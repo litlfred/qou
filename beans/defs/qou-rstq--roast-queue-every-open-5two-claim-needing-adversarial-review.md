@@ -11,7 +11,7 @@ tags:
     - roast
     - reorg-2026-10-04
 created_at: 2026-08-07T22:05:00Z
-updated_at: 2026-10-04T15:15:05Z
+updated_at: 2026-11-27T15:30:00Z
 parent: b9cj
 ---
 
@@ -569,3 +569,7 @@ rule, does not touch Gap A (`qou-glbl`), and does not perform the assembly
 
 ## Round 72 Progress (PR #8491)
 - De-vacuified and proved genuine Lean 4.24.0 theorems in PR `litlfred/qou#8491` (C1 `0a93eba0e8b5b8ee92b4af6972a325d2dc1a28fd`, C2 `a9b922df9d2baa717878dbac10e60b5a5c341c6e`, 80-dps mpmath witness verified, 0 static audit findings).
+
+## 2026-11-27: PR #8491 closed unmerged (stale reference)
+
+PR #8491 was closed unmerged on 2026-11-22 as superseded, on the owner's decision. The "Round 72 Progress" block above describes work that never reached main. Checked against main `22b1f41263`. Already on main in some form: `LiTwo_neg_one` (`QCalculus/LiTwoNegOne.lean`, `MathlibExt/DilogarithmArchimedeanLimit.lean`), `chord_le_arc` (`QOU/BringsSurface/MobiusKernel.lean`), `not_subsingleton_unit_hom_of_nontrivial` (`QOU/Core/WitnessObstruction.lean`). Not on main, and only corollaries or wrappers of the above: `twelve_mul_LiTwo_neg_one`, `twelve_mul_cLiTwoExt_neg_one`, `chord_sq_le_arc_sq`, `mobiusKernel_symm`, `moduleCat_not_subsingleton_unit_hom_of_ne_zero`, `qou_eulerChar_nonzero` (a projection of a class field), and two `decide` checks on integer literals. None of it bears on this bean's open content. Nothing salvaged; status unchanged.

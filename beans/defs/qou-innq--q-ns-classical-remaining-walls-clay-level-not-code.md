@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-07-24T15:49:33Z
-updated_at: 2026-11-22T21:58:00Z
+updated_at: 2026-11-27T15:30:00Z
 parent: qou-a3n3
 ---
 
@@ -19,4 +19,12 @@ Open after the T1-T9 tractable tranche (categorical mechanism fully formalized; 
 
 ## 2026-11-22T21:58:00Z: applicability review — RESCOPE
 
-Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. The wall list predates the 2026-11-21 restatement (issue #8864) and the 2026-11-22 Galerkin dead end. (1) B2 as a q = 1 identification with Leray-Hopf is withdrawn as framed: the q -> 1 endpoint is Euler. (2) "B3 = Clay" is withdrawn: conj:regularity-breakdown is now Part A (Omega(q) -> infinity as q -> 1+) and Part B (a classical backward DSS solution with |V| ~ |y|^-1, not in L^3). (4) "Most tractable = DSS Leray profile" no longer holds: the Galerkin route is closed (scope a) and needs a new idea; the decay is r^-1. Corrected wall list: prove Part A; Part B existence by a non-Galerkin method; items (3), (5), (6) unchanged. #8491 open, unmerged.
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. The wall list predates the 2026-11-21 restatement (issue #8864) and the 2026-11-22 Galerkin dead end. (1) B2 as a q = 1 identification with Leray-Hopf is withdrawn as framed: the q -> 1 endpoint is Euler. (2) "B3 = Clay" is withdrawn: conj:regularity-breakdown is now Part A (Omega(q) -> infinity as q -> 1+) and Part B (a classical backward DSS solution with |V| ~ |y|^-1, not in L^3). (4) "Most tractable = DSS Leray profile" no longer holds: the Galerkin route is closed (scope a) and needs a new idea; the decay is r^-1. Corrected wall list: prove Part A; Part B existence by a non-Galerkin method; items (3), (5), (6) unchanged. #8491 was closed unmerged the same day (see the 2026-11-27 note below).
+
+## 2026-11-27: PR #8491 closed unmerged (stale reference)
+
+PR #8491 was closed unmerged on 2026-11-22 as superseded, on the owner's decision. The "Round 72 Progress" block above describes work that never reached main. Checked against main `22b1f41263`. Already on main in some form: `LiTwo_neg_one` (`QCalculus/LiTwoNegOne.lean`, `MathlibExt/DilogarithmArchimedeanLimit.lean`), `chord_le_arc` (`QOU/BringsSurface/MobiusKernel.lean`), `not_subsingleton_unit_hom_of_nontrivial` (`QOU/Core/WitnessObstruction.lean`). Not on main, and only corollaries or wrappers of the above: `twelve_mul_LiTwo_neg_one`, `twelve_mul_cLiTwoExt_neg_one`, `chord_sq_le_arc_sq`, `mobiusKernel_symm`, `moduleCat_not_subsingleton_unit_hom_of_ne_zero`, `qou_eulerChar_nonzero` (a projection of a class field), and two `decide` checks on integer literals. None of it bears on this bean's open content. Nothing salvaged; status unchanged.
+
+## 2026-11-27: overlap check with open PRs #9434 and #9428
+
+Neither PR settles any wall. #9428 (holography / q-NS essay review) works on Bring's 2D finite complex; it says nothing about Part A, Part B, or items (3), (5), (6). #9434 (q-NS literature formalisation, qou-0nqs) proves exact facts on a finite 2-complex (energy equality dE/dt = -nu*Omega, conditional enstrophy decay) and, for nu_q = (1 - q^-1)/2, the bound `nuQ_one_add_le`: nu_q(1 + eps) <= eps/2. That touches item (5) only as an ingredient: the conditional alpha = 1 route (closure Omega = eps/nu_q, see qou-15gb, qou-l5pt) would use nu_q ~ (q - 1)/2 exactly, but the closure stays a named hypothesis and alpha is not settled. Part A and Part B are untouched.
