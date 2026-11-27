@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-pre-archimedean-figure-eight-bloch-class",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:pre-archimedean-figure-eight-bloch-class",
+  "kind": "proposition",
+  "title": "The figure-eight Nahm equation gives a class in the Bloch group of $\\mathbb{Q}(\\sqrt{-3})$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-bloch-group-quotient-construction",
+    "papers/quantum-observable-universe/blocks/rem-q-dilog-habiro-ring"
+  ],
+  "cites": [
+    "references/suslin1991",
+    "references/zagier-dilogarithm",
+    "references/garoufalidis-scholze-wheeler-zagier2024"
+  ],
+  "tags": [
+    "bloch-group",
+    "habiro-ring",
+    "figure-eight-knot",
+    "pre-archimedean",
+    "dilogarithm"
+  ],
+  "leanRef": "qou:QOU.Archimedean.PreArchimedeanBloch.fig8Class_cyclotomic",
+  "text": "pre-archimedean-figure-eight-bloch-class.md",
+  "provenance": "authored"
+}
