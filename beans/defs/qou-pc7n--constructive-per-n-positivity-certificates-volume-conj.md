@@ -64,3 +64,5 @@ Hermitian-square certificates exist for those N (Siegel). Open: a uniform-in-N
 certificate for 8_18, total positivity for N > 14 (needs c_k, k > 13), and the
 N -> infinity limit on [Coev E]. Exponential growth at e^{2 pi i/N} for 4_1 is
 already proved analytically (KashaevAsymptoticBounds). Bean stays open.
+
+2026-11-27 stage 3b (PR #9749): Kashaev values of 4_1, 8_18 and 10_123 are positive at every Galois conjugate for N <= 20 (state-sum probe galois_conjugate_state_sum_probe.py; controls agree). The Habiro c_k route was abandoned past k = 15 as too slow. Uniform-in-N certificate still open.
