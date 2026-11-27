@@ -7,7 +7,7 @@ priority: high
 tags:
     - 8f-index
 created_at: 2026-11-27T14:25:39Z
-updated_at: 2026-11-27T14:27:38Z
+updated_at: 2026-11-27T14:34:43Z
 parent: qou-0uga
 ---
 
@@ -49,3 +49,9 @@ Rules for this session (owner): no empirical inputs inside formal proofs; prefer
 ## 2026-11-27 14:27Z — owner: tracks A, B and C all approved
 
 Verbatim: *"A B C"*. B reopens `qou-j3w6` as option A (second fundamental $W$, $\Lambda^3 W\cong\mathbf 1$, axiom datum). Order: A1 → B scaffold → C.
+
+
+
+## 2026-11-27 — A1 closed in PR #9444
+
+`OctonionColourTripletComplexType.lean` (0 sorry): octonionic colour triple is complex type; `Sym²(3)` has no singlet; `3 ≇ 3̄`. Paper ledger rows updated from 'not excluded (cited)' to 'passes (proved)'. A2 finding: `dim Der(O) = 14` (`octonion_derivation_dim`) and stabilizer dim 8 (`finrank_su3_e1`) were already proved; the ledger row was stale and is corrected in the same PR. Remaining A2: continuous G2 / S^6 coset.
