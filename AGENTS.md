@@ -65,6 +65,30 @@ chat-app / project memory. Current headline rulings: the photon form above;
 backup)**; the up quark is an unknot strand; Q_β from γγ pair production;
 two-term Lagrangian trace on the scoreboard and all β-decay routes.
 
+## 🟥 FAST MERGES: ONE PRE-MERGE GATE, QA AFTER (owner ruling 2026-11-27) — STRICT
+
+Verbatim: *"i dont want to have slow merge times, no red gates (excpet
+json(ld) KG publication). all QA runs after. can be agent, does not need to be
+github action w/ runner queue issues."* (and: *"current harness merge/CI
+workflow WAY TOO SLOW"*). Recorded in
+[`docs/coordination/owner-rulings.md`](docs/coordination/owner-rulings.md), 2026-11-27.
+
+- **Before a merge, only two things can block it:** the merge guard run by the
+  merging agent, `bun run cat merge:guard <pr>` (never `--full-tier`; CI is
+  advisory on a non-release merge), and the JSON-LD KG publication check
+  (`gen-block-jsonld --check` on the PR head). Nothing else is a red gate.
+- **Everything else runs after the merge, on `main`:** the Lean sweep,
+  `scripts/precision-gates.sh`, `scripts/check-sidecars.sh`, producer re-runs,
+  and the site + QA publish (`site-publish.yml` on push to main;
+  `scripts/publish-main-local.sh --deploy` when Actions cannot run). A
+  post-merge failure becomes a bean and a follow-up PR, never a revert by
+  default.
+- **No GitHub Actions merge gating on qou:** no `harness-pr-checks.yml`, no
+  Actions merge-guard callers, no required status checks.
+- **This supersedes** the Phase 1b / Phase 4 "verification gate" in §Branch +
+  PR workflow rule 10 and in `prepare-merge-auto`, wherever they make the
+  listed checks pre-merge. Those checks still run; they run after.
+
 ## 🟥 REBUILD THE SITE AFTER EVERY MERGE TO MAIN (owner directive 2026-11-23) — STRICT
 
 Verbatim: *"agents should rebuild when merge to main if github actions not

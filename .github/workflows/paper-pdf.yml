@@ -48,13 +48,17 @@ jobs:
       # The package set measured to build the paper cleanly on Ubuntu 24.04
       # (2026-11-18). cm-super is required: microtype aborts on page 1 without
       # scalable fonts.
+      # texlive-extra-utils carries latexpand, which publish-paper-pdf.sh runs
+      # after the PDF builds (main-flat.tex). Without it every run since the
+      # flattening step landed failed with exit 127 after a clean build.
       - name: Install TeX
         run: |
           sudo apt-get update -q
           sudo apt-get install -y -q --no-install-recommends \
             latexmk texlive-latex-extra texlive-science texlive-fonts-recommended \
             texlive-fonts-extra texlive-pictures texlive-bibtex-extra biber \
-            texlive-plain-generic texlive-lang-greek lmodern cm-super latexdiff
+            texlive-plain-generic texlive-lang-greek lmodern cm-super latexdiff \
+            texlive-extra-utils
 
       - name: Platform checkout (at .folio-assistant-pin)
         run: bash scripts/setup-folio-assistant.sh
