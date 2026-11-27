@@ -43,6 +43,14 @@ Gauss sum `G = Σ_{c<2ℓ} ω^{c²}`:
   `S² = D²·1` these are the defining relations of the projective `SL₂(ℤ)` representation.
 * `gaussSum_ne_zero` — `G ≠ 0`, so `p₊` is a genuine nonzero scalar.
 
+Fusion, on dimensions `a = i + 1`:
+
+* `tildeS_one_mul_cgChar` — the pointwise Clebsch–Gordan identity
+  `S̃(1,x)·Σ_{s<min(a,b)} S̃(a+b−1−2s, x) = S̃(a,x)·S̃(b,x)`.
+* `verlinde_fusion` — the **Verlinde formula** lands on the truncated Clebsch–Gordan rule:
+  `Σ_x (S̃(a,x)S̃(b,x)/S̃(1,x))·S̃(x,c) = −2ℓ·N_{ab}^c` with `N_{ab}^c = 1` iff `|a−b| < c < a+b`,
+  `a + b + c < 2ℓ` and `a + b + c` odd, and `0` otherwise (`fusionRule`).
+
 The proofs use only that `ζ` is a primitive `2ℓ`-th root of unity: the full character sum over
 `ℤ/2ℓ` is a geometric series, and the reflection `c ↦ 2ℓ − c` (which flips the sign of `S̃`) folds it
 onto the `ℓ − 1` simples.
@@ -652,5 +660,129 @@ hold, so the modular relation is not conditional on `False`. -/
 example : gaussSum two17 (2 * (0 + 2)) ≠ 0 :=
   gaussSum_ne_zero 0 (IsPrimitiveRoot.coe_units_iff.mp (by
     simpa [two17] using two_isPrimitiveRoot_eight_zmod17))
+
+/-! ### Verlinde fusion: the truncated Clebsch–Gordan rule
+
+Label the simples by their dimensions `a = i + 1 ∈ {1, …, k+1}`. -/
+
+/-- Clebsch–Gordan character `Σ_{s<min(a,b)} S̃(a+b−1−2s, x)`. Pointwise it equals the Verlinde
+ratio `S̃(a,x)·S̃(b,x)/S̃(1,x)` (`tildeS_one_mul_cgChar`). -/
+def cgChar (ζ : Rˣ) (a b x : ℕ) : R :=
+  ∑ s ∈ range (min a b), tildeS ζ (a + b - 1 - 2 * s) x
+
+omit [IsDomain R] in
+/-- **Pointwise Clebsch–Gordan.** `S̃(1,x)·Σ_{s<min(a,b)} S̃(a+b−1−2s, x) = S̃(a,x)·S̃(b,x)`:
+the `sl₂` character identity `χ_a·χ_b = Σ χ_t`, cleared of the denominator `S̃(1,x)`. -/
+theorem tildeS_one_mul_cgChar (ζ : Rˣ) (a b x : ℕ) :
+    tildeS ζ 1 x * cgChar ζ a b x = tildeS ζ a x * tildeS ζ b x := by
+  wlog hab : b ≤ a generalizing a b
+  · rw [show cgChar ζ a b x = cgChar ζ b a x by unfold cgChar; rw [min_comm, Nat.add_comm a b],
+      this b a (by omega), mul_comm]
+  set F : ℕ → R := fun s => ((ζ ^ (((a : ℤ) + b - 2 * s) * x) : Rˣ) : R) with hF
+  set H : ℕ → R := fun s => ((ζ ^ ((-(a : ℤ) - b + 2 * s) * x) : Rˣ) : R) with hH
+  have hterm : ∀ s ∈ range b, tildeS ζ 1 x * tildeS ζ (a + b - 1 - 2 * s) x =
+      (F s - F (s + 1)) - (H (s + 1) - H s) := by
+    intro s hs
+    rw [mem_range] at hs
+    have hcast : ((a + b - 1 - 2 * s : ℕ) : ℤ) = (a : ℤ) + b - 1 - 2 * s := by omega
+    simp only [hF, hH]
+    unfold tildeS
+    rw [hcast]
+    simp only [sub_mul, mul_sub, val_zpow_mul_val_zpow]
+    push_cast
+    ring_nf
+  rw [cgChar, min_eq_right hab, mul_sum, sum_congr rfl hterm, sum_sub_distrib, sum_range_sub',
+    sum_range_sub]
+  simp only [hF, hH]
+  unfold tildeS
+  simp only [sub_mul, mul_sub, val_zpow_mul_val_zpow]
+  push_cast
+  ring_nf
+
+theorem int_dvd_iff_eq_of_pos_lt {N x : ℤ} (hN : 0 < N) (h1 : 0 < x) (h2 : x < 2 * N) :
+    N ∣ x ↔ x = N := by
+  constructor
+  · rintro ⟨q, rfl⟩
+    have hq1 : 0 < q := by
+      by_contra h; push_neg at h; nlinarith
+    have hq2 : q < 2 := by
+      by_contra h; push_neg at h; nlinarith
+    have : q = 1 := by omega
+    subst this; ring
+  · rintro rfl; exact dvd_refl _
+
+/-- **Orthogonality on all of `ℤ/2ℓ`.** For `1 ≤ t < 2ℓ` and a simple `c ≤ ℓ − 1`,
+`Σ_j S̃(t,j+1)·S̃(j+1,c) = 2ℓ·([t = 2ℓ − c] − [t = c])`. -/
+theorem tildeS_mul_tildeS_gen {ζ : Rˣ} (k : ℕ) (hζ : IsPrimitiveRoot ζ (2 * (k + 2)))
+    {t c : ℕ} (ht1 : 1 ≤ t) (ht2 : t < 2 * (k + 2)) (hc1 : 1 ≤ c) (hc2 : c ≤ k + 1) :
+    ∑ j ∈ range (k + 1), tildeS ζ t (j + 1) * tildeS ζ (j + 1) c =
+      2 * ((k : R) + 2) *
+        ((if t = 2 * (k + 2) - c then 1 else 0) - (if t = c then 1 else 0)) := by
+  have hNK := natCast_two_ell_ne_zero k hζ
+  have h2 : (2 : R) ≠ 0 := by
+    intro h; apply hNK; rw [h, zero_mul]
+  have hfull := sum_tildeS_mul_full hζ t c
+  rw [sum_full_eq_two_mul_half k hζ] at hfull
+  have hN : (0 : ℤ) < ((2 * (k + 2) : ℕ) : ℤ) := by omega
+  have hc1' : ((2 * (k + 2) : ℕ) : ℤ) ∣ ((t : ℤ) + c) ↔ t = 2 * (k + 2) - c := by
+    rw [int_dvd_iff_eq_of_pos_lt hN (by omega) (by push_cast; omega)]
+    constructor <;> intro h <;> push_cast at * <;> omega
+  have hc2' : ((2 * (k + 2) : ℕ) : ℤ) ∣ (-((t : ℤ) + c)) ↔ t = 2 * (k + 2) - c := by
+    rw [Int.dvd_neg]; exact hc1'
+  have hc3 : ((2 * (k + 2) : ℕ) : ℤ) ∣ ((t : ℤ) - c) ↔ t = c := by
+    constructor
+    · intro h
+      have := Int.eq_zero_of_abs_lt_dvd h (by rw [abs_lt]; constructor <;> push_cast <;> omega)
+      omega
+    · rintro rfl; simp
+  have hc4 : ((2 * (k + 2) : ℕ) : ℤ) ∣ ((c : ℤ) - t) ↔ t = c := by
+    rw [← dvd_neg, neg_sub]; exact hc3
+  simp only [hc1', hc2', hc3, hc4] at hfull
+  apply mul_left_cancel₀ h2
+  rw [hfull]
+  split_ifs <;> push_cast <;> ring
+
+omit [IsDomain R] in
+theorem sum_range_ite_eq_target (n m d : ℕ) (hd : 1 ≤ d) :
+    ∑ s ∈ range n, (if m - 2 * s = d then (1 : R) else 0) =
+      if (m - d) / 2 < n ∧ m - 2 * ((m - d) / 2) = d then 1 else 0 := by
+  by_cases hP : (m - d) / 2 < n
+  · rw [sum_eq_single ((m - d) / 2)]
+    · by_cases h : m - 2 * ((m - d) / 2) = d
+      · rw [if_pos h, if_pos ⟨hP, h⟩]
+      · rw [if_neg h, if_neg (fun h' => h h'.2)]
+    · intro s _ hs; rw [if_neg]; omega
+    · intro hs; exact absurd (mem_range.mpr hP) hs
+  · rw [if_neg (fun h' => hP h'.1)]
+    apply sum_eq_zero; intro s hs; rw [mem_range] at hs; rw [if_neg]; omega
+
+/-- The **truncated Clebsch–Gordan rule** at level `k`, on dimensions `a, b, c ∈ {1, …, k+1}`:
+`N_{ab}^c = 1` iff `|a − b| < c < a + b`, `a + b + c < 2(k+2)` and `a + b + c` is odd. -/
+abbrev fusionRule (k a b c : ℕ) : Prop :=
+  a < b + c ∧ b < a + c ∧ c < a + b ∧ a + b + c < 2 * (k + 2) ∧ (a + b + c) % 2 = 1
+
+/-- **Verlinde formula, every level.** For simples `a, b, c ∈ {1, …, k+1}`,
+`Σ_j (S̃(a,j+1)S̃(b,j+1)/S̃(1,j+1))·S̃(j+1,c) = −2ℓ·N_{ab}^c`, with the Verlinde ratio written
+division-free as `cgChar` and `N_{ab}^c ∈ {0, 1}` the truncated Clebsch–Gordan rule. Since
+`S̃ = δ·S` and `−2ℓ = δ²D²`, this is `N_{ab}^c = Σ_x S_{ax}S_{bx}S_{cx}/(S_{0x}·D²)`. -/
+theorem verlinde_fusion {ζ : Rˣ} (k : ℕ) (hζ : IsPrimitiveRoot ζ (2 * (k + 2)))
+    {a b c : ℕ} (ha1 : 1 ≤ a) (ha2 : a ≤ k + 1) (hb1 : 1 ≤ b) (hb2 : b ≤ k + 1)
+    (hc1 : 1 ≤ c) (hc2 : c ≤ k + 1) :
+    ∑ j ∈ range (k + 1), cgChar ζ a b (j + 1) * tildeS ζ (j + 1) c =
+      -(2 * ((k : R) + 2)) * (if fusionRule k a b c then 1 else 0) := by
+  simp only [cgChar, sum_mul]
+  rw [sum_comm]
+  rw [sum_congr rfl (fun s hs => tildeS_mul_tildeS_gen k hζ (t := a + b - 1 - 2 * s) (c := c)
+    (by have := mem_range.mp hs; omega) (by have := mem_range.mp hs; omega) hc1 hc2)]
+  rw [← mul_sum, sum_sub_distrib,
+    sum_range_ite_eq_target (min a b) (a + b - 1) (2 * (k + 2) - c) (by omega),
+    sum_range_ite_eq_target (min a b) (a + b - 1) c hc1]
+  split_ifs <;> simp only [fusionRule] at * <;> first | ring1 | (exfalso; omega)
+
+/-- Sanity check of the rule. Example at level `k = 2` (Ising): `f_1 ⊗ f_1 = f_0 ⊕ f_2` and `f_2 ⊗ f_2 = f_0`, i.e.
+`N_{22}^1 = N_{22}^3 = N_{33}^1 = 1` and `N_{33}^3 = 0`. -/
+example :
+    fusionRule 2 2 2 1 ∧ fusionRule 2 2 2 3 ∧ fusionRule 2 3 3 1 ∧ ¬ fusionRule 2 3 3 3 := by
+  decide
 
 end QOU.HeckeTemperleyLieb.TLRootOfUnity
