@@ -277,3 +277,7 @@ Was in-progress with no bean update since 2026-08-19 and no main commit naming i
 ## 2026-11-20 — claim released (W4 batch-PR triage, owner instruction)
 
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8301, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
+
+## 2026-11-27 — third-knot blocks now exist and are certified (qou-x3iv Part 18)
+
+The (-2,3,7) pretzel's six holomorphic blocks are derived in closed form from the 1-dim level-2 state integral and certified against the triangulation 3D index at every flux m in -2..2 (to q^7 via GZ's printed total index and the 1-dim series), with e = meridian as pinned in PR #9739. Rank 6 = 2 unit + 2x2 doubled families, matching GZ's 1+4+1. The H_Ad polynomial test still needs the integer Stokes matrix, which now needs only the four region matrices M_R(x;q). See PR #9778 and audit docs/audits/2026-11-27-pretzel-level2-blocks-from-index.md.

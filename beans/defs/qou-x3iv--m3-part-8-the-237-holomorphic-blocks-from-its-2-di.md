@@ -109,3 +109,16 @@ Was in-progress with no bean update since 2026-09-14 and no main commit naming i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8294, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-14: "route-c(qou-x3iv Part 14): the Gaussians contribute a MONOMIAL to the fusion, not 1 — derived, quantified, and shown NOT"). The work may be partly or fully done. Read the bean before you close it.
+
+## Part 18 (2026-11-27) — the six blocks, derived from the 1-dim index and certified at every flux
+
+Producer `aomega_m3_pretzel_index_factorisation_blocks_probe.py` (6/6), audit
+`docs/audits/2026-11-27-pretzel-level2-blocks-from-index.md`, Lean
+`QOU/Nuclear/PretzelLevelTwoBlockFactorization.lean` (0 sorry), PR #9778, branch
+`claude/pretzel-237-level2-blocks`.
+
+- **The 1-dim integral IS the index.** Read as a U(1) theory (chirals of charge (1,1,2), CS level 2), its 3D index equals SnapPy m016's triangulation index on every cell m in -2..2, e in -6..6 to q^3, and GZ's printed total index to q^7. The dictionary (K = A, weight (-q^{1/2})^{-An}, flux charge 2 per meridian flux) is fixed on 4_1 and 5_2; the pretzel's half-meridian scales come from Part 12a. One longitude-framing integer per knot (4_1: -2, 5_2: 0, pretzel: 1), m = 0 row independent of it.
+- **Six closed-form blocks.** B_U(x) = sum_j q^{j(j+1)} x^{2j} (q^{1+j}x^2)_inf (q^{1+2j}x^2)_inf/(q)_j (x and 1/x, theta monomials zeta^{2m}q^{+-m}); B_{sigma,eps}(x) = sum_{j = eps mod 2} q^{j(j+2)/4} (sigma q^{1+j/2}x)_inf (sigma q^{1+j/2}/x)_inf/(q)_j, weight 1/2. Fusion in GGM eq (19) form equals the index at EVERY m in -2..2 to q^7 (residual scales as q^8).
+- **The level-2 pairing rule (open since Part 12b): same sign, same parity** on the q and q^{-1} sides, branch (q^{-1})^{1/2} = q^{-1/2}. Part 12b's eight branch twists were the eight ways to break it.
+- **Engine bug fixed.** borromean_3d_index's shell stop truncated large peripheral classes (m004 I(4,1) = 0 vs I(-4,-1) = q). The m != 0 rows of aomega-m3-rotated-index-three-knots.witness.json (qou-m3ad Part 7) were incomplete; m = 0 rows and verdict unaffected.
+- **Still open:** the integer matrix S^+(x;0) needs the four region matrices M_R(x;q). That is now the only missing input.

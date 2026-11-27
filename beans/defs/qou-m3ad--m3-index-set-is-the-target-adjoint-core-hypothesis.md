@@ -230,3 +230,12 @@ Was in-progress with no bean update since 2026-09-13 and no main commit naming i
 
 ## Round 57 Progress (PR litlfred/qou#8286)
 - Status updated to `in-progress` (`litlfred/qou#8286`, C1 `6c7a20f3289e7e0671ce65ef402e1a06fd77c443`, C2 `dce9c51d4a6cd8f2253c078180b4b77a6f7c1ed0`).
+
+## Part 11 (2026-11-27) — item 1 at block level: H_Ad is graded by the FUNDAMENTAL character on the doubled blocks
+
+From qou-x3iv Part 18 (six certified blocks of the (-2,3,7) pretzel). Meridian eigenvalue mu, x = mu^2.
+- Unit blocks B_U(mu), B_U(1/mu): depend on x only (first order 1 - 2qx).
+- Doubled blocks B_{sigma,eps}: depend on sigma*(mu + 1/mu), the fundamental character chi_V, with chi_V^2 = s(x) + 1 (Lean: fundamental_sq_eq_adjoint_add_one). sigma-even combinations lie in Z[s(x)], sigma-odd ones do not, and the sigma grading is tied to half-integer q powers.
+- Same ring verdict as the operator route (qou-lzzi), now from explicit blocks. Two independent derivations agree.
+- H_floor: every block carries an explicit meridian character, which supports a meridian grading. It does not exclude H_floor (never a statement about blocks), and it does not confirm H_Ad as stated: the pretzel's natural grading is chi_V, with the adjoint only as chi_V^2 - 1.
+- The explicit q->0 integer matrix is still not claimed. Missing input: the four region matrices M_R(x;q) for the six certified blocks.
