@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-27T22:17:45Z
-updated_at: 2026-11-27T23:24:09Z
+updated_at: 2026-11-27T23:47:53Z
 parent: qou-h315
 ---
 
@@ -17,3 +17,6 @@ OPEN: no proof. Suggested attack: Kerov transition measures (rho_n is a three-st
 
 
 2026-11-27 (PR #9828): one-cell (newest-box) form proved by Kerov cotransition identity: rho_n(s)=E[1{s}(c^2-(n-1))]/((n-1)(n-2)), M1=(n/3)Cov(s,c^2). Lower half of SC PROVED: rho_n(s)<=0 for (s-2)^2<=n-1. Two sufficient conditions FAIL: monotone regression E[c^2|s] (from n=24), per-nu covariance (nu=(3,3,2)). SC checked n<=58 (t=13 at n=57,58). Upper half (window 2+sqrt(n-1)<s, and s>=t_n) still OPEN; bean stays open. Audit docs/audits/2026-11-27-covariance-kernel-M1-newest-box-form.md.
+
+
+2026-11-27: SC extended exactly to n<=67 (scfast run stopped at the 1h limit at n=68); t_n=13 for n=57..67.
