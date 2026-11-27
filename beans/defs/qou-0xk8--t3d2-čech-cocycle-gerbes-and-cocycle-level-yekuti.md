@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-12T20:38:55Z
-updated_at: 2026-11-22T21:45:00Z
+updated_at: 2026-11-27T22:07:40Z
 parent: qou-533l
 ---
 
@@ -47,3 +47,6 @@ State on main: CechGerbe.lean (cocycle-level Thm 4.17, cl2_eq_one_iff, exists_is
 ## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
 
 APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. Cocycle-level Thm 4.17 exists; gerbe ≃ cocycle equivalence is still assumed, as the bean requires it be stated.
+
+
+2026-11-27: PR #9770 (MathlibExt/TorsorLift.lean): exists_liftAlong_iff. A G-torsor with sections s_i on the cover has a reduction along pi : E -> G carrying sections to s_i iff its transition cocycle lifts to an E-cocycle. Sorry-free. Remaining: gerbe vs 2-cocycle comparison, Def 3.21 central extension of gerbes.
