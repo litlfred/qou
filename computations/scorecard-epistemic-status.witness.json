@@ -1,8 +1,8 @@
 {
   "engine": "python (no arithmetic)",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-27T14:42:15.673258+00:00",
-  "commitSha": "ea1c84fe1334c7180df1215dc0b9adfcc60ae981",
+  "computedAt": "2026-11-27T17:18:54.290529+00:00",
+  "commitSha": "10b43a45bba66d67534e6a7c3daa78e0c06150dd",
   "assertions": [
     {
       "name": "every_basis_present_and_quoting",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 110,
   "computation": "scorecard-epistemic-status",
   "scriptFile": "scorecard_epistemic_status.py",
-  "scriptHash": "e23a83121f9b",
-  "scriptCommitSha": "8713cad503e55522b11169dfd8718063566f2e0c",
+  "scriptHash": "aec9b486bdda",
+  "scriptCommitSha": "069cca3a07471c3651976e4dba9b8e9530134d85",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -109,6 +109,12 @@
         "basis_excerpt": "is the cell nearest AME out of a 6",
         "gloss": "the 2H start value is the grid cell nearest AME out of 6 models x 4 charts"
       },
+      "ruled_trace_2h": {
+        "status": "Conditional",
+        "basis": "computations/binding-log-free-energy.witness.json",
+        "basis_excerpt": "tower factor ruled, not derived",
+        "gloss": "gamma-gamma bond V(2)^3 picked by the cheapest-passing rule, not by the binding; the tower E_0 factor is ruled, not derived; p = n in this cell, so flavour is not resolved"
+      },
       "hecke_1d_chain": {
         "status": "Unclassified",
         "basis": "ACCURACY.md",
@@ -198,7 +204,7 @@
       "Calibration": 3,
       "Derived": 2,
       "Selected": 3,
-      "Conditional": 10,
+      "Conditional": 11,
       "Unclassified": 6
     }
   },

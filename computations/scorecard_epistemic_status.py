@@ -50,6 +50,7 @@ KOIDE = "computations/probes/gap2b_mtau_s3_circulant_koide_test/gap2b-mtau-s3-ci
 EW_LEAN = "folio/quantum-observable-universe/lean/QOU/StandardModel/ElectroweakBringSchwingerBridge.lean"
 SEIFERT = "computations/alpha/alpha-em-seifert-kappa-pairing.witness.json"
 U1 = "computations/u1-hypercharge-assignment.witness.json"
+BLFE = "computations/binding-log-free-energy.witness.json"
 
 # row id -> (status, basis file, verbatim excerpt that must occur in the basis file, gloss)
 ROWS: dict[str, tuple[str, str, str, str]] = {
@@ -72,6 +73,9 @@ ROWS: dict[str, tuple[str, str, str, str]] = {
     # Table 3.2a (K_A rows: owner ruling 2026-11-25 scope note)
     "ka_rows": ("Selected", RULINGS, "is the cell nearest AME out of a 6",
                 "the 2H start value is the grid cell nearest AME out of 6 models x 4 charts"),
+    "ruled_trace_2h": ("Conditional", BLFE, "tower factor ruled, not derived",
+                       "gamma-gamma bond V(2)^3 picked by the cheapest-passing rule, not by the binding; "
+                       "the tower E_0 factor is ruled, not derived; p = n in this cell, so flavour is not resolved"),
     "hecke_1d_chain": ("Unclassified", "ACCURACY.md", "1D Symbolic Hecke Chain",
                        "no corpus artefact classifies this row yet"),
     # Table 3.3a
