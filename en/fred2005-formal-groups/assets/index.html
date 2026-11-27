@@ -262,6 +262,9 @@
 .fa-doc dfn.defterm { font-style: normal; font-weight: 600; }
 .fa-doc .cite { opacity: .72; }
 .fa-doc .fa-blk:empty { min-height: 3rem; }
+.fa-doc .fa-chap:not([data-filled]) { padding: .25rem 0 1rem; }
+.fa-doc .fa-chap-open { font: inherit; font-size: .85rem; cursor: pointer; }
+.fa-doc .fa-blk:not([data-filled]):empty::before { content: "Loading…"; display: block; padding: .75rem 0; opacity: .6; font-size: .9rem; }
 .fa-doc .fa-one-page { font-size: .85rem; opacity: .72; }
 .fa-doc .fa-downloads { font-size: .9rem; }
 .fa-doc .pc-bar { position: static; background: none; }

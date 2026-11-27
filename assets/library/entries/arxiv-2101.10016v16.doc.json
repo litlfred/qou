@@ -479,7 +479,7 @@
           "heading": false
         },
         {
-          "term": "braided tensor",
+          "term": "quasi-hopf algebras",
           "heading": false
         }
       ],
@@ -518,11 +518,11 @@
           "heading": false
         },
         {
-          "term": "braided tensor",
+          "term": "coboundary associator",
           "heading": false
         },
         {
-          "term": "coboundary associator",
+          "term": "braided tensor",
           "heading": false
         },
         {
@@ -566,11 +566,11 @@
           "heading": false
         },
         {
-          "term": "braided tensor",
+          "term": "structure rephl",
           "heading": false
         },
         {
-          "term": "structure rephl",
+          "term": "braided tensor",
           "heading": false
         },
         {
@@ -618,11 +618,11 @@
           "heading": false
         },
         {
-          "term": "braided tensor",
+          "term": "fusion tensor",
           "heading": false
         },
         {
-          "term": "fusion tensor",
+          "term": "braided tensor",
           "heading": false
         },
         {
@@ -702,10 +702,6 @@
           "heading": true
         },
         {
-          "term": "tensor category",
-          "heading": true
-        },
-        {
           "term": "ribbon category",
           "heading": true
         },
@@ -720,6 +716,10 @@
         {
           "term": "tensor functors",
           "heading": true
+        },
+        {
+          "term": "rigid tensor",
+          "heading": false
         },
         {
           "term": "braided symmetries",
@@ -1010,7 +1010,7 @@
           "heading": false
         },
         {
-          "term": "unitary weak",
+          "term": "trivial ω-involution",
           "heading": false
         }
       ],
@@ -1046,11 +1046,11 @@
           "heading": false
         },
         {
-          "term": "unitary weak",
+          "term": "weak quasi-hopf",
           "heading": false
         },
         {
-          "term": "weak quasi-hopf",
+          "term": "unitary weak",
           "heading": false
         },
         {
@@ -1058,7 +1058,7 @@
           "heading": false
         },
         {
-          "term": "unitary tensor",
+          "term": "weak quasi-bialgebra",
           "heading": false
         }
       ],
@@ -1078,15 +1078,11 @@
       "summary": null,
       "keywords": [
         {
-          "term": "quasi bialgebra",
-          "heading": false
-        },
-        {
           "term": "tannaka-krein duality",
           "heading": true
         },
         {
-          "term": "weak quasi",
+          "term": "quasi bialgebra",
           "heading": false
         },
         {
@@ -1107,6 +1103,10 @@
         },
         {
           "term": "quasi tensor",
+          "heading": false
+        },
+        {
+          "term": "weak quasi-tensor",
           "heading": false
         }
       ],
@@ -1198,11 +1198,11 @@
           "heading": false
         },
         {
-          "term": "quasi bialgebra",
+          "term": "hilb vec",
           "heading": false
         },
         {
-          "term": "hilb vec",
+          "term": "quasi bialgebra",
           "heading": false
         }
       ],
@@ -1294,11 +1294,11 @@
           "heading": false
         },
         {
-          "term": "semisimple tensor",
+          "term": "integral weak",
           "heading": false
         },
         {
-          "term": "integral weak",
+          "term": "semisimple tensor",
           "heading": false
         }
       ],
@@ -1474,11 +1474,11 @@
           "heading": true
         },
         {
-          "term": "braided tensor",
+          "term": "kirillov hermitian",
           "heading": false
         },
         {
-          "term": "kirillov hermitian",
+          "term": "braided tensor",
           "heading": false
         },
         {
@@ -1522,11 +1522,11 @@
           "heading": true
         },
         {
-          "term": "admissible module",
+          "term": "zhu functor",
           "heading": false
         },
         {
-          "term": "zhu functor",
+          "term": "admissible module",
           "heading": false
         },
         {
@@ -1538,7 +1538,7 @@
           "heading": false
         },
         {
-          "term": "virasoro algebra",
+          "term": "irreducible admissible",
           "heading": false
         }
       ],
@@ -1582,11 +1582,11 @@
           "heading": false
         },
         {
-          "term": "unitary braided",
+          "term": "ω-involutive weak",
           "heading": false
         },
         {
-          "term": "ω-involutive weak",
+          "term": "unitary voa",
           "heading": false
         }
       ],
@@ -1994,11 +1994,11 @@
           "heading": true
         },
         {
-          "term": "weak hopf",
+          "term": "unitary coboundary",
           "heading": true
         },
         {
-          "term": "unitary coboundary",
+          "term": "weak hopf",
           "heading": true
         },
         {
@@ -2006,11 +2006,11 @@
           "heading": false
         },
         {
-          "term": "weak tensor",
+          "term": "weak quasi-hopf",
           "heading": false
         },
         {
-          "term": "weak quasi-hopf",
+          "term": "weak tensor",
           "heading": false
         },
         {
@@ -2150,11 +2150,11 @@
           "heading": true
         },
         {
-          "term": "fusion tensor",
+          "term": "primary fields",
           "heading": false
         },
         {
-          "term": "primary fields",
+          "term": "fusion tensor",
           "heading": false
         },
         {
@@ -2290,11 +2290,11 @@
           "heading": true
         },
         {
-          "term": "intertwining operators",
+          "term": "cft-type pre-associator",
           "heading": false
         },
         {
-          "term": "cft-type pre-associator",
+          "term": "intertwining operators",
           "heading": false
         },
         {
@@ -2394,15 +2394,15 @@
           "heading": false
         },
         {
-          "term": "operator algebras",
-          "heading": false
-        },
-        {
           "term": "superselection sectors",
           "heading": false
         },
         {
-          "term": "dong",
+          "term": "operator algebras",
+          "heading": false
+        },
+        {
+          "term": "doplicher",
           "heading": false
         }
       ],
@@ -2442,10 +2442,6 @@
       "heading": false
     },
     {
-      "term": "category tensor",
-      "heading": true
-    },
-    {
       "term": "quasi-hopf structure",
       "heading": false
     },
@@ -2454,7 +2450,11 @@
       "heading": true
     },
     {
-      "term": "braided tensor",
+      "term": "category tensor",
+      "heading": true
+    },
+    {
+      "term": "coboundary categories",
       "heading": true
     },
     {

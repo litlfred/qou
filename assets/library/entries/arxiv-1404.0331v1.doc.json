@@ -533,16 +533,16 @@
           "heading": false
         },
         {
+          "term": "skl",
+          "heading": false
+        },
+        {
           "term": "p1p",
           "heading": false
         },
         {
           "term": "odd",
           "heading": true
-        },
-        {
-          "term": "lemma",
-          "heading": false
         }
       ],
       "extract": "From [Tr, Lemma 1.1] we have JT(n + 2) −t−4pq(n+1)JT(n) ∈R[t±2n], i.e. (3.1) (L2 −t−4pqM−2pq)JT ∈R[M±1]. Lemma 3.1. For all positive integers m, one has (L2m −t−4pqm2M−2pqm)JT ∈R[M±1]. Proof. From (3.1) we have (L2M2pq −t4pq)JT ∈R[M±1]. It follows that ((L2M2pq)m −t4pqm)JT ∈R[M±1]. Since (L2M2pq)m = t−4pqm(m−1)L2mM2pqm, we have (L2mM2pqm −t4pqm2)JT ∈R[M±1]. The lemma follows since L2mM2pqm = t8pqm2M2pqmL2m. □",

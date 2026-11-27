@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-flavor-split-aether-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:flavor-split-aether-interpretation",
+  "kind": "remark",
+  "title": "Reading and Bring-surface origin of the flavor-split formula",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-flavor-split-aether"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-flavor-split-aether",
+  "tags": [
+    "flavor-split",
+    "bring-surface",
+    "picard-lefschetz",
+    "precision",
+    "interpretation"
+  ],
+  "text": "flavor-split-substrate-interpretation.md",
+  "provenance": "authored"
+}

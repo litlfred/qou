@@ -537,11 +537,11 @@
           "heading": false
         },
         {
-          "term": "maxima",
+          "term": "minima",
           "heading": false
         },
         {
-          "term": "minima",
+          "term": "maxima",
           "heading": false
         },
         {
@@ -736,12 +736,12 @@
           "heading": false
         },
         {
-          "term": "bottom entries",
-          "heading": false
-        },
-        {
           "term": "constant term",
           "heading": true
+        },
+        {
+          "term": "bottom entries",
+          "heading": false
         }
       ],
       "extract": "trapezoids Using the terminology of the previous section, (m, n, k)-Gog trapezoids with bottom row b1, . . . , bk correspond to (s, t)-trees of order n, where s = ∅, t = (0, 1, . . . , n −k −1), such that (1) the bottom entries of the ﬁrst k NE-diagonals are b1, . . . , bk, (2) the bottom entries of the last n −k SE-diagonals are m + k + 1, . . . , m + n. In order to obtain the Gog trapezoid from the (s, t)-tree,",
@@ -920,11 +920,11 @@
           "heading": false
         },
         {
-          "term": "maxima",
+          "term": "minima",
           "heading": true
         },
         {
-          "term": "minima",
+          "term": "maxima",
           "heading": true
         },
         {
@@ -932,7 +932,7 @@
           "heading": false
         },
         {
-          "term": "bottom maxima",
+          "term": "bottom minima",
           "heading": false
         },
         {
@@ -1168,7 +1168,7 @@
           "heading": false
         },
         {
-          "term": "asx",
+          "term": "qyj",
           "heading": false
         }
       ],
@@ -1370,11 +1370,11 @@
           "heading": false
         },
         {
-          "term": "bottom row",
+          "term": "weighted enumeration",
           "heading": false
         },
         {
-          "term": "weighted enumeration",
+          "term": "bottom row",
           "heading": false
         },
         {

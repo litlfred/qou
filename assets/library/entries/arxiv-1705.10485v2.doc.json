@@ -394,11 +394,11 @@
           "heading": false
         },
         {
-          "term": "laws",
+          "term": "estimates",
           "heading": false
         },
         {
-          "term": "estimates",
+          "term": "laws",
           "heading": false
         },
         {
@@ -516,7 +516,7 @@
           "heading": false
         },
         {
-          "term": "uniform bounds",
+          "term": "mod-gaussian convergence",
           "heading": false
         }
       ],
@@ -552,11 +552,11 @@
           "heading": false
         },
         {
-          "term": "exponent eta",
+          "term": "alpha neq",
           "heading": false
         },
         {
-          "term": "alpha neq",
+          "term": "exponent eta",
           "heading": false
         },
         {
@@ -660,7 +660,7 @@
           "heading": false
         },
         {
-          "term": "hyp",
+          "term": "residues theta",
           "heading": false
         }
       ],
@@ -907,11 +907,11 @@
           "heading": false
         },
         {
-          "term": "right frac",
+          "term": "frac rho",
           "heading": false
         },
         {
-          "term": "frac rho",
+          "term": "right frac",
           "heading": false
         },
         {
@@ -999,11 +999,11 @@
           "heading": false
         },
         {
-          "term": "mathrm kol",
+          "term": "aligned left",
           "heading": false
         },
         {
-          "term": "aligned left",
+          "term": "mathrm kol",
           "heading": false
         },
         {
@@ -1246,11 +1246,11 @@
           "heading": true
         },
         {
-          "term": "cumulants kol",
+          "term": "mathrm var",
           "heading": false
         },
         {
-          "term": "mathrm var",
+          "term": "cumulants kol",
           "heading": false
         },
         {
@@ -1294,8 +1294,8 @@
           "heading": false
         },
         {
-          "term": "uniform bounds",
-          "heading": false
+          "term": "markov",
+          "heading": true
         }
       ],
       "extract": "[]{#sec:markov label=\"sec:markov\"} In this section, we present examples of random variables that admit uniform bounds on cumulants, which do not come from dependency graphs. Their structure is nevertheless not so different since the variables that we consider write as sums of random variables that are *weakly dependent*. The technique to prove uniform bounds on cumulants relies then on the notion of *uniform",
@@ -1326,11 +1326,11 @@
           "heading": false
         },
         {
-          "term": "edge",
+          "term": "vertices",
           "heading": false
         },
         {
-          "term": "vertices",
+          "term": "edge",
           "heading": false
         }
       ],
@@ -1498,11 +1498,11 @@
           "heading": false
         },
         {
-          "term": "mod-gaussian convergence",
+          "term": "ashkan nikeghbali",
           "heading": false
         },
         {
-          "term": "ashkan nikeghbali",
+          "term": "mod-gaussian convergence",
           "heading": false
         },
         {
@@ -1544,11 +1544,15 @@
   "withheld": false,
   "keywords": [
     {
+      "term": "frac mathbb",
+      "heading": false
+    },
+    {
       "term": "mathrm kol",
       "heading": false
     },
     {
-      "term": "frac mathbb",
+      "term": "leq mathbb",
       "heading": false
     },
     {
@@ -1557,10 +1561,6 @@
     },
     {
       "term": "cumulants kol",
-      "heading": false
-    },
-    {
-      "term": "leq mathbb",
       "heading": false
     },
     {

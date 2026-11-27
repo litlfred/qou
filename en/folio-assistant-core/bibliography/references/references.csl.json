@@ -929,6 +929,35 @@
     "note": "PDF library/ant-v14-n7-s-p10/ — from the bound issue split by scripts/split-bound-volume.py; DOI read from its own title page."
   },
   {
+    "id": "angeli-marinova2013",
+    "type": "article-journal",
+    "title": "Table of experimental nuclear ground state charge radii: An update",
+    "author": [
+      {
+        "family": "Angeli",
+        "given": "I."
+      },
+      {
+        "family": "Marinova",
+        "given": "K. P."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "container-title": "Atomic Data and Nuclear Data Tables",
+    "volume": "99",
+    "issue": "1",
+    "page": "69-95",
+    "DOI": "10.1016/j.adt.2011.12.006",
+    "URL": "https://doi.org/10.1016/j.adt.2011.12.006",
+    "note": "Measured rms charge radii, used ONLY as a labelled comparison input by computations/probes/coulomb_measured_radius_comparison_probe.py (bean qou-usft): 3He 1.9661(30) fm, 4He 1.6755(28) fm. Never a model input."
+  },
+  {
     "id": "arcus2011",
     "type": "article",
     "title": "Algebraic constructions in the category of vector bundles",
@@ -1925,6 +1954,30 @@
     },
     "URL": "https://arxiv.org/abs/1904.05612",
     "note": "arXiv:1904.05612v3 [math.OA] (27 Jul 2020). Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-1904.05612v3/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed."
+  },
+  {
+    "id": "balagovic-kolb-2015",
+    "type": "article",
+    "title": "Universal K-matrix for quantum symmetric pairs",
+    "author": [
+      {
+        "family": "Balagović",
+        "given": "Martina"
+      },
+      {
+        "family": "Kolb",
+        "given": "Stefan"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/1507.06276",
+    "note": "arXiv:1507.06276v2 [math.QA], 29 Jan 2016 (v1 2015, per the identifier). No journal reference is printed on the arXiv copy, so none is added. Ingested 2026-11-22 as library/arxiv-1507.06276v2/ from an owner chat upload. Constructs a universal K-matrix for quantum symmetric pair coideal subalgebras B_{c,s} of U_q(g) for g of finite type: it commutes with B_{c,s} and solves the reflection equation in integrable category-O modules (braids in a cylinder, tom Dieck-Haring-Oldenburg). HUMAN-REVIEW: unreviewed."
   },
   {
     "id": "ballantine2024",
@@ -2944,6 +2997,50 @@
     "container-title": "Moscow Mathematical Journal",
     "URL": "https://arxiv.org/abs/0707.3799",
     "note": "arXiv:0707.3799. PDF library/arxiv-0707.3799v3/0707.3799v3.pdf (ingested 2026-09-05, owner upload 783c4cf4). Derived Satake: the equivariant derived category of the affine Grassmannian via adjoint-equivariant coherent sheaves; loop rotation as a deformation parameter."
+  },
+  {
+    "id": "bhattacharyya2008",
+    "type": "article-journal",
+    "title": "Nonlinear Fluid Dynamics from Gravity",
+    "author": [
+      {
+        "family": "Bhattacharyya",
+        "given": "Sayantani"
+      },
+      {
+        "family": "Hubeny",
+        "given": "Veronika E."
+      },
+      {
+        "family": "Minwalla",
+        "given": "Shiraz"
+      },
+      {
+        "family": "Rangamani",
+        "given": "Mukund"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2008
+        ]
+      ]
+    },
+    "container-title": "Journal of High Energy Physics",
+    "volume": "2008",
+    "issue": "2",
+    "page": "045",
+    "DOI": "10.1088/1126-6708/2008/02/045",
+    "URL": "https://arxiv.org/abs/0712.2456",
+    "original-date": {
+      "date-parts": [
+        [
+          2007
+        ]
+      ]
+    },
+    "note": "arXiv:0712.2456. Held in full at library/arxiv-0712.2456v4/ (ingested 2026-11-25). Title, authors, journal reference and DOI read from the arXiv metadata record (export.arxiv.org API) on 2026-11-25; nothing added from memory."
   },
   {
     "id": "bialynicki1973",
@@ -4403,6 +4500,50 @@
     "note": "arXiv:1802.00038. Added 2026-11-21 for the regularity-breakdown restatement (issue #8864)."
   },
   {
+    "id": "bredberg2011",
+    "type": "article-journal",
+    "title": "From Navier-Stokes To Einstein",
+    "author": [
+      {
+        "family": "Bredberg",
+        "given": "Irene"
+      },
+      {
+        "family": "Keeler",
+        "given": "Cynthia"
+      },
+      {
+        "family": "Lysov",
+        "given": "Vyacheslav"
+      },
+      {
+        "family": "Strominger",
+        "given": "Andrew"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2012
+        ]
+      ]
+    },
+    "container-title": "Journal of High Energy Physics",
+    "volume": "2012",
+    "issue": "7",
+    "page": "146",
+    "DOI": "10.1007/JHEP07(2012)146",
+    "URL": "https://arxiv.org/abs/1101.2451",
+    "original-date": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "note": "arXiv:1101.2451. Held in full at library/arxiv-1101.2451v2/ (ingested 2026-11-25). Title, authors and DOI (journal, volume and article number read off the DOI) read from the arXiv metadata record (export.arxiv.org API) on 2026-11-25; nothing added from memory."
+  },
+  {
     "id": "breit-wigner1936",
     "type": "article-journal",
     "title": "Capture of Slow Neutrons",
@@ -5728,6 +5869,34 @@
     "note": "Cut from the GDZ Göttingen scan of Invent. Math. vol. 106 (PDF pp. 418-438; PDF p. 439, journal p. 432, is blank and omitted); OCR text only. GDZ terms: reproductions may not be donated to other repositories. DOI not recorded (not verified here). PDF library/cherednik1991-kz-dunkl/."
   },
   {
+    "id": "chester-arsiwalla-kauffman-2025",
+    "type": "article",
+    "title": "Preons, braid topology, and representations of fundamental particles",
+    "author": [
+      {
+        "family": "Chester",
+        "given": "David"
+      },
+      {
+        "family": "Arsiwalla",
+        "given": "Xerxes D."
+      },
+      {
+        "family": "Kauffman",
+        "given": "Louis H."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2501.03260",
+    "note": "arXiv:2501.03260v1 [physics.gen-ph], 3 Jan 2025. No journal reference on page 1. Ingested 2026-11-22 as library/arxiv-2501.03260v1/ from an owner chat upload. Maps helon states to the SU(3)_c x U(1)_em weight lattice, recovers Lambek's 4-vector model, introduces a 5-vector representation, reads chirality through B_3 -> PSL(2,Z), and proposes colour-matched braid multiplication for composites. HUMAN-REVIEW: unreviewed."
+  },
+  {
     "id": "chlouveraki2016",
     "type": "book",
     "title": "Blocks and Families for Cyclotomic Hecke Algebras",
@@ -5770,6 +5939,34 @@
     "URL": "https://theses.hal.science/tel-01411063",
     "genre": "Habilitation à Diriger des Recherches",
     "note": "Verified 2026-06-23 (doth): HDR thesis, UVSQ, defended 25 Nov 2016; HAL handle tel-01411063 (https://theses.hal.science/tel-01411063). Title corrected from 'Hecke algebras and their representations'. Cited in QOU for Theorem 6.20. HAL theses carry no DOI. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §C."
+  },
+  {
+    "id": "chmutov2007",
+    "type": "article-journal",
+    "title": "Mutant knots and intersection graphs",
+    "author": [
+      {
+        "family": "Chmutov",
+        "given": "S. V."
+      },
+      {
+        "family": "Lando",
+        "given": "S. K."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2007
+        ]
+      ]
+    },
+    "container-title": "Algebraic & Geometric Topology",
+    "volume": "7",
+    "page": "1579-1598",
+    "DOI": "10.2140/agt.2007.7.1579",
+    "URL": "https://arxiv.org/abs/0704.1313",
+    "note": "arXiv:0704.1313. Held in full at library/arxiv-0704.1313v1/ (ingested 2026-11-25). Title, authors, journal reference and DOI read from the arXiv metadata record (export.arxiv.org API) on 2026-11-25; nothing added from memory."
   },
   {
     "id": "christenson1964",
@@ -5946,6 +6143,30 @@
     },
     "URL": "https://arxiv.org/abs/0905.0228",
     "note": "arXiv:0905.0228; published version in Journal of Combinatorial Theory, Series A 118 (2011). Touchard–Riordan-style q-Hermite with crossing-weighted matching combinatorics — the combinatorial tradition behind the q-involution recurrence I_q(n+1) = I_q(n) + [n]_q·I_q(n−1) underlying the QOU c(q)=1 q-lift candidate (q-lift literature check, 2026-07-20)."
+  },
+  {
+    "id": "ciubotaru2014",
+    "type": "article",
+    "title": "Cocenters and representations of affine Hecke algebra",
+    "author": [
+      {
+        "family": "Ciubotaru",
+        "given": "Dan"
+      },
+      {
+        "family": "He",
+        "given": "Xuhua"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/1409.0902",
+    "note": "arXiv:1409.0902. Held in full at library/arxiv-1409.0902v1/ (ingested 2026-11-25). Title, authors read from the arXiv metadata record (export.arxiv.org API) on 2026-11-25; nothing added from memory. Preprint; the arXiv record carries no journal reference or DOI, and none is added here (not verified)."
   },
   {
     "id": "codata2022",
@@ -9731,6 +9952,30 @@
     "DOI": "10.1023/A:1022412010826"
   },
   {
+    "id": "fortierbourque2023",
+    "type": "article",
+    "title": "Linear programming bounds for hyperbolic surfaces",
+    "author": [
+      {
+        "family": "Fortier Bourque",
+        "given": "Maxime"
+      },
+      {
+        "family": "Petri",
+        "given": "Bram"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2302.02540",
+    "note": "arXiv:2302.02540. Held in full at library/arxiv-2302.02540v3/ (ingested 2026-11-25). Title, authors read from the arXiv metadata record (export.arxiv.org API) on 2026-11-25; nothing added from memory. Preprint; the arXiv record carries no journal reference or DOI, and none is added here (not verified)."
+  },
+  {
     "id": "foth2002",
     "type": "article-journal",
     "title": "Tetraplectic structures, tri-momentum maps, and quaternionic flag manifolds",
@@ -12247,6 +12492,46 @@
     "note": "PDF library/04010141/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record."
   },
   {
+    "id": "granssamuelsson2020",
+    "type": "article-journal",
+    "title": "The action of the Virasoro algebra in quantum spin chains. I. The non-rational case",
+    "author": [
+      {
+        "family": "Grans-Samuelsson",
+        "given": "Linnea"
+      },
+      {
+        "family": "Jacobsen",
+        "given": "Jesper Lykke"
+      },
+      {
+        "family": "Saleur",
+        "given": "Hubert"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "container-title": "Journal of High Energy Physics",
+    "volume": "2021",
+    "issue": "2",
+    "page": "130",
+    "DOI": "10.1007/JHEP02(2021)130",
+    "URL": "https://arxiv.org/abs/2010.12819",
+    "original-date": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "note": "arXiv:2010.12819. Held in full at library/arxiv-2010.12819v2/ (ingested 2026-11-25). Title, authors and DOI (journal, volume and article number read off the DOI) read from the arXiv metadata record (export.arxiv.org API) on 2026-11-25; nothing added from memory."
+  },
+  {
     "id": "grassi-gu-marino2019qsw",
     "type": "article",
     "title": "Non-perturbative approaches to the quantum Seiberg–Witten curve",
@@ -12315,6 +12600,26 @@
     "URL": "https://doi.org/10.1103/PhysRevLett.13.598"
   },
   {
+    "id": "gresnigt2018",
+    "type": "article",
+    "title": "Braids, normed division algebras, and Standard Model symmetries",
+    "author": [
+      {
+        "family": "Gresnigt",
+        "given": "Niels"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/1803.02202",
+    "note": "arXiv:1803.02202v2 [physics.gen-ph], 16 Mar 2018. Page 1 reads 'Prepared for submission to JHEP'; no journal reference is printed, so none is added. Ingested 2026-11-22 as library/arxiv-1803.02202v2/ from an owner chat upload. Identifies helon framed braids in B_3^c with the basis states of Furey's minimal left ideals of the complex octonions (Cl(6)); SU(3)_c and U(1)_em come from the octonionic ideals, not from the braiding. HUMAN-REVIEW: unreviewed."
+  },
+  {
     "id": "gresnigt-marciano-zappala2021",
     "type": "article",
     "title": "Braided matter interactions in quantum gravity via 1-handle attachment",
@@ -12373,6 +12678,28 @@
     "DOI": "10.1140/epjc/s10052-023-11923-y",
     "URL": "https://arxiv.org/abs/2306.13098",
     "note": "PDF library/arxiv-2306.13098v2/ (canonical) — the library also holds the published copy at library/s10052-023-11923-y-a/, marked duplicate_of the arXiv one. Volume, page and DOI were read off that published copy, so unlike the neighbouring intake entries they are verified against the publisher record rather than extracted from a preprint."
+  },
+  {
+    "id": "gresnigt2017",
+    "type": "paper-conference",
+    "title": "Quantum groups and braid groups as fundamental symmetries",
+    "author": [
+      {
+        "family": "Gresnigt",
+        "given": "Niels G."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "container-title": "European Physical Society Conference on High Energy Physics (EPS-HEP 2017), Venice, Italy, 5-12 July 2017",
+    "publisher": "Proceedings of Science",
+    "URL": "https://arxiv.org/abs/1711.09011",
+    "note": "arXiv:1711.09011v1 [physics.gen-ph], 21 Nov 2017. Conference name, dates and the pos.sissa.it licence line read from page 1 of the PDF; the PoS article number is not printed on the arXiv copy and is not added. Ingested 2026-11-22 as library/arxiv-1711.09011v1/ from an owner chat upload. Reviews SU_q(3) as a flavour symmetry (q a root of unity chosen by fit to baryon masses) and uses the Kauffman-Lomonaco Clifford braiding theorem to show C and H represent B_2 and the circular B_3^c of the helon model. HUMAN-REVIEW: unreviewed."
   },
   {
     "id": "gresnigt2019",
@@ -15565,7 +15892,11 @@
       ]
     },
     "container-title": "Topology",
-    "note": "PDF library/1-s20-0040938387900097-main/ — The bracket-polynomial paper. The held scan is partly garbled OCR ('f&riced in recisrdfirm I Srpremher 1986'); title and author are legible, the body is not reliably machine-readable."
+    "volume": "26",
+    "issue": "3",
+    "page": "395-407",
+    "DOI": "10.1016/0040-9383(87)90009-7",
+    "note": "PDF library/1-s20-0040938387900097-main/ — The bracket-polynomial paper. The held scan is partly garbled OCR ('f&riced in recisrdfirm I Srpremher 1986'); title and author are legible, the body is not reliably machine-readable. Volume/issue/pages/DOI added 2026-11-22 from the Scilit record (matches the library directory name 0040938387900097)."
   },
   {
     "id": "kauffman1991",
@@ -15612,6 +15943,36 @@
     },
     "URL": "https://arxiv.org/abs/quant-ph/0606114",
     "note": "arXiv:quant-ph/0606114v3 (9 Feb 2007). Journal reference not on page 1 and not added. Ingested 2026-11-18 as library/arxiv-quant-ph-0606114v3/ from the owner upload (commit 521b87dca7, epic qou-s4ws). Metadata read from page 1 of the PDF; nothing added from memory. HUMAN-REVIEW: unreviewed."
+  },
+  {
+    "id": "kauffman-lomonaco-2016",
+    "type": "paper-conference",
+    "title": "Braiding with Majorana fermions",
+    "author": [
+      {
+        "family": "Kauffman",
+        "given": "Louis H."
+      },
+      {
+        "family": "Lomonaco",
+        "given": "Samuel J., Jr."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "container-title": "Quantum Information and Computation IX",
+    "publisher": "SPIE",
+    "volume": "9873",
+    "page": "98730E",
+    "DOI": "10.1117/12.2228510",
+    "URL": "https://arxiv.org/abs/1603.07827",
+    "collection-title": "Proceedings of SPIE",
+    "note": "Verified 2026-11-22 against the SPIE Digital Library record (Proc. SPIE 9873, 98730E, published 19 May 2016) and the arXiv PDF 1603.07827, which states the Clifford Braiding Theorem (tau_k = (1 + c_{k+1}c_k)/sqrt2 represent the circular Artin braid group). This is the paper Gresnigt 2017 (arXiv:1711.09011, ref. [14]) cites for that theorem; kauffman-lomonaco-2007 (quant-ph/0606114) does not contain it."
   },
   {
     "id": "kawauchi1996",
@@ -17610,6 +17971,61 @@
     "note": "Added 2026-11-21 for the regularity-breakdown restatement (issue #8864)."
   },
   {
+    "id": "letzter2001",
+    "type": "article",
+    "title": "Coideal subalgebras and quantum symmetric pairs",
+    "author": [
+      {
+        "family": "Letzter",
+        "given": "Gail"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2001
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/math/0103228",
+    "note": "arXiv:math/0103228v2 [math.QA], 9 Apr 2002 (v1 2001, per the identifier). No journal reference is printed on the arXiv copy, so none is added. Ingested 2026-11-22 as library/arxiv-math-0103228v2/ from an owner chat upload. Survey of coideal subalgebras of U_q(g): generators, Harish-Chandra modules, the locally finite part, and the coideals that give quantum analogues U_q(g^theta) of symmetric pairs. HUMAN-REVIEW: unreviewed."
+  },
+  {
+    "id": "levin2005",
+    "type": "article-journal",
+    "title": "String-net condensation: A physical mechanism for topological phases",
+    "author": [
+      {
+        "family": "Levin",
+        "given": "Michael A."
+      },
+      {
+        "family": "Wen",
+        "given": "Xiao-Gang"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    },
+    "container-title": "Physical Review B",
+    "volume": "71",
+    "page": "045110",
+    "DOI": "10.1103/PhysRevB.71.045110",
+    "URL": "https://arxiv.org/abs/cond-mat/0404617",
+    "original-date": {
+      "date-parts": [
+        [
+          2004
+        ]
+      ]
+    },
+    "note": "arXiv:cond-mat/0404617. Held in full at library/arxiv-cond-mat-0404617v2/ (ingested 2026-11-25). Title, authors, journal reference and DOI read from the arXiv metadata record (export.arxiv.org API) on 2026-11-25; nothing added from memory."
+  },
+  {
     "id": "levine-raksit2020",
     "type": "article-journal",
     "title": "Motivic Gauss-Bonnet formulas",
@@ -18700,6 +19116,30 @@
     "note": "PDF library/022201-1-online/ — registered 2026-08-30 from the cluster-expansion upload drop. Approximation algorithms for quantum partition functions built on the abstract-polymer / cluster-expansion machinery. The QUANTUM member of this drop, and so the one whose setting is closest to the corpus's; cite for the polymer-model formulation, not for any nuclear claim."
   },
   {
+    "id": "mardby2024",
+    "type": "article",
+    "title": "112 years of listening to Riemannian manifolds",
+    "author": [
+      {
+        "family": "Mårdby",
+        "given": "Gustav"
+      },
+      {
+        "family": "Rowlett",
+        "given": "Julie"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2406.18369",
+    "note": "arXiv:2406.18369. Held in full at library/arxiv-2406.18369v2/ (ingested 2026-11-25). Title, authors read from the arXiv metadata record (export.arxiv.org API) on 2026-11-25; nothing added from memory. Preprint; the arXiv record carries no journal reference or DOI, and none is added here (not verified)."
+  },
+  {
     "id": "margolus1998",
     "type": "article-journal",
     "title": "The Maximum Speed of Dynamical Evolution",
@@ -19470,6 +19910,62 @@
     "note": "arXiv:2503.08846v1. PDF library/arxiv-2503.08846v1/ — registered from library intake; metadata read from page 1 of the PDF, not verified against the publisher record."
   },
   {
+    "id": "menasco-thistlethwaite1991",
+    "type": "article-journal",
+    "title": "The Tait flyping conjecture",
+    "author": [
+      {
+        "family": "Menasco",
+        "given": "William W."
+      },
+      {
+        "family": "Thistlethwaite",
+        "given": "Morwen B."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1991
+        ]
+      ]
+    },
+    "container-title": "Bulletin of the American Mathematical Society",
+    "volume": "25",
+    "issue": "2",
+    "page": "403-412",
+    "DOI": "10.1090/S0273-0979-1991-16083-0",
+    "note": "Verified 2026-11-22 against the AMS article page. Announcement of the proof of the flyping conjecture; full proof in menasco-thistlethwaite1993."
+  },
+  {
+    "id": "menasco-thistlethwaite1993",
+    "type": "article-journal",
+    "title": "The classification of alternating links",
+    "author": [
+      {
+        "family": "Menasco",
+        "given": "William W."
+      },
+      {
+        "family": "Thistlethwaite",
+        "given": "Morwen B."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1993
+        ]
+      ]
+    },
+    "container-title": "Annals of Mathematics",
+    "volume": "138",
+    "issue": "1",
+    "page": "113-171",
+    "DOI": "10.2307/2946636",
+    "note": "Verified 2026-11-22 against the Wikipedia Tait-conjectures bibliography (JSTOR 2946636); the publisher page could not be fetched from this sandbox. HUMAN-REVIEW: pages from a secondary source. Full proof of the Tait flyping conjecture."
+  },
+  {
     "id": "miki2007",
     "type": "article-journal",
     "title": "A $(q,\\gamma)$ analog of the $W_{1+\\infty}$ algebra",
@@ -19815,6 +20311,45 @@
     "page": "117-129",
     "DOI": "10.1017/S0022112069000991",
     "URL": "https://doi.org/10.1017/S0022112069000991"
+  },
+  {
+    "id": "mohamed2016",
+    "type": "article-journal",
+    "title": "Discrete exterior calculus discretization of incompressible Navier-Stokes equations over surface simplicial meshes",
+    "author": [
+      {
+        "family": "Mohamed",
+        "given": "Mamdouh S."
+      },
+      {
+        "family": "Hirani",
+        "given": "Anil N."
+      },
+      {
+        "family": "Samtaney",
+        "given": "Ravi"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "container-title": "Journal of Computational Physics",
+    "volume": "312",
+    "page": "175-191",
+    "DOI": "10.1016/j.jcp.2016.02.028",
+    "URL": "https://arxiv.org/abs/1508.01166",
+    "original-date": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "note": "arXiv:1508.01166. Held in full at library/arxiv-1508.01166v2/ (ingested 2026-11-25). Title, authors, journal reference and DOI read from the arXiv metadata record (export.arxiv.org API) on 2026-11-25; nothing added from memory."
   },
   {
     "id": "mohideen1998",
@@ -20454,6 +20989,30 @@
     },
     "URL": "https://arxiv.org/abs/2205.01282",
     "note": "PDF library/arxiv-2205.01282v2/ — Proves a Gukov-Pei-Putrov-Vafa conjecture for a wide class of plumbed 3-manifolds. NOT the same paper as habiro2004 despite a 0.66 title similarity — that near-match was rejected during re-linking."
+  },
+  {
+    "id": "murasugi1987",
+    "type": "article-journal",
+    "title": "Jones polynomials and classical conjectures in knot theory",
+    "author": [
+      {
+        "family": "Murasugi",
+        "given": "Kunio"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1987
+        ]
+      ]
+    },
+    "container-title": "Topology",
+    "volume": "26",
+    "issue": "2",
+    "page": "187-194",
+    "DOI": "10.1016/0040-9383(87)90058-9",
+    "note": "Verified 2026-11-22 against the Scilit record and the Wikipedia Tait-conjectures bibliography. One of the three independent 1987 proofs of Tait's crossing-number conjecture for reduced alternating diagrams."
   },
   {
     "id": "murasugi1996",
@@ -21635,6 +22194,43 @@
     },
     "URL": "https://arxiv.org/abs/1109.3255",
     "note": "PDF library/arxiv-1109.3255v2/1109.3255v2.pdf — arXiv:1109.3255v2 [math.SG], stamped 13 Feb 2014; id year is the arXiv submission. Cited with a caveat: its 'twisting sheaf O(1)' is a FALSE COGNATE for the QOU twist `T_q` — Serre twist shifts a grading, `T_q` deforms the identity by an idempotent. What does connect is the ℤ-graded coordinate ring ⊕ H⁰(O(n)) as a template for where a grading on spectral-sequence pages could come from, which is the input `BarGradedCollapse` does not supply for the Gröbner filtration."
+  },
+  {
+    "id": "pastawski2015",
+    "type": "article-journal",
+    "title": "Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence",
+    "author": [
+      {
+        "family": "Pastawski",
+        "given": "Fernando"
+      },
+      {
+        "family": "Yoshida",
+        "given": "Beni"
+      },
+      {
+        "family": "Harlow",
+        "given": "Daniel"
+      },
+      {
+        "family": "Preskill",
+        "given": "John"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "container-title": "Journal of High Energy Physics",
+    "volume": "2015",
+    "issue": "6",
+    "page": "149",
+    "DOI": "10.1007/JHEP06(2015)149",
+    "URL": "https://arxiv.org/abs/1503.06237",
+    "note": "arXiv:1503.06237. Held in full at library/arxiv-1503.06237v2/ (ingested 2026-11-25). Title, authors, journal reference and DOI read from the arXiv metadata record (export.arxiv.org API) on 2026-11-25; nothing added from memory."
   },
   {
     "id": "pati2017",
@@ -25527,6 +26123,30 @@
     "publisher-place": "Cambridge, UK"
   },
   {
+    "id": "thistlethwaite1987",
+    "type": "article-journal",
+    "title": "A spanning tree expansion of the Jones polynomial",
+    "author": [
+      {
+        "family": "Thistlethwaite",
+        "given": "Morwen B."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1987
+        ]
+      ]
+    },
+    "container-title": "Topology",
+    "volume": "26",
+    "issue": "3",
+    "page": "297-309",
+    "DOI": "10.1016/0040-9383(87)90003-6",
+    "note": "Verified 2026-11-22 against the Scilit record and the Wikipedia Tait-conjectures bibliography. One of the three independent 1987 proofs of Tait's crossing-number conjecture."
+  },
+  {
     "id": "thompson-fluxtubes",
     "type": "article",
     "title": "Towards topological quantum computation? Knotting and fusing flux tubes",
@@ -26056,6 +26676,30 @@
     },
     "container-title": "Topology",
     "note": "Cited from mass-theory/pachner-pentagon-borromean.ts beside [pachner1991] and [kashaev1997] — the Pachner-move invariance of a state sum is precisely the Turaev-Viro setting, which is the identification evidence. Authors from the hyphenated key; family Turaev corroborated by the existing `reshetikhin-turaev1990` and `turaev2010` entries. Year 1992 from the key. UNVERIFIED: volume, issue and page range, plus DOI — omitted rather than guessed. Registered by the dangling-citation drain, bean qou-ghy5."
+  },
+  {
+    "id": "turaev-virelizier2010",
+    "type": "article",
+    "title": "On two approaches to 3-dimensional TQFTs",
+    "author": [
+      {
+        "family": "Turaev",
+        "given": "Vladimir"
+      },
+      {
+        "family": "Virelizier",
+        "given": "Alexis"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/1006.3501",
+    "note": "arXiv:1006.3501. Held in full at library/arxiv-1006.3501v5/ (ingested 2026-11-25). Title, authors read from the arXiv metadata record (export.arxiv.org API) on 2026-11-25; nothing added from memory. Preprint; the arXiv record carries no journal reference or DOI, and none is added here (not verified)."
   },
   {
     "id": "turaev2010",

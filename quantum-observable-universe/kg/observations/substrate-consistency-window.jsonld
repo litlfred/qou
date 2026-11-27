@@ -6,14 +6,14 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-substrate-consistency-window",
+  "@id": "papers/quantum-observable-universe/blocks/prop-aether-consistency-window",
   "@type": [
     "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
-  "label": "prop:substrate-consistency-window",
+  "label": "prop:aether-consistency-window",
   "kind": "proposition",
-  "title": "Overdetermination of the substrate parameter",
+  "title": "Overdetermination of the aether parameter",
   "uses": [
     "papers/quantum-observable-universe/blocks/rem-fine-structure-observation",
     "papers/quantum-observable-universe/blocks/prop-crossing-energy-decomposition"
@@ -27,7 +27,7 @@
     "half-life",
     "speed-of-light"
   ],
-  "leanRef": "qou:QOU.Observations.substrate_consistency_window",
+  "leanRef": "qou:QOU.Observations.aether_consistency_window",
   "text": "substrate-consistency-window.md",
   "provenance": "authored"
 }

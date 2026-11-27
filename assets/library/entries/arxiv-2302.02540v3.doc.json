@@ -1,0 +1,2194 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2302.02540v3",
+  "title": "Linear programming bounds for hyperbolic surfaces",
+  "variant": "pdf",
+  "pages": 49,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Context",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-context"
+    },
+    {
+      "level": 2,
+      "title": "Organization",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-organization"
+    },
+    {
+      "level": 1,
+      "title": "The Fourier transform",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-2-the-fourier-transform"
+    },
+    {
+      "level": 1,
+      "title": "The Selberg trace formula",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-the-selberg-trace-formula"
+    },
+    {
+      "level": 1,
+      "title": "Linear programming",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-4-linear-programming"
+    },
+    {
+      "level": 2,
+      "title": "Certifying inequalities on intervals",
+      "number": "4.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-41-certifying-inequalities-on-intervals"
+    },
+    {
+      "level": 2,
+      "title": "Certifying error bounds on integrals",
+      "number": "4.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-42-certifying-error-bounds-on-integrals"
+    },
+    {
+      "level": 2,
+      "title": "Ancillary files",
+      "number": "4.3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-43-ancillary-files"
+    },
+    {
+      "level": 1,
+      "title": "Bessel functions",
+      "number": "5",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-5-bessel-functions"
+    },
+    {
+      "level": 1,
+      "title": "Systole",
+      "number": "6",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-6-systole"
+    },
+    {
+      "level": 2,
+      "title": "The criterion",
+      "number": "6.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-61-the-criterion"
+    },
+    {
+      "level": 2,
+      "title": "Low genus",
+      "number": "6.2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-62-low-genus"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics",
+      "number": "6.3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-63-asymptotics"
+    },
+    {
+      "level": 1,
+      "title": "Kissing numbers",
+      "number": "7",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-7-kissing-numbers"
+    },
+    {
+      "level": 2,
+      "title": "The criterion",
+      "number": "7.1",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-71-the-criterion"
+    },
+    {
+      "level": 2,
+      "title": "Low genus",
+      "number": "7.2",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-72-low-genus"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics",
+      "number": "7.3",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-73-asymptotics"
+    },
+    {
+      "level": 1,
+      "title": "First eigenvalue",
+      "number": "8",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-8-first-eigenvalue"
+    },
+    {
+      "level": 2,
+      "title": "The criterion",
+      "number": "8.1",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-81-the-criterion"
+    },
+    {
+      "level": 2,
+      "title": "Low genus",
+      "number": "8.2",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-82-low-genus"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics",
+      "number": "8.3",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-83-asymptotics"
+    },
+    {
+      "level": 1,
+      "title": "Multiplicity of the first eigenvalue",
+      "number": "9",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-9-multiplicity-of-the-first-eigenvalue"
+    },
+    {
+      "level": 2,
+      "title": "The criterion",
+      "number": "9.1",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-91-the-criterion"
+    },
+    {
+      "level": 2,
+      "title": "Low genus",
+      "number": "9.2",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-92-low-genus"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics",
+      "number": "9.3",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-93-asymptotics"
+    },
+    {
+      "level": 1,
+      "title": "Small eigenvalues",
+      "number": "10",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-10-small-eigenvalues"
+    },
+    {
+      "level": 2,
+      "title": "The criterion",
+      "number": "10.1",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-101-the-criterion"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics",
+      "number": "10.2",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-102-asymptotics"
+    },
+    {
+      "level": 2,
+      "title": "Numerical results for small systole",
+      "number": "10.3",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-103-numerical-results-for-small-systole"
+    },
+    {
+      "level": 2,
+      "title": "Ramanujan surfaces",
+      "number": "10.4",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-104-ramanujan-surfaces"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "linear programming",
+          "heading": false
+        },
+        {
+          "term": "systole",
+          "heading": false
+        },
+        {
+          "term": "bounds",
+          "heading": false
+        },
+        {
+          "term": "genus",
+          "heading": false
+        }
+      ],
+      "extract": "LINEAR PROGRAMMING BOUNDS FOR HYPERBOLIC SURFACES MAXIME FORTIER BOURQUE AND BRAM PETRI Abstract.We adapt linear programming methods from sphere packings to closed hy- perbolic surfaces and obtain new upper bounds on their systole, their kissing number, the first positive eigenvalue of their Laplacian, the multiplicity of their first eigenvalue, and their number of small eigenvalues. Apart from a few exceptions, the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2302.02540v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 757,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bound record",
+          "heading": false
+        },
+        {
+          "term": "genus previous",
+          "heading": false
+        },
+        {
+          "term": "systole",
+          "heading": false
+        },
+        {
+          "term": "upper bounds",
+          "heading": false
+        },
+        {
+          "term": "spectral gap",
+          "heading": false
+        },
+        {
+          "term": "gap larger",
+          "heading": false
+        },
+        {
+          "term": "lower bounds",
+          "heading": false
+        },
+        {
+          "term": "kissing number",
+          "heading": false
+        }
+      ],
+      "extract": "The goal of this paper is to prove new upper bounds on five invariants associated to a closed, oriented, hyperbolic surfaceM: (1) itssystolesys(M), the length of any shortest non-contractible closed curve inM; (2) itskissing numberkiss(M), the number of homotopy classes of oriented non- contractible closed curves of minimal length inM; (3) thefirst positive eigenvalueλ 1(M) (which coincides with thespectral gap) of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-context",
+      "number": null,
+      "title": "Context",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 575,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "packing density",
+          "heading": false
+        },
+        {
+          "term": "kissing numbers",
+          "heading": false
+        },
+        {
+          "term": "optimal bounds",
+          "heading": false
+        },
+        {
+          "term": "maximum ofm",
+          "heading": false
+        },
+        {
+          "term": "sphere packings",
+          "heading": false
+        },
+        {
+          "term": "systole",
+          "heading": false
+        },
+        {
+          "term": "maximizing",
+          "heading": false
+        },
+        {
+          "term": "bav",
+          "heading": false
+        }
+      ],
+      "extract": "mannian manifold (with 1/4 replaced by the bottom of the spectrum of the Laplacian on the universal cover ofMin the case ofN small) and their maximization has been studied by several authors for various classes of manifolds. These shape optimization problems seek to find optimal inequalities analogous to the isoperimetric inequality for other geometric quantities. For example, if we fix a topological manifold Σ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-organization",
+      "number": null,
+      "title": "Organization",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 259,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mfb",
+          "heading": false
+        },
+        {
+          "term": "selberg trace",
+          "heading": false
+        },
+        {
+          "term": "linear programming",
+          "heading": false
+        },
+        {
+          "term": "systole",
+          "heading": false
+        },
+        {
+          "term": "bounds",
+          "heading": false
+        },
+        {
+          "term": "trace formula",
+          "heading": false
+        },
+        {
+          "term": "universit",
+          "heading": false
+        }
+      ],
+      "extract": "the Fourier transform, the Selberg trace formula, the linear programming method, and Bessel functions. This is followed by one section for each of the five invariants sys, kiss,λ 1, m1, andN small. In each of these sections, we first present a general criterion for proving upper bounds based on the Selberg trace formula. We then discuss the results that we have obtained from this criterion in low genus (or for small",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-the-fourier-transform",
+      "number": "2",
+      "title": "The Fourier transform",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 170,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fourier transform",
+          "heading": true
+        },
+        {
+          "term": "integrable fourier",
+          "heading": false
+        },
+        {
+          "term": "andf",
+          "heading": false
+        },
+        {
+          "term": "positive-definite",
+          "heading": false
+        },
+        {
+          "term": "everyy",
+          "heading": false
+        }
+      ],
+      "extract": "The Fourier transform of an integrable functionf:R→Cis defined by bf(y) := 1√ 2π Z R f(x)e−iyxdx fory∈R. If bfis integrable, then the Fourier inversion theorem says that its Fourier transform is almost everywhere equal tox7→f(−x). We will frequently use the scaling property that fora >0, the Fourier transform of x7→f(ax) isy7→ bf(y/a)/a. Iffandgare integrable, then [f∗g= √ 2πbfbg where∗denotes the convolution and if",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-the-selberg-trace-formula",
+      "number": "3",
+      "title": "The Selberg trace formula",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 313,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bus",
+          "heading": false
+        },
+        {
+          "term": "selberg",
+          "heading": true
+        },
+        {
+          "term": "decay condition",
+          "heading": false
+        },
+        {
+          "term": "writer",
+          "heading": false
+        },
+        {
+          "term": "surfacem",
+          "heading": false
+        }
+      ],
+      "extract": "Given a closed hyperbolic surfaceM(always assumed to be oriented), we list the eigen- values of its Laplace–Beltrami operator (acting on square-integrable functions) in non- decreasing order 0 =λ 0(M)<λ 1(M)≤λ 2(M)≤··· where each eigenvalue is repeated according to its multiplicity, i.e., the dimension of the corresponding eigenspace. The set of oriented closed geodesics inMis denoted byC(M). This means that each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-linear-programming",
+      "number": "4",
+      "title": "Linear programming",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 582,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "linear programming",
+          "heading": true
+        },
+        {
+          "term": "mapp qis",
+          "heading": false
+        },
+        {
+          "term": "double zeros",
+          "heading": false
+        },
+        {
+          "term": "programming bounds",
+          "heading": false
+        },
+        {
+          "term": "sphere packings",
+          "heading": false
+        },
+        {
+          "term": "elkies",
+          "heading": false
+        },
+        {
+          "term": "cohn",
+          "heading": false
+        },
+        {
+          "term": "inequalities",
+          "heading": false
+        }
+      ],
+      "extract": "Like the linear programming bounds of Cohn and Elkies [CE03] for the density of sphere packings, for each of the five invariants sys, kiss,λ 1,m 1, andN small, our criterion will take the following form: Suppose thatfis an admissible function such thatfand bfsatisfy certain linear inequalities over certain intervals. Thenfand bfproduce a bound on the given invariant that holds for every closed hyperbolic surface",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-41-certifying-inequalities-on-intervals",
+      "number": "4.1",
+      "title": "Certifying inequalities on intervals",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 270,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sturm theorem",
+          "heading": false
+        },
+        {
+          "term": "double zeros",
+          "heading": false
+        },
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "transcendental functions",
+          "heading": false
+        },
+        {
+          "term": "interval",
+          "heading": false
+        },
+        {
+          "term": "inequalities",
+          "heading": true
+        },
+        {
+          "term": "taylor",
+          "heading": false
+        }
+      ],
+      "extract": "produce our bounds, the end results are rigorous. The reason is that we work with rational zeros and polynomials with rational coefficients, so the linear systems involved are solved exactly over the rational numbers. The polynomials we get thus have actual double zeros rather than approximate ones. To ascertain thatf(x) =p(x 2)e−x2/2≥0 for everyxin a given interval [a,b], we apply Sturm’s theorem to count the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-42-certifying-error-bounds-on-integrals",
+      "number": "4.2",
+      "title": "Certifying error bounds on integrals",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 279,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xtanh",
+          "heading": false
+        },
+        {
+          "term": "bounds",
+          "heading": true
+        },
+        {
+          "term": "integrals",
+          "heading": true
+        },
+        {
+          "term": "certified",
+          "heading": false
+        },
+        {
+          "term": "tanh",
+          "heading": false
+        },
+        {
+          "term": "inequalities",
+          "heading": false
+        },
+        {
+          "term": "estimate",
+          "heading": false
+        }
+      ],
+      "extract": "bounds is that we have inequalities involving integrals that need to be checked. For exam- ple, one of our bounds requires that (4.1) bf(i/2)≥2(g−1) Z ∞ 0 bf(x)xtanh(πx)dx. To obtain functions that satisfy this inequality, we first compute numerical approximations In of the integrals Z ∞ 0 L(−1/2) n (x2)e−x2/2xtanh(πx)dx. In our linear system of equations, we then impose that bf(i/2) =q(−1/4)e 1/8 is equal to ρtimes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-43-ancillary-files",
+      "number": "4.3",
+      "title": "Ancillary files",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ancillary",
+          "heading": true
+        },
+        {
+          "term": "file",
+          "heading": false
+        },
+        {
+          "term": "input parameters",
+          "heading": false
+        },
+        {
+          "term": "cell",
+          "heading": false
+        },
+        {
+          "term": "bounds",
+          "heading": false
+        },
+        {
+          "term": "estimate",
+          "heading": false
+        }
+      ],
+      "extract": "we explain how to estimate these integrals in the proof and state the resulting estimate that was obtained using interval arithmetic inSageMath. The calculations behind these es- timates are all contained in theJupyternotebookcertified integrals.ipynbattached as an ancillary file to the arXiv version of this paper. Then there is one fileverify invariant.ipynbfor each of the invariants we consider. Each such file",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-bessel-functions",
+      "number": "5",
+      "title": "Bessel functions",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 523,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "positive-definite ifα",
+          "heading": false
+        },
+        {
+          "term": "admissible ifα",
+          "heading": false
+        },
+        {
+          "term": "bessel functions",
+          "heading": true
+        },
+        {
+          "term": "fourier transform",
+          "heading": false
+        },
+        {
+          "term": "forα",
+          "heading": false
+        },
+        {
+          "term": "git",
+          "heading": false
+        },
+        {
+          "term": "rect",
+          "heading": false
+        },
+        {
+          "term": "wat",
+          "heading": false
+        }
+      ],
+      "extract": "Bessel functions were used in [CE03] to obtain a new proof of the second best asymptotic upper bound on the density of sphere packings inR n due to Levenshtein [Lev79]. We will also use these functions to obtain our asymptotic bounds. We list some of their properties here for later reference. One of the many equivalent definitions [Wat95, p.40] of theBessel function of the first kind of orderαis Jα(z) := \u0010z 2 \u0011α ∞X",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-6-systole",
+      "number": "6",
+      "title": "Systole",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-61-the-criterion",
+      "number": "6.1",
+      "title": "The criterion",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "everyj",
+          "heading": false
+        },
+        {
+          "term": "rfor every",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic surfacemof",
+          "heading": false
+        },
+        {
+          "term": "xtanh",
+          "heading": false
+        },
+        {
+          "term": "gel",
+          "heading": false
+        },
+        {
+          "term": "sys",
+          "heading": false
+        },
+        {
+          "term": "criterion",
+          "heading": true
+        }
+      ],
+      "extract": "any of its shortest closed geodesics (also called systoles). Our criterion for bounding the systole goes as follows. Theorem 6.1.Letg≥2. Suppose thatfis a non-constant admissible function for which there exists anR>0such that •f(x)≤0ifx≥R; • bf(ξ)≥0for everyξ∈R∪i \u0002 − 1 2, 1 2 \u0003 ; • bf(i/2)≥2(g−1) R∞ 0 bf(x)xtanh(πx)dx. Thensys(M)≤Rfor every closed hyperbolic surfaceMof genusg. Proof.Suppose that there is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-62-low-genus",
+      "number": "6.2",
+      "title": "Low genus",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 359,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bav",
+          "heading": false
+        },
+        {
+          "term": "vog",
+          "heading": false
+        },
+        {
+          "term": "genus",
+          "heading": true
+        },
+        {
+          "term": "hurwitz surfaces",
+          "heading": false
+        },
+        {
+          "term": "upper bound",
+          "heading": false
+        },
+        {
+          "term": "jen",
+          "heading": false
+        },
+        {
+          "term": "sch",
+          "heading": false
+        },
+        {
+          "term": "fbr",
+          "heading": false
+        }
+      ],
+      "extract": "optimization are listed in Table 1 for 2≤g≤20. The verification of these values is done in the ancillary fileverify systole.ipynb. They are lower than the previous best upper bounds except in genus 2 where the optimal bound is 2 arccosh(1+ √ 2)≈3.057142 [Jen84]. In all other genera, the previous best upper bound was Bavard’s inequality [Bav96] (6.1) sys(M)≤2 arccosh \u0012 1 2 sin(π/(12g−6)) \u0013 , which comes from a sharp",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-63-asymptotics",
+      "number": "6.3",
+      "title": "Asymptotics",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 19,
+      "labelStart": "12",
+      "labelEnd": "19",
+      "words": 2181,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "surf aces",
+          "heading": false
+        },
+        {
+          "term": "witha andb",
+          "heading": false
+        },
+        {
+          "term": "x2α",
+          "heading": false
+        },
+        {
+          "term": "fortier bourque",
+          "heading": false
+        },
+        {
+          "term": "bram petri",
+          "heading": false
+        },
+        {
+          "term": "maxime fortier",
+          "heading": false
+        },
+        {
+          "term": "r2α",
+          "heading": false
+        },
+        {
+          "term": "bavard bound",
+          "heading": false
+        }
+      ],
+      "extract": "asymptotic to π 12g asg→∞and arccosh(x) = log(x+ √ x2−1) = log(x) + log(2) +o(1) asx→∞so that Bavard’s bound (6.1) can be rewritten as sys(M)≤2 log \u00126g π \u0013 + 2 log(2) +o(1) = 2 log(g) + 2 log \u001212 π \u0013 +o(1) = 2 log(g) + 2.680353...+o(1) asg→∞. By comparison, the elementary area bound coming from the fact that a disk of radius sys(M)/2 is embedded is sys(M)≤4 arcsinh( p g−1) = 2 log(g) + 4 log(2) +o(1) = 2 log(g) +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-7-kissing-numbers",
+      "number": "7",
+      "title": "Kissing numbers",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-71-the-criterion",
+      "number": "7.1",
+      "title": "The criterion",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 628,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wheneverx",
+          "heading": false
+        },
+        {
+          "term": "kiss",
+          "heading": false
+        },
+        {
+          "term": "lets",
+          "heading": false
+        },
+        {
+          "term": "hypotheses",
+          "heading": false
+        },
+        {
+          "term": "sys",
+          "heading": false
+        },
+        {
+          "term": "criterion",
+          "heading": true
+        }
+      ],
+      "extract": "of oriented closed geodesics of minimal length. In the literature it is common to consider the quantity 1 2 kiss(M), which counts the number of unoriented systoles inM. Our criterion for bounding kissing numbers is the same as the one we used in [FBP22] for hyperbolic manifolds in any dimension. We repeat the proof in the surface case for convenience. Theorem 7.1.Lets>0and suppose thatfis an admissible function such",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-72-low-genus",
+      "number": "7.2",
+      "title": "Low genus",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 508,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fbp",
+          "heading": false
+        },
+        {
+          "term": "fbr",
+          "heading": false
+        },
+        {
+          "term": "upper bound",
+          "heading": false
+        },
+        {
+          "term": "sturm theorem",
+          "heading": false
+        },
+        {
+          "term": "vog",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "sch",
+          "heading": false
+        },
+        {
+          "term": "genus",
+          "heading": true
+        }
+      ],
+      "extract": "subintervals, and then optimize to find a single functionffor each subinterval. One subtlety is that to get an upper bound onK(s) whensbelongs to an interval [a,b], we need an upper bound on sinh(s/2) −sf(s) forsin the same interval. Once we find a candidate upper bound numerically, we appro- ximate sinh(s/2) ande−s2/2 by Taylor polynomials from the correct direction and then use Sturm’s theorem to certify that the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-73-asymptotics",
+      "number": "7.3",
+      "title": "Asymptotics",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": "22",
+      "labelEnd": "25",
+      "words": 1091,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "everyr",
+          "heading": false
+        },
+        {
+          "term": "thatf",
+          "heading": false
+        },
+        {
+          "term": "ifgis",
+          "heading": false
+        },
+        {
+          "term": "everyx",
+          "heading": false
+        },
+        {
+          "term": "kiss",
+          "heading": false
+        },
+        {
+          "term": "arcsinh",
+          "heading": false
+        },
+        {
+          "term": "upper bound",
+          "heading": false
+        },
+        {
+          "term": "systole",
+          "heading": false
+        }
+      ],
+      "extract": "with a proposition that bounds this quantity in terms of the systole. Proposition 7.5.There exist somes 0 >0such that K(s)<18.355· 2 sinh(s/2) s for everys≥s 0. In particular, every closed hyperbolic surfaceMof genusg≥2and systolesys(M)≥s 0 satisfies kiss(M)<18.355· 2 sinh(sys(M)/2) sys(M) (g−1). Remark7.6.This improves upon [FBP22, Remark 4.4], where we obtained the same in- equality but with the constant 63.71",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-8-first-eigenvalue",
+      "number": "8",
+      "title": "First eigenvalue",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-019-81-the-criterion",
+      "number": "8.1",
+      "title": "The criterion",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xtanh",
+          "heading": false
+        },
+        {
+          "term": "lfor",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic surface",
+          "heading": false
+        },
+        {
+          "term": "everyj",
+          "heading": false
+        },
+        {
+          "term": "cbe",
+          "heading": false
+        }
+      ],
+      "extract": "Laplacian onMgoes as follows. Theorem 8.1.Letg≥2. Suppose thatfis a non-constant admissible function for which there exists anL>0such that •f(x)≥0for allx∈R; • bf \u0010q λ− 1 4 \u0011 ≤0wheneverλ≥L; • bf(i/2)≤2(g−1) R∞ 0 bf(x)xtanh(πx)dx; Thenλ 1(M)≤Lfor every hyperbolic surfaceMof genusg. 26 MAXIME FORTIER BOURQUE AND BRAM PETRI Proof.Suppose thatMis a hyperbolic surface withλ 1(M)> L. By continuity, the same inequality",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-82-low-genus",
+      "number": "8.2",
+      "title": "Low genus",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 943,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kmcp",
+          "heading": false
+        },
+        {
+          "term": "genus",
+          "heading": true
+        },
+        {
+          "term": "supremum ofλ",
+          "heading": false
+        },
+        {
+          "term": "bbd",
+          "heading": false
+        },
+        {
+          "term": "value ofλ",
+          "heading": false
+        },
+        {
+          "term": "plumbed surfaces",
+          "heading": false
+        },
+        {
+          "term": "programming bounds",
+          "heading": false
+        },
+        {
+          "term": "lower bounds",
+          "heading": false
+        }
+      ],
+      "extract": "optimization are presented in Table 3 for 2≤g≤20 and their verification is done in the fileverify lambda.ipynb. Our bounds are smaller than the previous best upper bounds in every genus except 2, 3, 4, and 6 where bounds from [KMcP24], [Bon22] or [YY80] are better. Some comments on the examples we used for the lower bounds are in order: •Contrary to the other invariants considered in this paper, it is not known if",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-83-asymptotics",
+      "number": "8.3",
+      "title": "Asymptotics",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 32,
+      "labelStart": "28",
+      "labelEnd": "32",
+      "words": 1171,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tanh",
+          "heading": false
+        },
+        {
+          "term": "fortier bourque",
+          "heading": false
+        },
+        {
+          "term": "bram petri",
+          "heading": false
+        },
+        {
+          "term": "surf aces",
+          "heading": false
+        },
+        {
+          "term": "maxime fortier",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic surf",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "diam",
+          "heading": false
+        }
+      ],
+      "extract": "(8.1)λ 1(M)≤λ 0(Ddiam(M)/2) for any closed hyperbolic surfaceM, whereD R is a hyperbolic disk of radiusR,λ 0(Ω) is the smallest Dirichlet eigenvalue of Ω, and diam(M) is the diameter ofM. From this, Cheng deduces [Che75, Corollary 2.3] the more explicit bound λ1(M)≤ 1 4 + \u0012 4π diam(M) \u00132 . However, this can be improved using an inequality of Gage [Gag80, Theorem 5.2(a)] on the smallest eigenvalue of hyperbolic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-9-multiplicity-of-the-first-eigenvalue",
+      "number": "9",
+      "title": "Multiplicity of the first eigenvalue",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-91-the-criterion",
+      "number": "9.1",
+      "title": "The criterion",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 391,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "programming bounds",
+          "heading": false
+        },
+        {
+          "term": "values forλ",
+          "heading": false
+        },
+        {
+          "term": "linear programming",
+          "heading": false
+        },
+        {
+          "term": "fbp",
+          "heading": false
+        },
+        {
+          "term": "xtanh",
+          "heading": false
+        },
+        {
+          "term": "whenλ",
+          "heading": false
+        },
+        {
+          "term": "ifλ",
+          "heading": false
+        },
+        {
+          "term": "imaginary axis",
+          "heading": false
+        }
+      ],
+      "extract": "Laplacian on a hyperbolic surfaceMbym 1(M). The following criterion for boundingm 1 was first stated and proved in [FBP24, Lemma 3.2] in a slightly more general form. Theorem 9.1.LetMbe a closed hyperbolic surface of genusg≥2and suppose thatfis an admissible function such that •f(x)≥0for allx∈R; • bf \u0010q λ− 1 4 \u0011 ≤0wheneverλ≥λ 1(M); • bf \u0010q λ1(M)− 1 4 \u0011 <0. Then m1(M)≤ bf(i/2)−2(g−1) Z ∞ 0 bf(x)xtanh(πx)dx −bf \u0010q",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-92-low-genus",
+      "number": "9.2",
+      "title": "Low genus",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 36,
+      "labelStart": "33",
+      "labelEnd": "36",
+      "words": 1787,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "verdi ere",
+          "heading": false
+        },
+        {
+          "term": "upper bounds",
+          "heading": false
+        },
+        {
+          "term": "whenλ",
+          "heading": false
+        },
+        {
+          "term": "genus",
+          "heading": true
+        },
+        {
+          "term": "colin",
+          "heading": false
+        },
+        {
+          "term": "colbois",
+          "heading": false
+        },
+        {
+          "term": "cdv",
+          "heading": false
+        },
+        {
+          "term": "table",
+          "heading": false
+        }
+      ],
+      "extract": "in Table 5. They improve upon the previous best upper bound of 2g+ 3 from [S´ ev02] (which applies to all Schr¨ odinger operators on Riemannian surfaces). In genus 2 and 3, our bounds were previously obtained in [FBP24] and we do not repeat these calculations in the ancillary fileverify multiplicity.ipynbthat certifies the other values. We now discuss lower bounds. In every genusg≥3, Colbois and Colin de Verdi` ere",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-93-asymptotics",
+      "number": "9.3",
+      "title": "Asymptotics",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 39,
+      "labelStart": "36",
+      "labelEnd": "39",
+      "words": 775,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sublinear upper",
+          "heading": false
+        },
+        {
+          "term": "bound onm",
+          "heading": false
+        },
+        {
+          "term": "surf aces",
+          "heading": false
+        },
+        {
+          "term": "fbp",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic surf",
+          "heading": false
+        },
+        {
+          "term": "programming bounds",
+          "heading": false
+        },
+        {
+          "term": "arcsinh",
+          "heading": false
+        },
+        {
+          "term": "wat",
+          "heading": false
+        }
+      ],
+      "extract": "start by proving a sublinear bound onm 1 under the assumption thatλ 1 is fairly large. In the statement below,j α stands for the first positive zero of the Bessel functionJ α. The k-th positive zero is denotedj α,k. LINEAR PROGRAMMING BOUNDS FOR HYPERBOLIC SURF ACES 37 Proposition 9.3.For everyp 1,p 2∈(j 0,π], there exists a constantCand someg 0≥2 such that ifg≥g 0 andMis a closed hyperbolic surface of genusgwith",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-10-small-eigenvalues",
+      "number": "10",
+      "title": "Small eigenvalues",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": "39",
+      "labelEnd": "39",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-027-101-the-criterion",
+      "number": "10.1",
+      "title": "The criterion",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "39",
+      "labelEnd": "40",
+      "words": 279,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xtanh",
+          "heading": false
+        },
+        {
+          "term": "note thatλ",
+          "heading": false
+        },
+        {
+          "term": "bus",
+          "heading": false
+        },
+        {
+          "term": "right-hand side",
+          "heading": false
+        },
+        {
+          "term": "sys",
+          "heading": false
+        },
+        {
+          "term": "interval",
+          "heading": false
+        },
+        {
+          "term": "eigenvalues",
+          "heading": false
+        }
+      ],
+      "extract": "N[0,L](M) of eigenvalues of ∆ M in the interval [0,L] for anyL>0. Theorem 10.1.LetL,R>0and suppose thatf:R→Ris an admissible function such that •f(x)≤0for everyx≥R; • bf(ξ)≥0for everyξ∈R; • bf( p λ−1/4)≥1for everyλ∈[0,L]; Then every closed hyperbolic surfaceMof genusg≥2withsys(M)≥Rsatisfies N[0,L](M)≤2(g−1) Z ∞ 0 bf(x)xtanh(πx)dx+ 1− bf(i/2). Proof.By hypothesis, bf(rj(M)) is at least 1 for all eigenvaluesλ j(M) in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-102-asymptotics",
+      "number": "10.2",
+      "title": "Asymptotics",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 43,
+      "labelStart": "40",
+      "labelEnd": "43",
+      "words": 775,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nsmall",
+          "heading": false
+        },
+        {
+          "term": "x2dx",
+          "heading": false
+        },
+        {
+          "term": "ydy",
+          "heading": false
+        },
+        {
+          "term": "xdx",
+          "heading": false
+        },
+        {
+          "term": "sys",
+          "heading": false
+        },
+        {
+          "term": "rect",
+          "heading": false
+        },
+        {
+          "term": "bessel functions",
+          "heading": false
+        },
+        {
+          "term": "huber",
+          "heading": false
+        }
+      ],
+      "extract": "because they are easier to obtain than for the other invariants and they give us a point of comparison for the numerics. Theorem 10.2.IfMis a closed hyperbolic surface of genusg≥2, then Nsmall(M)<min \u001224π2(g−1) sys(M) 3 , 16(g−1) sys(M) 2 \u0013 . Proof.Letf:R→Rbe an even, non-negative, admissible (hence continuous), positive- definite function supported in [−1,1] normalized so that bf(0) = 1. We then use the functionf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-103-numerical-results-for-small-systole",
+      "number": "10.3",
+      "title": "Numerical results for small systole",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": "43",
+      "labelEnd": "43",
+      "words": 147,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lower bounds",
+          "heading": false
+        },
+        {
+          "term": "sys",
+          "heading": false
+        },
+        {
+          "term": "nsmall",
+          "heading": false
+        },
+        {
+          "term": "systole",
+          "heading": true
+        }
+      ],
+      "extract": "yields better results than Theorem 10.2 when the systole is relatively small. For example, the resulting bounds show thatN small(M)<2g−2 as soon as sys(M)≥2.317 and that Nsmall(M)< g−1 if sys(M)≥3.234. A list of lower bounds on sys(M) and the upper bounds they imply onN small(M)/(2g−2) is given in Table 6. The verification of these values is done in the ancillary fileverify nsmall.ipynb. To produce the plot in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-104-ramanujan-surfaces",
+      "number": "10.4",
+      "title": "Ramanujan surfaces",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 45,
+      "labelStart": "43",
+      "labelEnd": "45",
+      "words": 551,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ramanujan surfaces",
+          "heading": true
+        },
+        {
+          "term": "systole",
+          "heading": false
+        },
+        {
+          "term": "exist closed",
+          "heading": false
+        },
+        {
+          "term": "lower bound",
+          "heading": false
+        },
+        {
+          "term": "genus",
+          "heading": false
+        },
+        {
+          "term": "conjecture",
+          "heading": false
+        },
+        {
+          "term": "eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "smallest",
+          "heading": false
+        }
+      ],
+      "extract": "hyperbolic surfaceMof finite area isRamanujanifλ 1(M)≥1/4. We will also say thatM isstrictly Ramanujanifλ 1(M)>1/4. Selberg’s eigenvalue conjecture [Sel65] states that all congruence covers of the modular curve are Ramanujan (hence such surfaces could also be calledSelberg). A related question is whether there exist closed Ramanujan surfaces in every genus (see [Mon15, Question 1.1] and [Wri20, Problem 10.4]).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 49,
+      "labelStart": "45",
+      "labelEnd": "49",
+      "words": 2302,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fortier bourque",
+          "heading": false
+        },
+        {
+          "term": "riemann surfaces",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic surfaces",
+          "heading": false
+        },
+        {
+          "term": "montr eal",
+          "heading": false
+        },
+        {
+          "term": "random surfaces",
+          "heading": false
+        },
+        {
+          "term": "spectral gaps",
+          "heading": false
+        },
+        {
+          "term": "math ematiques",
+          "heading": false
+        },
+        {
+          "term": "verdi ere",
+          "heading": false
+        }
+      ],
+      "extract": "[Ada02] J. Adams. Character tables for GL(2), SL(2), PGL(2) and PSL(2) over a finite field. Un- published note, www2.math.umd.edu/ jda/characters/characters.pdf, 2002. [AM99] C. Adams and F. Morgan. Isoperimetric curves on hyperbolic surfaces.Proc. Amer. Math. Soc., 127(5):1347–1356, 1999. [AM23] N. Anantharaman and L. Monk. Friedman–Ramanujan functions in random hyperbolic geometry and application to spectral gaps.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "programming bounds",
+      "heading": true
+    },
+    {
+      "term": "fortier bourque",
+      "heading": false
+    },
+    {
+      "term": "upper bounds",
+      "heading": true
+    },
+    {
+      "term": "bram petri",
+      "heading": false
+    },
+    {
+      "term": "maxime fortier",
+      "heading": false
+    },
+    {
+      "term": "lower bounds",
+      "heading": true
+    },
+    {
+      "term": "surf aces",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic surf",
+      "heading": false
+    },
+    {
+      "term": "optimal bounds",
+      "heading": false
+    },
+    {
+      "term": "asymptotic bounds",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic surfaces",
+      "heading": true
+    },
+    {
+      "term": "systole sufficient",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Upper bounds and current record holders for the maximization of geometric and spectral invariants associated to hyperbolic surfaces",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Upper bounds on the number of small eigenvalues and lower bounds on the systole that imply a spectral gap larger than a quarter",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Bounds on the maximum of sys. The dagger indicates where the linear programming bound fails to beat the previous best upper bound",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Bounds on the maximum of 1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Bounds on the supremum of λ1. The daggers indicate where the linear programming bounds fail to beat the previous best upper bound",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Some congruence subgroups of the modular group, their signatures, and the genus of their plumbing",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "Bounds on the maximum of the multiplicity m1",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "Lower bounds on sys(M ) sufficient for Nsmall(M )/(2g − 2) to be strictly smaller than given values",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "7",
+      "title": "Lower bounds on sys(M ) sufficient for λ1(M ) > 1/4",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 32,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 33,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "7 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p45); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 33 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2302.02540v3"
+  }
+}

@@ -142,10 +142,11 @@
 <th style="text-align:left">/O_{\mathrm{exp}}$</th>
 <th style="text-align:left">Typical <code>ppQ</code> Error Scale</th>
 <th style="text-align:left">Within \(\le 1\sigma_{\mathrm{exp}}\)</th>
-<th style="text-align:left">Within \(\le 3\sigma_{\mathrm{exp}}\)</th>
+<th style="text-align:right">Within \(\le 3\sigma_{\mathrm{exp}}\)</th>
 <th style="text-align:left">Observational Verdict</th>
 <th style="text-align:left"><code>1 ppQ</code> (\(10^{-15}\)) Verdict</th>
 <th style="text-align:left">Epistemic Status</th>
+<th style="text-align:left">Within \(\le 1\sigma_{\mathrm{exp}}\), Derived rows only</th>
 </tr></thead><tbody>
 <tr>
 <td style="text-align:left"><strong>1. Mass</strong> (Elementary &amp; Hadrons)</td>
@@ -156,9 +157,10 @@
 <td style="text-align:right"><code>5.14e+07</code> to <code>4.86e+11</code></td>
 <td style="text-align:right"><strong><code>3 / 6</code></strong> (\(m_K/m_\pi, m_K, m_\tau/m_e\))</td>
 <td style="text-align:right"><strong><code>3 / 6</code></strong> (\(m_K/m_\pi, m_K, m_\tau/m_e\))</td>
-<td style="text-align:left"><strong>High</strong> on \(m_K/m_\pi\) (<code>+51.428 ppb</code>, <code>&lt;0.002σ</code>), \(m_\mu\) (<code>+211 ppb</code>), &amp; cond. \(m_\tau/m_e\) (<code>+0.92σ</code> / <code>+0.44σ</code> PDG-24); \(m_n\) (<code>-486 ppm</code>) open</td>
+<td style="text-align:left"><strong>High</strong> on selected \(m_K/m_\pi\) (<code>+51.428 ppb</code>, <code>&lt;0.002σ</code>), \(m_\mu\) (<code>+211 ppb</code>), &amp; cond. \(m_\tau/m_e\) (<code>+0.92σ</code> / <code>+0.44σ</code> PDG-24); \(m_n\) (<code>-486 ppm</code>) open</td>
 <td style="text-align:left"><strong>Not at <code>1 ppQ</code></strong> (input floor <code>3.13e5 ppQ</code>)</td>
-<td style="text-align:left">Derived (\(m_\mu, m_K\)); Conditional (\(m_\tau/m_e, m_n\))</td>
+<td style="text-align:left">Derived (\(m_\mu\)); Selected (\(m_K/m_\pi\), \(m_K\)); Conditional (\(m_\tau/m_e\), \(m_n\), \(\Delta m_{np}\))</td>
+<td style="text-align:right"><strong><code>0 / 6</code></strong></td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>1. Mass</strong> (Nuclear Rest Mass \(A \ge 2\))</td>
@@ -172,6 +174,7 @@
 <td style="text-align:left"><strong><code>~99.4%</code> bulk accuracy</strong> (constituent \(Z m_p + N m_n\)); <code>~0.57%</code> residual from binding</td>
 <td style="text-align:left"><strong>Not at <code>1 ppQ</code></strong> (<code>~5.8e12 ppQ</code>)</td>
 <td style="text-align:left">Principled 1D Q-CLT proxy</td>
+<td style="text-align:right"><code>0 / 2542</code></td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>2. Binding Energy</strong> (\(A = 2\text{--}4\) &amp; \(A \ge 2\))</td>
@@ -182,9 +185,10 @@
 <td style="text-align:right"><code>3.65e+13</code> (\(K_4\)) to <code>6.89e+14</code></td>
 <td style="text-align:right"><code>0 / 2542</code></td>
 <td style="text-align:right"><code>0 / 2542</code></td>
-<td style="text-align:left"><strong>Few-body \(K_4\) strong</strong> (<code>+1.8%</code> \({}^2\mathrm{H}\), <code>+3.65%</code> \({}^4\mathrm{He}\)); <strong>\(A \ge 5\) underbound <code>~69%</code></strong></td>
+<td style="text-align:left"><strong>Few-body \(K_4\) (selected cell)</strong> (<code>+1.8%</code> \({}^2\mathrm{H}\), <code>+3.65%</code> \({}^4\mathrm{He}\)); <strong>\(A \ge 5\) underbound <code>~69%</code></strong></td>
 <td style="text-align:left"><strong>Not at <code>1 ppQ</code></strong></td>
-<td style="text-align:left">Derived (\(A \le 4\)); Open saturation (\(A \ge 5\))</td>
+<td style="text-align:left">Selected (\(K_A\), \(A \le 4\): grid cell nearest AME, Table 3.2a note); Open saturation (\(A \ge 5\))</td>
+<td style="text-align:right"><code>0 / 2542</code></td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>3. Charge, \(\alpha_{\mathrm{EM}}\), \(R_\infty\) &amp; Geometry</strong></td>
@@ -197,20 +201,22 @@
 <td style="text-align:right"><code>7 / 22</code> (+ Form B \(\alpha_{\mathrm{EM}} \&amp; R_\infty\))</td>
 <td style="text-align:left"><strong>Exact</strong> \(Q\); <strong>proved 4-topo Form B</strong> (<code>-2.38σ</code>), <strong>cond. Form C</strong> (<code>-0.16σ</code>), <strong>Seifert CS</strong> (<code>-24.5 ppb</code>), <strong>\(R_\infty\)</strong> (<code>+0.725 ppb</code>)</td>
 <td style="text-align:left">\(Q\) exact (<code>0 ppQ</code>); Form B <code>3.65e5 ppQ</code>, Form C <code>2.41e4 ppQ</code></td>
-<td style="text-align:left">Proved (\(Q\), 1-loop \(h_A^2\)); Cond. (Bring / Bloch-\(B_3\))</td>
+<td style="text-align:left">Derived (\(Q\)); Conditional (Form B \(\alpha_{\mathrm{EM}}\), Form C \(\alpha_{\mathrm{EM}}\), Seifert \(\alpha_{\mathrm{EM}}\), Form B \(R_\infty\), Form C \(R_\infty\)); Unclassified (CS \(\alpha_{\mathrm{EM}}\), VSEPR); 1-loop \(h_A^2\) factor proved</td>
+<td style="text-align:right"><strong><code>1 / 22</code></strong> (\(Q\))</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>4. Weak \(\beta\)-Decay &amp; \(v_{\mathrm{weak}}\)</strong></td>
 <td style="text-align:left">\(v_{\mathrm{weak}}\) (\(N_v\)), free \(n\), <code>6</code> TM skein, <code>1009</code> composite \(\beta^-\)</td>
 <td style="text-align:right"><code>1011</code></td>
-<td style="text-align:right"><code>-29.37 ppb</code> (\(v_{\mathrm{weak}}\)), <code>-58.4%</code> (\(n\)), <code>255.5%</code> (table)</td>
-<td style="text-align:right"><code>71.7%</code> (TM), <code>142.4%</code> (table)</td>
-<td style="text-align:right"><code>2.94e+07</code> (\(v_{\mathrm{weak}}\)) to <code>1.42e+15</code></td>
+<td style="text-align:right"><code>-29.37 ppb</code> (\(v_{\mathrm{weak}}\)), <code>-58.4%</code> (\(n\)), <code>93.0%</code> (table)</td>
+<td style="text-align:right"><code>71.7%</code> (TM), <code>92.7%</code> (table)</td>
+<td style="text-align:right"><code>2.94e+07</code> (\(v_{\mathrm{weak}}\)) to <code>9.27e+14</code></td>
 <td style="text-align:right"><code>1 / 1011</code> (\(v_{\mathrm{weak}}\), <code>-0.11σ</code>)</td>
 <td style="text-align:right"><code>1 / 1011</code> (\(v_{\mathrm{weak}}\))</td>
-<td style="text-align:left"><strong>Sub-<code>30 ppb</code> \(v_{\mathrm{weak}}\) (<code>-0.11σ</code>)</strong>; keV–MeV TM (<code>-8.1%</code> \({}^{14}\mathrm{C}\)); isobaric table (<code>0/1009</code> exo.)</td>
+<td style="text-align:left"><strong>Sub-<code>30 ppb</code> \(v_{\mathrm{weak}}\) (<code>-0.11σ</code>)</strong>; keV–MeV TM (<code>-8.1%</code> \({}^{14}\mathrm{C}\)); isobaric table (<code>1009/1009</code> exo.)</td>
 <td style="text-align:left"><strong>Not at <code>1 ppQ</code></strong> (<code>2.94e7 ppQ</code> on \(v_{\mathrm{weak}}\))</td>
 <td style="text-align:left">Cond. (\(v_{\mathrm{weak}}\), <code>C1–C3</code> on \(n\)); Open (\(A \ge 2\))</td>
+<td style="text-align:right"><strong><code>0 / 1011</code></strong></td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>5. \(\alpha\)-Decay &amp; Fission</strong></td>
@@ -224,6 +230,7 @@
 <td style="text-align:left"><strong>Strong WKB + \(N=126\) preformation</strong> (<code>10.6%</code> \(T_{1/2}\)); <strong>derived heavy \(Q_\alpha\) open</strong> (<code>3–48 dex</code>)</td>
 <td style="text-align:left"><strong>Not at <code>1 ppQ</code></strong></td>
 <td style="text-align:left">Derived WKB/MJ; Open heavy \(Q_\alpha\)</td>
+<td style="text-align:right"><code>0 / 1051</code></td>
 </tr>
 </tbody></table></div>
 <hr>
@@ -252,7 +259,7 @@
 <td style="text-align:right"><code>0</code></td>
 <td style="text-align:right"><code>0.00σ</code></td>
 <td style="text-align:left">Anchor (input)</td>
-<td style="text-align:left">Calibration input 1</td>
+<td style="text-align:left"><strong>Calibration</strong>: calibration input 1</td>
 </tr>
 <tr>
 <td style="text-align:left">Muon \(m_\mu\)</td>
@@ -263,7 +270,7 @@
 <td style="text-align:right"><code>2.11e+8</code></td>
 <td style="text-align:right"><code>9.70σ</code></td>
 <td style="text-align:left">No</td>
-<td style="text-align:left">Derived (proton \(q_0\))</td>
+<td style="text-align:left"><strong>Derived</strong> (proton \(q_0\))</td>
 </tr>
 <tr>
 <td style="text-align:left">Tau/electron \(m_\tau / m_e\)</td>
@@ -274,7 +281,7 @@
 <td style="text-align:right"><code>6.11e+10</code></td>
 <td style="text-align:right"><strong><code>+0.92σ</code></strong> (<code>+0.44σ</code> PDG-24)</td>
 <td style="text-align:left">No</td>
-<td style="text-align:left">Conditional (<code>KoideTopologicalProtectionHypothesis</code>, <code>&lt; 1σ</code>)</td>
+<td style="text-align:left"><strong>Conditional</strong> (<code>KoideTopologicalProtectionHypothesis</code>, <code>&lt; 1σ</code>)</td>
 </tr>
 <tr>
 <td style="text-align:left">Charged pion \(m_{\pi^\pm}\)</td>
@@ -285,7 +292,7 @@
 <td style="text-align:right"><code>0</code></td>
 <td style="text-align:right"><code>0.00σ</code></td>
 <td style="text-align:left">Anchor (input)</td>
-<td style="text-align:left">Calibration input 3</td>
+<td style="text-align:left"><strong>Calibration</strong>: calibration input 3</td>
 </tr>
 <tr>
 <td style="text-align:left">Meson ratio \(m_{K^\pm}/m_{\pi^\pm}\)</td>
@@ -296,7 +303,7 @@
 <td style="text-align:right"><code>5.14e+7</code></td>
 <td style="text-align:right"><code>0.00σ</code></td>
 <td style="text-align:left">Yes (<code>0.20x</code>)</td>
-<td style="text-align:left">Derived (<code>&lt; 0.002σ</code>, beats \(100\times\)!)</td>
+<td style="text-align:left"><strong>Selected</strong> (the \((3,4)\) fusion pair is scan-selected; <code>&lt; 0.002σ</code>)</td>
 </tr>
 <tr>
 <td style="text-align:left">Charged kaon \(m_{K^\pm}\)</td>
@@ -307,7 +314,7 @@
 <td style="text-align:right"><code>5.14e+7</code></td>
 <td style="text-align:right"><code>0.00σ</code></td>
 <td style="text-align:left">Yes</td>
-<td style="text-align:left">Derived (<code>&lt; 0.002σ</code>)</td>
+<td style="text-align:left"><strong>Selected</strong> (inherits \(m_K/m_\pi\); <code>&lt; 0.002σ</code>)</td>
 </tr>
 <tr>
 <td style="text-align:left">Proton \(m_p\)</td>
@@ -318,7 +325,7 @@
 <td style="text-align:right"><code>0</code></td>
 <td style="text-align:right"><code>0.00σ</code></td>
 <td style="text-align:left">Anchor (input)</td>
-<td style="text-align:left">Calibration input 2 (\(q_0\) pin)</td>
+<td style="text-align:left"><strong>Calibration</strong>: calibration input 2 (\(q_0\) pin)</td>
 </tr>
 <tr>
 <td style="text-align:left">Neutron \(m_n\)</td>
@@ -329,7 +336,7 @@
 <td style="text-align:right"><code>4.86e+11</code></td>
 <td style="text-align:right"><code>-951874.24σ</code></td>
 <td style="text-align:left">No</td>
-<td style="text-align:left">Conditional (\(m_p + m_e + Q_{\beta^-}\))</td>
+<td style="text-align:left"><strong>Conditional</strong> (\(m_p + m_e + Q_{\beta^-}\))</td>
 </tr>
 <tr>
 <td style="text-align:left">Nucleon split \(\Delta m_{np}\)</td>
@@ -340,10 +347,10 @@
 <td style="text-align:right"><code>3.53e+14</code></td>
 <td style="text-align:right"><code>-1202367.45σ</code></td>
 <td style="text-align:left">No</td>
-<td style="text-align:left">Conditional (<code>C1–C3</code>)</td>
+<td style="text-align:left"><strong>Conditional</strong> (<code>C1–C3</code>)</td>
 </tr>
 </tbody></table></div>
-<p><em>Assessment (Elementary &amp; Hadron Sector):</em> Holding \(q_0\) fixed at the proton-to-electron anchor reproduces the charged-kaon to charged-pion ratio \(m_{K^\pm}/m_{\pi^\pm}\) to <code>+51.428 ppb</code> (<code>+0.0020</code>\(\sigma_{\mathrm{exp}}\), beating the \(100\times\) experimental precision target of <code>263.6 ppb</code>) and the muon mass \(m_\mu\) to <code>+211.21 ppb</code> (<code>+9.70</code>\(\sigma_{\mathrm{exp}}\); equivalent to an <code>+11.61 ppb</code> shift between muon-pinned and proton-pinned \(q_0\)). Conditional on topological protection of the classical \(q \to 1\) singlet–doublet Koide equipartition (\(Q = 2/3\), <code>KoideTopologicalProtectionHypothesis</code>), the monic quadratic resolvent welded to \((m_e, m_\mu^{\mathrm{QOU}} = m_e \mathrm{Vol}(4_1)/\hbar_{q_0}^2)\) yields \(m_\tau / m_e = 3477.4423\) (<code>+61.06 ppm</code>, <code>+0.92</code>\(\sigma_{\mathrm{exp}}\) vs CODATA 2022 <code>3477.23 ± 0.23</code>; <code>+22.16 ppm</code>, <code>+0.44</code>\(\sigma_{\mathrm{exp}}\) vs PDG 2024 \(1776.93 \pm 0.09\;\mathrm{MeV}\) — within \(1\sigma_{\mathrm{exp}}\) across both benchmarks and saturating the \(\sim 3.9\)-digit experimental uncertainty ceiling), whereas un-dressed finite-\(q_0\) Temperley–Lieb trace weights shift \(Q(q_0)\) by <code>-1.07%</code> and remain falsified without protection. The free neutron mass \(m_n\) (<code>-486.3 ppm</code>) inherits the <code>-0.4569 MeV</code> shortfall of the conditional \(Q_{\beta^-}\) weight-trace split.</p>
+<p><em>Assessment (Elementary &amp; Hadron Sector):</em> Holding \(q_0\) fixed at the proton-to-electron anchor reproduces the charged-kaon to charged-pion ratio \(m_{K^\pm}/m_{\pi^\pm}\) to <code>+51.428 ppb</code> (<code>+0.0020</code>\(\sigma_{\mathrm{exp}}\), beating the \(100\times\) experimental precision target of <code>263.6 ppb</code>) (a <strong>Selected</strong> row: the \((3,4)\) fusion pair and the EM factor were chosen from a scan against this target, <code>docs/audits/2026-11-20-mk-mpi-derivation-status.md</code>, so the agreement is not evidence of derivation) and the muon mass \(m_\mu\) to <code>+211.21 ppb</code> (<code>+9.70</code>\(\sigma_{\mathrm{exp}}\); equivalent to an <code>+11.61 ppb</code> shift between muon-pinned and proton-pinned \(q_0\)). Conditional on topological protection of the classical \(q \to 1\) singlet–doublet Koide equipartition (\(Q = 2/3\), <code>KoideTopologicalProtectionHypothesis</code>), the monic quadratic resolvent welded to \((m_e, m_\mu^{\mathrm{QOU}} = m_e \mathrm{Vol}(4_1)/\hbar_{q_0}^2)\) yields \(m_\tau / m_e = 3477.4423\) (<code>+61.06 ppm</code>, <code>+0.92</code>\(\sigma_{\mathrm{exp}}\) vs CODATA 2022 <code>3477.23 ± 0.23</code>; <code>+22.16 ppm</code>, <code>+0.44</code>\(\sigma_{\mathrm{exp}}\) vs PDG 2024 \(1776.93 \pm 0.09\;\mathrm{MeV}\) — within \(1\sigma_{\mathrm{exp}}\) across both benchmarks and saturating the \(\sim 3.9\)-digit experimental uncertainty ceiling), whereas un-dressed finite-\(q_0\) Temperley–Lieb trace weights shift \(Q(q_0)\) by <code>-1.07%</code> and remain falsified without protection. The free neutron mass \(m_n\) (<code>-486.3 ppm</code>) inherits the <code>-0.4569 MeV</code> shortfall of the conditional \(Q_{\beta^-}\) weight-trace split.</p>
 <h4 id="table-3-1b-nuclear-rest-masses-m-mathrm-nuc-z-n-across-mass-number-bands-a-ge-2">Table 3.1b: Nuclear Rest Masses \(M_{\mathrm{nuc}}(Z, N)\) Across Mass-Number Bands (\(A \ge 2\))</h4>
 <p>Comparison joins <code>computations/mass-table-comprehensive.witness.json</code> (<code>m_symbolic_MeV</code>, zero-fit symbolic 1D Q-CLT proxy) against all <code>2,542</code> non-estimated \(A \ge 2\) nuclides in AME2020 (\(M_{\mathrm{nuc}}^{\mathrm{exp}} = Z m_p + N m_n - B_{\mathrm{AME}}\)):</p>
 <div class="table-wrap"><table><thead><tr>
@@ -548,6 +555,7 @@
 <th style="text-align:right">\({}^4\mathrm{He}\) \(B\) (MeV) [Err]</th>
 <th style="text-align:right">Scaling \(B_3 / B_2\)</th>
 <th style="text-align:right">Scaling \(B_4 / B_2\)</th>
+<th style="text-align:left">Status</th>
 </tr></thead><tbody>
 <tr>
 <td style="text-align:left">AME2020 Experimental Reference</td>
@@ -557,6 +565,7 @@
 <td style="text-align:right"><code>28.29566</code></td>
 <td style="text-align:right"><code>3.813</code> (<code>3H</code>)</td>
 <td style="text-align:right"><code>12.720</code></td>
+<td style="text-align:left">Reference</td>
 </tr>
 <tr>
 <td style="text-align:left">1D Symbolic Hecke Chain (<code>mass-table</code>)</td>
@@ -566,6 +575,17 @@
 <td style="text-align:right"><code>—</code> (omitted)</td>
 <td style="text-align:right"><code>2.663</code></td>
 <td style="text-align:right"><code>3.000</code> (asymptotic)</td>
+<td style="text-align:left"><strong>Unclassified</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">Ruled trace pipeline (γγ bond \(V(2)^3\), tower \(E_0\), log law)</td>
+<td style="text-align:right"><code>0.00636</code> (<code>-99.71%</code>)</td>
+<td style="text-align:right"><code>—</code> (p = n cell)</td>
+<td style="text-align:right"><code>—</code> (p = n cell)</td>
+<td style="text-align:right"><code>—</code> (not computed)</td>
+<td style="text-align:right"><code>—</code></td>
+<td style="text-align:right"><code>—</code></td>
+<td style="text-align:left"><strong>Conditional</strong></td>
 </tr>
 <tr>
 <td style="text-align:left">3D \(K_A\) Plaquette Exact (<code>M3a</code>, \(E_{\mathrm{osc}}\))</td>
@@ -575,6 +595,7 @@
 <td style="text-align:right"><code>29.329</code> (<code>+3.65%</code>)</td>
 <td style="text-align:right"><code>3.980</code></td>
 <td style="text-align:right"><code>12.950</code></td>
+<td style="text-align:left"><strong>Selected</strong></td>
 </tr>
 <tr>
 <td style="text-align:left">Analytic Hoefsmit Plaquette Cumulant (<code>M5a</code>)</td>
@@ -584,6 +605,7 @@
 <td style="text-align:right"><code>24.794</code> (<code>-12.37%</code>)</td>
 <td style="text-align:right"><code>3.778</code></td>
 <td style="text-align:right"><code>10.948</code></td>
+<td style="text-align:left"><strong>Selected</strong></td>
 </tr>
 <tr>
 <td style="text-align:left">Self-Bound Jacobi Variational (Hall–Post \(\eta_2\))</td>
@@ -593,6 +615,7 @@
 <td style="text-align:right"><code>26.020</code> (<code>-8.04%</code>)</td>
 <td style="text-align:right"><code>4.830</code></td>
 <td style="text-align:right"><code>11.489</code></td>
+<td style="text-align:left"><strong>Selected</strong></td>
 </tr>
 <tr>
 <td style="text-align:left">Self-Bound Jacobi Variational (Unrestricted \(\eta_A^*\))</td>
@@ -602,8 +625,10 @@
 <td style="text-align:right"><code>30.546</code> (<code>+7.95%</code>)</td>
 <td style="text-align:right"><code>5.225</code></td>
 <td style="text-align:right"><code>13.487</code></td>
+<td style="text-align:left"><strong>Selected</strong></td>
 </tr>
 </tbody></table></div>
+<p><strong>Scope of this table (owner ruling 2026-11-25).</strong> The \(K_A\) and variational rows are not the ruled binding pipeline. The \({}^2\mathrm{H}\) value \(2.265\;\mathrm{MeV}\) that every \(K_A\) row starts from is one cell of PR #9221&#x27;s pre-registered grid of 6 models × 4 energy charts (<code>computations/probes/w4_colour_reconn_stokes_aomega/w4_colour_reconn_stokes_aomega_probe.witness.json</code>): model <code>G2_intra_casimir</code> with <code>V2_allpairs_fierz</code> bonds, read in the \(E_{\mathrm{osc}} = m_e/(q_0-1)^2\) chart (\(10.09\,E_0\)). The chart is a pre-registered definition and was not tuned. The cell was reported because it is the one nearest AME, so the headline is a selection against the target. The Fierz bonds are not γγ-selected. In the \(E_0\) chart, which every trace-pipeline row uses, the same model gives \(0.224\;\mathrm{MeV}\) (\(-89.9\%\)). With the ruled γγ bond \(V^3\), the same plaquette model gives \({}^2\mathrm{H}\) \(0.08\)–\(1.4\;\mathrm{keV}\), and the trace pipeline gives \(6.4\;\mathrm{keV}\) (\(-99.7\%\); production nucleon blocks are unbound), shown as the <em>Ruled trace pipeline</em> row above. That row reads its trace ratio from <code>computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json</code> and its tower \(E_0\) from <code>per-observable-100x-status.witness.json</code>; its nucleon cell has \(p = n\), so \({}^3\mathrm{H}\), \({}^3\mathrm{He}\) and \({}^4\mathrm{He}\) are not given. See <code>docs/audits/2026-11-25-binding-error-budget.md</code> §3.</p>
 <h4 id="table-3-2b-symbolic-1d-q-clt-binding-proxy-across-mass-number-bands-a-ge-2">Table 3.2b: Symbolic 1D Q-CLT Binding Proxy Across Mass-Number Bands (\(A \ge 2\))</h4>
 <div class="table-wrap"><table><thead><tr>
 <th style="text-align:left">Mass-Number Band</th>
@@ -692,7 +717,7 @@
 <td style="text-align:right"><code>0</code> (exact)</td>
 <td style="text-align:left"><code>0</code></td>
 <td style="text-align:left">Exact</td>
-<td style="text-align:left">Proved topological writhe \(Q = \tfrac{1}{2}\operatorname{writhe}(H)\)</td>
+<td style="text-align:left"><strong>Derived</strong>: proved topological writhe \(Q = \tfrac{1}{2}\operatorname{writhe}(H)\)</td>
 </tr>
 <tr>
 <td style="text-align:left">Fine-structure \(\alpha_{\mathrm{EM}}^{-1}\) (Schwinger Form B, 4-topology)</td>
@@ -701,7 +726,7 @@
 <td style="text-align:right"><code>-0.365 ppb</code></td>
 <td style="text-align:right"><code>365225.8</code></td>
 <td style="text-align:right"><code>-2.38σ</code></td>
-<td style="text-align:left">Derived 4-topology <code>(1 - h_A^2 α)</code> loop factor; conditional Bring zero-mode</td>
+<td style="text-align:left"><strong>Conditional</strong>: 4-topology <code>(1 - h_A^2 α)</code> loop factor proved; value conditional on <code>ArchimedeanLimit</code>, <code>BlochSuslinUniqueness</code>, <code>BringZeroModeBlochClass</code></td>
 </tr>
 <tr>
 <td style="text-align:left">Fine-structure \(\alpha_{\mathrm{EM}}^{-1}\) (2-loop Bloch-\(B_3\) Form C)</td>
@@ -710,7 +735,7 @@
 <td style="text-align:right"><code>-0.024 ppb</code></td>
 <td style="text-align:right"><code>24112.2</code></td>
 <td style="text-align:right"><strong><code>-0.16σ</code></strong></td>
-<td style="text-align:left">Conditional two-loop Bloch-\(B_3(\mathbb{C})\) trilogarithm defect (within \(1\sigma_{\mathrm{exp}}\)!)</td>
+<td style="text-align:left"><strong>Conditional</strong>: two-loop Bloch-\(B_3(\mathbb{C})\) trilogarithm defect (within \(1\sigma_{\mathrm{exp}}\)!)</td>
 </tr>
 <tr>
 <td style="text-align:left">Fine-structure \(\alpha_{\mathrm{EM}}^{-1}\) (\(8\times 8\) Seifert \(\kappa_{\mathrm{Seifert}}\))</td>
@@ -719,7 +744,7 @@
 <td style="text-align:right"><code>-24.53 ppb</code></td>
 <td style="text-align:right"><code>2.45e+7</code></td>
 <td style="text-align:right"><code>-160.1σ</code></td>
-<td style="text-align:left">Homological \(b_1(\Sigma_4)=8\) Seifert pairing (<code>19.1x</code> closer than Witten \(2\times 2\))</td>
+<td style="text-align:left"><strong>Conditional</strong>: homological \(b_1(\Sigma_4)=8\) Seifert pairing (<code>19.1x</code> closer than Witten \(2\times 2\))</td>
 </tr>
 <tr>
 <td style="text-align:left">Fine-structure \(\alpha_{\mathrm{EM}}^{-1}\) (legacy Witten \(2\times 2\) CS)</td>
@@ -728,7 +753,7 @@
 <td style="text-align:right"><code>-467.64 ppb</code></td>
 <td style="text-align:right"><code>4.68e+8</code></td>
 <td style="text-align:right"><code>-3051.6σ</code></td>
-<td style="text-align:left">Legacy \(2\times 2\) Chern–Simons baseline (<code>-0.468 ppm</code> gap vs Form B)</td>
+<td style="text-align:left"><strong>Unclassified</strong>: legacy \(2\times 2\) Chern–Simons baseline (<code>-0.468 ppm</code> gap vs Form B)</td>
 </tr>
 <tr>
 <td style="text-align:left">Rydberg constant \(R_\infty h c\) (Schwinger Form B)</td>
@@ -737,7 +762,7 @@
 <td style="text-align:right"><code>+0.725 ppb</code></td>
 <td style="text-align:right"><code>724872.2</code></td>
 <td style="text-align:right"><code>+2.31σ</code> (\(z_{\mathrm{comb}}\))</td>
-<td style="text-align:left">Derived \(\tfrac{1}{2}m_e c^2 \alpha_{\mathrm{EM}}^2\) (\(\sigma_{\mathrm{pred}} = 0.313\;\mathrm{ppb}\) from \(m_e\))</td>
+<td style="text-align:left"><strong>Conditional</strong>: \(\tfrac{1}{2}m_e c^2 \alpha_{\mathrm{EM}}^2\) with Form B \(\alpha\) (\(\sigma_{\mathrm{pred}} = 0.313\;\mathrm{ppb}\) from \(m_e\))</td>
 </tr>
 <tr>
 <td style="text-align:left">Rydberg constant \(R_\infty h c\) (2-loop Bloch-\(B_3\) Form C)</td>
@@ -746,25 +771,25 @@
 <td style="text-align:right"><code>+0.043 ppb</code></td>
 <td style="text-align:right"><code>42644.9</code></td>
 <td style="text-align:right"><strong><code>+0.14σ</code></strong> (\(z_{\mathrm{comb}}\))</td>
-<td style="text-align:left">Conditional two-loop Bloch-\(B_3\) Rydberg (within \(1\sigma_{\mathrm{comb}}\)!)</td>
+<td style="text-align:left"><strong>Conditional</strong>: two-loop Bloch-\(B_3\) Rydberg (within \(1\sigma_{\mathrm{comb}}\)!)</td>
 </tr>
 <tr>
 <td style="text-align:left">Bare topological \({}^3\mathrm{H}\text{--}{}^3\mathrm{He}\) Coulomb</td>
-<td style="text-align:right"><code>0.2213 MeV</code></td>
+<td style="text-align:right"><code>0.0452 MeV</code></td>
 <td style="text-align:right"><code>0.7638 MeV</code></td>
-<td style="text-align:right"><code>-71.03%</code> (<code>29.0%</code> covered)</td>
-<td style="text-align:right"><code>7.10e+14</code></td>
-<td style="text-align:right"><code>3.45x</code> short</td>
-<td style="text-align:left">Zero-fit \(\tanh(\ln q_0) B_{pp}\); nuclear-geometry factor open</td>
+<td style="text-align:right"><code>-94.09%</code> (<code>5.9%</code> covered)</td>
+<td style="text-align:right"><code>9.41e+14</code></td>
+<td style="text-align:right"><code>16.91x</code> short</td>
+<td style="text-align:left"><strong>Unclassified</strong>: zero-fit \(\tanh(\ln q_0) B_{pp}\) on the ruled nucleon word; scope-limited negative, nuclear-geometry factor open</td>
 </tr>
 <tr>
 <td style="text-align:left">Mirror-nuclei Coulomb systematics (\(N=8\), \(A=3\text{--}39\))</td>
-<td style="text-align:right">Ratio <code>0.9868</code></td>
+<td style="text-align:right">Ratio <code>0.9748</code></td>
 <td style="text-align:right"><code>1.0000</code> (AME2020 splits)</td>
-<td style="text-align:right"><code>-1.32%</code> mean</td>
-<td style="text-align:right"><code>1.32e+13</code></td>
-<td style="text-align:right"><code>±6.94%</code> RMS</td>
-<td style="text-align:left">Canonical nuclear-radius Coulomb scaling across mirror doublets</td>
+<td style="text-align:right"><code>-2.52%</code> mean</td>
+<td style="text-align:right"><code>2.52e+13</code></td>
+<td style="text-align:right"><code>±8.87%</code> RMS</td>
+<td style="text-align:left"><strong>Unclassified</strong>: uniform-sphere Coulomb with \(R=(\hbar c/m_\pi)A^{1/3}\) (coefficient 1 on \(\hbar c/m_\pi\) selected, \(A^{1/3}\) assumed; not \(r_0=1.2\) fm); ratio rises with \(A\), <code>0.806</code> at \(A=3\), so quote per \(A\)</td>
 </tr>
 </tbody></table></div>
 <h4 id="table-3-3b-q-weighted-vsepr-molecular-geometry-condensed-matter-benchmarks">Table 3.3b: \(q\)-Weighted VSEPR Molecular Geometry &amp; Condensed-Matter Benchmarks</h4>
@@ -849,7 +874,7 @@
 <td style="text-align:right"><code>-27.17σ</code></td>
 </tr>
 </tbody></table></div>
-<p><em>Assessment (Charge &amp; EM Sector):</em> Electric charge quantization is exact (\(0\;\mathrm{ppQ}\)) from topological writhe \(Q(H) = \tfrac{1}{2}\operatorname{writhe}(H)\). In the additive Schwinger Form B cubic, <code>QOU.Archimedean.EmFermionLoopFourTopology</code> proves symbolically over \(\mathbb{Q}(q)\) that summing all four signed chiral 2-vertex crossing topologies \((\epsilon_1,\epsilon_2)\in\{+,-\}^2\) on \(U_q(\mathfrak{sl}_2)\) <code>EmFermionLoop</code> cancels the \(\pm h_A m(\sigma_2)\) chiral tadpoles identically to \(-1\cdot h_A^2\), reproducing \(\alpha_{\mathrm{EM}}^{-1}\) to <code>-0.365 ppb</code> (<code>-2.38</code>\(\sigma_{\mathrm{exp}}\)) and the hydrogenic Rydberg constant \(R_\infty h c = \tfrac{1}{2}m_e c^2 \alpha_{\mathrm{EM}}^2\) to <code>+0.725 ppb</code> (\(z_{\mathrm{comb}} = +2.31\sigma\) once the <code>0.313 ppb</code> CODATA \(m_e\) uncertainty is propagated). Adding the zero-parameter weight-3 Bloch-\(B_3(\mathbb{C})\) trilogarithm defect \(c_2^{\mathrm{Bloch}} = H(q_0)(\zeta(3)-\operatorname{Li}_3(q_0^{-2}))/(8\pi)\) (<code>QOU.Archimedean.AlphaEmTwoLoopBlochSchwinger</code>, conditional on <code>AlphaEmTwoLoopBlochSchwingerClass</code>) brings \(\alpha_{\mathrm{EM}}^{-1}\) to <code>-0.024 ppb</code> (<code>-0.16</code>\(\sigma_{\mathrm{exp}}\)) and \(R_\infty h c\) to <code>+0.043 ppb</code> (\(z_{\mathrm{comb}} = +0.14\sigma\)). On the Chern–Simons arm, replacing Witten&#x27;s legacy \(2\times 2\) baseline (<code>-467.64 ppb</code>) with the \(8\times 8\) homological Seifert pairing \(\kappa_{\mathrm{Seifert}}(q_0) = q_0^8/(\Delta_{2,9}(q_0)\Delta_{3,5}(q_0))\) on \(H_1(\Sigma_4;\mathbb{Z})\cong\mathbb{Z}^8\) narrows the residual \(19.1\times\) to <code>-24.53 ppb</code>. In nuclear isospin doublets, the bare topological ratio \(\tanh(\ln q_0) = 0.103964\) accounts for <code>29.0%</code> of the \({}^3\mathrm{H}\text{–}{}^3\mathrm{He}\) split without nuclear-radius input, while canonical nuclear-radius Coulomb across \(8\) mirror pairs (\(A = 3\text{--}39\)) matches AME2020 splits with mean ratio <code>0.9868</code> (\(\pm 6.94\%\) RMS). Molecular bond angles are exact (<code>0–5.8 ppb</code>) where tetrahedral/linear symmetry dominates (\(\mathrm{CH_4}, \mathrm{CO_2}\)) and accurate to <code>0.20%–2.29%</code> under \(q\)-weighted lone-pair and double-bond repulsion (\(\mathrm{NH_3}, \mathrm{H_2O}, \mathrm{C_2H_4}, \mathrm{H_2S}\)).</p>
+<p><em>Assessment (Charge &amp; EM Sector):</em> Electric charge quantization is exact (\(0\;\mathrm{ppQ}\)) from topological writhe \(Q(H) = \tfrac{1}{2}\operatorname{writhe}(H)\). In the additive Schwinger Form B cubic, <code>QOU.Archimedean.EmFermionLoopFourTopology</code> proves symbolically over \(\mathbb{Q}(q)\) that summing all four signed chiral 2-vertex crossing topologies \((\epsilon_1,\epsilon_2)\in\{+,-\}^2\) on \(U_q(\mathfrak{sl}_2)\) <code>EmFermionLoop</code> cancels the \(\pm h_A m(\sigma_2)\) chiral tadpoles identically to \(-1\cdot h_A^2\), reproducing \(\alpha_{\mathrm{EM}}^{-1}\) to <code>-0.365 ppb</code> (<code>-2.38</code>\(\sigma_{\mathrm{exp}}\)) and the hydrogenic Rydberg constant \(R_\infty h c = \tfrac{1}{2}m_e c^2 \alpha_{\mathrm{EM}}^2\) to <code>+0.725 ppb</code> (\(z_{\mathrm{comb}} = +2.31\sigma\) once the <code>0.313 ppb</code> CODATA \(m_e\) uncertainty is propagated). Adding the zero-parameter weight-3 Bloch-\(B_3(\mathbb{C})\) trilogarithm defect \(c_2^{\mathrm{Bloch}} = H(q_0)(\zeta(3)-\operatorname{Li}_3(q_0^{-2}))/(8\pi)\) (<code>QOU.Archimedean.AlphaEmTwoLoopBlochSchwinger</code>, conditional on <code>AlphaEmTwoLoopBlochSchwingerClass</code>) brings \(\alpha_{\mathrm{EM}}^{-1}\) to <code>-0.024 ppb</code> (<code>-0.16</code>\(\sigma_{\mathrm{exp}}\)) and \(R_\infty h c\) to <code>+0.043 ppb</code> (\(z_{\mathrm{comb}} = +0.14\sigma\)). On the Chern–Simons arm, replacing Witten&#x27;s legacy \(2\times 2\) baseline (<code>-467.64 ppb</code>) with the \(8\times 8\) homological Seifert pairing \(\kappa_{\mathrm{Seifert}}(q_0) = q_0^8/(\Delta_{2,9}(q_0)\Delta_{3,5}(q_0))\) on \(H_1(\Sigma_4;\mathbb{Z})\cong\mathbb{Z}^8\) narrows the residual \(19.1\times\) to <code>-24.53 ppb</code>. In nuclear isospin doublets, the bare topological ratio \(\tanh(\ln q_0) = 0.103964\) accounts for only <code>5.9%</code> of the \({}^3\mathrm{H}\text{–}{}^3\mathrm{He}\) split without nuclear-radius input (a scope-limited negative on the ruled nucleon word), while canonical nuclear-radius Coulomb across \(8\) mirror pairs (\(A = 3\text{--}39\)) matches AME2020 splits with mean ratio <code>0.9748</code> (\(\pm 8.87\%\) RMS). Molecular bond angles are exact (<code>0–5.8 ppb</code>) where tetrahedral/linear symmetry dominates (\(\mathrm{CH_4}, \mathrm{CO_2}\)) and accurate to <code>0.20%–2.29%</code> under \(q\)-weighted lone-pair and double-bond repulsion (\(\mathrm{NH_3}, \mathrm{H_2O}, \mathrm{C_2H_4}, \mathrm{H_2S}\)).</p>
 <hr>
 <h3 id="3-4-category-4-weak-beta-decay-q-beta-weak-scale">3.4 Category 4 — Weak \(\beta\)-Decay (\(Q_{\beta^-}\) &amp; Weak Scale)</h3>
 <h4 id="table-3-4a-free-neutron-conditional-split-bare-monotone-transfer-matrix-benchmarks-weak-scale">Table 3.4a: Free-Neutron Conditional Split, Bare Monotone Transfer-Matrix Benchmarks, &amp; Weak Scale</h4>
@@ -871,7 +896,7 @@
 <td style="text-align:right"><code>-58.40%</code></td>
 <td style="text-align:right"><code>5.84e+14</code></td>
 <td style="text-align:right"><code>-1202367.3σ</code></td>
-<td style="text-align:left">Conditional (<code>C1–C3</code>)</td>
+<td style="text-align:left"><strong>Conditional</strong>: Conditional (<code>C1–C3</code>)</td>
 </tr>
 <tr>
 <td style="text-align:left">\({}^3\mathrm{H} \to {}^3\mathrm{He}\)</td>
@@ -881,7 +906,7 @@
 <td style="text-align:right"><code>+97.50%</code></td>
 <td style="text-align:right"><code>9.75e+14</code></td>
 <td style="text-align:right"><code>+1814.4σ</code></td>
-<td style="text-align:left">Zero-fit TM proxy</td>
+<td style="text-align:left"><strong>Unclassified</strong>: Zero-fit TM proxy</td>
 </tr>
 <tr>
 <td style="text-align:left">\({}^{14}\mathrm{C} \to {}^{14}\mathrm{N}\)</td>
@@ -891,7 +916,7 @@
 <td style="text-align:right"><code>-8.11%</code></td>
 <td style="text-align:right"><code>8.11e+13</code></td>
 <td style="text-align:right"><code>-317.3σ</code></td>
-<td style="text-align:left">Zero-fit TM proxy (<code>-8.11%</code>)</td>
+<td style="text-align:left"><strong>Unclassified</strong>: Zero-fit TM proxy (<code>-8.11%</code>)</td>
 </tr>
 <tr>
 <td style="text-align:left">\({}^{60}\mathrm{Co} \to {}^{60}\mathrm{Ni}\)</td>
@@ -901,7 +926,7 @@
 <td style="text-align:right"><code>-73.12%</code></td>
 <td style="text-align:right"><code>7.31e+14</code></td>
 <td style="text-align:right"><code>-1789.5σ</code></td>
-<td style="text-align:left">Zero-fit TM proxy</td>
+<td style="text-align:left"><strong>Unclassified</strong>: Zero-fit TM proxy</td>
 </tr>
 <tr>
 <td style="text-align:left">\({}^{90}\mathrm{Sr} \to {}^{90}\mathrm{Y}\)</td>
@@ -911,7 +936,7 @@
 <td style="text-align:right"><code>-89.96%</code></td>
 <td style="text-align:right"><code>9.00e+14</code></td>
 <td style="text-align:right"><code>-7015.4σ</code></td>
-<td style="text-align:left">Zero-fit TM proxy</td>
+<td style="text-align:left"><strong>Unclassified</strong>: Zero-fit TM proxy</td>
 </tr>
 <tr>
 <td style="text-align:left">\({}^{137}\mathrm{Cs} \to {}^{137}\mathrm{Ba}\)</td>
@@ -921,7 +946,7 @@
 <td style="text-align:right"><code>-70.21%</code></td>
 <td style="text-align:right"><code>7.02e+14</code></td>
 <td style="text-align:right"><code>-1718.4σ</code></td>
-<td style="text-align:left">Zero-fit TM proxy</td>
+<td style="text-align:left"><strong>Unclassified</strong>: Zero-fit TM proxy</td>
 </tr>
 <tr>
 <td style="text-align:left">\({}^{210}\mathrm{Bi} \to {}^{210}\mathrm{Po}\)</td>
@@ -931,7 +956,7 @@
 <td style="text-align:right"><code>-55.01%</code></td>
 <td style="text-align:right"><code>5.50e+14</code></td>
 <td style="text-align:right"><code>-10659.3σ</code></td>
-<td style="text-align:left">Zero-fit TM proxy</td>
+<td style="text-align:left"><strong>Unclassified</strong>: Zero-fit TM proxy</td>
 </tr>
 <tr>
 <td style="text-align:left">Electroweak VEV \(v_{\mathrm{weak}}\) (\(N_v = 262.418169\))</td>
@@ -941,7 +966,7 @@
 <td style="text-align:right"><strong><code>-29.37 ppb</code></strong></td>
 <td style="text-align:right"><code>2.94e+7</code></td>
 <td style="text-align:right"><strong><code>-0.11σ</code></strong></td>
-<td style="text-align:left">Conditional Bring–Schwinger fixed point (\(G_F\) within \(1\sigma_{\mathrm{exp}}\)!)</td>
+<td style="text-align:left"><strong>Conditional</strong>: Bring–Schwinger fixed point (\(G_F\) within \(1\sigma_{\mathrm{exp}}\)!)</td>
 </tr>
 </tbody></table></div>
 <h4 id="table-3-4b-isobaric-mass-difference-q-beta-m-z-n-m-z-1-n-1-m-e-across-measured-beta-emitters">Table 3.4b: Isobaric Mass-Difference \(Q_{\beta^-} = M(Z, N) - M(Z+1, N-1) - m_e\) Across Measured \(\beta^-\) Emitters</h4>
@@ -971,50 +996,50 @@
 <tr>
 <td style="text-align:left">Very Low-\(A\) (\(2\text{--}16\))</td>
 <td style="text-align:right"><code>27</code></td>
-<td style="text-align:right"><code>0/27</code></td>
-<td style="text-align:right"><code>167.1%</code></td>
-<td style="text-align:right"><code>111.2%</code></td>
-<td style="text-align:right"><code>1.11e+15</code></td>
+<td style="text-align:right"><code>27/27</code></td>
+<td style="text-align:right"><code>95.8%</code></td>
+<td style="text-align:right"><code>98.0%</code></td>
+<td style="text-align:right"><code>9.80e+14</code></td>
 <td style="text-align:left">Missing 3D cluster + symmetry energy</td>
 </tr>
 <tr>
 <td style="text-align:left">Low/Mid-\(A\) (\(17\text{--}56\))</td>
 <td style="text-align:right"><code>175</code></td>
-<td style="text-align:right"><code>0/175</code></td>
-<td style="text-align:right"><code>157.6%</code></td>
-<td style="text-align:right"><code>120.7%</code></td>
-<td style="text-align:right"><code>1.21e+15</code></td>
+<td style="text-align:right"><code>175/175</code></td>
+<td style="text-align:right"><code>91.9%</code></td>
+<td style="text-align:right"><code>96.3%</code></td>
+<td style="text-align:right"><code>9.63e+14</code></td>
 <td style="text-align:left">Missing Pauli asymmetry + Coulomb shift</td>
 </tr>
 <tr>
 <td style="text-align:left">High-\(A\) Med (\(57\text{--}150\))</td>
 <td style="text-align:right"><code>514</code></td>
-<td style="text-align:right"><code>0/514</code></td>
-<td style="text-align:right"><code>210.2%</code></td>
-<td style="text-align:right"><code>134.5%</code></td>
-<td style="text-align:right"><code>1.34e+15</code></td>
+<td style="text-align:right"><code>514/514</code></td>
+<td style="text-align:right"><code>90.9%</code></td>
+<td style="text-align:right"><code>93.9%</code></td>
+<td style="text-align:right"><code>9.39e+14</code></td>
 <td style="text-align:left">Isobaric parabola absent in 1D Q-CLT chain</td>
 </tr>
 <tr>
 <td style="text-align:left">Very High-\(A\) (\(\ge 151\))</td>
 <td style="text-align:right"><code>293</code></td>
-<td style="text-align:right"><code>0/293</code></td>
-<td style="text-align:right"><code>402.3%</code></td>
-<td style="text-align:right"><code>191.7%</code></td>
-<td style="text-align:right"><code>1.92e+15</code></td>
+<td style="text-align:right"><code>293/293</code></td>
+<td style="text-align:right"><code>97.2%</code></td>
+<td style="text-align:right"><code>84.7%</code></td>
+<td style="text-align:right"><code>8.47e+14</code></td>
 <td style="text-align:left">Large \(Z\) Coulomb gradient omitted</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong>All Measured (\(A \ge 1\))</strong></td>
 <td style="text-align:right"><code>1010</code></td>
-<td style="text-align:right"><code>1/1010</code></td>
-<td style="text-align:right"><code>255.5%</code></td>
-<td style="text-align:right"><code>142.4%</code></td>
-<td style="text-align:right"><code>1.42e+15</code></td>
-<td style="text-align:left">Only \(A=1\) exothermic without 3D/Coulomb closure</td>
+<td style="text-align:right"><code>1010/1010</code></td>
+<td style="text-align:right"><code>93.0%</code></td>
+<td style="text-align:right"><code>92.7%</code></td>
+<td style="text-align:right"><code>9.27e+14</code></td>
+<td style="text-align:left">Ruled-law \(B\): sign from the \(T_z\)-even bond, flat \(Q\) until Coulomb / \(T(T+1)\) terms land</td>
 </tr>
 </tbody></table></div>
-<p><em>Assessment (\(\beta\)-Decay &amp; Weak Scale):</em> On the single-nucleon baseline, the \(T^3\) weight-trace split on the cost-minimal \(\gamma\gamma\)-reachable Borromean braid \(V^3 = (\sigma_1 \sigma_2^{-1})^3\) (conditional on conjectures <code>C1–C3</code>) gives \(Q_{\beta^-}(n) = 0.325434\;\mathrm{MeV}\) (<code>-58.40%</code> vs <code>0.782334 MeV</code>). For composite nuclei (\(A \ge 2\)), bare monotone transfer-matrix skein shifts (<code>Table 3.4a</code>) land in the physical keV–MeV window (best at \({}^{14}\mathrm{C}\), <code>-8.11%</code>), whereas direct mass-table subtraction \(M(Z,N) - M(Z+1,N-1) - m_e\) (<code>Table 3.4b</code>) predicts <code>0 / 1,009</code> exothermic composite transitions because the 1D chain omits Coulomb repulsion \(\propto Z(Z-1)/A^{1/3}\) and Pauli neutron-excess pressure \(\propto (N-Z)^2/A\). On the electroweak scale fixing \(G_F\), the Bring–Schwinger fixed point \(1/\alpha_v = T_{\mathrm{EW}}(q_0) - \alpha_v H(q_0)(1 - \hbar_{q_0}^2 \alpha_v)\) (<code>QOU.StandardModel.ElectroweakBringSchwingerBridge</code>) yields \(N_v = 262.418169\) and \(v_{\mathrm{weak}} = 246.219644\;\mathrm{GeV}\) (<code>-29.37 ppb</code>, <code>-0.11</code>\(\sigma_{\mathrm{exp}}\) vs PDG \(G_F\), within \(1\sigma_{\mathrm{exp}}\)), leaving discharge of its conditional hypothesis class and nuclear Fermi / Gamow–Teller matrix elements for unconditional \(\Gamma_\beta\) half-lives.</p>
+<p><em>Assessment (\(\beta\)-Decay &amp; Weak Scale):</em> On the single-nucleon baseline, the \(T^3\) weight-trace split on the cost-minimal \(\gamma\gamma\)-reachable Borromean braid \(V^3 = (\sigma_1 \sigma_2^{-1})^3\) (conditional on conjectures <code>C1–C3</code>) gives \(Q_{\beta^-}(n) = 0.325434\;\mathrm{MeV}\) (<code>-58.40%</code> vs <code>0.782334 MeV</code>). For composite nuclei (\(A \ge 2\)), bare monotone transfer-matrix skein shifts (<code>Table 3.4a</code>) land in the physical keV–MeV window (best at \({}^{14}\mathrm{C}\), <code>-8.11%</code>), whereas direct mass-table subtraction \(M(Z,N) - M(Z+1,N-1) - m_e\) (<code>Table 3.4b</code>) predicts <code>1,009 / 1,009</code> exothermic composite transitions on the ruled log-law binding (free baseline subtracted, \(T_z\)-even bond; PR #9675). The sign is fixed but \(Q\) is the same for every nucleus, because the 1D chain still has no Coulomb repulsion \(\propto Z(Z-1)/A^{1/3}\) and no \(T(T+1)\) / neutron-excess term \(\propto (N-Z)^2/A\). Before the repair every composite row gave the same \(-1.793\;\mathrm{MeV}\) (<code>composite_beta_sign_decomposition_probe.py</code>). On the electroweak scale fixing \(G_F\), the Bring–Schwinger fixed point \(1/\alpha_v = T_{\mathrm{EW}}(q_0) - \alpha_v H(q_0)(1 - \hbar_{q_0}^2 \alpha_v)\) (<code>QOU.StandardModel.ElectroweakBringSchwingerBridge</code>) yields \(N_v = 262.418169\) and \(v_{\mathrm{weak}} = 246.219644\;\mathrm{GeV}\) (<code>-29.37 ppb</code>, <code>-0.11</code>\(\sigma_{\mathrm{exp}}\) vs PDG \(G_F\), within \(1\sigma_{\mathrm{exp}}\)), leaving discharge of its conditional hypothesis class and nuclear Fermi / Gamow–Teller matrix elements for unconditional \(\Gamma_\beta\) half-lives.</p>
 <hr>
 <h3 id="3-5-category-5-alpha-decay-heavy-composite-fission">3.5 Category 5 — \(\alpha\)-Decay &amp; Heavy / Composite Fission</h3>
 <h4 id="table-3-5a-gamow-wkb-alpha-tunneling-at-experimental-q-alpha-n-126-shell-preformation">Table 3.5a: Gamow WKB \(\alpha\)-Tunneling at Experimental \(Q_\alpha\) &amp; \(N = 126\) Shell Preformation</h4>
@@ -1123,7 +1148,7 @@
 <th style="text-align:left">Tunneling Assessment</th>
 </tr></thead><tbody>
 <tr>
-<td style="text-align:left">High-\(A\) Med (\(57\text{--}150\), Q-CLT + \(K_4\) \(\alpha\))</td>
+<td style="text-align:left">High-\(A\) Med (\(57\text{--}150\), mixed: chain + \(K_4\) \({}^4\mathrm{He}\))</td>
 <td style="text-align:left"><code>N = 178</code></td>
 <td style="text-align:right"><code>178/178 (100%)</code></td>
 <td style="text-align:right">Med <code>19.79</code> vs <code>1.73 MeV</code></td>
@@ -1132,7 +1157,7 @@
 <td style="text-align:left">1D chain underbinds parent/daughter slope \(\Delta B/\Delta A\)</td>
 </tr>
 <tr>
-<td style="text-align:left">Very High-\(A\) (\(\ge 151\), Q-CLT + \(K_4\) \(\alpha\))</td>
+<td style="text-align:left">Very High-\(A\) (\(\ge 151\), mixed: chain + \(K_4\) \({}^4\mathrm{He}\))</td>
 <td style="text-align:left"><code>N = 873</code></td>
 <td style="text-align:right"><code>873/873 (100%)</code></td>
 <td style="text-align:right">Med <code>19.79</code> vs <code>5.41 MeV</code></td>
@@ -1141,13 +1166,22 @@
 <td style="text-align:left">Over-exothermic (\(Q_\alpha^{\mathrm{pred}} \approx 21\;\mathrm{MeV}\)) without shell/Coulomb</td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>All Measured Exothermic (\(A \ge 6\))</strong></td>
+<td style="text-align:left"><strong>All Measured Exothermic (\(A \ge 6\), mixed)</strong></td>
 <td style="text-align:left"><code>N = 1051</code></td>
 <td style="text-align:right"><code>1051/1051 (100%)</code></td>
 <td style="text-align:right">Med <code>19.79</code> vs <code>4.71 MeV</code></td>
 <td style="text-align:right">Med <code>320.3%</code> (Mean <code>584.5%</code>)</td>
 <td style="text-align:right"><code>3.20e+15</code></td>
-<td style="text-align:left">All <code>1,051</code> exothermic, but multi-MeV \(Q_\alpha\) offset dominates</td>
+<td style="text-align:left">All <code>1,051</code> exothermic; ~93% of the \(Q_\alpha\) error is inherited from the binding slope</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Chain only, self-consistent (\(A \ge 6\))</strong></td>
+<td style="text-align:left"><code>N = 1051</code></td>
+<td style="text-align:right"><code>0/1051</code></td>
+<td style="text-align:right">Med <code>-2.70</code> vs <code>4.71 MeV</code></td>
+<td style="text-align:right">Med <code>157.3%</code> (Mean <code>193.3%</code>)</td>
+<td style="text-align:right"><code>1.57e+15</code></td>
+<td style="text-align:left">Chain \({}^4\mathrm{He}\) (extrapolated) = <code>6.84 MeV</code>; one \(\alpha\)-line slope for every pair, so \(Q_\alpha\) is constant (<code>AlphaQInheritance.lean</code>)</td>
 </tr>
 <tr>
 <td style="text-align:left">FCC \(k=12\) cluster model (<code>H2_FCC_k12_std</code>)</td>
@@ -1277,9 +1311,9 @@ python3 scripts/compute-qa.py --gate accuracy-scorecard</code></pre>
 </tr>
 <tr>
 <td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/per-observable-100x-status.witness.json"><code>computations/per-observable-100x-status.witness.json</code></a></td>
-<td style="text-align:right"><code>68ea5bed9677</code></td>
+<td style="text-align:right"><code>04745791ccce</code></td>
 <td style="text-align:left"><code>allPassed: true</code></td>
-<td style="text-align:left">§2, §3.1a, §3.4a</td>
+<td style="text-align:left">§2, §3.1a, §3.2a (tower E_0), §3.4a</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/alpha-em-schwinger-ladder.witness.json"><code>computations/alpha-em-schwinger-ladder.witness.json</code></a></td>
@@ -1289,7 +1323,7 @@ python3 scripts/compute-qa.py --gate accuracy-scorecard</code></pre>
 </tr>
 <tr>
 <td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/alpha/alpha_em_two_loop_bloch_schwinger_probe.witness.json"><code>computations/alpha/alpha_em_two_loop_bloch_schwinger_probe.witness.json</code></a></td>
-<td style="text-align:right"><code>a0c07ac36abe</code></td>
+<td style="text-align:right"><code>648a4b8f74ff</code></td>
 <td style="text-align:left"><code>allPassed: true</code></td>
 <td style="text-align:left">§1, §2, §3.3a, §5.1</td>
 </tr>
@@ -1307,13 +1341,13 @@ python3 scripts/compute-qa.py --gate accuracy-scorecard</code></pre>
 </tr>
 <tr>
 <td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/probes/electroweak-bring-schwinger-bridge.witness.json"><code>computations/probes/electroweak-bring-schwinger-bridge.witness.json</code></a></td>
-<td style="text-align:right"><code>912abf598c79</code></td>
+<td style="text-align:right"><code>d39e8c3c3fb5</code></td>
 <td style="text-align:left"><code>allPassed: true</code></td>
 <td style="text-align:left">§2, §3.4a, §5.1</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/mass-table-comprehensive.witness.json"><code>computations/mass-table-comprehensive.witness.json</code></a></td>
-<td style="text-align:right"><code>28a5344181a1</code></td>
+<td style="text-align:right"><code>cc892a598024</code></td>
 <td style="text-align:left"><code>allPassed: true</code></td>
 <td style="text-align:left">§2, §3.1b–c, §3.2b, §3.4b, §3.5b, §4</td>
 </tr>
@@ -1325,7 +1359,7 @@ python3 scripts/compute-qa.py --gate accuracy-scorecard</code></pre>
 </tr>
 <tr>
 <td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/probes/gap1b_4he_tetrahedral_k4_flux_ring/gap1b-4he-tetrahedral-k4-flux-ring.witness.json"><code>computations/probes/gap1b_4he_tetrahedral_k4_flux_ring/gap1b-4he-tetrahedral-k4-flux-ring.witness.json</code></a></td>
-<td style="text-align:right"><code>63f0971cb24d</code></td>
+<td style="text-align:right"><code>3e2c233b0e95</code></td>
 <td style="text-align:left"><code>allPassed: true</code></td>
 <td style="text-align:left">§2, §3.2a, §3.5b</td>
 </tr>
@@ -1337,31 +1371,31 @@ python3 scripts/compute-qa.py --gate accuracy-scorecard</code></pre>
 </tr>
 <tr>
 <td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/probes/gap3b_t29_composite_decay_threshold/gap3b-t29-composite-decay-threshold.witness.json"><code>computations/probes/gap3b_t29_composite_decay_threshold/gap3b-t29-composite-decay-threshold.witness.json</code></a></td>
-<td style="text-align:right"><code>61d781bdf3d8</code></td>
+<td style="text-align:right"><code>9b70d2c86ec5</code></td>
 <td style="text-align:left"><code>allPassed: true</code></td>
 <td style="text-align:left">§2, §3.5a</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/u1-hypercharge-assignment.witness.json"><code>computations/u1-hypercharge-assignment.witness.json</code></a></td>
-<td style="text-align:right"><code>54d9572eeffe</code></td>
+<td style="text-align:right"><code>a2b8923c9cc0</code></td>
 <td style="text-align:left"><code>allPassed: true</code></td>
 <td style="text-align:left">§2, §3.3a</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/charge-coulomb-tn3he-derived.witness.json"><code>computations/charge-coulomb-tn3he-derived.witness.json</code></a></td>
-<td style="text-align:right"><code>0b254a046dd6</code></td>
+<td style="text-align:right"><code>37b4cc873f59</code></td>
 <td style="text-align:left"><code>allPassed: true</code></td>
 <td style="text-align:left">§2, §3.3a</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/mirror-nuclei-coulomb-systematics.witness.json"><code>computations/mirror-nuclei-coulomb-systematics.witness.json</code></a></td>
-<td style="text-align:right"><code>1b11035996c1</code></td>
+<td style="text-align:right"><code>b65c675e1c9a</code></td>
 <td style="text-align:left"><code>allPassed: true</code></td>
 <td style="text-align:left">§2, §3.3a</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/beta-decay-from-q.witness.json"><code>computations/beta-decay-from-q.witness.json</code></a></td>
-<td style="text-align:right"><code>6845cc311b6b</code></td>
+<td style="text-align:right"><code>4a7c38a8f780</code></td>
 <td style="text-align:left">Audit witness (<code>verified</code>)</td>
 <td style="text-align:left">§2, §3.4a, §5.1</td>
 </tr>
@@ -1370,6 +1404,18 @@ python3 scripts/compute-qa.py --gate accuracy-scorecard</code></pre>
 <td style="text-align:right"><code>7b152b846217</code></td>
 <td style="text-align:left"><code>allPassed: true</code></td>
 <td style="text-align:left">§2, §3.5a–b</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json"><code>computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json</code></a></td>
+<td style="text-align:right"><code>21d99eb9cffd</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§3.2a (ruled trace-pipeline row)</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/litlfred/qou/blob/main/computations/scorecard-epistemic-status.witness.json"><code>computations/scorecard-epistemic-status.witness.json</code></a></td>
+<td style="text-align:right"><code>abad095f3ba1</code></td>
+<td style="text-align:left"><code>allPassed: true</code></td>
+<td style="text-align:left">§2, §3.1a, §3.2a, §3.3a, §3.4a (row labels)</td>
 </tr>
 </tbody></table></div>
 </main>

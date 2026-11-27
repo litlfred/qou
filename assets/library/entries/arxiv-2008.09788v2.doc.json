@@ -259,11 +259,11 @@
           "heading": false
         },
         {
-          "term": "logical equivalence",
+          "term": "isotypic algebras",
           "heading": false
         },
         {
-          "term": "isotypic algebras",
+          "term": "logical equivalence",
           "heading": false
         }
       ],
@@ -394,6 +394,10 @@
       "summary": null,
       "keywords": [
         {
+          "term": "machine halts",
+          "heading": false
+        },
+        {
           "term": "turing machine",
           "heading": false
         },
@@ -420,10 +424,6 @@
         {
           "term": "head moving",
           "heading": false
-        },
-        {
-          "term": "zero divisors",
-          "heading": true
         }
       ],
       "extract": "\\label{sec31} \\subsubsection{\\bf The sketch of construction}\\label{sk} Let $A$ be an algebra over a field $K$. The set of all words in the alphabet $\\{a_1,\\dots , a_N\\}$ is a semigroup. The main idea of the construction is a realization of a universal Turing machine in this semigroup. We use the universal Turing machine constructed by Marvin Minsky in \\cite{Minsky}. This machine has $7$ states and $4$-color tape.",
@@ -564,15 +564,15 @@
       "heading": false
     },
     {
-      "term": "free algebras",
-      "heading": false
-    },
-    {
       "term": "polynomial automorphisms",
       "heading": true
     },
     {
       "term": "theta algebras",
+      "heading": false
+    },
+    {
+      "term": "free algebras",
       "heading": false
     },
     {

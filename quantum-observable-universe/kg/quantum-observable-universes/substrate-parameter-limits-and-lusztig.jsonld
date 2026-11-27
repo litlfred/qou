@@ -6,18 +6,18 @@
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/rem-substrate-parameter-limits-and-lusztig",
+  "@id": "papers/quantum-observable-universe/blocks/rem-aether-parameter-limits-and-lusztig",
   "@type": [
     "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "rem:substrate-parameter-limits-and-lusztig",
+  "label": "rem:aether-parameter-limits-and-lusztig",
   "kind": "remark",
-  "title": "Limits of the substrate parameter and the Lusztig integral form",
+  "title": "Limits of the aether parameter and the Lusztig integral form",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+    "papers/quantum-observable-universe/blocks/def-aether-parameter"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "interprets": "papers/quantum-observable-universe/blocks/def-aether-parameter",
   "cites": [
     "references/lusztig1993"
   ],

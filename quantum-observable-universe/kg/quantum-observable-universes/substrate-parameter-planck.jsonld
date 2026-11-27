@@ -6,23 +6,23 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/def-substrate-parameter-planck",
+  "@id": "papers/quantum-observable-universe/blocks/def-aether-parameter-planck",
   "@type": [
     "folio-assistant-sci:Definition",
     "doco:Section"
   ],
-  "label": "def:substrate-parameter-planck",
+  "label": "def:aether-parameter-planck",
   "kind": "definition",
-  "title": "Substrate parameter and quantum Planck constant",
+  "title": "Aether parameter and quantum Planck constant",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate"
+    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-aether"
   ],
   "tags": [
     "substrate-parameter",
     "planck-constant",
     "q-deformation"
   ],
-  "leanRef": "qou:QOU.Core.AlgebraicSubstrate.SubstrateParameterPlanck",
+  "leanRef": "qou:QOU.Core.AlgebraicSubstrate.AetherParameterPlanck",
   "text": "substrate-parameter-planck.md",
   "leanSource": "substrate-parameter-planck.lean",
   "provenance": "authored"

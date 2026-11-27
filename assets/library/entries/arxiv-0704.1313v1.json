@@ -1,0 +1,349 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0704.1313v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Below, we use standard notions of the theory of ﬁnite order, or Va ssiliev, invariants\nof knots in 3-space; their deﬁnitions can be found, for example, in [ 6] or [14]. All\nknots are assumed to be oriented.\nTwo knots are said to be mutant if they diﬀer by a rotation/reﬂection of a tangle\nwith four endpoints; if necessary, the orientation inside the tangle may be replaced\nby the opposite one. Here is a famous example of mutant knots, the Conway (11n34)\nknot C of genus 3, and Kinoshita–Terasaka (11 n42) knot KT of genus 2 (see [1]).\nC = KT =\nNote that the change of the orientation of a knot can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0704.1313v1  [math.GT]  10 Apr 2007\nMutant knots and intersection graphs\nS. V. Chmutov ∗, S. K. Lando †\nApril 10, 2007\nAbstract\nWe prove that if a ﬁnite order knot invariant does not disting uish mutant knots,\nthen the corresponding weight system depends on the interse ction graph of a\nchord diagram rather than on the diagram itself. The convers e statement is\neasy and well known. We discuss relationship between our res ults and certain\nLie algebra weight systems.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "If a ﬁnite order knot invariant does not distinguish mutants , then the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-proof.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representability of graphs as the intersection graphs of chord diagrams",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-representability-of-graphs-as-the-intersection-g.md",
+      "narrative": null,
+      "content": "chord diagrams\nNot every graph can be represented as the intersection graph of a chord diagram. For\nexample, the following graphs are not intersection graphs.\nA characterization of those graphs that can be realized as interse ction graphs is given\nby an elegant theorem of A. Bouchet [4].\nOn the other hand, distinct diagrams may have coinciding intersectio n graphs.\nFor example, next three diagrams have the same intersection grap h :\nA combinatorial analog of the tangle in mutant knots is a share [5, 6]. Informally,\na share of a chord diagram is a subset of chords whose endpoints are separ ated",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "Two chord diagrams have the same intersection graph if and on ly if they",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-proof-of-theorem.md",
+      "narrative": null,
+      "content": "Suppose we have a Vassiliev knot invariant v of order at most n that does not dis-\ntinguish mutant knots. Let D1 and D2 be chord diagrams with n chords whose\nintersection graphs coincide. We are going to prove that the values of the weight\nsystem of v on D1 and D2 are equal.\nBy Theorem 2, it is enough to consider the case when D1 and D2 diﬀer by a\nsingle mutation in a share S. Let K1 be a singular knot with n double points whose\nchord diagram is D1. Consider the collection of double points of K1 corresponding\nto the chords occurring in the share S. By the deﬁnition of a share, K1 has two arcs",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lie algebra weight systems and intersection graphs",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-lie-algebra-weight-systems-and-intersection-grap.md",
+      "narrative": null,
+      "content": "and intersection graphs\nKontsevich [12] generalized a construction of Bar-Natan [2] of we ight systems deﬁned\nby a Lie algebra and its representation to a universal weight system , with values in\nthe universal enveloping algebra of the Lie algebra. In [18], Vaintro b extended this\nconstruction to Lie superalgebras.\nOur main goal in this section is to prove\nTheorem 3 The universal weight systems associated to the Lie algebra sl(2) and\nto the Lie superalgebra gl(1|1) depend on the intersection graphs of chord diagrams\nrather than on the diagrams themselves.\nIt follows immediately that the canoni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "The universal weight systems associated to the Lie algebra sl(2) and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "The universal weight system associated to the Lie algebra sl(2) depends",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/thm-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "thm-sec-004-03.md",
+      "narrative": null,
+      "content": "The universal weight systems associated to the Lie superalg ebra gl(1|1)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weight systems via Lie algebras",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-weight-systems-via-lie-algebras.md",
+      "narrative": null,
+      "content": "Our approach follows that of Kontsevich in [12]. In order to constru ct a weight system,\nwe need a complex Lie algebra endowed with a nondegenerate invarian t bilinear form\n(·, ·). The invariance requirement means that ( x, [y, z ]) = ([ x, y ], z ) for any three\nelements x, y, z in the Lie algebra. Pick an orthonormal basis a1, . . . , a d, (ai, a j) = δij,\nd being the dimension of the Lie algebra. Any chord diagram can be made into an\narc diagram by cutting the circle at some point and further straight ening it. For an\narc diagram of n arcs, write on each arc an index i between 1 and d, and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 4-bialgebra of graphs",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-the-4-bialgebra-of-graphs.md",
+      "narrative": null,
+      "content": "By a graph, we mean a ﬁnite undirected graph without loops and multip le edges.\nLet Gn denote the vector space freely spanned over C by all graphs with n vertices,\nG0 = C being spanned by the empty graph. The direct sum\nG = G0 ⊕ G1 ⊕ G2 ⊕ . . .\ncarries a natural structure of a commutative cocommutative gra ded Hopf algebra.\nThe multiplication in this Hopf algebra is induced by the disjoint union of g raphs,\nand the comultiplication is induced by the operation taking a graph G into the sum\n8\n∑ GU ⊗ G ¯U , where U is an arbitrary subset of vertices of G, ¯U its complement, and\nGU denotes the sub",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "Suppose the intersection graph of a chord diagram is the resu lt of identi-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "(i) The value of the universal sl(2) weight system on the 1-product of chord",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The sl(2) weight system",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-the-sl2-weight-system.md",
+      "narrative": null,
+      "content": "Our treatment of the universal weight system associated with the Lie algebra sl(2)\nis based on the recurrence formula for computing the value of this w eight system on\nchord diagrams due to Chmutov and Varchenko [7]. The recurrence states that if a\nchord diagram contains a leaf, that is, a chord intersecting only one other chord, then\nthe value of the sl(2) universal weight system on the diagram is ( c − 1/ 2) times its\nvalue on the result of deleting the leaf, and, in addition,\n− − + = 2 − 2\nmeaning that the value of the weight system on the chord diagram on the left-hand\nside coincides with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/thm-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "thm-sec-007-03.md",
+      "narrative": null,
+      "content": "Consider the part C2 participating in the Whitney twist and apply to",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The gl(1|1) weight system",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-008-the-gl11-weight-system.md",
+      "narrative": null,
+      "content": "Deﬁne the (unframed) Conway graph invariant with values in the ring of polynomi-\nals C[y] in one variable y in the following way. We set it equal to ( −y)n/2 on graphs\nwith n vertices if the adjacency matrix of the graph is nondegenerate, a nd 0 otherwise.\nRecall that the adjacency matrix AG of a graph G with n vertices is an n × n-matrix\nwith entries in Z2 obtained as follows. We choose an arbitrary numbering of the\nvertices of the graph, and the entry aij is 1 provided the i th and the j th vertices\nare adjacent and 0 otherwise (diagonal elements aii are 0). Note that for odd n, the\nadjacenc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0704.1313v1/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "The gl(1|1) universal weight system is the pullback of the framed Conway",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

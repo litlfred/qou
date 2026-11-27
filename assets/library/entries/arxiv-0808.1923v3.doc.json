@@ -396,19 +396,19 @@
           "heading": false
         },
         {
-          "term": "emph thin",
-          "heading": false
-        },
-        {
           "term": "circ gamma",
           "heading": false
         },
         {
-          "term": "thin homotopy",
+          "term": "emph thin",
           "heading": false
         },
         {
           "term": "sitting instants",
+          "heading": false
+        },
+        {
+          "term": "thin homotopy",
           "heading": false
         }
       ],
@@ -607,11 +607,11 @@
           "heading": false
         },
         {
-          "term": "equation holo",
+          "term": "mathrm tra",
           "heading": false
         },
         {
-          "term": "mathrm tra",
+          "term": "equation holo",
           "heading": false
         },
         {
@@ -835,7 +835,7 @@
           "heading": false
         },
         {
-          "term": "iij ijj",
+          "term": "mathfrak mathrm",
           "heading": false
         }
       ],
@@ -1163,8 +1163,8 @@
           "heading": false
         },
         {
-          "term": "reduced surface",
-          "heading": true
+          "term": "euscript left",
+          "heading": false
         }
       ],
       "extract": "The reduced surface holonomy has nice properties that we will reveal in the following. First we treat the dependence of the reduced surface holonomy on the marking. We arrange the set of markings of $S$ into equivalence classes, as it is common in the theory of Riemann surfaces. Two markings $(x,\\EuScript{M})$ and $(x',\\EuScript{M}')$, with $\\EuScript{M}=\\left \\lbrace \\alpha_i,\\beta_i \\right \\rbrace$ and",
@@ -1271,11 +1271,11 @@
       "heading": false
     },
     {
-      "term": "category transport",
+      "term": "mathfrak mathrm",
       "heading": false
     },
     {
-      "term": "mathfrak mathrm",
+      "term": "category transport",
       "heading": false
     },
     {

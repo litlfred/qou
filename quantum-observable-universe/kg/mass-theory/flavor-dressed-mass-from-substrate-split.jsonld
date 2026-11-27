@@ -6,17 +6,17 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-flavor-dressed-mass-from-substrate-split",
+  "@id": "papers/quantum-observable-universe/blocks/prop-flavor-dressed-mass-from-aether-split",
   "@type": [
     "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
-  "label": "prop:flavor-dressed-mass-from-substrate-split",
+  "label": "prop:flavor-dressed-mass-from-aether-split",
   "kind": "proposition",
-  "title": "Substrate-pure derivation of the dressed-quark mass splitting",
+  "title": "Aether-pure derivation of the dressed-quark mass splitting",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-flavor-dressing-functor",
-    "papers/quantum-observable-universe/blocks/conj-flavor-split-substrate-mass",
+    "papers/quantum-observable-universe/blocks/conj-flavor-split-aether-mass",
     "papers/quantum-observable-universe/blocks/lem-pair-skein-mass-formula"
   ],
   "tags": [

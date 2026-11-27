@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["chi_lambda_braid_qdef","chi_lambda_mn_qdef","cycle_types","mn_chi","removable_border_strips"],"struct":["BorderStrip"]};

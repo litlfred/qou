@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2302.02540v3/blocks/rem-sec-013-03",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 12,
+  "pageEnd": 19,
+  "text": "rem-sec-013-03.md",
+  "derivedFrom": "library/arxiv-2302.02540v3/sections/sec-013",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2302.02540v3",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.6",
+    "source_kind": "remark"
+  }
+}

@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["solve_alpha_psd","solve_alpha_psd_letters"],"struct":["SdpVerifierReport"]};

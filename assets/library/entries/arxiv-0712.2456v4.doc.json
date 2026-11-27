@@ -1,0 +1,2394 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0712.2456v4",
+  "title": "arxiv-0712.2456v4",
+  "variant": "pdf",
+  "pages": 47,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Fluid dynamics from gravity",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-fluid-dynamics-from-gravity"
+    },
+    {
+      "level": 1,
+      "title": "The perturbative expansion",
+      "number": "3",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-the-perturbative-expansion"
+    },
+    {
+      "level": 2,
+      "title": "The basic set up",
+      "number": "3.1",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-31-the-basic-set-up"
+    },
+    {
+      "level": 2,
+      "title": "General structure of perturbation theory",
+      "number": "3.2",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-32-general-structure-of-perturbation-theory"
+    },
+    {
+      "level": 3,
+      "title": "Constraint equations",
+      "number": "3.2.1",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-321-constraint-equations"
+    },
+    {
+      "level": 3,
+      "title": "Dynamical equations",
+      "number": "3.2.2",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-322-dynamical-equations"
+    },
+    {
+      "level": 3,
+      "title": "Summary of the perturbation analysis",
+      "number": "3.2.3",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-323-summary-of-the-perturbation-analysis"
+    },
+    {
+      "level": 2,
+      "title": "Outline of the first order computation",
+      "number": "3.3",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-33-outline-of-the-first-order-computation"
+    },
+    {
+      "level": 3,
+      "title": "Solving the constraint equations",
+      "number": "3.3.1",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-331-solving-the-constraint-equations"
+    },
+    {
+      "level": 3,
+      "title": "Solving the dynamical equations",
+      "number": "3.3.2",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-332-solving-the-dynamical-equations"
+    },
+    {
+      "level": 3,
+      "title": "The `Landau' Frame",
+      "number": "3.3.3",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-333-the-landau-frame"
+    },
+    {
+      "level": 2,
+      "title": "Outline of the second order computation",
+      "number": "3.4",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-34-outline-of-the-second-order-computation"
+    },
+    {
+      "level": 3,
+      "title": "The constraints at second order",
+      "number": "3.4.1",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-341-the-constraints-at-second-order"
+    },
+    {
+      "level": 3,
+      "title": "Nature of source terms",
+      "number": "3.4.2",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-342-nature-of-source-terms"
+    },
+    {
+      "level": 3,
+      "title": "Solution of the constraint equations",
+      "number": "3.4.3",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-343-solution-of-the-constraint-equations"
+    },
+    {
+      "level": 3,
+      "title": "Solving for $g^{(2)}$ and the second order stress tensor",
+      "number": "3.4.4",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-344-solving-for-g2-and-the-second-order-stress-t"
+    },
+    {
+      "level": 1,
+      "title": "The metric and stress tensor at first order",
+      "number": "4",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-4-the-metric-and-stress-tensor-at-first-order"
+    },
+    {
+      "level": 2,
+      "title": "Scalars of $SO(3)$",
+      "number": "4.1",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-41-scalars-of-so3"
+    },
+    {
+      "level": 2,
+      "title": "Vectors of $SO(3)$",
+      "number": "4.2",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-42-vectors-of-so3"
+    },
+    {
+      "level": 2,
+      "title": "The symmetric tensors of $SO(3)$",
+      "number": "4.3",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-43-the-symmetric-tensors-of-so3"
+    },
+    {
+      "level": 2,
+      "title": "Global solution to first order in derivatives",
+      "number": "4.4",
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-44-global-solution-to-first-order-in-derivatives"
+    },
+    {
+      "level": 2,
+      "title": "Stress tensor to first order",
+      "number": "4.5",
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-45-stress-tensor-to-first-order"
+    },
+    {
+      "level": 1,
+      "title": "The metric and stress tensor at second order",
+      "number": "5",
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-5-the-metric-and-stress-tensor-at-second-order"
+    },
+    {
+      "level": 2,
+      "title": "Solution in the scalar sector",
+      "number": "5.1",
+      "page": 28,
+      "pageLabel": "27",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-51-solution-in-the-scalar-sector"
+    },
+    {
+      "level": 2,
+      "title": "Solution in the vector sector",
+      "number": "5.2",
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-025-52-solution-in-the-vector-sector"
+    },
+    {
+      "level": 2,
+      "title": "Solution in the tensor sector",
+      "number": "5.3",
+      "page": 31,
+      "pageLabel": "30",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-026-53-solution-in-the-tensor-sector"
+    },
+    {
+      "level": 2,
+      "title": "Global solution to second order in derivatives",
+      "number": "5.4",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-027-54-global-solution-to-second-order-in-derivative"
+    },
+    {
+      "level": 2,
+      "title": "Stress tensor to second order",
+      "number": "5.5",
+      "page": 33,
+      "pageLabel": "32",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-028-55-stress-tensor-to-second-order"
+    },
+    {
+      "level": 1,
+      "title": "Second order fluid dynamics",
+      "number": "6",
+      "page": 34,
+      "pageLabel": "33",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-029-6-second-order-fluid-dynamics"
+    },
+    {
+      "level": 2,
+      "title": "Weyl transformation of the stress tensor",
+      "number": "6.1",
+      "page": 34,
+      "pageLabel": "33",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-030-61-weyl-transformation-of-the-stress-tensor"
+    },
+    {
+      "level": 2,
+      "title": "Spectrum of small fluctuations",
+      "number": "6.2",
+      "page": 36,
+      "pageLabel": "35",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-031-62-spectrum-of-small-fluctuations"
+    },
+    {
+      "level": 2,
+      "title": "Comparison with Baier et.al. (added in v2)",
+      "number": "6.3",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-032-63-comparison-with-baier-etal-added-in-v2"
+    },
+    {
+      "level": 1,
+      "title": "Discussion",
+      "number": "7",
+      "page": 38,
+      "pageLabel": "37",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-033-7-discussion"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 43,
+      "pageLabel": "42",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-034-acknowledgements"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 1055,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬂuid dynamics",
+          "heading": false
+        },
+        {
+          "term": "stress tensor",
+          "heading": false
+        },
+        {
+          "term": "boundary ﬂuid",
+          "heading": false
+        },
+        {
+          "term": "fluid dynamics",
+          "heading": false
+        },
+        {
+          "term": "tifr",
+          "heading": false
+        },
+        {
+          "term": "constraint equations",
+          "heading": false
+        },
+        {
+          "term": "rangamani",
+          "heading": false
+        },
+        {
+          "term": "dynamical equations",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0712.2456v4 [hep-th] 2 Apr 2008 Nonlinear Fluid Dynamics from Gravity Sayantani Bhattacharyyaa∗, Veronika E Hubeny b†, Shiraz Minwalla a‡, Mukund Rangamani b§ aDepartment of Theoretical Physics,Tata Institute of Funda mental Research, Homi Bhabha Rd, Mumbai 400005, India b Centre for Particle Theory & Department of Mathematical Sci ences, Science Laboratories, South Road, Durham DH1 3LE, United Ki ngdom",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0712.2456v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "2",
+      "labelEnd": "5",
+      "words": 1776,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬂuid dynamics",
+          "heading": false
+        },
+        {
+          "term": "distinguished ﬂuid",
+          "heading": false
+        },
+        {
+          "term": "ﬂuid dynamical",
+          "heading": false
+        },
+        {
+          "term": "conformal ﬂuid",
+          "heading": false
+        },
+        {
+          "term": "black brane",
+          "heading": false
+        },
+        {
+          "term": "ﬂuid dual",
+          "heading": false
+        },
+        {
+          "term": "ads cft",
+          "heading": false
+        },
+        {
+          "term": "brane horizons",
+          "heading": false
+        }
+      ],
+      "extract": "The AdS/CFT correspondence provides an important laborato ry to explore both gravita- tional physics as well as strongly coupled dynamics in a clas s of quantum ﬁeld theories. Using this correspondence it is possible to test general lor e about quantum ﬁeld theory in a non perturbative setting and so learn general lessons abou t strongly coupled dynamics. Conversely, it is also possible to use the AdS/CFT duality to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-fluid-dynamics-from-gravity",
+      "number": "2",
+      "title": "Fluid dynamics from gravity",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "5",
+      "labelEnd": "8",
+      "words": 1530,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dxµ dxν",
+          "heading": false
+        },
+        {
+          "term": "dxν pµν",
+          "heading": false
+        },
+        {
+          "term": "ﬂuid dynamics",
+          "heading": false
+        },
+        {
+          "term": "ﬂuid dynamical",
+          "heading": false
+        },
+        {
+          "term": "eddington-finkelstein coordinates",
+          "heading": false
+        },
+        {
+          "term": "boosted black",
+          "heading": false
+        },
+        {
+          "term": "einstein equations",
+          "heading": false
+        },
+        {
+          "term": "stress tensor",
+          "heading": false
+        }
+      ],
+      "extract": "We begin with a description of the procedure we use to constru ct a map from solutions of ﬂuid dynamics to solutions of gravity. We then summarize t he results obtained by implementing this procedure to second order in the derivati ve expansion. Consider a theory of pure gravity with a negative cosmologic al constant. With a par- ticular choice of units ( RAdS = 1) Einstein’s equations are given by 3 EM N = RM N − 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-perturbative-expansion",
+      "number": "3",
+      "title": "The perturbative expansion",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 67,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perturbative",
+          "heading": true
+        },
+        {
+          "term": "expansion",
+          "heading": true
+        },
+        {
+          "term": "orde",
+          "heading": false
+        }
+      ],
+      "extract": "As we have described in § 2, our goal is to set up a perturbative procedure to solve Ein- stein’s equations in asymptotically AdS spacetimes order b y order in a boundary derivative expansion. In this section we will explain the structure of t his perturbative expansion, and outline our implementation of this expansion to second orde r, leaving the details of com- putation to future sections.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-31-the-basic-set-up",
+      "number": "3.1",
+      "title": "The basic set up",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 346,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁeld gauge",
+          "heading": false
+        },
+        {
+          "term": "temperature ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "background ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "velocity",
+          "heading": false
+        },
+        {
+          "term": "diﬀerent",
+          "heading": false
+        },
+        {
+          "term": "metric",
+          "heading": false
+        },
+        {
+          "term": "equations",
+          "heading": false
+        }
+      ],
+      "extract": "In order to mathematically implement our perturbation theo ry, it is useful to regard b and βi described in § 2 as functions of the rescaled ﬁeld theory coordinates ε xµ where ε is a formal parameter that will eventually be set to unity. Notic e that every derivative of βi or b produces a power of ε, consequently powers of ε count the number of derivatives. We now describe a procedure to solve Einstein’s equations",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-general-structure-of-perturbation-theory",
+      "number": "3.2",
+      "title": "General structure of perturbation theory",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perturbation theory",
+          "heading": true
+        },
+        {
+          "term": "einstein equations",
+          "heading": false
+        },
+        {
+          "term": "nth order",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential operator",
+          "heading": false
+        },
+        {
+          "term": "unknown",
+          "heading": false
+        },
+        {
+          "term": "derivatives",
+          "heading": false
+        },
+        {
+          "term": "solve",
+          "heading": false
+        },
+        {
+          "term": "diﬀerent",
+          "heading": false
+        }
+      ],
+      "extract": "Let us imagine that we have solved the perturbation theory to the ( n − 1)th order, i.e., we have determined g(m) for m ≤ n − 1, and have determined the functions β(m) i and b(m) for m ≤ n − 2. Plugging the expansion (3.1) into Einstein’s equations, and extracting the coeﬃcient of εn, we obtain an equation of the form H [ g(0)(β(0) i , b(0)) ] g(n)(xµ ) = sn. (3.4) Here H is a linear diﬀerential operator of second",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-321-constraint-equations",
+      "number": "3.2.1",
+      "title": "Constraint equations",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 528,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "constraint equations",
+          "heading": true
+        },
+        {
+          "term": "ﬂuid dynamics",
+          "heading": false
+        },
+        {
+          "term": "stress tensor",
+          "heading": false
+        },
+        {
+          "term": "zeroth order",
+          "heading": false
+        },
+        {
+          "term": "nth order",
+          "heading": false
+        },
+        {
+          "term": "non-uniqueness",
+          "heading": false
+        },
+        {
+          "term": "zero modes",
+          "heading": false
+        },
+        {
+          "term": "solve",
+          "heading": false
+        }
+      ],
+      "extract": "By abuse of nomenclature, we will refer to those of the Einste in’s equations that are of ﬁrst order in r derivatives as constraint equations. Constraint equation s are obtained by dotting the tensor EM N with the vector dual to the one-form dr. Four of the ﬁve constraint equations ( i.e., those whose free index is a µ index) have an especially simple boundary interpretation; they are simply the equations of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-322-dynamical-equations",
+      "number": "3.2.2",
+      "title": "Dynamical equations",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 329,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zero modes",
+          "heading": false
+        },
+        {
+          "term": "non-singular",
+          "heading": false
+        },
+        {
+          "term": "source",
+          "heading": false
+        },
+        {
+          "term": "dynamical",
+          "heading": true
+        },
+        {
+          "term": "nonzero",
+          "heading": false
+        },
+        {
+          "term": "linear space",
+          "heading": false
+        },
+        {
+          "term": "solve",
+          "heading": false
+        },
+        {
+          "term": "yet",
+          "heading": false
+        }
+      ],
+      "extract": "The remaining constraint Err and the ‘dynamical’ Einstein’s equations Eµν may be used to solve for the unknown function g(n). Roughly speaking, it turns out to be possible to make a judicious choice of variables such that the operator H is converted into a decoupled system of ﬁrst order diﬀerential operators. It is then simpl e to solve the equation (3.4) for an arbitrary source sn by direct integration. This",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-323-summary-of-the-perturbation-analysis",
+      "number": "3.2.3",
+      "title": "Summary of the perturbation analysis",
+      "level": 3,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 94,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stress tensor",
+          "heading": false
+        },
+        {
+          "term": "ﬂuid",
+          "heading": false
+        },
+        {
+          "term": "derivativ",
+          "heading": false
+        }
+      ],
+      "extract": "In summary, it is always possible to ﬁnd a physically unique s olution for the metric g(n), which, in turn, yields the form of the nth order ﬂuid dynamical stress tensor (using the usual AdS/CFT dictionary). This process, being iterative, can be used to recover the ﬂuid dynamics stress tensor to any desired order in the derivativ e expansion. In § 3.3 and § 3.4 we will provide a few more details of our perturbative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-33-outline-of-the-first-order-computation",
+      "number": "3.3",
+      "title": "Outline of the first order computation",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 20,
+      "summary": null,
+      "keywords": [],
+      "extract": "We now present the strategy to implement the general procedu re discussed above to ﬁrst order in the derivative expansion.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-331-solving-the-constraint-equations",
+      "number": "3.3.1",
+      "title": "Solving the constraint equations",
+      "level": 3,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "temperature ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "taylor expansion",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst order",
+          "heading": false
+        },
+        {
+          "term": "equations",
+          "heading": true
+        },
+        {
+          "term": "dynami",
+          "heading": false
+        }
+      ],
+      "extract": "The Einstein constraint equations at ﬁrst order require tha t the zero order velocity and temperature ﬁelds obey the equations of perfect ﬂuid dynami cs ∂µ T µν (0) = 0 , (3.6) where up to an overall constant T µν (0) = 1 (b(0))4 ( ηµν + 4 uµ (0) uν (0) ) . (3.7) While it is diﬃcult to ﬁnd the general solution to these equat ions at all xµ , in order to carry out our ultralocal perturbative procedure at a given p",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-332-solving-the-dynamical-equations",
+      "number": "3.3.2",
+      "title": "Solving the dynamical equations",
+      "level": 3,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 164,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equations",
+          "heading": true
+        },
+        {
+          "term": "ﬁrst order",
+          "heading": false
+        },
+        {
+          "term": "quations",
+          "heading": false
+        }
+      ],
+      "extract": "As described in the previous section, we expand Einstein’s e quations to ﬁrst order and ﬁnd the equations (3.4). Using the ‘solution’ of § 3.3.1, all source terms may be regarded as functions of ﬁrst derivatives of velocity ﬁelds only. The equations (3.4) are then easily integrated subject to boundary conditions and we ﬁnd (3.4) i s given by g(1) = g(1) P + fb(xi, v) gb + fi(xj, v) gi, (3.8) where g(1) P is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-333-the-landau-frame",
+      "number": "3.3.3",
+      "title": "The `Landau' Frame",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 455,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬂuid dynamics",
+          "heading": false
+        },
+        {
+          "term": "stress tensor",
+          "heading": false
+        },
+        {
+          "term": "ambiguity",
+          "heading": false
+        },
+        {
+          "term": "landau",
+          "heading": true
+        },
+        {
+          "term": "perturbation theory",
+          "heading": false
+        },
+        {
+          "term": "non-uniqueness",
+          "heading": false
+        },
+        {
+          "term": "frame",
+          "heading": true
+        },
+        {
+          "term": "ﬁrst order",
+          "heading": false
+        }
+      ],
+      "extract": "Our solution (3.8) for the ﬁrst order metric has a four functi on non-uniqueness in it. As fb and fi may be absorbed into b(1) and β(1) i this non-uniqueness simply represents an ambiguity of convention, and may be ﬁxed by a ‘renormalizati on’ choice. We describe our choice below. Given g(1), it is straightforward to use the AdS/CFT correspondence to recover the stress tensor. To ﬁrst order in ε the boundary stress",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-34-outline-of-the-second-order-computation",
+      "number": "3.4",
+      "title": "Outline of the second order computation",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 46,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "discus",
+          "heading": false
+        },
+        {
+          "term": "implementing",
+          "heading": false
+        },
+        {
+          "term": "order",
+          "heading": true
+        }
+      ],
+      "extract": "Assuming that we have implemented the ﬁrst order calculatio n described in § 3.3, it is then possible to ﬁnd a solution to Einstein’s equations at th e next order. In this case care should be taken in implementing the constraints as we discus s below.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-341-the-constraints-at-second-order",
+      "number": "3.4.1",
+      "title": "The constraints at second order",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 504,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬂuid dynamics",
+          "heading": false
+        },
+        {
+          "term": "order stress",
+          "heading": false
+        },
+        {
+          "term": "stress tensor",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst derivatives",
+          "heading": false
+        },
+        {
+          "term": "conservation equation",
+          "heading": false
+        },
+        {
+          "term": "dissipative",
+          "heading": false
+        },
+        {
+          "term": "solve",
+          "heading": false
+        },
+        {
+          "term": "previous subsection",
+          "heading": false
+        }
+      ],
+      "extract": "The general discussion of § 3.2 allows us to obtain the second order solution to Einstein ’s equations once we have solved the ﬁrst order system as outlin ed in § 3.3. However, we need to confront an important issue before proceeding, owin g to the way we have set up the perturbation expansion. Of course perturbation theory at second order is well deﬁned only once the ﬁrst order equations have been solved. While in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-342-nature-of-source-terms",
+      "number": "3.4.2",
+      "title": "Nature of source terms",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 296,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theory derivatives",
+          "heading": false
+        },
+        {
+          "term": "source",
+          "heading": true
+        },
+        {
+          "term": "ﬁrst order",
+          "heading": false
+        },
+        {
+          "term": "source term",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld theory",
+          "heading": false
+        },
+        {
+          "term": "explained above",
+          "heading": false
+        }
+      ],
+      "extract": "As we have explained above, the Einstein’s equations, to sec ond order, take the schematic form described in (3.4) H [ g(0)(β(0) i , b(0)) ] g(2) = sa + sb (3.13) We have broken up the source term above into two pieces, sa and sb, for conceptual convenience. sa is a local functional of β(0) i and b(0) of up to second order in ﬁeld theory derivatives. Terms contributing to sa have their origin both in two ﬁeld theory",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-343-solution-of-the-constraint-equations",
+      "number": "3.4.3",
+      "title": "Solution of the constraint equations",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 256,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "constraint equations",
+          "heading": true
+        },
+        {
+          "term": "source terms",
+          "heading": false
+        },
+        {
+          "term": "covariantized",
+          "heading": false
+        },
+        {
+          "term": "imitation",
+          "heading": false
+        },
+        {
+          "term": "uce",
+          "heading": false
+        }
+      ],
+      "extract": "With the source terms in place, the procedure to solve for g(2) proceeds in direct imitation of the ﬁrst order calculation. The constraint equations red uce to the expansion to order ε of the equation of conservation of the stress tensor T µν = 1 b4 (4 uµ uν + ηµν ) − 2 ε 1 b3 σµν (3.14) with βi = β(0), b = b(0) + ε b(1). These four equations may be used to solve for the four derivatives ∂µ b(1) at xµ . Consequently",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-344-solving-for-g2-and-the-second-order-stress-t",
+      "number": "3.4.4",
+      "title": "Solving for $g^{(2)}$ and the second order stress tensor",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 115,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stress",
+          "heading": true
+        },
+        {
+          "term": "derivat",
+          "heading": false
+        },
+        {
+          "term": "dure",
+          "heading": false
+        }
+      ],
+      "extract": "Now plugging this solution for b(1) into the source terms it is straightforward to integrate (3.13) to obtain g(2). We ﬁx the ambiguity in the choice of homogeneous mode in this solution as before, by requiring T µν (2) u(0)ν = 0. This condition yields a unique solution for g(2) as well as for the second order correction to the ﬂuid dynamic al stress tensor T µν (2), giving rise to the result (2.9). We present the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-4-the-metric-and-stress-tensor-at-first-order",
+      "number": "4",
+      "title": "The metric and stress tensor at first order",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 338,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "metric",
+          "heading": true
+        },
+        {
+          "term": "dxi",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst order",
+          "heading": false
+        },
+        {
+          "term": "stress",
+          "heading": true
+        },
+        {
+          "term": "tensor",
+          "heading": true
+        },
+        {
+          "term": "black",
+          "heading": false
+        },
+        {
+          "term": "determine",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we will determine the solution, to ﬁrst order in the derivative expansion. As we have described in § 3, the equations that determine g(1) at xµ are ultralocal; consequently we are able to solve the problem point by point. It is always po ssible to choose coordinates to set uµ = (1 , 0, 0, 0) and b(0) = 1 at any given point xµ . Making that choice, the metric (2.6) expanded to ﬁrst order in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-41-scalars-of-so3",
+      "number": "4.1",
+      "title": "Scalars of $SO(3)$",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 907,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "einstein equations",
+          "heading": false
+        },
+        {
+          "term": "scalar sector",
+          "heading": false
+        },
+        {
+          "term": "source term",
+          "heading": false
+        },
+        {
+          "term": "theory metric",
+          "heading": false
+        },
+        {
+          "term": "thi",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst order",
+          "heading": false
+        },
+        {
+          "term": "normalizable",
+          "heading": false
+        },
+        {
+          "term": "stress",
+          "heading": false
+        }
+      ],
+      "extract": "The scalar components of g(1) are parameterized by the functions h1(r) and k1(r) according to17 g(1) ii (r) = 3 r2 h1(r) g(1) vv (r) = k1(r) r2 g(1) vr (r) = −3 2 h1(r). (4.2) Here g(1) ii and g(1) vr are related to each other by our gauge choice T r((g(0))−1g(1)) = 0. The scalar Einstein’s equations ( i.e., those equations that transform as a scalar of SO(3)) may be divided up into constraints and dynamical equati",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-42-vectors-of-so3",
+      "number": "4.2",
+      "title": "Vectors of $SO(3)$",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 455,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dxα dxβ",
+          "heading": false
+        },
+        {
+          "term": "eri",
+          "heading": false
+        },
+        {
+          "term": "dynamical equation",
+          "heading": false
+        },
+        {
+          "term": "vector sector",
+          "heading": false
+        },
+        {
+          "term": "evi",
+          "heading": false
+        },
+        {
+          "term": "stress tensor",
+          "heading": false
+        },
+        {
+          "term": "dxi",
+          "heading": false
+        },
+        {
+          "term": "einstein equations",
+          "heading": false
+        }
+      ],
+      "extract": "In the vector channel the relevant Einstein’s equations are the constraint r2 f (r) Eri +Evi = 0 and a dynamical equation which can be chosen to be any linear combination of the Einstein’s equations Eri = 0 and Evi = 0. The constraint evaluates to ∂ib(0) = ∂vβ(0) i , (4.10) which we will later interpret as a consequence of the conserv ation of boundary momentum. In order to explore the content of the dynamical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-43-the-symmetric-tensors-of-so3",
+      "number": "4.3",
+      "title": "The symmetric tensors of $SO(3)$",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 603,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dxi dxj",
+          "heading": false
+        },
+        {
+          "term": "dxα dxβ",
+          "heading": false
+        },
+        {
+          "term": "symmetric traceless",
+          "heading": false
+        },
+        {
+          "term": "source term",
+          "heading": false
+        },
+        {
+          "term": "stress tensor",
+          "heading": false
+        },
+        {
+          "term": "arbitrary source",
+          "heading": false
+        },
+        {
+          "term": "dxidxj",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst order",
+          "heading": false
+        }
+      ],
+      "extract": "We now turn to g(1) T , the part of g(1) that transforms in the 5, the symmetric traceless two tensor representation, of SO(3). Let us parameterize our metric ﬂuctuation by ( g(1) T ) αβ dxα dxβ = r2 α(1) ij (r) dxi dxj, (4.15) where αij is traceless and symmetric. The Einstein’s equation Eij = 0 yield d dr ( r5 f (r) d dr α(1) ij ) = −6 r2 σ(0) ij , (4.16) where we have deﬁned a symmetric traceless matrix σ(0) ij =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-44-global-solution-to-first-order-in-derivatives",
+      "number": "4.4",
+      "title": "Global solution to first order in derivatives",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dxµ dxν",
+          "heading": false
+        },
+        {
+          "term": "σµν",
+          "heading": false
+        },
+        {
+          "term": "metric",
+          "heading": false
+        },
+        {
+          "term": "covariant",
+          "heading": false
+        },
+        {
+          "term": "higher order",
+          "heading": false
+        },
+        {
+          "term": "subsection",
+          "heading": false
+        },
+        {
+          "term": "check",
+          "heading": false
+        }
+      ],
+      "extract": "In the previous subsection we have computed the metric g(1) about xµ assuming that b(0) = 1 and β(0) i = 0 at the origin. Since it is possible to choose coordinates t o set an arbitrary velocity to zero and an arbitrary b(0) to unity at any given point (and since our perturbation procedure is ultralocal), the results of the p revious subsection contain enough information to write down the metric g(1) about any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-45-stress-tensor-to-first-order",
+      "number": "4.5",
+      "title": "Stress tensor to first order",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stress tensor",
+          "heading": true
+        },
+        {
+          "term": "kµν",
+          "heading": false
+        },
+        {
+          "term": "ηµν",
+          "heading": false
+        },
+        {
+          "term": "σµν",
+          "heading": false
+        },
+        {
+          "term": "utiliz",
+          "heading": false
+        }
+      ],
+      "extract": "Given the solution to the ﬁrst order equations, we can utiliz e the AdS/CFT dictionary to construct the boundary stress tensor using the prescriptio n of [42] (see also [43]). For the metric (4.24) it is not diﬃcult to compute the stress tensor; all we need to do is compute the extrinsic curvature tensor Kµν to the surface at ﬁxed r. By convention, we choose the unit normal to this surface to be outward pointing,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-5-the-metric-and-stress-tensor-at-second-order",
+      "number": "5",
+      "title": "The metric and stress tensor at second order",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 28,
+      "labelStart": "23",
+      "labelEnd": "27",
+      "words": 1419,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "σij",
+          "heading": false
+        },
+        {
+          "term": "velocity ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "metric",
+          "heading": true
+        },
+        {
+          "term": "ﬁrst derivatives",
+          "heading": false
+        },
+        {
+          "term": "derivative terms",
+          "heading": false
+        },
+        {
+          "term": "derivative expansion",
+          "heading": false
+        },
+        {
+          "term": "einstein equations",
+          "heading": false
+        },
+        {
+          "term": "exhaustive list",
+          "heading": false
+        }
+      ],
+      "extract": "In order to obtain the metric and stress tensor at second orde r in the derivative expansion, we follow the method outlined in § 3 and implemented in detail in § 4 to leading order. Concretely, we choose coordinates such that β(0) i = 0 and b(0) = 1 at the point xµ = 0. The metric g(0) + g(1) given in (4.24) may be expanded to second order in derivative s. This involves Taylor expanding g(0) to second order and g(1)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-51-solution-in-the-scalar-sector",
+      "number": "5.1",
+      "title": "Solution in the scalar sector",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": "27",
+      "labelEnd": "29",
+      "words": 645,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stress tensor",
+          "heading": false
+        },
+        {
+          "term": "scalar",
+          "heading": true
+        },
+        {
+          "term": "source term",
+          "heading": false
+        },
+        {
+          "term": "behaviour",
+          "heading": false
+        },
+        {
+          "term": "one-form",
+          "heading": false
+        },
+        {
+          "term": "constraint",
+          "heading": false
+        },
+        {
+          "term": "sector",
+          "heading": true
+        },
+        {
+          "term": "integrated",
+          "heading": false
+        }
+      ],
+      "extract": "Given the general second order ﬂuctuation (5.1), we paramet erize scalar components of g(2) in terms of the functions h2(r) and k2(r) according to g(2) ii (r) = 3 r2 h2(r) g(2) vv (r) = k2(r) r2 g(2) vr (r) = −3 2 h2(r) . (5.4) As we have explained in the § 4.1, the constraint Einstein’s equations in this sector are given by the r and v component of the one-form formed by contracting the Einstei n tensor with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-52-solution-in-the-vector-sector",
+      "number": "5.2",
+      "title": "Solution in the vector sector",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 390,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "derivativ",
+          "heading": false
+        },
+        {
+          "term": "stress tensor",
+          "heading": false
+        },
+        {
+          "term": "vector",
+          "heading": true
+        },
+        {
+          "term": "solution",
+          "heading": true
+        },
+        {
+          "term": "once again",
+          "heading": false
+        },
+        {
+          "term": "derivatives",
+          "heading": false
+        }
+      ],
+      "extract": "The analysis of the vector ﬂuctuations at second order mimic s the computation described in § 4.2. The vector ﬂuctuation in g(2) is chosen as described in (5.1) to be g(2) vi = j(2) i r2 . (5.12) Once again, the analysis is easily done by looking at the cons traint equations which are obtained by contracting the tensor EM N with the vector dual to dr. The ith constraint equation evaluates to 18 ∂ib(1) = 5 vi + 5",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-53-solution-in-the-tensor-sector",
+      "number": "5.3",
+      "title": "Solution in the tensor sector",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stress tensor",
+          "heading": false
+        },
+        {
+          "term": "aij",
+          "heading": false
+        },
+        {
+          "term": "solution",
+          "heading": true
+        },
+        {
+          "term": "sector",
+          "heading": true
+        },
+        {
+          "term": "coeﬃcient",
+          "heading": false
+        },
+        {
+          "term": "leading",
+          "heading": false
+        }
+      ],
+      "extract": "Finally, we turn to the tensor modes at second order where we s hall recover the explicit form of the second order contributions to the stress tensor. Our task is now to determine the functions α(2) ij (r) in (5.1). As in § 4.3, in the symmetric traceless sector of SO(3) one has only the dynamical equation given by 1 2 r d dr [ r5 ( 1 − 1 r4 ) d dr α(2) ij (r) ] = Aij(r) (5.19) where Aij(r) = a1(r) ( Tij + 1 3Tij",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-54-global-solution-to-second-order-in-derivative",
+      "number": "5.4",
+      "title": "Global solution to second order in derivatives",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 437,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dxµ dxν",
+          "heading": false
+        },
+        {
+          "term": "duα",
+          "heading": false
+        },
+        {
+          "term": "pµν",
+          "heading": false
+        },
+        {
+          "term": "σµν",
+          "heading": false
+        },
+        {
+          "term": "gµν",
+          "heading": false
+        },
+        {
+          "term": "replacements",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the following metric ds2 = −2 uµ dxµ dr−r2 f (b r) uµ uν dxµ dxν +r2 Pµν dxµ dxν +3 b2 h2(b r) uµ dxµ dr+Gµν dxµ dxν , (5.22) where we have deﬁned a symmetric tensor Gµν by combing the contributions in the ﬁeld theory directions from the ﬁrst and second order metrics g(0) + g(1) Gµν = r2 ( 2 b F (b r) σµν + b2 α(2) µν (b r) ) + 1 r2 ( 2 3 r3 ∂λ uλ uµ uν + k2(b r) b2 uµ uν ) + r2 b2 h2(b r) Pµν + 1 r2 ( −2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-55-stress-tensor-to-second-order",
+      "number": "5.5",
+      "title": "Stress tensor to second order",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 196,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stress tensor",
+          "heading": true
+        },
+        {
+          "term": "ﬂuctuatio",
+          "heading": false
+        },
+        {
+          "term": "bed",
+          "heading": false
+        },
+        {
+          "term": "order",
+          "heading": true
+        }
+      ],
+      "extract": "The stress tensor dual to the solution to second order descri bed in § 5.4 can be obtained by using the standard formula (4.25). To determine the extri nsic curvature at large r, it suﬃces to know the asymptotic form of the metric since we are i nterested in terms that have a ﬁnite limit as we take r → ∞. Consequently, in order to compute the stress tensor it is suﬃcient to replace the various functions of r that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-6-second-order-fluid-dynamics",
+      "number": "6",
+      "title": "Second order fluid dynamics",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "33",
+      "labelEnd": "33",
+      "words": 103,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stress tensor",
+          "heading": false
+        },
+        {
+          "term": "initiate",
+          "heading": false
+        },
+        {
+          "term": "sou",
+          "heading": false
+        }
+      ],
+      "extract": "In the previous section we have derived the precise form of th e ﬂuid dynamical stress tensor dual to gravity on AdS 5 including all terms with no more than two derivatives. In this section we initiate a study of the physics of this stress tensor. In § 6.1 below we will demonstrate that our stress tensor transforms homogeneous ly under Weyl transformations. In § 6.2 we compute the dispersion relation for low",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-61-weyl-transformation-of-the-stress-tensor",
+      "number": "6.1",
+      "title": "Weyl transformation of the stress tensor",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 36,
+      "labelStart": "33",
+      "labelEnd": "35",
+      "words": 864,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stress tensor",
+          "heading": true
+        },
+        {
+          "term": "weyl transformation",
+          "heading": true
+        },
+        {
+          "term": "metric gµν",
+          "heading": false
+        },
+        {
+          "term": "weyl covariant",
+          "heading": false
+        },
+        {
+          "term": "full stress",
+          "heading": false
+        },
+        {
+          "term": "weyl invariance",
+          "heading": false
+        },
+        {
+          "term": "σµν",
+          "heading": false
+        },
+        {
+          "term": "transformation properties",
+          "heading": false
+        }
+      ],
+      "extract": "Thus far we have extracted the stress tensor for a conformal ﬂ uid in ﬂat space R3, 1. We would like to ensure that the second order stress tensor we ha ve derived transforms homo- geneously under Weyl rescaling. In order to check this we per form the obvious minimal covariantization of our stress tensor to generalize it to a ﬂ uid stress tensor about an arbi- trary boundary metric gµν .22 and study its Weyl",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-62-spectrum-of-small-fluctuations",
+      "number": "6.2",
+      "title": "Spectrum of small fluctuations",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 256,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬂuid",
+          "heading": false
+        },
+        {
+          "term": "mode",
+          "heading": false
+        },
+        {
+          "term": "ound",
+          "heading": false
+        },
+        {
+          "term": "quations",
+          "heading": false
+        },
+        {
+          "term": "spectrum",
+          "heading": true
+        }
+      ],
+      "extract": "Consider a static bath of homogeneous ﬂuid at temperature T . Given the two derivative stress tensor derived above (2.9), it is trivial to solve for the spectrum of small oscillations of ﬂuid dynamical modes about this background. As the backgr ound is translationally invariant, these ﬂuctuations can be taken to have the form βi(v, xj) = δβi ei ω v +i kj xj T (v, xj) = 1 + δT e i ω v +i kjxj (6.7) Plugging (6.7)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-63-comparison-with-baier-etal-added-in-v2",
+      "number": "6.3",
+      "title": "Comparison with Baier et.al. (added in v2)",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 778,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shear quasinormal",
+          "heading": false
+        },
+        {
+          "term": "quasinormal mode",
+          "heading": false
+        },
+        {
+          "term": "ﬂuid dynamical",
+          "heading": false
+        },
+        {
+          "term": "ﬂuid dynamics",
+          "heading": false
+        },
+        {
+          "term": "stress tensor",
+          "heading": false
+        },
+        {
+          "term": "order stress",
+          "heading": false
+        },
+        {
+          "term": "upto",
+          "heading": false
+        },
+        {
+          "term": "undetermined",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection we compare our results with those of the pr eprint [37] which appeared in an arXiv listing simultaneously with the ﬁrst version of t his paper. Where our results overlap we ﬁnd perfect agreement. The authors of [37] demonstrated that conformal invariance determines the two deriva- tive ﬂuid dynamical stress tensor of any conformal ﬁeld th eo ry to upto ﬁve parameters (see also [41] for an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-7-discussion",
+      "number": "7",
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 43,
+      "labelStart": "37",
+      "labelEnd": "42",
+      "words": 2385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬂuid dynamics",
+          "heading": false
+        },
+        {
+          "term": "ﬂuid dynamical",
+          "heading": false
+        },
+        {
+          "term": "charged ﬂuid",
+          "heading": false
+        },
+        {
+          "term": "black brane",
+          "heading": false
+        },
+        {
+          "term": "stress tensor",
+          "heading": false
+        },
+        {
+          "term": "gravitational dual",
+          "heading": false
+        },
+        {
+          "term": "boundary stress",
+          "heading": false
+        },
+        {
+          "term": "brane solution",
+          "heading": false
+        }
+      ],
+      "extract": "We have demonstrated how to start from a general, stationary black brane solution de- scribing perfect ﬂuid dynamics and promote the parameters i n the gravitational solution to physical ﬂuctuation modes. This procedure allows us to set u p a ﬂuctuation analysis which can be used to extract the boundary stress tensor of ﬂuids dua l to gravity in asymptotically AdS5 spacetimes, in a derivative expansion. Our",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 47,
+      "labelStart": "42",
+      "labelEnd": "46",
+      "words": 1386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shear viscosity",
+          "heading": false
+        },
+        {
+          "term": "viscous hydrodynamics",
+          "heading": false
+        },
+        {
+          "term": "ads cft",
+          "heading": false
+        },
+        {
+          "term": "ads black",
+          "heading": false
+        },
+        {
+          "term": "quark-gluon plasma",
+          "heading": false
+        },
+        {
+          "term": "starinets",
+          "heading": false
+        },
+        {
+          "term": "yang-mills plasma",
+          "heading": false
+        },
+        {
+          "term": "black holes",
+          "heading": false
+        }
+      ],
+      "extract": "It is a pleasure to thank R. Loganayagam, H. Reall and T. Wisem an for collaboration at the initial stages of this project, and for several invalu able comments and discussions throughout its execution. We thank the authors of [37] for sh aring their results with us prior to publication. We would like to thank P. Basu, D. Beren stein, R. Gopakumar, S. Gupta, M. Headrick, H. Liu, J. Lucietti, G. Mandal, S. Triv edi,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 2,
+        "items": [
+          "7 Discussion",
+          "7 Discussion"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "ﬂuid stress",
+      "heading": false
+    },
+    {
+      "term": "stress tensor",
+      "heading": true
+    },
+    {
+      "term": "order stress",
+      "heading": true
+    },
+    {
+      "term": "derivative stress",
+      "heading": false
+    },
+    {
+      "term": "dynamical stress",
+      "heading": false
+    },
+    {
+      "term": "dynamics stress",
+      "heading": false
+    },
+    {
+      "term": "boundary stress",
+      "heading": false
+    },
+    {
+      "term": "stress ensor",
+      "heading": false
+    },
+    {
+      "term": "ﬂuid dual",
+      "heading": false
+    },
+    {
+      "term": "full stress",
+      "heading": false
+    },
+    {
+      "term": "order metric",
+      "heading": true
+    },
+    {
+      "term": "stress energy",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "An exhaustive list of two derivative terms in made up from the temperature and velocity ﬁelds",
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 35,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 36,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p43); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 36 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0712.2456v4"
+  }
+}

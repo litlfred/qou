@@ -688,11 +688,11 @@
       "summary": null,
       "keywords": [
         {
-          "term": "fusion category",
+          "term": "frobenius-perron dimension",
           "heading": false
         },
         {
-          "term": "frobenius-perron dimension",
+          "term": "fusion category",
           "heading": false
         },
         {
@@ -752,11 +752,11 @@
           "heading": false
         },
         {
-          "term": "tensor product",
+          "term": "simple objects",
           "heading": false
         },
         {
-          "term": "simple objects",
+          "term": "tensor product",
           "heading": false
         },
         {
@@ -1032,11 +1032,11 @@
           "heading": false
         },
         {
-          "term": "tensor functor",
+          "term": "category mathcal",
           "heading": false
         },
         {
-          "term": "category mathcal",
+          "term": "tensor functor",
           "heading": false
         },
         {
@@ -1303,11 +1303,11 @@
           "heading": false
         },
         {
-          "term": "comultiplication delta",
+          "term": "phi otimes",
           "heading": false
         },
         {
-          "term": "phi otimes",
+          "term": "comultiplication delta",
           "heading": false
         },
         {
@@ -1359,11 +1359,11 @@
           "heading": false
         },
         {
-          "term": "non-degenerate left",
+          "term": "integral ell",
           "heading": false
         },
         {
-          "term": "integral ell",
+          "term": "non-degenerate left",
           "heading": false
         }
       ],
@@ -1746,7 +1746,7 @@
           "heading": false
         },
         {
-          "term": "unital tensor",
+          "term": "faithful module",
           "heading": false
         }
       ],
@@ -2068,12 +2068,12 @@
           "heading": false
         },
         {
-          "term": "tensor",
-          "heading": true
-        },
-        {
           "term": "classiﬁes ﬁrst",
           "heading": false
+        },
+        {
+          "term": "tensor",
+          "heading": true
         },
         {
           "term": "tensor functor",
@@ -2084,11 +2084,11 @@
           "heading": false
         },
         {
-          "term": "tensor structure",
+          "term": "associativity constraint",
           "heading": false
         },
         {
-          "term": "associativity constraint",
+          "term": "tensor structure",
           "heading": false
         }
       ],
@@ -2811,11 +2811,11 @@
           "heading": false
         },
         {
-          "term": "fusion category",
+          "term": "category mathcal",
           "heading": false
         },
         {
-          "term": "category mathcal",
+          "term": "fusion category",
           "heading": false
         },
         {
@@ -2855,11 +2855,11 @@
           "heading": false
         },
         {
-          "term": "nondegenerate fusion",
+          "term": "otimes bbb",
           "heading": false
         },
         {
-          "term": "otimes bbb",
+          "term": "nondegenerate fusion",
           "heading": false
         },
         {
@@ -2879,7 +2879,7 @@
           "heading": false
         },
         {
-          "term": "equivalent liftings",
+          "term": "fin",
           "heading": false
         }
       ],
@@ -3011,11 +3011,11 @@
           "heading": false
         },
         {
-          "term": "tensor categories",
+          "term": "fusion categories",
           "heading": false
         },
         {
-          "term": "fusion categories",
+          "term": "tensor categories",
           "heading": false
         },
         {
@@ -3061,16 +3061,12 @@
       "heading": false
     },
     {
-      "term": "semisimple hopf",
-      "heading": false
-    },
-    {
       "term": "fpdim mathcal",
       "heading": false
     },
     {
-      "term": "weak hopf",
-      "heading": true
+      "term": "semisimple hopf",
+      "heading": false
     },
     {
       "term": "let mathcal",
@@ -3079,6 +3075,10 @@
     {
       "term": "mathcal text",
       "heading": false
+    },
+    {
+      "term": "weak hopf",
+      "heading": true
     },
     {
       "term": "mathcal module",

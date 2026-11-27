@@ -1,0 +1,690 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0712.2456v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0712.2456v4  [hep-th]  2 Apr 2008\nNonlinear Fluid Dynamics from Gravity\nSayantani Bhattacharyyaa∗, Veronika E Hubeny b†,\nShiraz Minwalla a‡, Mukund Rangamani b§\naDepartment of Theoretical Physics,Tata Institute of Funda mental Research,\nHomi Bhabha Rd, Mumbai 400005, India\nb Centre for Particle Theory & Department of Mathematical Sci ences,\nScience Laboratories, South Road, Durham DH1 3LE, United Ki ngdom\nNovember 26, 2024\nTIFR/TH/07-44\nDCPT-07/73\nNI07097\nAbstract\nBlack branes in AdS 5 appear in a four parameter family labeled by their velocity\nand temperature. Promoting these parameters",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The AdS/CFT correspondence provides an important laborato ry to explore both gravita-\ntional physics as well as strongly coupled dynamics in a clas s of quantum ﬁeld theories.\nUsing this correspondence it is possible to test general lor e about quantum ﬁeld theory in\na non perturbative setting and so learn general lessons abou t strongly coupled dynamics.\nConversely, it is also possible to use the AdS/CFT duality to convert strongly held convic-\ntions about the behaviour of quantum ﬁeld theories into gene ral lessons about gravitational\nand stringy dynamics.\nIn this paper we use the AdS/CFT co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fluid dynamics from gravity",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-2-fluid-dynamics-from-gravity.md",
+      "narrative": null,
+      "content": "We begin with a description of the procedure we use to constru ct a map from solutions\nof ﬂuid dynamics to solutions of gravity. We then summarize t he results obtained by\nimplementing this procedure to second order in the derivati ve expansion.\nConsider a theory of pure gravity with a negative cosmologic al constant. With a par-\nticular choice of units ( RAdS = 1) Einstein’s equations are given by 3\nEM N = RM N − 1\n2 gM NR − 6 gM N = 0\n=⇒ RM N + 4 gM N = 0, R = −20.\n(2.1)\nOf course the equations (2.1) admit AdS 5 solutions. Another class of solutions to these\nequations is given by the ‘booste",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The perturbative expansion",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-3-the-perturbative-expansion.md",
+      "narrative": null,
+      "content": "As we have described in § 2, our goal is to set up a perturbative procedure to solve Ein-\nstein’s equations in asymptotically AdS spacetimes order b y order in a boundary derivative\nexpansion. In this section we will explain the structure of t his perturbative expansion, and\noutline our implementation of this expansion to second orde r, leaving the details of com-\nputation to future sections.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The basic set up",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-31-the-basic-set-up.md",
+      "narrative": null,
+      "content": "In order to mathematically implement our perturbation theo ry, it is useful to regard b and\nβi described in § 2 as functions of the rescaled ﬁeld theory coordinates ε xµ where ε is a\nformal parameter that will eventually be set to unity. Notic e that every derivative of βi\nor b produces a power of ε, consequently powers of ε count the number of derivatives. We\nnow describe a procedure to solve Einstein’s equations in a p ower series in ε. Consider the\n12R. Loganayagam [41] informs us that he has succeeded in rewri ting our stress tensor in a number of\ndiﬀerent compact forms, one of which makes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General structure of perturbation theory",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-32-general-structure-of-perturbation-theory.md",
+      "narrative": null,
+      "content": "Let us imagine that we have solved the perturbation theory to the ( n − 1)th order, i.e.,\nwe have determined g(m) for m ≤ n − 1, and have determined the functions β(m)\ni and b(m)\nfor m ≤ n − 2. Plugging the expansion (3.1) into Einstein’s equations, and extracting the\ncoeﬃcient of εn, we obtain an equation of the form\nH\n[\ng(0)(β(0)\ni , b(0))\n]\ng(n)(xµ ) = sn. (3.4)\nHere H is a linear diﬀerential operator of second order in the varia ble r alone. As g(n) is\nalready of order εn, and since every boundary derivative appears with an additi onal power\nof ε, H is an ultralocal operator in the ﬁeld th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Constraint equations",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-321-constraint-equations.md",
+      "narrative": null,
+      "content": "By abuse of nomenclature, we will refer to those of the Einste in’s equations that are of\nﬁrst order in r derivatives as constraint equations. Constraint equation s are obtained by\ndotting the tensor EM N with the vector dual to the one-form dr. Four of the ﬁve constraint\nequations ( i.e., those whose free index is a µ index) have an especially simple boundary\ninterpretation; they are simply the equations of boundary e nergy momentum conservation.\nIn the context of our perturbative analysis, these equation s simply reduce to\n∂µ T µν\n(n−1) = 0 (3.5)\nwhere T µν\n(n−1) is the boundary stress tenso",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dynamical equations",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-322-dynamical-equations.md",
+      "narrative": null,
+      "content": "The remaining constraint Err and the ‘dynamical’ Einstein’s equations Eµν may be used\nto solve for the unknown function g(n). Roughly speaking, it turns out to be possible to\nmake a judicious choice of variables such that the operator H is converted into a decoupled\nsystem of ﬁrst order diﬀerential operators. It is then simpl e to solve the equation (3.4)\nfor an arbitrary source sn by direct integration. This procedure actually yields a who le\nlinear space of solutions. The undetermined constants of in tegration in this procedure are\narbitrary functions of xµ and multiply zero modes of the ope",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary of the perturbation analysis",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-323-summary-of-the-perturbation-analysis.md",
+      "narrative": null,
+      "content": "In summary, it is always possible to ﬁnd a physically unique s olution for the metric g(n),\nwhich, in turn, yields the form of the nth order ﬂuid dynamical stress tensor (using the\nusual AdS/CFT dictionary). This process, being iterative, can be used to recover the ﬂuid\ndynamics stress tensor to any desired order in the derivativ e expansion.\nIn § 3.3 and § 3.4 we will provide a few more details of our perturbative pro cedure,\nin the context of implementing this procedure to ﬁrst and sec ond order in the derivative\nexpansion.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline of the first order computation",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-008-33-outline-of-the-first-order-computation.md",
+      "narrative": null,
+      "content": "We now present the strategy to implement the general procedu re discussed above to ﬁrst\norder in the derivative expansion.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solving the constraint equations",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-009-331-solving-the-constraint-equations.md",
+      "narrative": null,
+      "content": "The Einstein constraint equations at ﬁrst order require tha t the zero order velocity and\ntemperature ﬁelds obey the equations of perfect ﬂuid dynami cs\n∂µ T µν\n(0) = 0 , (3.6)\nwhere up to an overall constant\nT µν\n(0) = 1\n(b(0))4\n(\nηµν + 4 uµ\n(0) uν\n(0)\n)\n. (3.7)\nWhile it is diﬃcult to ﬁnd the general solution to these equat ions at all xµ , in order to\ncarry out our ultralocal perturbative procedure at a given p oint yµ , we only need to solve\nthese constraints to ﬁrst order in a Taylor expansion of the ﬁ elds b and βi about the point\nyµ . This is, of course, easily achieved. The four equatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solving the dynamical equations",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-010-332-solving-the-dynamical-equations.md",
+      "narrative": null,
+      "content": "As described in the previous section, we expand Einstein’s e quations to ﬁrst order and\nﬁnd the equations (3.4). Using the ‘solution’ of § 3.3.1, all source terms may be regarded\nas functions of ﬁrst derivatives of velocity ﬁelds only. The equations (3.4) are then easily\nintegrated subject to boundary conditions and we ﬁnd (3.4) i s given by\ng(1) = g(1)\nP + fb(xi, v) gb + fi(xj, v) gi, (3.8)\nwhere g(1)\nP is a particular solution to (3.4), and fb and fi are a basis for the zero modes of\nH that were described in the § 3.2. Plugging in this solution, the full metric g(0) + g(1),\nwhen expanded to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The `Landau' Frame",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-011-333-the-landau-frame.md",
+      "narrative": null,
+      "content": "Our solution (3.8) for the ﬁrst order metric has a four functi on non-uniqueness in it. As\nfb and fi may be absorbed into b(1) and β(1)\ni this non-uniqueness simply represents an\nambiguity of convention, and may be ﬁxed by a ‘renormalizati on’ choice. We describe our\nchoice below.\nGiven g(1), it is straightforward to use the AdS/CFT correspondence to recover the\nstress tensor. To ﬁrst order in ε the boundary stress tensor dual to the metric (3.9)\nevaluates to\nT µν = 1\nb4 (ηµν + 4 uµ uν ) − 2\nb3 T µν\n(1), (3.10)\nwhere\nb = b(0) + ε(b(1) + fb)\nβi = ε(β(1)\ni + fi)\n(3.11)\nwhere T µν\n(1), deﬁned by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline of the second order computation",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-012-34-outline-of-the-second-order-computation.md",
+      "narrative": null,
+      "content": "Assuming that we have implemented the ﬁrst order calculatio n described in § 3.3, it is\nthen possible to ﬁnd a solution to Einstein’s equations at th e next order. In this case care\nshould be taken in implementing the constraints as we discus s below.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The constraints at second order",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-013-341-the-constraints-at-second-order.md",
+      "narrative": null,
+      "content": "The general discussion of § 3.2 allows us to obtain the second order solution to Einstein ’s\nequations once we have solved the ﬁrst order system as outlin ed in § 3.3. However, we\nneed to confront an important issue before proceeding, owin g to the way we have set up\nthe perturbation expansion. Of course perturbation theory at second order is well deﬁned\nonly once the ﬁrst order equations have been solved. While in principle we should solve\nthese equations everywhere in R3, 1, in the previous subsection we did not quite achieve\nthat; we were content to solve the constraint equation (3.6) only",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nature of source terms",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-014-342-nature-of-source-terms.md",
+      "narrative": null,
+      "content": "As we have explained above, the Einstein’s equations, to sec ond order, take the schematic\nform described in (3.4)\nH\n[\ng(0)(β(0)\ni , b(0))\n]\ng(2) = sa + sb (3.13)\nWe have broken up the source term above into two pieces, sa and sb, for conceptual\nconvenience. sa is a local functional of β(0)\ni and b(0) of up to second order in ﬁeld theory\nderivatives. Terms contributing to sa have their origin both in two ﬁeld theory derivatives\nacting on the metric g(0) and exactly one ﬁeld theory derivative acting on g(1) (recall that\ng(1) itself is a local function of β(0)\ni and b(0) of ﬁrst order in derivat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solution of the constraint equations",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-015-343-solution-of-the-constraint-equations.md",
+      "narrative": null,
+      "content": "With the source terms in place, the procedure to solve for g(2) proceeds in direct imitation\nof the ﬁrst order calculation. The constraint equations red uce to the expansion to order ε\nof the equation of conservation of the stress tensor\nT µν = 1\nb4 (4 uµ uν + ηµν ) − 2 ε 1\nb3 σµν (3.14)\nwith βi = β(0), b = b(0) + ε b(1). These four equations may be used to solve for the four\nderivatives ∂µ b(1) at xµ . Consequently the constraint equations plus our choice of g auge,\nuniquely determined the ﬁrst order correction of the temper ature ﬁeld b(1) and velocity\nﬁeld β(1)\ni as a function of the zeroth",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solving for $g^{(2)}$ and the second order stress tensor",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-016-344-solving-for-g2-and-the-second-order-stress-t.md",
+      "narrative": null,
+      "content": "Now plugging this solution for b(1) into the source terms it is straightforward to integrate\n(3.13) to obtain g(2). We ﬁx the ambiguity in the choice of homogeneous mode in this\nsolution as before, by requiring T µν\n(2) u(0)ν = 0. This condition yields a unique solution for\ng(2) as well as for the second order correction to the ﬂuid dynamic al stress tensor T µν\n(2),\ngiving rise to the result (2.9). We present the details of the second order computation in\n§ 5.\nIn the rest of this paper we will present our implementation o f our perturbative proce-\ndure described above, to ﬁrst and second orde",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The metric and stress tensor at first order",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-017-4-the-metric-and-stress-tensor-at-first-order.md",
+      "narrative": null,
+      "content": "In this section we will determine the solution, to ﬁrst order in the derivative expansion. As\nwe have described in § 3, the equations that determine g(1) at xµ are ultralocal; consequently\nwe are able to solve the problem point by point. It is always po ssible to choose coordinates\nto set uµ = (1 , 0, 0, 0) and b(0) = 1 at any given point xµ . Making that choice, the metric\n(2.6) expanded to ﬁrst order in derivatives in the neighbour hood of xµ (chosen to be the\norigin of R3, 1 for notational simplicity) is given by\nds2\n(0) = 2 dv dr − r2 f (r) dv2 + r2 dxi dxi\n− 2 xµ ∂µ β(0)\ni dxi dr − 2 xµ ∂",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Scalars of $SO(3)$",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-018-41-scalars-of-so3.md",
+      "narrative": null,
+      "content": "The scalar components of g(1) are parameterized by the functions h1(r) and k1(r) according\nto17\ng(1)\nii (r) = 3 r2 h1(r)\ng(1)\nvv (r) = k1(r)\nr2\ng(1)\nvr (r) = −3\n2 h1(r).\n(4.2)\nHere g(1)\nii and g(1)\nvr are related to each other by our gauge choice T r((g(0))−1g(1)) = 0.\nThe scalar Einstein’s equations ( i.e., those equations that transform as a scalar of\nSO(3)) may be divided up into constraints and dynamical equati ons. The constraint\nequations are obtained by contracting Einstein’s equation s (the ﬁrst line of (2.1)) with the\n17In the spatial R3 ⊂ R3, 1 we will often for ease of notation, avo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vectors of $SO(3)$",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-019-42-vectors-of-so3.md",
+      "narrative": null,
+      "content": "In the vector channel the relevant Einstein’s equations are the constraint r2 f (r) Eri +Evi =\n0 and a dynamical equation which can be chosen to be any linear combination of the\nEinstein’s equations Eri = 0 and Evi = 0. The constraint evaluates to\n∂ib(0) = ∂vβ(0)\ni , (4.10)\nwhich we will later interpret as a consequence of the conserv ation of boundary momentum.\nIn order to explore the content of the dynamical equation (we choose Eri = 0), it is\nconvenient to parameterize the vector part of the ﬂuctuatio n metric by the functions j(1)\ni ,\nas (\ng(1)\nV\n)\nαβ\ndxα dxβ = 2 r2 (1 − f (r)) j(1)\ni (r)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The symmetric tensors of $SO(3)$",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-020-43-the-symmetric-tensors-of-so3.md",
+      "narrative": null,
+      "content": "We now turn to g(1)\nT , the part of g(1) that transforms in the 5, the symmetric traceless two\ntensor representation, of SO(3). Let us parameterize our metric ﬂuctuation by\n(\ng(1)\nT\n)\nαβ\ndxα dxβ = r2 α(1)\nij (r) dxi dxj, (4.15)\nwhere αij is traceless and symmetric. The Einstein’s equation Eij = 0 yield\nd\ndr\n(\nr5 f (r) d\ndr α(1)\nij\n)\n= −6 r2 σ(0)\nij , (4.16)\nwhere we have deﬁned a symmetric traceless matrix\nσ(0)\nij = ∂(iβ(0)\nj) − 1\n3 δij ∂mβ(0)\nm . (4.17)\nThe LHS of (4.16) is the restriction of the operator H of (3.4) to the tensor sector, and\nthe RHS of this equation is the tensor part of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Global solution to first order in derivatives",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-021-44-global-solution-to-first-order-in-derivatives.md",
+      "narrative": null,
+      "content": "In the previous subsection we have computed the metric g(1) about xµ assuming that\nb(0) = 1 and β(0)\ni = 0 at the origin. Since it is possible to choose coordinates t o set an\narbitrary velocity to zero and an arbitrary b(0) to unity at any given point (and since our\nperturbation procedure is ultralocal), the results of the p revious subsection contain enough\ninformation to write down the metric g(1) about any point. A simple way to do this is to\nconstruct a covariant metric 19, as a function of uµ and b, which reduces to (4.22) when\nb(0) = 1 and β(0)\ni = 0. It is easy to check that\nds2 = −2 u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stress tensor to first order",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-022-45-stress-tensor-to-first-order.md",
+      "narrative": null,
+      "content": "Given the solution to the ﬁrst order equations, we can utiliz e the AdS/CFT dictionary to\nconstruct the boundary stress tensor using the prescriptio n of [42] (see also [43]). For the\nmetric (4.24) it is not diﬃcult to compute the stress tensor; all we need to do is compute\nthe extrinsic curvature tensor Kµν to the surface at ﬁxed r. By convention, we choose the\nunit normal to this surface to be outward pointing, i.e. pointing towards the boundary, in\nthe deﬁnition of Kµν . Using then the deﬁnition\nT µ\nν = −2 lim\nr→∞\nr4 (K µ\nν − δµ\nν ) , (4.25)\non our solution (4.24), we ﬁnd the result is give",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The metric and stress tensor at second order",
+      "pageStart": 24,
+      "pageEnd": 28,
+      "target": "../sections/sec-023-5-the-metric-and-stress-tensor-at-second-order.md",
+      "narrative": null,
+      "content": "In order to obtain the metric and stress tensor at second orde r in the derivative expansion,\nwe follow the method outlined in § 3 and implemented in detail in § 4 to leading order.\nConcretely, we choose coordinates such that β(0)\ni = 0 and b(0) = 1 at the point xµ = 0.\nThe metric g(0) + g(1) given in (4.24) may be expanded to second order in derivative s.\nThis involves Taylor expanding g(0) to second order and g(1) to ﬁrst order, the second order\nanalogue of (4.1). As we have explained in § 3.4, at this stage we also make the substitution\nb(0) → b(0) + b(1), and treat b(1) as an order ε term,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solution in the scalar sector",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-024-51-solution-in-the-scalar-sector.md",
+      "narrative": null,
+      "content": "Given the general second order ﬂuctuation (5.1), we paramet erize scalar components of\ng(2) in terms of the functions h2(r) and k2(r) according to\ng(2)\nii (r) = 3 r2 h2(r)\ng(2)\nvv (r) = k2(r)\nr2\ng(2)\nvr (r) = −3\n2 h2(r) .\n(5.4)\nAs we have explained in the § 4.1, the constraint Einstein’s equations in this sector are\ngiven by the r and v component of the one-form formed by contracting the Einstei n tensor\nwith the vector dual to the one-form dr. The v component of this constraint, i.e. the\nsecond order expansion of (4.3), evaluates to\n1\nb(0) ∂vb(1) = 1\nb(1) S . (5.5)\nThis equation enables us t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solution in the vector sector",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-025-52-solution-in-the-vector-sector.md",
+      "narrative": null,
+      "content": "The analysis of the vector ﬂuctuations at second order mimic s the computation described\nin § 4.2. The vector ﬂuctuation in g(2) is chosen as described in (5.1) to be\ng(2)\nvi = j(2)\ni\nr2 . (5.12)\nOnce again, the analysis is easily done by looking at the cons traint equations which are\nobtained by contracting the tensor EM N with the vector dual to dr. The ith constraint\nequation evaluates to\n18 ∂ib(1) = 5 vi + 5 vi + 15 Vi − 15\n4 Vi − 33\n2 Vi . (5.13)\nThis equation allows us to solve for the spatial derivatives of b(1) in terms of derivatives of\nβ(0)\ni and b(0). (5.13) is simply the expan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solution in the tensor sector",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-026-53-solution-in-the-tensor-sector.md",
+      "narrative": null,
+      "content": "Finally, we turn to the tensor modes at second order where we s hall recover the explicit\nform of the second order contributions to the stress tensor. Our task is now to determine\nthe functions α(2)\nij (r) in (5.1). As in § 4.3, in the symmetric traceless sector of SO(3) one\nhas only the dynamical equation given by\n1\n2 r\nd\ndr\n[\nr5\n(\n1 − 1\nr4\n) d\ndr α(2)\nij (r)\n]\n= Aij(r) (5.19)\nwhere\nAij(r) = a1(r)\n(\nTij + 1\n3Tij + tij\n)\n+ a5(r) Tij + a6(r) Tij − 1\n4 a7(r) Tij\nwith the coeﬃcient functions\na1(r) = 3 p(r) + 11\np(r) + 5 − 3 r F (r)\na5(r) = 1\n2\n(\n1 + 1\nr4\n)\na6(r) = 4\nr2\nr2 p(r) + 3 r2 − r −",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Global solution to second order in derivatives",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-027-54-global-solution-to-second-order-in-derivative.md",
+      "narrative": null,
+      "content": "Consider the following metric\nds2 = −2 uµ dxµ dr−r2 f (b r) uµ uν dxµ dxν +r2 Pµν dxµ dxν +3 b2 h2(b r) uµ dxµ dr+Gµν dxµ dxν ,\n(5.22)\nwhere we have deﬁned a symmetric tensor Gµν by combing the contributions in the ﬁeld\ntheory directions from the ﬁrst and second order metrics g(0) + g(1)\nGµν = r2 (\n2 b F (b r) σµν + b2 α(2)\nµν (b r)\n)\n+ 1\nr2\n( 2\n3 r3 ∂λ uλ uµ uν + k2(b r)\nb2 uµ uν\n)\n+ r2 b2 h2(b r) Pµν + 1\nr2\n(\n−2 r3 Duα + 1\nb2 j(2)\nα (b r)\n)\nP α\nν uµ .\n(5.23)\nThe covariant expression for α(2)\nµν is given by (5.19) with the replacements\nTij → (T2d)µν , Tij → (T2c)µν , Tij → ℓµ ℓν − 1\n3 Pµν",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stress tensor to second order",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-028-55-stress-tensor-to-second-order.md",
+      "narrative": null,
+      "content": "The stress tensor dual to the solution to second order descri bed in § 5.4 can be obtained\nby using the standard formula (4.25). To determine the extri nsic curvature at large r, it\nsuﬃces to know the asymptotic form of the metric since we are i nterested in terms that\nhave a ﬁnite limit as we take r → ∞. Consequently, in order to compute the stress tensor it\nis suﬃcient to replace the various functions of r that have appeared in the computation in\n§ 5.1, § 5.2 and § 5.3 by their large r asymptotics. The stress tensor may the be computed\nin a straightforward fashion, yielding\n(T2)vv = (T2)vi =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Second order fluid dynamics",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-029-6-second-order-fluid-dynamics.md",
+      "narrative": null,
+      "content": "In the previous section we have derived the precise form of th e ﬂuid dynamical stress\ntensor dual to gravity on AdS 5 including all terms with no more than two derivatives. In\nthis section we initiate a study of the physics of this stress tensor. In § 6.1 below we will\ndemonstrate that our stress tensor transforms homogeneous ly under Weyl transformations.\nIn § 6.2 we compute the dispersion relation for low frequency sou nd and shear waves that\nfollows from our stress tensor. In § 6.3 we compare our predictions for the transport\ncoeﬃcients at second order with those of [37].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weyl transformation of the stress tensor",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-030-61-weyl-transformation-of-the-stress-tensor.md",
+      "narrative": null,
+      "content": "Thus far we have extracted the stress tensor for a conformal ﬂ uid in ﬂat space R3, 1. We\nwould like to ensure that the second order stress tensor we ha ve derived transforms homo-\ngeneously under Weyl rescaling. In order to check this we per form the obvious minimal\ncovariantization of our stress tensor to generalize it to a ﬂ uid stress tensor about an arbi-\ntrary boundary metric gµν .22 and study its Weyl transformation properties.\nConsider the Weyl transformation of the boundary metric\ngµν = e2φ ~gµν ⇒ gµν = e−2φ ~gµν\n& uµ = e−φ ~uµ , T = e−φ ~T .\n(6.1)\nIt is well known that the ﬁrst order",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spectrum of small fluctuations",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-031-62-spectrum-of-small-fluctuations.md",
+      "narrative": null,
+      "content": "Consider a static bath of homogeneous ﬂuid at temperature T . Given the two derivative\nstress tensor derived above (2.9), it is trivial to solve for the spectrum of small oscillations\nof ﬂuid dynamical modes about this background. As the backgr ound is translationally\ninvariant, these ﬂuctuations can be taken to have the form\nβi(v, xj) = δβi ei ω v +i kj xj\nT (v, xj) = 1 + δT e i ω v +i kjxj (6.7)\nPlugging (6.7) into the equations of ﬂuid dynamics (2.7), an d working to ﬁrst order in\nδβi and δT , these equations reduce to a set of four homogeneous linear e quations in the\namplitudes δβi and δT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison with Baier et.al. (added in v2)",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-032-63-comparison-with-baier-etal-added-in-v2.md",
+      "narrative": null,
+      "content": "In this subsection we compare our results with those of the pr eprint [37] which appeared\nin an arXiv listing simultaneously with the ﬁrst version of t his paper. Where our results\noverlap we ﬁnd perfect agreement.\nThe authors of [37] demonstrated that conformal invariance determines the two deriva-\ntive ﬂuid dynamical stress tensor of any conformal ﬁeld th eo ry to upto ﬁve parameters\n(see also [41] for an alternate derivation of this result). T he ﬁve undetermined parameters\nare the coeﬃcients of the various Weyl invariant two derivat ive expressions built out of\nvelocity. These coeﬃcients w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 38,
+      "pageEnd": 43,
+      "target": "../sections/sec-033-7-discussion.md",
+      "narrative": null,
+      "content": "We have demonstrated how to start from a general, stationary black brane solution de-\nscribing perfect ﬂuid dynamics and promote the parameters i n the gravitational solution to\nphysical ﬂuctuation modes. This procedure allows us to set u p a ﬂuctuation analysis which\ncan be used to extract the boundary stress tensor of ﬂuids dua l to gravity in asymptotically\nAdS5 spacetimes, in a derivative expansion. Our procedure is ult ralocal: we obtain our\nsolution by patching together local tubes of the black brane solution into a global solution\nof Einstein’s equations. The fact that our solutions tub",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0712.2456v4/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 43,
+      "pageEnd": 47,
+      "target": "../sections/sec-034-acknowledgements.md",
+      "narrative": null,
+      "content": "It is a pleasure to thank R. Loganayagam, H. Reall and T. Wisem an for collaboration\nat the initial stages of this project, and for several invalu able comments and discussions\nthroughout its execution. We thank the authors of [37] for sh aring their results with us\nprior to publication. We would like to thank P. Basu, D. Beren stein, R. Gopakumar,\nS. Gupta, M. Headrick, H. Liu, J. Lucietti, G. Mandal, S. Triv edi, S. Wadia and all the\nstudents in the TIFR theory room for useful discussions. We w ould also like to thank\nO. Aharony, R. Gopakumar, S. Lahiri, N. Seiberg, A. Stroming er, M. Van Ra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

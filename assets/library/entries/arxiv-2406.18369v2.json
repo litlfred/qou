@@ -1,0 +1,491 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2406.18369v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In 1910 the Dutch physicist Hendrik Antoon Lorentz gave five lectures under the\ntitle “Old and new problems in physics” at the University of Göttingen. One of the\ncentral topics of his lectures is the Helmholtz equation, the eigenvalue equation for\nthe Laplace operator:\n(1) ∆f =λf, together with boundary conditions in case of boundary.\nHere, ∆ is the Laplace operator, which inn-dimensional Euclidean spaceRn is\n(2) ∆ =−\nnX\ni=1\n∂2\n∂x2\ni\n.\nSolving the Helmholtz equation amounts to finding all eigenvaluesλ such that there\nexists a solutionf to (1). When one solves this problem on a bounded domain",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "112 YEARS OF LISTENING TO RIEMANNIAN MANIFOLDS\nGUSTAV MÅRDBY AND JULIE ROWLETT\nAbstract. In1910, HendrikAntoonLorentzdelvedintotheenigmaticLaplace\neigenvalue equation, also known as the Helmholtz equation, pondering to what\nextent the geometry in which one solves the equation can be recovered from\nknowledge of the eigenvalues. Lorentz, inspired by physical and musical analo-\ngies, conjectured a fundamental relationship between eigenvalues, domain vol-\nume, and dimensionality. While his conjecture initially seemed insurmount-\nable, Hermann Weyl’s groundbreaking proof in 1912 illuminated the dee",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-acknowledgements.md",
+      "narrative": null,
+      "content": "We are grateful to Jeff Galkowski and Javier Gomez-Serrano for suggesting fur-\nther references to include in this work.\n4 G. MÅRDBY AND J. ROWLETT",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/def-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 12,
+      "target": "def-sec-003-01.md",
+      "narrative": null,
+      "content": "For a domain Ω⊂ Rn, L2(Ω) is defined as the set of equiva-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/lem-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 12,
+      "target": "lem-sec-003-05.md",
+      "narrative": null,
+      "content": "With the notations above, we have for everyk",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 12,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "Let I = (a1,b 1)× (a2,b 2)⊂ R2 be a rectangle. Then both the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weyl's asymptotic law",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-2-weyls-asymptotic-law.md",
+      "narrative": null,
+      "content": "In 1910, Weyl was a relatively young mathematician who had recently completed\nhis doctoral studies. He earned his Ph.D. in mathematics in 1908 at the University\nof Göttingen under the supervision of David Hilbert, whom he greatly admired.\nWeyl’s career was just beginning to take shape at that time, and he would go on\nto make significant contributions to various fields in mathematics and theoreti-\ncal physics in the following decades, becoming a renowned figure in the world of\nmathematics.\nWeyl was very interested in mathematical physics at this point of time, partic-\nularly in the study of qua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 4,
+      "pageEnd": 12,
+      "target": "../sections/sec-003-21-preliminaries.md",
+      "narrative": null,
+      "content": "mulated by Lorentz, we establish key notations and preliminaries. A domain\nΩ⊂ Rn is a connected open subset of Rn. We always assume that Ω is com-\npact. The boundary of Ω is denoted by∂Ω. For a domain Ω⊂ Rn, we let|Ω|\ndenote then-dimensional volume ofΩ and|∂Ω| the (n− 1)-dimensional volume of\nthe boundary ofΩ. In particular, ifn = 2 then|Ω| and|∂Ω| denote the area and\nthe perimeter ofΩ, respectively.\nThe Laplace operatoron Rn is given by (2). For a functionf : Ω→ C, we write\nf∈ C∞(Ω) if f is infinitely differentiable, that is, iff is N times differentiable for\neveryN∈ N. Moreover, we writef∈ C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/thm-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 12,
+      "target": "thm-sec-003-03.md",
+      "narrative": null,
+      "content": "Let Ω be a domain with piecewise smooth boundary. Ifλk denotes",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/thm-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Weyl’s law",
+      "pageStart": 4,
+      "pageEnd": 12,
+      "target": "thm-sec-003-04.md",
+      "narrative": null,
+      "content": "Let Ω⊂ R2 be a bounded domain and let0 < λ1≤",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prop-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[108], Thm. 11.2",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "prop-sec-004-02.md",
+      "narrative": null,
+      "content": "If q(x) = xTQx is a positive definite qua-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prop-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[90], Prop. 2.28",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "prop-sec-004-04.md",
+      "narrative": null,
+      "content": "Suppose a latticeΓ∈ Rn can be decomposed",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Listening to flat tori",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-004-3-listening-to-flat-tori.md",
+      "narrative": null,
+      "content": "Ann-dimensional flat torus is a smooth compact Riemannian manifold obtained\nby taking the quotient of Euclidean spaceRn by a full-rank lattice. For inclusivity,\nwe recall that GLn(R) is the group of all invertiblen×n matrices with entries in\nR with group operation given by matrix multiplication. The subgroup GLn(Z)⊂\nGLn(R) consists of those matrices with entries inZ whose inverses also have entries\nin Z. A full-rank lattice in Rn is a discrete additive subgroup of the additive\ngroup Rn, that necessarily is a set of the formΓ =AZn for some invertible matrix\nA∈ Rn×n called abasis matrix of Γ. We",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[90], Thm. 2.8",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "The spectrum of a flat torusRn/Γ is the multi-set",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/thm-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[90], Cor. 2.15",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "thm-sec-004-03.md",
+      "narrative": null,
+      "content": "Two flat tori are isospectral if and only if their",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/thm-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[90], Cor. 3.7",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "thm-sec-004-05.md",
+      "narrative": null,
+      "content": "LetP andQ be the associated matrices of two even",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "One cannot hear the shape of a Riemannian manifold but can one hear the shape of a drum?",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-4-one-cannot-hear-the-shape-of-a-riemannian-mani.md",
+      "narrative": null,
+      "content": "hear the shape of a drum?\nJust two years after Milnor’s article appeared, Kac published the popular sci-\nentific article [70] titled “Can one hear the shape of a drum?” He first heard the\nproblem from Professor Bochner in mathematical terms: if two planar domains have\n16 G. MÅRDBY AND J. ROWLETT\nthe same Laplace spectrum, are they congruent in the sense of Euclidean geome-\ntry? The formulation in the title of Kac’s article is motivated by Professor Bers’s\nreformulation as “If you had perfect pitch could you find the shape of a drum?” We\nreasonably expect that Kac was inspired by Milnor’s artic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "Given two non-empty setsΘ, Ω⊂ R2, we havedH(Θ, Ω) = 0 if",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric preliminaries",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-41-geometric-preliminaries.md",
+      "narrative": null,
+      "content": "the plane converging to another domain. To define this, we need a way of measuring\nthe distance between two sets. We will use Hausdorff distance. Recall that an\nisometry in R2 is an affine linear mapping fromR2 to itself which corresponds to a\ncomposition of rotations, translations, and reflections. IfΘ and Ω are two sets in\nR2, then the Hausdorff distance betweenΘ and Ω is defined as\nD(Θ, Ω) = inf\nT,S isometries\ndH(T (Θ),S (Ω)),\nwhere\ndH(Θ, Ω) = max\n\u001a\nsup\nx∈Θ\ninf\ny∈Ω\n||x−y||, sup\nx∈Ω\ninf\ny∈Θ\n||x−y||\n\u001b\n.\nGiven a sequence of sets{Ωk}∞\nk=1 in R2, we say thatΩk converges in Hausdorffto\nsome set Ω",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/thm-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[59], Thm. 2.44",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "thm-sec-006-02.md",
+      "narrative": null,
+      "content": "If Ω has r holes, thenχ(Ω) = 1−r.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prop-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 33,
+      "target": "prop-sec-007-02.md",
+      "narrative": null,
+      "content": "If Ω = Rn, then the unique element ofL2(Ω× Ω× R+) that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "What could Kac hear?",
+      "pageStart": 17,
+      "pageEnd": 33,
+      "target": "../sections/sec-007-42-what-could-kac-hear.md",
+      "narrative": null,
+      "content": "of a domain Ω⊂ R2 is a spectral invariant. Kac was aware of this result and\nwanted to find other quantities ofΩ that are spectral invariants. Is perhaps the\nentire set Ω a spectral invariant (up to isometries)? In other words, can one hear\nthe shape of a drum? Studying spectral invariants is interesting for several reasons,\none of which being its connections to physics. To explore these connections between\nmathematics and physics, consider a system ofM particles in a three-dimensional\nvolume Ω such that the system is in equilibrium with temperatureT. We assume\nthat the particles comprise an id",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 33,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "There exists a unique mape−t∆ : C 0(Ω)→ C∞(Ω× R+), called",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "One cannot hear...",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "../sections/sec-008-5-one-cannot-hear.md",
+      "narrative": null,
+      "content": "Milnor’s example from 1964 (see §3) is the first example of a pair of isospectral\nnon-isometric Riemannian manifolds. It was partly this that inspired Kac’s arti-\ncle. One year after Kac’s article Kneser found two 12-dimensional flat tori which\nare isospectral but non-isometric [74]. Kitaoka then found, expressed in number-\ntheoretic language, two isospectral non-isometric 8-dimensional flat tori in 1977\n[73]. In the same year Perlis constructed algebraic number fields which are arith-\nmetically equivalent but non-isometric [96]. Ejiri continued this development in\n1979 by constructing non-fla",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "One cannot hear the shape of a drum, but one can hear...",
+      "pageStart": 35,
+      "pageEnd": 37,
+      "target": "../sections/sec-009-6-one-cannot-hear-the-shape-of-a-drum-but-one-ca.md",
+      "narrative": null,
+      "content": "Here we continue with an overview of so-called positive isospectral results which\nshowthatcertainquantitiesarespectralinvariants, aswellasresultsthatcontribute\nto the general understanding of the spectrum and its connections to geometry. In\n1966, Tanaka studied the spectrum of discontinuous groups and gave an asymptotic\nformula for the discrete spectrum associated with the modular group [111]. In the\nsame year Berger computed the first coefficients in the asymptotic expansion of the\nheat trace for closed manifolds, thus giving new spectral invariants [13]. One year\nlater, McKean and Singer obt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "We're still listening...",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-010-7-were-still-listening.md",
+      "narrative": null,
+      "content": "Can one hear the shape of a convex drum? Can one hear the shape of a smooth\ndrum? How many drums can sound the same? What all can one hear? These\nare just a few of numerous open questions in the rich field of spectral geometry.\nWhile one can study the spectrum and geometry of certain types of domains or\nRiemannian manifolds, and consider in that sense a ‘static’ problem, one could also\nstudy more dynamical problems in which the geometry changes. Indeed, Kac be-\ngan this type of investigation by letting polygonal domains approximate a smoothly\nbounded domain. In this context, how do spectral in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.18369v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 38,
+      "pageEnd": 42,
+      "target": "../sections/sec-011-references.md",
+      "narrative": null,
+      "content": "[1] Nist digital library of mathematical functions. Accessed: 2023-05-20.\n[2] P. Albin,Linear analysis on manifolds, American Mathematical Society. URl: https://www.\nams. org/open-math-notes/omn-view-listing (2017).\n[3] C.L. Aldana and J. Rowlett,A polyakov formula for sectors, The Journal of Geometric\nAnalysis 28 (2018), 1773–1839.\n[4] M.Anderson,A.Katsuda,Y.Kurylev,M.Lassas,andM.Taylor, Boundary regularity for the\nricci equation, geometric convergence, and gel’fand’s inverse boundary problem, Inventiones\nmathematicae 158 (2004), 261–321.\n[5] P. R. S. Antunes and P. Freitas,On the inverse spe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

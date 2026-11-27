@@ -1,0 +1,1517 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-cond-mat-0404617v2",
+  "title": "String-net condensation: A physical mechanism for topological phases",
+  "variant": "pdf",
+  "pages": 21,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "String-nets and gauge theories",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-string-nets-and-gauge-theories"
+    },
+    {
+      "level": 1,
+      "title": "General string-net picture",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-general-string-net-picture"
+    },
+    {
+      "level": 1,
+      "title": "String-net condensation in $(2+1)$ dimensions",
+      "number": "4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-string-net-condensation-in-21-dimensions"
+    },
+    {
+      "level": 2,
+      "title": "Fixed-point wave functions",
+      "number": "4.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-41-fixed-point-wave-functions"
+    },
+    {
+      "level": 2,
+      "title": "Fixed-point Hamiltonians",
+      "number": "4.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-42-fixed-point-hamiltonians"
+    },
+    {
+      "level": 2,
+      "title": "Quasiparticle excitations",
+      "number": "4.3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-43-quasiparticle-excitations"
+    },
+    {
+      "level": 1,
+      "title": "String-net condensation in $(3+1)$ and higher dimensions",
+      "number": "5",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-5-string-net-condensation-in-31-and-higher-dimen"
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": "6",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-6-examples"
+    },
+    {
+      "level": 2,
+      "title": "$N=1$ string model",
+      "number": "6.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-61-n1-string-model"
+    },
+    {
+      "level": 2,
+      "title": "$N=1$ string-net model",
+      "number": "6.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-62-n1-string-net-model"
+    },
+    {
+      "level": 2,
+      "title": "$N = 2$ string-net models",
+      "number": "6.3",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-63-n-2-string-net-models"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "7",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-7-conclusion"
+    },
+    {
+      "level": 1,
+      "title": "General string-net models",
+      "number": "A",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-a-general-string-net-models"
+    },
+    {
+      "level": 1,
+      "title": "Self-consistency conditions",
+      "number": "B",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-b-self-consistency-conditions"
+    },
+    {
+      "level": 1,
+      "title": "Graphical representation of the Hamiltonian",
+      "number": "C",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-c-graphical-representation-of-the-hamiltonian"
+    },
+    {
+      "level": 1,
+      "title": "Graphical representation of the string operators",
+      "number": "D",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-d-graphical-representation-of-the-string-operato"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "string-net condensation",
+          "heading": false
+        },
+        {
+          "term": "topological phases",
+          "heading": false
+        },
+        {
+          "term": "gauge bosons",
+          "heading": false
+        },
+        {
+          "term": "ground states",
+          "heading": false
+        },
+        {
+          "term": "cond-mat",
+          "heading": false
+        },
+        {
+          "term": "massachusetts",
+          "heading": false
+        },
+        {
+          "term": "extended objects",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:cond-mat/0404617v2 [cond-mat.str-el] 27 Apr 2004 String-net condensation: A physical mechanism for topolog ical phases Michael A. Levin and Xiao-Gang Wen ∗ Department of Physics, Massachusetts Institute of Technol ogy, Cambridge, Massachusetts 02139 (Dated: April 2004) We show that quantum systems of extended objects naturally g ive rise to a large class of ex- otic phases - namely topological phases. These",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 1324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "string-net condensation",
+          "heading": false
+        },
+        {
+          "term": "string-net condensed",
+          "heading": false
+        },
+        {
+          "term": "topological phases",
+          "heading": false
+        },
+        {
+          "term": "ordered phases",
+          "heading": false
+        },
+        {
+          "term": "doubled topological",
+          "heading": false
+        },
+        {
+          "term": "quasiparticle excitations",
+          "heading": false
+        },
+        {
+          "term": "fault tolerant",
+          "heading": false
+        },
+        {
+          "term": "con densation",
+          "heading": false
+        }
+      ],
+      "extract": "For many years, it was thought that Landau’s theory of symmetry breaking [1] could describe essentially all phases and phase transitions. It appeared that all con- tinuous phase transitions were associated with a broken symmetry. However, after the discovery of the fractional quantum Hall (FQH) eﬀect, it was realized that FQH states contain a new type of order - topological order - that is beyond the scope of Landau",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-string-nets-and-gauge-theories",
+      "number": "2",
+      "title": "String-nets and gauge theories",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 1059,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauge theories",
+          "heading": true
+        },
+        {
+          "term": "deconﬁned gauge",
+          "heading": false
+        },
+        {
+          "term": "electric ﬂux",
+          "heading": false
+        },
+        {
+          "term": "string-nets",
+          "heading": true
+        },
+        {
+          "term": "string-net picture",
+          "heading": false
+        },
+        {
+          "term": "ﬂux lines",
+          "heading": false
+        },
+        {
+          "term": "deconﬁned phase",
+          "heading": false
+        },
+        {
+          "term": "string nets",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we introduce the string-net picture in the context of gauge theory [27, 37, 38]. We point out that all deconﬁned gauge theories can be understood as string-net condensates where the strings are essentially electric ﬂux lines. We hope that this result provides in- tuition for (and motivates) the string-net picture in the general case. We begin with the simplest gauge theory - Z2 lattice gauge theory",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-general-string-net-picture",
+      "number": "3",
+      "title": "General string-net picture",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 692,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "string-net picture",
+          "heading": true
+        },
+        {
+          "term": "general string-net",
+          "heading": true
+        },
+        {
+          "term": "string-net condensation",
+          "heading": false
+        },
+        {
+          "term": "string-net hamiltonian",
+          "heading": false
+        },
+        {
+          "term": "string-net model",
+          "heading": false
+        },
+        {
+          "term": "string nets",
+          "heading": false
+        },
+        {
+          "term": "string types",
+          "heading": false
+        },
+        {
+          "term": "string tension",
+          "heading": false
+        }
+      ],
+      "extract": "Given the large scope of gauge theory, it is natural to wonder if string-nets can describe more general topo- logical phases. In this section we will discuss this more general string-net picture. (Actually, we will not discuss the most general string-net picture. We will focus on a special case for the sake of simplicity. See Appendix A for a discussion of the most general picture). We begin with a more detailed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-string-net-condensation-in-21-dimensions",
+      "number": "4",
+      "title": "String-net condensation in $(2+1)$ dimensions",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "DIMENSIONS",
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-41-fixed-point-wave-functions",
+      "number": "4.1",
+      "title": "Fixed-point wave functions",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 1984,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "string-net condensed",
+          "heading": false
+        },
+        {
+          "term": "string-net condensation",
+          "heading": false
+        },
+        {
+          "term": "ijm kln",
+          "heading": false
+        },
+        {
+          "term": "wave functions",
+          "heading": true
+        },
+        {
+          "term": "string-net conﬁguration",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed-point wave",
+          "heading": false
+        },
+        {
+          "term": "condensed phases",
+          "heading": false
+        },
+        {
+          "term": "object ijm",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we attempt to capture the universal features of string-net condensed phases in (2 + 1) dimen- sions. Our approach, inspired by Ref. [35–37, 42–44], is based on the string-net wave function. We construct a special “ﬁxed-point” wave function for each string-net condensed phase. We believe that these “ﬁxed-point” wave functions capture the universal properties of the corresponding phases. Each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-42-fixed-point-hamiltonians",
+      "number": "4.2",
+      "title": "Fixed-point Hamiltonians",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 1135,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ijm kln",
+          "heading": false
+        },
+        {
+          "term": "soluble hamiltonian",
+          "heading": false
+        },
+        {
+          "term": "magnetic ﬂux",
+          "heading": false
+        },
+        {
+          "term": "honeycomb lattice",
+          "heading": false
+        },
+        {
+          "term": "logical phases",
+          "heading": false
+        },
+        {
+          "term": "ﬂux operator",
+          "heading": false
+        },
+        {
+          "term": "spins adjacent",
+          "heading": false
+        },
+        {
+          "term": "topo logical",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we construct exactly soluble lattice spin Hamiltonians with the ﬁxed-point wave functions Φ as ground states. These Hamiltonians provide an explicit realization of all (2 + 1) D string-net condensates and therefore all (2 + 1) D doubled topological phases (pro- vided that we generalize these models as discussed in Appendix A). In the next section, we will use them to calculate the physical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-43-quasiparticle-excitations",
+      "number": "4.3",
+      "title": "Quasiparticle excitations",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 2558,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasiparticle",
+          "heading": true
+        },
+        {
+          "term": "type quasiparticles",
+          "heading": false
+        },
+        {
+          "term": "string operators",
+          "heading": false
+        },
+        {
+          "term": "vik vsk",
+          "heading": false
+        },
+        {
+          "term": "associated quasiparticles",
+          "heading": false
+        },
+        {
+          "term": "simple string",
+          "heading": false
+        },
+        {
+          "term": "irreducible string",
+          "heading": false
+        },
+        {
+          "term": "closed string",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we ﬁnd the quasiparticle excitations of the string-net Hamiltonian (10), and calculate their statistics (e.g. the twists θα and the S matrix sαβ ). We will only consider the topological phase with smooth con- tinuum limit. That is, we will choose as = ds∑ N i=0 d2 i in our lattice model. Recall that the ground state satisﬁes QI = Bp = 1 for all vertices I, and all plaquettes p. The quasiparticle ex-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-string-net-condensation-in-31-and-higher-dimen",
+      "number": "5",
+      "title": "String-net condensation in $(3+1)$ and higher dimensions",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 1592,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higher dimensions",
+          "heading": true
+        },
+        {
+          "term": "string-net",
+          "heading": true
+        },
+        {
+          "term": "string-net condensates",
+          "heading": false
+        },
+        {
+          "term": "dimensional string-net",
+          "heading": false
+        },
+        {
+          "term": "ijm kln",
+          "heading": false
+        },
+        {
+          "term": "string condensation",
+          "heading": false
+        },
+        {
+          "term": "plaquette boundaries",
+          "heading": false
+        },
+        {
+          "term": "honeycomb lattice",
+          "heading": false
+        }
+      ],
+      "extract": "AND HIGHER DIMENSIONS In this section, we generalize our results to (3 + 1) and higher dimensions. We ﬁnd that there is a one-to-one correspondence between (3 + 1) (and higher) dimensional string-net condensates and mathematical objects known as “symmetric tensor categories.” [32] The low energy eﬀective theories for these states are gauge theories cou- pled to bosonic or fermionic charges. Our approach is based on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-6-examples",
+      "number": "6",
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-61-n1-string-model",
+      "number": "6.1",
+      "title": "$N=1$ string model",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 1667,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "string",
+          "heading": true
+        },
+        {
+          "term": "ﬁxed-point wave",
+          "heading": false
+        },
+        {
+          "term": "creates electric",
+          "heading": false
+        },
+        {
+          "term": "topological phases",
+          "heading": false
+        },
+        {
+          "term": "soluble model",
+          "heading": false
+        },
+        {
+          "term": "legs",
+          "heading": false
+        },
+        {
+          "term": "string operators",
+          "heading": false
+        },
+        {
+          "term": "branching rules",
+          "heading": false
+        }
+      ],
+      "extract": "We begin with the simplest string-net model. In the notation from section III, this model is given by 1. Number of string types: N = 1 2. Branching rules: ∅ (no branching) 3. String orientations: 1 ∗ = 1. In other words, the string-nets in this model contain one unoriented string type and have no branching. Thus, they are simply closed loops. (See Fig. 3a). We would like to ﬁnd the diﬀerent topological phases that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-62-n1-string-net-model",
+      "number": "6.2",
+      "title": "$N=1$ string-net model",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 691,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-abelian anyons",
+          "heading": false
+        },
+        {
+          "term": "string-net",
+          "heading": true
+        },
+        {
+          "term": "univer sal",
+          "heading": false
+        },
+        {
+          "term": "sal quantum",
+          "heading": false
+        },
+        {
+          "term": "universal fault",
+          "heading": false
+        },
+        {
+          "term": "type string",
+          "heading": false
+        },
+        {
+          "term": "quasiparticles",
+          "heading": false
+        },
+        {
+          "term": "yang-lee",
+          "heading": false
+        }
+      ],
+      "extract": "The next simplest string-net model also contains only one oriented string type - but with branching. Simple as it is, we will see that this model contains non-Abelian anyons and is theoretically capable of universal fault tol- erant quantum computation [33]. Formally, the model is deﬁned by 1. Number of string types: N = 1 2. Branching rules: {{1, 1, 1}} 3. String orientations: 1 ∗ = 1. The string-nets are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-63-n-2-string-net-models",
+      "number": "6.3",
+      "title": "$N = 2$ string-net models",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 543,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "string-net",
+          "heading": true
+        },
+        {
+          "term": "elementary quasiparticles",
+          "heading": false
+        },
+        {
+          "term": "branching rules",
+          "heading": false
+        },
+        {
+          "term": "magnetic ﬂuxes",
+          "heading": false
+        },
+        {
+          "term": "string types",
+          "heading": false
+        },
+        {
+          "term": "string orientations",
+          "heading": false
+        },
+        {
+          "term": "electric charges",
+          "heading": false
+        },
+        {
+          "term": "self-consistent local",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we discuss two N = 2 string-net mod- els. The ﬁrst model contains one oriented string and its dual. In the notation from section III, it is given by 1. Number of string types: N = 2 2. Branching rules: {{1, 1, 1}, {2, 2, 2}} 3. String orientations: 1 ∗ = 2, 2 ∗ = 1. The string-nets are therefore oriented trivalent graphs with Z3 branching rules. The string-net condensed phases correspond to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-7-conclusion",
+      "number": "7",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 522,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "topological phases",
+          "heading": false
+        },
+        {
+          "term": "doubled topological",
+          "heading": false
+        },
+        {
+          "term": "fermi statistics",
+          "heading": false
+        },
+        {
+          "term": "characterize transitions",
+          "heading": false
+        },
+        {
+          "term": "condensation",
+          "heading": false
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        },
+        {
+          "term": "extended objects",
+          "heading": false
+        },
+        {
+          "term": "dmr",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we have shown that quantum systems of extended objects naturally give rise to topological phases. These phases occur when the extended objects (e.g. string-nets) become highly ﬂuctuating and con- dense. This physical picture provides a natural mech- anism for the emergence of parity invariant topological phases. Microscopic degrees of freedoms (such as spins or dimers) can organize into eﬀective",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-a-general-string-net-models",
+      "number": "A",
+      "title": "General string-net models",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 396,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "string-net models",
+          "heading": true
+        },
+        {
+          "term": "general string-net",
+          "heading": true
+        },
+        {
+          "term": "ijm kln",
+          "heading": false
+        },
+        {
+          "term": "δijk",
+          "heading": false
+        },
+        {
+          "term": "gauge theories",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed-point",
+          "heading": false
+        },
+        {
+          "term": "doubled",
+          "heading": false
+        }
+      ],
+      "extract": "MODELS In this section, we discuss the most general string-net models. These models can describe all doubled topo- logical phases, including all discrete gauge theories and doubled Chern-Simons theories. In these models, there is a “spin” degree of freedom at each branch point or node of a string-net, in addition to the usual string-net degrees of freedom. The dimension of this “spin” Hilbert space depends on the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-b-self-consistency-conditions",
+      "number": "B",
+      "title": "Self-consistency conditions",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 1011,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ijm kln",
+          "heading": false
+        },
+        {
+          "term": "self-consistency",
+          "heading": true
+        },
+        {
+          "term": "jip mns",
+          "heading": false
+        },
+        {
+          "term": "string-net conﬁguration",
+          "heading": false
+        },
+        {
+          "term": "fusion rule",
+          "heading": false
+        },
+        {
+          "term": "honeycomb lattice",
+          "heading": false
+        },
+        {
+          "term": "local rules",
+          "heading": false
+        },
+        {
+          "term": "mlq",
+          "heading": false
+        }
+      ],
+      "extract": "CONDITIONS In this section, we derive the self-consistency condi- tions (8). We begin with the last relation, the so-called “pentagon identity”, since it is the most fundamental. To derive this condition, we use the fusion rule (7) to relate the amplitude Φ ( i kj l m p q ) to the amplitude Φ ( mi j l k sr ) in two distinct ways (see Fig. 14). On the one hand, we can apply the fusion rule (7) twice to obtain i kj l",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-c-graphical-representation-of-the-hamiltonian",
+      "number": "C",
+      "title": "Graphical representation of the Hamiltonian",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 1577,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "string-net state",
+          "heading": false
+        },
+        {
+          "term": "fattened honeycomb",
+          "heading": false
+        },
+        {
+          "term": "graphical representation",
+          "heading": true
+        },
+        {
+          "term": "honeycomb lattice",
+          "heading": false
+        },
+        {
+          "term": "s1s s2k",
+          "heading": false
+        },
+        {
+          "term": "ekf",
+          "heading": false
+        },
+        {
+          "term": "local rules",
+          "heading": false
+        },
+        {
+          "term": "simultaneous eigenvalues",
+          "heading": false
+        }
+      ],
+      "extract": "OF THE HAMIL TONIAN In this section, we provide an alternative, graphical, representation of the lattice model (10). This graphical representation provides a simple visual technique for un- derstanding properties (a)-(c) of the Hamiltonian (10). We begin with the 2 D honeycomb lattice. Imagine we fatten the links of the lattice into stripes of ﬁnite width (see Fig. 16). Then, any string-net state in the fat- tened",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-d-graphical-representation-of-the-string-operato",
+      "number": "D",
+      "title": "Graphical representation of the string operators",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 1040,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "string operators",
+          "heading": true
+        },
+        {
+          "term": "graphical",
+          "heading": true
+        },
+        {
+          "term": "wen",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "unfattened lattice",
+          "heading": false
+        },
+        {
+          "term": "sti",
+          "heading": false
+        },
+        {
+          "term": "string-net states",
+          "heading": false
+        }
+      ],
+      "extract": "OF THE STRING OPERATORS In this section, we describe a graphical representation of the long string operators Wα (P ). Just as in the pre- vious section, this representation involves the fattened honeycomb lattice. The action of the string operator Wα (P ) on a general string state X, is simply to create a string labeled α along the path P . The resulting string- net state can then be reduced to a linear combination",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "string-net hamiltonian",
+      "heading": true
+    },
+    {
+      "term": "string-net condensation",
+      "heading": true
+    },
+    {
+      "term": "string-net condensed",
+      "heading": true
+    },
+    {
+      "term": "string-net wave",
+      "heading": true
+    },
+    {
+      "term": "string-net states",
+      "heading": true
+    },
+    {
+      "term": "string-net picture",
+      "heading": true
+    },
+    {
+      "term": "string-net con",
+      "heading": false
+    },
+    {
+      "term": "string-net model",
+      "heading": true
+    },
+    {
+      "term": "string-net conﬁguration",
+      "heading": false
+    },
+    {
+      "term": "string-net condensates",
+      "heading": false
+    },
+    {
+      "term": "general string-net",
+      "heading": true
+    },
+    {
+      "term": "string-net conden",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A schematic phase diagram for the generic string-net Hamiltonian (3). When t/U (the ratio of the kinetic energy to the string tension) is small the system is in the normal phase. The ground state is essentially the vacuum with a few small string-nets. When t/U is large the string-nets condense and l",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The constraint term",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Typical string-net conﬁgurations in the dual formulation of (a) Z2, (b) U (1), and (c) SU (2) gauge theory. In the case of (a) Z2 gauge theory, the string-net conﬁgurations consist of closed (non-intersecting) loops. In (b) U (1) gauge theory, the string-nets are oriented graphs with edges labeled b",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The orientation convention for the branching rules. =",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "i and i∗ label strings with opposite orientations",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Three pairs of string-net conﬁgurations that diﬀer only in their short distance structure. We expect string-net wave functions in the same quantum phase to only diﬀer by these short distance details",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "A schematic RG ﬂow diagram for a string-net model with 4 string-net condensed phases a, b, c, and d. All the states in each phase ﬂow to ﬁxed-points in the long distance limit. The corresponding ﬁxed-point wave functions Φa, Φb, Φc, and Φd capture the universal long distance features of the associat",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "A picture of the lattice spin model (10). The electric charge operator QI acts on the three spins adjacent to the vertex I, while the magnetic energy operator Bp acts on the 12 spins adjacent to the hexagonal plaquette p. The term QI constrains the string-nets to obey the branching rules, while Bp p",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Open and closed string operators for the lattice spin model (10). Open string operators create quasiparticles at the two ends, as shown on the left. Closed string operators, as shown on the right, commute with the Hamiltonian. The closed string operator W (P ) only acts nontrivially on the spins alo",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "A three dimensional trivalent lattice, obtained by splitting the sites of the cubic lattice. We replace each vertex of the cubic lattice with 4 other vertices as shown above",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Three plaquettes demonstrating the two fundamental diﬀerences between higher dimensional trivalent lattices and the honeycomb lattice. The plaquettes p1, p2 lie in the xz plane, while p3 is oriented in the xy direction. Notice that p1 and p2 share three vertices, I1, I2, I3. Also, notice that the pl",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "The Hamiltonians (39), (40), realizing the two N = 1 string-condensed phases. Each circle denotes a spin-1/2 spin",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "A closed string operator W (P ) for the two models (39),(40). The path P is drawn with a thick line, while the legs are drawn with thin lines. The action of the string operators (41),(44) on the legs is diﬀerent for legs that branch to the right of P , “R-legs”, and legs that branch to the left of P",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "The fusion rule (7) can be used to relate the amplitude of (a) to the amplitude of (c) in two diﬀerent ways",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Four string-net conﬁgurations related by tetrahedral symmetry. In diagram (a), we show the tetrahedron cor-",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "The fattened honeycomb lattice. The strings are forbidden in the shaded region. A string state in the fattened honeycomb lattice (a) can be viewed as a superposition of string states on the links (b)",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "The action of Bs",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "The action of Bs1",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18b",
+      "title": "We conclude that Bs2",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "The action of the string operator Wα(P ) is equivalent to adding a type-α string along the path P . The resulting string-net state can be reduced to a linear combination of states on the honeycomb lattice, using the local rules (4-7), (D1)",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 17,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 18,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 18 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-cond-mat-0404617v2"
+  }
+}

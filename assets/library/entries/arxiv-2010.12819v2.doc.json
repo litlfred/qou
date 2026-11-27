@@ -1,0 +1,3655 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2010.12819v2",
+  "title": "arxiv-2010.12819v2",
+  "variant": "pdf",
+  "pages": 61,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Discrete Virasoro algebra and the Koo-Saleur formulae",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-discrete-virasoro-algebra-and-the-koo-saleur-f"
+    },
+    {
+      "level": 2,
+      "title": "The Temperley-Lieb algebra in the periodic case",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-the-temperley-lieb-algebra-in-the-periodic-ca"
+    },
+    {
+      "level": 3,
+      "title": "The algebra TaN(m)",
+      "number": "2.1.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-211-the-algebra-tanm"
+    },
+    {
+      "level": 3,
+      "title": "Standard modules",
+      "number": "2.1.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-212-standard-modules"
+    },
+    {
+      "level": 2,
+      "title": "Physical systems and the Temperley-Lieb Hamiltonian",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-22-physical-systems-and-the-temperley-lieb-hamil"
+    },
+    {
+      "level": 2,
+      "title": "Indecomposability",
+      "number": "2.3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-23-indecomposability"
+    },
+    {
+      "level": 2,
+      "title": "Discrete Virasoro algebra",
+      "number": "2.4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-24-discrete-virasoro-algebra"
+    },
+    {
+      "level": 1,
+      "title": "Some features of the continuum limit",
+      "number": "3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-3-some-features-of-the-continuum-limit"
+    },
+    {
+      "level": 2,
+      "title": "Modules in the continuum",
+      "number": "3.1",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-31-modules-in-the-continuum"
+    },
+    {
+      "level": 2,
+      "title": "Bosonization and expected results",
+      "number": "3.2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-32-bosonization-and-expected-results"
+    },
+    {
+      "level": 2,
+      "title": "The choices of metric",
+      "number": "3.3",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-33-the-choices-of-metric"
+    },
+    {
+      "level": 2,
+      "title": "Feigin-Fuchs modules and conjugate states",
+      "number": "3.4",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-34-feigin-fuchs-modules-and-conjugate-states"
+    },
+    {
+      "level": 1,
+      "title": "Bethe Ansatz picture",
+      "number": "4",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-4-bethe-ansatz-picture"
+    },
+    {
+      "level": 2,
+      "title": "Bethe-ansatz and the identification of scaling states",
+      "number": "4.1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-41-bethe-ansatz-and-the-identification-of-scalin"
+    },
+    {
+      "level": 3,
+      "title": "Overlaps and mixing",
+      "number": "4.1.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-411-overlaps-and-mixing"
+    },
+    {
+      "level": 2,
+      "title": "Conjugate states and Bethe roots",
+      "number": "4.2",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-42-conjugate-states-and-bethe-roots"
+    },
+    {
+      "level": 2,
+      "title": "Some results about form factors",
+      "number": "4.3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-43-some-results-about-form-factors"
+    },
+    {
+      "level": 3,
+      "title": "Properties under conjugation and parity, implications for the modules",
+      "number": "4.3.1",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-431-properties-under-conjugation-and-parity-impl"
+    },
+    {
+      "level": 1,
+      "title": "Lattice Virasoro in the non-degenerate case",
+      "number": "5",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-5-lattice-virasoro-in-the-non-degenerate-case"
+    },
+    {
+      "level": 2,
+      "title": "Koo-Saleur generators and lattice momentum",
+      "number": "5.1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-51-koo-saleur-generators-and-lattice-momentum"
+    },
+    {
+      "level": 2,
+      "title": "Numerical results for L-1",
+      "number": "5.2",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-52-numerical-results-for-l-1"
+    },
+    {
+      "level": 1,
+      "title": "Lattice Virasoro in the degenerate case",
+      "number": "6",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-6-lattice-virasoro-in-the-degenerate-case"
+    },
+    {
+      "level": 2,
+      "title": "Modules Wj,1 for j =0",
+      "number": "6.1",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-61-modules-wj1-for-j-0"
+    },
+    {
+      "level": 2,
+      "title": "Modules W0,qpm2",
+      "number": "6.2",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-62-modules-w0qpm2"
+    },
+    {
+      "level": 1,
+      "title": "Anomalies, and the convergence of the Koo-Saleur generators",
+      "number": "7",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-7-anomalies-and-the-convergence-of-the-koo-saleu"
+    },
+    {
+      "level": 2,
+      "title": "``Scaling-weak'' convergence",
+      "number": "7.1",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-71-scaling-weak-convergence"
+    },
+    {
+      "level": 2,
+      "title": "A closer look at limits and commutators",
+      "number": "7.2",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-72-a-closer-look-at-limits-and-commutators"
+    },
+    {
+      "level": 3,
+      "title": "The case of n =0",
+      "number": "7.2.1",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-721-the-case-of-n-0"
+    },
+    {
+      "level": 3,
+      "title": "The case of n= 0",
+      "number": "7.2.2",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-722-the-case-of-n-0"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "8",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-8-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "A Some remarks on scalar products",
+      "number": null,
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-a-some-remarks-on-scalar-products"
+    },
+    {
+      "level": 1,
+      "title": "B More on form factors",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-b-more-on-form-factors"
+    },
+    {
+      "level": 2,
+      "title": "B.1 General framework, notations, conventions",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-b1-general-framework-notations-conventions"
+    },
+    {
+      "level": 2,
+      "title": "B.2 Quantum Inverse Scattering Method",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-b2-quantum-inverse-scattering-method"
+    },
+    {
+      "level": 2,
+      "title": "B.3 The expressions for the necessary FO1,…,Oj",
+      "number": null,
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-b3-the-expressions-for-the-necessary-fo1oj"
+    },
+    {
+      "level": 3,
+      "title": "B.3.1 Fz,Fzz,F-+",
+      "number": null,
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "B.3.2 Fz-+, F-z+",
+      "number": null,
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "B.3.3 Scalar products and the homogeneous limit",
+      "number": null,
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-b33-scalar-products-and-the-homogeneous-limit"
+    },
+    {
+      "level": 1,
+      "title": "C Numerical results for the degenerate case",
+      "number": null,
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-c-numerical-results-for-the-degenerate-case"
+    },
+    {
+      "level": 2,
+      "title": "C.1 The case of Wj,1",
+      "number": null,
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-c1-the-case-of-wj1"
+    },
+    {
+      "level": 3,
+      "title": "C.1.1 Considerations at level 2",
+      "number": null,
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-c11-considerations-at-level-2"
+    },
+    {
+      "level": 3,
+      "title": "C.1.2 Form factor results for Wj,1",
+      "number": null,
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-c12-form-factor-results-for-wj1"
+    },
+    {
+      "level": 2,
+      "title": "C.2 The case of W0,qpm2",
+      "number": null,
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-c2-the-case-of-w0qpm2"
+    },
+    {
+      "level": 2,
+      "title": "C.3 Relevant Bethe roots",
+      "number": null,
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-c3-relevant-bethe-roots"
+    },
+    {
+      "level": 1,
+      "title": "D Proof of (133)",
+      "number": null,
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-d-proof-of-133"
+    },
+    {
+      "level": 2,
+      "title": "D.1 The limit 0",
+      "number": null,
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "E Further numerical results for Section 7.2",
+      "number": null,
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-e-further-numerical-results-for-section-72"
+    },
+    {
+      "level": 1,
+      "title": "F The chiral-antichiral commutator",
+      "number": null,
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-f-the-chiral-antichiral-commutator"
+    },
+    {
+      "level": 1,
+      "title": "G The ordinary XXZ case",
+      "number": null,
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-g-the-ordinary-xxz-case"
+    },
+    {
+      "level": 2,
+      "title": "G.1 Algebraic description of the ordinary XXZ case",
+      "number": null,
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-g1-algebraic-description-of-the-ordinary-xxz-cas"
+    },
+    {
+      "level": 2,
+      "title": "G.2 Central charge and conformal weights for the ordinary XXZ case",
+      "number": null,
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-g2-central-charge-and-conformal-weights-for-the"
+    },
+    {
+      "level": 2,
+      "title": "G.3 Numerical results for the ordinary XXZ case",
+      "number": null,
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-g3-numerical-results-for-the-ordinary-xxz-case"
+    },
+    {
+      "level": 2,
+      "title": "G.4 Interpolation between c=1 and c=1-6x(x+1)",
+      "number": null,
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-g4-interpolation-between-c1-and-c1-6xx1"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 2119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "koo-saleur generators",
+          "heading": false
+        },
+        {
+          "term": "virasoro generators",
+          "heading": false
+        },
+        {
+          "term": "ordinary xxz",
+          "heading": false
+        },
+        {
+          "term": "lattice virasoro",
+          "heading": false
+        },
+        {
+          "term": "sorbonne universit",
+          "heading": false
+        },
+        {
+          "term": "universit paris",
+          "heading": false
+        },
+        {
+          "term": "xxz case",
+          "heading": false
+        },
+        {
+          "term": "paris saclay",
+          "heading": false
+        }
+      ],
+      "extract": "The action of the Virasoro algebra in quantum spin chains. I. The non-rational case Linnea Grans-Samuelsson 1, Jesper Lykke Jacobsen 1,2,3,4, and Hubert Saleur 1,5 1 Institut de Physique Th´ eorique, Universit´ e Paris Saclay, CEA, CNRS, F-91191 Gif-sur-Yvette, France 2 Laboratoire de Physique de l’ ´Ecole Normale Sup´ erieure, ENS, Universit´ e PSL, CNRS, Sorbonne Universit´ e, Universit´ e de Paris, F-75005 Paris,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2010.12819v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": "2",
+      "labelEnd": "5",
+      "words": 2239,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice virasoro",
+          "heading": false
+        },
+        {
+          "term": "koo-saleur generators",
+          "heading": false
+        },
+        {
+          "term": "virasoro algebra",
+          "heading": false
+        },
+        {
+          "term": "continuum limit",
+          "heading": false
+        },
+        {
+          "term": "xxz chain",
+          "heading": false
+        },
+        {
+          "term": "conformal weight",
+          "heading": false
+        },
+        {
+          "term": "scaling states",
+          "heading": false
+        },
+        {
+          "term": "conjectured conformal",
+          "heading": false
+        }
+      ],
+      "extract": "The mechanism responsible for the emergence of the rich structure of conformal ﬁeld theories (CFTs) in the continuum limit of discrete (not necessarily integrable) lattice models has attracted growing interest in the last few years. There are several reasons for this. On the one hand, this is part of the more general question of how one can approximate ﬁeld theories using discrete systems, with the ultimate goal of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-discrete-virasoro-algebra-and-the-koo-saleur-f",
+      "number": "2",
+      "title": "Discrete Virasoro algebra and the Koo-Saleur formulae",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 139,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "virasoro",
+          "heading": true
+        },
+        {
+          "term": "models based",
+          "heading": false
+        },
+        {
+          "term": "vir",
+          "heading": false
+        },
+        {
+          "term": "algebra",
+          "heading": true
+        }
+      ],
+      "extract": "While the questions we investigate and the strategy we use are fully general in the context of two-dimensional lattice models having a conformally invariant continuum limit, we focus in this paper speciﬁcally on models based on the Temperley-Lieb algebra. As discussed further below, we think of these models as providing some lattice analogue of the Virasoro algebra—or more precisely, since we study systems with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-the-temperley-lieb-algebra-in-the-periodic-ca",
+      "number": "2.1",
+      "title": "The Temperley-Lieb algebra in the periodic case",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 94,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e2e",
+          "heading": false
+        },
+        {
+          "term": "clarity",
+          "heading": false
+        },
+        {
+          "term": "rectangle",
+          "heading": false
+        }
+      ],
+      "extract": "The following two subsections contain material discussed already in our earlier work on the subject [22–24,28], which we prefer to reproduce here for clarity, completeness and in order to establish notations. 2We note in this respect that a lattice regularization of a W -algebra at c =−2 was proposed in [34]. 5 , , Figure 1: Three examples of aﬃne diagrams for N = 4, with the left and right sides of the framing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-211-the-algebra-tanm",
+      "number": "2.1.1",
+      "title": "The algebra TaN(m)",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 376,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "framing rectangle",
+          "heading": false
+        },
+        {
+          "term": "outer boundary",
+          "heading": false
+        },
+        {
+          "term": "inner boundary",
+          "heading": false
+        },
+        {
+          "term": "aﬃne diagrams",
+          "heading": false
+        },
+        {
+          "term": "sites",
+          "heading": false
+        },
+        {
+          "term": "through-line",
+          "heading": false
+        },
+        {
+          "term": "annulus",
+          "heading": false
+        },
+        {
+          "term": "algebra",
+          "heading": true
+        }
+      ],
+      "extract": "N(m) The algebraic framework for this work is provided by the aﬃne Temperley-Lieb algebra Ta N. A basis for this algebra is provided by particular diagrams, called aﬃne diagrams, drawn on an annulus with N sites on the inner and N on the outer boundary (we henceforth assume N even), such that the sites are pairwise connected by simple curves inside the annulus that do not cross. Some examples of aﬃne diagrams are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-212-standard-modules",
+      "number": "2.1.2",
+      "title": "Standard modules",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 951,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard modules",
+          "heading": true
+        },
+        {
+          "term": "through-lines",
+          "heading": false
+        },
+        {
+          "term": "eiφ",
+          "heading": false
+        },
+        {
+          "term": "free sites",
+          "heading": false
+        },
+        {
+          "term": "non-contractible loops",
+          "heading": false
+        },
+        {
+          "term": "framing rectangle",
+          "heading": false
+        },
+        {
+          "term": "aﬃne diagrams",
+          "heading": false
+        },
+        {
+          "term": "upper halves",
+          "heading": false
+        }
+      ],
+      "extract": "It is readily checked that for any ﬁnite N, the algebra Ta N(m) obeying the deﬁning relations (8)–(9) is in fact inﬁnite-dimensional. We wish however to focus on lattice models having a ﬁnite number of degrees of freedom per site. Their proper description involves certain ﬁnite-dimensional representations of Ta N, the so-called standard modules Wj,eiφ, which depend on two parameters. Diagrammatically, the ﬁrst",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-22-physical-systems-and-the-temperley-lieb-hamil",
+      "number": "2.2",
+      "title": "Physical systems and the Temperley-Lieb Hamiltonian",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 869,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xxz spin",
+          "heading": false
+        },
+        {
+          "term": "xxz representation",
+          "heading": false
+        },
+        {
+          "term": "spin chain",
+          "heading": false
+        },
+        {
+          "term": "loop representation",
+          "heading": false
+        },
+        {
+          "term": "eiφ",
+          "heading": false
+        },
+        {
+          "term": "ground-state energy",
+          "heading": false
+        },
+        {
+          "term": "cosγ",
+          "heading": false
+        },
+        {
+          "term": "temperley-lieb",
+          "heading": true
+        }
+      ],
+      "extract": "Following the original work in [1] we now consider systems with Hamiltonians H =− γ π sinγ N∑ j=1 (ej−e∞). (15) Here, the prefactor is chosen to ensure relativistic invariance at low energy (see the next section), and we recall that γ∈ [0,π ] is deﬁned through q =eiγ, so m∈ [−2, 2]. e∞ is a constant energy density added to cancel out extensive contributions to the ground state. Its value (as discussed below) is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-23-indecomposability",
+      "number": "2.3",
+      "title": "Indecomposability",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 796,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xxz chain",
+          "heading": false
+        },
+        {
+          "term": "xxz spin",
+          "heading": false
+        },
+        {
+          "term": "condition eiφ",
+          "heading": false
+        },
+        {
+          "term": "co-standard",
+          "heading": false
+        },
+        {
+          "term": "standard module",
+          "heading": false
+        },
+        {
+          "term": "quotient module",
+          "heading": false
+        },
+        {
+          "term": "loop model",
+          "heading": false
+        },
+        {
+          "term": "through-lines",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the standard module W0,q±2 for N = 2, i.e., the loop model for two sites, in the sector with no through-lines and with non-contractible loops given the same weight m = q + q−1 as contractible ones. We emphasize that since q only enters in the combination q + q−1, the sign of the exponent ( q2 versus q−2) does not matter, motivating the notation W0,q±2. In order to illustrate the diﬀerences between the XXZ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-24-discrete-virasoro-algebra",
+      "number": "2.4",
+      "title": "Discrete Virasoro algebra",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 395,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sinγ",
+          "heading": false
+        },
+        {
+          "term": "virasoro",
+          "heading": true
+        },
+        {
+          "term": "virasoro generators",
+          "heading": false
+        },
+        {
+          "term": "fonts",
+          "heading": false
+        },
+        {
+          "term": "discretized",
+          "heading": false
+        },
+        {
+          "term": "densities",
+          "heading": false
+        },
+        {
+          "term": "continuum",
+          "heading": false
+        },
+        {
+          "term": "momentum",
+          "heading": false
+        }
+      ],
+      "extract": "Following (15) we deﬁne the Hamiltonian density as hj =− γ π sinγej, from which we may construct a lattice momentum density pj =i[hj, hj−1] = −i ( γ π sinγ )2 [ej−1,ej] by using energy conservation [3]. We then deﬁne the corresponding momentum operator P as P =−i ( γ π sinγ )2 N∑ j=1 [ej,ej+1]. (29) From the densities hj and pj we may build components of a discretized stress tensor as Tj = 1 2(hj + pj), (30a) ¯Tj =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-some-features-of-the-continuum-limit",
+      "number": "3",
+      "title": "Some features of the continuum limit",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 49,
+      "summary": null,
+      "keywords": [],
+      "extract": "We recall once more that throughout this paper q is assumed to take generic values (not a root of unity). Whenever φ is such that the resonance criterion (11) is not met we say that φ is generic; and when (11) is satisﬁed φ is referred to as non-generic.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-31-modules-in-the-continuum",
+      "number": "3.1",
+      "title": "Modules in the continuum",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 691,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "verma module",
+          "heading": false
+        },
+        {
+          "term": "conformal weights",
+          "heading": false
+        },
+        {
+          "term": "iβi",
+          "heading": false
+        },
+        {
+          "term": "eiφ",
+          "heading": false
+        },
+        {
+          "term": "virasoro algebra",
+          "heading": false
+        },
+        {
+          "term": "highest-weight",
+          "heading": false
+        },
+        {
+          "term": "singular vector",
+          "heading": false
+        },
+        {
+          "term": "xxz",
+          "heading": false
+        }
+      ],
+      "extract": "Choosing Sz =j the XXZ representation for generic q and φ provides a faithful representation of the modules Wj,eiφ. The Hamiltonian acting on this module has a CFT low-energy spectrum, encoding conformal weights h, ¯h. These weights are known from a variety of techniques like the Bethe-ansatz or Coulomb-gas mappings, combined with extensive numerical studies [12,37]. It is convenient to encode their values by using",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-32-bosonization-and-expected-results",
+      "number": "3.2",
+      "title": "Bosonization and expected results",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 1322,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modiﬁed stress-energy",
+          "heading": false
+        },
+        {
+          "term": "stress-energy tensor",
+          "heading": false
+        },
+        {
+          "term": "conformal weights",
+          "heading": false
+        },
+        {
+          "term": "temperley-lieb generators",
+          "heading": false
+        },
+        {
+          "term": "free-ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "sinγ",
+          "heading": false
+        },
+        {
+          "term": "scaling states",
+          "heading": false
+        },
+        {
+          "term": "scaling limit",
+          "heading": false
+        }
+      ],
+      "extract": "Many algebraic aspects of the continuum limit of Temperley-Lieb based models can be understood using bosonization of the underlying XXZ spin chain and its relation with the free-ﬁeld (Dotsenko-Fateev) descrip- tion [31] of c <1 CFTs. We start with some basic results here, concerning in particular the identiﬁcation of the stress-energy tensor and its “twisted” version, the role of vertex operators, and the nature of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-33-the-choices-of-metric",
+      "number": "3.3",
+      "title": "The choices of metric",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 522,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deﬁnite scalar",
+          "heading": false
+        },
+        {
+          "term": "virasoro algebra",
+          "heading": false
+        },
+        {
+          "term": "scalar product",
+          "heading": false
+        },
+        {
+          "term": "xxz spin",
+          "heading": false
+        },
+        {
+          "term": "heisenberg algebra",
+          "heading": false
+        },
+        {
+          "term": "spin chain",
+          "heading": false
+        },
+        {
+          "term": "commutation relations",
+          "heading": false
+        },
+        {
+          "term": "free-boson",
+          "heading": false
+        }
+      ],
+      "extract": "We have just recovered the well-known result that the continuum limit of the XXZ spin chain is made up of sectors of a twisted free-boson theory. The space of states in the continuum limit can be built out of vertex- operator states Vα =:eiαϕ: (in this section we shall only consider the chiral part for notational brevity) and derivatives∂ϕ,∂ 2ϕ, (∂ϕ)2,... . From the free-boson current J(z) = 1 4∂zϕ, we deﬁne an as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-34-feigin-fuchs-modules-and-conjugate-states",
+      "number": "3.4",
+      "title": "Feigin-Fuchs modules and conjugate states",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 393,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conjugate states",
+          "heading": true
+        },
+        {
+          "term": "feigin-fuchs",
+          "heading": true
+        },
+        {
+          "term": "verma module",
+          "heading": false
+        },
+        {
+          "term": "v2α",
+          "heading": false
+        },
+        {
+          "term": "virasoro algebra",
+          "heading": false
+        },
+        {
+          "term": "fock",
+          "heading": false
+        },
+        {
+          "term": "charge",
+          "heading": false
+        },
+        {
+          "term": "arrows",
+          "heading": false
+        }
+      ],
+      "extract": "When the lattice parameters are such that the corresponding twisted free boson only involves non-degenerate cases, the Verma modules are irreducible and coincide with the Fock spaces of the bosonic theory. We now consider what happens in the degenerate case. As a module over the Heisenberg algebra, the Fock space is irreducible. If we instead wish to consider it as a module over the Virasoro algebra, it will be a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-4-bethe-ansatz-picture",
+      "number": "4",
+      "title": "Bethe Ansatz picture",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 36,
+      "summary": null,
+      "keywords": [],
+      "extract": "In the context of the XXZ spin chain the Bethe ansatz is a well-adapted tool to carry out the analysis [47]. We present the general picture, and refer the reader to Appendix B for more detail.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-41-bethe-ansatz-and-the-identification-of-scalin",
+      "number": "4.1",
+      "title": "Bethe-ansatz and the identification of scaling states",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 1404,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scaling states",
+          "heading": true
+        },
+        {
+          "term": "bethe integers",
+          "heading": false
+        },
+        {
+          "term": "ﬁlled circles",
+          "heading": false
+        },
+        {
+          "term": "electric excitation",
+          "heading": false
+        },
+        {
+          "term": "electromagnetic excitation",
+          "heading": false
+        },
+        {
+          "term": "anti-chiral level",
+          "heading": false
+        },
+        {
+          "term": "magnetic excitation",
+          "heading": false
+        },
+        {
+          "term": "non-scaling state",
+          "heading": false
+        }
+      ],
+      "extract": "When q not a root of unity, and the resonance criterion (11) is not satisﬁed, the XXZ Hamiltonian can be fully diagonalized using a basis of orthonormal Bethe states (see [48,49] and references therein). The corresponding Bethe equations are of the form Nλj = 2πIj +φ− ∑ k⁄=j ΘXXZ(λj,λk), (78) for j = 1, 2,..., N 2 −Sz, and are obtained (after some rewriting) by taking the logarithm of (154) as given in Appendix B;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-411-overlaps-and-mixing",
+      "number": "4.1.1",
+      "title": "Overlaps and mixing",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 490,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "descendant states",
+          "heading": false
+        },
+        {
+          "term": "primary state",
+          "heading": false
+        },
+        {
+          "term": "lowest-energy state",
+          "heading": false
+        },
+        {
+          "term": "scaling state",
+          "heading": false
+        },
+        {
+          "term": "momentum sectors",
+          "heading": false
+        },
+        {
+          "term": "mixing",
+          "heading": true
+        },
+        {
+          "term": "lattice momentum",
+          "heading": false
+        },
+        {
+          "term": "anti-chiral",
+          "heading": false
+        }
+      ],
+      "extract": "Even when taking the possibility of repeating integers into account, the above picture of scaling states and their conjectured limits is neater than reality. An important example of a more complicated situation, which will be relevant for the numerical results below, is as follows. 7Note: numerically, our momentum only depends one, since we have smeared out the twist.eφ instead modiﬁes the Hamiltonian itself. 18",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-42-conjugate-states-and-bethe-roots",
+      "number": "4.2",
+      "title": "Conjugate states and Bethe roots",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 815,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bethe roots",
+          "heading": true
+        },
+        {
+          "term": "degenerate anti-chiral",
+          "heading": false
+        },
+        {
+          "term": "anti-chiral charge",
+          "heading": false
+        },
+        {
+          "term": "bethe ansatz",
+          "heading": false
+        },
+        {
+          "term": "bethe equations",
+          "heading": false
+        },
+        {
+          "term": "koo-saleur generators",
+          "heading": false
+        },
+        {
+          "term": "null states",
+          "heading": false
+        },
+        {
+          "term": "degenerate chiral",
+          "heading": false
+        }
+      ],
+      "extract": "In Section 3.4 we saw that in the degenerate case there are two possible diagrams for the structure of Virasoro modules, reproduced here for convenience (co-Verma module to the left, Verma module to the right): • ◦ ◦ • . (82) Due to the sign in the conjecture (66), we see that degenerate chiral weights h (i.e., h = hr,s with r,s∈ N∗) are obtained by charges α corresponding to states where (e−eφ) and Sz are of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-43-some-results-about-form-factors",
+      "number": "4.3",
+      "title": "Some results about form factors",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 440,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "form factors",
+          "heading": true
+        },
+        {
+          "term": "bethe roots",
+          "heading": false
+        },
+        {
+          "term": "mσz",
+          "heading": false
+        },
+        {
+          "term": "virasoro generators",
+          "heading": false
+        },
+        {
+          "term": "carried out",
+          "heading": false
+        },
+        {
+          "term": "eigenstates",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian",
+          "heading": false
+        },
+        {
+          "term": "matrix elements",
+          "heading": false
+        }
+      ],
+      "extract": "In Appendix B we give a brief recapitulation of the Quantum Inverse Scattering Method, in which local operators such as σz m are expressed in terms of entries of the monodromy matrix T = (A B C D). For a general overview of this method see [51]. The eigenstates of the XXZ Hamiltonian are given as |{λ}⟩ =∏n k=1B(λk)|0⟩ for a set of Bethe roots {λ}, their duals as ⟨{λ}| =⟨0|∏n k=1C(λk) and we wish to ﬁnd matrix",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-431-properties-under-conjugation-and-parity-impl",
+      "number": "4.3.1",
+      "title": "Properties under conjugation and parity, implications for the modules",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 676,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "parity",
+          "heading": true
+        },
+        {
+          "term": "bethe states",
+          "heading": false
+        },
+        {
+          "term": "site-independent",
+          "heading": false
+        },
+        {
+          "term": "neighboring operators",
+          "heading": false
+        },
+        {
+          "term": "mσz",
+          "heading": false
+        },
+        {
+          "term": "form factors",
+          "heading": false
+        },
+        {
+          "term": "phase",
+          "heading": false
+        },
+        {
+          "term": "conjugation",
+          "heading": true
+        }
+      ],
+      "extract": "The site dependence of the form factors does not depend on the choice of operators and can be factorized in the expressions. Following the notation in Appendix B we let FO1···Oj denote the site-independent part of the form factor for j neighboring operators O1··· Oj. We wish to ﬁnd relations between the site-independent part of the form factors of interest. The ﬁrst type of relations between the site-independent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-5-lattice-virasoro-in-the-non-degenerate-case",
+      "number": "5",
+      "title": "Lattice Virasoro in the non-degenerate case",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 72,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bethe",
+          "heading": false
+        },
+        {
+          "term": "non-degenerate",
+          "heading": true
+        },
+        {
+          "term": "spin-chain",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we give a ﬁrst example of the numerical results obtained in the XXZ spin-chain representation by the Bethe ansatz. We consider matrix elements of the Koo-Saleur generator L−1 in the basis of Bethe states, in the non-degenerate case where neither α nor ¯α leads to a degenerate conformal weight hr,s. We begin by some general considerations with regard to lattice momentum, which also carry over to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-51-koo-saleur-generators-and-lattice-momentum",
+      "number": "5.1",
+      "title": "Koo-Saleur generators and lattice momentum",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 434,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice momentum",
+          "heading": true
+        },
+        {
+          "term": "koo-saleur",
+          "heading": true
+        },
+        {
+          "term": "bethe states",
+          "heading": false
+        },
+        {
+          "term": "koo-saleur generator",
+          "heading": false
+        },
+        {
+          "term": "nej",
+          "heading": false
+        },
+        {
+          "term": "aﬃne temperley-lieb",
+          "heading": false
+        },
+        {
+          "term": "temperley-lieb algebra",
+          "heading": false
+        },
+        {
+          "term": "matrix elements",
+          "heading": false
+        }
+      ],
+      "extract": "Thanks to the smearing of the twist in (22) the Bethe states are invariant under the usual translation operator, and we can sort them by their (rescaled) lattice momentum p = 0, 1,...,N − 1 deﬁned in (81). We deﬁne the matrix Ln[N] so that (Ln[N])ab is the matrix element⟨a|Ln[N]|b⟩ of the Koo-Saleur generator Ln[N] between two Bethe states at system size N. Ln[N] can then be written as a block-diagonal matrix, with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-52-numerical-results-for-l-1",
+      "number": "5.2",
+      "title": "Numerical results for L-1",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 1242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bethe states",
+          "heading": false
+        },
+        {
+          "term": "anti-chiral level",
+          "heading": false
+        },
+        {
+          "term": "bethe integers",
+          "heading": false
+        },
+        {
+          "term": "parasitic couplings",
+          "heading": false
+        },
+        {
+          "term": "chiral level",
+          "heading": false
+        },
+        {
+          "term": "koo-saleur generators",
+          "heading": false
+        },
+        {
+          "term": "scaling states",
+          "heading": false
+        },
+        {
+          "term": "norm squared",
+          "heading": false
+        }
+      ],
+      "extract": "We now show the ﬁrst non-zero matrix elements of the matrix L−1[N] for increasingly large system size N and compare with the values we would expect from CFT computations. In this example we consider Sz = 1,e = 0 at φ = 1/10,x = π. (Recall (1): q = eiγ = eiπ/(x+1), and (2): eφ = φ 2π ). For non-zero matrix elements, the lattice momentum must shift by p→p−n =p + 1 between the two Bethe states. We shall consider the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-6-lattice-virasoro-in-the-degenerate-case",
+      "number": "6",
+      "title": "Lattice Virasoro in the degenerate case",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 241,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "degenerate",
+          "heading": true
+        },
+        {
+          "term": "xxz spin",
+          "heading": false
+        },
+        {
+          "term": "conformal weights",
+          "heading": false
+        },
+        {
+          "term": "eiφ",
+          "heading": false
+        },
+        {
+          "term": "non-generic",
+          "heading": false
+        },
+        {
+          "term": "spin chain",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we turn to one of our main goals of this paper: ﬁnding the precise nature of modules occurring in the XXZ spin chain representation in degenerate cases, possibly also with non-generic φ. Compared to the loop representation studied in [2], the XXZ spin chain representation allows for both standard and co- standard Temperley-Lieb modules at non-generic φ. The Virasoro modules in the limit may diﬀer",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-61-modules-wj1-for-j-0",
+      "number": "6.1",
+      "title": "Modules Wj,1 for j =0",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "antichiral",
+          "heading": false
+        },
+        {
+          "term": "conformal weights",
+          "heading": false
+        },
+        {
+          "term": "modules",
+          "heading": true
+        },
+        {
+          "term": "xxz",
+          "heading": false
+        },
+        {
+          "term": "degenerate",
+          "heading": false
+        }
+      ],
+      "extract": "While the modules Wj,1 for j⁄= 0 remain irreducible for generic q, the generating function of levels (see (37)) reads Fj,1 = q−c/24¯q−c/24 P (q)P (¯q) ∑ e∈Z qhe,−j ¯qhe,j (105) and involves degenerate values of the conformal weights. Let us ﬁrst consider Sz = j > 0. As discussed in Section 4.2, the chiral weight h will be degenerate for e <0, and the corresponding module is conjectured to have the co-Verma structure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-62-modules-w0qpm2",
+      "number": "6.2",
+      "title": "Modules W0,qpm2",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 643,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "parasitic couplings",
+          "heading": false
+        },
+        {
+          "term": "cutoﬀ",
+          "heading": false
+        },
+        {
+          "term": "right panel",
+          "heading": false
+        },
+        {
+          "term": "left panel",
+          "heading": false
+        },
+        {
+          "term": "bethe integers",
+          "heading": false
+        },
+        {
+          "term": "modules",
+          "heading": true
+        },
+        {
+          "term": "central charge",
+          "heading": false
+        },
+        {
+          "term": "lattice momentum",
+          "heading": false
+        }
+      ],
+      "extract": "We now switch to the modules W0,q2 and W0,q−2 as deﬁned in (28). There will be several diﬀerences compared to the case of Wj,1. First, the resonance criterion (11) is fulﬁlled. Second, due to having Sz = 0, the chiral and anti-chiral sectors will have same charges (66) and play the same role. Third, withSz = 0 the lattice momentum (80) will change by ∆ p = N 2 whenever the Bethe integers are shifted one step. Since",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-7-anomalies-and-the-convergence-of-the-koo-saleu",
+      "number": "7",
+      "title": "Anomalies, and the convergence of the Koo-Saleur generators",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 622,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "parasitic couplings",
+          "heading": false
+        },
+        {
+          "term": "energy window",
+          "heading": false
+        },
+        {
+          "term": "central-charge",
+          "heading": false
+        },
+        {
+          "term": "koo-saleur",
+          "heading": true
+        },
+        {
+          "term": "non-generic cases",
+          "heading": false
+        },
+        {
+          "term": "unwanted terms",
+          "heading": false
+        },
+        {
+          "term": "ising model",
+          "heading": false
+        },
+        {
+          "term": "full norms",
+          "heading": false
+        }
+      ],
+      "extract": "The restriction to scaling states is crucial if one hopes to recover the Virasoro algebra relations (40) for the generators Ln, obtained from the Temperley-Lieb algebra by the Koo-Saleur formulae (31). Otherwise—for instance—since the Ln act on a ﬁnite-dimensional Hilbert space for N ﬁnite, we would necessarily have that Tr [Ln, L−n] = 0 (by cyclicity of the trace), preventing the appearance of the central-charge",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-71-scaling-weak-convergence",
+      "number": "7.1",
+      "title": "``Scaling-weak'' convergence",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": "28",
+      "labelEnd": "28",
+      "words": 422,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scaling-weak convergence",
+          "heading": true
+        },
+        {
+          "term": "virasoro generators",
+          "heading": false
+        },
+        {
+          "term": "scaling states",
+          "heading": false
+        },
+        {
+          "term": "koo-saleur generators",
+          "heading": false
+        },
+        {
+          "term": "intermediate states",
+          "heading": false
+        },
+        {
+          "term": "generators converge",
+          "heading": false
+        },
+        {
+          "term": "parasitic matrix",
+          "heading": false
+        },
+        {
+          "term": "lattice virasoro",
+          "heading": false
+        }
+      ],
+      "extract": "The precise mathematical status of the convergence of the Koo-Saleur generators to the Virasoro generators is clearly a problem beyond the scope of this article. A very conservative statement, which we believe to hold true, is that 1) matrix elements of lattice Virasoro generators converge, when evaluated between scaling states, to their expected continuum limit and 2) matrix elements of products of lattice Virasoro",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-72-a-closer-look-at-limits-and-commutators",
+      "number": "7.2",
+      "title": "A closer look at limits and commutators",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 737,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "commutators",
+          "heading": true
+        },
+        {
+          "term": "e2iπn",
+          "heading": false
+        },
+        {
+          "term": "matrix elements",
+          "heading": false
+        },
+        {
+          "term": "scaling limit",
+          "heading": false
+        },
+        {
+          "term": "koo-saleur",
+          "heading": false
+        },
+        {
+          "term": "central charge",
+          "heading": false
+        },
+        {
+          "term": "bethe",
+          "heading": false
+        },
+        {
+          "term": "anomalous",
+          "heading": false
+        }
+      ],
+      "extract": "A priori, it looks like any product of Koo-Saleur generators might be strongly aﬀected by parasitic couplings. We have, however, found serious evidence that only the central charge can come out wrong in calculations. In particular we shall in this section consider commutators, and our belief is that the scaling limit of Koo-Saleur commutators is the commutator of the scaling limit, except for the anomalous central",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-721-the-case-of-n-0",
+      "number": "7.2.1",
+      "title": "The case of n =0",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 32,
+      "labelStart": "29",
+      "labelEnd": "32",
+      "words": 1051,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e2iπn",
+          "heading": false
+        },
+        {
+          "term": "ejej",
+          "heading": false
+        },
+        {
+          "term": "sinγ",
+          "heading": false
+        },
+        {
+          "term": "nej",
+          "heading": false
+        },
+        {
+          "term": "subleading terms",
+          "heading": false
+        },
+        {
+          "term": "ground state",
+          "heading": false
+        },
+        {
+          "term": "absolute value",
+          "heading": false
+        },
+        {
+          "term": "matrix elements",
+          "heading": false
+        }
+      ],
+      "extract": "We now turn back to the comparison between (116) and (117). The ﬁrst observation is that the right-hand-side of (116) contains trigonometric functions of p/N,n/N while the right-hand side of (117) is linear in p,n . While this discrepancy could, by itself, explain why (116)⁄↦→ (117), that is in fact not the case. Expanding the sinuses in powers of their arguments (at ﬁxed p,n and with N large), it turns out that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-722-the-case-of-n-0",
+      "number": "7.2.2",
+      "title": "The case of n= 0",
+      "level": 3,
+      "pageStart": 32,
+      "pageEnd": 36,
+      "labelStart": "32",
+      "labelEnd": "36",
+      "words": 2038,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral-antichiral commutator",
+          "heading": false
+        },
+        {
+          "term": "ejej",
+          "heading": false
+        },
+        {
+          "term": "sinγ",
+          "heading": false
+        },
+        {
+          "term": "sin3γi",
+          "heading": false
+        },
+        {
+          "term": "extrapolated values",
+          "heading": false
+        },
+        {
+          "term": "ground state",
+          "heading": false
+        },
+        {
+          "term": "koo-saleur generators",
+          "heading": false
+        },
+        {
+          "term": "ground-state expectation",
+          "heading": false
+        }
+      ],
+      "extract": "In the case of n = 0, however, we do not obtain the falloﬀ for the individual terms seen in Figure 3. Indeed, to stand any chance of recovering the desired central-charge terms in (117b) we must have constant contributions. In Figure 5 we see that the matrix elements of the individual terms between the ground state and itself indeed seem to stay constant as N increases, while they decrease as before between the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-8-conclusions",
+      "number": "8",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 537,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xxz spin",
+          "heading": false
+        },
+        {
+          "term": "spin chain",
+          "heading": false
+        },
+        {
+          "term": "virasoro modules",
+          "heading": false
+        },
+        {
+          "term": "continuum limit",
+          "heading": false
+        },
+        {
+          "term": "numerical evidence",
+          "heading": false
+        },
+        {
+          "term": "commutators",
+          "heading": false
+        },
+        {
+          "term": "co-verma",
+          "heading": false
+        },
+        {
+          "term": "koo-saleur",
+          "heading": false
+        }
+      ],
+      "extract": "We have ﬁrst presented in this paper considerable numerical evidence of the validity of the Koo-Saleur conjecture, namely that Ln↦→Ln as N→∞ , in the scaling-weak sense. Thanks to the systematic use of form factors in the numerical computations, we have been able to increase signiﬁcantly the size of the systems studied—and thus the accuracy of the checks—as compared with the pioneering paper [1]. This has allowed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-a-some-remarks-on-scalar-products",
+      "number": null,
+      "title": "A Some remarks on scalar products",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 38,
+      "labelStart": "36",
+      "labelEnd": "38",
+      "words": 819,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scalar",
+          "heading": true
+        },
+        {
+          "term": "right eigenstates",
+          "heading": false
+        },
+        {
+          "term": "conformal scalar",
+          "heading": false
+        },
+        {
+          "term": "scalar product",
+          "heading": false
+        },
+        {
+          "term": "ground states",
+          "heading": false
+        },
+        {
+          "term": "ordinary scalar",
+          "heading": false
+        },
+        {
+          "term": "states correspond",
+          "heading": false
+        },
+        {
+          "term": "time evolution",
+          "heading": false
+        }
+      ],
+      "extract": "It is interesting to discuss in more detail why the conformal scalar product (the one corresponding to the conjugationL‡ n =L−n) is the one relevant for the calculation of correlation functions in the operator formalism, and, in our case, is the one obtained by “treating q as a formal variable”. Due to the exploratory nature of this 36 Appendix, we shall use here the standard bra-ket notation ⟨−|−⟩, although the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-b-more-on-form-factors",
+      "number": null,
+      "title": "B More on form factors",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": "38",
+      "labelEnd": "38",
+      "words": 19,
+      "summary": null,
+      "keywords": [],
+      "extract": "For a general overview of transfer matrix formalism, Bethe ansatz and the Quantum Inverse Scattering Method (QISM), see [51].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-033-b1-general-framework-notations-conventions",
+      "number": null,
+      "title": "B.1 General framework, notations, conventions",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 420,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bethe equations",
+          "heading": false
+        },
+        {
+          "term": "bethe states",
+          "heading": false
+        },
+        {
+          "term": "eiφd",
+          "heading": false
+        },
+        {
+          "term": "diagonal twist",
+          "heading": false
+        },
+        {
+          "term": "monodromy matrix",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "untwisted case",
+          "heading": false
+        },
+        {
+          "term": "eiφ",
+          "heading": false
+        }
+      ],
+      "extract": "We shall follow the work in [58]. We ﬁrst ﬁx our notation. The XXZ R-matrix is written as R(λ,µ ) =   1 0 0 0 0 b(λ,µ ) c(λ,µ ) 0 0 c(λ,µ ) b(λ,µ ) 0 0 0 0 1   , (152) with b(λ,µ ) = sinh(λ−µ) sinh(λ−µ +η), (153a) c(λ,µ ) = sinh(η) sinh(λ−µ +η) (153b) andη =iγ. Since R only depends on the diﬀerenceλ−µ, we shall sometimes write it in terms of only one variable, R(u)≡R(λ,µ ) withu =λ−µ. We write the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-b2-quantum-inverse-scattering-method",
+      "number": null,
+      "title": "B.2 Quantum Inverse Scattering Method",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "39",
+      "labelEnd": "40",
+      "words": 821,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bethe states",
+          "heading": false
+        },
+        {
+          "term": "b-operators",
+          "heading": false
+        },
+        {
+          "term": "homogeneous limit",
+          "heading": false
+        },
+        {
+          "term": "pre-factors",
+          "heading": false
+        },
+        {
+          "term": "commutation relations",
+          "heading": false
+        },
+        {
+          "term": "mab",
+          "heading": false
+        },
+        {
+          "term": "transfer matrix",
+          "heading": false
+        },
+        {
+          "term": "form factors",
+          "heading": false
+        }
+      ],
+      "extract": "In the framework of the quantum inverse scattering method, we express local operators O in terms of the operators A,B,C,D . Let t(η 2 ) = A(η 2 ) +D(η 2 ) denote the transfer matrix, that is, the trace of T(u) in the homogeneous case u = η/2 = iγ/2 (which will sometimes have to be taken as a limit, as we shall see below). We recall that the XXZ Hamiltonian (19) is recovered from T−1(u)∂T ∂u ⏐⏐⏐ u=η/2 . Acting on a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-b3-the-expressions-for-the-necessary-fo1oj",
+      "number": null,
+      "title": "B.3 The expressions for the necessary FO1,…,Oj",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 42,
+      "labelStart": "40",
+      "labelEnd": "42",
+      "words": 476,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eiφd",
+          "heading": false
+        },
+        {
+          "term": "mab",
+          "heading": false
+        },
+        {
+          "term": "fbc",
+          "heading": false
+        },
+        {
+          "term": "bethe roots",
+          "heading": false
+        },
+        {
+          "term": "fzz",
+          "heading": false
+        },
+        {
+          "term": "scalar products",
+          "heading": false
+        },
+        {
+          "term": "phases",
+          "heading": false
+        }
+      ],
+      "extract": "In what follows we shall use the notation {λ} to refer to the set of Bethe roots λ1,...,λ n, while{λ}a denotes the set with the a’th root removed. We use Sn({µ},{λ}) to refer to scalar products ⟨{µ}|{λ}⟩; these scalar products are given explicitly below. Note: As when ﬁnding the Bethe roots, we must again keep in mind the modiﬁed eigenvalue d(λ)→eiφd(λ). For the norm squared above any overall phase is ignored in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-b33-scalar-products-and-the-homogeneous-limit",
+      "number": null,
+      "title": "B.3.3 Scalar products and the homogeneous limit",
+      "level": 3,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": "42",
+      "labelEnd": "42",
+      "words": 336,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xsn",
+          "heading": false
+        },
+        {
+          "term": "eiφd",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        }
+      ],
+      "extract": "We give below the determinant representation for the scalar products Sn. Please note than when compared to [58] we have taken the factors of r(λ) =a(λ)/d(λ) outside the matrix. This leads to an overall phase e−inφ in front of the determinant from the modiﬁed eigenvalue d(λ)→eiφd(λ). Sn({µ},{λ})≡⟨{µ}|{λ}⟩ = e−inφ det(H({µ},{λ}))∏ j>kϕ(µk−µj)∏ α<βϕ(λβ−λα), (170) with Hab({µ},{λ}) = ϕ(η) ϕ(µa−λb) (∏ k⁄=a ϕ(µk−λb",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-c-numerical-results-for-the-degenerate-case",
+      "number": null,
+      "title": "C Numerical results for the degenerate case",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": "42",
+      "labelEnd": "43",
+      "words": 66,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "degenerate",
+          "heading": true
+        },
+        {
+          "term": "numerical",
+          "heading": true
+        },
+        {
+          "term": "states",
+          "heading": false
+        }
+      ],
+      "extract": "Within this Appendix we provide numerical evidence for the results (108) and (111) given in Section 6. Through- out this Appendix we take x =π, so that q is not a root of unity. We consider states with degenerate conformal weights h = hr,s and/or ¯h = hr,s. We shall use the same notation |u⟩,|v⟩,|w⟩... for scaling states and the corresponding states in the continuum. 42",
+      "extractCut": false
+    },
+    {
+      "id": "sec-038-c1-the-case-of-wj1",
+      "number": null,
+      "title": "C.1 The case of Wj,1",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "43",
+      "labelEnd": "44",
+      "words": 930,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bethe states",
+          "heading": false
+        },
+        {
+          "term": "primary state",
+          "heading": false
+        },
+        {
+          "term": "singular states",
+          "heading": false
+        },
+        {
+          "term": "level state",
+          "heading": false
+        },
+        {
+          "term": "lowering operators",
+          "heading": false
+        },
+        {
+          "term": "conj",
+          "heading": false
+        },
+        {
+          "term": "linear combinations",
+          "heading": false
+        },
+        {
+          "term": "anti-chiral",
+          "heading": false
+        }
+      ],
+      "extract": "The main goal of this section is to provide numerical support for the conjecture (108) and the concept of strong duality (97). We start by showing explicitly in Table 3 the duality for conjugate states for the ﬁrst few sizes, giving an example of how matrix elements for raising operators will follow from those for the lowering operators. In this example we consider Sz = 1, e=±1. We here also see the issue of mixing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-c11-considerations-at-level-2",
+      "number": null,
+      "title": "C.1.1 Considerations at level 2",
+      "level": 3,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "44",
+      "labelEnd": "45",
+      "words": 394,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bethe states",
+          "heading": false
+        },
+        {
+          "term": "fourth state",
+          "heading": false
+        },
+        {
+          "term": "full norm",
+          "heading": false
+        },
+        {
+          "term": "level",
+          "heading": true
+        },
+        {
+          "term": "form-factor",
+          "heading": false
+        },
+        {
+          "term": "anti-chiral",
+          "heading": false
+        },
+        {
+          "term": "projection onto",
+          "heading": false
+        },
+        {
+          "term": "meanwhile",
+          "heading": false
+        }
+      ],
+      "extract": "At level 2 we typically expect two orthogonal states, which we call |w1⟩ and|w2⟩. To get the total projection onto level 2 we consider |χ|2≡ √ |⟨w1|χ⟩|2 +|⟨w2|χ⟩|2 (176) and same for the anti-chiral quantities. In the case of degenerate conformal weights we furthermore again have the issue of overlap, so that we once again must take into account twice as many states. However, the fourth state is a singular Bethe",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-c12-form-factor-results-for-wj1",
+      "number": null,
+      "title": "C.1.2 Form factor results for Wj,1",
+      "level": 3,
+      "pageStart": 45,
+      "pageEnd": 47,
+      "labelStart": "45",
+      "labelEnd": "47",
+      "words": 911,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "primary state",
+          "heading": false
+        },
+        {
+          "term": "polynomial extrapolations",
+          "heading": false
+        },
+        {
+          "term": "lowering operator",
+          "heading": false
+        },
+        {
+          "term": "conj",
+          "heading": false
+        },
+        {
+          "term": "cft values",
+          "heading": false
+        },
+        {
+          "term": "same conventions",
+          "heading": false
+        },
+        {
+          "term": "relevant state",
+          "heading": false
+        },
+        {
+          "term": "fourth relevant",
+          "heading": false
+        }
+      ],
+      "extract": "For all form factor results we take the most extreme cutoﬀ in any product of Koo-Saleur generators. (See further the discussion in Section 7.1.) N ⟨v1|L−1|u−⟩ ⟨ ¯a−1u−| ¯L−1|u−⟩ 10 0.04744019 0.87777283 12 0.04357369 0.9762023 14 0.04048884 1.03974472 16 0.03793402 1.08270653 18 0.03576776 1.11294418 20 0.03389957 1.13495942 22 0.03226707 1.15145137 24 0.0308251 1.16410715 26 0.02953989 1.17402095 28 0.02838551",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-c2-the-case-of-w0qpm2",
+      "number": null,
+      "title": "C.2 The case of W0,qpm2",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 48,
+      "labelStart": "47",
+      "labelEnd": "48",
+      "words": 199,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted boundary",
+          "heading": false
+        },
+        {
+          "term": "indecomposability",
+          "heading": false
+        },
+        {
+          "term": "primary state",
+          "heading": false
+        },
+        {
+          "term": "boundary conditions",
+          "heading": false
+        }
+      ],
+      "extract": "We here wish to provide, in particular, support for the conjecture (111). The results are shown in Table 10. We here show how the indecomposability appears already at ﬁnite size in this particular case. We also again see the duality of conjugate states. While our focus here is on small system sizes and the indecomposability of the Temperley-Lieb modules, we still show the extrapolation as well—we see that already",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-c3-relevant-bethe-roots",
+      "number": null,
+      "title": "C.3 Relevant Bethe roots",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 49,
+      "labelStart": "48",
+      "labelEnd": "49",
+      "words": 488,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bethe roots",
+          "heading": true
+        },
+        {
+          "term": "roots necessary",
+          "heading": false
+        },
+        {
+          "term": "reproduce table",
+          "heading": false
+        },
+        {
+          "term": "roots corresponding",
+          "heading": false
+        },
+        {
+          "term": "opposite signs",
+          "heading": false
+        },
+        {
+          "term": "integers",
+          "heading": false
+        },
+        {
+          "term": "self-conjugate",
+          "heading": false
+        },
+        {
+          "term": "relevant",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we list the Bethe roots used in the numerical results at x =π,N = 10 and with the twist φ as speciﬁed in each case. The roots for other values of x and the twist φ can be reached numerically by gradually modifying x,φ , using the previous roots as the starting guess of the numerical solver in each step. The roots at larger system sizes N are found in the same fashion. These roots can be inserted into",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-d-proof-of-133",
+      "number": null,
+      "title": "D Proof of (133)",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 50,
+      "labelStart": "49",
+      "labelEnd": "50",
+      "words": 766,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sinγi cosγ",
+          "heading": false
+        },
+        {
+          "term": "sin3γi sinγi",
+          "heading": false
+        },
+        {
+          "term": "obtain ejej",
+          "heading": false
+        },
+        {
+          "term": "jσz",
+          "heading": false
+        },
+        {
+          "term": "sin2γ",
+          "heading": false
+        },
+        {
+          "term": "sinht",
+          "heading": false
+        },
+        {
+          "term": "sinγ",
+          "heading": false
+        },
+        {
+          "term": "jσy",
+          "heading": false
+        }
+      ],
+      "extract": "We wish to prove (133b), from which (133a) then also follows thanks to the known result (132). Within this Appendix, we let⟨O⟩ refer to the ground-state expectation value of an operator O in the limit N→∞ . Using the parity of the ground state we can restate (133b) as ⟨ejej+1⟩ = 3 sin3γI 1− sinγI 0 cosγ . (182) In [56] the following ground-state expectation values are given for spin operators Sa =σa/2, a=x,y,z : ⟨Sx",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-e-further-numerical-results-for-section-72",
+      "number": null,
+      "title": "E Further numerical results for Section 7.2",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 53,
+      "labelStart": "50",
+      "labelEnd": "53",
+      "words": 556,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "size eﬀects",
+          "heading": false
+        },
+        {
+          "term": "excited energy",
+          "heading": false
+        },
+        {
+          "term": "energy state",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst excited",
+          "heading": false
+        },
+        {
+          "term": "lattice parameters",
+          "heading": false
+        },
+        {
+          "term": "lowest energy",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite size",
+          "heading": false
+        },
+        {
+          "term": "ﬁgures",
+          "heading": false
+        }
+      ],
+      "extract": "Within this Appendix we collect ﬁgures providing further numerical evidence for the results (124) and (134) given in Section 7.2 regarding the limit of the commutator [ Lp+n + ¯L−p−n, L−p− ¯Lp]. Throughout this Appendix we consider x =π, so that q is not a root of unity. In Figures 8 and 9 we show results for n =−2, while in Figure 10 we show results for n = 0 in the case where we do not project back on the original",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-f-the-chiral-antichiral-commutator",
+      "number": null,
+      "title": "F The chiral-antichiral commutator",
+      "level": 1,
+      "pageStart": 53,
+      "pageEnd": 55,
+      "labelStart": "53",
+      "labelEnd": "55",
+      "words": 708,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e2iπn",
+          "heading": false
+        },
+        {
+          "term": "size eﬀects",
+          "heading": false
+        },
+        {
+          "term": "chiral-antichiral",
+          "heading": true
+        },
+        {
+          "term": "commutator",
+          "heading": true
+        },
+        {
+          "term": "ejej",
+          "heading": false
+        },
+        {
+          "term": "sinγ",
+          "heading": false
+        },
+        {
+          "term": "ﬁgures",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite size",
+          "heading": false
+        }
+      ],
+      "extract": "In [1] the limit of [ Lp+n + ¯L−p−n, L−p + ¯Lp] was checked, and was found to be correct. Meanwhile in Section 7 and Appendix E we found strong evidence for [ Lp+n + ¯L−p−n, L−p− ¯Lp] having the correct limit up to the central term. In order to isolate the chiral-antichiral commutator [ Lp+n, ¯L−p] it remains to ﬁnd the behaviour of [Lp+n− ¯L−p−n, L−p− ¯Lp]. We shall proceed in the same manner as in Section 7 and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-g-the-ordinary-xxz-case",
+      "number": null,
+      "title": "G The ordinary XXZ case",
+      "level": 1,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": "55",
+      "labelEnd": "55",
+      "words": 361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lxxz sinγ",
+          "heading": false
+        },
+        {
+          "term": "xxz case",
+          "heading": true
+        },
+        {
+          "term": "hxxz",
+          "heading": false
+        },
+        {
+          "term": "cosγ",
+          "heading": false
+        },
+        {
+          "term": "ordinary",
+          "heading": true
+        },
+        {
+          "term": "central charge",
+          "heading": false
+        },
+        {
+          "term": "cft",
+          "heading": false
+        }
+      ],
+      "extract": "Going back to the bosonization in section 3.2, we can note that if we deﬁned more general local interactions, replacing the factor i sinγ 2 byiλ in (18), we would obtain the twist Tλ =−1 4 : (∂ϕ)2 : +i 2λ sinγα0∂2ϕ (201) and the central charge cλ = 1− 96α2 0 λ2 sinγ2 . (202) We can use this additional freedom to explore the “ordinary” XXZ case, which we shall deﬁne shortly, in terms of a unitary c = 1 CFT, and to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-g1-algebraic-description-of-the-ordinary-xxz-cas",
+      "number": null,
+      "title": "G.1 Algebraic description of the ordinary XXZ case",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 56,
+      "labelStart": "55",
+      "labelEnd": "56",
+      "words": 396,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sinγ sinu",
+          "heading": false
+        },
+        {
+          "term": "sinu sin",
+          "heading": false
+        },
+        {
+          "term": "oﬀ-diagonal elements",
+          "heading": false
+        },
+        {
+          "term": "lxxz",
+          "heading": false
+        },
+        {
+          "term": "xxz",
+          "heading": true
+        },
+        {
+          "term": "hamiltonian",
+          "heading": false
+        }
+      ],
+      "extract": "To ﬁnd the algebra relevant to the new Hamiltonian densities fj we compare to the R-matrix deﬁned in [59] 19 as R(u) = 1 +f(u)Q +g(u)E, where f(u) = sinγ− sinu 2 sin(γ−u)− 1 2, (208a) g(u) = sinγ + sinu 2 sin(γ−u)− 1 2 (208b) 19Section 4.2. O(2) spin model. Note that the sign convention for the oﬀ-diagonal elements in E and Q is here the opposite to that of [59], to be consistent with the rest of this paper. 55",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-g2-central-charge-and-conformal-weights-for-the",
+      "number": null,
+      "title": "G.2 Central charge and conformal weights for the ordinary XXZ case",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 57,
+      "labelStart": "56",
+      "labelEnd": "57",
+      "words": 296,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weights hxxz",
+          "heading": false
+        },
+        {
+          "term": "central charge",
+          "heading": true
+        },
+        {
+          "term": "verma modules",
+          "heading": false
+        },
+        {
+          "term": "αxxz",
+          "heading": false
+        },
+        {
+          "term": "szα",
+          "heading": false
+        },
+        {
+          "term": "xxz",
+          "heading": true
+        }
+      ],
+      "extract": "We can consider the same kind of trace as in (36) in the twisted XXZ chain, this time considered as a c = 1 theory. Calling HSz the subspace with third component of the spin ﬁxed to Sz we have TrHSz e−βRHXXZ φ e−iβiPXXZ φ N→∞ −−−−→GSz,φ (211) with GSz,φ = q−1/24¯q−1/24 P (q)P (¯q) ∑ e∈Z q hXXZ (e−eφ ),−Sz ¯q hXXZ (e−eφ ),Sz, (212) and we have introduced the notation hXXZ r,s = [(x + 1)r−xs]2 4x(x + 1) = 1 4 [√ x + 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-g3-numerical-results-for-the-ordinary-xxz-case",
+      "number": null,
+      "title": "G.3 Numerical results for the ordinary XXZ case",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 57,
+      "labelStart": "57",
+      "labelEnd": "57",
+      "words": 473,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lxxz",
+          "heading": false
+        },
+        {
+          "term": "twisted boson",
+          "heading": false
+        },
+        {
+          "term": "primary state",
+          "heading": false
+        },
+        {
+          "term": "matrix elements",
+          "heading": false
+        },
+        {
+          "term": "numerical",
+          "heading": true
+        },
+        {
+          "term": "scaling states",
+          "heading": false
+        },
+        {
+          "term": "table",
+          "heading": false
+        },
+        {
+          "term": "indecomposable",
+          "heading": false
+        }
+      ],
+      "extract": "Building the Koo-Saleur generators out of fj rather than ej we expect to obtain the theory with the previous background chargeα0 replaced by zero. As a ﬁrst numerical example we consider the generic case Sz,φ = 1/10 explored in Table 1. We denote by ( LXXZ −1 [N])ab the matrix elements of the generators LXXZ n deﬁned by (207), and choose the scaling states |u1⟩ and|v1⟩ as described in (102) and (103). The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-g4-interpolation-between-c1-and-c1-6xx1",
+      "number": null,
+      "title": "G.4 Interpolation between c=1 and c=1-6x(x+1)",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 61,
+      "labelStart": "57",
+      "labelEnd": "61",
+      "words": 1735,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jacobsen",
+          "heading": false
+        },
+        {
+          "term": "saleur",
+          "heading": false
+        },
+        {
+          "term": "lxxz",
+          "heading": false
+        },
+        {
+          "term": "energ",
+          "heading": false
+        },
+        {
+          "term": "gainutdinov",
+          "heading": false
+        },
+        {
+          "term": "xxz chain",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        }
+      ],
+      "extract": "x(x+1) We have seen that the “ordinary” XXZ chain corresponds to λ = 0 in (201)–(202). Here we instead consider λ =t sinγ 2 , varyingt between 0 and 1 to obtain values of the central charge between c = 1 and c = 1− 6 x(x+1).20 On the lattice we deﬁne Mj(t) =−σ− j σ+ j+1−σ+ j σ− j+1− cosγ 2 σz jσz j+1−ti sinγ 2 (σz j−σz j+1) + cosγ 2 , (216) such that Mj(t) =   0 0 0 0 0 q−1 + (1−t) q−q−1 2 −1 0 0 −1 q− (1−t)",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 14,
+        "items": [
+          "1 Introduction",
+          "2 Discrete Virasoro algebra and the Koo-Saleur formulae",
+          "3 Some features of the continuum limit",
+          "2 Discrete Virasoro algebra and the Koo-Saleur formulae",
+          "2.1 The Temperley-Lieb algebra in the periodic case",
+          "2.1.1 The algebra Ta",
+          "2.1.2 Standard modules",
+          "2.3 Indecomposability",
+          "2.4 Discrete Virasoro algebra",
+          "3 Some features of the continuum limit",
+          "3.1 Modules in the continuum",
+          "3.2 Bosonization and expected results",
+          "3.3 The choices of metric",
+          "3.4 Feigin-Fuchs modules and conjugate states"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "bethe states",
+      "heading": true
+    },
+    {
+      "term": "lattice virasoro",
+      "heading": true
+    },
+    {
+      "term": "scaling states",
+      "heading": true
+    },
+    {
+      "term": "xxz spin",
+      "heading": false
+    },
+    {
+      "term": "virasoro generators",
+      "heading": false
+    },
+    {
+      "term": "xxz chain",
+      "heading": false
+    },
+    {
+      "term": "virasoro modules",
+      "heading": false
+    },
+    {
+      "term": "primary states",
+      "heading": false
+    },
+    {
+      "term": "koo-saleur generators",
+      "heading": true
+    },
+    {
+      "term": "xxz case",
+      "heading": true
+    },
+    {
+      "term": "xxz hamiltonian",
+      "heading": false
+    },
+    {
+      "term": "bethe roots",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Three examples of aﬃne diagrams for N = 4, with the left and right sides of the framing rectangle identiﬁed. The ﬁrst diagram represents e4, the second e2e4, and expressing the last one is left as an exercise",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Matrix elements ((cid:76)−1[N ])viuj for i = 1, j = 1 and i = 2, j = 1, where the scaling states |uj(cid:105) and |vi(cid:105) follow the patterns of Bethe integers shown in (102) and (103). The numerical values are given for the case of Sz = 1, e = 0, x = π, φ = 1/10 for system size N up to 80, aft",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Finite-size estimates for the central charge c, obtained from (112) for various N , plotted against x",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Absolute value of matrix elements, plotted with logarithmically scaled axes for sizes N = 10, 12, . . . , 24. A linear ﬁt is performed, excluding the lowest two sizes. The ﬁt indicates that the matrix elements decay as (cid:79)(1/N r), where the estimated slope r is shown on each curve. The ground s",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Absolute value of matrix elements of (cid:82) as deﬁned in (123), plotted using the same conventions as in",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Absolute value of matrix elements, plotted using the same conventions as in Figure 3 but with the choice of |u(cid:105) = |v(cid:105). The operators are here normal ordered: :(cid:79): ≡ O − O∞ with O∞ being the ground state expectation value as N → ∞. This value is given for ej in (16), and for eje",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Absolute value of matrix elements of (cid:82) as deﬁned in (123), plotted using the same conventions as in Figure 3 but with the choice of |u(cid:105) = |v(cid:105)",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Comparison of the numerical measures for (cid:69)p3, deﬁned in (129a), and its conjectured value which is the right-hand side of (131). The agreement between the extrapolated values and the conjecture is seen to be excellent, with a precision of the order 10−6 for all values of x. The same conventio",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Remake of Figure 2. (cid:76)−2(cid:76)2, and no cutoﬀ is taken. This commutator is denoted “Original”. We also show the result using a modiﬁed version of the Koo-Saleur generators given by (137), labelled “Modiﬁed”. “Conj*” refers to the result found by applying (136), while “Conj” refers to the CFT",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Matrix elements of (cid:76)±1 and ¯(cid:76)±1 in the sector of Sz = 1, at x = π. We call |u−(cid:105) the primary state at e = −1 and |u+(cid:105) the primary state at e = 1 (both in the N → ∞ limit), with charges given by (66). |v1(cid:105) and |v2(cid:105) are linear combinations of |a−1u−(cid:105",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Matrix elements of (cid:76)±1 and ¯(cid:76)±1 in the sector of Sz = 1, at x = π, with the same conventions as in Table 3. Having separated |¯a−1u+(cid:105) and |a−1u−(cid:105) from each other we here obtain the full conjectured norm",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "Norm at level 2 in the case of overlap. Shown is projection onto the four relevant states. In the right column is the full norm for comparison. The presence of parasitic couplings in the latter case leads to a diﬀerent result, which moreover cannot be reliably extrapolated. The conventions used for",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "Matrix elements of (cid:76)±1 and ¯(cid:76)±1 in the sector of Sz = 1, at x = π, with the same conventions as in",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "7",
+      "title": "Matrix elements of (cid:76)±1 and ¯(cid:76)±1 in the sector of Sz = 1, at x = π, with the same conventions as in",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "8",
+      "title": "Values of |χ|2, |χ|∗∗",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "9",
+      "title": "Values of |χ|2, |χ|∗∗",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "10",
+      "title": "Matrix elements of (cid:76)±1 and ¯(cid:76)±1 in the sector of Sz = 0, at x = π, |e| = 1 and twisted boundary conditions, with the same conventions as in Table 3. We call |uq2 (cid:105) the primary state at twisted boundary conditions eφ = α−/α+, corresponding to the module (cid:87)0,q2, and |uq−2(c",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Absolute value of matrix elements, plotted using the same conventions as in Figure 3 up to the choice of |u(cid:105): For each state |v(cid:105) the state |u(cid:105) corresponds to the same choice of lattice parameters up to a change in momentum sector, (cid:112) → (cid:112) + 2. To the left, the l",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Absolute value of matrix elements of (cid:82) as deﬁned in (123), plotted using the same conventions as in Figure 3 up to the choice of |u(cid:105): For each state |v(cid:105) the state |u(cid:105) corresponds to the same choice of lattice parameters up to a change in momentum sector, (cid:112) → (c",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Absolute value of matrix elements, plotted using the same conventions as in Figure 3 up to the choice of |u(cid:105): For each state |v(cid:105) the state |u(cid:105) is taken to be the ﬁrst excited energy state corresponding to the same choice of lattice parameters that were used for |v(cid:105). (",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Absolute value of matrix elements, plotted using the same conventions as in Figure 3 but with the choice of |u(cid:105) = |v(cid:105)",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Absolute value of matrix elements, plotted using the same conventions as in Figure 3. In case of choices of |v(cid:105) showing particularly strong ﬁnite size eﬀects (|Sz = 1, e = 1(cid:105) and |(cid:112) = 1(cid:105) in upper two plots) the linear ﬁt is performed using only the two leftmost points",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "11",
+      "title": "",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "12",
+      "title": "Matrix elements of (cid:76)±1, ¯(cid:76)±1, (cid:76)XXZ",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Finite-size estimate for the central charge c as a function of interpolation parameter t at x = π, using the same conventions as in Figure 2. The generators (cid:76)t",
+      "page": 59,
+      "pageLabel": "59",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 54,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 52,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "12 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p57); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 52 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2010.12819v2"
+  }
+}

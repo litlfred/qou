@@ -316,11 +316,11 @@
           "heading": false
         },
         {
-          "term": "coherent mcal",
+          "term": "mcal cong",
           "heading": false
         },
         {
-          "term": "mcal cong",
+          "term": "coherent mcal",
           "heading": false
         },
         {
@@ -392,12 +392,12 @@
       "summary": null,
       "keywords": [
         {
-          "term": "crossed groupoids",
-          "heading": true
-        },
-        {
           "term": "gerbe opn",
           "heading": false
+        },
+        {
+          "term": "crossed groupoids",
+          "heading": true
         },
         {
           "term": "bsym opn",
@@ -496,6 +496,10 @@
           "heading": false
         },
         {
+          "term": "groupoids gerbe",
+          "heading": false
+        },
+        {
           "term": "groupoids twocat",
           "heading": false
         },
@@ -514,10 +518,6 @@
         {
           "term": "trivializes twocat",
           "heading": false
-        },
-        {
-          "term": "geometric descent",
-          "heading": true
         }
       ],
       "extract": "\\label{sec:mdd} In this section we study the decomposition of twisted objects on open coverings. Given a set $K$ and $p \\in \\N$, we let \\begin{equation} \\label{eqn:mdd.111} \\bsym{\\Delta}_p(K) := \\{ (k_0, \\ldots, k_p) \\mid k_i \\in K \\} . \\end{equation} The collection $\\{ \\bsym{\\Delta}_p(K) \\}_{p \\in \\N}$ is a simplicial set. Recall that for an open covering $\\bsym{U} = \\{ U_k \\}_{k \\in K}$ of a topological space $X$,",
@@ -740,11 +740,11 @@
           "heading": false
         },
         {
-          "term": "mix bsym",
+          "term": "opn twob",
           "heading": false
         },
         {
-          "term": "opn twob",
+          "term": "mix bsym",
           "heading": false
         },
         {
@@ -796,11 +796,11 @@
           "heading": false
         },
         {
-          "term": "van den",
+          "term": "yekutieli",
           "heading": false
         },
         {
-          "term": "yekutieli",
+          "term": "van den",
           "heading": false
         },
         {
@@ -885,7 +885,7 @@
       "heading": false
     },
     {
-      "term": "sheaf mcal",
+      "term": "circ opn",
       "heading": false
     }
   ],

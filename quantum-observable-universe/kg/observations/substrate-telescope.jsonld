@@ -6,18 +6,18 @@
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/rem-substrate-telescope",
+  "@id": "papers/quantum-observable-universe/blocks/rem-aether-telescope",
   "@type": [
     "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "rem:substrate-telescope",
+  "label": "rem:aether-telescope",
   "kind": "remark",
-  "title": "Substrate Telescopes",
+  "title": "Aether Telescopes",
   "uses": [
     "papers/quantum-observable-universe/blocks/ex-q-reeb-flow"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "interprets": "papers/quantum-observable-universe/blocks/def-aether-parameter",
   "tags": [
     "detector",
     "substrate",

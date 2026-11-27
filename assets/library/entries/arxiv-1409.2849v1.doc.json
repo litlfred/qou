@@ -494,8 +494,8 @@
           "heading": false
         },
         {
-          "term": "ising",
-          "heading": true
+          "term": "log esper",
+          "heading": false
         }
       ],
       "extract": "\\label{sec:ising} In this section, $(\\sigma(i))_{i \\in \\lle 1,n\\rre}$ is a random configuration of spins under the Ising measure \\eqref{eq:isingmeasure}, and $M_n=\\sum_{i=1}^n \\sigma(i)$ is its magnetization. The mod-Gaussian convergence of $M_n$ after appropriate rescaling can be obtained by two different methods: the \\emph{transfer matrix method}, which yields an explicit formula for $\\esper[\\E^{zM_n}]$; and the",
@@ -534,11 +534,11 @@
           "heading": false
         },
         {
-          "term": "l1mod",
+          "term": "function psi",
           "heading": false
         },
         {
-          "term": "function psi",
+          "term": "l1mod",
           "heading": false
         }
       ],
@@ -662,11 +662,11 @@
           "heading": false
         },
         {
-          "term": "tanh alpha",
+          "term": "cosh frac",
           "heading": false
         },
         {
-          "term": "cosh frac",
+          "term": "tanh alpha",
           "heading": false
         },
         {
@@ -774,11 +774,11 @@
           "heading": false
         },
         {
-          "term": "mod-gaussian convergence",
+          "term": "int psi",
           "heading": false
         },
         {
-          "term": "int psi",
+          "term": "mod-gaussian convergence",
           "heading": false
         }
       ],
@@ -1192,7 +1192,7 @@
       "heading": false
     },
     {
-      "term": "transform esper",
+      "term": "log esper",
       "heading": false
     }
   ],

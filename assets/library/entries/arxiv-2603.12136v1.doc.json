@@ -561,12 +561,12 @@
           "heading": false
         },
         {
-          "term": "linear program",
-          "heading": true
-        },
-        {
           "term": "folding row",
           "heading": false
+        },
+        {
+          "term": "linear program",
+          "heading": true
         },
         {
           "term": "transpose holds",
@@ -613,11 +613,11 @@
           "heading": false
         },
         {
-          "term": "permutation symmetries",
+          "term": "equitable partition",
           "heading": false
         },
         {
-          "term": "equitable partition",
+          "term": "milp solvers",
           "heading": false
         }
       ],
@@ -789,15 +789,15 @@
           "heading": false
         },
         {
-          "term": "coloneqq transpose",
-          "heading": false
-        },
-        {
           "term": "coloneqq widehat",
           "heading": false
         },
         {
-          "term": "bmatrix transpose",
+          "term": "coloneqq transpose",
+          "heading": false
+        },
+        {
+          "term": "bmatrix widehat",
           "heading": false
         },
         {
@@ -809,7 +809,7 @@
           "heading": false
         },
         {
-          "term": "lambda transpose",
+          "term": "lambda widehat",
           "heading": false
         }
       ],
@@ -1333,7 +1333,7 @@
           "heading": false
         },
         {
-          "term": "extended drcr",
+          "term": "coarser equitable",
           "heading": false
         }
       ],

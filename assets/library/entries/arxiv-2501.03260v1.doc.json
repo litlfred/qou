@@ -1,0 +1,1304 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2501.03260v1",
+  "title": "arxiv-2501.03260v1",
+  "variant": "pdf",
+  "pages": 32,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Helon Model",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-the-helon-model"
+    },
+    {
+      "level": 2,
+      "title": "Particle Representation with Helons",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-particle-representation-with-helons"
+    },
+    {
+      "level": 2,
+      "title": "Composition Laws with Helons",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-composition-laws-with-helons"
+    },
+    {
+      "level": 1,
+      "title": "The 4-Vector Representation",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-the-4-vector-representation"
+    },
+    {
+      "level": 2,
+      "title": "Mapping Helons to Four-Vectors",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-mapping-helons-to-four-vectors"
+    },
+    {
+      "level": 1,
+      "title": "CPT Invariance and Braid Topology",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-cpt-invariance-and-braid-topology"
+    },
+    {
+      "level": 1,
+      "title": "Standard Model Interactions in the Helon Model",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-standard-model-interactions-in-the-helon-model"
+    },
+    {
+      "level": 2,
+      "title": "Gauge Boson Interactions",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-gauge-boson-interactions"
+    },
+    {
+      "level": 2,
+      "title": "Interactions with Fermions",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-interactions-with-fermions"
+    },
+    {
+      "level": 1,
+      "title": "The Helon Model from the SU(3)cU(1)em Weight Lattice",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-the-helon-model-from-the-su3cu1em-weight-lattice"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions and Discussion",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-conclusions-and-discussion"
+    },
+    {
+      "level": 1,
+      "title": "Standard Model Conventions",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-standard-model-conventions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 325,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "preon models",
+          "heading": false
+        },
+        {
+          "term": "helon diagrams",
+          "heading": false
+        },
+        {
+          "term": "lambek vector",
+          "heading": false
+        },
+        {
+          "term": "arsiwalla",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "braid topology",
+          "heading": false
+        },
+        {
+          "term": "cpt",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2501.03260v1 [physics.gen-ph] 3 Jan 2025 Preons, Braid Topology, and Representations of Fundamental Particles David Chester 1, ∗ Xerxes D. Arsiwalla 2, † Louis H. Kauﬀman 3, ‡ 1Quantum Gravity Research, Topanga, CA, USA 2Wolfram Institute for Computational Foundations of Scienc e, Champaign, IL, USA 3University of Illinois at Chicago, Chicago, IL, USA Abstract In particle phenomenology, preon models study",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2501.03260v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1279,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "preon models",
+          "heading": false
+        },
+        {
+          "term": "model interactions",
+          "heading": false
+        },
+        {
+          "term": "fun damental",
+          "heading": false
+        },
+        {
+          "term": "vector model",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "generation fermions",
+          "heading": false
+        },
+        {
+          "term": "interactions involving",
+          "heading": false
+        }
+      ],
+      "extract": "2 The Helon Model 4 2.1 Particle Representation with Helons . . . . . . . . . . . . . . . . . . . . 4 2.2 Composition Laws with Helons . . . . . . . . . . . . . . . . . . . . . . . 7 3 The 4-Vector Representation 8 3.1 Mapping Helons to Four-Vectors . . . . . . . . . . . . . . . . . . . . . . 9 4 CPT Invariance and Braid Topology 11 5 Standard Model Interactions in the Helon Model 13 5.1 Gauge Boson Interactions . .",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-the-helon-model",
+      "number": null,
+      "title": "The Helon Model",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": true
+        },
+        {
+          "term": "lambek",
+          "heading": false
+        },
+        {
+          "term": "ribbons",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": false
+        },
+        {
+          "term": "gaug",
+          "heading": false
+        }
+      ],
+      "extract": "introduces Lambek’s 4-vector model and compares it with the helon model. Section 4 pro- poses candidates for C, P , and T transformations in the helon model and demonstrates that CP T symmetry uniquely identiﬁes the fermionic braid states. Se ction 5 demon- strates that the helon model successfully contains the gaug e bosons of SU (3)c × U(1)em. Section 6 establishes the relationship between representa tion theory",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-particle-representation-with-helons",
+      "number": null,
+      "title": "Particle Representation with Helons",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 793,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "revised helon",
+          "heading": false
+        },
+        {
+          "term": "cartan generators",
+          "heading": false
+        },
+        {
+          "term": "gauge bosons",
+          "heading": false
+        },
+        {
+          "term": "on-shell states",
+          "heading": false
+        },
+        {
+          "term": "braid states",
+          "heading": false
+        },
+        {
+          "term": "left-chiral",
+          "heading": false
+        },
+        {
+          "term": "right-chiral",
+          "heading": false
+        }
+      ],
+      "extract": "The fermion assignments of our revised helon model are shown in Fig. 1 (the revisions we have proposed here will all be justiﬁed in the next few sectio ns). The electron/positron states include both, a left- and right-chiral electron/pos itron; that is, four on-shell states in total, which are encoded by four unique braid states. The b raid group B3 of three ribbons contains generators σ1 as braiding the 1st strand",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-composition-laws-with-helons",
+      "number": null,
+      "title": "Composition Laws with Helons",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 785,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "color-matched braid",
+          "heading": false
+        },
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "helon diagrams",
+          "heading": false
+        },
+        {
+          "term": "braid multiplication",
+          "heading": false
+        },
+        {
+          "term": "quark braids",
+          "heading": false
+        },
+        {
+          "term": "vector model",
+          "heading": false
+        },
+        {
+          "term": "composites",
+          "heading": false
+        },
+        {
+          "term": "colorless",
+          "heading": false
+        }
+      ],
+      "extract": "While discussing compatibility between the helon and 4-vec tor models, there is one im- portant issue that has to be addressed; namely, the nature of their respective composition laws. While the 4-vector model assumes a fully commutative c omposition rule by way of vector addition; the helon model is noncommutative, that is, the order of braids com- posing with each other does matters. In order to understand h ow",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-the-4-vector-representation",
+      "number": null,
+      "title": "The 4-Vector Representation",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 483,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vector representation",
+          "heading": true
+        },
+        {
+          "term": "proton braids",
+          "heading": false
+        },
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "particle chirality",
+          "heading": false
+        },
+        {
+          "term": "down quarks",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst-generation",
+          "heading": false
+        },
+        {
+          "term": "lambek",
+          "heading": false
+        },
+        {
+          "term": "fundamental particles",
+          "heading": false
+        }
+      ],
+      "extract": "Prior to the helon model, in the year 2000, Joachim Lambek had introduced a 4-vector representation of fundamental particles [17]. Lambek’s mo del was intended as a for- malization of the earlier rishon model proposed by Harari (w hich was also conceptually similar to Shupe’s and Raitio’s proposals) [8, 9, 11]. In Lam bek’s 4-vector representation, shown in Table 1, each lepton, quark, and gauge boson are asso",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-mapping-helons-to-four-vectors",
+      "number": null,
+      "title": "Mapping Helons to Four-Vectors",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 1127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "helon braids",
+          "heading": false
+        },
+        {
+          "term": "color-matched braid",
+          "heading": false
+        },
+        {
+          "term": "elon model",
+          "heading": false
+        },
+        {
+          "term": "model particle",
+          "heading": false
+        },
+        {
+          "term": "origi nal",
+          "heading": false
+        },
+        {
+          "term": "model diagrams",
+          "heading": false
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        }
+      ],
+      "extract": "Now, the helon model with its braided structure is certainly not a vector model. In the former, interactions are realized via color-matched br aid multiplication. The twists correspond to electric charges, while the braid crossings c apture chirality. Even though Fermions Antifermions Gauge bosons Baryons e− : 1 − i − j − k ¯e+ : − 1 + i + j + k γ, Z 0 : 0 n : 3 ν : 1 ¯ν : − 1 W − : − i − j − k p+ : 3 + i + j + k ur",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-cpt-invariance-and-braid-topology",
+      "number": null,
+      "title": "CPT Invariance and Braid Topology",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 1059,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cpt",
+          "heading": true
+        },
+        {
+          "term": "cpt transformations",
+          "heading": false
+        },
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "proposed cpt",
+          "heading": false
+        },
+        {
+          "term": "cpt invariant",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": true
+        },
+        {
+          "term": "topolo gical",
+          "heading": false
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        }
+      ],
+      "extract": "The helon model only uses a subset of all possible twisted bra id diagrams. Understanding a physical principle to choose these braids over another wou ld provide further justiﬁcation for the helon model. In this section, we review a set of topolo gical transformations that seem to map to the C, P, and T transformations. While CPT trans formations are found in the Lie group, these topological transformations are tra",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-standard-model-interactions-in-the-helon-model",
+      "number": null,
+      "title": "Standard Model Interactions in the Helon Model",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 32,
+      "summary": null,
+      "keywords": [],
+      "extract": "Next, the Feynman interaction rules of the standard model ar e exhaustively compared with the Bilson-Thompson model. We start by reviewing the ga uge-boson interactions, followed by the fermions with the bosons.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-gauge-boson-interactions",
+      "number": null,
+      "title": "Gauge Boson Interactions",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 1090,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "helon braid",
+          "heading": false
+        },
+        {
+          "term": "interactions",
+          "heading": true
+        },
+        {
+          "term": "boson",
+          "heading": true
+        },
+        {
+          "term": "bilson-thompson model",
+          "heading": false
+        },
+        {
+          "term": "gauge bosons",
+          "heading": false
+        },
+        {
+          "term": "higgs boson",
+          "heading": false
+        },
+        {
+          "term": "feynman rules",
+          "heading": false
+        }
+      ],
+      "extract": "The standard model contains non-Abelian gauge bosons that i nteract with SU (3) × SU (2) × × U(1) gauge symmetry. The Feynman rules for the strong- and weak-f orce gauge bosons stem from Yang-Mills theory. An arbitrary SU (N) Yang-Mills gauge ﬁeld AA µ corresponds to GA µ and W i µ for N = 2 and N = 3 . The gluons and the W-bosons interact with themselves, respectively. The B-boson sourc ed by weak hypercharge has",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-interactions-with-fermions",
+      "number": null,
+      "title": "Interactions with Fermions",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 20,
+      "labelStart": "16",
+      "labelEnd": "20",
+      "words": 1278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ikµ ig3gµ",
+          "heading": false
+        },
+        {
+          "term": "gauge boson",
+          "heading": false
+        },
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "boson interactions",
+          "heading": false
+        },
+        {
+          "term": "bilson-thompson model",
+          "heading": false
+        },
+        {
+          "term": "anti-fermion gauge",
+          "heading": false
+        },
+        {
+          "term": "fermion anti-fermion",
+          "heading": false
+        },
+        {
+          "term": "weak hypercharges",
+          "heading": false
+        }
+      ],
+      "extract": "The fermionic sector has interactions directly with the gau ge bosons, which is encoded in the covariant derivatives. The Lagrangian for the diﬀere nt ﬁelds in momentum space are given by Lq = iq†¯σµ (ikµ − ig3Gµ − ig2Wµ − iYqBµ ) q, (18) Ll = il†¯σµ (ikµ − ig2Wµ − iYlBµ ) l, (19) Lu = iu†¯σµ (ikµ − ig3Gµ − iYuBµ ) u, (20) Ld = ud†¯σµ (ikµ − ig3Gµ − iYdBµ ) d, (21) Le = ie†¯σµ (ikµ − iYeBµ ) e, (22) Lν = iν†¯σµ ikµ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-the-helon-model-from-the-su3cu1em-weight-lattice",
+      "number": null,
+      "title": "The Helon Model from the SU(3)cU(1)em Weight Lattice",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 25,
+      "labelStart": "20",
+      "labelEnd": "25",
+      "words": 2651,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": true
+        },
+        {
+          "term": "weight lattice",
+          "heading": true
+        },
+        {
+          "term": "lambek model",
+          "heading": false
+        },
+        {
+          "term": "helon braids",
+          "heading": false
+        },
+        {
+          "term": "ight lattice",
+          "heading": false
+        },
+        {
+          "term": "lattice coordinates",
+          "heading": false
+        },
+        {
+          "term": "root lattice",
+          "heading": false
+        },
+        {
+          "term": "twist coordinates",
+          "heading": false
+        }
+      ],
+      "extract": "Lattice The helon model completely describes the SU (3)c × U(1)em gauge theory for a single generation of standard model fermions. Next, we seek to unde rstand the origin of these braid and twist assignments from representation theory. No te that the on-shell states of spinors are determined by the braiding information. Ther efore, the twists can then uniquely determine the charge states of diﬀerent elementar y",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-conclusions-and-discussion",
+      "number": null,
+      "title": "Conclusions and Discussion",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "25",
+      "labelEnd": "27",
+      "words": 1170,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "generalized helon",
+          "heading": false
+        },
+        {
+          "term": "preon models",
+          "heading": false
+        },
+        {
+          "term": "lambek",
+          "heading": false
+        },
+        {
+          "term": "cpt invariant",
+          "heading": false
+        },
+        {
+          "term": "weight lattice",
+          "heading": false
+        },
+        {
+          "term": "braid diagrams",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        }
+      ],
+      "extract": "In conclusion, this work started with a discussion of variou s preon models from Harari and Shupe, to Lambek, to Bilson-Thompson. When preon models were ﬁrst introduced in particle physics, they generated some excitement in the c ommunity due to the fact that their combinatorics could reproduce aspects of standard mo del phenomenology. However, it was never clear where these interaction rules came from, o r how",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-standard-model-conventions",
+      "number": null,
+      "title": "Standard Model Conventions",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 32,
+      "labelStart": "27",
+      "labelEnd": "32",
+      "words": 2086,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard model",
+          "heading": true
+        },
+        {
+          "term": "sundance bilson-thompson",
+          "heading": false
+        },
+        {
+          "term": "arsiwalla",
+          "heading": false
+        },
+        {
+          "term": "right-chiral neutrinos",
+          "heading": false
+        },
+        {
+          "term": "wolfram model",
+          "heading": false
+        },
+        {
+          "term": "arxiv preprint",
+          "heading": false
+        },
+        {
+          "term": "jonathan hackett",
+          "heading": false
+        },
+        {
+          "term": "left-chiral",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix, we review some well-established facts abo ut SU (3)c × SU (2)L × U(1)Y gauge theory, in order to establish the conventions used in t he main text. This overview can be found in standard texts such as [51]. SU (3)c × SU (2)L × U(1)Y gauge theory contains a spectrum of particles described by quantum ﬁelds under the representations of SL(2, C) × SU (3) × SU (2) × U(1) once including the spin degrees",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 1,
+        "items": [
+          "Introduction: listed p2, found p31"
+        ]
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "helon model",
+      "heading": true
+    },
+    {
+      "term": "helon braid",
+      "heading": true
+    },
+    {
+      "term": "helon diagrams",
+      "heading": false
+    },
+    {
+      "term": "original helon",
+      "heading": false
+    },
+    {
+      "term": "revised helon",
+      "heading": true
+    },
+    {
+      "term": "helon mod",
+      "heading": false
+    },
+    {
+      "term": "generalized helon",
+      "heading": false
+    },
+    {
+      "term": "lambek model",
+      "heading": true
+    },
+    {
+      "term": "bilson-thompson model",
+      "heading": true
+    },
+    {
+      "term": "model interactions",
+      "heading": true
+    },
+    {
+      "term": "model particle",
+      "heading": true
+    },
+    {
+      "term": "model fermions",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Fermion assignments for a revised helon model are shown above. The up-quark states are updated to ensure the correct interactions",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The three color states of the left-chiral down and up quarks are shown above",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The braids claimed to be associated with the electroweak sector below the electroweak scale. Note that the Bilson-Thompson model does not have any data to associate the weak force with left-chiral fermions",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Braid diagrams for gluons corresponding to the six non-Cartan generators of SU(3)",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Candidates for quark composite braids are shown above. If color-matched braid multiplication was not used, then the proton braids would not always have one twist per ribbon and the neutron braids sometimes could contain twisted ribbons",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Fermions, antifermions, gauge bosons, and baryons with Lambek’s quaternionic (4-vector) assignments",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The proposed CPT transformations leave invariant exactly those braids corresponding to helon model particle states. All other braid words are not invariant under these transformations",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The gluon-interaction Feynman rules are shown on the top and a gluon interaction in the helon model is shown on the bottom",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Topologically, the combination of two photons could lead to a photon, which typically only occurs above the Schwinger limit and is not a classical phenomenon in the standard model",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The W + and W − bosons are shown to interact with the Z boson and photon",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "The fermion/anti-fermion/gauge boson interaction terms are depicted as Feynman diagrams and Bilson-Thompson braids above",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "The anatomy of neutron decay with helon braids",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "The twist values of the three strands for the non-negatively charged fermions in the ﬁrst generation are show above to give a cube",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "The root vectors of A2 form a hexagon in the root lattice, while the fundamental and anti-fundamental representations correspond to weight vectors forming equilateral triangles in the weight lattice",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "The coordinates for the D2 weight lattice and the corresponding braid operators are shown above",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "The fermionic spectrum of the standard model is depicted in terms of their braid U(1)em, their 4D Lambek coordinates, their 5D weight",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Indices for various reprentations of Lie groups for spacetime and the standard model. Note that α = 1, 2, a = 1, 2, i = 1, 2, 3, I = 1, 2, 3, and A = 1, . . . 8",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p27); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2501.03260v1"
+  }
+}

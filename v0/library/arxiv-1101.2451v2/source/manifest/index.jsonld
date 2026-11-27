@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-1101.2451v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1101.2451v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1101.2451v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1101.2451&metadataPrefix=arXiv), <license> element, read 2026-11-25",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1101.2451v2",
+    "format": "latex",
+    "url": "https://export.arxiv.org/src/1101.2451v2",
+    "content_type": "application/gzip",
+    "sha256": "07f3d1013436176c8cc2ec4ab21fc98235daccf1221597d1647d42fd7a17a848",
+    "bytes": 266095,
+    "fetched": "2026-11-25T15:44:34+00:00",
+    "files": [
+      {
+        "path": "source/files/cite.sty",
+        "role": "sty",
+        "sha256": "891afbbbf8e29fc0e49fd3a1e4ce985ebb8f80f1b64fe0ff6be61165261daad8",
+        "bytes": 32577
+      },
+      {
+        "path": "source/files/nsesydney.bbl",
+        "role": "bbl",
+        "sha256": "01fa3eb273c89df295c1b9f263e53e35466dcd49f9e1b953432dbeda20f76f6f",
+        "bytes": 15875
+      },
+      {
+        "path": "source/files/nsesydney.tex",
+        "role": "tex",
+        "sha256": "9ed53375305686b95d29e395ff4548e007eb168de35370e623c98880bf958fef",
+        "bytes": 43460
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

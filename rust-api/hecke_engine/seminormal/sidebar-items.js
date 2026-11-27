@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["Block"],"fn":["chi_lambda_braid","chi_lambda_matrix","chi_lambdas_braid","chi_q_atomic","chi_q_atomic_all_partitions","partitions_of","seminormal_block_generators","seminormal_matrices","standard_young_tableaux"],"type":["SparseMatrix"]};

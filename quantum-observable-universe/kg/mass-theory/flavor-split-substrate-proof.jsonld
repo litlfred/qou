@@ -6,16 +6,16 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-flavor-split-substrate",
+  "@id": "papers/quantum-observable-universe/blocks/prf-flavor-split-aether",
   "@type": [
     "folio-assistant-sci:Proof",
     "doco:Section"
   ],
-  "label": "prf:flavor-split-substrate",
+  "label": "prf:flavor-split-aether",
   "kind": "proof",
-  "title": "Proof of the substrate-pure flavor split formula",
+  "title": "Proof of the aether-pure flavor split formula",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-flavor-split-substrate"
+    "papers/quantum-observable-universe/blocks/prop-flavor-split-aether"
   ],
   "text": "flavor-split-substrate-proof.md",
   "provenance": "authored"

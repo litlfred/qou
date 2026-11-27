@@ -1,0 +1,1170 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2406.18369v2",
+  "title": "arxiv-2406.18369v2",
+  "variant": "pdf",
+  "pages": 42,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Weyl's asymptotic law",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-weyls-asymptotic-law"
+    },
+    {
+      "level": 2,
+      "title": "Preliminaries",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-21-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Weyl's law",
+      "number": "2.2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Listening to flat tori",
+      "number": "3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-listening-to-flat-tori"
+    },
+    {
+      "level": 1,
+      "title": "One cannot hear the shape of a Riemannian manifold but can one hear the shape of a drum?",
+      "number": "4",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-4-one-cannot-hear-the-shape-of-a-riemannian-mani"
+    },
+    {
+      "level": 2,
+      "title": "Geometric preliminaries",
+      "number": "4.1",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-41-geometric-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "What could Kac hear?",
+      "number": "4.2",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-42-what-could-kac-hear"
+    },
+    {
+      "level": 1,
+      "title": "One cannot hear...",
+      "number": "5",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-5-one-cannot-hear"
+    },
+    {
+      "level": 1,
+      "title": "One cannot hear the shape of a drum, but one can hear...",
+      "number": "6",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-6-one-cannot-hear-the-shape-of-a-drum-but-one-ca"
+    },
+    {
+      "level": 1,
+      "title": "We're still listening...",
+      "number": "7",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-7-were-still-listening"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 38,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "julie",
+          "heading": false
+        },
+        {
+          "term": "discernible",
+          "heading": false
+        },
+        {
+          "term": "non-isometric",
+          "heading": false
+        },
+        {
+          "term": "hearing",
+          "heading": false
+        }
+      ],
+      "extract": "112 YEARS OF LISTENING TO RIEMANNIAN MANIFOLDS GUSTAV MÅRDBY AND JULIE ROWLETT Abstract. In1910, HendrikAntoonLorentzdelvedintotheenigmaticLaplace eigenvalue equation, also known as the Helmholtz equation, pondering to what extent the geometry in which one solves the equation can be recovered from knowledge of the eigenvalues. Lorentz, inspired by physical and musical analo- gies, conjectured a fundamental",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2406.18369v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1327,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helmholtz equation",
+          "heading": false
+        },
+        {
+          "term": "lorentz conjecture",
+          "heading": false
+        },
+        {
+          "term": "bounded domain",
+          "heading": false
+        },
+        {
+          "term": "then-dimensional volume",
+          "heading": false
+        },
+        {
+          "term": "heard",
+          "heading": false
+        },
+        {
+          "term": "dirichlet boundary",
+          "heading": false
+        },
+        {
+          "term": "flat tori",
+          "heading": false
+        },
+        {
+          "term": "riemannian manifolds",
+          "heading": false
+        }
+      ],
+      "extract": "In 1910 the Dutch physicist Hendrik Antoon Lorentz gave five lectures under the title “Old and new problems in physics” at the University of Göttingen. One of the central topics of his lectures is the Helmholtz equation, the eigenvalue equation for the Laplace operator: (1) ∆f =λf, together with boundary conditions in case of boundary. Here, ∆ is the Laplace operator, which inn-dimensional Euclidean spaceRn is (2) ∆",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 25,
+      "summary": null,
+      "keywords": [],
+      "extract": "We are grateful to Jeff Galkowski and Javier Gomez-Serrano for suggesting fur- ther references to include in this work. 4 G. MÅRDBY AND J. ROWLETT",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-2-weyls-asymptotic-law",
+      "number": "2",
+      "title": "Weyl's asymptotic law",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 186,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weyl",
+          "heading": true
+        },
+        {
+          "term": "quantum systems",
+          "heading": false
+        },
+        {
+          "term": "admired",
+          "heading": false
+        },
+        {
+          "term": "renowned",
+          "heading": false
+        },
+        {
+          "term": "theoreti",
+          "heading": false
+        }
+      ],
+      "extract": "In 1910, Weyl was a relatively young mathematician who had recently completed his doctoral studies. He earned his Ph.D. in mathematics in 1908 at the University of Göttingen under the supervision of David Hilbert, whom he greatly admired. Weyl’s career was just beginning to take shape at that time, and he would go on to make significant contributions to various fields in mathematics and theoreti- cal physics in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-21-preliminaries",
+      "number": "2.1",
+      "title": "Preliminaries",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3051,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dirichlet eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "quarter ellipse",
+          "heading": false
+        },
+        {
+          "term": "dirichlet boundary",
+          "heading": false
+        },
+        {
+          "term": "neumann eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "ann-dimensional domain",
+          "heading": false
+        },
+        {
+          "term": "weyl law",
+          "heading": false
+        },
+        {
+          "term": "variational principles",
+          "heading": false
+        },
+        {
+          "term": "corresponding eigenfunctions",
+          "heading": false
+        }
+      ],
+      "extract": "mulated by Lorentz, we establish key notations and preliminaries. A domain Ω⊂ Rn is a connected open subset of Rn. We always assume that Ω is com- pact. The boundary of Ω is denoted by∂Ω. For a domain Ω⊂ Rn, we let|Ω| denote then-dimensional volume ofΩ and|∂Ω| the (n− 1)-dimensional volume of the boundary ofΩ. In particular, ifn = 2 then|Ω| and|∂Ω| denote the area and the perimeter ofΩ, respectively. The Laplace",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-listening-to-flat-tori",
+      "number": "3",
+      "title": "Listening to flat tori",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1523,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "flat tori",
+          "heading": true
+        },
+        {
+          "term": "listening",
+          "heading": true
+        },
+        {
+          "term": "flat torus",
+          "heading": false
+        },
+        {
+          "term": "definite quadratic",
+          "heading": false
+        },
+        {
+          "term": "isospectral",
+          "heading": false
+        },
+        {
+          "term": "associated flat",
+          "heading": false
+        },
+        {
+          "term": "full-rank lattice",
+          "heading": false
+        },
+        {
+          "term": "quadratic forms",
+          "heading": false
+        }
+      ],
+      "extract": "Ann-dimensional flat torus is a smooth compact Riemannian manifold obtained by taking the quotient of Euclidean spaceRn by a full-rank lattice. For inclusivity, we recall that GLn(R) is the group of all invertiblen×n matrices with entries in R with group operation given by matrix multiplication. The subgroup GLn(Z)⊂ GLn(R) consists of those matrices with entries inZ whose inverses also have entries in Z. A full-rank",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-one-cannot-hear-the-shape-of-a-riemannian-mani",
+      "number": "4",
+      "title": "One cannot hear the shape of a Riemannian manifold but can one hear the shape of a drum?",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 325,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hear",
+          "heading": true
+        },
+        {
+          "term": "drum",
+          "heading": true
+        },
+        {
+          "term": "milnor article",
+          "heading": false
+        },
+        {
+          "term": "shape",
+          "heading": true
+        },
+        {
+          "term": "kac",
+          "heading": false
+        },
+        {
+          "term": "heard",
+          "heading": false
+        },
+        {
+          "term": "rigorous",
+          "heading": false
+        },
+        {
+          "term": "professor",
+          "heading": false
+        }
+      ],
+      "extract": "hear the shape of a drum? Just two years after Milnor’s article appeared, Kac published the popular sci- entific article [70] titled “Can one hear the shape of a drum?” He first heard the problem from Professor Bochner in mathematical terms: if two planar domains have 16 G. MÅRDBY AND J. ROWLETT the same Laplace spectrum, are they congruent in the sense of Euclidean geome- try? The formulation in the title of Kac’s",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-41-geometric-preliminaries",
+      "number": "4.1",
+      "title": "Geometric preliminaries",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 395,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "euler characterstic",
+          "heading": false
+        },
+        {
+          "term": "sup inf",
+          "heading": false
+        },
+        {
+          "term": "inω",
+          "heading": false
+        },
+        {
+          "term": "euler characteristic",
+          "heading": false
+        },
+        {
+          "term": "hausdorff distance",
+          "heading": false
+        },
+        {
+          "term": "ofω",
+          "heading": false
+        },
+        {
+          "term": "polygons",
+          "heading": false
+        },
+        {
+          "term": "triangulation",
+          "heading": false
+        }
+      ],
+      "extract": "the plane converging to another domain. To define this, we need a way of measuring the distance between two sets. We will use Hausdorff distance. Recall that an isometry in R2 is an affine linear mapping fromR2 to itself which corresponds to a composition of rotations, translations, and reflections. IfΘ and Ω are two sets in R2, then the Hausdorff distance betweenΘ and Ω is defined as D(Θ, Ω) = inf T,S isometries",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-42-what-could-kac-hear",
+      "number": "4.2",
+      "title": "What could Kac hear?",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "λnt lim",
+          "heading": false
+        },
+        {
+          "term": "inf λnt",
+          "heading": false
+        },
+        {
+          "term": "sup λnt",
+          "heading": false
+        },
+        {
+          "term": "heat kernel",
+          "heading": false
+        },
+        {
+          "term": "kac",
+          "heading": true
+        },
+        {
+          "term": "heat trace",
+          "heading": false
+        },
+        {
+          "term": "polygonal domains",
+          "heading": false
+        },
+        {
+          "term": "euclidean heat",
+          "heading": false
+        }
+      ],
+      "extract": "of a domain Ω⊂ R2 is a spectral invariant. Kac was aware of this result and wanted to find other quantities ofΩ that are spectral invariants. Is perhaps the entire set Ω a spectral invariant (up to isometries)? In other words, can one hear the shape of a drum? Studying spectral invariants is interesting for several reasons, one of which being its connections to physics. To explore these connections between",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-one-cannot-hear",
+      "number": "5",
+      "title": "One cannot hear...",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1114,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isospectral non-isometric",
+          "heading": false
+        },
+        {
+          "term": "non-isometric riemannian",
+          "heading": false
+        },
+        {
+          "term": "non-isometric flat",
+          "heading": false
+        },
+        {
+          "term": "non-isometric manifolds",
+          "heading": false
+        },
+        {
+          "term": "non-isometric domains",
+          "heading": false
+        },
+        {
+          "term": "constructed isospectral",
+          "heading": false
+        },
+        {
+          "term": "found isospectral",
+          "heading": false
+        },
+        {
+          "term": "cannot hear",
+          "heading": true
+        }
+      ],
+      "extract": "Milnor’s example from 1964 (see §3) is the first example of a pair of isospectral non-isometric Riemannian manifolds. It was partly this that inspired Kac’s arti- cle. One year after Kac’s article Kneser found two 12-dimensional flat tori which are isospectral but non-isometric [74]. Kitaoka then found, expressed in number- theoretic language, two isospectral non-isometric 8-dimensional flat tori in 1977 [73]. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-6-one-cannot-hear-the-shape-of-a-drum-but-one-ca",
+      "number": "6",
+      "title": "One cannot hear the shape of a drum, but one can hear...",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polygonal domains",
+          "heading": false
+        },
+        {
+          "term": "heat trace",
+          "heading": false
+        },
+        {
+          "term": "year later",
+          "heading": false
+        },
+        {
+          "term": "heat kernel",
+          "heading": false
+        },
+        {
+          "term": "semi-regular polygons",
+          "heading": false
+        },
+        {
+          "term": "same year",
+          "heading": false
+        },
+        {
+          "term": "plane domains",
+          "heading": false
+        },
+        {
+          "term": "flat tori",
+          "heading": false
+        }
+      ],
+      "extract": "Here we continue with an overview of so-called positive isospectral results which showthatcertainquantitiesarespectralinvariants, aswellasresultsthatcontribute to the general understanding of the spectrum and its connections to geometry. In 1966, Tanaka studied the spectrum of discontinuous groups and gave an asymptotic formula for the discrete spectrum associated with the modular group [111]. In the same year",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-7-were-still-listening",
+      "number": "7",
+      "title": "We're still listening...",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 462,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gromov-hausdorff convergence",
+          "heading": false
+        },
+        {
+          "term": "hausdorff convergence",
+          "heading": false
+        },
+        {
+          "term": "heat trace",
+          "heading": false
+        },
+        {
+          "term": "hear",
+          "heading": false
+        },
+        {
+          "term": "spectral invariants",
+          "heading": false
+        },
+        {
+          "term": "perimeter",
+          "heading": false
+        },
+        {
+          "term": "drum",
+          "heading": false
+        },
+        {
+          "term": "trace coefficients",
+          "heading": false
+        }
+      ],
+      "extract": "Can one hear the shape of a convex drum? Can one hear the shape of a smooth drum? How many drums can sound the same? What all can one hear? These are just a few of numerous open questions in the rich field of spectral geometry. While one can study the spectrum and geometry of certain types of domains or Riemannian manifolds, and consider in that sense a ‘static’ problem, one could also study more dynamical problems",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2366,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isospectral domains",
+          "heading": false
+        },
+        {
+          "term": "isospectral manifolds",
+          "heading": false
+        },
+        {
+          "term": "isospectral deformations",
+          "heading": false
+        },
+        {
+          "term": "compact isospectral",
+          "heading": false
+        },
+        {
+          "term": "chalmers university",
+          "heading": false
+        },
+        {
+          "term": "mathematical journal",
+          "heading": false
+        },
+        {
+          "term": "polygonal domains",
+          "heading": false
+        },
+        {
+          "term": "mathematical society",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Nist digital library of mathematical functions. Accessed: 2023-05-20. [2] P. Albin,Linear analysis on manifolds, American Mathematical Society. URl: https://www. ams. org/open-math-notes/omn-view-listing (2017). [3] C.L. Aldana and J. Rowlett,A polyakov formula for sectors, The Journal of Geometric Analysis 28 (2018), 1773–1839. [4] M.Anderson,A.Katsuda,Y.Kurylev,M.Lassas,andM.Taylor, Boundary regularity for the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "isospectral domains",
+      "heading": false
+    },
+    {
+      "term": "isospectral non-isometric",
+      "heading": false
+    },
+    {
+      "term": "isospectral manifolds",
+      "heading": false
+    },
+    {
+      "term": "non-isometric riemannian",
+      "heading": false
+    },
+    {
+      "term": "compact isospectral",
+      "heading": false
+    },
+    {
+      "term": "polygonal domains",
+      "heading": false
+    },
+    {
+      "term": "bounded domains",
+      "heading": false
+    },
+    {
+      "term": "found isospectral",
+      "heading": false
+    },
+    {
+      "term": "isospectral quantum",
+      "heading": false
+    },
+    {
+      "term": "isospectral deformations",
+      "heading": false
+    },
+    {
+      "term": "constructed isospectral",
+      "heading": false
+    },
+    {
+      "term": "constructing isospectral",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "This domain Ω is a rectangle with side lengths l1 and l2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A quarter ellipse whose radii are proportional to R. Each lattice point in its interior corresponds to a unit square. The total area of the squares and the area of the quarter ellipse both grow on the order R2 as R → ∞, while the error is of the order R",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The domain Ω has an inner and outer covering consisting of finitely many rectangles. The rectangles contained in the interior are marked with a cross",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "An infinite sector with opening angle θ ∈ (π/2, π). (32) hS(θ)(r, ϕ, r, ϕ,t) =",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The polygon is split up into sectors which are close to the vertices, and regions close to the boundary but away from the vertices",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "We apply isometries so that one vertex is at the origin, one edge is parallel to the x-axis, and one edge is in the upper half plane. If the opening angle θ < π, then points on the left x-axis will have a positive distance to S(θ)",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The polygons converge to the unit disc in the sense of Hausdorff, but the perimeter diverges. The left shows k = 7 and the right k = 10",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 13,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p38); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2406.18369v2"
+  }
+}

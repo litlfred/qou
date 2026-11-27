@@ -1,0 +1,805 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1503.06237v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Prepared for submission to JHEP\nHolographic quantum error-correcting codes:\nToy models for the bulk/boundary\ncorrespondence\nFernando Pastawski,*a Beni Yoshida*a Daniel Harlow,b John Preskill,a\naInstitute for Quantum Information & Matter and Walter Burke Institute for Theoretical\nPhysics, California Institute of Technology, Pasadena, California 91125, USA\nbPrinceton Center for Theoretical Science, Princeton University, Princeton NJ 08540 USA\n*These authors contributed equally to this work.\nE-mail: fernando.pastawski@gmail.com, rouge@caltech.edu,\ndharlow@princeton.edu, preskill@caltech.edu\nAbstr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The AdS/CFT correspondence, an exact duality between quantum gravity on a (d+1)-\ndimensional asymptotically-AdS space and a d-dimensional CFT deﬁned on its bound-\nary, has signiﬁcantly advanced our understanding of quantum gravity, as well as pro-\nvided a powerful framework for studying strongly-coupled quantum ﬁeld theories. One\naspect of this duality is a remarkable relationship between geometry and entanglement.\nThis notion ﬁrst appeared in the proposal [2] that two entangled CFT’s have a bulk dual\nconnecting them through a wormhole, and was later quantiﬁed by Ryu and Takayanagi\nvia their p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Isometries and perfect tensors",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-isometries-and-perfect-tensors.md",
+      "narrative": null,
+      "content": "In this section we review some tools which will be used in our constructions of holo-\ngraphic states and codes. We begin with a standard deﬁnition:\nDeﬁnition 1. SayHA andHB are two Hilbert spaces, not necessarily of the same\ndimensionality. An isometry fromHA toHB is a linear map T :HA↦→H B with the\nproperty that it preserves the inner product.\nIfHA andHB have ﬁnite dimensionality, as we will assume throughout this paper,\nthen it immediately follows that such aT can exist only if their dimensionalities dim(A)\nand dim(B) obey dim(A)≤ dim(B). In the special case where dim( A) = dim(B), T\nis just",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of holographic quantum states and codes",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-002-3-construction-of-holographic-quantum-states-and.md",
+      "narrative": null,
+      "content": "We have seen how tensors can be interpreted as quantum states or quantum codes. In\nthis section we construct tensor networks in which the fundamental building blocks are\nperfect tensors. Our tensor networks describe states which we call holographic states,\nand codes which we call holographic codes.\nWe shall focus on examples based on tilings of two-dimensional hyperbolic space,\nwhich are speciﬁc realizations of uniform hyperbolic tilings known as hyperbolic tes-\nsellations. These tilings have desirable symmetries for constructing a toy model of\nthe AdS/CFT correspondence. In particular they ar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "The pentagon-tiling tensor network is an isometric tensor from the bulk",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Entanglement structure of holographic states",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-4-entanglement-structure-of-holographic-states.md",
+      "narrative": null,
+      "content": "In this section we explore to what extent holographic states reproduce key properties",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ryu-Takayanagi formula",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-41-ryu-takayanagi-formula.md",
+      "narrative": null,
+      "content": "boundary region [3] and the negativity of tripartite information [9].\n4.1 Ryu-Takayanagi formula\nThe Ryu-Takayanagi (RT) formula says that for a CFT whose gravitational dual is well-\napproximated by Einstein gravity at low energies, in any static state with a geometric\nbulk description the entropy SA of a boundary subregion A at ﬁxed time obeys\nSA = Area(γA)\n4G ; (4.1)\nhere G is Newton’s constant and γA is the minimal-area codimension-two bulk surface\nwhose boundary matches the boundary ∂A of A. In our examples the bulk theory is\n2 + 1 dimensional, so γA will be a spacelike bulk geodesic whose",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "Suppose that we have a holographic state associated to a simply-connected",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bipartite entanglement of disconnected regions",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-42-bipartite-entanglement-of-disconnected-region.md",
+      "narrative": null,
+      "content": "Unfortunately the proof of Theorem 2 does not directly generalize to a disconnected\nregionA, nor even to connected regions for states, such as our holographic code states,\nwhere not all perfect tensor indices are contracted in the bulk. We do not consider\nthis to be a serious problem for our models. However, we still ﬁnd it worthwhile to\nintroduce some machinery that allows us to quantify this presumption somewhat.\nThe ﬁrst technique we will introduce is an algorithmic procedure for constructing,\ngiven a boundary regionA, a bulk curveγ⋆\nA bounded by∂A such that the corresponding\ntensorP is gua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "For a holographic state or code, if A is a (not necessarily connected)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A map of multipartite entanglement",
+      "pageStart": 16,
+      "pageEnd": 21,
+      "target": "../sections/sec-006-43-a-map-of-multipartite-entanglement.md",
+      "narrative": null,
+      "content": "So far we have emphasized the bipartite entanglement between a boundary regionA and\nits complementAc in a holographic state or code. But we may also divide the boundary\ninto three or more regions and investigate the structure of the entanglement among\nthese regions. The entanglement structure can be elucidated via an entanglement\n“distillation” procedure which we will now describe.\nTo explain this procedure we begin by revisiting the case of bipartite entanglement.\nWe have seen that if the conditions of Theorem 2 are satisﬁed, then a holographic\nstate can be expressed in the form (4.2), where",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Negative tripartite information",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-007-44-negative-tripartite-information.md",
+      "narrative": null,
+      "content": "A useful characterization of multipartite entanglement is the tripartite information,\ndeﬁned as\nI3(A,B,C )≡SA +SB +SC−SAB−SAC−SBC +SABC. (4.13)\nFor a general (mixed) tripartite quantum state, I3 can take any real value. It is zero,\nthough, for any tripartite pure state of ABC, since in that case SABC = 0 and e.g.\nregions A and BC, being complementary, have the same entropy and therefore make\ncancelling contributions to I3. Nor is there a contribution to I3 from EPR pairs shared\nbetween a pair of the three regions (because e.g. a pair shared by AB yields positive\ncontributions to SA and SB whic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "Suppose the 2n indices of a perfect tensor state are partitioned into four",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum error correction in holographic codes",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-008-5-quantum-error-correction-in-holographic-codes.md",
+      "narrative": null,
+      "content": "In this section we study the error correction properties of our holographic codes in more\ndetail. The idea that a CFT with a gravity dual must have error correcting properties\nwas recently proposed in [1], and in this section we will see that our holographic codes\nillustrate many aspects of the proposal of [1] quite explicitly.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AdS-Rindler reconstruction as error correction",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-009-51-ads-rindler-reconstruction-as-error-correctio.md",
+      "narrative": null,
+      "content": "We begin by brieﬂy recalling the main point emphasized in [1], which is that in\nAdS/CFT a bulk local observable can be realized by many diﬀerent operators in the\nCFT. In fact, if x is any point in the bulk, and Y is any point on the boundary, the\nAdS/CFT dictionary can be chosen so that it maps the bulk local ﬁeld φ(x) to a CFT\noperatorO[φ(x)] which has no support in an open set containing Y , and therefore\ncommutes with any local ﬁeld of the CFT supported near Y . Since Y is an arbitrary\nboundary point, if the CFT operator corresponding to φ(x) were actually unique, we\nwould conclude that O c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The physical interpretation of holographic codes",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-010-52-the-physical-interpretation-of-holographic-co.md",
+      "narrative": null,
+      "content": "The error-correcting properties of the AdS/CFT correspondence were motivated in [1]\nby bulk calculations, together with plausibility arguments regarding the CFT. Our\ncentral observation in this paper is that analogous statements are provably true in\nholographic codes.\nWe emphasize that in holographic codes the uncontracted bulk legs hanging from\neach tensor should not be thought of as tensor factors in addition to the boundary legs.\nRather the entire physical Hilbert space is spanned by states of the boundary legs only.\nThe bulk legs just provide a way of conveniently describing states in a ce",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bulk reconstruction from tensor pushing",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-011-53-bulk-reconstruction-from-tensor-pushing.md",
+      "narrative": null,
+      "content": "We now explain how holographic codes realize the AdS-Rindler reconstruction of ﬁgure\n11. The basic idea is that, instead of using the full isometry of the entire network\nto push a local bulk operator to the boundary, we can instead successively push it\nthrough individual perfect tensors in a manner of our choosing by using the operation of\nﬁgure 2. We illustrate the reconstruction for two diﬀerent bulk points of the pentagon\ncode in ﬁgure 12. Here we use the deﬁning property of perfect tensors — that the\n– 23 –\ntensor provides a unitary transformation which maps any three legs of the tensor to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connected reconstruction and the causal wedge",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-012-54-connected-reconstruction-and-the-causal-wedge.md",
+      "narrative": null,
+      "content": "Given a subregion A of the boundary, which bulk local operators can be reconstructed\non A? This is not an easy question to answer in general, but at least we can give\na simple description of a large logical subsystem reconstructable on A, namely those\nlogical operators acting on bulk sites which are reachable using the greedy algorithm\nexplained in section 4.\nRecall that the greedy algorithm associates with any boundary region A a greedy\ngeodesic γ⋆\nA whose boundary matches the boundary of A, such that A and γ⋆\nA enclose\na tensor PA which deﬁnes an isometry mapping free bulk legs in PA togethe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/thm-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "thm-sec-012-01.md",
+      "narrative": null,
+      "content": "SupposeA is a connected boundary region. Then any bulk local operator",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Disconnected reconstruction and the entanglement wedge",
+      "pageStart": 28,
+      "pageEnd": 32,
+      "target": "../sections/sec-013-55-disconnected-reconstruction-and-the-entanglem.md",
+      "narrative": null,
+      "content": "Now let’s consider what bulk operators can be constructed on boundary regions with\nmore than one connected component. First we extend the deﬁnition of the causal wedge\nto disconnected regions:\n– 26 –\nDeﬁnition 6. Suppose that A is a boundary region, which is a union of connected\ncomponentsA1,A 2,... . The causal wedge ofA, denotedC[A], is deﬁned as the union\nof the causal wedges of the components of A,C[A] =⋃\niC[Ai].\nSince we have already established that any bulk operator in C[Ai] is reconstructable\non Ai if Ai is connected, it follows immediately from this deﬁnition that even for\ndisconnecte",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Erasure threshold",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "../sections/sec-014-56-erasure-threshold.md",
+      "narrative": null,
+      "content": "If the entanglement wedge conjecture is true for AdS/CFT, if holographic codes faith-\nfully model the entanglement structure of boundary theories with classical gravitational\nduals, and if the greedy entanglement wedge is a reasonable stand-in for the entangle-\nment wedge, then we should be able to ﬁnd holographic codes and boundary regions\nsuch that the greedy entanglement wedge reaches far outside the causal wedge. In this\nsection we provide examples which conﬁrm this expectation. One way to formalize this\nis to choose A to be a randomly chosen set of boundary spins, whose size is a speciﬁed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Holographic stabilizer codes",
+      "pageStart": 36,
+      "pageEnd": 39,
+      "target": "../sections/sec-015-57-holographic-stabilizer-codes.md",
+      "narrative": null,
+      "content": "Stabilizer codes have been extensively studied in quantum coding theory, and are often\nused in applications to fault-tolerant quantum computing [43]. Here we describe how to\nconstruct a family of holographic codes which are also stabilizer codes. We introduce the\nstabilizer formalism to pave the way for section 5.8, where we study some geometrical\nproperties of holographic stabilizer codes.\nStabilizer codes can be deﬁned for higher-dimensional spins as well, but here we\nwill assume the spins are qubits for simplicity. A Pauli operator acting on n qubits is\na tensor product of Pauli matrices, t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 39,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "Consider a holographic code deﬁned by a contracted network of perfect",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Are local gauge constraints enough?",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-016-58-are-local-gauge-constraints-enough.md",
+      "narrative": null,
+      "content": "It has recently been argued that in AdS/CFT gauge constraints in the boundary CFT\nmay pick out a small enough subspace of states to explain the error correcting properties\nof AdS/CFT [44]. The idea is that any gauge-invariant state already possess some non-\nlocal entanglement via the imposition of the gauge constraints, and that this might be\nenough to resolve the various paradoxes of [1]. 6\nWe can try to test this idea for the holographic stabilizer codes discussed in section\n5.7. Since gauge constraints are spatially local, the argument of Ref. [44] suggests\nthat the code’s stabilizer group",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Black holes and holography",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-017-6-black-holes-and-holography.md",
+      "narrative": null,
+      "content": "In holographic codes, bulk operators are reconstructed only on a subspace of the bound-\nary Hilbert space. This may seem troubling, since the holographic correspondence is\nsupposed to assign a bulk interpretation to all possible states on the boundary. A\nresolution of this confusion was proposed in [1] — a particular bulk operator might not\nalways be reconstructable because it lies deep inside a black hole for most boundary\nstates.7 In fact we can see this directly in our models if we incorporate black holes in\na manner that we now describe.\nTo illustrate the idea, consider the pentagon code,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Open problems and outlook",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-018-7-open-problems-and-outlook.md",
+      "narrative": null,
+      "content": "A remarkable convergence of quantum information science and quantum gravity has\naccelerated recently, propelled in particular by a vision of quantum entanglement as the\nfoundation of emergent geometry. We expect this interface area to continue to grow\nin importance, as practitioners in both communities struggle to develop a common\nlanguage and toolset. This paper was spurred by the connection between AdS/CFT\nand quantum error correction proposed in [1]. We have strived to make this connection\nmore concrete and accessible by formulating toy models which capture the key ideas,\nand we hope our ac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Perfect tensor examples",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../sections/sec-019-a-perfect-tensor-examples.md",
+      "narrative": null,
+      "content": "In this section we will present the 5-qubit code, the 3-qutrit code and discuss possibil-\nities of constructing perfect tensors with a larger number of legs. The 5-qubit code is\na qubit stabilizer code of the form introduced in section 5.7 whereas the 3-qutrit code\ncan be described through a natural generalization of the stabilizer formalism to higher\nspin dimensions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1 5-qubit code and 6-qubit state",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "../sections/sec-020-a1-5-qubit-code-and-6-qubit-state.md",
+      "narrative": null,
+      "content": "The ﬁve-qubit code is a [[5 , 1, 3]]2 perfect code with distance 3 encoding one logical\nqubit in ﬁve physical qubits. It is a stabilizer code with a stabilizer subgroup given by\nS =⟨S1,S 2,S 3,S 4⟩, where\nS1 =X⊗Z⊗Z⊗X⊗I\nS2 =I⊗X⊗Z⊗Z⊗X\nS3 =X⊗I⊗X⊗Z⊗Z\nS4 =Z⊗X⊗I⊗X⊗Z.\n(A.1)\nNote that S1S2S3S4 =Z⊗Z⊗X⊗I⊗X and hence the group is manifestly invariant\nunder cyclic permutations. As is the case in the stabilizer formalism, codes are char-\nacterized by an abelian stabilizer subgroup ([Si,Sj] = 0) and codespace is the joint +1\neigenspace for this group, code states satisfy\nSj|ψ⟩ =|ψ⟩ j = 1,... 4. (A.2)\n– 41 –",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2 3 -qutrit code and 4-qutrit state",
+      "pageStart": 45,
+      "pageEnd": 46,
+      "target": "../sections/sec-021-a2-3--qutrit-code-and-4-qutrit-state.md",
+      "narrative": null,
+      "content": "One of the simplest examples of perfect tensors is given by the three qutrit code. This\nstabilizer code allows encoding one logical qutrit onto three physical qutrits in a way\nthat it may be recovered even after erasure of any single physical qutrit. The reason\nfor providing this additional example at this point is that we believe that this family of\nperfect tensors may naturally be suited to generalizations leading to a continuum type\nlimit.\nThe code states for this code can be given as follows.\n√\n3|˜0⟩ =|000⟩ +|111⟩ +|222⟩\n√\n3|˜1⟩ =|012⟩ +|120⟩ +|201⟩\n√\n3|˜2⟩ =|021⟩ +|102⟩ +|210⟩.\nCorrespond",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.3 Large n",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "../sections/sec-022-a3-large-n.md",
+      "narrative": null,
+      "content": "In order to obtain perfect tensors for large n, one needs to increase v as well, with the\nﬁrst known construction [54] having v∝ O(n). A construction with v∝ O(√n) was\nlater proposed [55].\nWhile perfect tensors are essential in guaranteeing the isometric properties used in\nthe analysis of holographic codes, they do require a large degree of ﬁne tuning for their\nconstruction. An interesting observation is that according to canonical typicality, most\npure states are almost maximally entangled along any balanced bi-partition [56, 57].\nHence Haar random states may in some sense provide a good appr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Proof of RT for negatively curved planar graphs",
+      "pageStart": 47,
+      "pageEnd": 50,
+      "target": "../sections/sec-023-b-proof-of-rt-for-negatively-curved-planar-graph.md",
+      "narrative": null,
+      "content": "As we have presented in eq. 4.4, there is an upper bound on the amount of entanglement\na tensor network state can have based on the minimal cut γA dividing the network into\ntwo tensors P and Q. In this section, we will explain how to guarantee that this\nupper bound is saturated for connected regions in a certain class of holographic states.\nNamely, we shall focus on holographic states associated to planar graphs with non-\npositive curvature.\nWe argued that proving the RT formula amounts to showing that the tensors P\nand Q can be interpreted as unitary transformations, from the minimal geodesic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C Counting tensors in the pentagon code",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../sections/sec-024-c-counting-tensors-in-the-pentagon-code.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C.1 Counting tensors",
+      "pageStart": 50,
+      "pageEnd": 51,
+      "target": "../sections/sec-025-c1-counting-tensors.md",
+      "narrative": null,
+      "content": "In this appendix we compute some basic properties of the pentagon code that we quoted\nin the text. In these computations it is useful to “unwrap” the code, as in ﬁgure 20.\nThe central tensor is placed at the bottom, which we will refer to as the zeroth layer, the\nﬁrst ﬁve tensors as the ﬁrst layer, and so on, with the layer number n being equivalent\nto the graph distance to the central tensor.\nAt each layer, it is clear that there are two kinds of tensors: those with one leg\nconnected to the previous layer and those with two. We will denote the numbers of\nthese at layer n as fn and gn, so for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C.2 Connected reconstruction",
+      "pageStart": 51,
+      "pageEnd": 53,
+      "target": "../sections/sec-026-c2-connected-reconstruction.md",
+      "narrative": null,
+      "content": "We’ll now compute the size of connected boundary region that we need to reconstruct\noperators on the logical leg of the central ( n = 0) tensor. This is complicated by the\nfact that our network is not translationally invariant; whether or not we can reconstruct\nthe center depends not only on the size of the boundary region we have access to but\nalso where it is. The “best case” situation is illustrated in ﬁgure 21.\nWe can compute the number of physical qubits in the best-case region by growing\nthe tree it bounds: we start with f1 = 3 and g1 = 0, and then proceed as before by\napplying M repeate",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "D Estimating greedy erasure thresholds",
+      "pageStart": 53,
+      "pageEnd": 54,
+      "target": "../sections/sec-027-d-estimating-greedy-erasure-thresholds.md",
+      "narrative": null,
+      "content": "Noise models which are independent and identically distributed (i.i.d.) are usually\nanalytically tractable while providing reasonable predictive capability based on the few\nparameters deﬁning the individual noise model. In the case of erasure noise, this is\nparticularly simple since the only parameter is ϵ, the erasure probability per qubit. In\naddition to randomized bench-marking it is sometimes instructive to provide analytic\nbounds on how small the error/erasure probability needs to be in order to guarantee\na recovery probability for the encoded data which approaches unit. This can give us",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "D.1 Analytic bounds",
+      "pageStart": 54,
+      "pageEnd": 58,
+      "target": "../sections/sec-028-d1-analytic-bounds.md",
+      "narrative": null,
+      "content": "In this section, we derive such an analytic upper bound on the probability of logi-\ncal error. The goal of the section is to provide an example of how such a bound is\nderived illustrating a proof technique and obtaining a functional form for the logical\nerror probability. We do not strive to derive a tight bound or address a particularly\nrelevant holographic code scenario. In fact, the recovery procedure we model is strictly\nweaker than the one provided by the greedy algorithm which is itself weaker than an\noptimal erasure recovery algorithm. The model we analyze is essentially identical to\nth",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/thm-sec-028-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 58,
+      "target": "thm-sec-028-01.md",
+      "narrative": null,
+      "content": "Consider a single qubit hexagon code with n layers and an i.i.d. erasure",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/lem-sec-031-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 61,
+      "target": "lem-sec-031-02.md",
+      "narrative": null,
+      "content": "Given a stabilizer code withk logical qubits,𝓁(A)+𝓁(Ac) = 2k. Furthermore",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "D.2 Numerical evaluation",
+      "pageStart": 58,
+      "pageEnd": 58,
+      "target": "../sections/sec-029-d2-numerical-evaluation.md",
+      "narrative": null,
+      "content": "We may numerically evaluate the probability for the greedy algorithm to absorb the\ncentral tensor given a boundary region constructed by erasing a random set of physical\nindices according to an i.i.d. distribution. This gives us a conservative estimate of how\nwell protected the central qubit is from i.i.d. erasure since an optimal recovery method\ncan only do better. We perform such estimates for diﬀerent values of the lattice radius\nin order to identify the value pc associated to a correctability phase transition. For\nthe regular pentagon lattice tensor network we ﬁnd that there is no indicati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "E Reconstructing beyond the greedy algorithm",
+      "pageStart": 58,
+      "pageEnd": 58,
+      "target": "../sections/sec-030-e-reconstructing-beyond-the-greedy-algorithm.md",
+      "narrative": null,
+      "content": "The greedy algorithm provides an explicit prescription for representing bulk logical\noperators on a speciﬁed region of the boundary. A key virtue is that the region obtained\ndoes not depend in any way on the speciﬁc perfect tensors used to construct the network.\nIn this sense, it is analogous to the AdS/Rindler reconstruction, which is explicit and\napplicable to a large family of models satisfying a holographic correspondence.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "E.1 Reconstruction from symmetry guarantees",
+      "pageStart": 58,
+      "pageEnd": 61,
+      "target": "../sections/sec-031-e1-reconstruction-from-symmetry-guarantees.md",
+      "narrative": null,
+      "content": "The greedy entanglement wedge falls short of the expectations for a geometric entan-\nglement wedge in certain ways. For instance, in the scenario where the minimal surface\nseparatingA fromAc is well deﬁned, we expectE[A]∪E [Ac] to contain the full lattice.\n– 56 –\n00.10.20.30.40.50.60.70.80.91\n0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n1\nErasure probability\nCentral qubit recovery probability\nn=1\nn=3\nn=5\nn=7\nn=9\n(a) Holographic pentagon code\n00.20.40.60.81\n0\n0.1\n0.2\n0.3\n0.4\n0.5\n0.6\n0.7\n0.8\n0.9\n1\nErasure probability\nCentral qubit recovery probability\nn=1\nn=3\nn=5\nn=7\nn=9\n (b) Pentagon/hexagon code\n0 0.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/thm-sec-031-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 61,
+      "target": "thm-sec-031-01.md",
+      "narrative": null,
+      "content": "in of Ref. [64] precisely relates the number of independent logical",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1503.06237v2/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "E.2 Approximate reconstruction for typical tensors",
+      "pageStart": 61,
+      "pageEnd": 65,
+      "target": "../sections/sec-032-e2-approximate-reconstruction-for-typical-tensor.md",
+      "narrative": null,
+      "content": "Consider a connected residual region R obtained after removing the greedy entangle-\nment wedge associated to boundary region A and the one associated to its complement\nAc. A “typical” residual region will be composed of randomly chosen perfect tensors\nwithout any speciﬁc symmetry imposed. In this case, we may average the entanglement\nentropy associated to boundaries γ⋆\nA andγ⋆\nAc. We expect that for |γ⋆\nA|≥| γ⋆\nAc| +nR the\nmap from the bulk logical indices and the smaller boundary onto the larger one will\ngenerically be full rank. Furthermore, we conjecture that for random perfect tensors,\nthe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

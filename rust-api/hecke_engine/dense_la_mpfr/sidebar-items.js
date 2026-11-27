@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["dense_dense_mul_mpfr","invert_matrix_h_mpfr","sparse_to_dense_mpfr","svec_pack_mpfr","symmetrize_mpfr"]};

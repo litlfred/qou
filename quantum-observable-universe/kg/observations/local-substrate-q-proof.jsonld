@@ -6,16 +6,16 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-local-substrate-q",
+  "@id": "papers/quantum-observable-universe/blocks/prf-local-aether-q",
   "@type": [
     "folio-assistant-sci:Proof",
     "doco:Section"
   ],
-  "label": "prf:local-substrate-q",
+  "label": "prf:local-aether-q",
   "kind": "proof",
-  "title": "Proof of Local Value of the Substrate Parameter",
+  "title": "Proof of Local Value of the Aether Parameter",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-local-substrate-q",
+    "papers/quantum-observable-universe/blocks/prop-local-aether-q",
     "papers/quantum-observable-universe/blocks/def-three-calibration-discipline",
     "papers/quantum-observable-universe/blocks/prf-knot-volumes-verification"
   ],

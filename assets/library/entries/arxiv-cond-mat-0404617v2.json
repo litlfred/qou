@@ -1,0 +1,348 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-cond-mat-0404617v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "For many years, it was thought that Landau’s theory\nof symmetry breaking [1] could describe essentially all\nphases and phase transitions. It appeared that all con-\ntinuous phase transitions were associated with a broken\nsymmetry. However, after the discovery of the fractional\nquantum Hall (FQH) eﬀect, it was realized that FQH\nstates contain a new type of order - topological order\n- that is beyond the scope of Landau theory (for a re-\nview, see Ref. [2]). Since then the study of topological\nphases in condensed matter systems has been an active\narea of research. Topological phases have been inve",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:cond-mat/0404617v2  [cond-mat.str-el]  27 Apr 2004\nString-net condensation: A physical mechanism for topolog ical phases\nMichael A. Levin and Xiao-Gang Wen ∗\nDepartment of Physics, Massachusetts Institute of Technol ogy, Cambridge, Massachusetts 02139\n(Dated: April 2004)\nWe show that quantum systems of extended objects naturally g ive rise to a large class of ex-\notic phases - namely topological phases. These phases occur when the extended objects, called\n“string-nets”, become highly ﬂuctuating and condense. We d erive exactly soluble Hamiltonians\nfor 2D local bosonic models whose ground",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "String-nets and gauge theories",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-string-nets-and-gauge-theories.md",
+      "narrative": null,
+      "content": "In this section, we introduce the string-net picture in\nthe context of gauge theory [27, 37, 38]. We point out\nthat all deconﬁned gauge theories can be understood as\nstring-net condensates where the strings are essentially\nelectric ﬂux lines. We hope that this result provides in-\ntuition for (and motivates) the string-net picture in the\ngeneral case.\nWe begin with the simplest gauge theory - Z2 lattice\ngauge theory [39]. The Hamiltonian is\nHZ2 = −U\n∑\ni\nσx\ni + t\n∑\np\n∏\nedges of p\nσz\nj (1)\nwhere σx,y,z are the Pauli matrices, and I, i, p label the\nsites, links, and plaquettes of the lattice. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General string-net picture",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-3-general-string-net-picture.md",
+      "narrative": null,
+      "content": "Given the large scope of gauge theory, it is natural\nto wonder if string-nets can describe more general topo-\nlogical phases. In this section we will discuss this more\ngeneral string-net picture. (Actually, we will not discuss\nthe most general string-net picture. We will focus on a\nspecial case for the sake of simplicity. See Appendix A\nfor a discussion of the most general picture).\nWe begin with a more detailed deﬁnition of “string-\nnets.” As the name suggests, string-nets are networks of\nstrings. We will focus on trivalent networks where each\nnode or branch point is attached to exactly 3 str",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "String-net condensation in $(2+1)$ dimensions",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-4-string-net-condensation-in-21-dimensions.md",
+      "narrative": null,
+      "content": "DIMENSIONS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fixed-point wave functions",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-41-fixed-point-wave-functions.md",
+      "narrative": null,
+      "content": "In this section, we attempt to capture the universal\nfeatures of string-net condensed phases in (2 + 1) dimen-\nsions. Our approach, inspired by Ref. [35–37, 42–44],\nis based on the string-net wave function. We construct\na special “ﬁxed-point” wave function for each string-net\ncondensed phase. We believe that these “ﬁxed-point”\nwave functions capture the universal properties of the\ncorresponding phases. Each “ﬁxed-point” wave function\nis associated with a six index object F ijk\nlmn that satisﬁes\ncertain algebraic equations (8). In this way, we derive\na one-to-one correspondence between doubled",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fixed-point Hamiltonians",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-42-fixed-point-hamiltonians.md",
+      "narrative": null,
+      "content": "In this section, we construct exactly soluble lattice spin\nHamiltonians with the ﬁxed-point wave functions Φ as\nground states. These Hamiltonians provide an explicit\nrealization of all (2 + 1) D string-net condensates and\ntherefore all (2 + 1) D doubled topological phases (pro-\nvided that we generalize these models as discussed in\nAppendix A). In the next section, we will use them to\ncalculate the physical properties of the quasiparticle ex-\ncitations.\nFor every (F ijm\nkln , di) satisfying the self-consistency con-\nditions (8) and the unitarity condition (14), we can con-\nstruct an exactly sol",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quasiparticle excitations",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-43-quasiparticle-excitations.md",
+      "narrative": null,
+      "content": "In this section, we ﬁnd the quasiparticle excitations\nof the string-net Hamiltonian (10), and calculate their\nstatistics (e.g. the twists θα and the S matrix sαβ ). We\nwill only consider the topological phase with smooth con-\ntinuum limit. That is, we will choose as = ds∑ N\ni=0 d2\ni\nin our\nlattice model.\nRecall that the ground state satisﬁes QI = Bp = 1 for\nall vertices I, and all plaquettes p. The quasiparticle ex-\ncitations correspond to violations of these constraints fo r\nsome local collection of vertices and plaquettes. We are\ninterested in the topological properties (e.g. statistics ) of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "String-net condensation in $(3+1)$ and higher dimensions",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-5-string-net-condensation-in-31-and-higher-dimen.md",
+      "narrative": null,
+      "content": "AND HIGHER DIMENSIONS\nIn this section, we generalize our results to (3 + 1) and\nhigher dimensions. We ﬁnd that there is a one-to-one\ncorrespondence between (3 + 1) (and higher) dimensional\nstring-net condensates and mathematical objects known\nas “symmetric tensor categories.” [32] The low energy\neﬀective theories for these states are gauge theories cou-\npled to bosonic or fermionic charges.\nOur approach is based on the exactly soluble lattice\nspin Hamiltonian (10). In that model, the spins live on\nthe links of the honeycomb lattice. However, the choice\nof lattice was somewhat arbitrary: we cou",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-6-examples.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "$N=1$ string model",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-61-n1-string-model.md",
+      "narrative": null,
+      "content": "We begin with the simplest string-net model. In the\nnotation from section III, this model is given by\n1. Number of string types: N = 1\n2. Branching rules: ∅ (no branching)\n3. String orientations: 1 ∗ = 1.\nIn other words, the string-nets in this model contain one\nunoriented string type and have no branching. Thus,\nthey are simply closed loops. (See Fig. 3a).\nWe would like to ﬁnd the diﬀerent topological phases\nthat can emerge from these closed loops. According to\nthe discussion in section IV, each phase is captured by\na ﬁxed-point wave function, and each ﬁxed-point wave\nfunction is speciﬁed by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "$N=1$ string-net model",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-010-62-n1-string-net-model.md",
+      "narrative": null,
+      "content": "The next simplest string-net model also contains only\none oriented string type - but with branching. Simple\nas it is, we will see that this model contains non-Abelian\nanyons and is theoretically capable of universal fault tol-\nerant quantum computation [33]. Formally, the model is\ndeﬁned by\n1. Number of string types: N = 1\n2. Branching rules: {{1, 1, 1}}\n3. String orientations: 1 ∗ = 1.\nThe string-nets are unoriented trivalent graphs. To ﬁnd\nthe topological phases that can emerge from these ob-\njects, we solve the self-consistency relations (8). We ﬁnd\ntwo sets of self-consistent rules:\nΦ\n( )",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "$N = 2$ string-net models",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-011-63-n-2-string-net-models.md",
+      "narrative": null,
+      "content": "In this section, we discuss two N = 2 string-net mod-\nels. The ﬁrst model contains one oriented string and its\ndual. In the notation from section III, it is given by\n1. Number of string types: N = 2\n2. Branching rules: {{1, 1, 1}, {2, 2, 2}}\n3. String orientations: 1 ∗ = 2, 2 ∗ = 1.\nThe string-nets are therefore oriented trivalent graphs\nwith Z3 branching rules. The string-net condensed\nphases correspond to solutions of (8). Solving these equa-\ntions, we ﬁnd two sets of self-consistent local rules:\nΦ\n( )\n= ± Φ\n( )\nΦ\n( )\n= ± Φ\n( )\nΦ\n( )\n=\n√\n±1 ·Φ\n( )\n(54)\nThe corresponding ﬁxed-point wave funct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-012-7-conclusion.md",
+      "narrative": null,
+      "content": "In this paper, we have shown that quantum systems\nof extended objects naturally give rise to topological\nphases. These phases occur when the extended objects\n(e.g. string-nets) become highly ﬂuctuating and con-\ndense. This physical picture provides a natural mech-\nanism for the emergence of parity invariant topological\nphases. Microscopic degrees of freedoms (such as spins\nor dimers) can organize into eﬀective extended objects\nwhich can then condense. We hope that this physical\npicture may help direct the search for topological phases\nin real condensed matter systems. It would be interest-\ning",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General string-net models",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-013-a-general-string-net-models.md",
+      "narrative": null,
+      "content": "MODELS\nIn this section, we discuss the most general string-net\nmodels. These models can describe all doubled topo-\nlogical phases, including all discrete gauge theories and\ndoubled Chern-Simons theories.\nIn these models, there is a “spin” degree of freedom at\neach branch point or node of a string-net, in addition to\nthe usual string-net degrees of freedom. The dimension\nof this “spin” Hilbert space depends on the string types\nof the 3 strings incident on the node.\nTo specify a particular model one needs to provide\na 3 index tensor δijk which gives the dimension of the\nspin Hilbert space associ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Self-consistency conditions",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-014-b-self-consistency-conditions.md",
+      "narrative": null,
+      "content": "CONDITIONS\nIn this section, we derive the self-consistency condi-\ntions (8). We begin with the last relation, the so-called\n“pentagon identity”, since it is the most fundamental.\nTo derive this condition, we use the fusion rule (7)\nto relate the amplitude Φ\n(\ni\nkj l\nm\np q\n)\nto the amplitude\nΦ\n(\nmi\nj l k\nsr\n)\nin two distinct ways (see Fig. 14). On the\none hand, we can apply the fusion rule (7) twice to obtain\ni\nkj l\nm\nqp\ni m m i\nj l k j l k\ni m\nj l k j l k\nmi\nq\nsr\np\nn n\n(a) (b) (c)\n(d) (e)\ns\nr\nFIG. 14: The fusion rule (7) can be used to relate the am-\nplitude of (a) to the amplitude of (c) in t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Graphical representation of the Hamiltonian",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-015-c-graphical-representation-of-the-hamiltonian.md",
+      "narrative": null,
+      "content": "OF THE HAMIL TONIAN\nIn this section, we provide an alternative, graphical,\nrepresentation of the lattice model (10). This graphical\nrepresentation provides a simple visual technique for un-\nderstanding properties (a)-(c) of the Hamiltonian (10).\nWe begin with the 2 D honeycomb lattice. Imagine we\nfatten the links of the lattice into stripes of ﬁnite width\n(see Fig. 16). Then, any string-net state in the fat-\ntened honeycomb lattice (Fig. 16a) can be viewed as a\nsuperposition of string-net states in the original, unfat-\ntened lattice (Fig. 16b). This mapping is obtained via\nthe local rules (4-7",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-0404617v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Graphical representation of the string operators",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-016-d-graphical-representation-of-the-string-operato.md",
+      "narrative": null,
+      "content": "OF THE STRING OPERATORS\nIn this section, we describe a graphical representation\nof the long string operators Wα (P ). Just as in the pre-\nvious section, this representation involves the fattened\nhoneycomb lattice. The action of the string operator\nWα (P ) on a general string state X, is simply to create a\nstring labeled α along the path P . The resulting string-\nnet state can then be reduced to a linear combination of\nstring-net states on the unfattened lattice. The coeﬃ-\ncients in this linear combination are the matrix elements\nof Wα (P ).\nHowever, none of the rules (4-7) involve strings labe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

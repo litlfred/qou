@@ -1,0 +1,289 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2501.03260v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2501.03260v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2501.03260v1  [physics.gen-ph]  3 Jan 2025\nPreons, Braid Topology, and Representations\nof Fundamental Particles\nDavid Chester 1, ∗ Xerxes D. Arsiwalla 2, † Louis H. Kauﬀman 3, ‡\n1Quantum Gravity Research, Topanga, CA, USA\n2Wolfram Institute for Computational Foundations of Scienc e, Champaign, IL, USA\n3University of Illinois at Chicago, Chicago, IL, USA\nAbstract\nIn particle phenomenology, preon models study composition al rules of standard\nmodel interactions. In spite of empirical success, mathema tical underpinnings of\npreon models in terms of group representation theory have no t been",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2501.03260v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "2 The Helon Model 4\n2.1 Particle Representation with Helons . . . . . . . . . . . . . . . . . . . . 4\n2.2 Composition Laws with Helons . . . . . . . . . . . . . . . . . . . . . . . 7\n3 The 4-Vector Representation 8\n3.1 Mapping Helons to Four-Vectors . . . . . . . . . . . . . . . . . . . . . . 9\n4 CPT Invariance and Braid Topology 11\n5 Standard Model Interactions in the Helon Model 13\n5.1 Gauge Boson Interactions . . . . . . . . . . . . . . . . . . . . . . . . . . 14\n5.2 Interactions with Fermions . . . . . . . . . . . . . . . . . . . . . . . . . . 16\n6 The Helon Model from the SU (3)c × U(1)em",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2501.03260v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Helon Model",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-the-helon-model.md",
+      "narrative": null,
+      "content": "introduces Lambek’s 4-vector model and compares it with the helon model. Section 4 pro-\nposes candidates for C, P , and T transformations in the helon model and demonstrates\nthat CP T symmetry uniquely identiﬁes the fermionic braid states. Se ction 5 demon-\nstrates that the helon model successfully contains the gaug e bosons of SU (3)c × U(1)em.\nSection 6 establishes the relationship between representa tion theory in the weight lattice\nto the helon model and Lambek’s model. Section 7 ends with our concluding remarks.\n2 The Helon Model\nThe helon model depicts elementary particles as a braid dia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2501.03260v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Particle Representation with Helons",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-particle-representation-with-helons.md",
+      "narrative": null,
+      "content": "The fermion assignments of our revised helon model are shown in Fig. 1 (the revisions we\nhave proposed here will all be justiﬁed in the next few sectio ns). The electron/positron\nstates include both, a left- and right-chiral electron/pos itron; that is, four on-shell states\nin total, which are encoded by four unique braid states. The b raid group B3 of three\nribbons contains generators σ1 as braiding the 1st strand over the 2nd, σ2 as the 2nd over\nthe 3rd, σ−1\n1 as the 1st under the 2nd, and σ−1\n2 as the 2nd under the 3rd. The charges\nare uniquely determined by the twist conﬁgurations on each",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2501.03260v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Composition Laws with Helons",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-composition-laws-with-helons.md",
+      "narrative": null,
+      "content": "While discussing compatibility between the helon and 4-vec tor models, there is one im-\nportant issue that has to be addressed; namely, the nature of their respective composition\nlaws. While the 4-vector model assumes a fully commutative c omposition rule by way\nof vector addition; the helon model is noncommutative, that is, the order of braids com-\nposing with each other does matters. In order to understand h ow these two diﬀering\nmodels may still corroborate to reproduce correct standard model interactions, we need\nto closely examine their composition rules.\nNow, in the 4-vector model, the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2501.03260v1/blocks/rem-sec-003-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "rem-sec-003-01.md",
+      "narrative": null,
+      "content": "ably, it turns out that the above issue (for consisten tly constructing hadron",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2501.03260v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 4-Vector Representation",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-the-4-vector-representation.md",
+      "narrative": null,
+      "content": "Prior to the helon model, in the year 2000, Joachim Lambek had introduced a 4-vector\nrepresentation of fundamental particles [17]. Lambek’s mo del was intended as a for-\nmalization of the earlier rishon model proposed by Harari (w hich was also conceptually\nsimilar to Shupe’s and Raitio’s proposals) [8, 9, 11]. In Lam bek’s 4-vector representation,\nshown in Table 1, each lepton, quark, and gauge boson are asso ciated with a fundamental\n4-vector with entries ± 1 or 0. The ﬁrst component of this 4-vector corresponds to the\nfermion number, while the remaining three sum up to the elect ric charge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2501.03260v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mapping Helons to Four-Vectors",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-mapping-helons-to-four-vectors.md",
+      "narrative": null,
+      "content": "Now, the helon model with its braided structure is certainly not a vector model. In\nthe former, interactions are realized via color-matched br aid multiplication. The twists\ncorrespond to electric charges, while the braid crossings c apture chirality. Even though\nFermions Antifermions Gauge bosons Baryons\ne− : 1 − i − j − k ¯e+ : − 1 + i + j + k γ, Z 0 : 0 n : 3\nν : 1 ¯ν : − 1 W − : − i − j − k p+ : 3 + i + j + k\nur : 1 + j + k ¯ur : − 1 − j − k W + : i + j + k\nub : 1 + i + k ¯ub : − 1 − i − k G¯bg : j − k\nug : 1 + i + j ¯ug : − 1 − i − j G¯rb : − i + k\ndr : 1 − i ¯dr : − 1 + i G¯br : i − j\ndb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2501.03260v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CPT Invariance and Braid Topology",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-cpt-invariance-and-braid-topology.md",
+      "narrative": null,
+      "content": "The helon model only uses a subset of all possible twisted bra id diagrams. Understanding\na physical principle to choose these braids over another wou ld provide further justiﬁcation\nfor the helon model. In this section, we review a set of topolo gical transformations that\nseem to map to the C, P, and T transformations. While CPT trans formations are found\nin the Lie group, these topological transformations are tra nsformations that act on the\ntwisted braid states. We demonstrate that the braid diagram s of the helon model (taking\ninto account the modiﬁcation of helon assignments mentione d ea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2501.03260v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Standard Model Interactions in the Helon Model",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-standard-model-interactions-in-the-helon-model.md",
+      "narrative": null,
+      "content": "Next, the Feynman interaction rules of the standard model ar e exhaustively compared\nwith the Bilson-Thompson model. We start by reviewing the ga uge-boson interactions,\nfollowed by the fermions with the bosons.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2501.03260v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gauge Boson Interactions",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-gauge-boson-interactions.md",
+      "narrative": null,
+      "content": "The standard model contains non-Abelian gauge bosons that i nteract with SU (3) ×\nSU (2) × × U(1) gauge symmetry. The Feynman rules for the strong- and weak-f orce\ngauge bosons stem from Yang-Mills theory. An arbitrary SU (N) Yang-Mills gauge ﬁeld\nAA\nµ corresponds to GA\nµ and W i\nµ for N = 2 and N = 3 . The gluons and the W-bosons\ninteract with themselves, respectively. The B-boson sourc ed by weak hypercharge has\nno nonlinear self-interactions at the classical level to co nsider for interaction rules in\nFeynman diagrams. The Z-boson and photon are a mix of the W 0 and B-boson, which\nalso inte",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2501.03260v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interactions with Fermions",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-interactions-with-fermions.md",
+      "narrative": null,
+      "content": "The fermionic sector has interactions directly with the gau ge bosons, which is encoded\nin the covariant derivatives. The Lagrangian for the diﬀere nt ﬁelds in momentum space\nare given by\nLq = iq†¯σµ (ikµ − ig3Gµ − ig2Wµ − iYqBµ ) q, (18)\nLl = il†¯σµ (ikµ − ig2Wµ − iYlBµ ) l, (19)\nLu = iu†¯σµ (ikµ − ig3Gµ − iYuBµ ) u, (20)\nLd = ud†¯σµ (ikµ − ig3Gµ − iYdBµ ) d, (21)\nLe = ie†¯σµ (ikµ − iYeBµ ) e, (22)\nLν = iν†¯σµ ikµ ν. (23)\nThe interaction rules for fermion-antifermion-gauge boso n interactions are found by the\nfollowing\n∂3Lq\n∂q †\n˙αIia ∂q jb\nβJ ∂GA\nµ\n=g3(T A)i\nj(¯σµ ) ˙αα δa\nb , ∂3Lq\n∂q †\n˙αIi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2501.03260v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Helon Model from the SU(3)cU(1)em Weight Lattice",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "../sections/sec-010-the-helon-model-from-the-su3cu1em-weight-lattice.md",
+      "narrative": null,
+      "content": "Lattice\nThe helon model completely describes the SU (3)c × U(1)em gauge theory for a single\ngeneration of standard model fermions. Next, we seek to unde rstand the origin of these\nbraid and twist assignments from representation theory. No te that the on-shell states\nof spinors are determined by the braiding information. Ther efore, the twists can then\nuniquely determine the charge states of diﬀerent elementar y particles. As we will show,\nthe twist values of the helon braids can be found from an aﬃne l inear transformation\nacting on the weight lattice coordinates.\nThe fact that the ribbon twis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2501.03260v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions and Discussion",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-011-conclusions-and-discussion.md",
+      "narrative": null,
+      "content": "In conclusion, this work started with a discussion of variou s preon models from Harari\nand Shupe, to Lambek, to Bilson-Thompson. When preon models were ﬁrst introduced\nin particle physics, they generated some excitement in the c ommunity due to the fact that\ntheir combinatorics could reproduce aspects of standard mo del phenomenology. However,\nit was never clear where these interaction rules came from, o r how these diﬀerent models\nmapped onto each other. The most recent among preon models ar e the 4-vector model\nand the helon model (which incorporate the data of earlier mo dels). We have sho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2501.03260v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Standard Model Conventions",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "../sections/sec-012-standard-model-conventions.md",
+      "narrative": null,
+      "content": "In this appendix, we review some well-established facts abo ut SU (3)c × SU (2)L × U(1)Y\ngauge theory, in order to establish the conventions used in t he main text. This overview\ncan be found in standard texts such as [51].\nSU (3)c × SU (2)L × U(1)Y gauge theory contains a spectrum of particles described\nby quantum ﬁelds under the representations of SL(2, C) × SU (3) × SU (2) × U(1) once\nincluding the spin degrees of freedom. By using the chiral re presentations of the Lorentz\ngroup, the (p, q) representation of SL(2, C) has left-chiral spinors as (2, 1), vector ﬁelds\nGroup SL(2, C) SU (3)c SU",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

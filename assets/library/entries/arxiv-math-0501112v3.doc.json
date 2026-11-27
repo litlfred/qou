@@ -761,11 +761,11 @@
           "heading": false
         },
         {
-          "term": "approximate",
+          "term": "mathop mathrm",
           "heading": false
         },
         {
-          "term": "mathop mathrm",
+          "term": "approximate",
           "heading": false
         },
         {
@@ -1367,11 +1367,11 @@
           "heading": false
         },
         {
-          "term": "diff",
+          "term": "underline summands",
           "heading": false
         },
         {
-          "term": "underline summands",
+          "term": "diff",
           "heading": false
         },
         {
@@ -1383,7 +1383,7 @@
           "heading": false
         },
         {
-          "term": "every summand",
+          "term": "overcoming",
           "heading": false
         }
       ],
@@ -1439,15 +1439,15 @@
           "heading": true
         },
         {
-          "term": "semigroup algebra",
-          "heading": false
-        },
-        {
           "term": "definition-of-disjoint",
           "heading": false
         },
         {
           "term": "fix-points",
+          "heading": false
+        },
+        {
+          "term": "semigroup algebra",
           "heading": false
         },
         {
@@ -1595,12 +1595,12 @@
           "heading": false
         },
         {
-          "term": "proof",
-          "heading": true
-        },
-        {
           "term": "ﬁnishes",
           "heading": false
+        },
+        {
+          "term": "proof",
+          "heading": true
         }
       ],
       "extract": "\u0010 X deg kid(xi : i ∈πj) ≤ Thus (4.11) \u0010 X \u0011 1≤j≤m deg kid(xi : i ∈πj) Assumption (3.2) and Corollary 4.7 show that kid(xi : i ∈πj) : j = 1, 2, . . . k•\u0002 \u0003 GAUSSIAN FLUCTUATIONS OF CHARACTERS OF SYMMETRIC GROUPS 23 Proof. Partition π can be obtained from the trivial partition (every block consists of exactly one element) by performing P times the following operation: we select two blocks and merge them into a single",
@@ -1748,7 +1748,7 @@
           "heading": false
         },
         {
-          "term": "constructions",
+          "term": "column",
           "heading": false
         }
       ],
@@ -1960,8 +1960,8 @@
           "heading": false
         },
         {
-          "term": "figure reference-type",
-          "heading": false
+          "term": "sigma",
+          "heading": true
         }
       ],
       "extract": "[]{#subsec:explicit label=\"subsec:explicit\"} Let $\\pi$ be a partition of the set $\\{1,\\dots,n\\}$. Since the fat partition $\\pi_{\\mathop{\\mathrm{fat}}}$ connects every element of the set $\\{1',2',\\dots,n'\\}$ with exactly one element of the set $\\{1,2,\\dots,n\\}$, we can view $\\pi_{\\mathop{\\mathrm{fat}}}$ as a bijection $\\pi_{\\mathop{\\mathrm{fat}}}:\\{1',2',\\dots,n'\\}\\rightarrow\\{1,2,\\dots,n\\}$. We also consider a",
@@ -2068,12 +2068,12 @@
       "heading": true
     },
     {
-      "term": "young diagrams",
-      "heading": true
-    },
-    {
       "term": "geq dots",
       "heading": false
+    },
+    {
+      "term": "young diagrams",
+      "heading": true
     }
   ],
   "pageLabels": [

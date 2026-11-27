@@ -1,0 +1,852 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1711.09011v1",
+  "title": "arxiv-1711.09011v1",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Helon model",
+      "number": "3",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-3-the-helon-model"
+    },
+    {
+      "level": 1,
+      "title": "Normed division algebras",
+      "number": "4",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-4-normed-division-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Clifford algebra representations of circular Artin braid groups",
+      "number": "5",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-5-clifford-algebra-representations-of-circular-a"
+    },
+    {
+      "level": 2,
+      "title": "The complex numbers and a representation of the Artin braid group B2",
+      "number": "5.1",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-51-the-complex-numbers-and-a-representation-of-t"
+    },
+    {
+      "level": 2,
+      "title": "The quaternions and a representation of the circular Artin braid group Bc",
+      "number": "5.2",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-52-the-quaternions-and-a-representation-of-the-c"
+    },
+    {
+      "level": 2,
+      "title": "The octonions and a representation of the circular Artin braid group Bc",
+      "number": "5.3",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-53-the-octonions-and-a-representation-of-the-cir"
+    },
+    {
+      "level": 1,
+      "title": "Common elements of the Helon model and normed division algebra model",
+      "number": "6",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-6-common-elements-of-the-helon-model-and-normed"
+    },
+    {
+      "level": 1,
+      "title": "Discussion",
+      "number": "7",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-008-7-discussion"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-009-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 146,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "gresnigt",
+          "heading": false
+        },
+        {
+          "term": "niels",
+          "heading": false
+        },
+        {
+          "term": "quantum groups",
+          "heading": false
+        },
+        {
+          "term": "xjtlu",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum groups and braid groups as fundamental symmetries Niels G. Gresnigt∗† Xi’an Jiaotong-Liverpool University E-mail: niels.gresnigt@xjtlu.edu.cn The role of quantum groups and braid groups in the description of Standard Model particles is discussed. Some recent results on the use of the quantum groupSUq(3) as a ﬂavour symmetry are reviewed and a connection between two descriptions of Standard Model symmetries,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1711.09011v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1062,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "decuplet baryons",
+          "heading": false
+        },
+        {
+          "term": "octet baryons",
+          "heading": false
+        },
+        {
+          "term": "ﬂavour symmetry",
+          "heading": false
+        },
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "clifford braiding",
+          "heading": false
+        },
+        {
+          "term": "ndas",
+          "heading": false
+        },
+        {
+          "term": "baryon mass",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum groups (which are algebras rather than groups) provide a generalization of the fa- miliar symmetry concepts encoded in Lie groups. Such quantum groups are deformations on Hopf algebras and depend on a deformation parameter q with the value q = 1 returning the undeformed universal enveloping algebra. First formalized by Jimbo [1] and Drinfeld [2] as a class of Hopf al- gebras, quantum groups have found many",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-3-the-helon-model",
+      "number": "3",
+      "title": "The Helon model",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 215,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": true
+        },
+        {
+          "term": "ribbon network",
+          "heading": false
+        },
+        {
+          "term": "braided ribbon",
+          "heading": false
+        },
+        {
+          "term": "brn",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst generation",
+          "heading": false
+        },
+        {
+          "term": "braids",
+          "heading": false
+        }
+      ],
+      "extract": "The Helon model of Bilson-Thompson maps the simplest non-trivial braids consisting of three (twisted) ribbons and two crossings to the ﬁrst generation of SM fermions. There are exactly 15 states in the model with no place for a right-handed neutrino. Quantized electric charges of particles are represented by integral twists of the ribbons of the braids; The color charges of quarks and gluons are accounted for by the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-4-normed-division-algebras",
+      "number": "4",
+      "title": "Normed division algebras",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 426,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normed division",
+          "heading": true
+        },
+        {
+          "term": "division algebras",
+          "heading": true
+        },
+        {
+          "term": "quaternions",
+          "heading": false
+        },
+        {
+          "term": "octonions",
+          "heading": false
+        },
+        {
+          "term": "fano plane",
+          "heading": false
+        },
+        {
+          "term": "reals",
+          "heading": false
+        },
+        {
+          "term": "complex numbers",
+          "heading": false
+        },
+        {
+          "term": "eie",
+          "heading": false
+        }
+      ],
+      "extract": "A division algebra is an algebra over a ﬁeld where division is always possible, with the excep- tion of division by zero. Nature admits only four normed division algebras over the reals, the real numbers R, the complex numbers C, the quaternions Q and the octonions O. Starting from the real numbers and generalizing to the complex numbers, one has to give up the ordered property of the reals. Generalizing in turn to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-5-clifford-algebra-representations-of-circular-a",
+      "number": "5",
+      "title": "Clifford algebra representations of circular Artin braid groups",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 282,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clifford algebra",
+          "heading": true
+        },
+        {
+          "term": "artin braid",
+          "heading": true
+        },
+        {
+          "term": "braid groups",
+          "heading": true
+        },
+        {
+          "term": "braid generators",
+          "heading": false
+        },
+        {
+          "term": "σiσi",
+          "heading": false
+        },
+        {
+          "term": "circular",
+          "heading": true
+        }
+      ],
+      "extract": "The Artin braid group on n strands is denoted by Bn and is generated by elementary braids {σ1, ...,σn−1} subject to the relations σiσ j = σ jσi, whenever|i− j| > 1, (5.1) σiσi+1σi = σi+1σiσi+1, for i = 1, ....,n− 2. 4 Quantum groups and braid groups Niels G. Gresnigt The braid groups Bn are an extension of the symmetric groupsSn with the condition that the square of each generator being equal to one lifted. It was",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-51-the-complex-numbers-and-a-representation-of-t",
+      "number": "5.1",
+      "title": "The complex numbers and a representation of the Artin braid group B2",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 155,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "artin braid",
+          "heading": true
+        },
+        {
+          "term": "braid group",
+          "heading": true
+        },
+        {
+          "term": "braid generator",
+          "heading": false
+        }
+      ],
+      "extract": "The complex numbers C with basis{1,i} are isomorphic to the Clifford algebraCl(0,1) which has e2 1 =−1. Given the isomorphism above it means we also have an isomorphism withCl+(2,0), the even part of Cl(2,0). Therefore, via the Clifford Braiding Theorem, the complex number algebra C admits a repre- sentation of the braid group B2. In this case the Artin braid group is equivalent to the circular Artin braid group Bc",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-52-the-quaternions-and-a-representation-of-the-c",
+      "number": "5.2",
+      "title": "The quaternions and a representation of the circular Artin braid group Bc",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 223,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid",
+          "heading": true
+        },
+        {
+          "term": "e1e",
+          "heading": false
+        },
+        {
+          "term": "quaternions",
+          "heading": true
+        },
+        {
+          "term": "e12e",
+          "heading": false
+        },
+        {
+          "term": "e2e",
+          "heading": false
+        }
+      ],
+      "extract": "3 Moving on to the quaternions H, one can use the isomorphism H∼= Cl(0,2)∼= Cl+(3,0) to ﬁnd a quaternionic representation of the braid group Bc 3. Cl(0,2) is spanned by 1,e1,e2,e1e2 = e12 1A circular braid on n strings has n strings attached to the outer edges of two circles which lie in parallel planes in R3. 5 Quantum groups and braid groups Niels G. Gresnigt with e2 1 = e2 2 = e2 12 = e1e2e12 =−1, (5.6) e1e2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-53-the-octonions-and-a-representation-of-the-cir",
+      "number": "5.3",
+      "title": "The octonions and a representation of the circular Artin braid group Bc",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 195,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonions",
+          "heading": true
+        },
+        {
+          "term": "chained octonions",
+          "heading": false
+        },
+        {
+          "term": "pnm",
+          "heading": false
+        }
+      ],
+      "extract": "7 In addition to being non-commutative, the octonion algebra O is also non-associative making a matrix representation of the algebra impossible. However, by deﬁning a standard ordering to any product of octonions, it is possible to recover an associative description of the octonions. Let n, m, and p be three octonions. One deﬁnes the octonion chain ←−−pnm as the map←−−pnm : f↦→ p(n(m f)). One can generalize this to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-6-common-elements-of-the-helon-model-and-normed",
+      "number": "6",
+      "title": "Common elements of the Helon model and normed division algebra model",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 504,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": true
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst braid",
+          "heading": false
+        },
+        {
+          "term": "ribbons",
+          "heading": false
+        },
+        {
+          "term": "λ1λ",
+          "heading": false
+        },
+        {
+          "term": "ndas",
+          "heading": false
+        },
+        {
+          "term": "braiding",
+          "heading": false
+        }
+      ],
+      "extract": "The main new idea of this paper is that the Clifford Braiding Theorem can be applied to the NDAs to investigate their braid content. The braid group representations of the NDAs presented 6 Quantum groups and braid groups Niels G. Gresnigt above make it possible to compare this approach to the Helon model where elementary particles are represented as braided ribbons. The complex quaternions C⊗ H admit all the SM",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-7-discussion",
+      "number": "7",
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 328,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "ndas",
+          "heading": false
+        },
+        {
+          "term": "braid generators",
+          "heading": false
+        },
+        {
+          "term": "quantum groups",
+          "heading": false
+        },
+        {
+          "term": "ribbons",
+          "heading": false
+        },
+        {
+          "term": "suq",
+          "heading": false
+        },
+        {
+          "term": "network",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum groups and braid groups play important roles in physics. Taken as a ﬂavour sym- metry, SUq(3) leads to exceptionally accurate baryon mass formulas. It would be interesting to consider the deformation of other internal symmetries in the SM and extend previous work to cal- culate cross sections and branching ratios of particles when one assumes underlying quantum group symmetries. Quantum groups have also",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 19,
+      "summary": null,
+      "keywords": [],
+      "extract": "The author wishes to thank Cohl Furey, Louis Kauffman, Adam Gillard, and Benjamin Martin for insightful discussions and communications.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 619,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sundance bilson-thompson",
+          "heading": false
+        },
+        {
+          "term": "preprint hep-ph",
+          "heading": false
+        },
+        {
+          "term": "arxiv preprint",
+          "heading": false
+        },
+        {
+          "term": "robert finkelstein",
+          "heading": false
+        },
+        {
+          "term": "jonathan hackett",
+          "heading": false
+        },
+        {
+          "term": "gavrilik",
+          "heading": false
+        },
+        {
+          "term": "louis kauffman",
+          "heading": false
+        },
+        {
+          "term": "lee smolin",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Michio Jimbo. A q-difference analogue of U(g) and the Yang-Baxter equation. Letters in Mathematical Physics, 10(1):63–69, 1985. [2] VG Drinfeld. Soviet math. dokl. 32 (1985) 254; m. jimbo. Lett. Math. Phys, 10:63, 1985. [3] R. J. Finkelstein. On q-Electroweak. (preprint hep-th/0110075), 2001. [4] Robert J Finkelstein. An SLq(2) Extension of the Standard Model. (preprint arXiv:1205.1026), 2012. [5] Harold",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "braid groups",
+      "heading": true
+    },
+    {
+      "term": "circular braid",
+      "heading": true
+    },
+    {
+      "term": "groups niels",
+      "heading": false
+    },
+    {
+      "term": "artin braid",
+      "heading": true
+    },
+    {
+      "term": "braid generators",
+      "heading": false
+    },
+    {
+      "term": "ﬁrst braid",
+      "heading": false
+    },
+    {
+      "term": "braid content",
+      "heading": false
+    },
+    {
+      "term": "braid word",
+      "heading": false
+    },
+    {
+      "term": "braided ribbons",
+      "heading": true
+    },
+    {
+      "term": "helon model",
+      "heading": true
+    },
+    {
+      "term": "clifford braiding",
+      "heading": false
+    },
+    {
+      "term": "quantum groups",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The Helon model of Bilson-Thompson in which the ﬁrst generation SM fermions are represented as braids of three (possibly twisted) ribbons, and the embedding of such braids into a braided ribbon network",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Decuplet baryon mass formula",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Quaternion multiplication I2 = J2 = K2 = IJK = −1, and octonion multiplication represented using a Fano plane",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p9); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1711.09011v1"
+  }
+}

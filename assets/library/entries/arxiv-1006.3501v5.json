@@ -1,0 +1,1081 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1006.3501v5",
+  "blocks": [
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "1. Pivotal and spherical categories 3\n2. Multiplicities in pivotal categories 5\n3. Invariants of colored graphs 8\n4. Pre-fusion and fusion categories 10\n5. State sums on triangulated 3-manifolds 13\n6. State sums on skeletons of 3-manifolds 14\n7. Moves on skeletons and proof of Theorems 5.1 and 6.1 16\n8. Skeletons in the relative case 22\n9. The state-sum TQFT 26\n10. Modular categories and categorical centers 31\n11. Main theorems and applications 34\n12. State sum invariants of links in 3-manifolds 35\n13. Deduction of Theorems 11.1 and 11.2 from Lemma 11.3 55\n14. The coend of the center 59\n15. Pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1006.3501v5  [math.GT]  24 Jun 2013\nON TWO APPROACHES TO 3-DIMENSIONAL TQFTS\nVLADIMIR TURAEV AND ALEXIS VIRELIZIER\nAbstract. W e prove that|M |C = τZ(C)(M ) for any closed oriented 3-manifold\nM and for any spherical fusion category C of non-zero dimension. Here |M |C\nis the Turaev-Viro-Barrett-W estbury state sum invariant of M derived from C,\nZ(C) is the Drinfeld-Joyal-Street center of C, and τZ(C)(M ) is the Reshetikhin-\nTuraev surgery invariant of M derived from Z(C).\nContents",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pivotal and spherical categories",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-1-pivotal-and-spherical-categories.md",
+      "narrative": null,
+      "content": "We review several classes of monoidal categories needed in the seq uel.\n1.1. Pivotal categories ( [Mal]). By a pivotal (or sovereign) category, we mean a\nstrict monoidal category C with unit object 1 such that to each object X∈ Ob(C)\nthere are associated a dual object X ∗∈ Ob(C) and four morphisms\nevX :X ∗⊗X→ 1, coevX : 1→X⊗X ∗,\n~evX :X⊗X ∗→ 1, ~coevX : 1→X ∗⊗X,\nsatisfying the following conditions:\n(a) For every X∈ Ob(C), the pair (ev X, coevX ) is a left duality for X, i.e.,\n(idX⊗ evX )(coevX⊗ idX ) = id X and (ev X⊗ idX ∗)(idX ∗⊗ coevX ) = id X ∗ ;\n(b) For every X∈ Ob(C), the pair ( ~evX, ~c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "IfC is spherical, then ωT S",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "lem-sec-002-02.md",
+      "narrative": null,
+      "content": "IfC is non-degenerate, then the form (6) is non-degenerate for all S",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multiplicities in pivotal categories",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-2-multiplicities-in-pivotal-categories.md",
+      "narrative": null,
+      "content": "Forn≥ 1 objects X1,...,X n of a monoidal category C, one can consider the\n“set of multiplicities” Hom C(1,X 1⊗···⊗ Xn). We show that if C is pivotal, then\nthis set essentially depends only on the cyclic order of the objects X1,...,X n.\n2.1. Permutation maps. For objects X,Y of a pivotal category C, let\nσX,Y : Hom C(1,X⊗Y )→ HomC(1,Y ⊗X)\nbe the map deﬁned as follows: for any α∈ HomC(1,X⊗Y ),\n(3) σX,Y (α) = (ev X⊗ idY ⊗X )(idX ∗⊗α⊗ idX )~coevX =\nPSfrag replacements\nX\nα\nY\n.\nIt is easy to check that the maps {σX,Y}X,Y ∈Ob(C) are natural in the sense that\n(g⊗f )σX,Y (α) = σX ′,Y ′ ((f⊗g)α)\nfor any",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/ex-sec-003-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "ex-sec-003-02.md",
+      "narrative": null,
+      "content": "For an n-tuple S = ((X1,ε 1),..., (Xn,ε n)) of signed objects of C,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/ex-sec-003-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "ex-sec-003-03.md",
+      "narrative": null,
+      "content": "For any i,j,k,l,m,n ∈ Ob(C), consider the following C-colored",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "The vector FC(G)∈ H(G)⋆ is a well-deﬁned isotopy invariant of a",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariants of colored graphs",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-3-invariants-of-colored-graphs.md",
+      "narrative": null,
+      "content": "In this section, C is a pivotal k-category.\n3.1. Colored graphs in surfaces. By a graph, we mean a ﬁnite graph without\nisolated vertices. Every edge of a graph connects two (possibly co inciding) vertices\ncalled the endpoints of the edge. We allow multiple edges with the same e ndpoints.\nA graph G isC-colored, if each edge of G is oriented and endowed with an object\nofC called the color of the edge.\nLet Σ be an oriented surface. By a graph in Σ, we mean a graph embedded\nin Σ. A vertex v of aC-colored graph G in Σ determines a cyclic C- set (Ev,c v,ε v)\nas follows: Ev is the set of half-edges o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "LetC be a pre-fusion category. Then:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "lem-sec-004-02.md",
+      "narrative": null,
+      "content": "LetC be a spherical pre-fusion category and let I be a representative",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "Let I be a representative set of simple objects of a spherical fusi on",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pre-fusion and fusion categories",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-4-pre-fusion-and-fusion-categories.md",
+      "narrative": null,
+      "content": "4.1. Pre-fusion categories. An object X of a monoidal k-categoryC is simple\nif End C(X) is a free k-module of rank 1. Equivalently, X is simple if the k-ho-\nmomorphism k→ EndC(X), k↦→k idX is an isomorphism. By the deﬁnition of a\nmonoidal k-category, the unit object 1 is simple. In the literature, simple objects\nin our sense are often called absolutely simple objects or scalar obje cts.\nA pre-fusion category (over k) is a pivotal k-categoryC such that\n(a) Any ﬁnite family of objects of C has a direct sum in C;\n(b) Each object of C is a ﬁnite direct sum of simple objects;\n(c) For any non-isomor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State sums on triangulated 3-manifolds",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-5-state-sums-on-triangulated-3-manifolds.md",
+      "narrative": null,
+      "content": "In this section, we derive a topological invariant of closed oriented 3 -manifolds\nfrom a spherical fusion category.\n5.1. Preliminaries on triangulated 3-manifolds. LetM be a 3-manifold (with-\nout boundary). Let t be a triangulation of M . The simplices of t of dimension 0,\n1, 2, 3 are called respectively vertices, edges, faces, and tetrah edra. For a vertex x\noft, the union of all simplices of t incident to x (i.e., containing x) is a closed 3-ball\nB⊂ M . The simplices of t lying in ∂B form a triangulation of ∂B . Let Γ ⊂ ∂B\nbe the 1-skeleton of this triangulation, i.e., the union of vertices",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "|M|C is a topological invariant of M (independent of the choice of t",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State sums on skeletons of 3-manifolds",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-6-state-sums-on-skeletons-of-3-manifolds.md",
+      "narrative": null,
+      "content": "We compute |M|C as a state sum on any skeleton of M . This generalizes the\nstate sums of Section 5 and of [TV, BW1]. We begin with topological pre liminaries.\n6.1. Stratiﬁed 2-polyhedra. By a 2-polyhedron, we mean a compact topological\nspace that can be triangulated using only simplices of dimension ≤ 2. For a 2-\npolyhedron P , denote by Int(P ) the subspace of P consisting of all points having a\nneighborhood homeomorphic to R2. Clearly, Int(P ) is an (open) 2-manifold without\nboundary. By an arc in P , we mean the image of a path α : [0, 1]→ P which is\nan embedding except that possibly α(0) =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "For any skeleton P of M ,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 22,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "Any two skeletons of M can be related by primary moves.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 22,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "Any skeleton P of M can be transformed by the primary moves into",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Moves on skeletons and proof of Theorems 5.1 and 6.1",
+      "pageStart": 16,
+      "pageEnd": 22,
+      "target": "../sections/sec-007-7-moves-on-skeletons-and-proof-of-theorems-51-an.md",
+      "narrative": null,
+      "content": "The proof of Theorems 5.1 and 6.1 given at the end of the section is ba sed on a\nstudy of transformations of skeletons of a closed 3-manifold M .\nON TWO APPROACHES TO 3-DIMENSIONAL TQFTS 17\n7.1. Moves on skeletons. The symbols # v, #e, #r will denote the number of\nvertices, edges, and regions of a skeleton of M , respectively. We deﬁne four moves\nT1−T4 on a skeleton P ofM transformingP into a new skeleton of M , see Figure 3.\nThe “phantom edge move” T1 keeps P as a polyhedron and adds one new edge\nconnecting distinct vertices of P (this edge is an arc in P meeting P (1) solely at\nits endpoints",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "lem-sec-008-01.md",
+      "narrative": null,
+      "content": "Every pair (a compact orientable 3-manifold M , an oriented graph G",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "lem-sec-008-02.md",
+      "narrative": null,
+      "content": "The manifold M has a frame. Any two frames of M can be related",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Skeletons in the relative case",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-008-8-skeletons-in-the-relative-case.md",
+      "narrative": null,
+      "content": "We study skeletons of 3-manifolds with boundary and their transfo rmations.\n8.1. Skeletons of pairs. LetM be a compact 3-manifold (with boundary). Let G\nbe an oriented graph in ∂M such that all vertices of G have valence≥ 2. (A graph\nis oriented, if all its edges are oriented.) A skeleton of the pair (M,G ) is an oriented\nstratiﬁed 2-polyhedron P⊂M such that\n(i) P∩∂M =∂P =G;\n(ii) every vertex v of G is an endpoint of a unique edge dv of P not contained\nin ∂M ; moreover, dv∩∂M ={v} and dv is not a loop;\n(iii) every edge a of G is an edge of P of valence 1; the only region Da of P\nadjacent to a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 31,
+      "target": "lem-sec-009-02.md",
+      "narrative": null,
+      "content": "Let (M0, Σ 0, Σ 1), (M1, Σ 1, Σ 2) be two 3-cobordisms and (M, Σ 0, Σ 2)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The state-sum TQFT",
+      "pageStart": 26,
+      "pageEnd": 31,
+      "target": "../sections/sec-009-9-the-state-sum-tqft.md",
+      "narrative": null,
+      "content": "We construct in this section the state sum TQFT associated with any spherical\nfusion category with invertible dimension.\nON TWO APPROACHES TO 3-DIMENSIONAL TQFTS 27\n9.1. Preliminaries on TQFTs. For convenience of the reader, we outline a def-\ninition of a 3-dimensional Topological Quantum Field Theory (TQFT) re ferring\nfor details to [Tu]. We ﬁrst deﬁne a category of 3-dimensional cobor disms Cob 3.\nObjects of Cob 3 are closed oriented surfaces. A morphism Σ 0 → Σ 1 in Cob 3\nis represented by a pair ( M,h ), where M is a compact oriented 3-manifold and\nh is an orientation-preserving homeomorph",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/thm-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 31,
+      "target": "thm-sec-009-01.md",
+      "narrative": null,
+      "content": "For a skeleton P of (M,G ), set",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "lem-sec-010-01.md",
+      "narrative": null,
+      "content": "The centerZ(C) ofC is ribbon.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[M¨ u2, Lemma 3.10]",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "lem-sec-010-02.md",
+      "narrative": null,
+      "content": "If dim(C) is invertible in k, then for any half",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Modular categories and categorical centers",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "../sections/sec-010-10-modular-categories-and-categorical-centers.md",
+      "narrative": null,
+      "content": "We recall the basics on modular categories and the Drinfeld center.\n10.1. Modular categories ( [Tu]). A braiding in a monoidal category B is a nat-\nural isomorphism τ ={τX,Y : X⊗Y→Y⊗X}X,Y ∈Ob(B) such that\nτX,Y ⊗Z = (id Y⊗τX,Z )(τX,Y⊗ idZ ) and τX⊗Y,Z = (τX,Z⊗ idY )(idX⊗τY,Z ).\nThese conditions imply that τX,1 =τ1,X = id X for all X∈ Ob(B) and so that (2)\nis satisﬁed.\n32 V. TURAEV AND A. VIRELIZIER\nA monoidal category endowed with a braiding is said to be braided. The braiding\nand its inverse are depicted as follows\nτX,Y =\nPSfrag replacements X\nX\nY\nY\nand τ −1\nY,X =\nPSfrag replacements X\nX\nY\nY\n.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/thm-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[M¨ u2, Theorem 1.2, Proposition 5.18]",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "thm-sec-010-03.md",
+      "narrative": null,
+      "content": "LetC be a spherical fusion",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/cor-sec-011-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "cor-sec-011-05.md",
+      "narrative": null,
+      "content": "For any closed oriented 3-manifold M ,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/cor-sec-011-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "cor-sec-011-06.md",
+      "narrative": null,
+      "content": "Equivalent spherical fusion categories of non-zero dimens ion over",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/cor-sec-011-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "cor-sec-011-07.md",
+      "narrative": null,
+      "content": "The TQFT |·| C associated with a unitary fusion category C is",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/cor-sec-011-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "cor-sec-011-08.md",
+      "narrative": null,
+      "content": "IfC is a unitary fusion category, then ||M|C|≤ (dim(C))g(M)−1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "lem-sec-011-03.md",
+      "narrative": null,
+      "content": "Under the conditions of Theorem 11.1, the vector spaces |Σ|C and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-011-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "lem-sec-011-04.md",
+      "narrative": null,
+      "content": "will be proved in Sections 14 and 15.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main theorems and applications",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-011-11-main-theorems-and-applications.md",
+      "narrative": null,
+      "content": "11.1. Main theorems. The Reshetikhin-Turaev construction (see [Tu]) derives\nfrom any modular category B over k equipped with a distinguished square root\nof dim(B) a 3-dimensional “extended TQFT” τB. The latter is a functor from a\ncertain extension of the category Cob 3 to vectk; the extension in question is formed\nby surfaces with a Lagrangian subspace in the real 1-homology. Fo r an anomaly free\nB, we take the element ∆ = ∆ ±∈ k deﬁned in Section 10.1 as the distinguished\nsquare root of dim( B). The corresponding extended TQFT τB does not involve\nLagrangian spaces and is a TQFT in the sense o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "LetC be a spherical fusion category over an algebraically closed",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/thm-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "thm-sec-011-02.md",
+      "narrative": null,
+      "content": "Under the conditions of Theorem 11.1, the TQFTs |·| C andτZ(C)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 55,
+      "target": "lem-sec-012-01.md",
+      "narrative": null,
+      "content": "The vector FC(G)∈H(G)⋆ is a well-deﬁned isotopy invariant of G",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 55,
+      "target": "lem-sec-012-02.md",
+      "narrative": null,
+      "content": "|M,L|C is a topological invariant of the pair (M,L ) independent of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-012-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 55,
+      "target": "lem-sec-012-03.md",
+      "narrative": null,
+      "content": "c and the deﬁnition of the twist scalar vJ (if the red-bold strand is",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-012-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 55,
+      "target": "lem-sec-012-05.md",
+      "narrative": null,
+      "content": "At each of these N− 1 steps, the tensor contraction of the tensor",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State sum invariants of links in 3-manifolds",
+      "pageStart": 35,
+      "pageEnd": 55,
+      "target": "../sections/sec-012-12-state-sum-invariants-of-links-in-3-manifolds.md",
+      "narrative": null,
+      "content": "Fix a spherical fusion category C over an algebraically closed ﬁeld k such that\ndimC⁄= 0. In this section, we extend the state-sum invariant of 3-cobor disms|·| C\nto 3-cobordisms with Z(C)-colored links inside.\n36 V. TURAEV AND A. VIRELIZIER\n12.1. Knotted graphs in S2. By a knotted graph in S2, we mean a graph im-\nmersed in S2 such that the multiple points of the immersion are double transversa l\ncrossings of edges, and at each crossing, one of the two intersec ting edges is distin-\nguished and said to be “lower” or “under-passing”, the second edg e being “upper”\nor “over-passing”. Note that s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/thm-sec-012-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 55,
+      "target": "thm-sec-012-04.md",
+      "narrative": null,
+      "content": "|M,L|C is a topological invariant of the pair (M,L ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 59,
+      "target": "lem-sec-013-01.md",
+      "narrative": null,
+      "content": "Let M be a closed oriented 3-manifold obtained by surgery on S3",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 59,
+      "target": "lem-sec-013-02.md",
+      "narrative": null,
+      "content": "Let Y be any basis of A and w =∑",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-013-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 59,
+      "target": "lem-sec-013-03.md",
+      "narrative": null,
+      "content": "with the obvious changes.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-013-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 59,
+      "target": "lem-sec-013-04.md",
+      "narrative": null,
+      "content": "The set Y = (yj)j∈J is a basis of the vector space A. The canonical",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-013-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 59,
+      "target": "lem-sec-013-05.md",
+      "narrative": null,
+      "content": ", dim A = dimτZ(C)(S1×S1). By [Tu], dim τZ(C)(S1×S1) = cardJ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-013-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 59,
+      "target": "lem-sec-013-06.md",
+      "narrative": null,
+      "content": "This completes the proof of our claim and of the theorem .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deduction of Theorems 11.1 and 11.2 from Lemma 11.3",
+      "pageStart": 55,
+      "pageEnd": 59,
+      "target": "../sections/sec-013-13-deduction-of-theorems-111-and-112-from-lemma.md",
+      "narrative": null,
+      "content": "13.1. Conventions. In this section, the symbol D2 denotes the unit disk in C with\ncounterclockwise orientation and S1 =∂D 2 is the unit circle with counterclockwise\norientation. Unless explicitly stated to the contrary, the torus S1×S1 and the solid\ntori S1×D2 and D2×S1 are provided with the product orientations.\n13.2. A surgery formula. Let Z : Cob 3→ vectk be a 3-dimensional TQFT over\na ﬁeld k. We establish a surgery formula for the values of Z on closed 3-manifolds.\nGiven a framed oriented link L =∪N\nq=1Lq in S3, denote by EL its exterior,\ni.e., the complement in S3 of an open regular neigh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The coend of the center",
+      "pageStart": 59,
+      "pageEnd": 64,
+      "target": "../sections/sec-014-14-the-coend-of-the-center.md",
+      "narrative": null,
+      "content": "The aim of this section is to compute the coend of the center of a fus ion category.\nThis computation will be instrumental in the proof of Lemma 11.3 given in the next\nsection. It is based on the theory of Hopf monads, which was introd uced precisely\nto this end in [BV1, BV2]. We brieﬂy recall this theory and state the r elevant\nresults of [BV1, BV2].\n14.1. Coends. LetC andD be categories. A dinatural transformation from a\nfunctor F :Cop×C→D to an object D ofD is a family\nd ={dX : F (X,X )→D}X∈Ob(C)\n60 V. TURAEV AND A. VIRELIZIER\nof morphisms in D such that dXF (f, idX ) = dYF (idY,f ) for eve",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 64,
+      "pageEnd": 69,
+      "target": "lem-sec-015-01.md",
+      "narrative": null,
+      "content": "LetC be a spherical fusion category over a commutative ring k such",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/lem-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 64,
+      "pageEnd": 69,
+      "target": "lem-sec-015-02.md",
+      "narrative": null,
+      "content": "(a). Therefore, for any h∈H(Gi,j),",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Lemma 11.3",
+      "pageStart": 64,
+      "pageEnd": 69,
+      "target": "../sections/sec-015-15-proof-of-lemma-113.md",
+      "narrative": null,
+      "content": "Since k is an algebraically closed ﬁeld, Z(C) is a fusion category. By Section 14.1,\nthe coend of Z(C) is ⨁\ni∈Ii∗⊗i, whereI is a representative set of simple objects\nofZ(C). By [Tu, Chapter IV], for a closed oriented surface Σ of genus g≥ 0,\nτZ(C)(Σ) =\n⨁\ni1,...,ig ∈I\nHomZ(C)(1Z(C),i ∗\n1⊗i1⊗···⊗ i∗\ng⊗ig)\n= Hom Z(C)\n(\n1Z(C),\n⨁\ni1,...,ig ∈I\ni∗\n1⊗i1⊗···⊗ i∗\ng⊗ig\n)\n= Hom Z(C)(1Z(C), (\n⨁\ni∈I\ni∗⊗i)⊗g).\nTherefore Lemma 11.3 is a direct consequence of the following lemma.\nLemma 15.1. LetC be a spherical fusion category over a commutative ring k such\nthat dim(C) is invertible in k. Then for any closed c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix. The 6j-symbols",
+      "pageStart": 69,
+      "pageEnd": 70,
+      "target": "../sections/sec-016-appendix-the-6j-symbols.md",
+      "narrative": null,
+      "content": "The tensors known under the awkward name 6j-symbols (see Example 3.3) play a\nspecial role in this theory because only these tensors are needed f or the computation\nof the state sum of Section 6.3 on special skeletons of 3-manifolds. We outline the\nbasic properties of the 6j-symbols associated with a spherical pre-fusion category C.\nPick a 6-tuple T = (i,ε i,j,ε j,k,ε k,l,ε l,m,ε m,n,ε n) of signed objects of C. Let Γ T\nbe the C-colored graph in S2 obtained from the graph Γ ⊂ S2 in Example 3.3 by\nreversing the orientation on all edges colored by x∈{ i,j,k,l,m,n } with εx =−.\nThen ⏐⏐⏐⏐\niε i jε j",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/thm-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "The Biedenharn-Elliott identity",
+      "pageStart": 69,
+      "pageEnd": 70,
+      "target": "thm-sec-016-01.md",
+      "narrative": null,
+      "content": "LetI be a representative set of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/thm-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "The orthonormality relation",
+      "pageStart": 69,
+      "pageEnd": 70,
+      "target": "thm-sec-016-02.md",
+      "narrative": null,
+      "content": "For any objects i,k,l,m,m ′,n ofC",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.3501v5/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 70,
+      "pageEnd": 72,
+      "target": "../sections/sec-017-references.md",
+      "narrative": null,
+      "content": "[Ba1] Balsam, B., Turaev-Viro invariants as an extended TQFT II ,\narXiv:1010.1222.\nON TWO APPROACHES TO 3-DIMENSIONAL TQFTS 71\n∑\nz∈I\ndim(z)\nPSfrag replacements\ni iz z\nm′\nk k\nl lm\nnn\n=\nPSfrag replacements\niz\nm′\nk\nl\nm\nn = δm,m′ dim(m)−1\nPSfrag replacements i\nz\nm′\nk\nl\nm\nm\nn\nFigure 11. Proof of the orthonormality relation\n[Ba2] , Turaev-Viro invariants as an extended TQFT III ,\narXiv:1012.0560.\n[BK] Balsam, B., Kirillov, A. Jr., Turaev-Viro invariants as an extended TQFT ,\narXiv:1004.1533.\n[BW1] Barrett, J., Westbury, B., Invariants of piecewise-linear 3-manifolds ,\nTrans. Amer. Math. Soc. 348 (19",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

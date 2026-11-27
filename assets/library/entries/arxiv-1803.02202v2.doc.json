@@ -1,0 +1,1265 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1803.02202v2",
+  "title": "arxiv-1803.02202v2",
+  "variant": "pdf",
+  "pages": 21,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Helon model",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-helon-model"
+    },
+    {
+      "level": 2,
+      "title": "The Artin braid groups",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-the-artin-braid-groups"
+    },
+    {
+      "level": 2,
+      "title": "Semi-direct product structure of the Helon model",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-semi-direct-product-structure-of-the-helon-mo"
+    },
+    {
+      "level": 1,
+      "title": "Normed division algebras and Clifford algebras",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-normed-division-algebras-and-clifford-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Normed division algebras",
+      "number": "3.1",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Clifford algebras",
+      "number": "3.2",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-32-clifford-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Minimal left ideals of the complex chained octonions",
+      "number": "3.3",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-33-minimal-left-ideals-of-the-complex-chained-oc"
+    },
+    {
+      "level": 1,
+      "title": "Normed division algebra representations of circular Artin braid groups",
+      "number": "4",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-normed-division-algebra-representations-of-cir"
+    },
+    {
+      "level": 2,
+      "title": "The Clifford Braiding Theorem",
+      "number": "4.1",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-41-the-clifford-braiding-theorem"
+    },
+    {
+      "level": 2,
+      "title": "A representation of the Artin braid group B2 from C",
+      "number": "4.2",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-42-a-representation-of-the-artin-braid-group-b2"
+    },
+    {
+      "level": 2,
+      "title": "A representation of the circular Artin braid group Bc3 from H",
+      "number": "4.3",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-43-a-representation-of-the-circular-artin-braid"
+    },
+    {
+      "level": 2,
+      "title": "A representation of the circular Artin braid group Bc7 from O",
+      "number": "4.4",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Connecting the Helon model with normed division algebras",
+      "number": "4.5",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-45-connecting-the-helon-model-with-normed-divisi"
+    },
+    {
+      "level": 1,
+      "title": "Helon braids as basis states of minimal left ideals of CO",
+      "number": "5",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-5-helon-braids-as-basis-states-of-minimal-left-i"
+    },
+    {
+      "level": 2,
+      "title": "Interchanging between braiding and twisting",
+      "number": "5.1",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-51-interchanging-between-braiding-and-twisting"
+    },
+    {
+      "level": 2,
+      "title": "Braid representations of minimal left ideals of the complex chained octonions",
+      "number": "5.2",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-52-braid-representations-of-minimal-left-ideals"
+    },
+    {
+      "level": 1,
+      "title": "Discussion",
+      "number": "6",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-6-discussion"
+    },
+    {
+      "level": 1,
+      "title": "A Braid group representations in terms of C+(n,0) and C(0,n-1)",
+      "number": null,
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-a-braid-group-representations-in-terms-of-cn0-an"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 218,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "framed braids",
+          "heading": false
+        },
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "braiding inb",
+          "heading": false
+        },
+        {
+          "term": "normed division",
+          "heading": false
+        },
+        {
+          "term": "circular braid",
+          "heading": false
+        },
+        {
+          "term": "division algebras",
+          "heading": false
+        },
+        {
+          "term": "gresnigt",
+          "heading": false
+        }
+      ],
+      "extract": "Prepared for submission to JHEP Braids, normed division algebras, and Standard Model symmetries N. Gresnigt Xi’an Jiaotong-Liverpool University, 111 Ren’ai Road, Suzhou SIP, Higher Education Town, 215123, Jiangsu province, China E-mail: niels.gresnigt@xjtlu.edu.cn Abstract: This paper represents a ﬁrst attempt at unifying two promising attempts to understand the origin of the internal symmetries of leptons and",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1803.02202v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 835,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon braids",
+          "heading": false
+        },
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "four ndas",
+          "heading": false
+        },
+        {
+          "term": "normed division",
+          "heading": false
+        },
+        {
+          "term": "artin braid",
+          "heading": false
+        },
+        {
+          "term": "minimal ideals",
+          "heading": false
+        },
+        {
+          "term": "chained octonions",
+          "heading": false
+        },
+        {
+          "term": "braid groupbc",
+          "heading": false
+        }
+      ],
+      "extract": "2 The Helon model 3 2.1 The Artin braid groups 4 2.2 Semi-direct product structure of the Helon model 5 3 Normed division algebras and Cliﬀord algebras 5 3.1 Normed division algebras 5 3.2 Cliﬀord algebras 7 3.3 Minimal left ideals of the complex chained octonions 8 4 Normed division algebra representations of circular Artin braid groups 10 4.1 The Cliﬀord Braiding Theorem 10 4.2 A representation of the Artin braid",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-helon-model",
+      "number": "2",
+      "title": "The Helon model",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 507,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": true
+        },
+        {
+          "term": "ribbon network",
+          "heading": false
+        },
+        {
+          "term": "spin network",
+          "heading": false
+        },
+        {
+          "term": "pachner moves",
+          "heading": false
+        },
+        {
+          "term": "evolution moves",
+          "heading": false
+        },
+        {
+          "term": "braided structures",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst generation",
+          "heading": false
+        },
+        {
+          "term": "tetravalent",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we give the briefest of overviews of the Helon model, suﬃcient for our purposes. The reader is directed to the original paper in which the model was ﬁrst presented [1] for an in-depth presentation. The Helon model of Bilson-Thompson maps the simplest non-trivial braids consisting of three (twisted) ribbons and two crossings to the ﬁrst generation of SM fermions. Quan- tized electric charges of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-the-artin-braid-groups",
+      "number": "2.1",
+      "title": "The Artin braid groups",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 171,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid",
+          "heading": true
+        },
+        {
+          "term": "framed braid",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "σiσi",
+          "heading": false
+        }
+      ],
+      "extract": "The Artin braid group onn strands is denoted byBn and is generated by elementary braids {σ1,...,σ n−1} subject to the relations σiσj =σjσi, whenever|i−j|> 1, (2.1) σiσi+1σi =σi+1σiσi+1, fori = 1,....,n − 2. (2.2) The braid groupsBn are an extension of the symmetric groupsSn with the condition that the square of each generator being equal to one lifted. In the framed braid group, each strand is thickened to a ribbon",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-semi-direct-product-structure-of-the-helon-mo",
+      "number": "2.2",
+      "title": "Semi-direct product structure of the Helon model",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 432,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid word",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst braid",
+          "heading": false
+        },
+        {
+          "term": "λ1λ",
+          "heading": false
+        },
+        {
+          "term": "twisting ﬁrst",
+          "heading": false
+        },
+        {
+          "term": "charges written",
+          "heading": false
+        },
+        {
+          "term": "ribbons",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst followed",
+          "heading": false
+        },
+        {
+          "term": "framed braids",
+          "heading": false
+        }
+      ],
+      "extract": "In general, the twisting of the ribbons and the braiding of ribbons is not commutative, with the braidings inducing a permutation on the twists of the ribbons. The mathematical structure of framed braids is therefore that of the semi-direct productBc 3 ⋉ (B2)3. Because B2∼= 1 2 Z this can be rewritten as( 1 2 Z)3 ⋊Bc 3 = ( 1 2 Z× 1 2 Z× 1 2 Z) ⋊Bc 3. An element of ( 1 2 Z× 1 2 Z× 1 2 Z) is denoted by a vector[a1,a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-normed-division-algebras-and-clifford-algebras",
+      "number": "3",
+      "title": "Normed division algebras and Clifford algebras",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 467,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normed division",
+          "heading": true
+        },
+        {
+          "term": "division algebra",
+          "heading": false
+        },
+        {
+          "term": "octonions",
+          "heading": false
+        },
+        {
+          "term": "quaternions",
+          "heading": false
+        },
+        {
+          "term": "fano plane",
+          "heading": false
+        },
+        {
+          "term": "reals",
+          "heading": false
+        },
+        {
+          "term": "complex numbers",
+          "heading": false
+        },
+        {
+          "term": "ndas",
+          "heading": false
+        }
+      ],
+      "extract": "3.1 Normed division algebras A division algebra is an algebra over a ﬁeld where division is always possible, with the exception of division by zero. A normed division algebra (NDA) is a division algebra where 1We will often simply write[a1,a 2,a 3]Λ, dropping the parenthesis and comma. – 5 – Figure 3 . Quaternion multiplication I 2 = J 2 = K 2 = IJK =−1, and octonion multiplication represented using a Fano plane. in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-32-clifford-algebras",
+      "number": "3.2",
+      "title": "Clifford algebras",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 474,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "c𝓁",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord conjugation",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord algebras",
+          "heading": false
+        },
+        {
+          "term": "real cliﬀord",
+          "heading": false
+        },
+        {
+          "term": "grade involution",
+          "heading": false
+        },
+        {
+          "term": "reversion",
+          "heading": false
+        },
+        {
+          "term": "matrix representations",
+          "heading": false
+        }
+      ],
+      "extract": "Cliﬀord algebras are the result of an attempt by William Cliﬀord in 1876 to generalize the quaternions to higher dimensions and since then they have found many applications in physics [21–25]. They appear whenever spinors do, suggesting they likely play an important role in describing SM fermions. A real Cliﬀord algebra on the vector spaceRp,q equipped with a degenerate quadratic form is deﬁned as the associative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-33-minimal-left-ideals-of-the-complex-chained-oc",
+      "number": "3.3",
+      "title": "Minimal left ideals of the complex chained octonions",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "left ideals",
+          "heading": true
+        },
+        {
+          "term": "complex octonions",
+          "heading": true
+        },
+        {
+          "term": "minimal left",
+          "heading": true
+        },
+        {
+          "term": "labeled complex",
+          "heading": false
+        },
+        {
+          "term": "complex coeﬃcients",
+          "heading": false
+        },
+        {
+          "term": "anticommutation",
+          "heading": false
+        },
+        {
+          "term": "basis vectors",
+          "heading": false
+        },
+        {
+          "term": "conjugate",
+          "heading": false
+        }
+      ],
+      "extract": "Two main results of Furey’s thesis are that the generalized ideals of the complex quaternions describe consicely all of the Lorentz group representations found in the SM and that the minimal left ideals of the complex octonions mirror the behaviour of a single generation of leptons and quarks with unbrokenSU (3)c and U(1)em symmetry [6]. Relevant to what is to follow are the minimal left ideals of the complex",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-normed-division-algebra-representations-of-cir",
+      "number": "4",
+      "title": "Normed division algebra representations of circular Artin braid groups",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-41-the-clifford-braiding-theorem",
+      "number": "4.1",
+      "title": "The Clifford Braiding Theorem",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 218,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cliﬀord algebracl",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord algebras",
+          "heading": false
+        },
+        {
+          "term": "braid generators",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "ndas",
+          "heading": false
+        }
+      ],
+      "extract": "In 2016 Kauﬀman and Lomonaco showed, in what they call the Cliﬀord Braiding Theorem (CBT), that Cliﬀord algebras contain representations of (circular) braid groups [16]. For a Cliﬀord algebraCl(n, 0) over the real numbers generated by linearly independent elements{e1,e 2,...,e n} with e2 k = 1 for all k and ekel =−elek for k ⁄= l, the algebra elementsσk = 1√ 2(1 +ek+1ek) form a representation of the circular4 Artin",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-42-a-representation-of-the-artin-braid-group-b2",
+      "number": "4.2",
+      "title": "A representation of the Artin braid group B2 from C",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 303,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "artin braid",
+          "heading": true
+        },
+        {
+          "term": "braid generator",
+          "heading": false
+        },
+        {
+          "term": "inc𝓁",
+          "heading": false
+        },
+        {
+          "term": "ofcl",
+          "heading": false
+        },
+        {
+          "term": "bivector",
+          "heading": false
+        },
+        {
+          "term": "e2e",
+          "heading": false
+        }
+      ],
+      "extract": "Thecomplexnumbers Cwithbasis{1,i}areisomorphictotheCliﬀordalgebra Cl(0, 1)with e2 1 =−1. Given this isomorphism it means one also has an isomorphism withCl+(2, 0), the even part ofCl(2, 0). Therefore, the complex number algebraC admits a representation of the braid groupB2. In this case the Artin braid group is equivalent to the circular Artin braid groupBc 2∼= B2. The single braid generatorσ1 can be represented in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-43-a-representation-of-the-circular-artin-braid",
+      "number": "4.3",
+      "title": "A representation of the circular Artin braid group Bc3 from H",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 358,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chained octonions",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": true
+        },
+        {
+          "term": "braid groupbc",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord conjugation",
+          "heading": false
+        },
+        {
+          "term": "circular",
+          "heading": true
+        },
+        {
+          "term": "e1e",
+          "heading": false
+        },
+        {
+          "term": "braid generators",
+          "heading": false
+        },
+        {
+          "term": "e12e",
+          "heading": false
+        }
+      ],
+      "extract": "3 from H Moving on to the quaternionsH, one can use the isomorphismH∼=Cl(0, 2)∼=Cl+(3, 0) to ﬁndaquaternionicrepresentationofthebraidgroup Bc 3. Cl(0, 2)isspannedby {1,e 1,e 2,e 1e2 = e12} with e2 1 =e2 2 =e2 12 = e1e2e12 =−1, (4.6) e1e2 =−e2e1, e1e12 =−e12e1, e2e12 =−e12e2. (4.7) One can thus identifye1 =I, e2 =J, e12 =K to obtain a copy ofH. The even subalgebra ofCl(3,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-45-connecting-the-helon-model-with-normed-divisi",
+      "number": "4.5",
+      "title": "Connecting the Helon model with normed division algebras",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 217,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon model",
+          "heading": true
+        },
+        {
+          "term": "framed braids",
+          "heading": false
+        },
+        {
+          "term": "ribbons",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "normed",
+          "heading": true
+        },
+        {
+          "term": "division",
+          "heading": true
+        }
+      ],
+      "extract": "4.5 Connecting the Helon model with normed division algebras The framed braids that represent fermions in the Helon model are constructed out of two braid groups, B2 and B3. The twisting of the ribbons, representing (quantised) electric charge corresponds to elements ofB2. When the ribbon is twisted the two edges of the ribbon braid one another. Additionally, the braiding of three ribbons forms a braid word inB3.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-5-helon-braids-as-basis-states-of-minimal-left-i",
+      "number": "5",
+      "title": "Helon braids as basis states of minimal left ideals of CO",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-51-interchanging-between-braiding-and-twisting",
+      "number": "5.1",
+      "title": "Interchanging between braiding and twisting",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 567,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braiding",
+          "heading": true
+        },
+        {
+          "term": "twisting",
+          "heading": true
+        },
+        {
+          "term": "pure braid",
+          "heading": false
+        },
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "twist vectors",
+          "heading": false
+        },
+        {
+          "term": "σ2σ",
+          "heading": false
+        },
+        {
+          "term": "σ1σ",
+          "heading": false
+        }
+      ],
+      "extract": "It was demonstrated in [2] that any braiding can always be exchanged for twisting (in the case for three ribbon braids). This means that any element([a,b,c ], Λ)∈ (B2)3 ⋊Bc 3 may always be rewritten as[a′,b′,c′]∈ (B2)3 in which the braiding inBc 3 is trivial. The framed braids in the Helon model can therefore be written purely in terms of twist vectors. For example, in Figure 4, it is shown how the braiding induced",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-52-braid-representations-of-minimal-left-ideals",
+      "number": "5.2",
+      "title": "Braid representations of minimal left ideals of the complex chained octonions",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 1139,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "minimal left",
+          "heading": true
+        },
+        {
+          "term": "left ideals",
+          "heading": true
+        },
+        {
+          "term": "braid",
+          "heading": true
+        },
+        {
+          "term": "σ3σ",
+          "heading": false
+        },
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "pure braid",
+          "heading": false
+        },
+        {
+          "term": "σ1σ",
+          "heading": false
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        }
+      ],
+      "extract": "nions If we now consider the neutrino in the Helon model, written as the braidσ−1 2 σ1 and with no twisting of the ribbons, then the up quark, anti-down quark and positron can be considered excitations of the neutrino in the sense that their representations are obtained by adding twist to the ribbons that compose the neutrino but leaving the underlying braid structure unchanged. One can then write these fermions in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-6-discussion",
+      "number": "6",
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 963,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helon braids",
+          "heading": false
+        },
+        {
+          "term": "helon model",
+          "heading": false
+        },
+        {
+          "term": "framed braid",
+          "heading": false
+        },
+        {
+          "term": "trivial braid",
+          "heading": false
+        },
+        {
+          "term": "left ideals",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "braid generators",
+          "heading": false
+        },
+        {
+          "term": "braid product",
+          "heading": false
+        }
+      ],
+      "extract": "One of the most prominent challenges in theoretical physics today is understanding the theoretical origin of the SM gauge group along with why only some of the representations of these gauge groups are observed in Nature. Another is the uniﬁcation of the SM with gravity. Recent attempts to use the NDAs, in particular the octonions to describe the symmetries of leptons and quarks has led to progress in the ﬁrst",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-a-braid-group-representations-in-terms-of-cn0-an",
+      "number": null,
+      "title": "A Braid group representations in terms of C+(n,0) and C(0,n-1)",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 563,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sundance bilson-thompson",
+          "heading": false
+        },
+        {
+          "term": "geoﬀrey dixon",
+          "heading": false
+        },
+        {
+          "term": "cohl furey",
+          "heading": false
+        },
+        {
+          "term": "arxiv preprint",
+          "heading": false
+        },
+        {
+          "term": "yidun wan",
+          "heading": false
+        },
+        {
+          "term": "louis kauﬀman",
+          "heading": false
+        },
+        {
+          "term": "c𝓁",
+          "heading": false
+        },
+        {
+          "term": "lee smolin",
+          "heading": false
+        }
+      ],
+      "extract": "C𝓁+(2, 0) C𝓁(0, 1) C𝓁+(3, 0) C𝓁(0, 2) C𝓁+(7, 0) C𝓁(0, 6) σ1 1√ 2(1 +e21) 1√ 2(1−e1) 1√ 2(1 +e21) 1√ 2(1 +e21) 1√ 2(1 +e21) 1√ 2(1 +e21) σ2 1√ 2(1 +e32) 1√ 2(1−e2) 1√ 2(1 +e32) 1√ 2(1 +e32) σ3 1√ 2(1 +e13) 1√ 2(1 +e1) 1√ 2(1 +e43) 1√ 2(1 +e43) σ4 1√ 2(1 +e54) 1√ 2(1 +e54) σ5 1√ 2(1 +e65) 1√ 2(1 +e65) σ6 1√ 2(1 +e76) 1√ 2(1−e6) σ7 1√ 2(1 +e17) 1√ 2(1 +e1) Acknowledgments",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "helon braids",
+      "heading": true
+    },
+    {
+      "term": "framed braid",
+      "heading": false
+    },
+    {
+      "term": "circular braid",
+      "heading": true
+    },
+    {
+      "term": "helon model",
+      "heading": true
+    },
+    {
+      "term": "braid groupbc",
+      "heading": false
+    },
+    {
+      "term": "artin braid",
+      "heading": true
+    },
+    {
+      "term": "braid generators",
+      "heading": false
+    },
+    {
+      "term": "ﬁrst braid",
+      "heading": false
+    },
+    {
+      "term": "braid groups",
+      "heading": true
+    },
+    {
+      "term": "cliﬀord braiding",
+      "heading": false
+    },
+    {
+      "term": "pure braid",
+      "heading": false
+    },
+    {
+      "term": "braid representing",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The Helon model of Bilson-Thompson in which the ﬁrst generation SM fermions are represented as braids of three (possibly twisted) ribbons. Used with permission. Source, [1]",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The embedding of a Helon model braid into a ribbon network. Used with permission. Source, [5]",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Quaternion multiplication I 2 = J 2 = K 2 = IJK = −1, and octonion multiplication represented using a Fano plane",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The twisting and braiding in CRBs (consisting of two or three ribbons) is interchangeable. Source, [5]",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 19,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 18,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p20); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 18 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1803.02202v2"
+  }
+}

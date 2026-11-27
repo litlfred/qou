@@ -1,0 +1,69 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-2202.03067v4/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2202.03067v4",
+  "contains": [
+    "library/arxiv-2202.03067v4/sections/sec-front-matter",
+    "library/arxiv-2202.03067v4/sections/sec-000",
+    "library/arxiv-2202.03067v4/sections/sec-001",
+    "library/arxiv-2202.03067v4/sections/sec-002",
+    "library/arxiv-2202.03067v4/sections/sec-003",
+    "library/arxiv-2202.03067v4/sections/sec-004",
+    "library/arxiv-2202.03067v4/sections/sec-005",
+    "library/arxiv-2202.03067v4/sections/sec-006",
+    "library/arxiv-2202.03067v4/sections/sec-007",
+    "library/arxiv-2202.03067v4/sections/sec-008",
+    "library/arxiv-2202.03067v4/sections/sec-009",
+    "library/arxiv-2202.03067v4/sections/sec-010",
+    "library/arxiv-2202.03067v4/sections/sec-011",
+    "library/arxiv-2202.03067v4/sections/sec-012",
+    "library/arxiv-2202.03067v4/sections/sec-013",
+    "library/arxiv-2202.03067v4/sections/sec-014",
+    "library/arxiv-2202.03067v4/sections/sec-015",
+    "library/arxiv-2202.03067v4/sections/sec-016",
+    "library/arxiv-2202.03067v4/sections/sec-017",
+    "library/arxiv-2202.03067v4/sections/sec-018",
+    "library/arxiv-2202.03067v4/sections/sec-019",
+    "library/arxiv-2202.03067v4/sections/sec-020",
+    "library/arxiv-2202.03067v4/sections/sec-021",
+    "library/arxiv-2202.03067v4/sections/sec-022"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "QUANTUM JET BUNDLES — We formulate a notion of jet bundles over a possibly noncommutative algebra A equipped with a torsion free connection.\n\n**QUANTUM JET BUNDLES**\n\n*SHAHN MAJID AND FRANCISCO SIM ÃO*\n\n43 pp, 24 sections.\n\n**Abstract.** We formulate a notion of jet bundles over a possibly noncommutative algebra A equipped with a torsion free connection. Among the conditions needed for 3rd-order jets and above is that the connection also be ﬂat and its ‘generalised braiding tensor’ σ ∶Ω1⊗A Ω1 → Ω1⊗A Ω1 obey the Yang-Baxter equation or braid relations. We also cover the case of jet bundles of a given ‘vector bundle’ over A in the form of a bimodule E with a ﬂat bimodule connection with its braiding σE obeying the coloured braid relations. Examples include the permutation group S3 with its 2-cycles calculus, M2(C), the bicrossproduct model quantum spacetime in two dimensions and Cq[SL2] for q a 4th root of unity.\n\n**Outline.** Front matter; 1 Introduction; Acknowledgements; 2 Preliminaries; 3 Jet bundles JkA over a noncommutative algebr; 3.1 First and second order jet bundles over a ; 3.2 Third order jets bundle over a noncommutat; 4 General jet bundle JkA over a noncommutative; 4.1 Higher order Leibniz rules; 4.2 Jet bimodules JkA; 4.3 Reduced jet bundle; 5 Jets JkE for a vector bundle; 5.1 First and second order jet bundles for the; 5.2 Higher order Leibniz rules for the JkE cas; 5.3 Higher Jet bundles for a generic bimodule ; 6 Construction of noncommutative examples; 6.1 The algebra M2(C) with its 2D calculus.; 6.2 Functions on the group S3\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.8: Let ∇be a torsion free, ﬂat, ∧-compatible, extendable and Leibniz-compatible\n- Theorem 5.9: Let ∇be a torsion free, ﬂat, ∧-compatible, extendable and Leibniz compatible\n- Theorem: s 3.6 and 5.9. The proof is similar to the easy case at the start of Section 6 as the\n- Proposition 3.1: Let∇be a torsion free bimodule connection onΩ1. Then J 2\n- Proposition 5.1: LetσE ∶E⊗A Ω1→Ω1⊗AE be a bimodule map, and a∈A,s ∈E, ω ∈Ω1.\n- Proposition 5.3: Let∇be torsion free withσ obeying the braid relations and∇E ﬂat, extendable",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-27"
+    }
+  ],
+  "meta": {
+    "doc_id": "arxiv-2202.03067v4",
+    "title_source": "slug",
+    "source_file": "2202.03067v4.pdf",
+    "source_sha256": "22cf51d9d54ff681940a05efdcf02d467c4e68288790cccec984fabda1d07558",
+    "pages": 43,
+    "arxiv": {
+      "id": "2202.03067",
+      "version": "4",
+      "primary_class": "math.QA",
+      "stamp_date": "16 May 2023"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

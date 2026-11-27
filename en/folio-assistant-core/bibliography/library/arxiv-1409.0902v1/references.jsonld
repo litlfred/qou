@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1409.0902v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Cocenters and representations of affine Hecke algebra",
+      "dcterms:creator": [
+        "CIUBOTARU, DAN",
+        "XUHUAHE"
+      ],
+      "dcterms:issued": "D:20180715",
+      "dcterms:identifier": "https://arxiv.org/abs/1409.0902",
+      "dcterms:abstract": "In this paper, we study the relation between the cocenter and the representation theory of aﬃne Hecke algebras. The appro ach is based on the interaction between the rigid cocenter, an important subspace of the cocenter, and the dual object in representation theory, the rigid quotient of the Grothendieck group of ﬁnite dimensional representatio ns.",
+      "dcterms:source": "library/arxiv-1409.0902v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1409.0902v1"
+    }
+  ]
+}

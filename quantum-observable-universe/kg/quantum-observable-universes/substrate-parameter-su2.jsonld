@@ -6,19 +6,19 @@
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/ex-substrate-parameter-su2",
+  "@id": "papers/quantum-observable-universe/blocks/ex-aether-parameter-su2",
   "@type": [
     "folio-assistant-core:Example",
     "doco:Section"
   ],
-  "label": "ex:substrate-parameter-su2",
+  "label": "ex:aether-parameter-su2",
   "kind": "example",
-  "title": "Substrate parameter for $\\mathrm{SU}(2)$",
+  "title": "Aether parameter for $\\mathrm{SU}(2)$",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+    "papers/quantum-observable-universe/blocks/def-aether-parameter",
     "papers/quantum-observable-universe/blocks/ex-quantum-universe-su2"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "interprets": "papers/quantum-observable-universe/blocks/def-aether-parameter",
   "tags": [
     "su2",
     "substrate-parameter",

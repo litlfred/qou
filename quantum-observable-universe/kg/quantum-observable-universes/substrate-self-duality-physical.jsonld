@@ -6,18 +6,18 @@
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/rem-substrate-self-duality-physical",
+  "@id": "papers/quantum-observable-universe/blocks/rem-aether-self-duality-physical",
   "@type": [
     "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "rem:substrate-self-duality-physical",
+  "label": "rem:aether-self-duality-physical",
   "kind": "remark",
-  "title": "Physical interpretation of substrate self-duality",
+  "title": "Physical interpretation of aether self-duality",
   "uses": [
-    "papers/quantum-observable-universe/blocks/thm-substrate-self-duality"
+    "papers/quantum-observable-universe/blocks/thm-aether-self-duality"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/thm-substrate-self-duality",
+  "interprets": "papers/quantum-observable-universe/blocks/thm-aether-self-duality",
   "cites": [
     "references/yekutieli2010"
   ],

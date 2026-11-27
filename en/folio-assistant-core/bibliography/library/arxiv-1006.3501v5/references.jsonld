@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1006.3501v5",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On two approaches to 3-dimensional TQFTs",
+      "dcterms:creator": [
+        "TURAEV, VLADIMIR",
+        "VIRELIZIER, ALEXIS"
+      ],
+      "dcterms:issued": "D:20181022",
+      "dcterms:identifier": "https://arxiv.org/abs/1006.3501",
+      "dcterms:abstract": "W e prove that|M |C = τZ(C)(M ) for any closed oriented 3-manifold M and for any spherical fusion category C of non-zero dimension. Here |M |C is the Turaev-Viro-Barrett-W estbury state sum invariant of M derived from C, Z(C) is the Drinfeld-Joyal-Street center of C, and τZ(C)(M ) is the Reshetikhin- Turaev surgery invariant of M derived from Z(C).",
+      "dcterms:source": "library/arxiv-1006.3501v5/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1006.3501v5"
+    }
+  ]
+}

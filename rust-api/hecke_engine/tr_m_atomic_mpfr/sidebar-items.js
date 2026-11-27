@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["tr_m_atomic_mpfr","tr_m_atomic_mpfr_cached","tr_m_atomic_mpfr_with_state"]};

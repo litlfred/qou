@@ -1,6 +1,5 @@
 {
  "$schema": "folio-translation-review/v1",
- "reviewPage": "en/cat-harness/translation-status/review.html",
  "issue": {
   "schema": "translation-adjudication/v1",
   "label": "translation-adjudication",
@@ -35,71 +34,6 @@
   ]
  },
  "layers": [
-  {
-   "name": "folio-assistant-sci",
-   "repository": "litlfred/folio-assistant-sci",
-   "translations": "translations",
-   "locales": [
-    "ar",
-    "es",
-    "fr",
-    "ru",
-    "zh"
-   ],
-   "rows": [
-    {
-     "catalogue": "block-kinds",
-     "sources": [
-      "folio-assistant-sci/block-kinds/conjecture.json",
-      "folio-assistant-sci/block-kinds/corollary.json",
-      "folio-assistant-sci/block-kinds/definition.json",
-      "folio-assistant-sci/block-kinds/lemma.json",
-      "folio-assistant-sci/block-kinds/proof.json",
-      "folio-assistant-sci/block-kinds/proposition.json",
-      "folio-assistant-sci/block-kinds/theorem.json"
-     ],
-     "cells": {
-      "ar": {
-       "state": "machine",
-       "entries": 7,
-       "translated": 7,
-       "fuzzy": 0,
-       "hash": "51618f529bd6ce74"
-      },
-      "es": {
-       "state": "machine",
-       "entries": 7,
-       "translated": 7,
-       "fuzzy": 0,
-       "hash": "faf1f2852af3265e"
-      },
-      "fr": {
-       "state": "machine",
-       "entries": 7,
-       "translated": 7,
-       "fuzzy": 0,
-       "hash": "5677b36e3e7fbcd1"
-      },
-      "ru": {
-       "state": "machine",
-       "entries": 7,
-       "translated": 7,
-       "fuzzy": 0,
-       "hash": "582701730fdf3de3"
-      },
-      "zh": {
-       "state": "machine",
-       "entries": 7,
-       "translated": 7,
-       "fuzzy": 0,
-       "hash": "a86f7d96e3794cb1"
-      }
-     },
-     "strings": "folio-assistant-sci/block-kinds.json"
-    }
-   ],
-   "templatesOnly": 3
-  },
   {
    "name": "cat-harness",
    "repository": "litlfred/cat-harness",
@@ -819,6 +753,71 @@
     }
    ],
    "templatesOnly": 99
+  },
+  {
+   "name": "folio-assistant-sci",
+   "repository": "litlfred/folio-assistant-sci",
+   "translations": "translations",
+   "locales": [
+    "ar",
+    "es",
+    "fr",
+    "ru",
+    "zh"
+   ],
+   "rows": [
+    {
+     "catalogue": "block-kinds",
+     "sources": [
+      "folio-assistant-sci/block-kinds/conjecture.json",
+      "folio-assistant-sci/block-kinds/corollary.json",
+      "folio-assistant-sci/block-kinds/definition.json",
+      "folio-assistant-sci/block-kinds/lemma.json",
+      "folio-assistant-sci/block-kinds/proof.json",
+      "folio-assistant-sci/block-kinds/proposition.json",
+      "folio-assistant-sci/block-kinds/theorem.json"
+     ],
+     "cells": {
+      "ar": {
+       "state": "machine",
+       "entries": 7,
+       "translated": 7,
+       "fuzzy": 0,
+       "hash": "51618f529bd6ce74"
+      },
+      "es": {
+       "state": "machine",
+       "entries": 7,
+       "translated": 7,
+       "fuzzy": 0,
+       "hash": "faf1f2852af3265e"
+      },
+      "fr": {
+       "state": "machine",
+       "entries": 7,
+       "translated": 7,
+       "fuzzy": 0,
+       "hash": "5677b36e3e7fbcd1"
+      },
+      "ru": {
+       "state": "machine",
+       "entries": 7,
+       "translated": 7,
+       "fuzzy": 0,
+       "hash": "582701730fdf3de3"
+      },
+      "zh": {
+       "state": "machine",
+       "entries": 7,
+       "translated": 7,
+       "fuzzy": 0,
+       "hash": "a86f7d96e3794cb1"
+      }
+     },
+     "strings": "folio-assistant-sci/block-kinds.json"
+    }
+   ],
+   "templatesOnly": 3
   },
   {
    "name": "folio-assistant-core",

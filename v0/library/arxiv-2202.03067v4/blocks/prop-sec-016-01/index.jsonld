@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2202.03067v4/blocks/prop-sec-016-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 33,
+  "pageEnd": 34,
+  "text": "prop-sec-016-01.md",
+  "derivedFrom": "library/arxiv-2202.03067v4/sections/sec-016",
+  "sourceDocument": "library/arxiv-2202.03067v4/manifest",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.2",
+    "source_kind": "proposition"
+  }
+}

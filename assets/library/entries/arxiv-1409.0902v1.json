@@ -1,0 +1,1689 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1409.0902v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Aﬃne Hecke algebras appear naturally in the representation theor y of reductive\np-adic groups as convolution algebras of compactly supported func tions, such as\nIwahori-Hecke algebras e.g., [Bo],[IM], and their generalizations in the t heory of\ntypes, e.g., [HM],[BK], or as endomorphism algebras of certain project ive gener-\nators [Be],[Hei]. The representation theory of aﬃne Hecke algebras w ith (equal\nand unequal) parameters that are not roots of unity was extensiv ely studied, e.g.,\n[KL],[CG],[Lu1, Lu2],[BM1, BM2], [Xi1], [Op, OS1, OS2, So],[Re],[Kat]. The rep-\nresentation theory of aﬃne He",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.1.",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11.md",
+      "narrative": null,
+      "content": "general case of an aﬃne Hecke algebra with an automorphism δ of the root system\nand the δ-twisted cocenter, but, for simplicity, in the introduction, we pres ent the\nresults in the untwisted case only. We also consider arbitrary (nonz ero) parameters.\nThe aﬃne Hecke algebra H is a deformation of the group algebra C[~W ] for the\nextended aﬃne Weyl group ~W . Let cl(~W ) denote the set of conjugacy classes in\n2010 Mathematics Subject Classiﬁcation. 20C08, 22E50.\nKey words and phrases. aﬃne Hecke algebra, cocenter, density theorem, trace Paley -Wiener\ntheorem.\nThe authors thank R. Bezrukavnikov,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1409.0902v1  [math.RT]  2 Sep 2014\nCOCENTERS AND REPRESENT A TIONS OF AFFINE HECKE\nALGEBRA\nDAN CIUBOTARU AND XUHUA HE\nAbstract. In this paper, we study the relation between the cocenter and\nthe representation theory of aﬃne Hecke algebras. The appro ach is based\non the interaction between the rigid cocenter, an important subspace of the\ncocenter, and the dual object in representation theory, the rigid quotient of\nthe Grothendieck group of ﬁnite dimensional representatio ns.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.2.",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12.md",
+      "narrative": null,
+      "content": "other subspace of ¯H, which we call the rigid quotient and rigid cocenter, respectively.\nLet us ﬁrst describe our motivation leading to the deﬁnitions and the n describe\nthe main result and its consequences.\nFor simplicity, we only consider the aﬃne Hecke algebras associated t o semisim-\nple root datum in this introduction. In the beginning, we would like to ge t a\nnice ﬁnite subset of cl(~W ). A natural choice is cl(~W )ell, the set of elliptic conju-\ngacy classes of ~W . The problem is that there is no relation between the subspace\nspanned by{TO;O∈ cl(~W )ell} and the elliptic cocenter.\nThe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "(1) The set{TO :O∈ cl(~W )0} is a basis of ¯Hrigid for an aﬃne",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/thm-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "thm-sec-002-02.md",
+      "narrative": null,
+      "content": "in particular explains where the name “rigid” for ¯Hrigid comes from:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/thm-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "thm-sec-002-03.md",
+      "narrative": null,
+      "content": "The set {TO :O ∈cl(~W )} is a basis of ¯H for an aﬃne Hecke",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.3.",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-13.md",
+      "narrative": null,
+      "content": "analogues of classical results from p-adic groups: the Density Theorem and the\ntrace Paley-Wiener Theorem. For p-adic groups, proofs of these results are known\nfrom [BDK] and [Kaz2], see also [Da] and [Fl]. For aﬃne Hecke algebras wit h\npositive parameters, the Density Theorem and trace Paley-Wiener theorem are\nstudied in [So, Theorem 3.4] by diﬀerent methods.\nWe summarize our results in the next theorem.\nTheorem 1.3. (1) (Density Theorem) Suppose that the parameters of the aﬃne\nHecke algebra are admissible. Then the trace map tr : ¯H→ R(H)∗ is injec-\ntive.\n(2) (Trace Paley-Wiener Theorem) For",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.4.",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-14.md",
+      "narrative": null,
+      "content": "to simplify the arguments of [BM1, BM2] for the preservation of unit arity under the\nBorel functor for the category of smooth representations with Iwahori ﬁxed vectors\nof a semisimple p-adic group G. Let I be an Iwahori subgroup and if H ⊂ G\nis a closed subgroup containing I, let H(H//I ) denote the Iwahori-Hecke algebra\nof I-biinvariant compactly supported functions with support in H. The Borel-\nCasselman correspondence says that the functor V →V I is an equivalence between\nthe subcategory of smooth complex G-representations generated by their I-ﬁxed\nvectors and the category of H(G//I)-module",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "(1) (Density Theorem) Suppose that the parameters of the aﬃne",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.5.",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-15.md",
+      "narrative": null,
+      "content": "and give the basic deﬁnitions for the aﬃne Hecke algebra (extended by outer auto-\nmorphisms), the cocenter and R(H). In section 4, we recall in our setting the main\ndeﬁnitions and properties of the induction and restriction functor s, as introduced\nforp-adic groups in [BDK] and studied further in [Da]. In section 5, we reco rd the\nmain cocenter results from [HN1, HN2] that we will use in the rest of t he paper.\nIn sections 6 and 7, we deﬁne the rigid and elliptic cocenters and the r igid and\nelliptic quotients of R(H), and prove the main results about the duality between\nthe rigid cocenter and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-2-preliminaries.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2.1.",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-007-21.md",
+      "narrative": null,
+      "content": "(a) X,X ∨ are free abelian groups of ﬁnite rank with a perfect pairing ⟨, ⟩ :\nX×X ∨→ Z;\n(b) R ⊂ X, R∨ ⊂ X ∨ are the roots and coroots, respectively, in bijection\nα↔α∨;\n(c) Π ⊂R is the set of simple roots.\nLet R+ denote the positive roots deﬁned by Π, and Π − =−Π +; let R∨,+, R∨,−\ndenote the corresponding coroots. For every α∈R, let sα∈GL(X) be the reﬂec-\ntionsα(x) = x−⟨x,α ∨⟩α. LetW⊂GL(X) be the ﬁnite Weyl group, generated by\nS ={sα :α∈ Π}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2.2.",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-008-22.md",
+      "narrative": null,
+      "content": "byβ∨≤α∨ isα∨−β∨ is a nonnegative integer linear combination of {α∨ :α∈ Π}.\nSet Rm ={γ∈R :γ∨ is minimal in ( R∨,≤)}. The simple aﬃne roots are\nΠ a ={(α, 0) : α∈ Π}∪{ (γ∨, 1) : γ∈Rm}. (2.1)\nDeﬁne the extended aﬃne Weyl group:\n~W =X ⋊W. (2.2)\nWe write a typical element in ~W astxw,x∈X,w ∈W . The multiplication is then\n(txw)· (tx′w′) = tx+w(x′)ww′. The group ~W acts on X by (txw)·y =x +w(y).\nDeﬁne also the aﬃne Weyl group:\nW a =Q ⋊W, (2.3)\n6 DAN CIUBOTARU AND XUHUA HE\nwhereQ⊂X is the root lattice, i.e., the Z-span of R. The group W a is an inﬁnite\nCoxeter group generated by Sa = S∪{ t−γsγ : γ ∈ Rm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2.3.",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-009-23.md",
+      "narrative": null,
+      "content": "w∈ ~W , and let Λ = C[q(s)±1 :s∈Sa].\nDeﬁnition 2.1 (Iwahori-Matsumoto presentation). The aﬃne Hecke algebra H =\nH(Φ, q) is the Λ-algebra generated by {Tw :w∈ ~W} subject to the relations:\n(1) Tw·Tw′ =Tww′, if ℓ(ww′) = ℓ(w) +ℓ(w′);\n(2) (Ts + 1)(Ts− q(s)2) = 0, s∈Sa.\nThe algebraH(Φ, q) admits a second presentation, due to Bernstein and Lusztig,\nthat we recall next. If w∈W a has a reduced expression w =s1··· sk, si∈Sa, set\nq(w) = ∏ q(si). Extend this further to ~W by setting q(u) = 1 for all u∈ Ω.\nDeﬁne X+ ={x∈X :⟨x,α ∨⟩≥ 0, for all α∈ Π}. If x∈X, write x =x1−x2,\nx1,x 2∈X+. Deﬁne\nθx = q(tx1)−1q(t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prop-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[CH, Proposition 3.1.1]",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "prop-sec-012-01.md",
+      "narrative": null,
+      "content": "Set ¯H′ =H′/[H′,H′]. Then:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2.4.",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-010-24.md",
+      "narrative": null,
+      "content": "R∨\nJ ={α∨ : α∈ RJ}. Let WJ ⊂ W be the parabolic subgroup deﬁned by the\nreﬂections in J. Denote ~WJ =X ⋊WJ, and let qJ be the restriction of q to ~WJ.\nConsider the root datum Φ J = (X,R J,X ∨,R ∨\nJ,J ) and the aﬃne Hecke algebra\nHJ =H(Φ J, qJ ). This algebra can be identiﬁed with the subalgebra of H(Φ, q)\ngenerated by Tw, w∈WJ and θx, x∈X. One calls it a parabolic subalgebra of H.\nDeﬁne the induction functor\niJ :R(HJ )→R(H). (2.9)\nTo deﬁne the “semisimple part” of H, one introduces\nXJ =X/X∩ (J ∨)⊥ and X ∨\nJ =X ∨∩ QJ ∨, (2.10)\nwhere (J ∨)⊥ ={x∈ X :⟨x,α ∨⟩ = 0, for all α∈ J}. Consider the root da",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "3.1.",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-011-31.md",
+      "narrative": null,
+      "content": "q satisfy q(δ(w)) = q(w), for all w∈ ~W , we can deﬁne an extension of the aﬃne\nHecke algebraH by Γ = ⟨δ⟩:\nH′ =H ⋊ Γ. (3.1)\nSet ~W ′ = ~W ⋊Γ and W ′ =W ⋊Γ. The center ofH′ isAW ′\n, so the central characters\nare parameterized by points in W ′\\T× SpecΛ.\nIf J⊂ Π, set Γ J ={δi∈ Γ : δi(RJ ) = RJ}. The parabolic subalgebra is then\nH′\nJ =HJ ⋊ Γ J. We denote the induction functor again by iJ :R(H′\nJ )→R(H′).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "3.2.",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-012-32.md",
+      "narrative": null,
+      "content": "[CH, section 3.1], where the similar notions in the setting of the graded aﬃne Hecke\nalgebra were considered.\nDeﬁnition 3.1. If h,h ′∈H , deﬁne the δi-commutator of h and h′ by [h,h ′]δi =\nhh′−h′δ(h). Let [H,H]δi be the submodule of H generated by all δi-commutators.\nDenote by ¯H[i] the quotient ofH/[H,H]δi by the image of (1−δ). The following\nresult was proved in [CH] for extended graded Hecke algebras, but the proof applies\nto any associative algebra extended by a ﬁnite cyclic group.\nProposition 3.2 ([CH, Proposition 3.1.1]) . Set ¯H′ =H′/[H′,H′]. Then:\n8 DAN CIUBOTARU AND XUHUA HE\n(1) ¯H′ =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/lem-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "cf. [CH, Lemma 3.2.1]",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "lem-sec-013-02.md",
+      "narrative": null,
+      "content": "Let X ⋊U be an irreducible H′-module as",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "3.3.",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-013-33.md",
+      "narrative": null,
+      "content": "graded aﬃne Hecke algebra case from [CH, section 3.2], and the proo fs are identical.\nLet Γ = ⟨δ⟩. If ( π,X ) is a ﬁnite dimensional H-module, let ( δi\nπ, δi\nX) denote the\nH-module with the action δi\nπ(h)x = π(δ−i(h))x, for all x∈ X, h∈H . If X is a\nsimple module, deﬁne the inertia group Γ X ={δi :X∼= δi\nX}.\nFix a family of isomorphisms φδi : X→ δ−i\nX, δi∈ Γ X such that φδki = φk\nδi.\nThis is possible since Γ X is cyclic.\nIf U is an irreducible Γ X -module, there is an action of H ⋊ Γ X on X⊗U :\n(hδi)(x⊗u) = hφδi (x)⊗δiu. (3.2)\nOne can form the induced H′-module X ⋊U = Ind H⋊Γ\nH⋊Γ X (X⊗U ).\nThe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/thm-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "cf. [RR, Appendix A]",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "thm-sec-013-01.md",
+      "narrative": null,
+      "content": "(1) If X is an irreducible H-module",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/lem-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "lem-sec-016-01.md",
+      "narrative": null,
+      "content": "If K =δ(K) and J =δ(J), then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "3.4.",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-014-34.md",
+      "narrative": null,
+      "content": "tr : ¯H′→R(H′)∗, h ↦→(fh :R(H′)→ C, fh(π) = tr π(h)). (3.5)\nThis map is compatible with the decompositions from Proposition 3.2 and (3.4) as\nfollows. Let R∗\nδ (H) = Hom C(Rδ(H)C, C). The twisted trace map\ntrδ :H→ R∗\nδ(H), h ↦→(f δ\nh :Rδ(H)C→ C, fδ\nh(π) = tr δ(π)) (3.6)\ndescends to a linear map\ntrδ : ¯Hδ =H/[H,H]δ→R∗\nδ (H). (3.7)\nDeﬁnition 3.5. A form f∈R∗\nδ (H) is called a trace form if f∈ im trδ. Denote the\nsubspace of trace forms by R∗\nδ (H)tr.\nA form f∈ R∗\nδ (H) is called good if for every J⊂ I such that δ(J) = J, and\nevery σ∈ Irrδ(Hss\nJ ), the function t↦→f (X(J,σ,t )) is a regular functio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Induction and restriction",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-015-4-induction-and-restriction.md",
+      "narrative": null,
+      "content": "In this section, we recollect some known facts about the induction a nd restriction\nfunctors.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "4.1.",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-016-41.md",
+      "narrative": null,
+      "content": "K : R(HK)→ R(HJ ) the functor of\ninduction, and by rJ\nK :R(HJ )→R(HK) the functor of restriction. When J andK\nare δ-invariant, we also have the corresponding functors, denoted ag ain by iJ\nK and\nrJ\nK betweenRδ(HK ) and Rδ(HJ ).\nIt is obvious that\nLemma 4.1. ForL⊂K⊂J⊂I, iJ\nL =iJ\nK◦iK\nL and rJ\nL =rK\nL◦rJ\nK.\nThe following result. is the analogue of [BDK, Lemma 5.4] and [Fl, Lemm a 2.1].\nSee also [Mi, Theorem 1].\nLemma 4.2. If K =δ(K) and J =δ(J), then\nrK◦iJ =\n∑\nw∈K W J ∩W δ\niK\nKw◦w◦rJ\nJw, (4.1)\nas functors from Rδ(HJ ) to Rδ(HK), where KW J is the set of representatives of\nminimal length for WK\\W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/lem-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "lem-sec-018-01.md",
+      "narrative": null,
+      "content": "Ifδ(K) = K,δ(J) = J, w∈ KW J (δ), and K =w(J), then iK◦w =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "4.2.",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-017-42.md",
+      "narrative": null,
+      "content": "ﬁeld of Z. For every α∈ Π, set\nG(α) =\n{ q(sα )2θα −1\nθα −1 , if α∨ /∈ 2X ∨,\n(q(s)q(~s)θα −1)(q(s)q(~s)−1)θα +1)\nθ2α −1 , if α∨∈ 2X ∨,\n(4.2)\nsee [Lu1, section 3.8]. We have G(α)∈A F =A⊗ ZF. Deﬁne the following elements\ninHF =H⊗ ZF :\nτ α = (Tsα + 1)G(α)−1− 1. (4.3)\nBy [Lu1, Proposition 5.2], the assignment sα↦→τ α, α∈ Π extends to a unique\ngroup homomorphism W→H ×\nF. Denote by τw the image of w∈W. Moreover,\nfτ w =τww−1(f ), for all w∈W, f∈A F. (4.4)\nThe following lemma is also well-known, see for example [BM3, section 1.6], where\na similar statement was veriﬁed in the context of graded Hecke alg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "4.3.",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-018-43.md",
+      "narrative": null,
+      "content": "every α∈J, Tsατw−1 =τw−1Tsβ , where β =w(α)∈K.\nProof. We calculate:\nTsατw−1 = ((τ α + 1)G(α)− 1)τw−1\n= (τ α + 1)τw−1G(β)−τw−1, by (4.4)\n= (τw−1τ β +τw−1 )G(β)−τw−1, since τ is a homomorphism\n=τw−1Tsα.\n□\nLemma 4.4. Ifδ(K) = K,δ(J) = J, w∈ KW J (δ), and K =w(J), then iK◦w =\niJ in Rδ(H).\nProof. Let (σ◦χt,V ) be an irreducible module in Rδ(HJ ), t∈ T J , and let ( σw◦\nχw(t),V w = V )∈ Rδ(HK) be its twist by w. We need to prove that in Rδ(H),\niK(σw◦χw(t)) = iJ (σ◦χt). Since the characters of both sides are regular functions\nint, it is suﬃcient to prove this for t generic. Deﬁne\nφw(σ,t ) :H⊗ HJ V →H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/lem-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "cf. [CH, Lemma 4.5.1]",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "lem-sec-019-01.md",
+      "narrative": null,
+      "content": "The maps ¯iJ and ¯rJ are tr( , )-adjoint to",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/lem-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "lem-sec-020-01.md",
+      "narrative": null,
+      "content": "Suppose (PDT) holds. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prop-sec-020-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "prop-sec-020-03.md",
+      "narrative": null,
+      "content": "We have A2 =aA for some a⁄= 0 and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prop-sec-020-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "prop-sec-020-04.md",
+      "narrative": null,
+      "content": "Suppose (PDT) holds. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "4.5.",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-019-45.md",
+      "narrative": null,
+      "content": "Lemma 4.5 (cf. [CH, Lemma 4.5.1]) . The maps ¯iJ and ¯rJ are tr( , )-adjoint to\nrJ and iJ , respectively.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "4.4.",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-020-44.md",
+      "narrative": null,
+      "content": "(PDT) The Density Theorem holds for every proper parabolic subalg ebraHJ ,\nδ(J) = J.\nThe following properties are dual to those of iJ and rJ.\nLemma 4.6. Suppose (PDT) holds. Then\n(i) ForL⊂K⊂J, ¯iJ\nL = ¯iJ\nK◦ ¯iK\nL and ¯rJ\nL = ¯rK\nL◦ ¯rJ\nK.\n(ii) If K =δ(K) and J =δ(J), then\n¯rJ◦ ¯iK =\n∑\nw∈KW J (δ)\n¯iJ\nJw◦w−1◦ ¯rK\nKw, (4.6)\nas maps from ¯HK,δ→ ¯HJ,δ, whereKw =K∩wJw −1 andJw =J∩w−1Kw.\n(iii) If w∈ KW J (δ) and K =w(J),\nw−1◦ ¯rK = ¯rJ. (4.7)\nRemark 4.7. (1) We will see in section 8 that the (PDT) hypothesis is not neces-\nsary.\n(2) In general, if J, K, and w are as in Lemma 4.6(iii), ¯iK◦w⁄= ¯iJ in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/rem-sec-020-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "rem-sec-020-02.md",
+      "narrative": null,
+      "content": "(1) We will see in section 8 that the (PDT) hypothesis is not neces-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spanning set of the cocenter",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-021-5-spanning-set-of-the-cocenter.md",
+      "narrative": null,
+      "content": "In this section, we recall the explicit description of the cocenter of H obtained\nin [HN1] and [HN2].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "5.1.",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-022-51.md",
+      "narrative": null,
+      "content": "We follow [HN1]. For w,w ′∈ ~W ′ and s∈Sa, we write w\ns\n− →w′ if w′ =sws and\nℓ(w′)≤ℓ(w). We write w→w′ if there is a sequence w =w0,w 1,··· ,w n =w′ of\nelements in ~W such that for any k,wk−1\ns\n− →wk for some s∈Sa.\nWe call w,w ′∈ ~W ′ elementarily strongly conjugate if ℓ(w) = ℓ(w′) and there\nexistsx∈ ~W ′ such that w′ =xwx−1 andℓ(xw) = ℓ(x) +ℓ(w) or ℓ(wx−1) = ℓ(x) +\nℓ(w). We call w,w ′ strongly conjugate if there is a sequence w =w0,w 1,··· ,w n =\nw′ such that for each i,wi−1 is elementarily strongly conjugate to wi and we write\nw∼w′ in this case.\nIt is proved in [HN1, Theorem A] that\nTheorem",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "5.2.",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-023-52.md",
+      "narrative": null,
+      "content": "class of ~W ′. Let TO be the image of Tw in ¯H′, where w is a minimal length element\ninO. By Theorem 5.1 (2), TO is independent of the choice of w.\nMoreover, we have the following result.\nTheorem 5.2. The elements{TO}, whereO ranges over all the conjugacy classes\nof ~W ′, span ¯H′ as an Λ -module.\nThe equal parameter case was proved in [HN1, Theorem 5.3]. The gen eral case\ncan be proved in the same way and we omit the details. In [HN1, Theore m 6.7], it\nis proved the in the equal parameter case, {TO} is a basis of ¯H′. The proof there\nis to use base ring to reduce the question to the group alg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "5.3.",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-024-53.md",
+      "narrative": null,
+      "content": "However, the expression for a minimal length element Tw inO is usually very\ncomplicated. To study the induction and restriction functors on th e cocenter, we\nalso need the Bernstein-Lusztig presentation of ¯H′ established in [HN2].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "5.4.",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-025-54.md",
+      "narrative": null,
+      "content": "Let νw = λ/N and ¯νw be the unique dominant element in the W0-orbit of νw.\nThen the map ~W→XC,w↦→¯νw is constant on the conjugacy class of ~W ′. For any\nconjugacy class O, we set νO = ¯νw for any w∈O and call it the Newton point of\nO. We set\nJO ={α∈ Π : sα(νO) = νO}. (5.1)\nCOCENTERS AND REPRESENTATIONS OF AFFINE HECKE ALGEBRA 13",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/thm-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "thm-sec-022-01.md",
+      "narrative": null,
+      "content": "LetO be a conjugacy class of ~W ′ andOmin be the set of minimal",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/thm-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "thm-sec-023-01.md",
+      "narrative": null,
+      "content": "The elements{TO}, whereO ranges over all the conjugacy classes",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "5.5.",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-026-55.md",
+      "narrative": null,
+      "content": "if (XC)w ⊂ (XC)W and an element w∈ ~W elliptic if p(w) is elliptic in W ′. A\nconjugacy class O in ~W ′ is called elliptic if w is elliptic for some (or, equivalently\nany)w∈O . By deﬁnition, if O is elliptic, then JO = Π.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "5.6.",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-027-56.md",
+      "narrative": null,
+      "content": "of ~WJ ⋊ Γ J and νw is dominant for some (or, equivalently any) w∈ C. For any\n(J,C ), (J ′,C ′)∈A , we write ( J,C )∼ (J ′,C ′) if νw = νw′ for w∈C and w′∈C′\nand there exists x∈ J ′\n(WJν w ⋊ Γ Jν w )J such that xJx −1 =J ′ and xCx−1 =C′.\nBy [HN2, Lemma 5.8], the map from A to the set of conjugacy classes of ~W ′\nsending (J,C ) to the unique conjugacy class O of ~W with C⊂O gives a bijection\nfromA/∼ to the set of conjugacy classes of ~W . We denote this map by τ . It is\nproved in [HN2, Theorem B] that\nTheorem 5.3. Let (J,C )∈A andO =τ (J,C ). Then\nTO = ¯iJ (T J\nC ).\nRemark 5.4. HereT J\nC is the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "5.7.",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-028-57.md",
+      "narrative": null,
+      "content": "crucial role in this paper. Here we discuss a variation of §5.6 and Theorem 5.3.\nLetO be a conjugacy class of ~W ′ andJ =JO. We may assume thatO =τ (K,C ).\nThen it is easy to see that K⊂J. Let O′ be the conjugacy class of ~W ′\nJ ⋊ Γ J such\nthatO′ =τJ (K,C ). Then JO′ =J and T J\nO′ = ¯iJ\nK(T K\nC ). Hence\nTO = ¯iK(T K\nC ) = ¯iJ (T J\nO′).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Elliptic quotient and rigid quotient",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-029-6-elliptic-quotient-and-rigid-quotient.md",
+      "narrative": null,
+      "content": "In this section, we discuss two natural quotients for Rδ(H): the elliptic quotient\nintroduced in [BDK] and the rigid quotient, which we introduce below.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "6.1.",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-030-61.md",
+      "narrative": null,
+      "content": "¯Rδ\n0(H)C =Rδ(H)C/\n∑\nJ=δ(J)⫋ I\niJ(Rδ(HJ )C).\nNow we introduce the rigid quotient.\nDeﬁnition 6.1. Set\nRδ(H)diﬀ −ind = span{iJ(σ)−iJ (σ◦χt) : J =δ(J), σ∈Rδ(Hss\nJ ),\nt∈ HomZ(X∩ QR/X∩ QJ, C∗)δ}\n(6.1)\nand deﬁne the rigid quotient of Rδ(H) to be\n¯Rδ(H)rigid :=Rδ(H)/Rδ(H)diﬀ −ind. (6.2)\n14 DAN CIUBOTARU AND XUHUA HE\nNotice in the deﬁnition the presence of X∩ QR, rather than X. This is to\naccount for the fact the the root datum may not be semisimple.\nIn the rest of this section, we assume that the root datum Φ for H is semisimple.\nWe estimate the dimension of the elliptic quotient and rigid quotient o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/thm-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "thm-sec-027-01.md",
+      "narrative": null,
+      "content": "Let (J,C )∈A andO =τ (J,C ). Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/lem-sec-032-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "lem-sec-032-01.md",
+      "narrative": null,
+      "content": "If K = δ(K) ⊊ Π, then iK(Rδ(HK )diﬀ −ind) ⊆ Rδ(H)diﬀ −ind and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prop-sec-032-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "prop-sec-032-02.md",
+      "narrative": null,
+      "content": "Suppose that the root datum for H is semisimple. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "6.2.",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-031-62.md",
+      "narrative": null,
+      "content": "ple. Then the rank of the restriction of the trace map tr : ¯Hell\nδ × ¯Rδ\n0(H)→ C equals\ndim ¯Rδ\n0(H). In particular, dim ¯Rδ\n0(H)≤ dim ¯Hell\nδ .\nProof. Suppose{π1,π 2,...,π k} is a set in ⊂Rδ(H) such that its image in R\nδ\n0(H) is\nlinearly independent. Applying the operator A, one obtains a linearly independent\nset{A(π1),A (π2),...,A (πk)} inRδ(H). This is because A(π)≡aπ in R\nδ\n0(H), and\na⁄= 0.\nSince the characters of simple modules are linear independent, so ar e the charac-\nters of any linear independent set in Rδ(H). Thus there exist elements h1,h 2,...,h k\nof ¯H, such that the matrix (tr(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "6.3.",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-032-63.md",
+      "narrative": null,
+      "content": "w∈ W δ∩ J ′\nW J such that w(J) = J ′. For each ∼δ-equivalence class in I δ, we\nchoose a representatives. We denote by I δ\n♠⊂I δ the set of representatives. Set\nNJ ={z∈ JW J ;z =δ(z),J =z(J)}. Then NJ acts on Rδ(Hss\nJ ) and on ¯Rδ\n0(Hss\nJ ).\nBy Lemma 4.1 and Lemma 4.2, we have\nLemma 6.3. If K = δ(K) ⊊ Π, then iK(Rδ(HK )diﬀ −ind) ⊆ Rδ(H)diﬀ −ind and\nrK(Rδ(H)diﬀ −ind)⊆Rδ(HK)diﬀ −ind.\nThe ﬁrst result is a dimension estimate for ¯Rδ(H)rigid.\nProposition 6.4. Suppose that the root datum for H is semisimple. Then\ndim ¯Rδ(H)rigid =\n∑\nJ∈I δ\n♠\ndim ¯Rδ\n0(Hss\nJ )NJ\nProof. Let m =|Π| and consider ﬁrst the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prop-sec-033-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "prop-sec-033-01.md",
+      "narrative": null,
+      "content": "Suppose that q is admissible and that the root datum for H",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "6.4.",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-033-64.md",
+      "narrative": null,
+      "content": "quotient of Rδ(H) in terms of δ-conjugacy classes of ~W .\nLet cl(~W,δ ) be the set of δ-conjugacy classes of ~W . Let cl(~W,δ )ell be the set of\nellipticδ-conjugacy classes of ~W , and let cl(~W,δ )0 be the set of δ-conjugacy classes\nO of ~W such that νO = 0. Then\ncl(~W,δ )ell⊂cl(~W,δ )0⊂cl(~W,δ ).\nLet cl(W,δ )ell⊂cl(W,δ ) denote the set of elliptic δ-conjugacy classes, respectively\nall δ-conjugacy classes in W .\nBy [HN2, Lemma 5.8], we have\n∑\nJ⊂I δ\n♠\n|cl(~WJ,δ )ell/NJ| =|cl(~W,δ )0|, (6.3)\nAn element s∈ T = Hom Z(X, C∗) is called isolated if there exists a δ-elliptic\nelement w ∈ W such that w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/rem-sec-033-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "rem-sec-033-02.md",
+      "narrative": null,
+      "content": "In particular, the parameterization of irreducible representation s of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/cor-sec-034-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "cor-sec-034-01.md",
+      "narrative": null,
+      "content": "If the root datum for H is semisimple, a section of ¯Rδ(H)rigid is",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "6.5.",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-034-65.md",
+      "narrative": null,
+      "content": "To deﬁne it, recall the [BDK]-map deﬁned in (4.8)\nA :Rδ(H)C→Rδ(H)C,\nwhich by Proposition 4.8 has the property that\nkerA =Rδ\n1(H), and so im A∼= ¯Rδ\n0(H). (6.11)\nLet AJ : Rδ(HJ )C→ Rδ(HJ )C be the similar maps for the parabolic subalgebras\nHJ. As a consequence of the proof of Proposition 6.4, we have\nCorollary 6.8. If the root datum for H is semisimple, a section of ¯Rδ(H)rigid is\ngiven by ⨁\nJ∈I δ\n♠\niJ im(AJ :R(Hss\nJ )C→R(Hss\nJ )C)NJ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Duality between and R(H)",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-035-7-duality-between-and-rh.md",
+      "narrative": null,
+      "content": "Our strategy to prove the main results is to use traces of ﬁnite dime nsional\nH-modules to separate the elements {TO} that span the cocenter ¯H.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "7.1.",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-036-71.md",
+      "narrative": null,
+      "content": "δ (H) = Hom C(Rδ(H)C, C). Let ( ¯Rδ(H)rigid)∗ be the subspace of\nR∗\nδ(H) consisting of linear functions on Rδ(H) that vanish on Rδ(H)diﬀ −ind. Deﬁne\n¯Hrigid = span{TO;JO = Π}.\nWe have the following separation theorem.\nTheorem 7.1. Suppose that (PDT) holds. Then\n¯Hrigid\nδ ={h∈ ¯Hδ; trδ(h)(Rδ(H)diﬀ −ind) = 0}.\nProof. LetO be a conjugacy class with JO = Π. There exist K ⊊ Π a such that\nTO =Tw (in ¯Hδ) for some elliptic element w in the parahoric subgroup ~W ′\nK. If the\nroot datum for H is semisimple, then ~W ′\nK is a ﬁnite group, and therefore\niJ (σ)∼=iJ (σ◦χt) asH′\nK-representations,\nfor all J =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/thm-sec-036-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "thm-sec-036-01.md",
+      "narrative": null,
+      "content": "Suppose that (PDT) holds. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/ex-sec-037-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "ex-sec-037-01.md",
+      "narrative": null,
+      "content": "For every subset K ⊊ Sa, let HK⊂H be the (ﬁnite) parahoric",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/lem-sec-037-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "lem-sec-037-02.md",
+      "narrative": null,
+      "content": "The image of the rank map Rk lies in ¯Hrigid.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "7.2.",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-037-72.md",
+      "narrative": null,
+      "content": "cocenter ¯Hrigid appears naturally in relation with K0(H), the Grothendieck group\nof ﬁnitely generated projective H-modules. Let\nRk :K0(H)→ ¯H (7.3)\nbe the Hattori-Stallings rank map, see for example [Da, §1.2]. If P∈ K0(H) is a\nﬁnitely generated projective module, then P is a direct summand of Hn for some\npositive integer n. As such, there exists an idempotent eP∈ Mn×n(H) such that\nP =HneP as leftH-modules. The rank map is deﬁned to be the image in ¯H of the\nmatrix trace of eP , i.e.,\nRk(P ) = Tr(eP ) mod [H,H]. (7.4)\nExample 7.2. For every subset K ⊊ Sa, let HK⊂H be the (ﬁnite) parahoric\nHec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/rem-sec-037-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "rem-sec-037-03.md",
+      "narrative": null,
+      "content": "One may regard this result as the aﬃne Hecke algebra analogue of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prop-sec-038-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "prop-sec-038-01.md",
+      "narrative": null,
+      "content": "Suppose the root datum for H is semisimple and that (PDT)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "7.3.",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-038-73.md",
+      "narrative": null,
+      "content": "δ dual to the one for ¯Rδ(H)rigid from Propo-\nsition 6.4 and Corollary 6.8.\nProposition 7.5. Suppose the root datum for H is semisimple and that (PDT)\nholds. Then\n¯Hrigid\nδ =\n⨁\nJ∈I δ\n♠\n¯iJ ( ¯AJ (( ¯Hss\nJ )\nrigid\n)NJ ).\nProof. The proof follows the lines of the proof of Proposition 6.4.\nBy Theorem 7.1, ¯Hell\nδ ⊆ ¯Hrigid\nδ . By Proposition 4.8, ¯A( ¯Hrigid\nδ ) = ¯Hell\nδ . Hence\nHell\nδ = ¯A(Hell\nδ )⊆ ¯A(Hrigid\nδ )⊆ ¯A(Hδ) =Hell\nδ . Thus\n¯A( ¯Hrigid\nδ ) = ¯Hell\nδ ⊂ ¯Hrigid\nδ .\nSet ¯p0 = ¯A| ¯Hrigid\nδ\n. Since ¯A2 = a ¯A, a⁄= 0, by Proposition 4.9, we have ¯Hrigid\nδ =\n¯A( ¯Hrigid\nδ )⊕ ker ¯p0.\nSinc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/thm-sec-038-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "thm-sec-038-02.md",
+      "narrative": null,
+      "content": "Suppose the root datum for H is semisimple, the (PDT) holds 1,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/ex-sec-039-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "SL(2",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "ex-sec-039-01.md",
+      "narrative": null,
+      "content": "). LetH be the aﬃne Hecke algebra for the root datum of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/ex-sec-039-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "PGL (2",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "ex-sec-039-02.md",
+      "narrative": null,
+      "content": "). LetH be the aﬃne Hecke algebra for the root datum of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/ex-sec-039-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "Aﬃne C2",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "ex-sec-039-03.md",
+      "narrative": null,
+      "content": "LetH be the aﬃne Hecke algebra attached to the aﬃne",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/ex-sec-039-04",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "Extended aﬃne C2",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "ex-sec-039-04.md",
+      "narrative": null,
+      "content": "The Hecke algebra attached to the extended",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-039-74-examples.md",
+      "narrative": null,
+      "content": "tient and the rigid cocenter in some concrete examples.\nExample 7.7 (SL(2)). LetH be the aﬃne Hecke algebra for the root datum of\nSL(2). This is generated by T0 and T1 subject to\nT 2\ni = (q− 1)Ti + q, i = 0, 1.\nThere are three conjugacy classes of ﬁnite order in ~W : s0 (the aﬃne reﬂection),\ns1 (the ﬁnite reﬂection), and 1. Accordingly, we have the three basis elements of\n¯Hrigid: T0,T1, and 1.\nThere are four one-dimensional modules corresponding to Ti∈{− 1, q}. A basis\nof the elliptic space ¯R0(H) in the admissible case is given by the classes of St =\nCOCENTERS AND REPRESENTATIONS OF AFFINE H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/lem-sec-041-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "lem-sec-041-01.md",
+      "narrative": null,
+      "content": "The map aγ ↦→a induces an isomorphism τ −1(γ)∼= ¯A[γ], where",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prop-sec-041-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "prop-sec-041-02.md",
+      "narrative": null,
+      "content": "Assume the root datum is semisimple and that q is admissible.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some consequences",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-040-8-some-consequences.md",
+      "narrative": null,
+      "content": "In this section, we prove the basis theorem, density theorem and t race Paley-\nWiener theorem. They will be proven inductively, using Theorem 7.6.\nTheorem 8.1 (Basis Theorem for arbitrary parameters) . ¯H′ is a free Λ -module\nwith basis{TO}, whereO ranges over all the conjugacy classes of ~W ′.\nTheorem 8.2 (Density Theorem for admissible parameters) . When the parameter\nq is admissible, the trace map tr : ¯H′→R∗(H′)good is bijective.\nThe results in the previous subsections regarding ¯Rδ(H)rigid and ¯Hrigid\nδ were\nproved under the assumption that the root datum is semisimple and t he parameters",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "8.1.",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-041-81.md",
+      "narrative": null,
+      "content": "A′ =A ⋊ C[Γ]. The map aγ↦→γ,a∈A, γ∈ Γ induces a surjective linear map\nτ : ¯A′→ C[Γ] =\n⨁\n[γ]∈cl(Γ)\nCγ. (8.1)\nThe ﬁber τ −1(γ) is by deﬁnition the image of Aγ in ¯A′. Similar to section 3.2, we\nhave:\nLemma 8.3. The map aγ ↦→a induces an isomorphism τ −1(γ)∼= ¯A[γ], where\n¯A[γ] = (A/[A,A ]γ)ZΓ (γ), the space of ZΓ (γ)-coinvariants.\nProposition 8.4. Assume the root datum is semisimple and that q is admissible.\nIf the statement of Theorem 8.1 holds when H′ is semisimple and q is admissible,\nthen it holds in general.\n24 DAN CIUBOTARU AND XUHUA HE\nProof. Deﬁne the linear map\nπ :\n⨁\nO∈cl(~W ′)\nΛ→ ¯H′,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/lem-sec-042-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "lem-sec-042-01.md",
+      "narrative": null,
+      "content": "and hence Proposition 4.9 and Proposition 6.2 hold unconditio nally.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "8.3.",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-042-83.md",
+      "narrative": null,
+      "content": "restriction functors ¯iJ and ¯rJ depend algebraically on the parameters, therefore\nLemma 4.6 and hence Proposition 4.9 and Proposition 6.2 hold unconditio nally.\nMoreover, ¯Hell\nδ ⊂ ¯Hrigid\nδ and Proposition 7.5 holds without the (PDT) assumption.\nWe can now prove the trace Paley-Wiener theorem for arbitrary pa rameters.\nTheorem 8.5. For arbitrary parameters, the image of the map tr : ¯H′→R(H′) is\nR∗(H′)good. In other words, R∗\nδ (H)tr =R∗\nδ (H)good.\nProof. We ﬁrst show that\ntr : ¯Hell\nδ → ¯Rδ\n0(H)∗ is surjective. (a)\nBy Proposition 4.8, we may regard ¯Rδ\n0(H) as A(Rδ(H))⊂ Rδ(H). Under this\nid",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/thm-sec-042-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "thm-sec-042-02.md",
+      "narrative": null,
+      "content": "For arbitrary parameters, the image of the map tr : ¯H′→R(H′) is",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prop-sec-043-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "prop-sec-043-01.md",
+      "narrative": null,
+      "content": "Suppose that Φ is a semisimple based root datum. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "8.4.",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-043-84.md",
+      "narrative": null,
+      "content": "Proposition 8.6. Suppose that Φ is a semisimple based root datum. Then\ndim ¯Rδ\n0(H)≤ rank ¯Hell\nδ =|cl(~W,δ )ell|.\nProof. By Proposition 6.2 and§8.3, dim ¯Rδ\n0(H)≤ dim ¯Hell\nδ for arbitrary parameters.\nSince (PDT) holds for admissible parameters, rank ¯Hell\nδ = rank ¯Hδ/ ker ¯A is ﬁnite\nfor admissible parameters. Since ¯Hδ is a Λ-module with basis TO and the map\n¯A depends algebraically on the parameters, rank ¯Hδ/ ker ¯A is semi-continuous, i.e.,\nthe rank at any parameter is less than or equal to the rank at gene ric parameters.\nBy Theorem 7.6 (2) and Proposition 6.6 (2), rank ¯Hell\nδ ≤|cl(~W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications to smooth representations of reductive p-adic groups",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-044-9-applications-to-smooth-representations-of-redu.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "9.1.",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-045-91.md",
+      "narrative": null,
+      "content": "ﬁeld of cardinality q. Let G be a connected semisimple group over k, and set\nG =G(k). Let G0 be the subgroup of G generated by all of the compact open\nsubgroups. A (one-dimensional) smooth character of G is called unramiﬁed if\nχ|G0 = 1. Let Xu(G) denote the group of unramiﬁed characters of G. Let R(G)\ndenote the Grothendieck group of smooth C-representations of G. Let B(G) be\nthe (modiﬁed) Bernstein center of G, as in [BK]. Then we have a decomposition\nR(G) = ∏\ns∈B(G)Rs(G).\nIf P is a ( k-rational) parabolic subgroup of G, with Levi decomposition P =\nMN , let iM : R(M ) → R(G) and rM : R(G) → R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/rem-sec-043-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "rem-sec-043-02.md",
+      "narrative": null,
+      "content": "If the root datum Φ is not semisimple, apply the constructions from",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "9.2.",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-046-92.md",
+      "narrative": null,
+      "content": "representations from the p-adic group to Iwahori-Hecke algebras. Let G satisfy the\nsame assumptions as in [Bo].\nLet I be an Iwahori subgroup of G. Let CI (G) be the category of smooth G-\nrepresentations generated by their I-ﬁxed vectors. By a classical result of Cassel-\nman,\nCI (G) = R0(G),\nwhereR0(G) is the Bernstein component where the simple objects are sub quot ients\nof unramiﬁed minimal principal series.\nLetH =C∞\nc (I\\G/I) be the Iwahori-Hecke algebra, i.e., the complex associative\nunital algebra of compactly supported, smooth, I-biinvariant complex functions,\nunder the convolution with r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/thm-sec-046-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "thm-sec-046-01.md",
+      "narrative": null,
+      "content": "Let (π,V )∈C I (G) be an irreducible hermitian G-representation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/lem-sec-047-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "lem-sec-047-01.md",
+      "narrative": null,
+      "content": "For every K⊃I, the K-character of any irreducible representation",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "9.3.",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-047-93.md",
+      "narrative": null,
+      "content": "modules. Invoking Langlands classiﬁcation or Corollary 6.8, it is clear t hat we may\nchoose ¯Vi so that they are all tempered H-modules. Under the functor (9.3), there\nexist smooth admissible G-representation Vi such that V I\ni = ¯Vi. It is well-known\nthatFI induces a bijection between tempered representations in the two c ategories,\nthus Vi are tempered G-representations. In fact, FI induces a homeomorphism\nbetween the supports of the Plancherel measures in the two cate gories, see [BHK],\nbut we will not need this more precise statement.\nSince the functor (9.3) commutes with parabolic inducti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/thm-sec-047-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "cf. [BM1, Theorem 5.3]",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "thm-sec-047-02.md",
+      "narrative": null,
+      "content": "Let{Vi}1≤i≤n be the ﬁxed basis of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "9.4.",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-048-94.md",
+      "narrative": null,
+      "content": "LetHK =C∞(I\\K/I ) be the subalgebra of H consisting of functions whose sup-\nport is in K. If ( σ,U σ) is a K-type, then ( σ,U I\nσ ) is an HK-module. If V I is a\nsimpleH-module, then the HK-character of V I is\nθHK (V I ) =\n∑\nσ∈ ˆK,U Iσ ⁄=0\nmσσ, (9.7)\nand theHK-signature character is\nΣ HK (V I ) = (\n∑\nσ∈ ˆK,U Iσ ⁄=0\npσσ,\n∑\nσ∈ ˆK,U Iσ ⁄=0\nqσσ). (9.8)\nTheorem 9.4 implies that the HK-signature character of V I is\nΣ HK (V I ) = (\nn∑\ni=1\naiθHK (V I\ni ),\nn∑\ni=1\nbiθHK (V I\ni )), (9.9)\nwith the same integers ai,b i as in Theorem 9.4.\nNow we can complete the argument. Suppose that V I is unitary as anH-m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-049-references.md",
+      "narrative": null,
+      "content": "[AM] S. Ariki and A. Mathas, The number of simple modules of the Hecke algebras of type\nG(r,1, n), Math. Z. 233 (2000), 601–623.\n[Ar] J. Arthur, On elliptic tempered characters , Acta Math. 171, No.1, 73–138 (1993).\n[BB] P. Blanc, J.-L. Brylinski, Cyclic homology and the Selberg principle , J. Func. Anal. 109\n(1992), 289–330.\n[BC] D. Barbasch, D. Ciubotaru, Unitary equivalences for reductive p-adic groups ,\nAmer. Jour. Math. 135 (2013), no. 6, 1633–1674.\n[BM1] D. Barbasch, A. Moy, A unitarity criterion for p-adic groups , Invent. Math. 98 (1989),\nno. 1, 19–37.\n[BM2] D. Barbasch, A. Moy, Reduct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0902v1/blocks/thm-sec-048-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "thm-sec-048-01.md",
+      "narrative": null,
+      "content": "implies that the HK-signature character of V I is",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

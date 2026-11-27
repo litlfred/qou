@@ -189,15 +189,11 @@
           "heading": false
         },
         {
-          "term": "convective shell",
-          "heading": false
-        },
-        {
           "term": "magnetic white",
           "heading": false
         },
         {
-          "term": "convective region",
+          "term": "convective shell",
           "heading": false
         },
         {
@@ -207,6 +203,10 @@
         {
           "term": "dynamo",
           "heading": true
+        },
+        {
+          "term": "coalescing white",
+          "heading": false
         }
       ],
       "extract": "[]{#dynamo label=\"dynamo\"} The merger of two degenerate cores is the final destiny of the evolution of a sizable fraction of binary systems. Three-dimensional simulations of the merger process (Guerrero et al. 2004; Yoon et al. 2007; Lorén--Aguilar et al. 2009) indicate that the remnant of the coalescence of two white dwarfs consists of a central white dwarf which contains all the mass of the primary. On top of it a",
@@ -351,10 +351,6 @@
       "heading": false
     },
     {
-      "term": "convective corona",
-      "heading": false
-    },
-    {
       "term": "single white",
       "heading": false
     },
@@ -364,6 +360,10 @@
     },
     {
       "term": "stellar mergers",
+      "heading": false
+    },
+    {
+      "term": "convective corona",
       "heading": false
     }
   ],

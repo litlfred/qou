@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-cond-mat-0404617v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "String-net condensation: A physical mechanism for topological phases (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-cond-mat-0404617v2",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:cond-mat/0404617&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-11-25"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-cond-mat-0404617v2",
+    "format": "latex",
+    "url": "https://export.arxiv.org/src/cond-mat/0404617v2",
+    "content_type": "application/gzip",
+    "sha256": "9b78132837bc14f6cc93e892987177858a9544629bfcffd0f217875408c835c3",
+    "bytes": 103647,
+    "fetched": "2026-11-25T15:44:27+00:00",
+    "files": [
+      {
+        "path": "source/files/strnet.bbl",
+        "role": "bbl",
+        "sha256": "cec3a03d682662a15f04b9737453be4599dce60e1dba793d2b3c5b9f4a78da59",
+        "bytes": 15939
+      },
+      {
+        "path": "source/files/strnet.tex",
+        "role": "tex",
+        "sha256": "1a2e9c35af5d98ee86e4fe37fb0a17b4aa02b804bb72b300e3696c1676ebe3b6",
+        "bytes": 116146
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["char_poly_rational","rational_matrix_is_psd","sturm_sequence"]};

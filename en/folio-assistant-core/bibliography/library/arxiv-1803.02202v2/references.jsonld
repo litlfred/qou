@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1803.02202v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Braids, normed division algebras, and Standard Model symmetries",
+      "dcterms:creator": [
+        "Gresnigt, N."
+      ],
+      "dcterms:issued": "D:20180319",
+      "dcterms:identifier": "https://arxiv.org/abs/1803.02202",
+      "dcterms:abstract": "This paper represents a ﬁrst attempt at unifying two promising attempts to understand the origin of the internal symmetries of leptons and quarks. It is shown that each of the four normed division algebras over the reals admits a representation of a circular braid group. For the complex numbers and the quaternions, the represented circular braid groups areB2 and Bc 3, precisely those used to construct leptons and quarks as framed braids in the Helon model of Bilson-Thompson. It is then shown that these framed braids coincide with the states that span the minimal left ideals of the complex (chained) octonions, shown by Furey to describe one generation of leptons and quarks with unbrokenSU (3)c and U(1)em symmetry. The identiﬁcation of basis states of minimal ideals with certain framed braids is possible because the braiding inB2 and Bc 3 in the Helon model are interchangeable. It is shown that the framed braids in the Helon model can be written as pure braid words inBc 3 with trivial braiding inB2, something which is not possible for framed braids in general. arXiv:1803.02202v2 [physics.gen-ph] 16 Mar 2018",
+      "dcterms:source": "library/arxiv-1803.02202v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1803.02202v2"
+    }
+  ]
+}

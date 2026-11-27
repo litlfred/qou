@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-2302.02540v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Linear programming bounds for hyperbolic surfaces (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2302.02540v3",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2302.02540&metadataPrefix=arXiv), <license> element, read 2026-11-25",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2302.02540v3",
+    "format": "latex",
+    "url": "https://export.arxiv.org/src/2302.02540v3",
+    "content_type": "application/gzip",
+    "sha256": "c304870e430fbb4d1d9517b9dcdc127caa55833bfbf90e852286e7cabe24b141",
+    "bytes": 188003,
+    "fetched": "2026-11-25T15:44:43+00:00",
+    "files": [
+      {
+        "path": "source/files/LPbounds.bbl",
+        "role": "bbl",
+        "sha256": "318d11b04e4c37997af8ecc742aa2f889be52c01576739a7a87f495bd29ec627",
+        "bytes": 21867
+      },
+      {
+        "path": "source/files/LPbounds.tex",
+        "role": "tex",
+        "sha256": "541a883d03904788da5f6b3206da6ed8d55ab73d3ffa4e51bf79df7231b78eb2",
+        "bytes": 130973
+      },
+      {
+        "path": "source/files/commands.tex",
+        "role": "tex",
+        "sha256": "8b3742b5e2c2b6068859770b8a6c1bdbf25d87639dc06955db4c0d78a9373242",
+        "bytes": 3730
+      },
+      {
+        "path": "source/files/theorems.tex",
+        "role": "tex",
+        "sha256": "477af80144aa7083f0e8bd7440c4bac7fba961c2fff7638195ee49f894aa7df0",
+        "bytes": 1785
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

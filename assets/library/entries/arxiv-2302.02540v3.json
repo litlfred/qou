@@ -1,0 +1,1364 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2302.02540v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The goal of this paper is to prove new upper bounds on five invariants associated to a\nclosed, oriented, hyperbolic surfaceM:\n(1) itssystolesys(M), the length of any shortest non-contractible closed curve inM;\n(2) itskissing numberkiss(M), the number of homotopy classes of oriented non-\ncontractible closed curves of minimal length inM;\n(3) thefirst positive eigenvalueλ 1(M) (which coincides with thespectral gap) of the\nLaplace–Beltrami operator ∆M onM;\n(4) themultiplicitym 1(M) of the eigenvalueλ 1(M), that is, the dimension of the\ncorresponding eigenspace;\n(5) the numberN small(M), counting m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "LINEAR PROGRAMMING BOUNDS FOR HYPERBOLIC SURFACES\nMAXIME FORTIER BOURQUE AND BRAM PETRI\nAbstract.We adapt linear programming methods from sphere packings to closed hy-\nperbolic surfaces and obtain new upper bounds on their systole, their kissing number, the\nfirst positive eigenvalue of their Laplacian, the multiplicity of their first eigenvalue, and\ntheir number of small eigenvalues. Apart from a few exceptions, the resulting bounds are\nthe current best known both in low genus and as the genus tends to infinity. Our methods\nalso provide lower bounds on the systole (achieved in genus 2 to 7, 14",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "There exists someg 0≥2such that every closed hyperbolic surfaceMof",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "There exists someg 0≥2such that every closed hyperbolic surfaceMof",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-03.md",
+      "narrative": null,
+      "content": "There exists someg 0≥2such that every closed hyperbolic surfaceMof",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-04.md",
+      "narrative": null,
+      "content": "There exists someg 0≥2such that every closed hyperbolic surfaceMof",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-000-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-05.md",
+      "narrative": null,
+      "content": "IfMis a closed hyperbolic surface of genusg≥2, then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Context",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-context.md",
+      "narrative": null,
+      "content": "mannian manifold (with 1/4 replaced by the bottom of the spectrum of the Laplacian on\nthe universal cover ofMin the case ofN small) and their maximization has been studied by\nseveral authors for various classes of manifolds. These shape optimization problems seek\nto find optimal inequalities analogous to the isoperimetric inequality for other geometric\nquantities.\nFor example, if we fix a topological manifold Σ, then maximizing the systole over all\nRiemannian manifoldsMof a given volume that are homeomorphic to Σ is called the\nisosystolic problemand it has been solved for the projective plane",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Organization",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-organization.md",
+      "narrative": null,
+      "content": "the Fourier transform, the Selberg trace formula, the linear programming method, and\nBessel functions. This is followed by one section for each of the five invariants sys, kiss,λ 1,\nm1, andN small. In each of these sections, we first present a general criterion for proving\nupper bounds based on the Selberg trace formula. We then discuss the results that we have\nobtained from this criterion in low genus (or for small systole) using numerical optimization\nand conclude each section by proving an asymptotic bound. In both ranges, we compare\nour bounds with the previous best. The lower bounds on th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Fourier transform",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-2-the-fourier-transform.md",
+      "narrative": null,
+      "content": "The Fourier transform of an integrable functionf:R→Cis defined by\nbf(y) := 1√\n2π\nZ\nR\nf(x)e−iyxdx\nfory∈R. If bfis integrable, then the Fourier inversion theorem says that its Fourier\ntransform is almost everywhere equal tox7→f(−x).\nWe will frequently use the scaling property that fora >0, the Fourier transform of\nx7→f(ax) isy7→ bf(y/a)/a. Iffandgare integrable, then\n[f∗g=\n√\n2πbfbg\nwhere∗denotes the convolution and if bfandbgare also integrable, then\ncfg= 1√\n2π\nbf∗bg.\nWhenfis an even function, which will be the case throughout the paper, its Fourier\ntransform reduces to the cosine transform\nbf(y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Selberg trace formula",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-3-the-selberg-trace-formula.md",
+      "narrative": null,
+      "content": "Given a closed hyperbolic surfaceM(always assumed to be oriented), we list the eigen-\nvalues of its Laplace–Beltrami operator (acting on square-integrable functions) in non-\ndecreasing order\n0 =λ 0(M)<λ 1(M)≤λ 2(M)≤···\nwhere each eigenvalue is repeated according to its multiplicity, i.e., the dimension of the\ncorresponding eigenspace.\nThe set of oriented closed geodesics inMis denoted byC(M). This means that each\nunoriented closed geodesic appears twice inC(M), once for each orientation. The length of\na geodesicγ∈C(M) is denotedℓ(γ) and itsprimitive lengthis denoted Λ(γ). The latter\nis defined",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linear programming",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-4-linear-programming.md",
+      "narrative": null,
+      "content": "Like the linear programming bounds of Cohn and Elkies [CE03] for the density of sphere\npackings, for each of the five invariants sys, kiss,λ 1,m 1, andN small, our criterion will take\nthe following form:\nSuppose thatfis an admissible function such thatfand bfsatisfy certain\nlinear inequalities over certain intervals. Thenfand bfproduce a bound on\nthe given invariant that holds for every closed hyperbolic surface (satisfying\ncertain conditions) in a given genus.\nThis is called “linear programming” because the inequalities are linear in the sense that\nany positive linear combination of functions",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Certifying inequalities on intervals",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-41-certifying-inequalities-on-intervals.md",
+      "narrative": null,
+      "content": "produce our bounds, the end results are rigorous. The reason is that we work with rational\nzeros and polynomials with rational coefficients, so the linear systems involved are solved\nexactly over the rational numbers. The polynomials we get thus have actual double zeros\nrather than approximate ones.\nTo ascertain thatf(x) =p(x 2)e−x2/2≥0 for everyxin a given interval [a,b], we apply\nSturm’s theorem to count the number of distinct roots ofpin that interval and make sure\nthat there are no more than the number of imposed double zeros. This implies that neither\npnorfchanges sign on the interval, an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Certifying error bounds on integrals",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-42-certifying-error-bounds-on-integrals.md",
+      "narrative": null,
+      "content": "bounds is that we have inequalities involving integrals that need to be checked. For exam-\nple, one of our bounds requires that\n(4.1) bf(i/2)≥2(g−1)\nZ ∞\n0\nbf(x)xtanh(πx)dx.\nTo obtain functions that satisfy this inequality, we first compute numerical approximations\nIn of the integrals Z ∞\n0\nL(−1/2)\nn (x2)e−x2/2xtanh(πx)dx.\nIn our linear system of equations, we then impose that bf(i/2) =q(−1/4)e 1/8 is equal to\nρtimes the numerical approximation of 2(g−1)\nR∞\n0\nbf(x)xtanh(πx)dx(given by a linear\ncombination of the approximationsI n), whereρ>1 is some rational number. Technically,\nwe also replacee",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ancillary files",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-008-43-ancillary-files.md",
+      "narrative": null,
+      "content": "we explain how to estimate these integrals in the proof and state the resulting estimate\nthat was obtained using interval arithmetic inSageMath. The calculations behind these es-\ntimates are all contained in theJupyternotebookcertified integrals.ipynbattached\nas an ancillary file to the arXiv version of this paper.\nThen there is one fileverify invariant.ipynbfor each of the invariants we consider.\nEach such file contains a functioninvariant polywhich computes a pair of polynomials\nLINEAR PROGRAMMING BOUNDS FOR HYPERBOLIC SURF ACES 9\n(p,q) such thatf(x) =p(x 2)e−x2/2 and bf(x) =q(x 2)e−x2/2 are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bessel functions",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-009-5-bessel-functions.md",
+      "narrative": null,
+      "content": "Bessel functions were used in [CE03] to obtain a new proof of the second best asymptotic\nupper bound on the density of sphere packings inR n due to Levenshtein [Lev79]. We will\nalso use these functions to obtain our asymptotic bounds. We list some of their properties\nhere for later reference.\nOne of the many equivalent definitions [Wat95, p.40] of theBessel function of the first\nkind of orderαis\nJα(z) :=\n\u0010z\n2\n\u0011α ∞X\nn=0\n(−1)n\nn! Γ(n+α+ 1)\n\u0010z\n2\n\u00112n\nwhenαis not a negative integer, where Γ is the classical gamma function. For non-integer\nordersJ α is a multi-valued function, but by abuse of notati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Systole",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-010-6-systole.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The criterion",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-011-61-the-criterion.md",
+      "narrative": null,
+      "content": "any of its shortest closed geodesics (also called systoles). Our criterion for bounding the\nsystole goes as follows.\nTheorem 6.1.Letg≥2. Suppose thatfis a non-constant admissible function for which\nthere exists anR>0such that\n•f(x)≤0ifx≥R;\n• bf(ξ)≥0for everyξ∈R∪i\n\u0002\n− 1\n2, 1\n2\n\u0003\n;\n• bf(i/2)≥2(g−1)\nR∞\n0\nbf(x)xtanh(πx)dx.\nThensys(M)≤Rfor every closed hyperbolic surfaceMof genusg.\nProof.Suppose that there is a hyperbolic surfaceMof genusgsuch that sys(M)>R. Then\nsys(N)>Rfor every surfaceNin some connected neighborhoodUofMin moduli space.\nLINEAR PROGRAMMING BOUNDS FOR HYPERBOLIC SURF ACES 11\nThis i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/rem-sec-011-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "rem-sec-011-02.md",
+      "narrative": null,
+      "content": "The analogous result for flat tori was proved in [CE03, Theorem 3.2] using a",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/rem-sec-011-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "rem-sec-011-03.md",
+      "narrative": null,
+      "content": "It is easy to see that if the inequality in the third bullet point is strict, then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "Letg≥2. Suppose thatfis a non-constant admissible function for which",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Low genus",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-012-62-low-genus.md",
+      "narrative": null,
+      "content": "optimization are listed in Table 1 for 2≤g≤20. The verification of these values is done\nin the ancillary fileverify systole.ipynb. They are lower than the previous best upper\nbounds except in genus 2 where the optimal bound is 2 arccosh(1+\n√\n2)≈3.057142 [Jen84].\nIn all other genera, the previous best upper bound was Bavard’s inequality [Bav96]\n(6.1) sys(M)≤2 arccosh\n\u0012 1\n2 sin(π/(12g−6))\n\u0013\n,\nwhich comes from a sharp upper bound on the radius of an embedded disk inM.\nWe have also listed the largest recorded value of the systole in some genera. Those listed\nin genus 7, 14, and 17 come from Hurwit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/cor-sec-013-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 19,
+      "target": "cor-sec-013-08.md",
+      "narrative": null,
+      "content": "Letα= 0.559,b >0,c= 2.3726, andκ 0 = 0.1814. Then there exists",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/lem-sec-013-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 19,
+      "target": "lem-sec-013-04.md",
+      "narrative": null,
+      "content": "Letf R be defined as in(6.2)withα∈(0,1),b>0, andc>0. Ifκ n→κ 0∈R",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/lem-sec-013-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 19,
+      "target": "lem-sec-013-05.md",
+      "narrative": null,
+      "content": "For everyα∈(0,1), there exist a constantd α >0such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/lem-sec-013-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 19,
+      "target": "lem-sec-013-06.md",
+      "narrative": null,
+      "content": "If we writeκ = infnκn, then we have thatbhc(y)R2α",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/lem-sec-013-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 19,
+      "target": "lem-sec-013-07.md",
+      "narrative": null,
+      "content": "Letα= 0.559andc= 2.3726. ThenZ ∞",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics",
+      "pageStart": 12,
+      "pageEnd": 19,
+      "target": "../sections/sec-013-63-asymptotics.md",
+      "narrative": null,
+      "content": "asymptotic to π\n12g asg→∞and\narccosh(x) = log(x+\n√\nx2−1) = log(x) + log(2) +o(1)\nasx→∞so that Bavard’s bound (6.1) can be rewritten as\nsys(M)≤2 log\n\u00126g\nπ\n\u0013\n+ 2 log(2) +o(1)\n= 2 log(g) + 2 log\n\u001212\nπ\n\u0013\n+o(1)\n= 2 log(g) + 2.680353...+o(1)\nasg→∞. By comparison, the elementary area bound coming from the fact that a disk\nof radius sys(M)/2 is embedded is\nsys(M)≤4 arcsinh(\np\ng−1)\n= 2 log(g) + 4 log(2) +o(1)\n= 2 log(g) + 2.772588...+o(1)\nasg→∞.\nWe will decrease the additive constant in Bavard’s bound by roughly 0.271, which is\nconsistent with the improvement we have observed in small genus.\nTheorem 6.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/rem-sec-013-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 19,
+      "target": "rem-sec-013-02.md",
+      "narrative": null,
+      "content": "In terms of area, this result means that in large genus, a disk of radius",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/rem-sec-013-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 19,
+      "target": "rem-sec-013-03.md",
+      "narrative": null,
+      "content": "In large genus, the constructions with the fastest growing systole known are",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 19,
+      "target": "thm-sec-013-01.md",
+      "narrative": null,
+      "content": "There exists someg 0≥2such that every closed hyperbolic surfaceMof",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/def-sec-015-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "def-sec-015-03.md",
+      "narrative": null,
+      "content": "Fors>0, we defineK(s) as the infimum of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/lem-sec-015-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "lem-sec-015-05.md",
+      "narrative": null,
+      "content": "The functionK(s)is non-decreasing fors∈[6,∞).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Kissing numbers",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-014-7-kissing-numbers.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The criterion",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-015-71-the-criterion.md",
+      "narrative": null,
+      "content": "of oriented closed geodesics of minimal length. In the literature it is common to consider\nthe quantity 1\n2 kiss(M), which counts the number of unoriented systoles inM. Our criterion\nfor bounding kissing numbers is the same as the one we used in [FBP22] for hyperbolic\nmanifolds in any dimension. We repeat the proof in the surface case for convenience.\nTheorem 7.1.Lets>0and suppose thatfis an admissible function such that\n• bf(ξ)≥0for everyξ∈R∪i\n\u0002\n− 1\n2, 1\n2\n\u0003\n;\n•f(x)≤0wheneverx≥sandf(s)<0.\nThen for every closed hyperbolic surfaceMof genusg≥2such thatsys(M) =swe have\nkiss(M)≤4\n√\n2π(g−1) sinh(s/",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/rem-sec-015-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "rem-sec-015-02.md",
+      "narrative": null,
+      "content": "We could take the value of bf(",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "Lets>0and suppose thatfis an admissible function such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-015-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "thm-sec-015-04.md",
+      "narrative": null,
+      "content": "can then be restated as saying that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-015-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "thm-sec-015-06.md",
+      "narrative": null,
+      "content": ", it remains to prove an upper bound forK(s) whens∈[2 arcsinh(1),6] and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Low genus",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-016-72-low-genus.md",
+      "narrative": null,
+      "content": "subintervals, and then optimize to find a single functionffor each subinterval. One\nsubtlety is that to get an upper bound onK(s) whensbelongs to an interval [a,b], we\nneed an upper bound on\nsinh(s/2)\n−sf(s)\nforsin the same interval. Once we find a candidate upper bound numerically, we appro-\nximate sinh(s/2) ande−s2/2 by Taylor polynomials from the correct direction and then use\nSturm’s theorem to certify that the bound is valid (recall thatf(s) =p(s 2)e−s2/2 for some\npolynomialp).\nIn other words, if we know thatf(s)<0 for everys∈[a,b], then\nsinh(s/2)\n−sf(s) ≤B⇐⇒sinh(s/2) +Bsp(s 2)e−s2/2≤0.\nI",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/cor-sec-017-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "cor-sec-017-04.md",
+      "narrative": null,
+      "content": ", we obtain that there exists someR 0 >0 such thatf(R+bκ)≤0 for every",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/lem-sec-017-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "lem-sec-017-03.md",
+      "narrative": null,
+      "content": "Letfbe as in Proposition 7.5 withα= 0.592,b= 0.981,c= 1 +b 2/4, and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prop-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "prop-sec-017-01.md",
+      "narrative": null,
+      "content": "There exist somes 0 >0such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-017-73-asymptotics.md",
+      "narrative": null,
+      "content": "with a proposition that bounds this quantity in terms of the systole.\nProposition 7.5.There exist somes 0 >0such that\nK(s)<18.355· 2 sinh(s/2)\ns\nfor everys≥s 0. In particular, every closed hyperbolic surfaceMof genusg≥2and\nsystolesys(M)≥s 0 satisfies\nkiss(M)<18.355· 2 sinh(sys(M)/2)\nsys(M) (g−1).\nRemark7.6.This improves upon [FBP22, Remark 4.4], where we obtained the same in-\nequality but with the constant 63.71 instead of 18.355.\nProof.Recall that\nK(s) = 2\n√\n2π 2 sinh(s/2)\ns inf\nf\n\u001a 1\n−f(s)\nZ ∞\n0\nbf(x)xtanh(x)dx\n\u001b\nwhere the infimum is over admissible functionsfsuch thatf(x)≤0 ifx≥s,f(s)<0,\nan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/rem-sec-017-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "rem-sec-017-02.md",
+      "narrative": null,
+      "content": "This improves upon [FBP22, Remark 4.4], where we obtained the same in-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/rem-sec-017-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "rem-sec-017-06.md",
+      "narrative": null,
+      "content": "For some towers of principal congruence covers of arithmetic surfaces, the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-017-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "thm-sec-017-05.md",
+      "narrative": null,
+      "content": "There exists someg 0≥2such that every closed hyperbolic surfaceMof",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "First eigenvalue",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-018-8-first-eigenvalue.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The criterion",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-019-81-the-criterion.md",
+      "narrative": null,
+      "content": "Laplacian onMgoes as follows.\nTheorem 8.1.Letg≥2. Suppose thatfis a non-constant admissible function for which\nthere exists anL>0such that\n•f(x)≥0for allx∈R;\n• bf\n\u0010q\nλ− 1\n4\n\u0011\n≤0wheneverλ≥L;\n• bf(i/2)≤2(g−1)\nR∞\n0\nbf(x)xtanh(πx)dx;\nThenλ 1(M)≤Lfor every hyperbolic surfaceMof genusg.\n26 MAXIME FORTIER BOURQUE AND BRAM PETRI\nProof.Suppose thatMis a hyperbolic surface withλ 1(M)> L. By continuity, the same\ninequality holds for every surfaceNin some neighborhoodUofMin moduli space. Let\nrj(N)∈Cbe such thatr j(N) 2 =λ j(N)− 1\n4. The Selberg trace formula yields\n∞X\nj=0\nbf(rj(N))≤ bf(i/2)\n≤2(g−1)\nZ ∞\n0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/rem-sec-019-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "rem-sec-019-02.md",
+      "narrative": null,
+      "content": "If the inequality in the third bullet point is strict, then the conclusion can be",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "thm-sec-019-01.md",
+      "narrative": null,
+      "content": "Letg≥2. Suppose thatfis a non-constant admissible function for which",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Low genus",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-020-82-low-genus.md",
+      "narrative": null,
+      "content": "optimization are presented in Table 3 for 2≤g≤20 and their verification is done in the\nfileverify lambda.ipynb. Our bounds are smaller than the previous best upper bounds\nin every genus except 2, 3, 4, and 6 where bounds from [KMcP24], [Bon22] or [YY80] are\nbetter.\nSome comments on the examples we used for the lower bounds are in order:\n•Contrary to the other invariants considered in this paper, it is not known if the\nsupremum ofλ 1 is attained. For instance, we do not know if the entries equal to\n1/4 in the table are attained (see below).\n•In genus 2 and 3, the upper bounds from [KMcP24, Bon2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics",
+      "pageStart": 28,
+      "pageEnd": 32,
+      "target": "../sections/sec-021-83-asymptotics.md",
+      "narrative": null,
+      "content": "(8.1)λ 1(M)≤λ 0(Ddiam(M)/2)\nfor any closed hyperbolic surfaceM, whereD R is a hyperbolic disk of radiusR,λ 0(Ω)\nis the smallest Dirichlet eigenvalue of Ω, and diam(M) is the diameter ofM. From this,\nCheng deduces [Che75, Corollary 2.3] the more explicit bound\nλ1(M)≤ 1\n4 +\n\u0012 4π\ndiam(M)\n\u00132\n.\nHowever, this can be improved using an inequality of Gage [Gag80, Theorem 5.2(a)] on\nthe smallest eigenvalue of hyperbolic disks, which states that\n(8.2)λ 0(DR)≤ 1\n4 + π2\nR2− 1\n4 sinh2(R).\nIf we ignore the last term (of smaller order), we obtain the improved inequality\nλ1(M)≤ 1\n4 +\n\u0012 2π\ndiam(M)\n\u00132\n.\nLINEAR P",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/rem-sec-021-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 32,
+      "target": "rem-sec-021-02.md",
+      "narrative": null,
+      "content": "An inequality of Savo [Sav09, Theorem 5.6] states that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/rem-sec-021-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 32,
+      "target": "rem-sec-021-03.md",
+      "narrative": null,
+      "content": "As stated in the introduction, it is still unknown if there exist surfaces with",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/rem-sec-021-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 32,
+      "target": "rem-sec-021-04.md",
+      "narrative": null,
+      "content": "The choice offin the above proof is not at all random. It is proportional to",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 32,
+      "target": "thm-sec-021-01.md",
+      "narrative": null,
+      "content": "There exists someg 0≥2such that every closed hyperbolic surfaceMof",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multiplicity of the first eigenvalue",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-022-9-multiplicity-of-the-first-eigenvalue.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The criterion",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-023-91-the-criterion.md",
+      "narrative": null,
+      "content": "Laplacian on a hyperbolic surfaceMbym 1(M). The following criterion for boundingm 1\nwas first stated and proved in [FBP24, Lemma 3.2] in a slightly more general form.\nTheorem 9.1.LetMbe a closed hyperbolic surface of genusg≥2and suppose thatfis\nan admissible function such that\n•f(x)≥0for allx∈R;\n• bf\n\u0010q\nλ− 1\n4\n\u0011\n≤0wheneverλ≥λ 1(M);\n• bf\n\u0010q\nλ1(M)− 1\n4\n\u0011\n<0.\nThen\nm1(M)≤\nbf(i/2)−2(g−1)\nZ ∞\n0\nbf(x)xtanh(πx)dx\n−bf\n\u0010q\nλ1(M)− 1\n4\n\u0011 .\nProof.Let us writer j(M) =\nq\nλj(M)− 1\n4. The Selberg trace formula tells us that\nbf(i/2) +m 1(M)bf(r 1(M))≥\n∞X\nj=0\nbf(rj(M))\n= 2(g−1)\nZ ∞\n0\nbf(x)xtanh(πx)dx+ 1√\n2π\nX\nγ∈C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "thm-sec-023-01.md",
+      "narrative": null,
+      "content": "LetMbe a closed hyperbolic surface of genusg≥2and suppose thatfis",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/lem-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "lem-sec-024-01.md",
+      "narrative": null,
+      "content": "IfMis a hyperbolic(p,q,r)-triangle surface of area at least",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Low genus",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "../sections/sec-024-92-low-genus.md",
+      "narrative": null,
+      "content": "in Table 5. They improve upon the previous best upper bound of 2g+ 3 from [S´ ev02]\n(which applies to all Schr¨ odinger operators on Riemannian surfaces). In genus 2 and 3,\nour bounds were previously obtained in [FBP24] and we do not repeat these calculations\nin the ancillary fileverify multiplicity.ipynbthat certifies the other values.\nWe now discuss lower bounds. In every genusg≥3, Colbois and Colin de Verdi` ere\n[CCdV88] constructed closed hyperbolic surfaces satisfyingm 1(M) =\n\u0004 1\n2\n\u0000\n1 +√8g+ 1\n\u0001\u0005\n.\nThis has the same order of growth as the maximum of\n\u0004 1\n2\n\u0000\n5 +√48g+ 1\n\u0001\u0005\namong all\nclosed,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prop-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 39,
+      "target": "prop-sec-025-01.md",
+      "narrative": null,
+      "content": "For everyp 1,p 2∈(j 0,π], there exists a constantCand someg 0≥2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics",
+      "pageStart": 36,
+      "pageEnd": 39,
+      "target": "../sections/sec-025-93-asymptotics.md",
+      "narrative": null,
+      "content": "start by proving a sublinear bound onm 1 under the assumption thatλ 1 is fairly large. In\nthe statement below,j α stands for the first positive zero of the Bessel functionJ α. The\nk-th positive zero is denotedj α,k.\nLINEAR PROGRAMMING BOUNDS FOR HYPERBOLIC SURF ACES 37\nProposition 9.3.For everyp 1,p 2∈(j 0,π], there exists a constantCand someg 0≥2\nsuch that ifg≥g 0 andMis a closed hyperbolic surface of genusgwith\nλ1(M)∈\n\"\n1\n4 +\n\u0012 p1\nlog(g)\n\u00132\n, 1\n4 +\n\u0012 p2\nlog(g)\n\u00132#\n,\nthenm 1(M)≤Cg/log(g) 3.\nProof.We start by picking two constantsαandcthat only depend onp 1 andp 2 (and not\nong).\nFor everyk∈N,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/rem-sec-025-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 39,
+      "target": "rem-sec-025-02.md",
+      "narrative": null,
+      "content": "It is easy to modify the proof of Theorem 9.1 to bound the total number of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-025-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 39,
+      "target": "thm-sec-025-03.md",
+      "narrative": null,
+      "content": "There exists someg 0≥2such that every closed hyperbolic surfaceMof",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Small eigenvalues",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../sections/sec-026-10-small-eigenvalues.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The criterion",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-027-101-the-criterion.md",
+      "narrative": null,
+      "content": "N[0,L](M) of eigenvalues of ∆ M in the interval [0,L] for anyL>0.\nTheorem 10.1.LetL,R>0and suppose thatf:R→Ris an admissible function such\nthat\n•f(x)≤0for everyx≥R;\n• bf(ξ)≥0for everyξ∈R;\n• bf(\np\nλ−1/4)≥1for everyλ∈[0,L];\nThen every closed hyperbolic surfaceMof genusg≥2withsys(M)≥Rsatisfies\nN[0,L](M)≤2(g−1)\nZ ∞\n0\nbf(x)xtanh(πx)dx+ 1− bf(i/2).\nProof.By hypothesis, bf(rj(M)) is at least 1 for all eigenvaluesλ j(M) in the interval [0,L]\nand non-negative at all eigenvalues. Also note thatλ 0(M) = 0∈[0,L] corresponds to the\nterm bf(i/2). We thus have\nN[0,L](M)−1 + bf(i/2)≤\n∞X\nj=0\nbf(rj(M))\n= 2(g−1)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "thm-sec-027-01.md",
+      "narrative": null,
+      "content": "LetL,R>0and suppose thatf:R→Ris an admissible function such",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "../sections/sec-028-102-asymptotics.md",
+      "narrative": null,
+      "content": "because they are easier to obtain than for the other invariants and they give us a point of\ncomparison for the numerics.\nTheorem 10.2.IfMis a closed hyperbolic surface of genusg≥2, then\nNsmall(M)<min\n\u001224π2(g−1)\nsys(M) 3 , 16(g−1)\nsys(M) 2\n\u0013\n.\nProof.Letf:R→Rbe an even, non-negative, admissible (hence continuous), positive-\ndefinite function supported in [−1,1] normalized so that bf(0) = 1.\nWe then use the functionf R(x) =f(x/R)/Rin Theorem 10.1 withL= 1/4 and\nR= sys(M). The first and second bullet points in the statement of the theorem are\nsatisfied by hypothesis onfwhile the third one follows",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/rem-sec-028-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "rem-sec-028-02.md",
+      "narrative": null,
+      "content": "Note that 24π 2/x3 <16/x 2 if and only ifx>3π 2/2≈14.8044 (forx>0).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/thm-sec-028-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "thm-sec-028-01.md",
+      "narrative": null,
+      "content": "IfMis a closed hyperbolic surface of genusg≥2, then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/conj-sec-030-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "conj-sec-030-01.md",
+      "narrative": null,
+      "content": "There exist constantsc 1 >c 2 such that the smallest upper bound on the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical results for small systole",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../sections/sec-029-103-numerical-results-for-small-systole.md",
+      "narrative": null,
+      "content": "yields better results than Theorem 10.2 when the systole is relatively small. For example,\nthe resulting bounds show thatN small(M)<2g−2 as soon as sys(M)≥2.317 and that\nNsmall(M)< g−1 if sys(M)≥3.234. A list of lower bounds on sys(M) and the upper\nbounds they imply onN small(M)/(2g−2) is given in Table 6. The verification of these\nvalues is done in the ancillary fileverify nsmall.ipynb. To produce the plot in Figure 2a,\nwe used these values as well as the bounds produced at many other points and took a spline\nthrough this list of points. Thus, the plot itself is not rigorous, but the table is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ramanujan surfaces",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "../sections/sec-030-104-ramanujan-surfaces.md",
+      "narrative": null,
+      "content": "hyperbolic surfaceMof finite area isRamanujanifλ 1(M)≥1/4. We will also say thatM\nisstrictly Ramanujanifλ 1(M)>1/4. Selberg’s eigenvalue conjecture [Sel65] states that\nall congruence covers of the modular curve are Ramanujan (hence such surfaces could also\nbe calledSelberg). A related question is whether there exist closed Ramanujan surfaces in\nevery genus (see [Mon15, Question 1.1] and [Wri20, Problem 10.4]). Thanks to the work of\nHide and Magee [HM23] (see also [AM25, HMT25, MPvH25]), we now know that in large\n44 MAXIME FORTIER BOURQUE AND BRAM PETRI\ngenus, there exist closed surfaces that a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.02540v3/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 45,
+      "pageEnd": 49,
+      "target": "../sections/sec-031-references.md",
+      "narrative": null,
+      "content": "[Ada02] J. Adams. Character tables for GL(2), SL(2), PGL(2) and PSL(2) over a finite field. Un-\npublished note, www2.math.umd.edu/ jda/characters/characters.pdf, 2002.\n[AM99] C. Adams and F. Morgan. Isoperimetric curves on hyperbolic surfaces.Proc. Amer. Math.\nSoc., 127(5):1347–1356, 1999.\n[AM23] N. Anantharaman and L. Monk. Friedman–Ramanujan functions in random hyperbolic\ngeometry and application to spectral gaps. Preprint, arXiv:2304.02678, 2023.\n[AM25] N. Anantharaman and L. Monk. Friedman–Ramanujan functions in random hyperbolic\ngeometry and application to spectral gaps II. Preprint, arXi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

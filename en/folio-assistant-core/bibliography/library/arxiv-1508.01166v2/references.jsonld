@@ -1,0 +1,36 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1508.01166v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Discrete exterior calculus discretization of incompressible Navier-Stokes equations over surface simplicial meshes",
+      "dcterms:creator": [
+        "Mohameda, Mamdouh S.",
+        "1",
+        "∗",
+        "Hiranib, Anil N.",
+        "Samtaneya, Ravi"
+      ],
+      "dcterms:issued": "D:20160212",
+      "dcterms:identifier": "https://arxiv.org/abs/1508.01166",
+      "dcterms:abstract": "A conservative discretization of incompressible Navier-Stokes equations is de- veloped based on discrete exterior calculus (DEC). A distinguishing feature of our method is the use of an algebraic discretization of the interior product op- erator and a combinatorial discretization of the wedge product. The governing equations are ﬁrst rewritten using the exterior calculus notation, replacing vector calculus diﬀerential operators by the exterior derivative, Hodge star and wedge product operators. The discretization is then carried out by substituting with the corresponding discrete operators based on the DEC framework. Numerical exper- iments for ﬂows over surfaces reveal a second order accuracy for the developed scheme when using structured-triangular meshes, and ﬁrst order accuracy for oth- erwise unstructured meshes. By construction, the method is conservative in that both mass and vorticity are conserved up to machine precision. The relative error in kinetic energy for inviscid ﬂow test cases converges in a second order fashion with both the mesh size and the time step.",
+      "dcterms:source": "library/arxiv-1508.01166v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1508.01166v2"
+    }
+  ]
+}

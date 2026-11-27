@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-1507.06276v2/sections/sec-029",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Construction of the universal K-matrix",
+  "pageStart": 36,
+  "pageEnd": 37,
+  "contains": [
+    "library/arxiv-1507.06276v2/blocks/prose-sec-029"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1507.06276v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1507.06276v2",
+  "provenance": "ingested"
+}

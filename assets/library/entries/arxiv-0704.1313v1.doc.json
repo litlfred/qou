@@ -1,0 +1,724 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0704.1313v1",
+  "title": "arxiv-0704.1313v1",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Proof",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-proof"
+    },
+    {
+      "level": 2,
+      "title": "Representability of graphs as the intersection graphs of chord diagrams",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-representability-of-graphs-as-the-intersection-g"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem ??",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Lie algebra weight systems and intersection graphs",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-lie-algebra-weight-systems-and-intersection-grap"
+    },
+    {
+      "level": 2,
+      "title": "Weight systems via Lie algebras",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-weight-systems-via-lie-algebras"
+    },
+    {
+      "level": 2,
+      "title": "The 4-bialgebra of graphs",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-the-4-bialgebra-of-graphs"
+    },
+    {
+      "level": 2,
+      "title": "The sl(2) weight system",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-the-sl2-weight-system"
+    },
+    {
+      "level": 2,
+      "title": "The gl(1|1) weight system",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-the-gl11-weight-system"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 80,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mutant knots",
+          "heading": false
+        },
+        {
+          "term": "disting",
+          "heading": false
+        },
+        {
+          "term": "interse",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0704.1313v1 [math.GT] 10 Apr 2007 Mutant knots and intersection graphs S. V. Chmutov ∗, S. K. Lando † April 10, 2007 Abstract We prove that if a ﬁnite order knot invariant does not disting uish mutant knots, then the corresponding weight system depends on the interse ction graph of a chord diagram rather than on the diagram itself. The convers e statement is easy and well known. We discuss relationship between",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0704.1313v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 754,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "distinguish mutants",
+          "heading": false
+        },
+        {
+          "term": "chord diagrams",
+          "heading": false
+        },
+        {
+          "term": "mutant knots",
+          "heading": false
+        },
+        {
+          "term": "vassiliev invariants",
+          "heading": false
+        },
+        {
+          "term": "intersection graph",
+          "heading": false
+        },
+        {
+          "term": "weight system",
+          "heading": false
+        },
+        {
+          "term": "singular knot",
+          "heading": false
+        },
+        {
+          "term": "order knot",
+          "heading": false
+        }
+      ],
+      "extract": "Below, we use standard notions of the theory of ﬁnite order, or Va ssiliev, invariants of knots in 3-space; their deﬁnitions can be found, for example, in [ 6] or [14]. All knots are assumed to be oriented. Two knots are said to be mutant if they diﬀer by a rotation/reﬂection of a tangle with four endpoints; if necessary, the orientation inside the tangle may be replaced by the opposite one. Here is a famous example",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-proof",
+      "number": null,
+      "title": "Proof",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-representability-of-graphs-as-the-intersection-g",
+      "number": null,
+      "title": "Representability of graphs as the intersection graphs of chord diagrams",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 1573,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chord diagrams",
+          "heading": true
+        },
+        {
+          "term": "intersection graphs",
+          "heading": true
+        },
+        {
+          "term": "marked chord",
+          "heading": false
+        },
+        {
+          "term": "another chord",
+          "heading": false
+        },
+        {
+          "term": "bipartite graph",
+          "heading": false
+        },
+        {
+          "term": "prime graph",
+          "heading": false
+        },
+        {
+          "term": "complete graph",
+          "heading": false
+        },
+        {
+          "term": "canonical decomposition",
+          "heading": false
+        }
+      ],
+      "extract": "chord diagrams Not every graph can be represented as the intersection graph of a chord diagram. For example, the following graphs are not intersection graphs. A characterization of those graphs that can be realized as interse ction graphs is given by an elegant theorem of A. Bouchet [4]. On the other hand, distinct diagrams may have coinciding intersectio n graphs. For example, next three diagrams have the same",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-proof-of-theorem",
+      "number": null,
+      "title": "Proof of Theorem ??",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 351,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chord diagram",
+          "heading": false
+        },
+        {
+          "term": "singular knot",
+          "heading": false
+        },
+        {
+          "term": "double points",
+          "heading": false
+        },
+        {
+          "term": "knot representing",
+          "heading": false
+        },
+        {
+          "term": "obtain singular",
+          "heading": false
+        },
+        {
+          "term": "arcs",
+          "heading": false
+        },
+        {
+          "term": "share",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose we have a Vassiliev knot invariant v of order at most n that does not dis- tinguish mutant knots. Let D1 and D2 be chord diagrams with n chords whose intersection graphs coincide. We are going to prove that the values of the weight system of v on D1 and D2 are equal. By Theorem 2, it is enough to consider the case when D1 and D2 diﬀer by a single mutation in a share S. Let K1 be a singular knot with n double",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-lie-algebra-weight-systems-and-intersection-grap",
+      "number": null,
+      "title": "Lie algebra weight systems and intersection graphs",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 388,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weight systems",
+          "heading": true
+        },
+        {
+          "term": "intersection graphs",
+          "heading": true
+        },
+        {
+          "term": "lie algebra",
+          "heading": true
+        },
+        {
+          "term": "universal weight",
+          "heading": false
+        },
+        {
+          "term": "lie superalgebra",
+          "heading": false
+        },
+        {
+          "term": "systems associated",
+          "heading": false
+        },
+        {
+          "term": "chord",
+          "heading": false
+        },
+        {
+          "term": "matroid",
+          "heading": false
+        }
+      ],
+      "extract": "and intersection graphs Kontsevich [12] generalized a construction of Bar-Natan [2] of we ight systems deﬁned by a Lie algebra and its representation to a universal weight system , with values in the universal enveloping algebra of the Lie algebra. In [18], Vaintro b extended this construction to Lie superalgebras. Our main goal in this section is to prove Theorem 3 The universal weight systems associated to the Lie",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-weight-systems-via-lie-algebras",
+      "number": null,
+      "title": "Weight systems via Lie algebras",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 469,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chord diagram",
+          "heading": false
+        },
+        {
+          "term": "universal enveloping",
+          "heading": false
+        },
+        {
+          "term": "weight",
+          "heading": true
+        },
+        {
+          "term": "enveloping algebra",
+          "heading": false
+        },
+        {
+          "term": "lie",
+          "heading": true
+        },
+        {
+          "term": "arc diagram",
+          "heading": false
+        },
+        {
+          "term": "weight system",
+          "heading": false
+        },
+        {
+          "term": "corresponding universal",
+          "heading": false
+        }
+      ],
+      "extract": "Our approach follows that of Kontsevich in [12]. In order to constru ct a weight system, we need a complex Lie algebra endowed with a nondegenerate invarian t bilinear form (·, ·). The invariance requirement means that ( x, [y, z ]) = ([ x, y ], z ) for any three elements x, y, z in the Lie algebra. Pick an orthonormal basis a1, . . . , a d, (ai, a j) = δij, d being the dimension of the Lie algebra. Any chord",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-the-4-bialgebra-of-graphs",
+      "number": null,
+      "title": "The 4-bialgebra of graphs",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 391,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bialgebra",
+          "heading": true
+        },
+        {
+          "term": "vertices adjacent",
+          "heading": false
+        },
+        {
+          "term": "graphs",
+          "heading": true
+        },
+        {
+          "term": "graph obtained",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "gab",
+          "heading": false
+        },
+        {
+          "term": "chord",
+          "heading": false
+        },
+        {
+          "term": "cocommutative",
+          "heading": false
+        }
+      ],
+      "extract": "By a graph, we mean a ﬁnite undirected graph without loops and multip le edges. Let Gn denote the vector space freely spanned over C by all graphs with n vertices, G0 = C being spanned by the empty graph. The direct sum G = G0 ⊕ G1 ⊕ G2 ⊕ . . . carries a natural structure of a commutative cocommutative gra ded Hopf algebra. The multiplication in this Hopf algebra is induced by the disjoint union of g raphs, and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-the-sl2-weight-system",
+      "number": null,
+      "title": "The sl(2) weight system",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 873,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chord diagram",
+          "heading": false
+        },
+        {
+          "term": "weight system",
+          "heading": true
+        },
+        {
+          "term": "whitney twist",
+          "heading": false
+        },
+        {
+          "term": "intersection graph",
+          "heading": false
+        },
+        {
+          "term": "universal weight",
+          "heading": false
+        },
+        {
+          "term": "graph obtained",
+          "heading": false
+        },
+        {
+          "term": "matroid",
+          "heading": false
+        },
+        {
+          "term": "share",
+          "heading": false
+        }
+      ],
+      "extract": "Our treatment of the universal weight system associated with the Lie algebra sl(2) is based on the recurrence formula for computing the value of this w eight system on chord diagrams due to Chmutov and Varchenko [7]. The recurrence states that if a chord diagram contains a leaf, that is, a chord intersecting only one other chord, then the value of the sl(2) universal weight system on the diagram is ( c − 1/ 2) times",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-the-gl11-weight-system",
+      "number": null,
+      "title": "The gl(1|1) weight system",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 978,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conway graph",
+          "heading": false
+        },
+        {
+          "term": "framed conway",
+          "heading": false
+        },
+        {
+          "term": "vassiliev knot",
+          "heading": false
+        },
+        {
+          "term": "chord diagrams",
+          "heading": false
+        },
+        {
+          "term": "graph invariant",
+          "heading": false
+        },
+        {
+          "term": "weight system",
+          "heading": true
+        },
+        {
+          "term": "circle graphs",
+          "heading": false
+        },
+        {
+          "term": "recognizing circle",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁne the (unframed) Conway graph invariant with values in the ring of polynomi- als C[y] in one variable y in the following way. We set it equal to ( −y)n/2 on graphs with n vertices if the adjacency matrix of the graph is nondegenerate, a nd 0 otherwise. Recall that the adjacency matrix AG of a graph G with n vertices is an n × n-matrix with entries in Z2 obtained as follows. We choose an arbitrary numbering of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "chord diagram",
+      "heading": false
+    },
+    {
+      "term": "chord dia",
+      "heading": false
+    },
+    {
+      "term": "obtain chord",
+      "heading": false
+    },
+    {
+      "term": "marked chord",
+      "heading": false
+    },
+    {
+      "term": "another chord",
+      "heading": false
+    },
+    {
+      "term": "intersection graph",
+      "heading": false
+    },
+    {
+      "term": "conway graph",
+      "heading": false
+    },
+    {
+      "term": "circle graph",
+      "heading": false
+    },
+    {
+      "term": "graph invariant",
+      "heading": false
+    },
+    {
+      "term": "weight system",
+      "heading": true
+    },
+    {
+      "term": "intersectio graphs",
+      "heading": false
+    },
+    {
+      "term": "universal weight",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p11); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0704.1313v1"
+  }
+}

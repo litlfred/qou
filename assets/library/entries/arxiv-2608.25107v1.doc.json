@@ -521,8 +521,8 @@
           "heading": false
         },
         {
-          "term": "ground-state",
-          "heading": true
+          "term": "stored",
+          "heading": false
         }
       ],
       "extract": "[]{#sec:adonis_nucleus label=\"sec:adonis_nucleus\"} The target nucleus is described by a spectral function, the probability density for finding the struck nucleon with momentum $|\\mathbf{p}|$ and removal energy $E$ [@Isaacson:2020wlx]. At generation, the struck nucleon is sampled from the tabulated spectral function by importance sampling, with density proportional to $|\\mathbf{p}|^2 S(|\\mathbf{p}|,E)$, and its",

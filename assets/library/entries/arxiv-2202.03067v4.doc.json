@@ -1,0 +1,1727 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2202.03067v4",
+  "title": "arxiv-2202.03067v4",
+  "variant": "pdf",
+  "pages": 43,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "Jet bundles JkA over a noncommutative algebra to order 3",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-jet-bundles-jka-over-a-noncommutative-algebra"
+    },
+    {
+      "level": 2,
+      "title": "First and second order jet bundles over a noncommutative algebra",
+      "number": "3.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-31-first-and-second-order-jet-bundles-over-a-non"
+    },
+    {
+      "level": 2,
+      "title": "Third order jets bundle over a noncommutative algebra",
+      "number": "3.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-32-third-order-jets-bundle-over-a-noncommutative"
+    },
+    {
+      "level": 1,
+      "title": "General jet bundle JkA over a noncommutative algebra",
+      "number": "4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-4-general-jet-bundle-jka-over-a-noncommutative-a"
+    },
+    {
+      "level": 2,
+      "title": "Higher order Leibniz rules",
+      "number": "4.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-41-higher-order-leibniz-rules"
+    },
+    {
+      "level": 2,
+      "title": "Jet bimodules JkA",
+      "number": "4.2",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-42-jet-bimodules-jka"
+    },
+    {
+      "level": 2,
+      "title": "Reduced jet bundle",
+      "number": "4.3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-43-reduced-jet-bundle"
+    },
+    {
+      "level": 1,
+      "title": "Jets JkE for a vector bundle",
+      "number": "5",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-5-jets-jke-for-a-vector-bundle"
+    },
+    {
+      "level": 2,
+      "title": "First and second order jet bundles for the vector bundle case",
+      "number": "5.1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-51-first-and-second-order-jet-bundles-for-the-ve"
+    },
+    {
+      "level": 2,
+      "title": "Higher order Leibniz rules for the JkE case",
+      "number": "5.2",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-52-higher-order-leibniz-rules-for-the-jke-case"
+    },
+    {
+      "level": 2,
+      "title": "Higher Jet bundles for a generic bimodule E",
+      "number": "5.3",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-53-higher-jet-bundles-for-a-generic-bimodule-e"
+    },
+    {
+      "level": 1,
+      "title": "Construction of noncommutative examples",
+      "number": "6",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-6-construction-of-noncommutative-examples"
+    },
+    {
+      "level": 2,
+      "title": "The algebra M2(C) with its 2D calculus.",
+      "number": "6.1",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-61-the-algebra-m2c-with-its-2d-calculus"
+    },
+    {
+      "level": 2,
+      "title": "Functions on the group S3",
+      "number": "6.2",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-62-functions-on-the-group-s3"
+    },
+    {
+      "level": 2,
+      "title": "Bicrossproduct Minkowski spacetime in 1+1 dimensions with its 2D calculus",
+      "number": "6.3",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-63-bicrossproduct-minkowski-spacetime-in-11-dime"
+    },
+    {
+      "level": 2,
+      "title": "The quantum group Cq[SL2]",
+      "number": "6.4",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-64-the-quantum-group-cqsl2"
+    },
+    {
+      "level": 2,
+      "title": "Constructions for J3E",
+      "number": "6.5",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-65-constructions-for-j3e"
+    },
+    {
+      "level": 1,
+      "title": "Concluding remarks",
+      "number": "7",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-7-concluding-remarks"
+    },
+    {
+      "level": 1,
+      "title": "Declaration",
+      "number": null,
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-declaration"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jet bundles",
+          "heading": false
+        },
+        {
+          "term": "braid relations",
+          "heading": false
+        },
+        {
+          "term": "rd-order",
+          "heading": false
+        },
+        {
+          "term": "bicrossproduct",
+          "heading": false
+        }
+      ],
+      "extract": "QUANTUM JET BUNDLES SHAHN MAJID AND FRANCISCO SIM ˜AO Abstract. We formulate a notion of jet bundles over a possibly noncommutative algebra A equipped with a torsion free connection. Among the conditions needed for 3rd-order jets and above is that the connection also be ﬂat and its ‘generalised braiding tensor’ σ ∶Ω1⊗A Ω1 → Ω1⊗A Ω1 obey the Yang-Baxter equation or braid relations. We also cover the case of jet",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2202.03067v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "4",
+      "words": 2056,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jet prolongation",
+          "heading": false
+        },
+        {
+          "term": "jet bundle",
+          "heading": false
+        },
+        {
+          "term": "quantum jet",
+          "heading": false
+        },
+        {
+          "term": "split jet",
+          "heading": false
+        },
+        {
+          "term": "dga alone",
+          "heading": false
+        },
+        {
+          "term": "prolongation map",
+          "heading": false
+        },
+        {
+          "term": "prolongation maps",
+          "heading": false
+        },
+        {
+          "term": "bimodule connection",
+          "heading": false
+        }
+      ],
+      "extract": "Noncommutative geometry is the idea that geometric constructions can be extended to the case where the ‘coordinate algebra’A is potentially noncommutative. Originally motivated by the quantisation of phase spaces in quantum mechanics, a more recent motivation is the hypothesis that spacetime itself is better modelled by noncommutative coordinates due to quantum gravity eﬀects. The most well-established approach,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 44,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "acknowledgements",
+          "heading": true
+        },
+        {
+          "term": "noohi",
+          "heading": false
+        },
+        {
+          "term": "months",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowledgements. We thank B. Noohi and the authors of [11] for helpful comments on our ﬁrst arXiv preprint version in relation to [2] and to connection-independence. The work [11] appeared some months later and provides an interesting more general categorical construction as ‘jet endofunctors’.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 1177,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bimodule connection",
+          "heading": false
+        },
+        {
+          "term": "bimodule maps",
+          "heading": false
+        },
+        {
+          "term": "braided category",
+          "heading": false
+        },
+        {
+          "term": "generalised braiding",
+          "heading": false
+        },
+        {
+          "term": "left-module map",
+          "heading": false
+        },
+        {
+          "term": "left connection",
+          "heading": false
+        },
+        {
+          "term": "leibniz rule",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        }
+      ],
+      "extract": "The general results in the paper work over an ﬁeldk. All algebras are assumed unital. Here we recall the elements we need from noncommutative geometry in the constructive bimodule-based approach. More details are in [4] and in the wider literature cited therein. By a ﬁrst order diﬀerential algebra, we mean A equipped with an A-bimodule Ω 1 (so the left and right actions commute) together with a bimodule derivation d",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-jet-bundles-jka-over-a-noncommutative-algebra",
+      "number": "3",
+      "title": "Jet bundles JkA over a noncommutative algebra to order 3",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 146,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jet",
+          "heading": true
+        },
+        {
+          "term": "noncommutative algebra",
+          "heading": true
+        },
+        {
+          "term": "bimodule",
+          "heading": false
+        },
+        {
+          "term": "bundles",
+          "heading": true
+        }
+      ],
+      "extract": "A over a noncommutative algebra to order 3 In this section we construct jet bundles or more precisely their sections as ‘jet bimodule’ Jk A for k ≤3 over a potentially noncommutative algebra A equipped with a diﬀerential graded algebra (Ω, d). These low order cases allow us to see explicitly how the progressively stronger geometric data emerge and also provide a template for the general case in Section 4. For J 2 A,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-31-first-and-second-order-jet-bundles-over-a-non",
+      "number": "3.1",
+      "title": "First and second order jet bundles over a noncommutative algebra",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 899,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jet",
+          "heading": true
+        },
+        {
+          "term": "jet bimodule",
+          "heading": false
+        },
+        {
+          "term": "nd-order jet",
+          "heading": false
+        },
+        {
+          "term": "bimodule map",
+          "heading": false
+        },
+        {
+          "term": "bimodule connection",
+          "heading": false
+        },
+        {
+          "term": "bullet actions",
+          "heading": false
+        },
+        {
+          "term": "free bimodule",
+          "heading": false
+        },
+        {
+          "term": "right bullet",
+          "heading": false
+        }
+      ],
+      "extract": "1st-order jet bimodule and jet prolongation map as J 1 A =A⊕Ω1, j 1(s) =s+ ds, wheres∈A is prolonged toj1(s) ∈J 1 A. Here, the ﬁrst order derivatives of s are encoded in j1(s) though ds. The left and right bullet actions of a∈A on J 1 A are deﬁned on each degree as a●1s= (a+ da)s, s ●1a=s(a+ da), a●1ω =aω, ω ●1a=ωa, where ω ∈Ω1. Here and in general, we use ●k to denote the bimodule actions of A on Jk A. It follows",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-32-third-order-jets-bundle-over-a-noncommutative",
+      "number": "3.2",
+      "title": "Third order jets bundle over a noncommutative algebra",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 13,
+      "labelStart": "8",
+      "labelEnd": "13",
+      "words": 1932,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rd-order leibniz",
+          "heading": false
+        },
+        {
+          "term": "leibniz compatibility",
+          "heading": false
+        },
+        {
+          "term": "bimodule connection",
+          "heading": false
+        },
+        {
+          "term": "bimodule map",
+          "heading": false
+        },
+        {
+          "term": "leibniz rule",
+          "heading": false
+        },
+        {
+          "term": "extendable case",
+          "heading": false
+        },
+        {
+          "term": "certain bimodule",
+          "heading": false
+        },
+        {
+          "term": "leibniz properties",
+          "heading": false
+        }
+      ],
+      "extract": "A which is considerably more involved than J 1 A, J 2 A, and will lay the groundwork for the general case. Here we have to make further assumptions, which we will illustrate and motivate during this subsection. These are presented in Fig. 1 using the diagrammatic notion where maps are read downwards, as discussed at the end of Section 2. Recall that we denoted the wedge product by a join, ∇by a splitting and its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-general-jet-bundle-jka-over-a-noncommutative-a",
+      "number": "4",
+      "title": "General jet bundle JkA over a noncommutative algebra",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 459,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "idk idn",
+          "heading": false
+        },
+        {
+          "term": "noncommutative algebra",
+          "heading": true
+        },
+        {
+          "term": "disp",
+          "heading": false
+        },
+        {
+          "term": "uni22ef",
+          "heading": false
+        },
+        {
+          "term": "tensor factors",
+          "heading": false
+        },
+        {
+          "term": "product connections",
+          "heading": false
+        },
+        {
+          "term": "jet",
+          "heading": true
+        },
+        {
+          "term": "alt",
+          "heading": false
+        }
+      ],
+      "extract": "A over a noncommutative algebra We are now ready to construct bimodules Jk A over a possibly noncommutative algebra A for any k. Following the pattern in Section 3, we deﬁne the space of quantum symmetric k-forms Ωk S as the joint kernel of Ω 1⊗Ak = Ω1⊗A/uni22EF⊗A Ω1 when applying ∧in any two adjacent places Ωk S ∶=/uni22C2.disp i<k ker/braceleft.alt3∧i∶Ω1⊗Ak→Ω1⊗A(i−1)⊗ A Ω2⊗ A Ω1⊗A(k−i−1)/braceright.alt3 where ∧i",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-41-higher-order-leibniz-rules",
+      "number": "4.1",
+      "title": "Higher order Leibniz rules",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 19,
+      "labelStart": "14",
+      "labelEnd": "19",
+      "words": 2180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alt bracketleft",
+          "heading": false
+        },
+        {
+          "term": "alt3id bracketleft",
+          "heading": false
+        },
+        {
+          "term": "alt parenleft",
+          "heading": false
+        },
+        {
+          "term": "alt parenright",
+          "heading": false
+        },
+        {
+          "term": "disp bracketleft",
+          "heading": false
+        },
+        {
+          "term": "alt braceleft",
+          "heading": false
+        },
+        {
+          "term": "alt braceright",
+          "heading": false
+        },
+        {
+          "term": "alt idm",
+          "heading": false
+        }
+      ],
+      "extract": "and establish their key properties. Lemma 4.1. Let∇be a torsion free, ∧-compatible bimodule connection. Then ∇n restricts to a bimodule connection on Ωn S. If in addition ∇is ﬂat then im∇n ⊆Ωn S. Proof. We taken≥3 as earlier cases are clear or covered in Section 3. For the 1st assertion, we have∧i∇n = 0 on Ωn S for i ≥3 by using the original deﬁnition of ∇n; for the ﬁrst term this acts commutes to act on the later",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-42-jet-bimodules-jka",
+      "number": "4.2",
+      "title": "Jet bimodules JkA",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 805,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "disp summation",
+          "heading": false
+        },
+        {
+          "term": "jet",
+          "heading": true
+        },
+        {
+          "term": "bimodule map",
+          "heading": false
+        },
+        {
+          "term": "uni22ef",
+          "heading": false
+        },
+        {
+          "term": "a-bimodule",
+          "heading": false
+        },
+        {
+          "term": "pro-object",
+          "heading": false
+        },
+        {
+          "term": "same manner",
+          "heading": false
+        },
+        {
+          "term": "uni",
+          "heading": false
+        }
+      ],
+      "extract": "A. With the above theory of higher order derivatives on Ω 1⊗An and braided binomials in hand, we have now done all the work to write down the jet bimodules of any order over a possibly noncommutative algebra A. Theorem 4.8. Let ∇be a torsion free, ﬂat, ∧-compatible, extendable and Leibniz-compatible bimodule connection on Ω1 as shown in Fig. 1(a)-(e). Then Jk A = k /uni2295.big.disp i=0 Ωi S =A⊕Ω1 S⊕/uni22EF⊕Ωk S, j",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-43-reduced-jet-bundle",
+      "number": "4.3",
+      "title": "Reduced jet bundle",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 388,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jet",
+          "heading": true
+        },
+        {
+          "term": "bimodule map",
+          "heading": false
+        },
+        {
+          "term": "disp",
+          "heading": false
+        },
+        {
+          "term": "reduced",
+          "heading": true
+        },
+        {
+          "term": "braid relations",
+          "heading": false
+        },
+        {
+          "term": "ker",
+          "heading": false
+        },
+        {
+          "term": "obeys",
+          "heading": false
+        },
+        {
+          "term": "bundle",
+          "heading": true
+        }
+      ],
+      "extract": "A as built on the degree ≤k part of a diﬀerent graded algebra, namely the ‘braided-symmetric algebra’ Sσ(Ω1) associated to σ obeying the braid relations as is the case in Theorem 4.8. This algebra is deﬁned as Sσ(Ω1) = TAΩ1 ⊕k ker[k,σ ]! = TAΩ1 ⊕k ker∑π∈Skσi1/uni22EFσil(π) where, for the second expression, we write π =si1/uni22EFsil(π) of length l(π) as a product of simple reﬂections si = (i,i + 1) and σi denotes σ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-5-jets-jke-for-a-vector-bundle",
+      "number": "5",
+      "title": "Jets JkE for a vector bundle",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 358,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vector bundle",
+          "heading": true
+        },
+        {
+          "term": "ﬂat connection",
+          "heading": false
+        },
+        {
+          "term": "bimodule map",
+          "heading": false
+        },
+        {
+          "term": "leibniz",
+          "heading": false
+        },
+        {
+          "term": "jet",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        },
+        {
+          "term": "right action",
+          "heading": false
+        }
+      ],
+      "extract": "E for a vector bundle We now consider a general ‘vector bundle’ over the base manifold. In our setting, we work with a bimodule E of ‘sections’ equipped with a ﬂat connection ∇E∶E→Ω1⊗AE. Here a ‘sheaf’ E in [4, Chap. 4] is loosely modelled by such data. The ﬂat connection comes with a bimodule map σE∶E⊗A Ω1→Ω1⊗AE for the right side Leibniz rule. Similarly to the case of a noncommutative algebra, we want to construct",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-51-first-and-second-order-jet-bundles-for-the-ve",
+      "number": "5.1",
+      "title": "First and second order jet bundles for the vector bundle case",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": "22",
+      "labelEnd": "25",
+      "words": 1356,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jet bundles",
+          "heading": true
+        },
+        {
+          "term": "jet bimodule",
+          "heading": false
+        },
+        {
+          "term": "nd-order leibniz",
+          "heading": false
+        },
+        {
+          "term": "leibniz compatibility",
+          "heading": false
+        },
+        {
+          "term": "bimodule map",
+          "heading": false
+        },
+        {
+          "term": "leibniz rule",
+          "heading": false
+        },
+        {
+          "term": "bimodule connection",
+          "heading": false
+        },
+        {
+          "term": "bimodule structure",
+          "heading": false
+        }
+      ],
+      "extract": "bimodule. For the split jet bundle we will also need a bimodule connection ∇E,σE as discussed, but for the bimodule structure in the case of the ﬁrst-order jet bimodule, we need only σE. Proposition 5.1. LetσE ∶E⊗A Ω1→Ω1⊗AE be a bimodule map, and a∈A,s ∈E, ω ∈Ω1. (1) The actions a●1s=as+ da⊗s, s ●1a=sa+σE(s⊗da), a●1 (ω⊗s) =aω⊗s, (ω⊗s)●1a=ω⊗sa make J 1 E =E⊕Ω1⊗AE a bimodule and 0→Ω1⊗ A E→J 1 E→E→0 (where we quotient",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-52-higher-order-leibniz-rules-for-the-jke-case",
+      "number": "5.2",
+      "title": "Higher order Leibniz rules for the JkE case",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 1283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alt parenleft",
+          "heading": false
+        },
+        {
+          "term": "alt parenright",
+          "heading": false
+        },
+        {
+          "term": "alt bracketleft",
+          "heading": false
+        },
+        {
+          "term": "alt ide",
+          "heading": false
+        },
+        {
+          "term": "idn parenright",
+          "heading": false
+        },
+        {
+          "term": "alt braceright",
+          "heading": false
+        },
+        {
+          "term": "alt3id bracketleft",
+          "heading": false
+        },
+        {
+          "term": "disp parenleft",
+          "heading": false
+        }
+      ],
+      "extract": "E case. Here we collect the geometric data and some facts needed for the general case. First, we observe as alluded to near the start of Section 4 that extendable connections have a simple rule for their tensor product curvature. Lemma 5.4. Let ∇E be an extendable bimodule connection. Then RE is a bimodule map iﬀ ∇E is Leibniz compatible as shown in Fig. 3(b). In this case, if ∇F is another connection, then ∇E⊗AF",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-53-higher-jet-bundles-for-a-generic-bimodule-e",
+      "number": "5.3",
+      "title": "Higher Jet bundles for a generic bimodule E",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "30",
+      "words": 638,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "disp summation",
+          "heading": false
+        },
+        {
+          "term": "jet",
+          "heading": true
+        },
+        {
+          "term": "bimodule",
+          "heading": true
+        },
+        {
+          "term": "compatible bimodule",
+          "heading": false
+        },
+        {
+          "term": "bimodule connection",
+          "heading": false
+        },
+        {
+          "term": "ejk",
+          "heading": false
+        },
+        {
+          "term": "bimodule map",
+          "heading": false
+        },
+        {
+          "term": "leibniz compatible",
+          "heading": false
+        }
+      ],
+      "extract": "derivatives on Ω1⊗Ak⊗AE, we are now ready to construct higher jets for a generic bimodule E. Theorem 5.9. Let ∇be a torsion free, ﬂat, ∧-compatible, extendable and Leibniz compatible bimodule connection on Ω1 as in Fig. 1(a)-(e) and ∇E a ﬂat, extendable and Leibniz compatible bimodule connection on E as in Fig. 3 (a)-(c). Then Jk E =E⊕Ω1 S⊗ A E⊕/uni22EF⊕Ωk S⊗ A E, j k E ∶E→Jk E, j k E(s) =s+∇1 Es+⋅⋅⋅+∇k Es, form an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-6-construction-of-noncommutative-examples",
+      "number": "6",
+      "title": "Construction of noncommutative examples",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 877,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "extendable case",
+          "heading": false
+        },
+        {
+          "term": "leibniz-compatibility",
+          "heading": false
+        },
+        {
+          "term": "ﬂip map",
+          "heading": false
+        },
+        {
+          "term": "noncommutative",
+          "heading": true
+        },
+        {
+          "term": "leibniz compatible",
+          "heading": false
+        },
+        {
+          "term": "torsion free",
+          "heading": false
+        },
+        {
+          "term": "grassmann algebra",
+          "heading": false
+        },
+        {
+          "term": "extra conditions",
+          "heading": false
+        }
+      ],
+      "extract": "For J 1 A and J 1 E, we need only a diﬀerential algebra (A, Ω, d) (plus a connection on E in the vector bundle case) and for J 2 A and J 2 E also a torsion free connection on Ω1 (and the connection inE should be ﬂat). Thus we can use for∇any number of connections in the literature, including the QLCs of the many known quantum Riemannian geometries as covered in [4]. For general Jk A and Jk E, however, we need a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-61-the-algebra-m2c-with-its-2d-calculus",
+      "number": "6.1",
+      "title": "The algebra M2(C) with its 2D calculus.",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 590,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jet bimodule",
+          "heading": false
+        },
+        {
+          "term": "uni27e",
+          "heading": false
+        },
+        {
+          "term": "bullet bimodule",
+          "heading": false
+        },
+        {
+          "term": "ﬂip map",
+          "heading": false
+        },
+        {
+          "term": "qlc",
+          "heading": false
+        },
+        {
+          "term": "algebra",
+          "heading": true
+        },
+        {
+          "term": "lower degree",
+          "heading": false
+        },
+        {
+          "term": "higher degrees",
+          "heading": false
+        }
+      ],
+      "extract": "connections since there is an obvious connection that turns out to meet all our criteria, namely the standard QLC for the quantum metric g = s⊗t−t⊗s [4]. One could also analyse the full moduli of allowed ∇by similar methods. The standard 2-dimensional Ω 1 for this algebra has a central basis s,t while the exterior algebra is unusual as it obey s∧t=t∧s (it is commutative!) along with s2 =t2 = 0 and ds= 2θ∧s, dt=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-62-functions-on-the-group-s3",
+      "number": "6.2",
+      "title": "Functions on the group S3",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 708,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jet bimodule",
+          "heading": false
+        },
+        {
+          "term": "parenleft",
+          "heading": false
+        },
+        {
+          "term": "parenright",
+          "heading": false
+        },
+        {
+          "term": "alt",
+          "heading": false
+        },
+        {
+          "term": "bimodule map",
+          "heading": false
+        },
+        {
+          "term": "uni27e",
+          "heading": false
+        },
+        {
+          "term": "spanc",
+          "heading": false
+        },
+        {
+          "term": "braid relations",
+          "heading": false
+        }
+      ],
+      "extract": "generators u = (12), v = (23) and set w = (13) so that uvu =vuv =w. Its algebra of functions A = C(S3) has a standard 3-dimensional Ω 1 with left-invariant basis eu,ev,ew and relations in degree 2 of the exterior algebra e2 a = 0, e u∧ev+ev∧ew+ew∧eu = 0, e v∧eu+ew∧ev+eu∧ew = 0, deu =−ev∧ew−ew∧ev, dev =−ew∧eu−eu∧ew, dew =−eu∧ev−ev∧eu. The relations with functions are eaf =Ra(f)ea where a=u,v,w and Ra(f)(g) =f(ga)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-63-bicrossproduct-minkowski-spacetime-in-11-dime",
+      "number": "6.3",
+      "title": "Bicrossproduct Minkowski spacetime in 1+1 dimensions with its 2D calculus",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 37,
+      "labelStart": "34",
+      "labelEnd": "37",
+      "words": 1077,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jet bimodule",
+          "heading": false
+        },
+        {
+          "term": "bicrossproduct",
+          "heading": true
+        },
+        {
+          "term": "stated ansatz",
+          "heading": false
+        },
+        {
+          "term": "jet bundles",
+          "heading": false
+        },
+        {
+          "term": "quantum jet",
+          "heading": false
+        },
+        {
+          "term": "braid relations",
+          "heading": false
+        },
+        {
+          "term": "uni27e",
+          "heading": false
+        },
+        {
+          "term": "calculus",
+          "heading": true
+        }
+      ],
+      "extract": "Another example of interest [3, 4] is the 1+1 bicrossproduct model quantum spacetime [r,t]=λr with its 2D calculus [r,t]=λr, [r,dt]=λdr, [t, dt]=λdt, [r,dr]= [t, dr]= 0, (dr)2 = 0, dr∧v+v∧dr = 0, v 2 =λv∧dr, QUANTUM JET BUNDLES 35 where dr and v = rdt−tdr form a central basis. Here d t, dr obey the usual exterior algebra relations, resulting in the relations stated in terms of the central basis. The calculus is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-64-the-quantum-group-cqsl2",
+      "number": "6.4",
+      "title": "The quantum group Cq[SL2]",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 40,
+      "labelStart": "37",
+      "labelEnd": "40",
+      "words": 1244,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alt divides",
+          "heading": false
+        },
+        {
+          "term": "jet prolongation",
+          "heading": false
+        },
+        {
+          "term": "jet bimodule",
+          "heading": false
+        },
+        {
+          "term": "jet bundle",
+          "heading": false
+        },
+        {
+          "term": "qbe",
+          "heading": false
+        },
+        {
+          "term": "disp",
+          "heading": false
+        },
+        {
+          "term": "inﬁnite jet",
+          "heading": false
+        },
+        {
+          "term": "left-invariant bimodule",
+          "heading": false
+        }
+      ],
+      "extract": "[16] with q ∈C×and generators a,b,c,d obeying the relations ba=qab, ca =qac, db =qbd, dc =qcd, da −ad= (q−q−1)bc, bc =cb, ad −q−1bc= 1. We will focus on its 3D calculus with basis [25, 4] e0 =dda−qbdc, e + =q−1adc−q−2cda, e −=ddb−qbdd and relations e±f =q/divides.alt0f/divides.alt0fe±, e0f =q2/divides.alt0f/divides.alt0fe0, for f ∈Cq[SL2] an element of homogeneous degree and /divides.alt0a/divides.alt0=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-65-constructions-for-j3e",
+      "number": "6.5",
+      "title": "Constructions for J3E",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 316,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bimodule connection",
+          "heading": false
+        },
+        {
+          "term": "extendable",
+          "heading": false
+        },
+        {
+          "term": "inner",
+          "heading": false
+        },
+        {
+          "term": "fig",
+          "heading": false
+        },
+        {
+          "term": "hold",
+          "heading": false
+        },
+        {
+          "term": "giving",
+          "heading": false
+        }
+      ],
+      "extract": "E. Here we note that our remark about inner calculi also applies for a bimodule connection ∇E on any bimodule E, i.e. we can construct all such in the form (17) ∇E =θ⊗( )−σE(( )⊗θ)+αE, σ E∶E⊗ A Ω1→Ω1⊗ A E, α E∶E→Ω1⊗ A E. The proof is analogous to that in [18] for Ω 1, namely given a bimodule connection ∇E, we deﬁne αE =∇E−θ⊗( )+σE(( )⊗θ) and deduced from the connection properties that this is a bimodule map.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-7-concluding-remarks",
+      "number": "7",
+      "title": "Concluding remarks",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": "41",
+      "labelEnd": "43",
+      "words": 1260,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braided-hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "braided shuﬄe",
+          "heading": false
+        },
+        {
+          "term": "braided binomials",
+          "heading": false
+        },
+        {
+          "term": "jet bundle",
+          "heading": false
+        },
+        {
+          "term": "braided hopf",
+          "heading": false
+        },
+        {
+          "term": "braided category",
+          "heading": false
+        },
+        {
+          "term": "a-bimodule equipped",
+          "heading": false
+        },
+        {
+          "term": "bicrossproduct minkowski",
+          "heading": false
+        }
+      ],
+      "extract": "We constructed jet bimodules Jk A and Jk E under the assumption of some geometric data on the diﬀerential algebra ofA and theA-bimoduleE. We also showed that these data a available in a wide variety of A, including a discrete space (functions on a ﬁnite group Cayley graph), and a matrix algebra, the enveloping algebras of a solvable Lie algebra (a standard quantum spacetime) and, perhaps surprisingly, Cq[SL2] at q a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-declaration",
+      "number": null,
+      "title": "Declaration",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": "43",
+      "labelEnd": "43",
+      "words": 33,
+      "summary": null,
+      "keywords": [],
+      "extract": "Data sharing is not applicable as no datasets were generated or analysed during the current study. The authors have no competing interests to declare that are relevant to the content of this article.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": "43",
+      "labelEnd": "43",
+      "words": 478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noncommutative riemannian",
+          "heading": false
+        },
+        {
+          "term": "noncommutative geometry",
+          "heading": false
+        },
+        {
+          "term": "majid",
+          "heading": false
+        },
+        {
+          "term": "jet bundles",
+          "heading": false
+        },
+        {
+          "term": "qmul",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "quantum groups",
+          "heading": false
+        }
+      ],
+      "extract": "[1] I. Anderson, Introduction to variational bicomplex, Contemp. Math. 132 (1992) 51 [2] M.F. Atiyah, Complex analytic connections in ﬁbre bundles,. Trans. Am. Math. Soc. 85 (1957) 181–207 [3] E.J. Beggs and S. Majid, Gravity induced from quantum spacetime, Class. Quantum Grav. 31 (2014) 035020 (39pp) [4] E.J. Beggs and S. Majid, Quantum Riemannian Geometry , Grundlehren der mathematischen Wis- senschaften, Vol.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "jet bimodule",
+      "heading": true
+    },
+    {
+      "term": "bimodule connection",
+      "heading": false
+    },
+    {
+      "term": "ﬂat bimodule",
+      "heading": false
+    },
+    {
+      "term": "jet bundles",
+      "heading": true
+    },
+    {
+      "term": "jet prolongation",
+      "heading": false
+    },
+    {
+      "term": "quantum jet",
+      "heading": false
+    },
+    {
+      "term": "compatible bimodule",
+      "heading": false
+    },
+    {
+      "term": "bimodule map",
+      "heading": false
+    },
+    {
+      "term": "free bimodule",
+      "heading": false
+    },
+    {
+      "term": "bimodule actions",
+      "heading": false
+    },
+    {
+      "term": "bullet bimodule",
+      "heading": false
+    },
+    {
+      "term": "curvature bimodule",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Conditions for the connection ∇: (a) torsion-free and its conse-",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "String diagramss used in the proof of Lemma 4.3",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Conditions for J",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 23,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 24,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p43); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 24 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2202.03067v4"
+  }
+}

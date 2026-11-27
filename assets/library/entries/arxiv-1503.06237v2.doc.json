@@ -1,0 +1,2652 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1503.06237v2",
+  "title": "arxiv-1503.06237v2",
+  "variant": "pdf",
+  "pages": 65,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Isometries and perfect tensors",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-isometries-and-perfect-tensors"
+    },
+    {
+      "level": 1,
+      "title": "Construction of holographic quantum states and codes",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-construction-of-holographic-quantum-states-and"
+    },
+    {
+      "level": 1,
+      "title": "Entanglement structure of holographic states",
+      "number": "4",
+      "page": 11,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-entanglement-structure-of-holographic-states"
+    },
+    {
+      "level": 2,
+      "title": "Ryu-Takayanagi formula",
+      "number": "4.1",
+      "page": 11,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-41-ryu-takayanagi-formula"
+    },
+    {
+      "level": 2,
+      "title": "Bipartite entanglement of disconnected regions",
+      "number": "4.2",
+      "page": 13,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-42-bipartite-entanglement-of-disconnected-region"
+    },
+    {
+      "level": 2,
+      "title": "A map of multipartite entanglement",
+      "number": "4.3",
+      "page": 16,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-43-a-map-of-multipartite-entanglement"
+    },
+    {
+      "level": 2,
+      "title": "Negative tripartite information",
+      "number": "4.4",
+      "page": 21,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-44-negative-tripartite-information"
+    },
+    {
+      "level": 1,
+      "title": "Quantum error correction in holographic codes",
+      "number": "5",
+      "page": 23,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-5-quantum-error-correction-in-holographic-codes"
+    },
+    {
+      "level": 2,
+      "title": "AdS-Rindler reconstruction as error correction",
+      "number": "5.1",
+      "page": 23,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-51-ads-rindler-reconstruction-as-error-correctio"
+    },
+    {
+      "level": 2,
+      "title": "The physical interpretation of holographic codes",
+      "number": "5.2",
+      "page": 25,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-52-the-physical-interpretation-of-holographic-co"
+    },
+    {
+      "level": 2,
+      "title": "Bulk reconstruction from tensor pushing",
+      "number": "5.3",
+      "page": 25,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-53-bulk-reconstruction-from-tensor-pushing"
+    },
+    {
+      "level": 2,
+      "title": "Connected reconstruction and the causal wedge",
+      "number": "5.4",
+      "page": 27,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-54-connected-reconstruction-and-the-causal-wedge"
+    },
+    {
+      "level": 2,
+      "title": "Disconnected reconstruction and the entanglement wedge",
+      "number": "5.5",
+      "page": 28,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-55-disconnected-reconstruction-and-the-entanglem"
+    },
+    {
+      "level": 2,
+      "title": "Erasure threshold",
+      "number": "5.6",
+      "page": 32,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-56-erasure-threshold"
+    },
+    {
+      "level": 2,
+      "title": "Holographic stabilizer codes",
+      "number": "5.7",
+      "page": 36,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-57-holographic-stabilizer-codes"
+    },
+    {
+      "level": 2,
+      "title": "Are local gauge constraints enough?",
+      "number": "5.8",
+      "page": 39,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-58-are-local-gauge-constraints-enough"
+    },
+    {
+      "level": 1,
+      "title": "Black holes and holography",
+      "number": "6",
+      "page": 40,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-6-black-holes-and-holography"
+    },
+    {
+      "level": 1,
+      "title": "Open problems and outlook",
+      "number": "7",
+      "page": 41,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-7-open-problems-and-outlook"
+    },
+    {
+      "level": 1,
+      "title": "A Perfect tensor examples",
+      "number": null,
+      "page": 43,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-a-perfect-tensor-examples"
+    },
+    {
+      "level": 2,
+      "title": "A.1 5-qubit code and 6-qubit state",
+      "number": null,
+      "page": 43,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-a1-5-qubit-code-and-6-qubit-state"
+    },
+    {
+      "level": 2,
+      "title": "A.2 3 -qutrit code and 4-qutrit state",
+      "number": null,
+      "page": 45,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-a2-3--qutrit-code-and-4-qutrit-state"
+    },
+    {
+      "level": 2,
+      "title": "A.3 Large n",
+      "number": null,
+      "page": 46,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-a3-large-n"
+    },
+    {
+      "level": 1,
+      "title": "B Proof of RT for negatively curved planar graphs",
+      "number": null,
+      "page": 47,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-b-proof-of-rt-for-negatively-curved-planar-graph"
+    },
+    {
+      "level": 1,
+      "title": "C Counting tensors in the pentagon code",
+      "number": null,
+      "page": 50,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-c-counting-tensors-in-the-pentagon-code"
+    },
+    {
+      "level": 2,
+      "title": "C.1 Counting tensors",
+      "number": null,
+      "page": 50,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-c1-counting-tensors"
+    },
+    {
+      "level": 2,
+      "title": "C.2 Connected reconstruction",
+      "number": null,
+      "page": 51,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-c2-connected-reconstruction"
+    },
+    {
+      "level": 1,
+      "title": "D Estimating greedy erasure thresholds",
+      "number": null,
+      "page": 53,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-d-estimating-greedy-erasure-thresholds"
+    },
+    {
+      "level": 2,
+      "title": "D.1 Analytic bounds",
+      "number": null,
+      "page": 54,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-d1-analytic-bounds"
+    },
+    {
+      "level": 2,
+      "title": "D.2 Numerical evaluation",
+      "number": null,
+      "page": 58,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-d2-numerical-evaluation"
+    },
+    {
+      "level": 1,
+      "title": "E Reconstructing beyond the greedy algorithm",
+      "number": null,
+      "page": 58,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-e-reconstructing-beyond-the-greedy-algorithm"
+    },
+    {
+      "level": 2,
+      "title": "E.1 Reconstruction from symmetry guarantees",
+      "number": null,
+      "page": 58,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-e1-reconstruction-from-symmetry-guarantees"
+    },
+    {
+      "level": 2,
+      "title": "E.2 Approximate reconstruction for typical tensors",
+      "number": null,
+      "page": 61,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-e2-approximate-reconstruction-for-typical-tensor"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 433,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holographic codes",
+          "heading": false
+        },
+        {
+          "term": "error-correcting codes",
+          "heading": false
+        },
+        {
+          "term": "holographic quantum",
+          "heading": false
+        },
+        {
+          "term": "connected reconstruction",
+          "heading": false
+        },
+        {
+          "term": "ads cft",
+          "heading": false
+        },
+        {
+          "term": "tripartite information",
+          "heading": false
+        },
+        {
+          "term": "counting tensors",
+          "heading": false
+        },
+        {
+          "term": "cft correspondence",
+          "heading": false
+        }
+      ],
+      "extract": "Prepared for submission to JHEP Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence Fernando Pastawski,*a Beni Yoshida*a Daniel Harlow,b John Preskill,a aInstitute for Quantum Information & Matter and Walter Burke Institute for Theoretical Physics, California Institute of Technology, Pasadena, California 91125, USA bPrinceton Center for Theoretical Science, Princeton",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1503.06237v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 851,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ads cft",
+          "heading": false
+        },
+        {
+          "term": "entanglement wedge",
+          "heading": false
+        },
+        {
+          "term": "entanglement renormalization",
+          "heading": false
+        },
+        {
+          "term": "error-correcting codes",
+          "heading": false
+        },
+        {
+          "term": "quantum entanglement",
+          "heading": false
+        },
+        {
+          "term": "bulk boundary",
+          "heading": false
+        },
+        {
+          "term": "cft correspondence",
+          "heading": false
+        },
+        {
+          "term": "bulk geometry",
+          "heading": false
+        }
+      ],
+      "extract": "The AdS/CFT correspondence, an exact duality between quantum gravity on a (d+1)- dimensional asymptotically-AdS space and a d-dimensional CFT deﬁned on its bound- ary, has signiﬁcantly advanced our understanding of quantum gravity, as well as pro- vided a powerful framework for studying strongly-coupled quantum ﬁeld theories. One aspect of this duality is a remarkable relationship between geometry and entanglement.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-isometries-and-perfect-tensors",
+      "number": "2",
+      "title": "Isometries and perfect tensors",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 1064,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perfect tensors",
+          "heading": true
+        },
+        {
+          "term": "isometric tensors",
+          "heading": false
+        },
+        {
+          "term": "physical spins",
+          "heading": false
+        },
+        {
+          "term": "two-index tensor",
+          "heading": false
+        },
+        {
+          "term": "logical spin",
+          "heading": false
+        },
+        {
+          "term": "party holding",
+          "heading": false
+        },
+        {
+          "term": "operator pushing",
+          "heading": false
+        },
+        {
+          "term": "code",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we review some tools which will be used in our constructions of holo- graphic states and codes. We begin with a standard deﬁnition: Deﬁnition 1. SayHA andHB are two Hilbert spaces, not necessarily of the same dimensionality. An isometry fromHA toHB is a linear map T :HA↦→H B with the property that it preserves the inner product. IfHA andHB have ﬁnite dimensionality, as we will assume throughout this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-construction-of-holographic-quantum-states-and",
+      "number": "3",
+      "title": "Construction of holographic quantum states and codes",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 1045,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holographic codes",
+          "heading": true
+        },
+        {
+          "term": "tensor legs",
+          "heading": false
+        },
+        {
+          "term": "physical legs",
+          "heading": false
+        },
+        {
+          "term": "perfect tensors",
+          "heading": false
+        },
+        {
+          "term": "holographic pentagon",
+          "heading": false
+        },
+        {
+          "term": "input legs",
+          "heading": false
+        },
+        {
+          "term": "uncontracted boundary",
+          "heading": false
+        },
+        {
+          "term": "six legs",
+          "heading": false
+        }
+      ],
+      "extract": "We have seen how tensors can be interpreted as quantum states or quantum codes. In this section we construct tensor networks in which the fundamental building blocks are perfect tensors. Our tensor networks describe states which we call holographic states, and codes which we call holographic codes. We shall focus on examples based on tilings of two-dimensional hyperbolic space, which are speciﬁc realizations of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-entanglement-structure-of-holographic-states",
+      "number": "4",
+      "title": "Entanglement structure of holographic states",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 13,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we explore to what extent holographic states reproduce key properties",
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-41-ryu-takayanagi-formula",
+      "number": "4.1",
+      "title": "Ryu-Takayanagi formula",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 810,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uncontracted legs",
+          "heading": false
+        },
+        {
+          "term": "contracted legs",
+          "heading": false
+        },
+        {
+          "term": "boundary legs",
+          "heading": false
+        },
+        {
+          "term": "ryu-takayanagi",
+          "heading": true
+        },
+        {
+          "term": "perfect tensors",
+          "heading": false
+        },
+        {
+          "term": "tensor network",
+          "heading": false
+        },
+        {
+          "term": "boundary matches",
+          "heading": false
+        },
+        {
+          "term": "bulk geodesic",
+          "heading": false
+        }
+      ],
+      "extract": "boundary region [3] and the negativity of tripartite information [9]. 4.1 Ryu-Takayanagi formula The Ryu-Takayanagi (RT) formula says that for a CFT whose gravitational dual is well- approximated by Einstein gravity at low energies, in any static state with a geometric bulk description the entropy SA of a boundary subregion A at ﬁxed time obeys SA = Area(γA) 4G ; (4.1) here G is Newton’s constant and γA is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-42-bipartite-entanglement-of-disconnected-region",
+      "number": "4.2",
+      "title": "Bipartite entanglement of disconnected regions",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "11",
+      "labelEnd": "14",
+      "words": 1189,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "greedy geodesics",
+          "heading": false
+        },
+        {
+          "term": "greedy algorithm",
+          "heading": false
+        },
+        {
+          "term": "bipartite",
+          "heading": true
+        },
+        {
+          "term": "holographic code",
+          "heading": false
+        },
+        {
+          "term": "bipartite residual",
+          "heading": false
+        },
+        {
+          "term": "bulk legs",
+          "heading": false
+        },
+        {
+          "term": "minimal geodesics",
+          "heading": false
+        },
+        {
+          "term": "legs contracted",
+          "heading": false
+        }
+      ],
+      "extract": "Unfortunately the proof of Theorem 2 does not directly generalize to a disconnected regionA, nor even to connected regions for states, such as our holographic code states, where not all perfect tensor indices are contracted in the bulk. We do not consider this to be a serious problem for our models. However, we still ﬁnd it worthwhile to introduce some machinery that allows us to quantify this presumption somewhat.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-43-a-map-of-multipartite-entanglement",
+      "number": "4.3",
+      "title": "A map of multipartite entanglement",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 21,
+      "labelStart": "14",
+      "labelEnd": "19",
+      "words": 1931,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multipartite entanglement",
+          "heading": true
+        },
+        {
+          "term": "multipartite residual",
+          "heading": false
+        },
+        {
+          "term": "greedy geodesic",
+          "heading": false
+        },
+        {
+          "term": "greedy algorithm",
+          "heading": false
+        },
+        {
+          "term": "bulk multipartite",
+          "heading": false
+        },
+        {
+          "term": "entanglement distillation",
+          "heading": false
+        },
+        {
+          "term": "bipartite entanglement",
+          "heading": false
+        },
+        {
+          "term": "multipartite entangle",
+          "heading": false
+        }
+      ],
+      "extract": "So far we have emphasized the bipartite entanglement between a boundary regionA and its complementAc in a holographic state or code. But we may also divide the boundary into three or more regions and investigate the structure of the entanglement among these regions. The entanglement structure can be elucidated via an entanglement “distillation” procedure which we will now describe. To explain this procedure we begin",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-44-negative-tripartite-information",
+      "number": "4.4",
+      "title": "Negative tripartite information",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 859,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tripartite information",
+          "heading": true
+        },
+        {
+          "term": "sbc sad",
+          "heading": false
+        },
+        {
+          "term": "multipartite residual",
+          "heading": false
+        },
+        {
+          "term": "greedy geodesics",
+          "heading": false
+        },
+        {
+          "term": "four greedy",
+          "heading": false
+        },
+        {
+          "term": "bipartite residual",
+          "heading": false
+        },
+        {
+          "term": "residual region",
+          "heading": false
+        },
+        {
+          "term": "greedy algorithm",
+          "heading": false
+        }
+      ],
+      "extract": "A useful characterization of multipartite entanglement is the tripartite information, deﬁned as I3(A,B,C )≡SA +SB +SC−SAB−SAC−SBC +SABC. (4.13) For a general (mixed) tripartite quantum state, I3 can take any real value. It is zero, though, for any tripartite pure state of ABC, since in that case SABC = 0 and e.g. regions A and BC, being complementary, have the same entropy and therefore make cancelling contributions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-quantum-error-correction-in-holographic-codes",
+      "number": "5",
+      "title": "Quantum error correction in holographic codes",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 56,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holographic codes",
+          "heading": true
+        },
+        {
+          "term": "error",
+          "heading": true
+        },
+        {
+          "term": "correction",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we study the error correction properties of our holographic codes in more detail. The idea that a CFT with a gravity dual must have error correcting properties was recently proposed in [1], and in this section we will see that our holographic codes illustrate many aspects of the proposal of [1] quite explicitly.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-51-ads-rindler-reconstruction-as-error-correctio",
+      "number": "5.1",
+      "title": "AdS-Rindler reconstruction as error correction",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 686,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ads-rindler reconstruction",
+          "heading": true
+        },
+        {
+          "term": "ads cft",
+          "heading": false
+        },
+        {
+          "term": "cft operator",
+          "heading": false
+        },
+        {
+          "term": "cft local",
+          "heading": false
+        },
+        {
+          "term": "bulk operator",
+          "heading": false
+        },
+        {
+          "term": "causal wedges",
+          "heading": false
+        },
+        {
+          "term": "distinct causal",
+          "heading": false
+        },
+        {
+          "term": "erased",
+          "heading": false
+        }
+      ],
+      "extract": "We begin by brieﬂy recalling the main point emphasized in [1], which is that in AdS/CFT a bulk local observable can be realized by many diﬀerent operators in the CFT. In fact, if x is any point in the bulk, and Y is any point on the boundary, the AdS/CFT dictionary can be chosen so that it maps the bulk local ﬁeld φ(x) to a CFT operatorO[φ(x)] which has no support in an open set containing Y , and therefore commutes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-52-the-physical-interpretation-of-holographic-co",
+      "number": "5.2",
+      "title": "The physical interpretation of holographic codes",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 216,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holographic codes",
+          "heading": true
+        },
+        {
+          "term": "bulk legs",
+          "heading": false
+        },
+        {
+          "term": "dangling bulk",
+          "heading": false
+        },
+        {
+          "term": "boundary legs",
+          "heading": false
+        },
+        {
+          "term": "bulk local",
+          "heading": false
+        },
+        {
+          "term": "code subspace",
+          "heading": false
+        },
+        {
+          "term": "cft",
+          "heading": false
+        }
+      ],
+      "extract": "The error-correcting properties of the AdS/CFT correspondence were motivated in [1] by bulk calculations, together with plausibility arguments regarding the CFT. Our central observation in this paper is that analogous statements are provably true in holographic codes. We emphasize that in holographic codes the uncontracted bulk legs hanging from each tensor should not be thought of as tensor factors in addition to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-53-bulk-reconstruction-from-tensor-pushing",
+      "number": "5.3",
+      "title": "Bulk reconstruction from tensor pushing",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 641,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bulk",
+          "heading": true
+        },
+        {
+          "term": "blue bulk",
+          "heading": false
+        },
+        {
+          "term": "green bulk",
+          "heading": false
+        },
+        {
+          "term": "blue isometry",
+          "heading": false
+        },
+        {
+          "term": "reconstruction",
+          "heading": true
+        },
+        {
+          "term": "bulk operator",
+          "heading": false
+        },
+        {
+          "term": "ads-rindler reconstruction",
+          "heading": false
+        },
+        {
+          "term": "bulk indices",
+          "heading": false
+        }
+      ],
+      "extract": "We now explain how holographic codes realize the AdS-Rindler reconstruction of ﬁgure 11. The basic idea is that, instead of using the full isometry of the entire network to push a local bulk operator to the boundary, we can instead successively push it through individual perfect tensors in a manner of our choosing by using the operation of ﬁgure 2. We illustrate the reconstruction for two diﬀerent bulk points of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-54-connected-reconstruction-and-the-causal-wedge",
+      "number": "5.4",
+      "title": "Connected reconstruction and the causal wedge",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 607,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "causal wedge",
+          "heading": true
+        },
+        {
+          "term": "reconstruction",
+          "heading": true
+        },
+        {
+          "term": "greedy algorithm",
+          "heading": false
+        },
+        {
+          "term": "greedy geodesic",
+          "heading": false
+        },
+        {
+          "term": "rindler reconstruction",
+          "heading": false
+        },
+        {
+          "term": "bulk operators",
+          "heading": false
+        },
+        {
+          "term": "allows reconstruction",
+          "heading": false
+        },
+        {
+          "term": "bulk local",
+          "heading": false
+        }
+      ],
+      "extract": "Given a subregion A of the boundary, which bulk local operators can be reconstructed on A? This is not an easy question to answer in general, but at least we can give a simple description of a large logical subsystem reconstructable on A, namely those logical operators acting on bulk sites which are reachable using the greedy algorithm explained in section 4. Recall that the greedy algorithm associates with any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-55-disconnected-reconstruction-and-the-entanglem",
+      "number": "5.5",
+      "title": "Disconnected reconstruction and the entanglement wedge",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 32,
+      "labelStart": "26",
+      "labelEnd": "30",
+      "words": 1602,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "entanglement wedge",
+          "heading": true
+        },
+        {
+          "term": "greedy entanglement",
+          "heading": false
+        },
+        {
+          "term": "causal wedge",
+          "heading": false
+        },
+        {
+          "term": "reconstruction",
+          "heading": true
+        },
+        {
+          "term": "greedy algorithm",
+          "heading": false
+        },
+        {
+          "term": "bulk operators",
+          "heading": false
+        },
+        {
+          "term": "bulk geodesic",
+          "heading": false
+        },
+        {
+          "term": "minimal bulk",
+          "heading": false
+        }
+      ],
+      "extract": "Now let’s consider what bulk operators can be constructed on boundary regions with more than one connected component. First we extend the deﬁnition of the causal wedge to disconnected regions: – 26 – Deﬁnition 6. Suppose that A is a boundary region, which is a union of connected componentsA1,A 2,... . The causal wedge ofA, denotedC[A], is deﬁned as the union of the causal wedges of the components of A,C[A] =⋃",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-56-erasure-threshold",
+      "number": "5.6",
+      "title": "Erasure threshold",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 36,
+      "labelStart": "30",
+      "labelEnd": "34",
+      "words": 1856,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "erasure threshold",
+          "heading": true
+        },
+        {
+          "term": "code erasing",
+          "heading": false
+        },
+        {
+          "term": "holographic code",
+          "heading": false
+        },
+        {
+          "term": "pentagon code",
+          "heading": false
+        },
+        {
+          "term": "bulk logical",
+          "heading": false
+        },
+        {
+          "term": "erasure probability",
+          "heading": false
+        },
+        {
+          "term": "greedy entanglement",
+          "heading": false
+        },
+        {
+          "term": "triangle code",
+          "heading": false
+        }
+      ],
+      "extract": "If the entanglement wedge conjecture is true for AdS/CFT, if holographic codes faith- fully model the entanglement structure of boundary theories with classical gravitational duals, and if the greedy entanglement wedge is a reasonable stand-in for the entangle- ment wedge, then we should be able to ﬁnd holographic codes and boundary regions such that the greedy entanglement wedge reaches far outside the causal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-57-holographic-stabilizer-codes",
+      "number": "5.7",
+      "title": "Holographic stabilizer codes",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 39,
+      "labelStart": "34",
+      "labelEnd": "37",
+      "words": 1098,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stabilizer codes",
+          "heading": true
+        },
+        {
+          "term": "holographic codes",
+          "heading": true
+        },
+        {
+          "term": "perfect stabilizer",
+          "heading": false
+        },
+        {
+          "term": "stabilizer tensor",
+          "heading": false
+        },
+        {
+          "term": "logical qubits",
+          "heading": false
+        },
+        {
+          "term": "ﬁve hexagons",
+          "heading": false
+        },
+        {
+          "term": "stabilizer generators",
+          "heading": false
+        },
+        {
+          "term": "encoding isometry",
+          "heading": false
+        }
+      ],
+      "extract": "Stabilizer codes have been extensively studied in quantum coding theory, and are often used in applications to fault-tolerant quantum computing [43]. Here we describe how to construct a family of holographic codes which are also stabilizer codes. We introduce the stabilizer formalism to pave the way for section 5.8, where we study some geometrical properties of holographic stabilizer codes. Stabilizer codes can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-58-are-local-gauge-constraints-enough",
+      "number": "5.8",
+      "title": "Are local gauge constraints enough?",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 532,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauge constraints",
+          "heading": true
+        },
+        {
+          "term": "code stabilizer",
+          "heading": false
+        },
+        {
+          "term": "holographic stabilizer",
+          "heading": false
+        },
+        {
+          "term": "stabilizer generators",
+          "heading": false
+        },
+        {
+          "term": "logical pauli",
+          "heading": false
+        },
+        {
+          "term": "nontrivial logical",
+          "heading": false
+        },
+        {
+          "term": "logical operator",
+          "heading": false
+        },
+        {
+          "term": "ads cft",
+          "heading": false
+        }
+      ],
+      "extract": "It has recently been argued that in AdS/CFT gauge constraints in the boundary CFT may pick out a small enough subspace of states to explain the error correcting properties of AdS/CFT [44]. The idea is that any gauge-invariant state already possess some non- local entanglement via the imposition of the gauge constraints, and that this might be enough to resolve the various paradoxes of [1]. 6 We can try to test this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-6-black-holes-and-holography",
+      "number": "6",
+      "title": "Black holes and holography",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 532,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": true
+        },
+        {
+          "term": "bulk legs",
+          "heading": false
+        },
+        {
+          "term": "assign bulk",
+          "heading": false
+        },
+        {
+          "term": "pentagon code",
+          "heading": false
+        },
+        {
+          "term": "bulk operators",
+          "heading": false
+        },
+        {
+          "term": "code subspace",
+          "heading": false
+        },
+        {
+          "term": "tensor network",
+          "heading": false
+        },
+        {
+          "term": "wormhole",
+          "heading": false
+        }
+      ],
+      "extract": "In holographic codes, bulk operators are reconstructed only on a subspace of the bound- ary Hilbert space. This may seem troubling, since the holographic correspondence is supposed to assign a bulk interpretation to all possible states on the boundary. A resolution of this confusion was proposed in [1] — a particular bulk operator might not always be reconstructable because it lies deep inside a black hole for most",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-7-open-problems-and-outlook",
+      "number": "7",
+      "title": "Open problems and outlook",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 709,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holographic codes",
+          "heading": false
+        },
+        {
+          "term": "greedy entanglement",
+          "heading": false
+        },
+        {
+          "term": "entanglement wedge",
+          "heading": false
+        },
+        {
+          "term": "ads cft",
+          "heading": false
+        },
+        {
+          "term": "holographic states",
+          "heading": false
+        },
+        {
+          "term": "toy models",
+          "heading": false
+        },
+        {
+          "term": "bulk",
+          "heading": false
+        },
+        {
+          "term": "stabilizer",
+          "heading": false
+        }
+      ],
+      "extract": "A remarkable convergence of quantum information science and quantum gravity has accelerated recently, propelled in particular by a vision of quantum entanglement as the foundation of emergent geometry. We expect this interface area to continue to grow in importance, as practitioners in both communities struggle to develop a common language and toolset. This paper was spurred by the connection between AdS/CFT and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-a-perfect-tensor-examples",
+      "number": null,
+      "title": "A Perfect tensor examples",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": "41",
+      "labelEnd": "41",
+      "words": 60,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qutrit code",
+          "heading": false
+        },
+        {
+          "term": "qubit code",
+          "heading": false
+        },
+        {
+          "term": "perfect",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we will present the 5-qubit code, the 3-qutrit code and discuss possibil- ities of constructing perfect tensors with a larger number of legs. The 5-qubit code is a qubit stabilizer code of the form introduced in section 5.7 whereas the 3-qutrit code can be described through a natural generalization of the stabilizer formalism to higher spin dimensions.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-020-a1-5-qubit-code-and-6-qubit-state",
+      "number": null,
+      "title": "A.1 5-qubit code and 6-qubit state",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 45,
+      "labelStart": "41",
+      "labelEnd": "43",
+      "words": 534,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁve-qubit code",
+          "heading": false
+        },
+        {
+          "term": "logical qubit",
+          "heading": false
+        },
+        {
+          "term": "codeword states",
+          "heading": false
+        },
+        {
+          "term": "codeword space",
+          "heading": false
+        },
+        {
+          "term": "perfect code",
+          "heading": false
+        },
+        {
+          "term": "logical operators",
+          "heading": false
+        },
+        {
+          "term": "stabilizer generators",
+          "heading": false
+        },
+        {
+          "term": "stabilizer subgroup",
+          "heading": false
+        }
+      ],
+      "extract": "The ﬁve-qubit code is a [[5 , 1, 3]]2 perfect code with distance 3 encoding one logical qubit in ﬁve physical qubits. It is a stabilizer code with a stabilizer subgroup given by S =⟨S1,S 2,S 3,S 4⟩, where S1 =X⊗Z⊗Z⊗X⊗I S2 =I⊗X⊗Z⊗Z⊗X S3 =X⊗I⊗X⊗Z⊗Z S4 =Z⊗X⊗I⊗X⊗Z. (A.1) Note that S1S2S3S4 =Z⊗Z⊗X⊗I⊗X and hence the group is manifestly invariant under cyclic permutations. As is the case in the stabilizer formalism, codes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-a2-3--qutrit-code-and-4-qutrit-state",
+      "number": null,
+      "title": "A.2 3 -qutrit code and 4-qutrit state",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "43",
+      "labelEnd": "44",
+      "words": 347,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qutrit",
+          "heading": true
+        },
+        {
+          "term": "code",
+          "heading": true
+        },
+        {
+          "term": "perfect tensors",
+          "heading": false
+        },
+        {
+          "term": "perfect state",
+          "heading": false
+        },
+        {
+          "term": "stabilizer group",
+          "heading": false
+        },
+        {
+          "term": "corresponding cliﬀord",
+          "heading": false
+        },
+        {
+          "term": "continuum",
+          "heading": false
+        }
+      ],
+      "extract": "One of the simplest examples of perfect tensors is given by the three qutrit code. This stabilizer code allows encoding one logical qutrit onto three physical qutrits in a way that it may be recovered even after erasure of any single physical qutrit. The reason for providing this additional example at this point is that we believe that this family of perfect tensors may naturally be suited to generalizations leading",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-a3-large-n",
+      "number": null,
+      "title": "A.3 Large n",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 47,
+      "labelStart": "44",
+      "labelEnd": "45",
+      "words": 233,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perfect tensors",
+          "heading": false
+        },
+        {
+          "term": "random states",
+          "heading": false
+        },
+        {
+          "term": "codes",
+          "heading": false
+        },
+        {
+          "term": "stabilizer",
+          "heading": false
+        },
+        {
+          "term": "dimensional side",
+          "heading": false
+        },
+        {
+          "term": "normalization",
+          "heading": false
+        }
+      ],
+      "extract": "In order to obtain perfect tensors for large n, one needs to increase v as well, with the ﬁrst known construction [54] having v∝ O(n). A construction with v∝ O(√n) was later proposed [55]. While perfect tensors are essential in guaranteeing the isometric properties used in the analysis of holographic codes, they do require a large degree of ﬁne tuning for their construction. An interesting observation is that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-b-proof-of-rt-for-negatively-curved-planar-graph",
+      "number": null,
+      "title": "B Proof of RT for negatively curved planar graphs",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 50,
+      "labelStart": "45",
+      "labelEnd": "48",
+      "words": 1403,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circuit interpretation",
+          "heading": false
+        },
+        {
+          "term": "tensor network",
+          "heading": false
+        },
+        {
+          "term": "unitary circuit",
+          "heading": false
+        },
+        {
+          "term": "neighboring nodes",
+          "heading": false
+        },
+        {
+          "term": "planar",
+          "heading": true
+        },
+        {
+          "term": "starting node",
+          "heading": false
+        },
+        {
+          "term": "contracted indices",
+          "heading": false
+        },
+        {
+          "term": "perfect tensors",
+          "heading": false
+        }
+      ],
+      "extract": "As we have presented in eq. 4.4, there is an upper bound on the amount of entanglement a tensor network state can have based on the minimal cut γA dividing the network into two tensors P and Q. In this section, we will explain how to guarantee that this upper bound is saturated for connected regions in a certain class of holographic states. Namely, we shall focus on holographic states associated to planar graphs",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-c-counting-tensors-in-the-pentagon-code",
+      "number": null,
+      "title": "C Counting tensors in the pentagon code",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": "48",
+      "labelEnd": "48",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-025-c1-counting-tensors",
+      "number": null,
+      "title": "C.1 Counting tensors",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 51,
+      "labelStart": "48",
+      "labelEnd": "49",
+      "words": 308,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensors",
+          "heading": true
+        },
+        {
+          "term": "layer",
+          "heading": false
+        },
+        {
+          "term": "nbulk",
+          "heading": false
+        },
+        {
+          "term": "nboundary",
+          "heading": false
+        },
+        {
+          "term": "central tensor",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix we compute some basic properties of the pentagon code that we quoted in the text. In these computations it is useful to “unwrap” the code, as in ﬁgure 20. The central tensor is placed at the bottom, which we will refer to as the zeroth layer, the ﬁrst ﬁve tensors as the ﬁrst layer, and so on, with the layer number n being equivalent to the graph distance to the central tensor. At each layer, it is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-c2-connected-reconstruction",
+      "number": null,
+      "title": "C.2 Connected reconstruction",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 53,
+      "labelStart": "49",
+      "labelEnd": "51",
+      "words": 582,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "best-case region",
+          "heading": false
+        },
+        {
+          "term": "reconstruction",
+          "heading": true
+        },
+        {
+          "term": "nboundary",
+          "heading": false
+        },
+        {
+          "term": "worst-case",
+          "heading": false
+        },
+        {
+          "term": "wouldn",
+          "heading": false
+        },
+        {
+          "term": "boundary region",
+          "heading": false
+        },
+        {
+          "term": "physical qubits",
+          "heading": false
+        },
+        {
+          "term": "worst case",
+          "heading": false
+        }
+      ],
+      "extract": "We’ll now compute the size of connected boundary region that we need to reconstruct operators on the logical leg of the central ( n = 0) tensor. This is complicated by the fact that our network is not translationally invariant; whether or not we can reconstruct the center depends not only on the size of the boundary region we have access to but also where it is. The “best case” situation is illustrated in ﬁgure 21.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-d-estimating-greedy-erasure-thresholds",
+      "number": null,
+      "title": "D Estimating greedy erasure thresholds",
+      "level": 1,
+      "pageStart": 53,
+      "pageEnd": 54,
+      "labelStart": "51",
+      "labelEnd": "52",
+      "words": 125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "erasure",
+          "heading": true
+        },
+        {
+          "term": "erasure probability",
+          "heading": false
+        },
+        {
+          "term": "noise",
+          "heading": false
+        },
+        {
+          "term": "recovery",
+          "heading": false
+        }
+      ],
+      "extract": "Noise models which are independent and identically distributed (i.i.d.) are usually analytically tractable while providing reasonable predictive capability based on the few parameters deﬁning the individual noise model. In the case of erasure noise, this is particularly simple since the only parameter is ϵ, the erasure probability per qubit. In addition to randomized bench-marking it is sometimes instructive to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-d1-analytic-bounds",
+      "number": null,
+      "title": "D.1 Analytic bounds",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 58,
+      "labelStart": "52",
+      "labelEnd": "56",
+      "words": 1547,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hierarchical recovery",
+          "heading": false
+        },
+        {
+          "term": "hexagon code",
+          "heading": false
+        },
+        {
+          "term": "greedy algorithm",
+          "heading": false
+        },
+        {
+          "term": "recovery model",
+          "heading": false
+        },
+        {
+          "term": "holographic hexagon",
+          "heading": false
+        },
+        {
+          "term": "qubit hexagon",
+          "heading": false
+        },
+        {
+          "term": "erasure threshold",
+          "heading": false
+        },
+        {
+          "term": "recovery procedure",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we derive such an analytic upper bound on the probability of logi- cal error. The goal of the section is to provide an example of how such a bound is derived illustrating a proof technique and obtaining a functional form for the logical error probability. We do not strive to derive a tight bound or address a particularly relevant holographic code scenario. In fact, the recovery procedure we model is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-d2-numerical-evaluation",
+      "number": null,
+      "title": "D.2 Numerical evaluation",
+      "level": 2,
+      "pageStart": 58,
+      "pageEnd": 58,
+      "labelStart": "56",
+      "labelEnd": "56",
+      "words": 297,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "erasure threshold",
+          "heading": false
+        },
+        {
+          "term": "logical legs",
+          "heading": false
+        },
+        {
+          "term": "central qubit",
+          "heading": false
+        },
+        {
+          "term": "recovery",
+          "heading": false
+        },
+        {
+          "term": "greedy",
+          "heading": false
+        },
+        {
+          "term": "protected",
+          "heading": false
+        },
+        {
+          "term": "pen",
+          "heading": false
+        },
+        {
+          "term": "hexagons",
+          "heading": false
+        }
+      ],
+      "extract": "We may numerically evaluate the probability for the greedy algorithm to absorb the central tensor given a boundary region constructed by erasing a random set of physical indices according to an i.i.d. distribution. This gives us a conservative estimate of how well protected the central qubit is from i.i.d. erasure since an optimal recovery method can only do better. We perform such estimates for diﬀerent values of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-e-reconstructing-beyond-the-greedy-algorithm",
+      "number": null,
+      "title": "E Reconstructing beyond the greedy algorithm",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 58,
+      "labelStart": "56",
+      "labelEnd": "56",
+      "words": 68,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "greedy",
+          "heading": true
+        },
+        {
+          "term": "rindler",
+          "heading": false
+        },
+        {
+          "term": "algorithm",
+          "heading": true
+        }
+      ],
+      "extract": "The greedy algorithm provides an explicit prescription for representing bulk logical operators on a speciﬁed region of the boundary. A key virtue is that the region obtained does not depend in any way on the speciﬁc perfect tensors used to construct the network. In this sense, it is analogous to the AdS/Rindler reconstruction, which is explicit and applicable to a large family of models satisfying a holographic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-e1-reconstruction-from-symmetry-guarantees",
+      "number": null,
+      "title": "E.1 Reconstruction from symmetry guarantees",
+      "level": 2,
+      "pageStart": 58,
+      "pageEnd": 61,
+      "labelStart": "56",
+      "labelEnd": "59",
+      "words": 1102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "greedy wedge",
+          "heading": false
+        },
+        {
+          "term": "greedy entanglement",
+          "heading": false
+        },
+        {
+          "term": "greedy algorithm",
+          "heading": false
+        },
+        {
+          "term": "holographic code",
+          "heading": false
+        },
+        {
+          "term": "hexagon code",
+          "heading": false
+        },
+        {
+          "term": "stabilizer code",
+          "heading": false
+        },
+        {
+          "term": "pentagon code",
+          "heading": false
+        },
+        {
+          "term": "tensor network",
+          "heading": false
+        }
+      ],
+      "extract": "The greedy entanglement wedge falls short of the expectations for a geometric entan- glement wedge in certain ways. For instance, in the scenario where the minimal surface separatingA fromAc is well deﬁned, we expectE[A]∪E [Ac] to contain the full lattice. – 56 – 00.10.20.30.40.50.60.70.80.91 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 Erasure probability Central qubit recovery probability n=1 n=3 n=5 n=7 n=9 (a)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-e2-approximate-reconstruction-for-typical-tensor",
+      "number": null,
+      "title": "E.2 Approximate reconstruction for typical tensors",
+      "level": 2,
+      "pageStart": 61,
+      "pageEnd": 65,
+      "labelStart": "59",
+      "labelEnd": "63",
+      "words": 1464,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holographic entanglement",
+          "heading": false
+        },
+        {
+          "term": "entanglement entropy",
+          "heading": false
+        },
+        {
+          "term": "entanglement renormalization",
+          "heading": false
+        },
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "quantum codes",
+          "heading": false
+        },
+        {
+          "term": "van raamsdonk",
+          "heading": false
+        },
+        {
+          "term": "error correction",
+          "heading": false
+        },
+        {
+          "term": "anti-de sitter",
+          "heading": false
+        }
+      ],
+      "extract": "Consider a connected residual region R obtained after removing the greedy entangle- ment wedge associated to boundary region A and the one associated to its complement Ac. A “typical” residual region will be composed of randomly chosen perfect tensors without any speciﬁc symmetry imposed. In this case, we may average the entanglement entropy associated to boundaries γ⋆ A andγ⋆ Ac. We expect that for |γ⋆ A|≥| γ⋆ Ac|",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "holographic code",
+      "heading": true
+    },
+    {
+      "term": "code logical",
+      "heading": true
+    },
+    {
+      "term": "bulk legs",
+      "heading": true
+    },
+    {
+      "term": "perfect code",
+      "heading": false
+    },
+    {
+      "term": "holographic entanglement",
+      "heading": true
+    },
+    {
+      "term": "bulk boundary",
+      "heading": true
+    },
+    {
+      "term": "greedy entanglement",
+      "heading": false
+    },
+    {
+      "term": "code stabilizer",
+      "heading": false
+    },
+    {
+      "term": "pentagon code",
+      "heading": true
+    },
+    {
+      "term": "tensor legs",
+      "heading": true
+    },
+    {
+      "term": "code states",
+      "heading": false
+    },
+    {
+      "term": "qubit code",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Diagrammatic tensor notation, here showing that T is an isometry",
+      "page": 6,
+      "pageLabel": "4",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Operator pushing through an isometric tensor",
+      "page": 6,
+      "pageLabel": "4",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "If",
+      "page": 6,
+      "pageLabel": "4",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "White dots represent physical legs on the boundary. Red dots represent logical input legs associated to each perfect tensor",
+      "page": 9,
+      "pageLabel": "7",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "A cut through a holographic tensor network by a curve c bounded by ∂A. Boundary indices a and b are uncontracted in A and its complement Ac respectively; tensors P and Q are contracted by summing over the index i which is cut by c",
+      "page": 12,
+      "pageLabel": "10",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "A step in the greedy algorithm. The upper node has at least three legs contracted with the region P , which we have shaded red, so we include it into P",
+      "page": 14,
+      "pageLabel": "12",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Three examples where the greedy algorithm fails to ﬁnd the matching minimal geodesics from complementary regions. The ﬁrst example involves disconnected regions in the holographic state. The second example involves a positive curvature obstruction at the center of the tiling which blocks the greedy",
+      "page": 14,
+      "pageLabel": "12",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "(a) Distillation of two EPR pairs. (b) The corresponding local moves. Before the ﬁrst move, the tensor on the left has four legs crossed by the cut. Because the tensor is perfect, its remaining two legs are maximally entangled with a subsystem of these four. The ﬁrst local unitary transformation act",
+      "page": 17,
+      "pageLabel": "15",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "A geometric map of bipartite entanglement. White dots represent physical spins distilled by applying local unitary transformations to A and Ac",
+      "page": 18,
+      "pageLabel": "16",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "The “map of entanglement” and multipartite residual regions in a holographic state. For",
+      "page": 19,
+      "pageLabel": "17",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Bulk ﬁeld reconstruction in the causal wedge. On the left is a spacetime diagram, [A] associated with a boundary sub-",
+      "page": 24,
+      "pageLabel": "22",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Boundary reconstruction of bulk operators. The blue operator on the central bulk leg is pushed to an operator supported on a fairly large boundary region, while the green bulk operator further from the center is pushed to an operator supported on a smaller boundary region. Bulk legs for the other te",
+      "page": 26,
+      "pageLabel": "24",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Disconnected reconstruction of a central operator beyond the causal wedge. Each of two separate connected boundary regions is too small for reconstruction of the central operator, yet the reconstruction is possible on the union of the two regions. In this example the greedy algorithm reaches the cen",
+      "page": 29,
+      "pageLabel": "27",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "The intersection of the entanglement wedge",
+      "page": 31,
+      "pageLabel": "29",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "it may have a very shallow causal wedge",
+      "page": 32,
+      "pageLabel": "30",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Dangerous small erasures for the triangle (a) and pentagon codes (b). In the triangle code erasing two boundary spins, boxed in blue, can prevent reconstruction of the central tensor. In the pentagon code erasing four spins can prevent the reconstruction",
+      "page": 33,
+      "pageLabel": "31",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "Tensor networks for holographic pentagon/hexagon codes with erasure thresholds, where neighboring polygons share contracted indices. In the network shown on the left, pentagons and hexagons alternate on the lattice; each pentagon carries one dangling bulk index, and hexagons carry no bulk degrees of",
+      "page": 35,
+      "pageLabel": "33",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "A black hole in a holographic code, and the corresponding wormhole geometry",
+      "page": 41,
+      "pageLabel": "39",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "Here we illustrate how to construct a unitary circuit interpretation of a holographic state which witnesses the RT entanglement for a simply connected boundary region",
+      "page": 49,
+      "pageLabel": "47",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "The ﬁrst few levels of the unwrapped pentagon code. The dangling logical legs are not shown, and the “hollow” lines and dots are identiﬁed with the solid ones on the other side. The tensors in the top row have all remaining non-logical legs extended outwards and treated as physical qubits",
+      "page": 50,
+      "pageLabel": "48",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "21",
+      "title": "The best-case reconstruction of the center; we need to use only three “branches” of the tree, and in the outer branches we can choose to push “inwards” every time",
+      "page": 52,
+      "pageLabel": "50",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "22",
+      "title": "The worst-case reconstruction of the center; we are just barely not able to use the second branch, so we need to use the third, fourth, and ﬁfth",
+      "page": 52,
+      "pageLabel": "50",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "23",
+      "title": "Locations of the “bad” points from ﬁgure 16b. If the worst-case region were just a little smaller on the right it wouldn’t contain any of them so, it wouldn’t be able to reconstruct the center",
+      "page": 53,
+      "pageLabel": "51",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "24",
+      "title": "We illustrate how correlated erasures can not grow beyond nearest neighbor in the hierarchical recovery model",
+      "page": 56,
+      "pageLabel": "54",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "25",
+      "title": "We illustrate the prerequisite for two erasures to be propagated one layer higher. The most fragile case corresponds to one of the sites having only four descendants since at least one of them needs to have ﬁve. Irrespective of the availability of a shared descendant there is a minimum number of era",
+      "page": 57,
+      "pageLabel": "55",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "26",
+      "title": "Here we present Monte Carlo simulation for the probability of the central tensor being incorporated by the greedy algorithm applied to a holographic code. The greedy algorithm is applied to a region A constructed by randomly taking each boundary physical index to belong to A with probability p. We p",
+      "page": 59,
+      "pageLabel": "57",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "27",
+      "title": "In (a) we represent a bipartite network composed of tensors with a symmetry H and H ∗. We alternate applying H (solid squares) and H ∗ (hollow squares) to all legs of tensors in the bipartite tensor network. In (b) we represent the same tensor network where a portion A of the boundary was marked wit",
+      "page": 60,
+      "pageLabel": "58",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 33,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 34,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p61); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 34 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1503.06237v2"
+  }
+}

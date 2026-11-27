@@ -1,0 +1,1807 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1507.06276v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-background.md",
+      "narrative": null,
+      "content": "involutive Lie algebra automorphism. Let k = {x ∈ g |θ(x) = x} denote the ﬁxed\nLie subalgebra. We call the pair of Lie algebras ( g, k) a symmetric pair. Assume\nthatθ is of the second kind, which means that the standard Borel subalge bra b+ of\ng satisﬁes dim(θ(b+) ∩ b+)< ∞. In this case the universal enveloping algebra U (k)\nhas a quantum group analog Bc,s =Bc,s(θ) which is a right coideal subalgebra of\nthe Drinfeld-Jimbo quantized enveloping algebraUq(g), see [Let99], [Let02], [Kol14].\nWe call (Uq(g),B c,s) a quantum symmetric pair.\nThe theory of quantum symmetric pairs was ﬁrst developed by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1507.06276v2  [math.QA]  29 Jan 2016\nUNIVERSAL K-MA TRIX FOR QUANTUM SYMMETRIC P AIRS\nMARTINA BALAGOVI ´C AND STEF AN KOLB\nAbstract. Let g be a symmetrizable Kac-Moody algebra and let Uq(g) de-\nnote the corresponding quantized enveloping algebra. In th e present paper\nwe show that quantum symmetric pair coideal subalgebras Bc,s of Uq(g) have\na universal K-matrix if g is of ﬁnite type. By a universal K-matrix for Bc,s\nwe mean an element in a completion of Uq(g) which commutes with Bc,s and\nprovides solutions of the reﬂection equation in all integra ble Uq(g)-modules in\ncategory O. The con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Universal K-matrix for coideal subalgebras",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-universal-k-matrix-for-coideal-subalgebras.md",
+      "narrative": null,
+      "content": "ﬂection equation were essential ingredients in the initial construct ion of quantum\nsymmetric pairs by Noumi, Sugitani, and Dijkhuizen [Nou96], [NS95], [NDS 97],\n[Dij96]. For this reason it is natural to expect that quantum symmet ric pairs give\nrise to universal K-matrices. The fact that quantum symmetric pa irs Bc,s are\ncoideal subalgebras of Uq(g) moreover suggests to base the concept of a universal\nK-matrix on a coideal subalgebra of a braided (or quasitriangular) H opf algebra.\nRecall that a subalgebra B of Uq(g) is called a right coideal subalgebra if\n∆(B) ⊂B ⊗Uq(g).\nIn the present paper",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main results",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-13-main-results.md",
+      "narrative": null,
+      "content": "a universal K-matrix for every quantum symmetric pair coideal sub algebra Bc,s\nof Uq(g) for g of ﬁnite type. This provides an analog of the universal R-matrix\nfor quantum symmetric pairs. Moreover, it shows that important p arts of Lusztig’s\nbook [Lus94, Chapters 4 & 32] translate to the setting of quantum symmetric pairs.\nThe construction in the present paper is signiﬁcantly inspired by the examples\n(sl2N, s(glN × glN )) and ( sl2N +1, s(glN × glN +1)) considered by Bao and Wang in\n[BW13]. The papers [BW13] and [ES13] both observed the existence o f a bar in-\nvolution for quantum symmetric pa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Organization",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-14-organization.md",
+      "narrative": null,
+      "content": "tation for Kac-Moody algebras and quantized enveloping algebras, mostly following\n[Kac90], [Lus94], and [Jan96]. In Section 3 we discuss the completion U of Uq(g)\nand the completion U (2)\n0 of Uq(g) ⊗Uq(g). In particular, we consider Lusztig’s\nbraid group action and the commutativity isomorphisms ˆR in this setting.\nSection 4.1 is a review of the notion of a braided tensor category with a cylinder\ntwist as introduced by tom Dieck and H¨ aring-Oldenburg. We extend their origi-\nnal deﬁnition by a twist in Section 4.2 to include all the examples obtaine d from\nquantum symmetric pairs later in the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "lem-sec-006-01.md",
+      "narrative": null,
+      "content": "The pairing (·, ·) takes values in 1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries on quantum groups",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-2-preliminaries-on-quantum-groups.md",
+      "narrative": null,
+      "content": "In this section we ﬁx notation and recall some standard results abo ut quantum\ngroups. We mostly follow the conventions in [Lus94] and [Jan96].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The root datum",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-21-the-root-datum.md",
+      "narrative": null,
+      "content": "metrizable generalized Cartan matrix. By deﬁnition there exists a dia gonal matrix\nD = diag( ǫi |i ∈ I) with coprime entries ǫi ∈ N such that the matrix DA is\nsymmetric. Let ( h, Π, Π ∨) be a minimal realization of A as in [Kac90, 1.1]. Here\nΠ = {αi |i ∈ I} and Π ∨ = {hi |i ∈ I} denote the set of simple roots and the set\nof simple coroots, respectively. We write g = g(A) to denote the Kac-Moody Lie\nalgebra corresponding to the realization ( h, Π, Π ∨) of A as deﬁned in [Kac90, 1.3].\nLet Q = ZΠ be the root lattice and deﬁne Q+ = N0Π. For λ,µ ∈ h∗ we write\nλ> µ if λ −µ ∈Q+ \\ {0}. For µ = ∑\nimiαi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "it makes sense to consider q(λ,µ) as an element of K(q1/d) for any",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantized enveloping algebras",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-22-quantized-enveloping-algebras.md",
+      "narrative": null,
+      "content": "to introduce the quantized enveloping algebra Uq(g). Let d ∈ N be the smallest\npositive integer such that d\ndet(Aext) ∈ Z. Let q1/d be an indeterminate and let K a\nﬁeld of characteristic zero. We will work with the ﬁeld K(q1/d) of rational functions\ninq1/d with coeﬃcients in K.\nRemark 2.3. The choice of ground ﬁeld is dictated by two reasons. Firstly , by\nLemma 2.2 it makes sense to consider q(λ,µ) as an element of K(q1/d) for any\nweights λ,µ ∈ P . This will allow us to deﬁne the commutativity isomorphism ˆR,\nsee Example 3.4 and formula (3.10). Secondly, in the construction of the function\nξ i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-007-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "rem-sec-007-01.md",
+      "narrative": null,
+      "content": "The choice of ground ﬁeld is dictated by two reasons. Firstly , by",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lusztig's skew derivations ri and ir",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-24-lusztigs-skew-derivations-ri-and-ir.md",
+      "narrative": null,
+      "content": "algebra generated by elements fi for alli ∈I. The algebra ′f is a U 0-module algebra\nwith Kh⊲fi =qαi(h)fi. As in (2.7) one obtains a Q+-grading\n′f =\n⨁\nµ∈Q+\n′fµ.\nThe natural projection ′f → U +, fi ↦→Ei respects the Q+-grading. There exist\nuniquely determined K(q1/d)-linear maps ir,ri : ′f → ′f such that\nri(fj ) = δij, r i(xy) = q(αi,ν)ri(x)y +xri(y),(2.13)\nir(fj ) = δij, ir(xy) = ir(x)y +q(αi,µ)xir(y)(2.14)\nfor any x ∈ ′fµ and y ∈ ′fν. The above equations imply in particular that ir(1) =\n0 = ri(1). By [Lus94, 1.2.13] the maps ir andri factor over U +, that is there exist\nlinear maps ir,ri : U",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/ex-sec-010-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "ex-sec-010-01.md",
+      "narrative": null,
+      "content": "The action of Uq(g) on objects of Oint gives an algebra homomor-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/ex-sec-010-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "ex-sec-010-02.md",
+      "narrative": null,
+      "content": "Let ξ : P → K(q1/d) be any map. For M ∈ Ob(Oint) deﬁne a",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The completion U of Uq(g)",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-3-the-completion-u-of-uqg.md",
+      "narrative": null,
+      "content": "It is natural to consider completions of the inﬁnite dimensional algeb raUq(g) and\nrelated algebras. The quasi R-matrix for Uq(g), for example, lies in a completion of\nU − ⊗U +, and the universal R-matrix lies in a completion of U ≤ ⊗U ≥, see Section\n3.3. Similarly, the universal K-matrix we construct in this paper lies in a completion\nU of Uq(g). This completion is commonly used in the literature, see for example\n[Sai94, 1.3]. Here, for the convenience of the reader, we recall the construction and\nproperties of the completion U in quite some detail. This allows us to introduce\nfurther concept",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The algebra U",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-31-the-algebra-u.md",
+      "narrative": null,
+      "content": "category O. Recall that category O consists of all ﬁnitely generated Uq(g)-modules\nM which decompose into weight spaces M = ⊕λ∈PMλ and on which the action of\nU + is locally ﬁnite. Objects in Oint are additionally locally ﬁnite with respect to the\naction ofUqi(sl2)i for alli ∈I. Simple objects in Oint are irreducible highest weight\nmodules with dominant integral highest weight [Lus94, Corollary 6.2.3 ]. If g is of\nﬁnite type then Oint is the category of ﬁnite dimensional type 1 representations.\nLet Vect be the category of vector spaces over K(q1/d). Both Vect and Oint are\ntensor categories, and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/ex-sec-011-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "ex-sec-011-01.md",
+      "narrative": null,
+      "content": "ForM,N ∈Ob(Oint) deﬁne a linear map",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The coproduct on U",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-011-32-the-coproduct-on-u.md",
+      "narrative": null,
+      "content": "For(2) : Oint × Oint → Vect, (M,N ) ↦→ For(M ⊗N ) = For(M ) ⊗ For(N ),\n(f,g ) ↦→ For(f ⊗g).\nLet U (2)\n0 = End( For(2)) denote the set of natural transformations from For(2)\nto itself. Again, U (2)\n0 is an algebra for which the multiplication · is given by\ncomposition of natural transformations. The map\ni(2) : U ⊗ U → U (2)\n0 , (ϕM ) ⊗ (ψN ) ↦→(ϕM ⊗ψN )\n14 MARTINA BALAGOVI ´C AND STEF AN KOLB\nis an injective algebra homomorphism. However, it is not surjective, as the following\nexample shows.\nExample 3.4. ForM,N ∈Ob(Oint) deﬁne a linear map\nκM,N :M ⊗N →M ⊗N, m ⊗n ↦→q(µ,ν)m ⊗n if m ∈Mµ and n ∈Nν.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-012-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "lem-sec-012-03.md",
+      "narrative": null,
+      "content": "Assume that g is of ﬁnite type. Then the relations",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quasi R-matrix and commutativity isomorphisms",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-012-33-quasi-r-matrix-and-commutativity-isomorphisms.md",
+      "narrative": null,
+      "content": "{bµ,i} be a basis of U −\n−µ. Let {bµ\ni} be the dual basis of U +\nµ with respect to the\npairing (2.8). Deﬁne\nRµ =\n∑\ni\nbµ,i ⊗bµ\ni ∈U − ⊗U +.\nThe element Rµ is independent of the chosen basis {bµ,i}. The quasi R-matrix\nR =\n∑\nµ∈Q+\nRµ(3.4)\ngives a well-deﬁned element U (2)\n0 . Indeed, for M,N ∈Ob(Oint) only ﬁnitely many\nsummands Rµ act nontrivially on any element of M ⊗N .\nUNIVERSAL K-MATRIX FOR QUANTUM SYMMETRIC PAIRS 15\nRemark 3.5. The element R ∈ U (2)\n0 coincides with the quasi-R-matrix deﬁned\nin [Lus94, 4.1.4] and in [Jan96, 7.2] in the ﬁnite case. Those references use the\nsymbol Θ for the qua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-012-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "rem-sec-012-01.md",
+      "narrative": null,
+      "content": "If g is of ﬁnite type then the quasi-R-matrix R can be factorized into",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-012-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "rem-sec-012-02.md",
+      "narrative": null,
+      "content": "In the construction of the commutativity isomorphisms ˆRM,N in",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/cor-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "cor-sec-013-01.md",
+      "narrative": null,
+      "content": "XIII.3.8]. If g is ﬁnite dimensional then Oint has a duality in the sense",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Braided tensor categories with a cylinder twist",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-013-4-braided-tensor-categories-with-a-cylinder-twis.md",
+      "narrative": null,
+      "content": "As explained in Section 3.3 the commutativity isomorphisms (3.11) turn Oint\ninto a braided tensor category. For any V ∈ Ob(Oint) there exists a graphical\ncalculus for the action of ˆR on V ⊗n in terms of braids in C × [0, 1], see [Kas95,\nCorollary XIII.3.8]. If g is ﬁnite dimensional then Oint has a duality in the sense\nof [Kas95, XIV.2] and there exists a ribbon element which turns Oint into a ribbon\ncategory as deﬁned in [Kas95, XIV.3.2]. The graphical calculus exten ds to ribbon\ncategories, see [Kas95, Theorem XIV 5.1] also for original referen ces.\nIn [tD98] T. tom Dieck outlined a program",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/ex-sec-014-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "ex-sec-014-01.md",
+      "narrative": null,
+      "content": "As seen in Section 3.3, the category A = Oint is a braided tensor",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/ex-sec-014-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "ex-sec-014-02.md",
+      "narrative": null,
+      "content": "The pair (B, A) from Example 4.1 is a tensor pair. In this setting",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prop-sec-014-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "prop-sec-014-03.md",
+      "narrative": null,
+      "content": "Let (B, A) be a tensor pair with a cylinder twist (tM )M∈Ob(A).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cylinder twists and the reflection equation",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-014-41-cylinder-twists-and-the-reflection-equation.md",
+      "narrative": null,
+      "content": "(A, ⊗,I,a,l,r ) be a tensor category as deﬁned in [Kas95, Deﬁnition XI.2.1]. Let B\nbe another category and assume that there exists a functor ∗ : B × A → B which\nwe write as\n(M,N ) ↦→M ∗N, (f,g ) ↦→f ∗g\non objects M ∈ Ob(B),N ∈ Ob(A) and morphisms f,g in B and A, respectively.\nThe functor ∗ is called a right action of A on B if there exist natural isomorphisms\nα and ρ with\nαM,N,N ′ : (M ∗N ) ∗N ′ →M ∗ (N ⊗N ′) for M ∈Ob(B),N,N ′ ∈Ob(A)\nρM :M ∗I →M for M ∈Ob(B)\nwhich satisfy the pentagon and the triangle axiom given in [tD98, (2.1) , (2.2)].\nA category B together with a right action of A on B i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/ex-sec-015-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "ex-sec-015-01.md",
+      "narrative": null,
+      "content": "Consider the setting of Example 4.1. Let ϕ : Uq(g) → Uq(g) be",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted cylinder twists",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-015-42-twisted-cylinder-twists.md",
+      "narrative": null,
+      "content": "considered in the present paper in full generality, we introduce a slig ht generaliza-\ntion of tom Dieck’s notion of a cylinder twist for ( B, A). This generalization involves\na second twist which suggests the slightly repetitive terminology.\nLet tw : A → A be braided tensor equivalence given by M ↦→Mtw and\nf ↦→ftw ∈ Hom(Mtw,N tw) for all M,N ∈ Ob(A) and f ∈ Hom(M,N ). This\nmeans that tw is a braided tensor functor as deﬁned in [Kas95, Deﬁnition XIII.3.6]\nand an equivalence of categories. A family t = (tM )M∈Ob(A) of morphisms tM ∈\nHomB(M,M tw) is called a B-tw-endomorphism of A if\ntN ◦f =ftw",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/ex-sec-016-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "ex-sec-016-01.md",
+      "narrative": null,
+      "content": "s 4.1, 4.3, and 4.7 can be formalized in the setting of bialgebras and their",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cylinder-braided coideal subalgebras and the universal K-matrix",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-016-43-cylinder-braided-coideal-subalgebras-and-the.md",
+      "narrative": null,
+      "content": "Examples 4.1, 4.3, and 4.7 can be formalized in the setting of bialgebras and their\ncoideal subalgebras. For the convenience of the reader we recall the relevant notions\nin the setting of the present paper.\nDeﬁnition 4.8. ([Kas95, Deﬁnition VIII.2.2]) A bialgebra H with coproduct ∆H :\nH → H ⊗ H is called braided (or quasitriangular) if there exists an in vertible\nelement RH ∈H ⊗H such that the following two properties hold:\n(1) For all x ∈H one has\n∆op\nH (x) = (RH )−1∆H (x)RH(4.9)\nwhere∆op\nH = ﬂip ◦∆H :H →H ⊗H denotes the opposite coproduct.\n(2) The element R satisﬁes the relations\n(∆H ⊗ idH )",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-016-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "rem-sec-016-02.md",
+      "narrative": null,
+      "content": "The conventions in Deﬁnition 4.8 slightly diﬀer from the con ventions",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-016-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "rem-sec-016-03.md",
+      "narrative": null,
+      "content": "Observe the parallel between Deﬁnition 4.8 and Deﬁnition 4. 10 in",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-016-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "rem-sec-016-04.md",
+      "narrative": null,
+      "content": "Let B ⊆ Uq(g) be a right coideal subalgebra and let (B, Oint) be",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prop-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "prop-sec-017-01.md",
+      "narrative": null,
+      "content": "Let (H,RH,θH ) be a factorizable ribbon Hopf algebra over a",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cylinder braided coideal subalgebras via characters",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-017-44-cylinder-braided-coideal-subalgebras-via-char.md",
+      "narrative": null,
+      "content": "[DKM03] J. Donin, P. Kulish, and A. Mudrov introduced the notion of a universal\nsolution of the reﬂection equation which they also called a universal K -matrix. In\ncontrast to Deﬁnition 4.10, this notion does not refer to a coideal s ubalgebra of a\nHopf algebra. Nevertheless, there is a close relationship between D eﬁnition 4.10\nand the notion of a universal K-matrix in [DKM03], and it is the purpose of the\npresent section to explain this. This material will not be used in later p arts of the\npresent paper.\nAs in Section 4.3 let ( H,RH ) be a braided Hopf algebra over a ﬁeld k. We\nretain the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum symmetric pairs",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-018-5-quantum-symmetric-pairs.md",
+      "narrative": null,
+      "content": "Remark 4.15. Assume that g is of ﬁnite type. If one naively translates the con-\nstruction of Proposition 4.14 to the setting of Uq(g) then the resulting universal\nK-matrix is the identity element because Uq(g) does not have any interesting charac-\nters. However, in [DKM03] a universal K-matrix is also deﬁned for non-factorizable\nH. In this case one chooses Kdkm to be the canonical element in ˜H ∗ ⊗H where\n˜H ∗ denotes a twisted version of the dual Hopf algebra H ∗. One obtains a universal\nK-matrix by application of a character f of ˜H ∗. This framework translates to the\nsetting of Uq(g) if one",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Involutive automorphisms of the second kind",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-019-51-involutive-automorphisms-of-the-second-kind.md",
+      "narrative": null,
+      "content": "tive Borel subalgebra of g. An automorphism θ : g → g is said to be of the second\nkind if dim( θ(b+) ∩ b+) < ∞. Involutive automorphisms of the second kind of g\nwere essentially classiﬁed in [KW92], see also [Kol14, Theorem 2.7]. In this section\nwe recall the combinatorial data underlying this classiﬁcation.\nFor any subset X ofI let gX denote the corresponding Lie subalgebra of g. The\nsublattice QX of Q generated by {αi |i ∈X} is the root lattice of gX . If gX is of\nﬁnite type then let ρX and ρ∨\nX denote the half sum of positive roots and positive\ncoroots of gX , respectively. The Weyl group W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-018-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "rem-sec-018-01.md",
+      "narrative": null,
+      "content": "Assume that g is of ﬁnite type. If one naively translates the con-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-019-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "rem-sec-019-01.md",
+      "narrative": null,
+      "content": "In [Kol14, (2.7)] and in [BK15, (3.2)] we chose the values s(i) for",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/thm-sec-019-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "thm-sec-019-02.md",
+      "narrative": null,
+      "content": "([KW92], [Kol14, Theorem 2.7]) The map",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The construction of quantum symmetric pairs",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-020-52-the-construction-of-quantum-symmetric-pairs.md",
+      "narrative": null,
+      "content": "inition of quantum symmetric pair coideal subalgebras following [Kol14]. For the\nremainder of this paper let ( X,τ ) be an admissible pair and s :I → K× a function\nsatisfying (5.1) and (5.2). Let MX =Uq(gX ) denote the subalgebra of Uq(g) gener-\nated by the elements Ei,Fi,K ±1\ni for all i ∈X. Correspondingly, let M+\nX and M−\nX\ndenote the subalgebras of MX generated by the elements in the sets {Ei |i ∈ X}\nand {Fi |i ∈X}, respectively.\nThe derived Lie subalgebra g′ is invariant under the involutive automorphism\nθ =θ(X,τ ). One can deﬁne a quantum group analog θq :Uq(g′) →Uq(g′) of θ, see\n[Kol14,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-020-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "rem-sec-020-01.md",
+      "narrative": null,
+      "content": "The conditions c ∈ C , s ∈ S can be found in [Kol14, (5.9),(5.11)] .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The bar involution for quantum symmetric pairs",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-021-53-the-bar-involution-for-quantum-symmetric-pair.md",
+      "narrative": null,
+      "content": "for Uq(g) deﬁned in (2.23) does not map Bc,s to itself. Inspired by the papers\n[ES13], [BW13], it was shown in [BK15] under mild additional assumptions that\nBc,s allows an intrinsic bar involution B : Bc,s → Bc,s. We now recall these\nassumptions and the construction of the intrinsic bar involution for Bc,s.\nIn [BK15, Section 3.2] the algebras Bc,s are given explicitly in terms of generators\nand relations for all Cartan matrices A = (aij) and admissible pairs ( X,τ ) which\nsatisfy the following properties:\n(i) If i ∈I \\X with τ (i) = i and j ∈X then aij ∈ {0, −1, −2}.\n(ii) If i ∈I \\X with τ (i)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/thm-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "thm-sec-021-01.md",
+      "narrative": null,
+      "content": "([BK15, Theorem 3.11]) Assume that conditions (i) and (ii) hold.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Assumptions",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-022-54-assumptions.md",
+      "narrative": null,
+      "content": "denotes the Kac-Moody algebra corresponding to the symmetriza ble Cartan matrix\nA = (aij) and (X,τ ) is an admissible pair. We ﬁx parameters c ∈ C and s ∈ S and\nlet Bc,s denote the corresponding quantum symmetric pair coideal subalge bra of\nUq(g′) as given in Deﬁnition 5.4. Additionally the following assumptions are mad e\nfor the remainder of this paper.\n(1) The Cartan matrix A = (aij) satisﬁes conditions (i) and (ii) in Section 5.3.\n(2) The parameters c ∈ C satisfy the condition\nciZi =q(αi,ατ (i))cτ (i)Zτ (i) for all i ∈I \\X.(5.15)\n(3) The parameters s ∈ S satisfy the condition\nsi =si for all",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Quasi K-matrix X",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-023-6-the-quasi-k-matrix-x.md",
+      "narrative": null,
+      "content": "The bar involution x ↦→x on Uq(g) deﬁned by (2.23) and the internal bar\ninvolutionx ↦→xB on Bc,s deﬁned by (5.12) satisfy Bi ⁄=Bi\nB\nif i ∈I \\X. Hence\nthe two bar involutions do not coincide when restricted to Bc,s. The aim of this\nsection is to construct an element X ∈ ˆU + which intertwines between the two bar\ninvolutions. More precisely, we will ﬁnd ( Xµ)µ∈Q+ with Xµ ∈U +\nµ and X0 = 1 such\nthat X = ∑\nµ Xµ satisﬁes\n(6.1) xBX = Xx for all x ∈Bc,s.\nIn view of relation (3.5), the element X ∈ ˆU + ⊆ U is an analog of the quasi-R-\nmatrixR for quantum symmetric pairs. For this reason we will call X",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-022-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "rem-sec-022-01.md",
+      "narrative": null,
+      "content": "Assumption (1) is only used in the proof of Theorem 5.6. Assum ption",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-022-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "rem-sec-022-02.md",
+      "narrative": null,
+      "content": "Observe that assumption (2) is a stronger statement then wha t is",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-022-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "rem-sec-022-03.md",
+      "narrative": null,
+      "content": "For every admissible pair there exist parameters ci ∈ K(q) satisfying",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/thm-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "thm-sec-023-01.md",
+      "narrative": null,
+      "content": "s 2.10, 6.4] for the coideal subalgebras corresponding to the symmetric",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/cor-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "cor-sec-024-01.md",
+      "narrative": null,
+      "content": "Letµ ∈Q+ and let (Xµ′ )µ′≤µ∈Q+ , with Xµ′ ∈U +",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A recursive formula for X",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-024-61-a-recursive-formula-for-x.md",
+      "narrative": null,
+      "content": "we translate relation (6.1) into a recursive formula for the compone nts Xµ.\nProposition 6.1. Let\nX =\n∑\nµ∈Q+\nXµ ∈ ˆU +, with Xµ ∈U +\nµ.\nThe following are equivalent:\n(1) For all x ∈Bc,s one has xBX = Xx.\n(2) For all i ∈I one has Bi\nB\nX = XBi.\n(3) For all µ ∈Q+ and all i ∈I one has\nri(Xµ) = −(qi −q−1\ni )\n(\nXµ+Θ( αi)−αiciXi +siXµ−αi\n)\n,(6.2)\nir(Xµ) = −(qi −q−1\ni )\n(\nq−(Θ( αi),αi)ciXiXµ+Θ( αi)−αi +siXµ−αi\n)\n.(6.3)\nIf these equivalent conditions hold then additionally\n(4) For all µ ∈Q+ such that Xµ ⁄= 0, one has Θ(µ) = −µ.\nProof. (1) ⇒ (2) : Property (2) is the special case x =Bi of property (1).",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prop-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "prop-sec-025-01.md",
+      "narrative": null,
+      "content": "Letµ ∈Q+ with ht(µ) ≥ 2 and ﬁx elements Ai,iA ∈U +",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Systems of equations given by skew derivations",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-025-62-systems-of-equations-given-by-skew-derivation.md",
+      "narrative": null,
+      "content": "quasi K-matrix X can be constructed inductively if in each step it is possible to\nsolve the system of equations given by (6.2) and (6.3) for all i. In this subsection\nwe derive necessary and suﬃcient conditions for such a system to h ave a solution.\nProposition 6.3. Letµ ∈Q+ with ht(µ) ≥ 2 and ﬁx elements Ai,iA ∈U +\nµ−αi for\nall i ∈I. The following are equivalent:\n(1) There exists an element X ∈U +\nµ such that\nri(X) = Ai and ir(X) = iA for all i ∈I.(6.5)\n(2) The elements Ai,iA have the following two properties:\n(a) For all i,j ∈I one has\n(6.6) ri(jA) = jr(Ai);\n(b) For all i ⁄=j ∈I one has\n(6.7",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-026-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "lem-sec-026-01.md",
+      "narrative": null,
+      "content": "Leti ⁄=j ∈I andµ = (1 −aij)αi +αj. If Θ(µ) = −µ theni,j ∈I \\X",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-026-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "lem-sec-026-02.md",
+      "narrative": null,
+      "content": "Letµ ∈Q+ and let j ∈I \\X with sj = 0 . Assume that a collection",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-026-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "lem-sec-026-03.md",
+      "narrative": null,
+      "content": "Let ν ∈Q+, and let (Xµ)µ<ν∈Q+ be a collection with Xµ ∈U +",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three technical lemmas",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-026-63-three-technical-lemmas.md",
+      "narrative": null,
+      "content": "inductively construct Xµ by solving the system of equations given by (6.2), (6.3)\nfor all i ∈ I. To simplify the proof that the right hand sides of equations (6.2),\n(6.3) satisfy the conditions from Proposition 6.3.(2), we provide sev eral technical\nlemmas. These results are auxiliary and will only be used in the proof of Lemma\n6.8.\nLemma 6.4. Leti ⁄=j ∈I andµ = (1 −aij)αi +αj. If Θ(µ) = −µ theni,j ∈I \\X\nand one of the following two cases holds:\n(1) Θ( αi) = −αj and aij = 0.\n(2) Θ( αi) = −αi and Θ(αj) = −αj.\nProof. Assume that i ∈ X. Then Θ( αi) = αi which together with Θ( µ) = −µ\nimplies that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "lem-sec-027-01.md",
+      "narrative": null,
+      "content": "The relation ri(jA) = jr(Ai) holds for all i,j ∈I.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-027-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "lem-sec-027-02.md",
+      "narrative": null,
+      "content": "For all i ⁄= j ∈ I the elements Ai,Aj given by (6.12) satisfy the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Constructing X",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "../sections/sec-027-64-constructing-x.md",
+      "narrative": null,
+      "content": "and assume that a collection ( Xµ′ )µ′<µ∈Q+ with Xµ′ ∈U +\nµ′ and X0 = 1 has already\nbeen constructed and that this collection satisﬁes conditions (6.2) and (6.3) for all\nµ′<µ and for all i ∈I. Deﬁne\nAi = −(qi −q−1\ni )\n(\nXµ+Θ( αi)−αiciXi +siXµ−αi\n)\n,(6.12)\niA = −(qi −q−1\ni )\n(\nq−(Θ( αi),αi)ciXiXµ+Θ( αi)−αi +siXµ−αi\n)\n(6.13)\nfor all i ∈ I. We will keep the above assumptions and the deﬁnition of Ai and\niA all through this subsection. We will prove that the elements Ai,iA, which are\nthe right hand sides of equations (6.2), (6.3), satisfy the condition s (6.6) and (6.7).\nBy Proposition 6.3 this wil",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-027-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "rem-sec-027-03.md",
+      "narrative": null,
+      "content": "If one restricts to quantum symmetric pair coideal subalgeb rasBc,s",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Constructing X",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../sections/sec-028-65-constructing-x.md",
+      "narrative": null,
+      "content": "namely the existence of the quasi K-matrix X. Recall the assumptions from Section\n5.4.\nTheorem 6.10. There exists a uniquely determined element X = ∑\nµ∈Q+ Xµ ∈ ˆU +,\nwith X0 = 1 and Xµ ∈U +\nµ , such that the equality\n(6.23) xBX = Xx\nholds in U for all x ∈Bc,s.\nProof. We construct Xµ by induction on the height of µ, starting from X0 = 1. If\nµ =αj then equations (6.2) and (6.3) are equivalent to\nri(Xµ) = ir(Xµ) =\n{\n0 if i ⁄=j,\n−(qi −q−1\ni )si if i =j\nas sj =sj by (5.16). In this case Xαj = −(qj −q−1\nj )sjEj satisﬁes (6.2) and (6.3).\nThis deﬁnes Xµ in the case ht( µ) = 1. Assume now that ht( µ) ≥",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of the universal K-matrix",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-029-7-construction-of-the-universal-k-matrix.md",
+      "narrative": null,
+      "content": "Using the quasi K-matrix X from the previous section we now construct a candi-\ndate K ∈ U for a universal K-matrix as in Deﬁnition 4.12. Our approach is again\ninspired by the special case considered in [BW13]. However, we are aim ing for a\ncomprehensive construction for all quantum symmetric Kac-Mood y pairs. In this\nsetting the Weyl group does not contain a longest element. We henc e replace the\nLusztig action in [BW13, Theorem 2.18] by a twist of the underlying mod ule, see\nSection 7.1. In Section 7.2 we construct a Bc,s-module homomorphism between\ntwisted versions of modules in Oint. This p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/thm-sec-028-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "thm-sec-028-01.md",
+      "narrative": null,
+      "content": "There exists a uniquely determined element X = ∑",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-030-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "lem-sec-030-01.md",
+      "narrative": null,
+      "content": "For all i ∈I one has tw ◦Ti =Ti ◦ tw on Uq(g).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A pseudo longest element of W",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-030-71-a-pseudo-longest-element-of-w.md",
+      "narrative": null,
+      "content": "τ0 ∈ Aut(A) such that the longest element w0 ∈W satisﬁes\nw0(αi) = −ατ0(i) for all i ∈I.(7.1)\nMoreover, in this case the Lusztig automorphism Tw0 ofUq(g) corresponding to w0\ncan be explicitly calculated. Indeed, by [Jan96, Proposition 8.20] or [K ol14, Lemma\n3.4] one has\n(7.2)\nTw0(Ei) = −Fτ0(i)Kτ0(i), T w0(Fi) = −K −1\nτ0(i)Eτ0(i), T w0(Ki) = K −1\nτ0(i),\nT −1\nw0 (Ei) = −K −1\nτ0(i)Fτ0(i), T −1\nw0 (Fi) = −Eτ0(i)Kτ0(i), T −1\nw0 (Ki) = K −1\nτ0(i).\nIn the Kac-Moody case we mimic the inverse of the Lusztig automorp hism corre-\nsponding to the longest element of the Weyl group as follows. Let tw : Uq(g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-030-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "rem-sec-030-02.md",
+      "narrative": null,
+      "content": "Assume that g is of ﬁnite type. In this case we always choose τ0 to",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-030-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "rem-sec-030-03.md",
+      "narrative": null,
+      "content": "If the algebra automorphism ϕ :Uq(g′) →Uq(g′) extends to a Hopf",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-031-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "lem-sec-031-01.md",
+      "narrative": null,
+      "content": "Let ξ : P → K(q1/d)× be any function which satisﬁes the recursion",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The twisted universal K-matrix in the Kac-Moody case",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "../sections/sec-031-72-the-twisted-universal-k-matrix-in-the-kac-moo.md",
+      "narrative": null,
+      "content": "assumptions from Section 5.4 and Assumption ( τ0) from the previous subsection.\nTo construct the desired Bc,s-module homomorphism we require one additional\ningredient. Consider the function γ :I → K(q1/d) deﬁned by\nγ(i) =\n{\n1 if i ∈X\ncis(τ (i)) if i ∈I \\X(7.7)\nUNIVERSAL K-MATRIX FOR QUANTUM SYMMETRIC PAIRS 39\nand note that by (7.4) and (7.5) one has γ(ττ 0(i)) = γ(i) for all i ∈I. Now assume\nthatξ :P → K(q1/d)× is a function satisfying the following recursion\nξ(µ +αi) = γ(i)q−(αi,Θ( αi))−(µ,αi+Θ( αi))ξ(µ) for all µ ∈P , i ∈I.(7.8)\nSuch a function exists. Indeed, we may take an arbitrary map on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-031-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "rem-sec-031-03.md",
+      "narrative": null,
+      "content": "The function ξ is an important ingredient in the construction of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/thm-sec-031-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "thm-sec-031-02.md",
+      "narrative": null,
+      "content": "Letξ :P → K(q1/d)× be a function satisfying the recursion (7.8).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/cor-sec-032-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "cor-sec-032-01.md",
+      "narrative": null,
+      "content": "Assume that g is of ﬁnite type and let ξ : P → K(q1/d)× be a",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The universal K-matrix in the finite case",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-032-73-the-universal-k-matrix-in-the-finite-case.md",
+      "narrative": null,
+      "content": "ﬁnite type. In this case, following Remark 7.2, we always choose τ0 ∈ Aut(I,X )\nsuch that the longest element w0 ∈ W satisﬁes w0(αi) = −ατ0(i) for all i ∈I. By\nEquation (7.2) this gives T −1\nw0 =τ0 ◦ tw on Uq(g).\nIf M a ﬁnite dimensional Uq(g)-module then the Lusztig action Tw0 : M → M\nsatisﬁes Tw0(um) = Tw0(u)Tw0(m) for all m ∈M , u ∈Uq(g). In other words, the\nLusztig action on M deﬁnes an Uq(g)-module isomorphism\nTw0 :M tw◦τ0 →M.\nComposing the inverse of this isomorphism with the isomorphism K′ from Theorem\n7.5, we get the following corollary.\n42 MARTINA BALAGOVI ´C AND STEF AN KOLB\nCorollar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-032-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "rem-sec-032-02.md",
+      "narrative": null,
+      "content": "As before let B denote the category with objects in Oint and mor-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/cor-sec-033-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "cor-sec-033-01.md",
+      "narrative": null,
+      "content": "We aim to show that K is a ττ 0-universal K-matrix for Bc,s, that is",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-034-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "lem-sec-034-02.md",
+      "narrative": null,
+      "content": "The function ξ :P → K(q1/d)× deﬁned by (8.1) satisﬁes the relation",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A special choice of",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/sec-033-8-a-special-choice-of.md",
+      "narrative": null,
+      "content": "In the following we want to determine the coproduct of the element K ∈ U from\nCorollary 7.7. We aim to show that K is a ττ 0-universal K-matrix for Bc,s, that is\nthat the coproduct ∆(K) is given by (4.16). This, however, will only hold true for\na suitable choice of ξ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Choosing",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "../sections/sec-034-81-choosing.md",
+      "narrative": null,
+      "content": "the function γ : I → K(q1/d) given by (7.7). Extend the function γ to a group\nhomomorphism γ :P → K(q1/d)×. Depending on the choice of coeﬃcients c ∈ C ,\nit may be necessary to replace K(q1/d) by a ﬁnite extension to do this. We will\nillustrate the situation and comment on the ﬁeld extension in Subsect ion 8.4.\nFor any λ ∈P write\nλ+ = λ + Θ(λ)\n2 , ˜λ = λ − Θ(λ)\n2 .\nObserve that both ( λ+,λ +) and ( ˜λ, ˜λ) are contained in 1\n2d Z for all λ ∈ P . Recall\nfrom Section 2.1 that ̟∨\ni for i ∈I denote the fundamental coweights. Now deﬁne\na function ξ :P → K(q1/d)× by\nξ(λ) = γ(λ)q−(λ+,λ+)+∑\nk∈I ( ˜αk,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-034-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "rem-sec-034-01.md",
+      "narrative": null,
+      "content": "A priori one only has −(λ+,λ +) + ∑",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-035-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "lem-sec-035-02.md",
+      "narrative": null,
+      "content": "The element ξ ∈ U deﬁned by (8.1) satisﬁes the relation",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-035-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "lem-sec-035-03.md",
+      "narrative": null,
+      "content": "The automorphism Ad(ξ) : U → U restricts to an automorphism of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-035-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "lem-sec-035-04.md",
+      "narrative": null,
+      "content": "Assume that g is of ﬁnite type. Then one has",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The coproduct of",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "../sections/sec-035-82-the-coproduct-of.md",
+      "narrative": null,
+      "content": "ample 3.4. Let f :P →P be any map. For every M,N ∈Ob(Oint) deﬁne a linear\nmap\nκf\nM,N :M ⊗N →M ⊗N, (m ⊗n) ↦→q(f (µ),ν)m ⊗n if m∈Mµ, n∈Nν.(8.4)\nAs in Example 3.4 the collection κf = (κf\nM,N )M,N ∈Ob(Oint) deﬁnes an element in\nU (2).\nRemark 8.3. In the following we will apply this notion in the case f = −Θ =\nwX ◦τ , see Section 5.1. To this end we need to assume that the minima l realization\n(h, Π, Π ∨) is compatible with the involution τ ∈ Aut(I,X ) as in [Kol14, 2.6] . This\nmeans that the map τ : Π ∨ → Π ∨ extends to a permutation τ : Π ∨\next → Π ∨\next such\nthat ατ (i)(dτ (s)) = αi(ds). In this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-035-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "rem-sec-035-01.md",
+      "narrative": null,
+      "content": "In the following we will apply this notion in the case f = −Θ =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-035-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "rem-sec-035-05.md",
+      "narrative": null,
+      "content": "]. If X = ∅ or τ = id then γ extends to a group homomorphism",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The coproduct of the universal K-matrix K",
+      "pageStart": 45,
+      "pageEnd": 46,
+      "target": "../sections/sec-036-9-the-coproduct-of-the-universal-k-matrix-k.md",
+      "narrative": null,
+      "content": "For the remainder of this paper we assume that g is of ﬁnite type. We keep the\nsetting from Section 5.4 and Assumption ( τ0) from Section 7.1. Recall that in the\nﬁnite case Assumptions (1) and (4) in Section 5.4 are always satisﬁed . Moreover,\nby Remark 7.2 Assumption ( τ0) reduces to Equation (7.4) where τ0 is determined\nby (7.1). In this section we calculate the coproduct of the element\nK = XξT −1\nw0 T −1\nwX ∈ U\ngiven in Corollary 7.7. This will show that K is indeed a ττ 0-universal K-matrix.\nAs an essential step we determine the coproduct of the quasi-K-m atrix X in Section\n9.2. First, how",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-037-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "lem-sec-037-01.md",
+      "narrative": null,
+      "content": "The following relation holds",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/lem-sec-037-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "lem-sec-037-02.md",
+      "narrative": null,
+      "content": "For any i ∈I the following relation holds",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminary calculations with the quasi R-matrix",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "../sections/sec-037-91-preliminary-calculations-with-the-quasi-r-mat.md",
+      "narrative": null,
+      "content": "quasi-R-matrix corresponding to the semisimple Lie subalgebra gX of g. Recall\nthat w0 and wX denote the longest elements of W and WX , respectively. Choose\na reduced expression w0 =si1...s it such that wX =si1...s is for some s <t. As\nin Remark 3.6 the quasi-R-matrices R and RX can then be written as\nR =R[t] ·R[t−1] · · ·R[1], R X =R[s] ·R[s−1] · · ·R[1].\nIn view of relation (3.6) one obtains that\nRRX =RR−1\nX =R[t] ·R[t−1] · · ·R[s+1].(9.1)\nDeﬁne\nR(τ,X ) = (Ad(ξ)T −1\nw0T −1\nwXττ 0 ⊗ 1)(RRX ) ∈ U (2)\n0 .(9.2)\nWe will see in Theorem 9.4 that the element R(τ,X ) is a major building block of\nthe c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The coproduct of the quasi K-matrix X",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "../sections/sec-038-92-the-coproduct-of-the-quasi-k-matrix-x.md",
+      "narrative": null,
+      "content": "K-matrix as X = ∑\nµ∈Q+ Xµ ∈ U with Xµ ∈U +\nµ . Deﬁne\nXK2 =\n∑\nµ∈Q+\nKµ ⊗ Xµ ∈ U (2)\n0 .(9.6)\nThis element will appear as a factor in the coproduct of X.\nLemma 9.3. For any i ∈I one has\n(1 ⊗ri)(XK2) = (qi −q−1\ni )XK2 ·\n(\nρiKαi−Θ( αi) ⊗T −1\nwX (Eτ (i)) −siKi ⊗ 1\n)\nin U (2) whereρi =cτ (i)s(i)q−(αi,Θ( αi)), in particular ρi =si = 0 if i ∈X.\n48 MARTINA BALAGOVI ´C AND STEF AN KOLB\nProof. By Equation (6.2) one has\n(1 ⊗ri)(XK2) =\n∑\nµ∈Q+\nKµ ⊗ri(Xµ)\n= −(qi−q−1\ni )\n∑\nµ∈Q+\nKµ ⊗\n(\nciXµ+Θ( αi)−αiXi +siXµ−αi\n)\n= −(qi−q−1\ni )ci\n∑\nµ∈Q+\n(Kµ+Θ( αi)−αi ⊗ Xµ+Θ( αi)−αi) (Kαi−Θ( αi) ⊗Xi)\n− (qi−q−1\ni )si\n∑\nµ∈Q+\n(Kµ−α",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/thm-sec-038-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "thm-sec-038-01.md",
+      "narrative": null,
+      "content": "The intertwiner X satisﬁes the relation",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The coproduct of K",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "../sections/sec-039-93-the-coproduct-of-k.md",
+      "narrative": null,
+      "content": "ττ 0 :P →P and obtain elements κττ 0,κ −ττ 0 ∈ U (2)\n0 . To simplify notation deﬁne\nRττ 0 =\n∑\nµ∈Q+\n(ττ 0 ⊗ 1)(Rµ) =\n∑\nµ∈Q+\n(1 ⊗ττ 0)(Rµ) ∈ U (2)\n0\nand\nˆRττ 0 =Rττ 0 ·κ−ττ 0 · ﬂip ∈ U (2).\nRecall from Corollary 7.7 that K = XξT −1\nwXT −1\nw0 .\n50 MARTINA BALAGOVI ´C AND STEF AN KOLB\nTheorem 9.5. The coproduct of K in U (2) is given by\n∆(K) = ( K ⊗ 1) · ˆRττ 0 · (K ⊗ 1) · ˆR.(9.14)\nProof. Using 6.1.(4) one veriﬁes that in U (2)\n0 one has\n(TwXTw0 ⊗ 1) · XK2 · (TwXTw0 ⊗ 1)−1 =κ−ττ 0 · (1 ⊗ X) ·κττ 0.(9.15)\nMoreover, the following relation holds\nκττ 0 · (Tw0TwX ⊗ 1) = (Tw0TwX ⊗ 1) ·κΘ.(9.16)\nCombini",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/rem-sec-039-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "rem-sec-039-03.md",
+      "narrative": null,
+      "content": "The approach to quantum symmetric pairs in the papers [Nou96],",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/thm-sec-039-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "thm-sec-039-01.md",
+      "narrative": null,
+      "content": "The coproduct of K in U (2) is given by",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/thm-sec-039-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "thm-sec-039-02.md",
+      "narrative": null,
+      "content": "we obtain the ﬁrst statement of the following corollary.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1507.06276v2/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 51,
+      "pageEnd": 52,
+      "target": "../sections/sec-040-references.md",
+      "narrative": null,
+      "content": "[Ara62] S. Araki, On root systems and an inﬁnitesimal classiﬁcation of irredu cible symmetric\nspaces, J. Math. Osaka City Univ. 13 (1962), 1–34.\n[BK15] M. Balagovi´ c and S. Kolb, The bar involution for quantum symmetric pairs , Represent.\nTheory 19 (2015), 186–210.\n[BW13] H. Bao and W. W ang, A new approach to Kazhdan-Lusztig theory of type B via quan-\ntum symmetric pairs , preprint, arXiv:1310.0103v1 (2013), 89 pp.\n[BW15] H. Bao and W. W ang, Canonical bases arising from quantum symmetric pairs , in\npreparation.\n[CG92] E. Cremmer and J.-L. Gervais, The quantum strip: Liouville theory for ope",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

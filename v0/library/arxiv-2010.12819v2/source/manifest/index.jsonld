@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-2010.12819v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2010.12819v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2010.12819v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2010.12819&metadataPrefix=arXiv), <license> element, read 2026-11-25",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2010.12819v2",
+    "format": "latex",
+    "url": "https://export.arxiv.org/src/2010.12819v2",
+    "content_type": "application/gzip",
+    "sha256": "46b49c2d488bb0f487eda5fff9d20dc09d652d6d40acf61914a1bd72374fa45e",
+    "bytes": 1425929,
+    "fetched": "2026-11-25T15:44:58+00:00",
+    "files": [
+      {
+        "path": "source/files/BOONDOX-cal.sty",
+        "role": "sty",
+        "sha256": "8cd53c8748f3bb929b27e69a8a7675604b1673b8b1324c15de2b934850f33b81",
+        "bytes": 554
+      },
+      {
+        "path": "source/files/Linnea11.5.tex",
+        "role": "tex",
+        "sha256": "64efb94033d283801c10b2d952e640571a563215f43055140f96944221513ac3",
+        "bytes": 389981
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

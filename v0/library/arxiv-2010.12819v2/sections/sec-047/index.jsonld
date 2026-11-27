@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-2010.12819v2/sections/sec-047",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "G.1 Algebraic description of the ordinary XXZ case",
+  "pageStart": 55,
+  "pageEnd": 56,
+  "contains": [
+    "library/arxiv-2010.12819v2/blocks/prose-sec-047"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2010.12819v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2010.12819v2",
+  "provenance": "ingested"
+}

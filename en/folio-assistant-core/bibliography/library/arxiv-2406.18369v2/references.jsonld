@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2406.18369v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "112 years of listening to Riemannian manifolds",
+      "dcterms:creator": [
+        "MÅRDBY, GUSTAV",
+        "ROWLETT, JULIE"
+      ],
+      "dcterms:issued": "D:20240920",
+      "dcterms:identifier": "https://arxiv.org/abs/2406.18369",
+      "dcterms:abstract": "In1910, HendrikAntoonLorentzdelvedintotheenigmaticLaplace eigenvalue equation, also known as the Helmholtz equation, pondering to what extent the geometry in which one solves the equation can be recovered from knowledge of the eigenvalues. Lorentz, inspired by physical and musical analo- gies, conjectured a fundamental relationship between eigenvalues, domain vol- ume, and dimensionality. While his conjecture initially seemed insurmount- able, Hermann Weyl’s groundbreaking proof in 1912 illuminated the deep con- nection between eigenvalues and geometric properties. Over the ensuing 112 years, mathematicians and physicists have continued to decipher the intricate interplay between eigenvalues and geometry. From Weyl’s law to Milnor’s ex- ample of isospectral non-isometric flat tori, and Kac’s inspiring question about hearing the shape of a drum, the field has witnessed remarkable progress, un- covering spectral invariants and advancing our understanding of geometric properties discernible through eigenvalues. We present an overview of this field amenable to both physicists and mathematicians.",
+      "dcterms:source": "library/arxiv-2406.18369v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2406.18369v2"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2501.03260v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2501.03260v1",
+  "contains": [
+    "library/arxiv-2501.03260v1/sections/sec-front-matter",
+    "library/arxiv-2501.03260v1/sections/sec-000",
+    "library/arxiv-2501.03260v1/sections/sec-001",
+    "library/arxiv-2501.03260v1/sections/sec-002",
+    "library/arxiv-2501.03260v1/sections/sec-003",
+    "library/arxiv-2501.03260v1/sections/sec-004",
+    "library/arxiv-2501.03260v1/sections/sec-005",
+    "library/arxiv-2501.03260v1/sections/sec-006",
+    "library/arxiv-2501.03260v1/sections/sec-007",
+    "library/arxiv-2501.03260v1/sections/sec-008",
+    "library/arxiv-2501.03260v1/sections/sec-009",
+    "library/arxiv-2501.03260v1/sections/sec-010",
+    "library/arxiv-2501.03260v1/sections/sec-011",
+    "library/arxiv-2501.03260v1/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Preons, Braid Topology, and Representations of Fundamental Particles — In particle phenomenology, preon models study composition al rules of standard model interactions.\n\n**Preons, Braid Topology, and Representations of Fundamental Particles**\n\n*David Chester 1, ∗ Xerxes D. Arsiwalla 2, † Louis H. Kauffman 3, ‡*\n\n32 pp, 14 sections.\n\n**Abstract.** In particle phenomenology, preon models study composition al rules of standard model interactions. In spite of empirical success, mathema tical underpinnings of preon models in terms of group representation theory have no t been fully worked out. Here, we address this issue while clarifying the relati on between diﬀerent preon models. In particular, we focus on two prominent models: Bils on-Thompson’s helon model, and Lambek’s 4-vector model. We determine the mappin g between helon model particle states and representation theory of Lie alge bras. Braided ribbon dia- grams of the former represent on-shell states of spinors of t he Lorentz group. Braids correspond to chirality, and twists, to charges. We note tha t this model captures only the SU (3)c × U (1)em sector of the standard model. We then map the twists of helon diagrams to the weight polytope of SU (3)c × U (1)em.\n\n**Outline.** Front matter; Introduction; The Helon Model; Particle Representation with Helons; Composition Laws with Helons; The 4-Vector Representation; Mapping Helons to Four-Vectors; CPT Invariance and Braid Topology; Standard Model Interactions in the Helon Model; Gauge Boson Interactions; Interactions with Fermions; The Helon Model from the SU(3)cU(1)em Weight L; Conclusions and Discussion; Standard Model Conventions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-27"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-2501.03260v1",
+    "title_source": "slug",
+    "source_file": "2501.03260v1.pdf",
+    "source_sha256": "510ae5435ae95664671d9221125ff4acdf660e7b5649dfd2ee7c6939ed83ce0f",
+    "pages": 32,
+    "arxiv": {
+      "id": "2501.03260",
+      "version": "1",
+      "primary_class": "physics.gen-ph",
+      "stamp_date": "3 Jan 2025"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

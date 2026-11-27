@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-strand-slot-separates-gen1",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:strand-slot-separates-gen1",
+  "kind": "proposition",
+  "title": "The strand slot separates the first-generation quark states",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-fermi-pair-wedge"
+  ],
+  "cites": [
+    "references/baez-huerta2010"
+  ],
+  "tags": [
+    "appendix",
+    "standard-model",
+    "chirality",
+    "charge-quantisation"
+  ],
+  "leanRef": "qou:QOU.EightfoldWay.StrandSlotSeparatesGen1.slot_dual_injective",
+  "text": "strand-slot-separates-gen1.md",
+  "provenance": "authored"
+}

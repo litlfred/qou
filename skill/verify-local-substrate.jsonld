@@ -8,7 +8,7 @@
       "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
       "name": "verify-local-substrate",
       "title": "Verify Local Substrate Connectivity",
-      "description": "Verify that every observational result block traces back to the local U substrate (def:substrate-parameter) through the uses[] dependency graph. Identifies gaps where observational claims lack a formal connection to the substrate parameter, and suggests fixes.",
+      "description": "Verify that every observational result block traces back to the local U substrate (def:aether-parameter) through the uses[] dependency graph. Identifies gaps where observational claims lack a formal connection to the substrate parameter, and suggests fixes.",
       "instructionsPath": "skills/local/verify-local-substrate.md",
       "instructionLines": 170,
       "hasInstructions": true,

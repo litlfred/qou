@@ -6,19 +6,19 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-local-substrate-q",
+  "@id": "papers/quantum-observable-universe/blocks/prop-local-aether-q",
   "@type": [
     "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
-  "label": "prop:local-substrate-q",
+  "label": "prop:local-aether-q",
   "kind": "proposition",
-  "title": "Local Value of the Substrate Parameter",
+  "title": "Local Value of the Aether Parameter",
   "uses": [
     "papers/quantum-observable-universe/blocks/rem-photonic-hall"
   ],
   "proofs": [
-    "papers/quantum-observable-universe/blocks/prf-local-substrate-q"
+    "papers/quantum-observable-universe/blocks/prf-local-aether-q"
   ],
   "examples": [
     "papers/quantum-observable-universe/blocks/rem-mass-from-generators",
@@ -31,7 +31,7 @@
     "mass",
     "observation"
   ],
-  "leanRef": "qou:QOU.Experimental.LocalSubstrateQ",
+  "leanRef": "qou:QOU.Experimental.LocalAetherQ",
   "text": "local-substrate-q.md",
   "leanSource": "local-substrate-q.lean",
   "provenance": "authored"

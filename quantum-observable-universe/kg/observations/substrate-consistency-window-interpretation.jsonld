@@ -6,18 +6,18 @@
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/rem-substrate-consistency-window-interpretation",
+  "@id": "papers/quantum-observable-universe/blocks/rem-aether-consistency-window-interpretation",
   "@type": [
     "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "rem:substrate-consistency-window-interpretation",
+  "label": "rem:aether-consistency-window-interpretation",
   "kind": "remark",
-  "title": "Falsifiability of the substrate consistency window",
+  "title": "Falsifiability of the aether consistency window",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-substrate-consistency-window"
+    "papers/quantum-observable-universe/blocks/prop-aether-consistency-window"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/prop-substrate-consistency-window",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-aether-consistency-window",
   "tags": [
     "substrate-parameter",
     "falsifiability",

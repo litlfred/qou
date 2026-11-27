@@ -1,0 +1,291 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1101.2451v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1101.2451v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "FROM NAVIER-STOKES TO EINSTEIN\nIrene Bredberg, Cynthia Keeler, Vyacheslav Lysov and Andrew Strominger\nCenter for the Fundamental Laws of Nature, Harvard University\nCambridge, MA, 02138\nAbstract\nWe show by explicit construction that for every solution of the incompressible Navier-Stokes equation\nin p + 1 dimensions, there is a uniquely associated “dual” solution of the vacuum Einstein equations\nin p + 2 dimensions. The dual geometry has an intrinsically ﬂat timelike boundary segment Σ c whose\nextrinsic curvature is given by the stress tensor of the Navier-Stokes ﬂuid. We consider a “near-horizo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.2451v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The Einstein equation\nGµν = 0, (1)\nand the incompressible Navier-Stokes equation\n˙vi−η∂ 2vi +∂iP +vj∂jvi = 0, (2)\nhave long played central roles in both mathematics and physics. The Einstein equation universally governs\nthe long-distance behavior of essentially any gravitating system, while the incompressible Navier-Stokes\nequation universally governs the hydrodynamic limit of essentially any ﬂuid. They both display a rich\nnon-linear structure which has been a continual source of interesting surprises yet remains, centuries\nafter their discovery, incompletely understood. It is the purpose of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.2451v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relation to previous work",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-relation-to-previous-work.md",
+      "narrative": null,
+      "content": "The ﬁrst suggestion of a relation between horizon and Navier-Stokes dynamics appears in the prescient\nthesis of Damour [3]. This work contains an expression now known as the Damour-Navier-Stokes equation\n[39] governing the geometric data on any null surface. Although tantalizingly similar, it is not quite the\nNavier-Stokes equation as it has too many variables (eliminated herein by an appropriate boundary\ncondition) and an extra nonlinear term. To get precisely Navier-Stokes we found it necessary to consider\nthe near-null limit of a highly accelerated timelike surface. Such a surface was intro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.2451v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The hydrodynamic limit and the -expansion",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-3-the-hydrodynamic-limit-and-the--expansion.md",
+      "narrative": null,
+      "content": "The incompressible Navier-Stokes equation has a well-known scaling symmetry which is important in the\nfollowing and brieﬂy reviewed here. Let the pair (vi,P ) solve the incompressible Navier-Stokes equation\n∂ivi = 0, ∂ τvi−η∂ 2vi +∂iP +vj∂jvi = 0, (3)\nwhere η is the kinematic viscosity and i = 1,...p . Now consider a family of pairs ( vϵ\ni,P ϵ) in which\nfrequencies and wavelengths are non-relativistically dilated and amplitudes scaled down by the parameter\nϵ:\nvϵ\ni(xi,τ ) =ϵvi(ϵxi,ϵ 2τ), (4)\nPϵ\ni (xi,τ ) =ϵ2P (ϵxi,ϵ 2τ).\nIt is easy to check that (3) directly implies\n∂τvϵ\ni−η∂ 2vϵ\ni +∂iPϵ +vϵj∂j",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.2451v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Characterizing the dual geometries",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-4-characterizing-the-dual-geometries.md",
+      "narrative": null,
+      "content": "We seek a relation between the (p+2)-dimensional Einstein and (p+1)-dimensional Navier-Stokes equa-\ntions. Of course, the former has a much larger solution space than the latter so only a special type of\nEinstein geometry is relevant. Roughly speaking, the relevant geometries are non-singular perturbations\nof a horizon. Let us now make this more precise.\nWe consider geometries of the type depicted in Figure 1 with an outer “cutoﬀ” boundary denoted\nΣc. The boundary hypersurface Σ c is taken to be asymptotically null in both the far future and far past.\nIn the Minkowskian coordinates ds2\np+2 =−d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.2451v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nonlinear solution in the -expansion",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-5-nonlinear-solution-in-the--expansion.md",
+      "narrative": null,
+      "content": "In this section we will improve on the analysis of [28] by solving the shooting problem in the long\nwavelengthϵ-expansion without a simultaneous linearized expansion. The general solution will be pa-\nrameterized by a solution vi(xi,τ ), P(xi,τ ) of the full nonlinear Navier-Stokes equation with viscosity\n(12) together with the parameter ϵ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.2451v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The solution",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-51-the-solution.md",
+      "narrative": null,
+      "content": "Consider the metric\nds2\np+2 =−rdτ 2 + 2dτdr +dxidxi\n− 2\n(\n1− r\nrc\n)\nvidxidτ− 2vi\nrc\ndxidr (14)\n+\n(\n1− r\nrc\n)[\n(v2 + 2P )dτ 2 + vivj\nrc\ndxidxj\n]\n+\n(v2\nrc\n+ 2P\nrc\n)\ndτdr\n− (r2−r2\nc)\nrc\n∂2vidxidτ + ...\nwherevi =vi(xi,τ ) and P (xi,τ ) are independent of r. Here and henceforth i,j = 1,..p indices are raised\nand lowered with δij and we take\nvi∼O (ϵ), P ∼O (ϵ2), ∂ i∼O (ϵ), ∂ τ∼O (ϵ2) (15)\nas in the hydrodynamic scaling of section 3. It follows that the ﬁrst line on the right hand side of (14) is\nO(ϵ0) and each subsequent line is one higher order in ϵ. The linearization of this expression in vi agree",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.2451v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Forcing the fluid",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-52-forcing-the-fluid.md",
+      "narrative": null,
+      "content": "Solutions of the linearized Navier-Stokes equation decay exponentially in the future. There is some\nexpectation - although no proof - that nonlinear solutions eventually decay as well. Therefore the extrinsic\ncurvature on Σc in our examples is expected to become constant.\nOn the other hand, already at the linear level, Navier-Stokes solutions grow exponentially in the far\npast and typically are singular at τ =−∞ . Therefore we expect that the dual geometry is also singular\natτ =−∞, which is the past horizonH− of Σc. This singularity is not problematic for real ﬂuids, as we\nare typically intere",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.2451v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Singularities at r=",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-53-singularities-at-r.md",
+      "narrative": null,
+      "content": "The square of the Riemann tensor for the solution (14) is given by\nR2 =− 3\n2r2c\n(∂ivj−∂jvi)2− 2 r\nr2c\n[\n∂2vi∂2vi + 3∂ivj(\n∂j∂2vi−∂i∂2vj\n)]\n+ .... (25)\nThis expression diverges atr =±∞. Of course perturbation theory cannot be trusted when|r| is of order\n1\nϵ , so the computation is unreliable in this regime. Whether or not there are actual divergences in these\nregions will depend on the details of the solution. In general, at r =−∞, black hole type singularities\nmay plausibly arise.\nThe divergence at r = +∞ is outside the cutoﬀ surface, so a priori need not concern us. Still we may\nask what happ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.2451v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Uniqueness",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-54-uniqueness.md",
+      "narrative": null,
+      "content": "Equation (14) gives the ﬁrst three orders in the ϵ-expansion of metrics satisfying the Einstein equations\nwith the prescribed boundary data. These solutions are constructed from nonlinear solutions of the\nincompressible Navier-Stokes equations. The latter are in turn, assuming existence and uniqueness for\nNavier-Stokes, speciﬁed by a divergence-free vector ﬁeld vi(x,τ∗) at a moment of time τ∗.\nOne may ask whether or not (14) is the unique solution with the prescribed boundary data (up to\ncoordinate transformations and ﬁeld redeﬁnitions) associated to a given vi(x,τ∗). This can be addressed\nin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.2451v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Alternate presentation",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-6-alternate-presentation.md",
+      "narrative": null,
+      "content": "In this section we give an alternate presentation of the metric (14) in which all the factors of ϵ appear\nexplicitly, without being hidden in the functional dependence on the coordinates. This is accomplished\nby ﬁrst transforming to hatted coordinates\nxi = rcˆxi\nϵ , τ = rcˆτ\nϵ2 , r =rcˆr (26)\nso that ∂ˆτ =O(ϵ0) and we denote ˆ∂i = ∂\n∂ ˆxi =O(ϵ0). In the new coordinates\nds2\np+2 =− ˆrr3\nc\nϵ4 dˆτ 2 + 2r2\nc\nϵ2 dˆτd ˆr + r2\nc\nϵ2dˆxidˆxi\n− 2r2\nc\n1− ˆr\nϵ2 ˆvidˆxidˆτ− 2rcˆvidˆxidˆr (27)\n+ (1− ˆr)\n[\nr2\nc\nˆv2 + 2 ˆP\nϵ2 dˆτ 2 +rcˆviˆvjdˆxidˆxj\n]\n+rc(ˆv2 + 2 ˆP )dˆτd ˆr\n− (ˆr2− 1)rc ˆ∂2ˆvidˆxidˆτ + ..., (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.2451v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Petrov type",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-010-7-petrov-type.md",
+      "narrative": null,
+      "content": "Interestingly, this geometry is of an algebraically special type. We consider the case of p = 2 to connect\nto the well-studied Petrov classiﬁcation of spacetimes [37]). A geometry is Petrov type II if there exists\na real null vector kµ such that the Weyl tensor satisﬁes\nWµνρ[σkλ]kνkρ = 0. (39)\nThis happens if the invariantI 3−27J 2 vanishes whereI,J are both speciﬁc combinations of Weyl tensor\ncomponents which can be found in [37]. For the metric (14), the lowest nonzero entries for I,J are at\nO(ϵ4) andO(ϵ6) respectively. Hence, the ﬁrst contribution to the invariant would be at O(ϵ12); howeve",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.2451v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nonlinear solution in the near-horizon expansion",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-011-8-nonlinear-solution-in-the-near-horizon-expansi.md",
+      "narrative": null,
+      "content": "In section 4, the nonlinear Einstein equations with certain boundary conditions were solved in the non-\nrelativistic, long-wavelength hydrodynamic ϵ-expansion. This generalized the analysis given in [28] of\nthe ϵ-expansion for linearized modes. [28] also considered, for linearized modes, a second, near-horizon\nexpansion. Although physically inequivalent, the two expansions were found to be equivalent mathemat-\nically and reduce to the linearized dynamics of an incompressible ﬂuid. In this section, we consider the\nnonlinear version of the near-horizon expansion and ﬁnd that it is again mathemat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.2451v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-012-9-acknowledgements.md",
+      "narrative": null,
+      "content": "We are grateful to D. Christodoulou, S. Cremonini, T. Damour, B. Freivogel, S. Gubser, S. Hartnoll,\nS. Kachru, R. Loganayagam, A. Maloney, S. Minwalla, D. Nelson, P. Petrov, S. Sachdev, O. Saremi, J.\nSmoller, K. Thorne, E. Verlinde and S. T. Yau for illuminating conversations. This work was supported\nby DOE grant DE-FG0291ER40654 and the Fundamental Laws Initiative at Harvard.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.2451v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Appendix",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-013-a-appendix.md",
+      "narrative": null,
+      "content": "In the ϵ-expansion,\nds2\np+2 =−rdτ 2 + 2dτdr +dxidxi− 2\n(\n1− r\nrc\n)\nvidxidτ− 2vi\nrc\ndxidr\n+\n(\n1− r\nrc\n)[\n(v2 + 2P )dτ 2 + vivj\nrc\ndxidxj\n]\n+\n(v2\nrc\n+ 2P\nrc\n)\ndτdr +c1 log\n(r\nrc\n)\n(∂ivj +∂jvi)dxidxj\n− (r2−r2\nc)\nrc\n∂2vidxidτ− 2\n(\n1− r\nrc\n)\nqidxidτ− 2c1 (r logr−rc logrc)∂2vidxidτ (45)\n− 2c1 log\n(r\nrc\n)\nvj (∂ivj +∂jvi)dxidτ + 2c1\n(\n1− r\nrc\n)\nvj∂jvidxidτ +O(ϵ4)\nsolves the Einstein equations through O(ϵ3) if vi obeys the incompressible Navier-Stokes equation with\nthe “wrong” viscosity η = rc (1 +c1) where c1 is a nonzero constant. For this geometry, the square of\nthe Riemann tensor is\nR2 =− 3\n2r2c\n(∂",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

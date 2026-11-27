@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["rational_to_f64","tighten_f64","tighten_vec"]};

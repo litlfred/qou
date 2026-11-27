@@ -598,6 +598,25 @@
       "bibo:doi": "10.2140/ant.2020.14.1981"
     },
     {
+      "@id": "references/angeli-marinova2013",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Table of experimental nuclear ground state charge radii: An update",
+      "dcterms:creator": [
+        "Angeli, I.",
+        "Marinova, K. P."
+      ],
+      "dcterms:issued": "2013",
+      "dcterms:isPartOf": "Atomic Data and Nuclear Data Tables",
+      "bibo:volume": "99",
+      "bibo:issue": "1",
+      "bibo:pages": "69-95",
+      "bibo:doi": "10.1016/j.adt.2011.12.006",
+      "dcterms:identifier": "https://doi.org/10.1016/j.adt.2011.12.006"
+    },
+    {
       "@id": "references/arcus2011",
       "@type": [
         "fabio:Work",
@@ -1236,6 +1255,20 @@
       ],
       "dcterms:issued": "2020",
       "dcterms:identifier": "https://arxiv.org/abs/1904.05612"
+    },
+    {
+      "@id": "references/balagovic-kolb-2015",
+      "@type": [
+        "fabio:Work",
+        "bibo:Article"
+      ],
+      "dcterms:title": "Universal K-matrix for quantum symmetric pairs",
+      "dcterms:creator": [
+        "Balagović, Martina",
+        "Kolb, Stefan"
+      ],
+      "dcterms:issued": "2015",
+      "dcterms:identifier": "https://arxiv.org/abs/1507.06276"
     },
     {
       "@id": "references/ballantine2024",
@@ -1892,6 +1925,27 @@
       "dcterms:issued": "2008",
       "dcterms:isPartOf": "Moscow Mathematical Journal",
       "dcterms:identifier": "https://arxiv.org/abs/0707.3799"
+    },
+    {
+      "@id": "references/bhattacharyya2008",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Nonlinear Fluid Dynamics from Gravity",
+      "dcterms:creator": [
+        "Bhattacharyya, Sayantani",
+        "Hubeny, Veronika E.",
+        "Minwalla, Shiraz",
+        "Rangamani, Mukund"
+      ],
+      "dcterms:issued": "2008",
+      "dcterms:isPartOf": "Journal of High Energy Physics",
+      "bibo:volume": "2008",
+      "bibo:issue": "2",
+      "bibo:pages": "045",
+      "bibo:doi": "10.1088/1126-6708/2008/02/045",
+      "dcterms:identifier": "https://arxiv.org/abs/0712.2456"
     },
     {
       "@id": "references/bialynicki1973",
@@ -2815,6 +2869,27 @@
       "dcterms:identifier": "https://arxiv.org/abs/1802.00038"
     },
     {
+      "@id": "references/bredberg2011",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "From Navier-Stokes To Einstein",
+      "dcterms:creator": [
+        "Bredberg, Irene",
+        "Keeler, Cynthia",
+        "Lysov, Vyacheslav",
+        "Strominger, Andrew"
+      ],
+      "dcterms:issued": "2012",
+      "dcterms:isPartOf": "Journal of High Energy Physics",
+      "bibo:volume": "2012",
+      "bibo:issue": "7",
+      "bibo:pages": "146",
+      "bibo:doi": "10.1007/JHEP07(2012)146",
+      "dcterms:identifier": "https://arxiv.org/abs/1101.2451"
+    },
+    {
       "@id": "references/breit-wigner1936",
       "@type": [
         "fabio:Work",
@@ -3636,6 +3711,21 @@
       "bibo:pages": "411-431"
     },
     {
+      "@id": "references/chester-arsiwalla-kauffman-2025",
+      "@type": [
+        "fabio:Work",
+        "bibo:Article"
+      ],
+      "dcterms:title": "Preons, braid topology, and representations of fundamental particles",
+      "dcterms:creator": [
+        "Chester, David",
+        "Arsiwalla, Xerxes D.",
+        "Kauffman, Louis H."
+      ],
+      "dcterms:issued": "2025",
+      "dcterms:identifier": "https://arxiv.org/abs/2501.03260"
+    },
+    {
       "@id": "references/chlouveraki2016",
       "@type": [
         "fabio:Work",
@@ -3662,6 +3752,24 @@
       "dcterms:issued": "2016",
       "dcterms:publisher": "Université de Versailles Saint-Quentin",
       "dcterms:identifier": "https://theses.hal.science/tel-01411063"
+    },
+    {
+      "@id": "references/chmutov2007",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Mutant knots and intersection graphs",
+      "dcterms:creator": [
+        "Chmutov, S. V.",
+        "Lando, S. K."
+      ],
+      "dcterms:issued": "2007",
+      "dcterms:isPartOf": "Algebraic & Geometric Topology",
+      "bibo:volume": "7",
+      "bibo:pages": "1579-1598",
+      "bibo:doi": "10.2140/agt.2007.7.1579",
+      "dcterms:identifier": "https://arxiv.org/abs/0704.1313"
     },
     {
       "@id": "references/christenson1964",
@@ -3772,6 +3880,20 @@
       ],
       "dcterms:issued": "2009",
       "dcterms:identifier": "https://arxiv.org/abs/0905.0228"
+    },
+    {
+      "@id": "references/ciubotaru2014",
+      "@type": [
+        "fabio:Work",
+        "bibo:Article"
+      ],
+      "dcterms:title": "Cocenters and representations of affine Hecke algebra",
+      "dcterms:creator": [
+        "Ciubotaru, Dan",
+        "He, Xuhua"
+      ],
+      "dcterms:issued": "2014",
+      "dcterms:identifier": "https://arxiv.org/abs/1409.0902"
     },
     {
       "@id": "references/codata2022",
@@ -6166,6 +6288,20 @@
       "bibo:doi": "10.1023/A:1022412010826"
     },
     {
+      "@id": "references/fortierbourque2023",
+      "@type": [
+        "fabio:Work",
+        "bibo:Article"
+      ],
+      "dcterms:title": "Linear programming bounds for hyperbolic surfaces",
+      "dcterms:creator": [
+        "Fortier Bourque, Maxime",
+        "Petri, Bram"
+      ],
+      "dcterms:issued": "2023",
+      "dcterms:identifier": "https://arxiv.org/abs/2302.02540"
+    },
+    {
       "@id": "references/foth2002",
       "@type": [
         "fabio:Work",
@@ -7736,6 +7872,26 @@
       ]
     },
     {
+      "@id": "references/granssamuelsson2020",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The action of the Virasoro algebra in quantum spin chains. I. The non-rational case",
+      "dcterms:creator": [
+        "Grans-Samuelsson, Linnea",
+        "Jacobsen, Jesper Lykke",
+        "Saleur, Hubert"
+      ],
+      "dcterms:issued": "2021",
+      "dcterms:isPartOf": "Journal of High Energy Physics",
+      "bibo:volume": "2021",
+      "bibo:issue": "2",
+      "bibo:pages": "130",
+      "bibo:doi": "10.1007/JHEP02(2021)130",
+      "dcterms:identifier": "https://arxiv.org/abs/2010.12819"
+    },
+    {
       "@id": "references/grassi-gu-marino2019qsw",
       "@type": [
         "fabio:Work",
@@ -7785,6 +7941,19 @@
       "dcterms:identifier": "https://doi.org/10.1103/PhysRevLett.13.598"
     },
     {
+      "@id": "references/gresnigt2018",
+      "@type": [
+        "fabio:Work",
+        "bibo:Article"
+      ],
+      "dcterms:title": "Braids, normed division algebras, and Standard Model symmetries",
+      "dcterms:creator": [
+        "Gresnigt, Niels"
+      ],
+      "dcterms:issued": "2018",
+      "dcterms:identifier": "https://arxiv.org/abs/1803.02202"
+    },
+    {
       "@id": "references/gresnigt-marciano-zappala2021",
       "@type": [
         "fabio:Work",
@@ -7817,6 +7986,21 @@
       "bibo:pages": "747",
       "bibo:doi": "10.1140/epjc/s10052-023-11923-y",
       "dcterms:identifier": "https://arxiv.org/abs/2306.13098"
+    },
+    {
+      "@id": "references/gresnigt2017",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Quantum groups and braid groups as fundamental symmetries",
+      "dcterms:creator": [
+        "Gresnigt, Niels G."
+      ],
+      "dcterms:issued": "2017",
+      "dcterms:publisher": "Proceedings of Science",
+      "dcterms:isPartOf": "European Physical Society Conference on High Energy Physics (EPS-HEP 2017), Venice, Italy, 5-12 July 2017",
+      "dcterms:identifier": "https://arxiv.org/abs/1711.09011"
     },
     {
       "@id": "references/gresnigt2019",
@@ -9827,7 +10011,11 @@
         "Kauffman, Louis H."
       ],
       "dcterms:issued": "1987",
-      "dcterms:isPartOf": "Topology"
+      "dcterms:isPartOf": "Topology",
+      "bibo:volume": "26",
+      "bibo:issue": "3",
+      "bibo:pages": "395-407",
+      "bibo:doi": "10.1016/0040-9383(87)90009-7"
     },
     {
       "@id": "references/kauffman1991",
@@ -9857,6 +10045,25 @@
       ],
       "dcterms:issued": "2007",
       "dcterms:identifier": "https://arxiv.org/abs/quant-ph/0606114"
+    },
+    {
+      "@id": "references/kauffman-lomonaco-2016",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Braiding with Majorana fermions",
+      "dcterms:creator": [
+        "Kauffman, Louis H.",
+        "Lomonaco, Samuel J., Jr."
+      ],
+      "dcterms:issued": "2016",
+      "dcterms:publisher": "SPIE",
+      "dcterms:isPartOf": "Quantum Information and Computation IX",
+      "bibo:volume": "9873",
+      "bibo:pages": "98730E",
+      "bibo:doi": "10.1117/12.2228510",
+      "dcterms:identifier": "https://arxiv.org/abs/1603.07827"
     },
     {
       "@id": "references/kawauchi1996",
@@ -11184,6 +11391,37 @@
       "dcterms:identifier": "https://doi.org/10.1007/BF02547354"
     },
     {
+      "@id": "references/letzter2001",
+      "@type": [
+        "fabio:Work",
+        "bibo:Article"
+      ],
+      "dcterms:title": "Coideal subalgebras and quantum symmetric pairs",
+      "dcterms:creator": [
+        "Letzter, Gail"
+      ],
+      "dcterms:issued": "2001",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0103228"
+    },
+    {
+      "@id": "references/levin2005",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "String-net condensation: A physical mechanism for topological phases",
+      "dcterms:creator": [
+        "Levin, Michael A.",
+        "Wen, Xiao-Gang"
+      ],
+      "dcterms:issued": "2005",
+      "dcterms:isPartOf": "Physical Review B",
+      "bibo:volume": "71",
+      "bibo:pages": "045110",
+      "bibo:doi": "10.1103/PhysRevB.71.045110",
+      "dcterms:identifier": "https://arxiv.org/abs/cond-mat/0404617"
+    },
+    {
       "@id": "references/levine-raksit2020",
       "@type": [
         "fabio:Work",
@@ -11895,6 +12133,20 @@
       "dcterms:identifier": "https://doi.org/10.1063/5.0013689"
     },
     {
+      "@id": "references/mardby2024",
+      "@type": [
+        "fabio:Work",
+        "bibo:Article"
+      ],
+      "dcterms:title": "112 years of listening to Riemannian manifolds",
+      "dcterms:creator": [
+        "Mårdby, Gustav",
+        "Rowlett, Julie"
+      ],
+      "dcterms:issued": "2024",
+      "dcterms:identifier": "https://arxiv.org/abs/2406.18369"
+    },
+    {
       "@id": "references/margolus1998",
       "@type": [
         "fabio:Work",
@@ -12415,6 +12667,42 @@
       "dcterms:identifier": "https://arxiv.org/abs/2503.08846"
     },
     {
+      "@id": "references/menasco-thistlethwaite1991",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The Tait flyping conjecture",
+      "dcterms:creator": [
+        "Menasco, William W.",
+        "Thistlethwaite, Morwen B."
+      ],
+      "dcterms:issued": "1991",
+      "dcterms:isPartOf": "Bulletin of the American Mathematical Society",
+      "bibo:volume": "25",
+      "bibo:issue": "2",
+      "bibo:pages": "403-412",
+      "bibo:doi": "10.1090/S0273-0979-1991-16083-0"
+    },
+    {
+      "@id": "references/menasco-thistlethwaite1993",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The classification of alternating links",
+      "dcterms:creator": [
+        "Menasco, William W.",
+        "Thistlethwaite, Morwen B."
+      ],
+      "dcterms:issued": "1993",
+      "dcterms:isPartOf": "Annals of Mathematics",
+      "bibo:volume": "138",
+      "bibo:issue": "1",
+      "bibo:pages": "113-171",
+      "bibo:doi": "10.2307/2946636"
+    },
+    {
       "@id": "references/miki2007",
       "@type": [
         "fabio:Work",
@@ -12646,6 +12934,25 @@
       "bibo:pages": "117-129",
       "bibo:doi": "10.1017/S0022112069000991",
       "dcterms:identifier": "https://doi.org/10.1017/S0022112069000991"
+    },
+    {
+      "@id": "references/mohamed2016",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Discrete exterior calculus discretization of incompressible Navier-Stokes equations over surface simplicial meshes",
+      "dcterms:creator": [
+        "Mohamed, Mamdouh S.",
+        "Hirani, Anil N.",
+        "Samtaney, Ravi"
+      ],
+      "dcterms:issued": "2016",
+      "dcterms:isPartOf": "Journal of Computational Physics",
+      "bibo:volume": "312",
+      "bibo:pages": "175-191",
+      "bibo:doi": "10.1016/j.jcp.2016.02.028",
+      "dcterms:identifier": "https://arxiv.org/abs/1508.01166"
     },
     {
       "@id": "references/mohideen1998",
@@ -13096,6 +13403,23 @@
       ],
       "dcterms:issued": "2022",
       "dcterms:identifier": "https://arxiv.org/abs/2205.01282"
+    },
+    {
+      "@id": "references/murasugi1987",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Jones polynomials and classical conjectures in knot theory",
+      "dcterms:creator": [
+        "Murasugi, Kunio"
+      ],
+      "dcterms:issued": "1987",
+      "dcterms:isPartOf": "Topology",
+      "bibo:volume": "26",
+      "bibo:issue": "2",
+      "bibo:pages": "187-194",
+      "bibo:doi": "10.1016/0040-9383(87)90058-9"
     },
     {
       "@id": "references/murasugi1996",
@@ -13893,6 +14217,27 @@
       ],
       "dcterms:issued": "2011",
       "dcterms:identifier": "https://arxiv.org/abs/1109.3255"
+    },
+    {
+      "@id": "references/pastawski2015",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence",
+      "dcterms:creator": [
+        "Pastawski, Fernando",
+        "Yoshida, Beni",
+        "Harlow, Daniel",
+        "Preskill, John"
+      ],
+      "dcterms:issued": "2015",
+      "dcterms:isPartOf": "Journal of High Energy Physics",
+      "bibo:volume": "2015",
+      "bibo:issue": "6",
+      "bibo:pages": "149",
+      "bibo:doi": "10.1007/JHEP06(2015)149",
+      "dcterms:identifier": "https://arxiv.org/abs/1503.06237"
     },
     {
       "@id": "references/pati2017",
@@ -16462,6 +16807,23 @@
       "bibo:doi": "10.1017/CBO9780511755682"
     },
     {
+      "@id": "references/thistlethwaite1987",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "A spanning tree expansion of the Jones polynomial",
+      "dcterms:creator": [
+        "Thistlethwaite, Morwen B."
+      ],
+      "dcterms:issued": "1987",
+      "dcterms:isPartOf": "Topology",
+      "bibo:volume": "26",
+      "bibo:issue": "3",
+      "bibo:pages": "297-309",
+      "bibo:doi": "10.1016/0040-9383(87)90003-6"
+    },
+    {
       "@id": "references/thompson-fluxtubes",
       "@type": [
         "fabio:Work",
@@ -16822,6 +17184,20 @@
       ],
       "dcterms:issued": "1992",
       "dcterms:isPartOf": "Topology"
+    },
+    {
+      "@id": "references/turaev-virelizier2010",
+      "@type": [
+        "fabio:Work",
+        "bibo:Article"
+      ],
+      "dcterms:title": "On two approaches to 3-dimensional TQFTs",
+      "dcterms:creator": [
+        "Turaev, Vladimir",
+        "Virelizier, Alexis"
+      ],
+      "dcterms:issued": "2010",
+      "dcterms:identifier": "https://arxiv.org/abs/1006.3501"
     },
     {
       "@id": "references/turaev2010",

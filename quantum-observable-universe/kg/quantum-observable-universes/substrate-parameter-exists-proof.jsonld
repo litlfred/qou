@@ -6,16 +6,16 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-substrate-parameter-exists",
+  "@id": "papers/quantum-observable-universe/blocks/prf-aether-parameter-exists",
   "@type": [
     "folio-assistant-sci:Proof",
     "doco:Section"
   ],
-  "label": "prf:substrate-parameter-exists",
+  "label": "prf:aether-parameter-exists",
   "kind": "proof",
-  "title": "Proof of existence of the substrate parameter",
+  "title": "Proof of existence of the aether parameter",
   "uses": [
-    "papers/quantum-observable-universe/blocks/thm-substrate-parameter-exists",
+    "papers/quantum-observable-universe/blocks/thm-aether-parameter-exists",
     "papers/quantum-observable-universe/blocks/prop-braiding-eigenvalue-extraction"
   ],
   "text": "substrate-parameter-exists-proof.md",

@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2202.03067v4",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "QUANTUM JET BUNDLES",
+      "dcterms:creator": [
+        "MAJID, SHAHN",
+        "ÃO, FRANCISCO SIM"
+      ],
+      "dcterms:issued": "D:20230517",
+      "dcterms:identifier": "https://arxiv.org/abs/2202.03067",
+      "dcterms:abstract": "We formulate a notion of jet bundles over a possibly noncommutative algebra A equipped with a torsion free connection. Among the conditions needed for 3rd-order jets and above is that the connection also be ﬂat and its ‘generalised braiding tensor’ σ ∶Ω1⊗A Ω1 → Ω1⊗A Ω1 obey the Yang-Baxter equation or braid relations. We also cover the case of jet bundles of a given ‘vector bundle’ over A in the form of a bimodule E with a ﬂat bimodule connection with its braiding σE obeying the coloured braid relations. Examples include the permutation group S3 with its 2-cycles calculus, M2(C), the bicrossproduct model quantum spacetime in two dimensions and Cq[SL2] for q a 4th root of unity.",
+      "dcterms:source": "library/arxiv-2202.03067v4/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2202.03067v4"
+    }
+  ]
+}

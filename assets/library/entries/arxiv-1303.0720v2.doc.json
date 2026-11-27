@@ -924,19 +924,19 @@
           "heading": false
         },
         {
-          "term": "metric subsec-bm",
-          "heading": false
-        },
-        {
           "term": "bergman kernel",
           "heading": false
         },
         {
-          "term": "text ding",
+          "term": "metric subsec-bm",
           "heading": false
         },
         {
           "term": "varkappa text",
+          "heading": false
+        },
+        {
+          "term": "text ding",
           "heading": false
         }
       ],
@@ -1713,12 +1713,12 @@
           "heading": false
         },
         {
-          "term": "diffusion operator",
-          "heading": true
-        },
-        {
           "term": "rangle mathbf",
           "heading": false
+        },
+        {
+          "term": "diffusion operator",
+          "heading": true
         }
       ],
       "extract": "Next, to define the diffusion operator ${\\mathbf S}$, we need the two differential operators $${{\\pmb{\\partial}}}_w=\\partial_w-\\frac{\\partial_w\\theta}{\\bar\\partial_{w}\\theta} \\bar\\partial_{w},\\qquad {\\pmb{\\partial}}_\\theta= \\frac{1}{\\bar\\partial_{w}\\theta}\\bar\\partial_{w}. \\label{eq-coordch1}$$ These operators come from the change of variables $(z,w, \\bar w) \\to (z, w, \\theta)$, but this is of no real significance",

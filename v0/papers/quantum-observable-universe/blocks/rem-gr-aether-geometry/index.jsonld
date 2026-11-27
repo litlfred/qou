@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-gr-aether-geometry",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:gr-aether-geometry",
+  "kind": "remark",
+  "title": "General Relativity as the Aether Geometry",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-yang-mills-levi"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-yang-mills-levi",
+  "tags": [
+    "gravity",
+    "substrate"
+  ],
+  "text": "gr-substrate-geometry.md",
+  "provenance": "authored"
+}

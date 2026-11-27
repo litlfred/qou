@@ -284,12 +284,12 @@
           "heading": false
         },
         {
-          "term": "axioms",
-          "heading": true
-        },
-        {
           "term": "quad hfill",
           "heading": false
+        },
+        {
+          "term": "axioms",
+          "heading": true
         },
         {
           "term": "smallskip item",
@@ -340,11 +340,11 @@
           "heading": false
         },
         {
-          "term": "onto dua",
+          "term": "begin lrarray",
           "heading": false
         },
         {
-          "term": "begin lrarray",
+          "term": "onto dua",
           "heading": false
         }
       ],
@@ -380,11 +380,11 @@
           "heading": false
         },
         {
-          "term": "bra varphi",
+          "term": "eps",
           "heading": false
         },
         {
-          "term": "eps",
+          "term": "bra varphi",
           "heading": false
         },
         {
@@ -436,12 +436,12 @@
           "heading": false
         },
         {
-          "term": "space dua",
-          "heading": false
-        },
-        {
           "term": "trivial representation",
           "heading": true
+        },
+        {
+          "term": "space dua",
+          "heading": false
         }
       ],
       "extract": "Since the counit of a WHA is in general not an algebra map, weak Hopf algebras may be lacking of any 1-dimensional representation. Nevertheless the axioms ensure that any WHA $A$ has a distinguished representation providing a unit object for the (relaxed) monoidal category of left $A$-modules. We shall discuss this category in detail in \\cite{BNSzII}. Now we concentrate only on the properties of this representation.",
@@ -932,11 +932,11 @@
       "heading": false
     },
     {
-      "term": "beq bra",
+      "term": "qquad dua",
       "heading": false
     },
     {
-      "term": "qquad dua",
+      "term": "beq bra",
       "heading": false
     },
     {

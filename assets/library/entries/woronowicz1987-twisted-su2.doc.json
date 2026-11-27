@@ -1,0 +1,1258 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "woronowicz1987-twisted-su2",
+  "title": "woronowicz1987-twisted-su2",
+  "variant": "pdf",
+  "pages": 66,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "§ 1. The Pseudogroup",
+      "number": null,
+      "page": 5,
+      "pageLabel": "121",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-the-pseudogroup"
+    },
+    {
+      "level": 1,
+      "title": "§2. First Order Differential Calculus",
+      "number": null,
+      "page": 14,
+      "pageLabel": "130",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-first-order-differential-calculus"
+    },
+    {
+      "level": 1,
+      "title": "2 =—(DO",
+      "number": "0",
+      "page": 25,
+      "pageLabel": "141",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-0-2-do"
+    },
+    {
+      "level": 2,
+      "title": "</(CAO=rfCAC'+(-l)8WC'",
+      "number": null,
+      "page": 30,
+      "pageLabel": "146",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-caorfcac-l8wc"
+    },
+    {
+      "level": 3,
+      "title": "C^flo^iA^+^i^A^o+^oA^i",
+      "number": null,
+      "page": 33,
+      "pageLabel": "149",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-cfloiaiaooai"
+    },
+    {
+      "level": 4,
+      "title": "§4 Extended BImodules",
+      "number": null,
+      "page": 35,
+      "pageLabel": "151",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-4-extended-bimodules"
+    },
+    {
+      "level": 4,
+      "title": "Ak=(id®ri)v",
+      "number": null,
+      "page": 44,
+      "pageLabel": "160",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-akidriv"
+    },
+    {
+      "level": 1,
+      "title": "S intertwines v with v'",
+      "number": "I",
+      "page": 45,
+      "pageLabel": "161",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-i-s-intertwines-v-with-v"
+    },
+    {
+      "level": 2,
+      "title": "<42Wx)Q =S ^^(8)^-A^AC+i; ^(8)rf^AC",
+      "number": null,
+      "page": 55,
+      "pageLabel": "171",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-42wxq-s-8-aaci-8rfac"
+    },
+    {
+      "level": 3,
+      "title": "Af\"° = A^Bf + I®Aa",
+      "number": null,
+      "page": 58,
+      "pageLabel": "174",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-af-abf-iaa"
+    },
+    {
+      "level": 3,
+      "title": "A2. Structure of the Algebra A",
+      "number": null,
+      "page": 62,
+      "pageLabel": "178",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-a2-structure-of-the-algebra-a"
+    },
+    {
+      "level": 3,
+      "title": "References",
+      "number": null,
+      "page": 64,
+      "pageLabel": "180",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-011-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": "121",
+      "words": 1508,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pseudogroups",
+          "heading": false
+        },
+        {
+          "term": "non-commutative differential",
+          "heading": false
+        },
+        {
+          "term": "svu",
+          "heading": false
+        },
+        {
+          "term": "differential calculus",
+          "heading": false
+        },
+        {
+          "term": "differential forms",
+          "heading": false
+        },
+        {
+          "term": "twisted unimodularity",
+          "heading": false
+        },
+        {
+          "term": "haar measure",
+          "heading": false
+        },
+        {
+          "term": "compact topological",
+          "heading": false
+        }
+      ],
+      "extract": "PubL RIMS, Kyoto Univ. 23 (1987), 117-181 Twisted SU(2) Group. An Example of a Non-Commutative Differential Calculus By S.L. WORONOWICZ* For any number v in the interval [— 1, 1] a C*-algebra A generated by two elements a and f satisfying simple (depending on v) commutation relation is introduced and investi- gated. If y=l then the algebra coincides with the algebra of all continuous functions on the group SU(T).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-000-1-the-pseudogroup",
+      "number": null,
+      "title": "§ 1. The Pseudogroup",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 14,
+      "labelStart": "121",
+      "labelEnd": "130",
+      "words": 2421,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pseudogroup",
+          "heading": true
+        },
+        {
+          "term": "matrix pseudogroup",
+          "heading": false
+        },
+        {
+          "term": "antimultiplicative mapping",
+          "heading": false
+        },
+        {
+          "term": "nxn matrix",
+          "heading": false
+        },
+        {
+          "term": "entries belonging",
+          "heading": false
+        },
+        {
+          "term": "jtf",
+          "heading": false
+        },
+        {
+          "term": "continuous linear",
+          "heading": false
+        },
+        {
+          "term": "multiplicative mapping",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we introduce the basic object investigated in this paper. It is the pseudogroup SUU(2). In general pseudogroups should be considered as \"locally compact topological groups\" on which the \"algebra of continuous functions\" with \"pointwise multiplication\" is not commutative,, The particular example considered in this paper is closely related to SU(T) group and can be obtained by a modification of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-first-order-differential-calculus",
+      "number": null,
+      "title": "§2. First Order Differential Calculus",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 25,
+      "labelStart": "130",
+      "labelEnd": "141",
+      "words": 2559,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "differential calculus",
+          "heading": true
+        },
+        {
+          "term": "non-zero coefficient",
+          "heading": false
+        },
+        {
+          "term": "linear functional",
+          "heading": false
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        },
+        {
+          "term": "jtf",
+          "heading": false
+        },
+        {
+          "term": "convolution products",
+          "heading": false
+        },
+        {
+          "term": "neutral element",
+          "heading": false
+        },
+        {
+          "term": "kmn",
+          "heading": false
+        }
+      ],
+      "extract": "In the theory of Lie groups the external derivative of a smooth function a GE *& °° (G) may be written in the form where (cok) is a basis in the space of left invariant differential forms of the first order, %t are directional derivatives of the delta-function NON-COMMUTATIVE DIFFERENTIAL CALCULUS 131 concentrated at the neutral element of the group G and * denotes the convolution product. We shall use the above",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-0-2-do",
+      "number": "0",
+      "title": "2 =—(DO",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 30,
+      "labelStart": "141",
+      "labelEnd": "146",
+      "words": 1346,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grade elements",
+          "heading": false
+        },
+        {
+          "term": "differential calculus",
+          "heading": false
+        },
+        {
+          "term": "differential forms",
+          "heading": false
+        },
+        {
+          "term": "graded algebra",
+          "heading": false
+        },
+        {
+          "term": "jtf",
+          "heading": false
+        },
+        {
+          "term": "sub-bimodule",
+          "heading": false
+        },
+        {
+          "term": "order differential",
+          "heading": false
+        },
+        {
+          "term": "stf",
+          "heading": false
+        }
+      ],
+      "extract": "Proof, Let co^F. Then a) can be written as a finite sum (cf. Thm. 2. 2) (^ = T.aidbi (2.37) where a^b^sf and E^A = 0. Using the rules (2. 34) -(2. 36) onei easily obtain and the uniqueness of (2. 33) is proven. To prove the existence we have to show that for any al5 a2? ... 5 aN, 61? 62? - • • 9 bN ( '\" _ ) => (Si*rffl*=0). (2.38)\\XX- 6i = 0/ Assume that ^ aibi = 0 and Y^1aidbi = 0. Then according to Prop. 2- 43 2]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-caorfcac-l8wc",
+      "number": null,
+      "title": "</(CAO=rfCAC'+(-l)8WC'",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 33,
+      "labelStart": "146",
+      "labelEnd": "149",
+      "words": 528,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grade",
+          "heading": false
+        },
+        {
+          "term": "stf",
+          "heading": false
+        },
+        {
+          "term": "differential calculus",
+          "heading": false
+        },
+        {
+          "term": "non-commutative differential",
+          "heading": false
+        },
+        {
+          "term": "homogeneous elements",
+          "heading": false
+        },
+        {
+          "term": "condition follows",
+          "heading": false
+        },
+        {
+          "term": "formulae",
+          "heading": false
+        }
+      ],
+      "extract": "for all homogeneous elements C, C'e.TA; 3£ denotes the grade of C 4° («Q*=rf(C*) 5° NON-COMMUTATIVE DIFFERENTIAL CALCULUS 147 The proof of this theorem is based on the following proposition which will be proven in the next section. Proposition 39 3* There exists a larger graded ^-algebra FA (with multiplication denoted by f\\ or by e if one of the factors is of grade 0) containing FA and a grade one element X^JPA",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-cfloiaiaooai",
+      "number": null,
+      "title": "C^flo^iA^+^i^A^o+^oA^i",
+      "level": 3,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": "149",
+      "labelEnd": "151",
+      "words": 364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "infinitesimal shifts",
+          "heading": false
+        },
+        {
+          "term": "svu",
+          "heading": false
+        },
+        {
+          "term": "stf",
+          "heading": false
+        },
+        {
+          "term": "differential",
+          "heading": false
+        },
+        {
+          "term": "means",
+          "heading": false
+        },
+        {
+          "term": "lie",
+          "heading": false
+        },
+        {
+          "term": "isomorphic",
+          "heading": false
+        }
+      ],
+      "extract": "where ak^£/ (k = 0,1,2). Looking more closely to the structure of the ideal S one sees that ak (k = Q, l,-2) are uniquely determined by C2. Similarly any element C3^jTA3 is of the form where a^stf is uniquely determined by C3. Moreover it is clear that P*n = Q for n>3. Therefore the de Rham cochain complex for SVU(2) has the following form: o — >e^__»r--»rA2— r*3 — >o . We shall prove in Section 5 that this sequence",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-extended-bimodules",
+      "number": null,
+      "title": "§4 Extended BImodules",
+      "level": 4,
+      "pageStart": 35,
+      "pageEnd": 44,
+      "labelStart": "151",
+      "labelEnd": "160",
+      "words": 2378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bimodule structure",
+          "heading": false
+        },
+        {
+          "term": "repre sentation",
+          "heading": false
+        },
+        {
+          "term": "representation acting",
+          "heading": false
+        },
+        {
+          "term": "differential calculus",
+          "heading": false
+        },
+        {
+          "term": "f0f",
+          "heading": false
+        },
+        {
+          "term": "s2c",
+          "heading": false
+        },
+        {
+          "term": "woronowigz",
+          "heading": false
+        },
+        {
+          "term": "jtf",
+          "heading": false
+        }
+      ],
+      "extract": "This section is exclusively devoted to the proof of Prop* 30 3, No notion introduced in this section will be used later. The reader interesting in applications of the differential calculus described in the previous sections may omit Section 4 and pass to Section 50 To prove Prop, 3. 3 we have to extend #-bimodule Fa Let jtX be a free left ^/-module with one generator X and Any element GjeJT is of the form ® = cX+co",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-akidriv",
+      "number": null,
+      "title": "Ak=(id®ri)v",
+      "level": 4,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "160",
+      "labelEnd": "161",
+      "words": 257,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "infinitesimal generators",
+          "heading": false
+        },
+        {
+          "term": "irf",
+          "heading": false
+        },
+        {
+          "term": "sjj",
+          "heading": false
+        },
+        {
+          "term": "svu",
+          "heading": false
+        }
+      ],
+      "extract": "for k = Q, 1, 2 (see Section 2 for the definition of %Q, %i5 #2). Operators AQ, AI, A2 introduced by (5. 4) will be called infinitesimal generators of v. Example 5. 1. If u is the representation of S»U(2) considered in Thm. NON-COMMUTATIVE DIFFERENTIAL CALCULUS 161 1.4 then using formulae (2. 3) we compute infinitesimal generators of u'. V \\0, f /I V \"• 7 • \" ]f\\ \\ I I \\ I-\"-* V/ ' Ai=(id®%i)u = \\ i-C y»^*)\\ /«, 0\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-i-s-intertwines-v-with-v",
+      "number": "I",
+      "title": "S intertwines v with v'",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 55,
+      "labelStart": "161",
+      "labelEnd": "171",
+      "words": 2387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "infinitesimal representation",
+          "heading": false
+        },
+        {
+          "term": "infinitesimal generators",
+          "heading": false
+        },
+        {
+          "term": "amax",
+          "heading": false
+        },
+        {
+          "term": "non-commutative differential",
+          "heading": false
+        },
+        {
+          "term": "selfadjointness relation",
+          "heading": false
+        },
+        {
+          "term": "differential calculus",
+          "heading": false
+        },
+        {
+          "term": "svu",
+          "heading": false
+        },
+        {
+          "term": "nonnegative integer",
+          "heading": false
+        }
+      ],
+      "extract": "II. SAk = AiSfor A = 0, 1,2. Proof. If (S(g)/)z; = z/(5'(B)/) then applying to both sides the map 162 S. L. WORONOWICZ (A = 0, 1,2) we obtain £(w/(g)fc)z; = (id®ik}v'S. Therefore I implies II. To prove the converse we have to compute (id®d) (zT1) where v~l is the inverse of v. Using relation dl = 0 we get and using (5. 7) we obtain Now, using the rules of differential calculus, formula (5. 7) with v replaced by v'",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-42wxq-s-8-aaci-8rfac",
+      "number": null,
+      "title": "<42Wx)Q =S ^^(8)^-A^AC+i; ^(8)rf^AC",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 58,
+      "labelStart": "171",
+      "labelEnd": "174",
+      "words": 784,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "regular representation",
+          "heading": false
+        },
+        {
+          "term": "cohomology groups",
+          "heading": false
+        },
+        {
+          "term": "multiplicity",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        },
+        {
+          "term": "rham",
+          "heading": false
+        },
+        {
+          "term": "denoting",
+          "heading": false
+        },
+        {
+          "term": "sequence",
+          "heading": false
+        },
+        {
+          "term": "acting",
+          "heading": false
+        }
+      ],
+      "extract": "and formula (5.9) shows that ^ = 0, It means that (5.40) is a cochain complex. We shall prove Theorem 5. 9. Let q be the multiplicity of one dimensional trivial rep- resentation in v. Then denoting by Hi, Hlv, H2v,Hl the cohomology groups of (5. 40) we have H°V = C<, //J = 0, #* = 0, H* = C*. (5.41) Proof. It is known that any representation of SVU(2) can be decomposed into a direct sum of irreducible",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-af-abf-iaa",
+      "number": null,
+      "title": "Af\"° = A^Bf + I®Aa",
+      "level": 3,
+      "pageStart": 58,
+      "pageEnd": 62,
+      "labelStart": "174",
+      "labelEnd": "178",
+      "words": 1004,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted unimodularity",
+          "heading": false
+        },
+        {
+          "term": "unimodularity condition",
+          "heading": false
+        },
+        {
+          "term": "entries belonging",
+          "heading": false
+        },
+        {
+          "term": "non-trivial unitary",
+          "heading": false
+        },
+        {
+          "term": "non-commutative differential",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        },
+        {
+          "term": "differential calculus",
+          "heading": false
+        },
+        {
+          "term": "canonical basis",
+          "heading": false
+        }
+      ],
+      "extract": "where r = 0, 1, 2, y are infinitesimal generators of v and w resp. and Bwr = T>fr (bj) nj = (zW(x)/r) w.j In virtue of (2.4), (2.5) and (5.6) (5.52) NON-COMMUTATIVE DIFFERENTIAL CALCULUS 175 Moreover using (2.11) and (5.1) we obtain It turns out that for any representation w operator B% has only positive eigenvalues. This fact can be checked by direct computations for irreducible w (then w is equivalent to dn with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-a2-structure-of-the-algebra-a",
+      "number": null,
+      "title": "A2. Structure of the Algebra A",
+      "level": 3,
+      "pageStart": 62,
+      "pageEnd": 64,
+      "labelStart": "178",
+      "labelEnd": "180",
+      "words": 560,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "algebra",
+          "heading": true
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "continuous operator",
+          "heading": false
+        },
+        {
+          "term": "operator functions",
+          "heading": false
+        },
+        {
+          "term": "acting",
+          "heading": false
+        },
+        {
+          "term": "functions defined",
+          "heading": false
+        }
+      ],
+      "extract": "We shall use the notions and results of [2]. For any Hilbert space H we denote by DV(H) the set of all pairs of operators (a, f) acting on H and satisfying relations of Table 0. Then Dv is a measurable domain and for any //, DU(H) is a closed subset of B(H}2. Therefore Dv is a compact domain. One can easily verify that the algebra A introduced in Section 1 NON-COMMUTATIVE DIFFERENTIAL CALCULUS 179 coincides with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-references",
+      "number": null,
+      "title": "References",
+      "level": 3,
+      "pageStart": 64,
+      "pageEnd": 66,
+      "labelStart": "180",
+      "labelEnd": null,
+      "words": 161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "algebre",
+          "heading": false
+        },
+        {
+          "term": "pseudogroups",
+          "heading": false
+        },
+        {
+          "term": "lecture notes",
+          "heading": false
+        },
+        {
+          "term": "non commutative",
+          "heading": false
+        },
+        {
+          "term": "woronowicz",
+          "heading": false
+        }
+      ],
+      "extract": "[ 1 ] Woronowicz, S. L., Compact matrix pseudogroups, in preparation. [ 2 ] Kruszynski, P. and Woronowicz, S. L., A non commutative Gelfand Naimark theorem, Journal of Operator Theory, 8 (1982), 361-389. NON-COMMUTATIVE DIFFERENTIAL CALCULUS 181 [ 3 ] Woronowicz, S. L., Pseudospaces, pseudogroups and Pontriagin duality. Proceedings of the International Conference on Mathematics and Physics Lausanne 1979, Lecture",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "differential calculus",
+      "heading": true
+    },
+    {
+      "term": "non-commutative differential",
+      "heading": false
+    },
+    {
+      "term": "grade elements",
+      "heading": false
+    },
+    {
+      "term": "invariant differential",
+      "heading": false
+    },
+    {
+      "term": "order differential",
+      "heading": true
+    },
+    {
+      "term": "differential forms",
+      "heading": false
+    },
+    {
+      "term": "infinitesimal representation",
+      "heading": false
+    },
+    {
+      "term": "woronowicz",
+      "heading": false
+    },
+    {
+      "term": "infinitesimal generators",
+      "heading": false
+    },
+    {
+      "term": "differential geometry",
+      "heading": false
+    },
+    {
+      "term": "svu",
+      "heading": false
+    },
+    {
+      "term": "representation acting",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "118",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "119",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "120",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "121",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "122",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "123",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "124",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "125",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "126",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "127",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "128",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "129",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "130",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "131",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "132",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "133",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "134",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "135",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "136",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "137",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "138",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "139",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "140",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "141",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "142",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "143",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "144",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "145",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "146",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "147",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "148",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "149",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "150",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "151",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "152",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "153",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "154",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "155",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "156",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "157",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "158",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "159",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "160",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "161",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "162",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "163",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "164",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "165",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "166",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "167",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "168",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "169",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "170",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "171",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "172",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "173",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "174",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "175",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "176",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "177",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "178",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "179",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "180",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "181",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 12,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 13,
+      "note": "4 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p64); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/woronowicz1987-twisted-su2"
+  }
+}

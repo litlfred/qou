@@ -592,11 +592,11 @@
           "heading": false
         },
         {
-          "term": "maximal flow",
+          "term": "geq psi",
           "heading": false
         },
         {
-          "term": "geq psi",
+          "term": "maximal flow",
           "heading": false
         }
       ],
@@ -636,15 +636,15 @@
           "heading": false
         },
         {
-          "term": "delaunay",
-          "heading": true
-        },
-        {
           "term": "dual program",
           "heading": false
         },
         {
           "term": "finite subcomplex",
+          "heading": false
+        },
+        {
+          "term": "infmain",
           "heading": false
         }
       ],
@@ -672,11 +672,11 @@
           "heading": false
         },
         {
-          "term": "simply-connected domain",
+          "term": "andreevthm",
           "heading": false
         },
         {
-          "term": "andreevthm",
+          "term": "simply-connected domain",
           "heading": false
         },
         {
@@ -712,11 +712,11 @@
       "summary": null,
       "keywords": [
         {
-          "term": "delaunay",
+          "term": "moduli space",
           "heading": true
         },
         {
-          "term": "moduli space",
+          "term": "delaunay",
           "heading": true
         },
         {
@@ -724,11 +724,11 @@
           "heading": false
         },
         {
-          "term": "delaunay triangulation",
+          "term": "kappaineq",
           "heading": false
         },
         {
-          "term": "kappaineq",
+          "term": "delaunay triangulation",
           "heading": false
         },
         {
@@ -868,11 +868,11 @@
           "heading": false
         },
         {
-          "term": "linear program",
+          "term": "suff",
           "heading": false
         },
         {
-          "term": "suff",
+          "term": "linear program",
           "heading": false
         },
         {
@@ -922,10 +922,6 @@
       "heading": false
     },
     {
-      "term": "delaunay triangulation",
-      "heading": false
-    },
-    {
       "term": "mathcal sum",
       "heading": false
     },
@@ -938,11 +934,15 @@
       "heading": false
     },
     {
-      "term": "edge dihedral",
+      "term": "delaunay triangulation",
       "heading": false
     },
     {
       "term": "cutset mathcal",
+      "heading": false
+    },
+    {
+      "term": "edge dihedral",
       "heading": false
     },
     {

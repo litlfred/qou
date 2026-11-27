@@ -1,0 +1,72 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1006.3501v5",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1006.3501v5",
+  "contains": [
+    "library/arxiv-1006.3501v5/sections/sec-front-matter",
+    "library/arxiv-1006.3501v5/sections/sec-000",
+    "library/arxiv-1006.3501v5/sections/sec-001",
+    "library/arxiv-1006.3501v5/sections/sec-002",
+    "library/arxiv-1006.3501v5/sections/sec-003",
+    "library/arxiv-1006.3501v5/sections/sec-004",
+    "library/arxiv-1006.3501v5/sections/sec-005",
+    "library/arxiv-1006.3501v5/sections/sec-006",
+    "library/arxiv-1006.3501v5/sections/sec-007",
+    "library/arxiv-1006.3501v5/sections/sec-008",
+    "library/arxiv-1006.3501v5/sections/sec-009",
+    "library/arxiv-1006.3501v5/sections/sec-010",
+    "library/arxiv-1006.3501v5/sections/sec-011",
+    "library/arxiv-1006.3501v5/sections/sec-012",
+    "library/arxiv-1006.3501v5/sections/sec-013",
+    "library/arxiv-1006.3501v5/sections/sec-014",
+    "library/arxiv-1006.3501v5/sections/sec-015",
+    "library/arxiv-1006.3501v5/sections/sec-016",
+    "library/arxiv-1006.3501v5/sections/sec-017"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On two approaches to 3-dimensional TQFTs — W e prove that|M |C = τZ(C)(M ) for any closed oriented 3-manifold M and for any spherical fusion category C of non-zero dimension.\n\n**On two approaches to 3-dimensional TQFTs**\n\n*VLADIMIR TURAEV AND ALEXIS VIRELIZIER*\n\n72 pp, 19 sections.\n\n**Abstract.** W e prove that|M |C = τZ(C)(M ) for any closed oriented 3-manifold M and for any spherical fusion category C of non-zero dimension. Here |M |C is the Turaev-Viro-Barrett-W estbury state sum invariant of M derived from C, Z(C) is the Drinfeld-Joyal-Street center of C, and τZ(C)(M ) is the Reshetikhin- Turaev surgery invariant of M derived from Z(C).\n\n**Outline.** Front matter; Introduction; 1 Pivotal and spherical categories; 2 Multiplicities in pivotal categories; 3 Invariants of colored graphs; 4 Pre-fusion and fusion categories; 5 State sums on triangulated 3-manifolds; 6 State sums on skeletons of 3-manifolds; 7 Moves on skeletons and proof of Theorems 5.1; 8 Skeletons in the relative case; 9 The state-sum TQFT; 10 Modular categories and categorical centers; 11 Main theorems and applications; 12 State sum invariants of links in 3-manifold; 13 Deduction of Theorems 11.1 and 11.2 from Le; 14 The coend of the center; 15 Proof of Lemma 11.3; Appendix. The 6j-symbols\n\n**Extracted claims (proposals, not verified).**\n- Theorem 5.1: |M|C is a topological invariant of M (independent of the choice of t\n- Theorem 6.1: For any skeleton P of M ,\n- Theorem 9.1: For a skeleton P of (M,G ), set\n- Theorem 10.3: LetC be a spherical fusion\n- Theorem 11.1: LetC be a spherical fusion category over an algebraically closed\n- Theorem 11.2: Under the conditions of Theorem 11.1, the TQFTs |·| C andτZ(C)",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-27"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1006.3501&metadataPrefix=arXiv), <license> element, read 2026-11-25",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1006.3501v5",
+    "title_source": "slug",
+    "source_file": "1006.3501v5.pdf",
+    "source_sha256": "e939aec50387ce2d8a3c4e46d8120724047619032162850f19a3feb882d49103",
+    "pages": 72,
+    "arxiv": {
+      "id": "1006.3501",
+      "version": "5",
+      "primary_class": "math.GT",
+      "stamp_date": "24 Jun 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

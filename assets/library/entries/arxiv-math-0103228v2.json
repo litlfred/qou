@@ -1,0 +1,957 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0103228v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0103228v2  [math.QA]  9 Apr 2002\nCoideal Subalgebras and Quantum Symmetric Pairs\nGail Letzter 1\nMathematics Department\nVirginia Polytechnic Institute\nand State University\nBlacksburg, V A 24061\nAbstract\nCoideal subalgebras of the quantized enveloping algebra ar e sur-\nveyed, with selected proofs included. The ﬁrst half of the pa per studies\ngenerators, Harish-Chandra modules, and associated quant um homo-\ngeneous spaces. The second half discusses various well know n quan-\ntum coideal subalgebras and the implications of the abstrac t theory\non these examples. The focus is on the local",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "lem-sec-000-01.md",
+      "narrative": null,
+      "content": "A left coideal I contained in H is equal to a direct sum of the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "lem-sec-000-02.md",
+      "narrative": null,
+      "content": "LetI be a left coideal in H and let M be a Hopf subalgebra of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "lem-sec-000-03.md",
+      "narrative": null,
+      "content": "LetI be left coideal of U. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background and Notation",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "../sections/sec-000-1-background-and-notation.md",
+      "narrative": null,
+      "content": "Let H be a Hopf algebra over a ﬁeld k with comultiplication ∆ , antipodal\nmap σ, and counit ǫ. Given any a ∈ H, write ∆ (a) = ∑ a(1) ⊗a(2) using\nSweedler notation. A vector subspace I of H is called a left coideal if\n∆ (I) ⊂H ⊗I.\nSimilarly, I is called a right coideal if ∆ (I) ⊂ I ⊗H. In particular, a left\n(resp. right) coideal is a left (resp. right) H comodule contained in H. If I\nis both a left (resp. right) coideal and a subalgebra of H, then we simply say\nthatI is a left (resp. right) coideal subalgebra. There is also a no tion of two\nsided coideals but those are generally not considered",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/cor-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "cor-sec-001-03.md",
+      "narrative": null,
+      "content": "Every ﬁnite-dimensional simple U module V is a Harish-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "lem-sec-001-05.md",
+      "narrative": null,
+      "content": "LetV be a ﬁnite-dimensional U module and let W be a ﬁnite-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Harish-Chandra modules",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "../sections/sec-001-2-harish-chandra-modules.md",
+      "narrative": null,
+      "content": "Consider a Lie subalgebra k of the semisimple Lie algebra g. A Harish-\nChandra module associated to the pair g, k is a g module which can be writ-\nten as a direct sum of ﬁnite-dimensional simple k modules. Harish-Chandra\nmodules are an important tool in classical representation t heory. This is\nespecially true when g, k is a symmetric pair. Harish-Chandra modules asso-\nciated to symmetric pairs provide an algebraic approach to t he representation\ntheory of real reductive Lie groups.\nThere is a nice introduction to the theory of Harish-Chandra modules\npresented in [D, Chapter 9] from an algebra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[D, Proposition 1.7.9]",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "The direct sum of all the ﬁnite-di-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "thm-sec-001-02.md",
+      "narrative": null,
+      "content": "Every ﬁnite-dimensional unitary I module can be written as",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "thm-sec-001-04.md",
+      "narrative": null,
+      "content": "]. Thus ([L1, Lemma 4.2]) S(w,w ) ⁄= 0 for any nonzero vector",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-001-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "thm-sec-001-06.md",
+      "narrative": null,
+      "content": "The sum of all the ﬁnite-dimensional simple unitary I mod-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Dual Picture",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-002-3-the-dual-picture.md",
+      "narrative": null,
+      "content": "In this section, we consider the connection between coideal subalgebras of\nU and coideal subalgebras inside the Hopf dual of U. The results presented\nin this section are well known and are related to the theory of quantum\nhomogeneous spaces. A good reference for most of the materia l presented\nhere and for other basic results about quantum homogeneous s paces is [KS,\nChapter 11] (see also [Jo, 1.4.15]).\nLetRq[G] denote the quantized function algebra of the connected, si mply\nconnected algebraic Lie group G with Lie algebra g. (See [Jo, Section 9.1]\nfor a precise deﬁnition.) Note that up to a ﬁ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "For any left coideal I ofU, Rq[G]I",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/cor-sec-003-12",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 26,
+      "target": "cor-sec-003-12.md",
+      "narrative": null,
+      "content": "Let I be a left coideal subalgebra of U such that I ∩T is",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 26,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "Let I be a (left) coideal subalgebra of the group algebra of the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 26,
+      "target": "lem-sec-003-03.md",
+      "narrative": null,
+      "content": "Let J be an adT submodule and a coideal subalgebra of G−",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-003-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 26,
+      "target": "lem-sec-003-06.md",
+      "narrative": null,
+      "content": "LetI be a left coideal of U and let b be an element of I ∩U −G+t",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-003-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 26,
+      "target": "lem-sec-003-07.md",
+      "narrative": null,
+      "content": "Letb ∈U be a weight vector. Then maxht(b) is transveral.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-003-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 26,
+      "target": "lem-sec-003-09.md",
+      "narrative": null,
+      "content": "Let I be a left coideal subalgebra such that I ∩T is a group.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-003-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 26,
+      "target": "lem-sec-003-11.md",
+      "narrative": null,
+      "content": "and Lemma 4.8, we can ﬁnd a basis B of I such that B =⋃",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generators and Filtrations",
+      "pageStart": 16,
+      "pageEnd": 26,
+      "target": "../sections/sec-003-4-generators-and-filtrations.md",
+      "narrative": null,
+      "content": "Consider the Hopf algebra U(L), the universal enveloping algebra of a com-\nplex Lie algebra L. Since U(L) is cocommutative, the one-sided coideal\nsubalgebras of U(L) are exactly the subbialgebras of U(L). It is very easy to\nunderstand the coideal subalgebras of U(L). Indeed,the next observation is\nwell known. It follows from say [Mo, Theorem 5.6.5] and the fa ct that every\nsubcoalgebra of U(L) is connected ([Mo, Deﬁnition 5.1.5 and Lemma 5.1.9]).\n(Theorem 5.6.5 of [Mo] is stated for Hopf algebras, however, the proof also\nworks for bialgebras.)\nTheorem 4.1 The set of (left) coideal subalgebras",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 26,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "The set of (left) coideal subalgebras of U(L) is the set of en-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 26,
+      "target": "thm-sec-003-04.md",
+      "narrative": null,
+      "content": "LetI be a left coideal subalgebra of U such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 26,
+      "target": "thm-sec-003-05.md",
+      "narrative": null,
+      "content": "for these special coideal subalgebras. Below, w e generalize these",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-003-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 26,
+      "target": "thm-sec-003-08.md",
+      "narrative": null,
+      "content": "Let I be a left coideal subalgebra and adT submodule of U.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-003-10",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 26,
+      "target": "thm-sec-003-10.md",
+      "narrative": null,
+      "content": "LetI be a left coideal subalgebra such that I ∩T is a group.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 34,
+      "target": "lem-sec-004-02.md",
+      "narrative": null,
+      "content": "Note that the notation in [JL1] is diﬀerent than in this paper. In",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 34,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "] corresponds to divisibility by 2 in this paper.) F or example,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 34,
+      "target": "lem-sec-004-04.md",
+      "narrative": null,
+      "content": "The algebra ψ(U) is a left coideal of U ⊗U op.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 34,
+      "target": "lem-sec-004-05.md",
+      "narrative": null,
+      "content": "F (U ⊗U op) = F (U) ⊗F (U)op",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 34,
+      "target": "lem-sec-004-06.md",
+      "narrative": null,
+      "content": "The multiplication map induces an isomorphism φ of vector",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The locally ﬁnite part of U",
+      "pageStart": 26,
+      "pageEnd": 34,
+      "target": "../sections/sec-004-5-the-locally-ﬁnite-part-of-u.md",
+      "narrative": null,
+      "content": "One of the most important coideal subalgebras contained in t he quantized\nenveloping algebra is the locally ﬁnite part, F (U), deﬁned by (2.1). This\nsubalgebra is studied extensively in [JL1] and [JL2] (see al so [Jo]). Here we\npresent some of the known results about this algebra by direc tly showing\nthatF (U) is a coideal subalgebra of U. We will see some of the implications\nof Section 4 on the structure of F (U).\nRecall that F (U) is deﬁned using the quantum adjoint action in Section\n2. It is helpful to see how the generators of U act via the adjoint action. In\nparticular\n(ad yi)b =yibti −by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 34,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "F (U) is a left coideal subalgebra of U.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-004-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 34,
+      "target": "thm-sec-004-07.md",
+      "narrative": null,
+      "content": "The set of F (U) bimodules with compatible adU module ac-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-004-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 34,
+      "target": "thm-sec-004-08.md",
+      "narrative": null,
+      "content": ", we see that Hom( M,N ) is a (F (U) ⊗F (U)op)ψ(U) module. By",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-004-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 34,
+      "target": "thm-sec-004-09.md",
+      "narrative": null,
+      "content": ", the sum of all ﬁnite-dimensional ad U modulesF (M,N ) inside",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "]). Thus the left coideal subalgebra N −",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "], if Y is an element of G− of weight −λ such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nilpotent and parabolic coideal subalgebras",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-005-6-nilpotent-and-parabolic-coideal-subalgebras.md",
+      "narrative": null,
+      "content": "Yet another left coideal subalgebra of U is G−, an obvious quantum analog\nof U(n−). In this section, we consider coideal subalgebras of G− which cor-\nrespond to classical enveloping algebras of Lie subalgebra s of n− and related\nLie subalgebras of g. Most of the results presented here are from [Ke].\nLet π′ be a subset of the simple roots π of g. There are a number of\nLie subalgebras of g which can be associated to π′. The most obvious is\nthe semisimple Lie subalgebra m of g generated by the ei,f i, hi, for those\ni with αi ∈ π′. Since the simple roots π′ associated to the root system of\nm are c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/cor-sec-006-09",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 62,
+      "target": "cor-sec-006-09.md",
+      "narrative": null,
+      "content": "implies that GKdim B/N is equal to the number of elements",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/lem-sec-006-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 62,
+      "target": "lem-sec-006-06.md",
+      "narrative": null,
+      "content": "Let Yij = Fij(Bi,B j) for i ⁄= j and λij = (1 −aij)αi +αj. If",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 62,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "(b)] and (7.6),we must have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/prop-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 62,
+      "target": "prop-sec-006-03.md",
+      "narrative": null,
+      "content": "], Two sends yi to a nonzero scalar multiple of xd(i)t−1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum symmetric pairs",
+      "pageStart": 37,
+      "pageEnd": 62,
+      "target": "../sections/sec-006-7-quantum-symmetric-pairs.md",
+      "narrative": null,
+      "content": "We turn now to the theory of quantum symmetric pairs. First, w e present\nthe construction and characterization of the coideal subal gebras used to form\nsuch pairs. The results are drawn from [L2] and [L3], but the m ethods\nin this paper are often simpler. The involutions used to cons truct these\nalgebras are given in a concrete fashion here. The relations for the coideal\nsubalgebras as algebras are also presented more explicitly . Moreover, using\nthe results of Section 4, we give a new, less intricate, proof of the uniqueness\ncharacterization for the subalgebras used to form quantum s ymmetric",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 62,
+      "target": "thm-sec-006-02.md",
+      "narrative": null,
+      "content": "There exists a C algebra automorphism ˜θ on U such that:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 62,
+      "target": "thm-sec-006-04.md",
+      "narrative": null,
+      "content": "B is a left coideal subalgebra of U.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 62,
+      "target": "thm-sec-006-05.md",
+      "narrative": null,
+      "content": ", ˜θ(xi) = xi wheneverαi ∈πΘ . Furthermore, ˜θ(yj) and yj have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-006-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 62,
+      "target": "thm-sec-006-07.md",
+      "narrative": null,
+      "content": "Let ˜B be the algebra freely generated over M+TΘ by the el-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-006-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 62,
+      "target": "thm-sec-006-08.md",
+      "narrative": null,
+      "content": "A subalgebraB ofU satisﬁes (7.23), (7.24), and (7.25) if and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-006-10",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 62,
+      "target": "thm-sec-006-10.md",
+      "narrative": null,
+      "content": "Let B be a real analog of U(gθ ) and let M be a U module.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-006-11",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 62,
+      "target": "thm-sec-006-11.md",
+      "narrative": null,
+      "content": "LetL(λ) be a ﬁnite-dimensional U module with highest weight",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-006-12",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 62,
+      "target": "thm-sec-006-12.md",
+      "narrative": null,
+      "content": ", the Peter-Weyl decomposition of Rq[G], (3.1), and (3.4)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-006-13",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 62,
+      "target": "thm-sec-006-13.md",
+      "narrative": null,
+      "content": "There is an isomorphism of right U modules",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0103228v2/blocks/thm-sec-006-14",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 62,
+      "target": "thm-sec-006-14.md",
+      "narrative": null,
+      "content": ", these are shown to be examples of the analogs pre sented here.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

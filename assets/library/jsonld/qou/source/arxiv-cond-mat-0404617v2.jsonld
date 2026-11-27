@@ -1,0 +1,78 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-cond-mat-0404617v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "String-net condensation: A physical mechanism for topological phases",
+  "contains": [
+    "library/arxiv-cond-mat-0404617v2/sections/sec-front-matter",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-000",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-001",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-002",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-003",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-004",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-005",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-006",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-007",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-008",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-009",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-010",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-011",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-012",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-013",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-014",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-015",
+    "library/arxiv-cond-mat-0404617v2/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "String-net condensation: A physical mechanism for topological phases — 18 sections: Front matter; Introduction; String-nets and gauge theories\n\n**String-net condensation: A physical mechanism for topological phases**\n\n*Michael A. Levin and Xiao-Gang Wen ∗*\n\n21 pp, 18 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 String-nets and gauge theories; 3 General string-net picture; 4 String-net condensation in $(2+1)$ dimension; 4.1 Fixed-point wave functions; 4.2 Fixed-point Hamiltonians; 4.3 Quasiparticle excitations; 5 String-net condensation in $(3+1)$ and highe; 6 Examples; 6.1 $N=1$ string model; 6.2 $N=1$ string-net model; 6.3 $N = 2$ string-net models; 7 Conclusion; A General string-net models; B Self-consistency conditions; C Graphical representation of the Hamiltonian; D Graphical representation of the string opera",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-27"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:cond-mat/0404617&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-11-25"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-cond-mat-0404617v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "cond-mat-0404617v2.pdf",
+    "source_sha256": "8e31b9ec8ac2e03484c343d7ec54f92a63206ad9e3c0c92306d8522c857e9216",
+    "pages": 21,
+    "arxiv": {
+      "id": "cond-mat/0404617",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "27 Apr 2004"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

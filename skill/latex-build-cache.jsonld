@@ -10,7 +10,7 @@
       "title": "LaTeX build performance — findings + what's safe",
       "description": "LaTeX build performance — findings + what's safe. The headline goal was to cache the paper's build (a 35-chapter / ~2900-block `report` with a heavy `pgf`/`tikz`/`tikz-cd`/`hyperref` preamble + 74 tikz-cd diagrams). Both standard caching mechanisms were tested on a real engine and FAILED on this toolchain (see §Negative results), so there is currently NO preamble/diagram cache. What DOES work: getting a TeX engine into the sandbox (`../folio-assistant/scripts/install-tex.sh`) and quick changed-chapter feature builds (`../folio-assistant/scripts/feature-build.sh`). Read this BEFORE re-attempting a LaTeX cache so you don't re-walk the rakes.",
       "instructionsPath": "skills/local/latex-build-cache.md",
-      "instructionLines": 136,
+      "instructionLines": 138,
       "hasInstructions": true,
       "hasIOContract": false,
       "ambiguous": true

@@ -1,0 +1,2578 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1409.0902v1",
+  "title": "arxiv-1409.0902v1",
+  "variant": "pdf",
+  "pages": 31,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "1.1.",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11"
+    },
+    {
+      "level": 2,
+      "title": "1.2.",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12"
+    },
+    {
+      "level": 2,
+      "title": "1.3.",
+      "number": null,
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13"
+    },
+    {
+      "level": 2,
+      "title": "1.4.",
+      "number": null,
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14"
+    },
+    {
+      "level": 2,
+      "title": "1.5.",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "2.1.",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-21"
+    },
+    {
+      "level": 2,
+      "title": "2.2.",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-22"
+    },
+    {
+      "level": 2,
+      "title": "2.3.",
+      "number": null,
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-23"
+    },
+    {
+      "level": 2,
+      "title": "2.4.",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-24"
+    },
+    {
+      "level": 1,
+      "title": "Clifford Theory for H\"426830A \"526930B",
+      "number": "3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "3.1.",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-31"
+    },
+    {
+      "level": 2,
+      "title": "3.2.",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-32"
+    },
+    {
+      "level": 2,
+      "title": "3.3.",
+      "number": null,
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-33"
+    },
+    {
+      "level": 2,
+      "title": "3.4.",
+      "number": null,
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-34"
+    },
+    {
+      "level": 1,
+      "title": "Induction and restriction",
+      "number": "4",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-4-induction-and-restriction"
+    },
+    {
+      "level": 2,
+      "title": "4.1.",
+      "number": null,
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-41"
+    },
+    {
+      "level": 2,
+      "title": "4.2.",
+      "number": null,
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-42"
+    },
+    {
+      "level": 2,
+      "title": "4.3.",
+      "number": null,
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-43"
+    },
+    {
+      "level": 2,
+      "title": "4.4.",
+      "number": null,
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-44"
+    },
+    {
+      "level": 2,
+      "title": "4.5.",
+      "number": null,
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-45"
+    },
+    {
+      "level": 1,
+      "title": "Spanning set of the cocenter",
+      "number": "5",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-5-spanning-set-of-the-cocenter"
+    },
+    {
+      "level": 2,
+      "title": "5.1.",
+      "number": null,
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-51"
+    },
+    {
+      "level": 2,
+      "title": "5.2.",
+      "number": null,
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-52"
+    },
+    {
+      "level": 2,
+      "title": "5.3.",
+      "number": null,
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-53"
+    },
+    {
+      "level": 2,
+      "title": "5.4.",
+      "number": null,
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-54"
+    },
+    {
+      "level": 2,
+      "title": "5.5.",
+      "number": null,
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-55"
+    },
+    {
+      "level": 2,
+      "title": "5.6.",
+      "number": null,
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-56"
+    },
+    {
+      "level": 2,
+      "title": "5.7.",
+      "number": null,
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-57"
+    },
+    {
+      "level": 1,
+      "title": "Elliptic quotient and rigid quotient",
+      "number": "6",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-6-elliptic-quotient-and-rigid-quotient"
+    },
+    {
+      "level": 2,
+      "title": "6.1.",
+      "number": null,
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-61"
+    },
+    {
+      "level": 2,
+      "title": "6.2.",
+      "number": null,
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-62"
+    },
+    {
+      "level": 2,
+      "title": "6.3.",
+      "number": null,
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-63"
+    },
+    {
+      "level": 2,
+      "title": "6.4.",
+      "number": null,
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-64"
+    },
+    {
+      "level": 2,
+      "title": "6.5.",
+      "number": null,
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-65"
+    },
+    {
+      "level": 1,
+      "title": "Duality between and R(H)",
+      "number": "7",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-7-duality-between-and-rh"
+    },
+    {
+      "level": 2,
+      "title": "7.1.",
+      "number": null,
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-71"
+    },
+    {
+      "level": 2,
+      "title": "7.2.",
+      "number": null,
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-72"
+    },
+    {
+      "level": 2,
+      "title": "7.3.",
+      "number": null,
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-73"
+    },
+    {
+      "level": 2,
+      "title": "Examples",
+      "number": "7.4",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-74-examples"
+    },
+    {
+      "level": 1,
+      "title": "Some consequences",
+      "number": "8",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-8-some-consequences"
+    },
+    {
+      "level": 2,
+      "title": "8.1.",
+      "number": null,
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-81"
+    },
+    {
+      "level": 2,
+      "title": "Proofs of Theorems ?? and ??",
+      "number": "8.2",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "8.3.",
+      "number": null,
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-83"
+    },
+    {
+      "level": 2,
+      "title": "8.4.",
+      "number": null,
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-84"
+    },
+    {
+      "level": 1,
+      "title": "Applications to smooth representations of reductive p-adic groups",
+      "number": "9",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-9-applications-to-smooth-representations-of-redu"
+    },
+    {
+      "level": 2,
+      "title": "9.1.",
+      "number": null,
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-91"
+    },
+    {
+      "level": 2,
+      "title": "9.2.",
+      "number": null,
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-92"
+    },
+    {
+      "level": 2,
+      "title": "9.3.",
+      "number": null,
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-93"
+    },
+    {
+      "level": 2,
+      "title": "9.4.",
+      "number": null,
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-94"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 75,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cocenter",
+          "heading": false
+        },
+        {
+          "term": "representatio",
+          "heading": false
+        },
+        {
+          "term": "ach",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1409.0902v1 [math.RT] 2 Sep 2014 COCENTERS AND REPRESENT A TIONS OF AFFINE HECKE ALGEBRA DAN CIUBOTARU AND XUHUA HE Abstract. In this paper, we study the relation between the cocenter and the representation theory of aﬃne Hecke algebras. The appro ach is based on the interaction between the rigid cocenter, an important subspace of the cocenter, and the dual object in representation theory, the rigid quotient",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1409.0902v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "p-adic groups",
+          "heading": false
+        },
+        {
+          "term": "cocenter",
+          "heading": false
+        },
+        {
+          "term": "modular representations",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite dimensional",
+          "heading": false
+        }
+      ],
+      "extract": "Aﬃne Hecke algebras appear naturally in the representation theor y of reductive p-adic groups as convolution algebras of compactly supported func tions, such as Iwahori-Hecke algebras e.g., [Bo],[IM], and their generalizations in the t heory of types, e.g., [HM],[BK], or as endomorphism algebras of certain project ive gener- ators [Be],[Hei]. The representation theory of aﬃne Hecke algebras w ith (equal and unequal)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11",
+      "number": null,
+      "title": "1.1.",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 432,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "elliptic cocenter",
+          "heading": false
+        },
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        },
+        {
+          "term": "bdk",
+          "heading": false
+        },
+        {
+          "term": "andtw",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "induced modules",
+          "heading": false
+        },
+        {
+          "term": "inﬁnite",
+          "heading": false
+        }
+      ],
+      "extract": "general case of an aﬃne Hecke algebra with an automorphism δ of the root system and the δ-twisted cocenter, but, for simplicity, in the introduction, we pres ent the results in the untwisted case only. We also consider arbitrary (nonz ero) parameters. The aﬃne Hecke algebra H is a deformation of the group algebra C[~W ] for the extended aﬃne Weyl group ~W . Let cl(~W ) denote the set of conjugacy classes in 2010",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12",
+      "number": null,
+      "title": "1.2.",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 853,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rigid cocenter",
+          "heading": false
+        },
+        {
+          "term": "basic σ-conjugacy",
+          "heading": false
+        },
+        {
+          "term": "σ-conjugacy classes",
+          "heading": false
+        },
+        {
+          "term": "σ-conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "hrigid",
+          "heading": false
+        },
+        {
+          "term": "rigid quotient",
+          "heading": false
+        },
+        {
+          "term": "hecke algebrah",
+          "heading": false
+        },
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        }
+      ],
+      "extract": "other subspace of ¯H, which we call the rigid quotient and rigid cocenter, respectively. Let us ﬁrst describe our motivation leading to the deﬁnitions and the n describe the main result and its consequences. For simplicity, we only consider the aﬃne Hecke algebras associated t o semisim- ple root datum in this introduction. In the beginning, we would like to ge t a nice ﬁnite subset of cl(~W ). A natural choice is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13",
+      "number": null,
+      "title": "1.3.",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trace paley-wiener",
+          "heading": false
+        },
+        {
+          "term": "paley-wiener theorem",
+          "heading": false
+        },
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        },
+        {
+          "term": "p-adic groups",
+          "heading": false
+        },
+        {
+          "term": "density theorem",
+          "heading": false
+        }
+      ],
+      "extract": "analogues of classical results from p-adic groups: the Density Theorem and the trace Paley-Wiener Theorem. For p-adic groups, proofs of these results are known from [BDK] and [Kaz2], see also [Da] and [Fl]. For aﬃne Hecke algebras wit h positive parameters, the Density Theorem and trace Paley-Wiener theorem are studied in [So, Theorem 3.4] by diﬀerent methods. We summarize our results in the next theorem. Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14",
+      "number": null,
+      "title": "1.4.",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inﬁnitesimal character",
+          "heading": false
+        },
+        {
+          "term": "real inﬁnitesimal",
+          "heading": false
+        },
+        {
+          "term": "rigid quotient",
+          "heading": false
+        },
+        {
+          "term": "tempered",
+          "heading": false
+        },
+        {
+          "term": "iwahori",
+          "heading": false
+        },
+        {
+          "term": "preservation",
+          "heading": false
+        },
+        {
+          "term": "borel",
+          "heading": false
+        },
+        {
+          "term": "signature",
+          "heading": false
+        }
+      ],
+      "extract": "to simplify the arguments of [BM1, BM2] for the preservation of unit arity under the Borel functor for the category of smooth representations with Iwahori ﬁxed vectors of a semisimple p-adic group G. Let I be an Iwahori subgroup and if H ⊂ G is a closed subgroup containing I, let H(H//I ) denote the Iwahori-Hecke algebra of I-biinvariant compactly supported functions with support in H. The Borel- Casselman",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15",
+      "number": null,
+      "title": "1.5.",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 203,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cocenter",
+          "heading": false
+        },
+        {
+          "term": "pdt",
+          "heading": false
+        },
+        {
+          "term": "density theorem",
+          "heading": false
+        },
+        {
+          "term": "rigid",
+          "heading": false
+        },
+        {
+          "term": "reco",
+          "heading": false
+        }
+      ],
+      "extract": "and give the basic deﬁnitions for the aﬃne Hecke algebra (extended by outer auto- morphisms), the cocenter and R(H). In section 4, we recall in our setting the main deﬁnitions and properties of the induction and restriction functor s, as introduced forp-adic groups in [BDK] and studied further in [Da]. In section 5, we reco rd the main cocenter results from [HN1, HN2] that we will use in the rest of t he paper. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-21",
+      "number": null,
+      "title": "2.1.",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 91,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coroots",
+          "heading": false
+        },
+        {
+          "term": "letw",
+          "heading": false
+        },
+        {
+          "term": "reﬂec",
+          "heading": false
+        }
+      ],
+      "extract": "(a) X,X ∨ are free abelian groups of ﬁnite rank with a perfect pairing ⟨, ⟩ : X×X ∨→ Z; (b) R ⊂ X, R∨ ⊂ X ∨ are the roots and coroots, respectively, in bijection α↔α∨; (c) Π ⊂R is the set of simple roots. Let R+ denote the positive roots deﬁned by Π, and Π − =−Π +; let R∨,+, R∨,− denote the corresponding coroots. For every α∈R, let sα∈GL(X) be the reﬂec- tionsα(x) = x−⟨x,α ∨⟩α. LetW⊂GL(X) be the ﬁnite Weyl group,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-22",
+      "number": null,
+      "title": "2.2.",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aﬃne weyl",
+          "heading": false
+        },
+        {
+          "term": "aﬃne roots",
+          "heading": false
+        },
+        {
+          "term": "txw",
+          "heading": false
+        }
+      ],
+      "extract": "byβ∨≤α∨ isα∨−β∨ is a nonnegative integer linear combination of {α∨ :α∈ Π}. Set Rm ={γ∈R :γ∨ is minimal in ( R∨,≤)}. The simple aﬃne roots are Π a ={(α, 0) : α∈ Π}∪{ (γ∨, 1) : γ∈Rm}. (2.1) Deﬁne the extended aﬃne Weyl group: ~W =X ⋊W. (2.2) We write a typical element in ~W astxw,x∈X,w ∈W . The multiplication is then (txw)· (tx′w′) = tx+w(x′)ww′. The group ~W acts on X by (txw)·y =x +w(y). Deﬁne also the aﬃne Weyl",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-23",
+      "number": null,
+      "title": "2.3.",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 296,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite dimensional",
+          "heading": false
+        },
+        {
+          "term": "specλ",
+          "heading": false
+        },
+        {
+          "term": "λ-algebra",
+          "heading": false
+        },
+        {
+          "term": "tww",
+          "heading": false
+        }
+      ],
+      "extract": "w∈ ~W , and let Λ = C[q(s)±1 :s∈Sa]. Deﬁnition 2.1 (Iwahori-Matsumoto presentation). The aﬃne Hecke algebra H = H(Φ, q) is the Λ-algebra generated by {Tw :w∈ ~W} subject to the relations: (1) Tw·Tw′ =Tww′, if ℓ(ww′) = ℓ(w) +ℓ(w′); (2) (Ts + 1)(Ts− q(s)2) = 0, s∈Sa. The algebraH(Φ, q) admits a second presentation, due to Bernstein and Lusztig, that we recall next. If w∈W a has a reduced expression w =s1··· sk, si∈Sa,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-24",
+      "number": null,
+      "title": "2.4.",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 268,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "root datum",
+          "heading": false
+        },
+        {
+          "term": "hss",
+          "heading": false
+        }
+      ],
+      "extract": "R∨ J ={α∨ : α∈ RJ}. Let WJ ⊂ W be the parabolic subgroup deﬁned by the reﬂections in J. Denote ~WJ =X ⋊WJ, and let qJ be the restriction of q to ~WJ. Consider the root datum Φ J = (X,R J,X ∨,R ∨ J,J ) and the aﬃne Hecke algebra HJ =H(Φ J, qJ ). This algebra can be identiﬁed with the subalgebra of H(Φ, q) generated by Tw, w∈WJ and θx, x∈X. One calls it a parabolic subalgebra of H. Deﬁne the induction functor iJ :R(HJ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-31",
+      "number": null,
+      "title": "3.1.",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 93,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "specλ",
+          "heading": false
+        },
+        {
+          "term": "algebrah",
+          "heading": false
+        },
+        {
+          "term": "ofh",
+          "heading": false
+        }
+      ],
+      "extract": "q satisfy q(δ(w)) = q(w), for all w∈ ~W , we can deﬁne an extension of the aﬃne Hecke algebraH by Γ = ⟨δ⟩: H′ =H ⋊ Γ. (3.1) Set ~W ′ = ~W ⋊Γ and W ′ =W ⋊Γ. The center ofH′ isAW ′ , so the central characters are parameterized by points in W ′\\T× SpecΛ. If J⊂ Π, set Γ J ={δi∈ Γ : δi(RJ ) = RJ}. The parabolic subalgebra is then H′ J =HJ ⋊ Γ J. We denote the induction functor again by iJ :R(H′ J )→R(H′).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-32",
+      "number": null,
+      "title": "3.2.",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 114,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hδi",
+          "heading": false
+        },
+        {
+          "term": "maph",
+          "heading": false
+        },
+        {
+          "term": "ofh",
+          "heading": false
+        }
+      ],
+      "extract": "[CH, section 3.1], where the similar notions in the setting of the graded aﬃne Hecke algebra were considered. Deﬁnition 3.1. If h,h ′∈H , deﬁne the δi-commutator of h and h′ by [h,h ′]δi = hh′−h′δ(h). Let [H,H]δi be the submodule of H generated by all δi-commutators. Denote by ¯H[i] the quotient ofH/[H,H]δi by the image of (1−δ). The following result was proved in [CH] for extended graded Hecke algebras, but the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-33",
+      "number": null,
+      "title": "3.3.",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trδ",
+          "heading": false
+        },
+        {
+          "term": "irrδ",
+          "heading": false
+        },
+        {
+          "term": "irreducible module",
+          "heading": false
+        },
+        {
+          "term": "hδi",
+          "heading": false
+        },
+        {
+          "term": "ric",
+          "heading": false
+        },
+        {
+          "term": "γ-orbits",
+          "heading": false
+        },
+        {
+          "term": "induced module",
+          "heading": false
+        },
+        {
+          "term": "h-module",
+          "heading": false
+        }
+      ],
+      "extract": "graded aﬃne Hecke algebra case from [CH, section 3.2], and the proo fs are identical. Let Γ = ⟨δ⟩. If ( π,X ) is a ﬁnite dimensional H-module, let ( δi π, δi X) denote the H-module with the action δi π(h)x = π(δ−i(h))x, for all x∈ X, h∈H . If X is a simple module, deﬁne the inertia group Γ X ={δi :X∼= δi X}. Fix a family of isomorphisms φδi : X→ δ−i X, δi∈ Γ X such that φδki = φk δi. This is possible since Γ X is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-34",
+      "number": null,
+      "title": "3.4.",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "map trδ",
+          "heading": false
+        },
+        {
+          "term": "irrδ",
+          "heading": false
+        },
+        {
+          "term": "hss",
+          "heading": false
+        }
+      ],
+      "extract": "tr : ¯H′→R(H′)∗, h ↦→(fh :R(H′)→ C, fh(π) = tr π(h)). (3.5) This map is compatible with the decompositions from Proposition 3.2 and (3.4) as follows. Let R∗ δ (H) = Hom C(Rδ(H)C, C). The twisted trace map trδ :H→ R∗ δ(H), h ↦→(f δ h :Rδ(H)C→ C, fδ h(π) = tr δ(π)) (3.6) descends to a linear map trδ : ¯Hδ =H/[H,H]δ→R∗ δ (H). (3.7) Deﬁnition 3.5. A form f∈R∗ δ (H) is called a trace form if f∈ im trδ. Denote the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-4-induction-and-restriction",
+      "number": "4",
+      "title": "Induction and restriction",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 15,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section, we recollect some known facts about the induction a nd restriction functors.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-41",
+      "number": null,
+      "title": "4.1.",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 136,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "andk",
+          "heading": false
+        },
+        {
+          "term": "wjw",
+          "heading": false
+        },
+        {
+          "term": "δ-invariant",
+          "heading": false
+        }
+      ],
+      "extract": "K : R(HK)→ R(HJ ) the functor of induction, and by rJ K :R(HJ )→R(HK) the functor of restriction. When J andK are δ-invariant, we also have the corresponding functors, denoted ag ain by iJ K and rJ K betweenRδ(HK ) and Rδ(HJ ). It is obvious that Lemma 4.1. ForL⊂K⊂J⊂I, iJ L =iJ K◦iK L and rJ L =rK L◦rJ K. The following result. is the analogue of [BDK, Lemma 5.4] and [Fl, Lemm a 2.1]. See also [Mi, Theorem 1]. Lemma",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-42",
+      "number": null,
+      "title": "4.2.",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 122,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tsα",
+          "heading": false
+        },
+        {
+          "term": "algeb",
+          "heading": false
+        },
+        {
+          "term": "ras",
+          "heading": false
+        }
+      ],
+      "extract": "ﬁeld of Z. For every α∈ Π, set G(α) = { q(sα )2θα −1 θα −1 , if α∨ /∈ 2X ∨, (q(s)q(~s)θα −1)(q(s)q(~s)−1)θα +1) θ2α −1 , if α∨∈ 2X ∨, (4.2) see [Lu1, section 3.8]. We have G(α)∈A F =A⊗ ZF. Deﬁne the following elements inHF =H⊗ ZF : τ α = (Tsα + 1)G(α)−1− 1. (4.3) By [Lu1, Proposition 5.2], the assignment sα↦→τ α, α∈ Π extends to a unique group homomorphism W→H × F. Denote by τw the image of w∈W. Moreover, fτ w",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-43",
+      "number": null,
+      "title": "4.3.",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "left multiplication",
+          "heading": false
+        },
+        {
+          "term": "well-deﬁned",
+          "heading": false
+        },
+        {
+          "term": "deﬁne",
+          "heading": false
+        },
+        {
+          "term": "generic",
+          "heading": false
+        },
+        {
+          "term": "module",
+          "heading": false
+        },
+        {
+          "term": "map",
+          "heading": false
+        }
+      ],
+      "extract": "every α∈J, Tsατw−1 =τw−1Tsβ , where β =w(α)∈K. Proof. We calculate: Tsατw−1 = ((τ α + 1)G(α)− 1)τw−1 = (τ α + 1)τw−1G(β)−τw−1, by (4.4) = (τw−1τ β +τw−1 )G(β)−τw−1, since τ is a homomorphism =τw−1Tsα. □ Lemma 4.4. Ifδ(K) = K,δ(J) = J, w∈ KW J (δ), and K =w(J), then iK◦w = iJ in Rδ(H). Proof. Let (σ◦χt,V ) be an irreducible module in Rδ(HJ ), t∈ T J , and let ( σw◦ χw(t),V w = V )∈ Rδ(HK) be its twist by w. We need",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-45",
+      "number": null,
+      "title": "4.5.",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 22,
+      "summary": null,
+      "keywords": [],
+      "extract": "Lemma 4.5 (cf. [CH, Lemma 4.5.1]) . The maps ¯iJ and ¯rJ are tr( , )-adjoint to rJ and iJ , respectively.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-020-44",
+      "number": null,
+      "title": "4.4.",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 327,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pdt",
+          "heading": false
+        },
+        {
+          "term": "hell",
+          "heading": false
+        },
+        {
+          "term": "bdk",
+          "heading": false
+        },
+        {
+          "term": "forw",
+          "heading": false
+        },
+        {
+          "term": "opo",
+          "heading": false
+        }
+      ],
+      "extract": "(PDT) The Density Theorem holds for every proper parabolic subalg ebraHJ , δ(J) = J. The following properties are dual to those of iJ and rJ. Lemma 4.6. Suppose (PDT) holds. Then (i) ForL⊂K⊂J, ¯iJ L = ¯iJ K◦ ¯iK L and ¯rJ L = ¯rK L◦ ¯rJ K. (ii) If K =δ(K) and J =δ(J), then ¯rJ◦ ¯iK = ∑ w∈KW J (δ) ¯iJ Jw◦w−1◦ ¯rK Kw, (4.6) as maps from ¯HK,δ→ ¯HJ,δ, whereKw =K∩wJw −1 andJw =J∩w−1Kw. (iii) If w∈ KW J (δ) and K =w(J),",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-5-spanning-set-of-the-cocenter",
+      "number": "5",
+      "title": "Spanning set of the cocenter",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 18,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section, we recall the explicit description of the cocenter of H obtained in [HN1] and [HN2].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-51",
+      "number": null,
+      "title": "5.1.",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xwx",
+          "heading": false
+        },
+        {
+          "term": "leto",
+          "heading": false
+        },
+        {
+          "term": "sws",
+          "heading": false
+        }
+      ],
+      "extract": "We follow [HN1]. For w,w ′∈ ~W ′ and s∈Sa, we write w s − →w′ if w′ =sws and ℓ(w′)≤ℓ(w). We write w→w′ if there is a sequence w =w0,w 1,··· ,w n =w′ of elements in ~W such that for any k,wk−1 s − →wk for some s∈Sa. We call w,w ′∈ ~W ′ elementarily strongly conjugate if ℓ(w) = ℓ(w′) and there existsx∈ ~W ′ such that w′ =xwx−1 andℓ(xw) = ℓ(x) +ℓ(w) or ℓ(wx−1) = ℓ(x) + ℓ(w). We call w,w ′ strongly conjugate if there is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-52",
+      "number": null,
+      "title": "5.2.",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "density theorem",
+          "heading": false
+        },
+        {
+          "term": "whereo",
+          "heading": false
+        },
+        {
+          "term": "ino",
+          "heading": false
+        },
+        {
+          "term": "theore",
+          "heading": false
+        }
+      ],
+      "extract": "class of ~W ′. Let TO be the image of Tw in ¯H′, where w is a minimal length element inO. By Theorem 5.1 (2), TO is independent of the choice of w. Moreover, we have the following result. Theorem 5.2. The elements{TO}, whereO ranges over all the conjugacy classes of ~W ′, span ¯H′ as an Λ -module. The equal parameter case was proved in [HN1, Theorem 5.3]. The gen eral case can be proved in the same way and we omit",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-53",
+      "number": null,
+      "title": "5.3.",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 36,
+      "summary": null,
+      "keywords": [],
+      "extract": "However, the expression for a minimal length element Tw inO is usually very complicated. To study the induction and restriction functors on th e cocenter, we also need the Bernstein-Lusztig presentation of ¯H′ established in [HN2].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-025-54",
+      "number": null,
+      "title": "5.4.",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 68,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "cocenters",
+          "heading": false
+        },
+        {
+          "term": "newton",
+          "heading": false
+        }
+      ],
+      "extract": "Let νw = λ/N and ¯νw be the unique dominant element in the W0-orbit of νw. Then the map ~W→XC,w↦→¯νw is constant on the conjugacy class of ~W ′. For any conjugacy class O, we set νO = ¯νw for any w∈O and call it the Newton point of O. We set JO ={α∈ Π : sα(νO) = νO}. (5.1) COCENTERS AND REPRESENTATIONS OF AFFINE HECKE ALGEBRA 13",
+      "extractCut": false
+    },
+    {
+      "id": "sec-026-55",
+      "number": null,
+      "title": "5.5.",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 47,
+      "summary": null,
+      "keywords": [],
+      "extract": "if (XC)w ⊂ (XC)W and an element w∈ ~W elliptic if p(w) is elliptic in W ′. A conjugacy class O in ~W ′ is called elliptic if w is elliptic for some (or, equivalently any)w∈O . By deﬁnition, if O is elliptic, then JO = Π.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-027-56",
+      "number": null,
+      "title": "5.6.",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conjugacy classes",
+          "heading": false
+        },
+        {
+          "term": "minimal length",
+          "heading": false
+        },
+        {
+          "term": "length element",
+          "heading": false
+        }
+      ],
+      "extract": "of ~WJ ⋊ Γ J and νw is dominant for some (or, equivalently any) w∈ C. For any (J,C ), (J ′,C ′)∈A , we write ( J,C )∼ (J ′,C ′) if νw = νw′ for w∈C and w′∈C′ and there exists x∈ J ′ (WJν w ⋊ Γ Jν w )J such that xJx −1 =J ′ and xCx−1 =C′. By [HN2, Lemma 5.8], the map from A to the set of conjugacy classes of ~W ′ sending (J,C ) to the unique conjugacy class O of ~W with C⊂O gives a bijection fromA/∼ to the set of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-57",
+      "number": null,
+      "title": "5.7.",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 83,
+      "summary": null,
+      "keywords": [],
+      "extract": "crucial role in this paper. Here we discuss a variation of §5.6 and Theorem 5.3. LetO be a conjugacy class of ~W ′ andJ =JO. We may assume thatO =τ (K,C ). Then it is easy to see that K⊂J. Let O′ be the conjugacy class of ~W ′ J ⋊ Γ J such thatO′ =τJ (K,C ). Then JO′ =J and T J O′ = ¯iJ K(T K C ). Hence TO = ¯iK(T K C ) = ¯iJ (T J O′).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-029-6-elliptic-quotient-and-rigid-quotient",
+      "number": "6",
+      "title": "Elliptic quotient and rigid quotient",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 24,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section, we discuss two natural quotients for Rδ(H): the elliptic quotient introduced in [BDK] and the rigid quotient, which we introduce below.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-030-61",
+      "number": null,
+      "title": "6.1.",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀ ind",
+          "heading": false
+        },
+        {
+          "term": "rigid quotient",
+          "heading": false
+        },
+        {
+          "term": "root datum",
+          "heading": false
+        }
+      ],
+      "extract": "¯Rδ 0(H)C =Rδ(H)C/ ∑ J=δ(J)⫋ I iJ(Rδ(HJ )C). Now we introduce the rigid quotient. Deﬁnition 6.1. Set Rδ(H)diﬀ −ind = span{iJ(σ)−iJ (σ◦χt) : J =δ(J), σ∈Rδ(Hss J ), t∈ HomZ(X∩ QR/X∩ QJ, C∗)δ} (6.1) and deﬁne the rigid quotient of Rδ(H) to be ¯Rδ(H)rigid :=Rδ(H)/Rδ(H)diﬀ −ind. (6.2) 14 DAN CIUBOTARU AND XUHUA HE Notice in the deﬁnition the presence of X∩ QR, rather than X. This is to account for the fact the the root",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-62",
+      "number": null,
+      "title": "6.2.",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 170,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hell",
+          "heading": false
+        },
+        {
+          "term": "linear independent",
+          "heading": false
+        },
+        {
+          "term": "pdt",
+          "heading": false
+        },
+        {
+          "term": "ction",
+          "heading": false
+        }
+      ],
+      "extract": "ple. Then the rank of the restriction of the trace map tr : ¯Hell δ × ¯Rδ 0(H)→ C equals dim ¯Rδ 0(H). In particular, dim ¯Rδ 0(H)≤ dim ¯Hell δ . Proof. Suppose{π1,π 2,...,π k} is a set in ⊂Rδ(H) such that its image in R δ 0(H) is linearly independent. Applying the operator A, one obtains a linearly independent set{A(π1),A (π2),...,A (πk)} inRδ(H). This is because A(π)≡aπ in R δ 0(H), and a⁄= 0. Since the characters",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-63",
+      "number": null,
+      "title": "6.3.",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀ ind",
+          "heading": false
+        },
+        {
+          "term": "hss",
+          "heading": false
+        },
+        {
+          "term": "rss",
+          "heading": false
+        },
+        {
+          "term": "rigid",
+          "heading": false
+        },
+        {
+          "term": "dim",
+          "heading": false
+        },
+        {
+          "term": "representatives",
+          "heading": false
+        },
+        {
+          "term": "aﬃne",
+          "heading": false
+        }
+      ],
+      "extract": "w∈ W δ∩ J ′ W J such that w(J) = J ′. For each ∼δ-equivalence class in I δ, we choose a representatives. We denote by I δ ♠⊂I δ the set of representatives. Set NJ ={z∈ JW J ;z =δ(z),J =z(J)}. Then NJ acts on Rδ(Hss J ) and on ¯Rδ 0(Hss J ). By Lemma 4.1 and Lemma 4.2, we have Lemma 6.3. If K = δ(K) ⊊ Π, then iK(Rδ(HK )diﬀ −ind) ⊆ Rδ(H)diﬀ −ind and rK(Rδ(H)diﬀ −ind)⊆Rδ(HK)diﬀ −ind. The ﬁrst result is a dimension",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-64",
+      "number": null,
+      "title": "6.4.",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 660,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "isolated",
+          "heading": false
+        },
+        {
+          "term": "elliptic quotient",
+          "heading": false
+        },
+        {
+          "term": "ell",
+          "heading": false
+        },
+        {
+          "term": "parameterization",
+          "heading": false
+        },
+        {
+          "term": "dim",
+          "heading": false
+        },
+        {
+          "term": "classes",
+          "heading": false
+        }
+      ],
+      "extract": "quotient of Rδ(H) in terms of δ-conjugacy classes of ~W . Let cl(~W,δ ) be the set of δ-conjugacy classes of ~W . Let cl(~W,δ )ell be the set of ellipticδ-conjugacy classes of ~W , and let cl(~W,δ )0 be the set of δ-conjugacy classes O of ~W such that νO = 0. Then cl(~W,δ )ell⊂cl(~W,δ )0⊂cl(~W,δ ). Let cl(W,δ )ell⊂cl(W,δ ) denote the set of elliptic δ-conjugacy classes, respectively all δ-conjugacy classes in W . By",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-65",
+      "number": null,
+      "title": "6.5.",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hss",
+          "heading": false
+        },
+        {
+          "term": "bdk",
+          "heading": false
+        },
+        {
+          "term": "subalgebras",
+          "heading": false
+        }
+      ],
+      "extract": "To deﬁne it, recall the [BDK]-map deﬁned in (4.8) A :Rδ(H)C→Rδ(H)C, which by Proposition 4.8 has the property that kerA =Rδ 1(H), and so im A∼= ¯Rδ 0(H). (6.11) Let AJ : Rδ(HJ )C→ Rδ(HJ )C be the similar maps for the parabolic subalgebras HJ. As a consequence of the proof of Proposition 6.4, we have Corollary 6.8. If the root datum for H is semisimple, a section of ¯Rδ(H)rigid is given by ⨁ J∈I δ ♠ iJ im(AJ :R(Hss J",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-7-duality-between-and-rh",
+      "number": "7",
+      "title": "Duality between and R(H)",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 26,
+      "summary": null,
+      "keywords": [],
+      "extract": "Our strategy to prove the main results is to use traces of ﬁnite dime nsional H-modules to separate the elements {TO} that span the cocenter ¯H.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-036-71",
+      "number": null,
+      "title": "7.1.",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 547,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀ ind",
+          "heading": false
+        },
+        {
+          "term": "hrigid",
+          "heading": false
+        },
+        {
+          "term": "pdt",
+          "heading": false
+        },
+        {
+          "term": "root system",
+          "heading": false
+        },
+        {
+          "term": "nondegenerate",
+          "heading": false
+        },
+        {
+          "term": "hom",
+          "heading": false
+        },
+        {
+          "term": "conjugacy",
+          "heading": false
+        }
+      ],
+      "extract": "δ (H) = Hom C(Rδ(H)C, C). Let ( ¯Rδ(H)rigid)∗ be the subspace of R∗ δ(H) consisting of linear functions on Rδ(H) that vanish on Rδ(H)diﬀ −ind. Deﬁne ¯Hrigid = span{TO;JO = Π}. We have the following separation theorem. Theorem 7.1. Suppose that (PDT) holds. Then ¯Hrigid δ ={h∈ ¯Hδ; trδ(h)(Rδ(H)diﬀ −ind) = 0}. Proof. LetO be a conjugacy class with JO = Π. There exist K ⊊ Π a such that TO =Tw (in ¯Hδ) for some elliptic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-72",
+      "number": null,
+      "title": "7.2.",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 350,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "projective module",
+          "heading": false
+        },
+        {
+          "term": "generated projective",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "hrigid",
+          "heading": false
+        },
+        {
+          "term": "rank map",
+          "heading": false
+        },
+        {
+          "term": "matrix trace",
+          "heading": false
+        },
+        {
+          "term": "idempotent",
+          "heading": false
+        }
+      ],
+      "extract": "cocenter ¯Hrigid appears naturally in relation with K0(H), the Grothendieck group of ﬁnitely generated projective H-modules. Let Rk :K0(H)→ ¯H (7.3) be the Hattori-Stallings rank map, see for example [Da, §1.2]. If P∈ K0(H) is a ﬁnitely generated projective module, then P is a direct summand of Hn for some positive integer n. As such, there exists an idempotent eP∈ Mn×n(H) such that P =HneP as leftH-modules. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-73",
+      "number": null,
+      "title": "7.3.",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 706,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hell hrigid",
+          "heading": false
+        },
+        {
+          "term": "dim hrigid",
+          "heading": false
+        },
+        {
+          "term": "hss",
+          "heading": false
+        },
+        {
+          "term": "rigid",
+          "heading": false
+        },
+        {
+          "term": "perfect pairing",
+          "heading": false
+        },
+        {
+          "term": "pdt",
+          "heading": false
+        },
+        {
+          "term": "root datum",
+          "heading": false
+        },
+        {
+          "term": "ker",
+          "heading": false
+        }
+      ],
+      "extract": "δ dual to the one for ¯Rδ(H)rigid from Propo- sition 6.4 and Corollary 6.8. Proposition 7.5. Suppose the root datum for H is semisimple and that (PDT) holds. Then ¯Hrigid δ = ⨁ J∈I δ ♠ ¯iJ ( ¯AJ (( ¯Hss J ) rigid )NJ ). Proof. The proof follows the lines of the proof of Proposition 6.4. By Theorem 7.1, ¯Hell δ ⊆ ¯Hrigid δ . By Proposition 4.8, ¯A( ¯Hrigid δ ) = ¯Hell δ . Hence Hell δ = ¯A(Hell δ )⊆ ¯A(Hrigid δ )⊆",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-74-examples",
+      "number": "7.4",
+      "title": "Examples",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1227,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rigid cocenter",
+          "heading": false
+        },
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        },
+        {
+          "term": "rigid table",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite hecke",
+          "heading": false
+        },
+        {
+          "term": "q1q",
+          "heading": false
+        },
+        {
+          "term": "t0t",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "q0q",
+          "heading": false
+        }
+      ],
+      "extract": "tient and the rigid cocenter in some concrete examples. Example 7.7 (SL(2)). LetH be the aﬃne Hecke algebra for the root datum of SL(2). This is generated by T0 and T1 subject to T 2 i = (q− 1)Ti + q, i = 0, 1. There are three conjugacy classes of ﬁnite order in ~W : s0 (the aﬃne reﬂection), s1 (the ﬁnite reﬂection), and 1. Accordingly, we have the three basis elements of ¯Hrigid: T0,T1, and 1. There are four",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-8-some-consequences",
+      "number": "8",
+      "title": "Some consequences",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 139,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "density theorem",
+          "heading": false
+        },
+        {
+          "term": "basis theorem",
+          "heading": false
+        },
+        {
+          "term": "whereo",
+          "heading": false
+        },
+        {
+          "term": "admissible",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we prove the basis theorem, density theorem and t race Paley- Wiener theorem. They will be proven inductively, using Theorem 7.6. Theorem 8.1 (Basis Theorem for arbitrary parameters) . ¯H′ is a free Λ -module with basis{TO}, whereO ranges over all the conjugacy classes of ~W ′. Theorem 8.2 (Density Theorem for admissible parameters) . When the parameter q is admissible, the trace map tr :",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-81",
+      "number": null,
+      "title": "8.1.",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 695,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hrigid",
+          "heading": false
+        },
+        {
+          "term": "root datum",
+          "heading": false
+        },
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        },
+        {
+          "term": "parabolic subalgebras",
+          "heading": false
+        },
+        {
+          "term": "oaoto",
+          "heading": false
+        },
+        {
+          "term": "foro",
+          "heading": false
+        },
+        {
+          "term": "proper parabolic",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        }
+      ],
+      "extract": "A′ =A ⋊ C[Γ]. The map aγ↦→γ,a∈A, γ∈ Γ induces a surjective linear map τ : ¯A′→ C[Γ] = ⨁ [γ]∈cl(Γ) Cγ. (8.1) The ﬁber τ −1(γ) is by deﬁnition the image of Aγ in ¯A′. Similar to section 3.2, we have: Lemma 8.3. The map aγ ↦→a induces an isomorphism τ −1(γ)∼= ¯A[γ], where ¯A[γ] = (A/[A,A ]γ)ZΓ (γ), the space of ZΓ (γ)-coinvariants. Proposition 8.4. Assume the root datum is semisimple and that q is admissible. If the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-83",
+      "number": null,
+      "title": "8.3.",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 303,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hell",
+          "heading": false
+        },
+        {
+          "term": "hss",
+          "heading": false
+        },
+        {
+          "term": "byf",
+          "heading": false
+        },
+        {
+          "term": "isomoprhic",
+          "heading": false
+        },
+        {
+          "term": "paley-wiener",
+          "heading": false
+        }
+      ],
+      "extract": "restriction functors ¯iJ and ¯rJ depend algebraically on the parameters, therefore Lemma 4.6 and hence Proposition 4.9 and Proposition 6.2 hold unconditio nally. Moreover, ¯Hell δ ⊂ ¯Hrigid δ and Proposition 7.5 holds without the (PDT) assumption. We can now prove the trace Paley-Wiener theorem for arbitrary pa rameters. Theorem 8.5. For arbitrary parameters, the image of the map tr : ¯H′→R(H′) is R∗(H′)good. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-84",
+      "number": null,
+      "title": "8.4.",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 277,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rank hell",
+          "heading": false
+        },
+        {
+          "term": "rank hrigid",
+          "heading": false
+        },
+        {
+          "term": "hss",
+          "heading": false
+        },
+        {
+          "term": "admissible parameters",
+          "heading": false
+        },
+        {
+          "term": "irrδ",
+          "heading": false
+        },
+        {
+          "term": "root datum",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 8.6. Suppose that Φ is a semisimple based root datum. Then dim ¯Rδ 0(H)≤ rank ¯Hell δ =|cl(~W,δ )ell|. Proof. By Proposition 6.2 and§8.3, dim ¯Rδ 0(H)≤ dim ¯Hell δ for arbitrary parameters. Since (PDT) holds for admissible parameters, rank ¯Hell δ = rank ¯Hδ/ ker ¯A is ﬁnite for admissible parameters. Since ¯Hδ is a Λ-module with basis TO and the map ¯A depends algebraically on the parameters, rank ¯Hδ/",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-9-applications-to-smooth-representations-of-redu",
+      "number": "9",
+      "title": "Applications to smooth representations of reductive p-adic groups",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-045-91",
+      "number": null,
+      "title": "9.1.",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀ ind",
+          "heading": false
+        },
+        {
+          "term": "parabolic subgroup",
+          "heading": false
+        },
+        {
+          "term": "rigid",
+          "heading": false
+        },
+        {
+          "term": "unramiﬁed",
+          "heading": false
+        },
+        {
+          "term": "bernstein",
+          "heading": false
+        }
+      ],
+      "extract": "ﬁeld of cardinality q. Let G be a connected semisimple group over k, and set G =G(k). Let G0 be the subgroup of G generated by all of the compact open subgroups. A (one-dimensional) smooth character of G is called unramiﬁed if χ|G0 = 1. Let Xu(G) denote the group of unramiﬁed characters of G. Let R(G) denote the Grothendieck group of smooth C-representations of G. Let B(G) be the (modiﬁed) Bernstein center of G, as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-92",
+      "number": null,
+      "title": "9.2.",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 476,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "i-ﬁxed vectors",
+          "heading": false
+        },
+        {
+          "term": "inﬁnitesimal character",
+          "heading": false
+        },
+        {
+          "term": "hermitian form",
+          "heading": false
+        },
+        {
+          "term": "real inﬁnitesimal",
+          "heading": false
+        },
+        {
+          "term": "g-representation",
+          "heading": false
+        },
+        {
+          "term": "haar measure",
+          "heading": false
+        },
+        {
+          "term": "h-module",
+          "heading": false
+        },
+        {
+          "term": "iwahori",
+          "heading": false
+        }
+      ],
+      "extract": "representations from the p-adic group to Iwahori-Hecke algebras. Let G satisfy the same assumptions as in [Bo]. Let I be an Iwahori subgroup of G. Let CI (G) be the category of smooth G- representations generated by their I-ﬁxed vectors. By a classical result of Cassel- man, CI (G) = R0(G), whereR0(G) is the Bernstein component where the simple objects are sub quot ients of unramiﬁed minimal principal series. LetH",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-93",
+      "number": null,
+      "title": "9.3.",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 402,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k-signature character",
+          "heading": false
+        },
+        {
+          "term": "tempered",
+          "heading": false
+        },
+        {
+          "term": "k-character",
+          "heading": false
+        },
+        {
+          "term": "g-representation",
+          "heading": false
+        },
+        {
+          "term": "rigid",
+          "heading": false
+        },
+        {
+          "term": "hermitian",
+          "heading": false
+        },
+        {
+          "term": "signature",
+          "heading": false
+        },
+        {
+          "term": "irreducible",
+          "heading": false
+        }
+      ],
+      "extract": "modules. Invoking Langlands classiﬁcation or Corollary 6.8, it is clear t hat we may choose ¯Vi so that they are all tempered H-modules. Under the functor (9.3), there exist smooth admissible G-representation Vi such that V I i = ¯Vi. It is well-known thatFI induces a bijection between tempered representations in the two c ategories, thus Vi are tempered G-representations. In fact, FI induces a homeomorphism between",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-94",
+      "number": null,
+      "title": "9.4.",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 295,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hrigid",
+          "heading": false
+        },
+        {
+          "term": "g-representation",
+          "heading": false
+        },
+        {
+          "term": "k-signature",
+          "heading": false
+        },
+        {
+          "term": "mσσ",
+          "heading": false
+        }
+      ],
+      "extract": "LetHK =C∞(I\\K/I ) be the subalgebra of H consisting of functions whose sup- port is in K. If ( σ,U σ) is a K-type, then ( σ,U I σ ) is an HK-module. If V I is a simpleH-module, then the HK-character of V I is θHK (V I ) = ∑ σ∈ ˆK,U Iσ ⁄=0 mσσ, (9.7) and theHK-signature character is Σ HK (V I ) = ( ∑ σ∈ ˆK,U Iσ ⁄=0 pσσ, ∑ σ∈ ˆK,U Iσ ⁄=0 qσσ). (9.8) Theorem 9.4 implies that the HK-signature character of V I is Σ HK (V",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1070,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        },
+        {
+          "term": "reductive p-adic",
+          "heading": false
+        },
+        {
+          "term": "p-adic groups",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "acta math",
+          "heading": false
+        },
+        {
+          "term": "analyse math",
+          "heading": false
+        },
+        {
+          "term": "compositio math",
+          "heading": false
+        },
+        {
+          "term": "moy",
+          "heading": false
+        }
+      ],
+      "extract": "[AM] S. Ariki and A. Mathas, The number of simple modules of the Hecke algebras of type G(r,1, n), Math. Z. 233 (2000), 601–623. [Ar] J. Arthur, On elliptic tempered characters , Acta Math. 171, No.1, 73–138 (1993). [BB] P. Blanc, J.-L. Brylinski, Cyclic homology and the Selberg principle , J. Func. Anal. 109 (1992), 289–330. [BC] D. Barbasch, D. Ciubotaru, Unitary equivalences for reductive p-adic groups , Amer.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "aﬃne hecke",
+      "heading": false
+    },
+    {
+      "term": "cocenter hrigid",
+      "heading": false
+    },
+    {
+      "term": "rigid cocenter",
+      "heading": true
+    },
+    {
+      "term": "hell hrigid",
+      "heading": false
+    },
+    {
+      "term": "hecke algebra",
+      "heading": false
+    },
+    {
+      "term": "ﬁnite hecke",
+      "heading": false
+    },
+    {
+      "term": "affine hecke",
+      "heading": false
+    },
+    {
+      "term": "hecke algebrah",
+      "heading": false
+    },
+    {
+      "term": "dim hrigid",
+      "heading": false
+    },
+    {
+      "term": "graded hecke",
+      "heading": false
+    },
+    {
+      "term": "dan ciubotaru",
+      "heading": false
+    },
+    {
+      "term": "elliptic cocenter",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "The rigid cocenter/quotient table for SL(2) SL(2) T0 T1 1",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "The rigid cocenter/quotient table for P GL(2) P GL(2) St− St+ i∅(1) q − 1 0 2",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 52,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 51,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "2 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p29); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 51 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1409.0902v1"
+  }
+}

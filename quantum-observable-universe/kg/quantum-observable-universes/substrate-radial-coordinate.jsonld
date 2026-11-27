@@ -6,14 +6,14 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-substrate-radial-coordinate",
+  "@id": "papers/quantum-observable-universe/blocks/prop-aether-radial-coordinate",
   "@type": [
     "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
-  "label": "prop:substrate-radial-coordinate",
+  "label": "prop:aether-radial-coordinate",
   "kind": "proposition",
-  "title": "Substrate parameter as the radial coordinate",
+  "title": "Aether parameter as the radial coordinate",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-contact-affine-chart",
     "papers/quantum-observable-universe/blocks/def-fermion-boson-decomposition",
@@ -21,7 +21,7 @@
     "papers/quantum-observable-universe/blocks/ex-q-reeb-flow"
   ],
   "proofs": [
-    "papers/quantum-observable-universe/blocks/prf-substrate-radial-coordinate"
+    "papers/quantum-observable-universe/blocks/prf-aether-radial-coordinate"
   ],
   "tags": [
     "substrate",
@@ -29,7 +29,7 @@
     "boson",
     "fermion"
   ],
-  "leanRef": "qou:QOU.Core.substrate_radial_coordinate",
+  "leanRef": "qou:QOU.Core.aether_radial_coordinate",
   "text": "substrate-radial-coordinate.md",
   "leanSource": "substrate-radial-coordinate.lean",
   "provenance": "authored"

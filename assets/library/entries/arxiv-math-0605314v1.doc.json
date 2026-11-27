@@ -2038,16 +2038,16 @@
       "summary": null,
       "keywords": [
         {
+          "term": "vmvn",
+          "heading": false
+        },
+        {
           "term": "spana",
           "heading": false
         },
         {
           "term": "a-algebra",
           "heading": false
-        },
-        {
-          "term": "representation",
-          "heading": true
         }
       ],
       "extract": "the A-algebra RA = SpanA{Vn | n ≥0}. with the multiplication induced by tensor product. Since each ﬁnite-dimensional representation of Uh is a direct sum of copies of Vn, n ≥0, we may regard RA as the representation ring of Uh over A. VmVn = V|m−n| + V|m−n|+2 + · · · + Vm+n. antrVn q (x). q (−): RZ[v,v−1] × Uh →Q[[h]], q (−): RQ(v) × Uh →Q((h)), JL : RQ(v) × · · · × RQ(v) →Q(v1/2). If the framing of every component",
@@ -3237,11 +3237,11 @@
           "heading": false
         },
         {
-          "term": "divis-ring-zqh",
+          "term": "item",
           "heading": false
         },
         {
-          "term": "item",
+          "term": "divis-ring-zqh",
           "heading": false
         },
         {
@@ -3361,12 +3361,12 @@
       "summary": null,
       "keywords": [
         {
-          "term": "zqh",
-          "heading": false
-        },
-        {
           "term": "wrt",
           "heading": true
+        },
+        {
+          "term": "zqh",
+          "heading": false
         },
         {
           "term": "adic",
@@ -3728,12 +3728,12 @@
           "heading": false
         },
         {
-          "term": "framings",
-          "heading": false
-        },
-        {
           "term": "knot",
           "heading": true
+        },
+        {
+          "term": "framings",
+          "heading": false
         }
       ],
       "extract": "[]{#sec:surgery-along-knot label=\"sec:surgery-along-knot\"} Kirby and Melvin proved periodicity results for the WRT invariant of integral homology spheres obtained from $S^3$ by surgery along a knot with framings $1/m$ (Corollaries 8.15 and 8.26 of [@Kirby-Melvin]). We have the following generalization. ::: theorem []{#r9 label=\"r9\"} Let $K$ be a knot in an integral homology sphere $M$. Let $M'=M_{K;1/m}$ be the",
@@ -3947,7 +3947,7 @@
           "heading": false
         },
         {
-          "term": "quantum invariants",
+          "term": "integral homology",
           "heading": false
         },
         {

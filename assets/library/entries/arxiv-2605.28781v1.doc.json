@@ -619,12 +619,12 @@
           "heading": false
         },
         {
-          "term": "lattice",
-          "heading": true
-        },
-        {
           "term": "infty leq",
           "heading": false
+        },
+        {
+          "term": "lattice",
+          "heading": true
         }
       ],
       "extract": "The ring of algebraic integers $\\mathcal{O}_K$ can be viewed as a lattice of rank $d$ in $\\mathbb{R}^d$ via the Minkowski embedding $$\\alpha \\mapsto (\\sigma_1(\\alpha),\\ldots,\\sigma_d(\\alpha)),$$ where $\\sigma_1,\\ldots,\\sigma_d$ are the embeddings $\\sigma_i\\colon K\\hookrightarrow \\mathbb{R}$. The covolume of this lattice is $\\Delta_K^{1/2}$ (see [@La70 V, Lemma 2]). We write $$B^+(X) = \\{ \\alpha \\in \\mathcal{O}_K :",

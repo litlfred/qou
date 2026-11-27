@@ -6,20 +6,20 @@
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/rem-frobenius-hopf-substrate-remark",
+  "@id": "papers/quantum-observable-universe/blocks/rem-frobenius-hopf-aether-remark",
   "@type": [
     "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "rem:frobenius-hopf-substrate-remark",
+  "label": "rem:frobenius-hopf-aether-remark",
   "kind": "remark",
-  "title": "The counit, the antipode and self-duality of the substrate",
+  "title": "The counit, the antipode and self-duality of the aether",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate",
+    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-aether",
     "papers/quantum-observable-universe/blocks/def-quantum-universe",
     "papers/quantum-observable-universe/blocks/def-quantum-observable-universe"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate",
+  "interprets": "papers/quantum-observable-universe/blocks/def-frobenius-hopf-aether",
   "tags": [
     "frobenius",
     "hopf-algebra",

@@ -689,8 +689,8 @@
           "heading": false
         },
         {
-          "term": "phase",
-          "heading": true
+          "term": "alpha beta",
+          "heading": false
         }
       ],
       "extract": "[]{#sec:toeplitz label=\"sec:toeplitz\"} We now specialize to the model that leads most naturally to Bessel functions. Consider a static scatterer with scattering matrix $\\mathcal U^{\\alpha\\beta}(E)$, driven by a monochromatic, spatially uniform AC potential $$V(t) = V_{\\rm ac}\\cos(\\Omega t).$$ The corresponding gauge phase is $$\\phi(t) = \\frac{e}{\\hbar}\\int^t V(t')\\,dt' = A\\sin(\\Omega t), \\qquad A := \\frac{eV_{\\rm",
@@ -1041,15 +1041,15 @@
           "heading": false
         },
         {
+          "term": "edge kernel",
+          "heading": false
+        },
+        {
           "term": "edge singularity",
           "heading": false
         },
         {
           "term": "sambe",
-          "heading": false
-        },
-        {
-          "term": "frequency omega",
           "heading": false
         }
       ],

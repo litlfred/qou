@@ -303,7 +303,7 @@
           "heading": false
         },
         {
-          "term": "hyperbolic manifold",
+          "term": "dehn ﬁlling",
           "heading": false
         }
       ],
@@ -410,11 +410,11 @@
           "heading": false
         },
         {
-          "term": "geodesic boundary",
+          "term": "orientable manifold",
           "heading": false
         },
         {
-          "term": "orientable manifold",
+          "term": "geodesic boundary",
           "heading": false
         },
         {
@@ -494,12 +494,12 @@
           "heading": false
         },
         {
-          "term": "geometric",
-          "heading": true
-        },
-        {
           "term": "sufﬁcient",
           "heading": false
+        },
+        {
+          "term": "geometric",
+          "heading": true
         },
         {
           "term": "hyperbolic structure",
@@ -610,7 +610,7 @@
           "heading": false
         },
         {
-          "term": "conditions",
+          "term": "edges",
           "heading": false
         }
       ],
@@ -942,12 +942,12 @@
           "heading": false
         },
         {
-          "term": "step",
-          "heading": true
-        },
-        {
           "term": "stabilizer",
           "heading": false
+        },
+        {
+          "term": "step",
+          "heading": true
         },
         {
           "term": "ﬁxed",
@@ -1030,12 +1030,12 @@
           "heading": true
         },
         {
-          "term": "hyperbolic structure",
-          "heading": false
-        },
-        {
           "term": "thurston",
           "heading": true
+        },
+        {
+          "term": "hyperbolic structure",
+          "heading": false
         }
       ],
       "extract": "Let U be a sufﬁciently small neighbourhood of x0 in Ω(T ) and let x ∈U. For j = 1, . . . , k, we deﬁne the j–Dehn ﬁlling coefﬁcient (pj(x), qj(x)) ∈R2 ∪{∞} as follows: if uj(x) = 0, then (pj(x), qj(x)) = ∞; otherwise, pj(x), qj(x) are the unique real solutions of the equation pj(x)uj(x) + qj(x)vj(x) = 2πi. (Existence and uniqueness of such solutions near x0 can be easily deduced from Theorem 2.2 and Lemma 3.1.) Let",
@@ -1106,12 +1106,12 @@
           "heading": false
         },
         {
-          "term": "geodesic",
-          "heading": true
-        },
-        {
           "term": "dbx",
           "heading": false
+        },
+        {
+          "term": "geodesic",
+          "heading": true
         }
       ],
       "extract": "Inﬁnitesimal deformations of the geodesic boundary Let Teich(∂N) be the Teichm¨uller space of hyperbolic structures on ∂N, ie, the space of equivalence classes of hyperbolic metrics on ∂N, where two such metrics are considered equivalent if they are isometric through a diffeomorphism homotopic to the identity of ∂N. For x ∈Ω(T ) we denote by B(x) ∈Teich(∂N) the equivalence class of the hyperbolic structure induced",
@@ -1153,11 +1153,11 @@
           "heading": false
         },
         {
-          "term": "smooth path",
+          "term": "γ1γ",
           "heading": false
         },
         {
-          "term": "γ1γ",
+          "term": "smooth path",
           "heading": false
         },
         {
@@ -1189,11 +1189,11 @@
           "heading": true
         },
         {
-          "term": "ﬁnite-volume hyperbolic",
+          "term": "hyperbolic manifolds",
           "heading": false
         },
         {
-          "term": "hyperbolic manifolds",
+          "term": "ﬁnite-volume hyperbolic",
           "heading": false
         },
         {
@@ -1263,11 +1263,11 @@
       "heading": false
     },
     {
-      "term": "boundary edges",
+      "term": "hyperbolic structure",
       "heading": false
     },
     {
-      "term": "hyperbolic structure",
+      "term": "boundary edges",
       "heading": false
     },
     {

@@ -1,0 +1,1779 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1006.3501v5",
+  "title": "arxiv-1006.3501v5",
+  "variant": "pdf",
+  "pages": 72,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Pivotal and spherical categories",
+      "number": "1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-pivotal-and-spherical-categories"
+    },
+    {
+      "level": 1,
+      "title": "Multiplicities in pivotal categories",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-multiplicities-in-pivotal-categories"
+    },
+    {
+      "level": 1,
+      "title": "Invariants of colored graphs",
+      "number": "3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-invariants-of-colored-graphs"
+    },
+    {
+      "level": 1,
+      "title": "Pre-fusion and fusion categories",
+      "number": "4",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-pre-fusion-and-fusion-categories"
+    },
+    {
+      "level": 1,
+      "title": "State sums on triangulated 3-manifolds",
+      "number": "5",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-state-sums-on-triangulated-3-manifolds"
+    },
+    {
+      "level": 1,
+      "title": "State sums on skeletons of 3-manifolds",
+      "number": "6",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-6-state-sums-on-skeletons-of-3-manifolds"
+    },
+    {
+      "level": 1,
+      "title": "Moves on skeletons and proof of Theorems 5.1 and 6.1",
+      "number": "7",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-7-moves-on-skeletons-and-proof-of-theorems-51-an"
+    },
+    {
+      "level": 1,
+      "title": "Skeletons in the relative case",
+      "number": "8",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-8-skeletons-in-the-relative-case"
+    },
+    {
+      "level": 1,
+      "title": "The state-sum TQFT",
+      "number": "9",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-9-the-state-sum-tqft"
+    },
+    {
+      "level": 1,
+      "title": "Modular categories and categorical centers",
+      "number": "10",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-10-modular-categories-and-categorical-centers"
+    },
+    {
+      "level": 1,
+      "title": "Main theorems and applications",
+      "number": "11",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-11-main-theorems-and-applications"
+    },
+    {
+      "level": 1,
+      "title": "State sum invariants of links in 3-manifolds",
+      "number": "12",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-12-state-sum-invariants-of-links-in-3-manifolds"
+    },
+    {
+      "level": 1,
+      "title": "Deduction of Theorems 11.1 and 11.2 from Lemma 11.3",
+      "number": "13",
+      "page": 55,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-13-deduction-of-theorems-111-and-112-from-lemma"
+    },
+    {
+      "level": 1,
+      "title": "The coend of the center",
+      "number": "14",
+      "page": 59,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-14-the-coend-of-the-center"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Lemma 11.3",
+      "number": "15",
+      "page": 64,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-15-proof-of-lemma-113"
+    },
+    {
+      "level": 1,
+      "title": "Appendix. The 6j-symbols",
+      "number": null,
+      "page": 69,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-appendix-the-6j-symbols"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 70,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 78,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alexis",
+          "heading": false
+        },
+        {
+          "term": "turaev",
+          "heading": false
+        },
+        {
+          "term": "virelizier",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1006.3501v5 [math.GT] 24 Jun 2013 ON TWO APPROACHES TO 3-DIMENSIONAL TQFTS VLADIMIR TURAEV AND ALEXIS VIRELIZIER Abstract. W e prove that|M |C = τZ(C)(M ) for any closed oriented 3-manifold M and for any spherical fusion category C of non-zero dimension. Here |M |C is the Turaev-Viro-Barrett-W estbury state sum invariant of M derived from C, Z(C) is the Drinfeld-Joyal-Street center of C, and τZ(C)(M ) is the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1006.3501v5/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1238,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skeletons",
+          "heading": false
+        },
+        {
+          "term": "spherical fusion",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "modular categories",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "state sums",
+          "heading": false
+        },
+        {
+          "term": "diﬀerent state",
+          "heading": false
+        }
+      ],
+      "extract": "1. Pivotal and spherical categories 3 2. Multiplicities in pivotal categories 5 3. Invariants of colored graphs 8 4. Pre-fusion and fusion categories 10 5. State sums on triangulated 3-manifolds 13 6. State sums on skeletons of 3-manifolds 14 7. Moves on skeletons and proof of Theorems 5.1 and 6.1 16 8. Skeletons in the relative case 22 9. The state-sum TQFT 26 10. Modular categories and categorical centers 31 11.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-pivotal-and-spherical-categories",
+      "number": "1",
+      "title": "Pivotal and spherical categories",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1245,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coevx idx",
+          "heading": false
+        },
+        {
+          "term": "evx idx",
+          "heading": false
+        },
+        {
+          "term": "psfrag replacements",
+          "heading": false
+        },
+        {
+          "term": "pivotal",
+          "heading": true
+        },
+        {
+          "term": "spherical categories",
+          "heading": true
+        },
+        {
+          "term": "pivotal category",
+          "heading": false
+        },
+        {
+          "term": "pivotal structure",
+          "heading": false
+        },
+        {
+          "term": "monoidal constraints",
+          "heading": false
+        }
+      ],
+      "extract": "We review several classes of monoidal categories needed in the seq uel. 1.1. Pivotal categories ( [Mal]). By a pivotal (or sovereign) category, we mean a strict monoidal category C with unit object 1 such that to each object X∈ Ob(C) there are associated a dual object X ∗∈ Ob(C) and four morphisms evX :X ∗⊗X→ 1, coevX : 1→X⊗X ∗, ~evX :X⊗X ∗→ 1, ~coevX : 1→X ∗⊗X, satisfying the following conditions: (a) For every X∈",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-multiplicities-in-pivotal-categories",
+      "number": "2",
+      "title": "Multiplicities in pivotal categories",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1313,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "evt evs",
+          "heading": false
+        },
+        {
+          "term": "psfrag replacements",
+          "heading": false
+        },
+        {
+          "term": "pivotal",
+          "heading": true
+        },
+        {
+          "term": "cone bijections",
+          "heading": false
+        },
+        {
+          "term": "signed objects",
+          "heading": false
+        },
+        {
+          "term": "eop",
+          "heading": false
+        },
+        {
+          "term": "homc",
+          "heading": false
+        },
+        {
+          "term": "cyclic order",
+          "heading": false
+        }
+      ],
+      "extract": "Forn≥ 1 objects X1,...,X n of a monoidal category C, one can consider the “set of multiplicities” Hom C(1,X 1⊗···⊗ Xn). We show that if C is pivotal, then this set essentially depends only on the cyclic order of the objects X1,...,X n. 2.1. Permutation maps. For objects X,Y of a pivotal category C, let σX,Y : Hom C(1,X⊗Y )→ HomC(1,Y ⊗X) be the map deﬁned as follows: for any α∈ HomC(1,X⊗Y ), (3) σX,Y (α) = (ev X⊗ idY",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-invariants-of-colored-graphs",
+      "number": "3",
+      "title": "Invariants of colored graphs",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psfrag replacements",
+          "heading": false
+        },
+        {
+          "term": "c-colored graph",
+          "heading": false
+        },
+        {
+          "term": "ac-colored graph",
+          "heading": false
+        },
+        {
+          "term": "colored",
+          "heading": true
+        },
+        {
+          "term": "graph through",
+          "heading": false
+        },
+        {
+          "term": "gop",
+          "heading": false
+        },
+        {
+          "term": "half-edges",
+          "heading": false
+        },
+        {
+          "term": "opposite orientation",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, C is a pivotal k-category. 3.1. Colored graphs in surfaces. By a graph, we mean a ﬁnite graph without isolated vertices. Every edge of a graph connects two (possibly co inciding) vertices called the endpoints of the edge. We allow multiple edges with the same e ndpoints. A graph G isC-colored, if each edge of G is oriented and endowed with an object ofC called the color of the edge. Let Σ be an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-pre-fusion-and-fusion-categories",
+      "number": "4",
+      "title": "Pre-fusion and fusion categories",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1545,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pre-fusion",
+          "heading": true
+        },
+        {
+          "term": "psfrag replacements",
+          "heading": false
+        },
+        {
+          "term": "replacements jvv",
+          "heading": false
+        },
+        {
+          "term": "pre-fusion category",
+          "heading": false
+        },
+        {
+          "term": "object ofc",
+          "heading": false
+        },
+        {
+          "term": "rank homc",
+          "heading": false
+        },
+        {
+          "term": "monoidal k-category",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        }
+      ],
+      "extract": "4.1. Pre-fusion categories. An object X of a monoidal k-categoryC is simple if End C(X) is a free k-module of rank 1. Equivalently, X is simple if the k-ho- momorphism k→ EndC(X), k↦→k idX is an isomorphism. By the deﬁnition of a monoidal k-category, the unit object 1 is simple. In the literature, simple objects in our sense are often called absolutely simple objects or scalar obje cts. A pre-fusion category (over",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-state-sums-on-triangulated-3-manifolds",
+      "number": "5",
+      "title": "State sums on triangulated 3-manifolds",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eop",
+          "heading": false
+        },
+        {
+          "term": "oriented edge",
+          "heading": false
+        },
+        {
+          "term": "boltzmann weight",
+          "heading": false
+        },
+        {
+          "term": "oriented manifolds",
+          "heading": false
+        },
+        {
+          "term": "triangulated",
+          "heading": true
+        },
+        {
+          "term": "closed oriented",
+          "heading": false
+        },
+        {
+          "term": "i-colored",
+          "heading": false
+        },
+        {
+          "term": "opposite orientation",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we derive a topological invariant of closed oriented 3 -manifolds from a spherical fusion category. 5.1. Preliminaries on triangulated 3-manifolds. LetM be a 3-manifold (with- out boundary). Let t be a triangulation of M . The simplices of t of dimension 0, 1, 2, 3 are called respectively vertices, edges, faces, and tetrah edra. For a vertex x oft, the union of all simplices of t incident to x",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-state-sums-on-skeletons-of-3-manifolds",
+      "number": "6",
+      "title": "State sums on skeletons of 3-manifolds",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1379,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stratiﬁed polyhedron",
+          "heading": false
+        },
+        {
+          "term": "oriented skeleton",
+          "heading": false
+        },
+        {
+          "term": "incident tox",
+          "heading": false
+        },
+        {
+          "term": "eop",
+          "heading": false
+        },
+        {
+          "term": "ofp",
+          "heading": false
+        },
+        {
+          "term": "branches",
+          "heading": false
+        },
+        {
+          "term": "reg",
+          "heading": false
+        },
+        {
+          "term": "half-edges",
+          "heading": false
+        }
+      ],
+      "extract": "We compute |M|C as a state sum on any skeleton of M . This generalizes the state sums of Section 5 and of [TV, BW1]. We begin with topological pre liminaries. 6.1. Stratiﬁed 2-polyhedra. By a 2-polyhedron, we mean a compact topological space that can be triangulated using only simplices of dimension ≤ 2. For a 2- polyhedron P , denote by Int(P ) the subspace of P consisting of all points having a neighborhood",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-moves-on-skeletons-and-proof-of-theorems-51-an",
+      "number": "7",
+      "title": "Moves on skeletons and proof of Theorems 5.1 and 6.1",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3400,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skeletons",
+          "heading": true
+        },
+        {
+          "term": "psfrag replacements",
+          "heading": false
+        },
+        {
+          "term": "replacements iuv",
+          "heading": false
+        },
+        {
+          "term": "moves",
+          "heading": true
+        },
+        {
+          "term": "primary moves",
+          "heading": false
+        },
+        {
+          "term": "stratiﬁed polyhedron",
+          "heading": false
+        },
+        {
+          "term": "special skeletons",
+          "heading": false
+        },
+        {
+          "term": "regions created",
+          "heading": false
+        }
+      ],
+      "extract": "The proof of Theorems 5.1 and 6.1 given at the end of the section is ba sed on a study of transformations of skeletons of a closed 3-manifold M . ON TWO APPROACHES TO 3-DIMENSIONAL TQFTS 17 7.1. Moves on skeletons. The symbols # v, #e, #r will denote the number of vertices, edges, and regions of a skeleton of M , respectively. We deﬁne four moves T1−T4 on a skeleton P ofM transformingP into a new skeleton of M , see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-8-skeletons-in-the-relative-case",
+      "number": "8",
+      "title": "Skeletons in the relative case",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skeletons",
+          "heading": true
+        },
+        {
+          "term": "lune moves",
+          "heading": false
+        },
+        {
+          "term": "primary moves",
+          "heading": false
+        },
+        {
+          "term": "disk regions",
+          "heading": false
+        },
+        {
+          "term": "regions contained",
+          "heading": false
+        },
+        {
+          "term": "wide regions",
+          "heading": false
+        },
+        {
+          "term": "regions destroyed",
+          "heading": false
+        },
+        {
+          "term": "edges lying",
+          "heading": false
+        }
+      ],
+      "extract": "We study skeletons of 3-manifolds with boundary and their transfo rmations. 8.1. Skeletons of pairs. LetM be a compact 3-manifold (with boundary). Let G be an oriented graph in ∂M such that all vertices of G have valence≥ 2. (A graph is oriented, if all its edges are oriented.) A skeleton of the pair (M,G ) is an oriented stratiﬁed 2-polyhedron P⊂M such that (i) P∩∂M =∂P =G; (ii) every vertex v of G is an endpoint",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-9-the-state-sum-tqft",
+      "number": "9",
+      "title": "The state-sum TQFT",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2972,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "i-colored graph",
+          "heading": false
+        },
+        {
+          "term": "cob vectk",
+          "heading": false
+        },
+        {
+          "term": "tqft",
+          "heading": true
+        },
+        {
+          "term": "gop",
+          "heading": false
+        },
+        {
+          "term": "psfrag replacements",
+          "heading": false
+        },
+        {
+          "term": "category cob",
+          "heading": false
+        },
+        {
+          "term": "pick skeleton",
+          "heading": false
+        },
+        {
+          "term": "oriented graph",
+          "heading": false
+        }
+      ],
+      "extract": "We construct in this section the state sum TQFT associated with any spherical fusion category with invertible dimension. ON TWO APPROACHES TO 3-DIMENSIONAL TQFTS 27 9.1. Preliminaries on TQFTs. For convenience of the reader, we outline a def- inition of a 3-dimensional Topological Quantum Field Theory (TQFT) re ferring for details to [Tu]. We ﬁrst deﬁne a category of 3-dimensional cobor disms Cob 3. Objects of Cob 3",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-10-modular-categories-and-categorical-centers",
+      "number": "10",
+      "title": "Modular categories and categorical centers",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1063,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psfrag replacements",
+          "heading": false
+        },
+        {
+          "term": "modular categories",
+          "heading": true
+        },
+        {
+          "term": "half braiding",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "ribbon category",
+          "heading": false
+        },
+        {
+          "term": "pivotal category",
+          "heading": false
+        },
+        {
+          "term": "idx",
+          "heading": false
+        },
+        {
+          "term": "braided pivotal",
+          "heading": false
+        }
+      ],
+      "extract": "We recall the basics on modular categories and the Drinfeld center. 10.1. Modular categories ( [Tu]). A braiding in a monoidal category B is a nat- ural isomorphism τ ={τX,Y : X⊗Y→Y⊗X}X,Y ∈Ob(B) such that τX,Y ⊗Z = (id Y⊗τX,Z )(τX,Y⊗ idZ ) and τX⊗Y,Z = (τX,Z⊗ idY )(idX⊗τY,Z ). These conditions imply that τX,1 =τ1,X = id X for all X∈ Ob(B) and so that (2) is satisﬁed. 32 V. TURAEV AND A. VIRELIZIER A monoidal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-11-main-theorems-and-applications",
+      "number": "11",
+      "title": "Main theorems and applications",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1031,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unitary fusion",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "spherical fusion",
+          "heading": false
+        },
+        {
+          "term": "main theorems",
+          "heading": true
+        },
+        {
+          "term": "hermitian fusion",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "modular category",
+          "heading": false
+        },
+        {
+          "term": "closed oriented",
+          "heading": false
+        }
+      ],
+      "extract": "11.1. Main theorems. The Reshetikhin-Turaev construction (see [Tu]) derives from any modular category B over k equipped with a distinguished square root of dim(B) a 3-dimensional “extended TQFT” τB. The latter is a functor from a certain extension of the category Cob 3 to vectk; the extension in question is formed by surfaces with a Lagrangian subspace in the real 1-homology. Fo r an anomaly free B, we take the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-12-state-sum-invariants-of-links-in-3-manifolds",
+      "number": "12",
+      "title": "State sum invariants of links in 3-manifolds",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 55,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 7317,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psfrag replacements",
+          "heading": false
+        },
+        {
+          "term": "c-colored knotted",
+          "heading": false
+        },
+        {
+          "term": "knotted graph",
+          "heading": false
+        },
+        {
+          "term": "regions adjacent",
+          "heading": false
+        },
+        {
+          "term": "enriched link",
+          "heading": false
+        },
+        {
+          "term": "oriented enriched",
+          "heading": false
+        },
+        {
+          "term": "tree adjacent",
+          "heading": false
+        },
+        {
+          "term": "disk regions",
+          "heading": false
+        }
+      ],
+      "extract": "Fix a spherical fusion category C over an algebraically closed ﬁeld k such that dimC⁄= 0. In this section, we extend the state-sum invariant of 3-cobor disms|·| C to 3-cobordisms with Z(C)-colored links inside. 36 V. TURAEV AND A. VIRELIZIER 12.1. Knotted graphs in S2. By a knotted graph in S2, we mean a graph im- mersed in S2 such that the multiple points of the immersion are double transversa l crossings of edges,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-13-deduction-of-theorems-111-and-112-from-lemma",
+      "number": "13",
+      "title": "Deduction of Theorems 11.1 and 11.2 from Lemma 11.3",
+      "level": 1,
+      "pageStart": 55,
+      "pageEnd": 59,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cob vectk",
+          "heading": false
+        },
+        {
+          "term": "link tqft",
+          "heading": false
+        },
+        {
+          "term": "framed oriented",
+          "heading": false
+        },
+        {
+          "term": "graph tqft",
+          "heading": false
+        },
+        {
+          "term": "colored framed",
+          "heading": false
+        },
+        {
+          "term": "ribbon graphs",
+          "heading": false
+        },
+        {
+          "term": "dimensional tqfts",
+          "heading": false
+        },
+        {
+          "term": "along framed",
+          "heading": false
+        }
+      ],
+      "extract": "13.1. Conventions. In this section, the symbol D2 denotes the unit disk in C with counterclockwise orientation and S1 =∂D 2 is the unit circle with counterclockwise orientation. Unless explicitly stated to the contrary, the torus S1×S1 and the solid tori S1×D2 and D2×S1 are provided with the product orientations. 13.2. A surgery formula. Let Z : Cob 3→ vectk be a 3-dimensional TQFT over a ﬁeld k. We establish a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-14-the-coend-of-the-center",
+      "number": "14",
+      "title": "The coend of the center",
+      "level": 1,
+      "pageStart": 59,
+      "pageEnd": 64,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2553,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monad onc",
+          "heading": false
+        },
+        {
+          "term": "hopf monad",
+          "heading": false
+        },
+        {
+          "term": "coend",
+          "heading": true
+        },
+        {
+          "term": "psfrag replacements",
+          "heading": false
+        },
+        {
+          "term": "trivial monad",
+          "heading": false
+        },
+        {
+          "term": "bimonad onc",
+          "heading": false
+        },
+        {
+          "term": "dinatural transformation",
+          "heading": false
+        },
+        {
+          "term": "universal dinatural",
+          "heading": false
+        }
+      ],
+      "extract": "The aim of this section is to compute the coend of the center of a fus ion category. This computation will be instrumental in the proof of Lemma 11.3 given in the next section. It is based on the theory of Hopf monads, which was introd uced precisely to this end in [BV1, BV2]. We brieﬂy recall this theory and state the r elevant results of [BV1, BV2]. 14.1. Coends. LetC andD be categories. A dinatural transformation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-15-proof-of-lemma-113",
+      "number": "15",
+      "title": "Proof of Lemma 11.3",
+      "level": 1,
+      "pageStart": 64,
+      "pageEnd": 69,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1400,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psfrag replacements",
+          "heading": false
+        },
+        {
+          "term": "replacements i1i",
+          "heading": false
+        },
+        {
+          "term": "i1i l1l",
+          "heading": false
+        },
+        {
+          "term": "β1β α1α",
+          "heading": false
+        },
+        {
+          "term": "gop",
+          "heading": false
+        },
+        {
+          "term": "dimensional tqfts",
+          "heading": false
+        },
+        {
+          "term": "dim",
+          "heading": false
+        },
+        {
+          "term": "idc",
+          "heading": false
+        }
+      ],
+      "extract": "Since k is an algebraically closed ﬁeld, Z(C) is a fusion category. By Section 14.1, the coend of Z(C) is ⨁ i∈Ii∗⊗i, whereI is a representative set of simple objects ofZ(C). By [Tu, Chapter IV], for a closed oriented surface Σ of genus g≥ 0, τZ(C)(Σ) = ⨁ i1,...,ig ∈I HomZ(C)(1Z(C),i ∗ 1⊗i1⊗···⊗ i∗ g⊗ig) = Hom Z(C) ( 1Z(C), ⨁ i1,...,ig ∈I i∗ 1⊗i1⊗···⊗ i∗ g⊗ig ) = Hom Z(C)(1Z(C), ( ⨁ i∈I i∗⊗i)⊗g). Therefore Lemma 11.3",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-appendix-the-6j-symbols",
+      "number": null,
+      "title": "Appendix. The 6j-symbols",
+      "level": 1,
+      "pageStart": 69,
+      "pageEnd": 70,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 562,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psfrag replacements",
+          "heading": false
+        },
+        {
+          "term": "j-symbols",
+          "heading": true
+        },
+        {
+          "term": "equality follows",
+          "heading": false
+        },
+        {
+          "term": "signs",
+          "heading": false
+        },
+        {
+          "term": "dim",
+          "heading": false
+        },
+        {
+          "term": "tensors",
+          "heading": false
+        },
+        {
+          "term": "graph",
+          "heading": false
+        },
+        {
+          "term": "objects",
+          "heading": false
+        }
+      ],
+      "extract": "The tensors known under the awkward name 6j-symbols (see Example 3.3) play a special role in this theory because only these tensors are needed f or the computation of the state sum of Section 6.3 on special skeletons of 3-manifolds. We outline the basic properties of the 6j-symbols associated with a spherical pre-fusion category C. Pick a 6-tuple T = (i,ε i,j,ε j,k,ε k,l,ε l,m,ε m,n,ε n) of signed objects of C. Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 70,
+      "pageEnd": 72,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 705,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psfrag replacements",
+          "heading": false
+        },
+        {
+          "term": "turaev-viro invariants",
+          "heading": false
+        },
+        {
+          "term": "mono ıdales",
+          "heading": false
+        },
+        {
+          "term": "cat egories",
+          "heading": false
+        },
+        {
+          "term": "hopf monads",
+          "heading": false
+        },
+        {
+          "term": "monoidal categories",
+          "heading": false
+        },
+        {
+          "term": "pure appl",
+          "heading": false
+        },
+        {
+          "term": "manifold invariants",
+          "heading": false
+        }
+      ],
+      "extract": "[Ba1] Balsam, B., Turaev-Viro invariants as an extended TQFT II , arXiv:1010.1222. ON TWO APPROACHES TO 3-DIMENSIONAL TQFTS 71 ∑ z∈I dim(z) PSfrag replacements i iz z m′ k k l lm nn = PSfrag replacements iz m′ k l m n = δm,m′ dim(m)−1 PSfrag replacements i z m′ k l m m n Figure 11. Proof of the orthonormality relation [Ba2] , Turaev-Viro invariants as an extended TQFT III , arXiv:1012.0560. [BK] Balsam, B.,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "psfrag replacements",
+      "heading": false
+    },
+    {
+      "term": "evx psfrag",
+      "heading": false
+    },
+    {
+      "term": "replacements iuv",
+      "heading": false
+    },
+    {
+      "term": "replacements jvv",
+      "heading": false
+    },
+    {
+      "term": "replacements i1i",
+      "heading": false
+    },
+    {
+      "term": "psfrag replacementsi",
+      "heading": false
+    },
+    {
+      "term": "oriented skeleton",
+      "heading": false
+    },
+    {
+      "term": "dimensional tqfts",
+      "heading": false
+    },
+    {
+      "term": "oriented graph",
+      "heading": false
+    },
+    {
+      "term": "oriented edges",
+      "heading": false
+    },
+    {
+      "term": "c-colored graph",
+      "heading": false
+    },
+    {
+      "term": "fusion category",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 67,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 68,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 69,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 70,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 71,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 72,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "denoted FC(G)(⊗vαv). By linear extension, this procedure deﬁnes a vector FC(G) ∈",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The graph Γx ⊂ S2 associated with a vertex x",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Local moves on skeletons The orientation of the skeletons produced by the moves T1 − T4 on P is induced by the orientation of P except for the small disk regions created by T3, T4 whose orientation is chosen arbitrarily",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The moves T ′",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The move T m,n Any s-skeleton of M is a skeleton of M in the sense of Section 6.2. For example, the 2-skeleton of the cellular subdivision of M dual to a triangulation is a s-skeleton of M (the regions are provided with arbitrary orientation)",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The move T 2,1",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The lune moves L±1",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Moves Ω1 − Ω8 on link diagrams",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Proof of the Biedenharn-Elliot identity",
+      "page": 70,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Proof of the orthonormality relation",
+      "page": 71,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 18,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 19,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p70); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 19 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1006.3501v5"
+  }
+}

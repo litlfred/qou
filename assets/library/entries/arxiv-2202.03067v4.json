@@ -1,0 +1,972 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2202.03067v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "lem-sec-000-01.md",
+      "narrative": null,
+      "content": ", all hold automatically.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Noncommutative geometry is the idea that geometric constructions can be extended to the\ncase where the ‘coordinate algebra’A is potentially noncommutative. Originally motivated by the\nquantisation of phase spaces in quantum mechanics, a more recent motivation is the hypothesis\nthat spacetime itself is better modelled by noncommutative coordinates due to quantum gravity\neﬀects. The most well-established approach, coming out of operator algebras, the Gelfand-\nNaimark theorem and cyclic cohomology is that of A. Connes [9]. Since the 1980s there have\nalso emerged more algebraic-geometry like appro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "QUANTUM JET BUNDLES\nSHAHN MAJID AND FRANCISCO SIM ˜AO\nAbstract. We formulate a notion of jet bundles over a possibly noncommutative algebra A\nequipped with a torsion free connection. Among the conditions needed for 3rd-order jets and\nabove is that the connection also be ﬂat and its ‘generalised braiding tensor’ σ ∶Ω1⊗A Ω1 →\nΩ1⊗A Ω1 obey the Yang-Baxter equation or braid relations. We also cover the case of jet\nbundles of a given ‘vector bundle’ over A in the form of a bimodule E with a ﬂat bimodule\nconnection with its braiding σE obeying the coloured braid relations. Examples include the\npermu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-acknowledgements.md",
+      "narrative": null,
+      "content": "Acknowledgements. We thank B. Noohi and the authors of [11] for helpful comments on our\nﬁrst arXiv preprint version in relation to [2] and to connection-independence. The work [11]\nappeared some months later and provides an interesting more general categorical construction\nas ‘jet endofunctors’.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-2-preliminaries.md",
+      "narrative": null,
+      "content": "The general results in the paper work over an ﬁeldk. All algebras are assumed unital. Here we\nrecall the elements we need from noncommutative geometry in the constructive bimodule-based\napproach. More details are in [4] and in the wider literature cited therein.\nBy a ﬁrst order diﬀerential algebra, we mean A equipped with an A-bimodule Ω 1 (so the\nleft and right actions commute) together with a bimodule derivation d ∶A→Ω1, meaning that\nit satisﬁes the Leibniz rule d (ab) =adb+ (da)b for all a,b ∈A. We also ask that Ω 1 is spanned\nby elements of the form adb for a,b ∈A. We generally ask this to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "Let∇be a torsion free bimodule connection onΩ1. Then J 2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jet bundles JkA over a noncommutative algebra to order 3",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-3-jet-bundles-jka-over-a-noncommutative-algebra.md",
+      "narrative": null,
+      "content": "A over a noncommutative algebra to order 3\nIn this section we construct jet bundles or more precisely their sections as ‘jet bimodule’\nJk\nA for k ≤3 over a potentially noncommutative algebra A equipped with a diﬀerential graded\nalgebra (Ω, d). These low order cases allow us to see explicitly how the progressively stronger\ngeometric data emerge and also provide a template for the general case in Section 4. For J 2\nA, we\nwill need to equip Ω 1 with a torsion free connection ∇while for J 3\nA and above, this will need to\nbe ﬂat and obey further conditions. In Section 5, we will extend this constru",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "First and second order jet bundles over a noncommutative algebra",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-31-first-and-second-order-jet-bundles-over-a-non.md",
+      "narrative": null,
+      "content": "1st-order jet bimodule and jet prolongation map as\nJ 1\nA =A⊕Ω1, j 1(s) =s+ ds,\nwheres∈A is prolonged toj1(s) ∈J 1\nA. Here, the ﬁrst order derivatives of s are encoded in j1(s)\nthough ds. The left and right bullet actions of a∈A on J 1\nA are deﬁned on each degree as\na●1s= (a+ da)s, s ●1a=s(a+ da),\na●1ω =aω, ω ●1a=ωa,\nwhere ω ∈Ω1. Here and in general, we use ●k to denote the bimodule actions of A on Jk\nA. It\nfollows immediately from the Leibniz rule that J 1\nA becomes a bimodule and j1 a bimodule map\nwhere A is a bimodule by left and right action on itself. There is also clearly a bimodule map\ns",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "Suppose that ∇is torsion free, ﬂat and ∧-compatible in the sense that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "An extendable connection ∇on Ω1 has curvature a bimodule map iﬀ the condition",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "lem-sec-005-03.md",
+      "narrative": null,
+      "content": "Let ∇be a bimodule connection on Ω1. The 3rd-order Leibniz rule",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Third order jets bundle over a noncommutative algebra",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-32-third-order-jets-bundle-over-a-noncommutative.md",
+      "narrative": null,
+      "content": "A\nwhich is considerably more involved than J 1\nA, J 2\nA, and will lay the groundwork for the general\ncase. Here we have to make further assumptions, which we will illustrate and motivate during\nthis subsection. These are presented in Fig. 1 using the diagrammatic notion where maps are\nread downwards, as discussed at the end of Section 2. Recall that we denoted the wedge product\nby a join, ∇by a splitting and its associated σ by a braid crossing.\nFrom now on, we will use the notation ∧i,σi for the wedge product and braiding respectively\napplied to the i,i + 1 tensor factors of Ω 1⊗A Ω1⊗A Ω1. We",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General jet bundle JkA over a noncommutative algebra",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-4-general-jet-bundle-jka-over-a-noncommutative-a.md",
+      "narrative": null,
+      "content": "A over a noncommutative algebra\nWe are now ready to construct bimodules Jk\nA over a possibly noncommutative algebra A for\nany k. Following the pattern in Section 3, we deﬁne the space of quantum symmetric k-forms\nΩk\nS as the joint kernel of Ω 1⊗Ak = Ω1⊗A/uni22EF⊗A Ω1 when applying ∧in any two adjacent places\nΩk\nS ∶=/uni22C2.disp\ni<k\nker/braceleft.alt3∧i∶Ω1⊗Ak→Ω1⊗A(i−1)⊗\nA\nΩ2⊗\nA\nΩ1⊗A(k−i−1)/braceright.alt3\nwhere ∧i is taken to act on the i,i + 1 tensor factors in Ω 1⊗Ak. We set Ω 0\nS = A, Ω 1\nS = Ω1 and\ndeﬁne the k-th order jet bimodule as\nJk\nA∶=\nk\n/uni2295.big.disp\ni=0\nΩi\nS =A⊕Ω1⊕Ω2\nS⊕/uni22EF",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/cor-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "cor-sec-007-04.md",
+      "narrative": null,
+      "content": "If ∇∶Ω1→Ω1⊗A Ω1 is torsion free, ∧-compatible and extendable, and σ obeys",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "Let∇be a torsion free, ∧-compatible bimodule connection. Then ∇n restricts to a",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "If ∇∶Ω1→Ω1⊗A Ω1 is torsion free, ∧-compatible and extendable then the braided",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "lem-sec-007-03.md",
+      "narrative": null,
+      "content": "If σ∶Ω1⊗A Ω1→Ω1⊗A Ω1 satisﬁes the braid relations σiσi+1σi =σi+1σiσi+1, then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-007-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "lem-sec-007-05.md",
+      "narrative": null,
+      "content": "Assuming Leibniz compatibility Fig. 1(e), we have for i= 1,...,n −1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-007-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "lem-sec-007-06.md",
+      "narrative": null,
+      "content": "Let ∇be a Leibniz compatible bimodule connection on Ω1 as in Fig. 1(e). Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher order Leibniz rules",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-41-higher-order-leibniz-rules.md",
+      "narrative": null,
+      "content": "and establish their key properties.\nLemma 4.1. Let∇be a torsion free, ∧-compatible bimodule connection. Then ∇n restricts to a\nbimodule connection on Ωn\nS. If in addition ∇is ﬂat then im∇n ⊆Ωn\nS.\nProof. We taken≥3 as earlier cases are clear or covered in Section 3. For the 1st assertion, we\nhave∧i∇n = 0 on Ωn\nS for i ≥3 by using the original deﬁnition of ∇n; for the ﬁrst term this acts\ncommutes to act on the later factors of Ω n\nS and for the 2nd term it acts on the output of ∇n−1\nwhich as induction hypothesis we assume lands in Ω 1⊗A Ωn−1\nS . For ∧2, we use (5) with l = 2.\nThen∧2 vanishes on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jet bimodules JkA",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-42-jet-bimodules-jka.md",
+      "narrative": null,
+      "content": "A. With the above theory of higher order derivatives on Ω 1⊗An and\nbraided binomials in hand, we have now done all the work to write down the jet bimodules of\nany order over a possibly noncommutative algebra A.\nTheorem 4.8. Let ∇be a torsion free, ﬂat, ∧-compatible, extendable and Leibniz-compatible\nbimodule connection on Ω1 as shown in Fig. 1(a)-(e). Then\nJk\nA =\nk\n/uni2295.big.disp\ni=0\nΩi\nS =A⊕Ω1\nS⊕/uni22EF⊕Ωk\nS, j k∶A→Jk\nA, j k(s) =s+∇1s+/uni22EF+∇ks\nform an A-bimodule and bimodule map with actions ●k given by\na●kωj =jk−j(a)⊙ωj =\nk\n/summation.disp\ni=j\n∇i−ja⊙ωj, ω j●ka=ωj⊙jk−j(a) =\nk\n/summati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "Let ∇be a torsion free, ﬂat, ∧-compatible, extendable and Leibniz-compatible",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/cor-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "cor-sec-009-01.md",
+      "narrative": null,
+      "content": "Suppose that ∇obeys the conditions in Theorem 4.8 and that moreover",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reduced jet bundle",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-009-43-reduced-jet-bundle.md",
+      "narrative": null,
+      "content": "A as built\non the degree ≤k part of a diﬀerent graded algebra, namely the ‘braided-symmetric algebra’\nSσ(Ω1) associated to σ obeying the braid relations as is the case in Theorem 4.8. This algebra\nis deﬁned as\nSσ(Ω1) = TAΩ1\n⊕k ker[k,σ ]! = TAΩ1\n⊕k ker∑π∈Skσi1/uni22EFσil(π)\nwhere, for the second expression, we write π =si1/uni22EFsil(π) of length l(π) as a product of simple\nreﬂections si = (i,i + 1) and σi denotes σ in the i,i + 1 tensor power. These ideas are familiar\nin the vector space case where the ﬁrst point of view is that of a braided-linear space [16, 19]\nand the second has been called",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jets JkE for a vector bundle",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-010-5-jets-jke-for-a-vector-bundle.md",
+      "narrative": null,
+      "content": "E for a vector bundle\nWe now consider a general ‘vector bundle’ over the base manifold. In our setting, we work with\na bimodule E of ‘sections’ equipped with a ﬂat connection ∇E∶E→Ω1⊗AE. Here a ‘sheaf’ E in\n[4, Chap. 4] is loosely modelled by such data. The ﬂat connection comes with a bimodule map\nσE∶E⊗A Ω1→Ω1⊗AE for the right side Leibniz rule. Similarly to the case of a noncommutative\nalgebra, we want to construct the jet bimodule Jk\nE, which we set to be\nJk\nE =E⊕Ω1⊗\nA\nE⊕⋅⋅⋅⊕Ωk\nS⊗\nA\nE =/uni2295.big.disp\ni≤k\nΩk\nS⊗\nA\nE.\nOne can think of this as Jk\nA⊗AE but in the tensor product we use the righ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "LetσE ∶E⊗A Ω1→Ω1⊗AE be a bimodule map, and a∈A,s ∈E, ω ∈Ω1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prop-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "prop-sec-011-02.md",
+      "narrative": null,
+      "content": "Let∇be torsion free withσ obeying the braid relations and∇E ﬂat, extendable",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "First and second order jet bundles for the vector bundle case",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-011-51-first-and-second-order-jet-bundles-for-the-ve.md",
+      "narrative": null,
+      "content": "bimodule. For the split jet bundle we will also need a bimodule connection ∇E,σE as discussed,\nbut for the bimodule structure in the case of the ﬁrst-order jet bimodule, we need only σE.\nProposition 5.1. LetσE ∶E⊗A Ω1→Ω1⊗AE be a bimodule map, and a∈A,s ∈E, ω ∈Ω1.\n(1) The actions\na●1s=as+ da⊗s, s ●1a=sa+σE(s⊗da),\na●1 (ω⊗s) =aω⊗s, (ω⊗s)●1a=ω⊗sa\nmake J 1\nE =E⊕Ω1⊗AE a bimodule and\n0→Ω1⊗\nA\nE→J 1\nE→E→0\n(where we quotient out the Ω1⊗AE part) an exact sequence of bimodules.\n(2) Bimodule map splittings j1\nE of this exact sequence are in 1-1 correspondence with bimodule\nconnections∇E with generalised br",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/cor-sec-012-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "cor-sec-012-03.md",
+      "narrative": null,
+      "content": "Let∇be a torsion free,∧-compatible, extendable connection on Ω1. Let σ satisfy",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "lem-sec-012-01.md",
+      "narrative": null,
+      "content": "Let ∇E be an extendable bimodule connection. Then RE is a bimodule map iﬀ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "lem-sec-012-02.md",
+      "narrative": null,
+      "content": "If σ, σE satisfy the coloured braid relations σiσE,i+1σE,i =σE,i+1σE,iσi+1 then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-012-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "lem-sec-012-04.md",
+      "narrative": null,
+      "content": "in the more abstract form. One can also dissect the content of this by degree. □",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-012-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "lem-sec-012-05.md",
+      "narrative": null,
+      "content": "Let ∇be a torsion free, ﬂat, ∧-compatible bimodule connection on Ω1 and ∇E",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-012-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "lem-sec-012-06.md",
+      "narrative": null,
+      "content": "Lemma 5.8. Let ∇, ∇E be Leibniz compatible as in Fig. 1(e) and Fig. 3 (b). Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher order Leibniz rules for the JkE case",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-012-52-higher-order-leibniz-rules-for-the-jke-case.md",
+      "narrative": null,
+      "content": "E case. Here we collect the geometric data and\nsome facts needed for the general case. First, we observe as alluded to near the start of Section 4\nthat extendable connections have a simple rule for their tensor product curvature.\nLemma 5.4. Let ∇E be an extendable bimodule connection. Then RE is a bimodule map iﬀ\n∇E is Leibniz compatible as shown in Fig. 3(b). In this case, if ∇F is another connection, then\n∇E⊗AF has curvature\nRE⊗AF =RE⊗id+(σE,Ω2⊗id)id⊗RF.\nProof. The proof is similar to that of Lemma 3.4 but with the diagrams as in Fig. 3, so we omit\nthe details. One can also view this as piec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher Jet bundles for a generic bimodule E",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-013-53-higher-jet-bundles-for-a-generic-bimodule-e.md",
+      "narrative": null,
+      "content": "derivatives on Ω1⊗Ak⊗AE, we are now ready to construct higher jets for a generic bimodule E.\nTheorem 5.9. Let ∇be a torsion free, ﬂat, ∧-compatible, extendable and Leibniz compatible\nbimodule connection on Ω1 as in Fig. 1(a)-(e) and ∇E a ﬂat, extendable and Leibniz compatible\nbimodule connection on E as in Fig. 3 (a)-(c). Then\nJk\nE =E⊕Ω1\nS⊗\nA\nE⊕/uni22EF⊕Ωk\nS⊗\nA\nE, j k\nE ∶E→Jk\nE, j k\nE(s) =s+∇1\nEs+⋅⋅⋅+∇k\nEs,\nform an A-bimodule and bimodule maps for the bullet action ●k given by\na●k (ωj⊗s) =jk−ja⊙E (ωj⊗s) =\nk\n/summation.disp\ni=j\n∇i−ja⊙E (ωj⊗s),\n(ωj⊗s)●ka= (ωj⊗s)⊙Ejk−ja=\nk\n/summation.disp\ni=j\n(ωj",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/thm-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "thm-sec-013-01.md",
+      "narrative": null,
+      "content": "Let ∇be a torsion free, ﬂat, ∧-compatible, extendable and Leibniz compatible",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prop-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "prop-sec-014-01.md",
+      "narrative": null,
+      "content": "For an inner ∇on an inner diﬀerential algebra (A, Ω,θ):",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of noncommutative examples",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-014-6-construction-of-noncommutative-examples.md",
+      "narrative": null,
+      "content": "For J 1\nA and J 1\nE, we need only a diﬀerential algebra (A, Ω, d) (plus a connection on E in the\nvector bundle case) and for J 2\nA and J 2\nE also a torsion free connection on Ω1 (and the connection\ninE should be ﬂat). Thus we can use for∇any number of connections in the literature, including\nthe QLCs of the many known quantum Riemannian geometries as covered in [4].\nFor general Jk\nA and Jk\nE, however, we need a torsion free ﬂat connection ∇with the extra\nconditions of being ∧-compatible, extendable and the Leibniz-compatibility condition. In the\nvector bundle case we also need the connection o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The algebra M2(C) with its 2D calculus.",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-015-61-the-algebra-m2c-with-its-2d-calculus.md",
+      "narrative": null,
+      "content": "connections since there is an obvious connection that turns out to meet all our criteria, namely\nthe standard QLC for the quantum metric g = s⊗t−t⊗s [4]. One could also analyse the full\nmoduli of allowed ∇by similar methods.\nThe standard 2-dimensional Ω 1 for this algebra has a central basis s,t while the exterior\nalgebra is unusual as it obey s∧t=t∧s (it is commutative!) along with s2 =t2 = 0 and\nds= 2θ∧s, dt= 2θ∧t, θ =E12s+E21t, θ 2 =s∧t, dθ = 2s∧t.\nHere Eij is the elementary matrix with 1 at place (i,j) and zero elsewhere and θ makes the\ncalculus inner. Then\n∇s= 2θ⊗s, ∇t= 2θ⊗t, R ∇=T∇= 0\nis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prop-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "prop-sec-016-01.md",
+      "narrative": null,
+      "content": "Ω(S3) admits precisely two left-invariant ﬂat torsion free connections obeying",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Functions on the group S3",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-016-62-functions-on-the-group-s3.md",
+      "narrative": null,
+      "content": "generators u = (12), v = (23) and set w = (13) so that uvu =vuv =w. Its algebra of functions\nA = C(S3) has a standard 3-dimensional Ω 1 with left-invariant basis eu,ev,ew and relations in\ndegree 2 of the exterior algebra\ne2\na = 0, e u∧ev+ev∧ew+ew∧eu = 0, e v∧eu+ew∧ev+eu∧ew = 0,\ndeu =−ev∧ew−ew∧ev, dev =−ew∧eu−eu∧ew, dew =−eu∧ev−ev∧eu.\nThe relations with functions are eaf =Ra(f)ea where a=u,v,w and Ra(f)(g) =f(ga) denotes\nthe right translation operator. The calculus is inner by θ =eu+ev+ew. Moreover, the products\nof u,v,w are never in the set {u,v,w }, hence there can be no bimodule map α∶Ω1→Ω1⊗",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "lem-sec-017-01.md",
+      "narrative": null,
+      "content": "σ of the general form of the stated ansatz has four cases where it obeys the braid",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prop-sec-017-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "prop-sec-017-02.md",
+      "narrative": null,
+      "content": "For the bicrossproduct Minkowski spacetime with its 2D calculus and within",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bicrossproduct Minkowski spacetime in 1+1 dimensions with its 2D calculus",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-017-63-bicrossproduct-minkowski-spacetime-in-11-dime.md",
+      "narrative": null,
+      "content": "Another example of interest [3, 4] is the 1+1 bicrossproduct model quantum spacetime [r,t]=λr\nwith its 2D calculus\n[r,t]=λr, [r,dt]=λdr, [t, dt]=λdt, [r,dr]= [t, dr]= 0,\n(dr)2 = 0, dr∧v+v∧dr = 0, v 2 =λv∧dr,\nQUANTUM JET BUNDLES 35\nwhere dr and v = rdt−tdr form a central basis. Here d t, dr obey the usual exterior algebra\nrelations, resulting in the relations stated in terms of the central basis. The calculus is inner\nwithθ =−1\nλr(v+tdr) and one can check that the proposed form of bimodule connection in [3, 4]\n∇dr = 1\nr (αv⊗v+βv⊗dr+γdr⊗v+δdr⊗dr),\n∇v = 1\nr (α′v⊗v+β′v⊗dr+γ′dr⊗v+δ′dr⊗dr),\nσ(dr⊗dr)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/lem-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 40,
+      "target": "lem-sec-018-01.md",
+      "narrative": null,
+      "content": "Left-invariant bimodule connections onΩ1 which are torsion-free, ﬂat,∧-compatibility,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prop-sec-018-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 40,
+      "target": "prop-sec-018-02.md",
+      "narrative": null,
+      "content": "The jet prolongation map acts on the generators of Cq[SL2] as",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quantum group Cq[SL2]",
+      "pageStart": 37,
+      "pageEnd": 40,
+      "target": "../sections/sec-018-64-the-quantum-group-cqsl2.md",
+      "narrative": null,
+      "content": "[16] with q ∈C×and generators a,b,c,d obeying the relations\nba=qab, ca =qac, db =qbd, dc =qcd, da −ad= (q−q−1)bc, bc =cb, ad −q−1bc= 1.\nWe will focus on its 3D calculus with basis [25, 4]\ne0 =dda−qbdc, e + =q−1adc−q−2cda, e −=ddb−qbdd\nand relations e±f =q/divides.alt0f/divides.alt0fe±, e0f =q2/divides.alt0f/divides.alt0fe0, for f ∈Cq[SL2] an element of homogeneous degree\nand /divides.alt0a/divides.alt0= /divides.alt0c/divides.alt0= 1, /divides.alt0b/divides.alt0= /divides.alt0d/divides.alt0=−1. Note that the above deﬁnitions imply that d acts on the generators\nas\nda=qbe++ae0, db=ae−−q−2be0, dc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prop-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "prop-sec-019-01.md",
+      "narrative": null,
+      "content": "For an inner diﬀerential graded algebra (Ω, d), if ∇E is an inner bimodule",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Constructions for J3E",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-019-65-constructions-for-j3e.md",
+      "narrative": null,
+      "content": "E. Here we note that our remark about inner calculi also applies for\na bimodule connection ∇E on any bimodule E, i.e. we can construct all such in the form\n(17) ∇E =θ⊗( )−σE(( )⊗θ)+αE, σ E∶E⊗\nA\nΩ1→Ω1⊗\nA\nE, α E∶E→Ω1⊗\nA\nE.\nThe proof is analogous to that in [18] for Ω 1, namely given a bimodule connection ∇E, we deﬁne\nαE =∇E−θ⊗( )+σE(( )⊗θ)\nand deduced from the connection properties that this is a bimodule map. Conversely, given\nbimodule maps σ,α it is easy to see that ∇E deﬁned by the formula (17) has the properties of a\nbimodule connection. We say that ∇E is inner if αE = 0.\nProposition 6.7. Fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concluding remarks",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-020-7-concluding-remarks.md",
+      "narrative": null,
+      "content": "We constructed jet bimodules Jk\nA and Jk\nE under the assumption of some geometric data on\nthe diﬀerential algebra ofA and theA-bimoduleE. We also showed that these data a available in\na wide variety of A, including a discrete space (functions on a ﬁnite group Cayley graph), and a\nmatrix algebra, the enveloping algebras of a solvable Lie algebra (a standard quantum spacetime)\nand, perhaps surprisingly, Cq[SL2] at q a fourth root of unity. This also shows in particular\nthat the class of diﬀerential algebras equipped with a ﬂat torsion free connection, to which the\ntheory applies, is a rich class",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/thm-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "thm-sec-020-01.md",
+      "narrative": null,
+      "content": "s 3.6 and 5.9. The proof is similar to the easy case at the start of Section 6 as the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Declaration",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../sections/sec-021-declaration.md",
+      "narrative": null,
+      "content": "Data sharing is not applicable as no datasets were generated or analysed during the current\nstudy. The authors have no competing interests to declare that are relevant to the content of\nthis article.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.03067v4/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../sections/sec-022-references.md",
+      "narrative": null,
+      "content": "[1] I. Anderson, Introduction to variational bicomplex, Contemp. Math. 132 (1992) 51\n[2] M.F. Atiyah, Complex analytic connections in ﬁbre bundles,. Trans. Am. Math. Soc. 85 (1957) 181–207\n[3] E.J. Beggs and S. Majid, Gravity induced from quantum spacetime, Class. Quantum Grav. 31 (2014)\n035020 (39pp)\n[4] E.J. Beggs and S. Majid, Quantum Riemannian Geometry , Grundlehren der mathematischen Wis-\nsenschaften, Vol. 355, Springer (2020) 809pp\n[5] E.J. Beggs and S. Majid, *-compatible connections in noncommutative Riemannian geometry, J. Geom.\nPhys. 61 (2011) 95–124\n[6] E.J. Beggs and S. Majid, Qua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

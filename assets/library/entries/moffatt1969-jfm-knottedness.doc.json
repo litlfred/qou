@@ -90,11 +90,11 @@
           "heading": false
         },
         {
-          "term": "vorticity",
+          "term": "fluid",
           "heading": false
         },
         {
-          "term": "fluid",
+          "term": "vorticity",
           "heading": false
         },
         {
@@ -133,7 +133,19 @@
           "heading": false
         },
         {
+          "term": "vortex lines",
+          "heading": false
+        },
+        {
           "term": "vorticity field",
+          "heading": false
+        },
+        {
+          "term": "tangled vortex",
+          "heading": false
+        },
+        {
+          "term": "knotted vortex",
           "heading": false
         },
         {
@@ -142,18 +154,6 @@
         },
         {
           "term": "vorticity segments",
-          "heading": false
-        },
-        {
-          "term": "vortex lines",
-          "heading": false
-        },
-        {
-          "term": "tangled vortex",
-          "heading": false
-        },
-        {
-          "term": "opposite vorticity",
           "heading": false
         }
       ],
@@ -293,11 +293,11 @@
           "heading": false
         },
         {
-          "term": "stream function",
+          "term": "surfaces const",
           "heading": false
         },
         {
-          "term": "surfaces const",
+          "term": "spiral round",
           "heading": false
         }
       ],
@@ -315,15 +315,15 @@
   "withheld": false,
   "keywords": [
     {
-      "term": "vorticity blob",
-      "heading": false
-    },
-    {
       "term": "vortex filaments",
       "heading": false
     },
     {
       "term": "vortex lines",
+      "heading": false
+    },
+    {
+      "term": "vorticity blob",
       "heading": false
     },
     {
@@ -335,6 +335,10 @@
       "heading": false
     },
     {
+      "term": "inviscid fluid",
+      "heading": false
+    },
+    {
       "term": "vorticity field",
       "heading": false
     },
@@ -343,23 +347,19 @@
       "heading": false
     },
     {
-      "term": "inviscid fluid",
-      "heading": false
-    },
-    {
-      "term": "continuous vorticity",
-      "heading": false
-    },
-    {
-      "term": "vorticity distribution",
-      "heading": false
-    },
-    {
       "term": "vortex sheet",
       "heading": false
     },
     {
       "term": "closed vortex",
+      "heading": false
+    },
+    {
+      "term": "vortex axis",
+      "heading": false
+    },
+    {
+      "term": "continuous vorticity",
       "heading": false
     }
   ],

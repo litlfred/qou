@@ -1,0 +1,1053 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1101.2451v2",
+  "title": "arxiv-1101.2451v2",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Relation to previous work",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-relation-to-previous-work"
+    },
+    {
+      "level": 1,
+      "title": "The hydrodynamic limit and the -expansion",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-the-hydrodynamic-limit-and-the--expansion"
+    },
+    {
+      "level": 1,
+      "title": "Characterizing the dual geometries",
+      "number": "4",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-characterizing-the-dual-geometries"
+    },
+    {
+      "level": 1,
+      "title": "Nonlinear solution in the -expansion",
+      "number": "5",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-nonlinear-solution-in-the--expansion"
+    },
+    {
+      "level": 2,
+      "title": "The solution",
+      "number": "5.1",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-51-the-solution"
+    },
+    {
+      "level": 2,
+      "title": "Forcing the fluid",
+      "number": "5.2",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-52-forcing-the-fluid"
+    },
+    {
+      "level": 2,
+      "title": "Singularities at r=",
+      "number": "5.3",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-53-singularities-at-r"
+    },
+    {
+      "level": 2,
+      "title": "Uniqueness",
+      "number": "5.4",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-54-uniqueness"
+    },
+    {
+      "level": 1,
+      "title": "Alternate presentation",
+      "number": "6",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-6-alternate-presentation"
+    },
+    {
+      "level": 1,
+      "title": "Petrov type",
+      "number": "7",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-7-petrov-type"
+    },
+    {
+      "level": 1,
+      "title": "Nonlinear solution in the near-horizon expansion",
+      "number": "8",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-8-nonlinear-solution-in-the-near-horizon-expansi"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": "9",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-9-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "A Appendix",
+      "number": null,
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-a-appendix"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 421,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "incompressible navier-stokes",
+          "heading": false
+        },
+        {
+          "term": "near-horizon expansion",
+          "heading": false
+        },
+        {
+          "term": "navier-stokes equation",
+          "heading": false
+        },
+        {
+          "term": "petrov type",
+          "heading": false
+        },
+        {
+          "term": "nonlinear solution",
+          "heading": false
+        },
+        {
+          "term": "ﬂuid",
+          "heading": false
+        },
+        {
+          "term": "ϵ-expansion",
+          "heading": false
+        }
+      ],
+      "extract": "FROM NAVIER-STOKES TO EINSTEIN Irene Bredberg, Cynthia Keeler, Vyacheslav Lysov and Andrew Strominger Center for the Fundamental Laws of Nature, Harvard University Cambridge, MA, 02138 Abstract We show by explicit construction that for every solution of the incompressible Navier-Stokes equation in p + 1 dimensions, there is a uniquely associated “dual” solution of the vacuum Einstein equations in p + 2 dimensions.",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1101.2451v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 961,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "incompressible navier-stokes",
+          "heading": false
+        },
+        {
+          "term": "incompressible ﬂuid",
+          "heading": false
+        },
+        {
+          "term": "hydrodynamic expansion",
+          "heading": false
+        },
+        {
+          "term": "nonlinear incompressible",
+          "heading": false
+        },
+        {
+          "term": "navier-stokes equation",
+          "heading": false
+        },
+        {
+          "term": "nonlinear einstein",
+          "heading": false
+        },
+        {
+          "term": "hydrodynamic limit",
+          "heading": false
+        },
+        {
+          "term": "near-horizon expansion",
+          "heading": false
+        }
+      ],
+      "extract": "The Einstein equation Gµν = 0, (1) and the incompressible Navier-Stokes equation ˙vi−η∂ 2vi +∂iP +vj∂jvi = 0, (2) have long played central roles in both mathematics and physics. The Einstein equation universally governs the long-distance behavior of essentially any gravitating system, while the incompressible Navier-Stokes equation universally governs the hydrodynamic limit of essentially any ﬂuid. They both display",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-relation-to-previous-work",
+      "number": "2",
+      "title": "Relation to previous work",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 338,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ads cft",
+          "heading": false
+        },
+        {
+          "term": "navier-stokes equation",
+          "heading": false
+        },
+        {
+          "term": "cosmological constant",
+          "heading": false
+        },
+        {
+          "term": "herein",
+          "heading": false
+        },
+        {
+          "term": "bulk",
+          "heading": false
+        },
+        {
+          "term": "horizon",
+          "heading": false
+        },
+        {
+          "term": "surface",
+          "heading": false
+        },
+        {
+          "term": "extra",
+          "heading": false
+        }
+      ],
+      "extract": "The ﬁrst suggestion of a relation between horizon and Navier-Stokes dynamics appears in the prescient thesis of Damour [3]. This work contains an expression now known as the Damour-Navier-Stokes equation [39] governing the geometric data on any null surface. Although tantalizingly similar, it is not quite the Navier-Stokes equation as it has too many variables (eliminated herein by an appropriate boundary condition)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-hydrodynamic-limit-and-the--expansion",
+      "number": "3",
+      "title": "The hydrodynamic limit and the -expansion",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 282,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hydrodynamic limit",
+          "heading": true
+        },
+        {
+          "term": "incompressible navier-stokes",
+          "heading": false
+        },
+        {
+          "term": "navier-stokes equation",
+          "heading": false
+        },
+        {
+          "term": "τvi",
+          "heading": false
+        },
+        {
+          "term": "jvi",
+          "heading": false
+        },
+        {
+          "term": "ﬂuids",
+          "heading": false
+        },
+        {
+          "term": "scaled",
+          "heading": false
+        }
+      ],
+      "extract": "The incompressible Navier-Stokes equation has a well-known scaling symmetry which is important in the following and brieﬂy reviewed here. Let the pair (vi,P ) solve the incompressible Navier-Stokes equation ∂ivi = 0, ∂ τvi−η∂ 2vi +∂iP +vj∂jvi = 0, (3) where η is the kinematic viscosity and i = 1,...p . Now consider a family of pairs ( vϵ i,P ϵ) in which frequencies and wavelengths are non-relativistically dilated",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-characterizing-the-dual-geometries",
+      "number": "4",
+      "title": "Characterizing the dual geometries",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 701,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "extrinsic curvature",
+          "heading": false
+        },
+        {
+          "term": "geometries",
+          "heading": true
+        },
+        {
+          "term": "navier-stokes equation",
+          "heading": false
+        },
+        {
+          "term": "einstein equations",
+          "heading": false
+        },
+        {
+          "term": "γab",
+          "heading": false
+        },
+        {
+          "term": "einstein geometry",
+          "heading": false
+        },
+        {
+          "term": "boundary hypersurface",
+          "heading": false
+        },
+        {
+          "term": "initial data",
+          "heading": false
+        }
+      ],
+      "extract": "We seek a relation between the (p+2)-dimensional Einstein and (p+1)-dimensional Navier-Stokes equa- tions. Of course, the former has a much larger solution space than the latter so only a special type of Einstein geometry is relevant. Roughly speaking, the relevant geometries are non-singular perturbations of a horizon. Let us now make this more precise. We consider geometries of the type depicted in Figure 1 with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-nonlinear-solution-in-the--expansion",
+      "number": "5",
+      "title": "Nonlinear solution in the -expansion",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 53,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonlinear",
+          "heading": true
+        },
+        {
+          "term": "rameterized",
+          "heading": false
+        },
+        {
+          "term": "solution",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we will improve on the analysis of [28] by solving the shooting problem in the long wavelengthϵ-expansion without a simultaneous linearized expansion. The general solution will be pa- rameterized by a solution vi(xi,τ ), P(xi,τ ) of the full nonlinear Navier-Stokes equation with viscosity (12) together with the parameter ϵ.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-51-the-solution",
+      "number": "5.1",
+      "title": "The solution",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 580,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dxidxj",
+          "heading": false
+        },
+        {
+          "term": "einstein equations",
+          "heading": false
+        },
+        {
+          "term": "viscosity",
+          "heading": false
+        },
+        {
+          "term": "vidxidτ",
+          "heading": false
+        },
+        {
+          "term": "dxidxi",
+          "heading": false
+        },
+        {
+          "term": "dτdr",
+          "heading": false
+        },
+        {
+          "term": "vivj",
+          "heading": false
+        },
+        {
+          "term": "satisﬁed",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the metric ds2 p+2 =−rdτ 2 + 2dτdr +dxidxi − 2 ( 1− r rc ) vidxidτ− 2vi rc dxidr (14) + ( 1− r rc )[ (v2 + 2P )dτ 2 + vivj rc dxidxj ] + (v2 rc + 2P rc ) dτdr − (r2−r2 c) rc ∂2vidxidτ + ... wherevi =vi(xi,τ ) and P (xi,τ ) are independent of r. Here and henceforth i,j = 1,..p indices are raised and lowered with δij and we take vi∼O (ϵ), P ∼O (ϵ2), ∂ i∼O (ϵ), ∂ τ∼O (ϵ2) (15) as in the hydrodynamic scaling of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-52-forcing-the-fluid",
+      "number": "5.2",
+      "title": "Forcing the fluid",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 523,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "linearized navier-stokes",
+          "heading": false
+        },
+        {
+          "term": "forcing",
+          "heading": true
+        },
+        {
+          "term": "navier-stokes equation",
+          "heading": false
+        },
+        {
+          "term": "forcing term",
+          "heading": false
+        },
+        {
+          "term": "extrinsic curvature",
+          "heading": false
+        },
+        {
+          "term": "nonlinear level",
+          "heading": false
+        },
+        {
+          "term": "evolve according",
+          "heading": false
+        },
+        {
+          "term": "vidxidτ",
+          "heading": false
+        }
+      ],
+      "extract": "Solutions of the linearized Navier-Stokes equation decay exponentially in the future. There is some expectation - although no proof - that nonlinear solutions eventually decay as well. Therefore the extrinsic curvature on Σc in our examples is expected to become constant. On the other hand, already at the linear level, Navier-Stokes solutions grow exponentially in the far past and typically are singular at τ =−∞ .",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-53-singularities-at-r",
+      "number": "5.3",
+      "title": "Singularities at r=",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 231,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "cosmological constant",
+          "heading": false
+        },
+        {
+          "term": "r2c",
+          "heading": false
+        },
+        {
+          "term": "ivj",
+          "heading": false
+        },
+        {
+          "term": "codimension",
+          "heading": false
+        },
+        {
+          "term": "singularities",
+          "heading": true
+        }
+      ],
+      "extract": "The square of the Riemann tensor for the solution (14) is given by R2 =− 3 2r2c (∂ivj−∂jvi)2− 2 r r2c [ ∂2vi∂2vi + 3∂ivj( ∂j∂2vi−∂i∂2vj )] + .... (25) This expression diverges atr =±∞. Of course perturbation theory cannot be trusted when|r| is of order 1 ϵ , so the computation is unreliable in this regime. Whether or not there are actual divergences in these regions will depend on the details of the solution. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-54-uniqueness",
+      "number": "5.4",
+      "title": "Uniqueness",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 208,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "navier-stokes equation",
+          "heading": false
+        },
+        {
+          "term": "ϵ-expansion",
+          "heading": false
+        },
+        {
+          "term": "prescribed boundary",
+          "heading": false
+        },
+        {
+          "term": "unique solution",
+          "heading": false
+        },
+        {
+          "term": "boundary data",
+          "heading": false
+        },
+        {
+          "term": "uniqueness",
+          "heading": true
+        }
+      ],
+      "extract": "Equation (14) gives the ﬁrst three orders in the ϵ-expansion of metrics satisfying the Einstein equations with the prescribed boundary data. These solutions are constructed from nonlinear solutions of the incompressible Navier-Stokes equations. The latter are in turn, assuming existence and uniqueness for Navier-Stokes, speciﬁed by a divergence-free vector ﬁeld vi(x,τ∗) at a moment of time τ∗. One may ask whether or",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-6-alternate-presentation",
+      "number": "6",
+      "title": "Alternate presentation",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 647,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dˆτd",
+          "heading": false
+        },
+        {
+          "term": "hatted coordinates",
+          "heading": false
+        },
+        {
+          "term": "einstein tensor",
+          "heading": false
+        },
+        {
+          "term": "ˆvj",
+          "heading": false
+        },
+        {
+          "term": "dˆτ",
+          "heading": false
+        },
+        {
+          "term": "ˆqi",
+          "heading": false
+        },
+        {
+          "term": "ˆvi",
+          "heading": false
+        },
+        {
+          "term": "navier-stokes equation",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we give an alternate presentation of the metric (14) in which all the factors of ϵ appear explicitly, without being hidden in the functional dependence on the coordinates. This is accomplished by ﬁrst transforming to hatted coordinates xi = rcˆxi ϵ , τ = rcˆτ ϵ2 , r =rcˆr (26) so that ∂ˆτ =O(ϵ0) and we denote ˆ∂i = ∂ ∂ ˆxi =O(ϵ0). In the new coordinates ds2 p+2 =− ˆrr3 c ϵ4 dˆτ 2 + 2r2 c ϵ2 dˆτd ˆr +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-7-petrov-type",
+      "number": "7",
+      "title": "Petrov type",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "petrov",
+          "heading": true
+        },
+        {
+          "term": "weyl tensor",
+          "heading": false
+        },
+        {
+          "term": "wherei",
+          "heading": false
+        },
+        {
+          "term": "type",
+          "heading": true
+        }
+      ],
+      "extract": "Interestingly, this geometry is of an algebraically special type. We consider the case of p = 2 to connect to the well-studied Petrov classiﬁcation of spacetimes [37]). A geometry is Petrov type II if there exists a real null vector kµ such that the Weyl tensor satisﬁes Wµνρ[σkλ]kνkρ = 0. (39) This happens if the invariantI 3−27J 2 vanishes whereI,J are both speciﬁc combinations of Weyl tensor components which can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-8-nonlinear-solution-in-the-near-horizon-expansi",
+      "number": "8",
+      "title": "Nonlinear solution in the near-horizon expansion",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 600,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "near-horizon expansion",
+          "heading": true
+        },
+        {
+          "term": "dˆτ dˆτd",
+          "heading": false
+        },
+        {
+          "term": "nonlinear",
+          "heading": true
+        },
+        {
+          "term": "nonlinear einstein",
+          "heading": false
+        },
+        {
+          "term": "linearized modes",
+          "heading": false
+        },
+        {
+          "term": "incompressible ﬂuid",
+          "heading": false
+        },
+        {
+          "term": "dxidxi",
+          "heading": false
+        },
+        {
+          "term": "ϵ-expansion",
+          "heading": false
+        }
+      ],
+      "extract": "In section 4, the nonlinear Einstein equations with certain boundary conditions were solved in the non- relativistic, long-wavelength hydrodynamic ϵ-expansion. This generalized the analysis given in [28] of the ϵ-expansion for linearized modes. [28] also considered, for linearized modes, a second, near-horizon expansion. Although physically inequivalent, the two expansions were found to be equivalent mathemat-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-9-acknowledgements",
+      "number": "9",
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 60,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "freivogel",
+          "heading": false
+        },
+        {
+          "term": "hartnoll",
+          "heading": false
+        },
+        {
+          "term": "saremi",
+          "heading": false
+        }
+      ],
+      "extract": "We are grateful to D. Christodoulou, S. Cremonini, T. Damour, B. Freivogel, S. Gubser, S. Hartnoll, S. Kachru, R. Loganayagam, A. Maloney, S. Minwalla, D. Nelson, P. Petrov, S. Sachdev, O. Saremi, J. Smoller, K. Thorne, E. Verlinde and S. T. Yau for illuminating conversations. This work was supported by DOE grant DE-FG0291ER40654 and the Fundamental Laws Initiative at Harvard.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-a-appendix",
+      "number": null,
+      "title": "A Appendix",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 1305,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ivj jvi",
+          "heading": false
+        },
+        {
+          "term": "membrane paradigm",
+          "heading": false
+        },
+        {
+          "term": "cft hydrodynamics",
+          "heading": false
+        },
+        {
+          "term": "fluid gravity",
+          "heading": false
+        },
+        {
+          "term": "shear viscosity",
+          "heading": false
+        },
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "incompressible navier-stokes",
+          "heading": false
+        },
+        {
+          "term": "hep-th",
+          "heading": false
+        }
+      ],
+      "extract": "In the ϵ-expansion, ds2 p+2 =−rdτ 2 + 2dτdr +dxidxi− 2 ( 1− r rc ) vidxidτ− 2vi rc dxidr + ( 1− r rc )[ (v2 + 2P )dτ 2 + vivj rc dxidxj ] + (v2 rc + 2P rc ) dτdr +c1 log (r rc ) (∂ivj +∂jvi)dxidxj − (r2−r2 c) rc ∂2vidxidτ− 2 ( 1− r rc ) qidxidτ− 2c1 (r logr−rc logrc)∂2vidxidτ (45) − 2c1 log (r rc ) vj (∂ivj +∂jvi)dxidτ + 2c1 ( 1− r rc ) vj∂jvidxidτ +O(ϵ4) solves the Einstein equations through O(ϵ3) if vi obeys the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "incompressible navier-stokes",
+      "heading": false
+    },
+    {
+      "term": "linearized navier-stokes",
+      "heading": false
+    },
+    {
+      "term": "navier-stokes equation",
+      "heading": false
+    },
+    {
+      "term": "incompressible ﬂuid",
+      "heading": false
+    },
+    {
+      "term": "nonlinear einstein",
+      "heading": false
+    },
+    {
+      "term": "hydrodynamic ϵ-expansion",
+      "heading": false
+    },
+    {
+      "term": "hydrodynamic expansion",
+      "heading": true
+    },
+    {
+      "term": "einstein tensor",
+      "heading": true
+    },
+    {
+      "term": "einstein geometry",
+      "heading": true
+    },
+    {
+      "term": "hydrodynamic limit",
+      "heading": true
+    },
+    {
+      "term": "ivj jvi",
+      "heading": false
+    },
+    {
+      "term": "ﬂuid dynamics",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "This ﬁgure depicts the Einstein geometry holographically dual to a ﬂuid. The accelerated boundary hypersurface Σc at radius r = rc is intrinsically ﬂat but the extrinsic curvature is given by the ﬂuid stress tensor. This extrinsic curvature leads to gravity waves which propagate radially inward. The",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "On the Σc surface, prior to τ = τ∗, all initial data is trivial. At τ = τ∗, a gravitational shock wave arrives. The shock forces the ﬂuid on Σc, and consequently the vi is nontrivial on Σc after τ∗",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1101.2451v2"
+  }
+}

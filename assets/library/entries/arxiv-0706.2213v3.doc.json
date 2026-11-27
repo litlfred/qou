@@ -551,15 +551,15 @@
           "heading": false
         },
         {
-          "term": "smallmatrix right",
-          "heading": false
-        },
-        {
           "term": "begin smallmatrix",
           "heading": false
         },
         {
-          "term": "array right",
+          "term": "smallmatrix right",
+          "heading": false
+        },
+        {
+          "term": "begin array",
           "heading": false
         },
         {
@@ -954,8 +954,8 @@
           "heading": false
         },
         {
-          "term": "twist knots",
-          "heading": true
+          "term": "align lefteqn",
+          "heading": false
         }
       ],
       "extract": "We calculate the non--abelian Reidemeister torsion for even twist knots $J(2, 2m)$ where $m$ is an integer. \\subsubsection{Preliminaries} Following Section \\ref{ReviewCharK} and using Riley's method, we can parametrize a non--abelian $\\SL$-representation $\\rho$ by two parameters $u$ and $s$ as follows: \\[ \\rho(x) = \\left( \\begin{array}{cc} \\sqrt{s} & 1/\\sqrt{s} \\\\ 0 & 1/\\sqrt{s} \\end{array} \\right),\\, \\rho(y) =",
@@ -1217,7 +1217,7 @@
           "heading": false
         },
         {
-          "term": "partment",
+          "term": "titech",
           "heading": false
         }
       ],

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-2406.18369v2/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "What could Kac hear?",
+  "pageStart": 17,
+  "pageEnd": 33,
+  "contains": [
+    "library/arxiv-2406.18369v2/blocks/prose-sec-007",
+    "library/arxiv-2406.18369v2/blocks/thm-sec-007-01",
+    "library/arxiv-2406.18369v2/blocks/prop-sec-007-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2406.18369v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2406.18369v2",
+  "provenance": "ingested"
+}
