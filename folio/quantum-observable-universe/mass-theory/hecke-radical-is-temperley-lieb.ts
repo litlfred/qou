@@ -33,6 +33,17 @@ export default remark({
       kind: "note",
       date: "2026-11-27",
       body:
+        "Update, same day: the reverse inclusion is closed, so the ideal equality holds exactly up to " +
+        "$\\theta$ ([`TLKernelEquality`](../lean/BraidKnotOctonion/TLKernelEquality.lean), " +
+        "`mem_tlKernelPulled_iff`): $y \\in \\ker(H_n \\to TL_n)$ iff $\\theta y \\in \\mathrm{rad}(\\mathrm{wtrace})$, " +
+        "over any characteristic-zero field, $q \\neq 0$ not a root of unity. It reuses " +
+        "`JimboKernelGeneric.traceQuotTLEquiv` ($H/\\mathrm{rad} \\cong TL$, $e_i \\mapsto q - \\sigma_i$), " +
+        "which is exactly the $\\theta$-twist of the $U_i = T_i + 1$ presentation.",
+    },
+    {
+      kind: "note",
+      date: "2026-11-27",
+      body:
         "The row/column collision below is now settled in Lean at the ideal level, for the " +
         "skein-carrier pull-back of the TL kernel " +
         "([`TLKernelConvention`](../lean/BraidKnotOctonion/TLKernelConvention.lean)). " +
