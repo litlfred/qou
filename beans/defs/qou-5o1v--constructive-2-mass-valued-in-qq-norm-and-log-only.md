@@ -1,7 +1,7 @@
 ---
 # qou-5o1v
 title: 'Constructive 2: mass valued in Q(q); norm and log only at comparison'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -18,3 +18,6 @@ Doc item 2. def:mass-identity uses a norm; binding uses B = alpha ln tr_M (qou-2
 - Lean: BraidKnotOctonion/MassClassRingHom.lean `map_massClass` (braid-class mass natural under ring homs); QOU/Transcendental/MassTheory/MassComparison.lean (comparedMass |φ m|, comparedBinding −α log|φ b|, log product→sum). Sibling frobeniusMass/scalarMass removed.
 - Proton ring mass already on main (QOU/Core/MassInRing.lean).
 - Remaining: migrate other mass-theory binding prose block by block. Close when #9840 merges.
+
+## 2026-11-27T23:57Z — completed
+#9840 and #9845 merged. 9 binding blocks state the ring element and read −α log|φ(·)| as comparison. Left by design: volume/dilog/Bloch–Wigner logs (transcendental) and prop:tower-binding-energy (analytic continuation of Φ_q, not a ring element).
