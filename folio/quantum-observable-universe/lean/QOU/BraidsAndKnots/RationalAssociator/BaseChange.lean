@@ -333,6 +333,16 @@ theorem rational_lift_of_assocK (hd : 1 ≤ d) {E Φ : FreeAlgebra ℚ (Fin 2)}
   · rw [map_sub, LinearMap.lTensor_tmul, cHex, LinearMap.comp_apply, hc _ cHex, sub_self]
   · rw [map_sub, LinearMap.lTensor_tmul, cPent, LinearMap.comp_apply, hc _ cPent, sub_self]
 
+/-- **(B0), in the form of the named descent hypothesis.** A `K`-associator `1 ⊗ Φ + z`,
+`z ∈ K ⊗ FF d`, in `K ⊗ U4 (d + 1)` gives `SolvableOver K d E Φ`. -/
+theorem solvableOver_of_assocK (hd : 1 ≤ d) {E Φ : FreeAlgebra ℚ (Fin 2)}
+    (hE : FreeAlgebra.algebraMapInv E = 1) (hΦ : FreeAlgebra.algebraMapInv Φ = 1)
+    (z : K ⊗[ℚ] FF d)
+    (hK : AssocK K (d + 1) E ((1 : K) ⊗ₜ Φ + LinearMap.lTensor K (FF d).subtype z)) :
+    SolvableOver K d E Φ := by
+  obtain ⟨x, hx, -⟩ := rational_lift_of_assocK hd hE hΦ z hK
+  exact solvableOver_of_lift hd hE hΦ x.2 hx K
+
 end B0
 
 end QOU.BraidsAndKnots.RationalAssociator
