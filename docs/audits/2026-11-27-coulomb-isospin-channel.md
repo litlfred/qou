@@ -99,8 +99,15 @@ How to read it:
   the wrong channel. Subtracting `E_EM` from a binding that still carries it would count the
   `T_z` dependence twice. Wiring this term into production binding therefore goes together with
   removing that slope.
-* **Production wiring.** The scorecard's binding columns are still strong-only, and the
-  dashboard reports `E_C` beside them rather than subtracting it. Changing that is an owner
-  decision (asked on a card in the thread); this PR adds the term and its exact structure.
+* **Production wiring (done for the mass table, owner card 2026-11-27, "wire with the
+  bond-slope fix").** `mass_table_comprehensive.py` now writes `E_EM_MeV`,
+  `B_ruled_em_MeV = B_ruled − E_EM` and `m_ruled_em_MeV`, on top of the ruled binding of
+  PR #9675, whose strong bond is `T_z`-even, so the `T_z` dependence is counted once. Existing
+  fields are unchanged and no scorecard table reads the new ones yet.
+  Result: **11,756 of 14,970** nuclei have `B_ruled_em < 0`. The ruled strong law grows by
+  about 2.53 MeV per nucleon (⁵⁶Fe: 139.4 MeV against AME 492.3), while `E_EM` grows like
+  `Z²/A^{1/3}` (⁵⁶Fe: 116.2 MeV; ²⁰⁸Pb: 766.5 MeV against `B_ruled` 524.7). So once the EM
+  channel is present, the strong channel's underbinding shows as unbound heavy nuclei. This is
+  a scope-(a) statement about the ruled law as it stands, not about the EM term.
 
 No measured value enters any proof. AME numbers appear only in §3's comparison columns.
