@@ -5,9 +5,9 @@ import BraidKnotOctonion.JimboKernelGeneric
 # The Hecke trace radical IS the Temperley–Lieb kernel, after the twist `θ`
 
 `TLKernelConvention` showed that the pulled-back Temperley–Lieb kernel `tlKernelPulled` is
-**not** contained in `rad(wtrace)` (`tlKernelPulled_not_le_rad`), and that its image under the
-involution `θ : σ_i ↦ (q - q⁻¹) - σ_i = -σ_i⁻¹` is (`theta_mem_rad`).  This file closes the
-reverse inclusion, so the two ideals agree exactly up to `θ`:
+**not** contained in `rad(wtrace)` (`tlKernelPulled_not_le_rad`), and defined the involution
+`θ : σ_i ↦ (q - q⁻¹) - σ_i = -σ_i⁻¹`.  This file proves that the two ideals agree exactly up
+to `θ`:
 
     x ∈ rad(wtrace)  ↔  θ x ∈ tlKernelPulled           (`theta_mem_tlKernelPulled_iff`)
     y ∈ tlKernelPulled  ↔  θ y ∈ rad(wtrace)           (`mem_tlKernelPulled_iff`)
@@ -99,5 +99,12 @@ theorem mem_tlKernelPulled_iff {q : K} (hq0 : q ≠ 0)
     y ∈ tlKernelPulled hq0 n hδ
       ↔ theta q hq0 n y ∈ traceRadical (⇑(SeminormalRep.wtrace q hq0 hq2 n)) := by
   rw [← theta_mem_tlKernelPulled_iff hq0 hq2 hδ n, theta_theta]
+
+/-- **`θ(tlKernelPulled) ⊆ rad(wtrace)`** — the twisted inclusion, as a corollary. -/
+theorem theta_mem_rad {q : K} (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
+    {δ : K} (hδ : q * δ = q ^ 2 + 1) (n : ℕ) {x : Hecke K q q⁻¹ n}
+    (hx : x ∈ tlKernelPulled hq0 n hδ) :
+    theta q hq0 n x ∈ traceRadical (⇑(SeminormalRep.wtrace q hq0 hq2 n)) :=
+  (mem_tlKernelPulled_iff hq0 hq2 hδ n x).mp hx
 
 end QOU.IwahoriHecke.TLKernelEquality
