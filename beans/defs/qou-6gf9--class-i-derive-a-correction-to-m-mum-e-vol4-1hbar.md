@@ -370,3 +370,7 @@ The Ohtsuki series equals the q->1 expansion of (A/2-1)/(q(1-q)), where A is the
 
 
 2026-11-27 (thread "Resolve the mu-p residual", PR #9445, head 9d87721ae0): owner card option 1, derive/refute -(3 alpha/4pi) w^2. Scope (a) NEGATIVE for the Hecke photon-projector insertion class on 4_1 (3-dim rep, SU(2) Markov, normalised by tr_M(4_1)). Exact Q(w): pair <e1>+<e2> = (s^4-6s^2+7)/(s^4-5s^2+5), s=[2]_q (Lean pairCorr_eq, generic field). O(1),O(w),O(w^2): pair (-1,20,-203), S1 (-4,80,-812), D (-11,217,-8811/4), C (-21,617,-41051/4). Radius |w*| = 2-2cos(pi/10) = 0.0979; pin at 0.111 of it. Rank 3, so the w^2 coefficient is NOT forced (Lean w2_coeff_not_forced). Candidate needs 3alpha/4pi = 1.74e-3 vs class min |w^2| coeff 203. Lean sorry-free, axioms clean. Audit docs/audits/2026-11-27-mu-p-projector-insertion-w-order.md. Sibling option 2 (Sigma(2,3,5) Borel, PR #9459) also scope (a). GAP still open: open-worldline non-Markov reduction; nonzero y111.
+
+## 2026-11-27 — open-worldline path, scope (a) (PR #9492)
+
+Owner chose "both" new paths. Open worldline (unknot-normalised projector insertions on 4_1): closed class = open / tr_M(4_1); only pole w = -2 (radius 2 vs 0.098 closed), so #9445's large coefficients are a normalisation artifact. Leading terms nonzero; rank 3 on (1, tr_M, S1, D, C); (5c/8, -9c/8, 11c/8) on (1, tr_M, pair) gives any w^2 = c (Lean open_w2_not_forced). Smallest natural |w^2| 31/16 vs 3 alpha/4pi = 1.74e-3 (comparison only). Candidate stays unwired. Full Hecke weights (y_111 != 0) in a sibling thread. Bean stays open.
