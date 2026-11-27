@@ -853,6 +853,13 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
         f"**`{_fmt_fixed(mpf(10) ** abs(dex_po210_mj), 2)}x`** | Parameter-free $(1h_{{9/2}}, 3p_{{1/2}}/2g_{{9/2}})$ shell preformation |"
     )
 
+    # The production mass table (1D chain, Q-CLT) has its own 4He. The rows below
+    # labelled "mixed" pair chain parents/daughters with the K4-plaquette 4He
+    # (gap1b M3a); the "chain only" row uses the chain's own 4He so that one
+    # model supplies all three bindings (bean qou-q0gw).
+    # (2,2) has no mass-table row, so the chain's 4He is its own alpha-line
+    # extrapolation B(8Be) - [B(12C) - B(8Be)], as in alpha_qalpha_inheritance_probe.py.
+    b_he4_chain = 2 * _m(mt_by_zn[(4, 4)]["B_pred_MeV"]) - _m(mt_by_zn[(6, 6)]["B_pred_MeV"])
     alpha_records: list[dict[str, Any]] = []
     for e in ame:
         z, n, a = int(e["Z"]), int(e["N"]), int(e["A"])
@@ -874,13 +881,16 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
         b_dau_pred = _m(mt_by_zn[(z - 2, n - 2)]["B_pred_MeV"])
         q_pred = b_dau_pred + b_he4_m3a - b_par_pred
         rel = abs(q_pred - q_exp) / q_exp
-        alpha_records.append(dict(Z=z, N=n, A=a, q_pred=q_pred, q_exp=q_exp, rel=rel, exo=(q_pred > 0)))
+        # Self-consistent arm: the chain model's own 4He, not the K4-plaquette one.
+        q_chain = b_dau_pred + b_he4_chain - b_par_pred
+        alpha_records.append(dict(Z=z, N=n, A=a, q_pred=q_pred, q_exp=q_exp, rel=rel, exo=(q_pred > 0),
+                                  q_chain=q_chain, rel_chain=abs(q_chain - q_exp) / q_exp))
 
     alpha_derived_rows: list[str] = []
     for ab_lbl, ab_fn, ab_note in [
-        ("High-$A$ Med ($57\\text{--}150$, Q-CLT + $K_4$ $\\alpha$)", lambda a: 57 <= a <= 150, "1D chain underbinds parent/daughter slope $\\Delta B/\\Delta A$"),
-        ("Very High-$A$ ($\\ge 151$, Q-CLT + $K_4$ $\\alpha$)", lambda a: a >= 151, "Over-exothermic ($Q_\\alpha^{\\mathrm{pred}} \\approx 21\\;\\mathrm{MeV}$) without shell/Coulomb"),
-        ("**All Measured Exothermic ($A \\ge 6$)**", lambda a: a >= 6, "All `1,051` exothermic, but multi-MeV $Q_\\alpha$ offset dominates"),
+        ("High-$A$ Med ($57\\text{--}150$, mixed: chain + $K_4$ ${}^4\\mathrm{He}$)", lambda a: 57 <= a <= 150, "1D chain underbinds parent/daughter slope $\\Delta B/\\Delta A$"),
+        ("Very High-$A$ ($\\ge 151$, mixed: chain + $K_4$ ${}^4\\mathrm{He}$)", lambda a: a >= 151, "Over-exothermic ($Q_\\alpha^{\\mathrm{pred}} \\approx 21\\;\\mathrm{MeV}$) without shell/Coulomb"),
+        ("**All Measured Exothermic ($A \\ge 6$, mixed)**", lambda a: a >= 6, "All `1,051` exothermic; ~93% of the $Q_\\alpha$ error is inherited from the binding slope"),
     ]:
         sub = [x for x in alpha_records if ab_fn(x["A"])]
         rels = [x["rel"] for x in sub]
@@ -893,6 +903,18 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
             f"Med `{_fmt_fixed(_median(rels) * HUNDRED, 1)}%` (Mean `{_fmt_fixed(_mean(rels) * HUNDRED, 1)}%`) | "
             f"`{_fmt_ppq(_median(rels))}` | {ab_note} |"
         )
+
+    rels_ch = [x["rel_chain"] for x in alpha_records]
+    exo_ch = sum(1 for x in alpha_records if x["q_chain"] > 0)
+    alpha_derived_rows.append(
+        f"| **Chain only, self-consistent ($A \\ge 6$)** | `N = {len(alpha_records)}` | "
+        f"`{exo_ch}/{len(alpha_records)}` | "
+        f"Med `{_fmt_fixed(_median([x['q_chain'] for x in alpha_records]), 2)}` vs "
+        f"`{_fmt_fixed(_median([x['q_exp'] for x in alpha_records]), 2)} MeV` | "
+        f"Med `{_fmt_fixed(_median(rels_ch) * HUNDRED, 1)}%` (Mean `{_fmt_fixed(_mean(rels_ch) * HUNDRED, 1)}%`) | "
+        f"`{_fmt_ppq(_median(rels_ch))}` | Chain ${{}}^4\\mathrm{{He}}$ (extrapolated) = `{_fmt_fixed(b_he4_chain, 2)} MeV`; "
+        f"one $\\alpha$-line slope for every pair, so $Q_\\alpha$ is constant (`AlphaQInheritance.lean`) |"
+    )
 
     part_c_by_nuc = {h["nuclide"]: h for h in ad["part_c_derived_qalpha_benchmark"]["heavy_emitters"]}
     for nuc_c in ["210Po", "212Po", "238U"]:

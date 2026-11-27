@@ -212,9 +212,10 @@ Evaluated across all `1,010` non-estimated exothermic $\beta^-$ transitions ($Q_
 
 | Regime / Model | Sample / Nuclide | Exothermic ($Q_\alpha^{\mathrm{pred}} > 0$) | $Q_\alpha^{\mathrm{pred}}$ vs $Q_\alpha^{\mathrm{AME}}$ | Relative / `dex` Error | Median Error (`ppQ`) | Tunneling Assessment |
 |---|---|---:|---:|---:|---:|---|
-| High-$A$ Med ($57\text{--}150$, Q-CLT + $K_4$ $\alpha$) | `N = 178` | `178/178 (100%)` | Med `19.79` vs `1.73 MeV` | Med `1043.2%` (Mean `1265.2%`) | `1.04e+16` | 1D chain underbinds parent/daughter slope $\Delta B/\Delta A$ |
-| Very High-$A$ ($\ge 151$, Q-CLT + $K_4$ $\alpha$) | `N = 873` | `873/873 (100%)` | Med `19.79` vs `5.41 MeV` | Med `265.7%` (Mean `445.7%`) | `2.66e+15` | Over-exothermic ($Q_\alpha^{\mathrm{pred}} \approx 21\;\mathrm{MeV}$) without shell/Coulomb |
-| **All Measured Exothermic ($A \ge 6$)** | `N = 1051` | `1051/1051 (100%)` | Med `19.79` vs `4.71 MeV` | Med `320.3%` (Mean `584.5%`) | `3.20e+15` | All `1,051` exothermic, but multi-MeV $Q_\alpha$ offset dominates |
+| High-$A$ Med ($57\text{--}150$, mixed: chain + $K_4$ ${}^4\mathrm{He}$) | `N = 178` | `178/178 (100%)` | Med `19.79` vs `1.73 MeV` | Med `1043.2%` (Mean `1265.2%`) | `1.04e+16` | 1D chain underbinds parent/daughter slope $\Delta B/\Delta A$ |
+| Very High-$A$ ($\ge 151$, mixed: chain + $K_4$ ${}^4\mathrm{He}$) | `N = 873` | `873/873 (100%)` | Med `19.79` vs `5.41 MeV` | Med `265.7%` (Mean `445.7%`) | `2.66e+15` | Over-exothermic ($Q_\alpha^{\mathrm{pred}} \approx 21\;\mathrm{MeV}$) without shell/Coulomb |
+| **All Measured Exothermic ($A \ge 6$, mixed)** | `N = 1051` | `1051/1051 (100%)` | Med `19.79` vs `4.71 MeV` | Med `320.3%` (Mean `584.5%`) | `3.20e+15` | All `1,051` exothermic; ~93% of the $Q_\alpha$ error is inherited from the binding slope |
+| **Chain only, self-consistent ($A \ge 6$)** | `N = 1051` | `0/1051` | Med `-2.70` vs `4.71 MeV` | Med `157.3%` (Mean `193.3%`) | `1.57e+15` | Chain ${}^4\mathrm{He}$ (extrapolated) = `6.84 MeV`; one $\alpha$-line slope for every pair, so $Q_\alpha$ is constant (`AlphaQInheritance.lean`) |
 | FCC $k=12$ cluster model (`H2_FCC_k12_std`) | `210Po` | `Yes` | `2.18` vs `5.41 MeV` | `-59.7%` (`+32.80 dex` in $T_{1/2}$) | `5.97e+14` | Gamow sensitivity `-5.37 dex/MeV` |
 | FCC $k=12$ cluster model (`H2_FCC_k12_std`) | `212Po` | `Yes` | `2.09` vs `8.95 MeV` | `-76.6%` (`+48.24 dex` in $T_{1/2}$) | `7.66e+14` | Gamow sensitivity `-2.39 dex/MeV` |
 | FCC $k=12$ cluster model (`H2_FCC_k12_std`) | `238U` | `Yes` | `3.97` vs `4.27 MeV` | `-7.1%` (`+3.15 dex` in $T_{1/2}$) | `7.13e+13` | Gamow sensitivity `-8.52 dex/MeV` |
