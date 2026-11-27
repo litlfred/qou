@@ -103,5 +103,8 @@ electron's framing (its writhe) or from its framing-free part? In a TQFT, framin
 choice, which argues for the framing-free reading (the log chart sign). But the mass chart's
 positivity comes entirely from the writhe. This is stated here and not decided.
 
-The n−p cell `τ_n = q⁻² τ_p` is a pure power. If that power is a framing difference, then any
-framing-free chart gives n−p = 0 (`framing_cell_zero`). Whether it is one is not checked.
+The n−p cell `τ_n = q⁻² τ_p` is a pure power. If that power were a framing difference, then any
+framing-free chart would give n−p = 0 (`framing_cell_zero`). Under the ruled γγ word it is not
+one: both nucleons have writhe 0 (`QOU.Mass.GammaGammaWordSelection.borromean_writhe`;
+`2026-11-22-coulomb-all-q-and-nucleon-writhe.md` §2). So the `q⁻²` is not framing, and the
+framing route does not remove the n−p sign conflict.
