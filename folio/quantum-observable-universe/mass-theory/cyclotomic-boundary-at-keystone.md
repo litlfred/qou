@@ -77,7 +77,7 @@ bearing on the arithmetic mechanism is unproven.
 **Status — three tiers of correlation, not to be conflated.**
 
 1. *Arithmetic* (the substance): $D(n)$ is non-cyclotomic from $n=6$. This is
-   **verified through $n=11$** but **not proved for all $n \geq 6$**; the
+   **proved for $6 \le n \le 14$** (finite Lean certificates) but **not for all $n \geq 6$**; the
    cofactor's non-$q$-holonomic degree growth is the structural reason, not
    yet a proof. Generic high-degree bar-even integer polynomials are
    non-cyclotomic, so non-cyclotomicity is the *expected* outcome — the
@@ -96,14 +96,19 @@ said is the dovetail with $S(n)=\sum_{\lambda\vdash n}\dim_q(\lambda)=
 $E_8$ marks carries the Verlinde measure $W_\lambda$. Specific root
 magnitudes are not interpreted.
 
-**What is proved.** *Proved:* the Tier-1 base-case
-factorizations $D(4)=\Phi_1^2\Phi_3$ and $D(5)=2\,\Phi_1^2\Phi_2^2\Phi_3\Phi_6$
-(with the factors verified equal to the cyclotomic polynomials); the
-palindrome identity $C_6(z)=z^4\,\tilde C(z+z^{-1})$; and the full n = 6
-non-cyclotomicity of the deg-8 core $C_6$ — that $C_6$ is *not* a product of
-cyclotomic polynomials — derived using only the elementary direction of
-Kronecker's dichotomy (roots of cyclotomics are roots of unity, hence of
-modulus 1), *not* the hard converse. The entire n = 6 chain rests on a
-**single** cited classical input: that $\tilde C(y)=y^4+4y^3+2y^2-10y-8$ has a
-non-real root (immediate from $\mathrm{disc}(\tilde C)=-44208<0$). The full Tier-2 claim (non-cyclotomic
-for *all* $n\geq 6$) is not proved — it remains verified through $n=11$.
+**What is proved.** *Derived from the definition* (Lean,
+`QOU.Mass.CyclotomicBoundaryCertified`): for $2 \le n \le 9$, over a generic field with the hook
+brackets nonzero, the hook-length definition above gives $q^{m_n}D(n) = P_n(q)$ for an explicit
+$P_n \in \mathbb{Z}[q]$. In particular $D(2) = D(3) = 0$, $D(4) = q^{-2}\Phi_1^2\Phi_3$ and
+$D(5) = 2q^{-4}\Phi_1^2\Phi_2^2\Phi_3\Phi_6$, so the forward direction holds for every $n \le 5$.
+*The converse through $n = 14$:* for $6 \le n \le 14$, $P_n$ is not $c\,q^j\prod_k\Phi_k$. The
+certificate is finite integer arithmetic: if $P = c\,q^j\prod\Phi_k$ and $p \mid P(a)$,
+$p \nmid a$, $p \nmid P(b)$, then $a^k \equiv 1 \pmod p$ for some factor $\Phi_k$, so the
+order $m$ of $a$ mod $p$ divides $k$ and $\varphi(m) \le \varphi(k) \le \deg P$. One witness
+$(p, a)$ with $\varphi(m) > \deg P_n$ per $n$ refutes the factorisation (for example $n = 6$:
+$p = 47$, $a = 28$, $m = 23$, $\varphi(23) = 22 > 14$). This uses no analysis and no
+discriminant. The polynomials $P_{10}, \dots, P_{14}$ in the certificate are computed by
+`computations/cyclotomic_boundary_certificates.py`; for $n \le 9$ they are derived in Lean.
+The earlier $n = 6$ route (the deg-8 core $C_6$, palindrome identity, $\mathrm{disc}(\tilde C)
+= -44208 < 0$) remains proved in `QOU.Mass.CyclotomicBoundaryKeystone`.
+*Open:* non-cyclotomicity for **every** $n \ge 6$. No uniform family of witnesses is known.
