@@ -62,7 +62,7 @@ needs its own coefficient. In particular each needs its own energy scale.
 nucleus (the chain versus a 3D plaquette) is a separate axis, and the ledger cannot see it. The
 two known word-level facts are `ChainBindingNoSaturationPeak` and `AmeBindingNotPairwise`
 (`b₃ ≠ 0`). The rank caps of `flavour` and `em` are encoded as data (`Channel.maxRank`) and are
-not proved in Lean. That braid traces have rank 0 is proved at `n = 3` only.
+not proved in Lean, because that needs Wigner–Eckart for `U_q(sl₂)`. That braid traces have rank 0 is proved at every `n`.
 
 ## 3. The index set at the levels in use
 
