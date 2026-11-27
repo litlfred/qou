@@ -42,70 +42,72 @@
   content-bearing, not tautologies. Nothing inverts `Q_β`/CODATA; no
   `SDeformedVolumeChannel` instance is fabricated; no `c_k` is produced or wired.
 
-  Base ring: genuinely archimedean (`Real.sqrt`, `Complex`) — §7c-correct `ℝ`/`ℂ`.
+  Base ring: `ℝ`/`ℂ` (`Complex.re`, `Complex.im`). The constant `√3` enters only as a parameter
+  `s` (meant as `√3`); every statement holds for any `s`, positivity needs `0 < s`, and the
+  instance `s = Real.sqrt 3` lives behind the transcendental boundary (owner ruling
+  2026-11-27, bean `qou-dk7p`).
 
   -- Ref: [leitner2026] docs/audits/2026-08-02-nz-half-observable-normalization-structural-resolution.md
   -- Ref: [leitner2026] docs/audits/2026-07-27-nzImVolume-sincos-convention-bug.md
   -- Ref: [leitner2026] conj:binding-qbeta-complex-volume; bean qou-yh67; PR #4541 (qou-iyj5)
   -- Ref: [neumann-zagier1985] https://doi.org/10.1016/0040-9383(85)90004-7
 -/
-import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 
 namespace QOU.QBeta.ObservableComplexVolumeVsFullPotential
 
 open scoped Real
 
-/-- **Complex-volume coefficient `κ_pot = √3/4`.** The imaginary-part coefficient
+/-- **Complex-volume coefficient `κ_pot = s/4`, with `s = √3`.** The imaginary-part coefficient
     of the deformed COMPLEX VOLUME `𝔙 = Φ/2` — the genuine Chern–Simons invariant,
     carrying the Neumann–Zagier ½ (`∂𝔙/∂u = ½·v`). Same constant as
     `QOU.Knot.FigureEightComplexVolume.cuspModulus`. -/
-noncomputable def kappaCV : ℝ := Real.sqrt 3 / 4
+noncomputable def kappaCV (s : ℝ) : ℝ := s / 4
 
-/-- **Full-potential coefficient `κ_shape = √3/2`.** The imaginary-part coefficient
+/-- **Full-potential coefficient `κ_shape = s/2`, with `s = √3`.** The imaginary-part coefficient
     of the FULL NZ potential `Φ(u) = ∫₀ᵘ log(−L) dt` — the raw A-polynomial
     longitude integral WITHOUT the NZ ½ (A-polynomial ground truth,
     `docs/audits/2026-07-27-nzImVolume-sincos-convention-bug.md`). Same constant as
     `QOU.MassTheory.nzReVolume` / `QOU.QBeta.ArgUPhaseBranchSelection.nzImVolume`. -/
-noncomputable def kappaFull : ℝ := Real.sqrt 3 / 2
+noncomputable def kappaFull (s : ℝ) : ℝ := s / 2
 
-theorem kappaCV_pos : 0 < kappaCV := by unfold kappaCV; positivity
-theorem kappaFull_pos : 0 < kappaFull := by unfold kappaFull; positivity
+theorem kappaCV_pos {s : ℝ} (hs : 0 < s) : 0 < kappaCV s := by unfold kappaCV; positivity
+theorem kappaFull_pos {s : ℝ} (hs : 0 < s) : 0 < kappaFull s := by unfold kappaFull; positivity
 
 /-- **The Neumann–Zagier ½.** `κ_shape = 2·κ_pot`: the full-potential coefficient
     is exactly twice the complex-volume coefficient (`Φ = 2·𝔙`). Falsifiable: the
     ratio could have been any real; it is exactly 2. -/
-theorem kappaFull_eq_two_mul_kappaCV : kappaFull = 2 * kappaCV := by
+theorem kappaFull_eq_two_mul_kappaCV (s : ℝ) : kappaFull s = 2 * kappaCV s := by
   unfold kappaFull kappaCV; ring
 
 /-- **Im of the complex volume `𝔙`** (the physical Chern–Simons invariant):
     `Im 𝔙(u) = κ_pot·(Re²u − Im²u)`. -/
-noncomputable def imComplexVolume (u : ℂ) : ℝ := kappaCV * (u.re ^ 2 - u.im ^ 2)
+noncomputable def imComplexVolume (s : ℝ) (u : ℂ) : ℝ := kappaCV s * (u.re ^ 2 - u.im ^ 2)
 
 /-- **Im of the full NZ potential `Φ = 2𝔙`** (the raw longitude integral):
     `Im Φ(u) = κ_shape·(Re²u − Im²u)`. -/
-noncomputable def imFullPotential (u : ℂ) : ℝ := kappaFull * (u.re ^ 2 - u.im ^ 2)
+noncomputable def imFullPotential (s : ℝ) (u : ℂ) : ℝ := kappaFull s * (u.re ^ 2 - u.im ^ 2)
 
 /-- **`Φ = 2·𝔙` on the imaginary face (the object dictionary).** For every `u`,
     `Im Φ(u) = 2·Im 𝔙(u)`: the full NZ potential is exactly twice the complex
     volume. The two qou-yh67 candidate coefficients are ONE geometric object
     (`𝔙`, the Chern–Simons invariant) and TWICE it (`Φ`, the un-halved longitude
     integral) — related by the NZ ½, not by a free convention. -/
-theorem imFullPotential_eq_two_mul_imComplexVolume (u : ℂ) :
-    imFullPotential u = 2 * imComplexVolume u := by
+theorem imFullPotential_eq_two_mul_imComplexVolume (s : ℝ) (u : ℂ) :
+    imFullPotential s u = 2 * imComplexVolume s u := by
   unfold imFullPotential imComplexVolume
   rw [kappaFull_eq_two_mul_kappaCV]; ring
 
 /-- On the real substrate ray (`u = r : ℝ`): `Im 𝔙(r) = κ_pot·r²`. -/
-@[simp] theorem imComplexVolume_ofReal (r : ℝ) :
-    imComplexVolume (r : ℂ) = kappaCV * r ^ 2 := by
+@[simp] theorem imComplexVolume_ofReal (s r : ℝ) :
+    imComplexVolume s (r : ℂ) = kappaCV s * r ^ 2 := by
   simp [imComplexVolume]
 
 /-- On the real substrate ray (`u = r : ℝ`): `Im Φ(r) = κ_shape·r² = 2·(κ_pot·r²)`.
     The boost factor relative to the complex-volume scale `κ_pot·r²` is exactly
     `2` for the full potential. -/
-@[simp] theorem imFullPotential_ofReal (r : ℝ) :
-    imFullPotential (r : ℂ) = 2 * (kappaCV * r ^ 2) := by
+@[simp] theorem imFullPotential_ofReal (s r : ℝ) :
+    imFullPotential s (r : ℂ) = 2 * (kappaCV s * r ^ 2) := by
   rw [show (r : ℂ) = ((r : ℝ) : ℂ) from rfl, imFullPotential_eq_two_mul_imComplexVolume,
     imComplexVolume_ofReal]
 
@@ -117,11 +119,11 @@ theorem imFullPotential_eq_two_mul_imComplexVolume (u : ℂ) :
     (A=2, `c=√2`)" — the presence/absence of the NZ ½. This does NOT decide which
     the physical `S` inherits (open, bean qou-yh67); it only fixes that the choice
     is a genuine object choice with the two clean values `1` and `2`. -/
-theorem boost_factor_dictionary {r : ℝ} (hr : r ≠ 0) :
-    imComplexVolume (r : ℂ) / (kappaCV * r ^ 2) = 1 ∧
-      imFullPotential (r : ℂ) / (kappaCV * r ^ 2) = 2 := by
-  have hden : kappaCV * r ^ 2 ≠ 0 :=
-    mul_ne_zero (ne_of_gt kappaCV_pos) (pow_ne_zero 2 hr)
+theorem boost_factor_dictionary {s r : ℝ} (hs : 0 < s) (hr : r ≠ 0) :
+    imComplexVolume s (r : ℂ) / (kappaCV s * r ^ 2) = 1 ∧
+      imFullPotential s (r : ℂ) / (kappaCV s * r ^ 2) = 2 := by
+  have hden : kappaCV s * r ^ 2 ≠ 0 :=
+    mul_ne_zero (ne_of_gt (kappaCV_pos hs)) (pow_ne_zero 2 hr)
   refine ⟨?_, ?_⟩
   · rw [imComplexVolume_ofReal, div_self hden]
   · rw [imFullPotential_ofReal, mul_div_assoc, div_self hden, mul_one]
