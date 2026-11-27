@@ -25,7 +25,7 @@ $$
   \qquad H = \ker\varTheta \subset TM_S,
 $$
 
-where $\varTheta = \eta\,dz\big|_{M_S}$ and the horizontal distribution $H$ is spanned by the lifts of the color differentials $dx_2, dx_3, dx_4$ to $M_S$. The aether parameter ([aether parameter](#def:substrate-parameter)) is
+where $\varTheta = \eta\,dz\big|_{M_S}$ and the horizontal distribution $H$ is spanned by the lifts of the color differentials $dx_2, dx_3, dx_4$ to $M_S$. The aether parameter ([aether parameter](#def:aether-parameter)) is
 
 $$
   q(p) =  1 + \lvert\langle L_\varTheta, F_A^+ \rangle\rvert(p),

@@ -14,7 +14,7 @@ is **specific to the proton's β_Bor + H_3 structure**:
 - **Neutron**: solving N for `m_n = 2·m_μ·F_Bor − N·m_e` gives
   N ≈ 9.469 — NOT a clean integer.  The neutron derivation goes
   through `m_n = m_p + Δm_pn` via canonical Hecke-skein flavor-split
-  (prop:flavor-split-substrate), NOT via its own substrate identity.
+  (prop:flavor-split-aether), NOT via its own substrate identity.
 
 - **⁴He**: uses H_12 (12-strand atomic braid, n_0 = 3A = 12), not
   H_3 (β_Bor).  The identity's ingredients (|tr_M(β_Bor)|, [3]_q!,

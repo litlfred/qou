@@ -276,7 +276,7 @@ isospin doublet. Blocked behind §4-A and §4-C.
 | # | Parameter | Tier | Status |
 |---|---|---|---|
 | 17 | `m_H` | **conjectural** | `conj:electroweak-higgs-torus-link-triplet`: `H = T(2,8)`, `W = T(2,4)`, `Z = T(2,6)`. Torus links have `Vol = 0`, so the chain is Reshetikhin–Turaev at a root of unity, with **two open inputs** (level selection; invariant→mass formula). Best probes land **within a factor of two** — honestly reported as not a prediction |
-| 18 | `v` (EW scale) | **open** | `conj:g-action-on-substrate` is the natural home; open at the closure level. Nothing extracts `v` (or `G_F`) |
+| 18 | `v` (EW scale) | **open** | `conj:g-action-on-aether` is the natural home; open at the closure level. Nothing extracts `v` (or `G_F`) |
 
 > **Structural divergence worth stating.** `v` normalises every SM mass via
 > Yukawa. Its absence means the framework's mass predictions run an entirely

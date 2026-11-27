@@ -8,6 +8,6 @@ export default remark({
   uses: [
     "def:gravitational-constant",
     "def:q-yang-mills-levi",
-    "rem:gr-substrate-geometry",
+    "rem:gr-aether-geometry",
   ],
 });

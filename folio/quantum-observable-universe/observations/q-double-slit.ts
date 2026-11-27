@@ -12,7 +12,7 @@ export default simulator({
   title: "q-Deformed Double-Slit Simulator",
   html: "simulators/q_double_slit.html",
   uses: [
-    "prop:local-substrate-q",
+    "prop:local-aether-q",
     "def:categorical-dirac-operator",
     "def:localized-knot",
   ],

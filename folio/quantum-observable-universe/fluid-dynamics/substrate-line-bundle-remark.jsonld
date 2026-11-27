@@ -6,19 +6,19 @@
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/rem-substrate-line-bundle-remark",
+  "@id": "papers/quantum-observable-universe/blocks/rem-aether-line-bundle-remark",
   "@type": [
     "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "rem:substrate-line-bundle-remark",
+  "label": "rem:aether-line-bundle-remark",
   "kind": "remark",
   "title": "Archimedean fibring, $\\mathbb{P}^1$-compactification and base change of the aether bundle",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-substrate-line-bundle",
-    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+    "papers/quantum-observable-universe/blocks/def-aether-line-bundle",
+    "papers/quantum-observable-universe/blocks/def-aether-parameter"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-line-bundle",
+  "interprets": "papers/quantum-observable-universe/blocks/def-aether-line-bundle",
   "text": "substrate-line-bundle-remark.md",
   "provenance": "authored"
 }

@@ -1,4 +1,4 @@
-Let $\varrho$ denote a stable vortex filament of length $L$ in the brane fluid with [aether parameter](#def:substrate-parameter) $q > 1$. Let $\Delta_q$ denote the $q$-Laplacian acting on sections of the normal bundle $N_\varrho$.
+Let $\varrho$ denote a stable vortex filament of length $L$ in the brane fluid with [aether parameter](#def:aether-parameter) $q > 1$. Let $\Delta_q$ denote the $q$-Laplacian acting on sections of the normal bundle $N_\varrho$.
 
 Then:
 

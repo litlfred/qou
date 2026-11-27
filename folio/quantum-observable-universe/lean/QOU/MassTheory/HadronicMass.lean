@@ -593,8 +593,8 @@ section proves only that identity; it makes no comparison with measured
 masses (owner decision, PR #8917).
 
 Companion content blocks:
-  - `prop:flavor-split-substrate` — the proposition
-  - `prf:flavor-split-substrate` — the proof
+  - `prop:flavor-split-aether` — the proposition
+  - `prf:flavor-split-aether` — the proof
   - `probe_flavor_split_substrate.py` — numerical witness
   - `probe_per_sheet_flavor_nonin.py` — derivation via per-sheet Bring
     integration -/
@@ -643,7 +643,7 @@ theorem delta_m_over_M_N_eq_factored_over_3 {K : Type*} [Field K] (q : K) (hq : 
     is stated in the content block; this theorem proves only the algebraic
     identity between the two forms.
 
-    LaTeX: `\label{prop:flavor-split-substrate}` -/
+    LaTeX: `\label{prop:flavor-split-aether}` -/
 theorem flavor_split_substrate {K : Type*} [Field K] (q : K) (hq : q ≠ 0) :
     delta_m_over_M_N_substrate q = delta_m_over_mu_avg_factored q / 3 :=
   delta_m_over_M_N_eq_factored_over_3 q hq

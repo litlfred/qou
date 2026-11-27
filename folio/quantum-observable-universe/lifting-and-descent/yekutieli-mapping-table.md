@@ -40,7 +40,7 @@ Mass Identity (Def.~\ref{def:mass-identity})
   & Nonabelian multiplicative integral; 2D nonabelian Stokes theorem
   & \cite[Ch.~5--6]{yekutieli2015} \\[6pt]
 Aether field $q(p)$
-  (Def.~\ref{def:substrate-parameter})
+  (Def.~\ref{def:aether-parameter})
   & Local twisted deformation parameter; MC element varying over $M$
   & \cite{yekutieli2008, yekutieli2009} \\[6pt]
 $\mathrm{SU}_q(2)$ gauge flow

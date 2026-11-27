@@ -99,7 +99,7 @@ structure FrobeniusHopfData (C : Type u) [CategoryTheory.Category.{v} C]
   frobenius_relation :
     mul ≫ comul = (comul ▷ obj) ≫ (α_ obj obj obj).hom ≫ (obj ◁ mul)
   /-- **Left unit law.**  `η ▷ A ≫ μ = λ_A`.  Axiom 1 of
-      `def:frobenius-hopf-substrate` says `(μ, η)` make `A` an *associative
+      `def:frobenius-hopf-aether` says `(μ, η)` make `A` an *associative
       unital* algebra object; this is half of "unital".
 
       Field shape matches `CategoryTheory.MonObj.one_mul` exactly, so
@@ -126,7 +126,7 @@ structure FrobeniusHopfData (C : Type u) [CategoryTheory.Category.{v} C]
       This is the braiding-carrying half of the antipode package and is why
       the structure now requires `[BraidedCategory C]`: "reverses" is not
       statable without a way to exchange the two tensor factors.  That is no
-      new demand on the framework — `def:frobenius-hopf-substrate` already
+      new demand on the framework — `def:frobenius-hopf-aether` already
       says the substrate is available at the level of a *quantum universe*,
       and `def:quantum-universe` is braided monoidal.
 

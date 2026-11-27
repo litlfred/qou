@@ -8,7 +8,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "rem:complex-substrate-interpretation",
+    "rem:complex-aether-interpretation",
     "rem:chirality-trefoil-electron-positron",
   ],
   tags: ["tier:S", "complex-q", "chirality", "CPT", "phase", "conjecture"],

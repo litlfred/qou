@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ act as a [QOU](#def:quantum-observable-universe) over the [aether line bundle](#def:substrate-line-bundle) $\mathcal{Q}_M = M \times \mathbb{G}_m$. Assume $q_1, q_2 \colon M \to \mathbb{G}_m$ specify any two aether sections.
+Let $(\mathbf{C}, A, \tau)$ act as a [QOU](#def:quantum-observable-universe) over the [aether line bundle](#def:aether-line-bundle) $\mathcal{Q}_M = M \times \mathbb{G}_m$. Assume $q_1, q_2 \colon M \to \mathbb{G}_m$ specify any two aether sections.
 
 Then:
 

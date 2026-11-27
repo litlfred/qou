@@ -1,7 +1,8 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  label: "rem:delta-skein-substrate-identity",
+  label: "rem:delta-skein-aether-identity",
+  renamedFrom: ["rem:delta-skein-substrate-identity"],
   title:
     "Aether identity for the proton–neutron Skein difference $\\Delta S(n-p)$",
   interprets: "conj:borromean-baryon-mass-formula",

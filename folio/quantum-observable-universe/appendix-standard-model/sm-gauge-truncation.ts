@@ -12,7 +12,7 @@ export default conjecture({
     "def:gauge-action-groupoid",
     "thm:su2-emergence",
     "def:coulomb-charge",
-    "conj:g-action-on-substrate",
+    "conj:g-action-on-aether",
     "conj:electroweak-higgs-torus-link-triplet",
   ],
   tags: [

@@ -106,7 +106,7 @@
         "delta_ppm": "31804.307",
         "verdict": "Adds V(𝓑₃, q²) ≈ 4.04 to the tower; ~2 200 ppm shift.  Still small vs the 29 000 ppm Family A gap — does not discriminate."
       },
-      "interpretation": "Under the PROVED Family A λ_scale (replacing the prior fitted 2.4599527869, removed 2026-05-22), the bare Vol·λ_A/ℏ_q² tower lands m_p_pred ≈ 966 MeV — about 2.9 % above CODATA.  All three S(p) hypotheses produce shifts of <0.3 % vs that gap, so the m_avg residual is dominated by the λ_scale layer, NOT by S(p).  S(p) ≈ 0 remains the production assumption; the proton-neutron split is supplied separately by the substrate flavor-split formula (`prop:flavor-split-substrate`, PR #690 / #942).  The original 'S(p) = 0 forced by 1 ppb closure' argument was an artifact of the CAL-4 fitted λ_p; under Family A the S(p) discriminator becomes structural rather than 1-ppb-numerical."
+      "interpretation": "Under the PROVED Family A λ_scale (replacing the prior fitted 2.4599527869, removed 2026-05-22), the bare Vol·λ_A/ℏ_q² tower lands m_p_pred ≈ 966 MeV — about 2.9 % above CODATA.  All three S(p) hypotheses produce shifts of <0.3 % vs that gap, so the m_avg residual is dominated by the λ_scale layer, NOT by S(p).  S(p) ≈ 0 remains the production assumption; the proton-neutron split is supplied separately by the substrate flavor-split formula (`prop:flavor-split-aether`, PR #690 / #942).  The original 'S(p) = 0 forced by 1 ppb closure' argument was an artifact of the CAL-4 fitted λ_p; under Family A the S(p) discriminator becomes structural rather than 1-ppb-numerical."
     },
     "lean_uniqueness_ref": {
       "nucleus": "proton",

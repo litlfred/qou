@@ -9,7 +9,7 @@ export default remark({
     "def:planck-time",
     "ex:q-reeb-flow",
     "rem:julia-set-reeb",
-    "prop:local-substrate-q",
+    "prop:local-aether-q",
   ],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([Julia set of Reeb flow](#rem:julia-set-reeb))" },

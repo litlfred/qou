@@ -1,7 +1,8 @@
 import { proof } from "../../schema/builders";
 
 export default proof({
-  label: "prf:substrate-parameter-unique",
+  label: "prf:aether-parameter-unique",
+  renamedFrom: ["prf:substrate-parameter-unique"],
   title: "Proof of uniqueness of the aether parameter",
-  uses: ["thm:substrate-parameter-unique"],
+  uses: ["thm:aether-parameter-unique"],
 });

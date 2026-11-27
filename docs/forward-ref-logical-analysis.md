@@ -110,7 +110,7 @@ promote would just relocate the forward edge).
 The remaining **56 defects** are a structural floor under current
 chapter ordering:
 
-- The most-cited target (`prop:flavor-split-substrate` in
+- The most-cited target (`prop:flavor-split-aether` in
   observations) appears in only 3 edges; the rest of the distribution
   is a long tail of 1-2x cross-chapter dependencies. There is no
   high-fanout target that would justify a single FOUNDATIONAL_LATE

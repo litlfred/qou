@@ -10,7 +10,7 @@ AGENTS.md owner directive 2026-08-07) in mpmath, end to end.
 
 It does NOT compute the G_F-back-solved target 213.11; that lives in
 `n_sym_numerical_anchor.py` and is a different quantity (see the
-block's .md and `conj:g-action-on-substrate`). No number here is
+block's .md and `conj:g-action-on-aether`). No number here is
 compared to experiment.
 
 # Ref: folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md

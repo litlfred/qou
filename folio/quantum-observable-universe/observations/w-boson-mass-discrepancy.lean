@@ -9,7 +9,7 @@ import Mathlib.Analysis.Real.Pi.Bounds
 /-!
 # QOU.Observations.WBoson — Electroweak boson vertex δq
 
-Applies the local substrate proposition (prop:local-substrate-q) to
+Applies the local substrate proposition (prop:local-aether-q) to
 electroweak boson mass measurements, deriving a zero-free-parameter
 formula for the vertex substrate perturbation δq at each collider.
 

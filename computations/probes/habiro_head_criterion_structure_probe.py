@@ -35,7 +35,7 @@ normalisation `denom(-1)`, never through the trace value.
 ## 3. Where the 3 comes from
 
 `delta = flavor_split_leading(q) = (q-1)^2 (q^4-1) / (3 q^4)` — the leading
-flavour-split coefficient of `prop:flavor-split-substrate`, which carries a
+flavour-split coefficient of `prop:flavor-split-aether`, which carries a
 literal `/3`. It is used by exactly one interface kind, `averaged_weighted`;
 clearing that denominator puts a 3 in the cleared denominator's content, and
 since the factor's *value* at q=1 is 1/2, the numerator at u=-1 inherits it.
@@ -488,7 +488,7 @@ def main() -> int:
             "qou:QOU.Habiro.head_criterion_vacuous_of_isUnit",
         ],
         "reference_blocks": [
-            "prop:flavor-split-substrate",
+            "prop:flavor-split-aether",
             "def:motivic-galois-character",
         ],
         "input_witness": WITNESS_IN.name,

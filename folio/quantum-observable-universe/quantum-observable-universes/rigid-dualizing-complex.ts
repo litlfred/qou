@@ -6,7 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.RigidDualizingComplex",
     validation: "not_checked",
   },
-  uses: ["def:frobenius-hopf-substrate"],
+  uses: ["def:frobenius-hopf-aether"],
   cites: ["yekutieli-zhang1999-auslander-dualizing",
     "yekutieli2010",
   ],

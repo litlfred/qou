@@ -19,6 +19,6 @@ export default proposition({
   },
   uses: [
     "prop:golden-quartet-galois",
-    "prop:bar-t-duality-substrate",
+    "prop:bar-t-duality-aether",
   ],
 });

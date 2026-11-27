@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Are the six adopted antipode axioms independent, or does the package shrink?
 
-`def:frobenius-hopf-substrate` axiom 2 (2026-09-15, owner decision) asks for six
+`def:frobenius-hopf-aether` axiom 2 (2026-09-15, owner decision) asks for six
 conditions on `S` at once:
 
     1 anti_mul       S(xy)      = S(y) S(x)

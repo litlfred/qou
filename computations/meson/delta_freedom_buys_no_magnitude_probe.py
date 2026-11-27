@@ -20,7 +20,7 @@ what the bound needs.  So everything turns on whether BOTH weights are
 non-negative at the substrate — i.e. on whether `|δ| ≤ 2`.
 
 WHY THE TWO REGIMES CAN DISAGREE.  `δ = (q−1)²(1−q⁻⁴)/3`
-(`prop:flavor-split-substrate`).  As `q → 0` the `q⁻⁴` term diverges, which is
+(`prop:flavor-split-aether`).  As `q → 0` the `q⁻⁴` term diverges, which is
 what buys Addendum 32's four extra units of pole order.  At `q₀ ≈ 1.11` the
 `(q−1)²` prefactor is ~0.012 and the whole thing is small.  The same
 expression is enormous in one regime and negligible in the other.

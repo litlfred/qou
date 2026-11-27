@@ -16,7 +16,7 @@ export default conjecture({
   // prerequisite — "Compare the same caveat on … the Navier--Stokes leg" — and
   // it lists this conjecture transitively. A comparison is not a dependency.
   uses: [
-    "rem:substrate-gm-torsion",
+    "rem:aether-gm-torsion",
     "thm:qou-obstruction-reduction",
     "conj:qou-p-neq-np",
   ],

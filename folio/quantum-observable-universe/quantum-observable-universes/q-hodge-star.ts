@@ -7,5 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.QHodgeStar",
     validation: "not_checked",
   },
-  uses: ["def:categorical-hodge-star", "def:substrate-parameter"],
+  uses: ["def:categorical-hodge-star", "def:aether-parameter"],
 });

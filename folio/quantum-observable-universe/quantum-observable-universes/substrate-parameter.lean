@@ -68,7 +68,7 @@ noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
     unity) live on `ArchimedeanSubstrateField` below, after the
     substrate→archimedean wall (AGENTS.md §7c).
 
-    LaTeX: `\label{def:substrate-parameter}` -/
+    LaTeX: `\label{def:aether-parameter}` -/
 structure SubstrateParameter (M : Type*) where
   /-- The categorical substrate field `q : M → R_q`.
       Records the local value of the `End(𝟙) ≅ R_q`-element at each

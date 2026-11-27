@@ -9,7 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "def:substrate-parameter",
+    "def:aether-parameter",
   ],
   cites: [],
   tags: [

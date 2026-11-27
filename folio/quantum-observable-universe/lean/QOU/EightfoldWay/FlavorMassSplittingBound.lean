@@ -149,7 +149,7 @@ private lemma sqrt_sum_lt_three_mul_qq_inv {q : ℝ} (hq : 1 < q) :
 /-- **Substrate bound on the dressed-quark splitting.**
     For substrate parameter `q > 1`, nucleon average mass `M_N > 0`,
     and any `FlavorDressingFunctor F` satisfying the derivation
-    identity of `prop:flavor-dressed-mass-from-substrate-split`,
+    identity of `prop:flavor-dressed-mass-from-aether-split`,
     the down–up splitting satisfies the two-sided substrate bound
 
       0 < μ_d − μ_u < M_N · ℏ_q² · h_q · [2]_q
@@ -169,7 +169,7 @@ private lemma sqrt_sum_lt_three_mul_qq_inv {q : ℝ} (hq : 1 < q) :
 
     This form takes the splitting identity as a plain hypothesis
     `h_derive`; `flavor_mass_splitting_bound` below is the form
-    conditional on `conj:flavor-split-substrate-mass`. -/
+    conditional on `conj:flavor-split-aether-mass`. -/
 -- Ref: [leitner2026] braids-and-knots/flavor-mass-splitting-bound
 theorem flavor_mass_splitting_bound_of_split
     (F : FlavorDressingFunctor) (M_N q : ℝ)
@@ -249,7 +249,7 @@ theorem flavor_mass_splitting_bound_of_split
     exact mul_lt_mul_of_pos_left h_factor_lt hM
 
 /-- **Substrate bound on the dressed-quark splitting, conditional on
-    `conj:flavor-split-substrate-mass`** (§3b-cond). With
+    `conj:flavor-split-aether-mass`** (§3b-cond). With
     `M_N = (m_p + m_n)/2`, the conjecture `[FlavorSplitSubstrateMass m_p m_n q]`
     and the nucleon form of the pair Skein mass formula give
 

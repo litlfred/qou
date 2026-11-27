@@ -28,7 +28,7 @@
 //! ```
 //!
 //! `delta` is the substrate flavour split `Delta_m / M_N`
-//! (`prop:flavor-split-substrate`), and the p-n factor is the uniform
+//! (`prop:flavor-split-aether`), and the p-n factor is the uniform
 //! bar-invariant average `z - h/2` shifted by the colour-tube asymmetry
 //! `+ h*delta/4`. Setting `delta = 0` recovers `strict_averaged`.
 //!
@@ -121,7 +121,7 @@ pub enum PnConvention {
 }
 
 /// `delta(q) = (q-1)^2 * (1 - q^-4) / 3` — the leading substrate flavour
-/// split `Delta_m / M_N` (`prop:flavor-split-substrate`, PR #690).
+/// split `Delta_m / M_N` (`prop:flavor-split-aether`, PR #690).
 ///
 /// Port of `computations/_li_2_q_util.py::flavor_split_leading`.
 ///

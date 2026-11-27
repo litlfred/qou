@@ -5,5 +5,5 @@ export default remark({
   title: "Physical meaning of the Reeb operation count at $q = q_0$",
   interprets: "prop:reeb-operations-per-planck",
   tags: ["reeb", "planck-time", "substrate"],
-  uses: ["prop:reeb-operations-per-planck", "prop:local-substrate-q"],
+  uses: ["prop:reeb-operations-per-planck", "prop:local-aether-q"],
 });

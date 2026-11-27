@@ -23,7 +23,7 @@ export default conjecture({
     "prop:reeb-turing-completeness-classical",
     "rem:toffoli-q-and",
     "rem:jet-planck-steps",
-    "rem:complex-substrate-interpretation",
+    "rem:complex-aether-interpretation",
   ],
   cites: [
     "freedman2003",

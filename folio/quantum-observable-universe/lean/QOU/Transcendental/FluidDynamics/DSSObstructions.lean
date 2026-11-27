@@ -27,7 +27,7 @@ Lean**: no lemma here takes a literature theorem as a hypothesis class.
 * **L2 `qKappa_pow_two_kappa`, `qKappa_is_root_of_unity`** — the parameter
   `q_κ = exp(iπ/κ)` is a `2κ`-th root of unity. A scaling factor `λ_κ` built
   from it therefore conflicts with the standing QOU requirement that `q` is not a
-  root of unity (`def:substrate-parameter`).
+  root of unity (`def:aether-parameter`).
 * **L3 `lerayEnstrophy_blowup`** — in Leray variables
   `y = (x - x₀)/√(T - t)`, `s = -log(T - t)`, the enstrophy of a backward
   self-similar field is `(T - t)^{-1/2} E(s)` with `E(s) = ‖∇_y V(·, s)‖²`.

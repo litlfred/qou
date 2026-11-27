@@ -68,7 +68,7 @@ CODATA via the Bring-surface integration.  This is at the MASS level
 
 **At the substrate H_{3A} level (where this module operates)**: the
 substrate quark-flavor split δ = (m_n − m_p) / M_N is available via
-`flavor_split_leading(q)` (PR #690, prop:flavor-split-substrate; the
+`flavor_split_leading(q)` (PR #690, prop:flavor-split-aether; the
 2026-06-29 de-wire moved this off the POSITED subleading form).
 The `pn_convention` choices are:
 
@@ -258,7 +258,7 @@ def canonical_interface_kinds(
       - "bring_color_weighted" (DEFAULT, 2026-06-01 — canonical/derived):
           Quaternionic color-tube weighting using the substrate-derived
           δ = (m_n − m_p) / M_N from `flavor_split_leading(q)`
-          (PR #690, prop:flavor-split-substrate — substrate-pure,
+          (PR #690, prop:flavor-split-aether — substrate-pure,
           no fitted quark masses).  Net p-n interface factor (applied
           downstream in `closed_form_ratio` / `closed_form_tau_M`):
             f_pn = z − h·(1/2 − δ/4)

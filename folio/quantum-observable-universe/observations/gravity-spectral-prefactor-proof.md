@@ -2,7 +2,7 @@
 
 **Connection to aether geometry.**
 
-The remarks [Gravity emergent](#rem:gravity-emergent) and [GR aether geometry](#rem:gr-substrate-geometry) describe gravity as the CR-manifold curvature of the aether. The proposition above identifies the categorical counterpart: gravity is the high-stratum residue of the Hecke-algebraic mass functional, carrying $G$ as its universal prefactor. The two viewpoints are dual. CR geometry is the aether face; the Plancherel residue is the categorical face.
+The remarks [Gravity emergent](#rem:gravity-emergent) and [GR aether geometry](#rem:gr-aether-geometry) describe gravity as the CR-manifold curvature of the aether. The proposition above identifies the categorical counterpart: gravity is the high-stratum residue of the Hecke-algebraic mass functional, carrying $G$ as its universal prefactor. The two viewpoints are dual. CR geometry is the aether face; the Plancherel residue is the categorical face.
 
 **Corollaries.**
 

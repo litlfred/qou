@@ -7,7 +7,7 @@ export default remark({
     "Adelic-assembly reading of $\\mathcal{L}$ and phase-decoherence non-fullness",
   uses: [
     "def:classical-limit-functor",
-    "def:adelic-substrate",
+    "def:adelic-base-ring",
   ],
   tags: [
     "classical-limit",

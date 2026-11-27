@@ -6,7 +6,7 @@ export default example({
   interprets: "def:archimedean-condition",
   uses: [
     "def:archimedean-condition",
-    "def:motivic-substrate",
+    "def:motivic-base-ring",
     "prop:euler-char-stability",
     "rem:kummer-tower",
     "thm:motivic-perpetual-obstruction",

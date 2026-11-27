@@ -4,7 +4,7 @@ export default remark({
   interprets: "def:mass-identity",
   label: "rem:geometric-drag",
   title: "Geometric drag and the mass residue",
-  uses: ["def:substrate-parameter", "def:mass-identity"],
+  uses: ["def:aether-parameter", "def:mass-identity"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/geometric-drag-0.svg", blockIndex: 0, hash: "09ba06a8e86e" },
   ],

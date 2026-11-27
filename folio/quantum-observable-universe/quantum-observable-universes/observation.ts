@@ -8,7 +8,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:substrate-parameter",
+    "def:aether-parameter",
     "def:categorical-point",
     "prop:fibre-functor-atlas",
   ],

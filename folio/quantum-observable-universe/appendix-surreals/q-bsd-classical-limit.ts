@@ -9,7 +9,7 @@ export default remark({
     "def:categorical-mordell-weil",
     "prop:root-of-unity-truncation",
     "prop:ns-kummer-specialisation",
-    "rem:substrate-gm-torsion",
+    "rem:aether-gm-torsion",
   ],
   tags: [
     "birch-swinnerton-dyer",

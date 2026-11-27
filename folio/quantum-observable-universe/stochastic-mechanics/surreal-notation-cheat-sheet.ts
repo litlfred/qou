@@ -9,6 +9,6 @@ export default remark({
     "cheat-sheet",
     "appendix-pointer",
   ],
-  interprets: "def:frobenius-hopf-substrate",
+  interprets: "def:frobenius-hopf-aether",
   uses: [],
 });

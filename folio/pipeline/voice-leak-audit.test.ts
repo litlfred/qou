@@ -105,7 +105,7 @@ describe("owner ruling 2026-11-20 (every chapter is strict)", () => {
       writeFileSync(join(tmp, "introduction/introduction.ts"), `export default { sections: [{ label: "sec:intro", blocks: ["b0"] }] };\n`);
       writeFileSync(join(tmp, "introduction/b0.ts"), `export default { label: "prose:b0" };\n`);
       writeFileSync(join(tmp, "introduction/b0.md"), `Preview of $q$ and [later](#thm:b3).\n`);
-      writeFileSync(join(tmp, "ch-early/ch-early.ts"), `export default { sections: [{ label: "sec:pre", blocks: ["b1"] }, { label: "sec:substrate-parameter", blocks: ["b2"] }] };\n`);
+      writeFileSync(join(tmp, "ch-early/ch-early.ts"), `export default { sections: [{ label: "sec:pre", blocks: ["b1"] }, { label: "sec:aether-parameter", blocks: ["b2"] }] };\n`);
       writeFileSync(join(tmp, "ch-early/b1.ts"), `export default { label: "def:b1" };\n`);
       writeFileSync(join(tmp, "ch-early/b1.md"), `Premature $q$ before introduction section.\n`);
       writeFileSync(join(tmp, "ch-early/b2.ts"), `export default { label: "def:b2" };\n`);

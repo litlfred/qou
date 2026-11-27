@@ -246,7 +246,7 @@ end Ordered
 
 section Viscosity
 
-/-- Substrate grain `ℏ_q = 1 − q⁻¹` (`def:substrate-parameter`). -/
+/-- Substrate grain `ℏ_q = 1 − q⁻¹` (`def:aether-parameter`). -/
 def hbarQ {K : Type*} [Field K] (q : K) : K := 1 - q⁻¹
 
 /-- The q-NS kinematic viscosity as *introduced* in `def:q-navier-stokes`:

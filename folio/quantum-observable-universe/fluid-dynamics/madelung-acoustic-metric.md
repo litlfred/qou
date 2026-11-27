@@ -13,4 +13,4 @@ $$
   c_s^2 = \frac{\partial P}{\partial\rho}\bigg|_{Q_q}.
 $$
 
-An acoustic horizon forms wherever $|v| = c_s$, coinciding with a gravitational horizon in the aether geometry. General relativity emerges as the geometry of non-uniform brane flow: the [GR aether geometry](#rem:gr-substrate-geometry) is precisely the acoustic manifold. Bosonic modes (where $[F_A, \alpha] = 0$) travel along null acoustic geodesics; fermionic modes ($[F_A, \alpha] \neq 0$) spiral into the vortex filaments of $\psi$.
+An acoustic horizon forms wherever $|v| = c_s$, coinciding with a gravitational horizon in the aether geometry. General relativity emerges as the geometry of non-uniform brane flow: the [GR aether geometry](#rem:gr-aether-geometry) is precisely the acoustic manifold. Bosonic modes (where $[F_A, \alpha] = 0$) travel along null acoustic geodesics; fermionic modes ($[F_A, \alpha] \neq 0$) spiral into the vortex filaments of $\psi$.

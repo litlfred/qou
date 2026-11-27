@@ -6,22 +6,22 @@
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/rem-motivic-substrate-canonicity",
+  "@id": "papers/quantum-observable-universe/blocks/rem-motivic-base-ring-canonicity",
   "@type": [
     "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "rem:motivic-substrate-canonicity",
+  "label": "rem:motivic-base-ring-canonicity",
   "kind": "remark",
   "title": "Canonicity, realizations, and scope of the motivic base ring",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-motivic-substrate",
-    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate",
-    "papers/quantum-observable-universe/blocks/def-adelic-substrate",
+    "papers/quantum-observable-universe/blocks/def-motivic-base-ring",
+    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-aether",
+    "papers/quantum-observable-universe/blocks/def-adelic-base-ring",
     "papers/quantum-observable-universe/blocks/def-arc-space",
     "papers/quantum-observable-universe/blocks/def-motivic-mass-measure"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/def-motivic-substrate",
+  "interprets": "papers/quantum-observable-universe/blocks/def-motivic-base-ring",
   "cites": [
     "references/kontsevich1995",
     "references/denef-loeser2001"

@@ -6,7 +6,7 @@ Bean `qou-x9tm`. Written and committed **before** running the 80-dps aperture-av
 
 `folio/quantum-observable-universe/observations/double-slit-analytical.md` previously described its default overlay on the $600\;\mathrm{eV}$ electron diffraction data of Roger Bach, Damian Pope, Sy-Hwang Liou & Herman Batelaan (*New J. Phys.* 15, 033018, 2013) as "$q$-deformed prediction ($q = 1.020$)". Because $q = 1.020$ is neither $q_0 = 1.10997858\dots$ nor derived from CAL-1/2/3, presenting it as a QOU prediction violates the strict three-calibration anti-fit rule.
 
-Instead, under QOU's local substrate-$q$ principle (`prop:local-substrate-q`, `proton-gravity-tests-intro.md`), $q_{\mathrm{local}}(r) \to 1$ in exterior vacuum (independently required by the $3.42\;\mathrm{dex}$ ${}^{238}\mathrm{U}$ $\alpha$-tunneling discriminator) and deviates from $1$ across an open slit of width $a$ only through the evanescent Yukawa / Compton tails of the two slit walls at $y = \pm a/2$.
+Instead, under QOU's local substrate-$q$ principle (`prop:local-aether-q`, `proton-gravity-tests-intro.md`), $q_{\mathrm{local}}(r) \to 1$ in exterior vacuum (independently required by the $3.42\;\mathrm{dex}$ ${}^{238}\mathrm{U}$ $\alpha$-tunneling discriminator) and deviates from $1$ across an open slit of width $a$ only through the evanescent Yukawa / Compton tails of the two slit walls at $y = \pm a/2$.
 
 ## 2. Pre-Registered Exact Aperture Integral (`workdps = 80`, `q0Anchor = "proton"`)
 

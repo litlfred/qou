@@ -8,7 +8,7 @@ posed in
 docs/audits/2026-06-29-color-weighting-coverage-and-flavor-split-closed-form.md
 (Part D) and 2026-06-29-flavor-split-partial-derivation.md:
 
-  PROVEN leading split (prop:flavor-split-substrate, a 2-strand object):
+  PROVEN leading split (prop:flavor-split-aether, a 2-strand object):
       leading(q) = ℏ_q²·h_q·[2]_q/3 = (q−1)²(1−q⁻⁴)/3
   misses CODATA (m_n−m_p)/M_N by 0.128%.
 

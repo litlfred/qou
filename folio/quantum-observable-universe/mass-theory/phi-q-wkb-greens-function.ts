@@ -16,7 +16,7 @@ export default conjecture({
     "def:archimedean-realization-functor",
     "rem:kashaev-as-archimedean-realization",
     "def:categorical-instanton",
-    "def:adelic-substrate",
+    "def:adelic-base-ring",
     "rem:chern-simons-as-knot-invariant",
     "def:phi-q-piece",
     "prop:reeb-u1-chart-swap",

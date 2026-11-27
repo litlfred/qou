@@ -1146,7 +1146,7 @@
         "reviewed_at": "2026-08-09T13:01:31.034Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/observations/terminal-resolution-cz.ts:0: forward ref: uses prop:local-substrate-q (manifest pos 203) which appears after this block (pos 85) in the chapter"
+        "evidence": "folio/quantum-observable-universe/observations/terminal-resolution-cz.ts:0: forward ref: uses prop:local-aether-q (manifest pos 203) which appears after this block (pos 85) in the chapter"
       },
       {
         "field_hash": {
@@ -1168,7 +1168,7 @@
         },
         "reviewed_tree": "5d8ac78d47e3f97ad85c842c4bfcaaba52fd9822",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/observations/terminal-resolution-cz.ts:0: forward ref: uses prop:local-substrate-q (manifest pos 184) which appears after this block (pos 78) in the chapter"
+        "evidence": "folio/quantum-observable-universe/observations/terminal-resolution-cz.ts:0: forward ref: uses prop:local-aether-q (manifest pos 184) which appears after this block (pos 78) in the chapter"
       },
       {
         "field_hash": {
@@ -1186,7 +1186,7 @@
         "reviewed_at": "2026-11-21T16:41:49.000Z",
         "reviewed_sha": "82236be144e3afe6c18c41fdb9b26ac9e405e0d0",
         "severity": "major",
-        "evidence": "Pre-existing on main (same fail in the committed sidecar): uses prop:local-substrate-q, which sits later in the chapter. Not introduced here; reordering the chapter is out of scope.",
+        "evidence": "Pre-existing on main (same fail in the committed sidecar): uses prop:local-aether-q, which sits later in the chapter. Not introduced here; reordering the chapter is out of scope.",
         "notes": "Full read of the rewritten example (issue #8893)."
       },
       {
@@ -2056,7 +2056,7 @@
         },
         "reviewed_at": "2026-11-21T17:30:00.000Z",
         "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
-        "evidence": "Independent re-QA of #8897 at df85ca0b9c. QOU.Examples.czTerminalResolution records q0 = 1.10998 and hbar = 0.09908 (|0.09908 - (1-1/1.10998)| = 2.9e-6 < 1e-5), matching the .md; the .ts no longer `interprets` prop:terminal-resolution and drops the stale prop:local-substrate-q use (prior forward-ref minor resolved)."
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. QOU.Examples.czTerminalResolution records q0 = 1.10998 and hbar = 0.09908 (|0.09908 - (1-1/1.10998)| = 2.9e-6 < 1e-5), matching the .md; the .ts no longer `interprets` prop:terminal-resolution and drops the stale prop:local-aether-q use (prior forward-ref minor resolved)."
       }
     ],
     "da-citation-misuse": [

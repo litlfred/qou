@@ -6,6 +6,6 @@ export default definition({
   lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.CategoricalReebDerivation",
     validation: "not_checked",
   },
-  uses: ["def:frobenius-hopf-substrate", "def:categorical-reeb"],
+  uses: ["def:frobenius-hopf-aether", "def:categorical-reeb"],
   tags: ["reeb", "derivation", "observer-drift", "contact-geometry"],
 });

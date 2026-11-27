@@ -1,4 +1,4 @@
-Let $\varrho$ be a knot embedding with categorical Möbius energy $E_{\mathrm{cat}}(\varrho)$ as in [Proposition](#prop:mobius-energy), and let $q \neq 1$ be the aether parameter ([Definition](#def:substrate-parameter)).
+Let $\varrho$ be a knot embedding with categorical Möbius energy $E_{\mathrm{cat}}(\varrho)$ as in [Proposition](#prop:mobius-energy), and let $q \neq 1$ be the aether parameter ([Definition](#def:aether-parameter)).
 
 The non-cocommutativity of the Hopf structure at $q \neq 1$ provides a categorical obstruction to self-intersection:
 $$

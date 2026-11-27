@@ -15,7 +15,8 @@ export default chapter({
     // ── Central result: overdetermination of q ──────────────────────────
     section({
       title: "The Aether Consistency Window",
-      label: "sec:substrate-consistency",
+      label: "sec:aether-consistency",
+      renamedFrom: ["sec:substrate-consistency"],
       blocks: [
         "observations-intro",
         "einstein-ether-substrate",
@@ -61,7 +62,8 @@ export default chapter({
     // ── Substrate parameter from lepton masses ────────────────────────
     section({
       title: "Aether Parameter from Lepton Masses",
-      label: "sec:substrate-from-leptons",
+      label: "sec:aether-from-leptons",
+      renamedFrom: ["sec:substrate-from-leptons"],
       blocks: [
         "substrate-from-leptons-intro",
         // Phase 7 orphan reconnection (2026-05-25):
@@ -230,7 +232,7 @@ export default chapter({
         "magic-numbers-from-q",
         "magic-numbers-from-q-computation",
         // Relocated from quantum-observable-universes/
-        // sec:algebraic-substrate-reeb (2026-07-07): the conjectured
+        // sec:algebraic-layer-reeb (2026-07-07): the conjectured
         // full-seven-magic-numbers ↔ S₅-stable Bring period-lattice
         // ranks, sibling to conj:magic-numbers-from-q's {2,8,20,28}
         // derivation.

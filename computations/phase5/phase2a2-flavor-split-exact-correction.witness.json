@@ -43,7 +43,7 @@
     "reproduce": "python3 -u computations/phase5/phase2a2_flavor_split_exact_correction.py"
   },
   "description": "Reconstructs the exact flavor-split correction tower: X = X_leading · (1 + ℏ_q³ + c₄ℏ⁴ + c₅ℏ⁵ + ...) where ℏ_q = (q-1)/q is the substrate Planck constant. Identifies the coefficient c₄ and checks for rational structure.",
-  "contentBlock": "prop:flavor-split-substrate",
+  "contentBlock": "prop:flavor-split-aether",
   "data": {
     "hbar_q": "0.09908171604425850783917712",
     "two_term_fit": {

@@ -12,7 +12,7 @@ export default remark({
   uses: [
     "def:categorical-dirac-operator",
     "def:quantum-observable-universe",
-    "def:substrate-parameter",
+    "def:aether-parameter",
   ],
   cites: [
     "connes1989",

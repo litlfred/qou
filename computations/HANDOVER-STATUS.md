@@ -78,7 +78,7 @@ MISDP via enumeration works for small n_vars.
 - Equivalent to $E_0$ by scaling
 
 ### 2c. Substrate parameter $q_0 \approx :val[q_0]{precision=6}$
-- Categorical — comes from `prop:local-substrate-q` in Ch 7
+- Categorical — comes from `prop:local-aether-q` in Ch 7
 - Not a fit; derived from CODATA $m_\mu / m_e$ ratio
 
 ### 2d. Compound β-decay Q-values (AME 2020)

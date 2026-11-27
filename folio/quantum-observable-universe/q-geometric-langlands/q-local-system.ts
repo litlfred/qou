@@ -6,7 +6,7 @@ export default definition({
   title: "$q$-Local system",
   uses: [
     // The q != 1 non-vanishing that keeps L_q from reducing to a classical
-    // flat bundle. def:substrate-parameter, fixed in the same opening
+    // flat bundle. def:aether-parameter, fixed in the same opening
     // sentence, is omitted: it is already reached through
     // rem:kummer-filtration-obstruction.
     "prop:categorical-dq-squared",

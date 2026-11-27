@@ -20,6 +20,6 @@ export default remark({
     "conj:mass-endomorphism",
     "conj:brane-tower-z-habiro",
     "conj:quantum-dilogarithm-stratified",
-    "def:motivic-substrate",
+    "def:motivic-base-ring",
   ],
 });

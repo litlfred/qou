@@ -20,7 +20,7 @@ This proposition makes the calibration discipline precise.
      \qquad \mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) = 6\,\Lambda(\pi/3) \approx 2.0299.
    $$
 
-   Inverted for $q_0$, CAL-1 and CAL-2 coordinatize the single modulus $q_0$ one-to-one. The modulus is overdetermined. It can be fixed by $\alpha_{\mathrm{EM}}^{-1}$ or by tritium $t_{1/2}$, which agree on $q_0$ to within 0.3% ([aether-consistency window](#prop:substrate-consistency-window)). The computed values anchor $q_0$ on the proton ratio $m_{\mathfrak{p}}/m_e$, for higher precision. This is a substitution within the same overdetermined $H^1$ datum. It does not introduce a new calibration.
+   Inverted for $q_0$, CAL-1 and CAL-2 coordinatize the single modulus $q_0$ one-to-one. The modulus is overdetermined. It can be fixed by $\alpha_{\mathrm{EM}}^{-1}$ or by tritium $t_{1/2}$, which agree on $q_0$ to within 0.3% ([aether-consistency window](#prop:aether-consistency-window)). The computed values anchor $q_0$ on the proton ratio $m_{\mathfrak{p}}/m_e$, for higher precision. This is a substitution within the same overdetermined $H^1$ datum. It does not introduce a new calibration.
 4. **Consequence.** Any predicted mass, binding energy, or Q-value not of the form $m_e^a m_\pi^c \cdot \text{rational}(q_0)$ violates this discipline. It must either introduce a fourth calibration or report a $\tau$-image quantity from the Archimedean side.
 
 ## What the discipline rules out

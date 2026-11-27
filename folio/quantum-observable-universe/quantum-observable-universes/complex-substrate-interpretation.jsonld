@@ -6,19 +6,19 @@
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/rem-complex-substrate-interpretation",
+  "@id": "papers/quantum-observable-universe/blocks/rem-complex-aether-interpretation",
   "@type": [
     "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "rem:complex-substrate-interpretation",
+  "label": "rem:complex-aether-interpretation",
   "kind": "remark",
   "title": "Complex aether parameter and the observability constraint",
   "uses": [
-    "papers/quantum-observable-universe/blocks/ex-substrate-parameter-su2",
+    "papers/quantum-observable-universe/blocks/ex-aether-parameter-su2",
     "papers/quantum-observable-universe/blocks/rem-q-laplacian-interpretation"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "interprets": "papers/quantum-observable-universe/blocks/def-aether-parameter",
   "cites": [
     "references/lusztig1993"
   ],

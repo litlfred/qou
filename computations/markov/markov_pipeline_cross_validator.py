@@ -201,7 +201,7 @@ def main() -> int:
     w.add_data("reference_blocks", [
         "prop:full-pole-structure-mass-trace",
         "prop:gb-residue-spectral-sum",
-        "def:motivic-substrate",
+        "def:motivic-base-ring",
     ])
     w.add_data("lean_classes", [
         "qou:QOU.AlgebraicSubstrate.MotivicSubstrate",

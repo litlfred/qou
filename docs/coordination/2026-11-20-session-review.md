@@ -160,7 +160,7 @@ Queued (`todo`) or high/critical beans (57; full list in JSON):
 - `qou-6qbv` [in-progress, high, mechanical] De-vacuify Lean :True carriers — replace with real statements — last session `01Qmmkt6`
 - `qou-73kb` [in-progress, high, research-open] CHAR-ZERO: audit which Specht CharZero hypotheses are load-bearing and which are proof artifacts — last session `014boi4A`
 - `qou-8lxd` [in-progress, high, research-open] EPIC: eightfold way / SM derived from QOU — last session `01Qmmkt6`
-- `qou-aj49` [in-progress, high, research-open] def:frobenius-hopf-substrate axiom 2 (multiplicative counit) + Frobenius relation + counit law force — last session `01A1cKZc`
+- `qou-aj49` [in-progress, high, research-open] def:frobenius-hopf-aether axiom 2 (multiplicative counit) + Frobenius relation + counit law force — last session `01A1cKZc`
 - `qou-ajfl` [in-progress, high, mechanical] Add disclosure — 3 projections that assert **Theorem/Proposition** with none — last session `01XdKe1J`
 - `qou-argp` [in-progress, high, mechanical] Argument principle on an annulus — the single missing lemma for the converse theta zero locus — last session `01FsqmWK`
 - `qou-c46w` [in-progress, high, mechanical] prop:brings-smoothness-resolution is a PROPOSITION whose cited Lean proof was True AND True AND True — last session `016hDVVW`

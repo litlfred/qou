@@ -1640,7 +1640,7 @@
             "H8": 1
           }
         },
-        "evidence": "H1: the same operator $d_q$ is defined in def:substrate-parameter (same formula). H8: L7 'These operators exist and are unique' inside a definition; $\\delta_q$ is 'the formal adjoint ... with respect to the dagger structure' with no inner product on forms specified.",
+        "evidence": "H1: the same operator $d_q$ is defined in def:aether-parameter (same formula). H8: L7 'These operators exist and are unique' inside a definition; $\\delta_q$ is 'the formal adjoint ... with respect to the dagger structure' with no inner product on forms specified.",
         "notes": "Milnor H1-H8 = [1, 1, 1, 2, 2, 2, 1, 1] (T=11/16, fail); weakest: H1, H2, H3, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): Keep one definition of $d_q$ and cite it. Define the inner product on $\\Omega^\\bullet(A)$ (via $\\star_q$ and $\\int_A$) before $\\delta_q$. Delete 'These operators exist and are unique.' Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
         "reviewer": {
           "kind": "agent",

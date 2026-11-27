@@ -1,7 +1,8 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
-  label: "prop:substrate-consistency-window",
+  label: "prop:aether-consistency-window",
+  renamedFrom: ["prop:substrate-consistency-window"],
   lean: { ref: "qou:QOU.Observations.substrate_consistency_window", validation: "not_checked" },
   title: "Overdetermination of the aether parameter",
   tags: [

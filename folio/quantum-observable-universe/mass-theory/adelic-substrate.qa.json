@@ -1,6 +1,6 @@
 {
   "$schema": "block-qa/v1",
-  "label": "def:adelic-substrate",
+  "label": "def:adelic-base-ring",
   "kind": "definition",
   "paths": {
     "ts": "folio/quantum-observable-universe/mass-theory/adelic-substrate.ts",
@@ -763,7 +763,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/mass-theory/adelic-substrate.ts:0: uses[] dependency cycle: def:adelic-substrate -> def:classical-limit-functor -> def:adelic-substrate"
+        "evidence": "folio/quantum-observable-universe/mass-theory/adelic-substrate.ts:0: uses[] dependency cycle: def:adelic-base-ring -> def:classical-limit-functor -> def:adelic-base-ring"
       }
     ],
     "bib-cited-ref-has-url": [

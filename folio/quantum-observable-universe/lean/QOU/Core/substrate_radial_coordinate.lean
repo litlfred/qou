@@ -3,7 +3,7 @@ import Mathlib.Data.Real.Basic
 /-!
 # QOU.substrate_radial_coordinate — Reeb rotation `𝓛_ξ Z = J·ℏ_q·Z`
 
-**Proposition** ([`prop:substrate-radial-coordinate`](../../../quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.md)).
+**Proposition** ([`prop:aether-radial-coordinate`](../../../quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.md)).
 
 *Within the contact affine chart `U_ξ`, the substrate parameter
 `q` governs the radial and phase coordinates of the state.  Let
@@ -52,7 +52,7 @@ class SubstrateRadialContext where
   claim_reeb_rotation : ∀ (Z : Z_type),
     lieXi Z = J (smul (quantumPlanck q) Z)
 
-/-- **Reeb-rotation eigenvalue equation** ([`prop:substrate-radial-coordinate`]).
+/-- **Reeb-rotation eigenvalue equation** ([`prop:aether-radial-coordinate`]).
 
     For every affine coordinate `Z`, `𝓛_ξ Z = J(ℏ_q · Z)`. -/
 -- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.md

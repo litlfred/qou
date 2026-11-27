@@ -17,7 +17,7 @@ More precisely, q|_U is the unique real root q > 1 of:
 where Vol(4₁) ≈ 2.02988 and m_μ/m_e = 206.7682830 (CODATA 2022).
 Witness: computations/knot-volumes.witness.json (SnapPy 3.3.2, all passed).
 
-LaTeX label: `prop:local-substrate-q`
+LaTeX label: `prop:local-aether-q`
 
 ## References
 

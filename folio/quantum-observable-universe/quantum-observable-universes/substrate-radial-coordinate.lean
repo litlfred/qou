@@ -12,7 +12,7 @@ governs radial and phase coordinates:
 
 The q-Reeb flow: ℒ_ξ Z = J · ℏ_q · Z where ℏ_q = 1 - q⁻¹.
 
-LaTeX label: `prop:substrate-radial-coordinate`
+LaTeX label: `prop:aether-radial-coordinate`
 
 ## References
 

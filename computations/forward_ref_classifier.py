@@ -121,9 +121,9 @@ FOUNDATIONAL_LATE = {
                               # formally developed in the mass machinery.
     "def:z-habiro-ring",
     "def:qz-bicompletion",
-    "def:motivic-substrate",
+    "def:motivic-base-ring",
     "def:archimedean-realization-functor",
-    "def:adelic-substrate",   # the ring of adeles 𝔸 — foundational substrate
+    "def:adelic-base-ring",   # the ring of adeles 𝔸 — foundational substrate
                               # object, peer of motivic-substrate +
                               # archimedean-realization-functor above; used
                               # early (lifting-and-descent motivic-Galois

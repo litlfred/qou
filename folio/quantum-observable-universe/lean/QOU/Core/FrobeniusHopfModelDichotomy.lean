@@ -52,7 +52,7 @@ Two limits, both real:
 
 It is the classical fact, made exact. A finite-dimensional Hopf algebra is
 Frobenius, but its Frobenius comultiplication is **not** its Hopf
-comultiplication. `def:frobenius-hopf-substrate` axiom 3 fixes `Δ` as the
+comultiplication. `def:frobenius-hopf-aether` axiom 3 fixes `Δ` as the
 Frobenius one and axiom 2 now demands an antipode against *that* `Δ` — so the
 two are being forced to coincide, and the collapse is what that costs.
 

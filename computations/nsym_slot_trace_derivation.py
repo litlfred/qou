@@ -1,6 +1,6 @@
 """N_sym from the Hoefsmit slot realisation: exact symbolic derivation.
 
-Block: conj:g-action-on-substrate.  Audit: docs/audits/2026-11-20-nsym-derivation.md.
+Block: conj:g-action-on-aether.  Audit: docs/audits/2026-11-20-nsym-derivation.md.
 Lean twin: QOU.QuantumObservableUniverses.NSymSlotDerivation.
 
 Builds V^{x6} (V = 2-dim q-fundamental) with the Hecke generators

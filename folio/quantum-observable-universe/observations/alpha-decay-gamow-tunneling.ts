@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:substrate-parameter",
+    "def:aether-parameter",
     "def:categorical-q-ext-deriv",
     "def:quantum-planck-constant",
     "def:borromean-baryon",

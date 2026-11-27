@@ -6,7 +6,7 @@ import Mathlib.Tactic
 
 Substrate parameter and quantum Planck constant.
 
-LaTeX label: `def:substrate-parameter-planck`
+LaTeX label: `def:aether-parameter-planck`
 -/
 
 set_option autoImplicit false
@@ -16,7 +16,7 @@ namespace QOU.AlgebraicSubstrate
 /-- **SubstrateParameterPlanck**: the deformation parameter `q ∈ ℂ*`
     and the derived quantum Planck constant `ℏ_q = 1 - q⁻¹`.
 
-    LaTeX: `\label{def:substrate-parameter-planck}` -/
+    LaTeX: `\label{def:aether-parameter-planck}` -/
 structure SubstrateParameterPlanck where
   /-- The substrate parameter `q ∈ ℂ`, nonzero. -/
   q : ℂ

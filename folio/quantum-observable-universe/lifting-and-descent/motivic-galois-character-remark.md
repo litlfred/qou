@@ -3,4 +3,4 @@ The motivic-Galois layer on the obstruction $\kappa_n \in H^2(\mathcal{S}, \math
 **Choice of level.**
 The Čech-cocycle and Hochschild presentations of $\kappa_n$ become realizations of $\chi^{\mathrm{mot}}_A$ at the archimedean and Hochschild-deformation places. The [Hochschild–Kummer](#rem:hochschild-kummer-connection) duality corresponds to the duality between these two realizations.
 
-Conditional on the [motivic base ring](#def:motivic-substrate), the character $\chi^{\mathrm{mot}}_A$ is defined and is compatible with each local realization $\rho_p$.
+Conditional on the [motivic base ring](#def:motivic-base-ring), the character $\chi^{\mathrm{mot}}_A$ is defined and is compatible with each local realization $\rho_p$.

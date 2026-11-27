@@ -1,7 +1,7 @@
 One discretizes the continuous Reeb flow $\phi_t^q$ ([$q$-Reeb flow](#ex:q-reeb-flow)) at the Big Bang. Here the aether parameter $q \to \infty$ and the quantum Planck constant $\hbar_q = 1 - q^{-1} \to 1$ ([quantum Planck constant](#def:quantum-planck-constant)). This limits defines a **Planck step**—the minimal dynamical time unit of the QOU. Time is discrete at the origin.
 
 **Algebraic normalization.**
-The $q$-deformed Reeb flow rotates the affine coordinate $Z$ of a state ([aether radial coordinate](#prop:substrate-radial-coordinate)):
+The $q$-deformed Reeb flow rotates the affine coordinate $Z$ of a state ([aether radial coordinate](#prop:aether-radial-coordinate)):
 
 $$
   \mathcal{L}_\xi Z = J\hbar_q Z.
@@ -27,7 +27,7 @@ The Planck step acts as the polynomial iteration $f_q(z) = z^2 + c(q)$ ([Julia s
 | Regime | $q$ | $\hbar_q$ | $t_P$ | Interpretation |
 |--------|-----|-----------|-------|----------------|
 | Big Bang | $q \to \infty$ | $\to 1$ | $\to 1$ | Minimal step; time is fastest |
-| Physical | $q = q_0$ ([local aether $q$](#prop:local-substrate-q)) | $0.0988$ | $\approx 10.1$ | The Planck time |
+| Physical | $q = q_0$ ([local aether $q$](#prop:local-aether-q)) | $0.0988$ | $\approx 10.1$ | The Planck time |
 | Classical | $q \to 1$ | $\to 0$ | $\to \infty$ | No Reeb period; time freezes |
 
 At the Big Bang, $t_P \to 1$. One Planck step exactly equals one unit. The continuous Reeb flow is merely the $\mathbb{R}$-shadow of this discrete iteration. There is no sub-step resolution.

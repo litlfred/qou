@@ -236,7 +236,7 @@ CODATA numbers appear only in the comparison column.
 |---|---|---|---|---|
 | P1 | n–p cell 2E₀·ln q (this thread) | K-weight ratio ε_n/ε_p = q⁻², log map, kT = E₀ | derived (Lean: `common_factor_log_cell`, `cell_eq_eigen_gap`) | `SpectatorEnergyMap.lean` |
 | P1′ | same | assignment to an observable | **open** (ruling 2026-11-21); bound cell < 2m_e excludes m_n − m_p directly | audit §12 |
-| P2 | prop:flavor-split-substrate | Step 1 pair-Skein difference | asserted twice: the pair-Skein formula takes per-quark masses μ as inputs, and is convention C | `flavor-split-substrate-proof.md`, `pair-skein-mass-formula.md` |
+| P2 | prop:flavor-split-aether | Step 1 pair-Skein difference | asserted twice: the pair-Skein formula takes per-quark masses μ as inputs, and is convention C | `flavor-split-substrate-proof.md`, `pair-skein-mass-formula.md` |
 | P2′ | same | Step 2 (μ_d − μ_u)/μ_avg = h²ℏ/√q | asserted: fitted to experiment (the proof says so) | same |
 | P3 | `flavor_split_subleading` (1 + ℏ³) | — | asserted (marked POSITED) | `_li_2_q_util.py` |
 | P4 | `bring_color_weighted` f_pn = z − h(1/2 − δ/4) | δ = P2′ | asserted by inheritance | `closed_form_tau_M.py` |

@@ -7,7 +7,7 @@ export default remark({
     "Primitivity of $\\varepsilon$ and the $q-1 \\leftrightarrow \\varepsilon$ convention",
   uses: [
     "def:q-from-epsilon",
-    "def:frobenius-hopf-substrate",
+    "def:frobenius-hopf-aether",
     "def:classical-limit-obstruction",
   ],
   tags: [

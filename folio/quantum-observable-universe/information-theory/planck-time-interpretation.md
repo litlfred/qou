@@ -1,5 +1,5 @@
 **Interpretation.**
-One Planck time equals the period of a single full circuit of the $q$-Reeb flow ([$q$-Reeb flow](#ex:q-reeb-flow)). One measures this in discrete $f_q$-iterations on the exceptional divisor. One circuit comprises $t_P(q)$ iterations of $f_q(z) = z^2 + c(q)$. At the deep-quantum limit ($t_P = 1$), one iteration completes one circuit. At the physical aether value $q = q_0$ ([local aether $q$](#prop:local-substrate-q)), roughly $10$ iterations compose one circuit. The reciprocal $\hbar_q = 1/t_P$ represents the angular velocity: the fraction of a full circuit completed per $f_q$-iteration.
+One Planck time equals the period of a single full circuit of the $q$-Reeb flow ([$q$-Reeb flow](#ex:q-reeb-flow)). One measures this in discrete $f_q$-iterations on the exceptional divisor. One circuit comprises $t_P(q)$ iterations of $f_q(z) = z^2 + c(q)$. At the deep-quantum limit ($t_P = 1$), one iteration completes one circuit. At the physical aether value $q = q_0$ ([local aether $q$](#prop:local-aether-q)), roughly $10$ iterations compose one circuit. The reciprocal $\hbar_q = 1/t_P$ represents the angular velocity: the fraction of a full circuit completed per $f_q$-iteration.
 
 **Regime table.**
 

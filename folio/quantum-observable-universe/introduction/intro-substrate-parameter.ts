@@ -1,5 +1,6 @@
 import { prose } from "../../schema/builders";
 
 export default prose({
-  label: "prose:intro-substrate-parameter",
+  label: "prose:intro-aether-parameter",
+  renamedFrom: ["prose:intro-substrate-parameter"],
 });

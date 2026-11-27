@@ -7,5 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.planckTime",
     validation: "leanok",
   },
-  uses: ["def:substrate-parameter", "def:quantum-planck-constant"],
+  uses: ["def:aether-parameter", "def:quantum-planck-constant"],
 });

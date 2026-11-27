@@ -257,7 +257,7 @@ conj:q-gl-classical-limit (SECONDARY)
 
 | Block | References | Chapter | Status |
 |-------|-----------|---------|--------|
-| `q-gl-intro.ts` | `def:substrate-parameter`, `def:quantum-observable-universe`, `def:quantum-characteristic-classes`, `rem:kummer-filtration-obstruction`, `rem:fibre-functor-rigidity` | Ch 1–3 (Introduction, Categorical Substrate) | ✓ Uses canonical labels |
+| `q-gl-intro.ts` | `def:aether-parameter`, `def:quantum-observable-universe`, `def:quantum-characteristic-classes`, `rem:kummer-filtration-obstruction`, `rem:fibre-functor-rigidity` | Ch 1–3 (Introduction, Categorical Substrate) | ✓ Uses canonical labels |
 | `q-hecke-operator.ts` | `prop:braid-action-tensor` | Ch 4 (Iwahori–Hecke Algebra) | ✓ Cites Ch 4 braiding |
 | `q-langlands-dual.ts` | `def:quantum-gauge-group`, `def:quantum-su2` | Ch 2 (Models) | ✓ |
 | `q-flat-connection.ts` | `prop:categorical-dq-squared` | Ch 2 (Categorical Substrate) | ✓ |

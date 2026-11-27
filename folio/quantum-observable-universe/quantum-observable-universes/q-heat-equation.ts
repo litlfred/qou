@@ -9,7 +9,7 @@ export default definition({
   },
   uses: [
     "def:q-harmonic-form",
-    "prop:substrate-radial-coordinate",
+    "prop:aether-radial-coordinate",
   ],
   authorNotes: [
     {

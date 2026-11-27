@@ -7,7 +7,7 @@ import Mathlib.CategoryTheory.Monoidal.Hopf_
 # The antipode is determined, and `S² = id` is not
 
 Companion to `QOU.AntipodeIndependence`, which records the state of
-`def:frobenius-hopf-substrate` **before** 2026-09-14: `S` was named by the
+`def:frobenius-hopf-aether` **before** 2026-09-14: `S` was named by the
 definition and constrained by no law, so every question about it was
 *independent* rather than open.
 
@@ -59,7 +59,7 @@ about the current one.
 
 `FrobeniusHopfData` is **not** asserted to be a bialgebra. The bimonoid
 compatibility — `Δ ∘ μ = (μ ⊗ μ) ∘ tensorμ ∘ (Δ ⊗ Δ)`, i.e.
-`CategoryTheory.BimonObj` — appears nowhere in `def:frobenius-hopf-substrate`,
+`CategoryTheory.BimonObj` — appears nowhere in `def:frobenius-hopf-aether`,
 whose axiom 2 asks only for a coalgebra object. The Frobenius relation is a
 *different* compatibility and does not imply it. Consequently this structure
 does not extend to a `HopfObj` and `antipode_sq_of_comm` cannot be applied to

@@ -108,7 +108,7 @@ from witness_base import load_and_hash_upstream  # noqa: E402
 #   m_p_substrate  ← C2 inflection at d²A/da² = 0
 #                     (probe_a_selection_criteria, merged)
 #   m_n_substrate  ← m_p_substrate · (1 + (q-1)²·(1-q⁻⁴)·(1+ℏ_q³)/3)
-#                     (prop:flavor-split-substrate, merged in #663;
+#                     (prop:flavor-split-aether, merged in #663;
 #                      sub-leading (1+ℏ_q³) correction via centralized
 #                      _li_2_q_util.flavor_split_subleading helper)
 #
@@ -206,7 +206,7 @@ else:
     M_P_MEV = _m_p_substrate
     m_n_derived_3input = _m_n_substrate
     _NUCLEON_ANCHOR_SOURCE = (
-        "substrate-pure (C2 inflection + prop:flavor-split-substrate "
+        "substrate-pure (C2 inflection + prop:flavor-split-aether "
         "with (1+ℏ_q³) sub-leading correction; no CODATA m_p / m_n input)"
     )
 

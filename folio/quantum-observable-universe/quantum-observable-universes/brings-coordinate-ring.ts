@@ -6,7 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.BringsCoordinateRing",
     validation: "not_checked",
   },
-  uses: ["def:frobenius-hopf-substrate"],
+  uses: ["def:frobenius-hopf-aether"],
   defines: ["brings-coordinate-ring"],
   tags: ["brings-curve", "coordinate-ring", "genus-4", "S5-symmetry"],
 });

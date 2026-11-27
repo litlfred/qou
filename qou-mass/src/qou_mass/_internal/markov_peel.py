@@ -86,7 +86,7 @@ def _color_delta():
     if _COLOR_DELTA is None:
         # DE-WIRED 2026-06-29 (owner directive): the canonical color-weighting
         # δ now uses the PROVEN leading flavor split (flavor_split_leading,
-        # prop:flavor-split-substrate), NOT the posited flavor_split_subleading
+        # prop:flavor-split-aether), NOT the posited flavor_split_subleading
         # — the (1+ℏ_q³) factor is unproven and 76%-insufficient (audit
         # 2026-06-29-color-weighting-coverage-and-flavor-split-closed-form.md).
         # Re-wire to the derived 3-strand correction once it lands.

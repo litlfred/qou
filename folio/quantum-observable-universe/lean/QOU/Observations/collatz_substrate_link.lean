@@ -9,7 +9,7 @@ Brick 1 (`SkeinCollatzArith`, in `QCollatz.lean`) showed the Skein-Collatz
 **brick 2**: that `q` is the **QOU substrate parameter** — the map's arithmetic
 is *derived from an actual `ArchimedeanSubstrateField`* of the framework, not posited.
 
-`QOU.ArchimedeanSubstrateField M` (`def:substrate-parameter`) furnishes, at each point
+`QOU.ArchimedeanSubstrateField M` (`def:aether-parameter`) furnishes, at each point
 `p ∈ M`, the substrate field `q(p) : ℝ` with `q(p) ≥ 1 > 0` and never a root of
 unity. Feeding `q(p)` to `SkeinCollatzArith` realises the whole map arithmetic —
 `[2]_q`, `[3]_q`, the Skein divisibility identity, the contraction gap, the

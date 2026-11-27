@@ -1,7 +1,8 @@
 import { prose } from "../../schema/builders";
 
 export default prose({
-  label: "sec:algebraic-substrate-preamble",
+  label: "sec:algebraic-layer-preamble",
+  renamedFrom: ["sec:algebraic-substrate-preamble"],
   cites: [
     "yekutieli2010",
     "larson-sweedler1969",

@@ -15,7 +15,7 @@ export default remark({
   uses: [
     "def:information-theoretic-time",
     "prop:reeb-operations-per-planck",
-    "prop:local-substrate-q",
+    "prop:local-aether-q",
     "def:planck-time",
     "ex:q-reeb-flow",
     "rem:information-theoretic-time-julia-microscopic",

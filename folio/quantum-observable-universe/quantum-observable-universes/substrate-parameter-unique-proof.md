@@ -1,7 +1,7 @@
 Suppose $q, q' \in \mathrm{End}(\mathbf{1})$ are both aether
 parameters for the same QOU $(\mathbf{C}, A, \tau)$.  Each extracts
 from the same braiding $c_{V,V}$ via the spectral decomposition
-of [existence](#thm:substrate-parameter-exists).
+of [existence](#thm:aether-parameter-exists).
 
 **Step 1 (spectral data is intrinsic).**  The rigid monoidal
 structure and the volume constraint

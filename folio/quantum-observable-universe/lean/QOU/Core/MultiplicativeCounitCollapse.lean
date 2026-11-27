@@ -7,7 +7,7 @@ import Mathlib.LinearAlgebra.TensorProduct.Finiteness
 /-!
 # A multiplicative counit collapses a Frobenius algebra (no antipode needed)
 
-The prose definition `def:frobenius-hopf-substrate` once listed, as its axiom 2,
+The prose definition `def:frobenius-hopf-aether` once listed, as its axiom 2,
 that the counit is multiplicative, `ε(ab) = ε(a)ε(b)`. This file proves that
 this axiom alone, together with the Frobenius relation and one counit law,
 forces every element to be a scalar multiple of `1`:

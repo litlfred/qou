@@ -1,12 +1,13 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  label: "rem:adelic-substrate-integration",
+  label: "rem:adelic-base-ring-integration",
+  renamedFrom: ["rem:adelic-substrate-integration"],
   title: "Motivation for the adelic base ring and Tate integration",
-  interprets: "def:adelic-substrate",
+  interprets: "def:adelic-base-ring",
   tags: ["adeles", "macroscopic-limit", "tate-integral", "global"],
   uses: [
-    "def:adelic-substrate",
+    "def:adelic-base-ring",
     "def:archimedean-realization-functor",
     "def:algebraic-quantum-volume",
     "def:classical-limit-functor",

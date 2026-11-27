@@ -369,11 +369,11 @@ def compute_t2_t3_from_vols(
     return t2, t3
 
 
-# ── prop:flavor-split-substrate helpers (from #690) ────────────
+# ── prop:flavor-split-aether helpers (from #690) ────────────
 
 
 def flavor_split_leading(q: mpf, q_inv: mpf | None = None) -> mpf:
-    """Δm / M_N leading-order substrate formula (prop:flavor-split-substrate).
+    """Δm / M_N leading-order substrate formula (prop:flavor-split-aether).
 
     Δm / M_N = (q − 1)² · (1 − q⁻⁴) / 3 = ℏ_q² · h_q · [2]_q / 3
 
@@ -400,7 +400,7 @@ def flavor_split_subleading(q: mpf, q_inv: mpf | None = None) -> mpf:
     demands is C_true = (Δm/M_N)_CODATA / leading = 1.0012784, whereas
     (1+ℏ_q³) = 1.0009727 — it supplies only 76% of the gap
     ((C_true−1)/ℏ_q³ = 1.314). So it is a partial shape-fix, not the closure,
-    and must NOT be cited as backed by `prop:flavor-split-substrate` (which
+    and must NOT be cited as backed by `prop:flavor-split-aether` (which
     proves ONLY the leading `flavor_split_leading`).
 
     The genuine subleading correction should be DERIVED from the 3-strand /

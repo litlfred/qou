@@ -9,7 +9,7 @@ The production two-body binding form (`mass_binding_dashboard._bond_type_L`) giv
     z_D       = q_0^3/(q_0^2 + 1)          [convention D, owner ruling R1 2026-08-15]
     h         = q_0 - 1/q_0
     t         = 1/2 - delta/4              [bring_color_weighted, owner ruling R3]
-    delta     = (q_0-1)^2 (1 - q_0^-4)/3   [prop:flavor-split-substrate]
+    delta     = (q_0-1)^2 (1 - q_0^-4)/3   [prop:flavor-split-aether]
 
 against B_AME(2H) = 2.2245662 MeV: an overshoot of +27.34 %.  2H is the ONLY
 negative residual in the low-isotope table (R = -0.61; every other isotope has
@@ -155,7 +155,7 @@ def free_parameter_inventory():
          "fixed_by": "convexity of the colour superposition (a = (1-t)+t = 1)",
          "kind": "forced", "continuous_freedom": 0},
         {"ingredient": "t = 1/2 - delta/4", "role": "p-n colour weight",
-         "fixed_by": "owner ruling R3 + prop:flavor-split-substrate",
+         "fixed_by": "owner ruling R3 + prop:flavor-split-aether",
          "kind": "derived", "continuous_freedom": 0},
         {"ingredient": "(1-h)^(delta_e/2)", "role": "writhe normalisation",
          "fixed_by": "QOU.QBeta.WritheNormalisation (sorry-free, unique up to sign)",
@@ -404,7 +404,7 @@ def main():
             "B_sym(2H) = E_0 * L_pn = 2.8328 MeV against B_AME = 2.2246 MeV, +27.34 %, "
             "with ZERO continuous free parameters: m_e is CAL-1, q_0 is the CAL-2 proxy "
             "pin, E_0's form is derived, the interface coefficient a = 1 is forced by "
-            "convexity, the colour weight is derived from prop:flavor-split-substrate, "
+            "convexity, the colour weight is derived from prop:flavor-split-aether, "
             "and the writhe factor is Lean-proved unique up to sign. So the overshoot is "
             "a PARAMETER-FREE PREDICTION FAILURE of the two-body kernel, not a tuning gap. "
             "Of the ingredients, only the colour weight t reaches the target at all, and "

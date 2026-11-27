@@ -5,7 +5,7 @@ import Mathlib.Tactic.Linarith
 # QOU.Observations.substrate_consistency_window
 
 **Canonical declaration** for content block
-[`prop:substrate-consistency-window`](../../../quantum-observable-universe/observations/substrate-consistency-window.md): *Overdetermination of the substrate parameter*.
+[`prop:aether-consistency-window`](../../../quantum-observable-universe/observations/substrate-consistency-window.md): *Overdetermination of the substrate parameter*.
 
 This module states the manuscript claim conditional on the §3b hypothesis class.
 -/

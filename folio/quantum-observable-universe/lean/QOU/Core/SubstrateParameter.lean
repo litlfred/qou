@@ -17,7 +17,7 @@ the quantum Planck constant `ℏ_q = 1 − q⁻¹`.
 carrying `field_pos`, `field_ge_one` and `not_root_of_unity` — and that
 disagreed with both the block and the co-located siblings:
 
-* `def:substrate-parameter` defines the substrate parameter as
+* `def:aether-parameter` defines the substrate parameter as
   **`q ∈ End(𝟙)`** — categorical, no ordering, no `q ≥ 1`, no `ℝ`.
 * the siblings (`quantum-observable-universes/substrate-parameter.lean`,
   `quantum-gauge-group.lean`) had already migrated to the two-layer shape,
@@ -36,7 +36,7 @@ library. Now:
 The rename is *not* a demotion of the archimedean layer: it keeps all four
 fields, so every one of the 87 references across 22 library modules kept
 working unchanged. What it fixes is the **name**: `SubstrateParameter` now
-means what `def:substrate-parameter` says it means, and the real-valued
+means what `def:aether-parameter` says it means, and the real-valued
 specialisation is honestly labelled as living past the wall.
 
 Neither gate caught this, and the reason is worth remembering:
@@ -58,7 +58,7 @@ namespace QOU
     unity" are **archimedean** facts and live on `ArchimedeanSubstrateField`
     below, past the §7c wall.
 
-    LaTeX: `\label{def:substrate-parameter}` -/
+    LaTeX: `\label{def:aether-parameter}` -/
 structure SubstrateParameter (M : Type*) where
   /-- The categorical substrate field `q : M → R_q`. Records the local value
       of the `End(𝟙) ≅ R_q`-element at each point `p`. -/

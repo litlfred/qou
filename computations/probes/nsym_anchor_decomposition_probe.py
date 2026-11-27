@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """What the N_sym "anchor" 213.11 is made of, in exact arithmetic.
 
-Block: conj:g-action-on-substrate.  Audit: docs/audits/2026-11-20-nsym-derivation.md.
+Block: conj:g-action-on-aether.  Audit: docs/audits/2026-11-20-nsym-derivation.md.
 
 computations/n_sym_numerical_anchor.py defines
     N_v^script = v / (E_x mu_0),  E_x = (q - q^-1)/2,  m_e = 3 E_x mu_0

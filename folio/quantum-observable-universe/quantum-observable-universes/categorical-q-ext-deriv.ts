@@ -9,7 +9,7 @@ export default definition({
   },
   uses: [
     "def:categorical-connection",
-    "def:substrate-parameter",
+    "def:aether-parameter",
     "prop:positive-definite-dagger",
   ],
   examples: ["ex:q-ext-deriv", "ex:q-lie-bracket", "ex:q-connection", "ex:q-reeb-vector-field", "ex:q-reeb-flow", "ex:q-torsion-leaf"],

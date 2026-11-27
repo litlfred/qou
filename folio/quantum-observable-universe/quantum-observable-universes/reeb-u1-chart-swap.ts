@@ -19,7 +19,7 @@ export default proposition({
     "thm:categorical-reeb-exists",
     "ex:categorical-reeb-brings",
     "ex:reeb-su2",
-    "def:frobenius-hopf-substrate",
+    "def:frobenius-hopf-aether",
     "rem:i-as-braiding-orientation",
     "def:projective-line-object",
     "def:quantum-observable-universe",

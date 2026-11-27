@@ -30,7 +30,7 @@ is presented purely as a family of place-indexed evaluations.
 Ref: [kontsevich1995] — Kontsevich's motivic integration lecture
 Ref: [denef-loeser2001] https://doi.org/10.1090/S0894-0347-01-00374-7
 Ref: [tate1967] Fourier analysis in number fields and Hecke's zeta functions
-LaTeX label: `def:motivic-substrate`
+LaTeX label: `def:motivic-base-ring`
 -/
 
 namespace QOU.AlgebraicSubstrate
@@ -66,7 +66,7 @@ inductive Place : Type
     target is nontrivial at the archimedean place AND at some
     finite place — the minimal non-vacuous fragment of the Tate
     factorisation `ρ_tot([X]) = (ρ_v([X]))_v` of
-    `def:adelic-substrate`.  This guarantees the substrate is
+    `def:adelic-base-ring`.  This guarantees the substrate is
     genuinely adelic (supported neither entirely at `∞` nor entirely
     at one finite place) without committing to a specific integral
     subring data.  The full place-compatibility statement (almost-
@@ -94,7 +94,7 @@ class MotivicSubstrate
       The archimedean realization target is nontrivial — i.e. the
       substrate has a non-degenerate archimedean shadow.  This is
       the minimal non-vacuous fragment of the Tate factorisation
-      `ρ_tot([X]) = (ρ_v([X]))_v` of `def:adelic-substrate`: the
+      `ρ_tot([X]) = (ρ_v([X]))_v` of `def:adelic-base-ring`: the
       restricted product over places assembles a non-trivial
       classical-limit object only when the archimedean place
       contributes non-degenerately.
@@ -112,7 +112,7 @@ class MotivicSubstrate
 
       At least one finite place `p` has a non-trivial realization
       target.  Together with `archimedean_nontrivial`, this is the
-      minimal restricted-product condition of `def:adelic-substrate`:
+      minimal restricted-product condition of `def:adelic-base-ring`:
       the substrate is genuinely adelic, supported neither entirely
       at `∞` nor entirely on the archimedean continuum, but spread
       across the archimedean place AND at least one non-archimedean

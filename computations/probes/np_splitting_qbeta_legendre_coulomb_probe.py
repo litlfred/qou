@@ -333,7 +333,7 @@ def evaluate_anchor(pin_name: str, q: mpf) -> dict:
         "S06_substrate_skein_linear": {
             "val": m_p_mod * f_sub,
             "status": "conditional_conjecture_ansatz",
-            "formula": "m_p(q_0) * (q_0 - 1)^2 * (1 - q_0^{-4}) / 3  [conj:flavor-split-substrate-mass]",
+            "formula": "m_p(q_0) * (q_0 - 1)^2 * (1 - q_0^{-4}) / 3  [conj:flavor-split-aether-mass]",
         },
         "S07_substrate_skein_cayley": {
             "val": m_p_mod * f_sub / (mpf(1) - f_sub / mpf(2)),

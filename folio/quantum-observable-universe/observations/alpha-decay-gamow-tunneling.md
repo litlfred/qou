@@ -6,7 +6,7 @@ $$
 
 and tunnels from contact radius $R_{\mathrm{touch}}$ to classical turning radius $R_{\mathrm{turn}} = 2 Z_d \alpha_q \hbar c / Q_\alpha$ in exterior vacuum where the effective deformation relaxes to $q_{\mathrm{local}}(r) \to 1$.
 
-With zero fitted nuclear parameters, all inputs are fixed by the three calibrations: the [aether parameter](#def:substrate-parameter) $q_0$ determines the Bring--Schwinger coupling $\alpha_q^{-1} \approx 137.036$, while the charged-pion Compton length $r_\pi = \hbar c / m_{\pi^\pm} \approx 1.4138\;\mathrm{fm}$ fixes the tetrahedral bond $\ell_{\mathrm{bond}} = \tfrac{3}{2} r_\pi$ and the face-centred cubic Wigner--Seitz radius constant
+With zero fitted nuclear parameters, all inputs are fixed by the three calibrations: the [aether parameter](#def:aether-parameter) $q_0$ determines the Bring--Schwinger coupling $\alpha_q^{-1} \approx 137.036$, while the charged-pion Compton length $r_\pi = \hbar c / m_{\pi^\pm} \approx 1.4138\;\mathrm{fm}$ fixes the tetrahedral bond $\ell_{\mathrm{bond}} = \tfrac{3}{2} r_\pi$ and the face-centred cubic Wigner--Seitz radius constant
 
 $$
   r_0^{\mathrm{FCC}}

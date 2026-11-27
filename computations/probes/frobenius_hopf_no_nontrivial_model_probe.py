@@ -3,7 +3,7 @@
 
 `QOU.FrobeniusHopfData.dichotomy_of_scalars_field` (Lean, sorry-free) says that
 in a preadditive monoidal category whose scalars form a field, every model of
-`def:frobenius-hopf-substrate` has `A` a zero object or a retract of the tensor
+`def:frobenius-hopf-aether` has `A` a zero object or a retract of the tensor
 unit.  Over `ModuleCat k` that means `dim A <= 1`.
 
 The prediction this probe tests is the *sharp* one, and it is falsifiable: for

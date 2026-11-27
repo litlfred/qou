@@ -40,7 +40,7 @@ abbrev R_q := LaurentPolynomial ℤ
 /-- **Substrate parameter** (categorical) — local prerequisite.
 
     Re-declared from the sibling block `substrate-parameter.lean`
-    (`def:substrate-parameter`) so this sibling is a self-contained
+    (`def:aether-parameter`) so this sibling is a self-contained
     compilation unit — importing the library `SubstrateParameter`
     module would collide with its own `QuantumGaugeGroup`
     declaration.  Keep field-for-field in sync with the sibling. -/

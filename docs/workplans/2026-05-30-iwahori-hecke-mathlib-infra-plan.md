@@ -85,7 +85,7 @@ independent of each other (parallel after PR 3 lands).
 
 If the goal is to unblock just **one** Tier-B conjecture, the
 critical path is **PRs 1 + 2 + 3** (foundational $T_w$ basis).
-That alone unblocks `conj:hecke-anyonic-substrate` and
+That alone unblocks `conj:hecke-anyonic-aether` and
 `conj:reverse-limit-q-to-infinity`, plus enables the §3b-cond
 class instances in `prop:hecke-branching-trace-decomposition` to
 go from `placeholder Unit` field to actual `IwahoriHecke`-valued
@@ -140,7 +140,7 @@ but the differential is small.
 2. **Sprint 2 (1-2 weeks)** — `qou:QOU.IwahoriHecke.Basis`:
    - `Tw : W → IwahoriHecke W q` (reduced-expression-based)
    - `IsBasis (Set.range Tw)`
-   - **Closes**: `conj:hecke-anyonic-substrate` (anyonic-substrate
+   - **Closes**: `conj:hecke-anyonic-aether` (anyonic-substrate
      content reduces to "the $T_w$ basis spans"). Conditional or
      unconditional depending on the conjecture's exact statement
      — see the closure-plan §3b-cond preference.

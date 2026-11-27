@@ -1,4 +1,4 @@
-For the [aether line bundle](#def:substrate-line-bundle), fibring $(\mathbf{C}, A, \tau)$ over a space $M$ (the archimedean realisation) recasts the aether line bundle as $\mathcal{Q}_M = M \times \mathbb{G}_m$. An aether section operates as a strict map $q \colon M \to \mathbb{G}_m(k) = k^\times$.
+For the [aether line bundle](#def:aether-line-bundle), fibring $(\mathbf{C}, A, \tau)$ over a space $M$ (the archimedean realisation) recasts the aether line bundle as $\mathcal{Q}_M = M \times \mathbb{G}_m$. An aether section operates as a strict map $q \colon M \to \mathbb{G}_m(k) = k^\times$.
 
 **The $\mathbb{P}^1$-compactification.**
 Embed $\mathbb{G}_m \hookrightarrow \mathbb{P}^1$ via the standard inclusion $k^\times \hookrightarrow k \cup \{\infty\} = \mathbb{P}^1(k)$. The compactified aether bundle evaluates to

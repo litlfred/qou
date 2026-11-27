@@ -119,7 +119,7 @@ $$
 $$
 
 with $\delta$ the aether flavour split of
-[the aether flavor split conjecture](#conj:flavor-split-substrate-mass). A like-flavour
+[the aether flavor split conjecture](#conj:flavor-split-aether-mass). A like-flavour
 bond has no mean to tilt — averaging $f_{pp}$ with itself returns $f_{pp}$ for
 any weights summing to one — which is why the weighting is defined at the p-n
 interface and nowhere else.
@@ -156,7 +156,7 @@ The colour weighting uses $\varepsilon = \delta/4$, and
 $\overline{\delta} = -q^{2}\delta$, so it misses bar-oddness by exactly a factor
 of $q^{2}$ and nothing else. That factor localises: in the factored form
 $\delta \sim \hbar_q^{2}\, h_q\, [2]_q$ of
-[the closed and factored forms of the aether flavor split](#prop:flavor-split-substrate), the Hecke
+[the closed and factored forms of the aether flavor split](#prop:flavor-split-aether), the Hecke
 crossing $h_q$ is already bar-odd and the doublet integer $[2]_q$ is bar-even,
 so the **entire** obstruction is the $\hbar_q^{2}$ prefactor — the two quanta of
 aether Planck action.

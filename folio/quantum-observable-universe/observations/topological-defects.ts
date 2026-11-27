@@ -6,7 +6,7 @@ export default remark({
   title: "Topological signatures in large-scale structure",
   uses: [
     "def:quantum-characteristic-classes",
-    "def:substrate-parameter",
+    "def:aether-parameter",
   ],
   tags: ["topology", "large-scale-structure", "observation"],
 });

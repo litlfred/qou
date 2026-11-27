@@ -1,7 +1,8 @@
 import { definition } from "../../schema/builders";
 
 export default definition({
-  label: "def:substrate-parameter",
+  label: "def:aether-parameter",
+  renamedFrom: ["def:substrate-parameter"],
   cites: ["lusztig1993"],
   title: "Aether parameter",
   tags: ["substrate", "deformation", "fibre-coordinate"],
@@ -9,7 +10,7 @@ export default definition({
     validation: "leanok",
   },
   uses: ["def:categorical-reeb"],
-  examples: ["ex:substrate-parameter-su2"],
+  examples: ["ex:aether-parameter-su2"],
   authorNotes: [
     {
       kind: "note",

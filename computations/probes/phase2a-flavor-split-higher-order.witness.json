@@ -42,7 +42,7 @@
     "reproduce": "python3 -u computations/probes/phase2a_flavor_split_higher_order_probe.py"
   },
   "description": "Probes higher-order corrections to the flavor-split X formula. At 50 dps, the residual δX = X_current − X_target is analyzed for rational structure in the h-variable. Identifies the leading correction order and coefficient.",
-  "contentBlock": "prop:flavor-split-substrate",
+  "contentBlock": "prop:flavor-split-aether",
   "data": {
     "delta_X": "-1.971838230037258385e-6",
     "delta_X_ppm_of_X": "-1433.32321",

@@ -1,4 +1,4 @@
-The [aether parameter](#def:substrate-parameter) operates as an element of $\mathrm{End}(\mathbf{1}) \cong k^\times$, establishing the fibre coordinate on a $\mathbb{G}_m$-family. This parameter must strictly avoid the torsion subgroup of $\mathbb{G}_m$.
+The [aether parameter](#def:aether-parameter) operates as an element of $\mathrm{End}(\mathbf{1}) \cong k^\times$, establishing the fibre coordinate on a $\mathbb{G}_m$-family. This parameter must strictly avoid the torsion subgroup of $\mathbb{G}_m$.
 
 **The multiplicative group scheme.**
 The aether parameter evaluates as a section $q \colon M \to \mathbb{G}_m(k)$ where $\mathbb{G}_m(k) = k^\times$. The $\mathbb{G}_m$-family of operators
@@ -18,7 +18,7 @@ $$
   \mathbb{G}_m[\mathrm{tors}] = \mu_\infty = \bigcup_{n \geq 1} \mu_n.
 $$
 
-The rigid axiom controlling the [aether parameter](#def:substrate-parameter) dictates:
+The rigid axiom controlling the [aether parameter](#def:aether-parameter) dictates:
 
 $$
   q(p) \notin \mu_\infty(k)

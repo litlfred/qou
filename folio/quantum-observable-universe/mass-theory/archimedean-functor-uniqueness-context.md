@@ -7,7 +7,7 @@ enter as cited inputs.
 ## Pre-archimedean / archimedean separation
 
 The QOU aether is pre-archimedean: every block in the
-[motivic base ring](#def:motivic-substrate) and the
+[motivic base ring](#def:motivic-base-ring) and the
 [algebraic quantum volume](#def:algebraic-quantum-volume) lives
 in $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$, a ring of
 Laurent polynomials with no real-analytic transcendentals. QOU

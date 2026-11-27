@@ -4,7 +4,7 @@
   ⚠ [fundamental-object-explication]: Undefined cross-reference(s) in .md: chap:qou
   ⚠ [simple-objects-V]: Undefined cross-reference(s) in .md: rem:fundamental-object-explication
   ⚠ [unit-simplicity]: Undefined cross-reference(s) in .md: eq:categorical-volume-constraint
-  ⚠ [tannaka-krein-overview]: Undefined cross-reference(s) in .md: sec:substrate-parameter
+  ⚠ [tannaka-krein-overview]: Undefined cross-reference(s) in .md: sec:aether-parameter
   ⚠ [quantum-observable-universe]: Undefined cross-reference(s) in .md: rem:yekutieli-stokes-remark, rem:fundamental-object-explication
   ⚠ [braiding-induced-ordering]: Undefined cross-reference(s) in .md: def:admissible-system
   ⚠ [frobenius-integration]: Undefined cross-reference(s) in .md: eq:categorical-volume-constraint
@@ -73,7 +73,7 @@
   ⚠ [quantum-peter-weyl]: Undefined cross-reference(s) in .md: rem:pawlowski-leitner-inner-product
   ⚠ [p1-nonlinear-uniqueness]: prop:q-ns-nonlinear-uniqueness: no Lean declaration yet
   ⚠ [observability-in-fluid-context]: Undefined cross-reference(s) in .md: def:adjoint-weight-decomposition
-  ✗ [substrate-line-bundle]: Definition "def:substrate-line-bundle" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean or lean.file
+  ✗ [substrate-line-bundle]: Definition "def:aether-line-bundle" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean or lean.file
   ⚠ [observability-q-independent]: thm:observability-q-independent: no Lean declaration yet
   ⚠ [core-levi-form]: prop:core-levi-form: no Lean declaration yet
   ⚠ [core-levi-form]: Undefined cross-reference(s) in .md: def:state-bundle, rem:levi-form-defect
@@ -151,7 +151,7 @@
   ✗ [benzene-molecular-braid]: Definition "def:benzene-molecular-braid" requires Lean formalization. Expected: /home/user/qou/folio/quantum-observable-universe/molecular-construction/benzene-molecular-braid.lean or lean.file
   ⚠ [benzene-molecular-braid]: Undefined cross-reference(s) in .md: rem:benzene-threading-emergence
   ⚠ [benzene-threading-emergence]: prop:benzene-threading-emergence: no Lean declaration yet
-  ⚠ [substrate-consistency-window]: prop:substrate-consistency-window: no Lean declaration yet
+  ⚠ [substrate-consistency-window]: prop:aether-consistency-window: no Lean declaration yet
   ⚠ [atom-mass-full-hecke]: Undefined cross-reference(s) in .md: sec:amc-calculations
   ⚠ [qvalue-observation]: Undefined cross-reference(s) in .md: rem:qvalue-derivation-chain, ex:qvalue-benchmark-table
   ✗ [shell-threading-conjecture]: Unresolved uses: def:molecular-hopf-ring

@@ -114,7 +114,7 @@ which are idempotent, pairwise orthogonal and satisfy
 $\sum_{a,b,c} E_{abc} = \mathbf{1}$. This part is a theorem of the
 Hecke quadratic relation alone.
 
-The $T(2,8)$ pair is indexed by its link rather than by $H$, to keep it distinct from the Higgs idempotent $e_H$ of [conj:g-action-on-substrate](#conj:g-action-on-substrate), which is a rank-one idempotent on $A^{(H)}$ and not a Wedderburn block of $H_2(q)$.
+The $T(2,8)$ pair is indexed by its link rather than by $H$, to keep it distinct from the Higgs idempotent $e_H$ of [conj:g-action-on-aether](#conj:g-action-on-aether), which is a rank-one idempotent on $A^{(H)}$ and not a Wedderburn block of $H_2(q)$.
 
 The three torus links all embed in the same Bring-surface
 genus-$4$ Seifert fiber

@@ -1,7 +1,8 @@
 import { definition } from "../../schema/builders";
 
 export default definition({
-  label: "def:frobenius-hopf-substrate",
+  label: "def:frobenius-hopf-aether",
+  renamedFrom: ["def:frobenius-hopf-substrate"],
   title: "The quantum vacuum as a Frobenius--Hopf algebra",
   lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.FrobeniusHopfSubstrate",
     validation: "not_checked",

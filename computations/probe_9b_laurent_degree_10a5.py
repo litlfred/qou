@@ -21,7 +21,7 @@ the Phase-5q closed form (computations/closed_form_tau_M.py):
     f_pp = z,  f_nn = z − h,  f_pn = z − h·(1/2 − δ(q)/4)   [bring_color_weighted]
 
 with z = 1/(√q + 1/√q), h = q − q⁻¹, δ(q) = (q−1)²(1−q⁻⁴)/3 (the PROVEN
-leading flavor split, prop:flavor-split-substrate; the posited subleading
+leading flavor split, prop:flavor-split-aether; the posited subleading
 was de-wired 2026-06-29).
 
 METHOD (exact, per compute-author §1/§3):

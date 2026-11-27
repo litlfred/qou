@@ -7,8 +7,8 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:substrate-parameter-planck",
-    "def:adelic-substrate",
+    "def:aether-parameter-planck",
+    "def:adelic-base-ring",
   ],
   tags: [
     "classical-limit",

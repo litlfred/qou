@@ -20,8 +20,8 @@ export default proposition({
     "ex:instanton",
     "ex:irreducible-connection",
     "ex:self-dual-curvature",
-    "rem:c-substrate-via-levi",
+    "rem:c-aether-via-levi",
     "ex:reeb-decomposition",
-    "rem:gr-substrate-geometry",
+    "rem:gr-aether-geometry",
   ],
 });

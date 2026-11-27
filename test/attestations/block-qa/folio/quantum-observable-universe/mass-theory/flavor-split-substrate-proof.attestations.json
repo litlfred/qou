@@ -473,7 +473,7 @@
         "reviewed_at": "2026-11-21T18:42:52.000Z",
         "reviewed_sha": "7673b36426a4d2e06e56f3488851a5eb1e1241a2",
         "severity": "major",
-        "evidence": "Pre-existing, persists after #8931: the proof still does not establish prop:flavor-split-substrate. Step 1 holds only in the excised convention-C frame, Step 2 is a fitted ansatz (now additionally shown underivable within the pivot class), so Steps 4-6 derive the closed form from an unproved input. #8931 adds a scoped negative; it does not close the gap."
+        "evidence": "Pre-existing, persists after #8931: the proof still does not establish prop:flavor-split-aether. Step 1 holds only in the excised convention-C frame, Step 2 is a fitted ansatz (now additionally shown underivable within the pivot class), so Steps 4-6 derive the closed form from an unproved input. #8931 adds a scoped negative; it does not close the gap."
       },
       {
         "field_hash": {
@@ -725,7 +725,7 @@
         "reviewed_at": "2026-11-21T19:20:00.000Z",
         "reviewed_sha": "8e1db9fdd0de1228744ce32b1cc2750ca8b166a6",
         "severity": "minor",
-        "evidence": "QA re-refresh of #8917 at 8e1db9fdd0d. Step 2 condition (c) cites a numerical agreement of -0.67% at q = q0 inside the proof block. The block scopes it as selection against the target and it does not enter the identity, but an empirical figure still sits in a proof; it could move to rem:flavor-split-substrate-codata-comparison with the other comparisons. Not fixed here."
+        "evidence": "QA re-refresh of #8917 at 8e1db9fdd0d. Step 2 condition (c) cites a numerical agreement of -0.67% at q = q0 inside the proof block. The block scopes it as selection against the target and it does not enter the identity, but an empirical figure still sits in a proof; it could move to rem:flavor-split-aether-codata-comparison with the other comparisons. Not fixed here."
       },
       {
         "field_hash": {
@@ -741,7 +741,7 @@
         "reviewed_at": "2026-11-21T19:30:00.000Z",
         "reviewed_sha": "b87258043bb80d4c49a88acc2e29b32b1ab31865",
         "severity": "minor",
-        "evidence": "QA re-check of #8917 at b87258043bb. Step 2(c) now cites -0.13 % at the proton pin instead of -0.67 %. The value is right: propagated through (1) it is the -0.128 % residual of the comparison remark (recomputed at 50 dps). It is still an empirical figure inside a proof block, though scoped as selection against the target and not used by the identity. Could move to rem:flavor-split-substrate-codata-comparison. Not fixed here."
+        "evidence": "QA re-check of #8917 at b87258043bb. Step 2(c) now cites -0.13 % at the proton pin instead of -0.67 %. The value is right: propagated through (1) it is the -0.128 % residual of the comparison remark (recomputed at 50 dps). It is still an empirical figure inside a proof block, though scoped as selection against the target and not used by the identity. Could move to rem:flavor-split-aether-codata-comparison. Not fixed here."
       },
       {
         "field_hash": {
@@ -1773,7 +1773,7 @@
         },
         "reviewed_at": "2026-11-21T19:55:00.000Z",
         "reviewed_sha": "e59b6b486c4aa0aee888f34351657590fee201c3",
-        "evidence": "Full proof read at #8931 head e59b6b486c4 (after the merge of #8917). The new sentence cites Lean declarations, not content blocks; uses[] = [prop:flavor-split-substrate] remains complete for the block prose."
+        "evidence": "Full proof read at #8931 head e59b6b486c4 (after the merge of #8917). The new sentence cites Lean declarations, not content blocks; uses[] = [prop:flavor-split-aether] remains complete for the block prose."
       }
     ]
   }

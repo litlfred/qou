@@ -161,6 +161,6 @@ export default remark({
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The crossing pairs appear in [Table: Neutron crossing pairs](#tbl:categorical-neutron-table-data)." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([energy scale](#rem:beta-decay-energy-scale))" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([formation chain](#rem:meson-to-proton-via-borromean))" },
-    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([local substrate](#prop:local-substrate-q))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([local substrate](#prop:local-aether-q))" },
   ],
 });

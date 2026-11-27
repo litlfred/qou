@@ -1,4 +1,4 @@
-The aether parameter $q \colon M \to k^\times$ ([aether parameter](#def:substrate-parameter)) is a field, not a background constant. A hadron ([hadron](#def:hadron)) is a multi-component knot composite containing internal Hopf junctions and crossings. It perturbs the local value of $q$ through its topological linking structure. The effective aether parameter observed by a nucleus is
+The aether parameter $q \colon M \to k^\times$ ([aether parameter](#def:aether-parameter)) is a field, not a background constant. A hadron ([hadron](#def:hadron)) is a multi-component knot composite containing internal Hopf junctions and crossings. It perturbs the local value of $q$ through its topological linking structure. The effective aether parameter observed by a nucleus is
 
 $$
   q_{\mathrm{eff}}(p, n)

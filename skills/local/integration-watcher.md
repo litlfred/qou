@@ -1287,7 +1287,7 @@ Workflow:
    Examples of well-formed branch names (each one binds a
    `<TYPE>` + `<DESCRIPTIVE-STUB>` to a backlog item):
 
-   - **compute** wiring `prop:flavor-split-substrate` into the
+   - **compute** wiring `prop:flavor-split-aether` into the
      6-term sweep: `claude/iw-compute-wire-flavor-split-substrate`.
    - **proof** chasing the last `sorry` in `prop:foo` plus a
      missing `-- Ref:` citation:

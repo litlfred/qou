@@ -6,6 +6,6 @@ export default remark({
   title: "Explicit q-AND amplitudes at the aether value $q_0$",
   uses: [
     "prop:toffoli-transfer-matrix",
-    "prop:local-substrate-q",
+    "prop:local-aether-q",
   ],
 });

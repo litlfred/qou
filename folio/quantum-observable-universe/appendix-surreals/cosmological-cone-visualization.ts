@@ -18,6 +18,6 @@ export default remark({
     "conj:bigbang-heatdeath",
     "def:exceptional-divisor",
     "def:color-sector-coords",
-    "def:substrate-parameter",
+    "def:aether-parameter",
   ],
 });

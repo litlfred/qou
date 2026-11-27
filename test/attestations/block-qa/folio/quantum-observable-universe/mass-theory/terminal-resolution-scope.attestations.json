@@ -21,7 +21,7 @@
         },
         "reviewed_at": "2026-11-21T17:30:00.000Z",
         "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
-        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Each sentence checked: part (ii) bijectivity implies any (m_p,m_n) is fitted; prf:flavor-split-substrate (flavor-split-substrate-proof.md line 43) does call Step 2 'a phenomenological ansatz ... selection against the target'; 1/(q^{1/2}+q^{-1/2}) = sqrt(q)/(q+1) = z_C. Correct."
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Each sentence checked: part (ii) bijectivity implies any (m_p,m_n) is fitted; prf:flavor-split-aether (flavor-split-substrate-proof.md line 43) does call Step 2 'a phenomenological ansatz ... selection against the target'; 1/(q^{1/2}+q^{-1/2}) = sqrt(q)/(q+1) = z_C. Correct."
       }
     ],
     "da-vacuous": [
@@ -55,7 +55,7 @@
         },
         "reviewed_at": "2026-11-21T17:30:00.000Z",
         "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
-        "evidence": "Independent re-QA of #8897 at df85ca0b9c. No circular use; interprets prop:terminal-resolution and cites only it and prop:flavor-split-substrate."
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. No circular use; interprets prop:terminal-resolution and cites only it and prop:flavor-split-aether."
       }
     ],
     "da-overclaim": [
@@ -72,7 +72,7 @@
         },
         "reviewed_at": "2026-11-21T16:57:04.000Z",
         "reviewed_sha": "4eeb377d54fa519b6fb38d549a47b08bd48561ae",
-        "evidence": "Full read of the new remark (moved from the proposition). Each claim traced: bijection (prop part ii), flavor-split Step 2 is an ansatz (prf:flavor-split-substrate states it), convention C (lem:pair-skein-mass-formula states it)."
+        "evidence": "Full read of the new remark (moved from the proposition). Each claim traced: bijection (prop part ii), flavor-split Step 2 is an ansatz (prf:flavor-split-aether states it), convention C (lem:pair-skein-mass-formula states it)."
       },
       {
         "field_hash": {
@@ -87,7 +87,7 @@
         },
         "reviewed_at": "2026-11-21T17:30:00.000Z",
         "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
-        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Advisory: 'the only such input on record' is defensible since prop:flavor-dressed-mass-from-substrate-split is downstream of the same ansatz; no overclaim."
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. Advisory: 'the only such input on record' is defensible since prop:flavor-dressed-mass-from-aether-split is downstream of the same ansatz; no overclaim."
       }
     ],
     "da-hidden-dof": [
@@ -155,7 +155,7 @@
         },
         "reviewed_at": "2026-11-21T17:30:00.000Z",
         "reviewed_sha": "df85ca0b9cd707f7e4e793afb1c901254ac9ccee",
-        "evidence": "Independent re-QA of #8897 at df85ca0b9c. prop:flavor-split-substrate cited for what its proof says; both links are in uses[] (prior uses[] minor resolved here)."
+        "evidence": "Independent re-QA of #8897 at df85ca0b9c. prop:flavor-split-aether cited for what its proof says; both links are in uses[] (prior uses[] minor resolved here)."
       }
     ],
     "da-definitional-ambiguity": [

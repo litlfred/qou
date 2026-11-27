@@ -2,7 +2,7 @@
 In Leray's similarity variables $y = (x - x_0)/\sqrt{T^* - t}$, $s = -\log(T^* - t)$, the velocity profile satisfies the Leray system. A *continuous* self-similar blowup would require a time-independent ($s$-independent) profile $(V, \Pi)$ on $\mathbb{R}^3$; such a profile with $V \in L^3(\mathbb{R}^3)$ is zero \cite{necas-ruzicka-sverak1996}, a no-go extended to $L^q$, $3 < q \leq \infty$, and to local-energy estimates \cite{tsai1998}. The profile considered here is therefore [discretely self-similar](#def:leray-profile): periodic in $s$ with some period $P > 0$. The Leray system itself does not fix $P$.
 
 **The period.**
-An identification of $P$ with the scaling $\lambda_\kappa$ of the root-of-unity ladder $q_\kappa = e^{i\pi/\kappa}$ would require evaluating at a root of unity, which [the aether parameter](#def:substrate-parameter) excludes. No identification of $P$ is made here.
+An identification of $P$ with the scaling $\lambda_\kappa$ of the root-of-unity ladder $q_\kappa = e^{i\pi/\kappa}$ would require evaluating at a root of unity, which [the aether parameter](#def:aether-parameter) excludes. No identification of $P$ is made here.
 
 **The angular decomposition.**
 A velocity field on $\mathbb{R}^3$ decomposes in angle into vector spherical harmonics of integer degree $\ell$: the sphere is $S^2 = \mathrm{SU}(2)/\mathrm{U}(1)$, and functions or vector fields on it carry only integer spin. Half-integer components $j = 1/2, 3/2, \ldots$ do not occur in a Navier--Stokes velocity field. The quadratic term $(V \cdot \nabla) V$ couples degrees $\ell_1$ and $\ell_2$ to every degree $\ell$ with $|\ell_1 - \ell_2| \le \ell \le \ell_1 + \ell_2$, so a finite set of degrees is in general not closed under the nonlinearity.

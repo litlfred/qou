@@ -15,7 +15,7 @@ Existence of the substrate parameter: given a Reeb derivation and
 weight decomposition, the interpolated differential d_q is constructed
 and yields a valid `SubstrateParameter`.
 
-LaTeX: `\label{thm:substrate-parameter-exists}`
+LaTeX: `\label{thm:aether-parameter-exists}`
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical

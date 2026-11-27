@@ -69,7 +69,7 @@ universe u v w x
     `L_q` lifts from level `n` to `n+1` iff `n ∣ χ(A)`.
 
     LaTeX: `\label{def:q-local-system}`
-    uses: `def:categorical-q-connection`, `def:substrate-parameter`,
+    uses: `def:categorical-q-connection`, `def:aether-parameter`,
           `def:q-flat-connection`, `prop:categorical-dq-squared`,
           `prop:kummer-filtration-obstruction` -/
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172

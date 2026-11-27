@@ -24,7 +24,7 @@ $$
   \cdot \sqrt{\rho}\Bigr).
 $$
 
-Here $c_q = 1/(q-1)$ identifies the aether [speed of light](#def:substrate-parameter). The trailing term supplies the quantum correction. At low density ($\rho \to 0$), the quantum pressure diverges, sending $c_s \to \infty$. At high density, the quantum correction collapses, leaving $c_s \to c_q$.
+Here $c_q = 1/(q-1)$ identifies the aether [speed of light](#def:aether-parameter). The trailing term supplies the quantum correction. At low density ($\rho \to 0$), the quantum pressure diverges, sending $c_s \to \infty$. At high density, the quantum correction collapses, leaving $c_s \to c_q$.
 
 *Horizon formation conditions.* An acoustic horizon forms exactly on a surface $\Sigma$ satisfying $|v| = c_s$. Three structural conditions must hold simultaneously:
 

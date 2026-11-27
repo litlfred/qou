@@ -3,7 +3,7 @@ import QOU.Core.Basic
 /-!
 # QOU.BraidKnot.HeckeAnyonicSubstrate — anyonic Hecke substrate (conjecture)
 
-Class axiomatisation of [conj:hecke-anyonic-substrate]: every QOU
+Class axiomatisation of [conj:hecke-anyonic-aether]: every QOU
 particle is an anyon before observation, governed by the braid-group
 action on `H_n(R, q)` via `σ_i ↦ T_{s_i}` modulo the Hecke quadratic
 relation `(T_{s_i} - q)(T_{s_i} + 1) = 0`.
@@ -28,7 +28,7 @@ Downstream theorems
 take the class as `[HeckeAnyonicSubstrate q]` and are conditional on
 the conjecture per AGENTS.md §3b-cond.
 
-LaTeX: `\label{conj:hecke-anyonic-substrate}`
+LaTeX: `\label{conj:hecke-anyonic-aether}`
 
 References:
 - Kassel, C. (1995). *Quantum Groups*. Springer GTM 155.
@@ -103,7 +103,7 @@ class HeckeAnyonicSubstrate (R : Type u) [CommRing R] (q : R) where
     braidAction i (braidAction i T) = (q - 1) • braidAction i T + q • T
   /-- **The conjecture itself**: every QOU particle's normal form
       lies in the image of the braid action.  This field plays the
-      role of `sorry` for `conj:hecke-anyonic-substrate`. -/
+      role of `sorry` for `conj:hecke-anyonic-aether`. -/
   anyonic_holds : ∀ T : NormalForm, ∃ i, ∃ T₀ : NormalForm,
     T = braidAction i T₀
 
@@ -165,14 +165,14 @@ theorem normal_form_inhabited_of_action
        load-bearing (`braidAction_not_injective_at_zero` below), so that theorem
        says something about `q` rather than holding for free.
     2. It makes concrete what the class does **not** settle: an instance exists,
-       so *possessing* one is not evidence for `conj:hecke-anyonic-substrate`.
+       so *possessing* one is not evidence for `conj:hecke-anyonic-aether`.
        See the scope note below for why, and what would change it.
 
     Per AGENTS.md §3b-tax this is deliberately **not** an `instance` — a global
     instance would silently discharge every `[HeckeAnyonicSubstrate R q]`
     hypothesis in the tree. Same disposition as
     `KazhdanLusztigClassicalLimit.canonical`. -/
--- Ref: [leitner2026] conj:hecke-anyonic-substrate (counter-model, not a witness)
+-- Ref: [leitner2026] conj:hecke-anyonic-aether (counter-model, not a witness)
 def zeroQCounterModel : HeckeAnyonicSubstrate ℤ 0 where
   NormalForm := ℤ
   braidAction i T := if i = 0 then -T else 0
@@ -183,7 +183,7 @@ def zeroQCounterModel : HeckeAnyonicSubstrate ℤ 0 where
 
 /-- `IsUnit q` is load-bearing in `braidAction_injective`: drop it and the
     statement is false, witnessed at `q = 0` on strand `1`. -/
--- Ref: [leitner2026] conj:hecke-anyonic-substrate
+-- Ref: [leitner2026] conj:hecke-anyonic-aether
 theorem braidAction_not_injective_at_zero :
     ¬ Function.Injective (zeroQCounterModel.braidAction 1) := by
   intro h
@@ -212,7 +212,7 @@ That is a class-arity change reaching `KazhdanLusztigClassicalLimit`,
 take `[HeckeAnyonicSubstrate R q]` and read `H.NormalForm`. It is left to the
 author rather than taken here. Tracked as bean `qou-9yt9`. -/
 
-/-! **No canonical instance is provided — `conj:hecke-anyonic-substrate` is open.**
+/-! **No canonical instance is provided — `conj:hecke-anyonic-aether` is open.**
 Per AGENTS.md §3b-tax, an unproved primary conjecture is represented by a
 content-bearing class with **no** instance (the open state); a genuine instance
 over a real Hecke `NormalForm` arrives once the substrate realisation is

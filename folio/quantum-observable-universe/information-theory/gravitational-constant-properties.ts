@@ -15,7 +15,7 @@ export default remark({
     "def:gravitational-constant",
     "def:information-speed-of-light",
     "def:operational-entropy",
-    "rem:gr-substrate-geometry",
+    "rem:gr-aether-geometry",
     "rem:jet-planck-steps",
     "prop:descent-eigenspaces",
     "rem:julia-hausdorff-dimension-prediction",

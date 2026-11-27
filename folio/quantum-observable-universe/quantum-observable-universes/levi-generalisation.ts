@@ -7,6 +7,6 @@ export default remark({
   tags: ["cr-geometry", "levi-form"],
   uses: [
     "def:q-harmonic-form",
-    "rem:c-substrate-via-levi",
+    "rem:c-aether-via-levi",
   ],
 });

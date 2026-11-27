@@ -79,7 +79,7 @@ export default simulator({
   label: "sim:q-double-slit",
   title: "q-Deformed Double-Slit Simulator",
   html: "q_double_slit.html",
-  uses: ["def:substrate-parameter", "prop:local-substrate-q"],
+  uses: ["def:aether-parameter", "prop:local-aether-q"],
   tags: ["double-slit", "q-deformation", "simulation"],
   defaultView: {
     name: "default",

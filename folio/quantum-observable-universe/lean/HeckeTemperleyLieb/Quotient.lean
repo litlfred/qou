@@ -75,7 +75,7 @@ This file establishes:
   with `IsBasis (Set.range Tw)`. This is Matsumoto's theorem on
   the independence of reduced expressions; it is the technical
   heart of the Iwahori-Hecke theory. Once landed:
-  - **Closes** `conj:hecke-anyonic-substrate` (its content is "the
+  - **Closes** `conj:hecke-anyonic-aether` (its content is "the
     `T_w` family spans the algebra freely modulo the relations").
 
 The Sprint 2 split lets us land the concrete quotient construction

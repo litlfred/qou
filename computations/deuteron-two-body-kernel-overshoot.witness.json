@@ -82,7 +82,7 @@
    {
     "ingredient": "t = 1/2 - delta/4",
     "role": "p-n colour weight",
-    "fixed_by": "owner ruling R3 + prop:flavor-split-substrate",
+    "fixed_by": "owner ruling R3 + prop:flavor-split-aether",
     "kind": "derived",
     "continuous_freedom": 0
    },
@@ -214,7 +214,7 @@
   ],
   "lean_crosscheck_all_hold": true
  },
- "verdict": "B_sym(2H) = E_0 * L_pn = 2.8328 MeV against B_AME = 2.2246 MeV, +27.34 %, with ZERO continuous free parameters: m_e is CAL-1, q_0 is the CAL-2 proxy pin, E_0's form is derived, the interface coefficient a = 1 is forced by convexity, the colour weight is derived from prop:flavor-split-substrate, and the writhe factor is Lean-proved unique up to sign. So the overshoot is a PARAMETER-FREE PREDICTION FAILURE of the two-body kernel, not a tuning gap. Of the ingredients, only the colour weight t reaches the target at all, and it must move 673x its own derived scale (delta/4) to do so; a fix through E_0 needs -21.5 % against a 128 ppb CAL-2 pin spread, i.e. 1.7e6x the available room, so no CAL-2-respecting fix exists inside this kernel.",
+ "verdict": "B_sym(2H) = E_0 * L_pn = 2.8328 MeV against B_AME = 2.2246 MeV, +27.34 %, with ZERO continuous free parameters: m_e is CAL-1, q_0 is the CAL-2 proxy pin, E_0's form is derived, the interface coefficient a = 1 is forced by convexity, the colour weight is derived from prop:flavor-split-aether, and the writhe factor is Lean-proved unique up to sign. So the overshoot is a PARAMETER-FREE PREDICTION FAILURE of the two-body kernel, not a tuning gap. Of the ingredients, only the colour weight t reaches the target at all, and it must move 673x its own derived scale (delta/4) to do so; a fix through E_0 needs -21.5 % against a 128 ppb CAL-2 pin spread, i.e. 1.7e6x the available room, so no CAL-2-respecting fix exists inside this kernel.",
  "scope": "scope-(a) scope-limited negative: the two-body Markov-trace kernel, ALONE, with convention D and the derived colour weighting, does not reproduce B_AME(2H). NOT scope-(b): the target IS inside the convention-D admissible band (reached at t ~ 0.268), so no invariant excludes it, and an ADDITIVE term is untouched by anything measured here. The convention-C-era claim that 2H sat below the whole band does not survive the R1 ruling.",
  "lean": "QOU.MassTheory.DeuteronTwoBodyKernel (7 theorems, sorry-free)",
  "wired": false,

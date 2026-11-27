@@ -14,5 +14,5 @@ export default remark({
     "magnetic-field",
     "sensitivity",
   ],
-  uses: ["rem:c-substrate-via-levi"],
+  uses: ["rem:c-aether-via-levi"],
 });

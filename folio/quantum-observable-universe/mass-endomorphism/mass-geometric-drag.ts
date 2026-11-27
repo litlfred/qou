@@ -7,6 +7,6 @@ export default remark({
   tags: ["mass", "brane-tower", "vortex"],
   uses: [
     "def:recursive-brane-tower",
-    "def:substrate-parameter",
+    "def:aether-parameter",
   ],
 });

@@ -8,7 +8,7 @@ export default remark({
     "rem:skein-decomposition",
     "thm:weight-decomposition-exists",
     "thm:categorical-reeb-exists",
-    "thm:substrate-parameter-exists",
+    "thm:aether-parameter-exists",
   ],
   computation: {
     engine: "mpmath",

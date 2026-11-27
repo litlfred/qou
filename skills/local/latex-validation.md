@@ -70,7 +70,7 @@ repository's `copilot-instructions.md`.
 ### 7. Deformation Parameter Convention
 - The parameter $q$ must **not** appear in definitions, examples,
   lemmas, or theorems before the substrate parameter section
-  (Section~\ref{sec:substrate-parameter}).
+  (Section~\ref{sec:aether-parameter}).
 - Categorical dimensions are written as plain integers (e.g.\ `$2$`)
   in the pre-substrate definitions; the $q$-deformed form `$[2]_q$`
   appears only after the substrate parameter is introduced.

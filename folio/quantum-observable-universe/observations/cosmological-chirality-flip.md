@@ -4,7 +4,7 @@ The [time reversal barrier](#rem:time-reversal-energy-barrier) dictates infinite
 
 The Frobenius form degenerates: $\int_A(f^\dagger f) \sim q^{-1} \to 0$. The [Heisenberg commutator](#rem:heisenberg-commutator) $[\hat{X}, \hat{P}]_q \to J$ is maximal. Observables become maximally non-commutative. The positive-definiteness axiom vanishes.
 
-Here, $q$ acquires an imaginary part $\theta \neq 0$. The [complex aether interpretation](#rem:complex-substrate-interpretation) allows continuous fiber chirality rotation. The [exceptional divisor](#def:exceptional-divisor) $\mathcal{S}_p$ supports phase rotation $\mathcal{X}_\varphi$ between trefoils and their mirrors. Chirality flips occur in the fibers.
+Here, $q$ acquires an imaginary part $\theta \neq 0$. The [complex aether interpretation](#rem:complex-aether-interpretation) allows continuous fiber chirality rotation. The [exceptional divisor](#def:exceptional-divisor) $\mathcal{S}_p$ supports phase rotation $\mathcal{X}_\varphi$ between trefoils and their mirrors. Chirality flips occur in the fibers.
 
 This meets Sakharov's conditions:
 1. Frobenius degeneration enables baryon number violation.
@@ -15,7 +15,7 @@ Condition 2 being satisfied *maximally* does not close baryogenesis; it sharpens
 
 **At heat death ($q \to 1$).**
 
-The Hopf algebra becomes cocommutative. The [quantum Planck constant](#def:substrate-parameter) vanishes. The Descartes color tubes collapse to a single $\mathrm{U}(1)$ phase tube ([prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction)). The crossing-energy asymmetry $q - q^{-1} \to 0$ disappears. The electron and muon survive as indistinguishable topological excitations ([rem:symmetry-preserving-leptons](#rem:symmetry-preserving-leptons)).
+The Hopf algebra becomes cocommutative. The [quantum Planck constant](#def:aether-parameter) vanishes. The Descartes color tubes collapse to a single $\mathrm{U}(1)$ phase tube ([prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction)). The crossing-energy asymmetry $q - q^{-1} \to 0$ disappears. The electron and muon survive as indistinguishable topological excitations ([rem:symmetry-preserving-leptons](#rem:symmetry-preserving-leptons)).
 
 **Categorical picture (conjectural).**
 

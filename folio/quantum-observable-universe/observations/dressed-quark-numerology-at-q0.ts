@@ -10,6 +10,6 @@ export default remark({
     "numerology",
     "q0",
   ],
-  interprets: "prop:flavor-dressed-mass-from-substrate-split",
+  interprets: "prop:flavor-dressed-mass-from-aether-split",
   uses: ["thm:flavor-mass-splitting-bound"],
 });

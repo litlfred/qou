@@ -6,7 +6,7 @@ import Mathlib.Tactic.LinearCombination
 /-!
 # The per-quark flavour split: what the pivot can and cannot give
 
-Target: Step 2 of `prf:flavor-split-substrate`
+Target: Step 2 of `prf:flavor-split-aether`
 (`mass-theory/flavor-split-substrate-proof.md`), which sets
 
     (μ_d − μ_u) / μ_avg  ≈  h² · ħ_q / √q,      h = q − q⁻¹,  ħ_q = (q − 1)/q,

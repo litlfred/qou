@@ -50,7 +50,7 @@
     "reproduce": "python3 -u computations/probes/flavor_split_substrate_probe.py"
   },
   "description": "Verify the substrate-pure proton–neutron flavor-split closed form (m_n−m_p)/M_N = (q−1)²(1−q⁻⁴)/3 = ℏ_q²·h_q·[2]_q/3 (the PROVEN leading form; the posited (1+ℏ_q³) subleading is NOT this block's claim) at the canonical muon-anchored substrate q₀, via the shared canonical utility _li_2_q_util.flavor_split_leading. No fit and no u–d mass input: only q₀ and the nucleon scale M_N enter. Compares to the CODATA split built from codata_constants.M_{P,N}_MEV_VALIDATION (single source), cross-checks the two algebraic forms agree exactly, and asserts archimedean agreement < 0.2 % (measured ≈ 0.13 %, the block's −0.10 % leading residual).",
-  "contentBlock": "prop:flavor-split-substrate",
+  "contentBlock": "prop:flavor-split-aether",
   "data": {
     "inputs": {
       "q0": "1.10997858275138080759166909561",

@@ -16,8 +16,8 @@ export default definition({
   },
   uses: [
     "def:information-speed-of-light",
-    "rem:gr-substrate-geometry",
-    "rem:c-substrate-via-levi",
+    "rem:gr-aether-geometry",
+    "rem:c-aether-via-levi",
   ],
   cites: [
     "jacobson1995",

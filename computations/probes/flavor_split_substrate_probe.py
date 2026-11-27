@@ -2,7 +2,7 @@
 # polynomial_q_not_applicable: probe; mpmath numeric eval at substrate q0; no fitted inputs.
 """
 flavor_split_substrate_probe.py — VERIFICATION probe for the claim in
-content block `prop:flavor-split-substrate`
+content block `prop:flavor-split-aether`
 (folio/quantum-observable-universe/mass-theory/flavor-split-substrate.md).
 
 THE CLAIM. The proton–neutron mass splitting is a closed form in substrate
@@ -140,7 +140,7 @@ def main() -> None:
         print("    block status:'verified'.")
 
     # ─── Witness ─────────────────────────────────────────────────────────
-    wb.set_content_block("prop:flavor-split-substrate")
+    wb.set_content_block("prop:flavor-split-aether")
     wb.set_description(
         "Verify the substrate-pure proton–neutron flavor-split closed form "
         "(m_n−m_p)/M_N = (q−1)²(1−q⁻⁴)/3 = ℏ_q²·h_q·[2]_q/3 (the PROVEN leading "

@@ -12,7 +12,7 @@ the pivot `q^{∓2}`.
 | 2 | a reference (vacuum) vector in V | no | the corpus selects one only through #5 | see #5 |
 | 3 | boundary condition on an open strand | no, for a fixed vector | no corpus construction found | undefined |
 | 4 | chiral projector / weak vertex `L±`, `P_L`, `P_R`, `J`, `Δ_S` | **yes**: polynomials in Ř (weak-vertex thread, symbolic) | none | excluded by `commutant_trace_eq`; agrees with ε-L1 and ε-TR1 (draft PR #8104) |
-| 5 | corpus Higgs vacuum `ϱ_Φ`, idempotent `e_H` (`conj:g-action-on-substrate`, G-3/G-4) | no: `e_H` projects onto one weight vector of the doublet | direction set by `Q·ϱ = 0` with the Higgs hypercharge `y = 1/2` **assigned** in Table 1; norm `v²/m_e²` **empirical**; quark coupling unspecified | breaks, size input, so not a hit |
+| 5 | corpus Higgs vacuum `ϱ_Φ`, idempotent `e_H` (`conj:g-action-on-aether`, G-3/G-4) | no: `e_H` projects onto one weight vector of the doublet | direction set by `Q·ϱ = 0` with the Higgs hypercharge `y = 1/2` **assigned** in Table 1; norm `v²/m_e²` **empirical**; quark coupling unspecified | breaks, size input, so not a hit |
 | 6 | ev/coev, twist θ, Jones–Wenzl, KZ, Reeb | yes (module maps / central / Casimir-built) | none | expected nulls, confirmed earlier (H2, A2) |
 | — | Coulomb insertion `Σ Q_aQ_b`, `Q = T³ + Y/2` (weak-vertex ε-EM1; Bridge B EM1) | no (diagonal, not F₃-equivariant) | asymmetry exactly `2Y`; `Y = ±1/3` is a labelled conditional input (bean qou-99qc) | breaks, size input |
 

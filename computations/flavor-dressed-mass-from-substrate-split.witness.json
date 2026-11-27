@@ -75,8 +75,8 @@
     ],
     "reproduce": "python3 -u computations/probe_flavor_dressed_mass_from_substrate_split.py"
   },
-  "description": "Substrate-derived down–up dressed-quark splitting μ_d − μ_u = M_N · (q−1)²(1−q⁻⁴)/3 · (q^½+q^−½)/(q+q⁻¹) at q = q_0. Verifies the substrate identity (q−1)²(1−q⁻⁴)/3 = (1/3)ℏ²h[2], the two-sided bound 0 < μ_d−μ_u < M_N·ℏ²·h·[2], and the slack ratio (1/3)(q^½+q^−½)/(q+q⁻¹). Pins μ_d−μ_u ≈ 1.286 MeV (substrate-pure modulo the CODATA M_N anchor); m_n−m_p is a cross-check target, not an input. Covers prop:flavor-dressed-mass-from-substrate-split and thm:flavor-mass-splitting-bound.",
-  "contentBlock": "prop:flavor-dressed-mass-from-substrate-split",
+  "description": "Substrate-derived down–up dressed-quark splitting μ_d − μ_u = M_N · (q−1)²(1−q⁻⁴)/3 · (q^½+q^−½)/(q+q⁻¹) at q = q_0. Verifies the substrate identity (q−1)²(1−q⁻⁴)/3 = (1/3)ℏ²h[2], the two-sided bound 0 < μ_d−μ_u < M_N·ℏ²·h·[2], and the slack ratio (1/3)(q^½+q^−½)/(q+q⁻¹). Pins μ_d−μ_u ≈ 1.286 MeV (substrate-pure modulo the CODATA M_N anchor); m_n−m_p is a cross-check target, not an input. Covers prop:flavor-dressed-mass-from-aether-split and thm:flavor-mass-splitting-bound.",
+  "contentBlock": "prop:flavor-dressed-mass-from-aether-split",
   "parameters": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",
     "M_N_MeV": "938.918755685",

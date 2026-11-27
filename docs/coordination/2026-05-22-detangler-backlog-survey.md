@@ -50,7 +50,7 @@ ask.
 | P31 | `thm:markov-trace-factorization` | particle-interactions | braids-and-knots `sec:phi-q-markov-schur-weyl-tower` | 8 | post-wall → pre-wall |
 | P32 | `def:atomic-braid` | particle-interactions | braids-and-knots `sec:skein-particle-generation` | 8 | post-wall → pre-wall |
 | P33 | `prop:confinement-sdp` | particle-interactions | braids-and-knots `sec:alpha-k-procedure` | 7 | post-wall → pre-wall |
-| P34 | `def:motivic-substrate` | braids-and-knots | lifting-and-descent `sec:yekutieli-lifting` | 7 | pre-wall → bridge |
+| P34 | `def:motivic-base-ring` | braids-and-knots | lifting-and-descent `sec:yekutieli-lifting` | 7 | pre-wall → bridge |
 | P35 | `conj:gb-depth-period-correspondence` | braids-and-knots | braids-and-knots `sec:archimedean-realization-kashaev` | 7 | **intra-chapter** (only one in batch) |
 | P36 | `prop:sw-period-thimble-equivalence` | descartes-universe | braids-and-knots `sec:kashiwara-jones-quantum-dilog` | 6 | post-wall → pre-wall |
 | P37 | `prop:lagrange-resolvent-transform` | descartes-universe | braids-and-knots `sec:braid-involutions` | 6 | post-wall → pre-wall |

@@ -1,4 +1,4 @@
-Let $q \in k^\times \setminus \{1\}$ denote the aether parameter ([aether parameter](#def:substrate-parameter)). Let $\hbar_q = 1 - q^{-1}$ denote the quantum Planck constant ([quantum Planck constant](#def:quantum-planck-constant)). One defines the **Planck time** as
+Let $q \in k^\times \setminus \{1\}$ denote the aether parameter ([aether parameter](#def:aether-parameter)). Let $\hbar_q = 1 - q^{-1}$ denote the quantum Planck constant ([quantum Planck constant](#def:quantum-planck-constant)). One defines the **Planck time** as
 
 $$
   t_P(q)  :=  \frac{1}{\hbar_q}

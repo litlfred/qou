@@ -152,7 +152,8 @@ export default chapter({
     // ── Substrate parameter ───────────────────────────────────────────
     section({
       title: "Aether parameter and deformation",
-      label: "sec:substrate-parameter",
+      label: "sec:aether-parameter",
+      renamedFrom: ["sec:substrate-parameter"],
       blocks: [
         "substrate-parameter-intro",
         "braiding-eigenvalue-extraction",
@@ -194,7 +195,7 @@ export default chapter({
     // ── Existence of a quantum observable universe ───────────────────
     // Moved here from sec:qou-definition (reading-order drain L4,
     // 2026-11-21): the existence proof exhibits Rep(U_q(g)) with O_q(G),
-    // so it follows sec:substrate-parameter, where q is introduced.
+    // so it follows sec:aether-parameter, where q is introduced.
     section({
       title: "Existence of a quantum observable universe",
       label: "sec:qou-existence",
@@ -230,14 +231,15 @@ export default chapter({
     }),
 
     // ── Algebraic substrate and the Reeb derivation ──────────────────
-    // Absorbed from former `algebraic-substrate / sec:algebraic-substrate-reeb`
+    // Absorbed from former `algebraic-substrate / sec:algebraic-layer-reeb`
     // (now dissolved). These 12 blocks deepen the substrate parameter
     // into the Frobenius--Hopf substrate, Reeb derivation, and Brings
     // coordinate ring — content that is genuinely foundational and
     // referenced from braids, fluid, info-theory, QOU itself.
     section({
       title: "The algebraic layer and the Reeb derivation",
-      label: "sec:algebraic-substrate-reeb",
+      label: "sec:algebraic-layer-reeb",
+      renamedFrom: ["sec:algebraic-substrate-reeb"],
       blocks: [
         "algebraic-substrate-intro",
         "substrate-preamble",
@@ -566,7 +568,7 @@ export default chapter({
 
     // ── Braiding conventions: eigenvalue labelling, ribbon, orientation ─
     // Held out of the core definition sections (sec:qou-definition,
-    // sec:substrate-parameter) so the convention/elaboration content does
+    // sec:aether-parameter) so the convention/elaboration content does
     // not pollute the QU/QOU axiomatic statements.
     section({
       title: "Braiding conventions: eigenvalue labelling, ribbon, orientation",

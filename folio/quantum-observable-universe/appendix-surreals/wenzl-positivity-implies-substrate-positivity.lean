@@ -2,7 +2,7 @@
 # QOU.AppendixSurreals.WenzlPositivityImpliesSubstratePositivity
 
 **Sibling-resolution stub** for content block
-[`conj:wenzl-positivity-implies-substrate-positivity`](wenzl-positivity-implies-substrate-positivity.md):
+[`conj:wenzl-positivity-implies-aether-positivity`](wenzl-positivity-implies-substrate-positivity.md):
 *Wenzl positivity at q_0 implies substrate C*-Frobenius positivity*.
 
 The §3b-cond class axiomatisation lives here. The class instance is
@@ -58,7 +58,7 @@ class WenzlPositivityImpliesSubstratePositivity
       ∈ R_{>1} implies substrate C*-Frobenius positivity (Müger /
       BKLR sense) of the QOU Frobenius–Hopf substrate. The class
       instance is the §3b-cond conjectural witness. -/
-  -- Ref: [leitner2026] conj:wenzl-positivity-implies-substrate-positivity
+  -- Ref: [leitner2026] conj:wenzl-positivity-implies-aether-positivity
   holds : WenzlPositiveAtQ0 → SubstrateFrobeniusPositive
 
 end QOU.AppendixSurreals

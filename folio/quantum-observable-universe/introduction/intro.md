@@ -31,7 +31,7 @@ numbers, measured once and then held still. If they are allowed to
 vary — not arbitrarily, but in a controlled, algebraic way — how does
 that change the mechanics, or more precisely the mechanics of
 observation? That is the question the paper asks, and the
-[aether parameter](#sec:introduction-substrate-parameter) below is
+[aether parameter](#sec:introduction-aether-parameter) below is
 the form it takes.
 
 Einstein taught that geometry and mass are bound together: spacetime

@@ -9,7 +9,7 @@ export default proposition({
   uses: [
     "def:categorical-q-connection",
     "prop:categorical-connection-exists",
-    "def:substrate-parameter",
+    "def:aether-parameter",
   ],
   proofs: ["prf:categorical-q-connection-exists"],
   tags: ["existence", "q-connection"],

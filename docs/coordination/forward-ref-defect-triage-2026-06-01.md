@@ -42,10 +42,10 @@ change `uses`→`interprets` OR extract a foundational piece):
 5. `particle-interactions/def:categorical-meson` → `predicted-spectra/def:quark-antiquark-production`
 6. `particle-interactions/def:categorical-proton` → `predicted-spectra/def:down-quark`
 7. `particle-interactions/prop:four-term-pair-nucleon` → `predicted-spectra/def:quark-antiquark-production`
-8. `lifting-and-descent/def:motivic-galois-character` → `mass-theory/def:adelic-substrate` (Δ2)
+8. `lifting-and-descent/def:motivic-galois-character` → `mass-theory/def:adelic-base-ring` (Δ2)
 
 ## High-fanout targets (move-once-fix-many)
-- `observations/prop:flavor-split-substrate` — 3 sources
+- `observations/prop:flavor-split-aether` — 3 sources
 - `predicted-spectra` defs (`quark-antiquark-production`, `down-quark`) — 2-3 sources each → **predicted-spectra may want foundational extraction / earlier placement**
 
 ## Phased plan
@@ -77,7 +77,7 @@ target was checked for **(deps that block an earlier move)** and
 | `def:brings-surface` | none | **13** | RISKY — up to 13 new backward edges |
 | `thm:topological-mass` | 3 | 4 | RISKY |
 | `def:bundle-isotopy-equivalence` | `def:bundle-initial-conditions` | 1 | CLUSTER |
-| `def:adelic-substrate` | `def:classical-limit-functor` | 3 | RISKY |
+| `def:adelic-base-ring` | `def:classical-limit-functor` | 3 | RISKY |
 | quark cluster (`up`/`down`/`qq̄`/`breit-wheeler`) | `up-quark`→`conj:borromean-quark` **in observations (LATER)** | up=3, breit=2, … | **RISKY — net negative** |
 
 **Conclusion.** *No* B1 defect is a clean single/cluster move: every

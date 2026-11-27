@@ -11,7 +11,7 @@ import QOU.EightfoldWay.PivotSplitOrder
 Categorical bridge from the discrete category **Flavor** of quark
 flavors to the positive reals carrying dressed-quark mass values.
 Derivation of the down–up splitting, conditional on
-`conj:flavor-split-substrate-mass` lives here; the splitting-only
+`conj:flavor-split-aether-mass` lives here; the splitting-only
 substrate bound theorem is included.
 
 ## Members
@@ -19,7 +19,7 @@ substrate bound theorem is included.
 - `FlavorDressingFunctor` — typeclass with `μ : Flavor → ℝ` and
   positivity.
 - `FlavorSplitSubstrateMass` — Lean class of
-  `conj:flavor-split-substrate-mass` (no instance).
+  `conj:flavor-split-aether-mass` (no instance).
 - `dressed_mass_from_substrate_split` — derivation of
   `μ_d − μ_u = M_N · substrate_split_factor q` from that class and the
   nucleon form of the pair Skein formula (an explicit hypothesis).
@@ -29,6 +29,6 @@ substrate bound theorem is included.
 ## References
 
 - [def:flavor-dressing-functor]
-- [prop:flavor-dressed-mass-from-substrate-split]
+- [prop:flavor-dressed-mass-from-aether-split]
 - [thm:flavor-mass-splitting-bound]
 -/

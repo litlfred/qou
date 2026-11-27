@@ -160,7 +160,7 @@ Tier 1:
   def:quantum-universe                 GENERAL
 
 Tier 2:
-  def:substrate-parameter              GENERAL
+  def:aether-parameter              GENERAL
   def:quantum-observable-universe      GENERAL
 
 Tier 3:
@@ -190,7 +190,7 @@ Tier 0 (terminal):
 
 Tier 1:
   def:quantum-universe                 GENERAL
-  def:substrate-parameter              GENERAL
+  def:aether-parameter              GENERAL
   thm:su2-emergence                    GENERAL / ARCHIMEDEAN PROOF
 
 Tier 2:
@@ -239,7 +239,7 @@ Objects unique to `thm:topological-mass`:
 
 Objects unique to `cor:mass-identity-C`:
 - `def:c-quantum-observable-universe`, `ex:c-quantum-universe`,
-  `def:substrate-parameter`
+  `def:aether-parameter`
 
 ## Audit checklist
 

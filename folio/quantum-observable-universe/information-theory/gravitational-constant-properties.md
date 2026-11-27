@@ -10,7 +10,7 @@ numerical values at $q_0$.
 
 **The variational origin of $G$.**
 The field equation $\mathrm{Ric}_{g_\varTheta} = T^{(q)}$
-([GR aether geometry](#rem:gr-substrate-geometry)) arises from
+([GR aether geometry](#rem:gr-aether-geometry)) arises from
 varying the $q$-Yang--Mills--Levi functional
 ([$q$-YM-Levi](#def:q-yang-mills-levi))
 

@@ -287,7 +287,7 @@ def main() -> int:
             "dominated by the λ_scale layer, NOT by S(p).  S(p) ≈ 0 "
             "remains the production assumption; the proton-neutron "
             "split is supplied separately by the substrate flavor-"
-            "split formula (`prop:flavor-split-substrate`, PR #690 "
+            "split formula (`prop:flavor-split-aether`, PR #690 "
             "/ #942).  The original 'S(p) = 0 forced by 1 ppb "
             "closure' argument was an artifact of the CAL-4 fitted "
             "λ_p; under Family A the S(p) discriminator becomes "
