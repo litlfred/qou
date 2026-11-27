@@ -3,7 +3,7 @@
 **Date** 2026-11-27 · **Brief** C2 (epic `qou-myts`), front E · **Bean** `qou-brng`
 **Owner question** (Carl, 2026-11-27): *"bond selection - keep open. exlore all three. why do we need a
 lnegth cutoff? can we measure (surrealy) or estimae error bounds?"*
-**Lean** [`QOU/MassTheory/BondLengthSumTail.lean`](../../folio/quantum-observable-universe/lean/QOU/MassTheory/BondLengthSumTail.lean):
+**Lean** [`QOU/Transcendental/MassTheory/BondLengthSumTail.lean`](../../folio/quantum-observable-universe/lean/QOU/Transcendental/MassTheory/BondLengthSumTail.lean):
 8 theorems, sorry-free, lean-direct `-DautoImplicit=false -s 65536` exit 0, `#print axioms` ⊆
 `[propext, Classical.choice, Quot.sound]`.
 **Probes** [`computations/probes/bond_rules_length_bound/`](../../computations/probes/bond_rules_length_bound/):
