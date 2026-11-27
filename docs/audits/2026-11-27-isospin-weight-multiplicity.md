@@ -64,6 +64,32 @@ times** too small at the proxy scale `α`. With `N = 3A` the coefficient is
 scale-unification thread. This is a scope-(a) result: the multiplicity term alone, at this
 `α`, is not the symmetry energy. It does not exclude it.
 
+## 6. The q-CLT and the Markov weighting (Carl, 2026-11-27: "use qCLT")
+
+The probe counts are exact binomials at every `A`; "Gaussian" in §2 was only the name of
+their large-`A` shape, i.e. the classical (`q = 1`) CLT. Two checks of the `q`-version:
+
+1. **q-CLT.** The corpus limit object (`QOU.Observations.QCltCut`, a conjecture with no
+   instance) is the q-Gaussian with moments in `ℤ[q]`. Its second moment is `1` at every `q`
+   (`QOU.Core.QGaussianMoments.qGaussMoment_two`). So the leading `−2T_z²/N` term keeps its
+   coefficient; `q` first enters through `m₄ = 2 + q` (against `3`), a `T_z⁴/N³` correction.
+2. **Markov weighting.** Under convention D the Markov trace is the `U_q(sl₂)` quantum trace,
+   which weights the `T_z` sector by `C(N,k)·q^{N−k}·qi^k`. Lean (same file, sorry-free):
+
+   | statement | Lean |
+   |---|---|
+   | the sectors sum to `(q + qi)^N = [2]_q^N` | `markov_sector_sum` |
+   | a sector times its mirror `T_z ↔ −T_z` is `C(N,k)²`, with no `q` | `markov_sector_mirror` |
+
+   Checked numerically at `N = 6, 9, 12, 30`: `Σ_T d_T [2T+1]_q = Σ_k C(N,k) q^{N−2k} = [2]_q^N`.
+   So the `q`-weighting multiplies each sector by an **odd** factor `q^{2T_z}`, and the even part,
+   which a symmetry energy reads, is the classical count exactly. Under `B += α ln(weight)` the
+   odd factor would add `2α ln q·T_z`, linear in `T_z` with no `1/A`. That is a separate channel,
+   not a symmetry term, and it is not computed against data here.
+
+Conclusion: neither the q-CLT nor the Markov weighting changes the `(N−Z)²/A` coefficient. The
+factor of ~37 stays in the scale and in the open energy map.
+
 ## 5. Verification
 
 - Lean: `lean -DautoImplicit=false -s 65536 QOU/Nuclear/IsospinWeightMultiplicity.lean` exit 0.
