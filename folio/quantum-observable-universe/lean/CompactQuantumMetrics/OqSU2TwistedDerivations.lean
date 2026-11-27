@@ -19,6 +19,15 @@ A left-invariant vector field of a covariant calculus is `X_φ = (id ⊗ φ)Δ` 
   on `β` or on `γ` has `u = q⁻¹`. The off-diagonal fields of a calculus are therefore
   twisted by exactly the point `χ_{q⁻¹}` whose two-sided action is the Haar modular
   automorphism (`modularAut_eq_twoSided`). A diagonal (Cartan) field leaves `u` free.
+* `twistedDerivation_ext`: twisted derivations agreeing on `α, β, γ, δ` are equal (the
+  kernel of a twisted derivation is a subalgebra).
+* `twistedDerivation_cartan_unique`: over a field, for `u ≠ q⁻¹, 1`, every `χ_u`-twisted
+  derivation is `(φ(α)/(1 − u)) • (ε − χ_u)`. This settles the form of the Cartan functional:
+  it is `(ε − χ_u)/c`, with only the twist `u` and the scale `c` free.
+* `epsSubChar_pivotal_alpha`: at the pivotal twist, `(ε − χ_{q⁻¹})(α) = 1 − q⁻¹ = ħ_q`.
+  At `u = q⁻¹` itself, `twistedDerivation_rels` and `twistedDerivation_ext` show a twisted
+  derivation is determined by `φ(α), φ(β), φ(γ)`: at most three dimensions, the size of the
+  3D covariant calculus. Existence of the off-diagonal ones is not proved here.
 
 ## Haar is fixed by its modular automorphism
 
@@ -147,5 +156,105 @@ theorem points_jump_at_one :
   exact (char_offdiag_zero hu χ).1
 
 end jump
+
+section cartan
+
+variable (q u : Rˣ)
+
+/-- `ε − χ_u` is a `χ_u`-twisted derivation, for every `u`. -/
+theorem epsSubChar_twisted (x y : OqSU2 R q) :
+    ((counit q).toLinearMap - (diagCharAlgHom q u).toLinearMap) (x * y) =
+      ((counit q).toLinearMap - (diagCharAlgHom q u).toLinearMap) x * diagCharAlgHom q u y +
+        counit q x * ((counit q).toLinearMap - (diagCharAlgHom q u).toLinearMap) y := by
+  simp only [LinearMap.sub_apply, AlgHom.toLinearMap_apply, map_mul]
+  ring
+
+/-- At the pivotal point `u = q⁻¹`, `(ε − χ_{q⁻¹})(α) = 1 − q⁻¹ = ħ_q`. -/
+theorem epsSubChar_pivotal_alpha :
+    ((counit q).toLinearMap - (diagCharAlgHom q q⁻¹).toLinearMap) (α q) =
+      1 - (((q⁻¹ : Rˣ) : R)) := by
+  simp [counit, diagCharAlgHom]
+
+/-- Two `χ`-twisted derivations that agree on the four generators agree everywhere:
+the kernel of a twisted derivation is a subalgebra. -/
+theorem twistedDerivation_ext (χ : OqSU2 R q →ₐ[R] R) (φ ψ : OqSU2 R q →ₗ[R] R)
+    (hφ : ∀ x y : OqSU2 R q, φ (x * y) = φ x * χ y + counit q x * φ y)
+    (hψ : ∀ x y : OqSU2 R q, ψ (x * y) = ψ x * χ y + counit q x * ψ y)
+    (hα : φ (α q) = ψ (α q)) (hβ : φ (β q) = ψ (β q))
+    (hγ : φ (γ q) = ψ (γ q)) (hδ : φ (δ q) = ψ (δ q)) : φ = ψ := by
+  set D := φ - ψ with hD
+  have hDl : ∀ x y, D (x * y) = D x * χ y + counit q x * D y := by
+    intro x y; simp only [hD, LinearMap.sub_apply, hφ, hψ]; ring
+  have hD1 : D 1 = 0 := by
+    have := hDl 1 1
+    simp only [mul_one, map_one, one_mul] at this
+    calc D 1 = (D 1 + D 1) - D 1 := by ring
+      _ = D 1 - D 1 := by rw [← this]
+      _ = 0 := sub_self _
+  let S : Subalgebra R (OqSU2 R q) :=
+    { carrier := {x | D x = 0}
+      mul_mem' := by
+        intro x y hx hy
+        simp only [Set.mem_setOf_eq] at hx hy ⊢
+        rw [hDl, hx, hy]; ring
+      add_mem' := by
+        intro x y hx hy
+        simp only [Set.mem_setOf_eq] at hx hy ⊢
+        rw [map_add, hx, hy, add_zero]
+      algebraMap_mem' := by
+        intro r
+        simp only [Set.mem_setOf_eq]
+        rw [Algebra.algebraMap_eq_smul_one, map_smul, hD1, smul_zero] }
+  ext x
+  have hx : x ∈ S := mem_of_gens S (by simp [S, hD, hα]) (by simp [S, hD, hβ])
+    (by simp [S, hD, hγ]) (by simp [S, hD, hδ]) x
+  have : D x = 0 := hx
+  simpa [hD, sub_eq_zero] using this
+
+end cartan
+
+section cartanField
+
+variable {K : Type*} [Field K] (q u : Kˣ)
+
+/-- **Uniqueness of the Cartan functional.** Over a field, if `u ≠ q⁻¹` and `u ≠ 1`, every
+`χ_u`-twisted derivation is a scalar multiple of `ε − χ_u`:
+`φ = (φ(α) / (1 − u)) • (ε − χ_u)`. So the Cartan field of a covariant calculus is
+`(ε − χ_u)/c` with one free scale `c`; only the twist `u` and `c` remain to be fixed. -/
+theorem twistedDerivation_cartan_unique (hpiv : u ≠ q⁻¹) (h1 : (u : K) ≠ 1)
+    (φ : OqSU2 K q →ₗ[K] K)
+    (hφ : ∀ x y : OqSU2 K q,
+      φ (x * y) = φ x * diagCharAlgHom q u y + counit q x * φ y) :
+    φ = (φ (α q) / (1 - (u : K))) •
+      ((counit q).toLinearMap - (diagCharAlgHom q u).toLinearMap) := by
+  obtain ⟨-, hd, hb, hg⟩ := twistedDerivation_rels q u φ hφ
+  have hqu : (1 - (q : K) * u) ≠ 0 := by
+    intro h
+    apply hpiv
+    apply Units.ext
+    have hq0 : (q : K) ≠ 0 := q.ne_zero
+    simp only [Units.val_inv_eq_inv_val]
+    field_simp
+    linear_combination -h
+  have hb0 : φ (β q) = 0 := (mul_eq_zero.mp hb).resolve_left hqu
+  have hg0 : φ (γ q) = 0 := (mul_eq_zero.mp hg).resolve_left hqu
+  have h1' : (1 - (u : K)) ≠ 0 := sub_ne_zero.mpr (Ne.symm h1)
+  have hu0 : (u : K) ≠ 0 := u.ne_zero
+  apply twistedDerivation_ext q (diagCharAlgHom q u) φ _ hφ
+  · intro x y
+    simp only [LinearMap.smul_apply, LinearMap.sub_apply, AlgHom.toLinearMap_apply, map_mul,
+      smul_eq_mul]
+    ring
+  · simp [counit, diagCharAlgHom]; field_simp
+  · simp [counit, diagCharAlgHom, hb0]
+  · simp [counit, diagCharAlgHom, hg0]
+  · rw [hd]
+    simp only [LinearMap.smul_apply, LinearMap.sub_apply, AlgHom.toLinearMap_apply,
+      smul_eq_mul, counit, diagCharAlgHom, liftQuadruple_delta, Units.val_one,
+      Units.val_inv_eq_inv_val]
+    field_simp
+    ring
+
+end cartanField
 
 end QOU.AlgebraicSubstrate.OqSU2
