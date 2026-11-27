@@ -235,7 +235,7 @@ noncomputable def projK (h : M ≤ N) : K ⊗[ℚ] U4 N →ₐ[K] K ⊗[ℚ] U4 
   Algebra.TensorProduct.map (AlgHom.id K K) (projU h)
 
 theorem projK_ιK (h : M ≤ N) (u : U4 N) : projK K h (ιK K N u) = ιK K M (projU h u) := by
-  simp [projK, ιK_apply]
+  simp [projK]
 
 /-- A `K`-associator in `K ⊗ U4 N` is one in `K ⊗ U4 M` for `M ≤ N`. -/
 theorem AssocK.proj {E : FreeAlgebra ℚ (Fin 2)} {Φ : K ⊗[ℚ] FreeAlgebra ℚ (Fin 2)}
@@ -454,5 +454,204 @@ theorem assocK_shift_finset (hd : 1 ≤ d) {n : ℕ} (hn : 2 ≤ n) {ι : Type*}
     rw [e]; exact add_mem hc hmem
 
 end Step4
+
+/-! ### The bridge: a primitive homogeneous kernel element lies in `grt` -/
+
+section Bridge
+
+variable {M d : ℕ}
+
+theorem Homog.smul' {p : FreeAlgebra ℚ (Fin 2)} (hp : Homog d p) (c : ℚ) : Homog d (c • p) :=
+  fun r => by rw [map_smul, hp, smul_comm]
+
+theorem Homog.sub' {p q : FreeAlgebra ℚ (Fin 2)} (hp : Homog d p) (hq : Homog d q) :
+    Homog d (p - q) :=
+  fun r => by rw [map_sub, hp, hq, smul_sub]
+
+/-- **(B2)–(B3) for a primitive element.** A primitive homogeneous `y` of degree `d` in the
+kernel of the degree-`d` system lies in `grt` in every `U4 M`: Friedrichs
+(`isLieElt_of_primitive`) makes it a Lie element, and `grtU4_of_lie` supplies the
+linearised (5.14). -/
+theorem grtU4_of_lin_primitive {y : FreeAlgebra ℚ (Fin 2)} (hy : Homog d y)
+    (hlin : assocLin (d + 1) y = 0) (hp : Friedrichs.IsPrimitive y) : GrtU4 M y := by
+  have h1 := congrArg Prod.fst hlin
+  have h2 := congrArg (fun z => z.2.1) hlin
+  have h3 := congrArg (fun z => z.2.2) hlin
+  simp only [assocLin, LinearMap.coe_mk, AddHom.coe_mk, Prod.fst_zero, Prod.snd_zero] at h1 h2 h3
+  have hsw : y + swapPoly y = 0 :=
+    add_swap_eq_zero hy (congrFun h1 ⟨(t (d + 1) 0, t (d + 1) 3), t_mem_Fil_one 0,
+      t_mem_Fil_one 3⟩)
+  have h513 : lin513Expr (d + 1) y = 0 := neg_eq_zero.1 h2
+  have h515 : lin515Expr (d + 1) y = 0 := h3
+  have z513 : lin513Expr M y = 0 :=
+    eq_zero_of_scU (mem_Fil_of_toQuot h513 (toQuot_lin513 y)) (scU_lin513 hy)
+  have z515 : lin515Expr M y = 0 :=
+    eq_zero_of_scU (mem_Fil_of_toQuot h515 (toQuot_lin515 y)) (scU_lin515 hy)
+  refine grtU4_of_lie (isLieElt_of_primitive hp) (fun a b _ _ => ?_) z513 ?_
+  · rw [← eval_swapPoly a b y, ← map_add, hsw, map_zero]
+  · rw [← sub_eq_zero]
+    rw [lin515Expr] at z515
+    rw [← neg_eq_zero, ← z515]
+    abel
+
+/-- `assocLin N` kills `FF N`: every evaluation of a word of length `≥ N` at `Fil N 1` is
+zero in `U4 N`. -/
+theorem assocLin_eq_zero_of_mem_FF {N : ℕ} {y : FreeAlgebra ℚ (Fin 2)} (hy : y ∈ FF N) :
+    assocLin N y = 0 := by
+  have hz : ∀ {a b : U4 N}, a ∈ Fil N 1 → b ∈ Fil N 1 → eval a b y = 0 :=
+    fun ha hb => eq_zero_of_mem_Fil (eval_mem_Fil ha hb hy)
+  have m := fun i => t_mem_Fil_one (N := N) i
+  have m2 : ∀ i j, t N i + t N j ∈ Fil N 1 := fun i j => add_mem (m i) (m j)
+  refine Prod.ext (funext fun p => ?_) (Prod.ext ?_ ?_)
+  · simp [assocLin, hz p.2.1 p.2.2, hz p.2.2 p.2.1]
+  · simp [assocLin, hz (m 1) (m 0), hz (m 3) (m 1), hz (m 0) (m 3)]
+  · simp [assocLin, hz (m 3) (m 5), hz (m2 0 1) (m2 4 5), hz (m 0) (m 3), hz (m 0) (m2 3 4),
+      hz (m2 1 3) (m 5)]
+
+variable {K : Type*} [Field K] [Algebra ℚ K]
+
+theorem linFF_contract_eq_zero {w : K ⊗[ℚ] FF d} (hw : KerK K d w) (μ : K →ₗ[ℚ] ℚ) :
+    linFF d (contract μ (FF d) w) = 0 := by
+  apply target_ext
+  · intro p
+    rw [map_zero, ← LinearMap.comp_apply, ← contract_lTensor, hw.1 p, map_zero]
+  · rw [map_zero, ← LinearMap.comp_apply, ← contract_lTensor, hw.2.1, map_zero]
+  · rw [map_zero, ← LinearMap.comp_apply, ← contract_lTensor, hw.2.2, map_zero]
+
+theorem equivFinsuppOfBasisLeft_eq_contract {ι V : Type*} [DecidableEq ι] [AddCommGroup V]
+    [Module ℚ V] (B : Module.Basis ι ℚ K) (u : K ⊗[ℚ] V) (i : ι) :
+    TensorProduct.equivFinsuppOfBasisLeft B u i = contract (B.coord i) V u := by
+  induction u using TensorProduct.induction_on with
+  | zero => simp
+  | tmul a v => simp
+  | add x y hx hy => simp only [map_add, Finsupp.add_apply, hx, hy]
+
+theorem basis_sum_eq {ι V : Type*} [DecidableEq ι] [AddCommGroup V] [Module ℚ V]
+    (B : Module.Basis ι ℚ K) (u : K ⊗[ℚ] V) :
+    u = ∑ i ∈ (TensorProduct.equivFinsuppOfBasisLeft B u).support,
+      B i ⊗ₜ TensorProduct.equivFinsuppOfBasisLeft B u i := by
+  conv_lhs => rw [← (TensorProduct.equivFinsuppOfBasisLeft B).symm_apply_apply u]
+  rw [TensorProduct.equivFinsuppOfBasisLeft_symm_apply]
+  rfl
+
+end Bridge
+
+/-! ### The induction step -/
+
+section Induction
+
+variable {K : Type*} [Field K] [Algebra ℚ K] {N d : ℕ}
+
+/-- **The induction step of gap B1, modulo primitivity of the top layer.** Let `d ≥ 1`,
+`d + 1 ≤ N ≤ n`, `2 ≤ n`, `ε(E) = ε(Φ) = 1`, and let `1 ⊗ Φ + z` (`z ∈ K ⊗ FF d`) be a
+`K`-associator in `U4 N`. Suppose every rational contraction of `z` agrees modulo `FF (d + 1)`
+with a primitive homogeneous element of degree `d` (`hprim`; this is what group-likeness of the
+`K`-associator supplies, and is not derived here). Then there is a rational `x ∈ FF d` with
+`Φ + x` a (rational) associator in `U4 (d + 1)`, together with a `K`-associator `Ψ` in `U4 N`
+agreeing with `1 ⊗ (Φ + x)` modulo `FFK (d + 1)`. -/
+theorem inductionStep_of_primitiveLayer (hd : 1 ≤ d) (hdN : d + 1 ≤ N) {n : ℕ} (hn : 2 ≤ n)
+    (hNn : N ≤ n) {E Φ : FreeAlgebra ℚ (Fin 2)} (hE : FreeAlgebra.algebraMapInv E = 1)
+    (hΦ : FreeAlgebra.algebraMapInv Φ = 1) (z : K ⊗[ℚ] FF d)
+    (hK : AssocK K N E ((1 : K) ⊗ₜ Φ + LinearMap.lTensor K (FF d).subtype z))
+    (hprim : ∀ μ : K →ₗ[ℚ] ℚ, ∃ h : FreeAlgebra ℚ (Fin 2), Homog d h ∧
+      ((contract μ (FF d) z : FreeAlgebra ℚ (Fin 2)) - h ∈ FF (d + 1)) ∧
+        Friedrichs.IsPrimitive h) :
+    ∃ x ∈ FF d, AssocU4 (d + 1) E (Φ + x) ∧
+      ∃ Ψ, AssocK K N E Ψ ∧ Ψ - (1 : K) ⊗ₜ (Φ + x) ∈ FFK K (d + 1) := by
+  classical
+  obtain ⟨π, hπ⟩ := exists_retraction (k := ℚ) (K := K)
+  obtain ⟨x0, hx0, hw⟩ := rational_lift_of_assocK hd hE hΦ z (hK.proj hdN)
+  set x : FF d := contract π (FF d) z with hx
+  set u : K ⊗[ℚ] FF d := (1 : K) ⊗ₜ x - z with hu
+  -- the descent identity, at every functional
+  have hcw : ∀ μ : K →ₗ[ℚ] ℚ, μ 1 • linFF d x0 - linFF d (contract μ (FF d) z) = 0 := by
+    intro μ
+    have := linFF_contract_eq_zero hw μ
+    rwa [map_sub, contract_tmul, map_sub, map_smul] at this
+  have hxx0 : linFF d x = linFF d x0 := by
+    have := hcw π
+    rw [hπ, one_smul, sub_eq_zero] at this
+    exact this.symm
+  have hcu : ∀ μ : K →ₗ[ℚ] ℚ, linFF d (contract μ (FF d) u) = 0 := by
+    intro μ
+    rw [hu, map_sub, contract_tmul, map_sub, map_smul, hxx0]
+    exact hcw μ
+  -- the rational associator
+  have hassoc : AssocU4 (d + 1) E (Φ + x) := by
+    have h0 := (assocU4_add_iff hd hE hΦ x0.2).1 hx0
+    refine (assocU4_add_iff hd hE hΦ x.2).2 ?_
+    rw [← h0]
+    exact hxx0
+  -- the primitive representatives
+  choose hμ hHom hdiff hP using hprim
+  let H : (K →ₗ[ℚ] ℚ) → FreeAlgebra ℚ (Fin 2) := fun μ => μ 1 • hμ π - hμ μ
+  have hHdiff : ∀ μ, (contract μ (FF d) u : FreeAlgebra ℚ (Fin 2)) - H μ ∈ FF (d + 1) := by
+    intro μ
+    have e : (contract μ (FF d) u : FreeAlgebra ℚ (Fin 2)) - H μ =
+        μ 1 • ((x : FreeAlgebra ℚ (Fin 2)) - hμ π) -
+          ((contract μ (FF d) z : FreeAlgebra ℚ (Fin 2)) - hμ μ) := by
+      simp only [H, hu, map_sub, contract_tmul, Submodule.coe_sub, Submodule.coe_smul, smul_sub]
+      abel
+    rw [e]
+    exact sub_mem (Submodule.smul_mem _ _ (hdiff π)) (hdiff μ)
+  have hHF : ∀ μ, H μ ∈ FF d := by
+    intro μ
+    have e : H μ = (contract μ (FF d) u : FreeAlgebra ℚ (Fin 2)) -
+        ((contract μ (FF d) u : FreeAlgebra ℚ (Fin 2)) - H μ) := by abel
+    rw [e]
+    exact sub_mem (contract μ (FF d) u).2 (FF_anti (by omega) (hHdiff μ))
+  have hHlin : ∀ μ, assocLin (d + 1) (H μ) = 0 := by
+    intro μ
+    have e : H μ = (contract μ (FF d) u : FreeAlgebra ℚ (Fin 2)) -
+        ((contract μ (FF d) u : FreeAlgebra ℚ (Fin 2)) - H μ) := by abel
+    rw [e, map_sub, assocLin_eq_zero_of_mem_FF (hHdiff μ), sub_zero]
+    exact hcu μ
+  have hHgrt : ∀ μ, GrtU4 N (H μ) := fun μ =>
+    grtU4_of_lin_primitive ((hHom π).smul' _ |>.sub' (hHom μ)) (hHlin μ)
+      (((hP π).smul _).sub (hP μ))
+  -- shift `1 ⊗ Φ + z` by the basis coordinates of `u`
+  set B := Module.Basis.ofVectorSpace ℚ K
+  set f := TensorProduct.equivFinsuppOfBasisLeft B u
+  have hf : ∀ i, (f i : FreeAlgebra ℚ (Fin 2)) = contract (B.coord i) (FF d) u := fun i => by
+    rw [equivFinsuppOfBasisLeft_eq_contract]
+  set Ψ0 : K ⊗[ℚ] FreeAlgebra ℚ (Fin 2) := (1 : K) ⊗ₜ Φ + LinearMap.lTensor K (FF d).subtype z
+  have hΨ01 : Ψ0 - 1 ∈ FFK K 1 := by
+    have e : Ψ0 - 1 = (1 : K) ⊗ₜ (Φ - algebraMap ℚ _ (FreeAlgebra.algebraMapInv Φ)) +
+        LinearMap.lTensor K (FF d).subtype z := by
+      rw [hΦ, map_one, TensorProduct.tmul_sub, ← Algebra.TensorProduct.one_def]
+      simp only [Ψ0]
+      abel
+    rw [e]
+    refine add_mem (tmul_mem_FFK _ (sub_algebraMapInv_mem_FF Φ)) ?_
+    exact FFK_anti hd ⟨z, rfl⟩
+  obtain ⟨Ψ, hΨ, hmem⟩ := assocK_shift_finset hd hn f.support (fun i => B i)
+    (fun i => H (B.coord i)) (fun i => hHF _)
+    (fun i r => grt1U4_expPoly (hHgrt _) hn hNn r) hK hΨ01
+  refine ⟨x, x.2, hassoc, Ψ, hΨ, ?_⟩
+  -- `lTensor u = Σ B i ⊗ f i` and `lTensor u = 1 ⊗ x − lTensor z`
+  have hLu : LinearMap.lTensor K (FF d).subtype u = ∑ i ∈ f.support, B i ⊗ₜ (f i : FreeAlgebra ℚ (Fin 2)) := by
+    conv_lhs => rw [basis_sum_eq B u]
+    rw [map_sum]
+    rfl
+  have hLu' : LinearMap.lTensor K (FF d).subtype u =
+      (1 : K) ⊗ₜ (x : FreeAlgebra ℚ (Fin 2)) - LinearMap.lTensor K (FF d).subtype z := by
+    rw [hu, map_sub, LinearMap.lTensor_tmul]
+    rfl
+  have e : Ψ - (1 : K) ⊗ₜ (Φ + (x : FreeAlgebra ℚ (Fin 2))) =
+      (Ψ - Ψ0 - ∑ i ∈ f.support, B i ⊗ₜ H (B.coord i)) -
+        ∑ i ∈ f.support, B i ⊗ₜ ((f i : FreeAlgebra ℚ (Fin 2)) - H (B.coord i)) := by
+    have e2 : ∑ i ∈ f.support, B i ⊗ₜ ((f i : FreeAlgebra ℚ (Fin 2)) - H (B.coord i)) =
+        LinearMap.lTensor K (FF d).subtype u - ∑ i ∈ f.support, B i ⊗ₜ H (B.coord i) := by
+      rw [hLu, ← Finset.sum_sub_distrib]
+      simp only [TensorProduct.tmul_sub]
+    rw [e2, hLu', TensorProduct.tmul_add]
+    simp only [Ψ0]
+    abel
+  rw [e]
+  refine sub_mem hmem (Submodule.sum_mem _ fun i _ => tmul_mem_FFK _ ?_)
+  rw [hf]
+  exact hHdiff _
+
+end Induction
 
 end QOU.BraidsAndKnots.RationalAssociator
