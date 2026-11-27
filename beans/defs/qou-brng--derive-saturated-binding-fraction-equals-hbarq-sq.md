@@ -5,9 +5,10 @@ status: in-progress
 type: task
 priority: normal
 tags:
+    - compute-accuracy
     - reorg-2026-10-04
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-11-23T12:00:00Z
+updated_at: 2026-11-27T15:30:00Z
 parent: qou-v2om
 ---
 
@@ -3580,3 +3581,8 @@ The previous entry's *conclusion* stands (the cusp pole cannot distinguish the c
 ## 2026-11-23 — main sync (binding-leftovers thread)
 Checked what landed (#9053, #9078, #9108, #9120). The ²H/³H/³He redo on the ruled γγ chain is done (#9053): every chain unbinds for every A ≥ 2 and q > 1, scope (b), proved in `QOU/Mass/LightNucleiGGChainSign.lean`. ⁴He all-pairs unbinds on (1, q*), q* ≈ 1.49 (#9078). The ²H six-strand word was computed exactly there, which covers the H₆ free-vs-bound deuteron difference: B_diff −0.77 keV (pn order), −1.34 keV (np) against AME 2224.6.
 Residual (ii), why the binding count channel is a bare integer while the mass channel keeps lw, is NOT touched by any of these. It stays open math. The new γγ results sharpen it: the bound-state trace now exceeds the free one, so the open question also includes where binding comes from at all on the ruled word.
+
+
+## 2026-11-27 — C2: the classical part of the RULED LOG law is a merge count (PR #9467)
+
+`QOU/MassTheory/ClassicalLogBindingCycleCount.lean` (sorry-free): at q = 1, B = E0 ln2 (c_free − c_atom). Consequences: (i) the γγ-cheapest bond V³ (and the nucleon V³) is classically trivial, so it merges 0 components and the selected deuteron's binding is a pure q-deformation (keV), the structural cause of the −99.7 %; pure-junction bonds merge 0 or 2 (parity). (ii) Ceiling: at most 3A−1 merges, per-nucleon < E0 ln 8. (iii) Cayley subadditivity gives a product-assembled classical b3 ≤ 0 under the log law; classical b3 ∈ E0 ln2·ℤ (S2 of the 2026-09-07 plan). Scorecard only: peak B/A ≈ E0 ln 8 (56Fe −0.005 %), post-hoc and E0-chart dependent (1 %), heavy nuclei exceed the finite-A ceiling by ~1 merge; not used. Probe 4/4, audit docs/audits/2026-11-27-classical-log-binding-cycle-count.md. Open: ceiling at q0; bond selection (owner); genuinely three-body permutations. Bean stays open.
