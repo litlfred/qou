@@ -26,8 +26,8 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
+Q0 = Q_MP
 USTAR=mp.findroot(lambda u:-u**6-u**4+u**3+u**2+1, mp.mpf('1.13')); QSTAR=USTAR**2
 def delta(l):
     c=tuple(sum(1 for p in l if p>i) for i in range(l[0]))

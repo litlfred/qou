@@ -45,14 +45,14 @@ from _precision import fmt, set_compute_dps  # noqa: E402
 from hoefsmit_mpfr import build_hoefsmit_mpfr  # noqa: E402
 from hoefsmit_symbolic import Q as QSYM  # noqa: E402
 from markov_weights_symbolic import hooks_and_contents, y_lambda_symbolic  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 DPS = 60
 set_compute_dps(DPS)
 mp.mp.dps = DPS
 T0 = time.time()
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 H0 = Q0 - 1 / Q0
 ZERO_TOL = mp.mpf("1e-40")
 FAILED: list[str] = []

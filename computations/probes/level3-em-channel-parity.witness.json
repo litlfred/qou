@@ -1,6 +1,6 @@
 {
   "schema": "witness/v1",
-  "computedAt": "2026-08-30T13:45:42.276325+00:00",
+  "computedAt": "2026-11-20T15:43:55.744393+00:00",
   "description": "The level-3 EM term already exists and cannot do the job. Post-qou-toul the antisymmetric/Coulomb channel has multiplicity (n+ + n-)/2 = 5A - 1, which is MIRROR-INVARIANT, while the symmetric/strong channel carries (n+ - n-)/2 = 2Z, all of the charge dependence -- the reverse of physics. So the existing EM term contributes exactly zero to every mirror splitting. Further, n+ and n- are each affine in (A,Z), so no linear functional of the crossing counts can supply the Z(Z-1) proton-pair multiplicity Coulomb needs.",
   "q0_pin": "proton",
   "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -410,12 +410,12 @@
     "qou-1pig"
   ],
   "allPassed": true,
-  "scriptHash": "6c5aded49b65",
-  "scriptCommitSha": "ff21b475e78dd43635812f9afb0c277a3f202353",
-  "commitSha": "06cc8ec091607e88abe8293ce00a0ce272790566",
+  "scriptFile": "level3_em_channel_parity_probe.py",
+  "scriptHash": "ac78f75809b4",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "level3_em_channel_parity_probe.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

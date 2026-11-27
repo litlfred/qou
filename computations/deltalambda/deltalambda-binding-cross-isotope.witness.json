@@ -3,22 +3,22 @@
   "description": "Cross-isotope check REFUTES the block-trace magnitude \u0394_\u03bb=sgn\u00b7dim_q\u00b2: it matches the deuteron (~101%) by coincidence and blows up 40-450x for T/\u00b3He/\u2074He. The DERIVED sign is validated cross-isotope (right sign all four). Binding magnitude returns to open; nothing wired.",
   "auditOnly": "docs/audits/2026-07-11-deltalambda-binding-block-trace.md",
   "tier": "measurement (reuses atom-chi-rust \u03c7 + validated y_lambda_at; AME targets)",
-  "computedAt": "2026-09-04T02:55:15.903167+00:00",
-  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
+  "computedAt": "2026-11-20T15:06:32.999040+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
   "scriptFile": "deltalambda_binding_cross_isotope_probe.py",
-  "scriptHash": "b9ea062ba35d",
+  "scriptHash": "a59db6c1f54b",
   "assertions": [
     {
       "name": "deuteron_dimq2_near_100",
       "passed": false,
-      "detail": "D: dim_q\u00b2 -> 0.331 (~101%, the earlier #3558 match)"
+      "detail": "D: dim_q\u00b2 -> -0.630 (~101%, the earlier #3558 match)"
     },
     {
       "name": "block_magnitude_blows_up_for_heavier",
       "passed": false,
-      "detail": "T/\u00b3He/\u2074He: dim_q\u00b2 -> t:12.8, 3he:19.5, 4he:-26.7 (40-450x overshoot) => block-trace magnitude REFUTED; deuteron match coincidental"
+      "detail": "T/\u00b3He/\u2074He: dim_q\u00b2 -> t:4.0, 3he:5.6, 4he:26.2 (40-450x overshoot) => block-trace magnitude REFUTED; deuteron match coincidental"
     },
     {
       "name": "derived_sign_right_all_isotopes",
@@ -33,33 +33,33 @@
         "iso": "d",
         "n": 6,
         "npart": 11,
-        "ratio_dimq2": 0.3314003377150088,
-        "ratio_dim2": 0.35192723063982234,
-        "right_sign": true
+        "ratio_dimq2": -0.6302481888927011,
+        "ratio_dim2": -0.5705311276963739,
+        "right_sign": false
       },
       {
         "iso": "t",
         "n": 9,
         "npart": 30,
-        "ratio_dimq2": 12.783147835323188,
-        "ratio_dim2": 7.602868764379677,
+        "ratio_dimq2": 3.9638655777303016,
+        "ratio_dim2": 2.279730073490414,
         "right_sign": true
       },
       {
         "iso": "3he",
         "n": 9,
         "npart": 30,
-        "ratio_dimq2": 19.5420897296846,
-        "ratio_dim2": 11.490709247769614,
+        "ratio_dimq2": 5.554420108023876,
+        "ratio_dim2": 3.1846002329024268,
         "right_sign": true
       },
       {
         "iso": "4he",
         "n": 12,
         "npart": 77,
-        "ratio_dimq2": -26.667589544047523,
-        "ratio_dim2": -7.5191424962469675,
-        "right_sign": false
+        "ratio_dimq2": 26.188961732882014,
+        "ratio_dim2": 8.046006672938724,
+        "right_sign": true
       }
     ],
     "verdict": "INCONCLUSIVE \u2014 an assertion failed; re-derive before citing."
@@ -71,7 +71,7 @@
     "counit_predecessor": "rho-k-counit-isotope-systematics.witness.json (ratio grows with A)",
     "open": "the binding magnitude (block trace refuted) \u2014 DERIVE, do not fit; nothing wired"
   },
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

@@ -87,7 +87,7 @@ from math import comb, factorial  # noqa: E402  # float64-ok: exact int, never f
 
 import mpmath as mp  # noqa: E402
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 50
 TOL = mp.mpf(10) ** -35
@@ -127,7 +127,7 @@ def fmt(x, n=8):
 
 def main() -> int:
     m = _walk()
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     h = q0 - 1 / q0
     v = mp.sqrt(q0)
 

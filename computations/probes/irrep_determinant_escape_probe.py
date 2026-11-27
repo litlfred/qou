@@ -140,7 +140,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 import mpmath as mp  # noqa: E402
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 50
 TOL = mp.mpf(10) ** -40
@@ -199,7 +199,7 @@ def mplus_mminus(shape, i):
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
 
     print("=" * 78)
     print(" IRREP DETERMINANT — retracting my own 'no irrep escapes' claim")

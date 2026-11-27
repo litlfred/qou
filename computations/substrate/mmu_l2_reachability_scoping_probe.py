@@ -53,7 +53,7 @@ sys.path.insert(0, str(HERE.parent))
 
 import mpmath as mp
 
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 
 mp.mp.dps = max(50, mp.mp.dps)
 SIGMA_P_E_PPB = mp.mpf("0.017")      # CODATA 2022 sigma on m_p/m_e
@@ -71,7 +71,7 @@ def check(name: str, ok: bool, detail: str) -> None:
 
 def main() -> int:
     mp.mp.dps = 60
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     vol = 2 * mp.clsin(2, mp.pi / 3)
 
     def mp_over_me(x):

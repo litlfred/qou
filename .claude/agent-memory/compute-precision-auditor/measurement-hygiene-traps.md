@@ -752,3 +752,59 @@ that same extension, so the export cannot help the only path that calls it.
 
 **A speedup factor is about the function; the payoff is about the call count.**
 Ten lines of `sys.settrace`-free spy wrapper settles it before any porting.
+
+## TRAP — a `nohup … &` long compute dies at TURN END; it is not harness-tracked
+
+**Measured twice in one session, 2026-11-20 (bean `qou-oiz3`).** A 78-producer witness
+refresh was launched as
+
+```bash
+nohup python3 -u /tmp/refresh.py > /tmp/refresh.log 2>&1 &
+```
+
+inside a Bash call made with `run_in_background: true`. It died **twice**, at 27/78 and
+again at 6/52, and both times the diagnosis looked like a probe failure — the log's last
+line was mid-producer (`gamma_gamma_isospin_composition_rule_probe`, then
+`particle_gram_bond_locality_probe`), so the obvious reading is "that probe hung or OOMed".
+
+**That reading is wrong, and the timestamps are what settle it.** Compare the log's last
+write against the session's last tool call:
+
+| death | log last written | my last tool call that turn |
+|---|---|---|
+| 1st, at 27/78 | 19:19:09 | ~19:19 |
+| 2nd, at 6/52 | 19:59:27 | ~19:59 |
+
+The job died **the moment the turn ended**, both times, on two different producers. It is
+the turn boundary, not the probe.
+
+**Mechanism.** The harness tracks the process it launches. `nohup … &` forks a child and
+the launcher exits immediately, so the harness tracks the *launcher* and the real work is
+orphaned. The giveaway is the completion notification: it arrives within seconds and says
+`exit code 0` — that is the `nohup`+`sleep` wrapper succeeding, **not** the compute. An
+orphan then has nothing holding it through container idle.
+
+**So a notification saying "completed (exit code 0)" is evidence about the WRAPPER.**
+Taking it as evidence the refresh finished is the second-order version of this trap, and it
+is how "D is at 27/78" became "D finished at 27/78" in a session summary.
+
+**The fix.** Pass the long compute to `run_in_background: true` **directly**, with no
+`nohup` and no trailing `&`:
+
+```bash
+python3 -u /tmp/refresh.py 2>&1 | tee /tmp/refresh.log     # run_in_background: true
+```
+
+Then the harness owns the process, it survives turn boundaries, and the completion
+notification is about the compute.
+
+**Corollary for any resumable sweep: make the driver STATELESS.** This one baselines every
+candidate against `git show HEAD:<file>` rather than against an in-memory snapshot, so a
+resume re-derives verdicts instead of trusting the dead run's. That is the only reason two
+deaths cost coverage and not correctness. A driver holding its baseline in memory would
+have had to start over, or worse, would have committed verdicts computed against a
+reference that no longer existed.
+
+**And check for a death before reporting progress.** `pgrep -f <driver>` plus the log's
+age (`stat -c %Y`) is two seconds of work; a tail alone cannot distinguish "running slowly"
+from "dead six hours ago", and the last log line looks identical either way.

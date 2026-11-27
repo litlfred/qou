@@ -233,8 +233,8 @@ def main() -> int:
     print()
     print("9. THE 3 DOES NOT q-DEFORM  (and this is NOT an accuracy argument)")
     tgt = mp.mpf("0.0013774698046076")
-    from qou_substrate.constants import Q_50_DIGIT_STR      # noqa: PLC0415
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP      # noqa: PLC0415
+    q0 = Q_MP
 
     def at(e):
         return mp.mpf(str(sp.N(e.subs(_q, sp.Float(str(q0), 50)), 45)))

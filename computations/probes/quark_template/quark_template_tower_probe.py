@@ -22,7 +22,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 for p in ("tools/pyhecke/python", "tools/qou-substrate/python", "computations", "computations/substrate"):
     sys.path.insert(0, str(ROOT / p))
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 60
 q, t = sp.symbols("q t", positive=True)
@@ -148,7 +148,7 @@ def ser(o):
 
 
 def main():
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     checks, out = {}, {"recipe": "preregistration.md (6b9dd5d172)", "q0": Q_50_DIGIT_STR}
 
     # C1: S+AVG with gluon reproduces the builder's chi_(2,1) at q0

@@ -46,8 +46,8 @@ import sys as _sys, pathlib as _pl  # noqa: E402
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
 import _path_bridge  # noqa: F401, E402
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
+Q0 = Q_MP
 H = Q0 - 1 / Q0
 HBAR_Q = (Q0 - 1) / Q0
 B_SQ = (H ** 2 + 3) / (H ** 2 + 4)

@@ -56,7 +56,7 @@ sys.path.insert(0, str(HERE.parent))
 import _path_bridge  # noqa: F401, E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from y_lambda_wenzl_bridge import (  # noqa: E402
     classical_dim, partitions_of, schur_principal,
@@ -105,7 +105,7 @@ def y_vector_at_z(n, q, z):
 
 def main() -> int:
     set_compute_dps()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     # E_0 is the UNIT-CELL scale m_e/(q_0(q_0-1)) ~ 4.186 MeV, exactly as the
     # upstream probe defines it (mu3_abs_choice_robustness_probe.py:48) -- NOT
     # Q_NEUTRON_MEV.  A wrong E_0 leaves the SIGN and every RATIO below correct

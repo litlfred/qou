@@ -102,7 +102,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 import markov.markov_weights_symbolic as M  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
 from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
@@ -168,7 +168,7 @@ def main() -> int:
     )
 
     # ---- assertion 2: the A-exponent of log Z is the volume term's ----------
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     log_z_per_strand = mp.log(1 + q0 ** 2)
 
     def log_z(A: int) -> mp.mpf:

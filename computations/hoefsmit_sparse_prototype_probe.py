@@ -61,7 +61,7 @@ import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import fmt  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from canonical_braid_crossings import (  # noqa: E402
     atom_canonical_crossings, d_for_ctype,
 )
@@ -154,7 +154,7 @@ def chi_structured(shape, crossings, q_value):
 
 def main() -> int:
     set_compute_dps()
-    q = float(mp.mpf(Q_50_DIGIT_STR))
+    q = float(Q_MP)
     crossings = atom_canonical_crossings(1, 2)     # tritium, n=9, 35 crossings
 
     w = WitnessBuilder("hoefsmit-sparse-prototype", engine="python")

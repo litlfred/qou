@@ -89,14 +89,14 @@ sys.path.insert(0, str(_HERE.parent / "substrate"))
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 import mpmath as mp  # noqa: E402
 
 set_compute_dps(40)
 mp.mp.dps = 40
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 #: the 4_1 cusp shape in the corpus's shortest-vector basis, a primitive 6th root
 #: of unity (cusp-shape-bar-parity.md, proved).

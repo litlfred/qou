@@ -23,12 +23,12 @@
     "identity": "q**2*(q**12 + q**8 - 1) == q**22 * V(q**-2)"
   },
   "q0": "1.1099785827513808075916690956107688798744991218736",
-  "W_at_q0_convention_D": "1.1874806131459626461071158300792049240880255765818",
-  "W_at_q0_convention_D_direct_trace": "1.1874806131459626461071158300792049240880255765818",
+  "W_at_q0_convention_D": "1.1874806131459626461071158300792049240880255765815",
+  "W_at_q0_convention_D_direct_trace": "1.1874806131459626461071158300792049240880255765815",
   "W_at_1": "1/4",
   "comparison_convention_C_EXCISED": {
     "z": "sqrt(q)/(q+1)",
-    "W_at_q0": "0.90633830989628740115525382540208706425183828142970",
+    "W_at_q0": "0.90633830989628740115525382540208706425183828142952",
     "note": "deliberate labelled comparison against the excised convention; not a live value"
   },
   "published_value_finding": {
@@ -92,13 +92,13 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "f20e5c0c89a3",
-  "scriptCommitSha": "eb9eb3f12631471523874c9d23a021d8a86ed93b",
-  "commitSha": "868820902aa742950d0564a80e9c522ccdafcf2c",
+  "scriptFile": "markov/weak_vertex_t35_trace.py",
+  "scriptHash": "2cddefe847f9",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-09-05T05:57:45.981366+00:00",
+  "computedAt": "2026-11-20T15:37:29.595235+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "markov/weak_vertex_t35_trace.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

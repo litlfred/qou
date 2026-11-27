@@ -199,7 +199,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from _li_2_q_util import flavor_split_leading  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 mp.mp.dps = 50
@@ -240,7 +240,7 @@ def R_of(d, h):
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
     dx = flavor_split_leading(q)
     w = mp.mpf(1) / 2 - dx / 4

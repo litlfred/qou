@@ -9,7 +9,10 @@ floor by Richardson extrapolation, reading off
 
     c₀(A) = 2^{−A} − 2^{1−2A}
 
-from `A = 2,3,4` and confirming it at `A = 5` to 9e-9. That is a fitted form
+from `A = 2,3,4` and confirming it at `A = 5` to 2.4e-10 (that figure read 9e-9
+until 2026-11-21: the probe's own witness was written 2026-09-05 and its import cone
+has since moved, tightening the confirmation 39x -- the closed form is unchanged).
+That is a fitted form
 checked against a prediction — good, but still numerics, and it stops where the
 trace computation stops (`A = 5`; `H_18` and beyond are out of reach).
 
@@ -99,7 +102,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 import tr_m_atom_via_transfer as TR  # noqa: E402
 
@@ -155,7 +158,7 @@ def richardson_trace_limits(Z: int, N: int) -> tuple[mp.mpf, mp.mpf]:
 
 
 def main() -> int:
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     w = WitnessBuilder("classical-floor-derivation-probe")
     w.set_description(
         "Derives the classical floor of tr_M(W_free) - tr_M(W_atom) instead of "

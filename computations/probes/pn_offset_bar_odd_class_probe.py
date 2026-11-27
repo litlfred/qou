@@ -70,7 +70,7 @@ for _p in (_HERE.parent, _HERE.parent / "substrate"):
 
 from mpmath import mp  # noqa: E402
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from closed_form_tau_M import markov_z, hecke_h  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
@@ -107,7 +107,7 @@ def main() -> int:
     mp.dps = DPS
     # `q_parameter.Q` is a float64 and would cap every figure below at 17
     # significant digits; the 50-digit anchor is what the corpus computes at.
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     z, h, delta = markov_z(q), hecke_h(q), flavor_split_leading(q)
 
     w = WitnessBuilder("pn-offset-bar-odd-class", engine="mpmath",

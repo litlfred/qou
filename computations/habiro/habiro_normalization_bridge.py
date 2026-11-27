@@ -36,7 +36,7 @@ sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder  # noqa: E402
 from canonical_trm_reference import tr_m_proton  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def q_fact(n, q):
@@ -49,7 +49,7 @@ def q_fact(n, q):
 def main():
     set_compute_dps()
     set_compute_dps()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1/q
 
     hab = mp.mpf("136.0712063634817616514048508169837773395")

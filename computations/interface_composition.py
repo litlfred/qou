@@ -129,14 +129,14 @@ def _pn_color_weighted(h_val: float) -> float:
     try:
         import mpmath as mp
         from _li_2_q_util import flavor_split_leading
-        from q_parameter import Q_50_DIGIT_STR
+        from q_parameter import Q_50_DIGIT_STR, Q_MP
         # This classifier is float BY SIGNATURE (`h_val: float`) and tags
         # letters with `abs(d - x) < 1e-9`. delta ~ 1.4e-3 shifts the pn value
         # by 7e-5, eight orders above that window, so double is ample. No
         # physical quantity is computed here -- only which of four letter
         # types a junction is.
         with mp.workdps(50):
-            delta = float(flavor_split_leading(mp.mpf(Q_50_DIGIT_STR)))  # float64-ok: letter-type tag, 1e-9 window, no physics
+            delta = float(flavor_split_leading(Q_MP))  # float64-ok: letter-type tag, 1e-9 window, no physics
     except Exception:
         return -h_val / 2
     return -h_val * (1 - delta / 2) / 2

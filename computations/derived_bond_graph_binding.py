@@ -91,9 +91,9 @@ def _constants():
     # AGENTS.md §"a float64 input poisons the whole result".  Deriving h from the
     # 50-digit q0 instead of importing the float HA is what lets the f_bond
     # derivation be confirmed past 1e-16.  Bean qou-vsqh.
-    from q_parameter import Q_50_DIGIT_STR
+    from q_parameter import Q_50_DIGIT_STR, Q_MP
     from codata_constants import M_E_MEV as me
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     h = q0 - 1 / q0                  # h = q - q^-1, derived, not imported as f64
     me = me if isinstance(me, mp.mpf) else mp.mpf(str(me))
     z = q0**3 / (q0**2 + 1)          # convention D

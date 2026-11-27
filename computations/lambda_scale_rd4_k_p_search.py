@@ -38,12 +38,12 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from experimental_constants import M_E_MEV, M_P_MEV
 from _precision import fmt
 
 mp.mp.dps = 80
-Q = mp.mpf(Q_50_DIGIT_STR)
+Q = Q_MP
 HBAR = (Q - 1) / Q
 G = mp.catalan
 

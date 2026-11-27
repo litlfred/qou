@@ -59,7 +59,7 @@ import sympy as sp  # noqa: E402
 from _precision import fmt, set_compute_dps  # noqa: E402
 from hoefsmit_symbolic import Q, chi_lambda_symbolic  # noqa: E402
 from markov_weights_symbolic import solve_y_lambda  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 DPS = 60
 set_compute_dps(DPS)
@@ -128,7 +128,7 @@ def build_jobs():
 
 def main() -> int:
     t0 = time.time()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     qv = sp.Rational(Q_50_DIGIT_STR)
     from qou_substrate.constants import M_E_MEV  # noqa: PLC0415
     me = mp.mpf(str(M_E_MEV))

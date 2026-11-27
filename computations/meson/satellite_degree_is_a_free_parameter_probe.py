@@ -51,11 +51,11 @@ from _precision import set_compute_dps  # noqa: E402
 from hecke_characters import standard_young_tableaux  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from mass_table_comprehensive import AME_BINDING  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 mp.mp.dps = max(mp.mp.dps, 50)
-Q = mp.mpf(Q_50_DIGIT_STR)
+Q = Q_MP
 
 # (AME_BINDING key, Z, N).  A = Z + N; the word has 3A strands.  The table keys
 # deuterium and tritium as "D"/"T", not "2H"/"3H".

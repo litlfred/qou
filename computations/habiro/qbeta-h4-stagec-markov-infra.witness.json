@@ -2,10 +2,10 @@
   "description": "Stage-C instrumented base (bean 1jrh / Q_beta c_4): the H4(q) Markov trace wired from validated pieces (seminormal characters x Wenzl weights) into a callable accepting any H4 word incl. sigma_3, gated by four exact no-fit laws (Hecke, Markov generator-uniformity, C12 stabilization ratio constancy at 5 q-points, branching cross-check). NO sigma_3-lift candidate is enumerated or evaluated — the categorical Lambda stays the sole open item per the Stage-C scope. auditOnly.",
   "audit_only": true,
   "parameters": {
-    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
     "dps": 70,
     "q_points": [
-      "1.1099785827513808075916690956107688798744991218736",
+      "1.109978582751380807591669095610768879874499121873578736072814240181799",
       "1.05",
       "1.2",
       "1.37",
@@ -52,9 +52,9 @@
     "c12_ratio_at_q0": "1.0",
     "worst_dev": {
       "A": "3.62227e-71",
-      "B": "0.0",
-      "C": "5.43341e-71",
-      "D": "0.0"
+      "B": "9.05568e-72",
+      "C": "6.33898e-71",
+      "D": "9.05568e-72"
     }
   },
   "assertions": [
@@ -76,14 +76,14 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "3bef5289f337",
-  "scriptCommitSha": "d6e6e6ada93e69f06578bd71a13a7625f5088109",
-  "commitSha": "e3c66da566c33dfd24e5d710d9136d567ddac837",
+  "scriptFile": "qbeta_h4_stagec_markov_infra.py",
+  "scriptHash": "ccc8819b60d1",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "engine": "mpmath",
-  "computedAt": "2026-08-24T16:30:58.593940+00:00",
-  "durationMs": 46,
-  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-20T15:36:21.185607+00:00",
+  "durationMs": 61,
+  "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "qbeta_h4_stagec_markov_infra.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

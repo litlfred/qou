@@ -110,7 +110,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -187,7 +187,7 @@ def main() -> int:
 
     # Show the failure is not marginal at the live pin: the mismatch factor at a
     # representative t is far from 1.
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     print("  Not a marginal failure.  At the 50-digit proton pin the two columns")
     print("  differ by the factor q^(it) on the length-1 term; its modulus is 1")
     print("  but its PHASE separates them.  Phase gap at a few sample t:")

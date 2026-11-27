@@ -13,7 +13,7 @@ Only ONE effective crossing carries operator-valued content.
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json, time
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from pathlib import Path
 from mpmath import mp, mpf, fabs
 
@@ -21,7 +21,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
 
-q0 = mpf(Q_50_DIGIT_STR)
+q0 = Q_MP
 qi = 1/q0
 h = q0 - qi
 two_q = q0 + qi

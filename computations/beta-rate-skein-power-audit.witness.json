@@ -12,8 +12,8 @@
     "sSq_identity": "sSq q = (q-1)**2/q == skein_amp**2 == s**2",
     "power_in_the_rate": 2,
     "power_in_merged_substitutionRateFactor": 4,
-    "s_sq_at_q0": "0.010896866707122299752491978091862815889240748484137",
-    "s_fourth_at_q0": "0.00011874170403279039205142330993704621125096677697453"
+    "s_sq_at_q0": "0.010896866707122299752491978091862815889240748484133",
+    "s_fourth_at_q0": "0.00011874170403279039205142330993704621125096677697444"
   },
   "substitution_factor": {
     "merged_W2_over_s4": "11875.441893676302628",
@@ -107,13 +107,13 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "936a4b7880dd",
-  "scriptCommitSha": "unknown",
-  "commitSha": "c1a61ec8b2a3a7da7b7a24256494c7cff1e8f54f",
+  "scriptFile": "markov/beta_rate_skein_power_audit.py",
+  "scriptHash": "ebcfe542e60f",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-09-05T08:51:05.829339+00:00",
+  "computedAt": "2026-11-20T15:37:09.598362+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "markov/beta_rate_skein_power_audit.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

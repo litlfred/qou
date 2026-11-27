@@ -41,14 +41,14 @@ from sublemma_2_1_deuteron_branching import (  # noqa: E402
     partitions_of,
 )
 from _precision import set_compute_dps, fmt  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()  # mp.dps via QOU_COMPUTE_DPS (default 50)
 
 # q_0 as an mpf carried from the 50-digit string, not the float64 `Q`. The
 # module previously imported `Q` (a Python float) and every downstream value
 # inherited that ceiling regardless of how it was serialized.
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 
 # h = q − q⁻¹, DERIVED from this file's own Q0 rather than typed.

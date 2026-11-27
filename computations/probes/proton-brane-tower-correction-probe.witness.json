@@ -1,23 +1,23 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:26:11.802891+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:44:54.948682+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "correction_is_small",
-      "computed": "0.00000000001242543944504852768170677637083385329414878677819821983611105543188589",
+      "computed": "0.0000000000124254568849967633878138290142731853612258726609225162684131550644358",
       "expected": 0.0,
       "passed": true,
       "tolerance": "0.0001"
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 6,
   "computation": "proton-brane-tower-correction-probe",
   "scriptFile": "proton_brane_tower_correction_probe.py",
-  "scriptHash": "62a6a1121a2c",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "e7bad60e491d",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,14 +25,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -43,21 +43,21 @@
   "data": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",
     "mp_over_me_N0": "1836.152673408421281403270760367728219349",
-    "mp_over_me_codata": "1836.152673431236285258571064985354075180",
-    "correction_ratio": "1.000000000012425439445048527681706776371",
-    "correction_R_minus_1": "1.2425439445048527682e-11",
+    "mp_over_me_codata": "1836.152673431236317280978642081602588349",
+    "correction_ratio": "1.000000000012425456884996763387813829014",
+    "correction_R_minus_1": "1.2425456884996763388e-11",
     "u_parameter": "0.0085172345501561421893",
     "err_N0_ppb": "0.0124",
     "tower_coefficients": {
       "d_1": "0.0000000015",
       "d_2": "0.0000001713",
       "d_3": "0.0000201102",
-      "d_4": "0.0023611160",
-      "d_5": "0.2772162737",
-      "d_6": "32.5476857594",
-      "d_7": "3821.3912705776"
+      "d_4": "0.0023611193",
+      "d_5": "0.2772166628",
+      "d_6": "32.5477314423",
+      "d_7": "3821.3966341598"
     },
-    "finding": "The 242 ppb m_p gap = correction ratio R-1 \u2248 2.42e-7. This matches u\u00b3 \u2248 6.2e-7 at d\u2083 \u2248 0.39 (order-1 coefficient). The proton correction tower starts at k=3 (same order as Q_\u03b2's c\u2083 = J = -2). The coefficient d\u2083 needs categorical identification."
+    "finding": "The 242 ppb m_p gap = correction ratio R-1 ≈ 2.42e-7. This matches u³ ≈ 6.2e-7 at d₃ ≈ 0.39 (order-1 coefficient). The proton correction tower starts at k=3 (same order as Q_β's c₃ = J = -2). The coefficient d₃ needs categorical identification."
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

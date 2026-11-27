@@ -84,7 +84,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 from qou_substrate.witness import apply_q0_comparison  # noqa: E402
 
 # Both pins read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). The
@@ -96,7 +96,7 @@ from qou_substrate.witness import apply_q0_comparison  # noqa: E402
 # The proton leg additionally had a silent `except` fallback to a hand-typed
 # copy of the same value. Same number today, and a second place for it to go
 # stale; a pin that cannot be established is an error, not a default.
-Q0_PROTON = mp.mpf(Q_50_DIGIT_STR)
+Q0_PROTON = Q_MP
 Q0_MUON = q_muon_at(50)
 
 # Empirical c_3 targets (registry ≈ −2.02 muon / −2.07 proton):

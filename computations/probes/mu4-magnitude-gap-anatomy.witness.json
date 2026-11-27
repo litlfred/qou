@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T21:32:17.178460+00:00",
-  "commitSha": "dce2f5e66420ba337e4d531b48b0d4496de0a2c0",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:44:20.080633+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "gap_is_not_single_factor_on_mu4",
@@ -27,8 +27,8 @@
   "durationMs": 14,
   "computation": "mu4-magnitude-gap-anatomy",
   "scriptFile": "mu4_magnitude_gap_anatomy_probe.py",
-  "scriptHash": "5f3e5c4988fd",
-  "scriptCommitSha": "2b4e6798babb0158632c0a010e356dfe10f91a2e",
+  "scriptHash": "96b4e6106386",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,14 +36,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -73,13 +73,13 @@
       "reading": "The magnitude gap is NOT chaseable by computation: a one-scalar family already reaches every target, so any probe that 'closes' it has inverted the anchor. Closing requires a categorical principle FIXING m."
     },
     "convention_residue": {
-      "cited_naive_z": "0.499320334183694452058888570316831932640732912745994623923123",
+      "cited_naive_z": "0.499320334183694452413442680257666303751948164041532416785170",
       "z_C_excised": "0.499320334183694452413442680257666303751948164041532416785170",
-      "z_D_canonical": "0.612688037146465251595829863945899248026308391545085404591497",
+      "z_D_canonical": "0.612688037146465251595829863945899248026308391545065358856171",
       "cited_is_convention_C": true,
       "ceiling_one_over_sqrt5": "0.447213595499957939281834733746255247088123671922304733722148",
       "det_IG_at_zC": "-0.185120479863117314893437679735634057743402994317986878732612",
-      "det_IG_at_zD": "-0.547744172023255108070962285180973937495466382429270845604515",
+      "det_IG_at_zD": "-0.547744172023255108070962285180973937495466382429216053927958",
       "exclusion_survives_under_D": true,
       "exclusion_stronger_under_D": true,
       "action": "Recorded, not silently corrected: the witness is not this branch's to regenerate and the exclusion it supports is live and unaffected."

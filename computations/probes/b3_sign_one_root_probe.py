@@ -54,7 +54,7 @@ for _p in ("tools/qou-substrate/python", "tools/pyhecke/python", "computations")
 import sympy as sp  # noqa: E402
 from mpmath import mp, mpf  # noqa: E402
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from pyhecke.constants import (  # noqa: E402
     PN_CONVENTION,
     flavor_split_leading,
@@ -83,7 +83,7 @@ def check(ok: bool, name: str, detail: str = "") -> None:
 # --------------------------------------------------------------------------
 # Substrate, convention D, proton pin.
 # --------------------------------------------------------------------------
-Q = mpf(Q_50_DIGIT_STR)
+Q = Q_MP
 H = Q - 1 / Q                      # Hecke h = q - 1/q
 Z_D = Q**3 / (Q**2 + 1)            # convention D Markov parameter
 

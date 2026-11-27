@@ -21,7 +21,7 @@ import option1_ropelength_probe as O1  # noqa: E402
 import sameloop_probe as SL  # noqa: E402
 import fibres_probe as F  # noqa: E402
 import bring_route2_qdeformed_probe as QD  # noqa: E402
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 WORDLEN = 11
 DIG = 40
@@ -95,7 +95,7 @@ def main():
         w = "".join(map(str, c))
         M = R2.sl2z(list(c))
         with mp.workdps(60):
-            q0h = mp.mpf(Q_50_DIGIT_STR)
+            q0h = Q_MP
             r = QD.classify(QD.evalm(QD.burau(list(c)), -q0h))
         rows.append({"word": w, "M": M, "S1": F.s1_key(M), "E": r["ell"], "type": r["type"],
                      "seen": sorted(k for k, v in SEEN.items() if O1.canon(tuple(map(int, v))) == c)})

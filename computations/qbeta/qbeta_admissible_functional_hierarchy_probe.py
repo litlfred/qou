@@ -60,7 +60,7 @@ import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
 from qbeta_net_trace_invariance_probe import (  # noqa: E402
@@ -176,7 +176,7 @@ def main() -> int:
               "both measure how far z=1 is from being a root -- shared cause, "
               "not independent evidence")
 
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     w0 = (1 - q0**3 / (q0**2 + 1)) / (q0 - q0**3 / (q0**2 + 1))
     print(f"\n      w*(q0) = {mp.nstr(w0, 20)}")
 

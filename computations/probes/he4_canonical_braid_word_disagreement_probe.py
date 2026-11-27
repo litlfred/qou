@@ -89,7 +89,7 @@ import sympy as sp  # noqa: E402
 from mpmath import mp  # noqa: E402
 
 from char_fast import _compiled_sigmas  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from sublemma_2_1_h12_he4_branching import he4_braid_canonical  # noqa: E402
 from sublemma_2_1_h9_tritium_verify import (  # noqa: E402
@@ -118,7 +118,7 @@ def he4_braid_LOCAL_PRE_FIX() -> list:
     return word
 
 mp.dps = 40
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 TARGETS = [(12,), (11, 1), (10, 2), (10, 1, 1),
            (3, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 1, 1, 1, 1, 1, 1, 1, 1),

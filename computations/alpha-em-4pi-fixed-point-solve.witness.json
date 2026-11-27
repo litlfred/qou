@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-19T21:20:23.120833+00:00",
-  "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:01:09.481904+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "fixed_point_forms_solved",
@@ -17,8 +17,8 @@
   "durationMs": 10,
   "computation": "alpha-em-4pi-fixed-point-solve",
   "scriptFile": "alpha_em_4pi_fixed_point_solve.py",
-  "scriptHash": "d17307e42c99",
-  "scriptCommitSha": "940b3e118c9cbb5470f89a9779210687afad4127",
+  "scriptHash": "a2e8d77f96c9",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,12 +26,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em_4pi_fixed_point_solve.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em_4pi_fixed_point_solve.py"
   },
   "description": "Self-consistent fixed-point derivation of α_EM at q_0 using the empirical form α⁻¹ = T + α·H·(1-h²·α+O(α²)) from #1477 and #1480. Solves the resulting polynomial in α numerically at 50 dps; compares to CODATA. If residual < experimental σ_α (0.15 ppb), this constitutes a structural derivation of α from q_0 + Bring data with no free parameters.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",

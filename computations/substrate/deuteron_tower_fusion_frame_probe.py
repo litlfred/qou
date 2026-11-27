@@ -92,7 +92,7 @@ three_v = v**2 + 1 + v**(-2)  # [3]_v
 # (1) canonical z — live pyhecke value vs the convention-D closed form
 import mpmath as _mp  # noqa: E402
 import pyhecke.gram as gram  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402  (canonical q0, via substrate path)
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402  (canonical q0, via substrate path)
 
 # `gram.z` is a float64 module constant, so this comparison has a float64 side
 # no matter what. Lift it EXACTLY (`repr` round-trips a float64) rather than
@@ -101,7 +101,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402  (canonical q0, via substra
 # precision claim about the identity. Was `float(gram.z)` differenced against a
 # float64 `Q0**3/(Q0**2+1)` until 2026-08-23 (AGENTS.md "PROBES ARE NOT EXEMPT").
 with _mp.workdps(50):
-    _q0 = _mp.mpf(Q_50_DIGIT_STR)
+    _q0 = Q_MP
     z_live = _mp.mpf(repr(float(gram.z)))
     z_formula = _q0**3 / (_q0**2 + 1)
     # 1e-12 is far looser than float64 eps at this magnitude (~1.1e-16); it is

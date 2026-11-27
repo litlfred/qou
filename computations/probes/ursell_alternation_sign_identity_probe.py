@@ -115,7 +115,7 @@ from mpmath import mp, mpf  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from closed_form_tau_M import hecke_h, markov_z  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
@@ -250,7 +250,7 @@ def check_alternation():
 # at the compute dps, carried end to end; floats appear nowhere.
 
 def framework_bond_factors():
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     z = markov_z(q)                       # convention D, canonical (R1 2026-08-15)
     h = hecke_h(q)
     delta = flavor_split_leading(q)
@@ -320,7 +320,7 @@ def check_boltzmann_chain():
     2026-08-15); C is what the 2026-08-08 audit itself used, so its row is the
     cross-check that this reproduces that audit's own number.
     """
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = hecke_h(q)
     d = flavor_split_leading(q)
     # NO SILENT FALLBACK. A hardcoded m_e differs from the package's

@@ -46,7 +46,7 @@ set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
 from experimental_constants import ALPHA_EM_INV  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def q_bracket(n: int, q):
@@ -87,7 +87,7 @@ def main() -> int:
     )
     builder.set_content_block("prop:em-coupling-bring-zero-mode")
 
-    q0 = mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     CODATA_alpha_inv = mpf(str(ALPHA_EM_INV))
     SIGMA_Q0_PPB = mpf("22")  # CAL-2 uncertainty on m_μ/m_e (~22 ppb)
     RESIDUAL_PPB = mpf("0.31")  # residual from #1484

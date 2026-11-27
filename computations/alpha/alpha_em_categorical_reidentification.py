@@ -64,14 +64,14 @@ sys.path.insert(0, str(HERE.parent))
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def main():
     set_compute_dps()
     wb = WitnessBuilder("alpha-em-categorical-reidentification", engine="mpmath")
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     qbra = lambda n: (q**n - q**(-n)) / (q - q**(-1))  # noqa: E731
 
     CODATA_alpha_inv = mpf("137.035999084")  # CODATA 2018

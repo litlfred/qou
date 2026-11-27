@@ -74,9 +74,9 @@ mp.mp.dps = 50
 # replaced carried 17 digits while the probe computes at 50 dps, and a
 # hand-copied pin is exactly the failure `q0_stamp.stamp_q0_anchor` refuses to
 # stamp: a producer can silently drift from the pin its witness declares.
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
-Q = mp.mpf(Q_50_DIGIT_STR)         # proton pin (experimental layer, per the
+Q = Q_MP         # proton pin (experimental layer, per the
 H = Q - 1 / Q                      # 2026-08-07 directive)
 
 Z_C = 1 / (mp.sqrt(Q) + 1 / mp.sqrt(Q))   # sqrt(q)/(q+1)  -- excised

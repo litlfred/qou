@@ -18,11 +18,11 @@ for _p_qp in (_Path_qp(__file__).resolve().parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 def main():
     mp.mp.dps = 60
-    q_val = mp.mpf(Q_50_DIGIT_STR)
+    q_val = Q_MP
     q = sp.Symbol('q')
     
     # Hook length formula for quantum dimension:

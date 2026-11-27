@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T02:58:27.452863+00:00",
-  "commitSha": "1ec0c6dec131fbb4293292cbfa42a8e72be10798",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:43:58.289660+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "the Lean closed form is symbolically identical to the direct expression",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 14,
   "computation": "markov-repeat-defect-lean-guard",
   "scriptFile": "markov_repeat_defect_lean_guard_probe.py",
-  "scriptHash": "2a239fb47fbc",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "373e52507d4a",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,14 +50,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -76,7 +76,7 @@
       "QOU.QBeta.InterfaceScalar.conventionD_markov_defect_neg",
       "QOU.QBeta.InterfaceScalar.markov_stabilisation_fails_on_repeat"
     ],
-    "lean_file": "content/quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean",
+    "lean_file": "folio/quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean",
     "closed_form": "-(q^2 - q + 1)(q^2 + q + 1) / (q^2 + 1)^2",
     "symbolic_difference": "0",
     "defect_at_q0": "-0.7527021132519654015937793516202361378302",

@@ -65,7 +65,7 @@ sys.path.insert(0, str(HERE.parent))
 import _path_bridge  # noqa: F401, E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from experimental_constants import Q_NEUTRON_MEV as E_0  # noqa: E402
 from y_lambda_wenzl_bridge import (  # noqa: E402
     classical_dim, partitions_of, schur_principal,
@@ -156,7 +156,7 @@ def nucleon_h3_traces(q):
 
 def main() -> int:
     set_compute_dps()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     log(f"proton pin q_0 = {Q_50_DIGIT_STR}  (dps={mp.mp.dps})")
     zc, zd = z_C(q), z_D(q)
     log(f"z_C = {mp.nstr(zc, 20)}   z_D = {mp.nstr(zd, 20)}   "

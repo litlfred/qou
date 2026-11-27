@@ -36,7 +36,7 @@ import subprocess
 import mpmath as mp
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 
 set_compute_dps()
 
@@ -45,7 +45,7 @@ SIGMA_ALPHA_INV = mp.mpf("0.000000021")          # CODATA 2018 σ on 1/α
 # Both pins read BY NAME (bean qou-4bef, 2026-09-03); the muon literal this carried was the
 # pin RETIRED 2026-08-22/28.
 ANCHORS = {
-    "proton": mp.mpf(Q_50_DIGIT_STR),
+    "proton": Q_MP,
     "muon": q_muon_at(50),
 }
 

@@ -64,7 +64,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 
@@ -99,7 +99,7 @@ def main() -> int:
     # PROTON q₀. (This comment said 'muon-canonical' until 2026-09-04, one line
     # above the call that reads `Q_50_DIGIT_STR`, which for this stem — not in
     # `ideal_muon` — resolves to the proton pin; bean qou-9ugp.)
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     h = q0 - 1 / q0
     deficit = h ** 4 * (3 + h ** 2) / (h ** 2 + 4)          # 1 − τ_Borr (dimensionless)
 

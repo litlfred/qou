@@ -71,7 +71,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 import qbeta_5two_stokes_barodd_index_probe as sb  # noqa: E402  (corpus H_num)
 from _precision import set_compute_dps  # noqa: E402
 
@@ -88,7 +88,7 @@ MU8 = mp.e ** (1j * mp.pi / 4)          # FW eq (7): μ₈, an 8th root of unity
 # `qou_substrate.constants`, so the witness resolves its anchor stamp.
 # The NAME Q0_MUON is kept so its call sites stay legible; it now holds the
 # proton pin, which is what this producer computes at.
-Q0_MUON = mp.mpf(Q_50_DIGIT_STR)
+Q0_MUON = Q_MP
 
 
 def e(x):

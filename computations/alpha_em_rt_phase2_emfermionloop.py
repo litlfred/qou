@@ -66,7 +66,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def q_bracket_sym(n, q):
@@ -174,7 +174,7 @@ def main() -> int:
     print()
 
     # ── Part D: numerical at q_0 ───────────────────────────────
-    q_val = mpf(Q_50_DIGIT_STR)
+    q_val = Q_MP
     print(f"  PART D: numerical evaluation at q_0 = {float(q_val):.14f}")
     bra2_num = q_val + 1/q_val
     print(f"      EmFermionLoop_V_F(q_0) = [2]_q at q_0 = {mp.nstr(bra2_num, 20)}")

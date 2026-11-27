@@ -50,11 +50,11 @@ from hecke_characters import (  # noqa: E402
     chi_lambda_braid,
     partitions_of,
 )
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
-Q0 = mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 
 def q_int(k, q):

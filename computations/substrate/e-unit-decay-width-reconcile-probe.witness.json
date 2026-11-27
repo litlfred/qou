@@ -37,12 +37,14 @@
   },
   "allPassed": true,
   "verdict": "𝔇 (DECAY-WIDTH) ROUTE: ARCHITECTURALLY VALID (removes CAL-4), NUMERICALLY NEGATIVE (confirms the landed §2h wall). E_unit = Q_beta * F needs F = E_unit/Q_beta = 1.27091; the genuine 2-body factors (2, 3/[2]_v, [3]_v/[2]_v) all miss the 0.4% law scale. Reconciliation with §2h: the exchange sector is scale-free (ss_det_no_linear_term) so E_unit is external either way; the sibling's landed table has the bar-EVEN 2 m_e closest (+2.62%) and bar-odd Q_beta WORST (-21%). So the 𝔇/bar-odd reinterpretation, while it correctly keeps E_unit inside 3 CALs (no new calibration), points at the numerically worst sector: it does NOT close the number, and if anything the data favor a bar-EVEN unit (2 m_e). The golden-ratio F ~ sqrt(phi) (0.09%) is a numerology trap, not claimed. CONCLUSION: E_unit stays open; the §2h NEAR-MATCH / external-unit verdict holds from the 𝔇 side too. Value delivered: the CAL-4 violation is removed (E_unit must be a 3-CAL function), and the decay-width sector is now an honest negative.",
-  "scriptHash": "256a35a3d387",
-  "scriptCommitSha": "22865e1323e9864d5a40b141c46dbecd8e031890",
-  "commitSha": "22865e1323e9864d5a40b141c46dbecd8e031890",
+  "scriptFile": "e_unit_decay_width_reconcile_probe.py",
+  "scriptHash": "3a535fc153f4",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "28488bb4f7c533dea5ff310ea41d0cc4c50c6bd8",
   "engine": "mpmath",
-  "computedAt": "2026-07-07T12:10:57.312512+00:00",
+  "computedAt": "2026-11-21T02:50:48.601859+00:00",
   "durationMs": 0,
-  "engineVersion": "mpmath 1.3.0",
-  "scriptFile": "e_unit_decay_width_reconcile_probe.py"
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

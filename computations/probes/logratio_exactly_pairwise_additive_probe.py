@@ -95,7 +95,7 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from canonical_braid_crossings import atom_canonical_crossings, d_for_ctype  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 
 set_compute_dps(40)
@@ -118,7 +118,7 @@ def main() -> int:
         print(f"  [{'PASS' if ok else 'FAIL'}] {name}")
         print(f"         {detail}")
 
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - mp.mpf(1) / q
     E0 = mp.mpf(str(M_E_MEV)) / (q * (q - 1))
     d_blind = d_for_ctype("averaged", h)

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath50+f64-seminormal-sparse",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T21:45:44.198317+00:00",
-  "commitSha": "98bbc136d0a4a9ba9f5595821d85301b02c0b233",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:20:35.193910+00:00",
+  "commitSha": "f603607f097ad30e397038d5345d39e2fe740ba0",
   "assertions": [
     {
       "name": "wenzl_level_is_constant_two",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 10,
   "computation": "threerow-isospin-parity",
   "scriptFile": "threerow_isospin_parity_probe.py",
-  "scriptHash": "c03e0c034db0",
-  "scriptCommitSha": "98bbc136d0a4a9ba9f5595821d85301b02c0b233",
+  "scriptHash": "cdeaa3ba51e5",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -170,11 +170,11 @@
           "1.001": "0.0",
           "1.05": "0.0",
           "1.1099786": "0.0",
-          "1.2": "7.42369598045e-51",
-          "1.2784496": "3.38447951381e-50",
-          "2.0": "1.88432487129e-46"
+          "1.2": "-1.56374708501e-51",
+          "1.2784496": "-2.72632045824e-51",
+          "2.0": "2.77561147914e-47"
         },
-        "max_abs_F": "1.88432487129e-46",
+        "max_abs_F": "2.77561147914e-47",
         "below_null_tolerance": true,
         "word": {
           "word_length": 23,
@@ -196,11 +196,11 @@
           "1.001": "0.0",
           "1.05": "0.0",
           "1.1099786": "0.0",
-          "1.2": "4.5957552849e-51",
-          "1.2784496": "1.97954854494e-50",
-          "2.0": "2.11720143877e-46"
+          "1.2": "-1.79078404089e-51",
+          "1.2784496": "-3.25883808181e-51",
+          "2.0": "2.49188464487e-47"
         },
-        "max_abs_F": "2.11720143877e-46",
+        "max_abs_F": "2.49188464487e-47",
         "below_null_tolerance": true,
         "word": {
           "word_length": 23,
@@ -221,11 +221,11 @@
           "1.001": "0.0",
           "1.05": "0.0",
           "1.1099786": "0.0",
-          "1.2": "7.40595495874e-51",
-          "1.2784496": "3.76430276798e-50",
-          "2.0": "1.56894461373e-46"
+          "1.2": "-4.71647506498e-52",
+          "1.2784496": "-1.10965918189e-51",
+          "2.0": "2.88246049357e-47"
         },
-        "max_abs_F": "1.56894461373e-46",
+        "max_abs_F": "2.88246049357e-47",
         "below_null_tolerance": true,
         "word": {
           "word_length": 23,
@@ -242,17 +242,17 @@
       {
         "q": "1.2",
         "descending_by_abs_F": [
+          "pp",
           "D",
-          "nn",
-          "pp"
+          "nn"
         ]
       },
       {
         "q": "2.0",
         "descending_by_abs_F": [
-          "pp",
+          "nn",
           "D",
-          "nn"
+          "pp"
         ]
       }
     ],

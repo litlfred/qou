@@ -48,7 +48,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
@@ -71,7 +71,7 @@ def main() -> int:
     # no comparison leg here, so the 2026-08-30 owner ruling puts this producer
     # on the PROTON default; the pin moves 11.54 ppb. `q_parameter`, not
     # `qou_substrate.constants`, so the witness resolves its anchor stamp.
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     m_e = mp.mpf("0.51099895069")
     import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
     E0 = _qbeta_e0.order_zero_scaled(m_e, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)

@@ -3,12 +3,12 @@
   "description": "The 5\u2082 order-3 bar-odd Habiro tail T_odd=\u03a3_{n=1}^3 (C_n(q0)\u2212C_n(1/q0))f_n(q0) \u2248 +0.019 (O(10\u207b\u00b2)) is order-of-magnitude consistent with the corpus bar-odd anchors S_muon/S_proton; 4\u2081 (order-2) gives exactly 0. Consistency, NOT identification (sign convention-dependent; strip \u03c6_odd 5\u00d7 smaller). scope-(a).",
   "audit_only": true,
   "tier": "numerical consistency (order-of-magnitude)",
-  "computedAt": "2026-09-03T23:24:50.936674+00:00",
-  "commitSha": "2cd62ed2eb1567d5a412fe894fa96dc444dff66d",
+  "computedAt": "2026-11-20T15:46:00.651948+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
   "scriptFile": "qbeta_5two_order3_barodd_tail_probe.py",
-  "scriptHash": "86fe6321bc9a",
+  "scriptHash": "f841f8a50fb5",
   "assertions": [
     {
       "name": "f_n_bar_even",
@@ -52,7 +52,7 @@
       "qbeta_g3_5two_barodd_substrate (intrinsic strip, open)"
     ]
   },
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

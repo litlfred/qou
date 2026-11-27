@@ -63,13 +63,13 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from hoefsmit_symbolic import dim_q  # noqa: E402
 
 from qou_substrate.witness import _tolerance_literal  # noqa: E402
 
 mp.mp.dps = 60
-Q_MP = mp.mpf(Q_50_DIGIT_STR)
+Q_MP = Q_MP
 
 #: Declared threshold for check C1. Carried NUMERICALLY here because the
 #: comparison below needs a number, and serialized through the guard because

@@ -119,7 +119,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 try:
-    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 except Exception:  # pragma: no cover
     Q_50_DIGIT_STR = None
 
@@ -441,7 +441,7 @@ def main() -> int:
         # whole function, so using it before that line is an UnboundLocalError.
         from _li_2_q_util import flavor_split_leading as _fsl  # noqa: E402
 
-        q0n = mp.mpf(Q_50_DIGIT_STR)
+        q0n = Q_MP
         hh = q0n - 1 / q0n
         zz = q0n ** 3 / (q0n ** 2 + 1)
         CC = zz ** 2 - hh * zz - 1
@@ -483,7 +483,7 @@ def main() -> int:
 
     payload_pin = {}
     if Q_50_DIGIT_STR is not None:
-        q0 = mp.mpf(Q_50_DIGIT_STR)
+        q0 = Q_MP
         hh = q0 - 1 / q0
         delta = mp.mpf(str(flavor_split_leading(q0)))
         t_pn = mp.mpf(1) / 2 - delta / 4
@@ -578,8 +578,8 @@ def main() -> int:
         "second_tranche": {
             "parity_ratio_closed_form": "odd/even = ((q^4-1)/(q^4+1)) * T_z, exactly",
             "n4_cap": "(q^4-1)/(q^4+1)",
-            "n4_cap_at_q0": (mp.nstr((mp.mpf(Q_50_DIGIT_STR) ** 4 - 1)
-                                     / (mp.mpf(Q_50_DIGIT_STR) ** 4 + 1), 20)
+            "n4_cap_at_q0": (mp.nstr((Q_MP ** 4 - 1)
+                                     / (Q_MP ** 4 + 1), 20)
                              if Q_50_DIGIT_STR is not None else None),
             "n6_peeled_bond_still_factors": True,
             "n6_sum_of_squares_generalises": False,

@@ -66,13 +66,13 @@ set_compute_dps()
 # established is an error, not a default. `q_parameter` rather than
 # `qou_substrate.constants` so the witness resolves its anchor stamp.
 try:
-    from q_parameter import Q_50_DIGIT_STR  # type: ignore
+    from q_parameter import Q_50_DIGIT_STR, Q_MP  # type: ignore
 except Exception as _exc:  # pragma: no cover
     raise RuntimeError(
         "cannot establish the q0 anchor: `q_parameter` did not import. "
         "Refusing to fall back to a literal -- see bean qou-9ugp."
     ) from _exc
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 
 def conj(U, F):

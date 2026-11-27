@@ -55,12 +55,12 @@ set_compute_dps()
 
 HERE = Path(__file__).parent
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_int_at as _q_int_at  # noqa: E402
 
 # Substrate: categorical q0>1; the |q|<1 image used by E_q(2) harmonic analysis.
-Q0 = mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 Q = 1 / Q0                      # ≈ 0.90092
 
 

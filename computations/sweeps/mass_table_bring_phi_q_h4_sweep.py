@@ -52,7 +52,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from _li_2_q_util import (  # noqa: E402
     linking_weight_family_a,
@@ -80,7 +80,7 @@ def linking_weight_bring_plus_phi_q_h4(q: mp.mpf, q_inv: mp.mpf | None = None) -
 
 
 def main() -> int:
-    Q0 = mp.mpf(Q_50_DIGIT_STR)
+    Q0 = Q_MP
     Q_INV = mp.mpf(1) / Q0
     HBAR_Q = (Q0 - 1) / Q0
     M_E = M_E_MEV

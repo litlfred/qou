@@ -1,12 +1,12 @@
 {
  "schema": "qou-witness/v1",
- "computedAt": "2026-11-15T20:38:18.388558+00:00",
+ "computedAt": "2026-11-20T15:16:12.809343+00:00",
  "computation": "rev_exact_maximiser_small_n_probe.py",
  "bean": "qou-hok7",
  "anchor": "physical_proton",
  "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736",
- "description": "M_n by EXHAUSTIVE enumeration over every partition of n, for triangular n up to T_12.  Every M_n this arc has published came from a neighbourhood search and was therefore a lower bound; these are maxima.  Affordable because betaSide_eq_hookSum makes the objective a sum over cells of phi(hook), and a cell's hook depends only on the rows below it, so building the diagram smallest-row-first costs one integer add per cell.  The search is exact integer arithmetic at scale 1e-40.",
+ "description": "M_n by EXHAUSTIVE enumeration over every partition of n, for triangular n up to T_10.  Every M_n this arc has published came from a neighbourhood search and was therefore a lower bound; these are maxima.  Affordable because betaSide_eq_hookSum makes the objective a sum over cells of phi(hook), and a cell's hook depends only on the rows below it, so building the diagram smallest-row-first costs one integer add per cell.  The search is exact integer arithmetic at scale 1e-40.",
  "constants": {
   "A": "3.60337772571985726431330301574",
   "B": "5.18936914405934016111693400948",
@@ -736,7 +736,7 @@
     }
    ],
    "staircase_is_argmax": false,
-   "elapsed_sec": 0.3
+   "elapsed_sec": 0.4
   },
   {
    "k": 10,
@@ -859,247 +859,7 @@
     }
    ],
    "staircase_is_argmax": false,
-   "elapsed_sec": 1.42
-  },
-  {
-   "k": 11,
-   "n": 66,
-   "L_frame": 12,
-   "H_min": 506,
-   "partitions_visited": 2323520,
-   "V_stair_scaled": "-183019919642378437365146865347139941474730",
-   "M_n_scaled": "-178068049898271187555987241993945932151349",
-   "second_best_scaled": "-178221298358485258550797144702761314170069",
-   "V_stair": "-18.3019919642378437365147",
-   "M_n": "-17.8068049898271187555987",
-   "excess_exact": "0.495186974410724980915962",
-   "n_argmax": 2,
-   "n_hook_multisets": 1,
-   "argmax": [
-    [
-     12,
-     10,
-     9,
-     7,
-     6,
-     5,
-     4,
-     4,
-     3,
-     2,
-     2,
-     1,
-     1
-    ],
-    [
-     13,
-     11,
-     9,
-     8,
-     6,
-     5,
-     4,
-     3,
-     3,
-     2,
-     1,
-     1
-    ]
-   ],
-   "argmax_beta": [
-    [
-     24,
-     21,
-     19,
-     16,
-     14,
-     12,
-     10,
-     9,
-     7,
-     5,
-     4,
-     2,
-     1
-    ],
-    [
-     24,
-     21,
-     18,
-     16,
-     13,
-     11,
-     9,
-     7,
-     6,
-     4,
-     2,
-     1
-    ]
-   ],
-   "staircase_beta_in_frame": [
-    22,
-    20,
-    18,
-    16,
-    14,
-    12,
-    10,
-    8,
-    6,
-    4,
-    2,
-    0
-   ],
-   "displacements": [
-    {
-     "partition": [
-      13,
-      11,
-      9,
-      8,
-      6,
-      5,
-      4,
-      3,
-      3,
-      2,
-      1,
-      1
-     ],
-     "u": [
-      2,
-      1,
-      0,
-      0,
-      -1,
-      -1,
-      -1,
-      -1,
-      0,
-      0,
-      0,
-      1
-     ],
-     "sum_u": 0,
-     "sum_u_sq": 10,
-     "ap_frame": true,
-     "two_delta_H_from_beta": 10,
-     "H_minus_Hmin": 5
-    }
-   ],
-   "staircase_is_argmax": false,
-   "elapsed_sec": 8.61
-  },
-  {
-   "k": 12,
-   "n": 78,
-   "L_frame": 14,
-   "H_min": 650,
-   "partitions_visited": 12132164,
-   "V_stair_scaled": "-297395981931913830222104375044140351887368",
-   "M_n_scaled": "-290484234423871020628647607491790546025645",
-   "second_best_scaled": "-291026080499261690733188425831883652056309",
-   "V_stair": "-29.7395981931913830222104",
-   "M_n": "-29.0484234423871020628648",
-   "excess_exact": "0.691174750804280959345677",
-   "n_argmax": 1,
-   "n_hook_multisets": 1,
-   "argmax": [
-    [
-     14,
-     12,
-     10,
-     8,
-     7,
-     6,
-     5,
-     4,
-     3,
-     3,
-     2,
-     2,
-     1,
-     1
-    ]
-   ],
-   "argmax_beta": [
-    [
-     27,
-     24,
-     21,
-     18,
-     16,
-     14,
-     12,
-     10,
-     8,
-     7,
-     5,
-     4,
-     2,
-     1
-    ]
-   ],
-   "staircase_beta_in_frame": [
-    25,
-    23,
-    21,
-    19,
-    17,
-    15,
-    13,
-    11,
-    9,
-    7,
-    5,
-    3,
-    1,
-    0
-   ],
-   "displacements": [
-    {
-     "partition": [
-      14,
-      12,
-      10,
-      8,
-      7,
-      6,
-      5,
-      4,
-      3,
-      3,
-      2,
-      2,
-      1,
-      1
-     ],
-     "u": [
-      2,
-      1,
-      0,
-      -1,
-      -1,
-      -1,
-      -1,
-      -1,
-      -1,
-      0,
-      0,
-      1,
-      1,
-      1
-     ],
-     "sum_u": 0,
-     "sum_u_sq": 14,
-     "ap_frame": false,
-     "two_delta_H_from_beta": 16,
-     "H_minus_Hmin": 8
-    }
-   ],
-   "staircase_is_argmax": false,
-   "elapsed_sec": 49.44
+   "elapsed_sec": 2.06
   }
  ],
  "heuristic_comparison": [
@@ -1109,13 +869,6 @@
    "heuristic": "0.1418310828873493723",
    "exact": "0.141831082887349372304948",
    "exact_minus_heuristic": "4.948e-21"
-  },
-  {
-   "n": 78,
-   "k": 12,
-   "heuristic": "0.69117475080428095935",
-   "exact": "0.691174750804280959345677",
-   "exact_minus_heuristic": "-4.323e-21"
   }
  ],
  "maximiser_profiles": [
@@ -1404,120 +1157,6 @@
    "n_three": 3,
    "n_one": 2,
    "threes_before_ones": true
-  },
-  {
-   "k": 11,
-   "n": 66,
-   "beta": [
-    24,
-    21,
-    19,
-    16,
-    14,
-    12,
-    10,
-    9,
-    7,
-    5,
-    4,
-    2,
-    1
-   ],
-   "gaps": [
-    3,
-    2,
-    3,
-    2,
-    2,
-    2,
-    1,
-    2,
-    2,
-    1,
-    2,
-    1
-   ],
-   "base": 1,
-   "max_gap": 3,
-   "n_three": 2,
-   "n_one": 3,
-   "threes_before_ones": true
-  },
-  {
-   "k": 11,
-   "n": 66,
-   "beta": [
-    24,
-    21,
-    18,
-    16,
-    13,
-    11,
-    9,
-    7,
-    6,
-    4,
-    2,
-    1
-   ],
-   "gaps": [
-    3,
-    3,
-    2,
-    3,
-    2,
-    2,
-    2,
-    1,
-    2,
-    2,
-    1
-   ],
-   "base": 1,
-   "max_gap": 3,
-   "n_three": 3,
-   "n_one": 2,
-   "threes_before_ones": true
-  },
-  {
-   "k": 12,
-   "n": 78,
-   "beta": [
-    27,
-    24,
-    21,
-    18,
-    16,
-    14,
-    12,
-    10,
-    8,
-    7,
-    5,
-    4,
-    2,
-    1
-   ],
-   "gaps": [
-    3,
-    3,
-    3,
-    2,
-    2,
-    2,
-    2,
-    2,
-    1,
-    2,
-    1,
-    2,
-    1
-   ],
-   "base": 1,
-   "max_gap": 3,
-   "n_three": 3,
-   "n_one": 3,
-   "threes_before_ones": true
   }
  ],
  "elastic_identity": {
@@ -1577,69 +1216,45 @@
    "gain_minus_cost": "0.34970955157129600634",
    "excess_exact": "0.349709551571296006340879",
    "residual": "-1.97818e-41"
-  },
-  {
-   "k": 11,
-   "n": 66,
-   "sum_u_sq": 10,
-   "ap_frame": true,
-   "H_minus_Hmin": 5,
-   "short_range_gain": "1.0168905760083225425",
-   "quadratic_cost": "0.52170360159759756158",
-   "gain_minus_cost": "0.49518697441072498092",
-   "excess_exact": "0.495186974410724980915962",
-   "residual": "-6.4658e-41"
-  },
-  {
-   "k": 12,
-   "n": 78,
-   "sum_u_sq": 14,
-   "ap_frame": false,
-   "H_minus_Hmin": 8,
-   "short_range_gain": "1.5259005133604370579",
-   "quadratic_cost": "0.83472576255615609853",
-   "gain_minus_cost": "0.69117475080428095935",
-   "excess_exact": "0.691174750804280959345677",
-   "residual": "-1.99777e-41"
   }
  ],
  "resolution": {
-  "n": 78,
-  "best_scaled": "-290484234423871020628647607491790546025645",
-  "second_best_scaled": "-291026080499261690733188425831883652056309",
-  "gap": "0.054184607539067010454",
-  "scaling_error_bound": "7.8e-39"
+  "n": 55,
+  "best_scaled": "-89062462399058585111673826781119024784137",
+  "second_best_scaled": "-89421217850195926920549841725731189448231",
+  "gap": "0.035875545113734180888",
+  "scaling_error_bound": "5.5e-39"
  },
  "checks": [
   {
    "name": "X1 the staircase's enumerated value equals its proved closed form at every k",
    "ok": true,
-   "detail": "max |enumerated - (A*k - B + tail_k - ln q0 * H_min)| = 2.039e-40 over k = 1..12, against the 1.0e-34 the integer scaling allows.  The enumeration walks cells and knows nothing of A, B, H_min or the multiset theorem; the closed form is `staircase_hookSum` summed against eps and against the identity.  So this is a check on StaircaseHookMultiset, not a restatement of it"
+   "detail": "max |enumerated - (A*k - B + tail_k - ln q0 * H_min)| = 1.971e-40 over k = 1..10, against the 1.0e-34 the integer scaling allows.  The enumeration walks cells and knows nothing of A, B, H_min or the multiset theorem; the closed form is `staircase_hookSum` summed against eps and against the identity.  So this is a check on StaircaseHookMultiset, not a restatement of it"
   },
   {
    "name": "X3 the heuristic search found the TRUE maximum at every n this reaches",
    "ok": true,
-   "detail": "2 overlapping point(s); max |exact - heuristic| = 4.948e-21.  The heuristic scans a neighbourhood of the staircase, so it could only ever have been a lower bound on M_n; at these n it is not merely close, it is exact.  That is evidence for the larger-n rows, not proof of them \u2014 those remain lower bounds"
+   "detail": "1 overlapping point(s); max |exact - heuristic| = 4.948e-21.  The heuristic scans a neighbourhood of the staircase, so it could only ever have been a lower bound on M_n; at these n it is not merely close, it is exact.  That is evidence for the larger-n rows, not proof of them \u2014 those remain lower bounds"
   },
   {
    "name": "X4 every gap of the exact maximiser lies in {1,2,3} \u2014 a UNIT perturbation of the staircase",
    "ok": true,
-   "detail": "max gap over 13 exact maximisers (k = 4..12) is 3.  The heuristic reported the same thing at k = 8..35 (rev-optimal-gap-profile.witness.json, check R1); this establishes it without a search"
+   "detail": "max gap over 10 exact maximisers (k = 4..10) is 3.  The heuristic reported the same thing at k = 8..35 (rev-optimal-gap-profile.witness.json, check R1); this establishes it without a search"
   },
   {
    "name": "X4b the wide gaps sit above the narrow ones \u2014 a two-sided boundary layer, not a bulk shift",
    "ok": true,
-   "detail": "13/13 exact maximisers put every gap of 3 strictly above every gap of 1.  The bulk stays on the staircase's all-2 lattice and the deviation is confined to the two ends, which is what makes e_k converge at all"
+   "detail": "10/10 exact maximisers put every gap of 3 strictly above every gap of 1.  The bulk stays on the staircase's all-2 lattice and the deviation is confined to the two ends, which is what makes e_k converge at all"
   },
   {
    "name": "X5 the maximiser is degenerate as a PARTITION but (mostly) unique as a hook multiset",
    "ok": true,
-   "detail": "at every k the number of distinct hook multisets attaining M_n is at most the number of partitions attaining it, and the transpose of a maximiser is a maximiser with the SAME multiset \u2014 so counting shapes over-counts the objects the objective can distinguish.  k=9: 2 shapes / 1 multisets, k=10: 2 shapes / 1 multisets, k=11: 2 shapes / 1 multisets, k=12: 1 shapes / 1 multisets"
+   "detail": "at every k the number of distinct hook multisets attaining M_n is at most the number of partitions attaining it, and the transpose of a maximiser is a maximiser with the SAME multiset \u2014 so counting shapes over-counts the objects the objective can distinguish.  k=7: 2 shapes / 1 multisets, k=8: 1 shapes / 1 multisets, k=9: 2 shapes / 1 multisets, k=10: 2 shapes / 1 multisets"
   },
   {
    "name": "X6 the best/second-best gap dwarfs the integer-scaling error, so the ranking is real",
    "ok": true,
-   "detail": "gap 0.054184608 against error bound 7.8e-39 \u2014 a ratio of 6.947e+36.  Each phi(h) is rounded once at dps 60 and every comparison in the search is exact integer arithmetic thereafter, so the only way the argmax could be wrong is a tie inside that bound.  There is none"
+   "detail": "gap 0.035875545 against error bound 5.5e-39 \u2014 a ratio of 6.523e+36.  Each phi(h) is rounded once at dps 60 and every comparison in the search is exact integer arithmetic thereafter, so the only way the argmax could be wrong is a tie inside that bound.  There is none"
   },
   {
    "name": "X7 the general separable identity for Delta H holds over EVERY partition of n",
@@ -1654,13 +1269,13 @@
   {
    "name": "X8 the split reproduces the exact excess at every k it is evaluated at",
    "ok": true,
-   "detail": "max |gain - cost - e_k| = 1.063e-40 over k = 7..12, against a DERIVED bound of 7.8e-39 \u2014 the operation count of the eps-side summation at dps 60 plus the search's one-off integer scaling error.  The two sides are computed from disjoint machinery: the left from the beta-set through (I'), the right from an exhaustive walk over cells.  So this checks the identity rather than restating it"
+   "detail": "max |gain - cost - e_k| = 1.063e-40 over k = 7..10, against a DERIVED bound of 5.5e-39 \u2014 the operation count of the eps-side summation at dps 60 plus the search's one-off integer scaling error.  The two sides are computed from disjoint machinery: the left from the beta-set through (I'), the right from an exhaustive walk over cells.  So this checks the identity rather than restating it"
   },
   {
    "name": "X8b the cost grows, so the maximiser is NOT a fixed-size defect sitting at the edge",
    "ok": true,
-   "detail": "H - H_min over k: k=7: 2, k=8: 2, k=9: 2, k=10: 5, k=11: 5, k=12: 8 \u2014 an integer at every k, as the sum-of-squares form forces.  A boundary layer of fixed size would hold it constant and e_k would already be at its limit; it is not, which is why e_k is still at 0.691175 here against 2.4393 at k = 88.  The deviation grows \u2014 slowly \u2014 and identifying that growth law is what e_inf now needs"
+   "detail": "H - H_min over k: k=7: 2, k=8: 2, k=9: 2, k=10: 5 \u2014 an integer at every k, as the sum-of-squares form forces.  A boundary layer of fixed size would hold it constant and e_k would already be at its limit; it is not, which is why e_k is still at 0.34971 here against 2.4393 at k = 88.  The deviation grows \u2014 slowly \u2014 and identifying that growth law is what e_inf now needs"
   }
  ],
- "verdict": "M_n is exact, not a lower bound, for every triangular n up to T_12, and where it overlaps the published table the heuristic search had in fact found the maximum.  The exact maximiser is a unit perturbation of the staircase \u2014 every gap in {1,2,3}, the 3s strictly above the 1s \u2014 so the deviation is a two-sided boundary layer on an otherwise unchanged all-2 bulk.  That is why e_k converges: the two layers are bounded and, as k grows, independent."
+ "verdict": "M_n is exact, not a lower bound, for every triangular n up to T_10, and where it overlaps the published table the heuristic search had in fact found the maximum.  The exact maximiser is a unit perturbation of the staircase \u2014 every gap in {1,2,3}, the 3s strictly above the 1s \u2014 so the deviation is a two-sided boundary layer on an otherwise unchanged all-2 bulk.  That is why e_k converges: the two layers are bounded and, as k grows, independent."
 }

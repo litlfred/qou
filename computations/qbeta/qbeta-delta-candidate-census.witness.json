@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T06:16:13.060449+00:00",
-  "commitSha": "2f0598479f47b3af373c5deb3c477d4fea0032d4",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:50:43.995112+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "closed_form_holds_on_no_constructed_candidate",
@@ -76,11 +76,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2714,
+  "durationMs": 3045,
   "computation": "qbeta-delta-candidate-census",
   "scriptFile": "qbeta_delta_candidate_census_probe.py",
-  "scriptHash": "186e22954cb8",
-  "scriptCommitSha": "0a31af8b5e1f315b92dc64ad1ac84ba34d1d9ab7",
+  "scriptHash": "b377387377dd",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -88,14 +88,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

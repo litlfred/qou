@@ -1,24 +1,24 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:08:36.362910+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-11-20T15:36:11.869138+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "ratio_near_qfact5",
-      "computed": 1,
+      "computed": 0,
       "expected": 1,
-      "passed": true,
+      "passed": false,
       "tolerance": 0,
       "source": "ratio/[5]_q! within 3% of 1"
     }
   ],
-  "allPassed": true,
-  "durationMs": 5,
+  "allPassed": false,
+  "durationMs": 6,
   "computation": "habiro-normalization-bridge",
   "scriptFile": "habiro_normalization_bridge.py",
-  "scriptHash": "adb3d720786a",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "95b29bb1ea7b",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -44,8 +44,8 @@
   "description": "Habiro normalization bridge: ratio 127.73 between Habiro integer expansion and direct Markov trace at H₉. Best candidate: ratio/[5]_q! ≈ 0.973 (2.7% off).",
   "auditOnly": "docs/audits/2026-05-27-habiro-normalization-gap.md",
   "data": {
-    "ratio": "127.72966374243532475",
-    "ratio_over_qfact5": "0.972710860410307",
+    "ratio": "216.21653478084513286",
+    "ratio_over_qfact5": "1.64657265524248",
     "status": "open — bridge is braid-specific, not algebraically clean"
   }
 }

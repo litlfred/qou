@@ -36,12 +36,15 @@ mpmath.mp.dps = 200
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from experimental_constants import M_E_MEV, G_F_MEV
 
 # Ref: [leitner2026] conj:g-action-on-substrate (the anchor and why it is not a host trace)
 
-q = mpmath.mpf(Q_50_DIGIT_STR)
+# main's citation kept; the pin stays Q_MP (70 digits) rather than the 50-digit string --
+# this file has NO sympy path, so there is no second q to straddle (cf. bean qou-ayzx,
+# where Part C's sweep left a sympy side at 50 digits and broke three 1e-50 checks).
+q = Q_MP
 
 
 def q_int(n):

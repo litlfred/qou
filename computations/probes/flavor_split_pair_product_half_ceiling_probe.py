@@ -32,7 +32,7 @@ sys.path.insert(0, str(HERE.parent / "substrate"))
 
 
 import mpmath as mp  # noqa: E402 — anchor read-by-name (bean qou-9ugp)
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 # Every mpf this probe builds was constructed at mpmath's default 15 dps:
@@ -142,7 +142,7 @@ def main() -> int:
                     "alpha source (Lean pairSum_lt_half_sq). Narrows, does not close; no fit."))
         out = w.save(q0_comparison(
             muon=mp.mpf(mp.nstr(q_muon_at(50), 50, strip_zeros=False)),
-            proton=mp.mpf(Q_50_DIGIT_STR),
+            proton=Q_MP,
             reason="alpha_target evaluated at both pins on purpose (anchor-robustness of the "
                    "> 1/2 exclusion); the proton (default) leg is the scored one"))
         print(f"\nWitness: {out}")

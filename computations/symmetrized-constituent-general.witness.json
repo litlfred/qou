@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T19:32:33.743168+00:00",
-  "commitSha": "d73f57a7531bf23e1f7be662e1fa27f3726d1bd5",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-21T02:51:06.956763+00:00",
+  "commitSha": "28488bb4f7c533dea5ff310ea41d0cc4c50c6bd8",
   "assertions": [
     {
       "name": "frobenius_Z2_matches_newton_h2",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15256,
+  "durationMs": 16670,
   "computation": "symmetrized-constituent-general",
   "scriptFile": "symmetrized_constituent_general.py",
-  "scriptHash": "5f9d902d8b0e",
-  "scriptCommitSha": "4e91e1e934fe33f2eb995518026fff3e91e09c0c",
+  "scriptHash": "110a961d8538",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

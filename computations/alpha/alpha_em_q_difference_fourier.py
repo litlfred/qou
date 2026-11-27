@@ -90,7 +90,7 @@ set_compute_dps(70)
 mp.mp.dps = 70
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def main() -> int:
@@ -199,7 +199,7 @@ def main() -> int:
     # (Im(q₀)=0, verified `lusztig_q_0_imaginary_part_zero`) and α is the
     # real CODATA fine-structure constant. The reality constraint belongs
     # to this archimedean step, NOT to the fibre-level spectrum above.
-    q0 = mpf(Q_50_DIGIT_STR)          # real archimedean substrate value
+    q0 = Q_MP          # real archimedean substrate value
     h0 = q0 - 1 / q0
     al_cod = mpf("1") / mpf("137.035999084")   # real observable α
     H_exact = (q0 + 1 / q0) * (1 - h0 ** 2 * al_cod)

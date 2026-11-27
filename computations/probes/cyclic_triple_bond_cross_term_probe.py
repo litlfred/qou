@@ -65,7 +65,7 @@ import mpmath as mp
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import _path_bridge  # noqa: E402, F401
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
@@ -73,7 +73,7 @@ from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
 from codata_constants import ame_binding_mev  # noqa: E402
 
 mp.mp.dps = 50
-Q = mp.mpf(Q_50_DIGIT_STR)
+Q = Q_MP
 H = Q - 1 / Q
 Z_D = Q ** 3 / (Q ** 2 + 1)
 DEFECT = Z_D ** 2 - H * Z_D - 1          # the convention-D Markov defect

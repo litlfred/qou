@@ -68,7 +68,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import fmt, set_compute_dps  # noqa: E402
 from hoefsmit_mpmath import BlockCacheMP, seminormal_matrices_mp  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from pyhecke.wedderburn import partitions_of  # noqa: E402
 from y_lambda_su_n import y_lambda_su_n  # noqa: E402
 from gamma_gamma_h3_psd_selector_probe import (  # noqa: E402
@@ -103,7 +103,7 @@ def main() -> int:
     if os.environ.get("QOU_Q0_ANCHOR", "").strip().lower() in ("ideal", "muon", "canonical"):
         raise SystemExit("proton-pin producer; refusing a muon override")
     mp.mp.dps = DPS
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     qi = 1 / q
     h = q - qi
     cache = BlockCacheMP(q, h)

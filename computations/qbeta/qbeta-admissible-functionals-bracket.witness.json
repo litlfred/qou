@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T20:35:34.420277+00:00",
-  "commitSha": "3d227b00d959478ae3bbf3a7a4a38ad13c4718c1",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:49:22.755969+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "chi3_is_multiplicative_on_the_generators_CONTROL",
@@ -139,11 +139,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1404,
+  "durationMs": 2144,
   "computation": "qbeta-admissible-functionals-bracket",
   "scriptFile": "qbeta_admissible_functionals_bracket_probe.py",
-  "scriptHash": "5e69e30ffd3a",
-  "scriptCommitSha": "3eacaf77362826fe3ed182747358bb28bacb07b8",
+  "scriptHash": "4efbdb2bf33c",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -151,14 +151,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -171,25 +171,25 @@
     "coordinate_sum": {
       "functional": "coordinate sum (epsNPq)",
       "descends_under_D": false,
-      "value_on_delta": "-0.187207194529378320729836545290980788975650514906299236406418",
-      "Q_MeV": "0.783645827374621213074939751341396890525736441030252615509847",
-      "err_pct": "0.167756873104829946723350200931500391578271731358075051290818"
+      "value_on_delta": "-0.187207194529378320729836545290980788975650514906272508759317",
+      "Q_MeV": "0.783645827374621213074939751341396890525736441030298052509919",
+      "err_pct": "0.167756873104829946723350200931500391578271731363955133653020"
     },
     "augmentation_(sigma->q)": {
       "functional": "augmentation  (sigma->q)",
       "descends_under_D": true,
-      "value_on_delta": "-0.210199349900502936568794845696942029965574442560284383124630",
-      "Q_MeV": "0.879890561260119838902965955941296576254288512481637018113333",
-      "err_pct": "12.4700224724220718163168459940365762376459714265113987796162"
+      "value_on_delta": "-0.210199349900502936568794845696942029965574442560246296227511",
+      "Q_MeV": "0.879890561260119838902965955941296576254288512481654391083948",
+      "err_pct": "12.4700224724220718163168459940365762376459714265135369913843"
     },
     "Markov_trace": {
       "functional": "Markov trace  (z_D)",
       "descends_under_D": true,
-      "value_on_delta": "-0.106235639848092790892141987160551894399375838398474615901997",
-      "Q_MeV": "0.444700408521780409100962213024942779024902777364453315934547",
-      "err_pct": "-43.1571752874458076893075387059482675607649443821710971260668"
+      "value_on_delta": "-0.106235639848092790892141987160551894399375838398456073596821",
+      "Q_MeV": "0.444700408521780409100962213024942779024902777364465343375742",
+      "err_pct": "-43.1571752874458076893075387059482675607649443821696431420646"
     },
-    "E0_MeV": "4.18598136329447589694506215875900841014348689087876132989370",
+    "E0_MeV": "4.18598136329447589694506215875900841014348689087960592354209",
     "Q_codata_MeV": "0.782333409309908500000000000000000000000000000000000331813602",
     "markov_convention": "D canonical",
     "assertion_notes": [

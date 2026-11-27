@@ -60,12 +60,12 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 
 # Canonical substrate q0 — muon-anchored computations-layer value carried by
 # computations/q-pinning-50-digit.witness.json (AGENTS.md "q0 anchor convention").
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 # Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
 # 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
 from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 H = Q0 - 1 / Q0
 QI = 1 / Q0
 Z = Q0**3 / (Q0**2 + 1)

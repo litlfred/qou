@@ -38,7 +38,7 @@ import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_K_PM_MEV_VALIDATION, M_PI_PM_MEV_VALIDATION)
 from meson_em_sinh_closed_form import alpha_em_inv_derived  # noqa: E402
@@ -54,7 +54,7 @@ def ppb(pred, ref):
 
 def main():
     set_compute_dps()
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     h = 1 - 1 / q0
     pdg = mp.mpf(M_K_PM_MEV_VALIDATION) / mp.mpf(M_PI_PM_MEV_VALIDATION)
     a_inv = alpha_em_inv_derived(q0)

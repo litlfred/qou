@@ -42,7 +42,7 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import M_E_MEV, _ame_binding_mev  # noqa: E402
 from coulomb_energy import alpha_em_hbar_c_mev_fm  # noqa: E402 — shared e²/(4πε₀)=α·ħc source
@@ -54,7 +54,7 @@ except ImportError:
     _HAVE_WB = False
 
 set_compute_dps()
-q = mp.mpf(Q_50_DIGIT_STR)
+q = Q_MP
 
 # e²/(4πε₀) = α·ħc, the shared repo constant (computations/coulomb_energy.py).
 # `ALPHA_HBAR_C_MEV_FM` (the hard-coded CODATA 1.43996) was drained from

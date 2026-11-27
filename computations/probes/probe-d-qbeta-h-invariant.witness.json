@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T00:21:01.013204+00:00",
-  "commitSha": "e50ca9c6e41e2fd0dccecc3a2d8bc1180515a65d",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T16:22:59.343251+00:00",
+  "commitSha": "da44c4efb5ad6e838faf959e5bb598eaa3a680b9",
   "assertions": [
     {
       "name": "qbeta_proxy_identity_exact",
@@ -13,26 +13,26 @@
     },
     {
       "name": "me8Gh_not_exact",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
-      "source": "precision-floor refutation of exactness (gap ≈ 6e-4 ≫ 1e-45 with exact inputs)"
+      "source": "precision-floor refutation of exactness: the gap must exceed the 1e-45 arithmetic floor by >9 orders. The criterion is the MARGIN over the floor, not a hardcoded gap — the old 1e-4 threshold was sized to the then-observed 6e-4 and reported a FALSE failure once the gap reached 1.68e-5, which is still ~40 orders above floor"
     },
     {
       "name": "dressed_equals_proxy_over_h",
-      "computed": 1.5557538194652854e-61,
-      "expected": 0.0,
+      "computed": "3.62227163153068494700364771635511671227301247925565527583305e-71",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-45",
       "source": "numerical cross-check of the exact reduction at q₀"
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 18,
   "computation": "probe-d-qbeta-h-invariant",
   "scriptFile": "probe_d_qbeta_h_invariant.py",
-  "scriptHash": "9517017dd4a2",
-  "scriptCommitSha": "e50ca9c6e41e2fd0dccecc3a2d8bc1180515a65d",
+  "scriptHash": "aafbeb45101d",
+  "scriptCommitSha": "806d5146227ea7160a8a1a42fe023c7e1c49cd43",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,11 +40,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/probe_d_qbeta_h_invariant.py"
+    ],
+    "reproduce": "python3 -u computations/probes/probe_d_qbeta_h_invariant.py"
   },
   "description": "Formalize-first on the deuteron 1/h scale: (i) EXACT ℚ(q) reduction Q_β_proxy = E₀·h·(2−h)/2 (sympy-proved) ⟹ Δ_λ(D)=1/h ⟺ B_D = E₀·(1−h/2)·Δtr — the 1/h is the E₀ scale dressed by the smoothed bar-averaged crossing; (ii) Q_β = m_e·8G·h REFUTED-as-exact at the precision floor (0.06% near-match survives as observation); (iii) the zero-fit candidate errors vs AME under both Q_β forms. Nothing wired (Δ_λ gate).",
   "auditOnly": "docs/audits/2026-07-03-deuteron-from-scratch-error-ledger.md",
@@ -62,21 +71,23 @@
       "lean_target": "generic-[Field R] identity per §7c: field_simp; ring — follow-up bean"
     },
     "ii_exactness_refutation": {
-      "gap_rel_production_Qbeta": -0.0006176006514719396,
-      "gap_rel_proxy_Qbeta": 0.0010576815965129191,
-      "precision_floor": 1e-45,
-      "verdict": "REFUTED-as-exact, scope (b) for the EXACT claim only: with exact 50-dps inputs the gap (≈6e-4 production / ≈1e-3 proxy) is 40+ orders above the floor — Q_β = m_e·8G·h is not an identity at q₀. The 0.06% near-match survives as an observation: E₀·(2−h)/2 ≈ m_e·8G, an algebraic-vs-Catalan transcendental near-coincidence (Weinberg-cosh class)"
+      "gap_rel_production_Qbeta": "-0.0000168181220374285849009720500978560192111722451051167718255931",
+      "gap_rel_proxy_Qbeta": "0.00105768159651291902098033893195456091447786645882443747459826",
+      "gap_production_orders_above_floor": "40.2257774995287274058598933684127461044931813760927059940403",
+      "refuted_at_floor": true,
+      "precision_floor": "1e-45",
+      "verdict": "REFUTED-as-exact, scope (b) for the EXACT claim only: with exact inputs the gap (-1.682e-5 production / 0.001058 proxy) is 40.2 orders above the 1.0e-45 floor — Q_β = m_e·8G·h is not an identity at q₀. The 0.00168% near-match survives as an observation: E₀·(2−h)/2 ≈ m_e·8G, an algebraic-vs-Catalan transcendental near-coincidence (Weinberg-cosh class). Figures derived, not hardcoded: the previous text quoted ≈6e-4 / 0.06%, which had gone stale by ~37x."
     },
     "iii_candidate": {
-      "Delta_tr": "0.595168892622343486522408194084",
-      "B_E0_undressed_MeV": "2.4913658925297409255",
-      "B_E0_undressed_err_rel": 0.11993335713261351,
-      "B_dressed_1_minus_h2_MeV": "2.230943043578974793",
-      "B_dressed_err_rel": 0.0028665559959396994,
-      "B_production_Qbeta_over_h_MeV": "2.2272095331670547028",
-      "B_production_Qbeta_over_h_err_rel": 0.0011882465745702254,
-      "consistency_dressed_eq_proxy_over_h": 1.5557538194652854e-61,
-      "tier": "observation-tier candidate, NOT wired (Δ_λ gate): the (1−h/2) dressing takes the E₀ route from +11.99% to +0.30% (proxy Q_β) / +0.12% (Kashiwara Q_β); wiring requires deriving the dressing from the binding functional"
+      "Delta_tr": "0.14704667798040846910949472902",
+      "B_E0_undressed_MeV": "0.61553465356035403321",
+      "B_E0_undressed_err_rel": "-0.723301264956577137056753515655491363853401804634070640738577",
+      "B_dressed_1_minus_h2_MeV": "0.55119272426415506044",
+      "B_dressed_err_rel": "-0.752224625068853846455482681257115789256372815159358565647012",
+      "B_production_Qbeta_over_h_MeV": "0.55060109359393804761",
+      "B_production_Qbeta_over_h_err_rel": "-0.752490578345594728712754098938936799964435495385027904692173",
+      "consistency_dressed_eq_proxy_over_h": "3.62227163153068494700364771635511671227301247925565527583305e-71",
+      "tier": "observation-tier candidate, NOT wired (Δ_λ gate): the (1−h/2) dressing takes the E₀ route from -72.33% to -75.22% (proxy Q_β) / -75.25% (Kashiwara Q_β) against AME2020; wiring requires deriving the dressing from the binding functional"
     }
   },
   "q0Anchor": "proton",

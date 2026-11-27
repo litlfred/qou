@@ -50,7 +50,7 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 # ── Color-sector flow rate table (from prop:six-canonical-knot-operators) ──
@@ -183,7 +183,7 @@ def main() -> int:
     builder.add_parameter("q_str", Q_50_DIGIT_STR)
     builder.add_parameter("dps", 50)
 
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     builder.add_parameter("q_at_q0", mp.nstr(q, 15))
 
     # Compare in mpmath at 50 dps; emit pass/fail as boolean assertions

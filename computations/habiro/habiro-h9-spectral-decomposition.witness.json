@@ -1,32 +1,32 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:08:36.141407+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-11-20T15:36:11.385342+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "residual_0_is_9500ppm",
-      "computed": 1,
+      "computed": 0,
       "expected": 1,
-      "passed": true,
+      "passed": false,
       "tolerance": 0,
       "source": "Habiro/pred₀ − 1 ≈ 9495 ppm"
     },
     {
       "name": "residual_1_is_319ppm",
-      "computed": 1,
+      "computed": 0,
       "expected": 1,
-      "passed": true,
+      "passed": false,
       "tolerance": 0,
       "source": "|Habiro/pred₁ − 1| ≈ 319 ppm after (1+ℏ²)"
     }
   ],
-  "allPassed": true,
-  "durationMs": 24,
+  "allPassed": false,
+  "durationMs": 126,
   "computation": "habiro-h9-spectral-decomposition",
   "scriptFile": "habiro_h9_spectral_decomposition.py",
-  "scriptHash": "2389641e0226",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "01df12dda407",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -54,62 +54,62 @@
   "data": {
     "n": 9,
     "num_partitions": 30,
-    "residual_0_ppm": 9494.309259837382,
-    "residual_1_ppm": -319.7382642806823,
-    "c4_empirical": "-3.350142589259",
+    "residual_0_ppm": 708838.4564237269,
+    "residual_1_ppm": 692225.5625534493,
+    "c4_empirical": "7252.97719277132",
     "moments": {
-      "M0": "0.0620254377257481",
-      "M1": "1.64279352155996",
-      "M2": "47.8105955728564",
-      "M3": "1486.93637018066",
-      "M4": "48364.6533361291"
+      "M0": "0.0620254377310407",
+      "M1": "1.64279352174419",
+      "M2": "47.8105955791915",
+      "M3": "1486.93637039918",
+      "M4": "48364.6533437217"
     },
     "correction_ladder": {
-      "level_0_ppm": 9494.309259837382,
-      "level_1_1_plus_hsq_ppm": -319.7382642806823,
-      "level_2a_1_plus_hsq_sq_ppm": -10038.376108599494,
-      "level_2b_geom_series_ppm": -416.08459869606605,
-      "level_2c_sqrt_geom_ppm": 4526.890742743153,
-      "level_2d_q9_over_9_ppm": -123323.84192296882
+      "level_0_ppm": 708838.4564237269,
+      "level_1_1_plus_hsq_ppm": 692225.5625534493,
+      "level_2a_1_plus_hsq_sq_ppm": 675774.1750219992,
+      "level_2b_geom_series_ppm": 692062.4706767796,
+      "level_2c_sqrt_geom_ppm": 700429.7752520761,
+      "level_2d_q9_over_9_ppm": 484008.2990168064
     },
     "partition_records": [
       {
         "partition": [
           9
         ],
-        "y_lambda": "0.022122276611734736518",
+        "y_lambda": "0.022122276615756767205",
         "content_sum": 36,
         "dim_q": "1.0",
         "dim_classical": 1,
         "self_conjugate": false,
-        "y_times_c": "0.796401958022451",
-        "y_times_c_sq": "28.6704704888082"
+        "y_times_c": "0.796401958167244",
+        "y_times_c_sq": "28.6704704940208"
       },
       {
         "partition": [
           8,
           1
         ],
-        "y_lambda": "0.01663817410305791325",
+        "y_lambda": "0.016638174104595807218",
         "content_sum": 27,
         "dim_q": "8.94568981786439",
         "dim_classical": 8,
         "self_conjugate": false,
-        "y_times_c": "0.449230700782564",
-        "y_times_c_sq": "12.1292289211292"
+        "y_times_c": "0.449230700824087",
+        "y_times_c_sq": "12.1292289222503"
       },
       {
         "partition": [
           7,
           2
         ],
-        "y_lambda": "0.011881263262686593687",
+        "y_lambda": "0.01188126326292369081",
         "content_sum": 20,
         "dim_q": "32.9221497375999",
         "dim_classical": 27,
         "self_conjugate": false,
-        "y_times_c": "0.237625265253732",
-        "y_times_c_sq": "4.75250530507464"
+        "y_times_c": "0.237625265258474",
+        "y_times_c_sq": "4.75250530516948"
       },
       {
         "partition": [
@@ -130,13 +130,13 @@
           6,
           3
         ],
-        "y_lambda": "0.0076436375073284203347",
+        "y_lambda": "0.0076436375070721038101",
         "content_sum": 15,
         "dim_q": "62.2496276898025",
         "dim_classical": 48,
         "self_conjugate": false,
-        "y_times_c": "0.114654562609926",
-        "y_times_c_sq": "1.71981843914889"
+        "y_times_c": "0.114654562606082",
+        "y_times_c_sq": "1.71981843909122"
       },
       {
         "partition": [
@@ -172,13 +172,13 @@
           5,
           4
         ],
-        "y_lambda": "0.0037400862409404702826",
+        "y_lambda": "0.0037400862406922890551",
         "content_sum": 12,
         "dim_q": "56.515732545811",
         "dim_classical": 42,
         "self_conjugate": false,
-        "y_times_c": "0.0448810348912856",
-        "y_times_c_sq": "0.538572418695428"
+        "y_times_c": "0.0448810348883075",
+        "y_times_c_sq": "0.53857241865969"
       },
       {
         "partition": [

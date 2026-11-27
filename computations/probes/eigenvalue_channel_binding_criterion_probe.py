@@ -130,7 +130,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from _li_2_q_util import flavor_split_leading  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 mp.mp.dps = 50
@@ -151,7 +151,7 @@ def fmt(x, n=11):
 
 def main() -> int:
     from codata_constants import M_E_MEV as _me
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
     z = q**3 / (q**2 + 1)
     me = _me if isinstance(_me, mp.mpf) else mp.mpf(str(_me))

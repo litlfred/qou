@@ -93,10 +93,10 @@ if _HERE not in sys.path:
 
 from mpmath import mp  # noqa: E402
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.dps = 60
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 LNQ = mp.log(Q0)
 TT = Q0 ** 2
 

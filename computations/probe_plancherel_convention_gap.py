@@ -209,9 +209,9 @@ def make_qdim(q: mp.mpf):
 
 def main() -> int:
     mp.mp.dps = 60
-    from qou_substrate.constants import Q_50_DIGIT_STR
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP
 
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     _, qfact, dim_q = make_qdim(q)
 
     ns = sorted(set(ATOM_N.values()))

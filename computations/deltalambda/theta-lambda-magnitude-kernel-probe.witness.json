@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T06:47:28.535464+00:00",
-  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T15:06:04.537147+00:00",
+  "commitSha": "3d37e09fb077076f13571e6d7b45c3772e1e4966",
   "assertions": [
     {
       "name": "deuteron_bare_kappa_reproduced",
-      "computed": "6.41614616239163203857813088973964458360273416038232247208400011117494",
+      "computed": "29.07537697116713421666093240295737285493352460062428107631348272902464",
       "expected": 6.0426,
       "passed": false,
       "tolerance": "0.01",
@@ -14,7 +14,7 @@
     },
     {
       "name": "I1_uniform_scale_dispersion_y_dim",
-      "computed": "15.209877",
+      "computed": "-12.428705",
       "expected": 10.4,
       "passed": false,
       "tolerance": 1.0,
@@ -30,7 +30,7 @@
     },
     {
       "name": "geometric_in_A_pattern_ratio_scatter",
-      "computed": "1.462072494678767113820861802605340579374914420712881689434780626191063",
+      "computed": "1.729614190645969789924390429187290858075471490586258761998615844654103",
       "expected": 1.06,
       "passed": false,
       "tolerance": "0.05",
@@ -49,8 +49,8 @@
   "durationMs": 3,
   "computation": "theta-lambda-magnitude-kernel-probe",
   "scriptFile": "theta_lambda_magnitude_kernel_probe.py",
-  "scriptHash": "ec231fc59271",
-  "scriptCommitSha": "7e3809af0b4341b68395ea953d24698043b77591",
+  "scriptHash": "5d8b9169240d",
+  "scriptCommitSha": "85b72bec662d83a998e1586f2435a2af292d7a1a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,14 +58,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
   },
   "invocation": {
     "argv": [
@@ -84,62 +82,62 @@
     },
     "required_amplifications": {
       "y": {
-        "D": "50.18659594",
-        "T": "545.0493127",
-        "3He": "604.7799784",
-        "4He": "10587.93753",
-        "mirror": "272.7903911",
+        "D": "152.3846657",
+        "T": "1536.88816",
+        "3He": "1204.802819",
+        "4He": "23916.49196",
+        "mirror": "-860.8111632",
         "_S_bare": {
-          "D": "0.08674362886",
-          "T": "0.03045313645",
-          "3He": "0.02497409077",
-          "4He": "0.005229841012"
+          "D": "0.02856827774",
+          "T": "0.01080004487",
+          "3He": "0.01253635021",
+          "4He": "0.002315273914"
         },
-        "_dS_mirror": "0.005479045681"
+        "_dS_mirror": "-0.001736305334"
       },
       "y_dim": {
-        "D": "6.416146162",
-        "T": "17.97110414",
-        "3He": "24.57021373",
-        "4He": "73.59430021",
-        "mirror": "4.838586307",
+        "D": "29.07537697",
+        "T": "147.4764018",
+        "3He": "108.6633505",
+        "4He": "702.4090022",
+        "mirror": "-56.51506023",
         "_S_bare": {
-          "D": "0.6785019141",
-          "T": "0.923619437",
-          "3He": "0.6147211515",
-          "4He": "0.7524119366"
+          "D": "0.1497269479",
+          "T": "0.1125499462",
+          "3He": "0.1389965431",
+          "4He": "0.07883331475"
         },
-        "_dS_mirror": "0.3088982855"
+        "_dS_mirror": "-0.02644659686"
       }
     },
     "mirror_convention_family": {
       "y*(theta_atom diff)": {
-        "m_e_S_MeV": "0.00015912667",
-        "amplification_needed": "4799.666"
+        "m_e_S_MeV": "-0.0052676921",
+        "amplification_needed": "144.98852"
       },
       "y*(dtheta diff)": {
-        "m_e_S_MeV": "0.0080476321",
-        "amplification_needed": "94.904298"
+        "m_e_S_MeV": "-0.0036923318",
+        "amplification_needed": "206.84893"
       },
       "y*|theta_atom diff|": {
-        "m_e_S_MeV": "0.01125824",
-        "amplification_needed": "67.839633"
+        "m_e_S_MeV": "0.0058538535",
+        "amplification_needed": "130.47045"
       },
       "y*dim*(|dtheta| diff)": {
-        "m_e_S_MeV": "0.1578467",
-        "amplification_needed": "4.8385863"
+        "m_e_S_MeV": "-0.013514183",
+        "amplification_needed": "56.51506"
       }
     },
     "invariant_I1_uniform_scale_prune": {
       "y": {
-        "dispersion_max_over_min": "210.97142",
+        "dispersion_max_over_min": "-27.783668",
         "band_allowed": "1.18",
-        "uniform_class_refuted": true
+        "uniform_class_refuted": false
       },
       "y_dim": {
-        "dispersion_max_over_min": "15.209877",
+        "dispersion_max_over_min": "-12.428705",
         "band_allowed": "1.18",
-        "uniform_class_refuted": true
+        "uniform_class_refuted": false
       }
     },
     "candidate_table": {
@@ -152,7 +150,9 @@
       "1/hbar_q^2": {
         "value": "101.8621786",
         "structural_tie": "muon-anchor c_q² (guardrail: belongs to Vol(4₁), not binding)",
-        "matches": [],
+        "matches": [
+          "3He"
+        ],
         "matches_all_observables": false
       },
       "1/hbar_q^3": {
@@ -164,9 +164,7 @@
       "[3]_q!": {
         "value": "6.120579278",
         "structural_tie": "per-nucleon H₃ Poincaré factor (F_Bor normaliser)",
-        "matches": [
-          "D"
-        ],
+        "matches": [],
         "matches_all_observables": false
       },
       "[5]_q!": {
@@ -184,9 +182,7 @@
       "F_Bor": {
         "value": "4.469138736",
         "structural_tie": "Borromean Hecke factor (mass chain)",
-        "matches": [
-          "mirror"
-        ],
+        "matches": [],
         "matches_all_observables": false
       },
       "Vol(B3)": {
@@ -198,9 +194,7 @@
       "Vol(B3)/hbar_q": {
         "value": "73.95637708",
         "structural_tie": "composite; no single-object tie",
-        "matches": [
-          "4He"
-        ],
+        "matches": [],
         "matches_all_observables": false
       },
       "exp(Vol(B3))/2pi": {
@@ -223,36 +217,36 @@
       }
     },
     "guarded_datum_kappaD_vs_q3fact": {
-      "kappa_D_y_dim": "6.416146162",
+      "kappa_D_y_dim": "29.07537697",
       "q3_factorial": "6.120579278",
-      "rel_diff": "0.0482907",
+      "rel_diff": "3.75043",
       "status": "datum only — single observable, breaks at A≥3"
     },
     "kashaev_color_kernel_probe": {
       "D": {
-        "B_pred_MeV": "29.55899635",
+        "B_pred_MeV": "21.27313133",
         "B_AME_MeV": "2.2245662",
-        "rel_err": "12.287533"
+        "rel_err": "8.5628223"
       },
       "T": {
-        "B_pred_MeV": "1814.976424",
+        "B_pred_MeV": "1781.060085",
         "B_AME_MeV": "8.4817962",
-        "rel_err": "212.98491"
+        "rel_err": "208.98619"
       },
       "3He": {
-        "B_pred_MeV": "623.3156024",
+        "B_pred_MeV": "534.8174251",
         "B_AME_MeV": "7.71804132",
-        "rel_err": "79.760853"
+        "rel_err": "68.29445"
       },
       "4He": {
-        "B_pred_MeV": "1225472764.0",
+        "B_pred_MeV": "1575812601.0",
         "B_AME_MeV": "28.2956624",
-        "rel_err": "43309562.0"
+        "rel_err": "55690959.0"
       },
       "mirror": {
-        "split_pred_MeV": "1191.660821",
+        "split_pred_MeV": "1246.24266",
         "split_AME_MeV": "0.76375488",
-        "rel_err": "1559.2661"
+        "rel_err": "1630.7312"
       }
     },
     "volumes": {
@@ -263,10 +257,10 @@
     },
     "guarded_pattern_geometric_in_A": {
       "per_step_ratios": {
-        "T/D": "2.8009188",
-        "3He/D": "3.8294349",
-        "4He/T": "4.0951463",
-        "4He/3He": "2.995265"
+        "T/D": "5.0722094",
+        "3He/D": "3.7372981",
+        "4He/T": "4.7628569",
+        "4He/3He": "6.4640838"
       },
       "ratio_identification_candidates": {
         "pi": "3.1415927",
@@ -278,31 +272,31 @@
         "D": {
           "A": 2,
           "pred": "6.1205793",
-          "required": "6.4161462",
-          "rel_diff": "-0.0460661"
+          "required": "29.075377",
+          "rel_diff": "-0.789493"
         },
         "T": {
           "A": 3,
           "pred": "19.646523",
-          "required": "17.971104",
-          "rel_diff": "0.0932285"
+          "required": "147.4764",
+          "rel_diff": "-0.866782"
         },
         "3He": {
           "A": 3,
           "pred": "19.646523",
-          "required": "24.570214",
-          "rel_diff": "-0.200393"
+          "required": "108.66335",
+          "rel_diff": "-0.819198"
         },
         "4He": {
           "A": 4,
           "pred": "63.063615",
-          "required": "73.5943",
-          "rel_diff": "-0.143091"
+          "required": "702.409",
+          "rel_diff": "-0.910218"
         },
         "mirror": {
-          "split_pred_MeV": "3.1011388",
+          "split_pred_MeV": "-0.26550671",
           "split_AME_MeV": "0.76375488",
-          "rel_diff": "3.06038"
+          "rel_diff": "-1.34763"
         }
       },
       "status": "GUARDED DATUM — post-hoc shape selection at 4 points with degenerate ratio identification; a constraint on any future derivation (𝒜 grows geometrically in A, ratio ≈ 3.2), NOT a closure; the mirror difference does not close; falsifiable next at A=6 (𝒜(⁶Li) ≈ 650 predicted)"

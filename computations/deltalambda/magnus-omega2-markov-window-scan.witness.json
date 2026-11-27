@@ -6,12 +6,12 @@
   "checks": [
     {
       "check": "W1_reproduces_recorded_conventionD_values",
-      "detail": "A=2: P(z_D) = -6.92125065297274 vs recorded -6.92125065297274 (diff 9.33e-60); A=3: P(z_D) = -13.9305624538076 vs recorded -13.9305624538076 (diff 4.61e-59); A=4: P(z_D) = -20.466481428076 vs recorded -20.466481428076 (diff 1.99e-59)",
+      "detail": "A=2: P(z_D) = -6.92125065297274 vs recorded -6.92125065297274 (diff 1.02e-50); A=3: P(z_D) = -13.9305624538076 vs recorded -13.9305624538076 (diff 1.91e-49); A=4: P(z_D) = -20.466481428076 vs recorded -20.466481428076 (diff 5.85e-49)",
       "pass": true
     },
     {
       "check": "W2_weight_normalisation_in_window",
-      "detail": "max |sum dim w(z) - 1| over A = 2,3,4 and 5 window points: 6.22e-61",
+      "detail": "max |sum dim w(z) - 1| over A = 2,3,4 and 5 window points: 1.87e-60",
       "pass": true
     },
     {
@@ -32,7 +32,7 @@
   ],
   "checks_passed": 5,
   "checks_total": 5,
-  "computedAt": "2026-10-12T19:12:45.745658+00:00",
+  "computedAt": "2026-11-20T15:07:54.160665+00:00",
   "dps": 60,
   "endpoint_patterns": {
     "z=0 (Molien)": "-++",

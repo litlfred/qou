@@ -71,7 +71,7 @@ def q0_mp() -> mp.mpf:
     whatever `mp.dps` said.  A function rather than a constant because `mp.mpf`
     rounds at construction and at import time `mp.dps` is 15.
     """
-    return mp.mpf(Q_50_DIGIT_STR)
+    return Q_MP
 
 Q0 = Q_MP  # was f64 roundtrip
 QI = Q_INV_MP

@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-02T22:06:53.009527+00:00",
-  "commitSha": "297b1f2236abc43b69f4efe08a916675d2248eb3",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:50:25.077551+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "the_3x3_Markov_solve_is_unique",
@@ -97,11 +97,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2656,
+  "durationMs": 2777,
   "computation": "qbeta-cds1-terminus-status",
   "scriptFile": "qbeta_cds1_terminus_status_probe.py",
-  "scriptHash": "7445e0c0d77f",
-  "scriptCommitSha": "af41fa4c180caa6a48b9ef88be1befdf2999521c",
+  "scriptHash": "65d07a912b56",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -109,14 +109,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

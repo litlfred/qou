@@ -107,7 +107,7 @@ sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.witness import resolve_q0_anchor  # noqa: E402
 
 # q₀ pin, declared by the producer rather than inferred.
@@ -220,7 +220,7 @@ def main():
     # ── 3. Numerical verification ───────────────────────────────
     print()
     print("  3. Numerical verification at q₀")
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     m_mu = mp.mpf(M_MU_MEV_VALIDATION)
     m_e = mp.mpf("0.51099895")
 

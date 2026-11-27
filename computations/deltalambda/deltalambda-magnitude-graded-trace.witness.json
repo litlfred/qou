@@ -3,12 +3,12 @@
   "description": "The \u0394_\u03bb magnitude is the trace of the sign-grading g_\u03c1 (= ordinary dimension), a classical q=1 dimension, NOT the substrate q\u2080 quantum dimension. Reduces the closure to constructing g_\u03c1; does not derive it.",
   "auditOnly": "docs/audits/2026-07-11-deltalambda-magnitude-graded-trace.md",
   "tier": "symbolic-exact + mpmath (parameter-free; exact identities + q\u2080 q-dimension)",
-  "computedAt": "2026-09-04T02:44:38.374833+00:00",
-  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
+  "computedAt": "2026-11-20T15:06:34.281837+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "engine": "python",
   "engineVersion": "1.14.0",
   "scriptFile": "deltalambda_magnitude_graded_trace_probe.py",
-  "scriptHash": "d661f6430c90",
+  "scriptHash": "503457ca8c44",
   "q0_source": "qou_substrate.q_at(30)",
   "q0": "1.1099785827513808076",
   "assertions": [
@@ -119,7 +119,7 @@
     "reduced_open_problem": "construct g_\u03c1 (principal \u03c1-grading) from the 13 drivers \u2014 categorical, formalize-first, NOT done",
     "gate": "Track-A/Subgoal-2 (owner-reversed for this reduction); no fit; nothing wired"
   },
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

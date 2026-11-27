@@ -82,8 +82,8 @@ def _read_muon_q0() -> mpf:
 
 def _read_proton_q0() -> mpf:
     sys.path.insert(0, str(ROOT / "tools" / "qou-substrate" / "python"))
-    from qou_substrate.constants import Q_50_DIGIT_STR
-    return mpf(Q_50_DIGIT_STR)
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP
+    return Q_MP
 
 
 def bar_odd(q: mpf) -> mpf:

@@ -94,7 +94,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
@@ -109,7 +109,7 @@ from codata_constants import (
 # on the PROTON default (11.54 ppb). The comment two lines up already noted
 # that a 17-digit literal is the shape this file should not model; it was
 # modelling it.
-_Q0 = mp.mpf(Q_50_DIGIT_STR)
+_Q0 = Q_MP
 _H = float(_Q0 - 1 / _Q0)            # ≈ 0.2091
 
 

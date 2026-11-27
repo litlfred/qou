@@ -62,12 +62,12 @@ for _p_qp in (_Path_qp(__file__).resolve().parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 Z0 = mp.e ** (mp.mpc(0, 1) * mp.pi / 3)
 PISQ6 = mp.pi ** 2 / 6
-Q0 = mp.mpf(Q_50_DIGIT_STR)            # muon-canonical (computations layer)
+Q0 = Q_MP            # muon-canonical (computations layer)
 S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")
 PHI_GOLDEN = (1 + mp.sqrt(5)) / 2

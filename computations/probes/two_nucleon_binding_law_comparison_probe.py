@@ -61,12 +61,20 @@ from _precision import fmt, set_compute_dps  # noqa: E402
 from hoefsmit_symbolic import Q  # noqa: E402
 from hecke_character_symbolic import q_character_on_braid_word  # noqa: E402
 from markov_weights_symbolic import solve_y_lambda  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from gamma_gamma_isospin_channel_probe import VERTICES, nucleon  # noqa: E402
 
 DPS = 60
 set_compute_dps(DPS)
-QV = sp.Rational(Q_50_DIGIT_STR)
+# BOTH LAYERS MUST CARRY THE SAME q. This was `sp.Rational(Q_50_DIGIT_STR)` while the
+# mpmath side below is `Q_MP` (70 digits) -- so the probe computed its H_6 characters and
+# Markov weights at one q and its `laws()` arithmetic at another, a 2.13e-50 internal
+# straddle. That gap is exactly what broke the three 1e-50 cross-witness checks
+# (H6_traces / D2_log / D4_ratios): the values agreed to 48 digits and the tolerance asks
+# for 51. Fixed at the producer per the owner's ruling (option D, 2026-11-21), not by
+# widening the tolerance -- a bound sized to its own miss is a fit.
+with mp.workdps(DPS + 15):
+    QV = sp.Rational(mp.nstr(Q_MP, DPS + 10, strip_zeros=False))
 S2 = [(2, "sigma")]
 PAIRS = ("pp", "pn", "np", "nn")
 HERE = Path(__file__).resolve().parent
@@ -130,14 +138,48 @@ def sign(x):
     return "bound" if x > 0 else ("unbound" if x < 0 else "marginal")
 
 
+#: Relative width below which two law values are reported as TIED rather than ordered.
+#: DERIVED from the probe's own arithmetic (DPS = 60, less a 10-digit guard), NOT sized to
+#: any observed miss -- a bound sized to its own miss is a fit. The two margins bracket it
+#: by a wide gap in both directions, which is what makes it safe:
+#:   * the spurious gaps it must absorb are ~1e-61 (round-off),      11 orders BELOW it;
+#:   * the smallest genuine gap in this probe is 0.0132 (D3 V3),     48 orders ABOVE it.
+#: So no choice inside ~1e-13..1e-58 changes any verdict here.
+ORDER_TIE_REL = mp.mpf(10) ** -(DPS - 10)
+
+
 def order_desc(d):
+    """Descending order of the law values, with TIES MADE EXPLICIT as `a = b`.
+
+    The strict-order version of this function made the `log_and_mayer_orders_identical`
+    check decide on round-off. At D3 vertices V1 and V2 the `nn` and `pn` values are
+    mathematically EQUAL; the committed 50-digit witness had both laws carrying a ~6.6e-61
+    residual that happened to point the SAME way, so the check passed by coincidence.
+    Closing the Q_MP/sympy straddle left `L_log` with a 3.3e-61 residual while `L_mayer`'s
+    became exactly 0.0, so one law broke the tie and the other did not, and the check
+    failed -- also by coincidence. A verdict decided at the 61st digit is not a verdict.
+
+    Same class as detector-blindness taxonomy row 59 (a tie-sorted list permuted by a
+    precision change at digit ~60), one level up: there the TIE moved, here it is the
+    ORDERING OVER a tie that is being compared.
+    """
     items = sorted(((k, v) for k, v in d.items() if v is not None), key=lambda kv: -kv[1])
-    return " > ".join(k for k, _ in items)
+    if not items:
+        return ""
+    groups = [[items[0]]]
+    for k, v in items[1:]:
+        ref = groups[-1][0][1]
+        scale = max(abs(ref), abs(v))
+        if scale == 0 or abs(ref - v) <= ORDER_TIE_REL * scale:
+            groups[-1].append((k, v))
+        else:
+            groups.append([(k, v)])
+    return " > ".join(" = ".join(sorted(k for k, _ in g)) for g in groups)
 
 
 def main() -> int:
     t0 = time.time()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     from qou_substrate.constants import M_E_MEV  # noqa: PLC0415
     me = mp.mpf(str(M_E_MEV))
     hbar_q = 1 - 1 / q

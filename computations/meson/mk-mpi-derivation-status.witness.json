@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-20T08:00:48.520200+00:00",
-  "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:37:52.630789+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "reproduces_dashboard_pred",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 7,
   "computation": "mk-mpi-derivation-status",
   "scriptFile": "mk_mpi_derivation_status_probe.py",
-  "scriptHash": "368c6712d8e9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "eb21d667bbdd",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,13 +54,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.18",
-    "numpy": "2.5.3",
-    "scipy": "1.18.1",
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1",
-    "cvxpy": "absent"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

@@ -91,7 +91,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from mpmath import log, mp, mpf, nstr  # noqa: E402
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.dps = 60
 
@@ -129,7 +129,7 @@ def _head_sha() -> str:
 
 
 def main() -> int:
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     eps = q - 1
     pp, pn, nn = (ev(BOND[k], eps, 5) for k in ("pp", "pn", "nn"))
     tgt = _f(TARGET)

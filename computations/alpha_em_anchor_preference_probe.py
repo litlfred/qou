@@ -41,7 +41,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 from qou_substrate import codata as _codata  # noqa: E402
 
 set_compute_dps()
@@ -61,7 +61,7 @@ CODATA = mp.mpf(_ALPHA_INV.value_str)
 # Both pins read BY NAME (bean qou-4bef, 2026-09-03): the muon literal this carried was the
 # pin RETIRED 2026-08-22/28; the muon leg now tracks the CODATA lepton ratio. The docstring
 # figures above were computed at the retired pin — the witness carries the live ones.
-Q_PROTON = mp.mpf(Q_50_DIGIT_STR)
+Q_PROTON = Q_MP
 Q_MUON = q_muon_at(50)
 
 

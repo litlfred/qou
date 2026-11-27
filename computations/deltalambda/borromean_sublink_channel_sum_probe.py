@@ -58,7 +58,7 @@ import mpmath as mp  # noqa: E402
 
 from hecke_character_symbolic import hoefsmit_matrices_symbolic  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
@@ -179,7 +179,7 @@ def perblock_g(n, sigma_word, Y):
 
 def main():
     t_start = time.time()
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
 
     # ── target context (0 fit; reported, never inverted into any derivation) ──
     MU3 = 0.4708      # AdditiveResidualSimplex #4320 (MeV)

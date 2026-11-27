@@ -126,7 +126,7 @@ for _p in ("computations", "computations/markov", "computations/hecke",
 import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 from markov_trace_canonical import tr_M_word  # noqa: E402
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 q = sp.symbols("q", positive=True)
 t = sp.symbols("t", positive=True)
@@ -165,7 +165,7 @@ def leading(expr, order):
 
 def main() -> int:
     mp.mp.dps = 60
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     f = lambda e: sp.lambdify(q, e, "mpmath")(q0)      # noqa: E731
     n = lambda x, d=50: mp.nstr(x, d, strip_zeros=False)  # noqa: E731
 

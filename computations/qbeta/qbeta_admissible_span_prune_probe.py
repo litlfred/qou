@@ -39,7 +39,7 @@ import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 from qbeta_net_trace_invariance_probe import (  # noqa: E402
     BASIS, N, LEFT, ONE, basis_vec, vec, length, net, q, h,
@@ -116,7 +116,7 @@ def main() -> int:
           f"disagrees on {len(nz)} of {N} basis elements "
           f"(indices {nz}) — fitting Delta does not make the functionals agree")
 
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     print()
     print(f"  w* (the weight that reproduces Delta) = {sp.simplify(w_star)}")
     print(f"  w* at q0                              = "

@@ -38,7 +38,7 @@ for _p in ("tools/qou-substrate/python", "computations/substrate", "computations
 
 import mpmath as mp  # noqa: E402
 from _precision import fmt, set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 DPS = 60
 set_compute_dps(DPS)
@@ -78,7 +78,7 @@ def chi_closed(k: int, x):
 
 def main() -> int:
     t0 = time.time()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     qi = 1 / q
     h = q - qi
     x = h ** 2

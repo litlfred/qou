@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T08:38:27.747958+00:00",
-  "commitSha": "f61a551c8d128d088d3731b89d84e9162ffc5ead",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:46:45.559569+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "ratio_map_is_bijection",
@@ -14,7 +14,7 @@
     },
     {
       "name": "inversion_roundtrip_exact",
-      "computed": "1.2796761219871603781e-69",
+      "computed": "3.254828397228212266e-69",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-20",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 6,
   "computation": "qbeta-offl-ratio-candidates-unfalsifiable",
   "scriptFile": "qbeta_offl_ratio_candidates_unfalsifiable_probe.py",
-  "scriptHash": "7027b78746d5",
-  "scriptCommitSha": "653f8d644e1ad96bcb4260c33ebb9578787fd546",
+  "scriptHash": "d90c2252dbde",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,10 +34,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_offl_ratio_candidates_unfalsifiable_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_offl_ratio_candidates_unfalsifiable_probe.py"
   },
   "description": "Bean qou-offl: a formalize-first design constraint on the cone-manifold route, derived before running any geometry. The channel has 2 anchor equations in 3 unknowns, so one extra scalar (a ratio theta_p/theta_mu) closes it with zero residual and cannot be tested. Established concretely: rho(A) is a monotone bijection from A in (A_crit, infinity) onto rho in (1, infinity), so every ratio above 1 is attained by exactly one A and no ratio candidate is refutable — it only names an A. Plausible geometric ratios moreover cluster into A in [2.5, 4], making a 'match near 3' near-guaranteed. Consequence: qou-offl must supply BOTH theta values absolutely, from a normalization fixed in advance. Derives no A_omega; endorses no candidate; wires nothing.",
   "contentBlock": "conj:im-q-physical-role",
@@ -83,7 +93,7 @@
     ],
     "U1_monotone": true,
     "U1_bijection_onto_gt1": true,
-    "U1_inversion_roundtrip_max_rel_err": "1.2796761e-69",
+    "U1_inversion_roundtrip_max_rel_err": "3.2548284e-69",
     "U2_discriminator_table": [
       {
         "candidate": "Vol(𝔹₃)/Vol(4₁)",

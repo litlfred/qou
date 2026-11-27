@@ -1,6 +1,6 @@
 {
   "schema": "https://litlfred.github.io/qou/schemas/witness/v1",
-  "computedAt": "2026-10-13T14:11:24.378016+00:00",
+  "computedAt": "2026-11-20T15:11:39.207266+00:00",
   "computation": {
     "script": "computations/deltalambda/rev_e_infinity_closed_form_probe.py"
   },
@@ -30,61 +30,61 @@
         "ell": 1,
         "direct": "-0.4533965449167026114262459",
         "closed": "-0.4533965449167026114262459",
-        "difference": "-1.26172e-57"
+        "difference": "-1.26183e-57"
       },
       {
         "ell": 2,
         "direct": "-0.62270736044987704363386815",
         "closed": "-0.62270736044987704363386815",
-        "difference": "-2.51029e-57"
+        "difference": "-2.51044e-57"
       },
       {
         "ell": 3,
         "direct": "-0.73098452359210675810583301",
         "closed": "-0.73098452359210675810583301",
-        "difference": "-3.7664e-57"
+        "difference": "-3.76625e-57"
       },
       {
         "ell": 5,
         "direct": "-0.88534316251043831386871167",
         "closed": "-0.88534316251043831386871167",
-        "difference": "-6.2756e-57"
+        "difference": "-6.27544e-57"
       },
       {
         "ell": 8,
         "direct": "-1.065613600992247540429723",
         "closed": "-1.065613600992247540429723",
-        "difference": "-1.00301e-56"
+        "difference": "-1.00296e-56"
       },
       {
         "ell": 12,
         "direct": "-1.281564484998038056003841",
         "closed": "-1.281564484998038056003841",
-        "difference": "-1.50538e-56"
+        "difference": "-1.50552e-56"
       },
       {
         "ell": 16,
         "direct": "-1.4915922870347159651963558",
         "closed": "-1.4915922870347159651963558",
-        "difference": "-2.0074e-56"
+        "difference": "-2.00748e-56"
       },
       {
         "ell": 20,
         "direct": "-1.7005265231137943069799073",
         "closed": "-1.7005265231137943069799073",
-        "difference": "-2.50948e-56"
+        "difference": "-2.50946e-56"
       },
       {
         "ell": 24,
         "direct": "-1.9092555498749500564902925",
         "closed": "-1.9092555498749500564902925",
-        "difference": "-3.0115e-56"
+        "difference": "-3.01147e-56"
       },
       {
         "ell": 32,
         "direct": "-2.3266290809595782124990552",
         "closed": "-2.3266290809595782124990552",
-        "difference": "-4.01543e-56"
+        "difference": "-4.01546e-56"
       }
     ],
     "halves_R7": {
@@ -103,8 +103,8 @@
           "up_closed": "0.63412354660363655313512829",
           "down_direct": "-1.0353497313605794084034211",
           "down_closed": "-1.0353497313605794084034211",
-          "up_difference": "7.77877e-62",
-          "down_difference": "-6.22302e-60"
+          "up_difference": "2.33363e-61",
+          "down_difference": "-6.53417e-60"
         },
         {
           "ell": 2,
@@ -112,8 +112,8 @@
           "up_closed": "0.95809271801614692176642379",
           "down_direct": "-1.4764593581465044530843857",
           "down_closed": "-1.4764593581465044530843857",
-          "up_difference": "2.33363e-61",
-          "down_difference": "-6.22302e-60"
+          "up_difference": "3.88938e-61",
+          "down_difference": "-6.53417e-60"
         },
         {
           "ell": 3,
@@ -121,8 +121,8 @@
           "up_closed": "1.1471664292336288144441248",
           "down_direct": "-1.7216398723464563040760984",
           "down_closed": "-1.7216398723464563040760984",
-          "up_difference": "7.15647e-60",
-          "down_difference": "-6.68974e-60"
+          "up_difference": "7.31204e-60",
+          "down_difference": "-6.84532e-60"
         },
         {
           "ell": 5,
@@ -130,8 +130,8 @@
           "up_closed": "1.3371313433582389339148943",
           "down_direct": "-1.9616227050698784669938402",
           "down_closed": "-1.9616227050698784669938402",
-          "up_difference": "2.08471e-59",
-          "down_difference": "-6.53417e-60"
+          "up_difference": "2.06915e-59",
+          "down_difference": "-6.84532e-60"
         },
         {
           "ell": 8,
@@ -139,8 +139,8 @@
           "up_closed": "1.4349985131887863189858317",
           "down_direct": "-2.0832492329029558101519296",
           "down_closed": "-2.0832492329029558101519296",
-          "up_difference": "4.12275e-59",
-          "down_difference": "-1.18237e-59"
+          "up_difference": "4.07608e-59",
+          "down_difference": "-1.30683e-59"
         },
         {
           "ell": 12,
@@ -148,8 +148,8 @@
           "up_closed": "1.465968666988174752843175",
           "down_direct": "-2.1214888300690957349515784",
           "down_closed": "-2.1214888300690957349515784",
-          "up_difference": "6.76753e-59",
-          "down_difference": "-1.08903e-59"
+          "up_difference": "6.75197e-59",
+          "down_difference": "-1.27572e-59"
         },
         {
           "ell": 16,
@@ -157,8 +157,8 @@
           "up_closed": "1.4717583032128415144557562",
           "down_direct": "-2.1286248276914013811248617",
           "down_closed": "-2.1286248276914013811248617",
-          "up_difference": "9.3812e-59",
-          "down_difference": "-1.12014e-59"
+          "up_difference": "9.42787e-59",
+          "down_difference": "-1.30683e-59"
         },
         {
           "ell": 24,
@@ -166,8 +166,8 @@
           "up_closed": "1.4730523077179397659319969",
           "down_direct": "-2.130219213758655674631414",
           "down_closed": "-2.130219213758655674631414",
-          "up_difference": "1.46863e-58",
-          "down_difference": "-1.08903e-59"
+          "up_difference": "1.47952e-58",
+          "down_difference": "-1.27572e-59"
         }
       ]
     }
@@ -193,7 +193,7 @@
         ],
         "direct": "1.9654443710777499961308923",
         "closed": "1.9654443710777499961308923",
-        "difference": "1.14815e-58"
+        "difference": "1.1637e-58"
       },
       {
         "block": [
@@ -201,7 +201,7 @@
         ],
         "direct": "0.58195318644387679697717515",
         "closed": "0.58195318644387679697717515",
-        "difference": "9.21006e-59"
+        "difference": "9.28007e-59"
       },
       {
         "block": [
@@ -209,7 +209,7 @@
         ],
         "direct": "0.86655173275052257318428034",
         "closed": "0.86655173275052257318428034",
-        "difference": "9.91015e-59"
+        "difference": "9.87904e-59"
       },
       {
         "block": [
@@ -218,7 +218,7 @@
         ],
         "direct": "1.2525758066084261764722037",
         "closed": "1.2525758066084261764722037",
-        "difference": "9.86348e-59"
+        "difference": "9.91015e-59"
       },
       {
         "block": [
@@ -228,7 +228,7 @@
         ],
         "direct": "1.778718664399674138825925",
         "closed": "1.778718664399674138825925",
-        "difference": "1.03613e-58"
+        "difference": "1.04236e-58"
       },
       {
         "block": [
@@ -239,7 +239,7 @@
         ],
         "direct": "1.0548570270200871534607709",
         "closed": "1.0548570270200871534607709",
-        "difference": "9.77013e-59"
+        "difference": "1.00502e-58"
       },
       {
         "block": [
@@ -251,7 +251,7 @@
         ],
         "direct": "2.1091926474796784456835681",
         "closed": "2.1091926474796784456835681",
-        "difference": "1.21971e-58"
+        "difference": "1.22282e-58"
       },
       {
         "block": [
@@ -263,14 +263,14 @@
         ],
         "direct": "1.6825893096129236564064952",
         "closed": "1.6825893096129236564064952",
-        "difference": "1.16993e-58"
+        "difference": "1.17304e-58"
       }
     ]
   },
   "assembled_R4": {
     "closed": "2.43929645512078402706542884314",
     "searched_7335": "2.43929645512078402706542884314",
-    "difference": "-2.4024712147395056598e-30"
+    "difference": "-2.4024712147395056585e-30"
   },
   "asymptotics_R5": {
     "slope_exact": "-0.0521703601597597561579531399865",
@@ -370,17 +370,17 @@
     {
       "name": "R7 both halves of the run collect with the SAME multiplicity min(d, ell), separately",
       "ok": true,
-      "detail": "8 lengths; worst difference 1.469e-58 against a floor of 1.0e-50.  R1 checks the SUM of the two halves, which a compensating error in the split would survive; this checks each half on its own, so it is the check that ties `EdgeDecoupling.sum_tails_eq_sum_min` (upward, condition `j < d`, kernel `eps(2d) - eps(2d+1)`) and `sum_heads_eq_sum_min` (downward, condition `ell <= j + d`, kernel `eps(2d) - eps(2d-1)`) to the two branches the probe actually walks.  The two halves are NOT equal to one another \u2014 they differ by up to 3.603, since the AP is asymmetric about a displaced row \u2014 so agreeing with the same multiplicity is a statement about the counting, not about a symmetry"
+      "detail": "8 lengths; worst difference 1.48e-58 against a floor of 1.0e-50.  R1 checks the SUM of the two halves, which a compensating error in the split would survive; this checks each half on its own, so it is the check that ties `EdgeDecoupling.sum_tails_eq_sum_min` (upward, condition `j < d`, kernel `eps(2d) - eps(2d+1)`) and `sum_heads_eq_sum_min` (downward, condition `ell <= j + d`, kernel `eps(2d) - eps(2d-1)`) to the two branches the probe actually walks.  The two halves are NOT equal to one another \u2014 they differ by up to 3.603, since the AP is asymmetric about a displaced row \u2014 so agreeing with the same multiplicity is a statement about the counting, not about a symmetry"
     },
     {
       "name": "R2 the run's intercept agrees between the distance sum and the Lambert series",
       "ok": true,
-      "detail": "C = -0.65717794754589989394706076, difference 3.899e-55.  The two routes share no algebra: one sums the second difference `T(d)` over distances, the other expands `eps(m) = sum_r t^(-mr)/r` and resums, giving `C = -sum_r (1/r)(q^r - q^-r)^2 q^(-4r)/(1 - q^(-4r))^2`.  That second form is a single Lambert-type series in q0 with no reference to the lattice at all"
+      "detail": "C = -0.65717794754589989394706076, difference 3.9e-55.  The two routes share no algebra: one sums the second difference `T(d)` over distances, the other expands `eps(m) = sum_r t^(-mr)/r` and resums, giving `C = -sum_r (1/r)(q^r - q^-r)^2 q^(-4r)/(1 - q^(-4r))^2`.  That second form is a single Lambert-type series in q0 with no reference to the lattice at all"
     },
     {
       "name": "R3 the Lambert-tail edge form reproduces the direct pair sum on every sampled block",
       "ok": true,
-      "detail": "8 blocks including the argmax [3, 2, 1, 1, 1]; worst difference 1.22e-58 against the 1.0e-50 floor.  Each block-to-bulk tail `sum_{d>=m}[eps(2d) - eps(2d+u)]` becomes `sum_r (1/r)(1 - q^(-2ur)) q^(-4mr)/(1 - q^(-4r))`, so the edge is a finite sum of Lambert series plus finitely many eps values \u2014 an explicit function of q, evaluated without any lattice sum"
+      "detail": "8 blocks including the argmax [3, 2, 1, 1, 1]; worst difference 1.223e-58 against the 1.0e-50 floor.  Each block-to-bulk tail `sum_{d>=m}[eps(2d) - eps(2d+u)]` becomes `sum_r (1/r)(1 - q^(-2ur)) q^(-4mr)/(1 - q^(-4r))`, so the edge is a finite sum of Lambert series plus finitely many eps values \u2014 an explicit function of q, evaluated without any lattice sum"
     },
     {
       "name": "R4 the closed forms reproduce #7335's searched e_inf",

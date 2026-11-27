@@ -2,7 +2,7 @@
   "witness_schema": "qou-probe/v1",
   "name": "sigma1cubed-seifert-surface-term",
   "description": "\u03c3\u2081\u00b3 deuteron NA-Stokes surface term: EMPIRICAL tessellation-independence check + value vs C_knot=5.853. Verdict: the surface state-sum is tessellation-INDEPENDENT (topological invariant, no per-cell DOF, not a fit) but at archimedean q\u2080 it is DEGENERATE (torus-knot Vol=0) and does NOT reproduce 5.853; the character-channel surface-ordering correction is identically 0 by trace cyclicity. The 5.853 content is fibre-level (root-of-unity WRT); the open wall is the fibre\u2192archimedean \u03c4-transfer, NOT a missing discretization. Honest negative.",
-  "computed_at": "2026-09-05T18:02:51Z",
+  "computed_at": "2026-11-20T15:20:33Z",
   "elapsed_sec": "0.001",
   "data": {
     "conventions": {
@@ -54,12 +54,12 @@
     "audit_only": true,
     "nothing_wired": true
   },
-  "scriptHash": "1880bc44019c",
+  "scriptHash": "acdcfeb040b1",
   "scriptFile": "sigma1cubed_seifert_surface_term_probe.py",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "f603607f097ad30e397038d5345d39e2fe740ba0",
   "engine": "python",
-  "computedAt": "2026-09-05T18:02:51.178121+00:00",
+  "computedAt": "2026-11-20T15:20:33.989862+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

@@ -45,7 +45,7 @@ from mpmath import mp, mpf  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 REASON_TEXT = "target below the 1e-30 precision floor — relative error undefined"
@@ -108,7 +108,7 @@ def main() -> int:
     set_compute_dps()
     wb = WitnessBuilder("qbeta-wenzl-habiro-chain-alpha", engine="mpmath")
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
 
     # Targets: (c_2, c_3, c_4...) from cache
     targets = {

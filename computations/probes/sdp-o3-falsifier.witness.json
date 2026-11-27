@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T07:47:34.680988+00:00",
-  "commitSha": "ad8cd0783b7a342d513f31571e6c74361d45409f",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:48:01.049293+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "the block decomposition reproduces tr_M at float64 input precision",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 11,
   "computation": "sdp-o3-falsifier",
   "scriptFile": "sdp_o3_falsifier_probe.py",
-  "scriptHash": "7580df387ce7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "888169c3bbb6",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,14 +66,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -84,7 +84,7 @@
   "description": "O3 falsifier for the operator-selection replacement. The partition-block SDP DOES fix the LP's objective-duplicates-constraint defect (all six LP-optimal vertices excluded, min eig -7.33/-3.85) but is degenerate by a different route: the SU(2) specialisation gives y_(1,1,1) = 0, so a Phi supported on that block is PSD with objective 0 and nonzero net, making the optimum identically 0 on a ray. That ray is the known q-antisymmetriser radical, so the repair is the existing quotient (O3').",
   "auditOnly": "docs/proposals/2026-09-05-operator-selection-objective-replacement.md",
   "parameters": {
-    "q0": "1.10997858275138080759166909561076887987449912187360000000000"
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281"
   },
   "data": {
     "markov_weights": [
@@ -138,7 +138,7 @@
     ],
     "degenerate_ray": {
       "net_sum": "0.0201621592527849362538405077680228789999786410403597706199778",
-      "radical_match_spread": "6.40427101960980136173748002890613461308984843252723832770372e-51"
+      "radical_match_spread": "6.38754533906735262470647470926670707206688425762312731618537e-50"
     }
   },
   "q0Anchor": "proton",

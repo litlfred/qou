@@ -112,9 +112,9 @@ def main() -> int:
     print("\n" + "=" * 78)
     print("§1  INVERTING THE BARE FORM AT EACH CODATA VINTAGE")
     print("=" * 78)
-    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     print(f"    substrate anchor q0        = {mp.nstr(q0, 18)}")
     print(f"    alpha^-1_bare(q0)          = {mp.nstr(alpha_inv_bare(q0), 12)}"
           f"   (measured is ~137.036; the gap is the CS dressing)")

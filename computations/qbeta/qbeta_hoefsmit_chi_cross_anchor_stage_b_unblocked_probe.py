@@ -77,7 +77,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 # The canonical anchor carriers. Both are STRINGS/derivations, not float
 # literals -- that is the point of importing them rather than typing them.
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 
 
 def main() -> int:
@@ -98,7 +98,7 @@ def main() -> int:
     # own subject. AGENTS.md records that separation as 11.6141 ppb.
     #
     # Gate: computations/audits/overlong_float_literal_audit.py.
-    Q_PROTON = mp.mpf(Q_50_DIGIT_STR)
+    Q_PROTON = Q_MP
     Q_MUON = mp.mpf(str(q_muon_at()))
 
     # Reference values from PR #1851 (must reproduce exactly)

@@ -134,8 +134,8 @@ def main() -> int:
 
     print()
     print("4. THREE DIFFERENT NUMBERS AT q0, AND THE CORPUS USES THE CLASSICAL ONE")
-    from qou_substrate.constants import Q_50_DIGIT_STR        # noqa: PLC0415
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP        # noqa: PLC0415
+    q0 = Q_MP
 
     def at(e):
         return mp.mpf(str(sp.N(e.subs(_q, sp.Float(str(q0), 50)), 45)))

@@ -115,7 +115,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 import markov.markov_weights_symbolic as M  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.dps = 40
@@ -140,7 +140,7 @@ def normaliser_coeffs(n: int) -> list[int]:
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     Q = q ** 2
     eta = mp.log(q)
     w = WitnessBuilder("fugacity-conjugate-sector-probe")

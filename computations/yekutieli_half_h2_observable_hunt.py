@@ -45,7 +45,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -62,7 +62,7 @@ def qfact(k, q):
 
 def main() -> int:
     set_compute_dps(60)
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
 
     print("=" * 78)
     print("Yekutieli +0.5·h² observable hunt (60 dps)")

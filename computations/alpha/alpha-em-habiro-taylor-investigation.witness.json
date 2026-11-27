@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:23:12.889347+00:00",
-  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:01:03.493410+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "habiro_taylor_coefficients_match_recursion",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 158,
+  "durationMs": 233,
   "computation": "alpha-em-habiro-taylor-investigation",
   "scriptFile": "alpha_em_habiro_taylor_investigation.py",
-  "scriptHash": "a07dd3c8926d",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "b4065ae5dbcb",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

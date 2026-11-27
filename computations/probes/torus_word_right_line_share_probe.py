@@ -32,7 +32,7 @@ from pathlib import Path
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools/qou-substrate/python"))
-from qou_substrate.constants import Q_50_DIGIT_STR  # proton pin (owner directive 2026-08-07)
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # proton pin (owner directive 2026-08-07)
 
 mp.mp.dps = 70
 NMAX = 7
@@ -210,7 +210,7 @@ for q in (Fr(11, 10), Fr(3, 2)):
               rows[1][1] / rows[1][2] == -1 / (q**2 * (q**2 + 1)))
         check(f"n={n}: right part nonzero for N = 0..{3*n}", all(r[1] != 0 for r in rows))
 
-q0 = mp.mpf(Q_50_DIGIT_STR)
+q0 = Q_MP
 print(f"\n== at the proton q0 = {mp.nstr(q0, 20)} (mpmath {mp.mp.dps} dps): right-line share of T(n,N)")
 for n in range(2, NMAX + 1):
     bl = blocks(n, q0, exact=False)

@@ -67,7 +67,7 @@ sys.path.insert(0, str(HERE.parent))
 
 from mpmath import mp, mpf, pi as mp_pi  # noqa: E402
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 
@@ -139,7 +139,7 @@ def main() -> int:
     # a 50-digit cap, which is BELOW `OUTPUT_DPS = 60`.  Measured against the
     # exact 50-digit decimal in `Fraction` arithmetic, `mpf(Q_50_DIGIT_STR)`
     # built at dps 70 sits 4.594e-72 from it and `Q_MP` sits 2.015e-50.
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     pi_sq = mp_pi ** 2
     pi_sq_720 = pi_sq / 720
     one_percent = pi_sq_720 / 100

@@ -35,7 +35,7 @@ sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 
@@ -67,7 +67,7 @@ def chi_21_full_matrix(word, q_val):
 def main():
     set_compute_dps()
     set_compute_dps()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     q_f = float(q)
 
     print("=" * 70)

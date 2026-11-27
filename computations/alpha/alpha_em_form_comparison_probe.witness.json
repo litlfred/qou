@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-15T19:52:50.460630+00:00",
-  "commitSha": "6898a93de88af7d81d0c34b80d3a9160e6ba9680",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:01:02.847560+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "the CS-tower row the block publishes reproduces at the proton pin",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 7,
   "computation": "alpha_em_form_comparison_probe",
   "scriptFile": "alpha_em_form_comparison_probe.py",
-  "scriptHash": "08103e52bb2c",
-  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
+  "scriptHash": "f73369b891cd",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,13 +30,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.18",
-    "numpy": "2.5.3",
-    "scipy": "1.18.1",
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "clarabel": "0.11.1",
-    "cvxpy": "absent"
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

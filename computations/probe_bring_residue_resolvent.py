@@ -20,7 +20,7 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from _precision import fmt, set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 POLE_ORDERS = [3, 4, 9, 10]  # downstream specialisations
@@ -33,7 +33,7 @@ def canonical_resolvent(q: mp.mpf, n: int) -> mp.mpf:
 
 def main() -> int:
     set_compute_dps()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h_q = q - 1 / q
 
     w = WitnessBuilder("bring-residue-resolvent-probe", engine="mpmath")

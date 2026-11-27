@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:56:41.558090+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:37:57.897281+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "k_crossing_at_least_one_passes_10_ppm",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "mmu-categorical-correction-k-crossing-probe",
   "scriptFile": "mmu_categorical_correction_k_crossing_probe.py",
-  "scriptHash": "5ecf447924bf",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "6dd6db1da41a",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,12 +25,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mmu_categorical_correction_k_crossing_probe.py"
+    ],
+    "reproduce": "python3 -u computations/mmu_categorical_correction_k_crossing_probe.py"
   },
   "data": {
     "target_delta": "0.0000002098",

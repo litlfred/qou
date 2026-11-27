@@ -92,7 +92,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -117,7 +117,7 @@ def fmt(x, n=8):
 
 
 def main() -> int:
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
 
     print("gs_tower_jet_degree_body_order_probe")
     print("=" * 78)

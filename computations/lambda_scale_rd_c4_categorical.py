@@ -69,11 +69,11 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from experimental_constants import M_E_MEV, M_P_MEV  # noqa: E402
 
 mp.mp.dps = 80
-Q = mp.mpf(Q_50_DIGIT_STR)
+Q = Q_MP
 H = Q - mp.mpf(1) / Q
 HBAR_Q = (Q - mp.mpf(1)) / Q
 G = mp.catalan

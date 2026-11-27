@@ -57,7 +57,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from mpmath import mp, mpf  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
 from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
@@ -82,7 +82,7 @@ def mult(np_, nn_):
 
 
 def main():
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
 
     b2 = AME["D"]

@@ -35,7 +35,7 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_P_MEV_VALIDATION,
@@ -59,7 +59,7 @@ def main():
     t0 = time.monotonic()
     set_compute_dps()
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     m_e = mpf(M_E_MEV)
     m_mu = _muon_mass_MeV()
     m_p_codata = mpf(M_P_MEV_VALIDATION)

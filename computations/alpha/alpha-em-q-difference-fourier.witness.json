@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:20:29.360124+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:01:05.083514+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "alpha_em_habiro_is_bar_involution_fixed_point",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 832,
+  "durationMs": 717,
   "computation": "alpha-em-q-difference-fourier",
   "scriptFile": "alpha_em_q_difference_fourier.py",
-  "scriptHash": "a2995bbbbd68",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "9977a51233c4",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,11 +34,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha/alpha_em_q_difference_fourier.py"
+    ],
+    "reproduce": "python3 -u computations/alpha/alpha_em_q_difference_fourier.py"
   },
   "description": "Apply the Q_β q-difference / root-of-unity / Fourier machinery (PRs #1593/#1602/#1622) to the α_EM Habiro element H = [2]_q·(1−h²α) = (q+q⁻¹)(1−(q−q⁻¹)²α). Computes the exact root-of-unity spectrum H(ζ_d) (the Fourier modes of σ_q), the special values H(ζ_1)=2 (classical α/4π), H(ζ_2)=−2 (bar mode), H(ζ_4)=0 (a ZERO — vs Q_β's pole), confirms H is a fixed point of the bar involution q↦q⁻¹ over the FORMAL fibre variable (the charge-conjugation-symmetric sector PR #1602 requires; not a reality assumption — reality enters only at the archimedean q₀ step), and reproduces the established h-Taylor recursion + q₀ truncation. Exact symbolic; sharpens the α_EM modular target, no closure of the open derived form.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",

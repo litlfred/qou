@@ -58,7 +58,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from hecke_characters import standard_young_tableaux, build_seminormal_matrices  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -190,7 +190,7 @@ def main():
     # Import braid pattern from phase1a
     from phase1a_symbolic_trace_dominant_h_expansion import _HE4_PATTERN
 
-    q0 = float(mp.mpf(Q_50_DIGIT_STR))
+    q0 = float(Q_MP)
     h0 = q0 - 1.0 / q0
 
     print(f"  q₀ = {q0:.15f}")

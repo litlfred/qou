@@ -1,6 +1,6 @@
 {
   "schema": "witness/v1",
-  "computedAt": "2026-08-30T13:48:19.676436+00:00",
+  "computedAt": "2026-11-20T15:39:10.323936+00:00",
   "description": "Sum rule vs product rule on the binding table under the Sec.10a log form and the chain assembly. The product rule is WORSE on absolute binding (mean |ln(model/AME)| 0.940 against 0.808) because moving f_nn onto the pn baseline removes binding from every nucleus with an nn bond. It matches the A=3 mirror splitting to 2.5% but its mirror difference is FLAT in A, identical at A=7 where the observed has doubled -- a flat line crossing a rising curve, not a fit. Both rules are ~3x short on absolute binding for A >= 4, which is the extensivity problem and is untouched by either. RECOMMENDATION: do not switch.",
   "q0_pin": "proton",
   "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -196,12 +196,12 @@
     "qou-brng"
   ],
   "allPassed": true,
-  "scriptHash": "60631cdb860f",
-  "scriptCommitSha": "unknown",
-  "commitSha": "06cc8ec091607e88abe8293ce00a0ce272790566",
+  "scriptFile": "bond_rule_dashboard_comparison_probe.py",
+  "scriptHash": "07c536ac4f98",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "bond_rule_dashboard_comparison_probe.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

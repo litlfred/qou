@@ -47,7 +47,7 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -57,7 +57,7 @@ except ImportError:
     _HAVE_WB = False
 
 set_compute_dps()
-q = mp.mpf(Q_50_DIGIT_STR)
+q = Q_MP
 
 
 # ── derived per-bond Markov factors (#2089 closed forms, δ→0) ──────────────────

@@ -15,7 +15,7 @@ from mass_at_3A_proper import atom_braid_word_3A
 
 import mpmath as mp  # noqa: E402
 from qou_substrate.precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 
@@ -47,7 +47,7 @@ if not str(Q_50_DIGIT_STR).startswith("1.10997858275"):
         "pin. This file is not in q0_anchor_manifest.json, so it should get "
         "the default. Refusing to classify against an unknown layer.")
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 HA = Q0 - 1 / Q0
 _CLASSIFY_TOL = mp.mpf("1e-6")
 

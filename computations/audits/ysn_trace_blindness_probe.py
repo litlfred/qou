@@ -35,11 +35,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "substrate"))
 
 from mpmath import mp                                    # noqa: E402
-from q_parameter import Q_50_DIGIT_STR                   # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP                   # noqa: E402
 
 mp.dps = 50
 
-Q = mp.mpf(Q_50_DIGIT_STR)
+Q = Q_MP
 H = Q - 1 / Q                       # h = q - 1/q
 
 

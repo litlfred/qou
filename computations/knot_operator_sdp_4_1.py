@@ -36,7 +36,7 @@ sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from experimental_constants import MU_OVER_E  # noqa: E402
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 
@@ -44,7 +44,7 @@ from hecke_characters import build_seminormal_matrices  # noqa: E402
 def main():
     set_compute_dps()
     set_compute_dps()
-    q = float(mp.mpf(Q_50_DIGIT_STR))
+    q = float(Q_MP)
     h = q - 1.0/q
 
     print("=" * 70)

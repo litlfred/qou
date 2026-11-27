@@ -36,8 +36,8 @@ check("chi_(2,1)(V^3) closed form", sp.simplify(c21_V3 - target) == 0)
 ratio = sp.simplify((q**4 * 1 + c21_V3 * c21_tref) / (q**4 * 1))
 mp.dps = 40
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3] / "tools/qou-substrate/python"))
-from qou_substrate.constants import Q_50_DIGIT_STR
-q0 = mpf(Q_50_DIGIT_STR)
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP
+q0 = Q_MP
 pred = mpf(str(sp.N(ratio.subs(q, sp.Rational(Q_50_DIGIT_STR)), 45)))
 w = json.load(open(pathlib.Path(__file__).with_name("h2-gg-atom.witness.json")))
 ch = w["results"]["V^3"]["electron=trefoil_s0s0s0s1,atom2=pe"]["rows"][0]["chars"]

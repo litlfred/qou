@@ -84,7 +84,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def c_3_closure(base, h_pieces):
@@ -103,7 +103,7 @@ def c_3_closure(base, h_pieces):
 def main() -> int:
     # Constants defined inside main() per Gemini review (avoid
     # module-level magic numbers).
-    Q0_MP = mp.mpf(Q_50_DIGIT_STR)
+    Q0_MP = Q_MP
     C3_TARGET = mp.mpf("-2.069342577")
 
     t0 = time.monotonic()

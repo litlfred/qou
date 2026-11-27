@@ -15,7 +15,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / 'substrate'))
 
 from _precision import set_compute_dps
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
@@ -83,7 +83,7 @@ mp.mp.dps = max(50, mp.mp.dps)
 E0 = mp.mpf('4.2045')
 
 def evaluate_occupancy_gap(isotope, Z, N, S, ame_mev):
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     
     lam = get_ground_state_partition(Z, N, S)
     W_lam = W_lambda(q, lam)

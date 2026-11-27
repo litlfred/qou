@@ -63,7 +63,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -126,7 +126,7 @@ def analyze_levels():
 
 def analyze_weightbound():
     mp.mp.dps = 50
-    Q0 = mp.mpf(Q_50_DIGIT_STR)
+    Q0 = Q_MP
     def qint(k):
         return (Q0 ** k - Q0 ** (-k)) / (Q0 - 1 / Q0)
 

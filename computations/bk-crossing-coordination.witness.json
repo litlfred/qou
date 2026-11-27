@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-11T16:18:59.692805+00:00",
-  "commitSha": "91899042fe57fa463ae21ef25945cb19847b6d95",
+  "computedAt": "2026-11-20T15:04:15.328794+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "alpha_cluster_coordination_constant_for_simplex_nuclei",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "bk-crossing-coordination",
   "scriptFile": "bk_crossing_coordination.py",
-  "scriptHash": "7d26a7109093",
-  "scriptCommitSha": "52ef7103acecbbf4171a7271391049443e93cd26",
+  "scriptHash": "27261d2098a3",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,8 +34,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/bk_crossing_coordination.py"
+    ],
+    "reproduce": "python3 -u computations/bk_crossing_coordination.py"
   },
   "description": "Crossing/coordination structure of the building-block link 𝓑_K tested as the open body-order multiplicity M_n(A) of the θ_λ weight. The per-nucleon coordination number z=A-1 supplies M for the non-magic A=3 pair (M_need ≈ 2.00/2.06 vs z=2, no fit); doubly-magic ⁴He needs an extra super-exp a_D^(4)≈2.53 factor (z·a_D^A closes it to a few %). z·a_D^A closes ⁴He but overshoots A=3 by ~30%, so a_D is a magic-shell enhancement, not universal. Crossing number c(𝓑_K) is the Vol=0 deuteron survivor, not the A≥3 multiplier. EXTENSION: for A>4 α-cluster nuclei (no single hyperbolic link), the principle lifts one level — B ≈ n_α·B(⁴He) + C(n_α,2)·b_αα with b_αα≈2.41 MeV constant for simplex clusters ⁸Be/¹²C/¹⁶O (n_α≤4), saturating for ⁴⁰Ca (n_α=10). b_αα is a single empirical constant, not derived. Scope-limited (a): tested alone, not a structural exclusion.",
   "data": {
@@ -117,17 +129,17 @@
       "20Ne": {
         "n_alpha": 5,
         "bonds": 10,
-        "B": 160.64482400000003,
-        "resid": 19.16651200000002,
-        "per_bond": 1.916651200000002,
+        "B": 160.644824,
+        "resid": 19.166512,
+        "per_bond": 1.9166512,
         "simplex": false
       },
       "24Mg": {
         "n_alpha": 6,
         "bonds": 15,
-        "B": 198.25704720000002,
-        "resid": 28.48307280000003,
-        "per_bond": 1.898871520000002,
+        "B": 198.2570472,
+        "resid": 28.4830728,
+        "per_bond": 1.89887152,
         "simplex": false
       },
       "40Ca": {
@@ -140,5 +152,7 @@
       }
     },
     "b_alpha_alpha_MeV_empirical": 2.415513466666667
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

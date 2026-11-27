@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T15:00:40.868823+00:00",
-  "commitSha": "ef7c2d823cb06587390dc971ae44e66c40eb2906",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:38:20.331822+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "scan_produced_results",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 8,
   "computation": "probe-k-ud-bring-color-tube-empirical-baseline",
   "scriptFile": "probe_k_ud_bring_color_tube_empirical_baseline.py",
-  "scriptHash": "80a93e02fb32",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "1db65a572c7e",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,12 +26,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_k_ud_bring_color_tube_empirical_baseline.py"
+    ],
+    "reproduce": "python3 -u computations/probe_k_ud_bring_color_tube_empirical_baseline.py"
   },
   "description": "EXPLORATORY probe: empirical baseline for the flavor-displacement exponent k_ud in the Bring color-tube weight refinement. Scans k_ud ∈ {-3..3} and reports implied m_d/m_u vs PDG 2.16(7). Best k_ud = 3. NOT a categorical derivation — this is the data-side baseline that Direction 2 Step 2 must explain. Audit-only.",
   "auditOnly": "docs/workplans/2026-05-30-mass-asymmetric-flavor-split.md",

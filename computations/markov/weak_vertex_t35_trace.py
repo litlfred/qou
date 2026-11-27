@@ -63,7 +63,7 @@ import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 import hecke_symbolic as hs  # noqa: E402
 from markov_trace_canonical import tr_M_word  # noqa: E402
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 q = hs.q                      # the MODULE's symbol (see d_frame_cyclotomic_exponent_probe)
 H = hs.HA                     # q − q⁻¹
@@ -90,7 +90,7 @@ def wedderburn_weights(z):
 
 def main() -> int:
     mp.mp.dps = 60
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
 
     # Route 1: the canonical trace on the word.
     tr_direct = sp.factor(sp.simplify(tr_M_word(WORD_T35, 3, Z_D, H)))

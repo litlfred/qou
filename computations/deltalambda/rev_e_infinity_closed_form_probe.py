@@ -94,10 +94,10 @@ if _COMPUTATIONS not in sys.path:
 
 from mpmath import mp  # noqa: E402
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.dps = 60
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 # Truncation depths, DERIVED from the decay rates rather than chosen.  `eps(m) ~ q^(-2m)` and the
 # Lambert terms decay like `q^(-4r)`, so to push both tails below 1e-`TARGET` we need

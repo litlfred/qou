@@ -61,9 +61,9 @@ sys.path.insert(0, _HERE)
 
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
-from q_parameter import Q_50_DIGIT_STR, E_CROSS_MP  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, E_CROSS_MP  # noqa: E402
 
-q = mp.mpf(Q_50_DIGIT_STR)
+q = Q_MP
 E0 = mp.mpf(E_CROSS_MP)
 me = mp.mpf("0.51099895069")           # CODATA m_e, MeV (bar-even, CAL-1)
 v = mp.sqrt(q)

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T07:31:00.057265+00:00",
-  "commitSha": "6ce35bc8eedd1a44b837f4408a1e44f4698f8201",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:04:07.279965+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "all_weight_checks_pass",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 17,
   "computation": "weight-factor-audit",
   "scriptFile": "weight_factor_audit.py",
-  "scriptHash": "322003647adc",
-  "scriptCommitSha": "3639b850e044812f50e6c247afdaf0834a2c5bbf",
+  "scriptHash": "16074ce9619e",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,14 +25,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -339,9 +339,9 @@
       {
         "check": "C8",
         "name": "Markov parameter z = q^3/(q^2 + 1) at q_0 (convention D)",
-        "computed_z": "0.612688037146465251595829863945899248026308391545087014074774",
-        "classical_limit_distance": "0.112688037146465251595829863945899248026308391545087014074774",
-        "expected": "0.612688037146465251595829863945899248026308391545087014074774",
+        "computed_z": "0.612688037146465251595829863945899248026308391545064759724287",
+        "classical_limit_distance": "0.112688037146465251595829863945899248026308391545064759724287",
+        "expected": "0.612688037146465251595829863945899248026308391545064759724287",
         "well_defined_positive": true,
         "passed": true
       }
