@@ -132,12 +132,87 @@ have no real projective zero. That is a finite computation on the existing seeds
 **The open step, named.** Passing to the limit needs bounds on the nonzero zeros uniform in the
 truncation (a Leray–Schauder setting). The §2 and §4 results constrain where such bounds can come
 from: they cannot come from an energy that the nonlinearity conserves, and they must be compatible with
-a negative weighted Bernoulli flux. That estimate is the whole difficulty of Part B and is not claimed.
+a negative weighted Bernoulli flux. That estimate is the whole difficulty of Part B and is not claimed. §5a reduces it to two named
+statements, (U1) and (U2).
 
 **Lean scaffold.** `DSSTailMatching.lean` §1 states the finite-dimensional energy dichotomy, with a
 non-vacuity witness. A statement of Part B in matching form (`∃ c ≠ 0, g c = 0` for the
 infinite-dimensional `g`) needs the sector expansion and Kummer functions, neither in Mathlib; it is
 left as prose rather than encoded as a hypothesis class.
+
+## 5a. The Bernoulli flux bound: what it gives, and where it stops
+
+Added 2026-11-27 (thread "Bound q-NS Part B via Bernoulli flux"). Lean: `DSSTailMatching.lean` §4–§5,
+sorry-free, no axioms, no empirical values. The goal was to turn the identity of §4 into an a priori
+bound on nonzero zeros of `g = A + Q`, uniform in the truncation. **Result: half of it works; the
+other half provably cannot come from the standard argument, and the obstruction is named.**
+
+**Setting.** Let `X` be the energy space with `‖V‖²_X = ∮ (‖∇V‖²_ρ + ½‖V‖²_ρ) ds`, `ρ = e^{−|y|²/4}`.
+The §4 balance says `−⟪AV, V⟫ = ‖V‖²_X` exactly, so the coercivity constant is `κ = 1`, and it stays
+`1` on every Galerkin truncation (compressing `A` to a subspace does not change its quadratic form).
+Write `F(V) = ⟪Q V, V⟫ = ½∮∫ B (y·V) ρ` for the Bernoulli flux.
+
+1. **Lower bound, uniform when the flux constant is (`norm_ge_of_flux`).** If `F(V) ≤ C‖V‖³_X` on the
+   truncation spaces, every nonzero zero has `‖V‖_X ≥ κ/C = 1/C`. The bound is sharp
+   (`norm_ge_of_flux_sharp`). It is uniform in the truncation exactly when `C` is.
+   *Reading for the Galerkin audit:* zeros that shrank to `0` under refinement force `C_n → ∞`.
+   *Is `C` finite on all of `X`?* Not shown. Heuristic only: for a field localized near `|y| = R`,
+   `F` is cubic in amplitude with one factor of `ρ(R)`, while `‖V‖³_X` carries `ρ(R)^{3/2}`, so the
+   ratio grows like `e^{R²/8}` unless the local flux cancels. So the bound most likely needs a second
+   norm, such as the decay-class constant `sup (1+|y|)|V|`, alongside `‖·‖_X`.
+2. **The flux identity gives no upper bound (`zero_rescale`).** If `c` is a zero of `A + Q`, then
+   `t·c` is a zero of `A + t⁻¹Q`, with the same `A` and flux constant `C/t`. Any upper bound must
+   use a *lower* bound on `Q`.
+3. **Exact radius identity (`radius_identity`).** Inverting `A` (invertible in tail coordinates, §5),
+   a zero solves `c + K c = 0` with `K = A⁻¹Q` homogeneous of degree 2 (`zero_iff_inverted`), and
+   then `‖c‖ · ‖K(ĉ)‖ = 1` for its direction `ĉ = c/‖c‖`. So `1/sup‖K‖ ≤ ‖c‖ ≤ 1/inf‖K‖` over
+   the unit sphere (`norm_ge_of_sup`, `norm_le_of_inf`, both with non-vacuity witnesses).
+4. **The sphere infimum cannot be uniform (proof, short).** In the limit problem `K` is weakly
+   sequentially continuous with `K(0) = 0`: this holds when `A⁻¹` is compact and `Q` is weakly
+   continuous, the usual Leray–Schauder setting. An orthonormal sequence `e_k` tends weakly to `0`, so
+   `K(e_k) → 0` and `inf_{‖u‖=1} ‖K u‖ = 0`. Hence the truncation infima `m_n` tend to `0`. The §5 parity
+   hypothesis (no real projective zero of `Q`) may hold at each level, but never with a uniform
+   margin. An upper bound has to use where zeros actually lie, not a whole-sphere bound.
+5. **Blow-up alternative (`tendsto_K_dir_zero`).** If zeros `c_n` have `‖c_n‖ → ∞`, then
+   `‖K_n(ĉ_n)‖ = 1/‖c_n‖ → 0`. Passing to a weak limit `ĉ_n ⇀ ĉ*` (proof sketch): either `ĉ* = 0`
+   (loss of compactness, with mass escaping to high modes or to `|y| → ∞`) or `Q(ĉ*) = 0`, a
+   projective zero of the nonlinearity.
+6. **The projective zeros are the Lamb-gradient fields, and they exist (`adv_grad_iff_lambGrad`).**
+   At the profile level, `Q(W) = 0` means that the Leray projection of `(W·∇)W` vanishes, that is,
+   `(W·∇)W` is a gradient. By the Lamb identity that holds exactly when `W × curl W` is a gradient,
+   which is the class §2 excluded *as profiles*. That class is not empty. It contains every Beltrami
+   field, including ones with `|W| = O(|y|⁻¹)`, such as those built from spherical Bessel functions
+   `j_l(λr) = O(r⁻¹)` (DLMF 10.52; the Chandrasekhar–Kendall construction, classical and not in
+   `library/`). **So the Liouville statement that a contradiction argument needs ("`Q(W) = 0` ⇒
+   `W = 0`") is false.** A uniform bound cannot come from the textbook blow-up argument. This fits §2:
+   Lamb-gradient fields are killed by the linear part, so they are never profiles, but they remain
+   available as asymptotic directions.
+   *Tail coordinates:* if a log-phase tail `T_c` is itself Lamb-gradient, its quadratic forcing is a
+   gradient and `Q(c) = 0`. Whether the tail space contains such a `c` is a finite check, and it is
+   not done here.
+
+**The open step, sharpened (formal, leading order).** Near a Lamb-gradient direction `ĉ*`, put
+`c = t ĉ* + w` with `w = O(1)` and `t → ∞`. Then
+`g(c) = t (A ĉ* + DQ(ĉ*) w) + A w + Q(w)`, so escape along `ĉ*` needs the solvability condition
+`A ĉ* ∈ closure(range DQ(ĉ*))`, where `DQ(ĉ*)` is the nonlinearity linearized at the Beltrami
+(Lamb-gradient) field. Pairing it with `ĉ*` gives `DF(ĉ*)[w] = 2⟪B(ĉ*, w), ĉ*⟫ = ‖ĉ*‖²_X > 0`,
+since `F(ĉ*) = 0` there. **The Bernoulli flux must turn on at first order off the Lamb-gradient cone.**
+So the a priori bound for Part B reduces to two named statements:
+
+- **(U1) No escape along the cone.** For every Lamb-gradient direction `ĉ*` in the decay class, there
+  is no `w` with `A ĉ* + DQ(ĉ*) w = 0`. A sufficient condition is that the linearized flux
+  `DF(ĉ*)` vanishes on the solution set of `DQ(ĉ*) w = −A ĉ*`.
+- **(U2) No loss of compactness.** Normalized zeros do not converge weakly to `0`. This needs the
+  second norm from item 1, or tightness in `|y|` and in the angular degree `l`.
+
+If (U1) and (U2) hold, item 5 gives a uniform upper bound by contradiction, and item 1 gives the
+uniform lower bound when `C` is uniform. These are statements to prove, not results. Nothing here
+shows that either holds, or that Part B is true or false.
+
+**Checks this enables on existing data (not run here).** On the Galerkin seeds of the 2026-11-21
+audit: (i) `F(V)/‖V‖³_X` along the refinement sequence (tests item 1); (ii) the angle between each
+seed's direction and the Lamb-gradient subspace of that truncation (tests item 5: zeros that run off
+under refinement should approach it).
 
 ## 6. Items 3, 5, 6 of `qou-innq`
 
