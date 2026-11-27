@@ -6887,6 +6887,12 @@ be a central extension of gerbes on a site $\mathcal{S}$, banded by an abelian s
 and $x$ admits a lift if and only if $\kappa(x) = 0$.
 
 This is the categorical form of the gerbe central-extension obstruction of Yekutieli \cite{yekutieli2010}; one adopts the name \emph{Quantum Lifting Condition} to emphasise its role in specialising the categorical aether.
+
+\textbf{Proposition (Lean: \texttt{QOU.\allowbreak{}Yekutieli\allowbreak{}Lifting\allowbreak{}Condition.\allowbreak{}of\allowbreak{}Central\allowbreak{}Extensions}, \texttt{QOU.\allowbreak{}Central\allowbreak{}Extension.\allowbreak{}obstruction\allowbreak{}Class\_\allowbreak{}eq\_\allowbreak{}one\_\allowbreak{}iff}).} Let $1 \to A_n \to E_n \to G_n \to 1$ ($n \in \mathbb{N}$) be central extensions of groups, $A_n$ commutative, and let $\varphi_n \colon H_n \to G_n$ be homomorphisms. Put $\kappa(\varphi_n) \in H^2(H_n, A_n)$ (trivial action) for the class of the obstruction cocycle of $\varphi_n$. Then $\varphi_n$ lifts to a homomorphism $H_n \to E_n$ if and only if $\kappa(\varphi_n) = 0$. Hence the data $\bigl(\prod_n H^2(H_n, A_n),\ n \mapsto\allowbreak{} \kappa(\varphi_n)\bigr)$ satisfy the Quantum Lifting Condition, with both directions proved rather than assumed.
+
+\emph{Proof.} Choose a set-theoretic section $\sigma_n$ of $E_n \to G_n$ and define $c(g,h) \in A_n$ by $\sigma_n(\varphi_n g)\,\sigma_n(\varphi_n h) =\allowbreak{} c(g,h)\,\sigma_n(\varphi_n(gh))$. Centrality of $A_n$ makes $c$ a 2-cocycle, and another section changes $c$ by the coboundary of $t\colon H_n \to A_n$ with $\sigma'_n = t\,\sigma_n$; so $\kappa(\varphi_n) = [c]$ in the commutative group $Z^2/B^2$ is independent of $\sigma_n$ (Lean: \texttt{obstruction\allowbreak{}Class\_\allowbreak{}section\_\allowbreak{}indep}). If $\psi$ is a lift, write $\sigma_n(\varphi_n g) =\allowbreak{} y(g)\,\psi(g)$; comparing the two expansions of $\sigma_n(\varphi_n g)\sigma_n(\varphi_n h)$ gives $c = \delta y$. Conversely, if $c = \delta x$ then $g \mapsto\allowbreak{} x(g)^{-1}\sigma_n(\varphi_n g)$ is multiplicative and lies over $\varphi_n$ (Lean: \texttt{exists\_\allowbreak{}lift\_\allowbreak{}iff\_\allowbreak{}coboundary}). A class is trivial exactly when its representative is a coboundary, which gives the criterion. The obstruction of level $n$ is placed in the $n$-th factor of $\prod_n H^2(H_n, A_n)$, so it vanishes iff $\kappa(\varphi_n)$ does. $\square$
+
+This is the group-level (one-object groupoid) case of Yekutieli's Thm 4.17 \cite{yekutieli2010}. The gerbe-level case over a site is open work.
 \end{definition}
 
 \begin{example}[{Categorical lifting condition for $\mathrm{SU}(2)$}]
@@ -57412,7 +57418,7 @@ Within the aether consistency window around $q_0 \approx 1.1100$, the topologica
 
 \begin{conjecture}[{The Higgs boson as $T(2,8)$: the link spanning three exceptional divisors}]
   \label{conj:higgs-t28}
-  \blockannot[drafted]{conj:higgs-t28}{QOU.HiggsT28.HiggsAsT28}{quantum-observable-universe/observations/higgs-t28.md}
+  \blockannot[spec]{conj:higgs-t28}{QOU.HiggsT28.HiggsAsT28}{quantum-observable-universe/observations/higgs-t28.md}
   \uses{def:confined-particle, prop:fermion-boson-knot-link}
 \emph{The Higgs boson is the torus link $T(2,8)$ — the unique genus-$3$ link on the Bring's surface whose Seifert surface spans all three exceptional divisors simultaneously.}
 
