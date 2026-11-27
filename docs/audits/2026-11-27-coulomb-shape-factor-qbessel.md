@@ -103,7 +103,14 @@ q-Hankel orthogonality is cited (Koelink–Swarttouw), not formalised.
 Why A ≤ 4: the derivation assumes one s-wave state (ν = 1/2); at A ≤ 4 every nucleon is in 0s.
 At A ≥ 5 the p shell is occupied and the single-state form is outside its own hypothesis, so
 the classical ball stays there, labelled as a classical import. Extending it to the shell model
-is a separate derivation.
+is a separate derivation. The cut is not free: 4 = 2 spin × 2 isospin, the 0s occupancy. But
+E_C jumps by a factor of 0.520011/0.464758 = 1.119 between A = 4 and A = 5, and that jump is a
+direct cost of keeping the import above the cut.
+
+Mixed convention: f is defined against the state's own r_rms, while the code uses
+r_rms = √(3/5)·λ̄_π·A^{1/3}. The √(3/5) is the uniform-ball moment relation. So the derived
+shape is paired with a ball-converted, selected radius. It is not true that only the radius is
+selected.
 
 ## What the wiring does to the consumers (measured, honest)
 
