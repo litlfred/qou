@@ -35,6 +35,14 @@ division, by `[0] = 0`, `[n+1] = ζⁿ + ζ⁻¹[n]` (so `[n] = ζ^{n−1} + ζ^
   the nondegeneracy of the braiding: the semisimplified category is **modular** (Turaev,
   Bakalov–Kirillov Thm 3.1.17).
 
+With `ω` a primitive `4ℓ`-th root and `ζ = ω²`, the twist `T = diag(ω^{(j+1)²})` and the quadratic
+Gauss sum `G = Σ_{c<2ℓ} ω^{c²}`:
+
+* `sMatrix_twist` — `δ·STS = −G·T⁻¹ST⁻¹`, `δ = ζ − ζ⁻¹` (completing the square in the Gauss sum).
+* `sMatrix_tMatrix_cube` — `δ·(ST)³ = −G·S²`, i.e. `(ST)³ = p₊·S²` with `p₊ = −G/δ`. Together with
+  `S² = D²·1` these are the defining relations of the projective `SL₂(ℤ)` representation.
+* `gaussSum_ne_zero` — `G ≠ 0`, so `p₊` is a genuine nonzero scalar.
+
 The proofs use only that `ζ` is a primitive `2ℓ`-th root of unity: the full character sum over
 `ℤ/2ℓ` is a geometric series, and the reflection `c ↦ 2ℓ − c` (which flips the sign of `S̃`) folds it
 onto the `ℓ − 1` simples.
@@ -45,7 +53,8 @@ onto the `ℓ − 1` simples.
   idempotents is the classical Kauffman–Lins / Kirby–Melvin computation. It is **cited** here, not
   re-derived from the corpus Hecke algebra; `qou-pbjv` / `qou-ltwg` (general-`n` `H_n(q)` as a
   braided category with Jones–Wenzl projectors) are the infrastructure that would let it be proved.
-* The twist `T` and the relation `(ST)³ = p₊·S²` (a quadratic Gauss sum) are the next step.
+* `T_{jj} = ω^{(j+1)²} = ω·θ_j` with `θ_j = ω^{j(j+2)}` the ribbon twist of `f_j` is likewise
+  cited (Kirby–Melvin), not derived from the corpus braiding.
 * This file is about the root-of-unity quotient. At a generic `q` (for instance real `q > 1`) every
   `[n]` is nonzero, the category has infinitely many simples and is **not** modular
   (`HeckeRealVsRootOfUnityModularity.lean`). The restatement of `hkmt` to the quotient follows the
@@ -354,5 +363,294 @@ theorem applies, so nothing above is conditional on `False`. -/
 example : (sMatrix two5 0).det ≠ 0 :=
   sMatrix_det_ne_zero 0 (IsPrimitiveRoot.coe_units_iff.mp (by
     simpa [two5] using two_isPrimitiveRoot_four_zmod5))
+
+/-! ### The twist and the relation `(ST)³ = p₊·S²`
+
+Fix `ω ∈ Rˣ` a primitive `4ℓ`-th root of unity and put `ζ = ω²` (a primitive `2ℓ`-th root). The
+diagonal twist matrix is `T_{jj} = ω^{(j+1)²} = ω·θ_j`, where `θ_j = ω^{j(j+2)}` is the ribbon twist
+of `f_j` (Kirby–Melvin, cited); the common factor `ω` only rescales the projective constant. The
+**quadratic Gauss sum** is `G = Σ_{c=0}^{2ℓ−1} ω^{c²}`. -/
+
+/-- The twist entry `ω^{a²}`. -/
+def thetaW (ω : Rˣ) (a : ℕ) : R := ((ω ^ ((a : ℤ) ^ 2) : Rˣ) : R)
+
+/-- The inverse twist entry `ω^{−a²}`. -/
+def thetaInv (ω : Rˣ) (a : ℕ) : R := ((ω ^ (-((a : ℤ) ^ 2)) : Rˣ) : R)
+
+/-- The quadratic Gauss sum `G = Σ_{c<N} ω^{c²}`. -/
+def gaussSum (ω : Rˣ) (N : ℕ) : R := ∑ c ∈ range N, ((ω ^ ((c : ℤ) ^ 2) : Rˣ) : R)
+
+omit [IsDomain R] in
+theorem thetaInv_mul_thetaW (ω : Rˣ) (a : ℕ) : thetaInv ω a * thetaW ω a = 1 := by
+  unfold thetaInv thetaW; rw [val_zpow_mul_val_zpow, neg_add_cancel, zpow_zero, Units.val_one]
+
+omit [IsDomain R] in
+/-- Shifting the index of a full-period sum by one changes nothing. -/
+theorem sum_range_shift_one {N : ℕ} (g : ℤ → R) (hg : ∀ t, g (t + N) = g t) :
+    ∑ c ∈ range N, g ((c : ℤ) + 1) = ∑ c ∈ range N, g c := by
+  have h1 := sum_range_succ' (fun c : ℕ => g c) N
+  have h2 := sum_range_succ (fun c : ℕ => g c) N
+  simp only [Nat.cast_add, Nat.cast_one, Nat.cast_zero] at h1
+  rw [h1] at h2
+  have h0 : g (N : ℤ) = g 0 := by simpa using hg 0
+  rw [h0] at h2
+  exact add_right_cancel h2
+
+omit [IsDomain R] in
+theorem sum_range_shift_nat {N : ℕ} (g : ℤ → R) (hg : ∀ t, g (t + N) = g t) (n : ℕ) :
+    ∑ c ∈ range N, g ((c : ℤ) + n) = ∑ c ∈ range N, g c := by
+  induction n with
+  | zero => simp
+  | succ n ih =>
+    have h := sum_range_shift_one (fun t => g (t + n)) (fun t => by
+      show g (t + N + n) = g (t + n)
+      rw [show t + (N : ℤ) + n = (t + n) + N by ring]; exact hg _)
+    rw [← ih, ← h]
+    apply sum_congr rfl; intro c _; push_cast; ring_nf
+
+omit [IsDomain R] in
+/-- Shifting the index of a full-period sum by any integer changes nothing. -/
+theorem sum_range_shift_int {N : ℕ} (g : ℤ → R) (hg : ∀ t, g (t + N) = g t) (m : ℤ) :
+    ∑ c ∈ range N, g ((c : ℤ) + m) = ∑ c ∈ range N, g c := by
+  obtain ⟨n, rfl | rfl⟩ := Int.eq_nat_or_neg m
+  · exact sum_range_shift_nat g hg n
+  · have h := sum_range_shift_nat (fun t => g (t - n)) (fun t => by
+      show g (t + N - n) = g (t - n)
+      rw [show t + (N : ℤ) - n = (t - n) + N by ring]; exact hg _) n
+    simp only [add_sub_cancel_right] at h
+    rw [h]; simp only [sub_eq_add_neg]
+
+omit [IsDomain R] in
+/-- `c ↦ ω^{c²}` has period `2ℓ` when `ω` is a primitive `4ℓ`-th root: `(t+2ℓ)² − t² = 4ℓ(t+ℓ)`. -/
+theorem sq_add_period_zpow {ω : Rˣ} {ℓ : ℕ} (hω : IsPrimitiveRoot ω (4 * ℓ)) (t : ℤ) :
+    ω ^ ((t + ((2 * ℓ : ℕ) : ℤ)) ^ 2) = ω ^ (t ^ 2) := by
+  have h : ω ^ (((4 * ℓ : ℕ) : ℤ) * (t + ℓ)) = 1 := by
+    rw [zpow_mul, zpow_natCast, hω.pow_eq_one, one_zpow]
+  rw [show (t + ((2 * ℓ : ℕ) : ℤ)) ^ 2 = t ^ 2 + ((4 * ℓ : ℕ) : ℤ) * (t + ℓ) by push_cast; ring,
+    zpow_add, h, mul_one]
+
+omit [IsDomain R] in
+/-- **Completing the square.** `Σ_{c<2ℓ} ζ^{mc}·ω^{c²} = ω^{−m²}·G`, `ζ = ω²`. -/
+theorem sum_twisted_character {ω : Rˣ} {ℓ : ℕ} (hω : IsPrimitiveRoot ω (4 * ℓ)) (m : ℤ) :
+    ∑ c ∈ range (2 * ℓ), (((ω ^ 2) ^ (m * c) : Rˣ) : R) * ((ω ^ ((c : ℤ) ^ 2) : Rˣ) : R) =
+      ((ω ^ (-m ^ 2) : Rˣ) : R) * gaussSum ω (2 * ℓ) := by
+  have hterm : ∀ c : ℕ, (((ω ^ 2) ^ (m * c) : Rˣ) : R) * ((ω ^ ((c : ℤ) ^ 2) : Rˣ) : R) =
+      ((ω ^ (-m ^ 2) : Rˣ) : R) * ((ω ^ (((c : ℤ) + m) ^ 2) : Rˣ) : R) := by
+    intro c
+    rw [← zpow_natCast ω 2, ← zpow_mul, val_zpow_mul_val_zpow, val_zpow_mul_val_zpow]
+    congr 2; push_cast; ring
+  simp_rw [hterm, ← mul_sum]
+  congr 1
+  unfold gaussSum
+  exact sum_range_shift_int (N := 2 * ℓ) (fun t => ((ω ^ (t ^ 2) : Rˣ) : R))
+    (fun t => congrArg Units.val (sq_add_period_zpow hω t)) m
+
+omit [IsDomain R] in
+/-- The twist is invariant under the reflection `c ↦ 2ℓ − c`. -/
+theorem thetaW_reflect {ω : Rˣ} {ℓ : ℕ} (hω : IsPrimitiveRoot ω (4 * ℓ)) (c : ℕ)
+    (hc : c ≤ 2 * ℓ) : thetaW ω (2 * ℓ - c) = thetaW ω c := by
+  unfold thetaW
+  have h : ω ^ (((4 * ℓ : ℕ) : ℤ) * ((ℓ : ℤ) - c)) = 1 := by
+    rw [zpow_mul, zpow_natCast, hω.pow_eq_one, one_zpow]
+  rw [Nat.cast_sub hc, show (((2 * ℓ : ℕ) : ℤ) - c) ^ 2 =
+      (c : ℤ) ^ 2 + ((4 * ℓ : ℕ) : ℤ) * ((ℓ : ℤ) - c) by push_cast; ring, zpow_add, h, mul_one]
+
+/-- **Weighted folding.** For a weight `w` invariant under `c ↦ 2ℓ − c`, the full sum over `ℤ/2ℓ`
+is twice the sum over the simple weights `1, …, k+1`. -/
+theorem sum_full_weighted_eq_two_mul_half {ζ : Rˣ} (k : ℕ) (hζ : IsPrimitiveRoot ζ (2 * (k + 2)))
+    (w : ℕ → R) (hw : ∀ c, c ≤ 2 * (k + 2) → w (2 * (k + 2) - c) = w c) (a b : ℕ) :
+    ∑ c ∈ range (2 * (k + 2)), tildeS ζ a c * w c * tildeS ζ c b =
+      2 * ∑ j ∈ range (k + 1), tildeS ζ a (j + 1) * w (j + 1) * tildeS ζ (j + 1) b := by
+  set N := 2 * (k + 2) with hNdef
+  set f : ℕ → R := fun c => tildeS ζ a c * w c * tildeS ζ c b with hf
+  have hrefl : ∀ c, c ≤ N → f (N - c) = f c := by
+    intro c hc
+    simp only [hf]
+    rw [tildeS_reflect hζ a c hc, tildeS_comm ζ (N - c) b, tildeS_reflect hζ b c hc,
+      tildeS_comm ζ b c, hw c hc]
+    ring
+  have hsplit : N = (k + 3) + (k + 1) := by omega
+  change ∑ c ∈ range N, f c = 2 * ∑ j ∈ range (k + 1), f (j + 1)
+  rw [hsplit, sum_range_add, sum_range_succ', sum_range_succ]
+  have hf0 : f 0 = 0 := by simp [hf]
+  have hfl : f (k + 1 + 1) = 0 := by
+    simp only [hf]
+    rw [show k + 1 + 1 = k + 2 by omega, tildeS_half_left (by omega) hζ b, mul_zero]
+  rw [hf0, hfl, add_zero, add_zero]
+  have hsecond : ∑ c ∈ range (k + 1), f (k + 3 + c) = ∑ j ∈ range (k + 1), f (j + 1) := by
+    rw [← sum_range_reflect (fun j => f (j + 1)) (k + 1)]
+    apply sum_congr rfl
+    intro c hc
+    rw [mem_range] at hc
+    rw [← hrefl (k + 3 + c) (by omega)]
+    congr 1
+    omega
+  rw [hsecond]; ring
+
+omit [IsDomain R] in
+theorem val_sq_zpow (ω : Rˣ) (z : ℤ) : (((ω ^ 2) ^ z : Rˣ) : R) = ((ω ^ (2 * z) : Rˣ) : R) := by
+  rw [← zpow_natCast ω 2, ← zpow_mul]; norm_num
+
+omit [IsDomain R] in
+/-- **Full twisted sum.** `Σ_{c<2ℓ} S̃(a,c)·ω^{c²}·S̃(c,b) = −2G·ω^{−a²−b²}·S̃(a,b)`. -/
+theorem sum_tildeS_twist_full {ω : Rˣ} {ℓ : ℕ} (hω : IsPrimitiveRoot ω (4 * ℓ)) (a b : ℕ) :
+    ∑ c ∈ range (2 * ℓ), tildeS (ω ^ 2) a c * thetaW ω c * tildeS (ω ^ 2) c b =
+      -(2 * gaussSum ω (2 * ℓ)) * ((ω ^ (-((a : ℤ) ^ 2 + (b : ℤ) ^ 2)) : Rˣ) : R) *
+        tildeS (ω ^ 2) a b := by
+  have hexp : ∀ c : ℕ, tildeS (ω ^ 2) a c * thetaW ω c * tildeS (ω ^ 2) c b =
+      (((ω ^ 2) ^ (((a : ℤ) + b) * c) : Rˣ) : R) * ((ω ^ ((c : ℤ) ^ 2) : Rˣ) : R)
+        + (((ω ^ 2) ^ (-((a : ℤ) + b) * c) : Rˣ) : R) * ((ω ^ ((c : ℤ) ^ 2) : Rˣ) : R)
+        - (((ω ^ 2) ^ (((a : ℤ) - b) * c) : Rˣ) : R) * ((ω ^ ((c : ℤ) ^ 2) : Rˣ) : R)
+        - (((ω ^ 2) ^ (((b : ℤ) - a) * c) : Rˣ) : R) * ((ω ^ ((c : ℤ) ^ 2) : Rˣ) : R) := by
+    intro c; rw [mul_right_comm, tildeS_mul_expand]; unfold thetaW; ring
+  simp_rw [hexp, sum_sub_distrib, sum_add_distrib, sum_twisted_character hω]
+  have e1 : (-((a : ℤ) + b)) ^ 2 = ((a : ℤ) + b) ^ 2 := by ring
+  have e2 : ((b : ℤ) - a) ^ 2 = ((a : ℤ) - b) ^ 2 := by ring
+  rw [e1, e2]
+  unfold tildeS
+  rw [val_sq_zpow, val_sq_zpow]
+  have h1 : ((ω ^ (-((a : ℤ) ^ 2 + (b : ℤ) ^ 2)) : Rˣ) : R) * ((ω ^ (2 * ((a : ℤ) * b)) : Rˣ) : R)
+      = ((ω ^ (-((a : ℤ) - b) ^ 2) : Rˣ) : R) := by
+    rw [val_zpow_mul_val_zpow]; congr 2; ring
+  have h2 : ((ω ^ (-((a : ℤ) ^ 2 + (b : ℤ) ^ 2)) : Rˣ) : R) *
+      ((ω ^ (2 * -((a : ℤ) * b)) : Rˣ) : R) = ((ω ^ (-((a : ℤ) + b) ^ 2) : Rˣ) : R) := by
+    rw [val_zpow_mul_val_zpow]; congr 2; ring
+  linear_combination (2 * gaussSum ω (2 * ℓ)) * h1 - (2 * gaussSum ω (2 * ℓ)) * h2
+
+omit [IsDomain R] in
+/-- `ζ = ω²` is a primitive `2(k+2)`-th root when `ω` is a primitive `4(k+2)`-th root. -/
+theorem isPrimitiveRoot_sq {ω : Rˣ} (k : ℕ) (hω : IsPrimitiveRoot ω (4 * (k + 2))) :
+    IsPrimitiveRoot (ω ^ 2) (2 * (k + 2)) :=
+  hω.pow (by omega) (by ring)
+
+/-- **Twisted orthogonality on the simples.** For all `a, b`,
+`Σ_{j=0}^{k} S̃(a,j+1)·ω^{(j+1)²}·S̃(j+1,b) = −G·ω^{−a²−b²}·S̃(a,b)`. -/
+theorem tildeS_twist_tildeS {ω : Rˣ} (k : ℕ) (hω : IsPrimitiveRoot ω (4 * (k + 2))) (a b : ℕ) :
+    ∑ j ∈ range (k + 1), tildeS (ω ^ 2) a (j + 1) * thetaW ω (j + 1) * tildeS (ω ^ 2) (j + 1) b =
+      -gaussSum ω (2 * (k + 2)) * ((ω ^ (-((a : ℤ) ^ 2 + (b : ℤ) ^ 2)) : Rˣ) : R) *
+        tildeS (ω ^ 2) a b := by
+  have hζ := isPrimitiveRoot_sq k hω
+  have hNK := natCast_two_ell_ne_zero k hζ
+  have h2 : (2 : R) ≠ 0 := by
+    intro h; apply hNK; rw [h, zero_mul]
+  have hfull := sum_tildeS_twist_full hω a b
+  rw [sum_full_weighted_eq_two_mul_half k hζ (thetaW ω) (fun c hc => thetaW_reflect hω c hc)]
+    at hfull
+  apply mul_left_cancel₀ h2
+  rw [hfull]; ring
+
+/-- The twist matrix `T = diag(ω^{(j+1)²})` on the simples `f_0, …, f_k`. -/
+def tMatrix (ω : Rˣ) (k : ℕ) : Matrix (Fin (k + 1)) (Fin (k + 1)) R :=
+  Matrix.diagonal fun j => thetaW ω (j.val + 1)
+
+/-- Its inverse `T⁻¹ = diag(ω^{−(j+1)²})`. -/
+def tInvMatrix (ω : Rˣ) (k : ℕ) : Matrix (Fin (k + 1)) (Fin (k + 1)) R :=
+  Matrix.diagonal fun j => thetaInv ω (j.val + 1)
+
+omit [IsDomain R] in
+theorem tInvMatrix_mul_tMatrix (ω : Rˣ) (k : ℕ) : tInvMatrix ω k * tMatrix ω k = 1 := by
+  unfold tInvMatrix tMatrix
+  rw [Matrix.diagonal_mul_diagonal, ← Matrix.diagonal_one]
+  congr 1; funext j; exact thetaInv_mul_thetaW ω _
+
+/-- Entry form of the twisted relation, cleared of denominators:
+`δ²·Σ_j [a(j+1)]·ω^{(j+1)²}·[(j+1)b] = −G·ω^{−a²}·ω^{−b²}·δ·[ab]`, `δ = ζ − ζ⁻¹`. -/
+theorem qInt_twist_qInt {ω : Rˣ} (k : ℕ) (hω : IsPrimitiveRoot ω (4 * (k + 2))) (a b : ℕ) :
+    qDelta (ω ^ 2) * (qDelta (ω ^ 2) * ∑ j ∈ range (k + 1),
+        qInt (ω ^ 2) (a * (j + 1)) * thetaW ω (j + 1) * qInt (ω ^ 2) ((j + 1) * b)) =
+      qDelta (ω ^ 2) * (-gaussSum ω (2 * (k + 2)) *
+        (thetaInv ω a * qInt (ω ^ 2) (a * b) * thetaInv ω b)) := by
+  have key := tildeS_twist_tildeS k hω a b
+  have hsum : qDelta (ω ^ 2) * (qDelta (ω ^ 2) * ∑ j ∈ range (k + 1),
+        qInt (ω ^ 2) (a * (j + 1)) * thetaW ω (j + 1) * qInt (ω ^ 2) ((j + 1) * b)) =
+      ∑ j ∈ range (k + 1),
+        tildeS (ω ^ 2) a (j + 1) * thetaW ω (j + 1) * tildeS (ω ^ 2) (j + 1) b := by
+    rw [mul_sum, mul_sum]; apply sum_congr rfl; intro j _
+    rw [tildeS_eq_qDelta_mul_qInt, tildeS_eq_qDelta_mul_qInt]; ring
+  have hw : ((ω ^ (-((a : ℤ) ^ 2 + (b : ℤ) ^ 2)) : Rˣ) : R) = thetaInv ω a * thetaInv ω b := by
+    unfold thetaInv; rw [val_zpow_mul_val_zpow, neg_add]
+  rw [hsum, key, hw, tildeS_eq_qDelta_mul_qInt]; ring
+
+/-- **The twisted `S`-relation** `δ·STS = −G·T⁻¹ST⁻¹` (`δ = ζ − ζ⁻¹`, `ζ = ω²`), every level. -/
+theorem sMatrix_twist {ω : Rˣ} (k : ℕ) (hω : IsPrimitiveRoot ω (4 * (k + 2))) :
+    qDelta (ω ^ 2) • (sMatrix (ω ^ 2) k * tMatrix ω k * sMatrix (ω ^ 2) k) =
+      (-gaussSum ω (2 * (k + 2))) •
+        (tInvMatrix ω k * sMatrix (ω ^ 2) k * tInvMatrix ω k) := by
+  have hδ := qDelta_ne_zero k (isPrimitiveRoot_sq k hω)
+  ext i m
+  simp only [tMatrix, tInvMatrix, Matrix.smul_apply, smul_eq_mul, Matrix.mul_diagonal,
+    Matrix.diagonal_mul]
+  rw [Matrix.mul_apply]
+  simp only [Matrix.mul_diagonal, sMatrix]
+  apply mul_left_cancel₀ hδ
+  rw [Fin.sum_univ_eq_sum_range (fun j => qInt (ω ^ 2) ((i.val + 1) * (j + 1)) *
+      thetaW ω (j + 1) * qInt (ω ^ 2) ((j + 1) * (m.val + 1))) (k + 1)]
+  exact qInt_twist_qInt k hω (i.val + 1) (m.val + 1)
+
+/-- **The modular relation** `δ·(ST)³ = −G·S²`, every level: with `S² = D²·1` this is
+`(ST)³ = p₊·S²`, `p₊ = −G/δ`, the second defining relation of the projective `SL₂(ℤ)` action. -/
+theorem sMatrix_tMatrix_cube {ω : Rˣ} (k : ℕ) (hω : IsPrimitiveRoot ω (4 * (k + 2))) :
+    qDelta (ω ^ 2) • (sMatrix (ω ^ 2) k * tMatrix ω k) ^ 3 =
+      (-gaussSum ω (2 * (k + 2))) • (sMatrix (ω ^ 2) k * sMatrix (ω ^ 2) k) := by
+  have hζ := isPrimitiveRoot_sq k hω
+  have hδ := qDelta_ne_zero k hζ
+  set S := sMatrix (ω ^ 2) k with hS
+  set T := tMatrix ω k with hT
+  set T' := tInvMatrix ω k with hT'
+  set δ := qDelta (ω ^ 2) with hδdef
+  set G := gaussSum ω (2 * (k + 2)) with hG
+  have hTw : δ • (S * T * S) = (-G) • (T' * S * T') := sMatrix_twist k hω
+  have hTT : T' * T = 1 := tInvMatrix_mul_tMatrix ω k
+  have hS2 : δ ^ 2 • (S * S) = (-(2 * ((k : R) + 2))) • 1 := sMatrix_mul_self k hζ
+  have hcube : (S * T) ^ 3 = (S * T * S) * (T * S * T) := by simp only [pow_three, mul_assoc]
+  have step1 : δ • (S * T) ^ 3 = (-G) • (T' * (S * S) * T) := by
+    rw [hcube, ← Matrix.smul_mul, hTw, Matrix.smul_mul]
+    congr 1
+    rw [show T' * S * T' * (T * S * T) = T' * S * (T' * T) * S * T by simp only [mul_assoc], hTT,
+      mul_one]
+    simp only [mul_assoc]
+  have step2 : δ ^ 2 • (δ • (S * T) ^ 3) = δ ^ 2 • ((-G) • (S * S)) := by
+    calc δ ^ 2 • (δ • (S * T) ^ 3) = δ ^ 2 • ((-G) • (T' * (S * S) * T)) := by rw [step1]
+      _ = (-G) • (T' * (δ ^ 2 • (S * S)) * T) := by
+        rw [smul_comm, Matrix.mul_smul, Matrix.smul_mul]
+      _ = (-G) • ((-(2 * ((k : R) + 2))) • (T' * T)) := by
+        rw [hS2, Matrix.mul_smul, Matrix.mul_one, Matrix.smul_mul]
+      _ = (-G) • (δ ^ 2 • (S * S)) := by rw [hTT, hS2]
+      _ = δ ^ 2 • ((-G) • (S * S)) := smul_comm _ _ _
+  ext i j
+  have h := congrFun (congrFun step2 i) j
+  simp only [Matrix.smul_apply, smul_eq_mul] at h ⊢
+  exact mul_left_cancel₀ (pow_ne_zero 2 hδ) h
+
+/-- **The Gauss sum does not vanish**, so `p₊ = −G/δ` is a genuine nonzero scalar. -/
+theorem gaussSum_ne_zero {ω : Rˣ} (k : ℕ) (hω : IsPrimitiveRoot ω (4 * (k + 2))) :
+    gaussSum ω (2 * (k + 2)) ≠ 0 := by
+  have hζ := isPrimitiveRoot_sq k hω
+  intro hG
+  have h := congrArg Matrix.det (sMatrix_twist k hω)
+  rw [hG, neg_zero, zero_smul, Matrix.det_zero ⟨0⟩, Matrix.det_smul, Matrix.det_mul,
+    Matrix.det_mul] at h
+  have hT : (tMatrix ω k).det ≠ 0 := by
+    rw [tMatrix, Matrix.det_diagonal]
+    exact prod_ne_zero_iff.mpr fun j _ => Units.ne_zero _
+  have hS := sMatrix_det_ne_zero k hζ
+  exact mul_ne_zero (pow_ne_zero _ (qDelta_ne_zero k hζ)) (mul_ne_zero (mul_ne_zero hS hT) hS) h
+
+/-- `2` is a primitive `8`-th root of unity in `𝔽₁₇` (`2⁴ = −1`). -/
+theorem two_isPrimitiveRoot_eight_zmod17 : IsPrimitiveRoot (2 : ZMod 17) 8 := by
+  refine IsPrimitiveRoot.mk_of_lt (2 : ZMod 17) (by norm_num) (by decide) ?_
+  intro l h0 hl
+  interval_cases l <;> decide
+
+instance fact_prime_seventeen : Fact (Nat.Prime 17) := ⟨by norm_num⟩
+
+/-- The unit `2 ∈ 𝔽₁₇ˣ`. -/
+def two17 : (ZMod 17)ˣ := ⟨2, 9, by decide, by decide⟩
+
+/-- **Non-vacuity of the twist relation.** At level `k = 0` over `𝔽₁₇` with `ω = 2` the hypotheses
+hold, so the modular relation is not conditional on `False`. -/
+example : gaussSum two17 (2 * (0 + 2)) ≠ 0 :=
+  gaussSum_ne_zero 0 (IsPrimitiveRoot.coe_units_iff.mp (by
+    simpa [two17] using two_isPrimitiveRoot_eight_zmod17))
 
 end QOU.HeckeTemperleyLieb.TLRootOfUnity
