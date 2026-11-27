@@ -1,11 +1,11 @@
 ---
 # qou-q3dc
 title: 'GAP: q-NS Part A needs the q-Clebsch-Gordan triad coefficients or a 3-complex DEC model'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T18:40:00Z
-updated_at: 2026-11-27T18:40:00Z
+updated_at: 2026-11-27T19:10:00Z
 parent: qou-pa7n
 ---
 
@@ -19,3 +19,6 @@ Follow-up to qou-pa7n (PR #9537). Two results show Part A of `conj:regularity-br
 2. **3-complex DEC model.** Build `C⁰→C¹→C²→C³` with vortex stretching and state Part A over refining 3-complexes.
 
 Open conjecture: do not close until Part A is proved or refuted. QOU-formalised sources only (owner rule 2026-11-27).
+
+## 2026-11-27 progress (route 1, q-CG; PR pending)
+`q_ns_triad_derivation.lean` (sorry-free): triad conservation is now DERIVED for the advection from the Leibniz rule and `τ∘X = 0` (`transport_skew`, `advectionTriad`). The corpus q-connection field is a derivation (`qField`). `parseval` and `transfer_eq_advection` tie the Galerkin transfer to the advection. Remaining hypotheses: the Clebsch–Gordan selection rule `hsel`; incompressibility; a commutative trace setting (the O_q(SU(2)) Haar state is not tracial, so the noncommutative picture needs a twisted Leibniz rule; open); and the numerical q-CG values. Audit `docs/audits/2026-11-27-qns-triad-conservation-from-leibniz.md`. Part A stays open; do not close.
