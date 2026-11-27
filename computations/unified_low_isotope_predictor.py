@@ -359,16 +359,18 @@ def main():
     print()
 
     isotopes = [
-        ("D",   1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),
-        ("T",   1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
-        ("3He", 2, 1, float(AME_B_HE3_MEV_VALIDATION)),
-        ("4He", 2, 2, float(AME_B_HE4_MEV_VALIDATION)),
-        ("6Li", 3, 3, float(AME_B_LI6_MEV_VALIDATION)),
-        ("7Li", 3, 4, 39.24453),
-        ("9Be", 4, 5, 58.16498),
-        ("11B", 5, 6, 76.20548),
-        ("12C", 6, 6, 92.16175),
-        ("16O", 8, 8, 127.61929),
+        # AME comparison values carried as mpf (qou-syit: these were the last
+        # non-integral raw float64 fields in the witness).
+        ("D",   1, 1, mp.mpf(AME_B_DEUTERON_MEV_VALIDATION)),
+        ("T",   1, 2, mp.mpf(AME_B_TRITIUM_MEV_VALIDATION)),
+        ("3He", 2, 1, mp.mpf(AME_B_HE3_MEV_VALIDATION)),
+        ("4He", 2, 2, mp.mpf(AME_B_HE4_MEV_VALIDATION)),
+        ("6Li", 3, 3, mp.mpf(AME_B_LI6_MEV_VALIDATION)),
+        ("7Li", 3, 4, mp.mpf("39.24453")),
+        ("9Be", 4, 5, mp.mpf("58.16498")),
+        ("11B", 5, 6, mp.mpf("76.20548")),
+        ("12C", 6, 6, mp.mpf("92.16175")),
+        ("16O", 8, 8, mp.mpf("127.61929")),
     ]
 
     print(f"  {'sym':<5} {'A':>3} {'T1':>9} {'T4':>9} {'T5':>9} "
