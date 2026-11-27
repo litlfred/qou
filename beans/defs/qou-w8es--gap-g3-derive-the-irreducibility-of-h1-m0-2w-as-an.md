@@ -35,3 +35,6 @@ Parent set to `qou-6qbv`: old parent `qou-qhcr` is not an epic/milestone/feature
 ## 2026-11-27 — χ = −6 chain thread (session_01VQDpPbyS5NspZ1YQT2xsE6, PR #9726)
 
 PR #9726: G3 is no longer necessary for χ = −6 if the least-hyperbolic selection principle is adopted (`chi_le_neg_six_of_A5_map`: any hyperbolic A₅-map has χ ≤ −6, attained). G3 itself is unchanged and stays open.
+
+## 2026-11-27 (χ = −6 chain thread, with the q-Bessel dictionary thread): G3 given genus 4, and why it is circular here
+The q-Bessel thread (branch claude/bring-harmonics-exhaustive-2026-11-27, file `QOU/BringsSurface/BringSymmetryQuotientGenus.lean`, not pushed yet) derives H¹(B, ℂ) = 2·[2,1,1,1] as an S₅-rep, hence 2W with W irreducible 4-dim for A₅. Inputs: g = 4, an S₅-action, Riemann–Hurwitz quotient genera, Chevalley–Weil, the S₅ character table. **It starts from g = 4, so it cannot be used to derive the genus**: it confirms G3 on Bring, which the chain already reads off. As a step toward χ = −6 it is circular. For the χ = −6 chain the non-circular replacements for G3 are PR #9726 (least hyperbolic A₅-surface) and the S₅ least-genus arithmetic (next PR). Side finding filed as qou-efxy: H⁰(K) is std ⊗ sgn, not std. E⁴ splitting: quoted (Riera–Rodríguez), not derived. Stays open.
