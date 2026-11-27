@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-10-12T19:48:14Z
-updated_at: 2026-11-27T22:40:00Z
+updated_at: 2026-11-27T23:00:00Z
 parent: qou-533l
 ---
 
@@ -99,3 +99,7 @@ Corrected stale note: KummerSurfaceData is inhabited on origin/main (point, S^2 
 
 Effective descent of objects, gluing half: MathlibExt/CocycleTorsor.lean. On a small site with U covering the final object and A a sheaf of groups, a 1-cocycle g gives cocycleTorsor g : MulSheafTorsor J A (isSheaf_twistedPresheaf, isPseudoTorsor_twistedAction, locallyNonempty_twistedPresheaf), whose canonical sections have transition cocycle g (cocycleSection_transition). Sorry-free, standard axioms.
 Still open: the converse (a torsor trivial on each U i is isomorphic to the torsor of its cocycle) and comparison with Mathlib's GrpCat-valued H¹.
+
+## 2026-11-27 (later, PR #9748)
+
+Converse half of descent: MathlibExt/TorsorDescent.lean, descentIso : P ≅ twistedPresheaf (transition P s) for a torsor with sections on each U i. With #9740 (merged 06ec5d2e02), effective descent for torsors trivialised on a cover is done, sorry-free. Remaining toward Yekutieli Thm 4.17 at stack level: gerbe ≃ 2-cocycle comparison (qou-0xk8) and central extensions of gerbes (Def 3.21) in the D3 setting.
