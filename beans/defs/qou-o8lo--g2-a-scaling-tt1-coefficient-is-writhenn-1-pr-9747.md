@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T21:52:11Z
-updated_at: 2026-11-27T21:52:18Z
+updated_at: 2026-11-27T22:11:56Z
 parent: qou-myts
 ---
 
@@ -18,3 +18,5 @@ Probe isospin_twist_writhe_scaling_probe (comparison only): Table 3.4b median Q_
 Second 1/A: block dimension, ln d_T - ln d_0 = ln(2T+1) - 2T^2/N; not wired (no corpus energy map for multiplicity).
 
 Open: bond-letter signs (G5); quark-level T3 writhe (#4618) would add an odd-in-T_z piece; block functional; scale alpha (scale-unification thread). Wiring choice put to Carl on a card.
+
+2026-11-27 (13b375fb0, PR #9747): sign-independent bound. |writhe| <= letters (abs_writhe_wordOf_le); core (σaσb⁻¹)³ writhe 0 (writhe_core); with one bridge letter per nucleon boundary (StrandLayoutForcesChain) |coeff| <= 2κ/(9A) for any bond signs (abs_ttCoeff_le_of_chain). Still assumed: sign of the term, block log-det energy map, one bridge per boundary, scale α. Nothing wired (Carl hold).
