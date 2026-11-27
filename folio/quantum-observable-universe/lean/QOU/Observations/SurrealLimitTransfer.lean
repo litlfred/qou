@@ -1,4 +1,5 @@
 import QOU.Observations.StandardPart
+import QOU.Core.CutLimit
 
 /-!
 # QOU.AppendixSurreals.SurrealLimitTransfer — limits as surreal equalities
@@ -145,46 +146,41 @@ theorem evalOmega_sub (a b : ℕ → ℝ) :
 
 end SurrealLimitTransfer
 
-/-- **Limit comparison through the surreal order.**  If `aₙ ≤ bₙ`
-    eventually and both sequences converge, the limits compare — the
-    entire argument routed through one surreal inequality at `ω` and
-    the proved monotonicity of the standard part.  (The classical
-    strict-inequality collapse is visible here: `evalOmega a <
-    evalOmega b` is compatible with equal standard parts, which is why
-    only `≤` survives the wall.) -/
-theorem tendstoReal_le_of_eventuallyLE (K : Type u) [SurrealField K]
-    [SurrealLimitTransfer K] (a b : ℕ → ℝ) (L M : ℝ)
+/-! ### Consequences, without the transfer hypothesis
+
+Strangler step for bean `qou-134z` (epic `qou-dk7p`, owner ruling 2026-11-27).
+The three consequences below used to take `[SurrealLimitTransfer K]` and route
+through `evalOmega` and the standard part. They are now proved from
+`QOU.Core.CutLimit`: a convergent sequence is a *located cut* containing its
+limit, and uniqueness, comparison and the squeeze are order algebra on that
+cut. No transfer class, no surreal field and no axiom is needed for them. The
+class above stays as the surreal error-tracking carrier; its ultrapower
+instance lives behind the transcendental boundary in
+`QOU.Transcendental.HyperrealLimitTransfer`. -/
+
+/-- `TendstoReal` is the located-cut convergence of `QOU.Core.CutLimit`. -/
+theorem convergesTo_of_tendstoReal {a : ℕ → ℝ} {L : ℝ} (h : TendstoReal a L) :
+    QOU.Core.CutLimit.ConvergesTo a L :=
+  QOU.Core.CutLimit.convergesTo_of_tendstoEps h
+
+/-- **Limit comparison.** If `aₙ ≤ bₙ` eventually and both sequences
+    converge, the limits compare. -/
+theorem tendstoReal_le_of_eventuallyLE (a b : ℕ → ℝ) (L M : ℝ)
     (ha : TendstoReal a L) (hb : TendstoReal b M)
-    (hab : EventuallyLE a b) : L ≤ M := by
-  have hle : SurrealLimitTransfer.evalOmega (K := K) a
-      ≤ SurrealLimitTransfer.evalOmega (K := K) b :=
-    SurrealLimitTransfer.evalOmega_le_of_eventuallyLE a b hab
-  have hfa :=
-    SurrealLimitTransfer.evalOmega_isFinite_of_tendstoReal (K := K) a L ha
-  have hfb :=
-    SurrealLimitTransfer.evalOmega_isFinite_of_tendstoReal (K := K) b M hb
-  have hst := standardPart_le_of_le hfa hfb hle
-  rwa [SurrealLimitTransfer.standardPart_evalOmega_of_tendstoReal a L ha,
-       SurrealLimitTransfer.standardPart_evalOmega_of_tendstoReal b M hb]
-    at hst
+    (hab : EventuallyLE a b) : L ≤ M :=
+  (convergesTo_of_tendstoReal ha).le_of_eventuallyLE (convergesTo_of_tendstoReal hb) hab
 
-/-- **Uniqueness of sequential limits via `st ∘ evalOmega`**: if `a` converges
-    to both `L` and `M`, both equal `standardPart (evalOmega a)` and hence
-    `L = M`. -/
-theorem tendstoReal_unique (K : Type u) [SurrealField K]
-    [SurrealLimitTransfer K] (a : ℕ → ℝ) (L M : ℝ)
-    (hL : TendstoReal a L) (hM : TendstoReal a M) : L = M := by
-  rw [← SurrealLimitTransfer.standardPart_evalOmega_of_tendstoReal (K := K) a L hL,
-      SurrealLimitTransfer.standardPart_evalOmega_of_tendstoReal (K := K) a M hM]
+/-- **Uniqueness of sequential limits.** -/
+theorem tendstoReal_unique (a : ℕ → ℝ) (L M : ℝ)
+    (hL : TendstoReal a L) (hM : TendstoReal a M) : L = M :=
+  (convergesTo_of_tendstoReal hL).unique (convergesTo_of_tendstoReal hM)
 
-/-- **Squeeze comparison through the surreal order at `ω`**: if `a ≤ b` and
-    `b ≤ c` eventually, `a → L`, `c → L`, and `b → M`, then `M = L`. -/
-theorem tendstoReal_squeeze (K : Type u) [SurrealField K]
-    [SurrealLimitTransfer K] (a b c : ℕ → ℝ) (L M : ℝ)
+/-- **Squeeze.** If `a ≤ b ≤ c` eventually, `a → L`, `c → L`, and `b → M`,
+    then `M = L`. -/
+theorem tendstoReal_squeeze (a b c : ℕ → ℝ) (L M : ℝ)
     (ha : TendstoReal a L) (hb : TendstoReal b M) (hc : TendstoReal c L)
     (hab : EventuallyLE a b) (hbc : EventuallyLE b c) : M = L :=
-  le_antisymm
-    (tendstoReal_le_of_eventuallyLE K b c M L hb hc hbc)
-    (tendstoReal_le_of_eventuallyLE K a b L M ha hb hab)
+  (convergesTo_of_tendstoReal ha).squeeze (convergesTo_of_tendstoReal hb)
+    (convergesTo_of_tendstoReal hc) hab hbc
 
 end QOU.AppendixSurreals
