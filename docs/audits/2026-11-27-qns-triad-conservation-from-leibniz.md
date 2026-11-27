@@ -44,3 +44,38 @@ now a theorem for the advection term of the q-NS system:
 Part A remains open. The triad model is now tied to the corpus nonlinearity
 everywhere except the four points above. Part A over `advectionTriad` is
 therefore a genuine conjecture about the infinite-mode system (bean `qou-q3dc`).
+
+## Follow-up, same day: the noncommutative case
+
+Owner route, next step "twisted Leibniz on `O_q(SU(2))`" (card, recommended
+option taken). Lean:
+`folio/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_triad_noncomm.lean`
+(sorry-free, `lean -DautoImplicit=false -s 65536` exit 0, axioms
+`propext, Classical.choice, Quot.sound`).
+
+**Finding: the commutative-trace hypothesis was not needed.** For any linear
+functional `φ` on a noncommutative algebra, and any linear `X` with the
+untwisted Leibniz rule and `φ ∘ X = 0`:
+
+- `φ(u·Xu) + φ(Xu·u) = φ(X(u²)) = 0`, so `φ(u²)` is conserved along `u̇ = Xu`
+  (`transport_skew_nc`);
+- the energy only sees the symmetrised form `B(f,g) = (φ(fg) + φ(gf))/2`, and
+  `X` is `B`-skew (`symForm_skew`);
+- couplings taken against `B` give a conserving `TriadCoeff`
+  (`advectionTriadNc`), Parseval holds for `B`-orthogonal modes (`parsevalNc`),
+  and the transfer is the advection (`transfer_eq_advection_nc`).
+
+The Haar state's modular twist `h(ab) = h(bσ(a))` therefore does not obstruct
+energy conservation. It only makes `φ` non-symmetric, and the energy ignores
+the antisymmetric part. For self-adjoint `u`, `h(u*u) = h(u²)`.
+
+**Non-vacuity on a non-tracial state.** If `φ(ab) = φ(bσ(a))` and `σc = c`,
+the inner derivation `f ↦ cf − fc` satisfies both hypotheses
+(`innerDer_div_free_of_kms`). On `O_q(SU(2))` the modular automorphism
+`nuAlgEquiv` fixes `αδ`, `δα` and `βγ` (`nuAlgEquiv_fixes_cartan`).
+
+**The gap moves.** It is no longer traciality. It is whether the q-NS
+transport `∇_q` acts on `O_q(SU(2))` as an *untwisted* derivation. The
+quantum-group derivations are usually twisted, `X(fg) = Xf·g + σ'(f)·Xg`, and
+then `φ(X(u²)) = φ(Xu·u) + φ(σ'(u)·Xu)` is not a symmetric combination. Not
+established here.
