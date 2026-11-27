@@ -1,0 +1,124 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-27T17:29:38.623436+00:00",
+  "commitSha": "3c21ab2d166aa966da1188d9a8e9fbb250f8ef9d",
+  "assertions": [
+    {
+      "name": "exact_dressing_commutes_s1",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_dressing_commutes_s2",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_lean_closed_form",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_undressed_equal",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_equal_charges_equal",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "proton_first_order_nonzero",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "muon_first_order_nonzero",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 210,
+  "computation": "nucleon-charge-dressed-words",
+  "scriptFile": "nucleon_charge_dressed_words_probe.py",
+  "scriptHash": "167256e2dced",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/nucleon_charge_dressed_words_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/nucleon_charge_dressed_words_probe.py"
+  },
+  "description": "Exact Q(q,c,a,b) check of the charge-dressed uud/udd words (QOU.QBeta.NucleonChargeDressedWords) from the full 8-dim Jimbo action, and 80-dps first-order split and Gibbs-map slope at both q0 anchors; the coupling c reaching CODATA m_n - m_p is a diagnostic only.",
+  "data": {
+    "lean_module": "QOU.QBeta.NucleonChargeDressedWords",
+    "beans_referenced": [
+      "qou-2skq",
+      "qou-myts",
+      "qou-99qc"
+    ],
+    "charges": {
+      "a_u": "2/3",
+      "b_d": "-1/3"
+    },
+    "split_exact": "c*(a - b)*(a*b*c + 1)**3*(a**5*c**2*q**12 - 3*a**5*c**2*q**10 + 3*a**5*c**2*q**8 - 2*a**5*c**2*q**6 + 3*a**5*c**2*q**4 - 3*a**5*c**2*q**2 + a**5*c**2 + a**4*b*c**2*q**12 - 3*a**4*b*c**2*q**10 + 3*a**4*b*c**2*q**8 - 5*a**4*b*c**2*q**6 + 3*a**4*b*c**2*q**4 - 3*a**4*b*c**2*q**2 + a**4*b*c**2 + a**3*b**2*c**2*q**12 - 3*a**3*b**2*c**2*q**10 + 3*a**3*b**2*c**2*q**8 - 5*a**3*b**2*c**2*q**6 + 3*a**3*b**2*c**2*q**4 - 3*a**3*b**2*c**2*q**2 + a**3*b**2*c**2 + 3*a**3*c*q**12 - 9*a**3*c*q**10 + 9*a**3*c*q**8 - 9*a**3*c*q**6 + 9*a**3*c*q**4 - 9*a**3*c*q**2 + 3*a**3*c + 3*a**2*b**3*c**2*q**10 - 12*a**2*b**3*c**2*q**8 + 15*a**2*b**3*c**2*q**6 - 12*a**2*b**3*c**2*q**4 + 3*a**2*b**3*c**2*q**2 + 3*a**2*b*c*q**12 - 9*a**2*b*c*q**10 + 9*a**2*b*c*q**8 - 15*a**2*b*c*q**6 + 9*a**2*b*c*q**4 - 9*a**2*b*c*q**2 + 3*a**2*b*c - 3*a*b**4*c**2*q**6 + 6*a*b**2*c*q**10 - 24*a*b**2*c*q**8 + 27*a*b**2*c*q**6 - 24*a*b**2*c*q**4 + 6*a*b**2*c*q**2 + 3*a*q**12 - 9*a*q**10 + 9*a*q**8 - 12*a*q**6 + 9*a*q**4 - 9*a*q**2 + 3*a - 3*b**3*c*q**6 + 3*b*q**10 - 12*b*q**8 + 12*b*q**6 - 12*b*q**4 + 3*b*q**2)/q**6",
+    "anchors": {
+      "proton": {
+        "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+        "t_V3": "2.99418581297996408672819936801871670008913958251181483468283",
+        "first_order_coeff": "-1.99028185862421647140673531064439330256965766367924979797914",
+        "first_order_rel": "-0.664715546375322650840550504677767195582450310304617474824114",
+        "E0_ord0": "4.18598136329447589694506215875900841014348689087960498278367",
+        "gibbs_cell_c0_ord0": "0.873536621380459821746434074984571553678259416295994588435349",
+        "gibbs_slope_dc_ord0": "2.78248688901920552626250089635488025656079466438620898866039",
+        "diag_c_for_dm_np_ord0": "0.157465550403789274889301839457882214797818021218589625735026",
+        "E0_twr": "4.22748335562903055026805602658721115361518419806561475207637",
+        "gibbs_cell_c0_twr": "0.882197316930225041262327987588075186486589880651820588341200",
+        "gibbs_slope_dc_twr": "2.81007390852953347509110473921991598121517590155850422723252",
+        "diag_c_for_dm_np_twr": "0.152502249972048563427414073423047555940818678514843758269650"
+      },
+      "muon": {
+        "q0": "1.10997859564273904668179512938000175270006556102901155697405",
+        "t_V3": "2.99418581036323740913656373060256326968864974621146012164371",
+        "first_order_coeff": "-1.99028185424435177797769047106357214072787998642399042156643",
+        "first_order_rel": "-0.664715545493451598923932997705787643527273899144016168660785",
+        "E0_ord0": "4.18598082401017136779972443048525839338975170253696642520986",
+        "gibbs_cell_c0_ord0": "0.873536606074301440157125707447638906612873189545819536614871",
+        "gibbs_slope_dc_ord0": "2.78248652685704907696313091642110364357376764738336448110525",
+        "diag_c_for_dm_np_ord0": "0.157465577795533352983617193214016729389586707418667964811716",
+        "E0_twr": "4.22748281985034987154227704566888462315634168857177243197923",
+        "gibbs_cell_c0_twr": "0.882197303319638657573070474646289138243300219596532338080243",
+        "gibbs_slope_dc_twr": "2.81007354866102029018151681641846385035435182345649997631089",
+        "diag_c_for_dm_np_twr": "0.152502275599250383595504142718771865663266524356552729523066"
+      }
+    },
+    "codata_comparison_only": {
+      "dm_np": "1.29333251000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "q0Anchor": "comparison"
+}
