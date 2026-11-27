@@ -89,14 +89,19 @@ none of which is the isomorphism:
 - $\dim \lambda = \dim \lambda'$ **for this family**,
   which the next section had been asserting without backing.
 
-**What is still not proved: the isomorphism itself.** No proof of
-$H_n(q)/\mathrm{rad} \cong TL_n(q)$ is given, and nothing above supplies one --- a
-count of blocks and a count of dimensions are not an isomorphism of algebras. The
-identification remains what this section calls it: something the counts support,
-deliberately not a proposition. What *is* available is the trace-theoretic half:
-the trace radical is a two-sided ideal, which is
-what licenses passing to the quotient as an algebra at all, and the trace at $z = q^3/(q^2+1)$ is
-the standard normalised Temperley--Lieb trace at loop parameter $\delta = [2]_q$.
+**The isomorphism and the ideal equality are now proved.** Over any field of
+characteristic zero and for $q \neq 0$ not a root of unity,
+$H_n(q)/\mathrm{rad} \cong TL_n(q + q^{-1})$ as algebras, with $e_i \mapsto q - \sigma_i$;
+the proof compares the Catalan dimension count above with a Jones normal-form spanning
+set of $TL_n$, so the counts are an ingredient of the proof and not a substitute for it.
+At the level of ideals, the kernel of the quotient map $H_n(q) \to TL_n$ in the
+presentation $U_i = T_i + 1$ equals $\theta(\mathrm{rad})$, where
+$\theta \colon \sigma_i \mapsto -\sigma_i^{-1}$ is the involution exchanging the two
+eigenvalues $q$ and $-q^{-1}$. Without $\theta$ the inclusion fails already at three
+strands: on the one-row block $(3)$ the relator acts by $(q^2+1)(q^4+q^2+1) \neq 0$.
+The trace radical is a two-sided ideal, which licenses passing to the quotient as an
+algebra, and the trace at $z = q^3/(q^2+1)$ is the standard normalised
+Temperley--Lieb trace at loop parameter $\delta = [2]_q$.
 
 ## A convention collision: rows versus columns
 
@@ -126,5 +131,7 @@ assumed --- it had been asserted here as though standard, and while it *is*
 standard for general partitions, nothing in this corpus had it.
 
 The practical consequence: transposition is the only correct transport between
-the two conventions, and it is not the identity. Matching totals is not evidence
+the two conventions, and it is not the identity. At the level of the algebra the transport is the
+involution $\theta$ above: it carries the row-convention radical onto the kernel of the
+$U_i = T_i + 1$ quotient map. Matching totals is not evidence
 that a theorem carries across.
