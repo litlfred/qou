@@ -173,6 +173,7 @@ export default chapter({
             "convention-d-kills-antisymmetriser-proof",
             "markov-branching-three-term",
             "hecke-radical-is-temperley-lieb",
+            "hecke-radical-is-tl-kernel",
             "markov-gram-star-positive",
             "markov-gram-bilinear-vs-star",
             "gram-degeneracy-blocks-connes",
