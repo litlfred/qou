@@ -1,0 +1,110 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-11-27T19:42:03.257492+00:00",
+  "commitSha": "cbcbe5e2e09d230a24d264039ed199bca7134b50",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "alpha-em-kappa-alexander-variable",
+  "scriptFile": "alpha_em_kappa_alexander_variable_probe.py",
+  "scriptHash": "8a66c2f382a2",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha/alpha_em_kappa_alexander_variable_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha/alpha_em_kappa_alexander_variable_probe.py"
+  },
+  "contentBlock": "rem:em-coupling-chern-simons",
+  "data": {
+    "identities": {
+      "kappa_family_det_identity": "0",
+      "delta_T29_q2_eq_qint18_over_2_9": "0",
+      "delta_T35_q2_eq_qint15_over_3_5": "0",
+      "kappa_D_closed_form": "0",
+      "convention_D_eigenvalue_ratio": "-q^-2"
+    },
+    "pins": {
+      "proton": {
+        "witten_resummed_ppb": "-467.6364224014564052249364739961931990989",
+        "kappa_required_diagnostic": "1.915314296059691281135485885560242898328",
+        "u=q^-2 (convention D Burau; PRE-REGISTERED)": {
+          "kappa": "2.629551756004155578156133582608231610845",
+          "alpha_inv": "137.0362358067162996804202240132119314846",
+          "residual_ppb": "1726.770467036490517783975802473048272904",
+          "residual_sigma": "11268.08172855621048685777199673735989001"
+        },
+        "u=q^-1 (existing Seifert probe; convention-C variable)": {
+          "kappa": "1.905155328232171100935192334060336552926",
+          "alpha_inv": "137.03599581508521450004392753415482224",
+          "residual_ppb": "-24.53307748103183717676411435124220621089",
+          "residual_sigma": "-160.0911802619026701174211989409505171068"
+        },
+        "u=q": {
+          "kappa": "0.3588366590584057414972708148465941085682",
+          "alpha_inv": "137.0354853264198365241886073737213531898",
+          "residual_ppb": "-3749.748848839130695490461200235410583924",
+          "residual_sigma": "-24469.07524587980054250601326889572176118"
+        },
+        "u=q^2": {
+          "kappa": "0.09328558790427019348837432865921282979388",
+          "alpha_inv": "137.0353979059528407216219023868086950872",
+          "residual_ppb": "-4387.686817846001263791063891276441436309",
+          "residual_sigma": "-28631.95462663230371893396149071013553074"
+        }
+      },
+      "muon": {
+        "witten_resummed_ppb": "-387.9415494464857240436394356174163780942",
+        "kappa_required_diagnostic": "1.882312351101132327233961865782746118331",
+        "u=q^-2 (convention D Burau; PRE-REGISTERED)": {
+          "kappa": "2.629551873093807346260893113001507809185",
+          "alpha_inv": "137.0362467278110960410225936080693577129",
+          "residual_ppb": "1806.465546154019141527524320870905890992",
+          "residual_sigma": "11788.13386171623917112419377893871160006"
+        },
+        "u=q^-1 (existing Seifert probe; convention-C variable)": {
+          "kappa": "1.90515542693417122818795166813033839254",
+          "alpha_inv": "137.0360067360907347578003800056903460119",
+          "residual_ppb": "55.16135015729875039743251352271545596621",
+          "residual_sigma": "359.9567016551333514288423974291369806948"
+        },
+        "u=q": {
+          "kappa": "0.3588366109681546401922873578434471603223",
+          "alpha_inv": "137.0354962472003250221356300969524589188",
+          "residual_ppb": "-3670.056063336889609271747540585899891806",
+          "residual_sigma": "-23949.03807976085068428109750195624531768"
+        },
+        "u=q^2": {
+          "kappa": "0.09328555738854810049014704332019534294662",
+          "alpha_inv": "137.0354088267089275990298056253455353624",
+          "residual_ppb": "-4307.994210410988392558291992907790124474",
+          "residual_sigma": "-28111.91862249528429497022164117321987306"
+        }
+      }
+    },
+    "verdict": {
+      "preregistered_member": "u = q^-2",
+      "reading": "scope-limited negative (a): the convention-D Burau variable overshoots; the -24.5 ppb Seifert figure needs u = q^-1, which convention D does not supply"
+    }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029",
+    "proton": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0AnchorReason": "Seifert-pairing kappa evaluated at the Alexander variable fixed by convention D (u = q^-2) and at the three other members, both registered pins"
+}
