@@ -45,6 +45,17 @@ Rules for an interactive research child:
 - The parent records the child's session id on the bean and in its progress report, so the owner can find it.
 - If a background agent turns out to need owner input, stop it, check its worktree for unpushed work, and relaunch the front as an interactive child session with that context.
 
+## 0b. Handoff envelope — open every prompt and message with it (owner directive 2026-11-25, STRICT)
+
+Owner, verbatim: *"(improve swarm managem,etc. process, when passing to child sibling, then give them the porcess/task they are enging in , their role, your role. this should be a part of general agent to agenet communication use by swarm/merge managers, etc. .)"*
+
+Every dispatched agent prompt, child-session prompt and `send_message` opens
+with **PROCESS / TASK** (process or skill by name, task, done-criteria),
+**YOUR ROLE** (what it decides, where it escalates: owner or sender) and
+**MY ROLE** (sender's role, session id, reply route), in four to six lines,
+before the §1 contract and the body. The canonical rule and template are in
+the platform skill `folio-assistant/cat-harness/sdlc/skills/sdlc-core/agent-handoff.md` §0 (litlfred/cat-harness#1405). This copy points to it and does not restate it.
+
 ## 0. When to use
 
 - Launching **≥ 2 background `Agent` calls** on independent fronts
