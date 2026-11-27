@@ -5448,10 +5448,40 @@ The biconditional holds over an arbitrary carrier with an addition, with no furt
 The equivalence is at the level of the scalar pentagon potential. The \emph{categorical $\to$ scalar} reduction (that the morphism-level Mac Lane pentagon on $\alpha_{X,Y,Z}$ reduces to this scalar five-term equation) is the classical shuffle–associator identification of Faddeev–Kashaev; the analytic five-term relation at $q \neq 1$ remains conjectural.
 \end{proposition}
 
-\phantomsection\label{rem:generating-functions-solve-reeb-flow}\begin{conjecture}[{Compatibility of the local archimedean realisation $\tau_\infty$ with the global realization $\mathcal{R}_{\mathrm{top}}$ on QOU volume classes}]
+\phantomsection\label{rem:generating-functions-solve-reeb-flow}\begin{proposition}[{The figure-eight Nahm equation gives a class in the Bloch group of $\mathbb{Q}(\sqrt{-3})$}]
+  \label{prop:pre-archimedean-figure-eight-bloch-class}
+  \blockannot[compiled]{prop:pre-archimedean-figure-eight-bloch-class}{QOU.Archimedean.PreArchimedeanBloch.fig8Class_cyclotomic}{quantum-observable-universe/quantum-observable-universes/pre-archimedean-figure-eight-bloch-class.md}
+  \uses{prop:bloch-group-quotient-construction, rem:q-dilog-habiro-ring}
+\textbf{Proposition.} \emph{Let $F$ be a field. Write $\mathcal{P}(F)$ for the pre-Bloch group: the free abelian group on symbols $[z]$, $z \in F \setminus \{0,1\}$, modulo the five-term relations}
+
+\[
+  [x] - [y] + \Bigl[\frac{y}{x}\Bigr] - \Bigl[\frac{1-x^{-1}}{1-y^{-1}}\Bigr] + \Bigl[\frac{1-x}{1-y}\Bigr] = 0 .
+\]
+
+\emph{Write $\mathcal{B}(F) =\allowbreak{} \ker\bigl(\delta \colon \mathcal{P}(F) \to\allowbreak{} \textstyle\bigwedge^2_{\mathbb{Z}} F^\times\bigr)$ with $\delta[z] = z \wedge (1-z)$. Let}
+
+\[
+  T_m(q) \;=\; \prod_{j=1}^{m} (1-q^{j})(1-q^{-j})
+\]
+
+\emph{be the $m$-th summand of the figure-eight Habiro series. Then:}
+
+\begin{enumerate}
+  \item \emph{$T_{m+1} =\allowbreak{} T_m \cdot (1-\allowbreak{}qX)(1-\allowbreak{}q^{-1}X^{-1})$ with $X = q^m$, so the Nahm equation of the summand is $(1-X)(1-X^{-1}) = 1$.}
+  \item \emph{For $X \neq 0$, the Nahm equation holds if and only if $X^2 - X + 1 = 0$.}
+  \item \emph{Every solution $X \in F$ gives $[X] \in \mathcal{B}(F)$, and $\delta[X] = 0$ already in $\bigwedge^2 F^\times$.}
+  \item \emph{For $F =\allowbreak{} \mathbb{Q}(\zeta_6) =\allowbreak{} \mathbb{Q}(\sqrt{-3})$, the class $2[\zeta_6]$ lies in $\mathcal{B}(F)$.}
+\end{enumerate}
+
+\emph{Proof.} Item 1 is the last factor of the product. For item 2, multiply the Nahm equation by $X$. For item 3, $X^2 - X + 1 = 0$ gives $1 - X = X^{-1}$, so $\delta[X] =\allowbreak{} X \wedge X^{-1} =\allowbreak{} -(X \wedge X) =\allowbreak{} 0$. Item 4 is item 3 at the primitive sixth root of unity, which satisfies $\zeta_6^2 - \zeta_6 + 1 = 0$. $\square$
+
+Every statement is algebraic over $F$; no limit, integral or numerical value enters. The archimedean step is separate. The Bloch–Wigner function $D$ is a homomorphism $\mathcal{B}(\mathbb{C}) \to\allowbreak{} \mathbb{R}$, and $D(e^{i\pi/3}) =\allowbreak{} \tfrac{1}{2}\mathrm{Vol}(4_1)$. That evaluation is the figure-eight case of \hyperref[conj:archimedean-realisation-volume-compatibility]{archimedean realisation compatibility}, not of this proposition. The identification of $2[\zeta_6]$ with the class of the hyperbolic structure on the figure-eight complement is the standard computation from its two regular ideal tetrahedra \cite{zagier-dilogarithm}; it is cited here, not proved. The scope is the figure-eight knot only.
+\end{proposition}
+
+\begin{conjecture}[{Compatibility of the local archimedean realisation $\tau_\infty$ with the global realization $\mathcal{R}_{\mathrm{top}}$ on QOU volume classes}]
   \label{conj:archimedean-realisation-volume-compatibility}
   \blockannot[spec]{conj:archimedean-realisation-volume-compatibility}{QOU.MassTheory.RealisationVolumeCompatibility.realisation_volume_compatibility}{quantum-observable-universe/quantum-observable-universes/archimedean-realisation-volume-compatibility.md}
-  \uses{rem:generating-functions-solve-reeb-flow, def:q-dilogarithm, prop:thurston-volume-additivity, def:archimedean-realization-functor}
+  \uses{rem:generating-functions-solve-reeb-flow, def:q-dilogarithm, prop:thurston-volume-additivity, def:archimedean-realization-functor, prop:pre-archimedean-figure-eight-bloch-class}
 The local archimedean realisation functor $\tau_\infty \colon \widehat{\mathbb{Z}[q]} \to\allowbreak{} \mathbb{C}[\![q-\allowbreak{}1]\!]$ acts on the Habiro-ring volume. The global archimedean realization functor $\mathcal{R}_{\mathrm{top}} \colon \widehat{\mathcal{M}} \to\allowbreak{} \mathbb{R}$ evaluates the motivic volume class.
 
 Conjecturally, for every QOU braid $\beta$, the archimedean value of the Habiro-ring volume and the topological realization of the motivic volume coincide with the hyperbolic volume:
@@ -5459,6 +5489,8 @@ Conjecturally, for every QOU braid $\beta$, the archimedean value of the Habiro-
 \[
   \mathrm{ev}_{q \to 1}\bigl(\tau_\infty(-\mathrm{Li}_2^q(-V_0(\beta)))\bigr) = \mathcal{R}_{\mathrm{top}}\bigl(\mu(\beta)\bigr) = V_{\mathrm{hyp}}(K_\beta).
 \]
+
+For the figure-eight knot the conjecture factors in two steps. The first is algebraic and proved: the Nahm equation of the Habiro summand gives the class $2[\zeta_6]$ in the Bloch group of $\mathbb{Q}(\sqrt{-3})$ (\hyperref[prop:pre-archimedean-figure-eight-bloch-class]{pre-Archimedean figure-eight class}). The second is the archimedean regulator: $\mathrm{Vol}(4_1) = 2D(e^{i\pi/3})$.
 \end{conjecture}
 
 \section{Braiding conventions: eigenvalue labelling, ribbon, orientation}
@@ -52721,10 +52753,8 @@ muon pin $\to$ proton pin & $79.17$ ppb (for either form) \\
   P(\alpha)
   \;=\;
   -h^2 H\,\alpha^3 + H\,\alpha^2 + T\,\alpha - 1
-  \;=\; 0,
+  \;=\; 0.
 \]
-
-\emph{and its inverse yields CODATA-consistency: $\lvert \alpha^{-1} -\allowbreak{} 137.035999177\rvert <\allowbreak{} 10^{-3}$.}
 \end{proposition}
 
 \phantomsection\label{rem:em-coupling-fixed-point-derivation-status}\phantomsection\label{rem:q-chromaticity}\phantomsection\label{rem:alpha-em-derivation-exploration-options}\begin{table}[htbp]
