@@ -156,6 +156,19 @@ theorem trace_bond_pair_factorizes (i j : Generator n)
     mul_one]
   ring
 
+/-- **Multiplicativity of the Markov trace across two bridge bonds (`qou-gr3t`).**
+For `i.idx.val < j.idx.val`, the Markov trace of the product of two bridge crossings equals the
+product of their individual Markov traces. -/
+theorem trace_bond_pair_eq_prod_single_bonds (i j : Generator n)
+    (h : i.idx.val < j.idx.val) (c₁ d₁ c₂ d₂ : R) :
+    MT.trace ((c₁ • HA.embed i + d₁ • (1 : A)) *
+              (c₂ • HA.embed j + d₂ • (1 : A)))
+      = MT.trace (c₁ • HA.embed i + d₁ • (1 : A)) *
+        MT.trace (c₂ • HA.embed j + d₂ • (1 : A)) := by
+  rw [trace_bond_pair_factorizes i j h c₁ d₁ c₂ d₂,
+      trace_bond_crossing i c₁ d₁,
+      trace_bond_crossing j c₂ d₂]
+
 end MarkovTrace
 
 end QOU.Hecke

@@ -126,4 +126,51 @@ theorem row_two_contents_are_weights :
   simp only
   omega
 
+/-! ## Uniqueness of `(2, 0)` and axial-distance shift invariance (`qou-59x9`) -/
+
+/-- **Complete classification of non-empty two-row shapes (`qou-59x9`).**
+For any non-empty two-row diagram `λ = (a, b)` (`b ≤ a`, `1 ≤ a + b`), if merely the
+corner cell `(0, 0)`, the second-row lead `(1, 0)` (when `b = 1`), and the top-row
+tail `(0, a - 1)` have contents that are `SU(2)` weights of `V_{(a,b)}`, then
+`(a, b) = (2, 0)` is forced. Together with `row_two_contents_are_weights`, this proves
+`(2, 0)` is the unique non-empty two-row shape whose box contents all lie in the weight
+set of `V_{(a,b)}`. -/
+theorem twoRow_all_weights_forces_two_zero {a b : ℕ} (hab : b ≤ a) (hpos : 1 ≤ a + b)
+    (h00 : IsTwoRowWeight a b (2 * boxContent ⟨0, 0⟩))
+    (h10 : b = 1 → IsTwoRowWeight a b (2 * boxContent ⟨1, 0⟩))
+    (htop : IsTwoRowWeight a b (2 * boxContent ⟨0, a - 1⟩)) :
+    a = 2 ∧ b = 0 := by
+  unfold IsTwoRowWeight twoRowTwiceSpin boxContent at h00 h10 htop
+  simp only at h00 h10 htop
+  by_cases hb1 : b = 1
+  · have h10' := h10 hb1
+    omega
+  · omega
+
+/-- Transposing a cell `(row, col) ↦ (col, row)` negates its content:
+`boxContent ⟨x.col, x.row⟩ = -boxContent x`. -/
+theorem boxContent_transpose_neg (x : Cell) :
+    boxContent ⟨x.col, x.row⟩ = -boxContent x := by
+  rcases x with ⟨r, c⟩
+  unfold boxContent
+  dsimp only
+  omega
+
+/-- The axial distance `c(y) - c(x)` between two cells `x, y` in a Young diagram
+(the quantity consumed by Hoefsmit matrix entries and `crystal-isospin-degeneracy-proof`). -/
+def axialDistance (x y : Cell) : ℤ :=
+  boxContent y - boxContent x
+
+/-- Diagonal shifts `(i, j) ↦ (i + k, j + k)` preserve `boxContent` and `axialDistance`
+identically, explaining why `crystal-isospin-degeneracy-proof` depends only on cell
+content differences rather than on the refuted weight-space identification (`qou-59x9`). -/
+theorem axialDistance_shift_invariant (x y : Cell) (k : ℕ) :
+    axialDistance ⟨x.row + k, x.col + k⟩ ⟨y.row + k, y.col + k⟩ =
+      axialDistance x y := by
+  rcases x with ⟨rx, cx⟩
+  rcases y with ⟨ry, cy⟩
+  unfold axialDistance boxContent
+  dsimp only
+  omega
+
 end QOU.BraidKnot

@@ -82,4 +82,32 @@ theorem meridian_ne_zero (a : ℝ) (k : ℕ) (hk : 1 ≤ k) : meridian a k ≠ 0
   rw [hzero, Complex.normSq_zero] at h
   nlinarith [Real.pi_pos]
 
+/-- **Strict monotonicity of `|meridian a k|²` in the winding number `k`.**
+
+For fixed real offset `a` and winding integers `k₁ < k₂`, the squared modulus
+`Complex.normSq (meridian a k)` increases strictly with `k`. -/
+theorem meridian_normSq_strict_mono_winding (a : ℝ) {k₁ k₂ : ℕ} (hk : k₁ < k₂) :
+    Complex.normSq (meridian a k₁) < Complex.normSq (meridian a k₂) := by
+  rw [meridian_normSq, meridian_normSq]
+  have hk_real : (k₁ : ℝ) < (k₂ : ℝ) := by exact_mod_cast hk
+  have hk_nonneg : (0 : ℝ) ≤ (k₁ : ℝ) := Nat.cast_nonneg k₁
+  have hpi : 0 < Real.pi := Real.pi_pos
+  nlinarith [mul_pos (mul_pos (by norm_num : (0 : ℝ) < 4) (mul_pos hpi hpi))
+    (sub_pos.mpr hk_real)]
+
+/-- **Off-lattice points inside the small-`|u|` disk are disjoint from all `k ≥ 1` meridians.**
+
+Any complex deformation parameter `u = ⟨a, θ⟩` whose squared modulus satisfies
+`a² + θ² < (2π)²` is strictly separated from `meridian a' k` for every real offset `a'`
+and integer winding `k ≥ 1`. -/
+theorem off_lattice_inside_disk_ne_meridian (a θ a' : ℝ) (k : ℕ) (hk : 1 ≤ k)
+    (hdisk : a * a + θ * θ < (2 * Real.pi) * (2 * Real.pi)) :
+    (⟨a, θ⟩ : ℂ) ≠ meridian a' k := by
+  intro heq
+  have hnorm : Complex.normSq (⟨a, θ⟩ : ℂ) = a * a + θ * θ := by
+    rw [Complex.normSq_apply]
+  have hfloor := meridian_normSq_ge_floor a' k hk
+  rw [← heq, hnorm] at hfloor
+  linarith
+
 end QOU.Knot.DeformedMeridianWinding

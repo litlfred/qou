@@ -236,4 +236,26 @@ theorem sign_carries_no_information_beyond_the_secant (Φ : ℝ → ℝ) {g : �
     (0 ≤ b3Agg Φ g) ↔ (originSecant Φ g ≤ originSecant Φ (3 * g)) :=
   b3Agg_nonneg_iff_secant_le Φ hg
 
+
+/-! ### Linearity of `b3Agg` and exact threshold of `witnessPhi` (`qou-2ss0`) -/
+
+/-- **Linearity of the 3-body cumulant operator (`qou-2ss0`).** `b3Agg` is linear in the
+aggregator `Φ` and vanishes identically on every linear function through the origin. -/
+theorem b3Agg_linear_comb_and_origin_line (Φ Ψ : ℝ → ℝ) (a b m g : ℝ) :
+    b3Agg (fun x => a * Φ x + b * Ψ x) g = a * b3Agg Φ g + b * b3Agg Ψ g ∧
+      b3Agg (fun x => m * x) g = 0 := by
+  constructor <;> (unfold b3Agg; ring)
+
+/-- **Exact polynomial factorization and nodes of `witnessPhi` (`qou-2ss0`).**
+For `witnessPhi x = x³ - x²`, the 3-body cumulant factors as
+`b3Agg witnessPhi g = 6 * g² * (4 * g - 1)`, vanishes at the non-zero threshold `g = 1/4`,
+and equals `3/2` at `g = 1/2`. -/
+theorem witnessPhi_b3Agg_factorization_and_nodes (g : ℝ) :
+    b3Agg witnessPhi g = 6 * g ^ 2 * (4 * g - 1) ∧
+      b3Agg witnessPhi (1 / 4) = 0 ∧
+      b3Agg witnessPhi (1 / 2) = 3 / 2 := by
+  refine ⟨by unfold b3Agg witnessPhi; ring,
+    by unfold b3Agg witnessPhi; norm_num,
+    by unfold b3Agg witnessPhi; norm_num⟩
+
 end QOU.MassTheory.B3AggSecant

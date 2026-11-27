@@ -156,7 +156,20 @@ theorem tr_atomWord_of_z_eq_zero (hz : S.z = 0) (isP : ℕ → Prop) [DecidableP
   rw [tr_atomWord S isP wp wn hp hn d n, hz]
   simp only [zero_add]
 
+/-- **Uniform-bond power factorisation of the atom trace (`qou-5zl1`).**
+When every inter-nucleon bridge carries the same scalar offset `d₀`, the `n + 1`
+bond factors collapse to `(S.z + d₀) ^ (n + 1)`. -/
+theorem tr_atomWord_const_bond (isP : ℕ → Prop) [DecidablePred isP]
+    (wp wn : List (ℕ × R × R)) (hp : ∀ l ∈ wp, l.1 ≤ 1) (hn : ∀ l ∈ wn, l.1 ≤ 1)
+    (d₀ : R) (n : ℕ) :
+    S.tr (atomWord S isP wp wn (fun _ => d₀) n)
+      = (S.z + d₀) ^ (n + 1)
+        * S.tr (wordVal S 0 wp) ^ ((Finset.range (n + 2)).filter isP).card
+        * S.tr (wordVal S 0 wn) ^ ((Finset.range (n + 2)).filter (fun k => ¬ isP k)).card := by
+  rw [tr_atomWord S isP wp wn hp hn (fun _ => d₀) n, Finset.prod_const, Finset.card_range]
+
 end Atom
+
 
 /-! ## On the Hecke colimit -/
 

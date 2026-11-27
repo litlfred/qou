@@ -153,4 +153,16 @@ theorem perNucleon_tendsto_plateau (ε k k' c : ℝ) :
   have := ((hrpow.const_mul (ε * c * (k - k') / 2)).const_sub (ε * k / 2))
   simpa using this
 
+/-- **Exact bond-count boundary deficit and zero-deficit reduction (`qou-v0yw`).**
+When `A = Aint + Asurf`, the deficit `k * A / 2 - bondCount k k' Aint Asurf` equals
+`(k - k') * Asurf / 2`, and vanishes when `k' = k`. -/
+theorem bondCount_deficit_and_uniform_eq (k k' Aint Asurf A : ℝ) (hA : A = Aint + Asurf) :
+    k * A / 2 - bondCount k k' Aint Asurf = (k - k') * Asurf / 2 ∧
+    bondCount k k Aint Asurf = k * A / 2 := by
+  constructor
+  · rw [bondCount_split k k' Aint Asurf A hA]
+    ring
+  · rw [bondCount_split k k Aint Asurf A hA]
+    ring
+
 end QOU.Mass.CoordinationSurfaceDeficit

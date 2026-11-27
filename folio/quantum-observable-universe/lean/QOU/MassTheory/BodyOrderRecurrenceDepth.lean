@@ -150,6 +150,22 @@ theorem a_six (h : IsDepthRecurrence 3 c a) :
   have h' := h 3
   simpa [Finset.sum_range_succ] using h'
 
+/-- Closed-form expression for `a 4` as a polynomial in the kernel coefficients
+multiplying `a 2` when `a 0 = 0` and `a 1 = 0` (`bean qou-i5yp`). -/
+theorem a_four_in_terms_of_a_two (h : IsDepthRecurrence 3 c a)
+    (h0 : a 0 = 0) (h1 : a 1 = 0) :
+    a 4 = (c 1 + c 2 ^ 2) * a 2 := by
+  rw [a_four h h1, a_three h h0 h1]
+  ring
+
+/-- Closed-form expression for `a 5` as a polynomial in the kernel coefficients
+multiplying `a 2` when `a 0 = 0` and `a 1 = 0` (`bean qou-i5yp`). -/
+theorem a_five_in_terms_of_a_two (h : IsDepthRecurrence 3 c a)
+    (h0 : a 0 = 0) (h1 : a 1 = 0) :
+    a 5 = (c 0 + 2 * c 1 * c 2 + c 2 ^ 3) * a 2 := by
+  rw [a_five h, a_four_in_terms_of_a_two h h0 h1, a_three h h0 h1]
+  ring
+
 end DepthThree
 
 section Reachability
@@ -179,6 +195,26 @@ theorem measured_target_reachable :
     ∃ c1 c2 : ℚ, c2 * 1 = (-519787 / 1000000 : ℚ) ∧
       c1 * 1 + c2 * (-519787 / 1000000 : ℚ) = (445038 / 100000 : ℚ) :=
   depth_three_kernel_reaches one_ne_zero _ _
+
+/-- **Uniqueness of the inverted depth-3 kernel (`bean qou-i5yp`).**
+For `a2 ≠ 0`, any two pairs `(c1, c2)` and `(c1', c2')` reproducing the same
+`(t3, t4)` target coincide (`c2 = c2' ∧ c1 = c1'`), proving that matching `(a₂, a₃, a₄)`
+is an exact bijection onto `(c₁, c₂)`. -/
+theorem depth_three_kernel_unique {a2 t3 t4 c1 c2 c1' c2' : R} (ha2 : a2 ≠ 0)
+    (h3 : c2 * a2 = t3) (h3' : c2' * a2 = t3)
+    (h4 : c1 * a2 + c2 * t3 = t4) (h4' : c1' * a2 + c2' * t3 = t4) :
+    c2 = c2' ∧ c1 = c1' := by
+  have hc2_sub : (c2 - c2') * a2 = 0 := by linear_combination h3 - h3'
+  have hc2 : c2 = c2' := by
+    rcases mul_eq_zero.mp hc2_sub with h0 | h0
+    · exact sub_eq_zero.mp h0
+    · exact False.elim (ha2 h0)
+  refine ⟨hc2, ?_⟩
+  rw [hc2] at h4
+  have hc1_sub : (c1 - c1') * a2 = 0 := by linear_combination h4 - h4'
+  rcases mul_eq_zero.mp hc1_sub with h0 | h0
+  · exact sub_eq_zero.mp h0
+  · exact False.elim (ha2 h0)
 
 end Reachability
 

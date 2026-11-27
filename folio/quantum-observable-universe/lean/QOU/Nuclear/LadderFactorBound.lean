@@ -126,4 +126,29 @@ theorem ladder_lt_of_rungs (u a F : ℝ) (hu : 0 < u) (hu2 : u ^ 2 < 1) (hF : 1 
       = Real.cos (a - u / 2) * ((1 - u ^ 2) * l.prod) := by ring
   rw [e]; linarith
 
+/-- **Quantitative deficit lower bound**: for any target `F` and rung list `l` with
+entries in `(0, 1]`, the gap `F − cos(α − u/2)(1 − u²) ∏ l` is at least
+`(F − 1) + u² · ∏ l`. -/
+theorem ladder_deficit_ge_of_rungs (u a F : ℝ) (hu : 0 < u) (hu2 : u ^ 2 < 1)
+    (l : List ℝ) (hl : ∀ x ∈ l, 0 < x ∧ x ≤ 1) :
+    (F - 1) + u ^ 2 * l.prod ≤ F - Real.cos (a - u / 2) * (1 - u ^ 2) * l.prod := by
+  obtain ⟨hP0, hP1⟩ := prod_pos_le_one l hl
+  have hq : (0 : ℝ) < 1 - u ^ 2 := by linarith
+  have hqP : (0 : ℝ) < (1 - u ^ 2) * l.prod := mul_pos hq hP0
+  have s1 : Real.cos (a - u / 2) * ((1 - u ^ 2) * l.prod)
+      ≤ 1 * ((1 - u ^ 2) * l.prod) :=
+    mul_le_mul_of_nonneg_right (Real.cos_le_one _) (le_of_lt hqP)
+  have e : Real.cos (a - u / 2) * (1 - u ^ 2) * l.prod
+      = Real.cos (a - u / 2) * ((1 - u ^ 2) * l.prod) := by ring
+  rw [e]
+  linarith
+
+/-- **Rung membership in `(0, 1]`**: any negative coefficient `c < 0` with
+`-1 < c · u^k` places the rung `1 + c · u^k` in `(0, 1]`. -/
+theorem rung_mem_unit_interval (u c : ℝ) (k : ℕ) (hu : 0 < u) (hc : c < 0)
+    (hlow : -1 < c * u ^ k) :
+    0 < 1 + c * u ^ k ∧ 1 + c * u ^ k ≤ 1 := by
+  have hlt := rung_lt_one u c k hu hc
+  exact ⟨by linarith, le_of_lt hlt⟩
+
 end QOU.QBeta.LadderFactorBound

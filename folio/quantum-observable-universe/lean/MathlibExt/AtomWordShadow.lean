@@ -298,4 +298,16 @@ theorem orbitCount_atomShadow {A : ℕ} (hcard : Fintype.card α = 3 * (A + 1))
   rw [orbitCount_freshProd (fresh_atomIdx x hx), hcard, toPairs_length, atomIdx_length]
   omega
 
+/-- **Exact inter-nucleon interface merge count (`qou-56qy`).**
+For `A + 1` nucleons on `3 * (A + 1)` strands, the difference between the free shadow's
+orbit count `2 * (A + 1)` and the atom shadow's orbit count `A + 2` is `A` — one orbit
+merge per inter-nucleon interface. -/
+theorem orbitCount_freeShadow_sub_atomShadow {A : ℕ}
+    (hcard : Fintype.card α = 3 * (A + 1))
+    (hx : ∀ i j, i < 3 * (A + 1) → j < 3 * (A + 1) → x i = x j → i = j) :
+    orbitCount (freshProd (toPairs x (freeIdx (A + 1)))) -
+      orbitCount (freshProd (toPairs x (atomIdx (A + 1)))) = A := by
+  rw [orbitCount_freeShadow x hcard hx, orbitCount_atomShadow x hcard hx]
+  omega
+
 end QOU.MassTheory
