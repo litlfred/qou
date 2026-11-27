@@ -389,6 +389,31 @@ structure QuantumObservableUniverse (R : Type w) [CommRing R]
 
       LaTeX: `\label{eq:categorical-volume-constraint}` -/
   volumeIso : exteriorSquare ≅ (𝟙_ C)
+
+  /-- **Twist scalar on `V`.**  `θ_V = s • 𝟙_V` with `s` a unit.  This names the scalar the
+      twist already carries; `q` is not added as a field.  Paired with the pin below it fixes
+      the normalisation of the braiding on `Λ²V`. -/
+  twistScalar : R
+  /-- Inverse of `twistScalar`. -/
+  twistScalarInv : R
+  twistScalar_mul_inv : twistScalar * twistScalarInv = 1
+  /-- `θ_V = s • 𝟙_V`. -/
+  twist_fundamental :
+    _root_.QOU.MathlibExt.BalancedCategory.twist fundamentalObj = twistScalar • 𝟙 fundamentalObj
+  /-- **`Λ²V` is the antisymmetric quotient** (adopted 2026-11-27, proposal
+      `docs/audits/2026-11-27-pin-exterior-quotients-proposal.md`): the braiding acts on it by
+      `-s⁻¹`.  Without this field `exteriorSquare` could be any quotient of `V ⊗ V`, and
+      `V = 𝟙` met condition (iii).
+
+      The scalar is `-s⁻¹`, **not** the Hecke `-q⁻¹` with `θ_V = q^{1/2}`: balancing forces
+      `s²c² = 1` on `Λ²V ≅ 𝟙` (`ExteriorQuotientNormalisation.exteriorSquare_balancing`), and
+      the pair `θ_V = q^{1/2}`, `c = -q⁻¹` forces `q = 1`
+      (`ExteriorQuotientNormalisation.hecke_halfTwist_forces_q_one`).  The sign picks the
+      antisymmetric root of `c² = s⁻²`. -/
+  exteriorSquare_antisym :
+    (β_ fundamentalObj fundamentalObj).hom ≫ exteriorSquareProj
+      = (-twistScalarInv) • exteriorSquareProj
+
 /-- The **quantum gauge group** `Aut⊗(τ)`: the monoidal natural automorphisms of
     the transcription functor, as a subgroup of `Aut(τ)`.  Kept in sync with
     `QOU.QuantumUniverse.gaugeGroup` (`QOU/Core/CategoricalFoundations.lean`).

@@ -144,7 +144,8 @@ universe u v
 open CategoryTheory MonoidalCategory QOU.FlavourCentralPhase
 
 attribute [local instance] QuantumUniverse.catInst QuantumUniverse.monInst
-  QuantumUniverse.preInst QuantumUniverse.linInst
+  QuantumUniverse.preInst QuantumUniverse.linInst QuantumUniverse.braidedInst
+  QuantumUniverse.balancedInst
 
 /-- **Constructor from a central phase.**  A quantum observable universe, an object `W` with
 `π₃ : W^{⊗3} ↠ Λ³W ≅ 𝟙`, and a central phase acting on `W` by `ω` with `1 - ω²` regular on
@@ -154,9 +155,19 @@ def ofCentralPhase {R : Type*} [CommRing R] (Q : QuantumObservableUniverse.{u, v
     [MonoidalPreadditive Q.C] [MonoidalLinear R Q.C]
     (W L3 : Q.C) (π₃ : (W ⊗ W) ⊗ W ⟶ L3) [Epi π₃] (vol : L3 ≅ 𝟙_ Q.C)
     (z : CentralPhase Q.C) (ω : R) (hW : z.app W = ω • 𝟙 W)
-    (hreg : ∀ f : 𝟙_ Q.C ⟶ W ⊗ W, (1 - ω ^ 2) • f = 0 → f = 0) :
+    (hreg : ∀ f : 𝟙_ Q.C ⟶ W ⊗ W, (1 - ω ^ 2) • f = 0 → f = 0)
+    (t c : R) (hθ : _root_.QOU.MathlibExt.BalancedCategory.twist W = t • 𝟙 W)
+    (h₁ : (β_ W W).hom ▷ W ≫ π₃ = c • π₃)
+    (h₂ : (α_ W W W).hom ≫ W ◁ (β_ W W).hom ≫ (α_ W W W).inv ≫ π₃ = c • π₃)
+    (hc : ∀ f : 𝟙_ Q.C ⟶ 𝟙_ Q.C, (1 - c) • f = 0 → f = 0) :
     FlavouredQuantumObservableUniverse.{u, v} R :=
   { Q with
+    flavourTwistScalar := t
+    twist_flavour := hθ
+    flavourBraidScalar := c
+    exteriorCube_antisym₁ := h₁
+    exteriorCube_antisym₂ := h₂
+    flavourBraid_regular := hc
     flavourObj := W
     exteriorCube := L3
     exteriorCubeProj := π₃

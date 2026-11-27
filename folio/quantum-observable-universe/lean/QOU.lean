@@ -2038,6 +2038,7 @@ import QOU.Core.FlavourCentralPhase
 import QOU.Core.FlavourLabelCarrier
 import QOU.Core.FlavourVolumeForcesDimThree
 import QOU.Core.HopfTraceFormula
+import QOU.Core.ExteriorQuotientNormalisation
 import QOU.StandardModel.OctonionCubeRootPhase
 import QOU.StandardModel.ColourTripletCommutant
 import QOU.StandardModel.ElectroweakBringSchwingerBridge
