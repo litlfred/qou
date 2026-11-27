@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T16:25:07Z
-updated_at: 2026-11-25T16:41:20Z
+updated_at: 2026-11-27T14:30:27Z
 ---
 
 Owner, 2026-11-25, verbatim: "all handovefr notes should go into common .md (bean) all agents work on for their session (that should also be part of process)" and "your token use for the week is getting low, there are skills for handover, please make sure you and siblings start preparing".
@@ -104,3 +104,14 @@ Bean qou-rf43 (in-progress). Draft PR #9436, branch claude/binding-error-budget-
 - 2026-11-25 ~16:55Z (session_01EucfRpmx5vQ5s5BZrP4uTV): qou-b7fc non-abelian Stokes route. The holonomy-level map is well-defined; per-face traces survive; no linear Stokes relation survives tracing (Lean NonabelianStokesTrace.lean, sorry-free). Explicit Bring prod-of-commutators identity still open.
 
 - 16:45Z rf43 (session_01EucfRntKGFoPCof8huHo3z): applied the owner's '2 then 1' on the Table 3.2a scope note. PR #9436 head 3d4d9b6b1. Ruling row added.
+
+
+
+## merge manager, project thread "QOU beans/PRs merge management" (2026-11-27T14:32Z)
+- Took over from session_01VQDpPcGfQnYtGnKTekPURH (rate-limited 11-25 18:27Z to 11-27 14:03Z; its 4 children were never created).
+- Owner grants (owner-rulings.md 2026-11-27): merge-on-green 24 h to 2026-11-28T14:20Z; FAST MERGES (KG JSON-LD check is the only pre-merge gate, QA after); merge past merge:guard's false base-main refusal (guard fix = follow-up).
+- Merged 11-27: #9437 #9435 #9432 #9440 #9442 #9441 (main 461e3e6ac9). Closed #9045 (already on main).
+- Research threads: knot volume, dilog/Bloch, Intro fast-pass, observer intent (#9441 merged). Briefs in project files qou-swarm-2026-11-27/briefs/.
+- Salvage threads S1-S5 own the 178 remaining open PRs (S1 recent drafts, S2/S3/S4 bulk Lean 11-16..18, S5 Aug-Nov 15). Fenced: #9217 #9178 #9176 #9174 #8734 #8692 #8735 #8150.
+- qou-s028 now tag stability, parent qou-5vkl.
+- Next: merge salvage/research PRs as they report; guard fix bean; post-merge QA on main.
