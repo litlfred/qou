@@ -1,0 +1,382 @@
+{
+  "name": "aomega-m3-pretzel-index-factorisation-blocks",
+  "description": "(-2,3,7) holomorphic blocks from the 1-dim level-2 state integral, certified against the triangulation 3D index at m in -2..2.",
+  "computation": "aomega-m3-pretzel-index-factorisation-blocks",
+  "engine": "python+snappy+mpmath",
+  "scriptFile": "aomega_m3_pretzel_index_factorisation_blocks_probe.py",
+  "computedAt": "2026-11-27T22:05:14.581557+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-11-27-pretzel-level2-blocks-from-index.md",
+  "parameters": {
+    "snappy_version": "3.3.2",
+    "q_grid": 3,
+    "q_series": 7,
+    "m_range": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "e_range": [
+      -6,
+      6
+    ],
+    "convention": "e = meridian (GGM S3Dx, PR #9739), m = longitude"
+  },
+  "data": {
+    "grids": {
+      "m004": {
+        "cells": 65,
+        "mismatches": []
+      },
+      "m015": {
+        "cells": 65,
+        "mismatches": []
+      },
+      "m016": {
+        "cells": 65,
+        "mismatches": []
+      }
+    },
+    "pretzel_total_index": [
+      1,
+      -8,
+      3,
+      50,
+      58,
+      13,
+      -196,
+      -456
+    ],
+    "fusion_rows": [
+      {
+        "theta": "0.7",
+        "m": -2,
+        "resid_q0.02": "1.678e-12",
+        "resid_q0.005": "2.517e-17",
+        "ratio": "66643.3",
+        "resid_over_q8_at_0.02": "65.54"
+      },
+      {
+        "theta": "0.7",
+        "m": -1,
+        "resid_q0.02": "4.008e-12",
+        "resid_q0.005": "5.961e-17",
+        "ratio": "67236.5",
+        "resid_over_q8_at_0.02": "156.6"
+      },
+      {
+        "theta": "0.7",
+        "m": 0,
+        "resid_q0.02": "4.343e-12",
+        "resid_q0.005": "6.43e-17",
+        "ratio": "67544.1",
+        "resid_over_q8_at_0.02": "169.7"
+      },
+      {
+        "theta": "0.7",
+        "m": 1,
+        "resid_q0.02": "4.008e-12",
+        "resid_q0.005": "5.961e-17",
+        "ratio": "67236.5",
+        "resid_over_q8_at_0.02": "156.6"
+      },
+      {
+        "theta": "0.7",
+        "m": 2,
+        "resid_q0.02": "1.678e-12",
+        "resid_q0.005": "2.517e-17",
+        "ratio": "66643.3",
+        "resid_over_q8_at_0.02": "65.54"
+      },
+      {
+        "theta": "2.1",
+        "m": -2,
+        "resid_q0.02": "5.41e-14",
+        "resid_q0.005": "8.453e-19",
+        "ratio": "63994.6",
+        "resid_over_q8_at_0.02": "2.113"
+      },
+      {
+        "theta": "2.1",
+        "m": -1,
+        "resid_q0.02": "3.684e-13",
+        "resid_q0.005": "5.62e-18",
+        "ratio": "65557.9",
+        "resid_over_q8_at_0.02": "14.39"
+      },
+      {
+        "theta": "2.1",
+        "m": 0,
+        "resid_q0.02": "5.393e-13",
+        "resid_q0.005": "8.179e-18",
+        "ratio": "65938.1",
+        "resid_over_q8_at_0.02": "21.07"
+      },
+      {
+        "theta": "2.1",
+        "m": 1,
+        "resid_q0.02": "3.684e-13",
+        "resid_q0.005": "5.62e-18",
+        "ratio": "65557.9",
+        "resid_over_q8_at_0.02": "14.39"
+      },
+      {
+        "theta": "2.1",
+        "m": 2,
+        "resid_q0.02": "5.41e-14",
+        "resid_q0.005": "8.453e-19",
+        "ratio": "63994.6",
+        "resid_over_q8_at_0.02": "2.113"
+      }
+    ],
+    "dictionary": {
+      "m004": {
+        "alpha": [
+          1,
+          1
+        ],
+        "f": [
+          1,
+          0
+        ],
+        "A": 1,
+        "mscale": 2,
+        "fs": 1,
+        "c": -2,
+        "integrand": "Phi_b(v+u) Phi_b(v) e^{-pi i v^2 + linear}  (Part 12a)"
+      },
+      "m015": {
+        "alpha": [
+          1,
+          1,
+          1
+        ],
+        "f": [
+          1,
+          0,
+          -1
+        ],
+        "A": 1,
+        "mscale": 2,
+        "fs": 1,
+        "c": 0,
+        "integrand": "Phi_b(v+u) Phi_b(v) Phi_b(v-u) e^{-pi i v^2}  (Part 11, SnapPy orientation)"
+      },
+      "m016": {
+        "alpha": [
+          1,
+          1,
+          2
+        ],
+        "f": [
+          1,
+          -1,
+          0
+        ],
+        "A": 2,
+        "mscale": 1,
+        "fs": 2,
+        "c": 1,
+        "integrand": "Phi_b(v+u/2) Phi_b(v-u/2) Phi_b(2v-c_b) e^{-2 pi i v^2}  (Part 12a; GK eq 56)"
+      }
+    }
+  },
+  "verdict": "The (-2,3,7) pretzel's one-dimensional level-2 state integral, read as a U(1) theory with chirals of charge (1,1,2) at CS level 2, reproduces the triangulation 3D index on every cell m in -2..2, e in -6..6 to q^3 (dictionary fixed on 4_1 and 5_2, half-meridian shifts from Part 12a, one longitude framing integer per knot), and GZ's printed total index to q^7. Closing the contour factorises it into SIX holomorphic blocks in GGM eq (19) form: two unit blocks B_U(x), B_U(1/x) and four doubled blocks B_{sigma,eps}, with the SAME sign and parity on the q and q^{-1} sides; the fusion equals the index at every m to q^7. This is the level-2 fusion rule qou-x3iv Parts 12b-17 were missing. H_Ad at block level: the unit blocks depend on the meridian x = m^2 only; the doubled blocks depend on sigma*(m + 1/m), the FUNDAMENTAL character, whose square is s(x) + 1. sigma-even combinations lie in Z[s(x)], sigma-odd ones do not, and the sigma-grading is tied to the half-integer q powers -- the same ring verdict as the operator route (qou-lzzi), now from explicit blocks.",
+  "assertions": [
+    {
+      "name": "G0-m004-I(4,1)==I(-4,-1)-and-nonzero",
+      "passed": true,
+      "I41": {
+        "2": 1,
+        "8": -1
+      },
+      "Im4m1": {
+        "2": 1,
+        "8": -1
+      }
+    },
+    {
+      "name": "G1-m004-1dim-index==triangulation-index-on-65-cells-to-q^3",
+      "passed": true,
+      "dictionary": {
+        "alpha": [
+          1,
+          1
+        ],
+        "f": [
+          1,
+          0
+        ],
+        "A": 1,
+        "mscale": 2,
+        "fs": 1,
+        "c": -2,
+        "integrand": "Phi_b(v+u) Phi_b(v) e^{-pi i v^2 + linear}  (Part 12a)"
+      },
+      "mixedCS": -1
+    },
+    {
+      "name": "G2-m015-1dim-index==triangulation-index-on-65-cells-to-q^3",
+      "passed": true,
+      "dictionary": {
+        "alpha": [
+          1,
+          1,
+          1
+        ],
+        "f": [
+          1,
+          0,
+          -1
+        ],
+        "A": 1,
+        "mscale": 2,
+        "fs": 1,
+        "c": 0,
+        "integrand": "Phi_b(v+u) Phi_b(v) Phi_b(v-u) e^{-pi i v^2}  (Part 11, SnapPy orientation)"
+      },
+      "mixedCS": 0
+    },
+    {
+      "name": "G3-m016-1dim-index==triangulation-index-on-65-cells-to-q^3",
+      "passed": true,
+      "dictionary": {
+        "alpha": [
+          1,
+          1,
+          2
+        ],
+        "f": [
+          1,
+          -1,
+          0
+        ],
+        "A": 2,
+        "mscale": 1,
+        "fs": 2,
+        "c": 1,
+        "integrand": "Phi_b(v+u/2) Phi_b(v-u/2) Phi_b(2v-c_b) e^{-2 pi i v^2}  (Part 12a; GK eq 56)"
+      },
+      "mixedCS": 0
+    },
+    {
+      "name": "G4-pretzel-total-index==GZ-Obs3.9-printed-to-q^7",
+      "passed": true,
+      "computed": [
+        1,
+        -8,
+        3,
+        50,
+        58,
+        13,
+        -196,
+        -456
+      ],
+      "printed": [
+        1,
+        -8,
+        3,
+        50,
+        58,
+        13,
+        -196,
+        -456
+      ],
+      "source": "GZ 2111.06645 (held as library/arxiv-2111.06645) Obs 3.9"
+    },
+    {
+      "name": "G5-six-block-fusion==index-for-m-in--2..2-(residual-scales-as-q^8)",
+      "passed": true,
+      "rows": [
+        {
+          "theta": "0.7",
+          "m": -2,
+          "resid_q0.02": "1.678e-12",
+          "resid_q0.005": "2.517e-17",
+          "ratio": "66643.3",
+          "resid_over_q8_at_0.02": "65.54"
+        },
+        {
+          "theta": "0.7",
+          "m": -1,
+          "resid_q0.02": "4.008e-12",
+          "resid_q0.005": "5.961e-17",
+          "ratio": "67236.5",
+          "resid_over_q8_at_0.02": "156.6"
+        },
+        {
+          "theta": "0.7",
+          "m": 0,
+          "resid_q0.02": "4.343e-12",
+          "resid_q0.005": "6.43e-17",
+          "ratio": "67544.1",
+          "resid_over_q8_at_0.02": "169.7"
+        },
+        {
+          "theta": "0.7",
+          "m": 1,
+          "resid_q0.02": "4.008e-12",
+          "resid_q0.005": "5.961e-17",
+          "ratio": "67236.5",
+          "resid_over_q8_at_0.02": "156.6"
+        },
+        {
+          "theta": "0.7",
+          "m": 2,
+          "resid_q0.02": "1.678e-12",
+          "resid_q0.005": "2.517e-17",
+          "ratio": "66643.3",
+          "resid_over_q8_at_0.02": "65.54"
+        },
+        {
+          "theta": "2.1",
+          "m": -2,
+          "resid_q0.02": "5.41e-14",
+          "resid_q0.005": "8.453e-19",
+          "ratio": "63994.6",
+          "resid_over_q8_at_0.02": "2.113"
+        },
+        {
+          "theta": "2.1",
+          "m": -1,
+          "resid_q0.02": "3.684e-13",
+          "resid_q0.005": "5.62e-18",
+          "ratio": "65557.9",
+          "resid_over_q8_at_0.02": "14.39"
+        },
+        {
+          "theta": "2.1",
+          "m": 0,
+          "resid_q0.02": "5.393e-13",
+          "resid_q0.005": "8.179e-18",
+          "ratio": "65938.1",
+          "resid_over_q8_at_0.02": "21.07"
+        },
+        {
+          "theta": "2.1",
+          "m": 1,
+          "resid_q0.02": "3.684e-13",
+          "resid_q0.005": "5.62e-18",
+          "ratio": "65557.9",
+          "resid_over_q8_at_0.02": "14.39"
+        },
+        {
+          "theta": "2.1",
+          "m": 2,
+          "resid_q0.02": "5.41e-14",
+          "resid_q0.005": "8.453e-19",
+          "ratio": "63994.6",
+          "resid_over_q8_at_0.02": "2.113"
+        }
+      ]
+    }
+  ],
+  "scriptHash": "7218b547fb26",
+  "scriptCommitSha": "unknown",
+  "commitSha": "ae277f0226cc268d932aaf64f640870e90422bb3",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}
