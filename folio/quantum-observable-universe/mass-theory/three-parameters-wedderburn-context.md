@@ -2,7 +2,7 @@
 
 | Parameter | Irrep | Observable | What it fixes |
 |:---:|:---:|:---:|:---|
-| $\alpha_1$ | $(3)$ symmetric | $m_\mu/m_e$ | Substrate $q_0$ (all crossings $+q$) |
+| $\alpha_1$ | $(3)$ symmetric | $m_\mu/m_e$ | Aether $q_0$ (all crossings $+q$) |
 | $\alpha_2$ | $(2,1)$ standard | $m_e$ | Mass scale (mixed eigenvalues) |
 | $\alpha_3$ | $(1{,}1{,}1)$ alternating | $\mathfrak{Q}_\beta(n)$ | Interaction scale (all crossings $-q^{-1}$) |
 

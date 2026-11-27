@@ -5,7 +5,7 @@ Instead $\Phi_n$ forms the global section of the categorical mass
 functor over the rigid :refterm[braided monoidal category]{#braided-monoidal-category} $\mathbf{C}$, in
 the strict sense of monoidal-category global sections:
 $\Phi_n \in \mathrm{End}_{\mathbf{C}}(A^{\otimes n})$ is determined
-by its compatibility with the Frobenius-Hopf substrate axioms across
+by its compatibility with the Frobenius-Hopf aether axioms across
 every sub-tensor-factor of $A^{\otimes n}$, not by an additive
 combination of local pieces.
 
@@ -48,14 +48,14 @@ $$
   X \mapsto (\int_A \otimes \mathrm{id}) \circ \Delta \circ (X \otimes -).
 $$
 
-The functor $\mathcal{F}_{\text{mass}}$ takes a substrate object
+The functor $\mathcal{F}_{\text{mass}}$ takes an aether object
 $X$ to its mass endomorphism. The global section $\Phi_n$ at level
 $n$ provides the assignment of $\mathcal{F}_{\text{mass}}(A^{\otimes n})$
-that respects all the substrate's monoidal-functor structure
+that respects all the aether's monoidal-functor structure
 simultaneously—including the central full-twist action on each
 $A^{\otimes n}$. Demanding that $\Phi_n$ form a single global
 section, rather than a colimit of local pieces, enforces the
-substrate-level constraint that the central action vanishes at
+aether-level constraint that the central action vanishes at
 saturated $n$.
 
 ## Implications for the conjecture

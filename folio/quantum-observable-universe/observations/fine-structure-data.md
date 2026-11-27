@@ -69,6 +69,6 @@ The running of $\alpha^{-1}$ from $137$ to $128$ corresponds to a $\sim 1\%$ dec
 
 **Planned observations.**
 
-* **FNAL muon $g - 2$** (Run 4+5): Tightens the $\alpha$ extraction. Tests whether the muon couples to the same $q$ as the electron, probing generation-dependent substrate coupling.
+* **FNAL muon $g - 2$** (Run 4+5): Tightens the $\alpha$ extraction. Tests whether the muon couples to the same $q$ as the electron, probing generation-dependent aether coupling.
 * **PSI muonium spectroscopy**: Directly measures $\alpha_{\mathrm{EM}}$ at the muonic scale. Sensitive to $q$-corrections depending on lepton generation (Reeb degree).
 * **Electron EDM** (ACME III, JILA): Constrains CP-violating phases in the crossing energy decomposition. Tests whether the symmetric/antisymmetric split of the Skein algebra holds exactly.

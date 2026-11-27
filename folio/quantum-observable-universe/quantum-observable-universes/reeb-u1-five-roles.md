@@ -1,4 +1,4 @@
-The maximal torus $T_q$ of the substrate $G_q$ plays five distinct roles:
+The maximal torus $T_q$ of the aether $G_q$ plays five distinct roles:
 1. Antipodal involution: $\rho_\pi : Z \mapsto -Z$ ($\mathbb{Z}_2$ at $\theta_q = \pi$).
 2. Imaginary unit $i$: $\rho_{\pi/2}$ ($\mathbb{Z}_4$).
 3. Wick rotation: $\rho_{\theta_q}$ (full $U(1)$).

@@ -1,5 +1,5 @@
 **Building block values.**
-The [$q$-momentum](#def:q-momentum) of the building-block knots, evaluated at the substrate value $q_0$, coincides with the writhe of each braid representative:
+The [$q$-momentum](#def:q-momentum) of the building-block knots, evaluated at the aether value $q_0$, coincides with the writhe of each braid representative:
 
 | Knot | Braid word | Writhe $w$ | $p_q(q_0)$ |
 |------|-----------|:----------:|:-------------:|

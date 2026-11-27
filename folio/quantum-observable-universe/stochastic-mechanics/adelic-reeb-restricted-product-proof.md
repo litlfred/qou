@@ -11,7 +11,7 @@ weak inequalities with one strict term is strict. $\square$
 **Tate's thesis.** This is the surreal-register form of Tate's adelic
 factorisation \cite{tate1967}: where Tate writes the global zeta integral as a
 restricted product of local zeta integrals $\zeta_v(f_v, s)$ — one per place —
-the substrate writes the global Reeb infinitesimal $\varepsilon$ as the
+the aether writes the global Reeb infinitesimal $\varepsilon$ as the
 restricted product of local $\varepsilon_v$, and the global valuation as the
 sum of local valuations. Part 1 is the valuation-theoretic shadow of the Euler
 product; part 2 gives a *separate squeeze at each prime*.

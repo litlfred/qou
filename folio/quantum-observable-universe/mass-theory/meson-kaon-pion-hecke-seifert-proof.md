@@ -63,7 +63,7 @@ proved" downstream.
 1. **The exponent $n_q=2$** has a *physical rationale* (two-quark
    composite) and is *not contradicted* by the power scan ($290$ ppm at
    $n_q=2$ vs $4.4\times 10^5$ ppm at $n_q=1$). It is **not derived** from
-   the substrate, and the scan does not supply the missing derivation —
+   the aether, and the scan does not supply the missing derivation —
    see the caveat in the proof body. Recording the value $n_q = 2$
    does not select it.
 2. **The canonical exact match to the PDG ratio** ($\approx 290$ ppm) is a

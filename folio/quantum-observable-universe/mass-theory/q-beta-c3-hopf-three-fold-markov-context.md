@@ -47,7 +47,7 @@ $\mathrm{tr}_M(\mathcal{B}_p) - \mathrm{tr}_M(\mathcal{B}_n)$ factors as
 $$
   c_3 \cdot b^3 \cdot \hbar_q^6
    \;=\;
-   J_{\text{Hopf}}(q=1) \cdot (\text{Hoefsmit substrate factor}) \cdot \hbar_q^6
+   J_{\text{Hopf}}(q=1) \cdot (\text{Hoefsmit aether factor}) \cdot \hbar_q^6
    \;=\;
    (-2) \cdot b^3 \cdot \hbar_q^6,
 $$

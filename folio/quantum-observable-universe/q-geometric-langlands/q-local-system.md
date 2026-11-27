@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q \in \mathbb{G}_m^{\mathrm{nt}}(k)$ ([substrate parameter](#def:substrate-parameter)), and let $X$ be a brane curve. A **$q$-local system** on $X$ with structure group $G_q$ is a functor
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with aether parameter $q \in \mathbb{G}_m^{\mathrm{nt}}(k)$ ([aether parameter](#def:substrate-parameter)), and let $X$ be a brane curve. A **$q$-local system** on $X$ with structure group $G_q$ is a functor
 
 $$
   \mathcal{L}_q \colon \Pi_1(X) \longrightarrow \mathbf{Rep}(G_q)

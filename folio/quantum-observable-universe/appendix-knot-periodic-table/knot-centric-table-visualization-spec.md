@@ -1,5 +1,5 @@
 Where the static appendix table freezes the periodic structure at
-the observed substrate value, an interactive rendering lets a reader
+the observed aether value, an interactive rendering lets a reader
 watch the row and shell structure deform continuously as $q$ slides
 from $1$ to $q_0$: the equal-width rows and absent magic
 shells at $q = 1$ reorganize into the observed table with its
@@ -12,7 +12,7 @@ The visualization should be an interactive HTML page
 groups fall into three physical layers the static table cannot expose
 side by side — the nuclear Borromean composition of each element, the
 shell structure of its electrons (the level words $e_n$), and the way both respond to
-the substrate parameter $q$ — so the specification below unfolds from
+the aether parameter $q$ — so the specification below unfolds from
 layout and tiles through the nuclear and electron panels to the $q$
 control that ties them together:
 
@@ -42,7 +42,7 @@ control that ties them together:
 5. **Controls**:
    - Toggle between standard and knot-centric layouts
    - Filter by stability pair, magic-receptive status, $k_\alpha$
-   - $q$ slider to show how the table changes with substrate
+   - $q$ slider to show how the table changes with aether
      parameter (at $q = 1$: all rows equal width,
      no magic shells; at $q = q_0$: observed table)
 

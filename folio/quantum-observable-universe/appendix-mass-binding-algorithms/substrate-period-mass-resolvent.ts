@@ -4,7 +4,7 @@ export default algorithm({
   label: "alg:substrate-period-mass-resolvent",
   renamedFrom: ["alg:mass-identity"],
   title:
-    "Archimedean Substrate Period, Borromean Ratio, and Inhomogeneous Lepton-Resolvent Evaluation ($\\mathcal{L}_1$)",
+    "Archimedean Aether Period, Borromean Ratio, and Inhomogeneous Lepton-Resolvent Evaluation ($\\mathcal{L}_1$)",
   uses: [
     "def:mass-identity",
     "prop:mass-identity-unique",

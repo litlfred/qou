@@ -1,4 +1,4 @@
-Let $\varepsilon \in \mathrm{Der}(A)$ be the [Reeb infinitesimal](#def:reeb-epsilon). The **substrate parameter associated to $\varepsilon$** is
+Let $\varepsilon \in \mathrm{Der}(A)$ be the [Reeb infinitesimal](#def:reeb-epsilon). The **aether parameter associated to $\varepsilon$** is
 
 $$
 q := 1 + \varepsilon,

@@ -1,4 +1,4 @@
-In the [color sector coordinates](#def:color-sector-coords), the color twist $q\phi$ rotates each sector by $q$ full turns as the latitude $\phi$ runs from the south pole ($0$) to the north pole ($\pi$). This encodes the chirality of the substrate parameter.
+In the [color sector coordinates](#def:color-sector-coords), the color twist $q\phi$ rotates each sector by $q$ full turns as the latitude $\phi$ runs from the south pole ($0$) to the north pole ($\pi$). This encodes the chirality of the aether parameter.
 
 The three sectors tile the [exceptional divisor](#def:exceptional-divisor) precisely:
 

@@ -32,7 +32,7 @@ $\hbar_q = 1 - 1/q$ is the quantum Planck constant.*
 The argument has three parts.
 
 **Part 1: the rigid dualizing complex mediates duality.**
-The Frobenius--Hopf algebra $A$ at the substrate parameter $q$
+The Frobenius--Hopf algebra $A$ at the aether parameter $q$
 carries a rigid dualizing complex $\omega_A^\bullet$
 (Van den Bergh's definition, as in \cite[Def. 3.1]{yekutieli-zhang1999-auslander-dualizing}), which satisfies the rigidifying
 isomorphism
@@ -136,7 +136,7 @@ $1 - h^2 = 4 - [3]_q$ and $h[2]_q = q^2 - q^{-2}$.
 The non-vanishing obstruction classes $\kappa_n \neq 0$
 at every level of the brane tower — the content of the
 [motivic perpetual obstruction theorem](#thm:motivic-perpetual-obstruction)
-applied to the substrate's motivic Galois character at every
+applied to the aether's motivic Galois character at every
 finite place — ensure that the evaluation $\mathrm{Geom}(K)$ for
 distinct hyperbolic knots produces algebraically independent
 values. A polynomial relation among the

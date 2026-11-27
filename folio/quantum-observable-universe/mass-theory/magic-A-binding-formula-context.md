@@ -8,7 +8,7 @@ regimes**:
 | Hyperbolic | $\mathfrak{B} = \mathfrak{m}_e \cdot \rho_0 \cdot \alpha_{\mathrm{shift}}(T(p, k))$ | per-rep Reeb phase at force-carrier torus knot $T(p, k)$ |
 | Doubly-magic | $\mathfrak{B} = \rho_F \cdot \mathfrak{m}_e \cdot A \cdot 8G$ | Borromean residue prefactor $\times$ nucleon count, no per-knot evaluation |
 
-The dispatch is determined by the substrate:
+The dispatch is determined by the aether:
 [Conjecture (diagrammatic double-magic): LR-fusion rigidity at $Z, N \in \mathfrak{M}$](../observations/diagrammatic-double-magic-lr-fusion.md)
 proves that at a doubly-magic level $A = Z + N$ with both $Z, N \in
 \mathfrak{M}$, the Littlewood–Richardson fusion of the $Z$-block and
@@ -36,7 +36,7 @@ The doubly-magic case is exactly this rectangular-spike limit.
 
 ## $\rho_F$ for $^4_2\mathrm{He}$
 
-The substrate-determined prefactor for $^4_2\mathrm{He}$ is
+The aether-determined prefactor for $^4_2\mathrm{He}$ is
 $\rho_F = 2$, sourced from the canonical
 the canonical formalism
 entry `2·m_e·4·Vol(L6a4)`. The categorical derivation of the integer

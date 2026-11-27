@@ -2,7 +2,7 @@
 
 **Proposition (conditional on the open recursion kernel of [$c_k$ precision-ladder recursion induced by the fibre-level Habiro $q$-difference equation](#prop:q-beta-c-k-recursion-from-habiro-q-difference); "$\mathrm{tr}_M$ ladder").**
 
-For a typed braid $\beta$ and a Hecke irreducible representation $V_\lambda$ of $H_n(q)$, the Markov-traced character at single wrap admits a canonical factorisation in the substrate ladder variable $u_\lambda = b_\lambda\,\hbar_q^2$ (where $\hbar_q = (q-1)/q$):
+For a typed braid $\beta$ and a Hecke irreducible representation $V_\lambda$ of $H_n(q)$, the Markov-traced character at single wrap admits a canonical factorisation in the aether ladder variable $u_\lambda = b_\lambda\,\hbar_q^2$ (where $\hbar_q = (q-1)/q$):
 
 $$
 \boxed{
@@ -34,4 +34,4 @@ The rung coefficients are conjectured to be determined by the proved second-orde
 | $k = 3$ | $c_3$ | open (recursion kernel open) |
 | $k \geq 4$ | $c_k^{(\lambda)}$ | recursion-generated; kernel open |
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs, including real-valued physical observables, real-analytic bounds, transcendental constants, and numerical evaluation at the substrate parameter $q_0$. Any generic categorical or $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the algebraic→archimedean wall. It invokes real- or complex-analytic constructs, including real-valued physical observables, real-analytic bounds, transcendental constants, and numerical evaluation at the aether parameter $q_0$. Any generic categorical or $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

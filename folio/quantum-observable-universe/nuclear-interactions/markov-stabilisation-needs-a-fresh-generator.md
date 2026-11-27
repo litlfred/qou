@@ -27,7 +27,7 @@ quadratic evaluates the left-hand side outright, and stabilisation collapses int
 a condition on $z$ alone. The Markov parameter $z = q^3/(q^2+1)$ misses it, and misses
 it by a quantity whose closed form factors into two positive-definite quadratics,
 $q^2 \pm q + 1 = (q \pm \tfrac12)^2 + \tfrac34$. The defect is therefore strictly
-negative at every $q$, not merely at the substrate value; no choice of pin
+negative at every $q$, not merely at the aether value; no choice of pin
 recovers the identity.
 
 The consequence is a condition on the braid word rather than on the algebra. The

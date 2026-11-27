@@ -5,7 +5,7 @@ The QOU framework requires exactly three calibration inputs from experiment: the
 | Input (proxy) | CAL | Canonical observable | What it fixes | Rel. precision |
 |-------|:--:|-------|--------------|:-:|
 | $m_e = 0.51099895000 \pm 0.00000000015$ MeV | CAL-1 | $m_e$ (leptonic mass scale) | the MeV unit + cohomological period | $2.9 \times 10^{-10}$ |
-| $m_\mu / m_e = 206.7682830 \pm 0.0000045$ | CAL-2 | $P_{\mathrm{skew}}^{\beta}$ ($n$ $\beta$-sector bar-skew channel) | substrate $q_0$ ($W$-plane modulus) | $2.2 \times 10^{-8}$ |
+| $m_\mu / m_e = 206.7682830 \pm 0.0000045$ | CAL-2 | $P_{\mathrm{skew}}^{\beta}$ ($n$ $\beta$-sector bar-skew channel) | aether $q_0$ ($W$-plane modulus) | $2.2 \times 10^{-8}$ |
 | $m_\pi = 139.57039 \pm 0.00018$ MeV | CAL-3 | $P_{\mathrm{avg}}^{\pi}$ (pion-sector bar-even channel) | orthogonal meson scale ($\mathrm{Vol}(\mathrm{Hopf})=0$) | $1.3 \times 10^{-6}$ |
 
 > **CAL-2 cross-check (not a separate input).** The free-neutron
@@ -24,7 +24,7 @@ The QOU framework requires exactly three calibration inputs from experiment: the
 > fourth calibration.
 
 The first input is a **dimensionless ratio** — it fixes $q_0$
-via the **leading-order substrate-truncation** of the canonical
+via the **leading-order aether-truncation** of the canonical
 operator-valued mass formula (see the note on the superseded scalar density
 below):
 
@@ -39,8 +39,8 @@ $\hbar_q = (q-1)/q$.  No units are involved.  The precision
 is limited by the muon mass ($2.2 \times 10^{-8}$), not
 the electron ($2.9 \times 10^{-10}$).
 
-> **Substrate density refinement.**
-> The dimensional factor $1/\hbar_q^2$ forms the leading-order scalar substrate density.
+> **Aether density refinement.**
+> The dimensional factor $1/\hbar_q^2$ forms the leading-order scalar aether density.
 > The canonical operator-valued form replaces it with the
 > Wedderburn-graded expansion. The Skein form closes $m_\mu/m_e = 206.77$ because it evaluates the Kashaev $q \to 1$ limit (the hyperbolic volume $\mathrm{Vol}(4_1)$), dressed by the scalar $1/\hbar_q^2$. The lepton-sector factor $\xi_\ell(q)$ that replaces $1/\hbar_q^2$ remains open.
 

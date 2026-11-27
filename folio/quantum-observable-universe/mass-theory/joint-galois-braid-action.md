@@ -1,5 +1,5 @@
 *Let $\mathcal{H}_q^{(n, K)}$ be the knot-indexed bi-filtration
-([Knot-indexed bi-filtration $\mathcal{H}_q^{(n, K)}$ on the substrate convolution algebra](#def:hq-bi-filtration)). Two groups act
+([Knot-indexed bi-filtration $\mathcal{H}_q^{(n, K)}$ on the aether convolution algebra](#def:hq-bi-filtration)). Two groups act
 on it by symmetry:*
 
 - *the **motivic Galois group** $G_{\mathrm{mot}}$ acts on the

@@ -25,7 +25,7 @@ The scope of a failure is therefore exactly this: the tower formula remains corr
 
 ## Statement
 
-**Conjecture (explicit mass endomorphism).** *The Hecke mass element $\Phi_{\mathrm{mass}}(\beta)$ admits a closed-form NF decomposition in $H_n(R, q)$ expressible in terms of the braid word $\beta$, the substrate parameter $q$, and the quantum dilogarithm $\Phi_q$. Specifically, the transient component satisfies:*
+**Conjecture (explicit mass endomorphism).** *The Hecke mass element $\Phi_{\mathrm{mass}}(\beta)$ admits a closed-form NF decomposition in $H_n(R, q)$ expressible in terms of the braid word $\beta$, the aether parameter $q$, and the quantum dilogarithm $\Phi_q$. Specifically, the transient component satisfies:*
 
 $$
   \mathrm{tr}_M\!\bigl(\Phi^{\mathrm{trans}}(\beta)\bigr)
@@ -67,7 +67,7 @@ $$
 
 where $J_N$ is the $N$-colored Jones polynomial. This limit involves evaluating at roots of unity ($q = e^{2\pi i/N}$, not generic $q$), the $N$-dimensional representation (not the fundamental), and an asymptotic limit ($N \to \infty$). Each step departs from the Hecke algebra at generic $q$.
 
-The Habiro ring partially closes this gap. The colored Jones polynomials for all $N$ coexist as a single element of $\widehat{\mathbb{Z}[q]}$. The algebraic quantum volume $\mathrm{Vol}_q(\beta) = \prod \hat{V}_i$ embeds into $\widehat{\mathbb{Z}[q^{1/2}]}$. Its evaluations at roots of unity collectively encode the hyperbolic volume via the Volume Conjecture. The mass at $q_0$ is a different specialisation of the same Habiro element. One evaluates directly at the substrate parameter, rather than passing through roots of unity.
+The Habiro ring partially closes this gap. The colored Jones polynomials for all $N$ coexist as a single element of $\widehat{\mathbb{Z}[q]}$. The algebraic quantum volume $\mathrm{Vol}_q(\beta) = \prod \hat{V}_i$ embeds into $\widehat{\mathbb{Z}[q^{1/2}]}$. Its evaluations at roots of unity collectively encode the hyperbolic volume via the Volume Conjecture. The mass at $q_0$ is a different specialisation of the same Habiro element. One evaluates directly at the aether parameter, rather than passing through roots of unity.
 
 ## Encoding requirements for $\Phi_{\mathrm{mass}}$
 

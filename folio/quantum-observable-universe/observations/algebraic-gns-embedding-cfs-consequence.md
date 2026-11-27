@@ -1,1 +1,1 @@
-**Consequence for the $\mu_{\mathrm{arch}}$ programme.** The operator-algebra realisation of the QOU pre-Archimedean substrate derives from the Jones–Wenzl theorem ([Markov-trace GNS embedding](#prop:algebraic-gns-embedding)). The exact CFS Lagrangian form remains open.
+**Consequence for the $\mu_{\mathrm{arch}}$ programme.** The operator-algebra realisation of the QOU pre-Archimedean aether derives from the Jones–Wenzl theorem ([Markov-trace GNS embedding](#prop:algebraic-gns-embedding)). The exact CFS Lagrangian form remains open.

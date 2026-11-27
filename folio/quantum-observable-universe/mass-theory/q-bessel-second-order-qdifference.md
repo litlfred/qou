@@ -66,4 +66,4 @@ $$
 
 **Step 5 — classical contraction.** In the limit $q \to 1^{-}$ the rescaled operator contracts to the ordinary Bessel operator $w\, g'' + (\nu + 1)\, g' + g$ acting on $g(w)$: the denominators degenerate as $1 - q^{k} \sim k\,(1-q)$ and $1 - q^{\nu+k} \sim (\nu+k)(1-q)$, so the rescaled coefficient ratio satisfies $\lim_{q \to 1^{-}} (1-q)^{2}\, c_k / c_{k-1} = -1/\bigl(k(\nu+k)\bigr)$, the coefficient recurrence of the classical Bessel series $\sum_{k} (-1)^k z^k / \bigl(k!\, (\nu+1)_k\bigr)$ in a formal variable $z$, where $(\nu+1)_k$ is the ordinary Pochhammer symbol. $\blacksquare$
 
-This is a fibre-level structural result: $q$ and $\nu$ are formal parameters, and no substrate evaluation is involved.
+This is a fibre-level structural result: $q$ and $\nu$ are formal parameters, and no aether evaluation is involved.

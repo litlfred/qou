@@ -10,4 +10,4 @@ The Markov trace $\tau$ is uniquely determined by the categorical axioms up to t
 
 The Markov trace is not invariant under the spin involution $\sigma_i \mapsto \sigma_i^{-1}$. At $z = q^3/(q^2+1)$, $\tau(\sigma_i) = q^3/(q^2+1)$ while $\tau(\sigma_i^{-1}) = 1/\bigl(q(q^2+1)\bigr)$. That involution respects the Hecke relation only together with $q \mapsto q^{-1}$, and $\tau$ is equivariant for that combined bar involution, $\tau(\bar x) = \overline{\tau(x)}$. So spin invariance of the LP-dual selections does not follow from properties of $\tau$.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.
+**Archimedean specialisation.** What follows sits on the archimedean side of the algebraic→archimedean wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

@@ -6,4 +6,4 @@ $$
 \varepsilon := \left. \frac{d}{dt} \right|_{t = 0} \Phi_t \;\in\; \mathrm{Der}(A)
 $$
 
-of the derivation algebra of the substrate object $A$.
+of the derivation algebra of the aether object $A$.

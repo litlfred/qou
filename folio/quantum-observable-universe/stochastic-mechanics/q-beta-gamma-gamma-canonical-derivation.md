@@ -51,9 +51,9 @@ Categorical-chain reading of the $c_k$ coefficients from [$\mathfrak{Q}_\beta$ c
 
 An end-to-end computation of the categorical-derivation chain shows the following. The N=2 $\to$ N=3 transition reduces the residual against CODATA by 112$\times$. This reduction is observable above CODATA's 0.4 ppm measurement floor. The categorical identification $c_3 = J_{\text{Hopf}}(q{=}1) = -2$ is empirically validated, not just an empirical fit.
 
-The fitted reading, in which $c_2$ is chosen to match the data, provides no structural derivation of the 1.7% deviation. The categorical reading — Kashiwara $c_2 = b^2$ together with Hopf $c_3 = -2$ — provides structural content: each rung's coefficient is derived from substrate-only data via the categorical chain.
+The fitted reading, in which $c_2$ is chosen to match the data, provides no structural derivation of the 1.7% deviation. The categorical reading — Kashiwara $c_2 = b^2$ together with Hopf $c_3 = -2$ — provides structural content: each rung's coefficient is derived from aether-only data via the categorical chain.
 
-Selection rule: when two readings match the data equally, the categorical-chain reading is canonical because it traces back to substrate principles.
+Selection rule: when two readings match the data equally, the categorical-chain reading is canonical because it traces back to aether principles.
 
 ## Open question: a rigorous $c_3 = -2$
 

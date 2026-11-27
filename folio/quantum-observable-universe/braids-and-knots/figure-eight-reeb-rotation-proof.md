@@ -89,7 +89,7 @@ $$
 \qquad \text{for } \varphi^{-1} < q < \varphi .
 $$
 
-This interval contains the classical point $q = 1$ and the substrate regime.
+This interval contains the classical point $q = 1$ and the aether regime.
 
 **Step 5: Unit-modulus eigenvalues.** $M_{4_1}$ is a real $2 \times 2$ matrix with $\det M_{4_1} = 1$ and real trace $t = \mathrm{tr}(M_{4_1})$, so its eigenvalues are the roots of $\lambda^{2} - t\lambda + 1 = 0$. By Step 4 the discriminant $t^{2} - 4$ is strictly negative on the golden interval, so the roots form a complex-conjugate pair $\lambda_{4_1} = e^{\pm i\theta}$ with
 
@@ -99,4 +99,4 @@ $$
 2\cos\theta = \mathrm{tr}(M_{4_1}).
 $$
 
-This proves the unit-modulus claim, with the rotation angle determined by the closed-form trace of Step 3. At $q = 1$ the trace is $-1$, so $\theta = 2\pi/3$ exactly (the eigenvalues are the primitive cube roots of unity); at the substrate value of $q$ the angle evaluates to $\theta \approx 117.09^{\circ}$. The eigenvalue degenerates to $\lambda = 1$ ($\theta = 0$) exactly at the golden endpoints $q \in \{\varphi^{-1}, \varphi\}$, where $\mathrm{tr}(M_{4_1}) = 2$, and the boundary value $\theta = \pi$ is never attained on the real axis since $\mathrm{tr}(M_{4_1}) + 2$ is a nonzero square. Outside the golden interval, for $q > \varphi$ or $0 < q < \varphi^{-1}$, the two golden factors in Step 4 have the same sign, so $t - 2 > 0$; the discriminant $t^2 - 4$ is then positive, the roots of $\lambda^2 - t\lambda + 1$ are real, distinct and positive with product $1$, and neither has modulus $1$. $\square$
+This proves the unit-modulus claim, with the rotation angle determined by the closed-form trace of Step 3. At $q = 1$ the trace is $-1$, so $\theta = 2\pi/3$ exactly (the eigenvalues are the primitive cube roots of unity); at the aether value of $q$ the angle evaluates to $\theta \approx 117.09^{\circ}$. The eigenvalue degenerates to $\lambda = 1$ ($\theta = 0$) exactly at the golden endpoints $q \in \{\varphi^{-1}, \varphi\}$, where $\mathrm{tr}(M_{4_1}) = 2$, and the boundary value $\theta = \pi$ is never attained on the real axis since $\mathrm{tr}(M_{4_1}) + 2$ is a nonzero square. Outside the golden interval, for $q > \varphi$ or $0 < q < \varphi^{-1}$, the two golden factors in Step 4 have the same sign, so $t - 2 > 0$; the discriminant $t^2 - 4$ is then positive, the roots of $\lambda^2 - t\lambda + 1$ are real, distinct and positive with product $1$, and neither has modulus $1$. $\square$

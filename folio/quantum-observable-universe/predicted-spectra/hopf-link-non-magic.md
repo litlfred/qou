@@ -23,7 +23,7 @@ brane-tower spectral sequence
 *descended Markov-trace* piece.
 
 **Non-magic shells use the Hopf link.**
-At non-magic $n$ at substrate $q_0$, the SDP optimum
+At non-magic $n$ at aether $q_0$, the SDP optimum
 $T^*(n, q_0)$ is **Hopf-decomposable**, expressible as a tensor
 product of Hopf links and trivial ribbons. It lives entirely in
 $E_\infty^{0, *}$ (the descended Markov-trace piece per

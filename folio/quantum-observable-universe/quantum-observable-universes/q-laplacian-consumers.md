@@ -1,3 +1,3 @@
 The $q$-Laplacian spectral tower acts as the organizing data for multiple $q$-deformed structures. The $q$-heat equation $\partial_t u = -\Delta_q u$ dictates that mode $k$ decays as $e^{-[k]_q^2 t}$. The $q$-Navier–Stokes dissipation exhibits eigenvalues $[k]_q^2 \sim q^{2k}$. The Markov trace / Gram blocks encode block quantum dimensions $[2j+1]_q$, and the lifting obstruction tower caps at $r-1$.
 
-The exact truncation at roots of unity guarantees that spectral computations form finite exact sums with no series-truncation error. The tower and its truncation form fibre-level statements; the observable component requires evaluating at the real archimedean substrate value $q_0$.
+The exact truncation at roots of unity guarantees that spectral computations form finite exact sums with no series-truncation error. The tower and its truncation form fibre-level statements; the observable component requires evaluating at the real archimedean aether value $q_0$.

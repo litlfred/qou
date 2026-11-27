@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q$ and Planck time $t_P(q) = 1/\hbar_q$. Let $\mathcal{L} \subset M$ be a discrete sublattice of brane points $\{p_i\}$. Each site carries a qubit $|\psi_i\rangle \in \mathcal{S}_{p_i}$. The **$q$-Game of Life** ($q$-GoL) is the discrete-time invertible cellular automaton
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with aether parameter $q$ and Planck time $t_P(q) = 1/\hbar_q$. Let $\mathcal{L} \subset M$ be a discrete sublattice of brane points $\{p_i\}$. Each site carries a qubit $|\psi_i\rangle \in \mathcal{S}_{p_i}$. The **$q$-Game of Life** ($q$-GoL) is the discrete-time invertible cellular automaton
 $$
   \mathcal{U}_{\mathrm{q\text{-}GoL}}
     \colon  \mathcal{H}_{\mathcal{L}}
@@ -46,7 +46,7 @@ $$
 $$
 so $\mathcal{U}_{\mathrm{q\text{-}GoL}}$ is invertible and the automaton is reversible. It is **not** unitary away from the classical limit: the eigenvalues of $\sigma_i$ are $q$ and $-q^{-1}$, of modulus $\neq 1$ for $q \neq 1$, so no inner product makes $\mathrm{Toff}_q$ unitary, and the Markov trace form has a nontrivial radical at $z = q^3/(q^2+1)$. Reversibility in the sense a reversible cellular automaton requires — invertibility of the tick — therefore holds for every $q > 0$, being a property of the quadratic relation alone and independent of the amplitude signs discussed below; unitarity holds only at $q = 1$.
 
-5. **Information bandwidth budget.** One generation advances in $3 |\mathcal{L}|$ Planck steps. The substrate bandwidth $\mathfrak{B}(q) = q \eta_q / (q - 1)^2$ bounds the generation rate:
+5. **Information bandwidth budget.** One generation advances in $3 |\mathcal{L}|$ Planck steps. The aether bandwidth $\mathfrak{B}(q) = q \eta_q / (q - 1)^2$ bounds the generation rate:
 $$
   \text{gens / sec}
    \leq 
@@ -63,10 +63,10 @@ $$
   P_{7,6}(q) \,=\, -\,\frac{(q-1)(q+1)\bigl(q^{6}+q^{4}+2q^{2}+1\bigr)}{2q\bigl(q^{2}+1\bigr)^{2}}.
 $$
 
-For $q > 0$ the first is strictly positive, having no positive root. The second vanishes exactly at $q = 1$: the factor $(q+1)$ is positive there, and the sextic $q^{6}+q^{4}+2q^{2}+1$ has no positive real root, so the whole zero set on $q > 0$ is carried by $(q-1)$. The condition therefore holds on $q \neq 1$, which contains the substrate value $q_0 \approx 1.110$.
+For $q > 0$ the first is strictly positive, having no positive root. The second vanishes exactly at $q = 1$: the factor $(q+1)$ is positive there, and the sextic $q^{6}+q^{4}+2q^{2}+1$ has no positive real root, so the whole zero set on $q > 0$ is carried by $(q-1)$. The condition therefore holds on $q \neq 1$, which contains the aether value $q_0 \approx 1.110$.
 
 **Non-vanishing, not positivity.** The criterion is that the q-AND does not degenerate, not that it carry a particular sign. This is the same condition the universality argument of [Toffoli q-AND](#rem:toffoli-q-and) uses — it turns on $P_{7,6}(q) \neq 0$ — and it is what invertibility of the tick requires. At $q = 1$ the q-AND vanishes and the braiding ceases to act: that is the classical limit, where the $q$-Toffoli degenerates to the ordinary Toffoli, and it is the one point the condition excludes.
 
-Strict positivity would be a different and stronger requirement: at $z = q^3/(q^2+1)$ it holds only on $0 < q < 1$, since $P_{7,6}(q_0) \approx -0.1438$, and would place the substrate outside the well-defined regime. It is not the criterion in force here.
+Strict positivity would be a different and stronger requirement: at $z = q^3/(q^2+1)$ it holds only on $0 < q < 1$, since $P_{7,6}(q_0) \approx -0.1438$, and would place the aether outside the well-defined regime. It is not the criterion in force here.
 
-**Direct LP feasibility vs. amplitude sign.** Constructing the $q$-Toffoli as an element of $H_3(q)$ — $T_q = \sigma_1 + \hbar_\times\,\sigma_0\sigma_1$ for the all-proton ordering — and evaluating the LP condition $G\vec t(q_0) \geq 0$ directly against the $H_3(q)$ Markov–Gram matrix gives strictly positive components for all eight strand-type orderings ([Toffoli LP-stability](#prop:toffoli-lp-stability)). Thus the substrate satisfies LP feasibility as well as non-vanishing. Two structural properties qualify this: first, the Gram matrix is entrywise non-negative and $\vec t$ is entrywise non-negative for the all-proton ordering, so positivity is forced by shape for $2$ of the $8$ orderings and nontrivial for the remaining $6$; second, $\vec t$ turns negative on $0 < q < 1$, the opposite side of $q = 1$ from where $P_{7,6}(q) < 0$, so the amplitude sign and the LP cone condition select opposite regimes.
+**Direct LP feasibility vs. amplitude sign.** Constructing the $q$-Toffoli as an element of $H_3(q)$ — $T_q = \sigma_1 + \hbar_\times\,\sigma_0\sigma_1$ for the all-proton ordering — and evaluating the LP condition $G\vec t(q_0) \geq 0$ directly against the $H_3(q)$ Markov–Gram matrix gives strictly positive components for all eight strand-type orderings ([Toffoli LP-stability](#prop:toffoli-lp-stability)). Thus the aether satisfies LP feasibility as well as non-vanishing. Two structural properties qualify this: first, the Gram matrix is entrywise non-negative and $\vec t$ is entrywise non-negative for the all-proton ordering, so positivity is forced by shape for $2$ of the $8$ orderings and nontrivial for the remaining $6$; second, $\vec t$ turns negative on $0 < q < 1$, the opposite side of $q = 1$ from where $P_{7,6}(q) < 0$, so the amplitude sign and the LP cone condition select opposite regimes.

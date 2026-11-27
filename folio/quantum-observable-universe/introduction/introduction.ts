@@ -33,7 +33,7 @@ export default chapter({
       ],
       subsections: [
         section({
-          title: "The substrate parameter",
+          title: "The aether parameter",
           label: "sec:introduction-substrate-parameter",
           blocks: [
             "intro-substrate-parameter",

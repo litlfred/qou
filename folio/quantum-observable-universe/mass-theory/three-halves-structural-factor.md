@@ -36,7 +36,7 @@ $\frac{[5]_q \cdot [3]_q}{[6]_q} = \frac{[5]_q}{[2]_q \cdot (1 + h^2)}$.
 All five identities hold over a generic commutative ring with the modulus
 $q$ a unit, without division or ordering. A field is used only to recover
 the two quotient presentations from the cross-multiplied identities. The
-identities therefore apply at the substrate $q_0 \approx 1.110$ by
+identities therefore apply at the aether $q_0 \approx 1.110$ by
 specialisation; numerical cross-checks at 50 digits verify each identity
 to $\leq 10^{-40}$.
 

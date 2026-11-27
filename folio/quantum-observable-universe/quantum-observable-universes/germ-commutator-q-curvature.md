@@ -33,5 +33,5 @@ The identity $[\delta q_1, \delta q_2] = F_q$ is unconditional
 $q$-curvature $(q-1)\mathcal{F}_q^{\mathrm{intr}}$ of the
 $q$-flat connection is the narrative bridge. Together these promote the
 parallelogram's $\delta q(p)$ to the curvature of the $q$-connection —
-the kinematic half of how the substrate parameter $q$ evolves locally
+the kinematic half of how the aether parameter $q$ evolves locally
 at a point.

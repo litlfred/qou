@@ -4,7 +4,7 @@ $$
 q \mathfrak{m}(L_+) - q^{-1}\mathfrak{m}(L_-) = (q^{1/2} - q^{-1/2})\mathfrak{m}(L_0).
 $$
 
-Evaluating the lepton mass ratio $m_{\mu}/m_{e}$ determines the local substrate parameter $q$:
+Evaluating the lepton mass ratio $m_{\mu}/m_{e}$ determines the local aether parameter $q$:
 
 $$
 \frac{m_{\mu}}{m_{e}} \;\stackrel{\text{LO}}{=}\; \frac{\mathrm{Vol}(4_1)}{\hbar_q^2}

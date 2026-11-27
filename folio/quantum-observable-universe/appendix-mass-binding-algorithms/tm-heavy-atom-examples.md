@@ -1,4 +1,4 @@
-The light-nucleus examples use only the bare transfer matrix product. For heavy nuclei, shell corrections from the magic number structure become essential. This section works through the full $Q$-value algorithm. These examples demonstrate the mechanics: a definite $Q$-value output from the substrate parameter $q$ alone. The worked numbers below are conditional on the three shell-structure conjectures [(C1)–(C3)](#rem:shell-construction-rules) — the magic-number set is observed, not yet derived from $q$; the dominant-binding-operator selection and the inner-shell cancellation are unproven. Where a residual remains, it is bracketed as an open direction under those conjectures, not absorbed into a free parameter.
+The light-nucleus examples use only the bare transfer matrix product. For heavy nuclei, shell corrections from the magic number structure become essential. This section works through the full $Q$-value algorithm. These examples demonstrate the mechanics: a definite $Q$-value output from the aether parameter $q$ alone. The worked numbers below are conditional on the three shell-structure conjectures [(C1)–(C3)](#rem:shell-construction-rules) — the magic-number set is observed, not yet derived from $q$; the dominant-binding-operator selection and the inner-shell cancellation are unproven. Where a residual remains, it is bracketed as an open direction under those conjectures, not absorbed into a free parameter.
 
 Recall: $s = q^{1/2} - q^{-1/2}$, $z = q^3/(q^2+1) = q^2/[2]_q$, $\hbar_q = 1 - q^{-1}$, $E_{\times} = \frac{1}{2}(q - q^{-1})$, and $\mu_0$ the conversion constant carrying the dimensionless bracket into $\mathrm{MeV}$. Exact $80$-digit bare transfer-matrix $Q$-values at $z(q_0^{(p)}) = q_0^{(p)3}/(q_0^{(p)2}+1)$ are tabulated in [Table A.3](#tbl:master-atlas-decays); the illustrative intermediate shell numerals in Examples 6--8 below retain an earlier pre-rationalized loop normalization and serve only to display the combinatorial structure of the $\binom{A}{2}$ generator sweep.
 
@@ -14,7 +14,7 @@ For nucleon count $X$, see [Table 1](#tbl:tm-heavy-atom-examples-table1-data). W
 
 ## The $Q$-value algorithm (summary)
 
-**Input:** $(Z, N)$, substrate parameter $q$.
+**Input:** $(Z, N)$, aether parameter $q$.
 
 1. Compute outer shell occupancies for parent $(Z, N)$ and daughter $(Z+1, N-1)$.
 2. Compute torus knot Markov traces $\tau(n)$ for each occupancy from the Chebyshev recurrence.

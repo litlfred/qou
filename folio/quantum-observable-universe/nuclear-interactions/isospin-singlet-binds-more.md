@@ -30,7 +30,7 @@ $$
 Every factor on the right is a sum of even powers of $q$ divided by a product of
 positive terms, so the sign requires no numerical input and no estimate. The
 denominator $q + q^{-1}$ is positive for $q > 0$ by the same reading. The ordering
-therefore holds for the whole positive axis, not on a window around the substrate
+therefore holds for the whole positive axis, not on a window around the aether
 parameter.
 
 How this ordering is read against the measured two-nucleon channels, with the values at $q_0$, is recorded in [the two-nucleon reading](#rem:isospin-singlet-binds-more-two-nucleon-reading).

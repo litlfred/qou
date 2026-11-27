@@ -45,7 +45,7 @@ $$
 Ismail–Masson pair \cite{ismail-masson1994} — the map carrying the bar-even
 recurrence to the bar-odd one — descends to the toroidal family *as* the
 Whipple exchange, i.e. that the two winding oscillations of a bound vortex
-pair are swapped by the substrate bar involution. This is stated as
+pair are swapped by the aether bar involution. This is stated as
 a primary conjecture: the rotation swaps the two winding
 gradings and is involutive on ladder data. No proof is given; the
 conjecture is open.

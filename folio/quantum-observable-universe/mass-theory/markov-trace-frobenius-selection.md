@@ -24,7 +24,7 @@ $$
 
 ## Proof
 
-The chain from the QOU substrate to the Markov trace runs through four
+The chain from the QOU aether to the Markov trace runs through four
 steps:
 
 ### Step 1: Cat-action of $\mathbf{C}$ on the state bundle
@@ -112,4 +112,4 @@ The QOU production stack computes $\mathrm{tr}_M$ on the canonical atomic word (
 
 The agreement column is the residual between those two paths at 50 dps, and it sits at the serialization floor rather than at any tolerance the computation imposes; the L1 target is $1$ ppQ ($10^{-15}$), which it clears by 35 orders.
 
-> **Two scope notes on the cross-check, both material.** *(i)* Two **further** paths exist, Hoefsmit (Rust canonical-$\chi$) and Habiro, and the four-way cross-check compares all four, but those two legs are **colour-blind**: they carry no $\delta$ colour split, so they diverge from the colour-weighted pair by up to $3.24\times 10^{-9}$ (measured on a fresh gate run, worst case the deuteron), which the gate reports as its `(cb≠)` status rather than as a failure. The $1$ ppQ certification therefore rests on the **two** colour-weighted paths tabulated above, and the four-way comparison does not enter it. *(ii)* That gate is **muon-canonical**: it refuses to run off the ideal CAL-2 pin, so it certifies at $q_0^{(\mu)}$, while the table above is evaluated at the canonical proton pin. The two pins differ by $11.6$ ppb (measured against the CODATA-2022 muon pin), which is the $\mu$–p substrate tension and is far above the agreement column; do not read the two as one measurement.
+> **Two scope notes on the cross-check, both material.** *(i)* Two **further** paths exist, Hoefsmit (Rust canonical-$\chi$) and Habiro, and the four-way cross-check compares all four, but those two legs are **colour-blind**: they carry no $\delta$ colour split, so they diverge from the colour-weighted pair by up to $3.24\times 10^{-9}$ (measured on a fresh gate run, worst case the deuteron), which the gate reports as its `(cb≠)` status rather than as a failure. The $1$ ppQ certification therefore rests on the **two** colour-weighted paths tabulated above, and the four-way comparison does not enter it. *(ii)* That gate is **muon-canonical**: it refuses to run off the ideal CAL-2 pin, so it certifies at $q_0^{(\mu)}$, while the table above is evaluated at the canonical proton pin. The two pins differ by $11.6$ ppb (measured against the CODATA-2022 muon pin), which is the $\mu$–p aether tension and is far above the agreement column; do not read the two as one measurement.

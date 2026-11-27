@@ -1,6 +1,6 @@
 ## Proof
 
-Write $q_0$ for the substrate modulus, $u = b(q)\,\hbar_q^2$ for the
+Write $q_0$ for the aether modulus, $u = b(q)\,\hbar_q^2$ for the
 ladder variable of the precision-ladder factorisation
 
 $$
@@ -10,7 +10,7 @@ $$
 $$
 
 ([$c_2$ structural identity](q-beta-c-2-eq-neg-one-structural.md)),
-$u_0 \approx 8.517\times 10^{-3}$ for its substrate value, and $c_k$
+$u_0 \approx 8.517\times 10^{-3}$ for its aether value, and $c_k$
 for the pinned ladder coefficients. A candidate Habiro element $F(q)$
 is a proposed closed form for the correction factor
 $\mathfrak{Q}_\beta(q)/[Q_A(q)\cos(\alpha_{\text{eff}}(q))]$
@@ -81,7 +81,7 @@ bound the admissible threshold window.
 1. *Lower bound.* The gate must not refute legitimate fibre-level
    candidates whose archimedean evaluations swing between anchor
    pins: recorded cross-anchor swings reach $\approx 3.5\,\%$ at the
-   $c_3$ level, while the substrate variable itself shifts by only
+   $c_3$ level, while the aether variable itself shifts by only
    $2.1\times 10^{-7}$ (210 ppb) under the proton–muon re-pin,
    moving the target through the ladder by
    $\bigl(\sum_k k\,|c_k|\,u_0^k\bigr)\cdot 2.1\times 10^{-7}
@@ -99,11 +99,11 @@ fibre-level tolerance ($\S 4(a)$).
 
 **Step 4 — non-vacuity: the stabilisation direction obstruction.**
 The canonical refuted precedent is the family of trace-level
-candidates whose substrate magnitude is a power of the
+candidates whose aether magnitude is a power of the
 positive-stabilisation weight, at the canonical value
 $z = q^3/(q^2+1)$. This satisfies $z < 1$ exactly when
 $q^3 - q^2 - 1 < 0$, that is for $1 < q < \psi \approx 1.4656$ (the
-real root of $x^3 = x^2 + 1$); the substrate lies in that range, with
+real root of $x^3 = x^2 + 1$); the aether lies in that range, with
 $z(q_0) \approx 0.6127$. A candidate with $|F(q_0)| = z(q_0)^m$ after
 $m$ stabilisations therefore satisfies
 

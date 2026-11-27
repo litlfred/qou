@@ -37,7 +37,7 @@ The categorical trefoil's chirality is a knot invariant. The Jones polynomial di
 The theory admits three mechanisms:
 
 1. **Passage through the exceptional divisor.** The [fiber adjoint involution](#prop:fiber-adjoint-involution) reverses Reeb flow. Extended to the [exceptional divisor](#def:exceptional-divisor), it maps $T_{2,3}$ to $T_{2,3}^{\sigma}$. This is a discrete jump (pair creation), destroying the knot type and creating its mirror.
-2. **Complex substrate rotation.** The pre-observable sector ([complex substrate interpretation](#rem:complex-substrate-interpretation)) allows continuous phase rotation of $q$ via $\mathcal{X}_\varphi$. The [chirality rotation conjecture](#conj:complex-chirality-rotation) identifies the discrete flip $T_{2,3} \leftrightarrow T_{2,3}^{\sigma}$ as the $\mathbb{Z}_2$ shadow of this $\mathrm{U}(1)$ rotation.
+2. **Complex aether rotation.** The pre-observable sector ([complex aether interpretation](#rem:complex-substrate-interpretation)) allows continuous phase rotation of $q$ via $\mathcal{X}_\varphi$. The [chirality rotation conjecture](#conj:complex-chirality-rotation) identifies the discrete flip $T_{2,3} \leftrightarrow T_{2,3}^{\sigma}$ as the $\mathbb{Z}_2$ shadow of this $\mathrm{U}(1)$ rotation.
 3. **Reconnection as Reidemeister move.** Classical reconnections represent local Reidemeister moves (R-II). R-II moves alter embedding and crossing energy without changing knot type. Writhe changes by $\pm 2$, corresponding to orbital shell transitions. Changing knot type requires surpassing a topological barrier.
 
 **Summary.**

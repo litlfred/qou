@@ -1,4 +1,4 @@
-The two natural involutions on the substrate moduli line $\mathbb{C}^\times$,
+The two natural involutions on the aether moduli line $\mathbb{C}^\times$,
 
 $$
   \sigma\colon q \mapsto iq

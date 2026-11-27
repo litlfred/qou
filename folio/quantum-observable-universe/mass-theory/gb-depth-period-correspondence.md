@@ -1,5 +1,5 @@
-*Let $\mathcal{H}_q$ be the substrate convolution Hopf algebra
-([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)) and let
+*Let $\mathcal{H}_q$ be the aether convolution Hopf algebra
+([Frobenius–Hopf aether](#def:frobenius-hopf-substrate)) and let
 $G(\mathcal{H}_q)$ be its sub-Hopf-algebra of grouplikes. Filter
 $G(\mathcal{H}_q)$ by **iterated-integral depth**:*
 

@@ -28,7 +28,7 @@ distinct archimedean evaluations, which do not coincide:
 
 | Face | Evaluation | Trace field | Resurgent action |
 |------|-----------|-------------|------------------|
-| Geometric / state-integral | Faddeev $\Phi_b$ at the substrate $b$ (root-of-unity / Kashaev) | $\mathbb{Q}(\sqrt{-3})$ | $\mathrm{Vol}(4_1)/\pi \approx 0.646$ |
+| Geometric / state-integral | Faddeev $\Phi_b$ at the aether $b$ (root-of-unity / Kashaev) | $\mathbb{Q}(\sqrt{-3})$ | $\mathrm{Vol}(4_1)/\pi \approx 0.646$ |
 | Archimedean $\rho_\infty$ | real-$q$ Habiro tail $S(q)$ | $\mathbb{Q}(\sqrt5)$ | $\pi^{2}/5 \approx 1.974$ |
 
 The classical dilogarithm $\mathrm{Li}_2$ is the semiclassical ($b\to 0$) leading

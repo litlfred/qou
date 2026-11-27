@@ -27,7 +27,7 @@ $$
   \mathfrak{H} \;\longmapsto\; n_\star(\mathfrak{H}),
 $$
 
-*derivable from QOU substrate data alone, such that the cyclotomic projection evaluated at $q = q_0$ and $z = z_i$ recovers the empirical brane-tower contribution to the binding $B(\mathfrak{H})$ uniformly across atoms.*
+*derivable from QOU aether data alone, such that the cyclotomic projection evaluated at $q = q_0$ and $z = z_i$ recovers the empirical brane-tower contribution to the binding $B(\mathfrak{H})$ uniformly across atoms.*
 
 ## Consequences of the conjecture
 
@@ -77,4 +77,4 @@ At the canonical Markov-trace operator-volume level, the two magic-shell sub-bra
 
 No probed choice recovers the light-isotope binding uniformly; the ${}^3\mathrm{He}$ gap represents a structural deficit at $A=3$, not an operator-volume choice.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs (real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$). Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the algebraic→archimedean wall. It invokes real- or complex-analytic constructs (real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the aether parameter $q_0$). Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

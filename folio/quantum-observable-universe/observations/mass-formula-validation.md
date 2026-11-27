@@ -6,7 +6,7 @@ Converting dimensionless mass ratios into physical units requires one external i
 
 The hadronic scale is $E_0 = m_e/(q_0(q_0 - 1)) \approx 4.186$ MeV. This agrees with the calibrated scale $E_0^{(\mathrm{cal})} \approx 4.155$ MeV to $0.75\%$. The neutron $Q$-value is a prediction: $\mathfrak{Q}_\beta = |\Delta\mathrm{net}| \times E_0 \approx 0.788$ MeV.
 
-## Genuine predictions of the substrate parameter $q$
+## Genuine predictions of the aether parameter $q$
 
 The derivation chain yields:
 

@@ -38,7 +38,7 @@ binding $T_{nn}$ and anti-binding $T_{pp}$ contributions.
 
 $\Phi_q$ was evaluated over **every** $\binom{A}{Z}$ arrangement for
 each $(Z, N)$ with $Z \leq N$ and $A \leq 16$, at the experimental
-substrate anchor, on both the bare-nucleon chain and the chain with the
+aether anchor, on both the bare-nucleon chain and the chain with the
 electron tail appended.
 
 The interleaved, tail-packed arrangement is the minimiser in a minority

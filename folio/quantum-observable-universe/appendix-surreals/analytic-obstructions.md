@@ -39,7 +39,7 @@ See [Table 1](#tbl:analytic-obstructions-table1-data).
 argument genuinely depends on Lebesgue measure, and it is used
 as a motivational cross-check rather than as a load-bearing step
 in the mass formula. The mass formula itself — Hoefsmit $\to$
-Markov trace $\to$ Jones $\to$ substrate value $\to$ categorical mass —
+Markov trace $\to$ Jones $\to$ aether value $\to$ categorical mass —
 never integrates.
 
 ## 2. Hilbert-space completion: stylistic, not load-bearing

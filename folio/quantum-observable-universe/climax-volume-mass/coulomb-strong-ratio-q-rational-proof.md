@@ -25,7 +25,7 @@ corollary: $\tanh(\ln q) = (q^2-1)/(q^2+1)$ for $q > 0$.
 ## q-usage discipline
 
 The identity is stated and proved over $\mathbb{R}_{>0}$ (the archimedean
-substrate-anchor regime). The fibre-level q-rational form
+aether-anchor regime). The fibre-level q-rational form
 $(q-q^{-1})/(q+q^{-1})$ is a Laurent-polynomial ratio over $\mathbb{Z}[q,q^{-1}]$,
 realised at $q = q_0 \in \mathbb{R}_{>0}$ where it agrees with the
 archimedean $\tanh(\ln q_0)$. There is no $|q| = 1$ step (the identity

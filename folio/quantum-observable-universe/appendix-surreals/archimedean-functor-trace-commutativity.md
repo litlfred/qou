@@ -33,7 +33,7 @@ flowchart TD
 ### Numerical realization
 
 The scale $\alpha$ in the diagram is the canonical energy scale $\alpha = E_0 =
-\mathfrak{m}_e/\bigl(q_0(q_0-1)\bigr)$, the electron mass lifted by the substrate
+\mathfrak{m}_e/\bigl(q_0(q_0-1)\bigr)$, the electron mass lifted by the aether
 factor — a derived quantity, not a free parameter (in particular it is neither
 the neutron $\beta$-decay value $\mathfrak{Q}_\beta$ nor a deuteron-pinned fit). Writing the
 bond suppression $s(K) = 1 - \mathrm{tr}_M(W_{\mathrm{atom}})/\mathrm{tr}_M(W_{\mathrm{free}})$

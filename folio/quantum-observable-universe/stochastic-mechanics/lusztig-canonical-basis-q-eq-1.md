@@ -12,7 +12,7 @@ $$
     \\
     q = 1 \text{ (Lusztig canonical basis, this conjecture)} \\
     \updownarrow \text{ specialise} \\
-    q = q_0 \text{ (substrate, framework production)} \\
+    q = q_0 \text{ (aether, framework production)} \\
   \end{array}
 $$
 
@@ -21,7 +21,7 @@ $$
 | Limit | Categorical structure |
 |-------|----------------------|
 | $q = 1$ (classical) | Lusztig canonical basis / KL polynomials (this conjecture) |
-| $q = q_0$ (substrate $\approx$ 1.11) | full Hecke algebra |
+| $q = q_0$ (aether $\approx$ 1.11) | full Hecke algebra |
 | $q \to 0$ (Kashiwara) | crystal basis / 0-Hecke |
 | $q \to \infty$ (reverse) | bar-image of Kashiwara |
 

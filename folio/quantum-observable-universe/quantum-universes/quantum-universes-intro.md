@@ -1,4 +1,4 @@
-A **quantum universe** is the purely categorical substrate from which
+A **quantum universe** is the purely categorical aether from which
 the framework later reads off physics: its axioms are chosen so that,
 once observability and a volume constraint are imposed, they *force*
 $\mathrm{SU}_2(R)$ as the physical gauge group rather than assuming it.

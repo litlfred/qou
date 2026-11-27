@@ -47,7 +47,7 @@ $$
 
 See [Table 5](#tbl:building-block-knots-table5-data).
 
-Evaluating the exact polynomials $J(q)$ of Tables 1--3 at the proton-anchored substrate parameter $q_0 \approx 1.10997858$ yields the numerical values in Table 5, encoding the $q$-deformation of each knot's categorical action.
+Evaluating the exact polynomials $J(q)$ of Tables 1--3 at the proton-anchored aether parameter $q_0 \approx 1.10997858$ yields the numerical values in Table 5, encoding the $q$-deformation of each knot's categorical action.
 
 ## Table 5: Categorical action at $q = q_0$
 

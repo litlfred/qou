@@ -12,4 +12,4 @@ The family $d_q$ of the definition, with its two limits:
 \end{equation}
 ```
 
-At $q = 1$, $d_q$ recovers $d$. As $q \to \infty$, $d_q$ projects fully onto the Reeb direction. When realized physically over a base space $M$, $q$ becomes a local substrate field $q \colon M \to k^{\times}$. Algebraically, this corresponds to the Lusztig integral form $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))$, which undergoes a base change via $q \mapsto q_0$.
+At $q = 1$, $d_q$ recovers $d$. As $q \to \infty$, $d_q$ projects fully onto the Reeb direction. When realized physically over a base space $M$, $q$ becomes a local aether field $q \colon M \to k^{\times}$. Algebraically, this corresponds to the Lusztig integral form $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))$, which undergoes a base change via $q \mapsto q_0$.

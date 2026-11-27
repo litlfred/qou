@@ -1,4 +1,4 @@
-Tannaka--Krein duality establishes a self-duality between two perspectives on the substrate:
+Tannaka--Krein duality establishes a self-duality between two perspectives on the aether:
 
 $$
 \mathbf{Rep}_{\mathrm{loc}}(A) \simeq \mathbf{Comod}(\mathcal{H}_\xi),

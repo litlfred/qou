@@ -1,4 +1,4 @@
-The appendix so far treats the substrate parameter $q = 1 +
+The appendix so far treats the aether parameter $q = 1 +
 \varepsilon$ as a **single global element** of the valuation ring
 $\mathcal{O} \subset \mathbf{No}$. This conjecture proposes a
 richer structure: $\varepsilon$ is a **sheaf** of infinitesimals
@@ -8,7 +8,7 @@ locally from patch to patch.
 ## Setup
 
 Let $X$ be the scheme of quantum observable universes (underlying
-the categorical substrate of this paper). Following the
+the categorical aether of this paper). Following the
 points-and-topology framework already in the paper, treat $X$ as a
 functor $\mathrm{CRing} \to \mathrm{Set}$.
 
@@ -34,7 +34,7 @@ by stripping infinitesimal fluctuations.
 
 ## Conjecture
 
-The substrate parameter is not a global constant $q \in \mathbb{R}$
+The aether parameter is not a global constant $q \in \mathbb{R}$
 but a **section of the structure sheaf** valued in $\mathcal{O}$:
 
 $$
@@ -46,18 +46,18 @@ infinitesimals on $X(\mathcal{O})$. Writing $\varepsilon(x)$ for
 the stalk at a point $x \in X$:
 
 1. **Local variation**: $\varepsilon(x)$ may differ from
- $\varepsilon(y)$ for distinct $x, y \in X$ — the substrate
+ $\varepsilon(y)$ for distinct $x, y \in X$ — the aether
  parameter *fluctuates* across the scheme.
 
 2. **Standard-part global constant**: $\mathrm{st}(\varepsilon(x)) = 0$
- for all $x$, so the classical substrate is $q_{\mathrm{classical}} = 1$
+ for all $x$, so the classical aether is $q_{\mathrm{classical}} = 1$
  everywhere — matching the archimedean limit to a trivial
  constant.
 
 3. **Birthday-uniform at archimedean scale**: the *leading
  surreal coefficient* of $\varepsilon(x)$ (i.e., the coefficient
  of $\omega^{-1}$ in the Conway normal form) *is* globally
- constant, and equals the paper's archimedean substrate deviation
+ constant, and equals the paper's archimedean aether deviation
  $q_0 - 1 \approx 0.11$.
 
 Equivalently, $q(x) = 1 + (q_0 - 1) + \delta(x)$ where $\delta(x)$
@@ -87,7 +87,7 @@ birthday-ordered magnitude distribution.
 ## Relation to existing conjectures
 
 This conjecture refines Hahn-series
-substrate: instead of $q$ being a single
+aether: instead of $q$ being a single
 Hahn series, it is a *sheaf* of Hahn series. The base $\mathbb{R}$-
 shadow agrees with the paper in both cases.
 

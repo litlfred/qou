@@ -15,7 +15,7 @@ of freedom of the first cohomology of the genus-four state space
 [three calibration inputs](#conj:three-calibration-inputs)):
 
 - the electron mass $m_e$ fixes the unit of mass, the *scale*;
-- the neutron $\beta$-decay channel fixes the substrate parameter
+- the neutron $\beta$-decay channel fixes the aether parameter
   $q_0$, the *modulus*. Its ideal proxy is the muon-to-electron mass
   ratio, through the figure-eight relation
   $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$. Because the modulus is

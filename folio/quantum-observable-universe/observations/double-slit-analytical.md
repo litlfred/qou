@@ -3,7 +3,7 @@ This analytical plotter evaluates the interference intensity envelope for the $q
 1. **Mode 1 (Massive particle)**: $q$-harmonic form scattering.
 2. **Mode 2 (Photon)**: Julia-set envelope scattering.
 
-**Default view and parameter-free vacuum prediction**: For the $600\;\mathrm{eV}$ electron diffraction data of Roger Bach, Damian Pope, Sy-Hwang Liou, and Herman Batelaan (2013) \cite{bach2013} through gold-coated silicon slits, the [local substrate $q$](#prop:local-substrate-q) profile relaxes to $q_{\mathrm{local}}(y) \to 1$ in exterior vacuum and departs from unity only within the evanescent Yukawa or Compton boundary layers of the two slit walls at $y = \pm a / 2$:
+**Default view and parameter-free vacuum prediction**: For the $600\;\mathrm{eV}$ electron diffraction data of Roger Bach, Damian Pope, Sy-Hwang Liou, and Herman Batelaan (2013) \cite{bach2013} through gold-coated silicon slits, the [local aether $q$](#prop:local-substrate-q) profile relaxes to $q_{\mathrm{local}}(y) \to 1$ in exterior vacuum and departs from unity only within the evanescent Yukawa or Compton boundary layers of the two slit walls at $y = \pm a / 2$:
 
 $$
   q_{\mathrm{local}}(y) - 1
@@ -32,7 +32,7 @@ with electromagnetic vertex projection reducing the electronic tail further to $
 
 **Parameters**:
 
-- $q$ --- substrate parameter ($q = 1$ in exterior vacuum; slider explores illustrative $q > 1$ deformations)
+- $q$ --- aether parameter ($q = 1$ in exterior vacuum; slider explores illustrative $q > 1$ deformations)
 - $a$ --- slit width
 - $d$ --- slit separation
 - $\lambda$ --- de Broglie wavelength

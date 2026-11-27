@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe equipped with connection $\nabla$, substrate parameter $q$, and Reeb derivation $\xi$. The :defterm[categorical Dirac operator]{#categorical-dirac-operator} is the morphism
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe equipped with connection $\nabla$, aether parameter $q$, and Reeb derivation $\xi$. The :defterm[categorical Dirac operator]{#categorical-dirac-operator} is the morphism
 
 $$
   \mathcal{D}_\nabla

@@ -16,7 +16,7 @@ point. Two quantities introduced for unrelated reasons turn out to be one quanti
 The coefficient of $\iota_\xi\nabla$ was fixed by demanding that the Dirac operator
 weight the Reeb direction consistently with the $q$-connection; the quantum Planck
 constant was defined as the deformation gap $(q-1)/q$ that measures how far the
-substrate sits from the classical point $q = 1$. Neither definition mentions the
+aether sits from the classical point $q = 1$. Neither definition mentions the
 other.
 
 ## What the identification says
@@ -33,9 +33,9 @@ product $\hbar_q \cdot t_P$ is the whole circuit, and the two symbols measure a
 fraction and its reciprocal rather than two competing scales.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the
-substrate wall: it invokes real- or complex-analytic constructs --- real-valued
+algebraic→archimedean wall: it invokes real- or complex-analytic constructs --- real-valued
 physical observables, real-analytic bounds, transcendental constants, or numerical
-evaluation at the substrate parameter $q_0$. Any generic categorical or
+evaluation at the aether parameter $q_0$. Any generic categorical or
 $q$-deformation identities it draws on remain valid over an abstract coefficient ring;
 only their archimedean realisation is specialised here. At
 $q_0 = 1.10997858275138080759$ the Reeb share is

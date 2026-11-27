@@ -1,7 +1,7 @@
 The $q$-deformed Reeb flow $\phi_t^q$ ([$q$-Reeb flow](#ex:q-reeb-flow)) restricted to the exceptional divisor $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$ ([Reeb on exceptional divisor](#rem:reeb-exceptional-divisor)) generates a discrete dynamical system. Its Julia set encodes the photon diffraction envelope.
 
 **The iteration.**
-The substrate parameter $q$ drives the main-cardioid parameterization of the Mandelbrot set:
+The aether parameter $q$ drives the main-cardioid parameterization of the Mandelbrot set:
 
 $$
   c(q) =  \tfrac{1}{2}e^{2\pi i q}

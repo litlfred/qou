@@ -9,8 +9,8 @@ $$
 
 holds, where $\mathrm{Vol}(K)$ is the hyperbolic volume of $S^3 \setminus K$
 and $\hbar_q = 1 - 1/q$ is the quantum Planck constant
-([quantum Planck constant](#def:quantum-planck-constant)) at the substrate
-parameter $q$ ([substrate parameter](#def:substrate-parameter)). The
+([quantum Planck constant](#def:quantum-planck-constant)) at the aether
+parameter $q$ ([aether parameter](#def:substrate-parameter)). The
 :refterm[descent]{#descent} involution $\hat{\tau}_n$
 ([:refterm[descent]{#descent} involution](#def:descent-involution)) induces the idempotent
 splitting $\mathrm{End}_{\mathbf{C}}(A_{n+1}) = \mathcal{A}^{\mathrm{desc}} \oplus \mathcal{A}^{\mathrm{trans}}$
@@ -78,4 +78,4 @@ $$
   \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{2}}.
 $$
 
-Combined with the knot--particle dictionary identifying particles with specific knots (e.g. the figure-eight knot $4_1$ with the Higgs field), this formula determines the substrate parameter $q$ from experimental mass ratios (see §6.10).
+Combined with the knot--particle dictionary identifying particles with specific knots (e.g. the figure-eight knot $4_1$ with the Higgs field), this formula determines the aether parameter $q$ from experimental mass ratios (see §6.10).

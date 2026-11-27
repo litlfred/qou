@@ -42,7 +42,7 @@ $$
 
 ## Numerical sanity check
 
-At the substrate parameter $q = q_0 \approx 1.10998$, the auxiliary function evaluates to $\sqrt{q_0} / (1 + q_0) \approx 0.499$ (distinct from the Markov parameter $q_0^3/(q_0^2+1) \approx 0.6127$), yielding $y_{(3)}(q_0) \approx 0.499$, $y_{(2,1)}(q_0) \approx 0.001$, and $y_{(1,1,1)}(q_0) \approx 0.499$, with $0.499 + 2(0.001) + 0.499 = 1.000$.
+At the aether parameter $q = q_0 \approx 1.10998$, the auxiliary function evaluates to $\sqrt{q_0} / (1 + q_0) \approx 0.499$ (distinct from the Markov parameter $q_0^3/(q_0^2+1) \approx 0.6127$), yielding $y_{(3)}(q_0) \approx 0.499$, $y_{(2,1)}(q_0) \approx 0.001$, and $y_{(1,1,1)}(q_0) \approx 0.499$, with $0.499 + 2(0.001) + 0.499 = 1.000$.
 
 By contrast, the canonical Wenzl–Markov weights at $q_0$ (for $z = q^3/(q^2+1)$) are $y_{(3)} = [4]_q/[2]_q^3 \approx 0.5054042$, $y_{(2,1)} = 1/[2]_q^2 \approx 0.2472979$, and $y_{(1^3)} = 0$, satisfying $\sum_\lambda y_\lambda d_\lambda = 1$ with $d = (1, 2, 1)$ and zero truncation residue.
 

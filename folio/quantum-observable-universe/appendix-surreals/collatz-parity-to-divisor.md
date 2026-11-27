@@ -26,4 +26,4 @@ After each odd step, the result $\mathcal{C}_q(P)$ is $q$-even. The integer $v_{
 | Relative margin | $q / [3]_q$ | $1/3$ | $0.332$ |
 | Empirical $\langle v \rangle$ at $q=1$ | — | $2$ (exact) | — |
 
-Two halvings overpower one tripling by a factor $[2]_q^2 / [3]_q = 1 + q/[3]_q \approx 4/3$. The margin $q/[3]_q \approx 1/3$ isolates the substrate parameter.
+Two halvings overpower one tripling by a factor $[2]_q^2 / [3]_q = 1 + q/[3]_q \approx 4/3$. The margin $q/[3]_q \approx 1/3$ isolates the aether parameter.

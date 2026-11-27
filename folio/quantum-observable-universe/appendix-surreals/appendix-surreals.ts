@@ -11,7 +11,7 @@ import { chapter } from "../../schema/builders";
 export default chapter({
   tabLabel: "D",
   label: "app:surreals",
-  title: "Surreal and Non-Archimedean Substrate Lift and Continuum Boundary",
+  title: "Surreal and Non-Archimedean Aether Lift and Continuum Boundary",
   sections: [
     {
       title: "Motivation, scope, and survival across the lift",

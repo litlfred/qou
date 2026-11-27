@@ -1,4 +1,4 @@
-*Let $q > 1$ be the substrate parameter and $\hbar_q = (q-1)/q$. Consider six quarks (two baryon-number units) with flavor content $(\mathfrak{u}, \mathfrak{d}, \mathfrak{s})^{\otimes 2}$. These six quarks can assemble in two topologically distinct configurations:*
+*Let $q > 1$ be the aether parameter and $\hbar_q = (q-1)/q$. Consider six quarks (two baryon-number units) with flavor content $(\mathfrak{u}, \mathfrak{d}, \mathfrak{s})^{\otimes 2}$. These six quarks can assemble in two topologically distinct configurations:*
 
 *1. Borromean phase ($\mathcal{P}_B$): Two Borromean baryons $\mathcal{B}_3 \cdot \mathcal{B}_3$. Each baryon possesses Borromean volume $V_B = 7.32772$ and features inter-baryon Hopf binding.*
 *2. Diquark phase ($\mathcal{P}_D$): Three Hopf diquark pairs ([Hopf diquark](#def:hopf-diquark)) $D_{[\mathfrak{u}\mathfrak{d}]} \cdot D_{[\mathfrak{d}\mathfrak{s}]} \cdot D_{[\mathfrak{s}\mathfrak{u}]}$. Each pair is bound by $\mathcal{L}_H$.*
@@ -42,7 +42,7 @@ $$
 $$
 
 *3. Evaluation at $q = q_0$.*
-*Evaluating the respective bindings at the substrate parameter gives:*
+*Evaluating the respective bindings at the aether parameter gives:*
 $$
   \frac{3}{2}(q + q^{-1})
   = 

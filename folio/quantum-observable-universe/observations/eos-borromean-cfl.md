@@ -1,4 +1,4 @@
-*Let $q > 1$ be the substrate parameter, $\hbar_q = (q-1)/q$, and $V_B = 7.32772$ the Borromean volume. The two topological phases of dense quark matter have distinct equations of state.*
+*Let $q > 1$ be the aether parameter, $\hbar_q = (q-1)/q$, and $V_B = 7.32772$ the Borromean volume. The two topological phases of dense quark matter have distinct equations of state.*
 
 *1. Borromean phase*
 *This is confined hadronic matter ($\rho < \rho_c$). The baryon mass is $M_B = V_B / \hbar_q^2$. For a cold, degenerate Fermi gas of baryons at number density $n_B$, the energy density and pressure are:*

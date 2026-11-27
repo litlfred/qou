@@ -11,7 +11,7 @@ The differences $T_{\mathrm{mix}} - T_{nn}$ and
 $T_{pp} - T_{\mathrm{mix}}$ both equal
 $[[h/2, 0], [0, h/2]] = \frac{h}{2} \mathbb{I}$.  $\square$
 
-**Explicit entries at the substrate parameter $q$:**
+**Explicit entries at the aether parameter $q$:**
 
 $$
   \Delta_\beta(q_0) = 

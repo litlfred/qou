@@ -6,7 +6,7 @@ $$
   \sum_{w \in \mathrm{supp}} c_w \cdot w.
 $$
 
-Each amplitude $c_w \in \mathbb{Z}[q^{1/2}, q^{-1/2}]$ is an exact Laurent polynomial in the substrate parameter $q$. The support $\mathrm{supp} \subset S_A$ consists of reduced words in the symmetric group.
+Each amplitude $c_w \in \mathbb{Z}[q^{1/2}, q^{-1/2}]$ is an exact Laurent polynomial in the aether parameter $q$. The support $\mathrm{supp} \subset S_A$ consists of reduced words in the symmetric group.
 
 ## Content of the NF
 

@@ -1,5 +1,5 @@
 **Proposition ($Z=N$ binding correction).**
-*For light atoms on the doubly-symmetric $Z=N$ line, the integer Kashaev binding law acquires a $q$-dimensional substrate correction:*
+*For light atoms on the doubly-symmetric $Z=N$ line, the integer Kashaev binding law acquires a $q$-dimensional aether correction:*
 
 $$
   B(Z\!=\!N\!=\!k,\;q)

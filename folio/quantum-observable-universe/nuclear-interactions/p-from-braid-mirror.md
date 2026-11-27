@@ -81,7 +81,7 @@ factor.
 
 - **The mirror $\sigma_i \mapsto \sigma_i^{-1}$ together with $q \mapsto q^{-1}$** is the bar involution on a letter. It keeps $P_+$ and $P_-$ and sends $e^-$ to $e^+$. Its profile is that of $C$, or of $CT$ if $q \mapsto q^{-1}$ is read as antilinear.
 - **The map $\sigma_i \mapsto -\sigma_i^{-1}$** keeps $q$, exchanges $P_+$ and $P_-$, and sends $e^-$ to $-e^+$. Its profile is that of $CP$.
-- **The map $\sigma_i \mapsto -\sigma_i$ together with $q \mapsto q^{-1}$** exchanges $P_+$ and $P_-$ and sends $e^-$ to $-e^-$. It is the only one of the three with the profile of $P$. It is not linear over the scalars unless $q^2 = 1$, and $q \mapsto q^{-1}$ has no counterpart at the real substrate value $q_0$.
+- **The map $\sigma_i \mapsto -\sigma_i$ together with $q \mapsto q^{-1}$** exchanges $P_+$ and $P_-$ and sends $e^-$ to $-e^-$. It is the only one of the three with the profile of $P$. It is not linear over the scalars unless $q^2 = 1$, and $q \mapsto q^{-1}$ has no counterpart at the real aether value $q_0$.
 
 **The bar involution as composite $CPT$.** At the letter level the bar involution keeps both eigenlines. A map with the profile of $CPT$ would exchange them, as $P$ does. So the factorisation bar $= P \cdot C \cdot T$ in the summary below is not supported at the letter level, where bar has the profile of $C$ (or $CT$).
 
