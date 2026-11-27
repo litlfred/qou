@@ -37,3 +37,7 @@ Partial: `QOU/QFTMath/InfinitesimalPureBraid.lean` on `claude/qft-math-cores-202
 ## 2026-11-27 — the 4T encoding collapses 𝒜ₙ (thread "Derive hypercharge and gauge structure", PR litlfred/qou#9729)
 
 `BraidKnotOctonion/Vassiliev/FourTermEncodingCollapse.lean` (0 sorry) proves that with `fourTermRelator D i j` imposed for all adjacent transpositions, `relationsSubmodule = ⊤` and every `WeightSystem R (k+1)` is 0 whenever 2 is a unit (the relator at i = j is 2·(one slide); slides generate Perm; 1T then kills every diagram). The true 𝒜₂/ℚ is 1-dimensional. Next: replace the encoding with Bar-Natan's 4T (shared definition, needs owner OK), then the near relation → 4T link. Kohno's theorem not attempted. Associator thread confirmed it is not touching this.
+
+## 2026-11-27 (later) — Bar-Natan 4T in place (owner card "Yes, replace it in this thread"; PR #9729)
+
+`FourTermRelation.lean` now encodes Bar-Natan's 4T (re-insertion via `gapPerm`, slides across both ends of a chord cancel, all rotations). The old relator survives as `slideRelator` in `FourTermEncodingCollapse.lean` with its collapse proof. `FourTermDegreeTwo.lean` shows that the crossed diagram survives in degree 2 and that a non-zero weight system exists. Still open: matching Bar-Natan in degree ≥ 3 as a theorem, linking the near relation [t_ij, t_ik+t_jk]=0 to this 4T via closure, and Kohno's theorem.
