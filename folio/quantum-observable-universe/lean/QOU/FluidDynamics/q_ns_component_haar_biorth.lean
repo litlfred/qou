@@ -128,4 +128,92 @@ theorem lapS_zeta_pow (k : ℕ) : lapS q (zetaB (R := R) q ^ k) = 0 := by
 
 end Commutator
 
+
+section Haar
+
+open Polynomial
+
+variable {K : Type*} [Field K] (q : Kˣ)
+
+local notation "qi" => (((q⁻¹ : Kˣ) : K))
+local notation "tw" => torusScaleAlgHom q q⁻¹ q⁻¹⁻¹
+
+/-! ### The `ζ`-polynomial factor is invisible to `R` and `S` -/
+
+theorem tw_ev (P : K[X]) : tw (ev q P) = ev q P := by
+  rw [ev, ← Polynomial.aeval_algHom_apply, tw_zeta]
+
+theorem lapS_ev (P : K[X]) : lapS q (ev q P) = 0 := by
+  induction P using Polynomial.induction_on' with
+  | add p r hp hr => rw [map_add, map_add, hp, hr, add_zero]
+  | monomial n c => rw [ev_monomial, map_smul, lapS_zeta_pow, smul_zero]
+
+theorem lapS_mul_ev {u : OqSU2 K q} {s : K} (hu : lapS q u = s • u) (P : K[X]) :
+    lapS q (u * ev q P) = s • (u * ev q P) := by
+  rw [lapS_mul, hu, tw_ev, tw_ev, lapS_ev, mul_zero, add_zero, smul_mul_assoc]
+
+theorem tw_mul_ev {u : OqSU2 K q} {d : K} (hu : tw u = d • u) (P : K[X]) :
+    tw (u * ev q P) = d • (u * ev q P) := by
+  rw [map_mul, hu, tw_ev, smul_mul_assoc]
+
+/-! ### Eigenvalue bookkeeping on the two dual pairs -/
+
+theorem jk_eq_div {z : K} (hz : z ≠ 1) (n : ℕ) : jk z n = (z ^ n - 1) / (z - 1) :=
+  eq_div_of_mul_eq (sub_ne_zero.2 hz) (jk_mul_sub_one z n)
+
+/-- `[k]_{x⁻¹} = x (x^k − 1) / (x^k (x − 1))`. -/
+theorem jk_inv_div {x : K} (hx0 : x ≠ 0) (hx : x ≠ 1) (k : ℕ) :
+    jk x⁻¹ k = x * (x ^ k - 1) / (x ^ k * (x - 1)) := by
+  rw [eq_div_iff (mul_ne_zero (pow_ne_zero _ hx0) (sub_ne_zero.2 hx))]
+  cases k with
+  | zero => simp
+  | succ n =>
+    have h1 := jk_reverse (y := x) (z := x⁻¹) (mul_inv_cancel₀ hx0) n
+    have h2 := jk_mul_sub_one x (n + 1)
+    rw [pow_succ]
+    linear_combination (x - 1) * x * h1 + x * h2
+
+/-- The matching identity behind `α^a β^m ↔ δ^a γ^m`, in `x = q²`. -/
+theorem match_dg_x {x : K} (hx0 : x ≠ 0) (hx : x ≠ 1) (a m n : ℕ) :
+    (jk x⁻¹ (a + n) * jk x (m + n + 1) - (jk x⁻¹ a * x ^ m - x * jk x m)) *
+        (x ^ a * (x ^ m)⁻¹) = jk x⁻¹ (m + n) * jk x (a + n + 1) := by
+  have hx' : x - 1 ≠ 0 := sub_ne_zero.2 hx
+  simp only [jk_inv_div hx0 hx, jk_eq_div hx, pow_add, pow_one]
+  field_simp
+  ring
+
+/-- The matching identity behind `α^a γ^m ↔ δ^a β^m`, in `x = q²`. -/
+theorem match_db_x {x : K} (hx0 : x ≠ 0) (hx : x ≠ 1) (a m n : ℕ) :
+    (jk x⁻¹ (a + m + n) * jk x (0 + n + 1) - (jk x⁻¹ a * x⁻¹ ^ m + jk x⁻¹ m)) *
+        (x ^ a * x ^ m) = jk x⁻¹ (0 + n) * jk x (a + m + n + 1) := by
+  have hx' : x - 1 ≠ 0 := sub_ne_zero.2 hx
+  simp only [jk_inv_div hx0 hx, jk_eq_div hx, pow_add, pow_one, zero_add, inv_pow]
+  field_simp
+  ring
+
+theorem qi_sq : qi * qi = ((q : K) * q)⁻¹ := by
+  rw [Units.val_inv_eq_inv_val, mul_inv]
+
+/-- Dual pair `α^a β^m ↔ δ^a γ^m`: `(λ_n − s) d² = μ_n`, with `λ`, `μ` the two component
+diagonals, `s` the `S`-eigenvalue of `α^a β^m` and `d` the twist of `δ^a γ^m`. -/
+theorem eig_match_dg (hx : (q : K) * q ≠ 1) (a m n : ℕ) :
+    (cdiag q a m n - (jk (qi * qi) a * ((q : K) * q) ^ m - (q : K) * q * jk ((q : K) * q) m)) *
+        ((q : K) ^ a * qi ^ m * ((q : K) ^ a * qi ^ m)) = cdiag q m a n := by
+  have hd : (q : K) ^ a * qi ^ m * ((q : K) ^ a * qi ^ m) =
+      ((q : K) * q) ^ a * (((q : K) * q) ^ m)⁻¹ := by
+    rw [Units.val_inv_eq_inv_val]; ring
+  rw [hd, cdiag, cdiag, qi_sq]
+  exact match_dg_x (mul_ne_zero q.ne_zero q.ne_zero) hx a m n
+
+/-- Dual pair `α^a γ^m ↔ δ^a β^m`. -/
+theorem eig_match_db (hx : (q : K) * q ≠ 1) (a m n : ℕ) :
+    (cdiag q (a + m) 0 n - (jk (qi * qi) a * (qi * qi) ^ m + jk (qi * qi) m)) *
+        ((q : K) ^ a * (q : K) ^ m * ((q : K) ^ a * (q : K) ^ m)) = cdiag q 0 (a + m) n := by
+  have hd : (q : K) ^ a * (q : K) ^ m * ((q : K) ^ a * (q : K) ^ m) =
+      ((q : K) * q) ^ a * ((q : K) * q) ^ m := by ring
+  rw [hd, cdiag, cdiag, qi_sq]
+  exact match_db_x (mul_ne_zero q.ne_zero q.ne_zero) hx a m n
+
+end Haar
+
 end QOU.FluidDynamics.ComponentLap
