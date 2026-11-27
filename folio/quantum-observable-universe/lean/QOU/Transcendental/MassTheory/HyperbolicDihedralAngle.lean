@@ -35,7 +35,7 @@ Archimedean (ℝ): `arccos`, `cos`, ordering — §7c.
 -- Ref: [leitner2026] beans qou-473l (T2 File 3), qou-idvt (T2)
 -/
 
-import QOU.MassTheory.GeodesicFaceH3
+import QOU.Transcendental.MassTheory.GeodesicFaceH3
 
 namespace QOU.Archimedean
 

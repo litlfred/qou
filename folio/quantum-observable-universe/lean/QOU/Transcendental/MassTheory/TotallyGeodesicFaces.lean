@@ -37,8 +37,8 @@ Archimedean (ℝ): `‖·‖`, inner product, `dist` — §7c.
   --   uniqueness wall), qou-322e (metric-axiom walls)
 -/
 
-import QOU.MassTheory.HyperbolicGeodesic
-import QOU.MassTheory.GeodesicFaceH3
+import QOU.Transcendental.MassTheory.HyperbolicGeodesic
+import QOU.Transcendental.MassTheory.GeodesicFaceH3
 import Mathlib.Geometry.Euclidean.Inversion.Basic
 
 namespace QOU.Archimedean

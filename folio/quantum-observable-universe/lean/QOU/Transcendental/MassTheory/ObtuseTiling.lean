@@ -78,10 +78,10 @@
   -- Ref: [milnor1982] https://doi.org/10.1090/S0273-0979-1982-14958-8
   -- Ref: [leitner2026] bean qou-w3eg (H4-5 obtuse)
 -/
-import QOU.MassTheory.ObtuseWedgeDegenerate
+import QOU.Transcendental.MassTheory.ObtuseWedgeDegenerate
 import QOU.MassTheory.IdealTetObtuseReduction
-import QOU.MassTheory.IdealTetEqChimney
-import QOU.MassTheory.MostowIdealTetVolume
+import QOU.Transcendental.MassTheory.IdealTetEqChimney
+import QOU.Transcendental.MassTheory.MostowIdealTetVolume
 
 namespace QOU.Archimedean.HyperbolicVolume
 

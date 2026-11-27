@@ -64,7 +64,7 @@ Archimedean (ℝ, ℂ): `arg`, `Λ`, the hyperbolic measure, ordering, `π` — 
 -- Ref: [leitner2026] beans qou-idvt (T2, still open), qou-krvm (iv), qou-7y3g
 -/
 
-import QOU.MassTheory.OrthoschemeTiling
+import QOU.Transcendental.MassTheory.OrthoschemeTiling
 import QOU.Transcendental.MathlibExt.BlochWignerLobachevsky
 
 namespace QOU.Archimedean.IdealTetVolumeChimneyBridge

@@ -40,7 +40,7 @@ Archimedean (ℝ): `sin`, `cos`, `arccos`, ordering — §7c.
 -- Ref: [leitner2026] beans qou-473l (T2 File 4), qou-idvt (T2)
 -/
 
-import QOU.MassTheory.HyperbolicDihedralAngle
+import QOU.Transcendental.MassTheory.HyperbolicDihedralAngle
 
 namespace QOU.Archimedean
 

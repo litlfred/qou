@@ -60,7 +60,7 @@
   -- Ref: [leitner2026] beans qou-5gai (H4-2), qou-w3eg (H4-2), qou-idvt (T2)
 -/
 
-import QOU.MassTheory.IdealTetrahedronRegion
+import QOU.Transcendental.MassTheory.IdealTetrahedronRegion
 import Mathlib.MeasureTheory.Constructions.Pi
 import Mathlib.MeasureTheory.Integral.Prod
 

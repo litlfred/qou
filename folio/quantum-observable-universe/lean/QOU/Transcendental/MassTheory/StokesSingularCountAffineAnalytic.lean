@@ -1,4 +1,4 @@
-import QOU.MassTheory.HyperbolicSurfaceLaw
+import QOU.Transcendental.MassTheory.HyperbolicSurfaceLaw
 import QOU.MassTheory.StokesSingularCountAffine
 import Mathlib.Tactic
 

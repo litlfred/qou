@@ -60,9 +60,9 @@ Archimedean (ℝ): `‖·‖`, ordering `0 < z` — §7c.
   --   qou-473l (T2), qou-idvt (T2)
 -/
 
-import QOU.MassTheory.HyperbolicGeodesicZAxis
-import QOU.MassTheory.HyperbolicIsometryInversion
-import QOU.MassTheory.HyperbolicIsometryAffine
+import QOU.Transcendental.MassTheory.HyperbolicGeodesicZAxis
+import QOU.Transcendental.MassTheory.HyperbolicIsometryInversion
+import QOU.Transcendental.MassTheory.HyperbolicIsometryAffine
 
 namespace QOU.Archimedean.HyperbolicMetric
 

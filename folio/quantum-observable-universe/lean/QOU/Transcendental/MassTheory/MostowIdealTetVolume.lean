@@ -63,9 +63,9 @@ Archimedean (ℝ): `Λ`, the hyperbolic volume measure, ordering, `π` — §7c.
 -- Ref: [leitner2026] beans qou-idvt (T2), qou-5gai (H1–H5), qou-krvm (iv), qou-473l
 -/
 
-import QOU.MassTheory.OrthoschemeTiling
-import QOU.MassTheory.IdealTetFacesFromInscribedTriangle
-import QOU.MassTheory.IdealTetEqChimney
+import QOU.Transcendental.MassTheory.OrthoschemeTiling
+import QOU.Transcendental.MassTheory.IdealTetFacesFromInscribedTriangle
+import QOU.Transcendental.MassTheory.IdealTetEqChimney
 
 -- The class name intentionally repeats the namespace tail (per the block's `lean.ref`
 -- convention, as in `RealisationVolumeCompatibility`); the resulting duplicated-namespace

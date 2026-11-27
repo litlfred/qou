@@ -52,7 +52,7 @@ Archimedean (ℝ): coordinates, squares, `Real.sqrt` — §7c.
   -- Ref: [leitner2026] beans qou-473l (T2 File 2), qou-5gai (H-tier)
 -/
 
-import QOU.MassTheory.HyperbolicConformalAngle
+import QOU.Transcendental.MassTheory.HyperbolicConformalAngle
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
 namespace QOU.Archimedean

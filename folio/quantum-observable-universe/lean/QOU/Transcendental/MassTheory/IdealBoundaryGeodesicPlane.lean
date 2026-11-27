@@ -58,7 +58,7 @@ Archimedean (ℝ): coordinates, `Real.sqrt` via `hemisphere` — §7c.
   -- Ref: [leitner2026] beans qou-idvt (T2), qou-473l (T2 vertex-independence)
 -/
 
-import QOU.MassTheory.GeodesicFaceH3
+import QOU.Transcendental.MassTheory.GeodesicFaceH3
 import Mathlib.Topology.Compactification.OnePoint.Basic
 
 namespace QOU.Archimedean

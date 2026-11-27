@@ -10,21 +10,21 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 
 | quantity | count |
 |---|---:|
-| Lean modules (paper package tree) | 4037 |
-| inside the boundary `QOU/Transcendental/` | 146 |
-| outside, using a transcendental/analytic API directly | 562 |
-| outside, algebraic but importing one transitively (tainted) | 247 |
-| outside, algebraic and import-clean (pure) | 3082 |
+| Lean modules (paper package tree) | 4067 |
+| inside the boundary `QOU/Transcendental/` | 187 |
+| outside, using a transcendental/analytic API directly | 543 |
+| outside, algebraic but importing one transitively (tainted) | 223 |
+| outside, algebraic and import-clean (pure) | 3114 |
 
 ## Direct use by class
 
 | class | modules | matched API |
 |---|---:|---|
-| transcendental-function | 381 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
-| real-completion | 131 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
-| analysis | 261 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
+| transcendental-function | 367 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
+| real-completion | 119 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
+| analysis | 253 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
 
-Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 57. These are the cheapest to move:
+Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 52. These are the cheapest to move:
 `Real.sqrt` of an algebraic number is algebraic, so most of them can become a root in an
 algebraic extension.
 
@@ -32,27 +32,27 @@ algebraic extension.
 
 | directory | modules |
 |---|---:|
-| `QOU/MassTheory` | 121 |
-| `BraidKnotOctonion` | 113 |
+| `BraidKnotOctonion` | 112 |
 | `QOU/Nuclear` | 97 |
+| `QOU/MassTheory` | 94 |
 | `MathlibExt` | 72 |
-| `QOU/BraidsAndKnots` | 42 |
+| `QOU/BraidsAndKnots` | 46 |
 | `QCalculus` | 16 |
 | `HeckeTemperleyLieb` | 15 |
 | `QOU/Observations` | 15 |
-| `QOU/BringsSurface` | 14 |
+| `QOU/BringsSurface` | 13 |
 | `QOU/StandardModel` | 12 |
 | `QOU/Core` | 11 |
-| `QOU/MassTheory/KZHolonomy` | 6 |
+| `QOU/MassTheory/KZHolonomy` | 11 |
 | `QOU/Confinement` | 5 |
+| `MathlibExt/KZHolonomy` | 4 |
 | `QOU/BraidsAndKnots/Drinfeld` | 4 |
 | `QOU/InformationTheory` | 4 |
-| `MathlibExt/KZHolonomy` | 3 |
 | `QOU/EightfoldWay` | 3 |
 | `QOU/LiftingDescent` | 3 |
 | `ToricConicOpt` | 3 |
-| `QOU/BraidsAndKnots/RationalAssociator` | 2 |
-| `CompactQuantumMetrics` | 1 |
+| `CompactQuantumMetrics` | 2 |
+| `HeckeTemperleyLieb/KZHolonomy` | 1 |
 
 ## Strangler targets: transcendental modules most imported by algebraic ones
 
@@ -61,7 +61,6 @@ algebraic modules.
 
 | module | algebraic importers |
 |---|---:|
-| `QOU.BraidsAndKnots.QBetaCategoricalPrecisionLadder` | 6 |
 | `BraidKnotOctonion.PLMaps` | 4 |
 | `QOU.Transcendental.QCalculus.FaddeevQuantumDilogarithm` | 4 |
 | `QCalculus.PhiBProd` | 4 |
@@ -71,21 +70,22 @@ algebraic modules.
 | `BraidKnotOctonion.BlochWignerPositive` | 3 |
 | `BraidKnotOctonion.PLPrismPush` | 3 |
 | `BraidKnotOctonion.PLAmbientIsotopy` | 3 |
-| `MathlibExt.LocalCocycleTransport` | 3 |
 | `QOU.Transcendental.QCalculus.ComplexDilogarithmDeriv` | 3 |
+| `QOU.BraidsAndKnots.KZShiftPhi` | 3 |
+| `QOU.BraidsAndKnots.KZHexagonCentral` | 3 |
 | `QOU.BraidsAndKnots.DeltaLambdaSignRule` | 3 |
 | `QOU.BraidsAndKnots.InterNucleonChannelColorTube` | 3 |
 | `QOU.BraidsAndKnots.Drinfeld.Hexagon` | 3 |
-| `QOU.BraidsAndKnots.KZHexagon` | 3 |
+| `QOU.Transcendental.BringsSurface.MetallicHierarchyReal` | 3 |
+| `QOU.Core.CategoricalHamiltonianLegendre` | 3 |
 | `QOU.Nuclear.InterfaceScalar` | 3 |
 | `QOU.MassTheory.BalancedMomentConfluence` | 3 |
 | `QOU.Nuclear.ReebTowerJacobiAnger` | 3 |
 | `QOU.Transcendental.MassTheory.BlochRigidity.Regularity` | 3 |
-| `QOU.Transcendental.MassTheory.BridgeAStokesNBody` | 3 |
-| `QOU.MassTheory.HyperbolicMetric` | 3 |
 | `QOU.MassTheory.HyperbolicVolumeTranscendence` | 3 |
 | `QOU.StandardModel.ElectroweakBringSchwingerBridge` | 3 |
 | `BraidKnotOctonion.LobMonotonicity` | 2 |
+| `BraidKnotOctonion.CechNerveTetrahedron` | 2 |
 
 ## Gate
 

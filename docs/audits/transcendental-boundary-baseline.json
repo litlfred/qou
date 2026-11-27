@@ -1199,78 +1199,11 @@
   "QOU/MassTheory/GrowingWidthCutShapeExclusion.lean": [
    "real-completion"
   ],
-  "QOU/MassTheory/HyperbolicConformalAngle.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/HyperbolicDihedralAngle.lean": [
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/HyperbolicGeodesic.lean": [
-   "analysis"
-  ],
-  "QOU/MassTheory/HyperbolicGeodesicZAxis.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/HyperbolicGeodesicZAxisUniqueness.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/HyperbolicMetric.lean": [
-   "analysis",
-   "real-completion",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/HyperbolicMetricSeparation.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/HyperbolicNormalization.lean": [
-   "real-completion"
-  ],
-  "QOU/MassTheory/HyperbolicQuotient.lean": [
-   "analysis"
-  ],
-  "QOU/MassTheory/HyperbolicSurfaceLaw.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/HyperbolicVolumeFubini.lean": [
-   "analysis",
-   "real-completion"
-  ],
-  "QOU/MassTheory/HyperbolicVolumeInversion.lean": [
-   "analysis"
-  ],
-  "QOU/MassTheory/HyperbolicVolumeMeasure.lean": [
-   "analysis",
-   "real-completion"
-  ],
   "QOU/MassTheory/HyperbolicVolumeTranscendence.lean": [
    "analysis"
   ],
-  "QOU/MassTheory/IdealTetEqChimney.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/IdealTetFacesFromInscribedTriangle.lean": [
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/IdealTetFromVertices.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
   "QOU/MassTheory/IdealTetObtuseReduction.lean": [
    "transcendental-function"
-  ],
-  "QOU/MassTheory/IdealTetVolumeChimneyBridge.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/IdealTetrahedronRegion.lean": [
-   "analysis",
-   "real-completion"
   ],
   "QOU/MassTheory/IdealTetrahedronShapeBridge.lean": [
    "transcendental-function"
@@ -1367,10 +1300,6 @@
   "QOU/MassTheory/MobiusRegulator.lean": [
    "analysis"
   ],
-  "QOU/MassTheory/MostowIdealTetVolume.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
   "QOU/MassTheory/MultiplicityNotExtensive.lean": [
    "real-completion",
    "transcendental-function"
@@ -1379,34 +1308,7 @@
    "real-completion",
    "transcendental-function"
   ],
-  "QOU/MassTheory/ObtuseTiling.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/ObtuseWedgeDegenerate.lean": [
-   "transcendental-function"
-  ],
   "QOU/MassTheory/OrthoschemeBaseIntegral.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/OrthoschemeLambdaSum.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/OrthoschemePolarReduction.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/OrthoschemeRotation.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/OrthoschemeTiling.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/OrthoschemeWedgePair.lean": [
    "analysis",
    "transcendental-function"
   ],
@@ -1459,9 +1361,6 @@
   ],
   "QOU/MassTheory/TorusInflection.lean": [
    "transcendental-function"
-  ],
-  "QOU/MassTheory/TotallyGeodesicFaces.lean": [
-   "real-completion"
   ],
   "QOU/MassTheory/TowerHeightAttack.lean": [
    "analysis"

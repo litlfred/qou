@@ -62,9 +62,9 @@ Archimedean (ℝ): `exp`, `log`, `‖·‖`, ordering `0 < z`, real analysis / F
   --   qou-0a0z (WALL-2), qou-r111 (the full geodesic-uniqueness wall)
 -/
 
-import QOU.MassTheory.HyperbolicGeodesic
-import QOU.MassTheory.HyperbolicGeodesicZAxis
-import QOU.MassTheory.HyperbolicMetricSeparation
+import QOU.Transcendental.MassTheory.HyperbolicGeodesic
+import QOU.Transcendental.MassTheory.HyperbolicGeodesicZAxis
+import QOU.Transcendental.MassTheory.HyperbolicMetricSeparation
 
 namespace QOU.Archimedean
 

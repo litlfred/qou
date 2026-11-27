@@ -30,7 +30,7 @@ Archimedean (ℝ): `‖·‖`, `dist`, ordering — §7c.
   -- Ref: [leitner2026] beans qou-473l (T2 C2), qou-idvt (T2)
 -/
 
-import QOU.MassTheory.HyperbolicMetric
+import QOU.Transcendental.MassTheory.HyperbolicMetric
 import Mathlib.Geometry.Euclidean.Inversion.Calculus
 
 namespace QOU.Archimedean
