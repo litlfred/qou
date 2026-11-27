@@ -8,7 +8,7 @@ tags:
     - compute-accuracy
     - reorg-2026-10-04
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-11-27T18:05:00Z
+updated_at: 2026-11-27T18:06:00Z
 parent: qou-v2om
 ---
 
@@ -3590,3 +3590,5 @@ Residual (ii), why the binding count channel is a bare integer while the mass ch
 ## 2026-11-27 — C2 part 2: the merge ceiling at q0, and reading 3 caps the merges (PR #9526)
 
 At q0, on every γγ bond word measured, the ceiling holds by a wide margin: max −ln r = 2.56 merge units at A = 2 (ceiling 5, all 5334 six-strand words, corpus 408/14 pass count reproduced, independent Schur–Weyl trace agrees) and 2.47 at A = 3 (ceiling 8, 1360 nine-strand words of length ≤ 4). Every passing word merges exactly 2 at both A. At A = 2 that cap is a theorem at q = 1: `QOU/MassTheory/ClassicalReading3MergeBound.lean` (sorry-free) proves top-level classical reading 3 ⇒ n+1 ≤ 2^c, so merges ≤ n − ⌈log2(n+1)⌉ (sharp for n ≤ 30, computed). At A = 3, 120 four-merge words pass classically and all fail at q0. If the q0 cap stays 2 for all A, this bond class cannot give an extensive term (scope a, measured not proved). Open: the cap at A = 4 (12 strands, PR #9474 TL engine); bond selection (owner card); three-body permutations. Audit docs/audits/2026-11-27-binding-ceiling-at-q0.md. Bean stays open.
+
+**2026-11-27 18:05Z correction + card.** The q0 merge cap is NOT 2 for every A: at A = 4 (12 strands) V2V3V4V8 merges 4 and passes reading 3, −ln r = 2.8101 (4.05 merge units). Audit and PR #9526 corrected; full A = 4 run (1392 words) in progress. Bond-selection card revised: recommended option is now "keep cheapest γγ bond" (the deuteron −99.7 % stays the recorded, unfitted result; a new rule needs its own derivation). Proceeding on it per the owner's standing pick; nothing re-scored.
