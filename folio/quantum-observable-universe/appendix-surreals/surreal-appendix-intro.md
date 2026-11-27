@@ -1,11 +1,11 @@
-This appendix explores a speculative lift of the Quantum Observable
-Universe from its native ground field $\mathbb{R}$ (or $\mathbb{C}$)
-to Conway's surreal numbers $\mathbf{No}$ — the unique proper-class
+This appendix develops Conway's surreal numbers $\mathbf{No}$ as a
+realisation of the Quantum Observable Universe alongside $\mathbb{R}$
+(or $\mathbb{C}$). $\mathbf{No}$ is the unique proper-class
 real-closed field containing every ordered-field extension of
 $\mathbb{R}$, including the hyperreals $^{*}\mathbb{R}$, the ordinals
 $\mathrm{Ord}$, and all Hahn series $\mathbb{R}((t^{G}))$ \cite{conway1976,ehrlich2012}.
 
-**Nothing in this appendix alters this paper.** The Quantum Observable Universe is developed and proved over $\mathbb{R}$. This appendix offers an *ambient* field into which the archimedean content embeds and from which it is recovered via standard-part. The claims here are either **remarks** interpreting existing blocks, **conjectures** pending further development, or **definitions** of new auxiliary structures.
+**How this appendix relates to the rest of the paper.** The paper is developed over a general commutative ring $R$, and its categorical results hold for every $R$ at once ([why not the real numbers](#prose:intro-why-not-the-reals)). Neither $\mathbb{R}$ nor $\mathbf{No}$ is the native ground field: both are realisations applied at the end. The surreal realisation is the one that keeps the algebraic structure of an error term, naming infinitesimal and infinite errors as genuine elements instead of collapsing them to a real bound, and the classical statements are recovered from it by taking standard parts. The claims here are either **remarks** interpreting existing blocks, **conjectures** pending further development, or **definitions** of new auxiliary structures.
 
 ## Motivation for the surreal lift
 
