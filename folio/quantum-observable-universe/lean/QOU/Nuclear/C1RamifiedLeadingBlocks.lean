@@ -193,70 +193,52 @@ theorem blocks_prod {R : Type*} [CommRing R] (p B : R)
     (h : p ^ 3 * B ^ 2 = p ^ 2 - 1) :
     p ^ 3 * (B * -B) = -(p ^ 2 - 1) := by linear_combination -h
 
-/-! ## Part 4 — solving over `ℝ`
+/-! ## Part 4 — solving, with the square root as a ring symbol
 
-The square root is the one archimedean step (§7c). -/
+The leading blocks are the two square roots of `(p²−1)/p³`.  Over a generic
+field they are carried by a symbol `s` with `s² = (p²−1)/p³`, so no square
+root is taken here; the `ℝ` statements with `Real.sqrt` are in
+`QOU.Transcendental.Nuclear.C1RamifiedLeadingBlocksReal` (transcendental-boundary
+strangler, bean `qou-dk7p`). -/
 
-/-- **The leading blocks.** For `p > 0` with `p² ≥ 1`, the solutions of the
-twisted edge equation are `B₁,₂ = ±√((p²−1)/p³)`. In the unramified variable
-`q = p²` that is `±√(q−1)/q^{3/4}` — **not** `±√(q−1)/q`. -/
-theorem leading_blocks (p T : ℝ) (hp : 0 < p) (hp1 : 1 ≤ p ^ 2) :
-    p ^ 3 * T ^ 2 = p ^ 2 - 1 ↔
-      T = Real.sqrt ((p ^ 2 - 1) / p ^ 3) ∨ T = -Real.sqrt ((p ^ 2 - 1) / p ^ 3) := by
-  have hp3 : (0 : ℝ) < p ^ 3 := by positivity
-  have hnn : (0 : ℝ) ≤ (p ^ 2 - 1) / p ^ 3 := by
-    apply div_nonneg (by linarith) hp3.le
-  constructor
-  · intro h
-    have hT2 : T ^ 2 = (p ^ 2 - 1) / p ^ 3 := by
-      field_simp
-      linarith [h]
-    have habs : |T| = Real.sqrt ((p ^ 2 - 1) / p ^ 3) := by
-      rw [← Real.sqrt_sq_eq_abs, hT2]
-    rcases (abs_eq (Real.sqrt_nonneg _)).mp habs with h' | h'
-    · exact Or.inl h'
-    · exact Or.inr h'
-  · intro h
-    have hT2 : T ^ 2 = (p ^ 2 - 1) / p ^ 3 := by
-      rcases h with h | h <;> subst h <;>
-        [skip; rw [neg_pow, neg_one_pow_two, one_mul]] <;>
-        rw [Real.sq_sqrt hnn]
-    rw [hT2]
-    field_simp
+/-- **The leading blocks, square-root-free.**  If `s² = (p²−1)/p³` (`p ≠ 0`),
+the solutions of the twisted edge equation are exactly `±s`. -/
+theorem leading_blocks_of_sq {K : Type*} [Field K] (p s T : K) (hp : p ≠ 0)
+    (hs : s ^ 2 = (p ^ 2 - 1) / p ^ 3) :
+    p ^ 3 * T ^ 2 = p ^ 2 - 1 ↔ T = s ∨ T = -s := by
+  have hp3 : p ^ 3 ≠ 0 := pow_ne_zero 3 hp
+  have key : p ^ 3 * T ^ 2 = p ^ 2 - 1 ↔ T ^ 2 = s ^ 2 := by
+    rw [hs, eq_div_iff hp3, mul_comm]
+  rw [key, sq_eq_sq_iff_eq_or_eq_neg]
 
-/-- **The two sectors are distinct exactly when `p ≠ 1`.** At `p = 1` the blocks
-collide — the classical, non-`q`-deformed limit, which is also the only place
-the untwisted convention would have agreed. -/
-theorem blocks_distinct_iff (p : ℝ) (hp : 0 < p) (hp1 : 1 ≤ p ^ 2) :
-    Real.sqrt ((p ^ 2 - 1) / p ^ 3) ≠ -Real.sqrt ((p ^ 2 - 1) / p ^ 3) ↔ p ≠ 1 := by
-  have hp3 : (0 : ℝ) < p ^ 3 := by positivity
-  have hnn : (0 : ℝ) ≤ (p ^ 2 - 1) / p ^ 3 := div_nonneg (by linarith) hp3.le
+/-- **The two sectors are distinct exactly when `p ≠ 1`** (`p > 0`), for any
+symbol `s` with `s² = (p²−1)/p³`. -/
+theorem blocks_distinct_iff_of_sq {K : Type*} [Field K] [LinearOrder K]
+    [IsStrictOrderedRing K] (p s : K) (hp : 0 < p)
+    (hs : s ^ 2 = (p ^ 2 - 1) / p ^ 3) :
+    s ≠ -s ↔ p ≠ 1 := by
+  have hp3 : (0 : K) < p ^ 3 := by positivity
+  have hs0 : s ≠ -s ↔ s ≠ 0 := by
+    constructor
+    · intro h h0; exact h (by rw [h0, neg_zero])
+    · intro h h'; exact h (by linarith)
+  rw [hs0]
   constructor
   · intro h hq
     apply h
     subst hq
-    norm_num
-  · intro hq hcontra
-    have h0 : Real.sqrt ((p ^ 2 - 1) / p ^ 3) = 0 := by linarith
-    have hle : (p ^ 2 - 1) / p ^ 3 ≤ 0 := Real.sqrt_eq_zero'.mp h0
-    have : p ^ 2 - 1 ≤ 0 := by
-      by_contra hc
-      push_neg at hc
-      exact absurd hle (not_le.mpr (by positivity))
-    have hp2 : p ^ 2 = 1 := by linarith
-    have : (p - 1) * (p + 1) = 0 := by linarith [hp2]
+    have : s ^ 2 = 0 := by rw [hs]; norm_num
+    exact pow_eq_zero_iff (n := 2) (by norm_num) |>.mp this
+  · intro hq h0
+    rw [h0] at hs
+    have h1 : (p ^ 2 - 1) / p ^ 3 = 0 := by rw [← hs]; ring
+    have h2 : p ^ 2 - 1 = 0 := by
+      rcases div_eq_zero_iff.mp h1 with h | h
+      · exact h
+      · exact absurd h hp3.ne'
+    have : (p - 1) * (p + 1) = 0 := by linear_combination h2
     rcases mul_eq_zero.mp this with h | h
-    · exact hq (by linarith [sub_eq_zero.mp h])
+    · exact hq (by linarith)
     · linarith
-
-/-- **The Stokes space is two-dimensional** at `p ≠ 1`: exactly two roots, hence
-exactly two sectors. -/
-theorem stokes_sector_count (p : ℝ) (hp : 0 < p) (hp1 : 1 < p) :
-    ({Real.sqrt ((p ^ 2 - 1) / p ^ 3),
-      -Real.sqrt ((p ^ 2 - 1) / p ^ 3)} : Finset ℝ).card = 2 := by
-  have hp2 : (1 : ℝ) ≤ p ^ 2 := by nlinarith
-  rw [Finset.card_insert_of_notMem, Finset.card_singleton]
-  simp only [Finset.mem_singleton]
-  exact (blocks_distinct_iff p hp hp2).mpr (by linarith)
 
 end QOU.QBeta.C1Ramified

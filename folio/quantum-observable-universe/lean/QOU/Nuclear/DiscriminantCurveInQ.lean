@@ -208,11 +208,14 @@ theorem classical_disc : classicalTr ^ 2 - 4 * classicalDet = -3 := by
 
 /-- The eigenphase in the Step-22 convention, `θ = arccos (tr / (2√det))`, is
 `arccos (−1/2) = 2π/3` — because `det = 1` and `tr = −1`. Recorded as the
-`cos` identity so it needs no `arccos` API. -/
-theorem classical_cos_eigenphase :
-    classicalTr / (2 * Real.sqrt classicalDet) = -(1 / 2) := by
-  unfold classicalTr classicalDet
-  rw [show ((1 : ℝ)) = 1 ^ 2 by norm_num, Real.sqrt_sq (by norm_num : (0:ℝ) ≤ 1)]
+`cos` identity so it needs no `arccos` API. The square root is a ring symbol
+`s` with `0 ≤ s` and `s² = det` (bean `qou-dk7p`), so no completed real enters;
+at `det = 1` the symbol is forced to be `1`. -/
+theorem classical_cos_eigenphase (s : ℝ) (hs : 0 ≤ s) (hs2 : s ^ 2 = classicalDet) :
+    classicalTr / (2 * s) = -(1 / 2) := by
+  unfold classicalTr classicalDet at *
+  have h1 : s = 1 := by nlinarith [sq_nonneg (s - 1)]
+  subst h1
   norm_num
 
 /-- The three-cycle really does have order 3, so `2π/3` is not an accident of the

@@ -56,8 +56,14 @@ weakening `c` from `1/9` to `1/30` moves the integer step from `4^k ≤ k!` (fir
 optimum over `k ≥ 3` of `k!/(81·4^k)` is attained at `k = 3` and equals `1/864`, so any
 `c ≤ 1/√864 ≈ 0.0340` works; `1/30` is the round number under it.
 
-Base ring `ℝ` (archimedean: `√2`, real order) — the wall is crossed only in the last two
-results; everything above `wStd_sq_lower` is `ℕ`-combinatorial.
+Base ring `ℝ` (real order) — the wall is crossed only in the last results; everything above
+`wStd_sq_lower` is `ℕ`-combinatorial.
+
+**No square root (bean `qou-dk7p`).** The bound is stated for every ratio `r ≥ 0` with
+`r² ≤ 2` (`wStd_geometric_from_three_of_sq_le`), and the class is inhabited at the rational
+`r = 7/5`, which is all the exclusions need. The `√2` forms — `wStd_geometric_from_three` and
+the instance at `r = √2` — keep their names in
+`QOU/Transcendental/MassTheory/WStdSuperExponentialReal.lean`.
 
 ## References
 
@@ -157,23 +163,23 @@ theorem wStd_sq_ge_two_pow (k : ℕ) (hk : 3 ≤ k) : (2:ℝ) ^ k / 900 ≤ wStd
   rw [key1, key2]
   gcongr
 
-/-- **The geometric bound: `(1/30)·(√2)^k ≤ w_std(k)` for `k ≥ 3`.**
-
-This is exactly `TowerGeometricLowerBound.lower_bound` with `r = √2 > 1` and `c = 1/30 > 0`,
+/-- **The geometric bound: `(1/30)·r^k ≤ w_std(k)` for `k ≥ 3`, for every `0 ≤ r` with
+`r² ≤ 2`.** At `r = √2` this is `TowerGeometricLowerBound.lower_bound` with `c = 1/30`;
 restricted to `k ≥ 3` — which is all that is possible, since `w_std` vanishes below it, and all
 that `no_linear_selection` / `no_superlinear_selection` consume, since both pick their `A` from
 an `atTop` filter. -/
-theorem wStd_geometric_from_three (k : ℕ) (hk : 3 ≤ k) :
-    (1/30 : ℝ) * Real.sqrt 2 ^ k ≤ wStd k := by
-  have hb : (0:ℝ) ≤ (1/30 : ℝ) * Real.sqrt 2 ^ k := by positivity
-  have hsqrt : (Real.sqrt 2) ^ 2 = 2 := Real.sq_sqrt (by norm_num)
-  have hbsq : ((1/30 : ℝ) * Real.sqrt 2 ^ k) ^ 2 = (2:ℝ) ^ k / 900 := by
-    rw [mul_pow, ← pow_mul, mul_comm k 2, pow_mul, hsqrt]
+theorem wStd_geometric_from_three_of_sq_le {r : ℝ} (hr : 0 ≤ r) (hr2 : r ^ 2 ≤ 2)
+    (k : ℕ) (hk : 3 ≤ k) :
+    (1/30 : ℝ) * r ^ k ≤ wStd k := by
+  have hb : (0:ℝ) ≤ (1/30 : ℝ) * r ^ k := by positivity
+  have hpow : (r ^ 2) ^ k ≤ (2:ℝ) ^ k := pow_le_pow_left₀ (sq_nonneg r) hr2 k
+  have hbsq : ((1/30 : ℝ) * r ^ k) ^ 2 = (r ^ 2) ^ k / 900 := by
+    rw [mul_pow, ← pow_mul, mul_comm k 2, pow_mul]
     ring
-  have hle : ((1/30 : ℝ) * Real.sqrt 2 ^ k) ^ 2 ≤ wStd k ^ 2 := by
-    rw [hbsq]; exact wStd_sq_ge_two_pow k hk
-  have := Real.sqrt_le_sqrt hle
-  rwa [Real.sqrt_sq hb, Real.sqrt_sq (wStd_nonneg k)] at this
+  have hle : ((1/30 : ℝ) * r ^ k) ^ 2 ≤ wStd k ^ 2 := by
+    rw [hbsq]
+    exact le_trans (by linarith) (wStd_sq_ge_two_pow k hk)
+  nlinarith [hle, hb, wStd_nonneg k]
 
 /-! ### Why the class needs its threshold, and what inhabits it -/
 
@@ -195,12 +201,13 @@ theorem not_towerGeometricLowerBound_wStd_of_lt_three (r c : ℝ) (k₀ : ℕ) (
   nlinarith [T.c_pos, pow_pos hr k₀]
 
 /-- **The class is inhabited at `k₀ = 3`** — the first threshold the previous result allows,
-and exactly where `w_std` stops vanishing. -/
-instance towerGeometricLowerBound_wStd :
-    QOU.Mass.LevelSelection.TowerGeometricLowerBound wStd (Real.sqrt 2) (1/30) 3 where
-  one_lt_r := by nlinarith [Real.sq_sqrt (show (0:ℝ) ≤ 2 by norm_num), Real.sqrt_nonneg 2]
+and exactly where `w_std` stops vanishing — at the rational ratio `r = 7/5`
+(`(7/5)² = 49/25 ≤ 2`). -/
+instance towerGeometricLowerBound_wStd_rat :
+    QOU.Mass.LevelSelection.TowerGeometricLowerBound wStd (7/5) (1/30) 3 where
+  one_lt_r := by norm_num
   c_pos := by norm_num
-  lower_bound := wStd_geometric_from_three
+  lower_bound := wStd_geometric_from_three_of_sq_le (by norm_num) (by norm_num)
 
 /-! ### The exclusions, now about `w_std` itself
 
@@ -211,12 +218,12 @@ theorems at the actual branched tower weight, with nothing conditional left. -/
 /-- **Linear level-selection is excluded, unconditionally, for the real `w_std`.** -/
 theorem no_linear_selection_wStd (M : ℝ)
     (hext : ∀ A : ℕ, 1 ≤ A → wStd A ≤ M * (A : ℝ)) : False :=
-  QOU.Mass.LevelSelection.no_linear_selection wStd (Real.sqrt 2) (1/30) 3 M hext
+  QOU.Mass.LevelSelection.no_linear_selection wStd (7/5) (1/30) 3 M hext
 
 /-- **Super-linear selection — bond-count `A(A−1)/2` included — likewise.** -/
 theorem no_superlinear_selection_wStd (M : ℝ) (kA : ℕ → ℕ) (A₀ : ℕ)
     (hsuper : ∀ A, A₀ ≤ A → A ≤ kA A)
     (hext : ∀ A, A₀ ≤ A → wStd (kA A) ≤ M * (A : ℝ)) : False :=
-  QOU.Mass.LevelSelection.no_superlinear_selection wStd (Real.sqrt 2) (1/30) 3 M kA A₀ hsuper hext
+  QOU.Mass.LevelSelection.no_superlinear_selection wStd (7/5) (1/30) 3 M kA A₀ hsuper hext
 
 end QOU.Mass.WStd

@@ -77,7 +77,7 @@ bearing on the arithmetic mechanism is unproven.
 **Status — three tiers of correlation, not to be conflated.**
 
 1. *Arithmetic* (the substance): $D(n)$ is non-cyclotomic from $n=6$. This is
-   **proved for $6 \le n \le 14$** (finite Lean certificates) but **not for all $n \geq 6$**; the
+   **proved for $6 \le n \le 20$** (finite Lean certificates) and for the families $n = T_j \pm 1$ but **not for all $n \geq 6$**; the
    cofactor's non-$q$-holonomic degree growth is the structural reason, not
    yet a proof. Generic high-degree bar-even integer polynomials are
    non-cyclotomic, so non-cyclotomicity is the *expected* outcome — the
@@ -101,14 +101,50 @@ magnitudes are not interpreted.
 brackets nonzero, the hook-length definition above gives $q^{m_n}D(n) = P_n(q)$ for an explicit
 $P_n \in \mathbb{Z}[q]$. In particular $D(2) = D(3) = 0$, $D(4) = q^{-2}\Phi_1^2\Phi_3$ and
 $D(5) = 2q^{-4}\Phi_1^2\Phi_2^2\Phi_3\Phi_6$, so the forward direction holds for every $n \le 5$.
-*The converse through $n = 14$:* for $6 \le n \le 14$, $P_n$ is not $c\,q^j\prod_k\Phi_k$. The
+*The converse through $n = 20$:* for $6 \le n \le 20$, $P_n$ is not $c\,q^j\prod_k\Phi_k$. The
 certificate is finite integer arithmetic: if $P = c\,q^j\prod\Phi_k$ and $p \mid P(a)$,
 $p \nmid a$, $p \nmid P(b)$, then $a^k \equiv 1 \pmod p$ for some factor $\Phi_k$, so the
 order $m$ of $a$ mod $p$ divides $k$ and $\varphi(m) \le \varphi(k) \le \deg P$. One witness
 $(p, a)$ with $\varphi(m) > \deg P_n$ per $n$ refutes the factorisation (for example $n = 6$:
 $p = 47$, $a = 28$, $m = 23$, $\varphi(23) = 22 > 14$). This uses no analysis and no
-discriminant. The polynomials $P_{10}, \dots, P_{14}$ in the certificate are computed by
+discriminant. The polynomials $P_{10}, \dots, P_{20}$ in the certificate are computed by
 `computations/cyclotomic_boundary_certificates.py`; for $n \le 9$ they are derived in Lean.
 The earlier $n = 6$ route (the deg-8 core $C_6$, palindrome identity, $\mathrm{disc}(\tilde C)
 = -44208 < 0$) remains proved in `QOU.Mass.CyclotomicBoundaryKeystone`.
-*Open:* non-cyclotomicity for **every** $n \ge 6$. No uniform family of witnesses is known.
+
+**Two infinite families (pen-and-paper proof, 2026-11-27).** Write $n = T_j + r$ with
+$T_j = j(j+1)/2$ and $1 \le r \le j+1$.
+
+*Leading coefficient.* $\dim_q(\lambda) = q^{-e_\lambda}g_\lambda(q^2)$ is bar-even with
+leading coefficient $1$, where $e_\lambda = \binom n2 - \sum_{(i,j)\in\lambda}(i+j)$. The
+minimisers of $\sum(i+j)$ fill the antidiagonals $0,\dots,j-1$ (the staircase $\delta_j$) and put
+$r$ cells on antidiagonal $j$, whose $j+1$ positions are all addable corners of $\delta_j$. So the
+top coefficient of $S(n)$ is $\binom{j+1}{r}$. Let $d_k$ be the antidiagonal of the $k$-th cell in
+this filling. The top degrees of $S(n-1)$ and $[n-1]_qS(n-2)$ lie below that of $S(n)$ by
+$n-1-d_n \ge 2$ and by $n-1-d_n-d_{n-1}$, which is $\ge 1$ for $n \ge 7$. Hence, for $n \ge 7$,
+$$\operatorname{lead}(P_n) = \binom{j+1}{r}.$$
+
+*The divisibility test.* If $P_n = c\,q^k\prod\Phi_{k_i}$, then $c = \operatorname{lead}(P_n)$
+divides every coefficient of $P_n$, because each $\Phi_k$ is monic in $\mathbb Z[q]$.
+
+*Second coefficient.* The shapes with $\sum(i+j)$ one above the minimum are of two kinds: one
+cell moved from antidiagonal $j$ to $j+1$, or one cell moved from $j-1$ to $j$. Counting them
+gives, whenever the gap $n-1-d_n-d_{n-1}$ is $\ge 2$ (true for $n \ge 9$),
+$$a_1(P_n) = N_1 = 2\binom{j}{r-2} + j\binom{j-1}{r-3} + j\binom{j-1}{r+1}.$$
+This agrees with the exact $P_n$ for $9 \le n \le 24$.
+
+* $n = T_{j+1} - 1$ ($r = j$), every $j \ge 3$: $N_1 = j^2(j-1)/2$, and
+  $j^2(j-1) \equiv -2 \pmod{j+1}$, so $(j+1) \nmid N_1$. **$D(n)$ is not cyclotomic.**
+* $n = T_j + 1$ ($r = 1$), every $j \ge 4$ with $j \ne 5$: $N_1 = j(j-1)(j-2)/2$, and
+  $j(j-1)(j-2) \equiv -6 \pmod{j+1}$, so $(j+1) \nmid N_1$ unless $(j+1) \mid 6$.
+  **$D(n)$ is not cyclotomic.** (The exception $j = 5$ is $n = 16$, covered by the finite
+  certificate.)
+
+Together with the finite certificates this settles $6 \le n \le 20$, and every
+$n \in \{T_j + 1, T_{j+1} - 1\}$ with $j \ge 4$. For other non-triangular $n$ the
+second coefficient can be divisible by the leading one (at $n = 16$ and $n = 18$), so a deeper
+coefficient is needed. At triangular $n$ ($6, 10, 15, 21, \dots$) the leading coefficient is
+$1$ and this test gives nothing.
+
+*Open:* non-cyclotomicity for **every** $n \ge 6$: all triangular $n$, and the non-triangular
+$n$ outside the two families above $n = 20$.
