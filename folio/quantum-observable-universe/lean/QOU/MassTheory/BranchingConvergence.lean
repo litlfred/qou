@@ -318,23 +318,27 @@ noncomputable def hookWalkTransition (dq_lambda dq_lambda_minus_c hook_c : ℝ)
 
 /-- **Branching convergence — typeclass (Pattern 4).**
 
-    The free-real statement `|f_k - f_inf| ≤ C_q / √(k-3)`
+    The free-real statement `|f_k - f_inf| ≤ C_q / √(k-3)` (carried in
+    squared form, below)
     has no a-priori semantic link between `f_k`, `f_inf`, `C_q`,
     and the actual q-Plancherel branching fractions. Until the
     Mathlib q-Plancherel CLT lands, callers must witness the
     bound for the specific `(k, f_k, f_inf, C_q)` they use. -/
 class BranchingConverges (k : ℕ) (_hk : k ≥ 4)
     (f_k f_inf : ℝ) (C_q : ℝ) (_hC : C_q > 0) : Prop where
-  /-- The Féray–Méliot O(1/√k) bound. -/
-  bound : |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)
+  /-- The Féray–Méliot O(1/√k) bound, in squared form
+      `(f_k − f_inf)²·(k − 3) ≤ C_q²`.  For `k ≥ 4` and `C_q > 0` this is
+      equivalent to `|f_k − f_inf| ≤ C_q / √(k−3)` and needs no square root
+      (transcendental-boundary strangler, bean `qou-dk7p`). -/
+  bound : (f_k - f_inf) ^ 2 * ((k : ℝ) - 3) ≤ C_q ^ 2
 
 /-- **Default instance from a `Fact` witness on the bound**.
-    When `Fact (|f_k - f_inf| ≤ C_q / √(k-3))` is in scope (e.g.
+    When `Fact ((f_k - f_inf)²·(k-3) ≤ C_q²)` is in scope (e.g.
     from a numerical witness at the specific `(k, f_k, f_inf)`),
     the typeclass instance follows. -/
 instance branchingConverges_of_fact (k : ℕ) (hk : k ≥ 4)
     (f_k f_inf : ℝ) (C_q : ℝ) (hC : C_q > 0)
-    [hf : Fact (|f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ))] :
+    [hf : Fact ((f_k - f_inf) ^ 2 * ((k : ℝ) - 3) ≤ C_q ^ 2)] :
     BranchingConverges k hk f_k f_inf C_q hC :=
   ⟨hf.out⟩
 
@@ -344,7 +348,9 @@ instance branchingConverges_refl (k : ℕ) (hk : k ≥ 4)
     (f : ℝ) (C_q : ℝ) (hC : C_q > 0) :
     BranchingConverges k hk f f C_q hC := by
   refine ⟨?_⟩
-  simp only [sub_self, abs_zero]
+  simp only [sub_self]
+  have : (0:ℝ) ^ 2 * ((k : ℝ) - 3) = 0 := by ring
+  rw [this]
   positivity
 
 /-- **Convergence at finite k** (the practically useful version).
