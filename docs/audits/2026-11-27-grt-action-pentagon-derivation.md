@@ -1144,3 +1144,54 @@ warnings or errors. It was compiled against the restored cache plus this branch'
 compiled into a scratch tree. `#print axioms` on `inductionStep_of_groupLike`, `GLK.compKK_GK`,
 `GL_expPoly` and `primLayer_of_GLK` shows only `propext`, `Classical.choice` and `Quot.sound`. No
 `lake build` was run.
+
+## §17d. The chain: a rational associator modulo `N` from a group-like `K`-associator (2026-11-27)
+
+New file `RationalAssociator/AssociatorChain.lean` (sorry-free). It closes the two gaps §17c
+listed and iterates `inductionStep_of_groupLike` from degree 1 to degree `N`.
+
+- **Input form.** `FFK K m` is defined as `LinearMap.range (lTensor K (FF m).subtype)`, so
+  `Ψ − 1 ⊗ Φ ∈ FFK K m` unfolds to `Ψ = 1 ⊗ Φ + lTensor z` (`exists_lTensor_of_mem_FFK`, three
+  lines).
+- **Constant term.** `algebraMapInv_add_of_mem_FF`: `ε(Φ + x) = 1` from `x ∈ FF d`, `d ≥ 1`, via
+  the existing `algebraMapInv_eq_zero_of_mem_FF`.
+- **Base case.** `Φ = 1` at degree 1. `sub_evK_zero_mem_FFK`: every `x ∈ K ⊗ ℚ⟨X,Y⟩` agrees with
+  `evK 0 0 x ⊗ 1` modulo `FFK K 1`; with `AssocK.const` this gives `Ψ₀ − 1 ∈ FFK K 1`
+  (`AssocK.sub_one_mem_FFK`).
+- **Invariant** (`chain_invariant`, by `Nat.le_induction` on `d ≥ 1`): for `1 ≤ d ≤ N` there is a
+  rational `Φ` with `ε(Φ) = 1`, with `AssocU4 d E Φ ∧ GL d Φ` once `d ≥ 2`, and a group-like
+  `K`-associator `Ψ` in `U4 N` with `Ψ ≡ 1 ⊗ Φ (mod FFK K d)`. The step uses truncation order
+  `n = N`.
+
+```lean
+theorem rational_associator_of_groupLikeK {N : ℕ} (hN : 2 ≤ N) {E : F2}
+    (hE : FreeAlgebra.algebraMapInv E = 1) {Ψ₀ : K ⊗[ℚ] F2} (hK : AssocK K N E Ψ₀)
+    (hGL : GLK K N Ψ₀) :
+    ∃ Φ : F2, AssocU4 N E Φ ∧ GL N Φ
+
+structure GroupLikeKAssociatorTower (E : F2) : Prop where
+  exists_assoc : ∀ N : ℕ, 2 ≤ N → ∃ Ψ : K ⊗[ℚ] F2, AssocK K N E Ψ ∧ GLK K N Ψ
+
+theorem rational_associator_of_tower {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
+    (hT : GroupLikeKAssociatorTower K E) {N : ℕ} (hN : 2 ≤ N) :
+    ∃ Φ : F2, AssocU4 N E Φ ∧ GL N Φ
+```
+
+**What remains.** The only unproved input is the hypothesis itself: for some field `K ⊇ ℚ`, a
+`K`-associator in `K ⊗ U4 N` for `E`, group-like modulo `FF2K N`, for each `N ≥ 2`. For `K = ℂ`
+this is Drinfeld's KZ associator truncated at `N`, an analytic construction that nothing in this
+repository formalises. It enters as a hypothesis or as the fields of `GroupLikeKAssociatorTower`,
+never as an axiom. Two further limits of scope:
+
+- `N ≥ 2` is assumed. The cases `N ∈ {0, 1}` are not stated.
+- The rational `Φ` is constructed separately for each `N`. The statement does not say that the
+  `Φ` for `N + 1` reduces to the `Φ` for `N`, so this is not a compatible tower and not a rational
+  associator in the completed algebra. Getting one needs either a compatible `K`-tower plus a
+  choice that respects it, or a direct induction over `N` that keeps the earlier lift; neither is
+  done here.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `AssociatorChain.lean` exits 0 with no
+output, against the restored cache plus `/home/claude/gltbuild` (this branch's modules up to
+`GroupLikeK`). `#print axioms` on `rational_associator_of_groupLikeK`,
+`rational_associator_of_tower`, `chain_invariant` and `sub_evK_zero_mem_FFK` shows only `propext`,
+`Classical.choice` and `Quot.sound`. No `lake build` was run.
