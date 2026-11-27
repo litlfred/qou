@@ -8,9 +8,10 @@ tags:
     - constructive
     - volume-conjecture
 created_at: 2026-11-27T17:25:00Z
-updated_at: 2026-11-27T18:40:00Z
+updated_at: 2026-11-27T20:03:45Z
 parent: qou-dk7p
 ---
+
 Owner standing pick (recommended option) 2026-11-27, alternative raised
 alongside the Lawvere cut.
 
@@ -35,3 +36,10 @@ Still open: Bernstein completeness (degree elevation); locatedness without the b
 ## 2026-11-27 follow-up (PR #9561, head 50b67ccd84e)
 #9527 merged as 356f1fcc71. Follow-up adds computations/knots/tarski_sign_certificates.py (exact generator), QOU/Core/TarskiSignKashaevGen.lean (floors of <4_1>_N, N = 3..16: 13, 27, 50, 89, 151, 250, 407, 651, 1030, 1610, 2495, 3835, 5855, 8883; increasing chain), and appendix-surreals prop:tarski-sign-decision-depth. Embedding depths 0-4, decision depths up to 18.
 Still open: Bernstein completeness proof; locatedness without the bounds hypothesis; N > 16 (elaboration time grows, ~1m45 at N <= 16).
+
+
+## 2026-11-27 follow-ups (PR #9603)
+- gonshorCut_located' : the Gonshor cut of every α is located in any Archimedean ordered field; the integer phase (exists_follow_bounded) discharges the bounds hypothesis. Sorry-free.
+- exists_bernstein_certificate : f ≥ δ > 0 on [0,1] gives some degree-N Bernstein certificate, so the generator's search always terminates. Uniform δ is needed (over Q a polynomial positive at rationals can vanish at an irrational). Sorry-free.
+- Floors of <4_1>_N for N = 17..24 (TarskiSignKashaevGen2, stepwise value proofs): 13404, 20128, 30092, 44814, 66501, 98361, 145056, 213336.
+- Still open: the N → ∞ limit (stays on [Coev E]); N > 24 (compile time is about 3 min per 8 levels, so this is mechanical).
