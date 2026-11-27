@@ -1,5 +1,5 @@
-import MathlibExt.DilogPartBWP1Capstone
-import MathlibExt.DilogPartBIteratedLimit
+import QOU.Transcendental.MathlibExt.DilogPartBWP1Capstone
+import QOU.Transcendental.MathlibExt.DilogPartBIteratedLimit
 
 /-!
 # Dilog Part-B W-P1 — the Faddeev-scaling positive (unconditional cusp-reaching limit)

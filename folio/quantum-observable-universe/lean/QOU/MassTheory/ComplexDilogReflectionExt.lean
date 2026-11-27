@@ -24,9 +24,9 @@ Sorry-free, no axioms beyond the standard three. Beans `qou-ph1k`, `qou-gkco`.
 
 -- Ref: [leitner2026] beans qou-ph1k, qou-gkco, qou-clx8
 -/
-import QCalculus.ComplexDilogBridge
+import QOU.Transcendental.QCalculus.ComplexDilogBridge
 import QCalculus.ComplexDilogarithmUnique
-import QCalculus.ComplexRogersDilog
+import QOU.Transcendental.QCalculus.ComplexRogersDilog
 
 namespace QOU.Archimedean
 

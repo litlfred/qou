@@ -1,9 +1,9 @@
 import MathlibExt.FiveTwoRogersExtend
 import MathlibExt.FiveTwoRogersReflection
-import QCalculus.ComplexDilogBridge
-import QCalculus.ComplexDilogarithmLanden
+import QOU.Transcendental.QCalculus.ComplexDilogBridge
+import QOU.Transcendental.QCalculus.ComplexDilogarithmLanden
 import QCalculus.ComplexDilogarithmBoundary
-import QCalculus.ComplexDilogarithmOnCut
+import QOU.Transcendental.QCalculus.ComplexDilogarithmOnCut
 
 /-!
 # `extend` **is** `Re` of the analytic Rogers `L` — **`qou-rstq` item 4, closed**

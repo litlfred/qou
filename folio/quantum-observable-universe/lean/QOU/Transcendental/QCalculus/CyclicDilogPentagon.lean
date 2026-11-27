@@ -1,4 +1,4 @@
-import QCalculus.FaddeevQuantumDilogarithm
+import QOU.Transcendental.QCalculus.FaddeevQuantumDilogarithm
 import Mathlib.Tactic
 
 /-!

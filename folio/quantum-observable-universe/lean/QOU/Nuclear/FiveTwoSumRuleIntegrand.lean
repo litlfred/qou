@@ -53,7 +53,7 @@ worked was the complex five-term identity (Routes 51–70).
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
-import QCalculus.ComplexDilogarithm
+import QOU.Transcendental.QCalculus.ComplexDilogarithm
 
 namespace QOU.QBeta.FiveTwo
 

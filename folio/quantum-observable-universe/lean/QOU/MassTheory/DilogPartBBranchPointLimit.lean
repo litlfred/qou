@@ -1,4 +1,4 @@
-import MathlibExt.DilogPartBBranchPointSum
+import QOU.Transcendental.MathlibExt.DilogPartBBranchPointSum
 import MathlibExt.QuadraticIrrationalBadlyApproximable
 
 /-!

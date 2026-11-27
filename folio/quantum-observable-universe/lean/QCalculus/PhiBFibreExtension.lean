@@ -1,5 +1,5 @@
-import QCalculus.FaddeevQuantumDilogarithm
-import QCalculus.FaddeevPhiBRealIntegral
+import QOU.Transcendental.QCalculus.FaddeevQuantumDilogarithm
+import QOU.Transcendental.QCalculus.FaddeevPhiBRealIntegral
 
 /-!
 # The def↔contour identification as an honest conjecture class (G1 remainder)

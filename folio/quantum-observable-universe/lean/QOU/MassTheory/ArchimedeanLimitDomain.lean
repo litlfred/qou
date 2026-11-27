@@ -1,4 +1,4 @@
-import MathlibExt.DilogPartARiemannSum
+import QOU.Transcendental.MathlibExt.DilogPartARiemannSum
 
 /-!
 # Where `ArchimedeanLimit x` can hold (issue #7942)

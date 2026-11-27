@@ -78,7 +78,7 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 import Mathlib.Tactic
 import BraidKnotOctonion.Clausen
-import MathlibExt.BlochWignerLobachevsky
+import QOU.Transcendental.MathlibExt.BlochWignerLobachevsky
 
 namespace QOU.Knot.Rivin
 

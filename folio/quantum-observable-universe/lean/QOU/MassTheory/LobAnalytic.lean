@@ -36,7 +36,7 @@
   -- Ref: [leitner2026] beans qou-w3eg (H4-5 obtuse, step 1), qou-idvt
 -/
 import BraidKnotOctonion.KummerDilogHalf
-import MathlibExt.BlochWignerLobachevsky
+import QOU.Transcendental.MathlibExt.BlochWignerLobachevsky
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
 namespace QOU.Archimedean

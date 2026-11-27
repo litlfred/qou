@@ -1,4 +1,4 @@
-import QCalculus.FaddeevRatioPeriodic
+import QOU.Transcendental.QCalculus.FaddeevRatioPeriodic
 import MathlibExt.DoublyPeriodicLiouville
 
 /-!

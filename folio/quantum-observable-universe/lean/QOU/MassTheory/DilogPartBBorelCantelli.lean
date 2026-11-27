@@ -1,4 +1,4 @@
-import MathlibExt.DilogPartBBoundarySeed
+import QOU.Transcendental.MathlibExt.DilogPartBBoundarySeed
 
 /-!
 # Dilog Part-B W-P1 — the a.e. route, deterministic bricks (Borel–Cantelli programme)

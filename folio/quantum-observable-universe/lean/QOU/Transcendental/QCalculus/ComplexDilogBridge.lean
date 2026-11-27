@@ -41,8 +41,8 @@ Nothing is stubbed: no `sorry`, no axiom. Tracked in `qou-gkco`.
 
 -- Ref: [leitner2026] beans qou-gkco, qou-ph1k
 -/
-import QCalculus.ComplexDilogarithm
-import MathlibExt.DilogReflection
+import QOU.Transcendental.QCalculus.ComplexDilogarithm
+import QOU.Transcendental.MathlibExt.DilogReflection
 
 namespace QOU.Archimedean
 

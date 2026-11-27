@@ -1,4 +1,4 @@
-import MathlibExt.DilogPartAConvergence
+import QOU.Transcendental.MathlibExt.DilogPartAConvergence
 
 /-!
 # Part B of `conj:dilogarithm-archimedean-limit` — the positive-factor branch-point sum (V3)

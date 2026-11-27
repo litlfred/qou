@@ -3,7 +3,7 @@ import QOU.MassTheory.MassTowerOpenProblemsClasses
 import ToricConicOpt.TypeBFoldedCrystalCombinatorics
 import MathlibExt.ClausenFunctionMathlibFiller
 import QOU.MassTheory.BlochWignerMathlibFiller
-import MathlibExt.BlochWignerLobachevsky
+import QOU.Transcendental.MathlibExt.BlochWignerLobachevsky
 import BraidKnotOctonion.CatalanValueBounds
 
 

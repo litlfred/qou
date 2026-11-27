@@ -1,5 +1,6 @@
-import QCalculus.HabiroTailAction
+import QCalculus.HabiroTailFactor
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
 
 /-!
 # The odd-channel Habiro datum lives in the cyclotomic coefficient's bar-asymmetry
@@ -35,13 +36,15 @@ namespace QOU.QBeta.HabiroCyclotomicOddLocus
 
 open QOU.QBeta.HabiroTailAction
 
-/-- **Odd-locus identity.** With a general cyclotomic coefficient `C : ℝ → ℝ`
+variable {K : Type*} [Field K]
+
+/-- **Odd-locus identity.** With a general cyclotomic coefficient `C : K → K`
     (the value `C_{K,n}` as a function of `q`), the bar-odd (`q ↔ q⁻¹`
     antisymmetric) part of the `n`-th Habiro term is exactly the bar-asymmetry
     of the coefficient times the (bar-even) factor:
 
       `C q · f_j(q) − C q⁻¹ · f_j(q⁻¹) = (C q − C q⁻¹) · f_j(q)`. -/
-theorem habiroTerm_bar_odd_eq_coeff_asymmetry (C : ℝ → ℝ) (q : ℝ) (j : ℕ) :
+theorem habiroTerm_bar_odd_eq_coeff_asymmetry (C : K → K) (q : K) (j : ℕ) :
     C q * habiroFactor q j - C q⁻¹ * habiroFactor q⁻¹ j
       = (C q - C q⁻¹) * habiroFactor q j := by
   rw [← habiroFactor_bar_even q j]
@@ -50,18 +53,18 @@ theorem habiroTerm_bar_odd_eq_coeff_asymmetry (C : ℝ → ℝ) (q : ℝ) (j : �
 /-- **Bar-symmetric coefficient ⇒ bar-even term.** If `C q = C q⁻¹` (the `4_1`
     case `C = 1` in particular), the `n`-th Habiro term is `q ↔ q⁻¹` invariant:
     no bar-odd datum. -/
-theorem habiroTerm_bar_even_of_coeff_symmetric (C : ℝ → ℝ) (q : ℝ) (j : ℕ)
+theorem habiroTerm_bar_even_of_coeff_symmetric (C : K → K) (q : K) (j : ℕ)
     (hC : C q = C q⁻¹) :
     C q * habiroFactor q j = C q⁻¹ * habiroFactor q⁻¹ j := by
   have h := habiroTerm_bar_odd_eq_coeff_asymmetry C q j
   rw [hC] at h ⊢
   -- h : C q⁻¹ * f q − C q⁻¹ * f q⁻¹ = (C q⁻¹ − C q⁻¹) * f q = 0
-  linarith [h]
+  rw [sub_self, zero_mul, sub_eq_zero] at h; exact h
 
 /-- **`4_1` case: the constant coefficient `C ≡ 1` gives a bar-even term.**
     The `4_1` Habiro tail (`C_n = 1`) carries no bar-odd datum. -/
-theorem fourOne_habiroTerm_bar_even (q : ℝ) (j : ℕ) :
-    (1 : ℝ) * habiroFactor q j = (1 : ℝ) * habiroFactor q⁻¹ j :=
+theorem fourOne_habiroTerm_bar_even (q : K) (j : ℕ) :
+    (1 : K) * habiroFactor q j = (1 : K) * habiroFactor q⁻¹ j :=
   habiroTerm_bar_even_of_coeff_symmetric (fun _ => 1) q j rfl
 
 /-! ## Concrete chiral instance: the `5_2` cyclotomic coefficients (Masbaum)
@@ -98,23 +101,23 @@ bar-odd data. -/
 
 /-- Leading `5_2` cyclotomic coefficient `C_{5_2,1}(t) = -(t^{-2} + t^{-4})`
     (Masbaum `C_{5_2,1}(q) = -(q⁴+q²)` at `t = q^{-1}`). -/
-noncomputable def c52_1 (t : ℝ) : ℝ := -((t ^ 2)⁻¹ + (t ^ 4)⁻¹)
+def c52_1 (t : K) : K := -((t ^ 2)⁻¹ + (t ^ 4)⁻¹)
 
 /-- Second `5_2` cyclotomic coefficient `C_{5_2,2}(t) = t^{-5}+t^{-7}+t^{-8}+t^{-11}`
     (Masbaum `C_{5_2,2}(q) = q⁵+q⁷+q⁸+q¹¹` at `t = q^{-1}`). -/
-noncomputable def c52_2 (t : ℝ) : ℝ :=
+def c52_2 (t : K) : K :=
   (t ^ 5)⁻¹ + (t ^ 7)⁻¹ + (t ^ 8)⁻¹ + (t ^ 11)⁻¹
 
 /-- Third `5_2` cyclotomic coefficient
     `C_{5_2,3}(t) = -(t^{-9}+t^{-11}+t^{-12}+t^{-13}+t^{-15}+t^{-16}+t^{-17}+t^{-21})`
     (Masbaum `C_{5_2,3}(q) = -(q⁹+q¹¹+q¹²+q¹³+q¹⁵+q¹⁶+q¹⁷+q²¹)` at `t = q^{-1}`). -/
-noncomputable def c52_3 (t : ℝ) : ℝ :=
+def c52_3 (t : K) : K :=
   -((t ^ 9)⁻¹ + (t ^ 11)⁻¹ + (t ^ 12)⁻¹ + (t ^ 13)⁻¹
     + (t ^ 15)⁻¹ + (t ^ 16)⁻¹ + (t ^ 17)⁻¹ + (t ^ 21)⁻¹)
 
 /-- **The leading `5_2` bar-odd Habiro term** is the coefficient's bar-asymmetry
     times the (bar-even) factor — the odd-locus, instantiated on the real `5_2`. -/
-theorem c52_1_bar_odd_term (t : ℝ) (j : ℕ) :
+theorem c52_1_bar_odd_term (t : K) (j : ℕ) :
     c52_1 t * habiroFactor t j - c52_1 t⁻¹ * habiroFactor t⁻¹ j
       = (c52_1 t - c52_1 t⁻¹) * habiroFactor t j :=
   habiroTerm_bar_odd_eq_coeff_asymmetry c52_1 t j
@@ -122,7 +125,7 @@ theorem c52_1_bar_odd_term (t : ℝ) (j : ℕ) :
 /-- The explicit bar-asymmetry of the leading `5_2` coefficient:
     `C_{5_2,1}(t) - C_{5_2,1}(t^{-1}) = t^4 + t^2 - t^{-2} - t^{-4}` (for `t ≠ 0`),
     a nonzero Laurent polynomial — chirality made explicit. -/
-theorem c52_1_asymmetry (t : ℝ) (ht : t ≠ 0) :
+theorem c52_1_asymmetry (t : K) (ht : t ≠ 0) :
     c52_1 t - c52_1 t⁻¹ = t ^ 4 + t ^ 2 - (t ^ 2)⁻¹ - (t ^ 4)⁻¹ := by
   unfold c52_1
   field_simp
@@ -131,14 +134,14 @@ theorem c52_1_asymmetry (t : ℝ) (ht : t ≠ 0) :
 /-- **The second `5_2` bar-odd Habiro term** is the coefficient's bar-asymmetry
     times the (bar-even) factor — the odd-locus on the authoritative Masbaum
     `C_{5_2,2}`. -/
-theorem c52_2_bar_odd_term (t : ℝ) (j : ℕ) :
+theorem c52_2_bar_odd_term (t : K) (j : ℕ) :
     c52_2 t * habiroFactor t j - c52_2 t⁻¹ * habiroFactor t⁻¹ j
       = (c52_2 t - c52_2 t⁻¹) * habiroFactor t j :=
   habiroTerm_bar_odd_eq_coeff_asymmetry c52_2 t j
 
 /-- **The third `5_2` bar-odd Habiro term** — the odd-locus on the authoritative
     Masbaum `C_{5_2,3}`. -/
-theorem c52_3_bar_odd_term (t : ℝ) (j : ℕ) :
+theorem c52_3_bar_odd_term (t : K) (j : ℕ) :
     c52_3 t * habiroFactor t j - c52_3 t⁻¹ * habiroFactor t⁻¹ j
       = (c52_3 t - c52_3 t⁻¹) * habiroFactor t j :=
   habiroTerm_bar_odd_eq_coeff_asymmetry c52_3 t j

@@ -1,4 +1,4 @@
-import QCalculus.ComplexDilogarithmDeriv
+import QOU.Transcendental.QCalculus.ComplexDilogarithmDeriv
 
 /-!
 # Landen's combination is locally constant — the analytic core the corpus lacks

@@ -31,7 +31,7 @@
 -/
 
 import MathlibExt.BorelWatsonTransport
-import MathlibExt.BorelWatsonSector
+import QOU.Transcendental.MathlibExt.BorelWatsonSector
 
 namespace QOU.Mathlib.Borel
 

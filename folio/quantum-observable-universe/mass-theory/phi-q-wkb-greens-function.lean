@@ -1,7 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic
-import MathlibExt.DilogarithmArchimedeanLimit
+import QOU.Transcendental.MathlibExt.DilogarithmArchimedeanLimit
 
 /-!
 # Next Faddeev-WKB order: S₁ = -½ log det 𝔇_∇ as the Green's function

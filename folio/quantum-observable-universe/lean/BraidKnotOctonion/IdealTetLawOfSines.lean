@@ -41,7 +41,7 @@
 
   -- Ref: [thurston1978], [neumann-zagier1985]
 -/
-import MathlibExt.BlochWignerLobachevsky
+import QOU.Transcendental.MathlibExt.BlochWignerLobachevsky
 
 namespace QOU.Knot.IdealTet
 

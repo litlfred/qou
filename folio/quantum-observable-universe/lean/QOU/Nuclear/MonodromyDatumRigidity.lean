@@ -1,4 +1,4 @@
-import QCalculus.CyclicDilogPentagon
+import QOU.Transcendental.QCalculus.CyclicDilogPentagon
 
 /-!
 # The A_ω monodromy datum is a pentagon-rigidity invariant

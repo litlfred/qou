@@ -49,7 +49,7 @@
 -/
 
 import Mathlib.Tactic
-import MathlibExt.BlochWignerLobachevsky
+import QOU.Transcendental.MathlibExt.BlochWignerLobachevsky
 import BraidKnotOctonion.Clausen
 
 namespace QOU.Archimedean

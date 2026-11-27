@@ -7,7 +7,7 @@ import Mathlib.Tactic
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import MathlibExt.ClausenFunctionMathlibFiller
 import QOU.MassTheory.BlochWignerMathlibFiller
-import MathlibExt.DilogarithmArchimedeanLimit
+import QOU.Transcendental.MathlibExt.DilogarithmArchimedeanLimit
 
 
 /-!

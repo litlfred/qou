@@ -1,4 +1,4 @@
-import MathlibExt.DilogPartBWP1Capstone
+import QOU.Transcendental.MathlibExt.DilogPartBWP1Capstone
 import QOU.MassTheory.DilogPartBEulerTail
 
 /-!

@@ -90,8 +90,8 @@
   -- Ref: [zagier1986], [milnor1982]
 -/
 import BraidKnotOctonion.KummerUnitCircle
-import QCalculus.ComplexDilogarithmDeriv
-import QCalculus.ComplexDilogarithmInversion
+import QOU.Transcendental.QCalculus.ComplexDilogarithmDeriv
+import QOU.Transcendental.QCalculus.ComplexDilogarithmInversion
 import BraidKnotOctonion.Clausen
 
 namespace QOU.Knot.Kummer

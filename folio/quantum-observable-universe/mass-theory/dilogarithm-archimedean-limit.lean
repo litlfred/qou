@@ -1,6 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic
-import MathlibExt.DilogarithmArchimedeanLimit
+import QOU.Transcendental.MathlibExt.DilogarithmArchimedeanLimit
 
 
 /-!

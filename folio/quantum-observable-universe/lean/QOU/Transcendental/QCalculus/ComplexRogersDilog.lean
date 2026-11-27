@@ -35,8 +35,8 @@ and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 
 -- Ref: [neumann2004] library/0307092v2/0307092v2.pdf, Prop 2.5 (Rogers `R`, and `R(z;p,q)`)
 -/
-import QCalculus.ComplexDilogarithmDeriv
-import QCalculus.ComplexDilogarithmInversion
+import QOU.Transcendental.QCalculus.ComplexDilogarithmDeriv
+import QOU.Transcendental.QCalculus.ComplexDilogarithmInversion
 
 namespace QOU.MathlibExt
 

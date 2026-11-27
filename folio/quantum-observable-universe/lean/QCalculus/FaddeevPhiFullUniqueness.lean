@@ -1,5 +1,5 @@
 import QCalculus.PhiBProdLociDensity
-import QCalculus.FaddeevQuantumDilogarithm
+import QOU.Transcendental.QCalculus.FaddeevQuantumDilogarithm
 
 /-!
 # `Φ_b` uniqueness — conditional on strip-growth + meromorphic normal form

@@ -1,4 +1,4 @@
-import QCalculus.ComplexRogersDilog
+import QOU.Transcendental.QCalculus.ComplexRogersDilog
 import BraidKnotOctonion.KummerRadial
 import Mathlib.Analysis.NormedSpace.Connected
 import Mathlib.Analysis.Calculus.MeanValue

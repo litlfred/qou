@@ -1,4 +1,4 @@
-import MathlibExt.DilogarithmArchimedeanLimit
+import QOU.Transcendental.MathlibExt.DilogarithmArchimedeanLimit
 import Mathlib.Algebra.Order.Ring.GeomSum
 import Mathlib.Analysis.Normed.Group.Tannery
 import Mathlib.NumberTheory.ZetaValues
