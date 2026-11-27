@@ -1995,6 +1995,7 @@ import HeckeTemperleyLieb.HeckeBraidingNonSymmetric
 import QOU.EightfoldWay.HyperbolicMesonClaspAndDiquarkSplit
 import QOU.EightfoldWay.MesonRatioSelectionStatus
 import QOU.EightfoldWay.MesonTwelveDimChannels
+import QOU.EightfoldWay.MesonLabelEmbeddings
 import QOU.EightfoldWay.MirrorSwapCompatibility
 import QOU.EightfoldWay.NonetMixingUnconstrained
 import QOU.EightfoldWay.ObstructionArithmeticCore
