@@ -8,7 +8,7 @@ tags:
     - compute-accuracy
     - alpha-decay
 created_at: 2026-11-27T19:46:04Z
-updated_at: 2026-11-27T20:36:29Z
+updated_at: 2026-11-27T20:47:00Z
 parent: qou-myts
 ---
 
@@ -36,3 +36,7 @@ Q_α = B_α − ΔB, ΔB = B(Z,N) − B(Z−2,N−2) (Lean QOU.Nuclear.AlphaQInh
 - Preformation bound (Lean AlphaPreformationBound, sorry-free): since 0<S<=1, T = T_WKB/S >= T_WKB. Of the 7 bare-WKB emitters, 4 cannot be closed by any preformation (8Be, 222Rn, 226Ra, 238U, S_req 7.7/1.39/1.55/2.54). Their miss is on the barrier side: Q, radius or deformation. 3 can be closed (212Po S_req 0.447, 214Po 0.726, 210Po 0.0553, the last already matched by MJ 1/20).
 - Scope (a) negative: reading the 210Po Mayer-Jensen rule literally for 212Po/214Po gives S=0.01 and dex +1.65/+1.86. That is worse than bare WKB. Open-shell pair coherence is missing from the counting rule.
 - Still open: a derived open-shell (coherent-pair) preformation for 212Po/214Po, and the barrier-side miss for the deformed actinides.
+
+
+
+2026-11-27 note from the Coulomb (G3) thread, PR #9691: the 34.82 MeV α-line Coulomb slope used the uniform-ball f = (3/5)^{3/2} = 0.464758. With the derived q-Hankel f = 0.520011 (PR #9665) and the same CAL-3 length, every Coulomb energy scales by 1.118885, so the slope is about 38.96 MeV and the nuclear-part target shifts with it. The length is still conditional: its coefficient was selected and A^{1/3} was assumed. Re-derive the split once G3 lands.
