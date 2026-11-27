@@ -149,3 +149,23 @@ python3 -u computations/probes/weaving_kashaev_root_of_unity/weaving_kashaev_pro
 python3 -u computations/probes/weaving_kashaev_root_of_unity/weaving_kashaev_probe.py 24 15 0 -N15-24   # Q1 only, N = 15..24
 python3 -u computations/probes/weaving_kashaev_root_of_unity/weaving_habiro_coefficients.py 13     # Q4, exact c_k for k ≤ 13
 ```
+
+## 9. Addendum (stage 3 of qou-pc7n): total positivity at every Galois conjugate
+
+A per-N Hermitian-square certificate (a sum of norms from Q(ζ_N) down to Q(ζ_N)⁺, as proved for 4₁ in `QOU/Core/KashaevHermitianCertificate.lean` and `KashaevReflection.lean`) forces ⟨K⟩_N > 0 at **every** primitive N-th root, not only at e^{2πi/N}. Measured with `galois_total_positivity_probe.py` (mpmath, 60 digits, from the exact Habiro c_k of §5, so N ≤ 14):
+
+| knot | N range | conjugates negative | smallest value | max imaginary residue |
+|---|---|---|---|---|
+| 4₁ (control) | 2–14 | none | 5 | 0 |
+| 8₁₈ | 2–14 | **none** | 45 | 4e-48 |
+| 10₁₂₃ | 2–14 | **none** | 121 | 9e-44 |
+
+The 4₁ control matches the Lean bounds: at N = 5 the conjugate a = 2 gives 41.53, against the proved N² + (N−1)² = 41.
+
+**Consequence.** For 8₁₈ and 10₁₂₃ the obstruction found in §5 (negative Habiro terms) is **not** an embedding obstruction: their Kashaev values are totally positive for every N ≤ 14. By Siegel's theorem, a totally positive element of the totally real field Q(ζ_N)⁺ is a sum of squares there, hence a sum of norms from Q(ζ_N). So per-N Hermitian-square certificates **exist** for these N; what is missing is a **uniform-in-N** certificate like the Pochhammer one for 4₁.
+
+**This corrects my thread remark** that the embedding caveat "will bite for 8₁₈". The negative c₁ rules out the term-wise Habiro certificate only. Total positivity beyond N = 14 is not measured; that needs c_k for k > 13.
+
+```bash
+python3 -u computations/probes/weaving_kashaev_root_of_unity/galois_total_positivity_probe.py
+```
