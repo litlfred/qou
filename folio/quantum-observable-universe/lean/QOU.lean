@@ -1222,7 +1222,7 @@ import QOU.BraidsAndKnots.DerivedCharacterCatalogue
 -- CI); registered here for coverage. Transitively pulls HeckeH3Characters,
 -- HeckeH3BlockRep, HeckeH2Wedderburn, HeckeBraidedCategoryScaffold,
 -- MatrixSemisimple.
-import HeckeTemperleyLieb.HeckeH2WedderburnReal
+import QOU.Transcendental.HeckeTemperleyLieb.HeckeH2WedderburnReal
 import HeckeTemperleyLieb.HeckeH3Semisimple
 import HeckeTemperleyLieb.HeckeH3GramNondegeneracy
 import HeckeTemperleyLieb.HeckeH4AlgebraLaws

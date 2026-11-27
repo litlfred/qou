@@ -23,7 +23,7 @@ $$ H_2(q) \;\cong\; R \times R $$
 blocks are the partitions $(2)$ and $(1,1)$.  Everything here is
 **sorry-free** over a generic commutative ring per §7c; the
 archimedean instantiation (real roots via `Real.sqrt`, unconditional
-semisimplicity) lives in `HeckeH2WedderburnReal`.
+semisimplicity) lives in `QOU.Transcendental.HeckeTemperleyLieb.HeckeH2WedderburnReal`.
 
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457
 -/
