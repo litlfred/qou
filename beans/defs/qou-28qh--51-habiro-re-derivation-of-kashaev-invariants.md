@@ -7,7 +7,7 @@ priority: normal
 tags:
     - constructive
 created_at: 2026-11-27T19:01:13Z
-updated_at: 2026-11-27T20:25:59Z
+updated_at: 2026-11-27T20:26:23Z
 parent: qou-dk7p
 ---
 
@@ -30,4 +30,4 @@ A then C: cyclotomic-series constructor + 3_1, 4_1, then twist knots via Masbaum
 
 ## P6 (every knot) — started 2026-11-27
 - 6.1 PR #9664: coloredJonesAt / coloredJones / kashaevElement / CyclotomicExpansion; evalRoot_coloredJones (Kashaev = colored Jones at its root = one Habiro element, any coefficients); coloredJones41 (AJ tower) = figure-eight cyclotomic polynomial.
-- 6.2 route to Habiro's existence theorem in-repo (plan): (a) trefoil at every colour from the coloured U_q(sl2) state sum rModel (QOU/MassTheory/QuantumSl2LinkDiagram*): eigenvalues of R-check on V_N (x) V_N, giving the Rosso-Jones form, then the q-series identity to sum q^n (q^{1+N})_n (q^{1-N})_n; (b) twist knots via Masbaum's skein recursion; (c) general knots via Habiro's universal sl2 invariant / bottom tangles (longest).
+- 6.2 route to Habiro's existence theorem in-repo (plan): (a) trefoil at every colour from the coloured U_q(sl2) state sum rModel (QOU/MassTheory/QuantumSl2LinkDiagram*): eigenvalues of R-check on V_N (x) V_N, giving the Rosso-Jones form, then the q-series identity to sum q^n (q^{1+N})_n (q^{1-N})_n; (b) twist knots via Masbaum's skein recursion; hooks found: braidEigen_eq / hwVec / hw_unique / rCheck_hwVec in folio/quantum-observable-universe/lean/BraidKnotOctonion/QuantumSl2HighestWeight.lean (eigenvalues of R-check on highest-weight vectors of V_m (x) V_m'), so tau(sigma^3) on two strands reduces to sum_j eigen_j^3 [dim]; remaining: Clebsch-Gordan completeness + the q-series identity (Masbaum/Le) to the cyclotomic form; (c) general knots via Habiro's universal sl2 invariant / bottom tangles (longest).
