@@ -6,6 +6,28 @@ import QOU.FluidDynamics.q_ns_haar_field_invariance_full
 
 Thread "Audit the q-Bessel special-function dictionary" (2026-11-27), Peter–Weyl step 3,
 bean `qou-kdh5`.
+
+`L = X₊X₋` is not symmetric for the Haar state `h`, but it has a transpose. With
+`S = X₊X₋ − q² X₋X₊` and the twist `R = θ_{q, q⁻¹}`:
+
+* `lapS_mul`: `S` is an `R²`-twisted derivation, `S(fg) = S f · R²g + f · S g`.
+* `haar_lap_transpose`: `h(x · L y) = h((L x − S x) · R² y)` (for `q` not a root of unity,
+  from `h ∘ X± = 0`).
+* `haarState_mul_eq_zero_of_eigen`: if `x`, `y` are `L`-eigenvectors, `x` is an `S`-eigenvector
+  and `y` an `R`-eigenvector, and `μ ≠ (λ − s) d²`, then `h(x y) = 0`.
+
+The component eigenbases of `q_ns_component_lap` / `q_ns_component_lap_quadrants` meet these
+hypotheses: the `ζ`-polynomial factor is killed by `S` and fixed by `R`, so `S` and `R` see only
+the monomial prefix. The eigenvalues match across two dual pairs (`eig_match_dg`,
+`eig_match_db`), and `cdiag_injective` finishes:
+
+* `haarState_compPoly_compPolyDG`: `α^a β^m p_{n'}(ζ)` and `δ^a γ^m p^{DG}_n(ζ)` are
+  Haar-orthogonal for `n ≠ n'`;
+* `haarState_compPolyAG_compPolyDB`: the same for `α^a γ^m` and `δ^a β^m`.
+
+Not stated here: the diagonal pairings `h(x_n y_n) ≠ 0` (checked in sympy for `a, m, n ≤ 3`,
+not proved), and the assembly of the four quadrants into one Peter–Weyl decomposition.
+Everything is over a generic field `K`; the only hypothesis is that `q` is not a root of unity.
 -/
 
 namespace QOU.FluidDynamics.ComponentLap
@@ -213,6 +235,99 @@ theorem eig_match_db (hx : (q : K) * q ≠ 1) (a m n : ℕ) :
       ((q : K) * q) ^ a * ((q : K) * q) ^ m := by ring
   rw [hd, cdiag, cdiag, qi_sq]
   exact match_db_x (mul_ne_zero q.ne_zero q.ne_zero) hx a m n
+
+/-! ### Integration by parts against the Haar state -/
+
+section IBP
+
+variable (hq : ∀ n : ℕ, 0 < n → (q : K) ^ n ≠ 1)
+include hq
+
+theorem haar_ibp_plus (x z : OqSU2 K q) :
+    haarState q (x * fieldPlus q z) = -haarState q (fieldPlus q x * tw z) := by
+  have h := haarState_fieldPlus_eq_zero q hq (x * z)
+  rw [fieldPlus_mul', map_add] at h
+  linear_combination h
+
+theorem haar_ibp_minus (x z : OqSU2 K q) :
+    haarState q (x * fieldMinus q z) = -haarState q (fieldMinus q x * tw z) := by
+  have h := haarState_fieldMinus_eq_zero q hq (x * z)
+  rw [fieldMinus_mul', map_add] at h
+  linear_combination h
+
+/-- **`L` moved across the Haar state.** `h(x · L y) = h((L x − S x) · R² y)`. -/
+theorem haar_lap_transpose (x y : OqSU2 K q) :
+    haarState q (x * lap q y) = haarState q ((lap q x - lapS q x) * tw (tw y)) := by
+  have htw : tw (fieldMinus q y) = ((q : K) * q) • fieldMinus q (tw y) := by
+    rw [fieldMinus_tw, smul_smul, show (q : K) * q * (qi * qi) = 1 by
+      linear_combination ((q : K) * qi + 1) * q_mul_qi q, one_smul]
+  rw [lap_apply, haar_ibp_plus q hq, htw, mul_smul_comm, map_smul, haar_ibp_minus q hq,
+    lapS_apply, sub_sub_cancel, smul_mul_assoc, map_smul, smul_eq_mul, smul_eq_mul]
+  ring
+
+/-- **Biorthogonality from the eigenvalues.** If `L x = λ x`, `S x = s x`, `L y = μ y`,
+`R y = d y` and `μ ≠ (λ − s) d²`, then `h(x y) = 0`. -/
+theorem haarState_mul_eq_zero_of_eigen {x y : OqSU2 K q} {l s m d : K}
+    (hx : lap q x = l • x) (hs : lapS q x = s • x) (hy : lap q y = m • y) (hd : tw y = d • y)
+    (hne : m ≠ (l - s) * (d * d)) : haarState q (x * y) = 0 := by
+  have h := haar_lap_transpose q hq x y
+  rw [hy, hx, hs, hd, map_smul, hd, smul_smul] at h
+  simp only [sub_mul, mul_smul_comm, smul_mul_assoc, map_sub, map_smul, smul_eq_mul] at h
+  have h' : (m - (l - s) * (d * d)) * haarState q (x * y) = 0 := by linear_combination h
+  exact (mul_eq_zero.1 h').resolve_left (sub_ne_zero.2 hne)
+
+/-! ### The two dual pairs -/
+
+theorem sq_pow_ne_one (n : ℕ) : ((q : K) * q) ^ (n + 1) ≠ 1 := by
+  rw [← pow_two, ← pow_mul]; exact hq _ (by omega)
+
+/-- **Haar biorthogonality, `α^a β^m ↔ δ^a γ^m`.** The `n'`-th eigenvector on the first-quadrant
+component and the `n`-th on the dual component `δ^a γ^m K[ζ]` are Haar-orthogonal for
+`n ≠ n'`. -/
+theorem haarState_compPoly_compPolyDG (a m : ℕ) {n n' : ℕ} (hnn : n ≠ n') :
+    haarState q ((α q ^ a * β q ^ m * ev q (compPoly q a m n')) *
+      (δ q ^ a * γ q ^ m * ev q (compPolyDG q a m n))) = 0 := by
+  have hS : lapS q (α (R := K) q ^ a * β q ^ m) =
+      ((1 * jk (qi * qi) a) * ((q : K) * q) ^ m + -((q : K) * q) * jk ((q : K) * q) m) •
+        (α q ^ a * β q ^ m) :=
+    lapS_mul_eigen q (lapS_pow_eigen q (s := 1) (by rw [lapS_alpha, one_smul]) (tw_tw_alpha q) a)
+      (lapS_pow_eigen q (lapS_beta q) (tw_tw_beta q) m) (tw_tw_pow q (tw_tw_beta q) m)
+  have hT : tw (δ (R := K) q ^ a * γ q ^ m) = ((q : K) ^ a * qi ^ m) • (δ q ^ a * γ q ^ m) := by
+    rw [map_mul, map_pow, map_pow, (field_twist_generators q).2.2.2,
+      (field_twist_generators q).2.2.1, smul_pow, smul_pow, smul_mul_smul_comm]
+  refine haarState_mul_eq_zero_of_eigen q hq (lap_compPoly q a m n') (lapS_mul_ev q hS _)
+    (lap_compPolyDG q a m n) (tw_mul_ev q hT _) ?_
+  have hx : (q : K) * q ≠ 1 := by simpa using sq_pow_ne_one q hq 0
+  rw [show (1 * jk (qi * qi) a) * ((q : K) * q) ^ m + -((q : K) * q) * jk ((q : K) * q) m =
+      jk (qi * qi) a * ((q : K) * q) ^ m - (q : K) * q * jk ((q : K) * q) m by ring,
+    eig_match_dg q hx]
+  rcases Nat.lt_or_gt_of_ne hnn with h | h
+  · exact (cdiag_injective q (sq_pow_ne_one q hq) m a h).symm
+  · exact cdiag_injective q (sq_pow_ne_one q hq) m a h
+
+/-- **Haar biorthogonality, `α^a γ^m ↔ δ^a β^m`.** -/
+theorem haarState_compPolyAG_compPolyDB (a m : ℕ) {n n' : ℕ} (hnn : n ≠ n') :
+    haarState q ((α q ^ a * γ q ^ m * ev q (compPolyAG q a m n')) *
+      (δ q ^ a * β q ^ m * ev q (compPolyDB q a m n))) = 0 := by
+  have hS : lapS q (α (R := K) q ^ a * γ q ^ m) =
+      ((1 * jk (qi * qi) a) * (qi * qi) ^ m + 1 * jk (qi * qi) m) • (α q ^ a * γ q ^ m) :=
+    lapS_mul_eigen q (lapS_pow_eigen q (s := 1) (by rw [lapS_alpha, one_smul]) (tw_tw_alpha q) a)
+      (lapS_pow_eigen q (s := 1) (by rw [lapS_gamma, one_smul]) (tw_tw_gamma q) m)
+      (tw_tw_pow q (tw_tw_gamma q) m)
+  have hT : tw (δ (R := K) q ^ a * β q ^ m) =
+      ((q : K) ^ a * (q : K) ^ m) • (δ q ^ a * β q ^ m) := by
+    rw [map_mul, map_pow, map_pow, (field_twist_generators q).2.2.2,
+      (field_twist_generators q).2.1, smul_pow, smul_pow, smul_mul_smul_comm]
+  refine haarState_mul_eq_zero_of_eigen q hq (lap_compPolyAG q a m n') (lapS_mul_ev q hS _)
+    (lap_compPolyDB q a m n) (tw_mul_ev q hT _) ?_
+  have hx : (q : K) * q ≠ 1 := by simpa using sq_pow_ne_one q hq 0
+  rw [show (1 * jk (qi * qi) a) * (qi * qi) ^ m + 1 * jk (qi * qi) m =
+      jk (qi * qi) a * (qi * qi) ^ m + jk (qi * qi) m by ring, eig_match_db q hx]
+  rcases Nat.lt_or_gt_of_ne hnn with h | h
+  · exact (cdiag_injective q (sq_pow_ne_one q hq) 0 (a + m) h).symm
+  · exact cdiag_injective q (sq_pow_ne_one q hq) 0 (a + m) h
+
+end IBP
 
 end Haar
 
