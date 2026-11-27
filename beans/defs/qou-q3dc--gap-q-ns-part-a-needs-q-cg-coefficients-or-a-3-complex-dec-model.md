@@ -74,3 +74,7 @@ consequence, not proved: if the Haar state is torus-invariant and positive, then
 and the budget `−c·h(Du·Du)` has the sign of `c` (Woronowicz: `u = q⁻²`, `s = q⁻¹`). No modular
 property is needed. Open: Haar torus invariance + positivity (Haar thread), off-diagonal
 directions, Part A.
+
+**2026-11-27 — Haar fact (1) proved (PR #9599, `haarState_torus`).** Next: when #9596 and #9599
+are both on main, add the corollary `h(Xa·Xa) = −h(w*w)` with no invariance hypothesis. Fact (2),
+positivity, is still open (Haar thread).
