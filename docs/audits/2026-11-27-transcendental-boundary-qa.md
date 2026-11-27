@@ -11,8 +11,8 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 | quantity | count |
 |---|---:|
 | Lean modules (paper package tree) | 4000 |
-| inside the boundary `QOU/Transcendental/` | 26 |
-| outside, using a transcendental/analytic API directly | 682 |
+| inside the boundary `QOU/Transcendental/` | 28 |
+| outside, using a transcendental/analytic API directly | 680 |
 | outside, algebraic but importing one transitively (tainted) | 281 |
 | outside, algebraic and import-clean (pure) | 3011 |
 
@@ -20,7 +20,7 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 
 | class | modules | matched API |
 |---|---:|---|
-| transcendental-function | 481 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
+| transcendental-function | 479 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
 | real-completion | 161 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
 | analysis | 322 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
 
@@ -33,7 +33,7 @@ algebraic extension.
 | directory | modules |
 |---|---:|
 | `QOU/MassTheory` | 151 |
-| `BraidKnotOctonion` | 145 |
+| `BraidKnotOctonion` | 143 |
 | `QOU/Nuclear` | 104 |
 | `MathlibExt` | 95 |
 | `QOU/BraidsAndKnots` | 42 |

@@ -32,7 +32,7 @@ No fit; nothing wired; L2 unchanged.
 -- Ref: [habiro2004] https://doi.org/10.1007/s00222-007-0071-0 (abstract; §1: determination by
 --      one Taylor expansion, or by infinitely many prime-power-order roots)
 -/
-import BraidKnotOctonion.KeystoneHabiroRootFamily
+import QOU.Transcendental.BraidKnotOctonion.KeystoneHabiroRootFamily
 
 namespace QOU.BraidKnot.KeystoneHabiroInfiniteRigidity
 
