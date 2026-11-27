@@ -1087,3 +1087,60 @@ for the group-likeness transport above.
 **Verification.** `lean -DautoImplicit=false -s 65536` on `BaseChangeK.lean` exits 0 with no
 warnings. It was compiled against the restored cache, with this branch's new modules compiled
 into a scratch tree. No `lake build` was run.
+
+## 17c. Group-likeness transport over K: `hprim` derived, and re-established one degree up
+
+Bean `qou-3fdg`. All four items of §17b are proved, sorry-free, in
+`folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/GroupLikeK.lean`.
+Axioms: `propext`, `Classical.choice`, `Quot.sound`. No analysis is used.
+
+| §17b item | Lean | statement |
+|---|---|---|
+| 3. primitive layer | `exists_primitive_layer` | `p ∈ FF d`, `Δp − p⊗1 − 1⊗p ∈ FF2 (d+1)` ⇒ the degree-`d` part of `p` is primitive |
+| 1. GLK over K | `GLK`, `primLayer_of_GLK` | `Δ_K Ψ − i₁Ψ · i₂Ψ ∈ FF2K m`; for `Ψ = 1⊗Φ + z`, `GLK (d+1)` gives exactly the `hprim` of `inductionStep_core` |
+| 2. invariance under the shift | `GL_expPoly`, `GLK.subst`, `GLK.compK`, `GLK.compKK_GK` | `GLK N Ψ ⇒ GLK N (compKK Ψ (GK H n c))` for every `c ∈ K`, `H ∈ FF 1` primitive, `N ≤ n`, `exp(xH) ∈ GRT1U4 N` for all rational `x` |
+| 4. the step | `inductionStep_of_groupLike` | `inductionStep_core` with `hprim := primLayer_of_GLK` and `Q := AssocK ∧ GLK N` |
+
+How item 2 goes:
+
+1. `cop (expTerm y k) = Σ_m expTerm y m ⊗ expTerm y (k−m)` for primitive `y`, so the truncated
+   exponential of a primitive `y ∈ FF 1` is group-like modulo `FF2 n` (`GL_expPoly`).
+2. A `K`-substitution `X ↦ a`, `Y ↦ b` with `a, b ∈ FF 1` primitive modulo `FF2 N` preserves
+   `GLK N`. Two `K`-algebra maps congruent modulo the two-sided ideal `FF2K N` on `X` and `Y` are
+   congruent everywhere (`sub_mem_FF2K_of_gen`).
+3. (5.12) for `g ∈ GRT1U4 (M+1)` gives `g · g(Y,X) ≡ 1` modulo `FF (M+1)` (`mul_swap_sub_one_mem`,
+   through `toFree` as in `add_swap_eq_zero`). With `GL N g` and `GL N g(Y,X)` (`GL.swap`), the
+   substituted variable `g X g(Y,X)` is primitive modulo `FF2 N` (`conj_almost_primitive`). So
+   Drinfeld's rational action `compK Ψ g` preserves `GLK N` (`GLK.compK`).
+4. At rational `c = x`, `compKK Ψ (GK H n x) = compK Ψ (expPoly (xH) n)`. The defect
+   `Δ_K(·) − i₁(·)i₂(·)` of `compKK Ψ (GK H n c)` is a polynomial in `c` with coefficients in
+   `K ⊗ (ℚ⟨X,Y⟩ ⊗ ℚ⟨X,Y⟩)`, so `mem_of_forall_rat` carries the rational case to all `c ∈ K`.
+
+Statement of the step:
+
+```lean
+theorem inductionStep_of_groupLike (hd : 1 ≤ d) (hdN : d + 1 ≤ N) {n : ℕ} (hn : 2 ≤ n)
+    (hNn : N ≤ n) {E Φ : F2} (hE : algebraMapInv E = 1) (hΦ : algebraMapInv Φ = 1)
+    (z : K ⊗[ℚ] FF d)
+    (hK : AssocK K N E ((1 : K) ⊗ₜ Φ + LinearMap.lTensor K (FF d).subtype z))
+    (hGL : GLK K N ((1 : K) ⊗ₜ Φ + LinearMap.lTensor K (FF d).subtype z)) :
+    ∃ x ∈ FF d, AssocU4 (d + 1) E (Φ + x) ∧ GL (d + 1) (Φ + x) ∧
+      ∃ Ψ, AssocK K N E Ψ ∧ GLK K N Ψ ∧ Ψ - (1 : K) ⊗ₜ (Φ + x) ∈ FFK K (d + 1)
+```
+
+§17b item 4 is resolved by the second route it named: the group-likeness hypothesis is carried by
+the `K`-associator `Ψ` (at the full level `N`), not by the rational lift. `Φ + x` is group-like
+modulo `FF2 (d+1)` only, which is what follows from `Ψ`.
+
+**What is not done.** Iterating the step needs the output in the input's shape:
+`Ψ = 1 ⊗ (Φ + x) + z'` with `z'` in the image of `K ⊗ FF (d+1)` under `lTensor`. The step gives
+`Ψ − 1 ⊗ (Φ + x) ∈ FFK K (d+1)`. No lemma in `RationalAssociator/` converts `FFK` membership into
+that `lTensor` form (searched: no hit for `FFK` together with `lTensor`). Also needed:
+`ε(Φ + x) = 1`, from `x ∈ FF d` with `d ≥ 1`. Neither step is analysis, but neither was written in
+this tranche, so the full induction is not yet assembled as one theorem.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `GroupLikeK.lean` exits 0 with no
+warnings or errors. It was compiled against the restored cache plus this branch's modules
+compiled into a scratch tree. `#print axioms` on `inductionStep_of_groupLike`, `GLK.compKK_GK`,
+`GL_expPoly` and `primLayer_of_GLK` shows only `propext`, `Classical.choice` and `Quot.sound`. No
+`lake build` was run.
