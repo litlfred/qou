@@ -963,3 +963,10 @@ Still open (unchanged guard: no anchor matching): the mode set Λ (hence d = |Λ
 * Still open: whether Λ = all of Irr H_n(q) (the proposition's wording; not derived), which n, then the a_j, c₃ and ϑ_K. No anchor input. Status unchanged.
 
 * (same PR, 2nd commit) `QHeatKernelRecursion.lean`: r_λ = (q−1)μ_λ is exactly bar-odd, so a_j(1/q) = (−1)^j a_j(q) for any mode set. The prop's "up to q^j twist" and "μ_λ bar-even" hypotheses are both discharged. Probe: n = 3 gives a₁ = (t²−1)³(t²+1)²(t⁸+5t⁴+1)/t⁹ and a₂ = 2(t²−1)⁶(t²+1)⁴(t⁸+3t⁴+1)/t¹⁴, with t = q^{1/2}. Carl chose to keep n general (card, 2026-11-27).
+
+## 2026-11-27 — c₃(q) from the recursion: determined from c₂ alone ONLY at depth 1
+
+The recursion c_{k+1} = Σ_{j≤d} a_j c_{k+1−j} needs d seeds, and the ladder supplies only c₂ = −1 (structural). So:
+* n = 2 (depth 1, one rate g_(2) = (q−q⁻¹)²): c₃(q) = a₁·c₂ = −(q−1)³(q+1)²/q^{5/2}, fully derived, no anchor. It vanishes at q = 1. That is recorded but not interpreted as a shadow-gate pass.
+* n ≥ 3: c₃ = a₁c₂ + a₂c₁ + …, which needs |Λ_n| − 1 further seeds (c₁, c₀, …) that the k ≥ 2 ladder does not define. This quantifies the earlier "underdetermined from seeds alone" note.
+ϑ_K would then follow by AV5, ϑ² = ln²q − (c₃ + Vol(4₁))/(A_ω κ). That step needs A_ω κ and Vol(4₁) (Transcendental/), and it is not taken here.
