@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-07-24T15:49:33Z
-updated_at: 2026-11-27T17:26:22Z
+updated_at: 2026-11-27T17:50:00Z
 parent: qou-a3n3
 ---
 
@@ -19,7 +19,7 @@ Open after the T1-T9 tractable tranche (categorical mechanism fully formalized; 
 
 ## 2026-11-22T21:58:00Z: applicability review — RESCOPE
 
-Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. The wall list predates the 2026-11-21 restatement (issue #8864) and the 2026-11-22 Galerkin dead end. (1) B2 as a q = 1 identification with Leray-Hopf is withdrawn as framed: the q -> 1 endpoint is Euler. (2) "B3 = Clay" is withdrawn: conj:regularity-breakdown is now Part A (Omega(q) -> infinity as q -> 1+) and Part B (a classical backward DSS solution with |V| ~ |y|^-1, not in L^3). (4) "Most tractable = DSS Leray profile" no longer holds: the Galerkin route is closed (scope a) and needs a new idea; the decay is r^-1. Corrected wall list: prove Part A; Part B existence by a non-Galerkin method; items (3), (5), (6) unchanged. #8491 was closed unmerged the same day (see the 2026-11-27 note below).
+Owner instruction 2026-11-22 ("reviewed for applicability ... critical analysis"). Checked against docs/coordination/owner-rulings.md on origin/main, git log since the bean's last update, and the state of every PR it cites. The wall list predates the 2026-11-21 restatement (issue #8864) and the 2026-11-22 Galerkin dead end. (1) B2 as a q = 1 identification with Leray-Hopf is withdrawn as framed: the q -> 1 endpoint is Euler. (2) "B3 = Clay" is withdrawn: conj:regularity-breakdown is now Part A (Omega(q) -> infinity as q -> 1+) and Part B (a classical backward DSS solution with |V| ~ |y|^-1, not in L^3). (4) "Most tractable = DSS Leray profile" no longer holds: the Galerkin route is closed (scope a) and needs a new idea; the decay is r^-1. Corrected wall list: prove Part A; Part B existence by a non-Galerkin method; items (5), (6) unchanged; item (3) restated 2026-11-27 as branch (B) of conj:levi-degeneracy on the Levi scalar ξ·curl ξ (tracked in qou-fm7s), since β is undefined after ruling Q1. #8491 was closed unmerged the same day (see the 2026-11-27 note below).
 
 ## 2026-11-27: PR #8491 closed unmerged (stale reference)
 
@@ -47,3 +47,7 @@ docs/audits/2026-11-27-qns-part-a-enstrophy-order-parameter.md
 ## 2026-11-27 Part B route (thread 'Find q-NS Part B route'), PR #9491
 
 Owner chose R4, tail matching + degree. Part B is a nonzero zero of g(c) = Ac + Q(c) on log-phase tail coefficients. Q is even, so if Q has no real projective zero, every truncation has nonzero zeros, which explains the Galerkin artifacts. Open step: an a priori bound uniform in the truncation (Leray–Schauder). R1 (Lamb-gradient / Beltrami) is closed: the Kummer coefficients are nonzero (DSSTailMatching.lean, sorry-free). R2 gives only Landau. Owner asked for a separate thread on the Bernoulli-flux bound. Item 3: no subject (see above). Items 5 and 6 are now child beans. Audit: docs/audits/2026-11-27-qns-part-b-route-assessment.md. Status stays in-progress: Part B is open.
+
+## 2026-11-27: item (3) restated
+
+Owner took the recommended options (2026-11-27). Item (3) now reads "branch (B) of conj:levi-degeneracy on ξ·curl ξ (see qou-fm7s)" in the corrected wall list above, replacing the withdrawn β computation. Status unchanged.
