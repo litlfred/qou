@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T20:14:23Z
+updated_at: 2026-11-27T20:53:03Z
 parent: qou-dk7p
 ---
 
@@ -87,3 +87,6 @@ KEY for research leg (p.854, Remark 2 after 5.8): without 5.3, obstruction to li
 - `assocU4_add_iff`, `exists_rational_lift`, `solvableOver_of_lift`: assoc mod d+1 over ℚ extending Φ exists iff the degree-d ℚ-linear system is solvable over some nontrivial K (named hypothesis `SolvableOver K d E Φ`).
 - `drinfeld519_of_grtU4`, `lin514_of_drinfeld519`: lin514 = Drinfeld (5.19) on zero-sum triples; nonzero central sum needs Lie y.
 Still open (audit §13): B0 K-associator ⟹ SolvableOver; B1 GRT stack over K ⊗ U4 N; B2 linearised (5.14) for y = ψ − (Φ_K)_d (Drinfeld Prop 5.7, needs Lie y); B3 homogeneity/grading on U4. Bean stays open.
+
+
+2026-11-27 (branch claude/grt-basechange-2026-11-27, audit §14). (B0) closed: rational_lift_of_assocK and solvableOver_of_assocK in BaseChange.lean. (B3) closed modulo (B2): grtU4_of_lin in Homogeneity.lean takes Lin514 M h as a named hypothesis. No sorry or axiom; #print axioms shows only propext, Classical.choice and Quot.sound. (B1) NOT done: AssocK is not yet closed under rational GRT1, and the polynomial-in-c extension to K and the K-congruence are missing. The plan is in §14 (est. 600-800 lines). Caveat for (B2): the h_i to which (B2) is applied need not be Lie unless both associators are group-like. Bean stays open.
