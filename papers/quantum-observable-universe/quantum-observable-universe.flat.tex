@@ -18903,7 +18903,7 @@ Closing either column should mathematically close the other, as they constitute 
 \begin{conjecture}[{Complex-volume unification: binding $\mathfrak{E}_{\mathrm{bind}}$ and $\beta$-decay $\mathfrak{Q}_\beta$ are $\operatorname{Re}$/$\operatorname{Im}$ of one $\mathfrak{V}=E_0\,\mathrm{tr}_M((\Pi_{\text{free}}-\mathbf{1})\circ\mathcal{M})$}]
   \label{conj:binding-qbeta-complex-volume}
   \blockannot[spec]{conj:binding-qbeta-complex-volume}{QOU.MassTheory.MassEndomorphism.ComplexVolumeMatch}{quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.md}
-  \uses{prop:categorical-mass-markov, conj:block-multiplicativity-v-free}
+  \uses{prop:categorical-mass-markov, prop:block-multiplicativity-v-free}
 \emph{Binding and the $\beta$-decay $Q$-value form
 the real and imaginary parts of a single complex fibre observable — the
 complexified mass-endomorphism convolution-defect}
@@ -27072,61 +27072,28 @@ hold at $z = q^3/(q^2+1)$ for either intra-nucleon ordering; it says nothing abo
 whether some other closed form describes the per-$Z$ step.
 \end{proof}
 
-\begin{conjecture}[{Block-multiplicativity of per-generator $\hat{V}$ on the disjoint Hecke product}]
-  \label{conj:block-multiplicativity-v-free}
-  \blockannot[spec]{conj:block-multiplicativity-v-free}{QOU.BraidsAndKnots.BlockMultiplicativityVFree}{quantum-observable-universe/mass-theory/block-multiplicativity-v-free.md}
+\begin{proposition}[{Block-multiplicativity of per-generator $\hat{V}$ on the disjoint Hecke product}]
+  \label{prop:block-multiplicativity-v-free}
+  \blockannot[compiled]{prop:block-multiplicativity-v-free}{QOU.BraidKnot.block_multiplicativity_v_free}{quantum-observable-universe/mass-theory/block-multiplicativity-v-free.md}
   \uses{prop:atomic-mass-gb-nf, thm:jones-markov-trace}
-\emph{Let $\mathcal{B}_K^{\mathrm{vac}} =\allowbreak{} \mathcal{B}_p^{(1)} \cdots \mathcal{B}_n^{(N)} \in H_{3A}(q)$ denote the constituent vacuum—the disjoint Hecke product of $Z$ proton braids and $N$ neutron braids on disjoint 3-strand blocks, with no interface crossings. For each generator $\sigma_g$ acting only inside the $k$-th nucleon block, the Wedderburn-weighted per-generator character ratio}
+\emph{Let $\mathrm{tr}$ be a Markov trace with parameter $z$ on the Hecke tower, and let the constituent vacuum $\mathcal{B}_K^{\mathrm{vac}} \in H_{3A}(q)$ be the product of $Z$ proton and $N$ neutron block words on disjoint $3$-strand windows (generators $3k, 3k+1$ for block $k$), with no interface crossings. For a generator $\sigma_g$ carrying the accumulated factor $W_g = \alpha_g\,\sigma_g + \beta_g$, define $\hat V_g := \mathrm{tr}(W_g)$. Then}
 
 \[
-  \hat V^{(3A)}_g(\mathcal{B}_K^{\mathrm{vac}})
-   :=
-  \sum_{\lambda \vdash 3A}
-    \frac{\dim_q^2(\lambda)}{[3A]_q!} \cdot
-    \frac{\chi^\lambda(W_g)}{\dim(\lambda)}
+  \hat V_g \;=\; \beta_g + \alpha_g\, z,
 \]
 
-\emph{is independent of $A$. It depends only on the flavor of the $k$-th nucleon and on the local position $g \bmod 3 \in \{0, 1\}$ within the block, not on the total strand count $3A$ or the flavor content of the other blocks.}
-
-\subparagraph{Empirical verification}
-
-Computed via the canonical formalism on D, T, ${}^{3}$He at $H_6, H_9, H_9$ respectively (50 dps):
-
-\begin{adjustbox}{max width=\linewidth}
-\begin{tabular}{l>{\raggedright\arraybackslash}p{0.282\linewidth}>{\raggedright\arraybackslash}p{0.235\linewidth}c}
-\toprule
-atom & proton block (gens 0, 1) & neutron block & matches D? \\
-\midrule
-D (A=2) & $V_0 = 0.6714$, $V_1 = 1.0551$ & $V_0 = 0.5517$, $V_1 = 1.0884$ & — \\
-T (A=3) & same & same & yes \\
-${}^{3}$He (A=3) & same & same & yes \\
-\bottomrule
-\end{tabular}
-\end{adjustbox}
-
-Block-multiplicativity holds exactly to 4 digits. The block factors evaluate to $v_p = 0.7084$ and $v_n = 0.6005$.
-
-\subparagraph{Classical-limit proof sketch ($q \to 1$)}
-
-When $\sigma_g$ acts inside the first 3-strand block, the symmetric-group character factors via the Littlewood–Richardson restriction rule. At $q = 1$ the Wedderburn weight is the classical Plancherel measure. By the classical Plancherel duality identity, the ratio simplifies to:
+\emph{independent of the strand count $3A$, of the position $g$, and of the other blocks. If a block word is the ascending product $W_{3k} W_{3k+1}$, its trace is $\hat V_{3k}\,\hat V_{3k+1}$. For any arrangement of the blocks,}
 
 \[
-  \hat V^{(3A)}_g
-   =
-  \frac{1}{6}
-  \sum_{\mu \vdash 3} \chi_\mu(\sigma_g) \dim(\mu).
+  \mathrm{tr}\bigl(\mathcal{B}_K^{\mathrm{vac}}\bigr) \;=\; v_p^{Z}\, v_n^{N},
+  \qquad
+  v_p = \hat V^{p}_0\, \hat V^{p}_1, \quad v_n = \hat V^{n}_0\, \hat V^{n}_1 .
 \]
 
-The right-hand side depends only on the $H_3$ character data of $\sigma_g$, proving the classical limit.
+The proof uses only the trace axioms and the three Hecke relations, over a generic commutative ring. The last identity is the disjoint-block trace law, with each block read at offset $0$ by shift invariance.
 
-\subparagraph{$q$-deformation: the open structural step}
-
-For $q \ne 1$, the LR identity generalises to a $q$-Schur duality. The conjecture is that this identity yields an $A$-independent residual after factoring out $[3A]_q! / [3A-3]_q!$. A structural proof via the $q$-Schur–Weyl duality remains pending.
-
-\subparagraph{Significance}
-
-Block-multiplicativity reduces the $T_1^{\text{free}}$ term of the mass-endomorphism tower from an $O(p(3A) \cdot 3A^3)$ character-sum compute to an $O(1)$ exponentiation: $T_1^{\text{free}}(K) =\allowbreak{} v_p^Z \cdot v_n^N$. Combined with structural identities for interface generators, this yields a closed-form formula computable in microseconds for any $(Z, N)$.
-\end{conjecture}
+\textbf{Scope.} The product formula holds for the \emph{ascending} block word $W_{3k}W_{3k+1}$. When a block's braid word interleaves its two generators, the trace of that word is $\mathrm{tr}(w_p)$ and not $\hat V_0 \hat V_1$, because reordering changes the trace. For example, $\mathrm{tr}(\sigma_1\sigma_2\sigma_1\sigma_2) -\allowbreak{} \mathrm{tr}(\sigma_1^2\sigma_2^2) =\allowbreak{} z^2 -\allowbreak{} hz -\allowbreak{} 1 =\allowbreak{} -(q^4+\allowbreak{}q^2+\allowbreak{}1)/(q^2+\allowbreak{}1)^2$ at $z = q^3/(q^2+1)$. The disjoint-block law still gives $\mathrm{tr}(\mathcal{B}_K^{\mathrm{vac}}) =\allowbreak{} \mathrm{tr}(w_p)^Z\,\mathrm{tr}(w_n)^N$ in that case.
+\end{proposition}
 
 \subsection{Bi-filtration and the adelic base ring}
 \label{sec:mass-algebraic-bifiltration-adelic}
@@ -43732,22 +43699,37 @@ $E_\infty^{\ell \geq 3, *}$ & jet-level prefix (Term 6) & conjectural & see §6 
 \end{adjustbox}
 \end{table}
 
-\begin{conjecture}[{Explicit $d_1, d_2$ on $H_3(q)$ over $\mathbb{R}[q, q^{-1}]$}]
-  \label{conj:spectral-sequence-h3-explicit}
-  \blockannot[spec]{conj:spectral-sequence-h3-explicit}{QOU.BraidsAndKnots.BraidKnot.SpectralSequenceH3Explicit}{quantum-observable-universe/mass-theory/spectral-sequence-h3-explicit.md}
+\begin{proposition}[{Explicit $d_1, d_2$ on $H_3(q)$ over $\mathbb{R}[q, q^{-1}]$}]
+  \label{prop:spectral-sequence-h3-explicit}
+  \blockannot[compiled]{prop:spectral-sequence-h3-explicit}{QOU.BraidKnot.h3_trace_standard_basis}{quantum-observable-universe/mass-theory/spectral-sequence-h3-explicit.md}
   \uses{prop:e-infinity-page-identifications}
-\emph{The differentials $d_1$ and $d_2$ execute completely algebraically on $H_3(R, q)$.}
+\emph{Filter $H_3(R, q)$ by Coxeter length, $F_k =\allowbreak{} \mathrm{span}_R\{T_w : \ell(w) \le\allowbreak{} k\}$, and pass to the cocentre $\mathrm{HH}_0(H_3) = H_3/[H_3, H_3]$, through which every trace factors. Write the quadratic relation as $\sigma_i^2 = a\,\sigma_i + b$ (so $a = h = q - q^{-1}$, $b = 1$). The pages are explicit:}
 
-The initial $E_1$ page categorizes directly into four explicit levels holding ranks 1, 2, 2, and 1. The $d_1$ differential acts directly through the Hecke relation
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{c l l l}
+\toprule
+length $k$ & $E_1$ basis & killed by $d$ & $E_\infty$ basis \\
+\midrule
+$0$ & $\mathbf{1}$ & none & $[\mathbf{1}]$ \\
+$1$ & $\sigma_1,\ \sigma_2$ & $\sigma_1 - \sigma_2$ & $[\sigma_1]$ \\
+$2$ & $\sigma_1\sigma_2,\ \sigma_2\sigma_1$ & $\sigma_1\sigma_2 - \sigma_2\sigma_1$ & $[\sigma_1\sigma_2]$ \\
+$3$ & $\sigma_1\sigma_2\sigma_1$ & $\sigma_1\sigma_2\sigma_1 -\allowbreak{} a\,\sigma_1\sigma_2 -\allowbreak{} b\,\sigma_2$ & none \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+
+\emph{so the $E_1$ ranks are $1, 2, 2, 1$ and the $E_\infty$ ranks are $1, 1, 1, 0$. The kills are explicit identities modulo commutators:}
 
 \[
-  \sigma_i^2 = (q - q^{-1}) \sigma_i + \mathbf{1}.
+  b\,(\sigma_1 - \sigma_2) \;=\; [\sigma_1, \sigma_2\sigma_1] - [\sigma_2, \sigma_1\sigma_2] - a\,[\sigma_1, \sigma_2],
+  \qquad
+  \sigma_1\sigma_2\sigma_1 \;\equiv\; a\,\sigma_1\sigma_2 + b\,\sigma_2 \pmod{[H_3, H_3]}.
 \]
 
-It drives pair matrices into pure symmetric/antisymmetric splits, killing specific states outright. The $d_2$ differential governs the Yang-Baxter overlap, further squashing rank bounds before fully locking into the final $E_\infty$ stable state.
+\emph{The three surviving classes are independent: the trivial, sign and reflection characters separate them with determinant $(Q+1)(Q^2+Q+1)$, $Q = q^2$. Hence $\mathrm{HH}_0(H_3)$ has rank $3$, the number of partitions of $3$, whenever $[2]_Q[3]_Q$ is not a zero divisor.}
 
-The explicitly computed $E_\infty$ trace limits correctly extract zero trace for single generators and exact pair traces for the $z^2$ multiplier, thoroughly fulfilling the term expectations mathematically.
-\end{conjecture}
+Every identity holds over a generic commutative ring with the Hecke and braid relations, and the Lean sibling proves each one. A trace $\tau$ is therefore fixed by $\tau(\mathbf{1})$, $\tau(\sigma_1)$ and $\tau(\sigma_1\sigma_2)$. On the six standard basis words it takes the values $t_0, t_1, t_1, t_2, t_2, a t_2 +\allowbreak{} t_1$.
+\end{proposition}
 
 \begin{proposition}[{Chirality factor $1 + w \cdot h$ from ribbon-twist framing (writhe $w$)}]
   \label{prop:chirality-writhe-ribbon-derivation}
@@ -44767,7 +44749,7 @@ $\bar\mu$) and live in the open follow-up; see
 \begin{conjecture}[{Linear-system procedure for Jones--Markov weights $y_\lambda$ and stratum prefactors $\alpha_k$ at $H_n(R, q)$}]
   \label{conj:alpha-k-derivation-procedure}
   \blockannot[spec]{conj:alpha-k-derivation-procedure}{QOU.BraidsAndKnots.BraidKnot.alpha_k_derivation_procedure}{quantum-observable-universe/mass-theory/alpha-k-derivation-procedure.md}
-  \uses{prop:mass-tower-coefficient-stratification, conj:spectral-sequence-h3-explicit}
+  \uses{prop:mass-tower-coefficient-stratification, prop:spectral-sequence-h3-explicit}
 \emph{Over $H_n(R, q)$ at generic $q$, the Jones-Markov trace admits a unique central-character expansion:}
 
 \[
@@ -45970,11 +45952,11 @@ This synergy drops mass-formula calculation times from hours to seconds for larg
 This optimization is essential for atom-knot identification at high $n$, enabling efficient evaluation of many hyperbolic knots at $H_{18}$ and $H_{21}$.
 \end{proposition}
 
-\begin{conjecture}[{Explicit $\alpha_k$ at $H_3(R, q)$: closed-form structural prefactors}]
-  \label{conj:explicit-alpha-k-h3}
-  \blockannot[spec]{conj:explicit-alpha-k-h3}{QOU.BraidsAndKnots.explicit_alpha_k_h3}{quantum-observable-universe/mass-theory/explicit-alpha-k-h3.md}
-  \uses{conj:spectral-sequence-h3-explicit}
-\emph{Let $z = q^{3}/(q^{2}+1)$ and $h = q - q^{-1}$. The structural prefactors of the unified mass formula at $H_3$ are:}
+\begin{proposition}[{Explicit $\alpha_k$ at $H_3(R, q)$: closed-form structural prefactors}]
+  \label{prop:explicit-alpha-k-h3}
+  \blockannot[compiled]{prop:explicit-alpha-k-h3}{QOU.BraidsAndKnots.explicit_alpha_k_h3}{quantum-observable-universe/mass-theory/explicit-alpha-k-h3.md}
+  \uses{prop:spectral-sequence-h3-explicit}
+\emph{Let $\mathrm{tr}$ be a Markov trace on $H_3(R, q)$ with parameter $z = q^{3}/(q^{2}+1)$, and let $h = q - q^{-1}$. On the representatives $r_0 = \mathbf{1}$, $r_1 = \sigma_1 - \sigma_2$, $r_2 = \sigma_1\sigma_2$, $r_3 = \sigma_1\sigma_2\sigma_1$, the prefactors $\alpha_k = \mathrm{tr}(r_k)$ are}
 
 \[
   \boxed{\;
@@ -45985,12 +45967,14 @@ This optimization is essential for atom-knot identification at high $n$, enablin
   \;}
 \]
 
-These values are fully q-algebraic. No transcendental constants or empirical fits appear. The $\alpha_1$ coefficient is structurally forced to zero by the cyclicity of the Markov trace and the collapse of Hochschild cohomology.
-\end{conjecture}
+\emph{Two of these values are structural and hold for every trace, not only the Markov one. $r_1$ is a sum of commutators, so $\alpha_1 = 0$. $r_3 \equiv h\,r_2 + \sigma_2$ modulo commutators, so $\alpha_3 =\allowbreak{} h\,\alpha_2 +\allowbreak{} \mathrm{tr}(\sigma_1)$.}
 
-\phantomsection\label{rem:explicit-alpha-k-h3-proof-sketch}\begin{conjecture}[{Explicit $\alpha_3$ at $H_4(R, q)$ via Wedderburn-orthogonal class-function $r_3$}]
-  \label{conj:explicit-alpha-k-h4}
-  \blockannot[spec]{conj:explicit-alpha-k-h4}{QOU.BraidsAndKnots.explicit_alpha_k_h4}{quantum-observable-universe/mass-theory/explicit-alpha-k-h4.md}
+In the length-filtered cocentre (\hyperref[prop:spectral-sequence-h3-explicit]{explicit $H_3$ pages}), $r_1$ and $r_3$ are not new classes: $r_1$ is killed in length $1$, and $r_3$ drops to lengths $2$ and $1$. The $E_\infty$ classes are $[\mathbf{1}], [\sigma_1], [\sigma_1\sigma_2]$, with traces $1, z, z^2$. The values are $q$-algebraic, and no transcendental constants or fitted numbers appear.
+\end{proposition}
+
+\phantomsection\label{rem:explicit-alpha-k-h3-proof-sketch}\begin{proposition}[{Explicit $\alpha_3$ at $H_4(R, q)$ via Wedderburn-orthogonal class-function $r_3$}]
+  \label{prop:explicit-alpha-k-h4}
+  \blockannot[compiled]{prop:explicit-alpha-k-h4}{QOU.BraidsAndKnots.explicit_alpha_k_h4}{quantum-observable-universe/mass-theory/explicit-alpha-k-h4.md}
   \uses{conj:wedderburn-bratteli-recursion, rem:y-lambda-sign-pattern}
 \emph{For each $\lambda \,\vdash\, 4$, the Wedderburn-orthogonal representative $r_\lambda =\allowbreak{} \sum_C c_C \cdot T_{w_C}$ has coefficients $c_C(\lambda) \in \mathbb{Q}(q)$ defined as:}
 
@@ -46010,13 +45994,15 @@ $(1^4)$ & $-\dfrac{q^9}{\Phi_{(4)}}$ & $\dfrac{q^4(3q^4 + 2q^2 + 1)}{\Phi_{(4)}}
 
 \emph{where $\Phi_{(4)} = q^6 + 2q^4 + 2q^2 + 1$.}
 
-\textbf{Archimedean specialisation.} What follows sits on the archimedean side of the algebraic→archimedean wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.
-\end{conjecture}
+\emph{The table is a dual basis to the characters: $\chi_\mu(r_\lambda) =\allowbreak{} \delta_{\lambda\mu}\,\kappa_\lambda$, where each $\kappa_\lambda$ factors through $q$, $q^2+1$, $q^4+1$ and $q^4+q^2+1$ only, so $\kappa_\lambda \neq 0$ at generic $q$. For any trace $\mathrm{tr} =\allowbreak{} \sum_\mu y_\mu \chi_\mu$ this gives $\mathrm{tr}(r_\lambda) =\allowbreak{} y_\lambda \kappa_\lambda$.}
+
+The characters $\chi_\mu$ are the characters of five explicit representations of $H_4$ with entries in $\mathbb{Z}[q^2]$: trivial, sign, the reflection representation $(3,1)$, its twist $T \mapsto (Q-1) - T$ for $(2,1,1)$, and the $H_3$ reflection representation pulled back along $T_1, T_2, T_3 \mapsto T_1, T_2, T_1$ for $(2,2)$. The Lean sibling checks the Hecke and braid relations for each of them and recomputes every entry of the character table. The statement holds over a generic commutative ring.
+\end{proposition}
 
 \phantomsection\label{rem:explicit-alpha-k-h4-proof-sketch}\begin{conjecture}[{Wedderburn--Bratteli recursion for Jones--Markov weights $y_\lambda$ at $H_n(R, q)$}]
   \label{conj:wedderburn-bratteli-recursion}
   \blockannot[spec]{conj:wedderburn-bratteli-recursion}{QOU.BraidsAndKnots.wedderburn_bratteli_recursion}{quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion.md}
-  \uses{conj:alpha-k-derivation-procedure, conj:explicit-alpha-k-h3}
+  \uses{conj:alpha-k-derivation-procedure, prop:explicit-alpha-k-h3}
 \emph{At the Markov parameter $z = q^3/(q^2+1)$, the Jones–Markov weight of every shape with three or more rows is $0$, and on the two-row shape $(a, b)$, $a \geq b$, it is}
 
 \[
@@ -46057,7 +46043,7 @@ This recursion confirms that $\alpha_k(H_n)$ at a fixed $k$ involves only finite
 \phantomsection\label{rem:wedderburn-bratteli-recursion-proof-sketch}\phantomsection\label{rem:alpha-k-derivation-procedure-proof-sketch}\phantomsection\label{rem:y-lambda-sign-pattern}\begin{conjecture}[{Terms 2 and 6: infinite Wedderburn / Habiro-cyclotomic sum and GB root-of-unity residue sum}]
   \label{conj:terms-2-6-higher-operations}
   \blockannot[spec]{conj:terms-2-6-higher-operations}{QOU.BraidsAndKnots.BraidKnot.Terms26HigherOperations}{quantum-observable-universe/mass-theory/terms-2-6-higher-operations.md}
-  \uses{conj:spectral-sequence-h3-explicit}
+  \uses{prop:spectral-sequence-h3-explicit}
 \emph{The unified knot mass formula enforces the following readings:}
 
 \begin{enumerate}
@@ -50682,6 +50668,12 @@ The Type-B Cartan datum is obtained by folding. The KLR canonical basis is bar-i
 The joint statement is that they compose to the CPT theorem at the Markov-trace level. The three components are not logically independent; they collectively constitute the conjecture. Only the components are conjectural: if each of $C$, $P$ and $T$ preserves $\mathrm{tr}_M$, so does their composite, so the joint statement reduces to the three component conjectures. Each component asserts that the named realisation of its symmetry is trace-preserving, and none is proved.
 
 The conjecture is stated over the closed-braid space $B$, the trace $\mathrm{tr}$ and the CPT action $\mathrm{cpt}$ it concerns. Downstream results that require CPT closure take it as an explicit hypothesis. Here $R$ is the coefficient ring of the trace—canonically $\mathbb{Z}[q, q^{-1}]$, with an archimedean evaluation $R := \mathbb{R}$ arising only on the observation side of the aether–archimedean wall.
+
+\paragraph{Status (2026-11-27): refuted in the stated form}
+
+$C$ acts on color-sheet flavor labels and not on Hecke generators, so on a braid word the composite $C\cdot P\cdot T$ is the mirror of the reversed word, that is braid inversion $\beta \mapsto \beta^{-1}$. This does not preserve the Markov trace: on $\sigma_0 \in B_2$ it changes $z$ to $z - (q - q^{-1})$. Lean: \texttt{QOU.\allowbreak{}Iwahori\allowbreak{}Hecke.\allowbreak{}Markov\allowbreak{}Trace\allowbreak{}Symmetries.\allowbreak{}cpt\_\allowbreak{}not\_\allowbreak{}trace\_\allowbreak{}preserving}. The component $T$ does preserve the trace (see \href{t-from-trace-cyclicity.md}{conj}), so the failure comes entirely from $P$ (see \href{p-from-braid-mirror.md}{conj}).
+
+\textbf{qCPT (proved).} CPT becomes a symmetry of the Markov trace once the parameter moves with it. With $a = q - q^{-1}$, the trace at $(q, z)$ of $\mathrm{CPT}(\beta)$ equals the trace at $(q^{-1}, z - a)$ of $\beta$, for every braid and every number of strands. Lean: \texttt{QOU.\allowbreak{}Iwahori\allowbreak{}Hecke.\allowbreak{}Markov\allowbreak{}Trace\allowbreak{}Symmetries.\allowbreak{}qcpt\_\allowbreak{}law}. For the writhe-normalised (HOMFLY-type) invariant $\mu^{e(\beta)}\,\mathrm{tr}(\beta)$, where $\mu$ is a unit with $\mu^2 z = z - a$, the shift of $z$ is absorbed. The mirror data are normalised by $\mu^{-1}$ with the same loop value $D = \mu z$, and the normalised invariant of $\mathrm{CPT}(\beta)$ at $(q, \mu)$ equals that of $\beta$ at $(q^{-1}, \mu^{-1})$. Lean: \texttt{is\allowbreak{}Normaliser\_\allowbreak{}inv}, \texttt{normalised\_\allowbreak{}qcpt\_\allowbreak{}law}.
 \end{conjecture}
 
 \begin{conjecture}[{Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)}]
@@ -50700,6 +50692,15 @@ The conjecture is stated over the closed-braid space $B$, the trace $\mathrm{tr}
 \emph{By the Markov trace cyclicity axiom $\mathrm{tr}_M(ab) =\allowbreak{} \mathrm{tr}_M(ba)$, word reversal is trace-invariant for the Markov closure. The Jones polynomial of $K$ and of its time-reversed counterpart $K^T$ coincide. The operator $T$ is an involution ($T^2 = \mathrm{id}$). It preserves $q$, color-sheet flavors, and Hecke generator signs. It acts purely on the ordering of crossings.}
 
 For a braid word $\beta$, define $\beta^T$ as the reversed word. Trace cyclicity gives $\mathrm{tr}_M(\beta) =\allowbreak{} \mathrm{tr}_M(\beta^T)$. The reversed word produces the mirror-orientation link, which has the same Jones polynomial as the original. $T$ alone is the trace-cyclicity dual. Composed with $C$ and $P$, it recovers the bar-involution = $CPT$ composite.
+
+\paragraph{Status (2026-11-27): proved}
+
+The invariance $\mathrm{tr}(\beta^T) =\allowbreak{} \mathrm{tr}(\beta)$ is a theorem, for every number of strands, over any commutative ring and any Hecke quadratic. Two remarks on the argument above. Cyclicity alone gives invariance under rotation of a word, not under reversal. What does give reversal is the anti-involution $\iota$ of $H_n(q)$ that fixes every generator, $\iota(\sigma_{i_1}\cdots\sigma_{i_\ell}) =\allowbreak{} \sigma_{i_\ell}\cdots\sigma_{i_1}$.
+
+\begin{itemize}
+  \item Every trace on $H_n(q)$ satisfies $\mathrm{tr}\circ\iota = \mathrm{tr}$. This covers every representation character, not only the Markov trace. The proof is an induction along $H_1 \subset H_2 \subset \cdots$ that uses only the double-coset decomposition $H_{k+1} = H_k + H_k\,\sigma_k\,H_k$. Lean: \texttt{QOU.\allowbreak{}Iwahori\allowbreak{}Hecke.\allowbreak{}Hecke\allowbreak{}Trace\allowbreak{}Reversal.\allowbreak{}trace\_\allowbreak{}rev}, and the instance \texttt{QOU.\allowbreak{}Braids\allowbreak{}And\allowbreak{}Knots.\allowbreak{}TFrom\allowbreak{}Trace\allowbreak{}Cyclicity\allowbreak{}All.\allowbreak{}t\allowbreak{}From\allowbreak{}Trace\allowbreak{}Cyclicity} of the carrier class for every $n$ and $d$.
+  \item For the Markov trace there is a second proof through Markov uniqueness, applied in the opposite algebra: \texttt{QOU.\allowbreak{}Iwahori\allowbreak{}Hecke.\allowbreak{}Markov\allowbreak{}Trace\allowbreak{}Symmetries.\allowbreak{}markov\_\allowbreak{}reverse}.
+\end{itemize}
 \end{conjecture}
 
 \begin{conjecture}[{Parity $P$ as mirror reflection of the braid diagram (writhe sign flip)}]
@@ -50840,6 +50841,12 @@ reversal, this conjecture supplying parity:
 \href{../nuclear-interactions/t-from-trace-cyclicity.md}{Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)}
   \item Bar-involution: \href{../braids-and-knots/bar-involution.md}{Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections} Tables 1-4
 \end{itemize}
+
+\paragraph{Status (2026-11-27): trace preservation refuted at fixed $q$}
+
+The mirror with $q$ held fixed does not preserve the Markov trace. The smallest counterexample is the one-letter braid $\sigma_0 \in B_2$: $\mathrm{tr}_M(\sigma_0) = z$ while $\mathrm{tr}_M(\sigma_0^{-1}) =\allowbreak{} z -\allowbreak{} (q -\allowbreak{} q^{-1})$. Lean: \texttt{QOU.\allowbreak{}Iwahori\allowbreak{}Hecke.\allowbreak{}Markov\allowbreak{}Trace\allowbreak{}Symmetries.\allowbreak{}mirror\_\allowbreak{}not\_\allowbreak{}trace\_\allowbreak{}preserving}, with a concrete trace on which it fails in \texttt{QOU.\allowbreak{}Braids\allowbreak{}And\allowbreak{}Knots.\allowbreak{}Markov\allowbreak{}Mirror\allowbreak{}Refutation.\allowbreak{}mirror\_\allowbreak{}fails\_\allowbreak{}H2}.
+
+What the mirror does instead is change parameters. The inverses $\sigma_i^{-1}$ satisfy the Hecke relation with $q - q^{-1}$ replaced by $q^{-1} - q$, and the Markov trace with parameter $z$ is a Markov trace for them with parameter $z - (q - q^{-1})$. So the mirror carries the Markov trace at $(q, z)$ to the Markov trace at $(q^{-1}, z - (q - q^{-1}))$. Lean: \texttt{mirror\_\allowbreak{}law}.
 \end{conjecture}
 
 \begin{conjecture}[{Type-B Coxeter folding realises CPT via Hecke-algebra $\mathbb{Z}/2$ fixed points}]
@@ -72680,6 +72687,36 @@ is the choice of $\Lambda^2$ over $\mathrm{Sym}^2$ for a strand pair, and the re
 multiplicity of $\bar 5$ and $\Lambda^2 5$.
 \end{proposition}
 
+\begin{proposition}[{The strand slot separates the first-generation quark states}]
+  \label{prop:strand-slot-separates-gen1}
+  \blockannot[compiled]{prop:strand-slot-separates-gen1}{QOU.EightfoldWay.StrandSlotSeparatesGen1.slot_dual_injective}{quantum-observable-universe/appendix-standard-model/strand-slot-separates-gen1.md}
+  \uses{prop:fermi-pair-wedge}
+\textbf{Proposition.} \emph{Place each first-generation quark state in one of four slots on
+$5 = C \oplus V$: a single colour strand in $\bar 5$, or a strand pair of type
+colour\allowbreak{}$\wedge e_3$, colour\allowbreak{}$\wedge e_4$ or colour\allowbreak{}$\wedge$\allowbreak{}colour in $\Lambda^2 5$, by the
+Georgi–Glashow assignment
+$u_L, \bar u_L \mapsto$ colour\allowbreak{}$\wedge e_3$, $d_L, \bar d_L \mapsto$ colour\allowbreak{}$\wedge e_4$,
+$u_R, \bar u_R \mapsto$ colour\allowbreak{}$\wedge$\allowbreak{}colour, $d_R, \bar d_R \mapsto$ colour. Mark the
+states $\bar u_L, \bar d_L, u_R, d_R$ as dual, meaning they sit in $5 \oplus \Lambda^2 \bar 5$.}
+
+\begin{enumerate}
+  \item \emph{Slot and dual flag together separate all eight states; the slot alone does not.}
+  \item \emph{The dual flag is set exactly when the chirality bit and the particle bit differ.}
+  \item \emph{At $\alpha = \tfrac16$ the slot charges are $\tfrac13$, $\tfrac23$, $-\tfrac13$, $-\tfrac23$,
+independent of the colour strand. Negated on dual states, they give $+\tfrac23$ on $u$,
+$-\tfrac13$ on $d$, and the negatives on $\bar u$, $\bar d$.}
+\end{enumerate}
+
+\textbf{Proof.} Items 1 and 2 are a case check over the eight states. Item 3 is
+\hyperref[prop:neutral-lepton-fixes-charges]{the neutral-lepton proposition} at $\alpha = \tfrac16$. $\square$
+
+\textbf{Scope.} The chirality analysis in \texttt{Chirality\allowbreak{}Independent\allowbreak{}Of\allowbreak{}Crossing} shows the crossing
+sign cannot separate the sector and leaves one further label open. This proposition
+takes that label to be the strand slot. The slot assignment is the Georgi–Glashow
+embedding and is an input; so are the matter content, one neutral lepton and Fermi
+exchange, through \hyperref[prop:fermi-pair-wedge]{the Fermi pair proposition}.
+\end{proposition}
+
 \phantomsection\label{rem:cal2-higgs-knot-coupling}\phantomsection\label{rem:a5-orbital-degeneracy-fracture}\section{The 26 parameters of the Standard Model}
 \label{sec:sm-parameters}
 \sectionannot{sec:sm-parameters}
@@ -79269,7 +79306,7 @@ Label & Title & Chapter \\
 \hyperref[conj:binding-manybody-eq-jet-filtration]{conj} & Binding many-body series equals the jet-order filtration: $B(K)=\sum_n m_e\,a_D^{(n)}$ & Ch 11 \\
 \hyperref[conj:jones-birthday]{conj} & Birthday refinement of the Jones polynomial & Ch 25 \\
 \hyperref[conj:bring-hyperbolic-knot-bloch-decomposition]{conj} & Bloch-group decomposition of $2/(3\pi)$ from $S_5$-equivariantly embeddable hyperbolic knots in Bring's surface & Ch 14 \\
-\hyperref[conj:block-multiplicativity-v-free]{conj} & Block-multiplicativity of per-generator $\hat{V}$ on the disjoint Hecke product & Ch 11 \\
+\hyperref[prop:block-multiplicativity-v-free]{prop} & Block-multiplicativity of per-generator $\hat{V}$ on the disjoint Hecke product & Ch 11 \\
 \hyperref[conj:borromean-baryon-mass-formula]{conj} & Borromean baryon mass formula with common Borromean term $\mathfrak{m}_{\mathcal{B}_3}(q_0)$ & Ch 11 \\
 \hyperref[conj:borromean-bloch-group-element]{conj} & Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$ & Ch 11 \\
 \hyperref[conj:brane-tower-z-habiro]{conj} & Brane tower lives in the $z$-Habiro ring & Ch 11 \\
@@ -79323,10 +79360,10 @@ Label & Title & Chapter \\
 \hyperref[conj:three-calibration-inputs]{conj} & Exactly three calibration inputs: every observable factors through $m_e$, $m_\pi$ and $q_0$ & Ch 11 \\
 \hyperref[conj:gs-residue-at-root-existence]{conj} & Existence of the cyclotomic residue at each filtration level & Ch 11 \\
 \hyperref[conj:gs-graded-markov-trace-existence]{conj} & Existence of the graded Markov trace on the GS filtration (categorical existence) & Ch 11 \\
-\hyperref[conj:explicit-alpha-k-h4]{conj} & Explicit $\alpha_3$ at $H_4(R, q)$ via Wedderburn-orthogonal class-function $r_3$ & Ch 11 \\
-\hyperref[conj:spectral-sequence-h3-explicit]{conj} & Explicit $d_1, d_2$ on $H_3(q)$ over $\mathbb{R}[q, q^{-1}]$ & Ch 11 \\
+\hyperref[prop:explicit-alpha-k-h4]{prop} & Explicit $\alpha_3$ at $H_4(R, q)$ via Wedderburn-orthogonal class-function $r_3$ & Ch 11 \\
+\hyperref[prop:spectral-sequence-h3-explicit]{prop} & Explicit $d_1, d_2$ on $H_3(q)$ over $\mathbb{R}[q, q^{-1}]$ & Ch 11 \\
 \hyperref[conj:explicit-formula]{conj} & Explicit formula as a spectral--geometric trace identity & Ch 22 \\
-\hyperref[conj:explicit-alpha-k-h3]{conj} & Explicit α\_k at H\_3(R, q): structural prefactors closed form & Ch 11 \\
+\hyperref[prop:explicit-alpha-k-h3]{prop} & Explicit α\_k at H\_3(R, q): structural prefactors closed form & Ch 11 \\
 \hyperref[conj:archimedean-remainder-exponential-decay]{conj} & Exponential decay of the archimedean brane-tower truncation remainder & Ch 12 \\
 \hyperref[conj:q-gl-fiber-functor]{conj} & Fibre-functor mediation of the $q$-Langlands correspondence & Ch 22 \\
 \hyperref[conj:gs-spectral-sum-finite]{conj} & Finiteness of the GS residue spectral sum & Ch 11 \\
