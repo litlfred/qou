@@ -43,21 +43,30 @@ The interface itself is analytic in two places:
 1. every field quantifies over `[NormedRing R] [NormedAlgebra ℂ R] [CompleteSpace R]`;
 2. `ePi` is the analytic exponential.
 
-## 3. Plan once the rational associator lands
+## 3. Plan (corrected the same day)
 
-Bar-Natan's thread, stage 5, discharges the `Φ` hypothesis of
-`HeckeTemperleyLieb/QuasiYangBaxterFromHexagon.lean` (#9519).
+The first version of this section proposed making `Associator` algebraic by replacing the normed
+context with a half-twist field. That does not work. The `Drinfeld/*` files use the analytic
+structure directly, not only through `Ψ`:
 
-| step | change | consumers touched |
-|---|---|---|
-| A | Generalise `Associator` to an algebraic carrier: a `ℚ`-algebra `R`, with a half-twist `e : R → R` given as a field satisfying `e(X+Y) = e X · e Y` for commuting `X, Y` and `Commute c X → Commute c (e X)`. These two laws are what `KZHexagonCentral` uses (`eπ_add`, `commute_eπ`). | `DrinfeldAssociator`, `Drinfeld/*` signatures (normed context drops) |
-| B | Build the KZ instance (`phiKZ`, `ePi = NormedSpace.exp`) as `Associator.ofKZ` and move it, with `AssociatorKZ`, `KZEdge`, `KZHexagon`, `KZShift`, `KZShiftPhi`, `KZPentagon` and `KZHexagonCentral`, into `QOU/Transcendental/BraidsAndKnots/`. | `GLnKZ`, `BlockResidues`, `KZIntertwine`, `ZigZag` import the instance from inside the boundary |
-| C | Instantiate `Associator` from the rational `Φ` over `R⟦h⟧`, with `e X = exp(h X / 2)` as a formal power series. The quasi-Yang–Baxter result (#9519) then becomes a corollary. | new file only |
-| D | Re-run the audit. `Drinfeld/*` should leave the outside set; the `Braiding`, `BraidingVV` and `RibbonDH` files still call `NormedSpace.exp` directly and need the same `e`-field treatment. | 3 files |
+- the carriers are complex matrices with local `linftyOpNormedRing` instances;
+- the coupling `c : ℂ` is assumed `Transcendental ℚ c`;
+- `Braiding`, `BraidingVV`, `RibbonDH` and `Hexagon` call `NormedSpace.exp`, `expSeries` and
+  `map_exp` themselves.
 
-Steps A and B do not need the rational associator, so they can start now. Step C waits on stage 5.
-Step A changes the type of a public structure that 21 files use. That makes it a single PR of
-roughly 30 files, which is the cost to weigh.
+So the Drinfeld category as written is a specialisation of the formal parameter `h` to a
+transcendental complex number. It is analytic, and an algebraic version is a new h-adic construction
+rather than a change to its signature.
+
+**Measured 2026-11-27:** the trio and everything downstream of it is **47 modules**. Apart from
+`QOU.lean`, the only importer outside those 47 is `QOU/Transcendental/MassTheory/BridgeAStokesNBody`,
+which is already inside the boundary. The chain is therefore a closed subgraph.
+
+| step | change |
+|---|---|
+| A | Move the 47 modules, unchanged, into `QOU/Transcendental/BraidsAndKnots/` (and `.../MassTheory/` for the four `MassTheory` members). The work is renaming import paths and updating one content-block reference. |
+| B | After Bar-Natan stage 5, build the h-adic Drinfeld category over `k⟦h⟧` from the rational `Φ`, outside the boundary. #9519's quasi-Yang–Baxter result is its first consumer. |
+| C | Once the algebraic category covers what the analytic one proves, keep the analytic chain as the comparison instance inside the boundary (KZ = specialisation at a transcendental `c`). |
 
 ## 4. Cut edges (algebraic module → analytic import), measured 2026-11-27
 
@@ -72,5 +81,4 @@ Drinfeld.Duals       <- Drinfeld.BraidingVV, ZigZag
 Drinfeld.HeckeStrands <- Drinfeld.RibbonDH
 ```
 
-Every edge except the last three passes through the `Associator` interface or the KZ instance. Step
-A plus step B cuts them.
+All of these edges are inside the 47-module chain, so step A removes them from the outside set.
