@@ -14,6 +14,7 @@ import MathlibExt.MapGenusNonneg
 import BraidKnotOctonion.GenusFourFromEquivariantMap
 import BraidKnotOctonion.A5LeastHyperbolicChi
 import BraidKnotOctonion.S5StrongSymmetricGenus
+import BraidKnotOctonion.A5VoltageMapChi
 import BraidKnotOctonion.GenusFourFromGermStabilisers
 import QOU.EightfoldWay.AmbientInvolutionDoesNotDecideType
 import QOU.EightfoldWay.CommutativeImageDegeneration
