@@ -800,7 +800,13 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
             continue
         if (z, n) not in mt_by_zn or (z + 1, n - 1) not in mt_by_zn:
             continue
-        q_pred = _m(mt_by_zn[(z, n)]["m_symbolic_MeV"]) - _m(mt_by_zn[(z + 1, n - 1)]["m_symbolic_MeV"]) - m_e
+        # Ruled-law masses (free baseline + T_z-even bond, PR #9675). The old
+        # m_symbolic gave every composite row the same -1.793 MeV
+        # (computations/probes/composite_beta_sign_decomposition_probe.py).
+        _mk = "m_ruled_MeV" if mt_by_zn[(z, n)].get("m_ruled_MeV") else "m_symbolic_MeV"
+        if not mt_by_zn[(z + 1, n - 1)].get(_mk):
+            continue
+        q_pred = _m(mt_by_zn[(z, n)][_mk]) - _m(mt_by_zn[(z + 1, n - 1)][_mk]) - m_e
         rel = abs(q_pred - q_exp) / q_exp
         beta_records.append(dict(Z=z, N=n, A=a, q_pred=q_pred, q_exp=q_exp, rel=rel, exo=(q_pred > 0)))
 
@@ -810,7 +816,7 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
         ("Low/Mid-$A$ ($17\\text{--}56$)", lambda a: 17 <= a <= 56, "Missing Pauli asymmetry + Coulomb shift"),
         ("High-$A$ Med ($57\\text{--}150$)", lambda a: 57 <= a <= 150, "Isobaric parabola absent in 1D Q-CLT chain"),
         ("Very High-$A$ ($\\ge 151$)", lambda a: a >= 151, "Large $Z$ Coulomb gradient omitted"),
-        ("**All Measured ($A \\ge 1$)**", lambda a: a >= 1, "Only $A=1$ exothermic without 3D/Coulomb closure"),
+        ("**All Measured ($A \\ge 1$)**", lambda a: a >= 1, "Ruled-law $B$: sign from the $T_z$-even bond, flat $Q$ until Coulomb / $T(T+1)$ terms land"),
     ]
     beta_band_rows: list[str] = []
     for bb_lbl, bb_fn, bb_diag in beta_band_defs:
@@ -990,7 +996,7 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
             f"`{_fmt_fixed(vew_ppb, 2, signed=True)} ppb` ($v_{{\\mathrm{{weak}}}}$), `-58.4%` ($n$), `{_fmt_fixed(_mean(all_beta_rels) * HUNDRED, 1)}%` (table) | "
             f"`71.7%` (TM), `{_fmt_fixed(_median(all_beta_rels) * HUNDRED, 1)}%` (table) | `2.94e+07` ($v_{{\\mathrm{{weak}}}}$) to `{_fmt_ppq(_median(all_beta_rels))}` | "
             f"`1 / {len(beta_records) + 1}` ($v_{{\\mathrm{{weak}}}}$, `-0.11σ`) | `1 / {len(beta_records) + 1}` ($v_{{\\mathrm{{weak}}}}$) | "
-            f"**Sub-`30 ppb` $v_{{\\mathrm{{weak}}}}$ (`-0.11σ`)**; keV–MeV TM (`-8.1%` ${{}}^{{14}}\\mathrm{{C}}$); isobaric table (`0/{len(beta_records)-1}` exo.) | "
+            f"**Sub-`30 ppb` $v_{{\\mathrm{{weak}}}}$ (`-0.11σ`)**; keV–MeV TM (`-8.1%` ${{}}^{{14}}\\mathrm{{C}}$); isobaric table (`{sum(1 for x in beta_records if x["exo"] and x["A"] > 1)}/{len(beta_records)-1}` exo.) | "
             f"**Not at `1 ppQ`** (`2.94e7 ppQ` on $v_{{\\mathrm{{weak}}}}$) | Cond. ($v_{{\\mathrm{{weak}}}}$, `C1–C3` on $n$); Open ($A \\ge 2$) |"
         ),
         (
@@ -1075,6 +1081,7 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
         "BETA_BENCHMARK_ROWS": "\n".join(beta_bench_rows),
         "N_BETA_TOTAL": f"{len(beta_records):,}",
         "N_BETA_COMPOSITE": f"{len(beta_records) - 1:,}",
+        "N_BETA_COMPOSITE_EXO": f"{sum(1 for x in beta_records if x['exo'] and x['A'] > 1):,}",
         "BETA_BAND_ROWS": "\n".join(beta_band_rows),
         "QBETA_BASE_MEV": _fmt_fixed(qbeta_base, 6),
         "NV_CROSSING": f"{int(nint(nv_crossing)):,}",
