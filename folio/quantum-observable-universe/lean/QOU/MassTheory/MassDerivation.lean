@@ -1,7 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import MathlibExt.Core
-import QOU.Transcendental.RpowSqrtHelpers
 import QOU.Core.Glossary
 import QOU.BraidsAndKnots.KnotTheory
 import QOU.LiftingDescent.Torsion
@@ -131,39 +130,9 @@ lemma vol_figure_eight_approx :
   unfold vol_figure_eight
   norm_num
 
-/-! ### Substrate-`q` `Real.sqrt` bracket
-
-The numerical witness `1.05341 < Real.sqrt substrate_q < 1.05343`
-discharges the half-denominator
-`Real.sqrt substrate_q + 1 / Real.sqrt substrate_q ≈ 2.00228`
-required by every QOU pair-skein bound. -/
-
-/-- `Real.sqrt substrate_q > 1.05341`. Proof: `1.05341² ≈
-    1.10967 < 1.1097`, so by monotonicity of `Real.sqrt`. -/
-lemma sqrt_substrate_q_gt :
-    (1.05341 : ℝ) < Real.sqrt substrate_q := by
-  apply QOU.MathlibExt.Real.lt_sqrt_of_sq_lt
-  · norm_num
-  · unfold substrate_q
-    norm_num
-
-/-- `Real.sqrt substrate_q < 1.05343`. Proof: `1.05343² ≈
-    1.1097148 > 1.1097`, so by monotonicity of `Real.sqrt`.
-    (The previous bound `1.05342` was false: `1.05342² ≈ 1.1096937
-    < 1.1097`, i.e. `√substrate_q ≈ 1.0534228` exceeds it.) -/
-lemma sqrt_substrate_q_lt :
-    Real.sqrt substrate_q < 1.05343 := by
-  apply QOU.MathlibExt.Real.sqrt_lt_of_lt_sq
-  · norm_num
-  · unfold substrate_q; norm_num
-  · unfold substrate_q
-    norm_num
-
-/-- Two-sided bracket on `Real.sqrt substrate_q`. -/
-lemma sqrt_substrate_q_bracket :
-    (1.05341 : ℝ) < Real.sqrt substrate_q ∧
-    Real.sqrt substrate_q < 1.05343 :=
-  ⟨sqrt_substrate_q_gt, sqrt_substrate_q_lt⟩
+/-! The numerical bracket `1.05341 < √substrate_q < 1.05343` lives in
+`QOU.Transcendental.MassTheory.MassDerivationReal` (transcendental-boundary
+strangler, bean `qou-dk7p`). -/
 
 /-- The muon-electron mass ratio is approximately 206.7683. -/
 lemma mu_e_ratio_approx :
@@ -231,8 +200,8 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
   -- Ref: [kronheimer2004] https://doi.org/10.2140/gt.2004.8.295
   have hsq := planck_sq_from_mass_eq q hq h_eq
   -- From the mass equation: (1-1/q)² = vol/ratio, and since q > 1
-  -- we get 1-1/q = √(vol/ratio), hence q = 1/(1-√(vol/ratio)).
-  -- We then sandwich √(vol/ratio) to bound q.
+  -- we get 1-1/q = v with v² = vol/ratio, hence q = 1/(1-v).
+  -- We then sandwich v to bound q.
   have hq_ne : q ≠ 0 := ne_of_gt (lt_trans zero_lt_one hq)
   have hq_pos : (0 : ℝ) < q := lt_trans zero_lt_one hq
   have hplanck_pos : 1 - 1 / q > 0 := by
@@ -245,52 +214,44 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
     apply div_pos
     · unfold vol_figure_eight; positivity
     · unfold experimental_mu_e_ratio; positivity
-  -- (1-1/q) = √r
-  have hplanck_eq_sqrt : 1 - 1 / q = Real.sqrt r := by
-    have h := Real.sqrt_sq (le_of_lt hplanck_pos)
-    rw [hsq] at h; exact h.symm
-  -- Therefore q = 1/(1 - √r)
-  have h_denom_pos : (0 : ℝ) < 1 - Real.sqrt r := by
+  -- `v := 1 − 1/q` is a square root of `r`, carried as a symbol: `v > 0`,
+  -- `v² = r`.  No `Real.sqrt` is taken (bean `qou-dk7p`).
+  set v : ℝ := 1 - 1 / q with hv
+  have hv_sq : v ^ 2 = r := hsq
+  have h_denom_pos : (0 : ℝ) < 1 - v := by
     have h_inv_pos : 0 < 1 / q := div_pos one_pos hq_pos
-    linarith [hplanck_eq_sqrt]
-  have h_denom_ne : (1 : ℝ) - Real.sqrt r ≠ 0 := ne_of_gt h_denom_pos
-  have hq_eq : q = 1 / (1 - Real.sqrt r) := by
-    have h1 : 1 - Real.sqrt r = 1 / q := by linarith [hplanck_eq_sqrt]
+    simp only [hv]; linarith
+  have h_denom_ne : (1 : ℝ) - v ≠ 0 := ne_of_gt h_denom_pos
+  have hq_eq : q = 1 / (1 - v) := by
+    have h1 : 1 - v = 1 / q := by simp only [hv]; ring
     rw [h1, one_div_one_div]
-  -- Now sandwich √r between 99/1000 and 996/10000
-  have hv_lb : (99 : ℝ) / 1000 < Real.sqrt r := by
+  -- Now sandwich `v` between 99/1000 and 996/10000, from the bracket on `v²`
+  have hv_lb : (99 : ℝ) / 1000 < v := by
     have hsq_lb : ((99 : ℝ) / 1000) ^ 2 < r := by
       show _ < vol_figure_eight / experimental_mu_e_ratio
       unfold vol_figure_eight experimental_mu_e_ratio; norm_num
-    calc (99 : ℝ) / 1000
-        = Real.sqrt (((99 : ℝ) / 1000) ^ 2) :=
-          (Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 99 / 1000)).symm
-      _ < Real.sqrt r := Real.sqrt_lt_sqrt (by positivity) hsq_lb
-  have hv_ub : Real.sqrt r < (996 : ℝ) / 10000 := by
+    nlinarith [hplanck_pos]
+  have hv_ub : v < (996 : ℝ) / 10000 := by
     have hsq_ub : r < ((996 : ℝ) / 10000) ^ 2 := by
       show vol_figure_eight / experimental_mu_e_ratio < _
       unfold vol_figure_eight experimental_mu_e_ratio; norm_num
-    calc Real.sqrt r
-        < Real.sqrt (((996 : ℝ) / 10000) ^ 2) :=
-          Real.sqrt_lt_sqrt (le_of_lt hr_pos) hsq_ub
-      _ = 996 / 10000 :=
-          Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 996 / 10000)
-  -- Bound q = 1/(1-√r) via division lemmas
-  have h_ne : (1 : ℝ) - Real.sqrt r ≠ 0 := ne_of_gt h_denom_pos
-  have h_lb : (11087 : ℝ) / 10000 < 1 / (1 - Real.sqrt r) := by
-    have key : (11087 : ℝ) / 10000 * (1 - Real.sqrt r) < 1 := by nlinarith
+    nlinarith [hplanck_pos]
+  -- Bound q = 1/(1-v) via division lemmas
+  have h_ne : (1 : ℝ) - v ≠ 0 := ne_of_gt h_denom_pos
+  have h_lb : (11087 : ℝ) / 10000 < 1 / (1 - v) := by
+    have key : (11087 : ℝ) / 10000 * (1 - v) < 1 := by nlinarith
     by_contra h; push_neg at h
-    have : 1 ≤ (11087 : ℝ) / 10000 * (1 - Real.sqrt r) :=
-      calc 1 = 1 / (1 - Real.sqrt r) * (1 - Real.sqrt r) :=
+    have : 1 ≤ (11087 : ℝ) / 10000 * (1 - v) :=
+      calc 1 = 1 / (1 - v) * (1 - v) :=
               (div_mul_cancel₀ 1 h_ne).symm
         _ ≤ _ := mul_le_mul_of_nonneg_right h (le_of_lt h_denom_pos)
     linarith
-  have h_ub : 1 / (1 - Real.sqrt r) < (11107 : ℝ) / 10000 := by
-    have key : 1 < (11107 : ℝ) / 10000 * (1 - Real.sqrt r) := by nlinarith
+  have h_ub : 1 / (1 - v) < (11107 : ℝ) / 10000 := by
+    have key : 1 < (11107 : ℝ) / 10000 * (1 - v) := by nlinarith
     by_contra h; push_neg at h
-    have : (11107 : ℝ) / 10000 * (1 - Real.sqrt r) ≤ 1 :=
-      calc (11107 : ℝ) / 10000 * (1 - Real.sqrt r)
-          ≤ 1 / (1 - Real.sqrt r) * (1 - Real.sqrt r) :=
+    have : (11107 : ℝ) / 10000 * (1 - v) ≤ 1 :=
+      calc (11107 : ℝ) / 10000 * (1 - v)
+          ≤ 1 / (1 - v) * (1 - v) :=
               mul_le_mul_of_nonneg_right h (le_of_lt h_denom_pos)
         _ = 1 := div_mul_cancel₀ 1 h_ne
     linarith

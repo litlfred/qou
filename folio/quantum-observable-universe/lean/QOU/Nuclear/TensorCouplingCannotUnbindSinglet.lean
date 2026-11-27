@@ -1,5 +1,4 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.LinearAlgebra.Matrix.Notation
 import Mathlib.Tactic
 
@@ -58,7 +57,10 @@ normalised even-negative stacked words `σ^{−2k}` do unbind (`SingleCrossingAl
 ## Base ring (§7c)
 
 Part (A) is over `ℂ` because `σ_y` needs `√−1`; no ordering, no `Real.*` — it is exact
-matrix algebra. Part (B) is over `ℝ` by nature (an ordering statement with `Real.sqrt`).
+matrix algebra. Part (B) is over `ℝ` by nature (an ordering statement). The square root
+in `λ₋` is a ring symbol `s`, `0 ≤ s`, `s² = ((a−b)/2)² + t²` (bean `qou-dk7p`); the
+`Real.sqrt` form `lowerEigen` and its theorems, under the original names, are in
+`QOU/Transcendental/Nuclear/TensorCouplingCannotUnbindSingletReal.lean`.
 
 -- Ref: [leitner2026] computations/probes/two_nucleon_sector_sign_probe.py
 -- Ref: [leitner2026] docs/audits/2026-08-16-two-nucleon-sector-final-state-eight-closures.md
@@ -145,25 +147,23 @@ end Singlet
 
 section Interlacing
 
-/-- The lower eigenvalue of the real symmetric block `[[a, t], [t, b]]`. -/
-noncomputable def lowerEigen (a b t : ℝ) : ℝ :=
-  (a + b) / 2 - Real.sqrt (((a - b) / 2) ^ 2 + t ^ 2)
+/-- The lower eigenvalue of the real symmetric block `[[a, t], [t, b]]`, with the
+square root a symbol `s`, `0 ≤ s`, `s² = ((a − b)/2)² + t²`. -/
+noncomputable def lowerEigenOf (a b s : ℝ) : ℝ := (a + b) / 2 - s
 
 /-- `λ₋` is a root of the characteristic polynomial `(a − λ)(b − λ) − t² = 0`. -/
-theorem lowerEigen_is_eigenvalue (a b t : ℝ) :
-    (a - lowerEigen a b t) * (b - lowerEigen a b t) - t ^ 2 = 0 := by
-  unfold lowerEigen
-  have h0 : (0:ℝ) ≤ ((a - b) / 2) ^ 2 + t ^ 2 := by positivity
-  have hs := Real.sq_sqrt h0
-  nlinarith [hs]
+theorem lowerEigenOf_is_eigenvalue {a b t s : ℝ} (hs2 : s ^ 2 = ((a - b) / 2) ^ 2 + t ^ 2) :
+    (a - lowerEigenOf a b s) * (b - lowerEigenOf a b s) - t ^ 2 = 0 := by
+  unfold lowerEigenOf
+  nlinarith [hs2]
 
 /-- `λ₋ ≤ a`: the coupled ground level never sits above the uncoupled `³S₁` level. -/
-theorem lowerEigen_le_left (a b t : ℝ) : lowerEigen a b t ≤ a := by
-  unfold lowerEigen
-  have h0 : (0:ℝ) ≤ ((a - b) / 2) ^ 2 + t ^ 2 := by positivity
-  have h1 : |(a - b) / 2| ≤ Real.sqrt (((a - b) / 2) ^ 2 + t ^ 2) := by
-    rw [← Real.sqrt_sq_eq_abs]
-    exact Real.sqrt_le_sqrt (by nlinarith)
+theorem lowerEigenOf_le_left {a b t s : ℝ} (hs : 0 ≤ s)
+    (hs2 : s ^ 2 = ((a - b) / 2) ^ 2 + t ^ 2) : lowerEigenOf a b s ≤ a := by
+  unfold lowerEigenOf
+  have h1 : |(a - b) / 2| ≤ s := by
+    rw [← abs_of_nonneg hs]
+    exact sq_le_sq.mp (by nlinarith [sq_nonneg t])
   have h2 : (b - a) / 2 ≤ |(a - b) / 2| := by
     rw [show (b - a) / 2 = -((a - b) / 2) by ring]
     exact neg_le_abs _
@@ -173,12 +173,13 @@ theorem lowerEigen_le_left (a b t : ℝ) : lowerEigen a b t ≤ a := by
 **strictly below** the uncoupled level `a` — tensor mixing binds the deuteron *harder*.
 Since the uncoupled `³S₁` is already 27.3 % over-bound, the coupling moves it the wrong
 way. -/
-theorem lowerEigen_lt_left_of_ne (a b t : ℝ) (ht : t ≠ 0) : lowerEigen a b t < a := by
-  unfold lowerEigen
+theorem lowerEigenOf_lt_left_of_ne {a b t s : ℝ} (ht : t ≠ 0) (hs : 0 ≤ s)
+    (hs2 : s ^ 2 = ((a - b) / 2) ^ 2 + t ^ 2) : lowerEigenOf a b s < a := by
+  unfold lowerEigenOf
   have hpos : 0 < t ^ 2 := by positivity
-  have h1 : |(a - b) / 2| < Real.sqrt (((a - b) / 2) ^ 2 + t ^ 2) := by
-    rw [← Real.sqrt_sq_eq_abs]
-    exact Real.sqrt_lt_sqrt (by positivity) (by linarith)
+  have h1 : |(a - b) / 2| < s := by
+    rw [← abs_of_nonneg hs]
+    exact sq_lt_sq.mp (by nlinarith)
   have h2 : (b - a) / 2 ≤ |(a - b) / 2| := by
     rw [show (b - a) / 2 = -((a - b) / 2) by ring]
     exact neg_le_abs _
@@ -186,12 +187,13 @@ theorem lowerEigen_lt_left_of_ne (a b t : ℝ) (ht : t ≠ 0) : lowerEigen a b t
 
 /-- The symmetric statement: `λ₋ < b` too, so the coupled ground level lies strictly
 below **both** uncoupled levels. -/
-theorem lowerEigen_lt_right_of_ne (a b t : ℝ) (ht : t ≠ 0) : lowerEigen a b t < b := by
-  unfold lowerEigen
+theorem lowerEigenOf_lt_right_of_ne {a b t s : ℝ} (ht : t ≠ 0) (hs : 0 ≤ s)
+    (hs2 : s ^ 2 = ((a - b) / 2) ^ 2 + t ^ 2) : lowerEigenOf a b s < b := by
+  unfold lowerEigenOf
   have hpos : 0 < t ^ 2 := by positivity
-  have h1 : |(a - b) / 2| < Real.sqrt (((a - b) / 2) ^ 2 + t ^ 2) := by
-    rw [← Real.sqrt_sq_eq_abs]
-    exact Real.sqrt_lt_sqrt (by positivity) (by linarith)
+  have h1 : |(a - b) / 2| < s := by
+    rw [← abs_of_nonneg hs]
+    exact sq_lt_sq.mp (by nlinarith)
   have h2 : (a - b) / 2 ≤ |(a - b) / 2| := le_abs_self _
   linarith
 

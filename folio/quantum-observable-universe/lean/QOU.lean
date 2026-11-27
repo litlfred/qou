@@ -436,6 +436,7 @@ import QOU.BraidsAndKnots.KnotTheory
 import QOU.BraidsAndKnots.Brunnian
 import QOU.BraidsAndKnots.KnotRegistry
 import QOU.MassTheory.MassDerivation
+import QOU.Transcendental.MassTheory.MassDerivationReal
 import QOU.MassTheory.LinkingWeightWedderburn
 -- Also brings QOU.Mass.ChainTraceFactor under the umbrella; nothing had
 -- imported it, so it was invisible to blueprint/doc-gen import walks.
@@ -457,6 +458,7 @@ import QOU.MassTheory.BondArcTheorems
 import QOU.MassTheory.PairIsospinAssignment
 import QOU.MassTheory.ReebPnMagnitude
 import QOU.MassTheory.ReebLinkingCWF
+import QOU.Transcendental.MassTheory.ReebLinkingCWFReal
 import QOU.MassTheory.SaturationRhoCap
 import QOU.MassTheory.IsospinMirrorInvariance
 import QOU.MassTheory.B4CumulantBarEven
@@ -554,6 +556,7 @@ import BraidKnotOctonion.SkewSYTBranchingBijection
 import BraidKnotOctonion.SkewBranchingSum
 import BraidKnotOctonion.SkewBranchingTwoOne
 import QOU.MassTheory.WStdSuperExponential
+import QOU.Transcendental.MassTheory.WStdSuperExponentialReal
 import HeckeTemperleyLieb.YoungLatticeExchange
 import BraidKnotOctonion.YoungLatticeCornerCount
 import QOU.MassTheory.LinearChainBondCount
@@ -1062,9 +1065,11 @@ import QOU.Transcendental.Nuclear.OhtsukiNZBridgeScale
 import QOU.Nuclear.WindingGFTransform
 import QOU.Nuclear.ThetaRealityBound
 import QOU.Nuclear.AfreeThetaConstraint
+import QOU.Transcendental.Nuclear.AfreeThetaConstraintReal
 import QOU.Nuclear.AlphaQInheritance
 import QOU.Nuclear.AlphaPreformationBound
 import QOU.Nuclear.ChannelMeridianIdentification
+import QOU.Transcendental.Nuclear.ChannelMeridianIdentificationReal
 import QOU.Nuclear.CompleteStructureExclusion
 import QOU.Nuclear.ThetaLipschitzObstruction
 import QOU.Nuclear.StokesSymmetryConstant
@@ -1296,7 +1301,7 @@ import QOU.BringsSurface.PlanckStepAtomicity
 import QOU.BringsSurface.AtomicityJetIndependence
 import QOU.BringsSurface.BarReflectionGridSelection
 import QOU.BringsSurface.DualFrameGaussianExponents
-import QOU.MassTheory.BarReflectionGridSelectionReal
+import QOU.Transcendental.MassTheory.BarReflectionGridSelectionReal
 import MathlibExt.LoopWeightRealSymmReduction
 import HeckeTemperleyLieb.MarkovGramRealSymm
 import HeckeTemperleyLieb.MatrixSchurCommutant
@@ -1505,6 +1510,7 @@ import QOU.MassTheory.NucleonOrderingSymmetry
 -- explicit strictly-better arrangement at A=5 (sorted pnnnn beats the prescribed
 -- npnnn on BOTH readouts), proved for an interval of q containing the anchor.
 import QOU.MassTheory.GroundStateOrderingRefutation
+import QOU.Transcendental.MassTheory.GroundStateOrderingRefutationReal
 -- qou-prjo (PR: germ gauge covariance): the germ q-curvature F_q = [dq_i, dq_j]
 -- is NOT gauge-covariant (connection law, concrete nonzero defect witness), so
 -- the transverse NA-Stokes Omega_2 has no basis-independent value; the covariant
@@ -1977,6 +1983,7 @@ import QOU.StandardModel.ElectroweakVevFixedPointDecomposition
 import QOU.StandardModel.ElectroweakVevGaps
 import QOU.StandardModel.NeutrinoUnknotSweedlerMassLift
 import QOU.MassTheory.BringSchwingerNormalizationDerivation
+import QOU.Transcendental.MassTheory.BringSchwingerNormalizationDerivationReal
 import QOU.Nuclear.CoshHolonomyAndGPMTBaseBridge
 import QOU.Nuclear.SelectorPrune
 import QOU.Nuclear.BringLatticeRanks
@@ -2035,6 +2042,7 @@ import TwistedFrobeniusHopf.FrobeniusSchurExpectationCancellation
 import QOU.StandardModel.SixStrandClusterChargeGellMannNishijima
 import QOU.Nuclear.BorromeanFlavourPivotalUnification
 import QOU.Nuclear.ThomaeJacksonCoulombAndAlphaTunneling
+import QOU.Transcendental.Nuclear.ThomaeJacksonCoulombAndAlphaTunnelingReal
 import QOU.Observations.DeBroglieBoostedReebPhase
 import QOU.Nuclear.ChargedCurrentChiralitySelection
 import QOU.StandardModel.TorusLinkElectroweakSchurRatio

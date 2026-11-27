@@ -2,6 +2,7 @@ import Mathlib.Tactic
 import QOU.Core.WeakSpectralCompleteness
 import QOU.StandardModel.ElectroweakBringSchwingerBridge
 import QOU.MassTheory.BringSchwingerNormalizationDerivation
+import QOU.Transcendental.MassTheory.BringSchwingerNormalizationDerivationReal
 
 /-!
 # QOU.StandardModel.ElectroweakVevFixedPointDecomposition — what the electroweak vev

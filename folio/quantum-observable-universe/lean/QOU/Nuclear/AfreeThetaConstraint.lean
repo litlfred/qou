@@ -152,15 +152,24 @@ The only escape is an anchor whose `ϑ` is fixed *independently* — an equation
 carrying no new unknown. The corpus's one candidate, the electron/trefoil `3₁`
 with `Vol = 0`, is closed on its own terms: a torus knot's Kashaev invariant
 grows polynomially rather than exponentially, so it has no Stokes constant to
-supply an `S` at all. -/
-theorem exists_angle_assignment (S : Fin n → ℝ) (κ lnq A : ℝ)
+supply an `S` at all.
+
+The square root is not taken here: existence of a square root of a non-negative
+element is carried as the hypothesis `hsqrt` (the field is Euclidean), so the
+statement holds in any Euclidean subfield and no completed real is used
+(bean `qou-dk7p`). `QOU/Transcendental/Nuclear/AfreeThetaConstraintReal.lean`
+discharges `hsqrt` with `Real.sqrt` as `exists_angle_assignment`. -/
+theorem exists_angle_assignment_of_sqrt
+    (hsqrt : ∀ x : ℝ, 0 ≤ x → ∃ s : ℝ, s ^ 2 = x)
+    (S : Fin n → ℝ) (κ lnq A : ℝ)
     (hadm : ∀ i, S i / (A * κ) ≤ lnq ^ 2) :
     ∃ θ : Fin n → ℝ, ∀ i, (θ i) ^ 2 = thetaSq A κ lnq (S i) := by
-  refine ⟨fun i => Real.sqrt (thetaSq A κ lnq (S i)), fun i => ?_⟩
-  refine Real.sq_sqrt ?_
-  have := hadm i
-  unfold thetaSq
-  linarith
+  have hnn : ∀ i, 0 ≤ thetaSq A κ lnq (S i) := by
+    intro i
+    have := hadm i
+    unfold thetaSq
+    linarith
+  exact ⟨fun i => (hsqrt _ (hnn i)).choose, fun i => (hsqrt _ (hnn i)).choose_spec⟩
 
 /-- The admissibility hypothesis holds for every sufficiently large `A`, so the
 family of solutions above is a genuine continuum rather than an isolated point:

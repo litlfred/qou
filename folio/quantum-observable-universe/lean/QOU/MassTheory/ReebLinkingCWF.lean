@@ -1,4 +1,4 @@
-import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Positivity
@@ -41,7 +41,7 @@ chosen.  The one residual structural bridge is the identification of the TL
 exchange channel with the CWF transverse direction, grounded in the Kauffman
 resolution above.
 
-This file proves — sorry-free over `ℝ` — the algebraic content: `ℓ` reads a
+This file proves — sorry-free over any ordered field `K` — the algebraic content: `ℓ` reads a
 *unit* tangent, satisfies the CWF normalization `ℓ(z)²(1+z²) = z²`, and at
 the Markov value `z = 1/w` lands on the deformed criticality
 `ℓ(1/w)²(1+w²) = 1` — the hypothesis of
@@ -52,36 +52,51 @@ the Markov value `z = 1/w` lands on the deformed criticality
 Markov + CWF + Kauffman transverse-selection with no fit.  It does **not**
 supply the absolute MeV scale: the deuteron law `B(²H) = 5g` remains a
 near-match with its unit anchor open (`reeb-linking-cwf-normalization.md`
-§Scope).  Base ring `ℝ` (§7c): genuinely archimedean (`Real.sqrt`).
+§Scope).
+
+**Ring symbol for the norm (bean `qou-dk7p`).** The norm `√(1+z²)` is a symbol
+`r` with `r² = 1 + z²`, so `ℓ(z) = z/r` lives in the quadratic extension
+`K(√(1+z²))` and no completed real enters. The `Real.sqrt` forms `ell`,
+`ellDirect` and their theorems, under the original names, are in
+`QOU/Transcendental/MassTheory/ReebLinkingCWFReal.lean`.
 -/
 
 namespace QOU.MassTheory.ReebLinkingCWF
 
-/-- The **CWF linking functional** `ℓ(z) = z/√(1+z²)`: the transverse
+variable {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+
+/-- The **CWF linking functional** `ℓ(z) = z/r`, `r² = 1 + z²`: the transverse
     (exchange-channel) component of the unit-normalized channel direction
     `(1, z)`. -/
-noncomputable def ell (z : ℝ) : ℝ := z / Real.sqrt (1 + z ^ 2)
+def ellOf (r z : K) : K := z / r
 
 /-- The **direct (identity-channel) component** of the unit tangent,
-    `cos θ = 1/√(1+z²)`. -/
-noncomputable def ellDirect (z : ℝ) : ℝ := 1 / Real.sqrt (1 + z ^ 2)
+    `cos θ = 1/r`. -/
+def ellDirectOf (r : K) : K := 1 / r
+
+theorem ne_zero_of_sq_eq_one_add_sq {r z : K} (hr : r ^ 2 = 1 + z ^ 2) : r ≠ 0 := by
+  rintro rfl
+  have : (0 : K) < 1 + z ^ 2 := by positivity
+  rw [← hr] at this
+  simp at this
 
 /-- **Unit tangent (sorry-free).**  The direct and exchange components square
     to `1` — `(cos θ)² + (sin θ)² = 1` — confirming `ℓ` reads a *unit*
     tangent (the CWF normalization, step 2). -/
-theorem ellDirect_sq_add_ell_sq (z : ℝ) : ellDirect z ^ 2 + ell z ^ 2 = 1 := by
-  have h : (1 : ℝ) + z ^ 2 ≠ 0 := by positivity
-  unfold ell ellDirect
-  rw [div_pow, div_pow, Real.sq_sqrt (by positivity)]
+theorem ellDirectOf_sq_add_ellOf_sq {r z : K} (hr : r ^ 2 = 1 + z ^ 2) :
+    ellDirectOf r ^ 2 + ellOf r z ^ 2 = 1 := by
+  have h0 := ne_zero_of_sq_eq_one_add_sq hr
+  unfold ellOf ellDirectOf
+  rw [div_pow, div_pow, hr]
+  have h : (1 : K) + z ^ 2 ≠ 0 := by positivity
   field_simp
 
-/-- **The CWF normalization equation (sorry-free).**  `ℓ(z)²(1+z²) = z²` —
-    the square-root-free content of `ℓ(z) = z/√(1+z²)`, exactly the equation
-    the conjecture `reeb-linking-cwf-normalization.md` states. -/
-theorem ell_sq_normalization (z : ℝ) : ell z ^ 2 * (1 + z ^ 2) = z ^ 2 := by
-  have h : (1 : ℝ) + z ^ 2 ≠ 0 := by positivity
-  unfold ell
-  rw [div_pow, Real.sq_sqrt (by positivity)]
+/-- **The CWF normalization equation (sorry-free).**  `ℓ(z)²(1+z²) = z²`. -/
+theorem ellOf_sq_normalization {r z : K} (hr : r ^ 2 = 1 + z ^ 2) :
+    ellOf r z ^ 2 * (1 + z ^ 2) = z ^ 2 := by
+  have h : (1 : K) + z ^ 2 ≠ 0 := by positivity
+  unfold ellOf
+  rw [div_pow, hr]
   field_simp
 
 /-- **Deformed criticality (sorry-free).**  At the Markov value `z = 1/w`
@@ -89,23 +104,20 @@ theorem ell_sq_normalization (z : ℝ) : ell z ^ 2 * (1 + z ^ 2) = z ^ 2 := by
     criticality locus `ℓ(1/w)²(1+w²) = 1` — the hypothesis of
     `ReebPnMagnitude.ss_det_zero_at_criticality`.  So the derived `ℓ` puts
     the pn-bond at marginal stability with no free parameter. -/
-theorem ell_criticality (w : ℝ) (hw : w ≠ 0) :
-    ell (1 / w) ^ 2 * (1 + w ^ 2) = 1 := by
-  have hpos : (0 : ℝ) ≤ 1 + (1 / w) ^ 2 := by positivity
+theorem ellOf_criticality {r w : K} (hw : w ≠ 0) (hr : r ^ 2 = 1 + (1 / w) ^ 2) :
+    ellOf r (1 / w) ^ 2 * (1 + w ^ 2) = 1 := by
+  have hpos : (1 : K) + (1 / w) ^ 2 ≠ 0 := by positivity
   have hw2 : w ^ 2 ≠ 0 := pow_ne_zero 2 hw
-  unfold ell
-  rw [div_pow, Real.sq_sqrt hpos]
+  unfold ellOf
+  rw [div_pow, hr]
   field_simp
   ring
 
 /-- **The amplitude is the exchange component of the unit tangent
-    (sorry-free).**  States step 3 explicitly: `ℓ(z)` is the second
-    (exchange) coordinate of the unit-normalized channel direction
-    `(1, z)/√(1+z²)`.  Together with `ellDirect` and
-    `ellDirect_sq_add_ell_sq` this exhibits `(ℓDirect, ℓ)` as a genuine unit
-    tangent `(cos θ, sin θ)`. -/
-theorem ell_eq_exchange_unit_component (z : ℝ) :
-    ell z = z * (Real.sqrt (1 + z ^ 2))⁻¹ := by
-  unfold ell; rw [div_eq_mul_inv]
+    (sorry-free).**  `ℓ(z)` is the second (exchange) coordinate of the
+    unit-normalized channel direction `(1, z)/r`. -/
+theorem ellOf_eq_exchange_unit_component (r z : K) :
+    ellOf r z = z * r⁻¹ := by
+  unfold ellOf; rw [div_eq_mul_inv]
 
 end QOU.MassTheory.ReebLinkingCWF

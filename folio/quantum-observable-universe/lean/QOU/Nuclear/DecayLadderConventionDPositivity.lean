@@ -96,7 +96,8 @@
        computations/qbeta/qbeta_d_frame_ladder_structure_probe.py
 -/
 
-import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Linarith
 
@@ -111,8 +112,12 @@ namespace QOU.QBeta.DecayLadderConventionDPositivity
 /-- The convention-D Markov parameter, `z_D(q) = q³/(q²+1)`. -/
 noncomputable def zD (q : ℝ) : ℝ := q ^ 3 / (q ^ 2 + 1)
 
-/-- The convention-C Markov parameter, `z_C(q) = √q/(1+q)`. -/
-noncomputable def zC (q : ℝ) : ℝ := Real.sqrt q / (1 + q)
+/-- The convention-C Markov parameter in the square-root variable: at `q = t²`,
+`z_C = t/(1+t²)`. Stated in `t` so no square root is taken (bean `qou-dk7p`);
+`z_C(q) = √q/(1+q)` with `Real.sqrt`, and the theorems about it under their
+original names, are in
+`QOU/Transcendental/Nuclear/DecayLadderConventionDPositivityReal.lean`. -/
+noncomputable def zCt (t : ℝ) : ℝ := t / (1 + t ^ 2)
 
 /-- The Q_β ladder's **affine phase coefficient**, `1/2 − z`.
 
@@ -159,32 +164,26 @@ theorem ladderPhaseCoeff_neg_at_zD (q : ℝ) (hq : 1 < q) :
   simp only [ladderPhaseCoeff]
   linarith
 
-/-- **`z_C(q) < 1/2` on the whole substrate regime `q > 1`.**
+/-- **`z_C < 1/2` on the whole substrate regime `q = t² > 1`.**
 
-    With `s = √q > 1`, the claim `2s < 1 + s²` is `0 < (s − 1)²`. -/
-theorem zC_lt_half (q : ℝ) (hq : 1 < q) : zC q < 1 / 2 := by
-  have hq0 : (0 : ℝ) < q := lt_trans zero_lt_one hq
-  have hs : Real.sqrt q ^ 2 = q := Real.sq_sqrt hq0.le
-  have hs1 : 1 < Real.sqrt q := by
-    have : Real.sqrt 1 < Real.sqrt q := by
-      exact Real.sqrt_lt_sqrt zero_le_one hq
-    simpa using this
-  have hden : (0 : ℝ) < 1 + q := by linarith
-  rw [zC, div_lt_iff₀ hden]
-  nlinarith [sq_nonneg (Real.sqrt q - 1)]
+    The claim `2t < 1 + t²` is `0 < (t − 1)²`. -/
+theorem zCt_lt_half (t : ℝ) (ht : 1 < t) : zCt t < 1 / 2 := by
+  have hden : (0 : ℝ) < 1 + t ^ 2 := by positivity
+  rw [zCt, div_lt_iff₀ hden]
+  nlinarith [sq_nonneg (t - 1)]
 
 /-- **The ladder's affine phase coefficient is strictly positive at `z_C`,
-    for every `q > 1`** — the mirror of `ladderPhaseCoeff_neg_at_zD`, and
+    for every `q = t² > 1`** — the mirror of `ladderPhaseCoeff_neg_at_zD`, and
     likewise carrying no trace-positivity content. -/
-theorem ladderPhaseCoeff_pos_at_zC (q : ℝ) (hq : 1 < q) :
-    0 < ladderPhaseCoeff (zC q) := by
-  have := zC_lt_half q hq
+theorem ladderPhaseCoeff_pos_at_zCt (t : ℝ) (ht : 1 < t) :
+    0 < ladderPhaseCoeff (zCt t) := by
+  have := zCt_lt_half t ht
   simp only [ladderPhaseCoeff]
   linarith
 
 /-- **The two conventions sit on opposite sides of `z = 1/2`.**
 
-    Capstone: for every substrate value `q > 1` the ladder's affine phase
+    Capstone: for every substrate value `q = t² > 1` the ladder's affine phase
     coefficient is positive at `z_C` and negative at `z_D`.  There is no
     `q > 1` at which the two agree in sign, so the C ladder's phase formula
     cannot be transported to D by substituting the parameter.
@@ -194,9 +193,9 @@ theorem ladderPhaseCoeff_pos_at_zC (q : ℝ) (hq : 1 < q) :
     *positivity of a Wedderburn weight* — is retracted (module docstring):
     under convention D the `H₃(q)` weights are positive semidefinite,
     signature `(5, 0, 1)`, per S2 (PR #5185). -/
-theorem ladderPhaseCoeff_sign_separates_zC_zD (q : ℝ) (hq : 1 < q) :
-    0 < ladderPhaseCoeff (zC q) ∧ ladderPhaseCoeff (zD q) < 0 :=
-  ⟨ladderPhaseCoeff_pos_at_zC q hq, ladderPhaseCoeff_neg_at_zD q hq⟩
+theorem ladderPhaseCoeff_sign_separates_zCt_zD (t : ℝ) (ht : 1 < t) :
+    0 < ladderPhaseCoeff (zCt t) ∧ ladderPhaseCoeff (zD (t ^ 2)) < 0 :=
+  ⟨ladderPhaseCoeff_pos_at_zCt t ht, ladderPhaseCoeff_neg_at_zD (t ^ 2) (by nlinarith)⟩
 
 /-! ### `z_D` in Temperley–Lieb form
 
@@ -213,8 +212,7 @@ of it.  See the audit doc §6.
 
 Stated over a generic field per AGENTS.md §7c — no ordering, no `Real.sqrt`,
 nothing archimedean is involved.  The `ℝ` corollary is the specialisation.
-(The convention-C mirror `z_C = 1/[2]_{√q}` is *not* stated generically: it
-needs `Real.sqrt`, so it lives on the archimedean side of the wall.) -/
+(The convention-C mirror is stated above in the square-root variable `t`.) -/
 theorem zD_eq_qsq_div_bracketTwo {R : Type*} [Field R] (q : R)
     (hq : q ≠ 0) (hden : q ^ 2 + 1 ≠ 0) :
     q ^ 3 / (q ^ 2 + 1) = q ^ 2 / (q + q⁻¹) := by

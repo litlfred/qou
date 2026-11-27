@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Photon IR zero-mode on Bring's surface: $\\delta(1/\\alpha_{EM})_{\\mathrm{IR}} = b_1/\\mathrm{Area} = 2g/(4\\pi(g-1))$",
   lean: {
-    ref: "qou:QOU.MassTheory.PhotonIRZeroMode.photonZeroModeShift_eq",
+    ref: "qou:QOU.MassTheory.PhotonIRZeroMode.photonZeroModeShiftP_eq",
     validation: "not_checked",
   },
   computation: {
