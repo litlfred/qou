@@ -727,7 +727,7 @@ import QOU.Transcendental.MathlibExt.DilogReflection
 import QOU.Transcendental.MassTheory.CatalanClausenBridge
 import MathlibExt.IdealTetrahedronConcavity
 import QOU.Transcendental.BraidKnotOctonion.LobachevskyDerivative
-import QOU.MassTheory.IdealTetrahedronShapeBridge
+import QOU.Transcendental.MassTheory.IdealTetrahedronShapeBridge
 import QOU.Transcendental.BraidKnotOctonion.IdealTetrahedronVolumeConcavity
 import QOU.Transcendental.BraidKnotOctonion.LobachevskyMaximum
 import QOU.Transcendental.BraidKnotOctonion.LobMonotonicity
@@ -1230,6 +1230,7 @@ import QOU.BringsSurface.zeta5_residue_monodromy
 
 import QOU.MassTheory.BorromeanQuark
 import QOU.MassTheory.EmCouplingBringZeroMode
+import QOU.Transcendental.MassTheory.EmCouplingBringZeroModeBloch
 import QOU.Transcendental.MassTheory.BringZeroModeClausenWitness
 import QOU.MassTheory.ArchimedeanLimitDomain
 import QOU.MassTheory.ArchimedeanLimitNegative
