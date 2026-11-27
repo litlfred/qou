@@ -82,3 +82,21 @@ Drinfeld.HeckeStrands <- Drinfeld.RibbonDH
 ```
 
 All of these edges are inside the 47-module chain, so step A removes them from the outside set.
+
+## 5. Step B prep, 2026-11-27
+
+Step A has landed (#9643). Step B starts with the part that does not depend on `Φ`:
+`QOU/BraidsAndKnots/HAdicDrinfeld/CasimirData.lean`, over any commutative ring `k`.
+
+- `CasimirData` holds a cocommutative coproduct `Δ` and a symmetric invariant tensor `t` with
+  the two splitting identities. For `A = U(𝔤)`, `t` is the split Casimir.
+- `CasimirData.dk3`: `(t₁₂, t₁₃, t₂₃)` is a `RationalAssociator.DK3` family. So the hexagon
+  results proved for `DK3` families apply to it.
+- `CasimirData.dk3_smul`: the rescaled family `(c t₁₂, c t₁₃, c t₂₃)` is `DK3` too. With
+  `k = ℚ[h]/(h^N)` and `c = h`, this is where the rational associator is evaluated.
+- `CasimirData.quasiCocomm_aeval`: every polynomial `p(t)` is quasi-cocommutative. That is the
+  hypothesis `hR` of `quasiYBE_of_hexagon`, and the truncated `exp(h t / 2)` is such a
+  polynomial.
+
+Next, still independent of `Φ`: the four-strand family in `A^{⊗4}` and the truncated evaluation
+map `U4 N → (A^{⊗4})[h]/(h^N)` through `UniversalDK.lift`. After that, `Φ` from stage 5 is plugged in.
