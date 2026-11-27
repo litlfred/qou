@@ -1,5 +1,5 @@
 import QOU.FluidDynamics.q_ns_triad_noncomm
-import CompactQuantumMetrics.OqSU2ModularNakayama
+import CompactQuantumMetrics.OqSU2HaarState
 
 /-!
 # QOU.FluidDynamics.q_ns_twisted_transport
@@ -232,6 +232,22 @@ theorem theta3D_energy (q : Kˣ) (c : K) (hc : c ≠ 0) (φ : OqSU2 K q →ₗ[K
         -c * φ (qDiff (theta3D q).toAlgHom c u * qDiff (theta3D q).toAlgHom c u) ∧
       φ (qCen (theta3D q) c u * u) + φ (u * qCen (theta3D q) c u) = 0 :=
   ⟨qDiff_energy_budget _ c hc φ hφ u, qCen_energy_conserving _ c φ hφ u⟩
+
+/-- `θ₃D`-invariance of every zero-weight functional (in particular of the Haar
+    state), discharged by the torus conjugation of the algebraic model. -/
+theorem theta3D_zeroWeight_invariant (q : Kˣ) (lam : ℕ → K) (f : OqSU2 K q) :
+    zeroWeightFunctional q lam (theta3D q f) = zeroWeightFunctional q lam f :=
+  zeroWeightFunctional_torusEquiv q lam _ _ f
+
+/-- **The energy identities for the Haar state, with no invariance hypothesis**: the
+    `hφ` of `theta3D_energy` is proved for the algebraically constructed `haarState`
+    (indeed for every zero-weight functional). -/
+theorem theta3D_energy_haar (q : Kˣ) (c : K) (hc : c ≠ 0) (u : OqSU2 K q) :
+    haarState q (qDiff (theta3D q).toAlgHom c u * u) +
+        haarState q (u * qDiff (theta3D q).toAlgHom c u) =
+        -c * haarState q (qDiff (theta3D q).toAlgHom c u * qDiff (theta3D q).toAlgHom c u) ∧
+      haarState q (qCen (theta3D q) c u * u) + haarState q (u * qCen (theta3D q) c u) = 0 :=
+  theta3D_energy q c hc (haarState q) (theta3D_zeroWeight_invariant q _) u
 
 end OqSU2
 
