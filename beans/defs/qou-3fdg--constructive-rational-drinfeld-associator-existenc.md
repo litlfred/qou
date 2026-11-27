@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T20:53:03Z
+updated_at: 2026-11-27T20:59:15Z
 parent: qou-dk7p
 ---
 
@@ -90,3 +90,12 @@ Still open (audit §13): B0 K-associator ⟹ SolvableOver; B1 GRT stack over K �
 
 
 2026-11-27 (branch claude/grt-basechange-2026-11-27, audit §14). (B0) closed: rational_lift_of_assocK and solvableOver_of_assocK in BaseChange.lean. (B3) closed modulo (B2): grtU4_of_lin in Homogeneity.lean takes Lin514 M h as a named hypothesis. No sorry or axiom; #print axioms shows only propext, Classical.choice and Quot.sound. (B1) NOT done: AssocK is not yet closed under rational GRT1, and the polynomial-in-c extension to K and the K-congruence are missing. The plan is in §14 (est. 600-800 lines). Caveat for (B2): the h_i to which (B2) is applied need not be Lie unless both associators are group-like. Bean stays open.
+
+## 2026-11-27 — gap B2 (Drinfeld Prop. 5.7), PR #9696 (research child)
+
+Proved, sorry-free (axioms: propext, Classical.choice, Quot.sound), new files `Prop57.lean`, `Prop57Cocycle.lean`:
+- `vanishing_of_cocycle` (step 2, general degree): LieLike + symmetric + cocycle ∈ FF3 N ⇒ s ∈ FF N.
+- `sPoly_lieLike`, `sPoly_symm`: Drinfeld's s is LieLike (α=β=0) and symmetric for EVERY y.
+- `cocycle_identity` / `uDefect_eq_zero` / `GrtU4.uDefect_eq_zero` (step 1): u = −[t12+t13+t23, μ1234] − [t14+t24, μ1243] + [t14, μ1423]; hence u = 0 in U4 N from lin512/513/515. No Lie hypothesis.
+
+STILL OPEN (this bean stays open): the bridge u = 0 in U4 N ⇒ cocycle(s) ∈ FF3 N. Needs (i) central shift ψ(a+z,b)=ψ(a,b) — the only place Lie-ness enters (also needed to extend lin514 from zero-sum to all DK3 triples); (ii) the retraction U4 N → End(ℚ⟨Y⟩/FF3 N) (t_i4 ↦ left mult, t12/t13/t23 ↦ derivations), evaluated at 1. Whether (5.19) holds for non-Lie y is not established. Audit §15.
