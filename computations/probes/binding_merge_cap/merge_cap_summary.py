@@ -103,7 +103,7 @@ def main() -> int:
     sources = [("A2-L6-census", HERE / "merge-cap-census-A2-L6.jsonl", 2),
                ("A3-L4-census", HERE / "merge-cap-census-A3-L4.jsonl", 3),
                ("A4-L4-checkpoint", A4_CKPT, 4)]
-    sources += [(f.stem, f, 4) for f in sorted(HERE.glob("merge-cap-A4-L5-*.jsonl"))]
+    sources += [(f.stem, f, int(f.stem.split("-")[2][1:])) for f in sorted(HERE.glob("merge-cap-A[0-9]-L5-*.jsonl"))]
     table, violations, marginal, nrows = {}, [], Counter(), {}
     for tag, path, A in sources:
         if not Path(path).exists():
@@ -128,6 +128,25 @@ def main() -> int:
     print("marginal", dict(marginal), flush=True)
     print("violations of (H):", violations, flush=True)
 
+    # Exhaustive classical fact (S_n, n <= 9): among permutations passing classical reading 3 at
+    # every level, which merge counts force a vanishing top-level two-row character?
+    import itertools
+    exhaustive = {}
+    for n in range(4, 10):
+        cnt = Counter()
+        for p in itertools.permutations(range(n)):
+            p = list(p)
+            if not classical_pass(p, n):
+                continue
+            a = a_seq(cyc_lengths(p), n)
+            ztop = any(a[k] == a[k + 1] for k in range(n // 2))
+            cnt[f"merges={n - len(cyc_lengths(p))},top_level_zero={ztop}"] += 1
+        exhaustive[str(n)] = dict(sorted(cnt.items()))
+        print(n, exhaustive[str(n)], flush=True)
+    s9 = exhaustive["9"]
+    s9_ok = all(not (int(k.split(",")[0].split("=")[1]) >= 4 and k.endswith("False")) for k in s9)
+    viol_lengths = sorted({len([c for c in v["word"].split("V") if c]) for v in violations})
+
     sys.path.insert(0, str(HERE.parent / "binding_ceiling_q0"))
     sys.argv = [sys.argv[0], "1", "2"]
     import binding_ceiling_q0_probe as b
@@ -136,18 +155,23 @@ def main() -> int:
           .set_description(
               "PROBE (bean qou-brng, brief C2 front B): per-support-component merge counts of every "
               "gamma-gamma bond word in the reading-3 censuses at the proton-pin q0 (A = 2, 3, 4). Tests "
-              "(H): every q0-passing word has each support component merging <= 2. Counts only; no ratio; "
+              "(H): every q0-passing word has each support component merging <= 2 (falsified at A = 3, length 5); "
+              "exhaustive S_n (n <= 9) top-level-zero fact. Counts only; no ratio; "
               "AME not read; nothing fitted or wired.")
           .set_audit_only("docs/audits/2026-11-27-binding-merge-cap-invariant.md")
           .add_data("rows_per_source", nrows)
           .add_data("tallies", table)
           .add_data("marginal_failures", dict(marginal))
-          .add_data("violations_of_H", violations))
-    wb.add_assertion("H_every_q0_passer_has_components_merging_at_most_2", computed=len(violations),
-                     expected=0, tolerance=0, source="component_merges over every census row")
+          .add_data("violations_of_H", violations)
+          .add_data("classical_exhaustive_top_level_zero", exhaustive))
+    wb.add_assertion("H_per_component_cap_2_violated_only_by_length_5_words", computed=viol_lengths,
+                     expected=[5], tolerance=0,
+                     source="(H) holds on every word of length <= 4; its counterexamples are length-5 A = 3 words")
+    wb.add_assertion("S9_classical_admissible_with_merges_ge_4_has_top_level_zero", computed=s9_ok,
+                     expected=True, tolerance=0, source="exhaustive over S_9, Young's rule a_k")
     wb.save({"q0Anchor": "proton", "q0Value": str(b.mp.nstr(b.Q, 50)),
              "q0AnchorReason": "q0 enters through the censuses via cf.Q (committed y-lambda-at-q0 witness, proton pin)"})
-    return 0 if not violations else 1
+    return 0 if (viol_lengths == [5] and s9_ok) else 1
 
 
 if __name__ == "__main__":

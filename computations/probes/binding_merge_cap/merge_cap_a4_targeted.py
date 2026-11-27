@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""merge_cap_a4_targeted.py — test the "2 merges per support component" hypothesis at A = 4.
+"""merge_cap_a4_targeted.py — test the "2 merges per support component" hypothesis (A = 4 default; A = 3 via 4th arg).
 
 Bean qou-brng (brief C2, front B). The A = 4, length <= 4 population of
 binding_ceiling_q0_a4_probe.py has no single-component word that merges 4, so it cannot test
@@ -12,7 +12,7 @@ reading 3 at the proton-pin q0 with the corpus seminormal helpers on one represe
 Records failing (level, two-row mu) cells. Ratio is not computed; AME not read; nothing fitted.
 mpmath only. Results stream to a .jsonl checkpoint (resumable), single process.
 
-Usage: merge_cap_a4_targeted.py L MERGES COMPONENTS
+Usage: merge_cap_a4_targeted.py L MERGES COMPONENTS [A=4]
 -- Ref: [leitner2026] bean qou-brng; computations/probes/binding_ceiling_q0/binding_ceiling_q0_a4_probe.py
 """
 from __future__ import annotations
@@ -22,9 +22,10 @@ import mpmath as mp
 
 HERE = Path(__file__).resolve().parent
 L, MERGES, NCOMP = (int(a) for a in sys.argv[1:4])
-A, N = 4, 12
+A = int(sys.argv[4]) if len(sys.argv) > 4 else 4
+N = 3 * A
 JUNCTIONS = [{3 * j - 2, 3 * j - 1} for j in range(1, A)]
-CKPT = HERE / f"merge-cap-A4-L{L}-m{MERGES}-c{NCOMP}.jsonl"
+CKPT = HERE / f"merge-cap-A{A}-L{L}-m{MERGES}-c{NCOMP}.jsonl"
 sys.argv = [sys.argv[0], "1", str(A)]
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent / "binding_ceiling_q0"))
@@ -74,7 +75,7 @@ def main():
     if CKPT.exists():
         done = {json.loads(l)["word"] for l in CKPT.read_text().splitlines()}
     todo = [w for w in reps.values() if "".join(f"V{s}" for s in w) not in done]
-    print(f"A=4 L={L} merges={MERGES} comps={NCOMP}: {len(reps)} commutation classes, "
+    print(f"A={A} L={L} merges={MERGES} comps={NCOMP}: {len(reps)} commutation classes, "
           f"{len(done)} done, {len(todo)} to run", flush=True)
     t0 = time.time()
     with CKPT.open("a") as fh:
@@ -85,7 +86,7 @@ def main():
             fails = {f"{m}:{','.join(map(str, mu))}": mp.nstr(v, 12)
                      for (m, mu), v in lc.items() if v < -b.TOL}
             rec = {"word": "".join(f"V{s}" for s in w), "gens": list(w), "pass_q0": not fails,
-                   "fails_q0": fails, "merges": MERGES, "components": NCOMP}
+                   "fails_q0": fails, "merges": MERGES, "components": NCOMP, "A": A}
             fh.write(json.dumps(rec) + "\n"); fh.flush()
             el = time.time() - t0
             print(f"  {k}/{len(todo)} {el:.0f}s ETA {el / k * (len(todo) - k):.0f}s "

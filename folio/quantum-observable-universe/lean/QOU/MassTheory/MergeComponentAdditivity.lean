@@ -11,18 +11,19 @@ cycle of length `ℓ` contributes `ℓ − 1`, so
 
     merges σ = |supp σ| − #(non-trivial cycles)   (`merges`, `merges_eq_sum`).
 
-The measured q₀ merge cap is stated per connected component of the bond word's support (strand
-intervals `[s, s+2]` of its vertices `V(s)`, joined when they overlap). Components act on
-disjoint strand sets, so their permutations are disjoint. This file proves the reduction that
-makes a per-component cap a global cap:
+A per-component merge cap was tested against the q₀ reading-3 censuses, with components the
+support components of the bond word (strand intervals `[s, s+2]` of its vertices `V(s)`, joined when
+they overlap). Components act on disjoint strand sets, so their permutations are disjoint. This file
+proves the bookkeeping that reads merges component by component:
 
 1. `merges_mul_of_disjoint` — merges add over a disjoint product.
 2. `merges_prod_of_pairwise` — merges of a product of pairwise disjoint permutations is the sum.
 3. `merges_prod_le` — a cap `k` per factor gives `k · #factors` for the product.
 4. `merges_le_card_support_sub_one` — one factor supported on `s` points merges at most `s − 1`.
 
-What is NOT proved here: that reading 3 at `q₀` caps a single component at 2. That is a measured
-statement (scope (a), audit §3); no `q₀` and no empirical number appears in this file.
+No cap at `q₀` is proved here. The measured cap of 2 per component held through length 4 and is
+falsified at `A = 3`, length 5 (audit §0, scope (a)); no `q₀` and no empirical number appears in this
+file.
 -/
 
 namespace QOU.MassTheory.MergeComponentAdditivity
@@ -67,8 +68,7 @@ theorem merges_prod_of_pairwise (l : List (Perm α)) (hl : l.Pairwise Perm.Disjo
     simp
 
 /-- **Per-component cap ⇒ global cap.** If every factor of a pairwise disjoint product merges at
-most `k`, the product merges at most `k · #factors`. With `k = 2` this is the measured q₀ cap:
-`merges ≤ 2 · (support components)`. -/
+most `k`, the product merges at most `k · #factors`. -/
 theorem merges_prod_le (l : List (Perm α)) (hl : l.Pairwise Perm.Disjoint) {k : ℕ}
     (hk : ∀ g ∈ l, merges g ≤ k) : merges l.prod ≤ k * l.length := by
   rw [merges_prod_of_pairwise l hl]
