@@ -39,9 +39,9 @@ about large A.
 
 6Li and 7Li were added the same day on branch claude/sv7h-li-timing-2026-11-27
 (probe file unchanged except EXTRA_ISOS). 4He -> 6Li is x1.70, 6Li -> 7Li is
-x1.33. Six points at A <= 7 grow roughly linearly in A (about 35-40 s per
-nucleon above A = 2); that is a description of six points, not a fitted law,
-and still says nothing about large A. 7Li needed four tries: three runs were
+x1.33. The added time per extra nucleon is 33 s (2H->3H), 30 s (3H->4He),
+39 s (4He->6Li) and 63 s (6Li->7Li). That is six points, not a fitted law, and
+it still says nothing about large A. 7Li needed four tries: three runs were
 killed when the container restarted (boot ids 93c6c22a, 66e51947, 52454806;
 no done line, so they give no result). Peak RSS on the third try was 0.93 GB
 of 15 GB, so memory was not the cause. The fourth try ran as a session-tracked
