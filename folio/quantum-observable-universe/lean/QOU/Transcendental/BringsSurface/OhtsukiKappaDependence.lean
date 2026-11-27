@@ -1,5 +1,6 @@
 import QOU.BringsSurface.DominationTowers
 import QOU.MassTheory.HyperbolicVolumeTranscendence
+import QOU.BringsSurface.OhtsukiKappaFormal
 
 /-!
 # QOU.AlgebraicSubstrate.OhtsukiKappaDependence — real κ data on the graded tower
@@ -71,15 +72,13 @@ namespace QOU.AlgebraicSubstrate
 
 open QOU.Archimedean
 
-/-! ## §1  The relation, formally -/
+/-! ## §1  The relation, formally
 
-/-- **The relation is formal.** For any `s` with `s² = 3` and any `p`, the pair
-`(11sp/108, 2p²/27)` satisfies a rational relation — nothing about `π` or `√3`
-beyond `√3² = 3` is used. Stated denominator-cleared so it holds over any
-commutative ring. -/
-theorem kappa_relation_formal {R : Type*} [CommRing R] (s p : R) (hs : s ^ 2 = 3) :
-    288 * (11 * s * p) ^ 2 * 27 = 121 * (2 * p ^ 2) * 108 ^ 2 := by
-  linear_combination (940896 * p ^ 2) * hs
+`kappa_relation_formal`, `kappaSym_relation` and the positivity lemmas are in
+`QOU.BringsSurface.OhtsukiKappaFormal`, over any ring or ordered field with
+ring symbols `s` (`s² = 3`) and `p`. This module only instantiates them at
+`s = √3`, `p = π` in `ℝ` (transcendental subgraph, moved 2026-11-27, bean
+`qou-gfsr`). -/
 
 /-! ## §2  The 4₁ Ohtsuki coefficients -/
 
@@ -89,15 +88,13 @@ noncomputable def kappa1_4_1 : ℝ := 11 * Real.sqrt 3 * Real.pi / 108
 /-- `κ₂(4₁) = 2π²/27 ≈ 0.731081807488100`. -/
 noncomputable def kappa2_4_1 : ℝ := 2 * Real.pi ^ 2 / 27
 
+theorem kappa1_4_1_eq_sym : kappa1_4_1 = kappa1Sym (Real.sqrt 3) Real.pi := rfl
+theorem kappa2_4_1_eq_sym : kappa2_4_1 = kappa2Sym Real.pi := rfl
+
 /-- **`288·κ₁² = 121·κ₂`** — an exact rational relation among the 4₁ Ohtsuki
 tail coefficients. Verified symbolically against the witness closed forms. -/
-theorem kappa_4_1_relation : 288 * kappa1_4_1 ^ 2 = 121 * kappa2_4_1 := by
-  have hs : Real.sqrt 3 ^ 2 = 3 := Real.sq_sqrt (by norm_num)
-  have h : (11 * Real.sqrt 3 * Real.pi) ^ 2 = 363 * Real.pi ^ 2 := by
-    rw [mul_pow, mul_pow, hs]; ring
-  unfold kappa1_4_1 kappa2_4_1
-  rw [div_pow, h]
-  ring
+theorem kappa_4_1_relation : 288 * kappa1_4_1 ^ 2 = 121 * kappa2_4_1 :=
+  kappaSym_relation (Real.sqrt 3) Real.pi (Real.sq_sqrt (by norm_num))
 
 /-- The same statement as an annihilator: `288x² − 121y` kills `(κ₁, κ₂)`, so
 the tail coefficients are **algebraically dependent over `ℚ`**. -/
@@ -106,16 +103,11 @@ theorem kappa_tail_annihilated : 288 * kappa1_4_1 ^ 2 - 121 * kappa2_4_1 = 0 :=
 
 /-- Both tail coefficients are non-zero, so the dependence is not the trivial
 one — `288x² − 121y` genuinely relates two non-degenerate quantities. -/
-theorem kappa1_4_1_pos : 0 < kappa1_4_1 := by
-  unfold kappa1_4_1
-  have h3 : 0 < Real.sqrt 3 := Real.sqrt_pos.mpr (by norm_num)
-  have hpi : 0 < Real.pi := Real.pi_pos
-  positivity
+theorem kappa1_4_1_pos : 0 < kappa1_4_1 :=
+  kappa1Sym_pos (Real.sqrt_pos.mpr (by norm_num)) Real.pi_pos
 
-theorem kappa2_4_1_pos : 0 < kappa2_4_1 := by
-  unfold kappa2_4_1
-  have hpi : 0 < Real.pi := Real.pi_pos
-  positivity
+theorem kappa2_4_1_pos : 0 < kappa2_4_1 :=
+  kappa2Sym_pos Real.pi_pos
 
 /-! ## §3  The head sits at grade zero -/
 

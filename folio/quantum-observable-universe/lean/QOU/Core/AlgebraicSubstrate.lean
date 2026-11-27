@@ -1,6 +1,6 @@
 import QOU.BringsSurface.KernelGrowthBound
 import QOU.BringsSurface.PolyhedralDomination
-import QOU.BringsSurface.OhtsukiKappaDependence
+import QOU.BringsSurface.OhtsukiKappaFormal
 import QOU.BringsSurface.DominationTowers
 import QOU.BringsSurface.DominationSqueeze
 import QOU.BringsSurface.TwoFiltrationBridgeGeneral
