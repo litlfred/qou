@@ -72,3 +72,16 @@ colour share is the abstract $\mathbb{Z}/3$ grading forced by any degree-3 volum
 operator. A flavour action that does not commute with colour is not excluded by this argument.
 Lean: `QOU/StandardModel/ColourTripletCommutant.lean` (`commutant_end`,
 `commutant_commutative`, `no_cubeRoot_phase_in_commutant`).
+
+**A fibre label carries the phase, and shows how little the axioms ask.** Give each object
+of $\mathbf{C}$ a label in $\mathbb{Z}/3$, with labels adding under $\otimes$ and no
+morphisms between different labels. For $\omega$ with $\omega^3 = 1$ the assignment
+$z_{(X,g)} = \omega^{g}\,\mathrm{id}_X$ is then a central phase, and $W = (V, 1)$ has no
+morphism $\mathbb{1} \to W \otimes W$ because $W \otimes W$ carries label $2$. A volume form
+on $V$ lifts to one on $W$ because $1 + 1 + 1 = 0$. This works for every $V$, including
+$V = \mathbb{1}$: a one-dimensional $W$ satisfies both flavour conditions. So
+$\Lambda^3 W \cong \mathbb{1}$ together with non-self-duality does not force $\dim W = 3$ or a
+flavour $\mathrm{SU}(3)$; those need further axioms. The label here is put in by hand, and
+deriving it from the aether is still open. Lean: `QOU/Core/FlavourLabelCarrier.lean`
+(`labelPhase`, `flavour_hom_unit_tensor_empty`, `flavourVolume_epi`,
+`unit_flavour_meets_axioms`).

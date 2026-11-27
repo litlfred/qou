@@ -1941,6 +1941,7 @@ import QOU.StandardModel.OctonionColourTripletComplexType
 import QOU.StandardModel.GaugeHeckeCanonicalFaithfulness
 import QOU.Core.FlavouredQuantumObservableUniverse
 import QOU.Core.FlavourCentralPhase
+import QOU.Core.FlavourLabelCarrier
 import QOU.StandardModel.OctonionCubeRootPhase
 import QOU.StandardModel.ColourTripletCommutant
 import QOU.StandardModel.ElectroweakBringSchwingerBridge
