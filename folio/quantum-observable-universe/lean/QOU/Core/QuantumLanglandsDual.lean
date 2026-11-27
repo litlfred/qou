@@ -26,6 +26,16 @@ bare `True`.
 The carrier is content-bearing and has **no instance** (honest open
 state).
 
+**Type `A`, every `n` (2026-11-27).** The algebra-level content for all strand
+counts — not only the `H_3` normal-form isomorphism below — is proved in
+`HeckeTemperleyLieb/HeckeLanglandsDual.lean` on the presentation
+`QOU.Hecke.IwahoriHecke K q n`: `rescaleEquiv` (`T_i ↦ -q⁻¹ T_i`),
+`inverseEquiv` (`T_i ↦ T_i⁻¹`), the involution `theta` (`T_i ↦ (q-1) - T_i`)
+with `theta_ne_refl` (non-trivial for `q ≠ -1`) and
+`not_algHom_of_inverts_param` (distinct from the bar involution). The class
+stays open: items 2 (reverse limit) and 3 (non-simply-laced folding) of the
+conjecture are not touched.
+
 LaTeX label: `conj:quantum-langlands-dual`
 
 ## References
