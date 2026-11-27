@@ -27,10 +27,15 @@ BASELINE = ROOT / "docs/audits/transcendental-boundary-baseline.json"
 
 CLASSES = {
     "transcendental-function": r"\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b"
-        r"|\bComplex\.(exp|log|cos|sin|cpow)\b|\bReal\.rpow\b|\bdilog\b|\bClausen\b|\bLobachevsky\b",
+        r"|\bComplex\.(exp|log|cos|sin|cpow)\b|\bReal\.rpow\b|\bdilog\b|\bClausen\b|\bLobachevsky\b"
+        r"|\bNormedSpace\.exp\b|\bNormedSpace\.exp_\w+",
     "real-completion": r"\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\b|\bReal\.exists_isLUB\b|√",
     "analysis": r"\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTendsto\b"
-        r"|\bContinuous\b|\bDifferentiable\b|\bHasSum\b|\btsum\b",
+        r"|\bContinuous\b|\bDifferentiable\b|\bHasSum\b|\btsum\b"
+        # A complete normed algebra is analytic structure even when no analytic lemma is called:
+        # the KZ / Drinfeld chain is built over `[NormedAlgebra ℂ R] [CompleteSpace R]` and was
+        # previously classed algebraic (measured 2026-11-27: 26 modules).
+        r"|\bCompleteSpace\b|\bNormedAlgebra\s+ℂ",
 }
 RX = {k: re.compile(v) for k, v in CLASSES.items()}
 # A bare `π` is Real.pi only under `open Real` / `open scoped Real`; elsewhere it is an
