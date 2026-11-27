@@ -1,11 +1,11 @@
 ---
 # qou-jb7k
 title: The Wedderburn input HeckeToTemperleyLieb calls missing now EXISTS — but in a different Hecke carrier (qou-img9), so the TL ideal equality is engineering, not mathematics
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-27T07:42:40Z
-updated_at: 2026-11-27T15:45:00Z
+updated_at: 2026-11-27T17:20:00Z
 parent: qou-0cyu
 ---
 
@@ -226,4 +226,8 @@ Parent set to `qou-0cyu`: old parent `qou-weeq` is not an epic/milestone/feature
 ## 2026-11-27 — ideal equality closed (PR #9488, see `qou-tlrv`)
 
 tlKernelPulled = θ(rad(wtrace)) exactly. The question in this bean's title is answered. Left open for the owner to close.
+
+## 2026-11-27 — completed (owner chose the recommended option)
+
+Closed: tlKernelPulled = θ(rad(wtrace)) is a theorem on main (`TLKernelEquality.mem_tlKernelPulled_iff`, #9488), with the untwisted inclusion refuted (`TLKernelConvention.tlKernelPulled_not_le_rad`, #9482).
 
