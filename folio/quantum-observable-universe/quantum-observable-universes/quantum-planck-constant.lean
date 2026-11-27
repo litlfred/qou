@@ -1,4 +1,4 @@
-import QOU.Core.AetherParameter
+import QOU.Core.SubstrateParameter
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.Linarith
 
