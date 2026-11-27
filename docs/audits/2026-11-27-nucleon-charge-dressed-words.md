@@ -88,3 +88,29 @@ python3 -u computations/probes/nucleon_charge_dressed_words_probe.py
 `scripts/precision-gates.sh --changed`: Q0_FLIP 0, no NEW dirty witnesses; the reds (q0-anchor
 flip, witness-value copy ratchet, CODATA stale-edition) are corpus-wide and name no file of this
 change.
+
+## 6. Addendum: charges in the ruled photon's weights (follow-up, same day)
+
+Owner standing pick (17:16 UTC): the recommended follow-up, "put the charges into the ruled
+photon's weights". Question: does the ruled photon fix the coupling `c`?
+
+The Borromean core is the ruled photon pair, `V³ = γ(0,0,qh)·γ(0,0,−q⁻¹h) = 1 + h²W − h²W²`,
+`W = σ₀σ₁⁻¹`, and the 2026-11-25 linking-neutrality ruling derives the weights from that identity.
+Dress the photon's vertex: `W ↦ L` (the dressed period of §1). Two results, Lean §5 of the same file:
+
+1. **The factorisation forces `c = 0`.** `ac_eq_zero_of_photon_factorisation`: if
+   `L³ = 1 + h²L − h²L²` on `W_p`, then `a·c = 0`, away from the loci `q² = 1`, `1 + a²c = 0`,
+   `1 + abc = 0`, `a²bc + a + b = 0` (read off the `(1,0)` entry,
+   `photonFactorisationDefect_one_zero`). The probe checks all nine entries on each weight space
+   with the quark charges: for generic `q` the only common root in `c` is `c = 0`, on `W_p` and on
+   `W_n`. So the ruled photon does **not** fix a non-zero coupling. It excludes one, as long as
+   the dressed `V³` must still be the ruled photon pair. Scope: this is (b) for that class (the
+   factorisation identity is the invariant), and it says nothing about a dressing that is not
+   required to factor.
+2. **The dressed photon pair, taken on its own terms, still splits, but only at order `(q²−1)⁴`.**
+   `trace_photonPair_split`: `tr Γ(Ln) − tr Γ(Lp) = c(a − b)(q² − 1)⁴(1 + abc)·H/q⁶`. At the
+   proton `q₀` with quark charges, `∂_c` at `c = 0` is `+0.005205`. That is about 1/380 of the
+   dressed-word value `−1.990`, and it has the opposite sign.
+
+Consequence for C2′: the two dressings are different elements once `c ≠ 0`, and only the
+dressed word keeps the `V³` shape. The coupling stays underived.
