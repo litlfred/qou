@@ -6,6 +6,8 @@ roles: [collaborator]
 
 # post-merge-rebuild
 
+> **Platform rules win (owner, 2026-11-27).** Where this local skill differs from the cat-harness KG rules (`req:agent-workflow`, `req:content-lifecycle`) or from [`lean-cache-manager`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/lean-cache-manager.md) and [`repo-cache-manager`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/repo-cache-manager.md), those win. In short: questions only on cards; beans are the tracker; threads never self-merge and send the PR number and full head SHA to the merge manager; the KG JSON-LD check is the only red pre-merge gate and all other QA runs after the merge; merges run under time-boxed grants, with the owner's card outside one; no repository secrets; one shared non-constructive axiom; no unverified external report as a source. Post-merge cache refreshes are the merge manager's cache lanes.
+
 Owner, 2026-11-23: *"agents should rebuild when merge to main if github actions
 not enabled"*. Actions on qou is `workflow_dispatch`-only (owner directive
 2026-06-30, billing), so a merge to `main` does not rebuild the site. The agent

@@ -8,6 +8,8 @@ roles:
 
 # /prepare-merge-auto — Autonomous merge pipeline
 
+> **Platform rules win (owner, 2026-11-27).** Where this local skill differs from the cat-harness KG rules (`req:agent-workflow`, `req:content-lifecycle`) or from [`prepare-merge-auto`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/prepare-merge-auto.md) and [`merge-manager-watcher`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/merge-manager-watcher.md), those win. In short: questions only on cards; beans are the tracker; threads never self-merge and send the PR number and full head SHA to the merge manager; the KG JSON-LD check is the only red pre-merge gate and all other QA runs after the merge; merges run under time-boxed grants, with the owner's card outside one; no repository secrets; one shared non-constructive axiom; no unverified external report as a source. Only the merge manager runs the merge phase.
+
 > **🟥 FAST MERGES override (owner ruling 2026-11-27, AGENTS.md §"FAST MERGES").**
 > Before a merge only two things block: `bun run cat merge:guard <pr>` run by
 > the merging agent (never `--full-tier`), and the JSON-LD KG publication check

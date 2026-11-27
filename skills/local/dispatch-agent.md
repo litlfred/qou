@@ -8,6 +8,8 @@ allowed-tools: Read, Grep, Glob, Bash, Edit, Write, Agent, SendMessage, Schedule
 
 # /dispatch-agent — parallel dispatch with a live 2-minute status heartbeat
 
+> **Platform rules win (owner, 2026-11-27).** Where this local skill differs from the cat-harness KG rules (`req:agent-workflow`, `req:content-lifecycle`) or from [`dispatch-agent`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/dispatch-agent.md), [`swarm-management`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/swarm-management.md) and [`research-manager`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/research-manager.md), those win. In short: questions only on cards; beans are the tracker; threads never self-merge and send the PR number and full head SHA to the merge manager; the KG JSON-LD check is the only red pre-merge gate and all other QA runs after the merge; merges run under time-boxed grants, with the owner's card outside one; no repository secrets; one shared non-constructive axiom; no unverified external report as a source. Stalled children are prodded; children paused on a usage limit are reported, not prodded.
+
 The expensive failure mode of multi-agent dispatch is **going dark**: you
 launch N background agents, then can't say what any of them is doing until
 it completes 20 minutes later. This skill fixes that with two halves that
