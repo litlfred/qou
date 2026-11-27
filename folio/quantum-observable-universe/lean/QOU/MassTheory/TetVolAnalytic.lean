@@ -49,7 +49,7 @@
   -- Ref: [milnor1982] https://doi.org/10.1090/S0273-0979-1982-14958-8
   -- Ref: [leitner2026] beans qou-w3eg (H4-5 obtuse), qou-idvt
 -/
-import QOU.MassTheory.LobAnalytic
+import QOU.Transcendental.MassTheory.LobAnalytic
 import BraidKnotOctonion.IdealTetrahedronVolumeConcave
 
 namespace QOU.Archimedean

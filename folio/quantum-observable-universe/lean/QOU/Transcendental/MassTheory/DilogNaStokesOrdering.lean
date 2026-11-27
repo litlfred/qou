@@ -1,5 +1,5 @@
 import QOU.Transcendental.MathlibExt.DilogPartBIteratedLimit
-import QOU.MassTheory.DilogPartBEulerTail
+import QOU.Transcendental.MassTheory.DilogPartBEulerTail
 
 /-!
 # Na-Stokes path-ordering selection for Dilog Part B — conditional class (§3b-cond)

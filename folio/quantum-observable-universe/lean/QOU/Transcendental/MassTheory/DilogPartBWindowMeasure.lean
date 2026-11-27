@@ -1,4 +1,4 @@
-import QOU.MassTheory.DilogPartBBorelCantelli
+import QOU.Transcendental.MassTheory.DilogPartBBorelCantelli
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 

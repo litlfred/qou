@@ -12,7 +12,7 @@ import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
-import QOU.MassTheory.AlphaEmTwoLoopBlochSchwinger
+import QOU.Transcendental.MassTheory.AlphaEmTwoLoopBlochSchwinger
 import QOU.StandardModel.ElectroweakBringSchwingerBridge
 import QOU.StandardModel.ElectroweakSweedlerScaleAndRGThresholds
 

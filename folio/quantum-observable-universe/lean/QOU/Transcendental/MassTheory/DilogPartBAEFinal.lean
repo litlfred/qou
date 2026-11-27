@@ -1,5 +1,5 @@
-import QOU.MassTheory.DilogPartBAEAssembly
-import QOU.MassTheory.DilogPartBWindowMeasure
+import QOU.Transcendental.MassTheory.DilogPartBAEAssembly
+import QOU.Transcendental.MassTheory.DilogPartBWindowMeasure
 
 /-!
 # Dilog Part-B W-P1 — the a.e. Borel–Cantelli assembly (final)

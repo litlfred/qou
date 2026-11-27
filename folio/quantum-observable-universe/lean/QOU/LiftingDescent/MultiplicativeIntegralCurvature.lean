@@ -1,5 +1,5 @@
 import QOU.MassTheory.DilogNaStokesHolonomyOrdering
-import QOU.MassTheory.DilogNaStokesOrdering
+import QOU.Transcendental.MassTheory.DilogNaStokesOrdering
 
 /-!
 # Yekutieli Multiplicative Integral Iterated Refinement Order & Surface-Ordering Shift (`qou-zbcj`, `qou-tw5z`)

@@ -1,4 +1,4 @@
-import QOU.MassTheory.AlphaEmTwoLoopBlochSchwinger
+import QOU.Transcendental.MassTheory.AlphaEmTwoLoopBlochSchwinger
 
 /-!
 # What the Form C conditional (`AlphaEmTwoLoopBlochSchwingerClass`) actually asserts

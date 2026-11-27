@@ -1,5 +1,5 @@
 import QOU.Transcendental.MathlibExt.DilogPartBWP1Capstone
-import QOU.MassTheory.DilogPartBEulerTail
+import QOU.Transcendental.MassTheory.DilogPartBEulerTail
 
 /-!
 # Joint-limit Part-B assembly (dilog Part B) — the second, Diophantine-gated closure

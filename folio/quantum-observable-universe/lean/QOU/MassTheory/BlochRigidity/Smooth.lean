@@ -1,7 +1,7 @@
-import QOU.MassTheory.BlochRigidity.Abstract
+import QOU.Transcendental.MassTheory.BlochRigidity.Abstract
 import QOU.MassTheory.BlochRigidity.ReebPlane
 import MathlibExt.Dolbeault
-import QOU.MassTheory.BlochRigidity.Regularity
+import QOU.Transcendental.MassTheory.BlochRigidity.Regularity
 import QOU.MassTheory.BlochRigidity.Instance
 
 /-!
