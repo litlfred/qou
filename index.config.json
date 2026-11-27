@@ -91,7 +91,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "e2beef41ee730e248671ec7b0a628cea67271426",
+          "ref": "b3bc5bfd78dd93068bfdfb3f6bfec09ad9326c8e",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -112,9 +112,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-25",
-              "ref": "e2beef41ee730e248671ec7b0a628cea67271426",
-              "evidence": "litlfred 2026-11-25 ~11:35Z, card answer \"Approve both (Recommended)\" to: approve pinning folio-assistant-sci 78f3321 (#222 + #221) and folio-assistant-core e2beef4 (#874 + #875) for the harness site publish; re-pin to the merge commits when they land."
+              "on": "2026-11-27",
+              "ref": "b3bc5bfd78dd93068bfdfb3f6bfec09ad9326c8e",
+              "evidence": "litlfred 2026-11-27 19:47Z 'load one chapter at a time, as reader needs/requests it' and 19:43Z card 'Both, KG rendering as a bean': pin folio-assistant-core#876 merge commit (lazy chapters, in-block headings stay in chunk)"
             }
           }
         }
