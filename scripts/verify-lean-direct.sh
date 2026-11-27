@@ -13,8 +13,8 @@ LP="$LP:$QD:$QD/lean"
 export LEAN_PATH="${LP#:}"
 F="$1"
 if [ -n "$2" ]; then
-  timeout 500 lean -o "$2" "$F"
+  timeout 500 lean -DautoImplicit=false -s 65536 -o "$2" "$F"
 else
-  timeout 500 lean "$F"
+  timeout 500 lean -DautoImplicit=false -s 65536 "$F"
 fi
 echo "EXIT: $?"
