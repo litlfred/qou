@@ -388,6 +388,9 @@
    "analysis",
    "transcendental-function"
   ],
+  "CompactQuantumMetrics/AlgebraicGnsEmbedding.lean": [
+   "analysis"
+  ],
   "CompactQuantumMetrics/SDPStrongDuality.lean": [
    "analysis"
   ],
@@ -412,6 +415,9 @@
   "HeckeTemperleyLieb/HoefsmitV21CosSymmetrization.lean": [
    "real-completion",
    "transcendental-function"
+  ],
+  "HeckeTemperleyLieb/KZHolonomy/BraidRep.lean": [
+   "analysis"
   ],
   "HeckeTemperleyLieb/KZTwoStrandHecke.lean": [
    "analysis",
@@ -605,6 +611,9 @@
    "transcendental-function"
   ],
   "MathlibExt/KZHolonomy/KZForm.lean": [
+   "analysis"
+  ],
+  "MathlibExt/KZHolonomy/LinearODE.lean": [
    "analysis"
   ],
   "MathlibExt/LiouvilleThird.lean": [
@@ -850,7 +859,22 @@
    "analysis",
    "transcendental-function"
   ],
+  "QOU/BraidsAndKnots/KZHexagonCentral.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
   "QOU/BraidsAndKnots/KZIntertwine.lean": [
+   "analysis"
+  ],
+  "QOU/BraidsAndKnots/KZPentagon.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/KZShift.lean": [
+   "analysis",
+   "transcendental-function"
+  ],
+  "QOU/BraidsAndKnots/KZShiftPhi.lean": [
    "analysis"
   ],
   "QOU/BraidsAndKnots/KeystoneN5LevelSixSuffices.lean": [
@@ -1106,6 +1130,9 @@
   "QOU/MassTheory/BridgeADeligneKZ.lean": [
    "transcendental-function"
   ],
+  "QOU/MassTheory/BridgeAP2Regular.lean": [
+   "analysis"
+  ],
   "QOU/MassTheory/BringSchwingerNormalizationDerivation.lean": [
    "transcendental-function"
   ],
@@ -1257,6 +1284,9 @@
   "QOU/MassTheory/KZHolonomy/ArtinGeneration.lean": [
    "analysis"
   ],
+  "QOU/MassTheory/KZHolonomy/BraidGauge.lean": [
+   "analysis"
+  ],
   "QOU/MassTheory/KZHolonomy/ConfConnected.lean": [
    "analysis"
   ],
@@ -1270,9 +1300,21 @@
    "analysis",
    "transcendental-function"
   ],
+  "QOU/MassTheory/KZHolonomy/FlatCocycle.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/KZHolonomy/FlatGauge.lean": [
+   "analysis"
+  ],
   "QOU/MassTheory/KZHolonomy/LocalMonodromy.lean": [
    "analysis",
    "transcendental-function"
+  ],
+  "QOU/MassTheory/KZHolonomy/ODETransport.lean": [
+   "analysis"
+  ],
+  "QOU/MassTheory/KZHolonomy/SmoothGauge.lean": [
+   "analysis"
   ],
   "QOU/MassTheory/KZUnitModulusPrune.lean": [
    "transcendental-function"
