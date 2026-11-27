@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T20:59:15Z
+updated_at: 2026-11-27T21:13:35Z
 parent: qou-dk7p
 ---
 
@@ -99,3 +99,6 @@ Proved, sorry-free (axioms: propext, Classical.choice, Quot.sound), new files `P
 - `cocycle_identity` / `uDefect_eq_zero` / `GrtU4.uDefect_eq_zero` (step 1): u = −[t12+t13+t23, μ1234] − [t14+t24, μ1243] + [t14, μ1423]; hence u = 0 in U4 N from lin512/513/515. No Lie hypothesis.
 
 STILL OPEN (this bean stays open): the bridge u = 0 in U4 N ⇒ cocycle(s) ∈ FF3 N. Needs (i) central shift ψ(a+z,b)=ψ(a,b) — the only place Lie-ness enters (also needed to extend lin514 from zero-sum to all DK3 triples); (ii) the retraction U4 N → End(ℚ⟨Y⟩/FF3 N) (t_i4 ↦ left mult, t12/t13/t23 ↦ derivations), evaluated at 1. Whether (5.19) holds for non-Lie y is not established. Audit §15.
+
+
+2026-11-27 (Prop57Link, PR #9711): gap B2 CLOSED in Lean. lin514_of_lie: IsLieElt y + GrtU4-form lin512/lin513/lin515 => lin514 (GrtU4 form) at every DK3 triple of Fil N 1; grtU4_of_lie assembles GrtU4 N y. Route: central shift (lieSpan induction) -> S = sPoly at DK3 triples -> retraction U4 N -> End(Q<Y1,Y2,Y3>/FF3 N) (t_i4 = left mult Y_i, t12/t13/t23 Leibniz maps; all 15 DK4 relations proved) -> cocycle(sPoly y) in FF3 N -> vanishing_of_cocycle -> (5.19) -> zero-sum lin514 -> nonzero central sums by the shift. Sorry-free; lean-direct exit 0; axioms propext/Classical.choice/Quot.sound. Open: whether non-Lie y can satisfy the three conditions without (5.14) (untested). Bean stays open (B1 and downstream).
