@@ -10,6 +10,18 @@ export default remark({
   authorNotes: [
     {
       kind: "status",
+      date: "2026-11-27",
+      body:
+        "**Mass is valued in the ring (owner ruling 2026-11-27, bean qou-5o1v, constructive item 2.1).** " +
+        "The definition no longer applies a norm: the mass is the composite $\\int_A \\circ \\Psi \\circ \\varrho \\in R$. " +
+        "`BraidKnotOctonion/MassClassRingHom.lean` proves `map_massClass`: the braid-class mass commutes with every ring " +
+        "homomorphism, so evaluation at a point is applied after the mass is computed. The absolute value and the " +
+        "logarithm of the binding law are confined to `QOU/Transcendental/MassTheory/MassComparison.lean` " +
+        "(`comparedMass`, `comparedBinding`, `comparedBinding_mul`). The quadratic `frobeniusMass` and the real-valued " +
+        "`scalarMass` were removed from the sibling `mass-identity.lean`.",
+    },
+    {
+      kind: "status",
       date: "2026-11-22",
       body:
         "**Demoted from prop: to rem: (owner card, 2026-11-22, \"Demote both to remarks\").** " +

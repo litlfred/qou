@@ -4,19 +4,18 @@ $$
   \Psi = (\textstyle\int_A \otimes \mathrm{id}) \circ \Delta \colon A \to A .
 $$
 
-The **inertial mass** of a morphism $\varrho \colon \mathbf{1} \to A$ (a "closed cycle" in the Frobenius--Hopf object) is the norm of the composite $\mathbf{1} \xrightarrow{\varrho} A \xrightarrow{\Psi} A \xrightarrow{\int_A} \mathbf{1}$:
+The **inertial mass** of a morphism $\varrho \colon \mathbf{1} \to A$ (a "closed cycle" in the Frobenius--Hopf object) is the composite $\mathbf{1} \xrightarrow{\varrho} A \xrightarrow{\Psi} A \xrightarrow{\int_A} \mathbf{1}$, read as an element of $\mathrm{End}(\mathbf{1}) = R$:
 
 $$
   \mathfrak{m}(\varrho)
   = 
-  \bigl\lVert
-    \textstyle\int_A \circ\, \Psi \circ \varrho
-  \bigr\rVert,
+  \textstyle\int_A \circ\, \Psi \circ \varrho
+  \;\in\; R .
 $$
 
-where $\lVert \cdot \rVert$ is the norm on $R$ induced by the Frobenius pairing ([Frobenius pairing](#def:frobenius-pairing)). The mass measures the resistance of the Frobenius--Hopf structure to transporting the cycle $\varrho$ through the comultiplication.
+The mass is valued in the ground ring: for the Hecke and Temperley--Lieb models it is an element of $\mathbb{Q}(q)$, or of a Laurent or $h$-adic completion of it. No norm, absolute value or logarithm is applied. The mass measures the resistance of the Frobenius--Hopf structure to transporting the cycle $\varrho$ through the comultiplication.
 
-The composite is an element of $\mathrm{End}(\mathbf{1}) = R$, so no trace is applied. Two facts fix its value. First, $\Psi$ is left multiplication by the fixed element $u = \Psi \circ \eta$, so $\mathfrak{m}(\varrho) = \lVert \int_A (u \cdot \varrho) \rVert$. Second, when the Frobenius form is the counit $\varepsilon$, as it is for the coalgebra a Frobenius form induces, $u = \eta$ and $\Psi = \mathrm{id}_A$, so $\mathfrak{m}(\varrho) = \lVert \int_A \varrho \rVert$.
+No trace is applied to the composite. Two facts fix its value. First, $\Psi$ is left multiplication by the fixed element $u = \Psi \circ \eta$, so $\mathfrak{m}(\varrho) = \int_A (u \cdot \varrho)$. Second, when the Frobenius form is the counit $\varepsilon$, as it is for the coalgebra a Frobenius form induces, $u = \eta$ and $\Psi = \mathrm{id}_A$, so $\mathfrak{m}(\varrho) = \int_A \varrho$.
 
 The categorical trace of the endomorphism $L_\varrho \circ \Psi$, where $L_\varrho$ is left multiplication by $\varrho$, is a different quantity. It equals $\int_A (u \cdot \varrho \cdot c)$, with $c = \mu \circ \mathrm{coev}$ the Casimir element of the self-duality of $A$. Under a fibre functor to free $R$-modules this is the regular trace of $A$, which is not a Markov trace.
 
@@ -37,4 +36,4 @@ $$
 
 with $w(\beta)$ the writhe of $\beta$, is constant on each class. This form, not the raw trace, defines the mass of a braid class. That braid classes correspond to isotopy classes of oriented links is the theorem of Alexander and Markov \cite{alexander1923, markov1936}, which names the classes and enters no statement here.
 
-**Archimedean specialisation.** What follows spans the algebraic→archimedean wall. The pre-archimedean Frobenius mass is valued in the generic ground ring $R$ (the Frobenius norm $\lVert x\rVert_F = \langle x, x\rangle_F$ stays in $R$). The post-$\tau$ scalar mass is the archimedean realisation $R \to \mathbb{R}$, $x \mapsto \lVert x\rVert$, obtained by evaluating the Frobenius norm at the aether parameter $q = q_0$. The $R \to \mathbb{R}$ realisation map inherently crosses the wall and cannot be made $\mathbb{R}$-free or generic-only. It is acknowledged here rather than splitting it off.
+**Comparison with measurement.** The mass is a ring element, so it carries no absolute value and no sign convention. A comparison with a measured value is a separate step that comes after the definition. One applies a ring homomorphism $\varphi \colon R \to K$, such as evaluation of $\mathbb{Q}(q)$ at a point or an embedding into an ordered field, and then a map that needs an order on $K$, such as $x \mapsto |\varphi(x)|$ for a mass or $b \mapsto -\alpha \log |\varphi(b)|$ for a binding factor. The braid-class mass commutes with every ring homomorphism: $\varphi(\mathfrak{m}_R([\beta])) = \mathfrak{m}_K([\beta])$, where the right side is built from $\varphi(q)$. So the mass is computed once, in $R$, and each comparison only evaluates it. The absolute value and the logarithm belong to the comparison and enter no definition or proof before it. The logarithm turns a product of binding factors in $R$ into a sum of compared binding energies, so additivity of binding energy is a property of the comparison map and not a separate postulate.
