@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-07-24T15:49:33Z
-updated_at: 2026-11-27T15:30:00Z
+updated_at: 2026-11-27T15:35:00Z
 parent: qou-a3n3
 ---
 
@@ -28,3 +28,7 @@ PR #8491 was closed unmerged on 2026-11-22 as superseded, on the owner's decisio
 ## 2026-11-27: overlap check with open PRs #9434 and #9428
 
 Neither PR settles any wall. #9428 (holography / q-NS essay review) works on Bring's 2D finite complex; it says nothing about Part A, Part B, or items (3), (5), (6). #9434 (q-NS literature formalisation, qou-0nqs) proves exact facts on a finite 2-complex (energy equality dE/dt = -nu*Omega, conditional enstrophy decay) and, for nu_q = (1 - q^-1)/2, the bound `nuQ_one_add_le`: nu_q(1 + eps) <= eps/2. That touches item (5) only as an ingredient: the conditional alpha = 1 route (closure Omega = eps/nu_q, see qou-15gb, qou-l5pt) would use nu_q ~ (q - 1)/2 exactly, but the closure stays a named hypothesis and alpha is not settled. Part A and Part B are untouched.
+
+## 2026-11-27: item (3) has no subject on main
+
+Item (3), "Levi branch value: compute β = limsup log C_L / log κ", no longer has a subject. Owner ruling Q1 (2026-10-13, bean qou-fm7s) re-scoped the Levi chain onto Θ = f·ξ♭ on the 3D flow domain, where the Levi form is 1 × 1 (the scalar ξ·curl ξ). C_L, β and the trichotomy are withdrawn as undefined (`conj:levi-degeneracy`, `QOU/FluidDynamics/levi_growth_trichotomy.lean` header, checked on main `ba53c84cd5`). Branch (A) is withdrawn (`beltrami_refutes_branchA`). What survives is branch (B) on the Levi scalar, an open conjecture carried by `LeviDegeneracyQ1.LeviDegeneracy` (no instance), tracked in qou-fm7s. Suggested restatement of item (3), pending the owner: "branch (B) of conj:levi-degeneracy on ξ·curl ξ (see qou-fm7s)", or drop it from this list. Not edited above; status unchanged.
