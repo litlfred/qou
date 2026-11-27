@@ -1,11 +1,11 @@
 ---
 # qou-tlru
 title: 'Hecke radical vs TL kernel at roots of unity: first failure (n = 2, q² a primitive cube root)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-27T17:45:00Z
-updated_at: 2026-11-27T17:45:00Z
+updated_at: 2026-11-27T17:50:00Z
 parent: qou-0cyu
 ---
 
@@ -15,4 +15,6 @@ Follow-up to `qou-tlrv` (generic equality rad(wtrace) = θ(tlKernelPulled), PR #
 
 **Not proved (open, do not close on this):** the exact threshold (failure iff [k]_q = 0 for some 2 ≤ k ≤ n + 1), and H/rad ≅ semisimple quotient of TL (literature: Jones 1983, Wenzl 1988).
 
-Status stays in-progress until #9520 merges; the threshold question is a separate decision for Carl.
+## 2026-11-27 — #9520 merged (95e333a43b)
+
+The first-failure theorem is on main, so this bean is completed. The threshold question is a separate open item and goes on a decision card, not this bean.
