@@ -209,3 +209,21 @@ This is the two-strand case of Murakami's `V′(1) = −3·lk·V(1)`. The genera
 **Reading.** On the ring mass of `def:mass-identity`, the muon's and the proton's own words carry no volume. Their ring masses are Jones-type Laurent polynomials. The muon's is symmetric under `q ↔ q⁻¹` (4₁ is amphichiral), so its `U` is odd in `log q`. The volume `v = Vol(4₁)` of the corpus muon `m_μ/m_e = v/ℏ_q²` (`QOU.Core.MassInRing`) is not this ring mass. It is a constant adjoined to the ring, `F = ℚ(q, v)`. On that volume chart, with `v` constant, `U(v/ℏ²) = 2/(q − 1) = 18.185` at q₀. That gives 20.670 for the muon in absolute terms (adding `U_e`) and `U_p = 20.997` for `2(v/ℏ²·F_Bor − 6)`. These are readings only. Nothing is compared with data and nothing is adopted.
 
 **Second factor: status.** The electron's `3` is derived: it is `3·lk(Hopf)`. At `q = 1` only a linked word has a nonzero ring reading, so among the corpus particles the electron alone is non-zero at `q = 1`. The muon and the proton enter the mass formula through the volume chart, not through their trace. The open question is how the two charts are related, which is the volume conjecture (Kashaev invariant at roots of unity, not generic `q`). No new numerical factor is claimed.
+
+## 11. `U(1) = 3·lk` for every three-strand word (owner card: "Prove 3·lk for all 3-strand links")
+
+**Lean.** `QOU/Observations/RingMassLinkingThreeStrand.lean` (algebraic, over ℤ) and `QOU/Transcendental/MassTheory/RingMassLinkingThreeStrand.lean` (the derivative). No `sorry`, no new axiom, no `native_decide`.
+
+**Method.** At `q = 1` the convention-D Hecke matrices are the reduced standard representation of `S₃` (`rho`, `rho_mul`, `trace_rho`: `tr ρ(g) = fix(g) − 1`). Each letter `σᵢ^{±1}` has derivative `±I` there (`hasDerivAt_genR`). So the first-order part of `ρ_q(w)` is `Q w = Σⱼ eⱼ·P(w with letter j deleted)` (`Q_eq_sum`). Deleting a letter multiplies the strand permutation by a transposition (`perm_eraseIdx`). That deletion is the oriented smoothing of the crossing, and it merges two components exactly when the two strands lie in different components (`merge_iff_not_sameOrbit`).
+
+| statement | Lean |
+|---|---|
+| the jet is the real derivative: `∂_q ρ_q(w)|₁ = Q w` | `hasDerivAt_rhoR` |
+| `m(1) = 2^c`, `c` = number of components | `m0_eq`, `massR_one` |
+| `m′(1) = m1 w` | `hasDerivAt_massR` |
+| per crossing over `S₃`: `2(−4 − 4 tr ρ(g) + 2 tr ρ(tg)) = −3·2^c` if the smoothing merges, else `0` | `crossing_term` |
+| **`2·m′(1) = −3·m(1)·linkSum`** | `two_mul_m1` |
+| **`U(1) = −m′(1)/m(1) = (3/2)·linkSum = 3·lk`** for every word | `uAtOne_eq` |
+| electron `σ₁σ₂σ₁`: linkSum 2 (lk 1), 2 components; muon `(σ₁σ₂⁻¹)²`: 0, knot; proton `(σ₁σ₂⁻¹)³`: 0, 3 components; `σ₁⁴σ₂`: 4 | `electron_linkSum`, `muon_linkSum`, `proton_linkSum`, `t24_linkSum` |
+
+Here `linkSum = Σ` of the signs of the crossings between different components `= 2·lk`. This is Murakami's `V′(1) = −3·lk·V(1)` for every closed 3-braid, with the ring mass playing the role of `V`. The value at `q = 1` is exactly what §10 found numerically: 3 for the electron, 0 for the muon and the proton.
