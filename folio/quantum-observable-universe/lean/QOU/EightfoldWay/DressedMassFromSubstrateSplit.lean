@@ -28,12 +28,13 @@ open Flavor
     `s(q) = (q − 1)² · (1 − q⁻⁴) / 3 · (√q + 1/√q) / (q + 1/q)`
 
     that multiplies `M_N` to give the dressed-quark splitting at
-    substrate parameter `q ∈ ℝ`, `0 < q`.  Defined as a function on
-    `ℝ` (we are at the archimedean / numerical layer here per
-    AGENTS.md §7c). -/
-noncomputable def aether_split_factor (q : ℝ) : ℝ :=
+    substrate parameter `q ∈ ℝ`, `0 < q`.  The square root `√q` is the
+    symbol `t` (meant with `0 < t`, `t² = q`, so `1/√q = t⁻¹`); the
+    hypotheses are taken where they are used, and no `Real.sqrt` is
+    needed (bean `qou-dk7p`). This is the convention-C form. -/
+noncomputable def aether_split_factor (t q : ℝ) : ℝ :=
   ((q - 1)^2 * (1 - q^(-4 : ℤ)) / 3) *
-    ((Real.sqrt q + Real.sqrt q⁻¹) / (q + q⁻¹))
+    ((t + t⁻¹) / (q + q⁻¹))
 
 @[deprecated (since := "2026-11-27")] alias substrate_split_factor := aether_split_factor
 
@@ -41,7 +42,7 @@ noncomputable def aether_split_factor (q : ℝ) : ℝ :=
     `aether_split_factor q` vanishes identically at `q = 1` because of the
     `(q - 1)^2` prefactor. -/
 theorem aether_split_factor_at_one :
-    aether_split_factor 1 = 0 := by
+    aether_split_factor 1 1 = 0 := by
   unfold aether_split_factor
   norm_num
 
@@ -51,14 +52,16 @@ theorem aether_split_factor_at_one :
     (`lem:pair-skein-mass-formula`) on the Borromean baryon braids of the
     proton and neutron:
 
-      `(m_n − m_p) · (√q + √q⁻¹) = (q + q⁻¹) · (μ_d − μ_u)`.
+      `(m_n − m_p) · (√q + √q⁻¹) = (q + q⁻¹) · (μ_d − μ_u)`,
+
+    with `√q` written as the symbol `t` (`t² = q`, `t > 0`).
 
     It is a hypothesis of the theorem below, not a lemma proved here. The
     Lean `QOU.HadronicMass.pair_skein_mass_formula` is a per-pair `Prop`
     and does not yet yield this nucleon form. The formula holds only in the
     convention-C frame. -/
-def PairSkeinNucleonSplit (F : FlavorDressingFunctor) (m_p m_n q : ℝ) : Prop :=
-  (m_n - m_p) * (Real.sqrt q + Real.sqrt q⁻¹)
+def PairSkeinNucleonSplit (F : FlavorDressingFunctor) (m_p m_n t q : ℝ) : Prop :=
+  (m_n - m_p) * (t + t⁻¹)
     = (q + q⁻¹) * (F.μ Flavor.down - F.μ Flavor.up)
 
 /-- **Dressed-quark mass splitting, conditional on
@@ -80,20 +83,20 @@ def PairSkeinNucleonSplit (F : FlavorDressingFunctor) (m_p m_n q : ℝ) : Prop :
     the quark splitting from it. -/
 -- Ref: [leitner2026] mass-theory/flavor-dressed-mass-from-substrate-split
 theorem dressed_mass_from_substrate_split
-    (F : FlavorDressingFunctor) (m_p m_n q : ℝ)
+    (F : FlavorDressingFunctor) (m_p m_n t q : ℝ)
     [h : FlavorSplitSubstrateMass m_p m_n q]
-    (h_skein : PairSkeinNucleonSplit F m_p m_n q) :
+    (h_skein : PairSkeinNucleonSplit F m_p m_n t q) :
     F.μ Flavor.down - F.μ Flavor.up
-        = (m_p + m_n) / 2 * aether_split_factor q ∧
+        = (m_p + m_n) / 2 * aether_split_factor t q ∧
     F.μ Flavor.down
-        = F.μ Flavor.up + (m_p + m_n) / 2 * aether_split_factor q := by
+        = F.μ Flavor.up + (m_p + m_n) / 2 * aether_split_factor t q := by
   have hq0 : 0 < q := lt_trans one_pos h.q_gt_one
   have hB : 0 < q + q⁻¹ := add_pos hq0 (inv_pos.mpr hq0)
   have hdiff : F.μ Flavor.down - F.μ Flavor.up
-      = (m_n - m_p) * (Real.sqrt q + Real.sqrt q⁻¹) / (q + q⁻¹) := by
+      = (m_n - m_p) * (t + t⁻¹) / (q + q⁻¹) := by
     rw [eq_div_iff hB.ne', h_skein]; ring
   have hsplit : F.μ Flavor.down - F.μ Flavor.up
-      = (m_p + m_n) / 2 * aether_split_factor q := by
+      = (m_p + m_n) / 2 * aether_split_factor t q := by
     rw [hdiff, h.nucleon_split]
     unfold aether_split_factor flavorSplitClosedForm
     ring
