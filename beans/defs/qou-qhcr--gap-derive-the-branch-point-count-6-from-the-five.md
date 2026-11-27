@@ -566,3 +566,11 @@ This replaces G3 + S₅ by an extremal selection principle ("least hyperbolic A�
 
 ### 2026-11-27 follow-up: is there an axiom-level reason for minimality? (owner card option 2, scope (a))
 Searched `folio/quantum-observable-universe/brings-surface/*.md` and grepped the corpus for least-action / minimal-area / extremal principles near the axioms. The only minimality in the corpus is the **dual** one: `brings-surface-example.md:19` says Bring is terminal among genus-4 curves (fix the genus, maximise `|Aut|`). PR #9726's principle fixes the group and minimises the hyperbolic genus. In the literature this is Tucker's *strong symmetric genus*; for S₅ it is 4 with no hyperbolicity hypothesis (S₅ acts on no sphere or torus), which would also remove `hχ2`, but proving that needs the finite subgroups of PGL₂ and solvability of the Euclidean triangle groups (not formalised). No axiom supplying either principle was found on the surfaces searched.
+
+### 2026-11-27 owner card "Look for an axiom that gives it": read of the five axioms (scope (a), negative)
+Source: `quantum-observable-universes/qou-axioms-physical-reading.md`. Checked each axiom for a statement that would force the base to be the *least hyperbolic* A₅-surface (maximal χ < 0, equivalently minimal Gauss–Bonnet area 2π|χ|):
+- Rigidity, non-degenerate integration: about duals and faithfulness of the Haar form; no extremal content.
+- Observability (Hom(1, Ad A) = 0): no invariant internal direction. It is a vanishing condition, not an extremal one; per the 2026-09-15 session it does not reach Aut(M₀) at all.
+- Measurability (c₁ = c₂ = 0 of the adjoint bundle): a vanishing condition on Ad, not on TΣ (c₁(TΣ₄) = χ = −6 ≠ 0), so it neither selects nor forbids a genus.
+- Categorical volume constraint: fixes a *unit* of volume (SL(2) not GL(2)). Closest in register: under Gauss–Bonnet the area of X/A₅ is 2π·|χ_orb|, and (0;2,5,5) gives the smallest such area (2π/10) with A₅ periods, a Siegel-type minimum. But the axiom fixes a unit, it does not say the area is minimal. Reading it as "minimal" would be choosing the reading because it gives 6, which is fitting.
+Verdict: no axiom supplies the principle on this reading. PR #9726 stays a side theorem; the chain text is unchanged.
