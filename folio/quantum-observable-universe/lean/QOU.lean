@@ -839,6 +839,7 @@ import BraidKnotOctonion.SecondMomentKernelVanishes
 import QOU.Confinement.FlavorDressing
 import QOU.MassTheory.ArchimedeanMassFormula
 import QOU.Observations.CODATAChain
+import QOU.Transcendental.Observations.CODATAChainReal
 import QOU.Core.ClassicalLimitObstruction
 import QOU.StandardModel.FeynmanPathIntegrals
 import QOU.Core.MathConstants
