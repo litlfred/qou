@@ -21,6 +21,7 @@ values; `--check` fails when that block drifts.
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import hashlib
 import html
 import json
@@ -188,6 +189,95 @@ def load_and_validate_upstream(root: Path) -> tuple[dict[str, dict[str, Any]], d
         if "allPassed" in obj and obj["allPassed"] is not True:
             errors.append(f"witness gate failed (`allPassed != True`): {rel}")
     return loaded, hashes, errors
+
+
+def check_consumed_witness_staleness(root: Path) -> tuple[list[str], list[str]]:
+    """Every consumed witness must still describe its producer.
+
+    `allPassed` and byte-identity say nothing about whether the numbers on the
+    scorecard would come out the same if the producers ran today. Two
+    directions are checked, for every witness in UPSTREAM_SPECS that names a
+    producer:
+
+      SELF  the producer file changed since the witness (`scriptHash`);
+      CONE  a first-party module in the producer's transitive import cone was
+            committed after the witness's `computedAt`
+            (`witness_import_cone_staleness_audit.py`; provenance-only modules
+            such as witness.py are ignored, as there).
+
+    SELF is an error. CONE is returned as a warning, printed by --check but
+    not failing it: it is a commit-time heuristic, and a comment-only commit
+    to a cone module trips it. Worse, WitnessBuilder keeps the on-disk stamp
+    when a re-run reproduces the payload, so a re-run that proves nothing
+    moved cannot clear it (measured 2026-11-27: atom-electron-mass and
+    alpha_decay_n126_qalpha_probe re-ran byte-identical and stay flagged).
+    Re-run the flagged producer and diff the payload; a move is the finding.
+    Modules whose age a shallow clone cannot tell are skipped, so a shallow run
+    is a lower bound. Bean qou-myts (B3).
+
+    Returns (errors, warnings).
+    """
+    if root.resolve() != REPO_ROOT.resolve():
+        return [], []  # self-test fixtures carry no git history
+    comp = REPO_ROOT / "computations"
+    if str(comp) not in sys.path:
+        sys.path.insert(0, str(comp))
+    try:
+        import witness_import_cone_staleness_audit as cone_audit
+        from witness_dependency_drift import check_self_staleness
+    except Exception as exc:  # noqa: BLE001 — report, never pass silently
+        return [f"witness staleness check could not load: {exc}"], []
+    index = cone_audit._build_producer_index([comp, REPO_ROOT / "tools"])
+    errors: list[str] = []
+    warnings: list[str] = []
+    for rel, _sections in UPSTREAM_SPECS:
+        wp = root / rel
+        try:
+            w = json.loads(wp.read_text(encoding="utf-8"))
+        except Exception:  # noqa: BLE001 — load_and_validate_upstream reports it
+            continue
+        script_file = w.get("scriptFile") or (
+            Path(str(w["producer"])).name if w.get("producer") else None)
+        if not script_file:
+            continue  # reference data (e.g. ame2020.json), no producer
+        cands = index.get(script_file, [])
+        if not cands:
+            errors.append(f"producer `{script_file}` of {rel} not found")
+            continue
+        producer = cone_audit._resolve_producer(cands, wp)
+        if check_self_staleness(wp, index) is not None:
+            errors.append(f"witness SELF-stale (producer changed since it ran): {rel}")
+            continue
+        try:
+            when = datetime.fromisoformat(str(w.get("computedAt")))
+        except ValueError:
+            errors.append(f"witness has no usable computedAt: {rel}")
+            continue
+        if when.tzinfo is None:
+            when = when.replace(tzinfo=timezone.utc)
+        movers = []
+        for mod in cone_audit.import_cone(producer, index):
+            rel_mod = cone_audit._rel(mod)
+            if cone_audit._is_provenance_only(rel_mod):
+                continue
+            ct = cone_audit._git_commit_time(mod)
+            if ct and ct > when:
+                movers.append((ct, rel_mod))
+        if movers:
+            movers.sort(reverse=True)
+            newest = ", ".join(f"{m} ({t.date()})" for t, m in movers[:3])
+            warnings.append(
+                f"witness IMPORT-CONE stale ({len(movers)} module(s) in its "
+                f"producer's cone committed after {when.date()}; newest: {newest}); "
+                f"re-run `{_rel_to_repo(producer)}` and diff the payload: {rel}")
+    return errors, warnings
+
+
+def _rel_to_repo(p: Path) -> str:
+    try:
+        return str(p.resolve().relative_to(REPO_ROOT.resolve()))
+    except ValueError:
+        return str(p)
 
 
 def render_scorecard(root: Path) -> tuple[str, list[str]]:
@@ -1236,6 +1326,10 @@ def run_check(root: Path, qa_report: bool = False, html_out: Path | None = None)
                 html_out.parent.mkdir(parents=True, exist_ok=True)
                 html_out.write_text(html_doc, encoding="utf-8")
     errors.extend(check_readme_link(root))
+    stale_errors, stale_warnings = check_consumed_witness_staleness(root)
+    errors.extend(stale_errors)
+    for w in stale_warnings:
+        print(f"WARN accuracy-scorecard: {w}", file=sys.stderr)
 
     elapsed_ms = (time.monotonic_ns() - t0_ns) // 1_000_000
     seconds_dec = f"{elapsed_ms // 1000}.{(elapsed_ms % 1000) // 100}"

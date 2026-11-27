@@ -128,18 +128,18 @@ def main() -> int:
     ratio_at_A3 = float(_R[0])
 
     print(f"\n  TREND IN A (the ratio is NOT constant):")
-    print(f"    Pearson r = {pearson_r:.3f}, t = {t_stat:.2f} on {_n-2} dof "
+    print(f"    Pearson r = {float(pearson_r):.3f}, t = {float(t_stat):.2f} on {_n-2} dof "
           f"(crit 2.447 ⇒ p < 0.05)")
     print(f"    slope = {float(_slope):+.5f} per unit A; "
           f"line: {float(_intercept + _slope*3):.3f} at A=3 → "
           f"{float(_intercept + _slope*39):.3f} at A=39")
-    print(f"    rms about the line {rms_about_line:.4f} vs about the mean {rms_dev:.4f} "
-          f"({100*(1-rms_about_line/rms_dev):.0f}% better)")
-    print(f"    ⇒ quote the A you need: A=3 (³H/³He) is {ratio_at_A3:.3f}, NOT the mean "
-          f"{mean_r:.3f}")
-    print(f"\n  split/ΔE_C = {mean_r:.3f} ± {rms_dev:.3f}  (mean ± RMS scatter, {100*rms_dev/mean_r:.0f}%)")
-    print(f"  ⇒ the split is PROPORTIONAL to Coulomb across A=3–39 (the {mean_r:.2f} factor is")
-    print(f"    the known uniform-sphere over-estimate of ΔE_C). The ~{100*rms_dev/mean_r:.0f}% ratio")
+    print(f"    rms about the line {float(rms_about_line):.4f} vs about the mean {float(rms_dev):.4f} "
+          f"({float(100*(1-rms_about_line/rms_dev)):.0f}% better)")
+    print(f"    ⇒ quote the A you need: A=3 (³H/³He) is {float(ratio_at_A3):.3f}, NOT the mean "
+          f"{float(mean_r):.3f}")
+    print(f"\n  split/ΔE_C = {float(mean_r):.3f} ± {float(rms_dev):.3f}  (mean ± RMS scatter, {float(100*rms_dev/mean_r):.0f}%)")
+    print(f"  ⇒ the split is PROPORTIONAL to Coulomb across A=3–39 (the {float(mean_r):.2f} factor is")
+    print(f"    the known uniform-sphere over-estimate of ΔE_C). The ~{float(100*rms_dev/mean_r):.0f}% ratio")
     print(f"    scatter (plus the ~0.07 MeV Nolen–Schiffer anomaly) bounds the strong CSB.")
 
     # QOU consequence
@@ -148,8 +148,8 @@ def main() -> int:
     print("\n### QOU consequence — the strong kernel must be charge-symmetric")
     print(f"  The observed split is Coulomb (∝ ΔE_C, one shared radius, all A), so the")
     print(f"  strong/categorical kernel must NOT carry it. The #2089 pure-strong A=3 mirror")
-    print(f"  split = {kernel_a3:.3f} MeV (#3564) is {kernel_a3/split_a3:.1f}× the whole observed")
-    print(f"  A=3 split ({split_a3:.3f} MeV) — and the systematics shows charge symmetry is")
+    print(f"  split = {float(kernel_a3):.3f} MeV (#3564) is {float(kernel_a3/split_a3):.1f}× the whole observed")
+    print(f"  A=3 split ({float(split_a3):.3f} MeV) — and the systematics shows charge symmetry is")
     print(f"  required at ALL A, not an A=3 accident. Any QOU strong kernel (#2089 f_bond,")
     print(f"  #3548 connected tr_M) must be charge-symmetric, Coulomb sourced separately.")
     print(f"  Scope-(a): constrains the kernel derivation, does not fit binding.")
@@ -198,19 +198,19 @@ def main() -> int:
             wb.add_assertion(
                 name="mirror_split_proportional_to_canonical_coulomb_all_A",
                 computed=str(int(rms_dev / mean_r < 0.15)), expected="1", tolerance=0,
-                source=(f"split_AME/ΔE_C(canonical Z(Z−1), r₀=1.2) = {mean_r:.3f} ± {rms_dev:.3f} "
-                        f"({100*rms_dev/mean_r:.0f}% spread) across 8 mirror pairs A=3–39 ⇒ the "
+                source=(f"split_AME/ΔE_C(canonical Z(Z−1), r₀=1.2) = {float(mean_r):.3f} ± {float(rms_dev):.3f} "
+                        f"({float(100*rms_dev/mean_r):.0f}% spread) across 8 mirror pairs A=3–39 ⇒ the "
                         "split is proportional to Coulomb ⇒ the strong kernel must be charge-symmetric. "
-                        f"The spread is a monotone TREND, not constant scatter (Pearson r = {pearson_r:.3f}); "
+                        f"The spread is a monotone TREND, not constant scatter (Pearson r = {float(pearson_r):.3f}); "
                         "the proportionality conclusion is unaffected."))
             wb.add_assertion(
                 name="mirror_ratio_trends_monotonically_with_A",
                 computed=str(int(t_stat > 2.447)), expected="1", tolerance=0,
-                source=(f"Pearson r = {pearson_r:.3f} between split/ΔE_C and A over the 8 pairs; "
-                        f"t = {t_stat:.2f} on 6 dof exceeds the 2.447 two-sided p=0.05 critical "
-                        f"value, and a straight line has rms {rms_about_line:.4f} against the "
-                        f"mean's {rms_dev:.4f}. Recorded so 'ratio_mean' is not consumed as if "
-                        f"it applied at every A — at A=3 the ratio is {ratio_at_A3:.3f}."))
+                source=(f"Pearson r = {float(pearson_r):.3f} between split/ΔE_C and A over the 8 pairs; "
+                        f"t = {float(t_stat):.2f} on 6 dof exceeds the 2.447 two-sided p=0.05 critical "
+                        f"value, and a straight line has rms {float(rms_about_line):.4f} against the "
+                        f"mean's {float(rms_dev):.4f}. Recorded so 'ratio_mean' is not consumed as if "
+                        f"it applied at every A — at A=3 the ratio is {float(ratio_at_A3):.3f}."))
             out = wb.save()
             print(f"\nWitness: {out}")
         except Exception as e:
