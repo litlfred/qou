@@ -11,6 +11,23 @@ Content block: [`conj:regularity-breakdown`](../../../quantum-observable-univers
 
 is asserted to diverge as `q → 1⁺`, "for suitable data".  Bean `qou-innq`.
 
+## Status after the 2026-11-27 weakening (read first)
+
+On 2026-11-27 the owner ruled (card "Weaken decay clause, keep Part A")
+that the per-mode decay field of `QNsWellposednessContext` was too strong:
+it was the linear Stokes law. The field is now `modal_balance`, with a
+nonlinear transfer term `T_k`. So the negative below holds for
+**transfer-free** flows only (`T_k ≤ 0`; Stokes, Beltrami eigenfields), and
+Part A is open again for the nonlinear flow.
+
+But the weakened class cannot carry Part A non-vacuously by itself.
+`junkContext` (end of this file) satisfies every field, has the
+`q`-independent datum `δ_{k,1}`, and has unbounded enstrophy along its
+solution as `q → 1⁺` (`partA_trivial_over_weakened_class`). The class
+does not tie the amplitudes `|v̂_k|` to the energy, nor `T_k` to a triad
+nonlinearity. A non-vacuous Part A needs a modal model of the actual
+nonlinearity. Gap bean filed.
+
 ## What this file proves (sorry-free)
 
 **Part A is incompatible with the corpus's own formalisation of
@@ -25,9 +42,10 @@ no content.**  Four steps.
    (`chebU_nonneg_mono`, `chebU_mono_param`).  Since `q ↦ q + q⁻¹` is
    nondecreasing on `q ≥ 1`, `[n]_q` is nondecreasing in `q` on `q > 1`
    (`qIntBal_mono`).  No analysis: induction and ring identities.
-2. **The supremum over time is attained at `t = 0`.**  The context's modal
-   inequality gives `|v̂_k(t)| ≤ |v̂_k(0)| e^{−ν_q [k]_q² t} ≤ |v̂_k(0)|`
-   (already proved there as `q_ns_spectral_decay`), so the enstrophy at every
+2. **The supremum over time is attained at `t = 0`, for transfer-free
+   flows.**  The context's modal balance with `T_k ≤ 0` gives
+   `|v̂_k(t)| ≤ |v̂_k(0)| e^{−ν_q [k]_q² t} ≤ |v̂_k(0)|`
+   (`q_ns_spectral_decay_of_no_transfer`), so the enstrophy at every
    `t ≥ 0` is at most the initial enstrophy, and `Ω(q)` *equals* the initial
    enstrophy (`q_ns_enstrophy_isGreatest`).
 3. **Monotone in `q`, hence bounded as `q → 1⁺`.**  For `q`-independent
@@ -46,14 +64,15 @@ with the linear Stokes flow `v̂_k(t) = a_k e^{−ν_q [k]_q² t}`.  It shows tw
 The family hypotheses of step 3 hold with nonzero data
 (`partA_fails_stokes`). The context also does not tell Stokes flow from
 Navier–Stokes flow. That is the
-diagnosis: the field `modal_inequality` forbids the nonlinear transfer between
+diagnosis: the former field `modal_inequality` forbade the nonlinear transfer between
 modes that Part A's heuristic ("loss of UV regularisation", "cascade becomes
 continuous") relies on.
 
 ## Scope of the negative
 
-(b), relative to `QNsWellposednessContext`: the invariant is the field
-`modal_inequality` together with the monotonicity of `[k]_q` (step 1).  It is
+(b), relative to transfer-free solutions of `QNsWellposednessContext`
+(formerly: relative to the whole class, via the field `modal_inequality`,
+removed 2026-11-27): the invariant is `T_k ≤ 0` together with the monotonicity of `[k]_q` (step 1).  It is
 **not** a statement about any equation whose modes exchange energy; a context
 whose modal law keeps the triad transfer term is not covered, and there Part A
 remains open.  No empirical value enters any proof.
@@ -241,11 +260,12 @@ theorem omega_realises_any (f : ℝ → ℝ) (hf : ∀ q, 1 < q → 0 ≤ f q) :
 noncomputable def qnsEnstrophy [ctx : QNsWellposednessContext] (v : ctx.Velocity) : ℝ :=
   ∑' k, ctx.q_int k ^ 2 * ctx.v_hat k v ^ 2
 
-/-- **The enstrophy never exceeds its initial value.**  Uses only
-    `q_ns_spectral_decay` (proved from the field `modal_inequality`), and
-    that `v̂_k` is a magnitude, hence nonnegative. -/
+/-- **The enstrophy never exceeds its initial value, for transfer-free
+    flows.**  Uses `q_ns_spectral_decay_of_no_transfer`, and that `v̂_k` is
+    a magnitude, hence nonnegative. -/
 theorem q_ns_enstrophy_le_initial [ctx : QNsWellposednessContext]
     (sol : ℝ → ctx.Velocity × ctx.Pressure) (hsol : ctx.IsSolution sol)
+    (hnt : ∀ k s, 0 ≤ s → ctx.transfer k (fun s => (sol s).1) s ≤ 0)
     (hnn : ∀ k t, 0 ≤ t → 0 ≤ ctx.v_hat k (sol t).1)
     (hsum : Summable fun k => ctx.q_int k ^ 2 * ctx.v_hat k ctx.v₀ ^ 2)
     (t : ℝ) (ht : 0 ≤ t) :
@@ -254,7 +274,7 @@ theorem q_ns_enstrophy_le_initial [ctx : QNsWellposednessContext]
   have h0 : ∀ k, 0 ≤ ctx.v_hat k ctx.v₀ := fun k => by
     simpa [ctx.initial_datum sol hsol] using hnn k 0 le_rfl
   have hpt : ∀ k, ctx.v_hat k (sol t).1 ≤ ctx.v_hat k ctx.v₀ := fun k => by
-    have hd := q_ns_spectral_decay sol hsol k t ht
+    have hd := q_ns_spectral_decay_of_no_transfer sol hsol k (hnt k) t ht
     have harg : -(ctx.ν_q * ctx.q_int k ^ 2) * t ≤ 0 := by
       have : 0 ≤ ctx.ν_q * ctx.q_int k ^ 2 * t :=
         mul_nonneg (mul_nonneg ctx.ν_q_pos.le (sq_nonneg _)) ht
@@ -274,19 +294,23 @@ theorem q_ns_enstrophy_le_initial [ctx : QNsWellposednessContext]
 
 /-- **`Ω(q)` is attained at `t = 0`.**  The set of enstrophies along the
     solution, over `t ≥ 0`, has greatest element the initial enstrophy; so the
-    supremum in the definition of `Ω(q)` is the initial enstrophy. -/
+    supremum in the definition of `Ω(q)` is the initial enstrophy.
+    Transfer-free flows only. -/
 theorem q_ns_enstrophy_isGreatest [ctx : QNsWellposednessContext]
     (sol : ℝ → ctx.Velocity × ctx.Pressure) (hsol : ctx.IsSolution sol)
+    (hnt : ∀ k s, 0 ≤ s → ctx.transfer k (fun s => (sol s).1) s ≤ 0)
     (hnn : ∀ k t, 0 ≤ t → 0 ≤ ctx.v_hat k (sol t).1)
     (hsum : Summable fun k => ctx.q_int k ^ 2 * ctx.v_hat k ctx.v₀ ^ 2) :
     IsGreatest ((fun t => qnsEnstrophy (sol t).1) '' Ici 0) (qnsEnstrophy ctx.v₀) := by
   refine ⟨⟨0, left_mem_Ici, ?_⟩, ?_⟩
   · simp [ctx.initial_datum sol hsol]
   · rintro _ ⟨t, ht, rfl⟩
-    exact (q_ns_enstrophy_le_initial sol hsol hnn hsum t ht).2
+    exact (q_ns_enstrophy_le_initial sol hsol hnt hnn hsum t ht).2
 
-/-- **Part A fails in every `q`-family of corpus contexts with `q`-independent
-    initial amplitudes.**  Let `C q` be a `QNsWellposednessContext` for each
+/-- **The initial enstrophy of `q`-independent data stays bounded as
+    `q → 1⁺`.**  For transfer-free flows this is the order parameter
+    (`q_ns_enstrophy_isGreatest`), so Part A fails for them; for the
+    nonlinear flow it is only the `t = 0` value.  Let `C q` be a `QNsWellposednessContext` for each
     `q > 1`, whose quantum integer is the canonical `[k]_q` and whose initial
     amplitudes `|v̂_k(0)| = a_k` do not depend on `q`.  If the initial enstrophy
     is finite at one `q₀ > 1`, the order parameter (which is the initial
@@ -336,6 +360,7 @@ noncomputable def stokesContext (q : ℝ) (hq : 1 < q) (a : ℕ → ℝ) :
   modalRate := fun k traj t =>
     -((1 - q⁻¹) / 2 * qIntBal q k ^ 2) *
       (a k * Real.exp (-((1 - q⁻¹) / 2 * qIntBal q k ^ 2) * traj t))
+  transfer := fun _ _ _ => 0
   existence_uniqueness := ⟨fun t => (t, ()), rfl, fun _ h => h⟩
   smooth_of_isSolution := fun _ _ => trivial
   initial_datum := fun _ h => by subst h; rfl
@@ -357,9 +382,9 @@ noncomputable def stokesContext (q : ℝ) (hq : 1 < q) (a : ℕ → ℝ) :
     have : a k * (Real.exp (-c * t) * (-c * 1)) = -c * (a k * Real.exp (-c * t)) := by ring
     rw [this] at hd
     exact hd.hasDerivWithinAt
-  modal_inequality := fun sol h k t _ => by
+  modal_balance := fun sol h k t _ => by
     subst h
-    exact le_refl _
+    simp
 
 /-- In `stokesContext`, the initial amplitudes are the given `a`, independent of `q`. -/
 theorem stokesContext_v_hat_v₀ (q : ℝ) (hq : 1 < q) (a : ℕ → ℝ) (k : ℕ) :
@@ -414,5 +439,125 @@ theorem physical_layer_conversion_diverges {Ωp : ℝ} (hΩ : 0 < Ωp) :
       exact pow_pos (sub_pos.mpr (show (1 : ℝ) < q from hq)) 2
   refine (h0.inv_tendsto_nhdsGT_zero.const_mul_atTop hΩ).congr (fun q => ?_)
   simp [div_eq_mul_inv]
+
+/-! ### The weakened class cannot carry Part A by itself
+
+After the 2026-11-27 weakening the modal law reads
+`d/dt|v̂_k| ≤ −ν_q[k]_q²|v̂_k| + T_k` with `T_k` free data. The class ties
+neither `|v̂_k|` to the energy nor `T_k` to a triad nonlinearity, so it admits
+contexts whose amplitudes grow for no dynamical reason. `junkContext` is one:
+mode 1 grows from `1` towards `1 + c_q`, `c_q = 1/(q−1)`. It satisfies every
+field, its initial datum `δ_{k,1}` does not depend on `q`, and its enstrophy
+along the solution exceeds any bound as `q → 1⁺`. So "Part A holds for some
+family of contexts" is **trivially true** over the weakened class, and a
+non-vacuous Part A needs a modal model of the actual nonlinearity. -/
+
+/-- Mode-1 amplitude profile of `junkContext`: `1 + c(1 − e^{−τ})`. -/
+noncomputable def junkAmp (c τ : ℝ) : ℝ := 1 + c * (1 - Real.exp (-τ))
+
+theorem junkAmp_hasDerivAt (c t : ℝ) :
+    HasDerivAt (junkAmp c) (c * Real.exp (-t)) t := by
+  have h1 : HasDerivAt (fun s : ℝ => Real.exp (-s)) (Real.exp (-t) * (-1)) t :=
+    (hasDerivAt_neg t).exp
+  have h2 := ((h1.const_sub 1).const_mul c).const_add 1
+  unfold junkAmp
+  convert h2 using 1
+  ring
+
+/-- **A context of the weakened class with spurious growth.**  Velocity
+    carrier = elapsed time, unique solution `t ↦ t`, amplitudes
+    `|v̂_1(τ)| = 1 + c_q(1 − e^{−τ})` and `|v̂_k| = 0` otherwise.  The
+    transfer term is whatever the modal balance requires. -/
+noncomputable def junkContext (q : ℝ) (hq : 1 < q) : QNsWellposednessContext where
+  q := q
+  q_gt_one := hq
+  ν_q := (1 - q⁻¹) / 2
+  ν_q_eq := rfl
+  ν_q_pos := by
+    have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
+    linarith
+  Velocity := ℝ
+  Pressure := Unit
+  v₀ := 0
+  norm_sq := fun _ => 0
+  dissipation := fun _ _ => 0
+  v_hat := fun k τ => if k = 1 then junkAmp (1 / (q - 1)) τ else 0
+  q_int := fun k => qIntBal q k
+  Smooth := fun _ => True
+  IsSolution := fun sol => sol = fun t => (t, ())
+  energyRate := fun _ _ => 0
+  dissipationRate := fun _ _ => 0
+  modalRate := fun k traj t =>
+    if k = 1 then 1 / (q - 1) * Real.exp (-(traj t)) else 0
+  transfer := fun k traj t =>
+    (if k = 1 then 1 / (q - 1) * Real.exp (-(traj t)) else 0)
+      + (1 - q⁻¹) / 2 * qIntBal q k ^ 2
+        * (if k = 1 then junkAmp (1 / (q - 1)) (traj t) else 0)
+  existence_uniqueness := ⟨fun t => (t, ()), rfl, fun _ h => h⟩
+  smooth_of_isSolution := fun _ _ => trivial
+  initial_datum := fun _ h => by subst h; rfl
+  dissipation_zero := fun _ _ => rfl
+  energy_continuousOn := fun _ _ _ => by simpa using continuousOn_const
+  energy_hasDeriv := fun _ _ _ t _ => by
+    simpa using (hasDerivWithinAt_const t (Ici t) (0 : ℝ))
+  energy_balance := fun _ _ _ _ => by norm_num
+  modal_continuousOn := fun sol h k T => by
+    subst h
+    by_cases hk : k = 1
+    · simp only [hk, if_true]
+      exact (continuous_iff_continuousAt.mpr fun t =>
+        (junkAmp_hasDerivAt _ t).continuousAt).continuousOn
+    · simp only [hk, if_false]
+      exact continuousOn_const
+  modal_hasDeriv := fun sol h k T t _ => by
+    subst h
+    by_cases hk : k = 1
+    · simp only [hk, if_true]
+      exact (junkAmp_hasDerivAt _ t).hasDerivWithinAt
+    · simp only [hk, if_false]
+      exact hasDerivWithinAt_const t (Ici t) (0 : ℝ)
+  modal_balance := fun sol h k t _ => by
+    subst h
+    apply le_of_eq
+    ring
+
+/-- **Part A is trivially satisfiable over the weakened class.**  The
+    family `junkContext` has the `q`-independent initial datum `δ_{k,1}`,
+    yet for every bound `M` there are, for all `q` close to `1`, times at
+    which its enstrophy exceeds `M`.  Hence any Part A stated only over
+    `QNsWellposednessContext` would be vacuous. -/
+theorem partA_trivial_over_weakened_class (M : ℝ) :
+    ∀ᶠ q in 𝓝[>] (1 : ℝ), ∃ hq : 1 < q,
+      (∀ k, (junkContext q hq).v_hat k (junkContext q hq).v₀
+          = if k = 1 then 1 else 0) ∧
+      ∃ t : ℝ, 0 ≤ t ∧ M ≤ @qnsEnstrophy (junkContext q hq) (t : ℝ) := by
+  have hc : Tendsto (fun q : ℝ => 1 / (q - 1)) (𝓝[>] 1) atTop := by
+    have h1 : Tendsto (fun q : ℝ => q - 1) (𝓝[>] 1) (𝓝[>] 0) := by
+      refine tendsto_nhdsWithin_iff.mpr ⟨?_, ?_⟩
+      · have := (Filter.tendsto_id (x := 𝓝 (1 : ℝ))).sub_const 1
+        simpa using this.mono_left nhdsWithin_le_nhds
+      · filter_upwards [self_mem_nhdsWithin] with q hq
+        exact sub_pos.mpr (show (1 : ℝ) < q from hq)
+    simpa [one_div] using h1.inv_tendsto_nhdsGT_zero
+  filter_upwards [self_mem_nhdsWithin, hc.eventually (eventually_ge_atTop (2 * |M|))]
+    with q hq hcq
+  have hq' : (1 : ℝ) < q := hq
+  refine ⟨hq', fun k => ?_, Real.log 2, Real.log_nonneg (by norm_num), ?_⟩
+  · show (if k = 1 then junkAmp (1 / (q - 1)) 0 else 0) = if k = 1 then 1 else 0
+    simp [junkAmp]
+  · have hE : @qnsEnstrophy (junkContext q hq') (Real.log 2 : ℝ)
+        = junkAmp (1 / (q - 1)) (Real.log 2) ^ 2 := by
+      have := omega_single (junkAmp (1 / (q - 1)) (Real.log 2)) q hq'
+      unfold omega at this
+      exact this
+    rw [hE]
+    have hexp : Real.exp (-Real.log 2) = 1 / 2 := by
+      rw [Real.exp_neg, Real.exp_log (by norm_num)]; norm_num
+    have hval : junkAmp (1 / (q - 1)) (Real.log 2) = 1 + 1 / (q - 1) / 2 := by
+      unfold junkAmp; rw [hexp]; ring
+    rw [hval]
+    have hpos : 0 ≤ 1 / (q - 1) := le_of_lt (one_div_pos.mpr (sub_pos.mpr hq'))
+    have hM : M ≤ |M| := le_abs_self M
+    nlinarith [sq_nonneg (1 / (q - 1) / 2)]
 
 end QOU.FluidDynamics.EnstrophyOrderParameter
