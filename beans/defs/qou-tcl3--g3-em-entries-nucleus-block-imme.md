@@ -15,3 +15,6 @@ parent: qou-tcl0
 No binding formula on record has em entries: no Z²-type term. Rank cap 2 for a two-body operator gives a + b T_z + c T_z² inside a multiplet (derived from the cap, not imported). Feeds B, Q_β, Q_α (ΔB constant 9.5366 MeV along the alpha line, #9653), mirror nuclei.
 
 RESULT: PR #9691, EM channel a=A(A-2)/8, b=(A-1)/2, c=1/2 derived; r_rms open
+
+## 2026-11-27T23:59Z — ring-valued ledger (PR #9839)
+EM channel put on the ring mass as one factor μ per proton pair (`QOU/Nuclear/CoulombRingLedger.lean`, sorry-free). Any additive reading (log, or energy `−q∂ log`) gives the IMME ledger with derived a, b, c and ε = reading(μ); ratios reading-independent; log and energy pair weights are two readings of one μ. Open: which μ (same open scale as r_rms). Audit `docs/audits/2026-11-27-coulomb-ring-ledger.md`.
