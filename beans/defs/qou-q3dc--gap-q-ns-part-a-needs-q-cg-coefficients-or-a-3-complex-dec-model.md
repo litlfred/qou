@@ -81,3 +81,6 @@ positivity, is still open (Haar thread).
 
 ## 2026-11-27T19:37Z — off-diagonal budget identities (PR #9608)
 `OqSU2BudgetAllDirections.lean`: `(X_{s0,sp,sm}a)* = -T_{q,q⁻¹}(X_{s0,sm,sp}(a*))`; for s²=q⁻¹, self-adjoint a, torus-invariant φ: φ(X₊a·X₋a) = -φ(w*w). Sorry-free, generic R. Conditional on Haar positivity (open, #9599): h(X₊a·X₋a) ≤ 0. Still open: which pairing is the transport budget; Haar positivity; Part A (qou-pa7n). Not closing.
+
+## 2026-11-27T20:05Z — budget sign (PR #9648, on #9617 + #9646)
+`OqSU2BudgetSign.lean`: for q>0, q≠1, ordered field, self-adjoint a: h(X a·X a) ≤ 0 (Cartan), h(X₊a·X₋a) ≤ 0 (s²=q⁻¹). Sorry-free. Open: identification of these integrands as the q-NS transport budget; any q→1 control; Part A (qou-pa7n). Not closing.
