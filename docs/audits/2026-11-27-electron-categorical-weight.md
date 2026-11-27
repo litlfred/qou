@@ -179,3 +179,33 @@ Relation to §7 (probe check): `U_e = 6 − w_e − 3 D[2]/[2]`.
 **What changes from §7.** The `3` at `q = 1` survives the framing correction, so it is not a writhe artefact of the chosen braid word. The ring mass is a braid-class invariant, so `U_e(1) = 3` is a link invariant of the Hopf link. The signs change. On the raw trace the electron reading is `+w_e` with an n−p cell of `−2/w_e`, which puts the neutron below the proton. On the ring mass, with the energy sign `U = −q∂_q log m`, the electron reading is positive and the n−p cell is positive, which puts the neutron above the proton.
 
 **Second derived factor: status.** No new factor is derived here. The candidate for the `3` is the Jones-derivative identity `V′_L(1) = −3·lk(L)·V_L(1)` (Murakami), with `lk(Hopf) = 1`. That would make `U_e(1) = 3·lk`, a derived quantity, not a fitted one. This is a candidate identification. It is not formalised. The other candidate, `N² − 1 = 3` for the spin-½ colour, agrees at this one point and is not separated by the electron alone. Separating the two needs a link with `lk ≠ 1` read the same way. Nothing here is chosen to match a measured value.
+
+## 10. The `3` is `3·lk`; the other corpus words on the ring mass (owner card: "Prove the 3 is 3·lk in Lean"; owner: "And muon etc on ring mass")
+
+**Lean.** `QOU/Observations/RingMassLinkingNumber.lean` and `QOU/Transcendental/MassTheory/RingMassLinkingNumber.lean`. No `sorry`, no new axiom.
+
+| statement | Lean |
+|---|---|
+| on `H₂(q)`, the Markov weights with parameter `z_D` are forced: `[3]/[2]²` and `1/[2]²` | `ocneanu_weights_forced` |
+| `tr_D(σ₁ⁿ) = ([3]qⁿ + (−q⁻¹)ⁿ)/[2]²`, with `tr_D(1) = 1` and `tr_D(σ₁) = z_D` | `trace2`, `trace2_zero`, `trace2_one` |
+| ring mass `m(σ₁ⁿ) = [3]q⁻ⁿ + (−1)ⁿq^{−3n}` | `ringMass2_eq` |
+| `n = 2` is the electron's `[4]/q³` | `ringMass2_two` |
+| `m′(1) = −3n(1 + (−1)ⁿ)` | `hasDerivAt_massFn_one` |
+| **`U(1) = 3k` on `T(2,2k)` (`lk = k`), and `U(1) = 0` on the knots `T(2,2k+1)`** | `uAtOne_even`, `uAtOne_odd`, `uAtOne_hopf` |
+| no constant fits the family, so the `3` is not `N² − 1` | `not_const_three` |
+
+This is the two-strand case of Murakami's `V′(1) = −3·lk·V(1)`. The general link case is not proved. The probe checks it on three strands for every corpus word below, at 10/10.
+
+**Corpus words on the ring mass** (`computations/probes/electron_weight/ring_mass_braid_words_probe.py`). The words are on 3 strands, and `U = −q∂_q log m`.
+
+| particle (word) | link | m(1) | U(1) = 3·lk | m(q₀) | U(q₀) |
+|---|---|---|---|---|---|
+| electron `σ₁σ₂σ₁` | Hopf, lk 1 | 4 | 3 | 3.00514 | 2.48463 |
+| muon `(σ₁σ₂⁻¹)²` | 4₁ | 2 | 0 | 2.27840 | −2.39507 |
+| proton `(σ₁σ₂⁻¹)³` | Borromean, lk 0 | 8 | 0 | 8.11978 | −0.25639 |
+| (control) `σ₁³σ₂` | trefoil | 2 | 0 | 1.83467 | 1.38621 |
+| (control) `σ₁⁴σ₂` | T(2,4), lk 2 | 4 | 6 | 2.29105 | 4.75658 |
+
+**Reading.** On the ring mass of `def:mass-identity`, the muon's and the proton's own words carry no volume. Their ring masses are Jones-type Laurent polynomials. The muon's is symmetric under `q ↔ q⁻¹` (4₁ is amphichiral), so its `U` is odd in `log q`. The volume `v = Vol(4₁)` of the corpus muon `m_μ/m_e = v/ℏ_q²` (`QOU.Core.MassInRing`) is not this ring mass. It is a constant adjoined to the ring, `F = ℚ(q, v)`. On that volume chart, with `v` constant, `U(v/ℏ²) = 2/(q − 1) = 18.185` at q₀. That gives 20.670 for the muon in absolute terms (adding `U_e`) and `U_p = 20.997` for `2(v/ℏ²·F_Bor − 6)`. These are readings only. Nothing is compared with data and nothing is adopted.
+
+**Second factor: status.** The electron's `3` is derived: it is `3·lk(Hopf)`. At `q = 1` only a linked word has a nonzero ring reading, so among the corpus particles the electron alone is non-zero at `q = 1`. The muon and the proton enter the mass formula through the volume chart, not through their trace. The open question is how the two charts are related, which is the volume conjecture (Kashaev invariant at roots of unity, not generic `q`). No new numerical factor is claimed.
