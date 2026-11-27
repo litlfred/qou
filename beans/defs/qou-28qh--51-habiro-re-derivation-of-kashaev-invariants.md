@@ -7,7 +7,7 @@ priority: normal
 tags:
     - constructive
 created_at: 2026-11-27T19:01:13Z
-updated_at: 2026-11-27T19:32:20Z
+updated_at: 2026-11-27T19:34:40Z
 parent: qou-dk7p
 ---
 
@@ -26,4 +26,4 @@ Overlaps: Coev strangler thread (QCalculus/HabiroBracket, HabiroCyclotomicOddLoc
 A then C: cyclotomic-series constructor + 3_1, 4_1, then twist knots via Masbaum (P1-P2) now; the general cyclotomic expansion for every knot (Habiro's theorem, quantum-group setup) is the long-run goal, added as P6.
 
 ## Progress
-- 2026-11-27: P1, P2 and P3 step 1 in PR #9592. P3 step 1 = QOU/Transcendental/BraidKnotOctonion/FigureEightKashaevHabiroReading (kashaev N = evalRoot zeta_N figureEight). Consumer moves wait for #9567/#9569 and the knot-volume thread (coordinate via coordinator). P4 (HabiroOhtsukiExpansion, trivial-connection expansion q=1+h) also in #9592. P5 (HabiroBarInvolution: bar, bar_bar, bar_figureEight, bar_trefoil) in #9604 (P4+P5 missed #9592 merge). P1-P3step1 merged via #9592 2026-11-27. P3 plan agreed with Coev thread: they move FigureEightVolume* whole to QOU/Transcendental/BraidKnotOctonion/ (same names); then this bean redefines kashaev as the archimedean instance of figureEight at the new path. Coordinator will signal.
+- 2026-11-27: P1, P2 and P3 step 1 in PR #9592. P3 step 1 = QOU/Transcendental/BraidKnotOctonion/FigureEightKashaevHabiroReading (kashaev N = evalRoot zeta_N figureEight). Consumer moves wait for #9567/#9569 and the knot-volume thread (coordinate via coordinator). P4 (HabiroOhtsukiExpansion, trivial-connection expansion q=1+h) also in #9592. P5 (HabiroBarInvolution: bar, bar_bar, bar_figureEight, bar_trefoil) merged via #9604. P1-P3step1 merged via #9592 2026-11-27. P3 plan agreed with Coev thread: they move FigureEightVolume* whole to QOU/Transcendental/BraidKnotOctonion/ (same names); then this bean redefines kashaev as the archimedean instance of figureEight at the new path. Coordinator will signal.
