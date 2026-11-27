@@ -176,6 +176,13 @@ unify definitionally.  Kept as a recorded check — the claim "composing the hal
 interface mismatch" was mine and was wrong, and the lemma is the evidence for the correction. -/
 theorem algebraMap_int_rat : (algebraMap ℤ ℚ) = Int.castRingHom ℚ := RingHom.ext_int _ _
 
+/-- `ℝ` discharges `SqrtOrderedField`, the one non-algebraic input of Roth's Lemma
+(`RothRealLadder`).  It is supplied here because this module is already analytic (it uses
+`Real.log`), so the algebraic ladder stays free of `Real.sqrt`. -/
+theorem sqrtOrderedField_real : SqrtOrderedField :=
+  ⟨ℝ, inferInstance, inferInstance, inferInstance,
+    fun x hx => ⟨Real.sqrt x, Real.sqrt_nonneg x, Real.sq_sqrt hx⟩⟩
+
 /-- **Step 4.**  Steps 2 and 3 in one place: the Taylor lower bound and Roth's Lemma's upper bound
 on the same index, contradicting each other as soon as the numeric hypotheses hold.
 
@@ -202,7 +209,7 @@ theorem roth_contradiction (hm : 1 ≤ m) {p q F : ℕ} (hp : 0 < p) (hpq : p �
     (hgap : (rothConstant m : ℚ) ^ (2 ^ (m - 1)) * ((p : ℚ) / (q : ℚ)) < ν ^ (2 ^ (m - 1))) :
     False := by
   obtain ⟨Θ, _, hΘbound, hΘidx⟩ :=
-    index_le_rothBound hm hp hpq (Equiv.refl (Fin m)) hg hA hκ
+    index_le_rothBound sqrtOrderedField_real hm hp hpq (Equiv.refl (Fin m)) hg hA hκ
   -- no coercion bridge needed: `algebraMap ℤ ℚ` and `Int.castRingHom ℚ` unify definitionally
   -- (see `algebraMap_int_rat`, which is a recorded check rather than a step).
   exact false_of_le_index_of_rothBound hν0
