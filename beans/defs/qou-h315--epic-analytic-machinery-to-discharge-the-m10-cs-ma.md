@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T01:33:54Z
-updated_at: 2026-11-22T21:40:00Z
+updated_at: 2026-11-27T22:08:41Z
 parent: qou-m6dn
 ---
 
@@ -47,3 +47,7 @@ The newest Round entries here cite a PR that is open and unmerged (#8483); its L
 
 ## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
 Verdict: APPLIES. CS-margin machinery for M_1 > 0; reduction skeleton YoungDiagramKernelCSMargin.m1_pos_all_of_cs_inputs is on main. PR #8483 (open, ready-to-merge label, mergeable_state dirty) is not on main; do not cite it until merged.
+
+
+## 2026-11-27: Jucys–Murphy form of the CS-margin inputs (PR #9774)
+P(n) = (n(n−1)(n−2)/3)·[(1 2 n)]|J_n| (single JM element; P>0 ⇔ that coefficient > 0); −N and M₁ likewise via Σ_{k≠l} δ(J_k=J_l). Verified exactly n=3..7, group algebra vs hook formula. Reformulation only, no bound. Open next question: do the moments [(1 2 n)]J_n^m (Lassalle / star factorizations) give an explicit finite-n bound? Gap qou-k5r5 unchanged.
