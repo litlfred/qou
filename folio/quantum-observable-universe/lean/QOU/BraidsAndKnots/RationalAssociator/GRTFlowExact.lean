@@ -624,6 +624,14 @@ theorem dk3_543 : DK3 (t N 5) (t N 4) (t N 3) :=
   ⟨by rw [add_comm]; exact (dk4 N).n34_2, by rw [add_comm]; exact (dk4 N).n24_3,
     by rw [add_comm]; exact (dk4 N).n23_4⟩
 
+/-- (5.20) at the 2↔3-relabelled universal family. -/
+theorem swap_lin515 (hy : GrtU4 N y) :
+    eval (t N 1) (t N 3 + t N 5) y + eval (t N 0 + t N 3) (t N 4) y =
+      eval (t N 3) (t N 4) y + eval (t N 1 + t N 0) (t N 5 + t N 4) y + eval (t N 1) (t N 3) y := by
+  have key := congrArg (swap23Hom N) hy.lin515
+  simp only [swap23Hom, map_add, map_eval, lift_t] at key
+  simpa [swap23Idx] using key
+
 local notation "τ" i => (inl (t N i) : DualNumber (U4 N))
 
 variable (hy : GrtU4 N y) {K : ℕ} (hK : 1 ≤ K) (hNK : N ≤ K) (x : ℚ)
@@ -723,6 +731,198 @@ theorem goodAt_hex {d : ℕ} (hz : evq x (defectPoly (N := N) y K .hex) ∈ Fil 
       eval _ _ G * eval _ _ G * eval _ _ G - (1 : DualNumber (U4 N)) by abel]
   exact key
 
+set_option maxHeartbeats 1600000 in
+/-- **(5.15) under the flow.** -/
+theorem goodAt_pent {d : ℕ} (hz : evq x (defectPoly (N := N) y K .pent) ∈ Fil N d) :
+    GoodAt d (evD x (defectPoly (N := N) y K .pent)) := by
+  have h : ∀ i, t N i ∈ Fil N 1 := t_mem_Fil_one
+  set G := expPoly (x • y) K
+  simp only [defectPoly, map_sub, map_mul] at hz ⊢
+  rw [evD_EP hy hK hNK x (h 0) (add_mem (h 3) (h 4)),
+    evD_EP hy hK hNK x (add_mem (h 1) (h 3)) (h 5), evD_EP hy hK hNK x (h 3) (h 5),
+    evD_EP hy hK hNK x (add_mem (h 0) (h 1)) (add_mem (h 4) (h 5)),
+    evD_EP hy hK hNK x (h 0) (h 3)]
+  simp only [inl_add]
+  have hDK : DK4 (τ 0) (τ 1) (τ 2) (τ 3) (τ 4) (τ 5) := by
+    simpa using (dk4 N).map' (inlHom (U4 N) (U4 N))
+  set Ga := Hh hy _ _ (h 0) (h 3)
+  set Gb := Hh hy _ _ (add_mem (h 1) (h 3)) (h 5)
+  set Gc := Hh hy _ _ (h 0) (add_mem (h 3) (h 4))
+  set Gd := Hh hy _ _ (add_mem (h 0) (h 1)) (add_mem (h 4) (h 5))
+  set Ge := Hh hy _ _ (h 3) (h 5)
+  have hg : PentagonV (gamD y) (τ 0) (τ 1) (τ 3) (τ 4) (τ 5) := by
+    simp only [PentagonV, gamD, fst_add, fst_inl, gam, one_add_inr_mul]
+    rw [hy.lin515]
+  have hg' : PentagonV (gamD y) (τ 1) (τ 0) (τ 3) (τ 5) (τ 4) := by
+    simp only [PentagonV, gamD, fst_add, fst_inl, gam, one_add_inr_mul]
+    rw [swap_lin515 hy]
+  have hu1 : gamD y (τ 5) (τ 3) * gamD y (τ 3) (τ 5) = 1 := (Hh hy _ _ (h 5) (h 3)).val_inv
+  have hu2 : gamD y (τ 4) (τ 3) * gamD y (τ 3) (τ 4) = 1 := (Hh hy _ _ (h 4) (h 3)).val_inv
+  have hA : TCompat (τ 1) (τ 3) Ga (Hh hy _ _ (h 1) (h 3)) := by
+    unfold TCompat; exact tc_gam hy (h 0) (h 1) (h 3) dk3_013
+  have hB : TCompat (τ 4) (τ 3) (Hh hy _ _ (h 5) (h 3)) (Hh hy _ _ (h 4) (h 3)) := by
+    unfold TCompat; exact tc_gam hy (h 5) (h 4) (h 3) dk3_543
+  have hfar := far_of_tcompatV (gamD y) (commProp_gamD y) hDK Ga Gb Gc Gd Ge
+    (Hh hy _ _ (h 1) (h 3)) (Hh hy _ _ (h 3) (h 4)) (Hh hy _ _ (h 1) (add_mem (h 3) (h 5)))
+    (Hh hy _ _ (add_mem (h 0) (h 3)) (h 4)) (Hh hy _ _ (h 5) (h 3)) (Hh hy _ _ (h 4) (h 3))
+    rfl rfl rfl rfl rfl rfl rfl rfl rfl rfl rfl hg hg' hu1 hu2 hA hB
+  have hdk4 := transported_dk4V (gamD y) (commProp_gamD y) hDK Ga Gb Gc Gd Ge
+    rfl rfl rfl rfl rfl hg hfar
+  have hpent := pentagon_actV G (gamD y) (commProp_gamD y) hDK Ga Gb Gc Gd Ge
+    rfl rfl rfl rfl rfl hg
+  rw [hpent]
+  simp only at hdk4 ⊢
+  set s := transported (τ 0) (τ 1) (τ 3) (τ 4) (τ 5) Ga Gb Gc with hs
+  have gA := goodAt_val_Hh hy (h 0) (h 3)
+  have gAi := goodAt_inv_Hh hy (h 0) (h 3)
+  have gB := goodAt_val_Hh hy (add_mem (h 1) (h 3)) (h 5)
+  have gBi := goodAt_inv_Hh hy (add_mem (h 1) (h 3)) (h 5)
+  have gC := goodAt_val_Hh hy (h 0) (add_mem (h 3) (h 4))
+  have gCi := goodAt_inv_Hh hy (h 0) (add_mem (h 3) (h 4))
+  have gCB : GoodAt 0 (↑(Gc * Gb) : DualNumber (U4 N)) := by
+    rw [Units.val_mul]; exact gC.mul (zero_add 0) gB
+  have gCBi : GoodAt 0 (↑(Gc * Gb)⁻¹ : DualNumber (U4 N)) := by
+    rw [mul_inv_rev, Units.val_mul]; exact gBi.mul (zero_add 0) gCi
+  have g23 : GoodAt 1 ((↑Ga⁻¹ : DualNumber (U4 N)) * (τ 3) * (Ga : DualNumber (U4 N))) :=
+    goodAt_conj gAi (goodAt_inl (h 3)) gA
+  have gs : GoodAt 1 s.1 ∧ GoodAt 1 s.2.1 ∧ GoodAt 1 s.2.2.1 ∧ GoodAt 1 s.2.2.2.1 ∧
+      GoodAt 1 s.2.2.2.2 := by
+    simp only [hs, transported]
+    exact ⟨goodAt_inl (h 0), ((goodAt_inl (h 1)).add (goodAt_inl (h 3))).sub g23, g23,
+      (goodAt_conj gCBi ((goodAt_inl (h 3)).add (goodAt_inl (h 4))) gCB).sub g23,
+      goodAt_conj gBi (goodAt_inl (h 5)) gB⟩
+  have g14 : GoodAt 1 (transported14 (τ 2) (τ 4) (τ 5) s) := by
+    unfold transported14
+    exact ((((goodAt_inl (h 2)).add (goodAt_inl (h 4))).add (goodAt_inl (h 5))).sub
+      gs.2.2.2.1).sub gs.2.2.2.2
+  have hsg : ∀ i, GoodAt 1 (![s.1, s.2.1, transported14 (τ 2) (τ 4) (τ 5) s, s.2.2.1,
+      s.2.2.2.1, s.2.2.2.2] i) := by
+    intro i
+    fin_cases i
+    exacts [gs.1, gs.2.1, g14, gs.2.2.1, gs.2.2.2.1, gs.2.2.2.2]
+  have key := goodAt_liftD _ hdk4 hsg hz
+  simp only [evq_EP, map_sub, map_mul, map_add, map_eval, liftD_t] at key
+  have := gCB.mul (zero_add d) key
+  simpa [pentDefect] using this
+
 end Conditions
+
+/-! ### The induction and the theorem -/
+
+section Main
+
+variable {N : ℕ} {y : FreeAlgebra ℚ (Fin 2)}
+
+theorem coeff_zero_defectPoly {K : ℕ} (hK : 2 ≤ K) (i : GRTDefect N) :
+    (defectPoly y K i).coeff 0 = 0 := by
+  have c0 := coeff_zero_EP (R := U4 N) y hK
+  cases i <;> simp [defectPoly, mul_coeff_zero, c0]
+
+/-- **The flow induction.** A polynomial with no constant term, whose value at `x + ε` is
+`GoodAt d` whenever its value at `x` lies in `Fil N d`, vanishes at every `x`. -/
+theorem evq_eq_zero_of_flow (P : (U4 N)[X]) (h0 : P.coeff 0 = 0)
+    (hflow : ∀ d x, evq x P ∈ Fil N d → GoodAt d (evD x P)) (x : ℚ) : evq x P = 0 := by
+  have key : ∀ d x, evq x P ∈ Fil N d := by
+    intro d
+    induction d with
+    | zero => exact fun x => mem_Fil_zero _
+    | succ d ih =>
+      exact evq_mem_of_snd_mem (Fil N (d + 1)) P h0 (fun x => (hflow d x (ih x)).2)
+  exact eq_zero_of_mem_Fil (key N x)
+
+theorem dk3_neg {R : Type*} [Ring R] (a b : R) : DK3 a (-a - b) b :=
+  ⟨by rw [show -a - b + b = -a by abel]; exact (Commute.refl a).neg_right,
+    by rw [show -a - b = -(a + b) by abel]; exact (Commute.refl _).neg_left,
+    by rw [show a + (-a - b) = -b by abel]; exact (Commute.refl _).neg_right⟩
+
+/-- A `DK3` family in `Fil N 1`, extended by zeros, as an endomorphism of `U4 N`. -/
+noncomputable def liftU3 (u v w : U4 N) (h : DK3 u v w) (hu : u ∈ Fil N 1) (hv : v ∈ Fil N 1)
+    (hw : w ∈ Fil N 1) : U4 N →ₐ[ℚ] U4 N :=
+  lift N ![u, v, 0, w, 0, 0] (by simpa using h.toDK4)
+    (word_eq_zero_of_Fil_one _ (by intro i; fin_cases i <;> simp [hu, hv, hw]))
+
+@[simp] theorem liftU3_t0 (u v w : U4 N) (h hu hv hw) : liftU3 u v w h hu hv hw (t N 0) = u := by
+  simp [liftU3]
+
+@[simp] theorem liftU3_t1 (u v w : U4 N) (h hu hv hw) : liftU3 u v w h hu hv hw (t N 1) = v := by
+  simp [liftU3]
+
+@[simp] theorem liftU3_t3 (u v w : U4 N) (h hu hv hw) : liftU3 u v w h hu hv hw (t N 3) = w := by
+  simp [liftU3]
+
+/-- **(S4), unconditional.** If `y ∈ grt` (`GrtU4 N y`) and the truncation order `K` of the
+(5.16)-exponential is at least `2` and at least the nilpotency order `N` of `U4 N`, then
+`Exp(xy) = expPoly (x • y) K` satisfies the four `GRT₁` conditions in `U4 N`, for every
+`x ∈ ℚ`. -/
+theorem grt1U4_expPoly (hy : GrtU4 N y) {K : ℕ} (hK : 2 ≤ K) (hNK : N ≤ K) (x : ℚ) :
+    GRT1U4 N (expPoly (x • y) K) := by
+  have hK1 : 1 ≤ K := by omega
+  have zinv := evq_eq_zero_of_flow _ (coeff_zero_defectPoly hK _)
+    (fun d x hz => goodAt_inv hy hK1 hNK x hz) x
+  have ztc := evq_eq_zero_of_flow _ (coeff_zero_defectPoly hK _)
+    (fun d x hz => goodAt_tc hy hK1 hNK x hz) x
+  have zhex := evq_eq_zero_of_flow _ (coeff_zero_defectPoly hK _)
+    (fun d x hz => goodAt_hex hy hK1 hNK x hz) x
+  have zpent := evq_eq_zero_of_flow _ (coeff_zero_defectPoly hK _)
+    (fun d x hz => goodAt_pent hy hK1 hNK x hz) x
+  simp only [defectPoly, map_sub, map_mul, map_one, evq_EP, evq_C] at zinv ztc zhex zpent
+  refine ⟨?_, ?_, ?_, ?_, ?_⟩
+  · apply algebraMapInv_expPoly _ _ hK1
+    rw [map_smul, hy.const, smul_zero]
+  · intro a b ha hb
+    have := congrArg (liftU3 a (-a - b) b (dk3_neg a b) ha
+      (sub_mem (neg_mem ha) hb) hb) zinv
+    simp only [map_sub, map_mul, map_one, map_zero, map_eval, liftU3_t0, liftU3_t3] at this
+    exact sub_eq_zero.1 this
+  · unfold Hexagon
+    simp only [map_one, mul_one]
+    exact (sub_eq_zero.1 zhex).symm
+  · intro u v w hu hv hw hDK
+    have := congrArg (liftU3 u v w hDK hu hv hw) ztc
+    simp only [map_sub, map_mul, map_add, map_zero, map_eval, liftU3_t0, liftU3_t1,
+      liftU3_t3] at this
+    exact sub_eq_zero.1 this
+  · exact sub_eq_zero.1 zpent
+
+/-- **The doubling hypothesis of `grt1U4_expPoly_of_doubling` holds** when `N ≤ K`: every
+defect of `Exp(xy)` vanishes, so the hypothesis is satisfied trivially. -/
+theorem hdouble_of_le (hy : GrtU4 N y) {K : ℕ} (hK : 2 ≤ K) (hNK : N ≤ K) :
+    ∀ d, (∀ i x, evq x (defectPoly (N := N) y K i) ∈ Fil N d) →
+      ∀ i x, evq (2 * x) (defectPoly (N := N) y K i) - (2 : ℚ) • evq x (defectPoly y K i) ∈
+        Fil N (d + 1) := by
+  have hz : ∀ i x, evq x (defectPoly (N := N) y K i) = 0 := by
+    intro i x
+    have g := grt1U4_expPoly hy hK hNK x
+    cases i with
+    | inv a b ha hb =>
+      simp only [defectPoly, map_sub, map_mul, map_one, evq_EP]
+      rw [g.inv512 a b ha hb, sub_self]
+    | hex =>
+      simp only [defectPoly, map_sub, map_mul, map_one, evq_EP]
+      have := g.hex513
+      unfold Hexagon at this
+      simp only [map_one, mul_one] at this
+      rw [← this, sub_self]
+    | tc u v w hu hv hw h =>
+      simp only [defectPoly, map_sub, map_mul, evq_EP, evq_C]
+      have := g.tc514 u v w hu hv hw h
+      unfold TCompatPoly at this
+      rw [this, sub_self]
+    | pent =>
+      simp only [defectPoly, map_sub, map_mul, evq_EP]
+      have := g.pent515
+      unfold Pentagon at this
+      rw [this, sub_self]
+  intro d _ i x
+  rw [hz i (2 * x), hz i x, smul_zero, sub_zero]
+  exact zero_mem _
+
+/-- `grt1U4_expPoly` recovered from `grt1U4_expPoly_of_doubling` by discharging its
+hypothesis. -/
+theorem grt1U4_expPoly_via_doubling (hy : GrtU4 N y) {K : ℕ} (hK : 2 ≤ K) (hNK : N ≤ K)
+    (x : ℚ) : GRT1U4 N (expPoly (x • y) K) :=
+  grt1U4_expPoly_of_doubling hy hK (hdouble_of_le hy hK hNK) x
+
+end Main
 
 end QOU.BraidsAndKnots.RationalAssociator
