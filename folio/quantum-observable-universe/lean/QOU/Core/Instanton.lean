@@ -35,7 +35,7 @@ structure CategoricalQExtDeriv (C : Type u) [CategoryTheory.Category.{v} C]
   proj_V : frobHopf.obj ⟶ frobHopf.obj
   /-- The deformation parameter `q`, over the formal ground ring.
 
-      Was `q : ℝ`. `def:substrate-parameter` puts the deformation parameter in
+      Was `q : ℝ`. `def:aether-parameter` puts the deformation parameter in
       `End(𝟙) ≅ R_q`, not in `ℝ`, and the co-located sibling had already made
       the move (bean `qou-u87j`); this copy is the one that had not. -/
   q : QOU.GroundRing.R_q

@@ -1,10 +1,11 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "def:substrate-line-bundle",
-  label: "rem:substrate-line-bundle-base-not-fibre",
+  interprets: "def:aether-line-bundle",
+  label: "rem:aether-line-bundle-base-not-fibre",
+  renamedFrom: ["rem:substrate-line-bundle-base-not-fibre"],
   title: "The QOU structure is the base, not the fibre",
-  uses: ["def:substrate-line-bundle"],
+  uses: ["def:aether-line-bundle"],
   authorNotes: [
     {
       kind: "note",

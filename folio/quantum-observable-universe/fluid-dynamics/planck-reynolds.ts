@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "def:substrate-parameter",
+  interprets: "def:aether-parameter",
   label: "rem:planck-reynolds",
   title: "Planck--Reynolds number and the turbulence transition",
   uses: ["def:information-speed-of-light"],

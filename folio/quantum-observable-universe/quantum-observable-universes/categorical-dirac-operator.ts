@@ -9,7 +9,7 @@ export default definition({
   },
   uses: [
     "def:categorical-connection",
-    "def:substrate-parameter",
+    "def:aether-parameter",
   ],
   defines: ["categorical-dirac-operator"],
 });

@@ -7,5 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.QuantumGaugeGroup",
     validation: "leanok",
   },
-  uses: ["def:substrate-parameter"],
+  uses: ["def:aether-parameter"],
 });

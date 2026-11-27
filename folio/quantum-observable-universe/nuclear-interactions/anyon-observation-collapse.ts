@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "conj:hecke-anyonic-substrate",
+  interprets: "conj:hecke-anyonic-aether",
   label: "rem:anyon-observation-collapse",
   title:
     "Anyon ladder: generic $q$ ↔ root-of-unity ↔ $q \\to 1$",

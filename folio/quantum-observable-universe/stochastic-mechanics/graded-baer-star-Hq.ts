@@ -16,7 +16,7 @@ export default conjecture({
     "open-problem",
   ],
   uses: [
-    "def:frobenius-hopf-substrate",
+    "def:frobenius-hopf-aether",
     "conj:gb-depth-period-correspondence",
     "prop:hecke-baer-star-generic",
   ],

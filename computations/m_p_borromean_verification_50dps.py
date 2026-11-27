@@ -131,7 +131,7 @@ VolDensity(𝓑₃, q₀) ≈ 746.42 × 2.46 ≈ 1836 — this IS the 1700× sca
 factor missing from the single-level Markov-trace m_p chain.  With
 Vol(𝓑₃) = 8·G exact (Adams 1985), the formula gives m_avg ≈ 966 MeV
 (+2.89 % vs CODATA mean).  The substrate flavor split
-(prop:flavor-split-substrate) then assigns m_p ≈ 965.4, m_n ≈ 966.7
+(prop:flavor-split-aether) then assigns m_p ≈ 965.4, m_n ≈ 966.7
 (both +2.89 %), with the SPLIT ratio Δm/M_N matched to ~305 ppm.
 
 The remaining ~2.89 % gap is now framed (per PR #1063) as a
@@ -150,7 +150,7 @@ NOT as a separate λ_scale closure.
     - VolDensity(K) per-knot decomposition (PR #1080 / prop:geom-
       universality): narrative-level only, no Lean theorem yet
     - flavor_split closed form ℏ_q²·h_q·[2]_q·(1+ℏ_q³)/3 (PR #690 /
-      prop:flavor-split-substrate): partial; the (1+ℏ_q³) 3-loop
+      prop:flavor-split-aether): partial; the (1+ℏ_q³) 3-loop
       correction lacks Lean backing
     - q_0 substrate value (CAL-2 from m_μ/m_e): numerical anchor, no
       Lean theorem
@@ -306,7 +306,7 @@ def main() -> int:
         "The proton-neutron mass difference is then supplied "
         "categorically by the substrate flavor-split closed form "
         "Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3 "
-        "(`prop:flavor-split-substrate`, PR #690), giving "
+        "(`prop:flavor-split-aether`, PR #690), giving "
         f"m_p^pred ≈ 965.38 MeV (vs CODATA {_Dec(mp.nstr(_M_P_MEV_VALIDATION, 20)):.6f}, "
         f"~2.89 % off) and m_n^pred ≈ 966.71 MeV "
         f"(vs CODATA {_Dec(mp.nstr(_M_N_MEV_VALIDATION, 20)):.6f}, ~2.89 % off).  The "
@@ -386,7 +386,7 @@ def main() -> int:
     # ── Class-uniform m_avg from VolDensity (proton, neutron predicted
     #    equal at this layer) + substrate flavor split (proton-neutron
     #    mass difference) ─────────────────────────────────────────────
-    # Per `prop:flavor-split-substrate` / PR #690, the proton-neutron
+    # Per `prop:flavor-split-aether` / PR #690, the proton-neutron
     # mass ratio carries a PROVED substrate-pure closed form:
     #     Δm / M_N  =  ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3
     # (see `_li_2_q_util.flavor_split_subleading`).  This is the
@@ -439,7 +439,7 @@ def main() -> int:
     dm_ratio_ppm = (dm_over_Mn / dm_codata_ratio - 1) * mp.mpf("1e6")
     w.add_data("substrate_flavor_split", {
         "formula": "Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3 "
-                   "(prop:flavor-split-substrate, PR #690)",
+                   "(prop:flavor-split-aether, PR #690)",
         "delta_m_over_M_N": mp.nstr(dm_over_Mn, 25),
         "delta_m_over_M_N_codata": mp.nstr(dm_codata_ratio, 15),
         "ratio_ppm_vs_codata": mp.nstr(dm_ratio_ppm, 8),
@@ -455,7 +455,7 @@ def main() -> int:
         tolerance="1000.0",  # 0.1 % ceiling — current value ~305 ppm
         unit="ppm",
         source=(
-            "prop:flavor-split-substrate / flavor_split_subleading "
+            "prop:flavor-split-aether / flavor_split_subleading "
             "vs CODATA (M_N − M_P)/M_avg at MPFR 50 dps"
         ),
     )
@@ -529,7 +529,7 @@ def main() -> int:
         "note": (
             "The pn split is now categorically derived: "
             "Δm = m_avg_pred · (ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3) "
-            "via prop:flavor-split-substrate / flavor_split_subleading. "
+            "via prop:flavor-split-aether / flavor_split_subleading. "
             "The rel_diff vs CODATA inherits the Family A m_avg gap "
             "(~3 %); the substrate flavor-ratio Δm/M_N is matched to "
             "~305 ppm (~0.030 %) independently — see "
@@ -581,7 +581,7 @@ def main() -> int:
         "The prior CAL-4 literals 2.4599527869 / 2.4633436333 are "
         "retained only as audit-only comparison columns.  The proton-"
         "neutron mass ratio Δm/M_N is the substrate-pure closed form "
-        "from `prop:flavor-split-substrate` (PR #690): "
+        "from `prop:flavor-split-aether` (PR #690): "
         "ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3, which matches CODATA "
         "to ~305 ppm (~0.030 %).  The remaining ~2.89 % gap in the "
         "absolute m_avg scale is now framed (per PR #1063) as a "

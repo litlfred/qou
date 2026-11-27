@@ -10,7 +10,7 @@ import Mathlib.Tactic.Ring
 # QOU.QuantumObservableUniverses.NSymSlotDerivation
 
 What the Hoefsmit slot realisation (`thm:hoefsmit-ew-cell-content`) forces for
-`𝒩_sym = tr_F(e_sym^EW · e_H)` of `conj:g-action-on-substrate`.
+`𝒩_sym = tr_F(e_sym^EW · e_H)` of `conj:g-action-on-aether`.
 Audit: `docs/audits/2026-11-20-nsym-derivation.md`.
 Compute twin: `computations/nsym_slot_trace_derivation.py`.
 

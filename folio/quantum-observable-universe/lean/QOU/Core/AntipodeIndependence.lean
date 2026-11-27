@@ -4,7 +4,7 @@ import QOU.Core.CategoricalFoundations
 # Historical record: the antipode WAS free data, and `S² = id` WAS independent
 
 **This file is a record of a state the corpus has left.**  On 2026-09-14 the
-owner decided to add the Hopf antipode axiom to `def:frobenius-hopf-substrate`
+owner decided to add the Hopf antipode axiom to `def:frobenius-hopf-aether`
 (beans `qou-c64q`, `qou-qjhc`).  `QOU.FrobeniusHopfData` now carries
 `antipode_left` / `antipode_right`, and `QOU.FrobeniusHopfData.antipode_unique`
 (in `QOU.QuantumObservableUniverse.AntipodeDetermined`) shows the antipode is

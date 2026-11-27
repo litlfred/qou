@@ -10,7 +10,7 @@ $\Delta_q(x^n) = \sum_{k} \binom{n}{k}_q x^k \otimes x^{n-k}$) and
 flow-invariant (via $D_q(x^n) = [n]_q x^{n-1}$, which shifts the
 series by one index while preserving the sum).  Over $\mathbb{C}$, the non-root-of-unity condition
 $q \notin \mu_\infty$
-([existence of aether parameter](#thm:substrate-parameter-exists),
+([existence of aether parameter](#thm:aether-parameter-exists),
 Step 3) keeps each $[n]_q! \ne 0$, and the resulting series converges
 to the analytic $q$-exponential
 (the Taylor series of $\exp_q$, derived in the information-theory chapter).  Over

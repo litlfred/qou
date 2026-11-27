@@ -1,7 +1,8 @@
 import { definition } from "../../schema/builders";
 
 export default definition({
-  label: "def:motivic-substrate",
+  label: "def:motivic-base-ring",
+  renamedFrom: ["def:motivic-substrate"],
   title:
     "The motivic base ring $(K_0(\\mathrm{Var}_k), \\mathbb{L}, \\{\\rho_v\\})$",
   tags: [
@@ -12,14 +13,14 @@ export default definition({
     "realization-tower",
     "axiom",
   ],
-  uses: ["def:frobenius-hopf-substrate", "def:adelic-substrate"],
+  uses: ["def:frobenius-hopf-aether", "def:adelic-base-ring"],
   cites: ["kontsevich1995", "denef-loeser2001", "tate1967"],
   lean: {
     ref: "qou:QOU.BringsSurface.MotivicSubstrate",
     validation: "not_checked",
   },
   authorNotes: [
-    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): The QOU framework's algebraic substrate appears through two faces: the [Frobenius–Hopf substrate](#def:frobenius-hopf-substrate) and the [adelic substrate](#def:adelic-substrate). Both realize a single underlying object: the **motivic substrate**, a Grothendieck-ring datum equipped with a tower of realization functors." },
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): The QOU framework's algebraic substrate appears through two faces: the [Frobenius–Hopf substrate](#def:frobenius-hopf-aether) and the [adelic substrate](#def:adelic-base-ring). Both realize a single underlying object: the **motivic substrate**, a Grothendieck-ring datum equipped with a tower of realization functors." },
     {
       kind: "note",
       body:
@@ -31,7 +32,7 @@ export default definition({
         "a `[MotivicSubstrate]` instance as an explicit hypothesis.",
     },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([motivic mass measure](#def:motivic-mass-measure))" },
-    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): One assigns one realization functor per place $v$ of $\\mathbb{Q}$ ([adelic substrate](#def:adelic-substrate))." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): One assigns one realization functor per place $v$ of $\\mathbb{Q}$ ([adelic substrate](#def:adelic-base-ring))." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The archimedean realization $\\rho_\\infty$ is the [archimedean realization functor](#def:archimedean-realization-functor), landing in $\\mathbb{R}$." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([Habiro completion](#prop:full-pole-structure-mass-trace))" },
   ],

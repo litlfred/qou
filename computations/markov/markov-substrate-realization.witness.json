@@ -233,8 +233,8 @@
       "qou:QOU.BraidKnot.HabiroCompletion"
     ],
     "reference_blocks": [
-      "def:motivic-substrate",
-      "def:adelic-substrate",
+      "def:motivic-base-ring",
+      "def:adelic-base-ring",
       "prop:full-pole-structure-mass-trace"
     ],
     "input_witness": "habiro-coefficients-atomic.witness.json",

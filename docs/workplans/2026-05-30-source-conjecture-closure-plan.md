@@ -93,7 +93,7 @@ Tier-B conjectures, then discharge them in priority order
 | 2 | `conj:hoefsmit-ew-cell-content` | 2 | Hoefsmit basis | hi (closes `branch_trace` instance) |
 | 3 | `conj:gs-graded-markov-trace-existence` | 2 | Iwahori-Hecke | hi |
 | 4 | `conj:reverse-limit-q-to-infinity` | 2 | Iwahori-Hecke + limit | med |
-| 5 | `conj:hecke-anyonic-substrate` | 2 | Iwahori-Hecke + MTC | med |
+| 5 | `conj:hecke-anyonic-aether` | 2 | Iwahori-Hecke + MTC | med |
 | 6 | `conj:joint-galois-braid-action` | 2 | Galois action on B_n | med |
 | 7 | `conj:two-filtration-bridge` | 1 | bar-class machinery | med |
 | 8 | `conj:complex-chirality-rotation` | 2 | complex q-extension | low |
@@ -120,7 +120,7 @@ conjectures. These need real research, not just engineering.
 | 5 | `conj:inter-nucleon-channel-color-tube` | 3 | physics — uniform-flavor map for inter-nucleon Hecke channels | 3-6 months |
 | 6 | `conj:qou-infra-discharges-goncharov-zeta5` | 3 | math — Goncharov ζ(5) via QOU infra | 3-6 months |
 | 7 | `conj:regularity-breakdown` | 3 | analytic — Navier-Stokes regularity in fluid-dynamics chapter | 12+ months — Clay-adjacent (NS); see Tier C-research |
-| 8 | `conj:g-action-on-substrate` | 3 | math — SU(2)_L × U(1)_Y gauge action | 6 months |
+| 8 | `conj:g-action-on-aether` | 3 | math — SU(2)_L × U(1)_Y gauge action | 6 months |
 | 9 | `conj:gb-depth-period-correspondence` | 3 | math — Goncharov period depth ↔ GS depth | 6-12 months |
 | 10 | `conj:shell-closure-nf-term-count` | 3 | physics — shell closure NF term count | 6 months |
 
@@ -264,7 +264,7 @@ concrete quotient construction, in-progress PR).
 |---|---|---|---|---:|
 | #1518 | `conj:reverse-limit-q-to-infinity` → `thm:` | B | Sprint 3 | 1 |
 | #1518 | `conj:gs-graded-markov-trace-existence` → `thm:` | B | Sprint 4 | 1 |
-| (this PR) | `conj:hecke-anyonic-substrate` → `thm:` | B | Sprint 2 follow-up | 2 |
+| (this PR) | `conj:hecke-anyonic-aether` → `thm:` | B | Sprint 2 follow-up | 2 |
 | (this PR) | `conj:hoefsmit-ew-cell-content` → `thm:` | B | Sprint 5 | 2 |
 
 **Cumulative closures across both waves**: 6 (`pontryagin`,

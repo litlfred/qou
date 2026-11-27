@@ -1,8 +1,8 @@
 import { algorithm } from "../../schema/builders";
 
 export default algorithm({
-  label: "alg:substrate-period-mass-resolvent",
-  renamedFrom: ["alg:mass-identity"],
+  label: "alg:aether-period-mass-resolvent",
+  renamedFrom: ["alg:mass-identity", "alg:substrate-period-mass-resolvent"],
   title:
     "Archimedean Aether Period, Borromean Ratio, and Inhomogeneous Lepton-Resolvent Evaluation ($\\mathcal{L}_1$)",
   uses: [

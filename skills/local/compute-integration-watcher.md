@@ -179,7 +179,7 @@ integration improvement instead.
     decision** before pushing the production-formula edits.
 
     **Three-phase delivery (validated on PR #696 for
-    `prop:flavor-dressed-mass-from-substrate-split`):**
+    `prop:flavor-dressed-mass-from-aether-split`):**
     - **Phase 1 — Foundation.**  Author the new structural
       content blocks (def + props + thm + remark) and their Lean
       stubs.  Update the chapter manifest.  Run
@@ -418,7 +418,7 @@ working?":
 | Pattern | Example on main (2026-05-18) |
 |---------|------------------------------|
 | I1 | `prop:chi-lambda-w0-sign-weighting` — Lean proven (PR #672 merge), no probe witness |
-| I2 | `prop:flavor-split-substrate` — probe `probe_flavor_split_substrate.py` exists, no production consumer beyond docstring mention in `derive_m_p_hecke_full_tower_50dps.py:58` |
+| I2 | `prop:flavor-split-aether` — probe `probe_flavor_split_substrate.py` exists, no production consumer beyond docstring mention in `derive_m_p_hecke_full_tower_50dps.py:58` |
 | I3 | (placeholder — fill in when a real instance is spotted) |
 | I4 | (caught by `witness_dependency_drift.py` — running it weekly is the policy) |
 | I5 | `prop:atomic-mass-via-rho-k` referenced by `atomic_mass_via_rho_k.py` — content block does not exist (2026-05-16 audit) |

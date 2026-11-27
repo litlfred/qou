@@ -1,8 +1,9 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:flavor-split-substrate",
-  label: "rem:flavor-split-substrate-interpretation",
+  interprets: "prop:flavor-split-aether",
+  label: "rem:flavor-split-aether-interpretation",
+  renamedFrom: ["rem:flavor-split-substrate-interpretation"],
   title: "Reading and Bring-surface origin of the flavor-split formula",
   tags: [
     "flavor-split",
@@ -11,5 +12,5 @@ export default remark({
     "precision",
     "interpretation",
   ],
-  uses: ["prop:flavor-split-substrate"],
+  uses: ["prop:flavor-split-aether"],
 });

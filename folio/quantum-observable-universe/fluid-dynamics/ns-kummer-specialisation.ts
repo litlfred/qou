@@ -10,7 +10,7 @@ export default proposition({
     "rem:three-euler-characteristics",
     "lem:bring-cone-reeb-quaternionic-twist",
     "def:reeb-bundle",
-    "rem:substrate-gm-torsion",
+    "rem:aether-gm-torsion",
     "prop:ns-obstruction-computation",
     "conj:qou-p-neq-np",
     "thm:ns-singularity-descartes",

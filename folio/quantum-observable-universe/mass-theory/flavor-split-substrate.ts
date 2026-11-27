@@ -1,7 +1,8 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
-  label: "prop:flavor-split-substrate",
+  label: "prop:flavor-split-aether",
+  renamedFrom: ["prop:flavor-split-substrate"],
   lean: { ref: "qou:QOU.MassTheory.HadronicMass.flavor_split_substrate",
     validation: "not_checked",
   },
@@ -18,8 +19,8 @@ export default proposition({
     status: "verified",
     requires: ["mpmath"],
   },
-  proofs: ["prf:flavor-split-substrate"],
+  proofs: ["prf:flavor-split-aether"],
   authorNotes: [
-    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the cross-chapter reading-order drain (L4; the block moved from observations to mass-theory and this sentence would now point ahead): A companion proposition ([Substrate-pure derivation of the dressed-quark mass splitting](#prop:flavor-dressed-mass-from-substrate-split)) recovers the dressed-mass difference $\\mu_{\\mathfrak{d}} - \\mu_{\\mathfrak{u}} \\approx 1.288\\,\\text{MeV}$, conditional on `conj:flavor-split-substrate-mass`." },
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the cross-chapter reading-order drain (L4; the block moved from observations to mass-theory and this sentence would now point ahead): A companion proposition ([Substrate-pure derivation of the dressed-quark mass splitting](#prop:flavor-dressed-mass-from-aether-split)) recovers the dressed-mass difference $\\mu_{\\mathfrak{d}} - \\mu_{\\mathfrak{u}} \\approx 1.288\\,\\text{MeV}$, conditional on `conj:flavor-split-aether-mass`." },
   ],
 });

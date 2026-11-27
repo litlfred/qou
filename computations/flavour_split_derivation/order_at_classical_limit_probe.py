@@ -1,5 +1,5 @@
 """Order of vanishing at q = 1 of every derived proton/neutron (or u/d) differentiator on record,
-against the Step-2 ansatz of prf:flavor-split-substrate. Exact over Q(q^{1/2}); no float, no q0, no CODATA.
+against the Step-2 ansatz of prf:flavor-split-aether. Exact over Q(q^{1/2}); no float, no q0, no CODATA.
 
 Question: can (mu_d - mu_u)/mu_avg = h^2 hbar_q / sqrt(q) (order (q-1)^3) come from an object the corpus derives?
 Every object tested here is either U_q(sl2)-equivariant (so the p/n difference is a pure pivot power of q,

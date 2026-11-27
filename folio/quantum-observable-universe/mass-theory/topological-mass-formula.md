@@ -10,7 +10,7 @@ $$
 holds, where $\mathrm{Vol}(K)$ is the hyperbolic volume of $S^3 \setminus K$
 and $\hbar_q = 1 - 1/q$ is the quantum Planck constant
 ([quantum Planck constant](#def:quantum-planck-constant)) at the aether
-parameter $q$ ([aether parameter](#def:substrate-parameter)). The
+parameter $q$ ([aether parameter](#def:aether-parameter)). The
 :refterm[descent]{#descent} involution $\hat{\tau}_n$
 ([:refterm[descent]{#descent} involution](#def:descent-involution)) induces the idempotent
 splitting $\mathrm{End}_{\mathbf{C}}(A_{n+1}) = \mathcal{A}^{\mathrm{desc}} \oplus \mathcal{A}^{\mathrm{trans}}$

@@ -75,7 +75,7 @@ auto-derived at runtime.
 - **Lean:** the `.lean` namespace `QOU.Torsion` stays unchanged; Lake builds the library tree under `folio/quantum-observable-universe/lean/`, not chapter-dir siblings, so the file move is transparent to the Lake build.
 - **Watcher:** detangler-integration-watcher, branch `claude/amazing-hopper-c0MLc`, PR #884.
 
-### P34 — `def:motivic-substrate` moved earlier (braids-and-knots → lifting-and-descent)
+### P34 — `def:motivic-base-ring` moved earlier (braids-and-knots → lifting-and-descent)
 
 - **Source:** `braids-and-knots/sec:classical-limit`.
 - **Target:** `lifting-and-descent/sec:yekutieli-lifting`, immediately before `motivic-galois-character`.
@@ -241,7 +241,7 @@ that did not tell a single story.
 
 | Source section | Blocks | Destination |
 |----------------|-------:|-------------|
-| §1 `sec:algebraic-substrate-reeb` | 12 | `quantum-observable-universes / sec:algebraic-substrate-reeb` (new) |
+| §1 `sec:algebraic-layer-reeb` | 12 | `quantum-observable-universes / sec:algebraic-layer-reeb` (new) |
 | §2 `sec:cohomological-defect` | 7 | `descartes-universe / sec:cohomological-defect` (new) |
 | §3 `sec:spectral-trace-tannaka` | 7 | `q-geometric-langlands / sec:q-gl-spectral-trace-tannaka` (new) |
 | §4 `sec:weil-bound-stability` | 6 | `q-geometric-langlands / sec:q-gl-weil-bound-stability` (new) |
@@ -368,18 +368,18 @@ arrays.
 
 | Block | Change | Story |
 |-------|--------|-------|
-| `def:quantum-universe` (quantum-universes) | dropped `def:frobenius-hopf-substrate` from `uses[]`; prose anchor retained in the `.md` | The edge was a pointer, not an editorial dependency — axiom 2 of `quantum-universe.md` spells out the whole Frobenius–Hopf datum ($\mu, \Delta, \eta, \varepsilon, S$, $\rho_V$) inline. |
+| `def:quantum-universe` (quantum-universes) | dropped `def:frobenius-hopf-aether` from `uses[]`; prose anchor retained in the `.md` | The edge was a pointer, not an editorial dependency — axiom 2 of `quantum-universe.md` spells out the whole Frobenius–Hopf datum ($\mu, \Delta, \eta, \varepsilon, S$, $\rho_V$) inline. |
 
 **Why the edge was dropped rather than the block relocated.** The `uses[]`
 graph carries a genuine 3-cycle,
 
 ```
-def:quantum-universe → def:frobenius-hopf-substrate → def:frobenius-pairing → def:quantum-universe
+def:quantum-universe → def:frobenius-hopf-aether → def:frobenius-pairing → def:quantum-universe
 ```
 
 (`quantum-observable-universes/frobenius-hopf-substrate.ts:9`,
 `quantum-universes/frobenius-pairing.ts:10`). **No placement orders a cycle.**
-Relocating `def:frobenius-hopf-substrate` into `quantum-universes` would have
+Relocating `def:frobenius-hopf-aether` into `quantum-universes` would have
 driven the classifier to 0 only by making the cycle intra-chapter, where the
 classifier — which measures cross-chapter edges — cannot see it. That is
 concealment, not a fix. It would additionally have orphaned the block from 8 of
@@ -447,7 +447,7 @@ Rebuilt `folio/quantum-observable-universe/appendix-mass-binding-algorithms/` fr
   3. `twisted-star-gram-radical-quotient` (`alg:twisted-star-gram-radical-quotient`, replacing `mba-step06-frobenius-pairing`): involution-twisted $\ast$-Gram radical projection onto $TL_n(q) = H_n(q)/\mathrm{rad}\,\tau_q$ and Nakayama-twisted Frobenius verification on non-involutory Hopf models.
   4. `ecat-radical-shadow-price` (`alg:ecat-radical-shadow-price`, replacing `mba-step10-confinement-sdp`): solver-free algebraic $(1^3)$ radical shadow-price extraction on $H_3(q_0)$.
   5. `confinement-tower-chamber-gs` (`alg:confinement-tower-chamber-gs`, replacing `mba-step07-gb-filtration`): five-layer `ConfinementLayer` ($\mathcal{L}_0 \to \mathcal{L}_4$) promotion, 11-rule physical nuclear cluster chamber $\mathcal{G}_{\mathrm{phys}}$, Mayer–Jensen shells, and chemical toric stoichiometry.
-  6. `substrate-period-mass-resolvent` (`alg:substrate-period-mass-resolvent`, renamed from `alg:mass-identity` in `mba-step09a-mass-identity`): 80-dps Clausen/Borromean ratio root (marking $q^{-3}$ asserted) and inhomogeneous $4_1$ lepton loop resolvent from $(m_e, \mathfrak{D}_\beta, m_\pi)$.
+  6. `substrate-period-mass-resolvent` (`alg:aether-period-mass-resolvent`, renamed from `alg:mass-identity` in `mba-step09a-mass-identity`): 80-dps Clausen/Borromean ratio root (marking $q^{-3}$ asserted) and inhomogeneous $4_1$ lepton loop resolvent from $(m_e, \mathfrak{D}_\beta, m_\pi)$.
   7. `q-beta-chirality-jet-evaluation` (`alg:q-beta-chirality-jet-evaluation`, consolidating `mba-step08-jet-prefix`, `mba-step11-q-beta-truncation`, `mba-sidecar-ck-truncation-ladder`): two-term chiral trace and tiered $\mathfrak{Q}_\beta$ jet evaluation.
   8. `rationalized-dual-slack-certificate` (`alg:rationalized-dual-slack-certificate`, replacing `mba-sidecar-lp-sdp-dual-emission` and retiring `mba-sidecar-witness-json-pipeline`): solver-external rationalized dual-slack optimality and support-uniqueness certification.
   9. `lp-sdp-bootstrap-prior-art` (`rem:lp-sdp-bootstrap-prior-art`): retained intact alongside `alg:rationalized-dual-slack-certificate`.

@@ -13,7 +13,7 @@ the canonical 3-input scheme is:
        braid is OPEN; currently calibrated)
   μ_u, μ_d: derived from Skein resolution tree.
 
-Post-#696 (D3 wiring of `prop:flavor-dressed-mass-from-substrate-split`):
+Post-#696 (D3 wiring of `prop:flavor-dressed-mass-from-aether-split`):
 the n − p splitting itself is now substrate-pure — μ_d − μ_u is
 derived from q_0 + M_N via the Skein lift, with CODATA m_n − m_p
 serving only as a validation target.  Scripts that import the
@@ -89,7 +89,7 @@ MARKERS = {
     "substrate_splitting_witness": re.compile(
         r"flavor-dressed-mass-from-substrate-split\.witness\.json"
         r"|probe_flavor_dressed_mass_split"
-        r"|prop:flavor-dressed-mass-from-substrate-split"
+        r"|prop:flavor-dressed-mass-from-aether-split"
     ),
 }
 
@@ -229,7 +229,7 @@ def _classify_source(text: str, script_name: str) -> dict | None:
     if uses_substrate_split and uses_m_p and uses_m_n:
         scheme = (
             "3-input-canonical-with-substrate-splitting "
-            "(m_n − m_p derived from prop:flavor-dressed-mass-from-substrate-split; "
+            "(m_n − m_p derived from prop:flavor-dressed-mass-from-aether-split; "
             "m_p + m_n used only for M_N anchor — CLASS-A pending Workplan-0b)"
         )
     elif uses_substrate_split and (uses_m_p or uses_m_n):

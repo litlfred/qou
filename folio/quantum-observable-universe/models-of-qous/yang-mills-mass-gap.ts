@@ -7,7 +7,7 @@ export default conjecture({
   tags: ["tier:famous", "yang-mills", "mass-gap", "vacuum", "spectral-gap", "millennium", "kummer", "gm-torsion"],
   uses: [
     "prop:vacuum-state",
-    "rem:substrate-gm-torsion",
+    "rem:aether-gm-torsion",
     "rem:kummer-filtration-obstruction",
     "thm:qou-obstruction-reduction",
   ],

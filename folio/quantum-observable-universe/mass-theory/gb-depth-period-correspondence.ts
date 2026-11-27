@@ -54,7 +54,7 @@ export default conjecture({
         "multiplicative counit outright " +
         "(`MultiplicativeCounitCollapse.eq_counit_smul_one`, bean `qou-aj49`). " +
         "The conjecture needs a Hopf algebra with a **different** comultiplication; " +
-        "which one is not fixed here. The link to `def:frobenius-hopf-substrate` " +
+        "which one is not fixed here. The link to `def:frobenius-hopf-aether` " +
         "is kept as provenance only.",
     },
   ],

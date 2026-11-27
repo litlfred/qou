@@ -7,7 +7,7 @@ import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 Content block: `prop:higgs-vacuum-residual-idempotent`
 (`knots-particles-confinement/higgs-vacuum-residual-idempotent.md`).
 
-Constraint (G-4) of `conj:g-action-on-substrate` defines the Higgs idempotent
+Constraint (G-4) of `conj:g-action-on-aether` defines the Higgs idempotent
 `e_H = ϱ_Φ ϱ_Φ^* / tr(ϱ_Φ^* ϱ_Φ)` from a vacuum morphism `ϱ_Φ : 𝟙 → A^{(H)}`.
 In `GActionOnSubstrate.lean` that datum is recorded only as a real number
 (`qDimHiggsIdempotent`). This file supplies the honest morphism-level

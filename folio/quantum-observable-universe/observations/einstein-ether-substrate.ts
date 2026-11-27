@@ -1,7 +1,8 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  label: "rem:einstein-ether-substrate",
+  label: "rem:einstein-aether",
+  renamedFrom: ["rem:einstein-ether-substrate"],
   title: "Einstein's ether and the categorical aether",
   // The remark is a historical interpretation of the substrate's *cohomological*
   // fixing — "q_0 is fixed ... by the cohomological structure of H^1(Bring) = 2W"

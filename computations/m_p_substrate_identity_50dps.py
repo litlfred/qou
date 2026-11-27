@@ -25,7 +25,7 @@ Both Lean-proved closed forms underlie the formula:
                                        ← YLambdaQSchur.lean (this PR)
 
    X = (q-1)²(1 - q^{-4})/3 = ℏ_q² · h · [2]_q / 3
-                                       ← prop:flavor-split-substrate
+                                       ← prop:flavor-split-aether
                                          (canonical Hecke-skein derivation)
 
 ## Calibration content
@@ -81,7 +81,7 @@ Substrate identity at 0.24 ppm. Structural status:
 Refs:
 - BorromeanMarkovTrace.lean (|tr_M| closed form)
 - YLambdaQSchur.lean (this PR — [3]_q! and y_λ closed forms)
-- prop:flavor-split-substrate (canonical Hecke-skein flavor split)
+- prop:flavor-split-aether (canonical Hecke-skein flavor split)
 - 2026-05-04-ocneanu-cancellation-numerical-verification.md (the −1/12)
 - 2026-05-25-proton-mass-identity-12-me-ocneanu.md (this audit)
 """
@@ -233,7 +233,7 @@ def habiro_ratio_s5bb(q, c4=None):
 
 
 def flavor_split_X(q):
-    """Δm/M_N substrate prediction from prop:flavor-split-substrate:
+    """Δm/M_N substrate prediction from prop:flavor-split-aether:
 
         X = (q-1)² (1 - q^-4) / 3 = ℏ_q² · h · [2]_q / 3
 
@@ -360,7 +360,7 @@ def main():
     m_n_pred = m_p_pred + Delta_m_pred                 # avoids large-number subtraction
     M_N_pred = (m_p_pred + m_n_pred) / 2
     # SECONDARY diagnostic — the canonical flavor-split RATIO
-    # X = ℏ_q²·h·[2]_q/3 (prop:flavor-split-substrate); a derived u↔d
+    # X = ℏ_q²·h·[2]_q/3 (prop:flavor-split-aether); a derived u↔d
     # split (−1.76 ppm on m_n), NOT the production neutron route.
     X = flavor_split_X(q)
     m_n_flavor_split = m_p_pred * (1 + X / (1 - X / 2))
@@ -568,7 +568,7 @@ def main():
         "m_n_flavor_split_residual_ppm": mp.nstr(m_n_fs_ppm, 12),
         "Delta_m_pn_flavor_split_MeV": mp.nstr(Delta_m_flavor_split, 25),
         "flavor_split_note": (
-            "flavor-split is a derived u↔d RATIO (prop:flavor-split-substrate), "
+            "flavor-split is a derived u↔d RATIO (prop:flavor-split-aether), "
             "−1.76 ppm on m_n; NOT the production neutron route."
         ),
     }

@@ -4,7 +4,8 @@ export default proposition({
   authorNotes: [
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
   ],
-  label: "prop:bar-t-duality-substrate",
+  label: "prop:bar-t-duality-aether",
+  renamedFrom: ["prop:bar-t-duality-substrate"],
   title:
     "Aether-level bar T-duality: $\\mathcal{E}_q \\leftrightarrow \\mathcal{E}_{1/q}$",
   tags: [

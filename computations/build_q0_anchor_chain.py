@@ -18,7 +18,7 @@ DerivationChain.
 
 This chain is therefore the **honest, minimal anchor**:
 
-  step 1 — AXIOM:        substrate parameter (def:substrate-parameter-planck)
+  step 1 — AXIOM:        substrate parameter (def:aether-parameter-planck)
   step 2 — SCRIPT_CITED: numerical anchor q_0 ≈ 1.110 from q_parameter.py
   step 3 — COMPUTATIONAL: leaf value matches `Q_0` literal
 
@@ -61,7 +61,7 @@ def build() -> DerivationChain:
     steps.append(DerivationStep(
         name="Substrate parameter q_0 ∈ ℝ_{>1}",
         operation=(
-            "By `def:substrate-parameter-planck`, the QOU "
+            "By `def:aether-parameter-planck`, the QOU "
             "manuscript introduces a single real parameter "
             "`q_0 ∈ ℝ_{>1}` characterising the Hecke energy scale "
             "`(q − q^{-1})`.  Existence and uniqueness follow from "
@@ -134,12 +134,12 @@ def build() -> DerivationChain:
         target="q_0",
         target_value=Q_0,
         target_tolerance=1e-15,
-        content_block="def:substrate-parameter-planck",
+        content_block="def:aether-parameter-planck",
         description=(
             "Substrate-parameter anchor chain.  Records the current "
             f"q_0 ≈ {Q_0:.6g} as a `script-cited` debt against "
             "`q_parameter.py` and pins the value via the AXIOM "
-            "`def:substrate-parameter-planck`.  Trust profile "
+            "`def:aether-parameter-planck`.  Trust profile "
             "{axiom: 1, script-cited: 1, computational: 1} — **not "
             "fully-trusted by design**: the SCRIPT_CITED frontier "
             "remains open until one of the three candidate "

@@ -53,9 +53,9 @@ python3 computations/forward_ref_classifier.py --json --actionable-only
 2. **3 genuine author-call `def→def` edges** — surface with evidence; do
    **not** auto-move (the `su2-generators` near-miss this session shows a
    usage-heuristic move can reverse a deliberate prior decision):
-   - `lifting-and-descent::def:motivic-galois-character → mass-theory::def:adelic-substrate` — which is foundational?
+   - `lifting-and-descent::def:motivic-galois-character → mass-theory::def:adelic-base-ring` — which is foundational?
    - `braids-and-knots::def:skein-resolution-obstruction → information-theory::def:computational-horizon` (+2 downstream edges to stochastic-mechanics `thm:qou-obstruction-reduction` and fluid-dynamics `prop:ns-obstruction-tower`) — does a braids def genuinely depend on an info-theory horizon, or should the edge drop?
-   - `mass-theory::def:adelic-substrate → stochastic-mechanics::def:classical-limit-functor`
+   - `mass-theory::def:adelic-base-ring → stochastic-mechanics::def:classical-limit-functor`
 
 3. **The 1 edge the quark move surfaced**:
    `quark-antiquark-production (Ch9) → breit-wheeler-pair-production (Ch13)`.

@@ -14,7 +14,7 @@ export default remark({
   ],
   uses: [
     "conj:chain-ring-comparison",
-    "def:substrate-parameter",
+    "def:aether-parameter",
     "def:threading-link",
   ],
 });

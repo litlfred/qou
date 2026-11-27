@@ -7,5 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.CategoricalQLieBracket",
     validation: "not_checked",
   },
-  uses: ["def:substrate-parameter"],
+  uses: ["def:aether-parameter"],
 });

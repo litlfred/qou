@@ -29,7 +29,7 @@ Three of the reasons are algebra this file now carries.
 sequence of modules splits, so `Ext¹` vanishes on every pair and there is
 nothing left to classify. `prop:knot-eigenbasis-complete`(1) puts `H_n(q₀)`
 exactly there: Jimbo's theorem at a `q₀` that the substrate axiom
-(`def:substrate-parameter`) forbids from being a root of unity.
+(`def:aether-parameter`) forbids from being a root of unity.
 
 `isCompl_ker_quadratic` — the same splitting from the Hecke quadratic alone,
 with no semisimplicity input. `rem:hecke-algebra-from-braiding` already names

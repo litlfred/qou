@@ -38,7 +38,7 @@ class QouCanonicalActionContext where
 Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) equipped with
 connection $\nabla$ ([categorical connection](#def:categorical-connection)),
-substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)),
+substrate parameter $q$ ([substrate parameter](#def:aether-parameter)),
 $q$-Hodge star $\star_q$ ([$q$-Hodge star](#def:q-hodge-star)),
 and state $\psi \colon \mathbf{1} \to A$.
 Then $(\mathbf{C}, A, \tau)$ determines a

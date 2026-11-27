@@ -21,7 +21,7 @@ lemma in `QOU.FluidDynamics.DSSObstructions`:
   `conj:ns-counterexample` states `d_H = 1`. The `.md` no longer asserts a
   vortex sheet.
 * **The period is not tied to `λ_κ`.** `q_κ = exp(iπ/κ)` is a root of unity
-  (`qKappa_is_root_of_unity`, L2), which `def:substrate-parameter` excludes.
+  (`qKappa_is_root_of_unity`, L2), which `def:aether-parameter` excludes.
   The period `P` is a free positive parameter.
 
 ## What the class does and does not encode

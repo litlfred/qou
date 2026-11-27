@@ -1,4 +1,4 @@
-Apply the local aether proposition ([local aether $q$](#prop:local-substrate-q)) to electroweak boson mass measurements. This yields a zero-free-parameter formula for the vertex aether perturbation $\delta q$.
+Apply the local aether proposition ([local aether $q$](#prop:local-aether-q)) to electroweak boson mass measurements. This yields a zero-free-parameter formula for the vertex aether perturbation $\delta q$.
 
 ## The vertex $\delta q$ formula
 

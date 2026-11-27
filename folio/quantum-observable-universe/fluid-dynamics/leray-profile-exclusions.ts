@@ -4,7 +4,7 @@ export default remark({
   interprets: "def:leray-profile",
   label: "rem:leray-profile-exclusions",
   title: "Exclusions for discretely self-similar Leray profiles",
-  uses: ["def:leray-profile", "def:substrate-parameter", "thm:ns-singularity-descartes"],
+  uses: ["def:leray-profile", "def:aether-parameter", "thm:ns-singularity-descartes"],
   cites: [
     "necas-ruzicka-sverak1996",
     "tsai1998",

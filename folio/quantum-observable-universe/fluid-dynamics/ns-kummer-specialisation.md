@@ -18,7 +18,7 @@ $$
   \to H^2(\mathcal{S}, \mathbb{G}_m) = 0.
 $$
 
-On a closed surface $H^2(\mathcal{S}, \mathbb{G}_m) = 0$, so $\partial_n$ is surjective; its source modulo $n$ is $\mathbb{Z}/n$ via the degree (the degree-zero part of $H^1(\mathcal{S}, \mathbb{G}_m)$ is divisible), and $H^2(\mathcal{S}, \mu_n) \cong \mathbb{Z}/n$. The [specialisation driving $q = 1$](#rem:substrate-gm-torsion) projects cleanly:
+On a closed surface $H^2(\mathcal{S}, \mathbb{G}_m) = 0$, so $\partial_n$ is surjective; its source modulo $n$ is $\mathbb{Z}/n$ via the degree (the degree-zero part of $H^1(\mathcal{S}, \mathbb{G}_m)$ is divisible), and $H^2(\mathcal{S}, \mu_n) \cong \mathbb{Z}/n$. The [specialisation driving $q = 1$](#rem:aether-gm-torsion) projects cleanly:
 
 $$
   \kappa_0 \mapsto

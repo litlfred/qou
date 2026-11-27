@@ -1,4 +1,4 @@
-At the local aether parameter $q_0$ ([local aether $q$](#prop:local-substrate-q)),
+At the local aether parameter $q_0$ ([local aether $q$](#prop:local-aether-q)),
 approximately $10$ iterations of the Julia set dynamics $f_q$ occur within each Planck
 time. Each iteration:
 

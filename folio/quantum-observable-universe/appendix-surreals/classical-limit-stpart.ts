@@ -15,7 +15,7 @@ export default conjecture({
   ],
   uses: [
     "def:classical-limit-functor",
-    "def:substrate-parameter",
+    "def:aether-parameter",
   ],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): | [archimedean QOU is standard-part of surreal](#conj:archimedean-stpart) | Whole-tuple surreal replacement on $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ | Conjecture (open) |" },

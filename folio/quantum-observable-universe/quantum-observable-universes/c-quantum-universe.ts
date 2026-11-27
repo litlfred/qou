@@ -8,6 +8,6 @@ export default example({
   lean: { ref: "qou:QOU.CRManifoldData",
     validation: "leanok",
   },
-  uses: ["def:substrate-parameter"],
+  uses: ["def:aether-parameter"],
   cites: ["tanaka1974", "tanaka1975", "webster1978"],
 });

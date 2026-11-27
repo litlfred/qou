@@ -20,7 +20,7 @@ tests candidate refinements:
 
 ## Cross-references
 
-- `prop:flavor-split-substrate` (the baseline X(q) formula)
+- `prop:flavor-split-aether` (the baseline X(q) formula)
 - PR #1581 m_K/m_π pattern audit (identified shared blocker)
 - PR #1511 α_em Habiro element template `[2]_q · (1 - h²α)`
 - coord ledger 2026-06-01-mp-yekutieli-and-mn-flavorsplit.md

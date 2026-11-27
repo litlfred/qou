@@ -1,14 +1,15 @@
 import { definition } from "../../schema/builders";
 
 export default definition({
-  label: "def:substrate-line-bundle",
+  label: "def:aether-line-bundle",
+  renamedFrom: ["def:substrate-line-bundle"],
   title:
     "The aether line bundle and the $\\mathbb{G}_m$-family of differentials",
   lean: {
     ref: "qou:QOU.FluidDynamics.SubstrateLineBundle",
     validation: "not_checked",
   },
-  uses: ["def:substrate-parameter"],
+  uses: ["def:aether-parameter"],
   tags: [
     "line-bundle",
     "multiplicative-group",

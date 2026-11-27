@@ -8,7 +8,7 @@ import Mathlib.CategoryTheory.Monoidal.Types.Basic
 Self-duality of the algebraic substrate: the Frobenius form induces
 a quasi-isomorphism `A ≃ ω_A•` in the derived category.
 
-LaTeX label: `thm:substrate-self-duality`
+LaTeX label: `thm:aether-self-duality`
 -/
 
 set_option autoImplicit false

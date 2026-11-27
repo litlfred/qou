@@ -103,7 +103,7 @@ REFERENCES
 ==========
 
   - Symmetric Frobenius algebras / Markov trace as Frobenius pairing:
-    ``def:frobenius-hopf-substrate``, ``thm:jones-markov-trace``.
+    ``def:frobenius-hopf-aether``, ``thm:jones-markov-trace``.
   - Sibling options:
     A: ``rho_k_h3a_refinement.py`` (PR #564),
     B: ``rho_k_h3a_co_casimir.py`` (PR #602),

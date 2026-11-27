@@ -6,6 +6,6 @@ export default definition({
   lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.LeviFormDefect",
     validation: "not_checked",
   },
-  uses: ["def:frobenius-hopf-substrate"],
+  uses: ["def:frobenius-hopf-aether"],
   tags: ["levi-form", "frobenius-failure", "matter", "defect"],
 });

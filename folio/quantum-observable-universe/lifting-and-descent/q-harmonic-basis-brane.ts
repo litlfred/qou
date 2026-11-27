@@ -6,7 +6,7 @@ export default remark({
   title: "$q$-Harmonic basis of the brane tower",
   tags: ["q-harmonic", "brane-tower", "self-duality"],
   uses: [
-    "def:substrate-parameter",
+    "def:aether-parameter",
     "rem:betti-numbers-brane",
   ],
 });

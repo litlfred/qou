@@ -1,7 +1,7 @@
 import { example } from "../../schema/builders";
 
 export default example({
-  interprets: "def:substrate-parameter",
+  interprets: "def:aether-parameter",
   label: "ex:ale",
   title: "ALE links",
   tags: ["ale", "orbifold", "mckay-correspondence"],

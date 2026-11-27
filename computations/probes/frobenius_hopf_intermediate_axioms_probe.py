@@ -10,7 +10,7 @@ spectrum between "no condition on S at all" and that one.
 This probe measures the spectrum on the family that should be a model of any
 honest answer: the group algebra `k[G]` with its FROBENIUS comultiplication.
 For each group and each candidate `S`, it checks every axiom of
-`def:frobenius-hopf-substrate` plus five candidate intermediates, and reports a
+`def:frobenius-hopf-aether` plus five candidate intermediates, and reports a
 table.
 
 The two numbers that decide the question are, for each axiom family:
@@ -558,7 +558,7 @@ def main() -> int:
     print("=" * 78)
     print("THE ADOPTED AXIOM SET (2026-09-15), AS A UNIT")
     print()
-    print("`def:frobenius-hopf-substrate` axiom 2 now asks for all six at once:")
+    print("`def:frobenius-hopf-aether` axiom 2 now asks for all six at once:")
     print("  anti-algebra + anti-coalgebra + S(1)=1 + eps.S=eps + S^2=id + lambda.S=lambda")
     print("The claim the change rests on is that k[G] with S(g) = g^-1 IS a model.")
     print("This is that claim, as one yes/no per group:")

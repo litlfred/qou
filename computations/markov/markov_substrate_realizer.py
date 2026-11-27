@@ -268,8 +268,8 @@ def main() -> int:
         "qou:QOU.BraidKnot.HabiroCompletion",
     ])
     w.add_data("reference_blocks", [
-        "def:motivic-substrate",
-        "def:adelic-substrate",
+        "def:motivic-base-ring",
+        "def:adelic-base-ring",
         "prop:full-pole-structure-mass-trace",
     ])
     w.add_data("input_witness", INPUT_WITNESS.name)

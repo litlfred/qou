@@ -6,7 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.BringsSurface.LocalQZetaFunction",
     validation: "not_checked",
   },
-  uses: ["def:brings-coordinate-ring", "def:substrate-parameter-planck"],
+  uses: ["def:brings-coordinate-ring", "def:aether-parameter-planck"],
   defines: ["local-q-zeta-function"],
   tags: [
     "zeta-function",

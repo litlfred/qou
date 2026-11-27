@@ -4,7 +4,7 @@ and no series in `hbar_q` closes it at any order.
 
 The flavour split carries a derived leading term and a posited correction:
 
-    delta_leading   = (q-1)^2 (1 - q^-4)/3        DERIVED (prop:flavor-split-substrate)
+    delta_leading   = (q-1)^2 (1 - q^-4)/3        DERIVED (prop:flavor-split-aether)
     delta_canonical = delta_leading . (1 + hbar_q^3)   POSITED, "3-loop substrate-Planck"
 
 `(1 + hbar_q^3)` is the first two terms of `1/(1 - hbar_q^3)`, so the instinct to

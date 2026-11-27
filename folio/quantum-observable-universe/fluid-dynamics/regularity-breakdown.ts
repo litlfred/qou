@@ -9,7 +9,7 @@ export default conjecture({
     "prop:q-turbulence-spectrum",
     "rem:hamilton-jacobi-phase",
     "def:leray-profile",
-    "def:substrate-parameter",
+    "def:aether-parameter",
     "def:qns-unit-layers",
   ],
   cites: [

@@ -9,7 +9,7 @@ export default remark({
     "summary",
     "reference",
   ],
-  interprets: "def:substrate-parameter",
+  interprets: "def:aether-parameter",
   cites: ["abdo2009", "amelinocamelia2013"],
   uses: [
     "def:quantum-planck-constant",

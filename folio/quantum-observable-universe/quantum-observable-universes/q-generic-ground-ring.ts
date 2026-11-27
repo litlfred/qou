@@ -15,6 +15,6 @@ export default remark({
     ref: "qou:QOU.Core.AlgebraicSubstrate.IsQGeneric",
     validation: "not_checked",
   },
-  uses: ["def:quantum-universe", "def:substrate-parameter"],
+  uses: ["def:quantum-universe", "def:aether-parameter"],
   tags: ["substrate", "ground-ring", "cyclotomic", "hecke"],
 });

@@ -214,7 +214,7 @@ def main() -> int:
             "ratio": int(sp.nsimplify(iface_den / blind_den)),
         },
         "reference_blocks": ["def:markov-trace",
-                             "prop:flavor-split-substrate",
+                             "prop:flavor-split-aether",
                              "prop:atomic-braid-decomposition"],
         "atoms": rows,
         "assertions": assertions,

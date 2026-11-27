@@ -31,7 +31,7 @@ load-bearing categorical step:
 
   LAYER 2 — FLAVOR-SPLIT (substrate Δm/M_N), per PR #942:
     Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3
-    PROVED theorem (prop:flavor-split-substrate, PR #690's
+    PROVED theorem (prop:flavor-split-aether, PR #690's
     `_li_2_q_util.flavor_split_subleading`), matches CODATA Δm
     to 0.03%.
 

@@ -6,19 +6,19 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/thm-substrate-parameter-exists",
+  "@id": "papers/quantum-observable-universe/blocks/thm-aether-parameter-exists",
   "@type": [
     "folio-assistant-sci:Theorem",
     "doco:Section"
   ],
-  "label": "thm:substrate-parameter-exists",
+  "label": "thm:aether-parameter-exists",
   "kind": "theorem",
   "title": "Existence of the aether parameter",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+    "papers/quantum-observable-universe/blocks/def-aether-parameter"
   ],
   "proofs": [
-    "papers/quantum-observable-universe/blocks/prf-substrate-parameter-exists"
+    "papers/quantum-observable-universe/blocks/prf-aether-parameter-exists"
   ],
   "tags": [
     "existence",

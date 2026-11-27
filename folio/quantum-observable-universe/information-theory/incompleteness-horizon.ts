@@ -17,7 +17,7 @@ export default remark({
   ],
   uses: [
     "prop:incompleteness-implies-horizon",
-    "rem:substrate-computation",
+    "rem:aether-computation",
     "rem:p-vs-np-event-horizon",
   ],
   cites: ["goedel1931", "turing1936",

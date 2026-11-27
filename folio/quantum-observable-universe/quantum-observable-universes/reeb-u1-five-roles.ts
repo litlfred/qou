@@ -16,6 +16,6 @@ export default remark({
   uses: [
     "prop:reeb-u1-chart-swap",
     "rem:affine-chart-origin-of-i-and-q",
-    "def:frobenius-hopf-substrate",
+    "def:frobenius-hopf-aether",
   ],
 });

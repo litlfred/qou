@@ -16,7 +16,7 @@ the involution is just q ↦ q⁻¹ on the parameter axis. We prove the
 involution is its own inverse and that its fixed locus on ℝ_{>0} is
 {1}.
 
-LaTeX label: `prop:bar-t-duality-substrate`
+LaTeX label: `prop:bar-t-duality-aether`
 
 ## References
 

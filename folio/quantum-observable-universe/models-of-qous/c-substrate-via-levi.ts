@@ -1,8 +1,9 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "def:substrate-parameter",
-  label: "rem:c-substrate-via-levi",
+  interprets: "def:aether-parameter",
+  label: "rem:c-aether-via-levi",
+  renamedFrom: ["rem:c-substrate-via-levi"],
   title: "Archimedean aether via the Levi form",
   tags: ["substrate", "levi-form", "archimedean"],
   uses: [

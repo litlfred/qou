@@ -7,7 +7,7 @@
 and
 [Regularity breakdown at $q = 1$: the classical limit as a phase transition](#conj:regularity-breakdown).**
 
-Let $(\mathbf{C}, A, \tau)$ be a QOU with aether parameter $q$ not a root of unity ([QOU axiom](#def:substrate-parameter)). As $q \to 1$ through the roots of unity $q = e^{i\pi/\kappa}$, the representation category truncates to a finite modular tensor category; blowup arises only in the $\kappa \to \infty$ accumulation. For an anti-parallel vortex pair with core aspect ratio $\kappa(t)$:
+Let $(\mathbf{C}, A, \tau)$ be a QOU with aether parameter $q$ not a root of unity ([QOU axiom](#def:aether-parameter)). As $q \to 1$ through the roots of unity $q = e^{i\pi/\kappa}$, the representation category truncates to a finite modular tensor category; blowup arises only in the $\kappa \to \infty$ accumulation. For an anti-parallel vortex pair with core aspect ratio $\kappa(t)$:
 
 $$
   \boxed{
@@ -19,7 +19,7 @@ $$
 
 **Proof.**
 
-The governing [QOU axiom](#def:substrate-parameter) rigorously demands that $q$ remains **not** a root of unity. However, forcibly passing the limit $q \to 1$ directly through the dense set of unity roots triggers a radical truncation across the representation theory that forcibly **strengthens** classical regularity. The resulting macroscopic blowup operating at $q = 1$ behaves merely as the pure mathematical accumulation gathering these infinite truncations.
+The governing [QOU axiom](#def:aether-parameter) rigorously demands that $q$ remains **not** a root of unity. However, forcibly passing the limit $q \to 1$ directly through the dense set of unity roots triggers a radical truncation across the representation theory that forcibly **strengthens** classical regularity. The resulting macroscopic blowup operating at $q = 1$ behaves merely as the pure mathematical accumulation gathering these infinite truncations.
 
 The core truncation mechanism — driven exclusively by the vanishing of the $q$-integer $[\kappa]_q$ executing exactly at $q = e^{i\pi/\kappa}$, which cleanly collapses the spanning $q$-Laplacian spectral tower $[k]_q^2$ straight into the constrained finite Verlinde/ADE set — finds derivation strictly within [the $q$-Laplacian spectral tower](#prop:q-laplacian-spectral-tower). The following formally extracts the resulting fluid-dynamical consequence.
 

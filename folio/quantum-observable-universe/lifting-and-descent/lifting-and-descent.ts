@@ -103,7 +103,7 @@ export default chapter({
         "hochschild-kummer-connection",
         "hkr-theorem",
         "s1-action-and-loop-space",
-        // def:motivic-substrate — substrate of the classical-limit
+        // def:motivic-base-ring — substrate of the classical-limit
         // functor; lives here alongside motivic-galois-character +
         // qou-motivic-galois-instance (its consumers). Detangler
         // P34 (2026-05-22).

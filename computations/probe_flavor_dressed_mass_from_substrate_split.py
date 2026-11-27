@@ -4,11 +4,11 @@
 """Flavor-dressed mass splitting μ_d − μ_u from the substrate split.
 
 Emits `flavor-dressed-mass-from-substrate-split.witness.json` for both
-`prop:flavor-dressed-mass-from-substrate-split` and
+`prop:flavor-dressed-mass-from-aether-split` and
 `thm:flavor-mass-splitting-bound`.
 
 The down–up dressed-quark splitting is fixed by the substrate formula
-(prop:flavor-dressed-mass-from-substrate-split):
+(prop:flavor-dressed-mass-from-aether-split):
 
     μ_d − μ_u = M_N · (q−1)²(1−q⁻⁴)/3 · (q^½ + q^−½)/(q + q⁻¹)
 
@@ -72,10 +72,10 @@ def main() -> int:
         "and the slack ratio (1/3)(q^½+q^−½)/(q+q⁻¹). Pins μ_d−μ_u ≈ "
         "1.286 MeV (substrate-pure modulo the CODATA M_N anchor); m_n−m_p "
         "is a cross-check target, not an input. Covers "
-        "prop:flavor-dressed-mass-from-substrate-split and "
+        "prop:flavor-dressed-mass-from-aether-split and "
         "thm:flavor-mass-splitting-bound."
     )
-    w.set_content_block("prop:flavor-dressed-mass-from-substrate-split")
+    w.set_content_block("prop:flavor-dressed-mass-from-aether-split")
 
     set_compute_dps(50)
     with mp.workdps(50):

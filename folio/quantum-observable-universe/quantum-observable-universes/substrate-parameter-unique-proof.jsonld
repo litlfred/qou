@@ -6,16 +6,16 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-substrate-parameter-unique",
+  "@id": "papers/quantum-observable-universe/blocks/prf-aether-parameter-unique",
   "@type": [
     "folio-assistant-sci:Proof",
     "doco:Section"
   ],
-  "label": "prf:substrate-parameter-unique",
+  "label": "prf:aether-parameter-unique",
   "kind": "proof",
   "title": "Proof of uniqueness of the aether parameter",
   "uses": [
-    "papers/quantum-observable-universe/blocks/thm-substrate-parameter-unique"
+    "papers/quantum-observable-universe/blocks/thm-aether-parameter-unique"
   ],
   "text": "substrate-parameter-unique-proof.md",
   "provenance": "authored"

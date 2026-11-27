@@ -65,7 +65,7 @@ magnitude only, not a derivation, and nothing here proposes it.)
 > constant term to its volume term, 12 mₑ / m_p = 6.5 × 10⁻³. If the Cartan weight sits on the
 > constant term instead of the volume term, the split is h · 12 mₑ ≈ 1.28 MeV, with the neutron
 > heavier. See §2(g). I also missed two corpus results in the first pass:
-> `prop:flavor-split-substrate` already gives (m_n − m_p)/M_N ≈ (q−1)²(1−q⁻⁴)/3 to −0.1 %, but its
+> `prop:flavor-split-aether` already gives (m_n − m_p)/M_N ≈ (q−1)²(1−q⁻⁴)/3 to −0.1 %, but its
 > own proof (Step 2) labels the input a phenomenological ansatz chosen to agree with experiment,
 > and it is convention C. `NucleonIsospinExclusions` (`trace_sword_eq`, `restrictedTrace_ratio`)
 > already proves, for every braid word, equal bare sector traces and quantum-trace ratio q².
@@ -1005,7 +1005,7 @@ other terms) stands as pre-registered.
 
 **The flavour route (corpus self-labelled as a fit).** The pair Skein formula gives
 m_n − m_p = [2]_q z_mkv (μ_d − μ_u), which survives at q = 1 if μ_d ≠ μ_u. The corpus value of
-μ_d − μ_u comes from `prop:flavor-split-substrate`, whose own proof (Step 2) calls its per-quark
+μ_d − μ_u comes from `prop:flavor-split-aether`, whose own proof (Step 2) calls its per-quark
 split h²ℏ_q/√q "a phenomenological ansatz … selection against the target", and whose Steps 1
 and 3 hold only in the excised convention C (also recorded in
 `docs/audits/2026-11-20-qbeta-epsilon-is-ruled-not-derived.md` §4). That ansatz is O((q − 1)³),

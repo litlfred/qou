@@ -22,7 +22,7 @@ export default conjecture({
   uses: [
     "cor:spectral-half-line",
     "def:classical-riemann-zeta",
-    "def:adelic-substrate",
+    "def:adelic-base-ring",
   ],
   tags: [
     "riemann-hypothesis",

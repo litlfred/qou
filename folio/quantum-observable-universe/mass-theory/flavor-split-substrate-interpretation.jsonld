@@ -6,18 +6,18 @@
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/rem-flavor-split-substrate-interpretation",
+  "@id": "papers/quantum-observable-universe/blocks/rem-flavor-split-aether-interpretation",
   "@type": [
     "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "rem:flavor-split-substrate-interpretation",
+  "label": "rem:flavor-split-aether-interpretation",
   "kind": "remark",
   "title": "Reading and Bring-surface origin of the flavor-split formula",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-flavor-split-substrate"
+    "papers/quantum-observable-universe/blocks/prop-flavor-split-aether"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/prop-flavor-split-substrate",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-flavor-split-aether",
   "tags": [
     "flavor-split",
     "bring-surface",

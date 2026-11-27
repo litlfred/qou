@@ -13,7 +13,7 @@ $T_1 = \mathrm{diag}(q, -q^{-1})$ contributes eigenvalues:
 The pn row uses $d = -h/2$, the $\delta = 0$ convention. Under the
 colour-tube-weighted interface factor $d = -h(1/2 - \delta/4)$, with
 $\delta$ the aether flavour split of
-[the aether flavor split conjecture](#conj:flavor-split-substrate-mass), *both* pn
+[the aether flavor split conjecture](#conj:flavor-split-aether-mass), *both* pn
 eigenvalues shift by the same $+h\delta/4$:
 
 $$

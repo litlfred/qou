@@ -1,9 +1,10 @@
 import { proof } from "../../schema/builders";
 
 export default proof({
-  label: "prf:local-substrate-q",
+  label: "prf:local-aether-q",
+  renamedFrom: ["prf:local-substrate-q"],
   title: "Proof of Local Value of the Aether Parameter",
-  uses: ["prop:local-substrate-q", "def:three-calibration-discipline", "prf:knot-volumes-verification"],
+  uses: ["prop:local-aether-q", "def:three-calibration-discipline", "prf:knot-volumes-verification"],
   computation: {
     engine: "snappea",
     script: "computations/knot-volumes.py",

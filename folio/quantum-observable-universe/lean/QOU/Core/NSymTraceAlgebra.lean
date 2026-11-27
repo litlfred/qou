@@ -5,7 +5,7 @@ import Mathlib.Tactic.Ring
 /-!
 # QOU.QuantumObservableUniverses.NSymTraceAlgebra — what `tr_F(e_sym^EW · e_H)` can be
 
-Content block: `conj:g-action-on-substrate`
+Content block: `conj:g-action-on-aether`
 (`quantum-observable-universes/g-action-on-substrate.md`), section
 "The closed form for 𝒩_sym(q): an open identification".
 

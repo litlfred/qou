@@ -32,7 +32,7 @@ Test forms:
 
 - PR #1645 ProtonMassEMSignBlock + sign-block scaffold
 - PR #1645 flavor_split_xq_refinement.py (the NULL refinement)
-- `prop:flavor-split-substrate` baseline X(q)
+- `prop:flavor-split-aether` baseline X(q)
 """
 from __future__ import annotations
 

@@ -19,7 +19,7 @@ export default simulator({
   title: "Double-Slit Analytical Simulator",
   html: "simulators/double_slit_simulator.html",
   uses: [
-    "prop:local-substrate-q",
+    "prop:local-aether-q",
     "def:categorical-dirac-operator",
     "prop:variational-equations",
   ],

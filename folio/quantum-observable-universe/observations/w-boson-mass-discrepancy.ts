@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:local-substrate-q",
+  interprets: "prop:local-aether-q",
   label: "rem:w-boson-mass-discrepancy",
   title:
     "Electroweak boson masses from vertex $\\delta q$ at the CODATA aether",

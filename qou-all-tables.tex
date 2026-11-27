@@ -795,7 +795,7 @@ Mass Identity (Def.~\ref{def:mass-identity})
   & Nonabelian multiplicative integral; 2D nonabelian Stokes theorem
   & \cite[Ch.~5--6]{yekutieli2015} \\[6pt]
 Substrate field $q(p)$
-  (Def.~\ref{def:substrate-parameter})
+  (Def.~\ref{def:aether-parameter})
   & Local twisted deformation parameter; MC element varying over $M$
   & \cite{yekutieli2008, yekutieli2009} \\[6pt]
 $\mathrm{SU}_q(2)$ gauge flow
@@ -3610,7 +3610,7 @@ Hoefsmit pairing $\langle \cdot, \chi_\lambda \rangle$ & \hyperref[prop:hoefsmit
 EW interface knot $\bowtie_K$ & \texttt{def:\allowbreak{}ew-\allowbreak{}interface-\allowbreak{}knot} (orphan block — not yet in any chapter section) & 0 & EW braid in $B_6$ with interface $I$ & element of $H_6(q)$ \\
 Higgs-vev mechanism $\mathrm{Lk}_R^{(1)}$ & \texttt{conj:\allowbreak{}categorical-\allowbreak{}higgs-\allowbreak{}mechanism} (orphan block) Step C & 0 & linking $k = 1$ & $\mathrm{End}_R(A)$ \\
 Categorical linking $\mathrm{Lk}_R^{(k)}$ & \texttt{conj:\allowbreak{}categorical-\allowbreak{}linking-\allowbreak{}operation} (orphan block) & 0 & linking integer $k$ & $\mathrm{End}_R(A)$ \\
-$q$-shuffle convolution $*_q$ & \hyperref[def:frobenius-hopf-substrate]{\texttt{def:\allowbreak{}frobenius-\allowbreak{}hopf-\allowbreak{}substrate}} & preserves $n$ & preserves $K$ (or merges) & $\mathcal{H}_q^{(n_1 + n_2, K \cdot K')}$ \\
+$q$-shuffle convolution $*_q$ & \hyperref[def:frobenius-hopf-aether]{\texttt{def:\allowbreak{}frobenius-\allowbreak{}hopf-\allowbreak{}substrate}} & preserves $n$ & preserves $K$ (or merges) & $\mathcal{H}_q^{(n_1 + n_2, K \cdot K')}$ \\
 Volume functor $\mathrm{Vol}$ & \hyperref[prop:vol-through-tau]{\texttt{prop:\allowbreak{}vol-\allowbreak{}through-\allowbreak{}tau}} & \textbf{2} & hyperbolic knot & $\mathcal{P}_2 / \mathcal{P}_1$ (real) \\
 Chern–Simons $\mathrm{CS}$ & (open in paper) & \textbf{3} & hyperbolic knot & $\mathcal{P}_3 / \mathcal{P}_2$ (Tate-twisted) \\
 Trilog at $\zeta_5$ orbit & \hyperref[conj:bring-trilog-depth-3-witness]{\texttt{conj:\allowbreak{}bring-\allowbreak{}trilog-\allowbreak{}depth-\allowbreak{}3-\allowbreak{}witness}} & \textbf{3} & $S_5$-Bring orbit & weight-3 cyclotomic period \\
@@ -7166,7 +7166,7 @@ Neutron & $Q(q_0) \mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{udd}$ & 939.565 MeV
 \toprule
 Symbol & Value & Source \\
 \midrule
-$q_0$ & $1.10998$ & CODATA $m_\mu/m_e$ (\hyperref[prop:local-substrate-q]{local substrate}) \\
+$q_0$ & $1.10998$ & CODATA $m_\mu/m_e$ (\hyperref[prop:local-aether-q]{local substrate}) \\
 $q_0 - 1$ & $0.10998$ & Derived \\
 $\alpha$ & $\alpha_s \approx 0.118$ or $\alpha_W \approx 0.034$ & Coupling at vertex \\
 $\lvert\chi(\Sigma_4)\rvert$ & $6$ & Bring surface, genus $4$, $\chi = 2 - 2g$ \\
@@ -8710,7 +8710,7 @@ Classical & $q \to 1$ & $\to 0$ & $\to \infty$ & Infinitely many steps; continuo
 $q$ & $n_R$ & Interpretation \\
 \midrule
 $\to \infty$ & $\to 1$ & Deep-quantum: one iteration per circuit, fully discrete \\
-$q_0$ & $\approx 10.1$ & Our universe (\hyperref[prop:local-substrate-q]{local substrate $q$}): $\sim 10$ iterations per circuit \\
+$q_0$ & $\approx 10.1$ & Our universe (\hyperref[prop:local-aether-q]{local substrate $q$}): $\sim 10$ iterations per circuit \\
 $2$ & $2$ & Two iterations per circuit \\
 $1.01$ & $101$ & Near-classical: $\sim 100$ iterations per circuit \\
 $\to 1$ & $\to \infty$ & Classical limit: infinitely many, continuous Reeb flow \\
@@ -9241,7 +9241,7 @@ Complex volume & fraktur & $\mathfrak{V}(K) =\allowbreak{} E_0\,\mathrm{tr}_M((\
 β-decay Q-value & fraktur & $\mathfrak{Q}_\beta$ — the Q-value as a \textbf{trace-component} ($\operatorname{Im}\mathfrak{V}$, derived). Measured value $\mathfrak{Q}_\beta^{\,\mathrm{obs}}$ (CODATA). Promoted from roman $Q_\beta$ (corpus migration tracked). Distinct from the decay-\emph{width} $\mathfrak{D}_\beta$ (a rate, the experimental face — not a trace-component). \\
 Factorized projector & upright Greek & $\Pi_{\text{free}}$ — idempotent projector ($\Pi_{\text{free}}^2=\allowbreak{}\Pi_{\text{free}}$) onto the factorized sub-object (parabolic/Young subalgebra; constituents un-linked). The "free" trace is $\mathrm{tr}_M\circ\Pi_{\text{free}}$. \\
 Mass (categorical) & fraktur & $\mathfrak{m}$, $\mathfrak{m}_{\mathfrak{H}}$ (hadron). Never plain $m$ for categorical mass. \\
-Photon & Greek & $\gamma$ — photon (standard physics convention). Used in pair-production / Breit–Wheeler vertices ($\gamma\gamma \to e^+ e^-$) and photonic channels. Distinct from the Euler–Mascheroni constant $\gamma$ (only ever appears inside zeta-value identities) and from Dirac matrices $\gamma^\mu$ (always with a Lorentz index). \textbf{Never} use $\gamma$ for a vortex morphism — the vortex is $\varrho$ (see \hyperref[def:frobenius-hopf-substrate]{the Frobenius--Hopf substrate definition}). \\
+Photon & Greek & $\gamma$ — photon (standard physics convention). Used in pair-production / Breit–Wheeler vertices ($\gamma\gamma \to e^+ e^-$) and photonic channels. Distinct from the Euler–Mascheroni constant $\gamma$ (only ever appears inside zeta-value identities) and from Dirac matrices $\gamma^\mu$ (always with a Lorentz index). \textbf{Never} use $\gamma$ for a vortex morphism — the vortex is $\varrho$ (see \hyperref[def:frobenius-hopf-aether]{the Frobenius--Hopf substrate definition}). \\
 $q$-Hamiltonian & hat & $\hat{H}_q$ — operator hat, Dirac convention. Distinct from $\mathcal{H}_q$ and $H_n(q)$. \\
 \bottomrule
 \end{tabular}
@@ -15901,8 +15901,8 @@ Label & Title & Chapter & Lean \\
 \hyperref[def:stable-atom]{def} & Stable atom (ILP feasibility) & Ch 8 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}StableAtom} \\
 \hyperref[def:stable-nucleus]{def} & Stable nucleus (Skein energy minimum) & Ch 12 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Torsion.\allowbreak{}StableNucleus} \\
 \hyperref[def:standard-part-functor]{def} & Standard-part functor $\mathrm{st} : \mathbf{No}_{\mathrm{fin}} \to\allowbreak{} \mathbb{R}$ & Ch 23 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AppendixSurreals.\allowbreak{}StandardPart} \\
-\hyperref[def:substrate-parameter]{def} & Substrate parameter & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}SubstrateParameter} \\
-\hyperref[def:substrate-parameter-planck]{def} & Substrate parameter and quantum Planck constant & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}SubstrateParameterPlanck} \\
+\hyperref[def:aether-parameter]{def} & Substrate parameter & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}SubstrateParameter} \\
+\hyperref[def:aether-parameter-planck]{def} & Substrate parameter and quantum Planck constant & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}SubstrateParameterPlanck} \\
 \hyperref[def:surreal-blowup-calculus]{def} & Surreal blow-up calculus: named infinite surreals for renormalisation & Ch 22 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AppendixSurreals.\allowbreak{}BlowupCalculus} \\
 \hyperref[def:q-casimir]{def} & The $q$-Casimir element of $\mathcal{U}_q(\mathfrak{su}(2))$ & Ch 5 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}QCasimir} \\
 \hyperref[def:q-chebyshev-function]{def} & The $q$-Chebyshev function & Ch 20 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}QChebyshevFunction} \\
@@ -15912,10 +15912,10 @@ Label & Title & Chapter & Lean \\
 \hyperref[def:classical-limit-obstruction]{def} & The classical limit obstruction of a quantum universe & Ch 17 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}ClassicalLimitObstruction} \\
 \hyperref[def:confinement-category]{def} & The confinement category $\mathbf{Conf}$ & Ch 8 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}ConfinementCategory} \\
 \hyperref[def:hyperelliptic-quintic]{def} & The hyperelliptic quintic $\mathcal{X}_5 \colon y^2 = x^5 - 1$ & Ch 6 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}HyperellipticQuintic} \\
-\hyperref[def:motivic-substrate]{def} & The motivic substrate $(K_0(\mathrm{Var}_k), \mathbb{L}, \{\rho_v\})$ & Ch 4 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}MotivicSubstrate} \\
-\hyperref[def:frobenius-hopf-substrate]{def} & The quantum vacuum as a Frobenius--Hopf algebra & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}FrobeniusHopfSubstrate} \\
+\hyperref[def:motivic-base-ring]{def} & The motivic substrate $(K_0(\mathrm{Var}_k), \mathbb{L}, \{\rho_v\})$ & Ch 4 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}MotivicSubstrate} \\
+\hyperref[def:frobenius-hopf-aether]{def} & The quantum vacuum as a Frobenius--Hopf algebra & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}FrobeniusHopfSubstrate} \\
 \hyperref[def:reeb-epsilon]{def} & The Reeb infinitesimal $\varepsilon$ & Ch 17 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}ReebEpsilon} \\
-\hyperref[def:substrate-line-bundle]{def} & The substrate line bundle and the $\mathbb{G}_m$-family of differentials & Ch 16 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}FluidDynamics.\allowbreak{}SubstrateLineBundle} \\
+\hyperref[def:aether-line-bundle]{def} & The substrate line bundle and the $\mathbb{G}_m$-family of differentials & Ch 16 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}FluidDynamics.\allowbreak{}SubstrateLineBundle} \\
 \hyperref[def:q-from-epsilon]{def} & The substrate parameter $q$ as $1 + \varepsilon$ & Ch 17 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}QFromEpsilon} \\
 \hyperref[def:unit-particle-state]{def} & The unit particle state $\mathrm{Li}_q(z)$ & Ch 6 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}UnitParticleState} \\
 \hyperref[def:threading-link]{def} & Threading link $T(2,N)$ & Ch 15 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Organic.\allowbreak{}ThreadingLink} \\
@@ -15947,7 +15947,7 @@ Label & Title & Chapter & Lean \\
 \hyperref[thm:embeddability-closure]{thm} & Embeddability closure under knot-particle generation & Ch 6 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Torsion.\allowbreak{}embeddability\_\allowbreak{}closure} \\
 \hyperref[thm:groebner-shirshov-energy]{thm} & Energy as a Gröbner--Shirshov invariant of the nuclear braid & Ch 8 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Archimedean.\allowbreak{}groebner\_\allowbreak{}shirshov\_\allowbreak{}energy} \\
 \hyperref[thm:categorical-reeb-exists]{thm} & Existence of the categorical Reeb derivation & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}categorical\_\allowbreak{}reeb\_\allowbreak{}exists} \\
-\hyperref[thm:substrate-parameter-exists]{thm} & Existence of the substrate parameter & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}SubstrateParameter.\allowbreak{}ofReebDecomposition} \\
+\hyperref[thm:aether-parameter-exists]{thm} & Existence of the substrate parameter & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}SubstrateParameter.\allowbreak{}ofReebDecomposition} \\
 \hyperref[thm:weight-decomposition-exists]{thm} & Existence of the weight decomposition & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}WeightDecomposition.\allowbreak{}ofMaximalTorus} \\
 \hyperref[thm:explicit-formula]{thm} & Explicit formula as a spectral--geometric trace identity & Ch 20 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}explicit\_\allowbreak{}formula} \\
 \hyperref[thm:frobenius-antipode-unifies-chirality-and-tower]{thm} & Frobenius antipode $S\colon \sigma \leftrightarrow \sigma^{-1}$ unifies chirality (Term 5) and neutron-tower closure & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}frobenius\_\allowbreak{}antipode\_\allowbreak{}unifies} \\
@@ -15966,14 +15966,14 @@ Label & Title & Chapter & Lean \\
 \hyperref[thm:topological-charge-quantization]{thm} & Quantization of topological charge & Ch 6 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}topological\_\allowbreak{}charge\_\allowbreak{}quantization} \\
 \hyperref[thm:quantum-peter-weyl]{thm} & Quantum Peter--Weyl theorem: completeness of the $\mathrm{SU}_q(2)$ eigenbasis & Ch 16 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}FluidDynamics.\allowbreak{}quantum\_\allowbreak{}peter\_\allowbreak{}weyl} \\
 \hyperref[thm:qu-to-qou]{thm} & Quantum universe with observability and categorical lifting is a QOU & Ch 4 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}QuToQou} \\
-\hyperref[thm:substrate-self-duality]{thm} & Self-duality of the algebraic substrate & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}substrate\_\allowbreak{}self\_\allowbreak{}duality} \\
+\hyperref[thm:aether-self-duality]{thm} & Self-duality of the algebraic substrate & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}substrate\_\allowbreak{}self\_\allowbreak{}duality} \\
 \hyperref[thm:six-term-mass-formula-complete]{thm} & Six-term mass formula: derivation + computation index & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}six\_\allowbreak{}term\_\allowbreak{}mass\_\allowbreak{}formula\_\allowbreak{}complete} \\
 \hyperref[thm:tannaka-krein-isomorphism]{thm} & Tannaka--Krein duality for the substrate & Ch 20 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}tannaka\_\allowbreak{}krein\_\allowbreak{}isomorphism} \\
 \hyperref[thm:ns-singularity-descartes]{thm} & The Descartes universe is NS-singular: Navier--Stokes admits finite-time blowup & Ch 16 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}FluidDynamics.\allowbreak{}ns\_\allowbreak{}singularity\_\allowbreak{}descartes} \\
 \hyperref[thm:wedderburn-mass-formula]{thm} & Three-invariant atomic mass formula & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}WedderburnMass.\allowbreak{}atomicMass} \\
 \hyperref[thm:flavor-mass-splitting-bound]{thm} & Two-sided substrate bound on the dressed-quark splitting & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}FlavorDressing.\allowbreak{}flavor\_\allowbreak{}mass\_\allowbreak{}splitting\_\allowbreak{}bound} \\
 \hyperref[thm:knot-mass-formula-unified]{thm} & Unified mass formula: tower + Frobenius co-Casimir correction & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}knot\_\allowbreak{}mass\_\allowbreak{}unified} \\
-\hyperref[thm:substrate-parameter-unique]{thm} & Uniqueness of the substrate parameter & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}SubstrateParameter.\allowbreak{}unique} \\
+\hyperref[thm:aether-parameter-unique]{thm} & Uniqueness of the substrate parameter & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}SubstrateParameter.\allowbreak{}unique} \\
 \hyperref[thm:frobenius-codim-universal]{thm} & Universal Frobenius co-dimension trace: $\tau(C_{\dim_q}) =\allowbreak{} \sum_\lambda 1/\dim_q(\lambda)$ & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}frobenius\_\allowbreak{}codim\_\allowbreak{}universal} \\
 \bottomrule
 \end{tabular}
@@ -16025,7 +16025,7 @@ Label & Title & Chapter & Lean \\
 \hyperref[prop:binding-scale-catalan]{prop} & Binding energy scale $\alpha = m_e \times 8G$ & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BindingScale.\allowbreak{}bindingScale\_\allowbreak{}value} \\
 \hyperref[prop:blowup-yekutieli]{prop} & Blowup mechanism as Yekutieli lifting obstruction in the brane tower & Ch 4 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}FluidDynamics.\allowbreak{}BlowupYekutieli} \\
 \hyperref[prop:boltzmann-constant]{prop} & Boltzmann constant is unity in QOU natural units & Ch 18 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Information.\allowbreak{}thermalEnergy} \\
-\hyperref[prop:lambda-scale-substrate-form]{prop} & Borromean baryon $\lambda_{\text{scale}}$ empirical form $5/2 - h^2 \cdot G$ (acknowledged-CAL-4) & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}lambdaA\_\allowbreak{}qForm\_\allowbreak{}eq\_\allowbreak{}hForm} \\
+\hyperref[prop:lambda-scale-aether-form]{prop} & Borromean baryon $\lambda_{\text{scale}}$ empirical form $5/2 - h^2 \cdot G$ (acknowledged-CAL-4) & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}lambdaA\_\allowbreak{}qForm\_\allowbreak{}eq\_\allowbreak{}hForm} \\
 \hyperref[prop:q-gaussian-obstruction-at-q0]{prop} & Bożejko–Speicher $q$-Gaussian obstruction at the substrate $q_0 > 1$ & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}MassTheory.\allowbreak{}qGaussianObstructionAtQ0} \\
 \hyperref[prop:bn-mtc-action]{prop} & Braid group action on $\mathbf{V}^{\otimes n}$ does not factor through $S_n$ & Ch 16 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}ObservableMTC.\allowbreak{}bnAction} \\
 \hyperref[prop:braid-action-tensor]{prop} & Braid-group action on tensor powers & Ch 5 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Braiding.\allowbreak{}braid\_\allowbreak{}action\_\allowbreak{}tensor} \\
@@ -16212,7 +16212,7 @@ Label & Title & Chapter & Lean \\
 \hyperref[prop:tau-leptonic-universality]{prop} & Lepton universality from the $T_{3,5}$ weak vertex & Ch 12 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Archimedean.\allowbreak{}tau\_\allowbreak{}leptonic\_\allowbreak{}universality} \\
 \hyperref[prop:level-sufficiency]{prop} & Level sufficiency: Markov trace computable in the coarsest confinement algebra & Ch 8 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}LevelSufficiency} \\
 \hyperref[prop:alpha-k-derivation-procedure]{prop} & Linear-system procedure for Jones--Markov weights $y_\lambda$ and stratum prefactors $\alpha_k$ at $H_n(R, q)$ & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}alpha\_\allowbreak{}k\_\allowbreak{}derivation\_\allowbreak{}procedure} \\
-\hyperref[prop:local-substrate-q]{prop} & Local Value of the Substrate Parameter & Ch 13 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Experimental.\allowbreak{}local\_\allowbreak{}substrate\_\allowbreak{}q} \\
+\hyperref[prop:local-aether-q]{prop} & Local Value of the Substrate Parameter & Ch 13 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Experimental.\allowbreak{}local\_\allowbreak{}substrate\_\allowbreak{}q} \\
 \hyperref[prop:chi-lambda-w0-sign-weighting]{prop} & Long-element $\chi_\lambda(w_0)$ sign-character weighting of the $c_k$ chain at $H_3$ & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}ChiLambdaW0SignWeighting} \\
 \hyperref[prop:co-lp-dual-binding]{prop} & LP dual for $CO$: covalent active-set $2$ ($+$ dative $=$ triple) & Ch 14 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Molecular.\allowbreak{}co\_\allowbreak{}lp\_\allowbreak{}dual\_\allowbreak{}binding} \\
 \hyperref[prop:h2-lp-dual-binding]{prop} & LP dual gives optimal $H_2$ binding & Ch 14 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Molecular.\allowbreak{}h2\_\allowbreak{}lp\_\allowbreak{}dual\_\allowbreak{}binding} \\
@@ -16251,7 +16251,7 @@ Label & Title & Chapter & Lean \\
 \hyperref[prop:observation-energy]{prop} & Observation increases quantum energy and deforms the action & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}QuantumObservableUniverse.\allowbreak{}observation\_\allowbreak{}energy} \\
 \hyperref[prop:q-gl-obstruction-calc]{prop} & Obstruction to $q$-flatness & Ch 20 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}q\_\allowbreak{}gl\_\allowbreak{}obstruction\_\allowbreak{}calc} \\
 \hyperref[prop:shell-structure-eigenvalues]{prop} & Orbital shells from eigenvalues of the photon-electron transfer matrix & Ch 12 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Archimedean.\allowbreak{}shell\_\allowbreak{}structure\_\allowbreak{}eigenvalues} \\
-\hyperref[prop:substrate-consistency-window]{prop} & Overdetermination of the substrate parameter & Ch 13 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Observations.\allowbreak{}substrate\_\allowbreak{}consistency\_\allowbreak{}window} \\
+\hyperref[prop:aether-consistency-window]{prop} & Overdetermination of the substrate parameter & Ch 13 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Observations.\allowbreak{}substrate\_\allowbreak{}consistency\_\allowbreak{}window} \\
 \hyperref[prop:parallel-fibre-noninteraction]{prop} & Parallel fibres are non-interacting (split-link trace multiplicativity) & Ch 18 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Information.\allowbreak{}OneDimChannel.\allowbreak{}parallel\_\allowbreak{}noninteraction} \\
 \hyperref[prop:parity-violation-skein]{prop} & Parity non-conservation from the Skein relation at $q \neq 1$ & Ch 12 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Archimedean.\allowbreak{}parity\_\allowbreak{}violation\_\allowbreak{}skein} \\
 \hyperref[prop:cl2-pentagon-and-faddeev-partial]{prop} & Partial closures: $\mathrm{Cl}_2$ pentagon at boundary + Faddeev-Kashaev limit at boundary (closes parts of substantive Mathlib gaps 2+3) & Ch 12 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Archimedean.\allowbreak{}PartialClosures.\allowbreak{}partial\_\allowbreak{}closures\_\allowbreak{}at\_\allowbreak{}boundary} \\
@@ -16309,10 +16309,10 @@ Label & Title & Chapter & Lean \\
 \hyperref[prop:brane-boundary]{prop} & Structure of the defining boundary & Ch 4 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Torsion.\allowbreak{}brane\_\allowbreak{}boundary\_\allowbreak{}structure} \\
 \hyperref[prop:composite-crossing-parity]{prop} & Sublimation from shell-filling representation theory & Ch 18 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Information.\allowbreak{}crossing\_\allowbreak{}parity\_\allowbreak{}eq\_\allowbreak{}Z} \\
 \hyperref[conj:proton-mass-substrate-identity]{prop} & Substrate evaluation: $m_p =\allowbreak{} 2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0) -\allowbreak{} 12 \cdot m_e$ to $0.24\,\mathrm{ppm}$ at $q = q_0$ & Ch 21 & — \\
-\hyperref[prop:substrate-radial-coordinate]{prop} & Substrate parameter as the radial coordinate & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}substrate\_\allowbreak{}radial\_\allowbreak{}coordinate} \\
-\hyperref[prop:bar-t-duality-substrate]{prop} & Substrate-level bar T-duality: $\mathcal{E}_q \leftrightarrow \mathcal{E}_{1/q}$ & Ch 12 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Archimedean.\allowbreak{}BarTDualitySubstrate.\allowbreak{}bar\_\allowbreak{}t\_\allowbreak{}duality\_\allowbreak{}substrate} \\
-\hyperref[prop:flavor-split-substrate]{prop} & Substrate-pure derivation of the $u$--$d$ flavor split & Ch 13 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}HadronicMass.\allowbreak{}flavor\_\allowbreak{}split\_\allowbreak{}substrate} \\
-\hyperref[prop:flavor-dressed-mass-from-substrate-split]{prop} & Substrate-pure derivation of the dressed-quark mass splitting & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}FlavorDressing.\allowbreak{}dressed\_\allowbreak{}mass\_\allowbreak{}from\_\allowbreak{}substrate\_\allowbreak{}split} \\
+\hyperref[prop:aether-radial-coordinate]{prop} & Substrate parameter as the radial coordinate & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}substrate\_\allowbreak{}radial\_\allowbreak{}coordinate} \\
+\hyperref[prop:bar-t-duality-aether]{prop} & Substrate-level bar T-duality: $\mathcal{E}_q \leftrightarrow \mathcal{E}_{1/q}$ & Ch 12 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Archimedean.\allowbreak{}BarTDualitySubstrate.\allowbreak{}bar\_\allowbreak{}t\_\allowbreak{}duality\_\allowbreak{}substrate} \\
+\hyperref[prop:flavor-split-aether]{prop} & Substrate-pure derivation of the $u$--$d$ flavor split & Ch 13 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}HadronicMass.\allowbreak{}flavor\_\allowbreak{}split\_\allowbreak{}substrate} \\
+\hyperref[prop:flavor-dressed-mass-from-aether-split]{prop} & Substrate-pure derivation of the dressed-quark mass splitting & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}FlavorDressing.\allowbreak{}dressed\_\allowbreak{}mass\_\allowbreak{}from\_\allowbreak{}substrate\_\allowbreak{}split} \\
 \hyperref[prop:surreal-rate-calculus]{prop} & Surreal rate calculus for the classical-limit scaling laws & Ch 22 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AlgebraicSubstrate.\allowbreak{}SurrealRateCalculus} \\
 \hyperref[prop:neutron-qvalue-symbolic]{prop} & Symbolic $Q$-value of free neutron decay & Ch 8 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}ParticleInteractions.\allowbreak{}neutron\_\allowbreak{}qvalue\_\allowbreak{}symbolic} \\
 \hyperref[prop:gram-matrix-h3-symbolic]{prop} & Symbolic closed-form H\_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in $u = \sqrt{q}$ with 2 of 3 structural axioms (is\_symm, diag\_top\_one) Lean-proved. & Ch 8 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Interactions.\allowbreak{}GramMatrixH3Symbolic.\allowbreak{}gramMatrix} \\
@@ -16544,7 +16544,7 @@ Label & Title & Chapter & Lean \\
 \hyperref[conj:vacuum-epsilon]{conj} & Infinitesimal vacuum: $\mathrm{Geom}(\unicode{9737}) =\allowbreak{} \varepsilon$ & Ch 22 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AppendixSurreals.\allowbreak{}VacuumEpsilon} \\
 \hyperref[conj:inter-nucleon-channel-color-tube]{conj} & Inter-nucleon Hecke channel assignment from Bring color-tube weighting & Ch 6 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidsAndKnots.\allowbreak{}InterNucleonChannelColorTube} \\
 \hyperref[conj:single-volume-irrationality]{conj} & Irrationality of a single hyperbolic knot volume & Ch 12 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Archimedean.\allowbreak{}SingleVolumeIrrationality} \\
-\hyperref[conj:hecke-anyonic-substrate]{conj} & Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation & Ch 8 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}IwahoriHecke.\allowbreak{}Tw.\allowbreak{}HeckeAnyonicSubstrate} \\
+\hyperref[conj:hecke-anyonic-aether]{conj} & Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation & Ch 8 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}IwahoriHecke.\allowbreak{}Tw.\allowbreak{}HeckeAnyonicSubstrate} \\
 \hyperref[conj:jet-filtered-knot-factor]{conj} & Jet-filtered knot factor: per-level character convergence and nuclear quotient braid & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}jet\_\allowbreak{}filtered\_\allowbreak{}knot\_\allowbreak{}factor} \\
 \hyperref[conj:jet-convergence-classical-limit]{conj} & Jet-filtered knot invariant converges to classical dimension-weighted average & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}jet\_\allowbreak{}convergence\_\allowbreak{}classical\_\allowbreak{}limit} \\
 \hyperref[conj:three-knot-jet-order-independence]{conj} & Jet-order algebraic independence (QOU-attackable reduction) & Ch 12 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Archimedean.\allowbreak{}JetOrderIndependence} \\
@@ -16597,7 +16597,7 @@ Label & Title & Chapter & Lean \\
 \hyperref[conj:jet-tower-uniform-delta-max]{conj} & Uniform per-level binding bound $\vert \Delta^{(n)}(\varrho)\vert \le\allowbreak{} \Delta_{\max}(\varrho)$ for the brane tower & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}JetTowerUniformDeltaMax} \\
 \hyperref[conj:geom-universality]{conj} & Universality of $\mathrm{Geom}(K)$: the categorical volume form yields $\mathrm{Vol}(K)$ and $\mathrm{CS}(K)$ & Ch 8 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}geom\_\allowbreak{}universality} \\
 \hyperref[conj:weinberg-angle-categorical]{conj} & Weinberg angle $\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors & Ch 8 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidsAndKnots.\allowbreak{}WeinbergAngleCategorical} \\
-\hyperref[conj:wenzl-positivity-implies-substrate-positivity]{conj} & Wenzl positivity at $q_0$ implies substrate $C^*$-Frobenius positivity & Ch 23 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AppendixSurreals.\allowbreak{}WenzlPositivityImpliesSubstratePositivity} \\
+\hyperref[conj:wenzl-positivity-implies-aether-positivity]{conj} & Wenzl positivity at $q_0$ implies substrate $C^*$-Frobenius positivity & Ch 23 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}AppendixSurreals.\allowbreak{}WenzlPositivityImpliesSubstratePositivity} \\
 \hyperref[conj:wigner-su4-from-spin-isospin]{conj} & Wigner $\mathrm{SU}(4) =\allowbreak{} \mathrm{SU}(2)_S \times \mathrm{SU}(2)_I$ as the categorical source for nuclear-shell binding (L3) & Ch 8 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidsAndKnots.\allowbreak{}WignerSU4FromSpinIsospin} \\
 \hyperref[conj:yang-mills-mass-gap]{conj} & Yang--Mills Existence and Mass Gap & Ch 3 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Torsion.\allowbreak{}YangMillsMassGap} \\
 \hyperref[conj:z-eq-n-rho-correction]{conj} & Z=N substrate-q correction to the Kashaev law: $B =\allowbreak{} m_e \cdot \mathrm{Vol}_{\rm hyp}(K_A) \cdot (\rho_{\rm struct} +\allowbreak{} A -\allowbreak{} [A]_q)$ & Ch 10 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}BraidKnot.\allowbreak{}ZeqNRhoCorrection} \\
@@ -16641,7 +16641,7 @@ Label & Title & Chapter & Lean \\
 \hyperref[ex:yekutieli-lifting-su2]{ex} & Categorical lifting for $\mathrm{SU}(2)$: perpetual obstruction & Ch 4 & — \\
 \hyperref[ex:categorical-action-notation-su2]{ex} & Categorical-action notation for $\mathrm{SU}(2)$ & Ch 2 & — \\
 \hyperref[ex:connection-su2]{ex} & Connection and curvature on $\mathcal{O}(\mathrm{SU}(2))$ & Ch 2 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Examples.\allowbreak{}su2Connection} \\
-\hyperref[ex:substrate-parameter-brings]{ex} & Constructive extraction of $q$ on Bring's surface & Ch 2 & — \\
+\hyperref[ex:aether-parameter-brings]{ex} & Constructive extraction of $q$ on Bring's surface & Ch 2 & — \\
 \hyperref[ex:categorical-reeb-brings]{ex} & Constructive Reeb derivation on Bring's coordinate ring & Ch 2 & — \\
 \hyperref[ex:rigid-dualizing-brings]{ex} & Constructive rigid dualizing complex for Bring's coordinate ring & Ch 2 & — \\
 \hyperref[ex:tannaka-krein-su2]{ex} & Constructive Tannaka--Krein reconstruction for $\mathrm{SU}_q(2)$ & Ch 20 & — \\
@@ -16682,7 +16682,7 @@ Label & Title & Chapter & Lean \\
 \hyperref[ex:self-dual-curvature]{ex} & Self-duality of the curvature & Ch 3 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}self\_\allowbreak{}dual\_\allowbreak{}curvature} \\
 \hyperref[ex:half-life-shell-worked]{ex} & Shell structure in half-lives: ${}^3\mathrm{H}$ and ${}^{14}\mathrm{C}$ as worked examples & Ch 13 & — \\
 \hyperref[ex:single-magic-O18-diagram]{ex} & Single-magic illustration: $^{18}\mathrm{O}$ at $Z = 8$, $N = 10$ & Ch 13 & — \\
-\hyperref[ex:substrate-parameter-su2]{ex} & Substrate parameter for $\mathrm{SU}(2)$ & Ch 2 & — \\
+\hyperref[ex:aether-parameter-su2]{ex} & Substrate parameter for $\mathrm{SU}(2)$ & Ch 2 & — \\
 \hyperref[ex:terminal-resolution-cz]{ex} & Terminal resolution in $\mathbb{C}[z]$ & Ch 13 & \texttt{qou:\allowbreak{}QOU.\allowbreak{}Examples.\allowbreak{}czTerminalResolution} \\
 \hyperref[ex:nitrogen-14-threading]{ex} & The ${}^{14}\mathrm{N}$ maximal braid shortcut vs ${}^{14}\mathrm{C}$ broken alternation & Ch 13 & — \\
 \hyperref[ex:electron-knot-concrete]{ex} & The electron as the trefoil knot on $\Sigma_4$ & Ch 12 & — \\

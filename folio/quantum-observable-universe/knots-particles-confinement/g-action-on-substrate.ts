@@ -1,7 +1,8 @@
 import { conjecture } from "../../schema/builders";
 
 export default conjecture({
-  label: "conj:g-action-on-substrate",
+  label: "conj:g-action-on-aether",
+  renamedFrom: ["conj:g-action-on-substrate"],
   title:
     "Categorical $G = \\mathrm{SU}(2)_L \\times \\mathrm{U}(1)_Y$ action on the Frobenius–Hopf aether",
   lean: { ref: "qou:QOU.Core.GActionOnSubstrate", validation: "stub" },
@@ -9,7 +10,7 @@ export default conjecture({
     "prop:lepton-meson-torus-knot-dictionary",
     "thm:ew-triplet-charge-spin-from-involution",
     "prop:weak-spectral-completeness",
-    "def:frobenius-hopf-substrate",
+    "def:frobenius-hopf-aether",
     "rem:hecke-algebra-from-braiding",
     "prop:higgs-vacuum-residual-idempotent",
     "conj:electroweak-higgs-torus-link-triplet",

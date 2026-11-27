@@ -39,7 +39,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR, Q_MP
 from experimental_constants import M_E_MEV, G_F_MEV
 
-# Ref: [leitner2026] conj:g-action-on-substrate (the anchor and why it is not a host trace)
+# Ref: [leitner2026] conj:g-action-on-aether (the anchor and why it is not a host trace)
 
 # main's citation kept; the pin stays Q_MP (70 digits) rather than the 50-digit string --
 # this file has NO sympy path, so there is no second q to straddle (cf. bean qou-ayzx,

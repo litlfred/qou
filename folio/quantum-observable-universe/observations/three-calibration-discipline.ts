@@ -19,7 +19,7 @@ export default definition({
   // conj:three-calibration-inputs; the H^1(Bring) alignment is
   // conj:calibration-cohomology-alignment. Neither is used by the definition.
   uses: [
-    "def:substrate-parameter",
+    "def:aether-parameter",
     "def:quantum-planck-constant",
     "prop:meson-scale-independence",
   ],

@@ -16,7 +16,7 @@ Step 5 has THREE components:
       Combined with the substrate Q_β formula
       Q_β^A(q_0) = m_e · |q^2 - 2q - 1|(q+1)/(2q^3), this gives a
       closed-form prediction of ΔS(n-p) in {m_e, q_0} alone.
-      Documented in `rem:delta-skein-substrate-identity`.
+      Documented in `rem:delta-skein-aether-identity`.
 
   5c. **(u,u,d) symmetry argument** for the anchor choice: the proton
       orientation is the lowest-mass nucleon; choosing S(p) = 0 fixes
@@ -88,7 +88,7 @@ def main() -> int:
         "with q_0 from q_parameter.Q_50_DIGIT_STR and CODATA from "
         "experimental_constants (3-input scheme: M_E_MEV, M_P_MEV, "
         "Q_NEUTRON_MEV; m_n derived). References "
-        "`rem:delta-skein-substrate-identity` for the underlying "
+        "`rem:delta-skein-aether-identity` for the underlying "
         "common-scale hypothesis. Documents the open R&D component: "
         "direct Kauffman-bracket verification of S(uud) = 0 from "
         "first principles (currently set by convention as the anchor)."
@@ -123,7 +123,7 @@ def main() -> int:
             "ΔS(n-p) computed from CODATA m_p, Q_neutron agrees with the "
             "substrate Q_β formula's prediction to ~1015 ppm — set by "
             "the substrate Q_β formula's residual at the current q_0 "
-            "pinning (per rem:delta-skein-substrate-identity). Closing "
+            "pinning (per rem:delta-skein-aether-identity). Closing "
             "this to <100 ppm requires substrate-only refinement of Q_β."
         ),
     })
@@ -135,7 +135,7 @@ def main() -> int:
         expected=0.0,
         tolerance=2000.0,
         unit="ppm",
-        source="rem:delta-skein-substrate-identity",
+        source="rem:delta-skein-aether-identity",
     )
 
     # ── 5a: anchor convention ─────────────────────────────────
@@ -199,7 +199,7 @@ def main() -> int:
     w.add_data("step_5_summary", {
         "5a_anchor_convention": "DEFINITIONAL (S(p) = 0 by anchor choice)",
         "5b_delta_S_closure": "PROVED at ~1015 ppm via "
-                               "rem:delta-skein-substrate-identity",
+                               "rem:delta-skein-aether-identity",
         "5c_symmetry_argument": "PLAUSIBLE (physics-motivated)",
         "5_open": "Direct Kauffman-bracket verification of S(uud) = 0",
     })
@@ -213,7 +213,7 @@ def main() -> int:
     print(f"  ΔS substrate prediction  = {float(delta_S_substrate):.10f}")
     print(f"  Relative diff            = {rel_diff_substrate_ppm:+.2f} ppm")
     print(f"  (Q_β substrate vs CAL-3: residual derives ΔS to the same "
-          f"~1015 ppm; see rem:delta-skein-substrate-identity.)")
+          f"~1015 ppm; see rem:delta-skein-aether-identity.)")
     return 0
 
 

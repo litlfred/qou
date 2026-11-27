@@ -60,7 +60,7 @@ export default conjecture({
     },
     {
       kind: "status",
-      body: "**Class-A discipline status.** The 173$\\times$ shortfall is captured by $\\rho_K$ in `prop:atomic-mass-gb-nf`, which admits a **graded substrate expansion** (`prop:rho-k-graded-expansion`) — the LO piece $Z m_{\\mathfrak{p}} + N m_{\\mathfrak{n}} + Z m_e$ is **proved** (Wenzl 1988 Markov multiplicativity); the single-gen piece closes empirically to $0.18\\%$; the pair-gen piece is open. On the nucleon-anchor side, $m_{\\mathfrak{p}}$ has a **conjectural substrate form** (`prop:lambda-scale-substrate-form`) matching CODATA to ~5.4 ppm. This proposition is therefore a Class-A opt-out (conditional on the substrate forms above) per the three-calibration discipline; the structural form (this block) is correct and independent of the open pieces.",
+      body: "**Class-A discipline status.** The 173$\\times$ shortfall is captured by $\\rho_K$ in `prop:atomic-mass-gb-nf`, which admits a **graded substrate expansion** (`prop:rho-k-graded-expansion`) — the LO piece $Z m_{\\mathfrak{p}} + N m_{\\mathfrak{n}} + Z m_e$ is **proved** (Wenzl 1988 Markov multiplicativity); the single-gen piece closes empirically to $0.18\\%$; the pair-gen piece is open. On the nucleon-anchor side, $m_{\\mathfrak{p}}$ has a **conjectural substrate form** (`prop:lambda-scale-aether-form`) matching CODATA to ~5.4 ppm. This proposition is therefore a Class-A opt-out (conditional on the substrate forms above) per the three-calibration discipline; the structural form (this block) is correct and independent of the open pieces.",
     },
     {
       kind: "note",

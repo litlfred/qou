@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe ([Definition](#def:quantum-observable-universe)) with aether parameter $q$ ([Definition](#def:substrate-parameter)), categorical action $\mathfrak{S}_q$ ([Definition](#def:categorical-action)), and $q$-Hodge star $\star_q$ ([Definition](#def:q-hodge-star)).
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe ([Definition](#def:quantum-observable-universe)) with aether parameter $q$ ([Definition](#def:aether-parameter)), categorical action $\mathfrak{S}_q$ ([Definition](#def:categorical-action)), and $q$-Hodge star $\star_q$ ([Definition](#def:q-hodge-star)).
 
 Let $\varrho \colon S^1 \to \tau(A)$ be a smooth closed curve (a knot embedding) and let $\mathfrak{m}(\varrho)$ denote the categorical mass ([Definition](#def:mass-identity)).
 

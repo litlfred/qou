@@ -10,7 +10,7 @@ export default definition({
   },
   title: "$q$-deformed path phase",
   uses: [
-    "def:substrate-parameter",
+    "def:aether-parameter",
     "def:categorical-reeb",
     "def:categorical-q-ext-deriv",
     "def:quantum-planck-constant",

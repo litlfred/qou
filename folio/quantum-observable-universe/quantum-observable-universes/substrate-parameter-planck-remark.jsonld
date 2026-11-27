@@ -6,18 +6,18 @@
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/rem-substrate-parameter-planck-remark",
+  "@id": "papers/quantum-observable-universe/blocks/rem-aether-parameter-planck-remark",
   "@type": [
     "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "rem:substrate-parameter-planck-remark",
+  "label": "rem:aether-parameter-planck-remark",
   "kind": "remark",
   "title": "The aether parameter as a measure of non-commutativity",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-substrate-parameter-planck"
+    "papers/quantum-observable-universe/blocks/def-aether-parameter-planck"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter-planck",
+  "interprets": "papers/quantum-observable-universe/blocks/def-aether-parameter-planck",
   "tags": [
     "substrate-parameter",
     "planck-constant",

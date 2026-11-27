@@ -32,7 +32,7 @@
     ],
     "reproduce": "python3 -u computations/atomic_mass_via_rho_k.py"
   },
-  "description": "Atomic mass-table predictions using the resolved ρ_K assembly M(K) = ρ_K · m_e · |tr_M(K)| from PR #564 §3.3a (Options A + C: no additive T6, Mittag-Leffler complementarity). Calibration anchors: m_e (CODATA, CAL-1); nucleon anchors = substrate-pure (C2 inflection + prop:flavor-split-substrate with (1+ℏ_q³) sub-leading correction; no CODATA m_p / m_n input). Reads |tr_M(K)| from atomic-tr-m-mpfr-50dps.witness.json. Atoms not in that witness are flagged tr_M_unavailable rather than fabricating values. Direct successor to atomic_braid_mass_table.py — see the side-by-side improvement_factor field.",
+  "description": "Atomic mass-table predictions using the resolved ρ_K assembly M(K) = ρ_K · m_e · |tr_M(K)| from PR #564 §3.3a (Options A + C: no additive T6, Mittag-Leffler complementarity). Calibration anchors: m_e (CODATA, CAL-1); nucleon anchors = substrate-pure (C2 inflection + prop:flavor-split-aether with (1+ℏ_q³) sub-leading correction; no CODATA m_p / m_n input). Reads |tr_M(K)| from atomic-tr-m-mpfr-50dps.witness.json. Atoms not in that witness are flagged tr_M_unavailable rather than fabricating values. Direct successor to atomic_braid_mass_table.py — see the side-by-side improvement_factor field.",
   "auditOnly": "AUDIT-DEEP-2026-05.md",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736",

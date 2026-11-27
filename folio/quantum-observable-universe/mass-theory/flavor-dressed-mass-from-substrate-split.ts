@@ -1,7 +1,8 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
-  label: "prop:flavor-dressed-mass-from-substrate-split",
+  label: "prop:flavor-dressed-mass-from-aether-split",
+  renamedFrom: ["prop:flavor-dressed-mass-from-substrate-split"],
   lean: { ref: "qou:QOU.Confinement.FlavorDressing.dressed_mass_from_substrate_split",
     validation: "not_checked",
   },
@@ -50,7 +51,7 @@ export default proposition({
         "carried this proposition's own conclusion as its `split` field, so the Lean " +
         "theorem projected its hypothesis (§3b-cond item 5). It is replaced by " +
         "`FlavorSplitSubstrateMass m_p m_n q`, the Lean class of " +
-        "`conj:flavor-split-substrate-mass` (no instance), which carries only the " +
+        "`conj:flavor-split-aether-mass` (no instance), which carries only the " +
         "nucleon split. The theorem now derives `μ_d − μ_u = M_N · s(q)` from that " +
         "class and the nucleon form of the pair Skein formula, an explicit hypothesis.",
     },
@@ -64,7 +65,7 @@ export default proposition({
   ],
   uses: [
     "def:flavor-dressing-functor",
-    "conj:flavor-split-substrate-mass",
+    "conj:flavor-split-aether-mass",
     "lem:pair-skein-mass-formula",
   ],
   computation: {

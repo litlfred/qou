@@ -23,7 +23,7 @@
  *
  *   leak-reading-order (L4)  (L4a) a `q`-dependent token (`$q$`, `[n]_q`,
  *       `\Phi_d`, `SU_q`, Hecke, "archimedean wall") in a block read before
- *       the first block of `sec:substrate-parameter`, where `q` is
+ *       the first block of `sec:aether-parameter`, where `q` is
  *       introduced. An `outro-*` block may name what the next chapter
  *       introduces;
  *       (L4b) a `](#label)` link to a block later in reading order.
@@ -63,7 +63,7 @@ export interface LeakHit {
   advisory?: boolean;
 }
 
-export const Q_INTRO_SECTION = "sec:substrate-parameter";
+export const Q_INTRO_SECTION = "sec:aether-parameter";
 /** Back matter a forward link may always point to. */
 export const BACK_MATTER = new Set(["glossary", "notation", "index-of-definitions"]);
 /** Chapters that preview what follows, exempt from L4 (owner ruling 2026-11-20: exempt the introduction). */

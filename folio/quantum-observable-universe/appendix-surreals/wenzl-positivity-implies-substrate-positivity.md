@@ -8,7 +8,7 @@ fusion categories among the q-deformed semisimple ones — implies the
 aether $C^*$-Frobenius positivity axiom of*
 [Osterwalder--Schrader reflection positivity from the Reeb $\mathbb{Z}_2$](#conj:os-reflection-positivity-from-reeb).
 *Equivalently, the Müger $C^*$-norm on the
-[Frobenius–Hopf aether](#def:frobenius-hopf-substrate)
+[Frobenius–Hopf aether](#def:frobenius-hopf-aether)
 $A$ at $q_0$, induced by the categorical trace of $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$,
 makes the antipode-twisted Frobenius pairing $\langle\theta(\cdot),
 \cdot\rangle_F$ positive-definite on the positive-time Reeb half.*

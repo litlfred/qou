@@ -1,7 +1,7 @@
 import { example } from "../../schema/builders";
 
 export default example({
-  interprets: "def:substrate-parameter",
+  interprets: "def:aether-parameter",
   label: "ex:p-adic-realisation",
   title: "$\\mathbb{Q}_\\pp$ realisation",
   authorNotes: [

@@ -13,7 +13,7 @@ export default remark({
   ],
   uses: [
     "conj:chain-ring-comparison",
-    "def:substrate-parameter",
+    "def:aether-parameter",
     "conj:topological-mass-formula",
     "rem:chain-ring-energy",
     "tbl:chain-ring-comparison-table1-data",

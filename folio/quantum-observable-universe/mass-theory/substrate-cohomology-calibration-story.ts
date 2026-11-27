@@ -1,7 +1,8 @@
 import { prose } from "../../schema/builders";
 
 export default prose({
-  label: "sec:substrate-cohomology-calibration-story",
+  label: "sec:aether-cohomology-calibration-story",
+  renamedFrom: ["sec:substrate-cohomology-calibration-story"],
   authorNotes: [
     {
       kind: "note",

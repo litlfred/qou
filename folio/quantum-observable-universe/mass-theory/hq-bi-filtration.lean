@@ -26,7 +26,7 @@ variable {R : Type*} [CommRing R]
 variable {q : R}
 
 /-- The substrate convolution Hopf algebra `H_q`. Placeholder;
-    wired through `def:frobenius-hopf-substrate`. -/
+    wired through `def:frobenius-hopf-aether`. -/
 opaque ConvolutionHopfAlgebra (q : R) : Type
 
 /-- Iterated-integral depth filtration `G^{(n)}(H_q)` on grouplikes

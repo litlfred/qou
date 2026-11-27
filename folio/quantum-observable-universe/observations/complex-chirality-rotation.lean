@@ -17,7 +17,7 @@ instance per claim.
 ## References
 
 - `[leitner2026]` `conj:complex-chirality-rotation`
-- `[leitner2026]` `rem:complex-substrate-interpretation`
+- `[leitner2026]` `rem:complex-aether-interpretation`
 - `[leitner2026]` `rem:chirality-trefoil-electron-positron`
 -/
 

@@ -73,7 +73,7 @@ function linkingSentence(prose: string, target: string): string {
 const TARGETS = [
   "thm:jones-markov-trace", "def:hecke-normal-form", "def:borromean-baryon",
   "def:crossing-energy", "rem:conway-normal-form", "def:habiro-ring",
-  "def:motivic-substrate", "def:archimedean-realization-functor",
+  "def:motivic-base-ring", "def:archimedean-realization-functor",
   "def:q-from-epsilon", "def:hadron", "def:categorical-neutron",
   "def:categorical-proton",
 ];

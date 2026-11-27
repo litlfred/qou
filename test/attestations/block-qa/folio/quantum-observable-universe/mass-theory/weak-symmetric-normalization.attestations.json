@@ -886,7 +886,7 @@
         "reviewed_at": "2026-11-21T02:47:40.016Z",
         "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
         "severity": "major",
-        "evidence": "The block is a proposition whose subject N_sym is defined as a Plancherel-weighted product at :1, yet :13 says the cell-content trace supersedes it and :17 records that the same symbol names a different quantity in conj:g-action-on-substrate. Three meanings of N_sym in the corpus; this block's own meaning is the polynomial only."
+        "evidence": "The block is a proposition whose subject N_sym is defined as a Plancherel-weighted product at :1, yet :13 says the cell-content trace supersedes it and :17 records that the same symbol names a different quantity in conj:g-action-on-aether. Three meanings of N_sym in the corpus; this block's own meaning is the polynomial only."
       }
     ],
     "da-empirical-fragility": [
@@ -2152,7 +2152,7 @@
         "reviewed_at": "2026-11-20T17:43:44.392Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "severity": "major",
-        "evidence": "uses[] contains conj:gram-determinant-plancherel-ratio, which folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md never mentions; conj:g-action-on-substrate is linked (:17) but not listed."
+        "evidence": "uses[] contains conj:gram-determinant-plancherel-ratio, which folio/quantum-observable-universe/mass-theory/weak-symmetric-normalization.md never mentions; conj:g-action-on-aether is linked (:17) but not listed."
       },
       {
         "field_hash": {
@@ -2169,7 +2169,7 @@
         },
         "reviewed_at": "2026-11-21T02:47:39.431Z",
         "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
-        "severity": "uses[] lists conj:gram-determinant-plancherel-ratio, prop:weak-spectral-completeness and conj:electroweak-higgs-torus-link-triplet; the .md also links conj:g-action-on-substrate only to disambiguate the symbol, which is not a logical dependency."
+        "severity": "uses[] lists conj:gram-determinant-plancherel-ratio, prop:weak-spectral-completeness and conj:electroweak-higgs-torus-link-triplet; the .md also links conj:g-action-on-aether only to disambiguate the symbol, which is not a logical dependency."
       }
     ],
     "da-arity-conflation": [

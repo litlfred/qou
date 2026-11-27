@@ -9,7 +9,7 @@ import Mathlib.Tactic.Ring
 # QOU.QuantumObservableUniverses.NSymHostStructure
 
 Structural facts bearing on the open composition rule of
-`conj:g-action-on-substrate` (does `𝒩_sym = tr_F(e_sym^EW · e_H)` compose
+`conj:g-action-on-aether` (does `𝒩_sym = tr_F(e_sym^EW · e_H)` compose
 the electroweak hosts by `⊗` or by `⊕`?).  Audit:
 `docs/audits/2026-11-20-nsym-host-corpus-route.md`.
 

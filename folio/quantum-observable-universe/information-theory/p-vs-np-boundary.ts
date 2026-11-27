@@ -22,7 +22,7 @@ export default conjecture({
     "prop:p-bandwidth-bound",
     "def:polynomial-observable-subcategory",
     "def:computational-boundary",
-    "rem:substrate-gm-torsion",
+    "rem:aether-gm-torsion",
   ],
   cites: ["cook1971", "freedman2003"],
 });

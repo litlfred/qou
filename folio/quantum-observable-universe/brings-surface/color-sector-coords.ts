@@ -11,7 +11,7 @@ export default definition({
   tags: ["archimedean-universe", "color-sectors", "colour-charge"],
   uses: [
     "def:exceptional-divisor",
-    "def:substrate-parameter",
+    "def:aether-parameter",
     "rem:chirality-trefoil",
   ],
   rendered: [

@@ -6,16 +6,16 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-substrate-radial-coordinate",
+  "@id": "papers/quantum-observable-universe/blocks/prf-aether-radial-coordinate",
   "@type": [
     "folio-assistant-sci:Proof",
     "doco:Section"
   ],
-  "label": "prf:substrate-radial-coordinate",
+  "label": "prf:aether-radial-coordinate",
   "kind": "proof",
   "title": "Proof of aether radial coordinate",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-substrate-radial-coordinate"
+    "papers/quantum-observable-universe/blocks/prop-aether-radial-coordinate"
   ],
   "text": "substrate-radial-coordinate-proof.md",
   "provenance": "authored"

@@ -19,7 +19,7 @@ export default remark({
   uses: [
     "rem:julia-set-reeb",
     "def:bundle-initial-conditions",
-    "prop:substrate-radial-coordinate",
+    "prop:aether-radial-coordinate",
     "rem:witt-lift-qou",
   ],
   cites: ["thooft2016"],

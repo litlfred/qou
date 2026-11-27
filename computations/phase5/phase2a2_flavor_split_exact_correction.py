@@ -242,7 +242,7 @@ def main():
         "ℏ_q = (q-1)/q is the substrate Planck constant. Identifies "
         "the coefficient c₄ and checks for rational structure."
     )
-    w.set_content_block("prop:flavor-split-substrate")
+    w.set_content_block("prop:flavor-split-aether")
     # Everything below is recorded as a decimal STRING: this witness carries no
     # raw float64 today and is absent from raw-float64-baseline.json, so adding
     # a bare float here would fail the audit as a NEW dirty witness.

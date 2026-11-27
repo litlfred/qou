@@ -46,7 +46,8 @@ import { proposition } from "../../schema/builders";
  * historical record of the empirical 5.6 ppm near-form.
  */
 export default proposition({
-  label: "prop:lambda-scale-substrate-form",
+  label: "prop:lambda-scale-aether-form",
+  renamedFrom: ["prop:lambda-scale-substrate-form"],
   lean: { ref: "qou:QOU.BraidsAndKnots.BraidKnot.lambdaA_qForm_eq_hForm" },
   title:
     "Borromean baryon $\\lambda_{\\text{scale}}$ empirical form $5/2 - h^2 \\cdot G$",

@@ -190,7 +190,7 @@ parent analysis), #1816 (per-knot Vol(β_K), Option A), #1569 (avg-crossing
 (`atomic-tr-m-mpfr-50dps`, `markov-peel-atomic-tr-m`, `cross-check-trM-1ppb`)
 are **stale color-blind** (2026-05-29, pre the bring_color_weighted flip);
 a color-weighted exact recompute differs by 1.8e-4 = the δ term. δ is an
-exact q-rational (= `prop:flavor-split-substrate` × ℏ_q³). The exact peel
+exact q-rational (= `prop:flavor-split-aether` × ℏ_q³). The exact peel
 path raises on nuclei (4-template classifier) and the fast LaurentQ path
 can't ingest the δ(q) element — both needed before peel can regen
 color-weighted. Audit:

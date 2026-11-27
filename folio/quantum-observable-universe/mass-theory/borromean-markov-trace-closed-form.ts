@@ -7,7 +7,7 @@ export default proposition({
   lean: { ref: "qou:BraidKnotOctonion.BorromeanMarkovTrace.borromean_markov_trace_closed_form" },
   uses: [
     "thm:jones-markov-trace",
-    "def:frobenius-hopf-substrate",
+    "def:frobenius-hopf-aether",
     // broken-ref removed (Phase 7): prop:borromean-vol-8G
   ],
   cites: [

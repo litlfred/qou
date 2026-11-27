@@ -34,11 +34,11 @@ Decisions made during editorial review sessions. Entries are append-only.
 | 6 | qou | `def:categorical-action` variational equations | Moved to `prop:variational-equations` + `rem:variational-archimedean` |
 | 7 | qou | `def:observation` archimedean explication | Moved to `rem:observation-archimedean` |
 | 8 | torsion | Yekutieli definition order | Reordered: lifting condition before characteristic classes |
-| 9 | qou | `rem:gr-substrate-geometry` defines S_q | Promoted to `def:q-yang-mills-levi` |
+| 9 | qou | `rem:gr-aether-geometry` defines S_q | Promoted to `def:q-yang-mills-levi` |
 | 10 | elab | `rem:vanishing-explication` + `rem:jet-bundle` overlap | Merged into single remark |
 | 11 | elab | `rem:q-harmonic-physical` duplicates `rem:reeb-physical` | Condensed to cross-reference |
 | 12 | qou | `rem:heisenberg-commutator` 3 sub-sections | Split into 3 remarks |
-| 13 | qou | `rem:c-substrate-via-levi` exponential discussion | Split to `rem:substrate-exponential` |
+| 13 | qou | `rem:c-aether-via-levi` exponential discussion | Split to `rem:substrate-exponential` |
 
 ### Labels preserved
 

@@ -232,7 +232,7 @@ def main():
         "for rational structure in the h-variable. Identifies the "
         "leading correction order and coefficient."
     )
-    w.set_content_block("prop:flavor-split-substrate")
+    w.set_content_block("prop:flavor-split-aether")
     w.add_data("delta_X", str(mp.nstr(delta_X, 20)))
     w.add_data("delta_X_ppm_of_X", str(mp.nstr(delta_X/X_current*1e6, 10)))
     w.add_data("best_correction", {

@@ -54,7 +54,7 @@ remark({
   label: "rem:crossing-energy-decomposition",
   interprets: "prop:crossing-energy-cosh-sinh",  // ← the formal statement
   title: "Crossing energy decomposes into strong and Coulomb channels",
-  uses: ["def:crossing-energy", "def:substrate-parameter"],
+  uses: ["def:crossing-energy", "def:aether-parameter"],
 });
 ```
 

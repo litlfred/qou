@@ -8,7 +8,7 @@ import Mathlib.CategoryTheory.Category.Basic
 The quantum vacuum as a self-dual Frobenius–Hopf algebra in a rigid
 monoidal category.
 
-LaTeX label: `def:frobenius-hopf-substrate`
+LaTeX label: `def:frobenius-hopf-aether`
 -/
 
 set_option autoImplicit false
@@ -27,7 +27,7 @@ universe u v
     Frobenius form, and a self-duality isomorphism `A ≅ A∨` induced
     by the non-degenerate Frobenius pairing.
 
-    LaTeX: `\label{def:frobenius-hopf-substrate}`
+    LaTeX: `\label{def:frobenius-hopf-aether}`
     Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
 structure FrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
     [MonoidalCategory C] [BraidedCategory C] where

@@ -5359,7 +5359,7 @@ new authoring should use `authorNotes` from the start.
 | adelic / motivic / Hahn substrate | **adelic / motivic / Hahn base ring** | a coefficient ring |
 | brane, brane tower, brane point, brane fluid | unchanged | always a *base* object; never a synonym for aether |
 
-New prose uses the new terms. Existing labels (`def:substrate-parameter`, …)
+New prose uses the new terms. Existing labels (`def:aether-parameter`, …)
 and Lean identifiers (`SubstrateParameter`, …) are renamed in phased PRs;
 Lean renames keep a `@[deprecated]` alias for the old name.
 

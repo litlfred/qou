@@ -18,7 +18,7 @@ export default remark({
     "rem:commutative-crossing-energy",
     "prop:categorical-coordinate-ring",
     "rem:laplace-fourier-wick-rotation",
-    "rem:complex-substrate-interpretation",
+    "rem:complex-aether-interpretation",
     "rem:i-as-braiding-orientation",
     "def:hyperelliptic-quintic",
     "prop:descartes-elliptic-curve",

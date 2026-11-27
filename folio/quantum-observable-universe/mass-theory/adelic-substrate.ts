@@ -1,7 +1,8 @@
 import { definition } from "../../schema/builders";
 
 export default definition({
-  label: "def:adelic-substrate",
+  label: "def:adelic-base-ring",
+  renamedFrom: ["def:adelic-substrate"],
   title: "Adelic base ring $\\mathbb{A}$",
   tags: ["adeles", "macroscopic-limit", "global", "non-archimedean"],
   uses: [],

@@ -27,7 +27,7 @@ Tests:
 ## Cross-references
 
 - merged PR #1650 Item 2 (H_2 NULL)
-- prop:flavor-split-substrate (X(q) baseline)
+- prop:flavor-split-aether (X(q) baseline)
 """
 from __future__ import annotations
 

@@ -42,7 +42,7 @@ numerator-only value with a flag.
 
 Cross-references:
   - `def:motivic-galois-character`
-  - `def:motivic-substrate`
+  - `def:motivic-base-ring`
   - `prop:motivic-perpetual-obstruction`
   - audit GAP 5b in `family-4-motivic-path.md`
 
@@ -527,7 +527,7 @@ def main() -> int:
         ),
         "reference_blocks": [
             "def:motivic-galois-character",
-            "def:motivic-substrate",
+            "def:motivic-base-ring",
             "prop:motivic-perpetual-obstruction",
         ],
         "input_witness": WITNESS_SYMBOLIC.name,

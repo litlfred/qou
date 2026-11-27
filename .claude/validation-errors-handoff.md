@@ -35,7 +35,7 @@ that the per-chapter validator can't resolve. Most common:
 | Referenced label | Defined in | Referenced from |
 |-----------------|-----------|----------------|
 | `def:quantum-observable-universe` | ch1 | ch3 (15×), ch4, ch5, ch6 |
-| `def:substrate-parameter` | ch1 | ch3 (4×), ch5, ch6, ch11 |
+| `def:aether-parameter` | ch1 | ch3 (4×), ch5, ch6, ch11 |
 | `def:projective-line-object` | ch1 | ch3 (5×), ch4 |
 | `def:c-quantum-observable-universe` | ch1 | ch3 (3×), ch5, ch6 |
 | `def:quantum-planck-constant` | ch1 | ch4, ch5, ch11 |

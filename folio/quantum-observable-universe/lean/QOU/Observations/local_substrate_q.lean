@@ -36,7 +36,7 @@ class LocalSubstrateQContext where
 
 In any sufficiently small neighbourhood `U ⊂ M` of the observable
 universe, the substrate parameter `q`
-([substrate parameter](#def:substrate-parameter)) agrees with its
+([substrate parameter](#def:aether-parameter)) agrees with its
 locally measured value within the measurement uncertainty:
 
   `|q − q_measured| ≤ Δq`.

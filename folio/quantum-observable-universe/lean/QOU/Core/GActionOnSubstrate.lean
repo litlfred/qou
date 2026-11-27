@@ -4,7 +4,7 @@ import Mathlib.Tactic
 # QOU.QuantumObservableUniverses.GActionOnSubstrate — conjecture carrier (content-bearing, no instance)
 
 **§3b-cond class axiomatisation** for content block
-[`conj:g-action-on-substrate`](../../../quantum-observable-universe/knots-particles-confinement/g-action-on-substrate.md): *Categorical $G = \\mathrm{SU}(2)_L \\times \\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate*.
+[`conj:g-action-on-aether`](../../../quantum-observable-universe/knots-particles-confinement/g-action-on-substrate.md): *Categorical $G = \\mathrm{SU}(2)_L \\times \\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate*.
 
 This is a **conjecture**, and the honest open state is a **content-bearing class
 with no instance** (AGENTS.md §3b-tax). `GActionOnSubstrate` carries the four axioms below — the conjecture's content, not a placeholder.
@@ -21,13 +21,13 @@ namespace QOU.QuantumObservableUniverses
 
 /-- Categorical $G = \\mathrm{SU}(2)_L \\times \\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate
 
-    Conjectural class — see [`conj:g-action-on-substrate`](../../../quantum-observable-universe/knots-particles-confinement/g-action-on-substrate.md). -/
+    Conjectural class — see [`conj:g-action-on-aether`](../../../quantum-observable-universe/knots-particles-confinement/g-action-on-substrate.md). -/
 class GActionOnSubstrate where
   -- Witness: computations/none
   /- **Conjecture statement** (from manuscript):
 
       Let $A$ be a Frobenius–Hopf substrate
-([substrate axioms](#def:frobenius-hopf-substrate)) in $\mathbf{C} =
+([substrate axioms](#def:frobenius-hopf-aether)) in $\mathbf{C} =
 \mathbf{Rep}(\mathrm{SU}_q(2))$. Then $A$ admits a unique
 $G$-equivariant structure for $G = \mathrm{SU}(2)_L \times
 \mathrm{U}(1)_Y$ compatible with the path-α torus-link identification

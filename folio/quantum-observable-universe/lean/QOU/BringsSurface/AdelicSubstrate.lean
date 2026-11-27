@@ -3,7 +3,7 @@ import Mathlib.Data.Real.Basic
 /-!
 # QOU.AlgebraicSubstrate.AdelicSubstrate — adelic substrate interface
 
-Formalizes `def:adelic-substrate`.
+Formalizes `def:adelic-base-ring`.
 
 The QOU framework's macroscopic substrate is the rational adele
 ring `𝔸_ℚ = ℝ × ∏'_p ℚ_p`: an archimedean place `ℝ` (the

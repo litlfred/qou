@@ -7,7 +7,7 @@ export default definition({
   lean: { ref: "qou:QOU.quantumPlanckConstant",
     validation: "leanok",
   },
-  uses: ["def:substrate-parameter"],
+  uses: ["def:aether-parameter"],
   authorNotes: [
     {
       kind: "note",

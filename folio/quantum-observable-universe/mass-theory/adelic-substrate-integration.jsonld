@@ -6,21 +6,21 @@
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/rem-adelic-substrate-integration",
+  "@id": "papers/quantum-observable-universe/blocks/rem-adelic-base-ring-integration",
   "@type": [
     "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "rem:adelic-substrate-integration",
+  "label": "rem:adelic-base-ring-integration",
   "kind": "remark",
   "title": "Motivation for the adelic base ring and Tate integration",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-adelic-substrate",
+    "papers/quantum-observable-universe/blocks/def-adelic-base-ring",
     "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor",
     "papers/quantum-observable-universe/blocks/def-algebraic-quantum-volume",
     "papers/quantum-observable-universe/blocks/def-classical-limit-functor"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/def-adelic-substrate",
+  "interprets": "papers/quantum-observable-universe/blocks/def-adelic-base-ring",
   "cites": [
     "references/tate1967"
   ],

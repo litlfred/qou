@@ -387,7 +387,7 @@ def main() -> int:
         ],
         "reference_blocks": [
             "def:motivic-galois-character",
-            "prop:flavor-split-substrate",
+            "prop:flavor-split-aether",
         ],
         "input_witness": WITNESS_IN.name,
         "max_mass_tested": MAX_MASS,

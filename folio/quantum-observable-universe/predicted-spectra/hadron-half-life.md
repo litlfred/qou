@@ -1,4 +1,4 @@
-A nucleus displaced from the valley of stability ([integer stability](#prop:integer-stability)) undergoes beta decay. The aether parameter $q$ ([aether parameter](#def:substrate-parameter)) governs the half-life via the $q$-deformed transition amplitude.
+A nucleus displaced from the valley of stability ([integer stability](#prop:integer-stability)) undergoes beta decay. The aether parameter $q$ ([aether parameter](#def:aether-parameter)) governs the half-life via the $q$-deformed transition amplitude.
 
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with aether parameter $q$, and let $\mathcal{N}(Z, N)$ ([stable nucleus](#def:stable-nucleus)) be a nucleus with proton displacement $\delta p = p - p_{\mathrm{stab}}(A)$ from the valley of stability. The beta-decay half-life is
 

@@ -13,7 +13,7 @@ import Mathlib.GroupTheory.OrderOfElement
 This file defines the Iwahori-Hecke algebra `IwahoriHecke W q` of a
 Coxeter system `(W, S)` over a commutative ring `R` with parameter
 `q : R`. It is the keystone infrastructure for closing 5 Tier-B
-source-node conjectures (`conj:hecke-anyonic-substrate`,
+source-node conjectures (`conj:hecke-anyonic-aether`,
 `conj:reverse-limit-q-to-infinity`,
 `conj:gs-graded-markov-trace-existence`,
 `conj:hoefsmit-ew-cell-content`, `conj:crystal-graph-realization`)
@@ -54,7 +54,7 @@ Remaining `sorry`s in this file:
   via `CoxeterSystem` once Mathlib's accessor stabilises).
 
 Sprints 2-5 (each its own PR per the infra plan):
-- Sprint 2: reduced-expression `T_w` basis (closes `conj:hecke-anyonic-substrate`)
+- Sprint 2: reduced-expression `T_w` basis (closes `conj:hecke-anyonic-aether`)
 - Sprint 3: Type-A specialisation (closes `conj:reverse-limit-q-to-infinity`)
 - Sprint 4: Markov trace (closes `conj:gs-graded-markov-trace-existence`)
 - Sprint 5: Hoefsmit seminormal basis (closes `conj:hoefsmit-ew-cell-content`
@@ -205,7 +205,7 @@ theorem isUnit_T (hq : IsUnit q) (s : S) : IsUnit (T q s) :=
 
 | Sprint | New API | Closes |
 |---:|------|------|
-| 2 | `Tw : W → IwahoriHecke W R q` (reduced-expression-based) | `conj:hecke-anyonic-substrate` |
+| 2 | `Tw : W → IwahoriHecke W R q` (reduced-expression-based) | `conj:hecke-anyonic-aether` |
 | 3 | `IwahoriHeckeOfSn n q` + concrete-strand `σi` API | `conj:reverse-limit-q-to-infinity` |
 | 4 | `markovTrace : IwahoriHeckeOfSn n q →+ R` | `conj:gs-graded-markov-trace-existence` |
 | 5 | `hoefsmitBasis : SYT λ → IwahoriHeckeOfSn n q` | `conj:hoefsmit-ew-cell-content` + upgrades §3b-cond |

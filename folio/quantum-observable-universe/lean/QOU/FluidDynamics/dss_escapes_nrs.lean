@@ -23,7 +23,7 @@ In Leray's similarity variables the profile is a function `U = U(s)` of
 * **discretely self-similar (DSS)** — `U` is `s`-*periodic* with some period
   `P > 0` (`P = 2 log λ` for the scaling factor `λ > 1`; no value of `P` is
   fixed, and in particular it is not tied to the root-of-unity ladder
-  `q_κ = exp(iπ/κ)`, which `def:substrate-parameter` excludes — see
+  `q_κ = exp(iπ/κ)`, which `def:aether-parameter` excludes — see
   `QOU.FluidDynamics.DSSObstructions.qKappa_is_root_of_unity`).
 
 Nečas–Růžička–Šverák (Acta Math. 176, 1996) exclude the *steady* finite-energy

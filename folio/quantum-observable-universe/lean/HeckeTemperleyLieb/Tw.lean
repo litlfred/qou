@@ -12,7 +12,7 @@ theorem hecke_anyonic_substrate_structural :
     Nonempty (HeckeAnyonicSubstrate R q S) := ⟨inferInstance⟩
 ```
 
-under the docstring *"**Discharge of `conj:hecke-anyonic-substrate`** … The conjecture's
+under the docstring *"**Discharge of `conj:hecke-anyonic-aether`** … The conjecture's
 claim … is now sorry-free at the algebra-existence level."* **That discharge was empty and
 has been removed.** Four separate defects, each sufficient on its own:
 
@@ -27,8 +27,8 @@ has been removed.** Four separate defects, each sufficient on its own:
    conjecture.
 3. **It contradicted the canonical carrier.**
    `QOU.BraidKnot.HeckeAnyonicSubstrate` — the class the content block
-   `conj:hecke-anyonic-substrate` actually points at — is content-bearing and carries **no
-   instance**, stating in its own docstring that *"`conj:hecke-anyonic-substrate` is
+   `conj:hecke-anyonic-aether` actually points at — is content-bearing and carries **no
+   instance**, stating in its own docstring that *"`conj:hecke-anyonic-aether` is
    open"*. Two files in one tree, one declaring the conjecture open and the other
    declaring it discharged. They also **shared the class name**, so bare
    `HeckeAnyonicSubstrate` resolved to different objects depending on the open namespace —

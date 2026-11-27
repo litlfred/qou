@@ -4,7 +4,8 @@ export default proposition({
   authorNotes: [
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
   ],
-  label: "prop:local-substrate-q",
+  label: "prop:local-aether-q",
+  renamedFrom: ["prop:local-substrate-q"],
   lean: { ref: "qou:QOU.Experimental.LocalSubstrateQ",
     validation: "not_checked",
   },
@@ -18,7 +19,7 @@ export default proposition({
     "rem:mass-comparison-table",
     "rem:w-boson-mass-discrepancy",
   ],
-  proofs: ["prf:local-substrate-q"],
+  proofs: ["prf:local-aether-q"],
   computation: {
     engine: "mpmath",
     script: "computations/q_pinning_50_digit.py",

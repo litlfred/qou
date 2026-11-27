@@ -17,7 +17,7 @@ substrate over `ℚ(q₀)`.  See
 for the precise outstanding mathematical work.
 
 Ref: [tate1967]
-LaTeX label: scoping for `def:motivic-substrate`
+LaTeX label: scoping for `def:motivic-base-ring`
 -/
 
 namespace QOU.AlgebraicSubstrate

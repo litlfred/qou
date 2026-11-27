@@ -13,10 +13,10 @@ mass splitting:
             + O((Δm/M_N)²)
 ```
 
-This is the categorical lift of `conj:flavor-split-substrate-mass` to
+This is the categorical lift of `conj:flavor-split-aether-mass` to
 the level of the flavor-dressing functor.
 
-LaTeX: `\label{prop:flavor-dressed-mass-from-substrate-split}`
+LaTeX: `\label{prop:flavor-dressed-mass-from-aether-split}`
 -/
 
 namespace QOU.FlavorDressing
@@ -58,7 +58,7 @@ def PairSkeinNucleonSplit (F : FlavorDressingFunctor) (m_p m_n q : ℝ) : Prop :
     = (q + q⁻¹) * (F.μ Flavor.down - F.μ Flavor.up)
 
 /-- **Dressed-quark mass splitting, conditional on
-    `conj:flavor-split-substrate-mass`** (§3b-cond).
+    `conj:flavor-split-aether-mass`** (§3b-cond).
 
     From the conjecture `[FlavorSplitSubstrateMass m_p m_n q]` and the
     nucleon form of the pair Skein mass formula, the down–up dressed-mass

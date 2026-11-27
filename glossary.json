@@ -60,7 +60,7 @@
       "narrative_term": "{Color sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$}",
       "lean_name": "QOU.DescartesUniverse.ColorSectorCoords",
       "kind": "def",
-      "narrative_definition": "With notation as in hyperref[def:exceptional-divisor]exceptional divisor, fix the substrate parameter q (hyperref[def:substrate-parameter]substrate parameter) and set phi in [0,pi], psi in [0, 2pi/3].  Define the , , and  sector embeddings by   (phi,psi) &=  O + Rbigl(sinphi bigl(cos(psi + qphi) T_1 + sin(psi + qphi) T_2bigr) - cosphi Nbigr), (phi,psi) &=  !bigl(phi,psi + 3bigr), (phi,psi) &=  !bigl(phi,psi + 3bigr).   The  qphi -- so named because the resulting geometry is a weave of ",
+      "narrative_definition": "With notation as in hyperref[def:exceptional-divisor]exceptional divisor, fix the substrate parameter q (hyperref[def:aether-parameter]substrate parameter) and set phi in [0,pi], psi in [0, 2pi/3].  Define the , , and  sector embeddings by   (phi,psi) &=  O + Rbigl(sinphi bigl(cos(psi + qphi) T_1 + sin(psi + qphi) T_2bigr) - cosphi Nbigr), (phi,psi) &=  !bigl(phi,psi + 3bigr), (phi,psi) &=  !bigl(phi,psi + 3bigr).   The  qphi -- so named because the resulting geometry is a weave of ",
       "latex_label": "def:color-sector-coords",
       "chapter": 6
     },

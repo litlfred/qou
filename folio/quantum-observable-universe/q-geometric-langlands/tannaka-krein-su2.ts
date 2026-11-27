@@ -8,8 +8,8 @@ export default example({
   tags: ["su2", "tannaka-krein", "constructive", "reconstruction"],
   uses: [
     "conj:tannaka-krein-isomorphism",
-    "ex:substrate-parameter-su2",
-    "ex:substrate-parameter-brings",
+    "ex:aether-parameter-su2",
+    "ex:aether-parameter-brings",
     "ex:categorical-reeb-brings",
   ],
 });

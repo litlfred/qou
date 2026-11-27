@@ -6,19 +6,19 @@
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/rem-c-substrate-via-levi",
+  "@id": "papers/quantum-observable-universe/blocks/rem-c-aether-via-levi",
   "@type": [
     "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "rem:c-substrate-via-levi",
+  "label": "rem:c-aether-via-levi",
   "kind": "remark",
   "title": "Archimedean aether via the Levi form",
   "uses": [
     "papers/quantum-observable-universe/blocks/ex-instanton",
     "papers/quantum-observable-universe/blocks/ex-self-dual-curvature"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "interprets": "papers/quantum-observable-universe/blocks/def-aether-parameter",
   "tags": [
     "substrate",
     "levi-form",

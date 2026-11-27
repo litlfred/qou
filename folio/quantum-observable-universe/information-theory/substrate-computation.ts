@@ -2,7 +2,8 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   interprets: "prop:toffoli-transfer-matrix",
-  label: "rem:substrate-computation",
+  label: "rem:aether-computation",
+  renamedFrom: ["rem:substrate-computation"],
   title: "Aether-independence of computation",
   tags: [
     "computation",

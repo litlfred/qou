@@ -15,7 +15,7 @@ This probe tests candidate forms for the standard-channel addition.
 ## Cross-references
 
 - PR #1654 Item A (mn_flavor_split_h3_plancherel.py)
-- prop:flavor-split-substrate
+- prop:flavor-split-aether
 """
 from __future__ import annotations
 

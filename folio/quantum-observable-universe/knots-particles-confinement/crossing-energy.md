@@ -10,7 +10,7 @@ $$
   \end{cases}
 $$
 
-where $q$ is the aether parameter ([aether parameter](#def:substrate-parameter)). The sign convention follows the Skein relation
+where $q$ is the aether parameter ([aether parameter](#def:aether-parameter)). The sign convention follows the Skein relation
 
 $$
   q\,L_+ - q^{-1} L_-

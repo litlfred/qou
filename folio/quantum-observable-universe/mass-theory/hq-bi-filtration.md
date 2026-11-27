@@ -1,5 +1,5 @@
 *Let $\mathcal{H}_q$ be the aether convolution Hopf algebra
-([Frobenius–Hopf aether](#def:frobenius-hopf-substrate)),
+([Frobenius–Hopf aether](#def:frobenius-hopf-aether)),
 filtered by iterated-integral depth
 $G^{(0)} \subseteq G^{(1)} \subseteq \cdots$.
 For each Bring-embeddable knot/link $K$ ([Bring-embeddable

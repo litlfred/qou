@@ -216,7 +216,7 @@ theorem hecke_not_splits_at_neg_one {R : Type u} [CommRing R] [Nontrivial R]
     No hypothesis beyond `q = -1`: nontriviality of `R_q` is supplied by
     instance search, so this is a statement about the actual ground ring rather
     than about some ring that might be trivial. It is still a statement about
-    normalisation A at a root of unity, which `def:substrate-parameter` excludes
+    normalisation A at a root of unity, which `def:aether-parameter` excludes
     — not about any `q` a QOU admits. -/
 theorem groundRing_not_splits_at_neg_one (q : QOU.GroundRing.R_q) (hq : q = -1) :
     ¬ Splits q (-1) (1 : QOU.GroundRing.R_q) :=

@@ -7,7 +7,7 @@ The substrate parameter `q ∈ End(𝟙)` of a QOU is uniquely
 determined by the braiding spectrum and the positivity of the
 induced dagger.
 
-LaTeX: `\label{thm:substrate-parameter-unique}`
+LaTeX: `\label{thm:aether-parameter-unique}`
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]`. The uniqueness statement is
 that any two `SubstrateParameter` records for the same base QOU

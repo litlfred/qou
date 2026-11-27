@@ -15,7 +15,7 @@ file-local three-field carrier — object, multiplication, unit — inlined
 so the derivation block elaborates without an inter-sibling import.  It
 is **not** the Frobenius–Hopf substrate, which is the eight-field
 `FrobeniusHopfSubstrate` of `frobenius-hopf-substrate.lean`
-(`def:frobenius-hopf-substrate`) and carries eleven laws this one does
+(`def:frobenius-hopf-aether`) and carries eleven laws this one does
 not, the two antipode axioms among them.
 
 "Keep the two in sync" is what this note used to say, and it is

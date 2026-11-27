@@ -15,7 +15,7 @@ export default proposition({
     ref: "qou:QOU.MassTheory.Archimedean.BarApplyTransfer.bar_apply_transfer",
     validation: "not_checked",
   },
-  uses: ["prop:bar-t-duality-substrate"],
+  uses: ["prop:bar-t-duality-aether"],
   authorNotes: [
     {
       kind: "note",
