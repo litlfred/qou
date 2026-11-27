@@ -1,5 +1,5 @@
 import MathlibExt.ClausenFunctionMathlibFiller
-import QOU.MassTheory.HyperbolicVolumeTranscendence
+import QOU.Transcendental.MassTheory.HyperbolicVolumeTranscendence
 
 /-!
 # QOU.Archimedean.CatalanClausenBridge — the two Catalan definitions agree

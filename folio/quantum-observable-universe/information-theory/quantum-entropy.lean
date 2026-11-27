@@ -37,7 +37,7 @@ abbrev R_q := LaurentPolynomial ℤ
     flux value `entropyFlux`, which downstream surface-independence
     lemmas constrain. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1090/memo/1032
-def quantumEntropy {M : Type*} (sp : SubstrateParameter M)
+def quantumEntropy {M : Type*} (sp : AetherParameter M)
     (U : Set M) (entropyFlux : Set M → R_q) : R_q :=
   - entropyFlux U
 
@@ -46,7 +46,7 @@ def quantumEntropy {M : Type*} (sp : SubstrateParameter M)
     quantum entropy agrees on them. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1090/memo/1032
 theorem quantumEntropy_surface_independent {M : Type*}
-    (sp : SubstrateParameter M) (U V : Set M)
+    (sp : AetherParameter M) (U V : Set M)
     (entropyFlux : Set M → R_q)
     (hflux : entropyFlux U = entropyFlux V) :
     quantumEntropy sp U entropyFlux = quantumEntropy sp V entropyFlux := by

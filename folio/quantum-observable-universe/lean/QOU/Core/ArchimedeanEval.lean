@@ -51,8 +51,8 @@ exists, `eval` is a hypothesis, and it is labelled as one.
 
 Bean `qou-mt7r` warns that whatever τ gets introduced "should be the one
 `qou-mt7r` needs, not a second parallel mechanism", and `qou-6ome` left the
-same debt on the other side of the corpus: `SubstrateParameter` (categorical,
-`M → R_q`) and `ArchimedeanSubstrateField` (`M → ℝ`) are also untied.
+same debt on the other side of the corpus: `AetherParameter` (categorical,
+`M → R_q`) and `ArchimedeanAetherField` (`M → ℝ`) are also untied.
 
 They are the same need, and the shared mechanism is not a new abstraction — it
 is `RingHom _ ℝ`, which Mathlib already has. `ArchimedeanEval` invents nothing;

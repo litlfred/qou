@@ -473,3 +473,141 @@ Lean: `RationalAssociator/GRTFlow.lean`, no `sorry`, axioms `propext`, `Classica
 - **(A)** top-defect additivity: error-carrying copies of `comp_inv512`, `comp_tcompat`,
   `pentagon_act_U4` and `hexagon_act_U4_universal`. Not attempted; it is the bulk.
 - The congruence `Φ ∘ g ≡ Φ + y` (§9.2) is still not in Lean.
+
+## 12. Stage 4 closed: `Exp(xy) ∈ GRT₁` for `y ∈ grt`, with the bound `N ≤ K`
+
+Lean: `RationalAssociator/GRTValued.lean` and `RationalAssociator/GRTFlowExact.lean`. Neither has a
+`sorry`. Checked with `lean -DautoImplicit=false -s 65536`, exit 0. `#print axioms` gives
+`propext`, `Classical.choice` and `Quot.sound` for `grt1U4_expPoly`, `hdouble_of_le` and
+`grt1U4_expPoly_via_doubling`; the check ran in a scratch copy.
+
+**Result.** `grt1U4_expPoly (hy : GrtU4 N y) (hK : 2 ≤ K) (hNK : N ≤ K) (x : ℚ) :
+GRT1U4 N (expPoly (x • y) K)` holds unconditionally. `hdouble_of_le` proves the hypothesis
+`hdouble` of `grt1U4_expPoly_of_doubling` under the same bounds, so the §11 statement is also
+closed through its own route (`grt1U4_expPoly_via_doubling`).
+
+**The extra hypothesis `N ≤ K` is needed.** With only `2 ≤ K`, `expPoly (x•y) K` is a truncation
+of the exponential, not the exponential. Example: take `K = 2`, so `G = 1 + xy`. Then `(5.12)`
+fails at order `x²`, because of the term `y(a,b)·y(b,a)`. This argument was worked by hand and is
+**not machine-checked**. With `K ≥ N`, every term `e_k(a,b)` with `k ≥ K` already vanishes in
+`U4 N`, since it lies in `Fil N k` (`eval_expTerm_eq_zero`). So the truncation is exact.
+
+**Route: an exact flow in dual numbers, not doubling.** Neither (P) nor (A) of §10–§11 was proved.
+The proof goes around both.
+
+- Work in `D = DualNumber (U4 N)`. `Hh y a b = 1 + ε·y(a,b)` is a unit, by (5.17).
+- **The flow identity** `evD_EP`: evaluating `Exp(xy)` at `x + ε` equals `actEval` of `Exp(xy)` by
+  `Hh`. Its inputs:
+  - the Leibniz chain rule;
+  - `L_y(e_k) = (k+1) e_{k+1}`;
+  - the exactness `e_K = 0` from `N ≤ K`.
+
+  This identity is the exact replacement for (P).
+- **Value-function action theorems** (`GRTValued.lean`). These are the action theorems of §4–§8,
+  restated for a value function `γ` and a defect, not for a single element:
+  - `inv_actV`;
+  - `tc_actV`;
+  - `hexagon_actV`;
+  - `pentagon_actV`, with `far_of_tcompatV` and `transported_dk4V`.
+
+  Each one shows that a defect of `φ ∘ γ` equals a unit times the same defect of `φ` at a
+  transported family. They replace (A): additivity is never needed, because the identity is exact.
+- **The `GoodAt` filtration.** `GoodAt d z` means `fst z ∈ Fil d` and `snd z ∈ Fil (d+1)`.
+  `goodAt_liftD` says that an algebra map `U4 N → D` with generator values `GoodAt 1` sends `Fil d`
+  into `GoodAt d`. The theorems `goodAt_inv`, `goodAt_tc`, `goodAt_hex` and `goodAt_pent` then
+  show: if a defect at `x` lies in `Fil d`, the defect at `x + ε` is `GoodAt d`.
+- **The induction** `evq_eq_zero_of_flow`. The `ε`-part of the defect at `x + ε` is
+  `Σ_j j x^{j−1} P_j`. If it lies in `Fil (d+1)` for every `x`, then every `P_j ∈ Fil (d+1)`,
+  using `P_0 = 0` (`coeff_zero_defectPoly`). Hence `P ∈ Fil N = 0`.
+- **Transfer.** The universal defects are carried to arbitrary pairs and `DK3` triples by
+  `liftU3`, the lift extended by zeros.
+
+**Still open.**
+- Nothing in the `hdouble` / Stage-4 item.
+- The congruence `Φ ∘ g ≡ Φ + y` (§9.2) is still not in Lean.
+- Matching the polynomial form of `GrtU4`'s t-compatibility to Drinfeld's (5.19) is still a paper
+  step, as stated in §11.
+
+## 13. The induction step: what is proved, and what still blocks it
+
+Lean: `RationalAssociator/AssociatorInduction.lean`. No `sorry`. Checked with
+`lean -DautoImplicit=false -s 65536`, exit 0. `#print axioms` gives `propext`, `Classical.choice`
+and `Quot.sound` for every theorem named below; the check ran in a scratch copy inside the tree,
+since deleted.
+
+**1. The congruence `Φ ∘ g ≡ Φ + y` (§9.2), proved.**
+
+- `compPoly_congr`: if `ε(Φ) = 1`, `y ∈ FF n` and `g − 1 − y ∈ FF (n+1)`, then
+  `compPoly Φ g − (Φ + y) ∈ FF (n+1)`. No hypothesis on `n`.
+- `expPoly_congr`: for `y ∈ FF n`, `n ≥ 1`, `K ≥ 2`, `Exp(y) − 1 − y ∈ FF (n+1)`. It uses the
+  sharper bound `expTerm y k ∈ FF (k·n)` (`expTerm_mem_FF_mul`).
+- `compPoly_expPoly_congr` combines the two.
+
+**2. The `GRT₁(ℚ)` shift of an associator in `U4 N`, proved.**
+
+- `AssocU4 N E Φ`: constant term `1`, (5.12) on `Fil N 1`, the hexagon with exponential `E` at the
+  universal three-strand family, the pentagon at the universal four-strand family.
+- `assocU4_compPoly`: `GRT1U4 N g` and `AssocU4 N E Φ` give `AssocU4 N E (compPoly Φ g)`.
+- `assocU4_shift`: for `GrtU4 N y`, `y ∈ FF n`, `n ≥ 1`, `2 ≤ K`, `N ≤ K`, the element
+  `Φ ∘ Exp(y)` is again an associator in `U4 N`, and it is `≡ Φ + y (mod FF (n+1))`.
+
+**3. The descent step, proved conditional on a named hypothesis.**
+
+- `assocU4_add_iff`: for `ε(Φ) = ε(E) = 1`, `d ≥ 1`, `x ∈ FF d`, the element `Φ + x` is an
+  associator in `U4 (d+1)` iff `assocLin x = −assocDefect Φ`. `assocLin` is (5.17), (5.18), (5.20)
+  in `U4 (d+1)`; `assocDefect Φ` is the vector of defects of `Φ` there. The proof is
+  `Linearization.lean` with `I = Fil 1`, `J = Fil d`.
+- `SolvableOver K d E Φ` (named hypothesis): the base change to `K` of this system has a
+  solution.
+- `exists_rational_lift`: `SolvableOver K d E Φ` for some nontrivial `ℚ`-algebra `K` gives
+  `x ∈ FF d` with `Φ + x` an associator in `U4 (d+1)`. Proof: `exists_of_baseChange`.
+- `solvableOver_of_lift`: conversely, such a rational `x` gives `SolvableOver K d E Φ` for every
+  `K`. So the hypothesis is exactly what the step needs, not a stronger assumption.
+
+So "associator mod degree `d` over `ℚ` ⟹ associator mod degree `d+1` over `ℚ`" is proved, under
+`SolvableOver K d E Φ`. It does not use that `Φ` is an associator mod `d`, because the hypothesis
+already contains that information.
+
+**4. (5.19), proved on zero-sum triples.**
+
+- `lin514_iff_drinfeld519`: on a triple `(u, v, w)` with `u + v + w = 0`, given (5.17) at
+  `(v, w)` and `(u, w)`, the `lin514` field of `GrtU4` is Drinfeld's (5.19) at
+  `(A, B, C) = (w, v, u)`.
+- `drinfeld519_of_grtU4`: `GrtU4 N y` gives (5.19) at every pair `A, B ∈ Fil N 1`, with
+  `C = −A − B`.
+- `lin514_of_drinfeld519`: (5.17) and (5.19) give `lin514` at every zero-sum triple of `Fil N 1`.
+- Not covered: `lin514` at a `DK3` triple whose central sum `c = u + v + w` is nonzero. Matching
+  it to (5.19) needs `y(a + c, b) = y(a, b)` for central `c`. That holds for Lie elements, and
+  `GrtU4` does not ask that `y` be Lie.
+
+**What blocks the full induction.** The hypothesis `SolvableOver K d E Φ` holds when `Φ` is the
+truncation of a `K`-associator. Drinfeld's argument (Prop. 5.8) keeps that true from one degree
+to the next. It shifts the `K`-associator `Φ_K` by `Exp(y)` with `y = ψ − (Φ_K)_d`, where `ψ` is
+the rational solution. Item 2 does this shift, but only over `ℚ`. Three things are missing over `K`:
+
+- **(B1) Coefficients in `K`.** `eval`, `U4`, `Fil`, `GrtU4`, `GRT1U4`, `expPoly` and every
+  action theorem are stated for `FreeAlgebra ℚ (Fin 2)`. Here `y` has coefficients in `K`.
+  - One way round: write `y = Σ cᵢ yᵢ` with `yᵢ ∈ grt(ℚ)`, `cᵢ ∈ K`. Then `defectPoly yᵢ K i`
+    vanishes at every `x ∈ ℚ`, so it is the zero polynomial, and it can be evaluated at
+    `cᵢ ∈ K`.
+  - This still needs every evaluation and action theorem in `K ⊗[ℚ] U4 N`. That is not written.
+- **(B2) The linearised (5.14) for `y`.** `y` satisfies the linearised (5.12), (5.13) and (5.15),
+  because both `ψ` and `(Φ_K)_d` solve the same linear system. `GrtU4` also asks for `lin514`.
+  - Drinfeld's Prop. 5.7 gives it, but only for Lie `y`. Its proof needs the symmetric-Lie-
+    polynomial lemma (`s(B, C)` symmetric with (5.24) forces `s = 0`).
+  - The repository has no Lie or group-like structure on associators.
+- **(B3) Homogeneity.** The linearised conditions on `y` hold in `U4 (d+1)`, but `assocU4_shift`
+  needs them in `U4 M` for every `M`. For homogeneous `y` of degree `d` this follows if the
+  degree-`d` part of `U4 M` maps isomorphically to that of `U4 (d+1)`. There is no grading on
+  `U4` in Lean.
+
+There is also a missing bridge (B0): a `K`-associator `Φ_K ≡ Φ (mod FF d)` gives
+`SolvableOver K d E Φ`. This is the linearisation lemma applied in `K ⊗[ℚ] U4 (d+1)`, and it is
+not written either. So the named hypothesis is the base-changed linear system, and is stated as
+that. It is not literally "a `K`-associator exists".
+
+**Order for the next agent.** (B0) and (B1) are the same piece of work: base change of `eval`,
+`Fil` and the four action theorems to `K ⊗[ℚ] U4 N`. Then (B3), then (B2). (B2) is the
+mathematically substantive one.
+
+**Still open (bean `qou-3fdg`).** (B0)–(B3). Nothing else in Stage 4 is open.

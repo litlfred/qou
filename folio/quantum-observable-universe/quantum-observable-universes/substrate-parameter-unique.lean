@@ -1,4 +1,4 @@
-import QOU.Core.SubstrateParameter
+import QOU.Core.AetherParameter
 
 /-!
 # Uniqueness of the substrate parameter
@@ -10,14 +10,14 @@ induced dagger.
 LaTeX: `\label{thm:aether-parameter-unique}`
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]`. The uniqueness statement is
-that any two `SubstrateParameter` records for the same base QOU
+that any two `AetherParameter` records for the same base QOU
 agree on their underlying field of $q$-values.
 -/
 
 namespace QOU
-namespace SubstrateParameter
+namespace AetherParameter
 
-/-- Witness that two `SubstrateParameter` instances arise from the
+/-- Witness that two `AetherParameter` instances arise from the
     same underlying QOU.  The narrative content of this predicate is
     "shared braiding $c_{V,V}$ + shared Hecke relation + shared
     positive-definite dagger" — exactly the data that, per Ch 2,
@@ -27,7 +27,7 @@ namespace SubstrateParameter
     *definition* of `SameQouOrigin`.  Once Ch 2's axioms land, this
     def will be promoted to a theorem deriving field equality from
     a richer same-QOU witness. -/
-def SameQouOrigin {M : Type*} (sp₁ sp₂ : SubstrateParameter M) : Prop :=
+def SameQouOrigin {M : Type*} (sp₁ sp₂ : AetherParameter M) : Prop :=
   sp₁.field = sp₂.field
 
 /-- Uniqueness of the substrate parameter (conditional on shared QOU
@@ -55,11 +55,11 @@ Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
      with the positivity constraint from the QOU dagger structure.
 -/
 theorem unique {M : Type*}
-    (sp₁ sp₂ : SubstrateParameter M)
+    (sp₁ sp₂ : AetherParameter M)
     (h_same_qou : SameQouOrigin sp₁ sp₂) :
     sp₁.field = sp₂.field :=
   -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
   h_same_qou
 
-end SubstrateParameter
+end AetherParameter
 end QOU

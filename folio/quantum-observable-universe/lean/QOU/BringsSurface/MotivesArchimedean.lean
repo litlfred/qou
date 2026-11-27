@@ -126,7 +126,7 @@ def FibreFunctor.archRestriction {C : Type*} [Category C] {Arch : ArchimedeanCat
     substrate is, in this formalization, applied as the
     real-valued post-processing map `archPostProc : ℝ → ℝ` on the
     Euler characteristic (cast to `ℝ`); the full adelic-carrier
-    target lives in `QOU.AlgebraicSubstrate.AdelicSubstrate`.
+    target lives in `QOU.AlgebraicSubstrate.AdelicBaseRing`.
     On QOU motivic data this composite agrees with `τ_arch`
     (`prop:vol-through-tau`). -/
 structure ArchimedeanRealizationFunctor where

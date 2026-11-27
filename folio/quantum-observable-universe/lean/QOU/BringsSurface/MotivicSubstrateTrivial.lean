@@ -1,9 +1,9 @@
-import QOU.BringsSurface.MotivicSubstrate
+import QOU.BringsSurface.MotivicBaseRing
 
 /-!
-# Trivial witness for `MotivicSubstrate`
+# Trivial witness for `MotivicBaseRing`
 
-A minimal `MotivicSubstrate ℤ ℤ trivialTarget` instance, where every
+A minimal `MotivicBaseRing ℤ ℤ trivialTarget` instance, where every
 realisation target is just `ℤ` and every field is the obvious choice.
 The instance witnesses **inhabitability** of the class — guarding
 against accidental over-constraint — but is **not** the QOU substrate
@@ -11,7 +11,7 @@ at `q₀`.
 
 The principal open item (GAP 6a in the
 [2026-05-02 forward-derivation audit](../../../../../docs/audits/2026-05-02-forward-derivation-pre-archimedean.md))
-is to produce a concrete `MotivicSubstrate` for the QOU motivic
+is to produce a concrete `MotivicBaseRing` for the QOU motivic
 substrate over `ℚ(q₀)`.  See
 [2026-05-04 GAP 6a + 18a scoping](../../../../../docs/audits/2026-05-04-gap-6a-18a-scoping.md)
 for the precise outstanding mathematical work.
@@ -36,7 +36,7 @@ instance inst_comm_ring_trivial_target : ∀ v, CommRing (trivialTarget v) :=
     pick the actual class of `𝔸¹` in `K₀(Var_k)`. -/
 -- Ref: [tate1967]
 instance trivial_motivic_substrate :
-    MotivicSubstrate ℤ ℤ trivialTarget where
+    MotivicBaseRing ℤ ℤ trivialTarget where
   lefschetz := 1
   inclusion := RingHom.id ℤ
   lefschetz_invertible := by

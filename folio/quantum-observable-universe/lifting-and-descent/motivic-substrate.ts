@@ -16,7 +16,7 @@ export default definition({
   uses: ["def:frobenius-hopf-aether", "def:adelic-base-ring"],
   cites: ["kontsevich1995", "denef-loeser2001", "tate1967"],
   lean: {
-    ref: "qou:QOU.BringsSurface.MotivicSubstrate",
+    ref: "qou:QOU.BringsSurface.MotivicBaseRing",
     validation: "not_checked",
   },
   authorNotes: [
@@ -24,12 +24,12 @@ export default definition({
     {
       kind: "note",
       body:
-        "Lean: the substrate is axiomatised as a `class MotivicSubstrate` " +
+        "Lean: the substrate is axiomatised as a `class MotivicBaseRing` " +
         "(AGENTS.md §3b) whose fields encode $K_0(\\mathrm{Var}_k)$, " +
         "$\\mathbb{L}$, the localization $\\widehat{\\mathcal{M}}$, and the " +
         "realization functors; the `sorry` in any concrete instance is the " +
         "substrate axiom (not a missing proof), and downstream results take " +
-        "a `[MotivicSubstrate]` instance as an explicit hypothesis.",
+        "a `[MotivicBaseRing]` instance as an explicit hypothesis.",
     },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([motivic mass measure](#def:motivic-mass-measure))" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): One assigns one realization functor per place $v$ of $\\mathbb{Q}$ ([adelic substrate](#def:adelic-base-ring))." },

@@ -7,10 +7,10 @@ import QOU.BringsSurface.TwoFiltrationBridgeGeneral
 import QOU.BringsSurface.TwoFiltrationBridgeSmallCases
 import QOU.BringsSurface.JointGaloisBraidFigure8
 import QOU.BringsSurface.JointGaloisBraidDischarged
-import QOU.BringsSurface.AdelicSubstrate
-import QOU.BringsSurface.MotivicSubstrate
+import QOU.BringsSurface.AdelicBaseRing
+import QOU.BringsSurface.MotivicBaseRing
 -- `MotivicSubstrateTrivial` deliberately NOT aggregated here:
--- the trivial `MotivicSubstrate ℤ ℤ trivialTarget` instance
+-- the trivial `MotivicBaseRing ℤ ℤ trivialTarget` instance
 -- would otherwise pollute typeclass search anywhere
 -- `QOU.AlgebraicSubstrate` (and thus `QOU`) is imported.
 -- Modules that need the witness must opt in explicitly with
@@ -30,7 +30,7 @@ import QOU.BringsSurface.WignerAxiom
 
 Aggregator module for the algebraic-substrate chapter:
 
-- **Adelic substrate** (`AdelicSubstrate.lean`) — the rational adele
+- **Adelic substrate** (`AdelicBaseRing.lean`) — the rational adele
   ring `𝔸_ℚ` interface used for Tate-thesis factorisations.
 - **Reeb infinitesimal** (`ReebEpsilon.lean`) — the categorical
   primitive `ε = d/dt|_{t=0} Φ_t` of the Reeb flow.

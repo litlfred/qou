@@ -4,7 +4,7 @@ export default definition({
   label: "def:aether-parameter-planck",
   renamedFrom: ["def:substrate-parameter-planck"],
   title: "Aether parameter and quantum Planck constant",
-  lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.SubstrateParameterPlanck",
+  lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.AetherParameterPlanck",
     validation: "not_checked",
   },
   uses: ["def:frobenius-hopf-aether"],

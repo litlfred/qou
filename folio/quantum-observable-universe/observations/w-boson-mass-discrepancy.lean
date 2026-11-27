@@ -43,7 +43,7 @@ namespace QOU.Observations.WBoson
 
 /-- The CODATA local substrate parameter.
     Unique root q > 1 of (1 - q⁻¹)² = Vol(4₁)/(m_μ/m_e).
-    See: QOU.Experimental.LocalSubstrateQ -/
+    See: QOU.Experimental.LocalAetherQ -/
 noncomputable def q₀ : ℝ := 1.10998
 
 /-- q₀ > 1 (substrate is in the quantum regime). -/

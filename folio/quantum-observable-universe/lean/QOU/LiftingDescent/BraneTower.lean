@@ -56,7 +56,7 @@ structure QuantumCharacteristicClasses where
     the identity-only gauge set satisfies the invariance fields. -/
 structure DirectLimitAlgebra where
   tower : RecursiveBraneTower
-  substrateAt : (n : ℕ) → ArchimedeanSubstrateField (tower.level n).M
+  substrateAt : (n : ℕ) → ArchimedeanAetherField (tower.level n).M
   sectionAlgebra : ℕ → Type*
   transitionMap : (n : ℕ) → sectionAlgebra n → sectionAlgebra (n + 1)
   limitAlgebra : Type*

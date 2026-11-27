@@ -31,17 +31,21 @@ open Flavor
     substrate parameter `q ∈ ℝ`, `0 < q`.  Defined as a function on
     `ℝ` (we are at the archimedean / numerical layer here per
     AGENTS.md §7c). -/
-noncomputable def substrate_split_factor (q : ℝ) : ℝ :=
+noncomputable def aether_split_factor (q : ℝ) : ℝ :=
   ((q - 1)^2 * (1 - q^(-4 : ℤ)) / 3) *
     ((Real.sqrt q + Real.sqrt q⁻¹) / (q + q⁻¹))
 
+@[deprecated (since := "2026-11-27")] alias substrate_split_factor := aether_split_factor
+
 /-- **Classical limit at `q = 1` (proved):** the substrate splitting factor
-    `substrate_split_factor q` vanishes identically at `q = 1` because of the
+    `aether_split_factor q` vanishes identically at `q = 1` because of the
     `(q - 1)^2` prefactor. -/
-theorem substrate_split_factor_at_one :
-    substrate_split_factor 1 = 0 := by
-  unfold substrate_split_factor
+theorem aether_split_factor_at_one :
+    aether_split_factor 1 = 0 := by
+  unfold aether_split_factor
   norm_num
+
+@[deprecated (since := "2026-11-27")] alias substrate_split_factor_at_one := aether_split_factor_at_one
 
 /-- The nucleon-level consequence of the pair Skein mass formula
     (`lem:pair-skein-mass-formula`) on the Borromean baryon braids of the
@@ -62,7 +66,7 @@ def PairSkeinNucleonSplit (F : FlavorDressingFunctor) (m_p m_n q : ℝ) : Prop :
 
     From the conjecture `[FlavorSplitSubstrateMass m_p m_n q]` and the
     nucleon form of the pair Skein mass formula, the down–up dressed-mass
-    splitting is `M_N · substrate_split_factor q` with
+    splitting is `M_N · aether_split_factor q` with
     `M_N = (m_p + m_n)/2`. The proof divides the Skein relation by
     `q + q⁻¹ > 0` and substitutes the conjecture's nucleon split.
 
@@ -80,18 +84,18 @@ theorem dressed_mass_from_substrate_split
     [h : FlavorSplitSubstrateMass m_p m_n q]
     (h_skein : PairSkeinNucleonSplit F m_p m_n q) :
     F.μ Flavor.down - F.μ Flavor.up
-        = (m_p + m_n) / 2 * substrate_split_factor q ∧
+        = (m_p + m_n) / 2 * aether_split_factor q ∧
     F.μ Flavor.down
-        = F.μ Flavor.up + (m_p + m_n) / 2 * substrate_split_factor q := by
+        = F.μ Flavor.up + (m_p + m_n) / 2 * aether_split_factor q := by
   have hq0 : 0 < q := lt_trans one_pos h.q_gt_one
   have hB : 0 < q + q⁻¹ := add_pos hq0 (inv_pos.mpr hq0)
   have hdiff : F.μ Flavor.down - F.μ Flavor.up
       = (m_n - m_p) * (Real.sqrt q + Real.sqrt q⁻¹) / (q + q⁻¹) := by
     rw [eq_div_iff hB.ne', h_skein]; ring
   have hsplit : F.μ Flavor.down - F.μ Flavor.up
-      = (m_p + m_n) / 2 * substrate_split_factor q := by
+      = (m_p + m_n) / 2 * aether_split_factor q := by
     rw [hdiff, h.nucleon_split]
-    unfold substrate_split_factor flavorSplitClosedForm
+    unfold aether_split_factor flavorSplitClosedForm
     ring
   exact ⟨hsplit, by linarith⟩
 

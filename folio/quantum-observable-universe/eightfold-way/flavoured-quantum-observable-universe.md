@@ -34,3 +34,27 @@ Whether the flavour triple and the colour triple coincide is a separate open pro
 The Lean structure is `QOU.FlavouredQuantumObservableUniverse` in
 `QOU/Core/FlavouredQuantumObservableUniverse.lean`, with `flavour_fibre_rank_three`,
 `fibre_and_flavour_ranks` and `octonionTriple_realises_not_selfDual`.
+
+**Clause 3 from a central phase.** Clause 3 can be traded for a reason. Let $z$ be a
+monoidal natural automorphism of the identity functor that acts on $W$ by a scalar $\omega$.
+Naturality on $\pi_3$ followed by $\varepsilon_3$ forces $(\omega^3 - 1)\cdot \mathrm{id}_{\mathbf{1}} = 0$,
+so the volume form fixes the phase to be a cube root of unity; it is not chosen. On a morphism
+$\mathbf{1} \to W \otimes W$ the same naturality gives $f = \omega^2 f$, so if $1 - \omega^2$ acts
+without torsion on $\mathrm{Hom}(\mathbf{1}, W \otimes W)$, clause 3 holds. For the fundamental $V$
+the degree-2 volume form forces $\omega^2 = 1$, so a central phase never separates $V$ from its
+dual; degree 3 is the first degree whose volume form admits a separating phase. This is a
+reduction of the datum (the phase is the $N$-ality of $\mathrm{SU}(3)$), not a derivation of $W$:
+the object and the phase are still supplied. The balancing twist does not provide the phase,
+because it is natural but not monoidal. Lean: `QOU/Core/FlavourCentralPhase.lean`
+(`phase_pow_of_volume`, `not_selfDual_of_phase`, `fundamental_phase_cannot_separate`,
+`FlavouredQuantumObservableUniverse.ofCentralPhase`), over a generic commutative ring.
+
+**The octonions supply the phase, but only after adjoining $\sqrt 3$.** The complex structure
+$J$ on the colour triple (left multiplication by a unit imaginary octonion, $J^2 = -1$,
+commuting with the $\mathfrak{su}(3)$ stabiliser) gives
+$\Omega = \tfrac12(\sqrt 3\, J - 1)$, which satisfies $\Omega^2 + \Omega + 1 = 0$ and so $\Omega^3 = 1$,
+over any commutative ring containing $\tfrac12$ and $\sqrt 3$; it commutes with everything that
+commutes with $J$. Over $\mathbb{Q}$ no element $a + bJ$ is a nontrivial cube root of unity,
+since $\mathbb{Q}(J) \cong \mathbb{Q}(i)$ does not contain $\omega$. This is a phase on the colour
+triple; identifying it with flavour is still open. Lean: `QOU/StandardModel/OctonionCubeRootPhase.lean`
+(`cubeRootPhase_cube`, `cubeRootPhase_commute`, `colourTriple_no_rational_cubeRoot_phase`).

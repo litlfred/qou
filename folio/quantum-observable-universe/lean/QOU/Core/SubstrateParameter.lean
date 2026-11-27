@@ -13,7 +13,7 @@ the quantum Planck constant `ℏ_q = 1 − q⁻¹`.
 
 ## Two layers, either side of the §7c wall (bean `qou-6ome`)
 
-`SubstrateParameter` used to be a single archimedean structure — `field : M → ℝ`
+`AetherParameter` used to be a single archimedean structure — `field : M → ℝ`
 carrying `field_pos`, `field_ge_one` and `not_root_of_unity` — and that
 disagreed with both the block and the co-located siblings:
 
@@ -22,7 +22,7 @@ disagreed with both the block and the co-located siblings:
 * the siblings (`quantum-observable-universes/substrate-parameter.lean`,
   `quantum-gauge-group.lean`) had already migrated to the two-layer shape,
   recording that "the archimedean properties … live on
-  `ArchimedeanSubstrateField` … **after the substrate→archimedean wall
+  `ArchimedeanAetherField` … **after the substrate→archimedean wall
   (AGENTS.md §7c)**".
 
 So the migration had reached the block and the siblings and never reached the
@@ -30,12 +30,12 @@ library. Now:
 
 | layer | what it is |
 |---|---|
-| `SubstrateParameter M` | categorical: `field : M → R_q`, matching the block |
-| `ArchimedeanSubstrateField M` | the former structure, renamed — `M → ℝ` with the order axioms |
+| `AetherParameter M` | categorical: `field : M → R_q`, matching the block |
+| `ArchimedeanAetherField M` | the former structure, renamed — `M → ℝ` with the order axioms |
 
 The rename is *not* a demotion of the archimedean layer: it keeps all four
 fields, so every one of the 87 references across 22 library modules kept
-working unchanged. What it fixes is the **name**: `SubstrateParameter` now
+working unchanged. What it fixes is the **name**: `AetherParameter` now
 means what `def:aether-parameter` says it means, and the real-valued
 specialisation is honestly labelled as living past the wall.
 
@@ -55,19 +55,22 @@ namespace QOU
     formal ground ring `R_q = ℤ[q, q⁻¹]`.
 
     Un-ordered by construction. `q(p) > 0`, `q(p) ≥ 1` and "not a root of
-    unity" are **archimedean** facts and live on `ArchimedeanSubstrateField`
+    unity" are **archimedean** facts and live on `ArchimedeanAetherField`
     below, past the §7c wall.
 
     LaTeX: `\label{def:aether-parameter}` -/
-structure SubstrateParameter (M : Type*) where
+structure AetherParameter (M : Type*) where
   /-- The categorical substrate field `q : M → R_q`. Records the local value
       of the `End(𝟙) ≅ R_q`-element at each point `p`. -/
   field : M → QOU.GroundRing.R_q
 
+@[deprecated AetherParameter (since := "2026-11-27")]
+abbrev SubstrateParameter := @AetherParameter
+
 /-- **Archimedean substrate field**: the substrate parameter as a genuine real
     field `q : M → ℝ`.
 
-    This is the structure that used to be called `SubstrateParameter`; the
+    This is the structure that used to be called `AetherParameter`; the
     rename is about which side of the §7c wall the name advertises, not about
     weakening what is assumed. `field_pos` is the one field that did not
     survive as a field — it is derivable, and is a theorem below.
@@ -75,7 +78,7 @@ structure SubstrateParameter (M : Type*) where
     **`field` here is independent by construction.** This docstring used to say
     the structure was "obtained by specialising the categorical field through
     `ι : R_q → ℝ, q ↦ q₀`" — prose asserting a tie the type did not carry.
-    Nothing related `field` to `SubstrateParameter.field`, so an instance could
+    Nothing related `field` to `AetherParameter.field`, so an instance could
     pair a real field with an entirely unrelated categorical one.
 
     To get the specialisation that prose described, build a
@@ -85,7 +88,7 @@ structure SubstrateParameter (M : Type*) where
     `LaurentPolynomial ℤ`, so evaluation at a real unit is an ordinary ring
     hom. This bare structure is kept for call sites that need only the
     archimedean data. -/
-structure ArchimedeanSubstrateField (M : Type*) where
+structure ArchimedeanAetherField (M : Type*) where
   /-- The substrate field `q : M → ℝ` with `q(p) ≥ 1`. -/
   field : M → ℝ
   /-- **Classicality bound**: `q(p) ≥ 1` at every point.
@@ -102,6 +105,9 @@ structure ArchimedeanSubstrateField (M : Type*) where
       unity. Recorded rather than quietly relied on (bean `qou-6ome`). -/
   not_root_of_unity : ∀ (p : M) (k : ℕ), k ≥ 1 → field p ^ k ≠ 1
 
+@[deprecated ArchimedeanAetherField (since := "2026-11-27")]
+abbrev ArchimedeanSubstrateField := @ArchimedeanAetherField
+
 /-- **Positivity is derived, not assumed.**
 
     This was a fourth field, `field_pos`, sitting beside `field_ge_one` — and
@@ -114,24 +120,24 @@ structure ArchimedeanSubstrateField (M : Type*) where
     Kept under the same name, so every existing `sp.field_pos p` call site
     reads identically — dot notation resolves to this theorem exactly as it
     resolved to the field. -/
-theorem ArchimedeanSubstrateField.field_pos {M : Type*}
-    (sp : ArchimedeanSubstrateField M) (p : M) : 0 < sp.field p :=
+theorem ArchimedeanAetherField.field_pos {M : Type*}
+    (sp : ArchimedeanAetherField M) (p : M) : 0 < sp.field p :=
   lt_of_lt_of_le zero_lt_one (sp.field_ge_one p)
 
 /-- **Quantum gauge group**: the family `{SU_{q(p)}(2)}_{p ∈ M}`.
     LaTeX: `\label{def:quantum-gauge-group}` -/
-structure QuantumGaugeGroup (M : Type*) extends ArchimedeanSubstrateField M where
+structure QuantumGaugeGroup (M : Type*) extends ArchimedeanAetherField M where
   /-- The quantum group at each point. -/
   groupAt : M → Type*
 
 /-- **Quantum Planck constant**: `ℏ_q(p) = 1 − q(p)⁻¹`.
     LaTeX: `\label{def:quantum-planck-constant}` -/
-noncomputable def quantumPlanckConstant {M : Type*} (sp : ArchimedeanSubstrateField M)
+noncomputable def quantumPlanckConstant {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) : ℝ :=
   1 - (sp.field p)⁻¹
 
 /-- The quantum Planck constant takes values in `[0, 1)`. -/
-theorem quantumPlanckConstant_nonneg {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem quantumPlanckConstant_nonneg {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) : 0 ≤ quantumPlanckConstant sp p := by
   unfold quantumPlanckConstant
   have hq := sp.field_ge_one p
@@ -141,7 +147,7 @@ theorem quantumPlanckConstant_nonneg {M : Type*} (sp : ArchimedeanSubstrateField
   nlinarith [mul_le_mul_of_nonneg_right hq (le_of_lt (inv_pos.mpr hpos)),
              mul_inv_cancel₀ hne]
 
-theorem quantumPlanckConstant_lt_one {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem quantumPlanckConstant_lt_one {M : Type*} (sp : ArchimedeanAetherField M)
     (p : M) : quantumPlanckConstant sp p < 1 := by
   unfold quantumPlanckConstant
   have hpos := sp.field_pos p

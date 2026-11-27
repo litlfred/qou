@@ -59,7 +59,7 @@ open QOU.AlgebraicSubstrate
 theorem motivic_perpetual_obstruction
     {K0 Mhat : Type*} [CommRing K0] [CommRing Mhat]
     {Target : Place → Type*} [∀ v, CommRing (Target v)]
-    [MotivicSubstrate K0 Mhat Target]
+    [MotivicBaseRing K0 Mhat Target]
     {motiveA : Mhat}
     [_hχ : MotivicGaloisCharacter K0 Mhat Target motiveA]
     (trace : Nat.Primes → ℤ)
@@ -88,7 +88,7 @@ theorem motivic_perpetual_obstruction
     carries units to units, so a non-unit image forces a non-unit source.
 
     `φ` is an explicit argument rather than derived from the substrate's
-    `realize`, because `MotivicSubstrate.realize` lands in `Target v`, which
+    `realize`, because `MotivicBaseRing.realize` lands in `Target v`, which
     is a bare `CommRing` with no ordering — `1 < |·|` is not expressible
     there.  A caller with `Target (Place.finite p) = ℤ` supplies `realize`
     itself; the generality costs nothing and avoids inventing structure on
@@ -98,7 +98,7 @@ theorem motivic_perpetual_obstruction
 theorem motivic_perpetual_obstruction_frobenius
     {K0 Mhat : Type*} [CommRing K0] [CommRing Mhat]
     {Target : Place → Type*} [∀ v, CommRing (Target v)]
-    [MotivicSubstrate K0 Mhat Target]
+    [MotivicBaseRing K0 Mhat Target]
     {motiveA : Mhat}
     (hχ : MotivicGaloisCharacter K0 Mhat Target motiveA)
     (φ : Mhat →+* ℤ)

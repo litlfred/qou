@@ -36,6 +36,16 @@ export default conjecture({
         "its identity coefficient. The same criterion applied to the element selects " +
         "$k = 0$. Audit: docs/audits/2026-11-21-proton-q3-kl-coordinate.md.",
     },
+    {
+      kind: "status",
+      date: "2026-11-27",
+      body:
+        "**$k = 0$ proved inside $H_3(q)$** (scope-(a) negative). The bar-fixed generator " +
+        "$x' = \\#x$ of the sign line squares as $x'^2 = [3]_q!\\,x'$, and $\\pm q^m x'$ is " +
+        "bar-fixed only for $m = 0$; the generator with square constant $c_{\\mathrm{sign}}$ is " +
+        "$q^{-3}x'$, not bar-fixed. Lean: QOU/MassTheory/ProtonNormaliserBarSchur.lean " +
+        "(`bar_normaliser_vs_production`). Audit round 13.",
+    },
   ],
   tags: [
     "negative-result",

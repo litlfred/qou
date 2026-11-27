@@ -1,5 +1,5 @@
 import MathlibExt.GroundRingCore
-import QOU.Core.SubstrateParameter
+import QOU.Core.AetherParameter
 import Mathlib.Data.Real.Basic
 
 /-!
@@ -12,10 +12,10 @@ between them:
 
 | layer | field |
 |---|---|
-| `QOU.SubstrateParameter M` | `field : M → R_q` (categorical) |
-| `QOU.ArchimedeanSubstrateField M` | `field : M → ℝ` (order axioms) |
+| `QOU.AetherParameter M` | `field : M → R_q` (categorical) |
+| `QOU.ArchimedeanAetherField M` | `field : M → ℝ` (order axioms) |
 
-`ArchimedeanSubstrateField`'s own docstring said it was "obtained by
+`ArchimedeanAetherField`'s own docstring said it was "obtained by
 specialising the categorical field through `ι : R_q → ℝ, q ↦ q₀`" — and the
 type said no such thing. Its `field` was independent, so an instance could pair
 a real field with a completely unrelated categorical one and every archimedean
@@ -50,7 +50,7 @@ not implied by nonzero.
 
 ## What the tie does and does not settle
 
-`ArchimedeanRealisation` bundles a categorical `SubstrateParameter`, a choice
+`ArchimedeanRealisation` bundles a categorical `AetherParameter`, a choice
 of `q₀`, and the two archimedean axioms *stated about the realised values*.
 `toArchimedeanSubstrateField` then produces the archimedean layer rather than
 letting it be posited independently.
@@ -117,7 +117,7 @@ theorem evalAt_q_param_mul_inv (q0 : ℝˣ) :
     categorical layer — but they are now stated about the realised values. -/
 structure ArchimedeanRealisation (M : Type*) where
   /-- The categorical substrate parameter being realised. -/
-  sp : QOU.SubstrateParameter M
+  sp : QOU.AetherParameter M
   /-- The chosen specialisation point, a unit because `q` is invertible in `R_q`. -/
   q0 : ℝˣ
   /-- **Classicality bound**, stated about the realised value. -/
@@ -125,10 +125,10 @@ structure ArchimedeanRealisation (M : Type*) where
   /-- Not a root of unity, stated about the realised value. -/
   not_root_of_unity : ∀ (p : M) (k : ℕ), k ≥ 1 → (evalAt q0 (sp.field p)) ^ k ≠ 1
 
-/-- The tie: an `ArchimedeanSubstrateField` whose `field` is `ι ∘ sp.field`,
+/-- The tie: an `ArchimedeanAetherField` whose `field` is `ι ∘ sp.field`,
     not an independent function. -/
 noncomputable def ArchimedeanRealisation.toArchimedeanSubstrateField {M : Type*}
-    (r : ArchimedeanRealisation M) : QOU.ArchimedeanSubstrateField M where
+    (r : ArchimedeanRealisation M) : QOU.ArchimedeanAetherField M where
   field := fun p => evalAt r.q0 (r.sp.field p)
   field_ge_one := r.ge_one
   not_root_of_unity := r.not_root_of_unity
@@ -137,7 +137,7 @@ noncomputable def ArchimedeanRealisation.toArchimedeanSubstrateField {M : Type*}
     so is its realisation — for every choice of `q₀`.
 
     This is the payoff, and the test of whether the tie is worth anything. With
-    `ArchimedeanSubstrateField.field` independent it was not provable: a point
+    `ArchimedeanAetherField.field` independent it was not provable: a point
     could sit at the classical value of the categorical parameter and at an
     arbitrary real simultaneously. -/
 theorem ArchimedeanRealisation.realised_one {M : Type*}
@@ -169,7 +169,7 @@ noncomputable def constRealisation (M : Type*) (q0 : ℝˣ)
 /-- **The `d_q²` counterexample witness is realisable.**
 
     `QOU/Elaboration.lean`'s `dq_squared_nonvanishing` refutes a statement
-    quantified over *arbitrary* `ArchimedeanSubstrateField`s, using a witness
+    quantified over *arbitrary* `ArchimedeanAetherField`s, using a witness
     with `field ≡ 2` on `PUnit`. Because that structure's field is independent
     of any categorical parameter, the refuted statement could in principle have
     been a strawman — a real-valued function with no substrate behind it.
@@ -180,7 +180,7 @@ noncomputable def constRealisation (M : Type*) (q0 : ℝˣ)
 
     This is the first thing the tie buys beyond hygiene, and it is why
     `qou-w7sc` concluded the migration it proposed was the wrong shape: there
-    was exactly one construction site of a bare `ArchimedeanSubstrateField` in
+    was exactly one construction site of a bare `ArchimedeanAetherField` in
     the library, and it is this witness, which should keep its concrete form. -/
 theorem dq_witness_realisable :
     ∃ r : ArchimedeanRealisation PUnit,

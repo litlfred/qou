@@ -40,7 +40,7 @@ namespace QOU.Experimental
     q is the unique real root > 1 of:
     `(1 - q⁻¹)² = Vol(4₁) / (m_μ/m_e)` -/
 -- Ref: CODATA 2018, [leitner2026] §11
-structure LocalSubstrateQ where
+structure LocalAetherQ where
   /-- Hyperbolic volume of the figure-eight knot.
       `Vol(4₁) = 2 Cl₂(π/3) = 6 Λ(π/3) ≈ 2.02988` — two regular ideal
       tetrahedra, each of volume `Cl₂(π/3) = 3 Λ(π/3)`. -/
@@ -55,6 +55,9 @@ structure LocalSubstrateQ where
   defining_eq : (1 - q⁻¹) ^ 2 = vol_figure_eight / muon_electron_ratio
   /-- q ≈ 1.1097 within experimental uncertainty. -/
   q_approx : |q - 1.1097| < 0.001
+
+@[deprecated LocalAetherQ (since := "2026-11-27")]
+abbrev LocalSubstrateQ := @LocalAetherQ
 
 /-- Uniqueness: the equation `(1 - q⁻¹)² = c` for `c > 0` has a
     unique solution `q > 1`.

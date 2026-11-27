@@ -21,7 +21,7 @@ substrate bound theorem is included.
 - `FlavorSplitSubstrateMass` — Lean class of
   `conj:flavor-split-aether-mass` (no instance).
 - `dressed_mass_from_substrate_split` — derivation of
-  `μ_d − μ_u = M_N · substrate_split_factor q` from that class and the
+  `μ_d − μ_u = M_N · aether_split_factor q` from that class and the
   nucleon form of the pair Skein formula (an explicit hypothesis).
 - `flavor_mass_splitting_bound` — two-sided substrate bound
   `0 < μ_d − μ_u < M_N · ℏ_q² · h_q · [2]_q`.

@@ -6,7 +6,7 @@ export default proposition({
   ],
   label: "prop:aether-radial-coordinate",
   renamedFrom: ["prop:substrate-radial-coordinate"],
-  lean: { ref: "qou:QOU.Core.substrate_radial_coordinate",
+  lean: { ref: "qou:QOU.Core.aether_radial_coordinate",
     validation: "not_checked",
   },
   title: "Aether parameter as the radial coordinate",

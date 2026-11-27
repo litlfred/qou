@@ -11,18 +11,18 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 | quantity | count |
 |---|---:|
 | Lean modules (paper package tree) | 4067 |
-| inside the boundary `QOU/Transcendental/` | 187 |
-| outside, using a transcendental/analytic API directly | 543 |
-| outside, algebraic but importing one transitively (tainted) | 223 |
+| inside the boundary `QOU/Transcendental/` | 195 |
+| outside, using a transcendental/analytic API directly | 539 |
+| outside, algebraic but importing one transitively (tainted) | 219 |
 | outside, algebraic and import-clean (pure) | 3114 |
 
 ## Direct use by class
 
 | class | modules | matched API |
 |---|---:|---|
-| transcendental-function | 367 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
+| transcendental-function | 365 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
 | real-completion | 119 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
-| analysis | 253 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
+| analysis | 250 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
 
 Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 52. These are the cheapest to move:
 `Real.sqrt` of an algebraic number is algebraic, so most of them can become a root in an
@@ -34,7 +34,7 @@ algebraic extension.
 |---|---:|
 | `BraidKnotOctonion` | 112 |
 | `QOU/Nuclear` | 97 |
-| `QOU/MassTheory` | 94 |
+| `QOU/MassTheory` | 90 |
 | `MathlibExt` | 72 |
 | `QOU/BraidsAndKnots` | 46 |
 | `QCalculus` | 16 |
@@ -82,10 +82,10 @@ algebraic modules.
 | `QOU.MassTheory.BalancedMomentConfluence` | 3 |
 | `QOU.Nuclear.ReebTowerJacobiAnger` | 3 |
 | `QOU.Transcendental.MassTheory.BlochRigidity.Regularity` | 3 |
-| `QOU.MassTheory.HyperbolicVolumeTranscendence` | 3 |
 | `QOU.StandardModel.ElectroweakBringSchwingerBridge` | 3 |
 | `BraidKnotOctonion.LobMonotonicity` | 2 |
 | `BraidKnotOctonion.CechNerveTetrahedron` | 2 |
+| `MathlibExt.GermStabiliserCyclic` | 2 |
 
 ## Gate
 

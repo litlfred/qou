@@ -1,7 +1,7 @@
 import QOU.Core.Basic
 import QOU.Core.Glossary
 import QOU.Core.CRRealisation
-import QOU.Core.SubstrateParameter
+import QOU.Core.AetherParameter
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
@@ -45,7 +45,7 @@ universe u v
 
     LaTeX: `\label{def:q-yang-mills-levi}` -/
 structure QYangMillsLevi (cqou : CQuantumObservableUniverse)
-    (sp : SubstrateParameter cqou.M) where
+    (sp : AetherParameter cqou.M) where
   /-- The integrand `q(p) · ‖F_A⁺|_H‖²(p)` at each point. -/
   integrand : cqou.M → ℝ
   /-- The total action value `S_q[A, θ]`. -/

@@ -51,6 +51,9 @@ import QOU.Core.KashaevHermitianCertificate
 import QOU.Core.TarskiSignKashaevGen
 import QOU.Core.KashaevHabiroBridge
 import QCalculus.HabiroDoubleTwist
+import QOU.Core.TarskiSignUnbounded
+import QOU.Core.TarskiSignBernstein
+import QOU.Core.TarskiSignKashaevGen2
 import QOU.Core.KashaevReflection
 import MathlibExt.Core
 import MathlibExt.QuadraticIrrationalBadlyApproximable
@@ -878,7 +881,7 @@ import QOU.StandardModel.su2_emergence_dagger_unitarity
 import QOU.StandardModel.su2_emergence_volume_determinant
 import TwistedFrobeniusHopf.frobenius_dagger_positive_definite
 import QOU.Core.volume_from_rigidity
-import QOU.Core.substrate_radial_coordinate
+import QOU.Core.aether_radial_coordinate
 -- Symmetry-eigenspace selection rules: bar-parity (c₃ ≠ −Vol(4₁), scope-(b)) +
 -- sign-positivity (Δ_λ rows B/E). Generic base ring §7c, sorry-free. Wired so
 -- CI type-checks it (not an orphan).
@@ -1036,6 +1039,7 @@ import QOU.Transcendental.Nuclear.OhtsukiNZBridgeScale
 import QOU.Nuclear.WindingGFTransform
 import QOU.Nuclear.ThetaRealityBound
 import QOU.Nuclear.AfreeThetaConstraint
+import QOU.Nuclear.AlphaQInheritance
 import QOU.Nuclear.ChannelMeridianIdentification
 import QOU.Nuclear.CompleteStructureExclusion
 import QOU.Nuclear.ThetaLipschitzObstruction
@@ -1072,6 +1076,7 @@ import QOU.Nuclear.TraceRealSpectrumComplex
 import QOU.Nuclear.TracelessDifferenceEllipticity
 import QOU.Nuclear.DiscriminantCurveInQ
 import QOU.Nuclear.TraceBlindSector
+import QOU.Nuclear.TermCompleteness
 import QOU.Nuclear.BondDecayRates
 import QOU.Nuclear.EigenphaseCarrierClassicalLimit
 import QOU.Nuclear.MonodromyTraceInvariance
@@ -1866,7 +1871,7 @@ import QOU.MassTheory.AffineCumulantSecondDifference
 import QOU.MassTheory.FiveTwoAPolynomialFromFareyWord
 import QOU.Nuclear.FloorRemainderFromDerivedShapeFields
 import QOU.Nuclear.PretzelRemainderFromPtolemy
-import QOU.MassTheory.VolumeTranscendental
+import QOU.Transcendental.MassTheory.VolumeTranscendental
 import TwistedFrobeniusHopf.BlockMeasureFromFrobeniusPairing
 import HeckeTemperleyLieb.BranchingPushforwardMultiplicativity
 import QOU.MassTheory.BlockMeasureBindingFormArchimedean
@@ -1928,12 +1933,15 @@ import QOU.EightfoldWay.USpinColemanGlashowLambdaSigma
 import QOU.EightfoldWay.AlternatingChannelRowCap
 import QOU.EightfoldWay.HyperchargeUniqueness
 import QOU.EightfoldWay.NeutralLeptonFixesCharges
+import QOU.EightfoldWay.FermiPairWedge
 import QOU.EightfoldWay.ColourSingletSelectionRule
 import QOU.StandardModel.OctonionColourTripletSplitting
 import QOU.StandardModel.ColourOnSingleFibreThreeStrands
 import QOU.StandardModel.OctonionColourTripletComplexType
 import QOU.StandardModel.GaugeHeckeCanonicalFaithfulness
 import QOU.Core.FlavouredQuantumObservableUniverse
+import QOU.Core.FlavourCentralPhase
+import QOU.StandardModel.OctonionCubeRootPhase
 import QOU.StandardModel.ElectroweakBringSchwingerBridge
 import QOU.StandardModel.ElectroweakSweedlerScaleAndRGThresholds
 import QOU.StandardModel.ElectroweakVevFixedPointDecomposition

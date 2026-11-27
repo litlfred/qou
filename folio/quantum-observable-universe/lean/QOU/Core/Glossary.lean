@@ -29,11 +29,11 @@ that relies on them transitively.
 | `KahlerDifferentials` | `QOU.MathlibExt.UniversalDifferentials.Ω1` (the noncommutative universal calculus `ker μ`), and the field `QuantumUniverse.differentialForms` |
 | `FrobeniusHopfObject` | `QOU.FrobeniusHopfData` (`QOU/QuantumObservableUniverse/CategoricalFoundations.lean`) |
 | `FibreFunctor` | `QOU.BraidsKnots.FibreFunctor` (`QOU/MotivesArchimedean.lean`), and the `fibreFunctor` field of `QOU.QuantumUniverse` |
-| `QuantumGaugeGroup` | `QOU.QuantumGaugeGroup` (`QOU/QuantumObservableUniverse/SubstrateParameter.lean`) |
+| `QuantumGaugeGroup` | `QOU.QuantumGaugeGroup` (`QOU/QuantumObservableUniverse/AetherParameter.lean`) |
 | `BringsSurface` | `QOU.BringsSurface.BringsSurface` (`QOU/BringsSurface.lean`) |
 | `JetProlongation` | `QOU.Torsion.JetProlongation` (`QOU/Torsion/JetProlongation.lean`) |
 | `BraidGroup` | `QOU.MathlibExt.Braid.BraidGroup` (`QOU/MathlibExt/BraidGroup.lean`) |
-| `quantumParameter`, `substrateParameter` | `QOU/QuantumObservableUniverse/SubstrateParameter.lean`.  The removed `quantumParameter` hard-coded `1.1097`, a numerical value that does not belong in a library definition. |
+| `quantumParameter`, `substrateParameter` | `QOU/QuantumObservableUniverse/AetherParameter.lean`.  The removed `quantumParameter` hard-coded `1.1097`, a numerical value that does not belong in a library definition. |
 
 ## Available in Mathlib
 
