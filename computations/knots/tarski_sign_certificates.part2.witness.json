@@ -1,0 +1,162 @@
+{
+  "producer": "computations/knots/tarski_sign_certificates.py",
+  "bean": "qou-rc4t",
+  "arithmetic": "exact (sympy Rational)",
+  "part": 2,
+  "levels": [
+    {
+      "N": 17,
+      "deg_psi": 8,
+      "psi": "x**8 + x**7 - 7*x**6 - 6*x**5 + 15*x**4 + 10*x**3 - 10*x**2 - 4*x + 1",
+      "reduced": "80*x**7 + 509*x**6 + 275*x**5 - 1597*x**4 - 1181*x**3 + 1280*x**2 + 722*x + 689",
+      "embedding_depth": 4,
+      "embedding_window": [
+        "3/2",
+        "2"
+      ],
+      "floor": 13404,
+      "decision_depth": 20,
+      "signs": "++-++-+++-+-++-++-+-",
+      "decision_window": [
+        "122221/65536",
+        "244443/131072"
+      ]
+    },
+    {
+      "N": 18,
+      "deg_psi": 3,
+      "psi": "x**3 - 3*x - 1",
+      "reduced": "2539*x**2 + 4775*x + 2186",
+      "embedding_depth": 3,
+      "embedding_window": [
+        "1",
+        "2"
+      ],
+      "floor": 20128,
+      "decision_depth": 21,
+      "signs": "++-+++----+---+++++-+",
+      "decision_window": [
+        "492669/262144",
+        "246335/131072"
+      ]
+    },
+    {
+      "N": 19,
+      "deg_psi": 9,
+      "psi": "x**9 + x**8 - 8*x**7 - 7*x**6 + 21*x**5 + 15*x**4 - 20*x**3 - 10*x**2 + 5*x + 1",
+      "reduced": "289*x**8 + 769*x**7 - 620*x**6 - 3045*x**5 - 747*x**4 + 3415*x**3 + 1528*x**2 - 930*x + 964",
+      "embedding_depth": 5,
+      "embedding_window": [
+        "7/4",
+        "2"
+      ],
+      "floor": 30092,
+      "decision_depth": 25,
+      "signs": "++-+++--+---+----+---+-+-",
+      "decision_window": [
+        "3967045/2097152",
+        "7934091/4194304"
+      ]
+    },
+    {
+      "N": 20,
+      "deg_psi": 4,
+      "psi": "x**4 - 5*x**2 + 5",
+      "reduced": "5121*x**3 + 9565*x**2 - 7069*x - 11588",
+      "embedding_depth": 4,
+      "embedding_window": [
+        "3/2",
+        "2"
+      ],
+      "floor": 44814,
+      "decision_depth": 20,
+      "signs": "++-+++--++-++++----+",
+      "decision_window": [
+        "249313/131072",
+        "124657/65536"
+      ]
+    },
+    {
+      "N": 21,
+      "deg_psi": 6,
+      "psi": "x**6 - x**5 - 6*x**4 + 6*x**3 + 8*x**2 - 8*x + 1",
+      "reduced": "8488*x**5 + 8197*x**4 - 36025*x**3 - 18901*x**2 + 33575*x - 2922",
+      "embedding_depth": 5,
+      "embedding_window": [
+        "7/4",
+        "2"
+      ],
+      "floor": 66501,
+      "decision_depth": 26,
+      "signs": "++-+++-+--+-+------++-+-++",
+      "decision_window": [
+        "16031851/8388608",
+        "4007963/2097152"
+      ]
+    },
+    {
+      "N": 22,
+      "deg_psi": 5,
+      "psi": "x**5 - x**4 - 4*x**3 + 3*x**2 + 3*x - 1",
+      "reduced": "9457*x**4 + 9239*x**3 - 20815*x**2 - 13074*x + 6568",
+      "embedding_depth": 4,
+      "embedding_window": [
+        "3/2",
+        "2"
+      ],
+      "floor": 98361,
+      "decision_depth": 23,
+      "signs": "++-+++-+-++-+----+-+-+-",
+      "decision_window": [
+        "1006101/524288",
+        "2012203/1048576"
+      ]
+    },
+    {
+      "N": 23,
+      "deg_psi": 11,
+      "psi": "x**11 + x**10 - 10*x**9 - 9*x**8 + 36*x**7 + 28*x**6 - 56*x**5 - 35*x**4 + 35*x**3 + 15*x**2 - 6*x - 1",
+      "reduced": "731*x**10 + 2286*x**9 - 2361*x**8 - 13338*x**7 - 2924*x**6 + 24825*x**5 + 13594*x**4 - 15995*x**3 - 8701*x**2 + 2497*x + 2512",
+      "embedding_depth": 5,
+      "embedding_window": [
+        "7/4",
+        "2"
+      ],
+      "floor": 145056,
+      "decision_depth": 25,
+      "signs": "++-+++-++-+------++-+++++",
+      "decision_window": [
+        "8077535/4194304",
+        "252423/131072"
+      ]
+    },
+    {
+      "N": 24,
+      "deg_psi": 4,
+      "psi": "x**4 - 4*x**2 + 1",
+      "reduced": "15628*x**3 + 30546*x**2 - 3668*x - 6251",
+      "embedding_depth": 3,
+      "embedding_window": [
+        "1",
+        "2"
+      ],
+      "floor": 213336,
+      "decision_depth": 22,
+      "signs": "++-+++-+++-+---++-+++-",
+      "decision_window": [
+        "506423/262144",
+        "1012847/524288"
+      ]
+    }
+  ],
+  "scriptFile": "tarski_sign_certificates.py",
+  "scriptHash": "db2f50191bb2",
+  "scriptCommitSha": "d287a8291913771a87cb1f29a17eb72832a6af04",
+  "commitSha": "3b70521ac614773e6149a0b88dfd04ddfaa169bc",
+  "engine": "sympy",
+  "computedAt": "2026-11-27T19:59:23.375037+00:00",
+  "durationMs": 0,
+  "engineVersion": "1.14.0",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

@@ -251,6 +251,51 @@ def sign_theorem(tag, k, psi_lean, lo, hi, concl, blk):
     return head + body + [""]
 
 
+# From this level on the value is proved stepwise: every Dickson value, partial
+# product and partial sum is reduced modulo Psi_N as it is formed, so each
+# linear_combination has degree < 2 deg Psi_N. The one-shot proof expands a
+# polynomial of degree ~N^2/2 and runs out of memory at N = 17.
+STEPWISE_FROM = 17
+
+
+def stepwise_value_proof(N: int, P: sp.Poly) -> list:
+    def red(e):
+        return sp.Poly(sp.expand(e), x).rem(P).as_expr()
+
+    def quo(e):
+        return sp.Poly(sp.expand(e), x).quo(P).as_expr()
+
+    L = lambda e: lean_poly(e, "c") if sp.expand(e) != 0 else "0"
+    out = ["  have hd0 : dicksonC c 0 = 2 := dicksonC_zero c",
+           "  have hd1 : dicksonC c 1 = c := dicksonC_one c"]
+    d = {0: sp.Integer(2), 1: x}
+    for j in range(2, N):
+        raw = x * d[j - 1] - d[j - 2]
+        d[j] = red(raw)
+        out.append(f"  have hd{j} : dicksonC c {j} = {L(d[j])} := by")
+        out.append(f"    have e : dicksonC c {j} = c * dicksonC c {j - 1} - dicksonC c {j - 2} :=")
+        out.append(f"      dicksonC_add_two c {j - 2}")
+        out.append(f"    rw [e, hd{j - 1}, hd{j - 2}]; linear_combination ({L(quo(raw))}) * hc")
+    pr = {0: sp.Integer(1)}
+    out.append("  have hp0 : (∏ j ∈ range 0, (2 - dicksonC c (j + 1))) = 1 := prod_range_zero _")
+    for k in range(1, N):
+        raw = pr[k - 1] * (2 - d[k])
+        pr[k] = red(raw)
+        out.append(f"  have hp{k} : (∏ j ∈ range {k}, (2 - dicksonC c (j + 1))) = {L(pr[k])} := by")
+        out.append(f"    have e : (∏ j ∈ range {k}, (2 - dicksonC c (j + 1)))")
+        out.append(f"        = (∏ j ∈ range {k - 1}, (2 - dicksonC c (j + 1))) * (2 - dicksonC c {k}) :=")
+        out.append(f"      prod_range_succ _ {k - 1}")
+        out.append(f"    rw [e, hp{k - 1}, hd{k}]; linear_combination ({L(quo(raw))}) * hc")
+    sm = sp.Integer(0)
+    out.append("  have hs0 : (∑ k ∈ range 0, ∏ j ∈ range k, (2 - dicksonC c (j + 1))) = 0 := sum_range_zero _")
+    for k in range(1, N + 1):
+        sm = sp.expand(sm + pr[k - 1])
+        out.append(f"  have hs{k} : (∑ k ∈ range {k}, ∏ j ∈ range k, (2 - dicksonC c (j + 1))) = {L(sm)} := by")
+        out.append(f"    rw [sum_range_succ, hs{k - 1}, hp{k - 1}]; ring")
+    out.append(f"  exact hs{N}")
+    return out
+
+
 def process(N: int) -> dict:
     t0 = time.time()
     P = psi(N)
@@ -269,12 +314,17 @@ def process(N: int) -> dict:
     tag = f"N{N}"
     psi_lean = lean_poly(Pexpr, "c")
     val_name = f"kashaev_{tag}_value"
+    if N >= STEPWISE_FROM:  # ~3N small steps in one declaration share its budget
+        lean.append("set_option maxHeartbeats 1000000 in")
     lean.append(f"/-- `⟨4₁⟩_{N}` modulo `Ψ_{N} = {psi_lean}`. -/")
     lean.append(f"theorem {val_name} {{R : Type*}} [CommRing R] (c : R) (hc : {psi_lean} = 0) :")
     lean.append(f"    kashaevFigureEight c {N} = {lean_poly(f, 'c')} := by")
-    lean.append("  simp only [kashaevFigureEight, sum_range_succ, prod_range_succ, sum_range_zero,")
-    lean.append("    prod_range_zero, dicksonC_add_two, dicksonC_one, dicksonC_zero, zero_add]")
-    lean.append(f"  linear_combination ({lean_poly(Q.as_expr(), 'c')}) * hc")
+    if N >= STEPWISE_FROM:
+        lean += stepwise_value_proof(N, P)
+    else:
+        lean.append("  simp only [kashaevFigureEight, sum_range_succ, prod_range_succ, sum_range_zero,")
+        lean.append("    prod_range_zero, dicksonC_add_two, dicksonC_one, dicksonC_zero, zero_add]")
+        lean.append(f"  linear_combination ({lean_poly(Q.as_expr(), 'c')}) * hc")
     lean.append("")
 
     if deg == 1:
@@ -399,8 +449,20 @@ open Finset QOU.Core.TarskiSign QOU.Core.TarskiSignKashaev
 
 
 def main(argv):
-    Ns = [int(a) for a in argv] or [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    # `--part K --link M N...`: write part K (K >= 2) as its own module
+    # TarskiSignKashaevGen<K>, importing the previous part; level M is
+    # recomputed for the chain link only and its lemmas are not re-emitted.
+    part, link = 1, None
+    args = list(argv)
+    if "--part" in args:
+        i = args.index("--part"); part = int(args[i + 1]); del args[i:i + 2]
+    if "--link" in args:
+        i = args.index("--link"); link = int(args[i + 1]); del args[i:i + 2]
+    Ns = [int(a) for a in args] or [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     infos, body = [], []
+    if link is not None:
+        info, _ = process(link)
+        infos.append(info)
     for N in Ns:
         info, lean = process(N)
         print(json.dumps(info), flush=True)
@@ -436,17 +498,36 @@ def main(argv):
         body.append(f"  have : ({a['floor'] + 1} : K) ≤ {b['floor']} := by norm_num")
         body.append("  linarith")
         body.append("")
-    LEAN_OUT.write_text(HEADER + "\n".join(body) + "\nend QOU.Core.TarskiSignKashaev.Gen\n")
+    out, witness, header, ns = LEAN_OUT, WITNESS, HEADER, "QOU.Core.TarskiSignKashaev.Gen"
+    if part > 1:
+        prev = "" if part == 2 else str(part - 1)
+        out = LEAN_OUT.with_name(f"TarskiSignKashaevGen{part}.lean")
+        witness = WITNESS.with_name(f"tarski_sign_certificates.part{part}.witness.json")
+        ns = f"{ns}{part}"
+        header = (HEADER.replace("import QOU.Core.TarskiSignKashaev\n",
+                                 f"import QOU.Core.TarskiSignKashaevGen{prev}\n")
+                  .replace("# QOU.Core.TarskiSignKashaevGen —",
+                           f"# QOU.Core.TarskiSignKashaevGen{part} —")
+                  .replace("namespace QOU.Core.TarskiSignKashaev.Gen\n",
+                           f"namespace {ns}\n")
+                  .replace("open Finset QOU.Core.TarskiSign QOU.Core.TarskiSignKashaev",
+                           "open Finset QOU.Core.TarskiSign QOU.Core.TarskiSignKashaev "
+                           + " ".join("QOU.Core.TarskiSignKashaev.Gen" + ("" if k == 1 else str(k))
+                                      for k in range(1, part))))
+        infos_out = infos[1:] if link is not None else infos
+    else:
+        infos_out = infos
+    out.write_text(header + "\n".join(body) + f"\nend {ns}\n")
     from qou_substrate.witness import WitnessBuilder
     payload = {"producer": "computations/knots/tarski_sign_certificates.py",
                "bean": "qou-rc4t", "arithmetic": "exact (sympy Rational)",
-               "levels": [{k: v for k, v in i.items() if k != "seconds"} for i in infos]}
+               "part": part, "levels": [{k: v for k, v in i.items() if k != "seconds"} for i in infos_out]}
     WitnessBuilder.stamp_staleness_metadata(
         payload, script_path=__file__, engine="sympy", engine_version=sp.__version__,
         q0_anchor=False,
         q0_anchor_reason="exact arithmetic in Q(zeta_N)+ at roots of unity; no q0 enters")
-    WITNESS.write_text(json.dumps(payload, indent=2) + "\n")
-    print(f"wrote {LEAN_OUT.relative_to(REPO)} and {WITNESS.relative_to(REPO)}")
+    witness.write_text(json.dumps(payload, indent=2) + "\n")
+    print(f"wrote {out.relative_to(REPO)} and {witness.relative_to(REPO)}")
 
 
 if __name__ == "__main__":
