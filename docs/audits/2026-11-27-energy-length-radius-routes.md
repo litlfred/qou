@@ -79,3 +79,20 @@ The gap is taken blind to any radius from corpus definitions only:
 - a different gap operator, such as the Casimir insertion `h²C` on the charge sectors (`BlockChargeSectorTrace`).
 
 Choosing among those to match would be selection. Each needs its own derivation.
+
+## 8. The E₀ multiple is the open electron weight, and neither corpus unit helps
+
+The "which multiple of `E₀`" question is not new. `docs/audits/2026-11-22-energy-scale-cal-map.md` and `ElectronUnitSplit.lean` already pin it to a single open input: the electron's categorical weight `w_e`.
+- **The calibrations cannot decide it.** The Lean results `Chart.matches_rescale` and `Chart.calibration_does_not_fix_unit` prove this.
+- **The β-dictionary unit is not a second ambiguity.** The `β = ln q` dictionary unit is `E₀·ln q` (`SpectatorEnergyMap.dictionary_unit`), and both temperature readings describe one Gibbs state (`same_weight_iff`). So a gap read from weights is `E₀·ln(y-ratio)` in either reading. The only freedom left is `w_e`.
+
+The corpus holds two electron weights. I computed both and chose neither.
+
+| unit | electron weight | `|E₁|` / m_e | `ε` | `D` |
+|---|---|---|---|---|
+| mass formula | `ℏ_q²` (CAL-1 placed by hand, `product_weight_ne`) | 5.8552 | 3.19e-3 | 13.19 |
+| trace pipeline | `τ_e = q³ y₍₃₎` (derived from the ruled electron word) | 0.08317 | 4.53e-5 | 110.69 |
+
+The units differ by `R = τ_e/ℏ_q² = 70.404`. Two consequences:
+- **The derived unit makes the miss larger.** At the comparison boundary, `r_rms` is 23.3 fm against 2.77 fm in the mass-formula unit, and both are far above 0.84 fm. So the unit is not the lever that closes the gap.
+- **The isospin block gap is not the right gap.** Read through the `β = ln q` dictionary, it is below Δ − N by two to four orders of magnitude, and its sign is reversed. The next candidate is a different operator, for example the Casimir insertion. Both units are carried along, and neither is selected.

@@ -44,9 +44,26 @@ print("E0 / m_e                 ", mp.nstr(E0, 15))
 print("|gap| / m_e              ", mp.nstr(gap, 15))
 print("eps = gap / M            ", mp.nstr(eps, 15))
 print("D = r_rms / lbar_M       ", mp.nstr(D, 15))
+
+# Second corpus unit (ElectronUnitSplit): trace-pipeline electron weight
+# tau_e = q^3 y_(3) instead of the hand-placed hbar_q^2. Units differ by
+# R = tau_e / hbar_q^2, so E0_trace = E0 / R. Reported, not chosen.
+hbar = 1 - 1 / q
+tau_e = q**3 * (q**4 + 1) / (q**2 + 1)**2
+R = tau_e / hbar**2
+gap_t = gap / R
+eps_t = gap_t / M
+D_t = sqrt(q / 2) / sqrt(eps_t)
+print()
+print("trace-pipeline unit: R = tau_e/hbar_q^2", mp.nstr(R, 15))
+print("  |gap| / m_e            ", mp.nstr(gap_t, 15))
+print("  eps                    ", mp.nstr(eps_t, 15))
+print("  D                      ", mp.nstr(D_t, 15))
 print()
 print("-- comparison boundary --")
 me_MeV = mpf("0.51099895069")
 lbar_p_fm = mpf("0.21030891")
 print("|gap| MeV                ", mp.nstr(gap * me_MeV, 8), " (Delta - N measured ~293)")
 print("r_rms fm                 ", mp.nstr(D * lbar_p_fm, 8), " (r_p measured 0.8409)")
+print("trace unit: |gap| MeV    ", mp.nstr(gap_t * me_MeV, 8))
+print("trace unit: r_rms fm     ", mp.nstr(D_t * lbar_p_fm, 8))
