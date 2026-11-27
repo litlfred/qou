@@ -81,3 +81,30 @@ Ring mass m(β) = [2]³ q^{-2w} tr_D(β), U = −q ∂_q log m.
 * `scripts/lean-verify.sh` on `LeptonUniversalityLadder.lean`: exit 0, sorry-free.
   `#print axioms`: `propext`, `Classical.choice`, `Quot.sound` only (ladder_swap_left: `propext`).
 * Imported in `QOU.lean`.
+
+## Pseudo-Anosov (second part, 2026-11-27 23:29–23:36Z)
+The owner reopened the universality ruling after the mass-map thread showed every central-step
+ladder is volume-blind (PR #9825: Δ² ↦ −I, same Nielsen–Thurston type at every rung), and wrote
+*"Work anosov"*.
+
+**Structure** (`QOU/Observations/LeptonChargeClassTrace.lean`, sorry-free): under
+B₃ → SL(2,ℤ), σ₀ ↦ [[1,1],[0,1]], σ₁ ↦ [[1,0],[−1,1]], the image mod 2 is the permutation
+(SL(2,𝔽₂) ≅ S₃), so every word of odd length (the electron's charge class: two-component closure)
+has even trace. The least-trace pseudo-Anosov σ₀σ₁⁻¹ (trace 3; its square closes to 4₁) is
+therefore neutral, consistent with the old canon 4₁ = Higgs.
+
+**Charge class ordered by |tr|** (probe `charge_class_pseudo_anosov_probe.py`, SnapPy high precision,
+words ≤ 9, 4/4): 0 Δ periodic; 2 σ₀^odd reducible; 4 σ₀²σ₁⁻¹, closure ∪ axis volume
+5.33348956689811958159 (magic manifold), one class; 6 σ₀⁴σ₁⁻¹, 6.35458655720065195270, one class;
+8 two classes (8.35550…, 6.75519…). Neutral class for reference: 3 → 4.05977 (= 2 Vol(4₁)).
+
+**Ruling** (owner card 23:35Z): e = Δ, μ = σ₀²σ₁⁻¹, τ = σ₀⁴σ₁⁻¹. Each pseudo-Anosov word is σ₀ⁿ
+times the photon's chiral vertex σ₀σ₁⁻¹. The rule "periodic, then pseudo-Anosov by |tr|" re-derives
+e = Δ and is unique up to mirror and centre for three generations; a fourth would need a further rule.
+
+**Caveats.** μ closes to the Hopf link, like e, so every closure invariant (ring mass, coloured
+masses, U) is equal for e and μ (PR #9832); τ closes to T(2,4). The mass map must read the braid
+with its axis. Volume ratio τ/μ = 1.19: volume alone cannot carry the hierarchy.
+
+**Backups kept** (owner: *"keep the alternatives… as a fallback"*): universality ladder Δ, Δ³, Δ⁵
+(§above, Lean kept); shared 4₁ carrier; T(2,2n) links; B₂ trefoil ladder.
