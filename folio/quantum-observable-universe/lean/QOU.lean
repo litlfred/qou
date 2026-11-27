@@ -49,6 +49,7 @@ import QOU.Core.TarskiSign
 import QOU.Core.TarskiSignKashaev
 import QOU.Core.KashaevHermitianCertificate
 import QOU.Core.TarskiSignKashaevGen
+import QOU.Core.KashaevHabiroBridge
 import QOU.Core.KashaevReflection
 import MathlibExt.Core
 import MathlibExt.QuadraticIrrationalBadlyApproximable
