@@ -37,14 +37,16 @@ what the missing binding term IS — only that this one-parameter family is not
 it.  The numbers in `measured_constant_error_at_least_two` are measured inputs
 carried in as literals, not derived in Lean.
 
-This file is deliberately over `ℝ` (AGENTS.md §7c): it compares model to
-measurement, needs an ordering and `Real.sqrt`, and so belongs on the
-archimedean side of the wall.
+This file is over `ℝ` (AGENTS.md §7c): it compares model to measurement and
+needs an ordering. The square root is a ring symbol `s` with `0 ≤ s` and
+`s² = x` (bean `qou-dk7p`); the `Real.sqrt` forms, under their original names,
+are in `QOU/Transcendental/MassTheory/GrowingWidthCutShapeExclusionReal.lean`.
 
 @module QOU.MassTheory.GrowingWidthCutShapeExclusion
 -/
 
-import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Data.Real.Basic
+import Mathlib.Order.MinMax
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.FieldSimp
@@ -82,49 +84,49 @@ theorem mono_hypothesis_is_load_bearing :
       ¬ (g₁ ≤ g₂) ∧ 0 ≤ c ∧ b₂ < b₁ ∧ c * g₁ = b₁ ∧ c * g₂ = b₂ :=
   ⟨2, 1, 2, 1, 1, by norm_num, by norm_num, by norm_num, by norm_num, by norm_num⟩
 
-/-- The geometric mean never exceeds the max. -/
-theorem sqrt_mul_le_max {x y : ℝ} (hx : 0 ≤ x) (hy : 0 ≤ y) :
-    Real.sqrt (x * y) ≤ max x y := by
+/-- The geometric mean never exceeds the max: any `s ≥ 0` with `s² = x·y` is at
+most `max x y`. -/
+theorem le_max_of_sq_eq_mul {x y s : ℝ} (hx : 0 ≤ x) (hy : 0 ≤ y) (hs : 0 ≤ s)
+    (hs2 : s ^ 2 = x * y) : s ≤ max x y := by
   have hm : 0 ≤ max x y := le_trans hx (le_max_left x y)
   have h : x * y ≤ max x y * max x y :=
     mul_le_mul (le_max_left x y) (le_max_right x y) hy hm
-  calc Real.sqrt (x * y) ≤ Real.sqrt (max x y * max x y) := Real.sqrt_le_sqrt h
-    _ = max x y := Real.sqrt_mul_self hm
+  nlinarith
 
 /-- **The quantitative form.**  If the per-isotope rescalings that would be
 required span `[rmin, rmax]`, then for EVERY positive constant `c` the worst
-multiplicative error is at least `√(rmax / rmin)`.
+multiplicative error is at least `√(rmax / rmin)`, the symbol `s ≥ 0` with
+`s² = rmax / rmin`.
 
 `rmax / c` is how far the constant undershoots the isotope needing the most;
 `c / rmin` how far it overshoots the one needing the least.  No `c` escapes
 both. -/
-theorem best_constant_error_lower_bound
-    {rmin rmax c : ℝ} (hmin : 0 < rmin) (hle : rmin ≤ rmax) (hc : 0 < c) :
-    Real.sqrt (rmax / rmin) ≤ max (rmax / c) (c / rmin) := by
+theorem best_constant_error_lower_bound_of_sq
+    {rmin rmax c s : ℝ} (hmin : 0 < rmin) (hle : rmin ≤ rmax) (hc : 0 < c)
+    (hs : 0 ≤ s) (hs2 : s ^ 2 = rmax / rmin) :
+    s ≤ max (rmax / c) (c / rmin) := by
   have hrmax : 0 < rmax := lt_of_lt_of_le hmin hle
-  have h := sqrt_mul_le_max (le_of_lt (div_pos hrmax hc)) (le_of_lt (div_pos hc hmin))
   have e : (rmax / c) * (c / rmin) = rmax / rmin := by
     field_simp
-  rwa [e] at h
+  exact le_max_of_sq_eq_mul (le_of_lt (div_pos hrmax hc)) (le_of_lt (div_pos hc hmin)) hs
+    (hs2.trans e.symm)
 
 /-- **Instantiated at the measured spread.**  With `rmin = 0.5130070` (²H) and
 `rmax = 2.3770636` (⁴He) — the rescalings the balanced cut `w = 3/2` would need
 — every constant is off by at least a factor of two somewhere.  The probe's
-dense value is 2.1526×; two is the floor this bound certifies.
+dense value is 2.1526×; two is the floor this bound certifies. No square root is
+needed: if both ratios were below `2`, their product `rmax/rmin` would be below `4`.
 
 The two literals are measured inputs, not Lean-derived. -/
 theorem measured_constant_error_at_least_two
     {c : ℝ} (hc : 0 < c) :
     (2 : ℝ) ≤ max ((23770636 : ℝ) / 10000000 / c) (c / ((5130070 : ℝ) / 10000000)) := by
-  have hmin : (0 : ℝ) < (5130070 : ℝ) / 10000000 := by norm_num
-  have hle : (5130070 : ℝ) / 10000000 ≤ (23770636 : ℝ) / 10000000 := by norm_num
-  have hb := best_constant_error_lower_bound hmin hle hc
-  have h2 : (2 : ℝ) ≤ Real.sqrt ((23770636 : ℝ) / 10000000 / ((5130070 : ℝ) / 10000000)) := by
-    rw [show ((23770636 : ℝ) / 10000000 / ((5130070 : ℝ) / 10000000))
-          = (23770636 : ℝ) / 5130070 by ring_nf]
-    rw [show (2 : ℝ) = Real.sqrt 4 by
-      rw [show (4 : ℝ) = 2 * 2 by norm_num, Real.sqrt_mul_self (by norm_num)]]
-    exact Real.sqrt_le_sqrt (by norm_num)
-  exact le_trans h2 hb
+  by_contra hlt
+  push_neg at hlt
+  have h1 : (23770636 : ℝ) / 10000000 / c < 2 := lt_of_le_of_lt (le_max_left _ _) hlt
+  have h2 : c / ((5130070 : ℝ) / 10000000) < 2 := lt_of_le_of_lt (le_max_right _ _) hlt
+  rw [div_lt_iff₀ hc] at h1
+  rw [div_lt_iff₀ (by norm_num)] at h2
+  nlinarith
 
 end QOU.MassTheory
