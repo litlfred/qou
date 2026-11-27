@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-21T06:59:28Z
+updated_at: 2026-11-27T15:10:00Z
 parent: qou-10v9
 ---
 
@@ -8983,3 +8983,82 @@ Bean stays OPEN.
 #8774 puts a reflection-equation boundary K on the Jimbo R-matrix and finds that T_p/T_n is fixed up to one binary choice (which end has the wall), while the size of n − p is not fixed. My Ariki–Koike blob result (01:10Z entry) agrees in kind. One blob scales the trace by exactly y, and two blobs depend on the slots. So the p/n split comes only through the free blob data (Q, y), and no size is derived. These are two routes to the same scope-(a) negative: a type-B boundary does not supply an n − p magnitude without a boundary–bulk coupling. I will not do a symbolic (Q, y) run, because it would only parametrise a size that neither route fixes.
 
 Cleanups re-checked on main 7836e3c2290. The derived_masses fields were handled by #8551/#8558. The qbeta_utils/constants two-term helpers now default to the ruled covariant all-pairs insertion, which gives 0 on V³, and the adjacent and plain variants are labelled comparisons. `error_reduction_pct` in free-neutron-decay reads "0.0" under that scored insertion, so it no longer reports a reduction. Nothing remains to card.
+
+
+
+## 2026-11-14 — a scalar per step: the γγ strand-tower route is closed by an IDENTITY, and reading 3 is magnitude-blind (PR litlfred/qou#7817)
+
+Producer `computations/probes/gg_ntower/gg_scalar_per_step_probe.py` (8/8, exact
+over ℚ(q), 70 dps at q₀); write-up `scalar_per_step_results.md`. **Re-derivation
+record, not a search.** Nothing wired, nothing selected, nothing re-scored.
+
+Answering the 2026-10-10 question ("what element or functional supplies a factor
+above 1 on the ruled base") on the one route `gg_ntower` listed as untested:
+**pair creation by Jones projections**, two strands per collision — the
+physically natural γγ vertex, since γγ → e⁺e⁻ creates particles rather than
+braiding existing ones. The vertex is forced, not chosen: σ has eigenvalues q and
+−q⁻¹, so `e_p = (q·1 − σ_p)/(q + q⁻¹)` is the unique U_q(sl₂)-invariant cup.
+
+### Three invariants, every residual exactly 0 over ℚ(q)
+
+- **I1 (new)** `e₀e₂ · Σ₁ = q² · e₀e₂`, both sides, all 7 two-row blocks at
+  n = 4,5,6, with `Σ₁ = σ₁σ₀σ₂σ₁`. The cabled crossing on a double singlet is the
+  scalar q² — the two-strand analogue of the sorry-free `mul_jonesIdempotent`.
+- **I2** `tr_M(y·e_m) = tr_M(y)/[2]_q²` for y ∈ H_m, 7 words, n = 3,4,5.
+- **I3** `tr_M(V₀³V_j³) = tr_M(V₀³)²` for j = 2 (**chain**) and j = 3 (disjoint).
+  Stronger than `explanation.md`, which claims multiplicativity only for the
+  disjoint s = +3 case; verified on a published element (#7733 s=+2 k=2).
+
+### The closure, and why it is scope (b)
+
+I1 gives `e₀e₂·Σ₁^c = q^{2c}·e₀e₂`, hence
+
+    tr_M(e₀e₂ Σ₁^c) = q^{2c}/[2]_q⁴ = q^{4+2c}/(q²+1)⁴
+
+verified against the closed form at **every c = 1…8**, step ratio **exactly**
+q² = 1.2320524541667639313. `F_required = 1.75923699418`, and the family passes
+**through** it between c = 5 (F = 1.634) and c = 6 (F = 2.013).
+
+**🛑 So reading 3 does not bound magnitude.** Frobenius positivity on every block
+with y_λ > 0 — ruled canonical 2026-09-12, whole word 2026-09-13, every strand
+count 2026-10-12 — admits every c while tr_M grows without limit. Measured three
+independent ways: this family (every c admissible, unbounded); the sibling
+pair-creation construction (10 of 12 admissible across a 7.6× range, and
+`χ_(3)(R_3) = 0` *exactly* for all 12 so the trace collapses to one scalar
+regardless); and the composed tower, already on record as "rejects nothing and
+admits everything H₃ rejected".
+
+**Scope (b), with a named invariant, for the stated class only:** every "fresh
+strands per collision" γγ construction whose collisions are joined by a chain (I3)
+or a cabled double singlet (I1) contributes **a scalar per step** — a geometric
+family, whose step index is a free unbounded knob. Picking the c that clears 1 is
+selection against the target, which §NO FITTING names as a fitted discrete
+parameter. **No c is adopted.**
+
+### What this does NOT close
+
+**No nucleon** — no quark letters, no flavour, no two-nucleon level — so this
+answers the *mechanism* half of the 2026-10-11 ask and **not** the deliverable
+half. Silent on the base, ε, z and the ladder; silent on placements that are
+neither a chain nor a cabled double singlet, and on creation at the bottom.
+
+One derivation worth carrying forward from the same review, **not** re-derived
+here: the corpus's 3-letter quark block is provably **not** γγ-produced on two
+sorry-free invariants — odd length against `gammaGamma_length_even`, and writhe
+∈ {±1,±3} against `writhe_eq_zero`. That justifies *replacing* the quark template
+rather than re-sweeping its 8 members, which is what the 2026-10-12 "derive it, do
+not pick it" ruling asks for.
+
+Verification: probe exit 0 8/8; `precision-gates.sh` full mode RED line sha256
+`7c24bef867293db6…` **byte-identical with and without this probe** (a `--changed`
+A/B was run first and was VOID — it skipped, examining nothing); 13 sibling audit
+witnesses restored by name per `qou-v0t8`.
+
+## 2026-11-27 — salvaged from closed #7817; owner ruled routes A + C
+
+PR #7817 was closed unmerged on 2026-11-27 in the old-PR cleanup. Its probe, witness and results note are re-landed on `main` by PR litlfred/qou#9464, where the probe was re-run on current main with 8/8 passing and a byte-identical witness. The bean notes above (dated 2026-11-14) are copied here from that branch, because they never reached the beans branch.
+
+Owner ruling, 2026-11-27, via a decision card in the project thread "C to D migration": **A + C**.
+- **A**: rule a second structural criterion beside reading 3 that bounds magnitude. It must come from the decay channel's particle content, not from the residual, because a ceiling chosen so that the target survives would be a fit.
+- **C**: build the H₆→H₃ (one nucleon) and H₁₂→H₆ (two nucleon) ladder with quark letters, and record the γγ residue with no magnitude expectation.
+B (reopening the z_D base) is held.
