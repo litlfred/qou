@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - compute-accuracy
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-11-27T14:18:20Z
+updated_at: 2026-11-27T14:53:15Z
 parent: qou-2002
 ---
 
@@ -362,3 +362,7 @@ reverted #8554 to the one-term default pin (two-term kept as a named comparison)
 Claimed by claude/w6-joint-lepton-resolvent-20261123 (2026-11-23)
 
 PR #9213 opened on claude/w6-joint-lepton-resolvent-20261123 (01ca9a6e9a9; Murakami real-q deformation excluded on sign, 29 theorems in InhomogeneousLeptonLoopResolvent.lean)
+
+
+## 2026-11-27 option 2: Borel resummation (PR #9459)
+The Ohtsuki series equals the q->1 expansion of (A/2-1)/(q(1-q)), where A is the LZ false theta (exact through order 11). The closed-form Borel transform has singularities at pi^2 j^2/30, j^2 = 1, 49 mod 120. At q0>1 the series is Borel summable with no ambiguity, I_B(q0)=0.6152261147. Sectors at q0: e^-c1=4.27e-2 (j=1) and 8.0e-68 (j=7), c1=3.153. Comparison only: t_res=2.11e-7 sits in this gap, so no single resummed quantity carries it (scope a). e^-5c1=1.42e-7 is not a sector (5 is not a square), so using it would be selection. Lean: PoincareSphereBorelSectors.lean dualSupport_action_gap. Audit: docs/audits/2026-11-27-sigma235-borel-resummation-mu-p.md.
