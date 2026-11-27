@@ -2,14 +2,13 @@
 # qou-usft
 title: 'Light-nucleus regime: derive the Coulomb radius AND density shape from binding + q-CLT, not r0*A^(1/3)'
 status: in-progress
-pr: 8192
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-mass
 created_at: 2026-08-09T10:35:13Z
-updated_at: 2026-11-27T20:05:00Z
+updated_at: 2026-11-27T20:59:58Z
 parent: qou-8lxd
 ---
 
@@ -433,3 +432,13 @@ fixes a shape class, not q₀; convention alternates span 0.5165–0.5283; no ra
 is claimed. Combining that f with a DERIVED radius is still the open part of this
 bean. The path-1 binding-tail radius carries a ±20 % shape choice of its own and
 is not derived.
+
+
+## 2026-11-27 — shape half wired (PR #9699), killswitch goes red
+
+- Lean `QOU/Nuclear/CoulombShellShapeFactor.lean` (sorry-free): f² = E²M₂/Q⁵ is invariant under dilation, charge rescale and the lattice shift p^k → p^(k+n).
+- `coulomb_energy.shape_factor`: default `derived` uses the q-Hankel f = 0.520011 for A ≤ 4 and the uniform ball for A ≥ 5. `uniform_ball` reproduces the old value; `qhankel` is for comparison.
+- A ≤ 4 follows from shell occupancy (0s holds 2 spin × 2 isospin = 4 nucleons). The ball at A ≥ 5 is an import, and E_C jumps by a factor of 1.119 between A = 4 and A = 5.
+- Caveat: r_rms = √(3/5)·λ̄_π·A^{1/3} uses the uniform-ball moment relation, so the derived f is paired with a ball-converted, selected radius.
+- **KNOWN RED after merge:** `coulomb-mirror-killswitch-probe` assertion `derived_coulomb_reproduces_every_mirror_split_within_nolen_schiffer_scale` fails on the next run (worst case 17 % → 24 %; ³H/³He ΔB_AME/ΔE_C 0.901 → 0.806). It must NOT be relaxed. It is a finding about the radius.
+- Pending after merge: regenerate the 17 coulomb_energy consumer witnesses (merge thread).
