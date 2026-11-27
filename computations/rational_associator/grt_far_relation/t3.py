@@ -89,12 +89,13 @@ def conjR(g,x,D): return mul(mul(g,x,D),inv1(g,D),D)  # g x g^-1
 def H2(gp,D):
     gvw=ev(gp,V,W,D); guw=ev(gp,U,W,D)
     return add(conjR(gvw,V,D),conjR(guw,U,D),W,sc(-1,add(U,V,W)))
-print('H2 sig3 deg5',iszero(H2(expL(sig3,5),5),5),'H2 xy deg4',iszero(H2(expL(xy,4),4),4))
-# generic degree-3 element a*XXY + b*YXY: which (a,b) satisfy H2 at deg 4?
-for ab in [(1,0),(0,1),(1,-1),(1,1)]:
-    l=add(sc(ab[0],lbr(X,lbr(X,Y))),sc(ab[1],lbr(Y,lbr(X,Y))))
-    print('H2',ab,iszero(H2(expL(l,4),4),4),'5.14',iszero(hex514(expL(l,4),4,U,V,W),4),'5.13',iszero(anti(expL(l,4),4,U,V),4))
 def TC(gp,D):
     gvw=ev(gp,V,W,D); guw=ev(gp,U,W,D)
     return add(conjR(gvw,V,D),sc(-1,conjR(guw,add(V,W),D)),W)
-print('TCompat sig3 deg5',iszero(TC(expL(sig3,5),5),5),'TCompat xy deg4',iszero(TC(expL(xy,4),4),4))
+if __name__ == '__main__':
+    print('H2 sig3 deg5',iszero(H2(expL(sig3,5),5),5),'H2 xy deg4',iszero(H2(expL(xy,4),4),4))
+    # generic degree-3 element a*XXY + b*YXY: which (a,b) satisfy H2 at deg 4?
+    for ab in [(1,0),(0,1),(1,-1),(1,1)]:
+        l=add(sc(ab[0],lbr(X,lbr(X,Y))),sc(ab[1],lbr(Y,lbr(X,Y))))
+        print('H2',ab,iszero(H2(expL(l,4),4),4),'5.14',iszero(hex514(expL(l,4),4,U,V,W),4),'5.13',iszero(anti(expL(l,4),4,U,V),4))
+    print('TCompat sig3 deg5',iszero(TC(expL(sig3,5),5),5),'TCompat xy deg4',iszero(TC(expL(xy,4),4),4))
