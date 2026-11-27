@@ -636,6 +636,8 @@ import HeckeTemperleyLieb.QJucysMurphy
 import HeckeTemperleyLieb.ContentCasimir
 import HeckeTemperleyLieb.QJucysMurphyEigen
 import HeckeTemperleyLieb.QHeatKernelRate
+import HeckeTemperleyLieb.QHeatKernelModeSet
+import HeckeTemperleyLieb.QHeatKernelRecursion
 import BraidKnotOctonion.SeminormalContentCasimir
 import BraidKnotOctonion.QSchurMoves
 import BraidKnotOctonion.QSchurUpperBound
