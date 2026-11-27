@@ -10,18 +10,18 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 
 | quantity | count |
 |---|---:|
-| Lean modules (paper package tree) | 4000 |
-| inside the boundary `QOU/Transcendental/` | 28 |
-| outside, using a transcendental/analytic API directly | 680 |
-| outside, algebraic but importing one transitively (tainted) | 281 |
-| outside, algebraic and import-clean (pure) | 3011 |
+| Lean modules (paper package tree) | 4001 |
+| inside the boundary `QOU/Transcendental/` | 29 |
+| outside, using a transcendental/analytic API directly | 679 |
+| outside, algebraic but importing one transitively (tainted) | 280 |
+| outside, algebraic and import-clean (pure) | 3013 |
 
 ## Direct use by class
 
 | class | modules | matched API |
 |---|---:|---|
-| transcendental-function | 479 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
-| real-completion | 161 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
+| transcendental-function | 478 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
+| real-completion | 160 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
 | analysis | 322 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
 
 Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 68. These are the cheapest to move:
@@ -37,7 +37,7 @@ algebraic extension.
 | `QOU/Nuclear` | 104 |
 | `MathlibExt` | 95 |
 | `QOU/BraidsAndKnots` | 42 |
-| `QCalculus` | 38 |
+| `QCalculus` | 37 |
 | `HeckeTemperleyLieb` | 16 |
 | `QOU/Observations` | 15 |
 | `QOU/BringsSurface` | 14 |
