@@ -18,3 +18,8 @@ Run from this directory. No floats: `Fraction` (exact) or integer arithmetic mod
   Among degree-3 directions a·[X,[X,Y]] + b·[Y,[X,Y]], only (a,b) = (1,1) satisfies it, and
   (5.13) singles out the same direction; linear (5.14) holds for all four tested. So through degree
   3 of g, (5.13) and (5.14) imply `TCompat`. Runtime about a minute.
+- `hexagon_act.py [D]`: **exact over Q**, in U(t3), default D = 5. Solves the hexagon (repo form)
+  degree by degree for a group-like phi with degree-2 part [X,Y]/24 (the hexagon alone leaves
+  free parameters; the script sets them to 0). With g = exp(σ3) it confirms (5.14) as
+  G2 G3 G1 = 1, the identity G1 t13 G1⁻¹ + G3⁻¹ t23 G3 = t13 + t23, and the hexagon of
+  φ̃ = φ(gAg⁻¹,B)·g, all through degree 5. With g = exp([X,Y]) all three fail. Imports `t3.py`.

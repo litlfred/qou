@@ -166,3 +166,50 @@ as the image of the pentagon under the relabelling automorphism `swap23Hom = lif
 The statement is of the Kashiwara–Vergne type (`grt ⊂ krv` in Alekseev–Torossian); whether that
 inclusion supplies it in this form has not been checked against the library. Bean `qou-3fdg` stays
 open on this point and on the existence of the units `G`.
+
+## 7. Stage 3e: the GRT action preserves the hexagon
+
+Lean: `RationalAssociator/HexagonAction.lean`, no `sorry`, axioms `propext`, `Classical.choice`,
+`Quot.sound`. Script: `computations/rational_associator/grt_far_relation/hexagon_act.py`.
+
+**The hexagon.** This is the repo's form (`LowDegree.lean`), with the exponential `E` an arbitrary
+one-variable polynomial:
+
+    E(t₁₃+t₂₃) = φ(t₁₃,t₁₂) E(t₁₃) φ(t₂₃,t₁₃) E(t₂₃) φ(t₁₂,t₂₃).
+
+`hexagon_expHalfPoly_iff` recovers the degree-3 truncated form of `LowDegree.lean`.
+
+**The route.** Write `G₁ = g(t₁₃,t₁₂)`, `G₂ = g(t₂₃,t₁₃)`, `G₃ = g(t₁₂,t₂₃)`. Transport `t` to
+`s = (t₁₂, G₁ t₁₃ G₁⁻¹, G₃⁻¹ t₂₃ G₃)`. Two facts drive the proof:
+
+- (5.14), in the form `G₂ G₃ G₁ = 1`, makes `Z = G₂G₃ = G₁⁻¹` conjugate the pair
+  `(G₂ t₂₃ G₂⁻¹, t₁₃)` to `(s₂₃, s₁₃)`.
+- `s₁₃ + s₂₃ = t₁₃ + t₂₃`. This follows from `DK3`, from (5.13) at `(t₂₃,t₁₂)`, and from one
+  `TCompat` instance at `(u,v,w) = (t₂₃,t₁₃,t₁₂)`.
+
+Then the factors map as follows, and the product telescopes:
+
+- `φ(s₁₃,s₁₂) = φ̃(t₁₃,t₁₂) G₁⁻¹`
+- `E(s₁₃) = G₁ E(t₁₃) G₁⁻¹`
+- `φ(s₂₃,s₁₃) = G₁ φ̃(t₂₃,t₁₃) G₃`
+- `E(s₂₃) = G₃⁻¹ E(t₂₃) G₃`
+- `φ(s₁₂,s₂₃) = G₃⁻¹ φ̃(t₁₂,t₂₃)`
+
+**Proved in Lean.**
+
+- `hexagon_act_of_transport` and `hexagon_act` give the instance form: the hexagon of `φ` at `s`
+  implies the hexagon of `φ̃` at `t`.
+- `transported3_dk3` shows that `s` is again a `DK3` family.
+- `hexagon_act_all`: if `φ` satisfies the hexagon at every `DK3` family of `R`, then `φ̃`
+  satisfies it at every `DK3` family at which `g` satisfies (5.13), (5.14) and `TCompat`.
+- No truncation enters any of these statements. Unlike the pentagon (§5–6), no far-relation
+  issue arises, because a `DK3` family only asks each generator to commute with the total.
+
+**Exact over ℚ (`hexagon_act.py`, through degree 5).**
+
+- Take `φ` solving the hexagon with degree-2 part `[X,Y]/24`, and `g = exp(σ₃)`. Then the
+  hexagon of `φ̃` holds, and so do both transport identities.
+- With `g = exp([X,Y])`, all three fail.
+
+**What remains as hypotheses.** These are the same as for the pentagon: `TCompat` (one instance
+here), and the existence of the units `G`.
