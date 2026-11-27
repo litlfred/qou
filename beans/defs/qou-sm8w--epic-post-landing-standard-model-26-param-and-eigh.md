@@ -5,8 +5,8 @@ status: in-progress
 type: epic
 priority: critical
 created_at: 2026-11-23T20:06:00Z
-updated_at: 2026-11-23T20:55:56Z
-parent: qou-hksc
+updated_at: 2026-11-27T14:25:42Z
+parent: qou-0uga
 ---
 
 ## Overview
@@ -88,3 +88,5 @@ Umbrella epic coordinating worker-ready Lean 4 + 80-dps derivation packages for 
 | **`Q-Gap-9`** | **`qou-ewsb`** | `qou-ukqh`, `qou-z3x8`, `qou-zd6l`, `qou-5iaz`, `qou-0whz` | Bridge `#9204`'s $(q_0^2-1)^8$ Sweedler weak norm to `ElectroweakVevGaps` (`v_EW` `-29.37 ppb` & $m_H, m_Z/m_W$), instantiate `CategoricalHiggsMechanism`, & test $(q_0^2-1)^{-4}$ RG threshold for $\sin^2\theta_W(M_Z)$ and $\alpha_s(M_Z)$. |
 | **`Q-Gap-10`** | **`qou-nu01`** | `qou-qydm` | 2-loop weak $T(3,5)$ Sweedler radical mass lift on $\mathrm{Vol}(0_1)=0$ unknot ($m_\nu \sim (q_0^2-1)^{12} m_e \approx 0.024\;\mathrm{eV}$) & Dirac vs. Majorana framing parity ($0\nu\beta\beta$). |
 | **`Q-Gap-11`** | **`qou-tcpx`** | `tqcp`, `qou-1jqd`, `qou-db6w` | Discharge `ColorSectorCPEven` via $3\times 3$ bar-paired $T(2,9)\oplus\overline{T(2,9)}$ writhe cancellation ($\theta_{\mathrm{QCD}} = 0$) & prove discrete Wilson area-law string tension from `ConfinementLayerTower.lean`. |
+
+2026-11-27 (thread 'Get QOU site running on harness'): owner asked that stability, eightfold+SM and accuracy show on the work-plan milestones dashboard (milestone-rollup.ts rolls up milestones only). Re-parented from qou-hksc (a session, typed milestone against AGENTS.md's epic rule) to milestone qou-0uga (SM / eightfold way), beside its sibling epic qou-8lxd.
