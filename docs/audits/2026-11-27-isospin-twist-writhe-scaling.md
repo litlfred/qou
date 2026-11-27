@@ -42,6 +42,24 @@ twist its `n`-only part `N(N−4)/4` would be quadratic in `A`, i.e. not extensi
 twist cannot be the whole-nucleus word under an extensive energy map, and a linear-writhe word
 is the reading under which both parts scale correctly.
 
+## 2a. The bound does not need the bond signs (added the same day)
+
+| statement | Lean |
+|---|---|
+| a word of `ℓ` letters `σ_i^{±1}` has `|e| ≤ ℓ`, any signs | `abs_writhe_wordOf_le` |
+| the nucleon core `(σ_aσ_b⁻¹)³` has `e = 0`; a writhe-zero factor leaves `e` unchanged | `writhe_core`, `writhe_mul_of_writhe_eq_one` |
+| `|e| ≤ ℓ` gives `|coeff| ≤ 2ℓ/(3A(3A−1))` | `abs_ttCoeff_le` |
+| `|e| ≤ A − 1` gives `|coeff| ≤ 2/(9A)` for all `A ≥ 1` | `abs_ttCoeff_le_of_chain` |
+
+Combined with `QOU.Mass.StrandLayoutForcesChain` (a single generator joins two nucleons
+only at `3k+2`, and only consecutive ones), a word made of writhe-zero nucleon cores plus
+one bridge letter per nucleon boundary has `|e| ≤ A − 1`, so the `T(T+1)` coefficient is
+at most `2κ/(9A)` in size **whatever the bond signs are**. The upper `1/A` scaling no longer
+rests on the sign assumption. What still rests on assumptions: the sign of the term (open,
+and possibly zero), the energy map (block log-determinant), one bridge letter per boundary
+(the corpus word; a word may repeat bridges), and the scale `α`. The full twist is outside
+this class: its `N(N−1)` letters are mostly intra-nucleon and transport letters.
+
 ## 3. What it gives (comparison only; AME is not used to choose anything)
 
 Same energy map, sign and lowest block as #9706. Only the writhe changes. The writhe of each
