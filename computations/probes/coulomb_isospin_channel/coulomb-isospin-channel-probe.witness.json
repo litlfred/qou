@@ -1,0 +1,180 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T20:45:50.229050+00:00",
+  "commitSha": "46f51edb80df18027b414b227fd047f5155bcc2f",
+  "assertions": [
+    {
+      "name": "imme_identity_exact_A_le_300",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Z(Z-1)/2 = A(A-2)/8 + (A-1)/2 T_z + T_z^2/2, exact Fractions"
+    },
+    {
+      "name": "quark_level_split_exact_A_le_40",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "3A-strand quark pair sum = Z(Z-1)/2 - N/3 (p internal 0, n internal -1/3)"
+    },
+    {
+      "name": "rank12_multiplet_average_zero",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Lean rank_one_multiplet_sum / rank_two_multiplet_sum, 2T <= 20"
+    },
+    {
+      "name": "uniform_ball_special_case_matches_coulomb_energy",
+      "computed": "3.7616e-71",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "em_energy_mev(f=(3/5)^{3/2}, r_rms=sqrt(3/5) R) == coulomb_energy_mev"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "coulomb-isospin-channel-probe",
+  "scriptFile": "coulomb_isospin_channel_probe.py",
+  "scriptHash": "82943bdd4da3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/coulomb_isospin_channel/coulomb_isospin_channel_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/coulomb_isospin_channel/coulomb_isospin_channel_probe.py"
+  },
+  "description": "Gap G3 (bean qou-tcl3): the EM channel of binding on the nucleus block. Exact charge structure Z(Z-1)/2 = a + b T_z + c T_z^2 with a = A(A-2)/8, b = (A-1)/2, c = 1/2 (Lean CoulombIsospinChannel.chargePairs_imme), one EM pair weight eps = 2 f alpha hbar_c / r_rms with f = q-Hankel 0.520011 (PR #9665). r_rms is OPEN; numbers use the CAL-3 length (coefficient selected, A^{1/3} assumed) and are CONDITIONAL. AME mirror splits are comparison only. Scope (a).",
+  "data": {
+    "f_qhankel": "0.5200105629948508624658401072266169236777",
+    "f_qhankel_provenance": "q-Hankel J_{1/2}(p^k; p^2), p = 1/q0, full Jackson lattice; PR #9665 witness, primary row (pre-registered)",
+    "f_uniform_ball": "0.4647580015448900262215118479738879533",
+    "alpha_hbar_c_MeV_fm": "1.43996521992482043319461632141",
+    "mirror_rows": [
+      {
+        "pair": "3H/3He",
+        "A": 3,
+        "eps_times_r_MeV_fm": "1.49759424941222",
+        "r_rms_cal3_conditional_fm": "1.57946214476993",
+        "split_model_qhankel_MeV": "0.948167231719482",
+        "split_model_ball_MeV": "0.84742183929187",
+        "split_AME_MeV": "0.76375488",
+        "rel_err_qhankel": "0.2414548915",
+        "rel_err_ball": "0.1095468736",
+        "r_rms_AME_would_need_fm (comparison only)": "1.960831006",
+        "r_cal3_over_r_needed": "0.8055065124"
+      },
+      {
+        "pair": "7Li/7Be",
+        "A": 7,
+        "eps_times_r_MeV_fm": "1.49759424941222",
+        "r_rms_cal3_conditional_fm": "2.09492341058209",
+        "split_model_qhankel_MeV": "2.14460477435225",
+        "split_model_ball_MeV": "1.9167345818732",
+        "split_AME_MeV": "1.6442398",
+        "rel_err_qhankel": "0.3043138685",
+        "rel_err_ball": "0.1657269103",
+        "r_rms_AME_would_need_fm (comparison only)": "2.732437658",
+        "r_cal3_over_r_needed": "0.7666866267"
+      },
+      {
+        "pair": "11B/11C",
+        "A": 11,
+        "eps_times_r_MeV_fm": "1.49759424941222",
+        "r_rms_cal3_conditional_fm": "2.43556485374963",
+        "split_model_qhankel_MeV": "3.07442901203518",
+        "split_model_ball_MeV": "2.74776242100923",
+        "split_AME_MeV": "2.76403599999999",
+        "rel_err_qhankel": "0.1122970222",
+        "rel_err_ball": "-0.005887614702",
+        "r_rms_AME_would_need_fm (comparison only)": "2.709071534",
+        "r_cal3_over_r_needed": "0.8990404362"
+      },
+      {
+        "pair": "13C/13N",
+        "A": 13,
+        "eps_times_r_MeV_fm": "1.49759424941222",
+        "r_rms_cal3_conditional_fm": "2.57503569798102",
+        "split_model_qhankel_MeV": "3.48949162278354",
+        "split_model_ball_MeV": "3.11872348067778",
+        "split_AME_MeV": "3.0028193",
+        "rel_err_qhankel": "0.1620717979",
+        "rel_err_ball": "0.03859845335",
+        "r_rms_AME_would_need_fm (comparison only)": "2.992376363",
+        "r_cal3_over_r_needed": "0.8605320272"
+      },
+      {
+        "pair": "15N/15O",
+        "A": 15,
+        "eps_times_r_MeV_fm": "1.49759424941222",
+        "r_rms_cal3_conditional_fm": "2.70084227624297",
+        "split_model_qhankel_MeV": "3.88144092607594",
+        "split_model_ball_MeV": "3.46902708577376",
+        "split_AME_MeV": "3.53653199999999",
+        "rel_err_qhankel": "0.09752744386",
+        "rel_err_ball": "-0.01908788447",
+        "r_rms_AME_would_need_fm (comparison only)": "2.96424852",
+        "r_cal3_over_r_needed": "0.9111389475"
+      },
+      {
+        "pair": "17O/17F",
+        "A": 17,
+        "eps_times_r_MeV_fm": "1.49759424941222",
+        "r_rms_cal3_conditional_fm": "2.81590788418322",
+        "split_model_qhankel_MeV": "4.25466829458198",
+        "split_model_ball_MeV": "3.80259801346748",
+        "split_AME_MeV": "3.5428119",
+        "rel_err_qhankel": "0.2009297741",
+        "rel_err_ball": "0.07332766198",
+        "r_rms_AME_would_need_fm (comparison only)": "3.381707619",
+        "r_cal3_over_r_needed": "0.8326881568"
+      },
+      {
+        "pair": "39K/39Ca",
+        "A": 39,
+        "eps_times_r_MeV_fm": "1.49759424941222",
+        "r_rms_cal3_conditional_fm": "3.71384412893936",
+        "split_model_qhankel_MeV": "7.66168146829535",
+        "split_model_ball_MeV": "6.84760660854831",
+        "split_AME_MeV": "7.3068333",
+        "rel_err_qhankel": "0.04856387901",
+        "rel_err_ball": "-0.06284893504",
+        "r_rms_AME_would_need_fm (comparison only)": "3.894202806",
+        "r_cal3_over_r_needed": "0.9536853405"
+      },
+      {
+        "pair": "41Ca/41Sc",
+        "A": 41,
+        "eps_times_r_MeV_fm": "1.49759424941222",
+        "r_rms_cal3_conditional_fm": "3.77627333733003",
+        "split_model_qhankel_MeV": "7.93159877812806",
+        "split_model_ball_MeV": "7.08884445721382",
+        "split_AME_MeV": "7.2778936",
+        "rel_err_qhankel": "0.08982065609",
+        "rel_err_ball": "-0.0259758047",
+        "r_rms_AME_would_need_fm (comparison only)": "4.115460686",
+        "r_cal3_over_r_needed": "0.9175821677"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
