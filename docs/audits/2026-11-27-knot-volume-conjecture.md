@@ -164,8 +164,29 @@ The 4₁ control matches the Lean bounds: at N = 5 the conjugate a = 2 gives 41.
 
 **Consequence.** For 8₁₈ and 10₁₂₃ the obstruction found in §5 (negative Habiro terms) is **not** an embedding obstruction: their Kashaev values are totally positive for every N ≤ 14. By Siegel's theorem, a totally positive element of the totally real field Q(ζ_N)⁺ is a sum of squares there, hence a sum of norms from Q(ζ_N). So per-N Hermitian-square certificates **exist** for these N; what is missing is a **uniform-in-N** certificate like the Pochhammer one for 4₁.
 
-**This corrects my thread remark** that the embedding caveat "will bite for 8₁₈". The negative c₁ rules out the term-wise Habiro certificate only. Total positivity beyond N = 14 is not measured; that needs c_k for k > 13.
+**This corrects my thread remark** that the embedding caveat "will bite for 8₁₈". The negative c₁ rules out the term-wise Habiro certificate only. Total positivity beyond N = 14 is measured in §10.
 
 ```bash
 python3 -u computations/probes/weaving_kashaev_root_of_unity/galois_total_positivity_probe.py
+```
+
+## 10. Addendum: total positivity extended to N ≤ 20
+
+The Habiro route of §9 does not scale: for 8₁₈, c_15 alone took 33 minutes and each step costs about 2.5× the one before, so k = 19 is a multi-day run. `galois_conjugate_state_sum_probe.py` instead evaluates the R-matrix state sum of `weaving_kashaev_probe.py` at q = e^{2πia/N}, gcd(a, N) = 1, by replacing the fourth root w = e^{iπ/(2N)} with e^{iπa/(2N)}. The state sum is a Laurent polynomial in w, so each value is the Galois image of the a = 1 value. Arithmetic is mpmath at 60 digits.
+
+Controls:
+- 4₁ agrees with the Habiro product Σ_k Π_j (2 − q^j − q^{−j}) at every conjugate, to relative 8e-52.
+- For N ≤ 14, all three knots agree with the exact-c_k values of §9 to 3e-20 relative (the printing precision of the stored reference).
+- The imaginary residue is at most 3e-25, so no branch phase appears.
+
+| knot | N range | conjugates tested | negative | smallest value (N = 10, a = 3) |
+|---|---|---|---|---|
+| 4₁ | 10–20 | 50 | none | 218.1 |
+| 8₁₈ | 10–20 | 50 | **none** | 536296 |
+| 10₁₂₃ | 10–20 | 50 | **none** | 16365745 |
+
+So the Kashaev values of 8₁₈ and 10₁₂₃ are totally positive for every N ≤ 20. By Siegel's theorem, per-N Hermitian-square certificates therefore exist through N = 20. This is a finite numerical observation at fixed N; a proof for all N still needs a uniform certificate.
+
+```bash
+python3 -u computations/probes/weaving_kashaev_root_of_unity/galois_conjugate_state_sum_probe.py 10 20
 ```
