@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-22T10:47:45Z
-updated_at: 2026-11-25T01:16:31Z
+updated_at: 2026-11-27T20:15:00Z
 parent: qou-wxhi
 ---
 
@@ -70,3 +70,6 @@ PR #9213 opened on claude/w6-joint-lepton-resolvent-20261123 (01ca9a6e9a9; Murak
 Verbatim: 'make it conjecture/contingent on BraidBoostInertialEquivalence and work BraidBoostInertialEquivalence'.
 Done in PR #9402: new block conj:braid-boost-inertial-equivalence (information-theory/braid-boost-inertial-equivalence.{ts,md}, lean.ref to the class); conditional banner on prop:mass-energy, with the conjecture added to its uses[]; mass-energy-equivalence-interpretation no longer says 'not an independent postulate'.
 NARROWED: this bean now waits on qou-2k68 (a definition of inertial mass independent of m, then the class) and on the E_e / 70x unit split, which are the same missing input seen from two sides. Route 1 is excluded (probe braid_boost_inertial_clock). Kept OPEN (Rule 13a).
+
+
+2026-11-27 (PRs #9636, #9645): the electron weight's y₍₃₎ is now tied to the Hecke algebra. `jimboTrace_p3` (#9636) proves that the convention-D trace of the trivial central idempotent p₃ = x/[3]_q! of H₃(q) is (q⁴+1)/(q²+1)². `jimboTrace_p3_eq_y3` (#9645) proves that this equals `WeightSpaceMarkov.y3`, so τ_e = q³·τ(p₃). This is a bridge only. The canonical chart, meaning one rule that gives both the electron and the muon weights, is still OPEN. Side finding from the 1ppq survey: in the balanced normalisation the trivial-block character of the symmetriser is exactly [3]_q!, which is k = 0 for the proton normaliser, so it agrees with the KL-coordinate negative (#8964). The proton normaliser workstream stays parked.
