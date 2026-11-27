@@ -37,7 +37,7 @@
   -- Ref: [leitner2026] QOU/Knot/LobTaylorSaddle.lean
   -- Ref: [leitner2026] QOU/MathlibExt/GaussianThetaBound.lean
 -/
-import BraidKnotOctonion.KashaevPeakValue
+import QOU.Transcendental.BraidKnotOctonion.KashaevPeakValue
 
 namespace QOU.Knot.FigureEightVolume
 

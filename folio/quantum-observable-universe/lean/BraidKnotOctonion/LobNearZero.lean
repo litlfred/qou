@@ -37,7 +37,7 @@
   -- Ref: [leitner2026] QOU/Archimedean/BlochWignerLobachevsky.lean
 -/
 import BraidKnotOctonion.LogSincNearZero
-import BraidKnotOctonion.KashaevReflectionTrapezoid
+import QOU.Transcendental.BraidKnotOctonion.KashaevReflectionTrapezoid
 import Mathlib.Analysis.Normed.Group.FunctionSeries
 import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic

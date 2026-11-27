@@ -42,8 +42,8 @@
   -- Ref: [leitner2026] QOU/Archimedean/LobachevskyDerivative.lean
   -- Ref: [leitner2026] computations/probes/kashaev_reflection_probe.py
 -/
-import BraidKnotOctonion.KashaevProdEndpoint
-import BraidKnotOctonion.LobachevskyDerivative
+import QOU.Transcendental.BraidKnotOctonion.KashaevProdEndpoint
+import QOU.Transcendental.BraidKnotOctonion.LobachevskyDerivative
 
 namespace QOU.Knot.FigureEightVolume
 

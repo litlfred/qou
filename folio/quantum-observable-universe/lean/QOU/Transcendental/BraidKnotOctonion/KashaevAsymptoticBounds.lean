@@ -21,8 +21,8 @@
   -- Ref: [leitner2026] QOU/Knot/KashaevFullSum.lean
   -- Ref: [leitner2026] QOU/Knot/KashaevLogAsymptotic.lean
 -/
-import BraidKnotOctonion.KashaevFullSum
-import BraidKnotOctonion.KashaevLogAsymptotic
+import QOU.Transcendental.BraidKnotOctonion.KashaevFullSum
+import QOU.Transcendental.BraidKnotOctonion.KashaevLogAsymptotic
 
 namespace QOU.Knot.FigureEightVolume
 

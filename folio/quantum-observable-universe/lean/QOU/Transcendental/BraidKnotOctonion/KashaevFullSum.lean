@@ -24,7 +24,7 @@
   -- Ref: [leitner2026] QOU/Knot/KashaevSaddleWindow.lean
   -- Ref: [leitner2026] QOU/Knot/KashaevBeyondWindow.lean
 -/
-import BraidKnotOctonion.KashaevBeyondWindow
+import QOU.Transcendental.BraidKnotOctonion.KashaevBeyondWindow
 
 namespace QOU.Knot.FigureEightVolume
 

@@ -51,7 +51,7 @@
   -- Ref: [leitner2026] QOU/Knot/KashaevEndpointSplit.lean          (defines logSinc)
   -- Ref: [leitner2026] QOU/MathlibExt/CompositeEulerMaclaurin.lean (the rule applied)
 -/
-import BraidKnotOctonion.KashaevEndpointSplit
+import QOU.Transcendental.BraidKnotOctonion.KashaevEndpointSplit
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 import Mathlib.Analysis.Calculus.MeanValue

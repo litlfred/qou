@@ -23,9 +23,9 @@
   -- Ref: [leitner2026] QOU/Knot/KashaevPeakValue.lean
   -- Ref: [leitner2026] QOU/Knot/KashaevTailBound.lean
 -/
-import BraidKnotOctonion.KashaevPeakValue
-import BraidKnotOctonion.KashaevArgmax
-import BraidKnotOctonion.KashaevTailBound
+import QOU.Transcendental.BraidKnotOctonion.KashaevPeakValue
+import QOU.Transcendental.BraidKnotOctonion.KashaevArgmax
+import QOU.Transcendental.BraidKnotOctonion.KashaevTailBound
 
 namespace QOU.Knot.FigureEightVolume
 
