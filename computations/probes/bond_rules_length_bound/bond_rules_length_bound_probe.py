@@ -34,7 +34,7 @@ tr(x P)/tr(x), P the spectral projector of S at n-2. Computed by powers and by t
 Tail bound (archimedean, after the wall): for a truncation at length L0 of the weighted sum,
     ||Σ_{L>L0} (tS')^L|| ≤ (|t| ||S'||)^{L0+1} / (1 - |t| ||S'||)        when |t| ||S'|| < 1,
 and |tr(Y)| ≤ ||Y||_2 for the normalised quantum trace (K = diag(q, 1/q) is positive with Tr K = [2]).
-Lean: `QOU.MassTheory.BondLengthSumTail`.
+Lean: `QOU.Transcendental.MassTheory.BondLengthSumTail` (namespace QOU.MassTheory.BondLengthSumTail).
 
 Representation: Schur-Weyl on (C^2)^{⊗n}, R-matrix with σ - σ^{-1} = h (exactly the independent
 trace of the ceiling probe, which agrees with the corpus seminormal trace to 1e-25), block-diagonal

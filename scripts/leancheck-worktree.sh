@@ -44,13 +44,13 @@ for mod in ${DEPS+"${DEPS[@]}"}; do
   if [ -f "$S/$rel.olean" ]; then echo "=== dep cached $mod"; continue; fi
   mkdir -p "$(dirname "$out")"
   echo "=== dep build $mod"
-  timeout 1800 lean "$src" -o "$out" || { echo "=== dep FAILED $mod"; exit 1; }
+  timeout 1800 lean -DautoImplicit=false -s 65536 "$src" -o "$out" || { echo "=== dep FAILED $mod"; exit 1; }
 done
 
 rc=0
 for f in "$@"; do
   echo "=== lean $f"
-  timeout 1800 lean "$f"
+  timeout 1800 lean -DautoImplicit=false -s 65536 "$f"
   s=$?
   echo "=== exit $s  ($f)"
   [ "$s" -ne 0 ] && rc=$s

@@ -12,6 +12,7 @@ import MathlibExt.CombinatorialMapEuler
 import MathlibExt.CycleCountSwap
 import MathlibExt.MapGenusNonneg
 import BraidKnotOctonion.GenusFourFromEquivariantMap
+import BraidKnotOctonion.A5LeastHyperbolicChi
 import BraidKnotOctonion.GenusFourFromGermStabilisers
 import QOU.EightfoldWay.AmbientInvolutionDoesNotDecideType
 import QOU.EightfoldWay.CommutativeImageDegeneration
@@ -106,6 +107,7 @@ import QOU.Transcendental.MassTheory.ClausenDoubleAngleSeries
 import QOU.Transcendental.MassTheory.Cl2PentagonFromBlochWigner
 import QOU.Transcendental.MassTheory.BlochGroupComplex
 import QOU.Transcendental.MassTheory.MuonCarrierHeckeObstruction
+import QOU.Transcendental.MassTheory.ElectronCategoricalEnergy
 import QOU.MassTheory.BranchIntegerPinning
 import QOU.MassTheory.NucleusBondValence
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
@@ -332,8 +334,8 @@ import BraidKnotOctonion.HomflySkeinReference
 import QOU.Transcendental.BraidKnotOctonion.FigureEightQuarticCoefficient
 import QOU.BraidsAndKnots.PerNeutronLadder
 import QOU.Transcendental.BraidKnotOctonion.IdealTriangulation
-import BraidKnotOctonion.ManifoldVolumeBridge
-import BraidKnotOctonion.ManifoldVolumePositive
+import QOU.Transcendental.BraidKnotOctonion.ManifoldVolumeBridge
+import QOU.Transcendental.BraidKnotOctonion.ManifoldVolumePositive
 import CompactQuantumMetrics.Bicommutant
 import HeckeTemperleyLieb.BraidGroup
 import BraidKnotOctonion.PLPolygonalLink
@@ -393,6 +395,7 @@ import QOU.Transcendental.BraidKnotOctonion.FiveTwoVolumeChord
 import QOU.Transcendental.BraidKnotOctonion.FiveTwoShapeBounds
 import QOU.Transcendental.BraidKnotOctonion.FigureEightTriangulation
 import BraidKnotOctonion.AngleStructureUniqueness
+import QOU.Transcendental.BraidKnotOctonion.AngleStructureUniquenessTetVol
 import QOU.Transcendental.BraidKnotOctonion.IdealTetLawOfSines
 import QOU.Transcendental.BraidKnotOctonion.KummerDilogHalf
 import QOU.Transcendental.BraidKnotOctonion.KummerRadial
@@ -722,7 +725,7 @@ import QOU.MassTheory.IdealTetrahedronShapeBridge
 import QOU.Transcendental.BraidKnotOctonion.IdealTetrahedronVolumeConcavity
 import QOU.Transcendental.BraidKnotOctonion.LobachevskyMaximum
 import QOU.Transcendental.BraidKnotOctonion.LobMonotonicity
-import BraidKnotOctonion.BlochWignerNonneg
+import QOU.Transcendental.BraidKnotOctonion.BlochWignerNonneg
 import QOU.Transcendental.BraidKnotOctonion.BlochWignerPositive
 import QOU.Transcendental.MassTheory.HyperbolicVolumeMeasure
 import QOU.Transcendental.MassTheory.HyperbolicVolumeInversion

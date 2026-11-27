@@ -142,7 +142,7 @@ build_qou_module() {
   mkdir -p "$SCRATCH/$(dirname "$rel")"
   blog="$(mktemp)"
   for i in $(seq 1 "${LEAN_BUILD_FANOUT:-64}"); do
-    timeout "${LEAN_TIMEOUT:-600}" lean "$src" -o "$SCRATCH/$rel.olean" >"$blog" 2>&1
+    timeout "${LEAN_TIMEOUT:-600}" lean -DautoImplicit=false -s 65536 "$src" -o "$SCRATCH/$rel.olean" >"$blog" 2>&1
     rc=$?
     if [ "$rc" -eq 0 ]; then
       _MOD_OK="$_MOD_OK$mod "; rm -f "$blog"; return 0
@@ -297,7 +297,7 @@ for f in "${files[@]}"; do
   [ -f "$f" ] || { gone=$((gone+1)); printf '%-70s NOT-FOUND\n' "$(basename "$f")"; continue; }
   freshen_cone "$f"
   # No pipe: $? is lean's own status.
-  timeout "${LEAN_TIMEOUT:-600}" lean "$f" >"$log" 2>&1
+  timeout "${LEAN_TIMEOUT:-600}" lean -DautoImplicit=false -s 65536 "$f" >"$log" 2>&1
   rc=$?
   # --build-missing: rebuild stale QOU upstreams from current source, retry.
   if [ "$rc" -ne 0 ] && [ "$BUILD_MISSING" = "1" ]; then
@@ -312,7 +312,7 @@ for f in "${files[@]}"; do
         break
       fi
       printf '%-70s  ..built upstream %s\n' "" "$mod"
-      timeout "${LEAN_TIMEOUT:-600}" lean "$f" >"$log" 2>&1
+      timeout "${LEAN_TIMEOUT:-600}" lean -DautoImplicit=false -s 65536 "$f" >"$log" 2>&1
       rc=$?
       [ "$rc" -eq 0 ] && break
     done

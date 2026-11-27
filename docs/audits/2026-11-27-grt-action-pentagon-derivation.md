@@ -843,6 +843,90 @@ enters only through the central shift. Whether non-Lie `y` can satisfy the three
 without (5.14) is still **not established**, as §15 said: neither tested nor proved. B1, in
 `BaseChange.lean` and `Homogeneity.lean`, was not touched.
 
+## 16b. Gap B1, step (1) closed; steps (2)–(4) and the Lie-ness input still open
+
+Bean `qou-3fdg`, branch `claude/grt-b1-basechange-2026-11-27`, file
+`RationalAssociator/BaseChangeAction.lean` (sorry-free; `#print axioms assocK_compK` gives
+`propext`, `Classical.choice`, `Quot.sound` only, checked in a scratch copy).
+
+### What is proved
+
+**Step (1): `AssocK` is closed under a rational `GRT₁` element.**
+
+    theorem assocK_compK (hΦ : AssocK K N E Φ) (hg : GRT1U4 N g) : AssocK K N E (compK Φ g)
+
+where `compK Φ g = (id_K ⊗ subst[A ↦ g·A·g(B,A), B ↦ B]) Φ · (1 ⊗ g)` is Drinfeld's (5.16)
+with the inverse written through (5.12), base-changed in its first argument.
+`evK_compK` evaluates it as `Φ(g(a,b)·a·g(b,a), b) · g(a,b)`.
+
+How it is proved:
+
+* The action theorems `pentagon_act` and `hexagon_act_of_transport` use `φ` only through
+  `φ(u⁻¹au, u⁻¹bu) = u⁻¹ φ(a,b) u`. They are repeated for an arbitrary `f : R → R → R`
+  with that property (`pentagon_actF`, `hexagon_act_of_transportF`). For `f = evK · · Φ`
+  the property is `evK_conj`.
+* The units `g(·,·)` and the transported family are rational, because `g` is. So the
+  rational lemmas `far_of_tcompat`, `transported_dk4`, `transported3_sum` and
+  `transported3_dk3` give the rational transported family as a nilpotent `DK4` (resp. `DK3`)
+  family, unchanged. `pentK_of_universal` / `hexK_of_universal` move the pentagon / hexagon of
+  `Φ` from the universal family to it, by the `K`-algebra map `id_K ⊗ lift`, which commutes
+  with `evK` (`map_evK`).
+* (5.12) of `compK Φ g` (`inv_compK`) is conjugation by the rational unit `g(b,a)` plus (5.12)
+  of `Φ` at the rational pair `(g(a,b) a g(b,a), b)`. The constant term (`const_compK`) uses
+  `eval 0 0 p = ε(p)` (`eval_zero_zero`).
+
+### What is not done
+
+**Step (2): `c ∈ ℚ` to `c ∈ K`.** The shifts needed in step (4) are `exp(β·h)` with `β ∈ K`,
+whose coefficients are in `K`, so `assocK_compK` (rational `g`) does not apply directly. Planned
+route: for the four defects (const, (5.12), hexagon, pentagon) of `Φ ∘ exp(β h)`, show each is
+`Σ_{j<n} βʲ d_j` with `d_j ∈ K ⊗ U4 N` independent of `β` (work in `(K ⊗ U4 N)[T]` and evaluate
+at the central element `β`), vanishing for every `β ∈ ℚ` by step (1) and `grt1U4_expPoly`; then
+`coeff_mem_of_forall` with `F = ⊥` gives `d_j = 0`. Not written.
+
+**Step (3): the `K`-congruence** `Φ ∘ exp(β h) ≡ Φ + β ⊗ h (mod FFK (d+1))` for `h ∈ FF d`. The
+`K`-version of `compPoly_congr` / `expPoly_congr`. Not written; it is a filtration argument
+of the same shape as the rational one.
+
+**Step (4): the shift.** Decompose `z = Φ_K − 1 ⊗ x ∈ K ⊗ FF d` (with `x = contract π z` the
+rational lift of `rational_lift_of_assocK`) in a `ℚ`-basis `β_i` of `K`, `z ≡ Σ β_i ⊗ h_i`
+mod `FFK (d+1)`, and shift `Φ_K` by `exp(−β_i h_i)` one `i` at a time. Each `h_i` must be in
+`grt`, which is where B2 enters. Not written.
+
+### The Lie-ness input: carrying it is a real gap, not bookkeeping
+
+B2 is now discharged in `Prop57Link.lean` (#9711): `grtU4_of_lie (hy : IsLieElt y) (h512)
+(h513) (h515) : GrtU4 N y`, with `IsLieElt y` meaning `y ∈ lieSpan ℚ {ι 0, ι 1}`. So step (4)
+needs `IsLieElt h_i` for the degree-`d` parts `h_i`.
+
+The plan's suggestion was to carry group-likeness of the `K`-associator. Worked out (not in
+Lean): if the `K`-associator is group-like modulo degree `N` and the rational `x` is the explicit
+contraction, then each `h_i` is **primitive**, `Δ h_i = h_i ⊗ 1 + 1 ⊗ h_i`. But `grtU4_of_lie`
+needs `h_i ∈ lieSpan`, and primitive ⟹ Lie is the **Friedrichs criterion**. It is not in this
+corpus and not used anywhere in it (searched: `Friedrichs`, `primitive`, `lieSpan` in
+`folio/` and `computations/`; Mathlib not searched for a version over `FreeAlgebra`, so
+"not in Mathlib" is unverified).
+
+Three ways to close it, none started:
+
+1. **Prove Friedrichs for `ℚ⟨X, Y⟩`** (characteristic 0): via the Dynkin–Specht–Wever
+   projector `θ(x₁⋯x_n) = [[x₁, x₂], …, x_n]`, which satisfies `θ(y) = n·y` on primitive
+   homogeneous `y` of degree `n`, and whose image is in `lieSpan` by construction. A single
+   self-contained algebraic file. Then carry group-likeness as planned.
+2. **Carry `Φ_K = exp(ψ)` with `ψ` Lie.** Then the lowest-degree difference of two such is the
+   difference of the `ψ`'s, which is Lie. But the shift must preserve the form, which needs
+   Baker–Campbell–Hausdorff closure of `exp(Lie)` (the `actEval` composition of two
+   exponentials). Harder than option 1.
+3. **Change B2's input**: a version of `grtU4_of_lie` whose hypothesis is primitivity. Its
+   proof uses Lie-ness only for the central shift `y(a+z, b) = y(a, b)` (§15), which primitivity
+   also gives, at least in degree terms. Not checked.
+
+The judgement here (not a finding): option 1 is the cleanest, because it is self-contained and
+reusable, and it keeps `grtU4_of_lie` unchanged.
+
+Default if nothing is chosen: B1 stays at step (1); the induction step stays conditional on
+steps (2)–(4) and on the Lie-ness input.
+
 ## 17a. The Friedrichs criterion: primitive ⇒ Lie (proved)
 
 `Friedrichs.lean`, sorry-free. `#print axioms` shows only `propext`, `Classical.choice` and

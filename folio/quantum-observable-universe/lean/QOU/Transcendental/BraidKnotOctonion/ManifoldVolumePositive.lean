@@ -32,7 +32,7 @@
   -- Ref: [neumann-zagier1985] §2
 -/
 import QOU.Transcendental.BraidKnotOctonion.BlochWignerPositive
-import BraidKnotOctonion.ManifoldVolumeBridge
+import QOU.Transcendental.BraidKnotOctonion.ManifoldVolumeBridge
 
 namespace QOU.MathlibExt.ManifoldVolumePositive
 
