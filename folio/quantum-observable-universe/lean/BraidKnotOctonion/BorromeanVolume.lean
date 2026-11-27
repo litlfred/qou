@@ -41,7 +41,7 @@
   -- Ref: [leitner2026] binding-scale-catalan
 -/
 
-import BraidKnotOctonion.FigureEightVolumeSqueeze
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolumeSqueeze
 import BraidKnotOctonion.CatalanValueBounds
 
 namespace QOU.Knot.FigureEightVolume

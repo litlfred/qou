@@ -45,7 +45,7 @@ vanishing-term analysis and no mirror-sign bookkeeping (simpler than the
 Borromean carrier on both counts).
 -/
 
-import BraidKnotOctonion.FigureEightVolumeSqueeze
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolumeSqueeze
 import BraidKnotOctonion.CatalanValueBounds
 
 namespace QOU.Knot.FigureEightVolume

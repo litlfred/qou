@@ -27,7 +27,7 @@
   -- Ref: [leitner2026] QOU/MathlibExt/GaussianThetaBound.lean
 -/
 import QOU.Transcendental.BraidKnotOctonion.KashaevRatioExpansion
-import BraidKnotOctonion.FigureEightVolumeSqueeze
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolumeSqueeze
 
 namespace QOU.Knot.FigureEightVolume
 

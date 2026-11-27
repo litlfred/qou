@@ -1,5 +1,5 @@
 import QCalculus.HabiroCyclotomicSeries
-import BraidKnotOctonion.FigureEightVolume
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolume
 import Mathlib.RingTheory.Polynomial.Cyclotomic.Roots
 import Mathlib.RingTheory.RootsOfUnity.Complex
 

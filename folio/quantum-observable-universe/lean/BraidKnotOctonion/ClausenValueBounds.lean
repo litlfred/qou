@@ -25,7 +25,7 @@
 
 import Mathlib.Analysis.PSeries
 import Mathlib.Analysis.SpecificLimits.Basic
-import BraidKnotOctonion.FigureEightVolume
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolume
 
 namespace QOU.Knot
 
