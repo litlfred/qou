@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-25T11:27:03.736150+00:00",
-  "commitSha": "ec3d0642447888cfcad5acb47a3ae91f5ddaaaeb",
+  "computedAt": "2026-11-25T11:42:17.715789+00:00",
+  "commitSha": "0dead7f4afdae440e7d509b9a99a11bd713b6da3",
   "assertions": [
     {
       "name": "c1_over_c0_eq_dressing",
@@ -17,8 +17,8 @@
   "durationMs": 14,
   "computation": "probe-d-dressing-cross-a",
   "scriptFile": "probe_d_dressing_cross_a.py",
-  "scriptHash": "9805137e2160",
-  "scriptCommitSha": "d470f854014b095a36eca381dbc28b9761a16dbe",
+  "scriptHash": "2664ce6e37d5",
+  "scriptCommitSha": "d5b4067b05d093095ad6868778acfaf05c2f4cb7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,14 +58,14 @@
         "A": 2,
         "Delta_tr": "0.1470466779804084691094947",
         "B_AME_MeV": "2.2245662",
-        "C0_undressed_MeV": "0.615534653560354",
-        "C0_err_rel": "-0.72330126495657713706",
-        "C1_flat_MeV": "0.551192724264155",
-        "C1_err_rel": "-0.75222462506885384646",
-        "C2_per_interface_MeV": "0.551192724264155",
-        "C2_err_rel": "-0.75222462506885384646",
-        "C_log_law_MeV": "2.83316257200452",
-        "C_log_law_err_rel": "0.27357979816672741424"
+        "C0_undressed_MeV": "0.621637383662719",
+        "C0_err_rel": "-0.7205579300527362719",
+        "C1_flat_MeV": "0.556657535077185",
+        "C1_err_rel": "-0.74976805137235972015",
+        "C2_per_interface_MeV": "0.556657535077185",
+        "C2_err_rel": "-0.74976805137235972015",
+        "C_log_law_MeV": "2.8612520165436",
+        "C_log_law_err_rel": "0.2862067294484663427"
       },
       {
         "atom": "T",
@@ -74,14 +74,14 @@
         "A": 3,
         "Delta_tr": "0.1129280144363327321132444",
         "B_AME_MeV": "8.4817962",
-        "C0_undressed_MeV": "0.472714563824338",
-        "C0_err_rel": "-0.94426716314825645716",
-        "C1_flat_MeV": "0.423301639845255",
-        "C1_err_rel": "-0.95009292491073351868",
-        "C2_per_interface_MeV": "0.379053856191889",
-        "C2_err_rel": "-0.95530971892582274781",
-        "C_log_law_MeV": "6.63094550714688",
-        "C_log_law_err_rel": "-0.21821447358675311021"
+        "C0_undressed_MeV": "0.477401301413832",
+        "C0_err_rel": "-0.94371459887071661739",
+        "C1_flat_MeV": "0.42749847205433",
+        "C1_err_rel": "-0.94959812025967681665",
+        "C2_per_interface_MeV": "0.382811992903151",
+        "C2_err_rel": "-0.95486663627886373886",
+        "C_log_law_MeV": "6.69668814327555",
+        "C_log_law_err_rel": "-0.2104634460239039595"
       },
       {
         "atom": "3He",
@@ -90,14 +90,14 @@
         "A": 3,
         "Delta_tr": "0.1295823893450523990445223",
         "B_AME_MeV": "7.71804132",
-        "C0_undressed_MeV": "0.542429466809558",
-        "C0_err_rel": "-0.92971928442467084266",
-        "C1_flat_MeV": "0.485729233606175",
-        "C1_err_rel": "-0.93706573812354567041",
-        "C2_per_interface_MeV": "0.434955884250433",
-        "C2_err_rel": "-0.94364426591973294759",
-        "C_log_law_MeV": "4.88387226438596",
-        "C_log_law_err_rel": "-0.36721351157705936511"
+        "C0_undressed_MeV": "0.54780739413885",
+        "C0_err_rel": "-0.92902248492511962216",
+        "C1_flat_MeV": "0.490545005388285",
+        "C1_err_rel": "-0.93644177517978286496",
+        "C2_per_interface_MeV": "0.439268262688694",
+        "C2_err_rel": "-0.94308552591570037154",
+        "C_log_law_MeV": "4.9322935094151",
+        "C_log_law_err_rel": "-0.36093973782779693583"
       },
       {
         "atom": "4He",
@@ -106,17 +106,17 @@
         "A": 4,
         "Delta_tr": "0.07817256284216317881784802",
         "B_AME_MeV": "28.2956624",
-        "C0_undressed_MeV": "0.327228891178261",
-        "C0_err_rel": "-0.98843536911939332042",
-        "C1_flat_MeV": "0.293023606296115",
-        "C1_err_rel": "-0.98964422171307377534",
-        "C2_per_interface_MeV": "0.234965741320106",
-        "C2_err_rel": "-0.99169605086466872549",
-        "C_log_law_MeV": "8.68165519952831",
-        "C_log_law_err_rel": "-0.69318070463237111618"
+        "C0_undressed_MeV": "0.330473208282109",
+        "C0_err_rel": "-0.98832071136521231392",
+        "C1_flat_MeV": "0.295928794448404",
+        "C1_err_rel": "-0.98954154915106692794",
+        "C2_per_interface_MeV": "0.237295313659022",
+        "C2_err_rel": "-0.99161372120205173352",
+        "C_log_law_MeV": "8.76772963614704",
+        "C_log_law_err_rel": "-0.69013873885677121932"
       }
     ],
-    "verdict": "NEGATIVE (owner ruling 2026-11-25, bean qou-xj4p). On the ruled inputs (convention D, alternating confinement word) the dressed raw-difference candidate C1 misses D by -75.22%; the 2026-07-04 +0.29% held only for the superseded grouped word under convention C. C0-C2 all use the raw difference tr_free*(1-r), which carries the per-nucleon self-trace tr_free. The corpus's live law E_0*log(tr_free/tr_atom) gives D 27.36%, on the single-crossing interface letters that the 2026-11-15 gamma-gamma bond ruling supersedes (a record, not a prediction). Scope (a): constrains these candidates on this route only."
+    "verdict": "NEGATIVE (owner ruling 2026-11-25, bean qou-xj4p). On the ruled inputs (convention D, alternating confinement word) the dressed raw-difference candidate C1 misses D by -74.98%; the 2026-07-04 +0.29% held only for the superseded grouped word under convention C. C0-C2 all use the raw difference tr_free*(1-r), which carries the per-nucleon self-trace tr_free. The corpus's live law E_0*log(tr_free/tr_atom) gives D 28.62%, on the single-crossing interface letters that the 2026-11-15 gamma-gamma bond ruling supersedes (a record, not a prediction). Scope (a): constrains these candidates on this route only."
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

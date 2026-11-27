@@ -47,7 +47,8 @@ for _p in ("computations", "computations/substrate", "tools/qou-substrate/python
 
 from mpmath import mpf  # noqa: E402
 
-__all__ = ["order_zero", "order_zero_scaled", "tower_summed", "canonical", "TOWER_FACTOR_DOC"]
+__all__ = ["order_zero", "order_zero_scaled", "tower_summed", "tower_summed_scaled",
+           "canonical", "TOWER_FACTOR_DOC"]
 
 TOWER_FACTOR_DOC = (
     "1/(1 - hbar_q^2), taken from qbeta_bar_branch_refuted_probe.py:88 "
@@ -96,6 +97,17 @@ def tower_summed(q=None, m_e=None):
     q, m_e = _inputs(q, m_e)
     hbar = 1 - 1 / q
     return m_e / (q * (q - 1)) / (1 - hbar ** 2)
+
+
+def tower_summed_scaled(x, q):
+    """x / (q(q-1)) / (1 - hbar_q^2), hbar_q = 1 - 1/q: the CANONICAL tower-summed
+    E_0 with numerator x, type-preserving (sympy symbols or an mpf at the caller's
+    dps; x = 1 gives E_0 in units of m_e). The scaled twin of `tower_summed`, for
+    call sites that need the ruled form without the module's own mpf inputs.
+    Owner ruling 2026-11-25 (bean qou-of4i): the log binding law uses this form.
+    """
+    hbar = 1 - 1 / q
+    return x / (q * (q - 1)) / (1 - hbar ** 2)
 
 
 def canonical(q=None, m_e=None):

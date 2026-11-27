@@ -26,8 +26,11 @@ grow with A — it misses AME by 4.8–39.7×. The **log**-free-energy is the
 
 on-scale 0.57–2.36× vs AME. It is the q-heat-flow free energy
 `B = E_0·log(Z_free/Z_atom)` of the Wedderburn heat trace `Z_q = tr_M`, with
-`E_0 = m_e/(q0(q0−1)) ≈ 4.186 MeV` a **closed substrate expression** (NO fit, NO
-fourth calibration).
+`E_0 = m_e/(q0(q0−1))/(1 − ℏ_q²) ≈ 4.2275 MeV`, the ruled tower form (owner ruling
+2026-11-25, bean qou-of4i; it was the order-zero m_e/(q0(q0−1)) ≈ 4.186 MeV before,
++0.99 %). Built from CAL-1/CAL-2 only (no fit, no fourth calibration). The tower
+factor 1/(1 − ℏ_q²) is canonical by ruling, not derived (bean qou-y3bm); route T of
+docs/audits/2026-11-21-qbeta-energy-map-spectator.md §8–9 derives the order-zero form.
 
 ## Scope (honest)
 
@@ -82,7 +85,7 @@ def main() -> int:
     # Canonical energy scale — closed substrate expression (the deuteron-fixing
     # scale of the 2026-06-10 audit; NOT Q_β, NOT a fit).
     import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
-    E0 = _qbeta_e0.order_zero_scaled(me, q0)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
+    E0 = _qbeta_e0.tower_summed_scaled(me, q0)  # ruled tower E_0 = m_e/(q0(q0-1))/(1-hbar_q^2) (owner ruling 2026-11-25, qou-of4i)
 
     rows = []
     for name, Z, N, B_ame in ATOMS:
@@ -116,7 +119,7 @@ def main() -> int:
         "Extensive binding via the log-free-energy functional "
         "B = E_0·log(|tr_M_free|/|tr_M_atom|) wired onto the CANONICAL lossless "
         "tr_M (binding_canonical, all p(3A) partitions, 50 dps). E_0 = "
-        f"m_e/(q0(q0-1)) = {mp.nstr(E0, 8)} MeV (closed substrate form, no fit). "
+        f"m_e/(q0(q0-1))/(1-hbar_q^2) = {mp.nstr(E0, 8)} MeV (ruled tower form, owner 2026-11-25; tower factor ruled, not derived, bean qou-y3bm). "
         "On-scale 0.57-2.36x vs AME, vs the canonical LINEAR difference "
         "B = Q_β·(tr_free-tr_atom) which is intensive and saturates (~0.78 MeV, "
         "4.8-39.7x miss). NOT a closure: chain topology under-binds magic 4He / "
@@ -157,7 +160,7 @@ def main() -> int:
 
     print("=" * 92)
     print(" Log-free-energy binding  B = E_0·log(|tr_free|/|tr_atom|)  on the CANONICAL tr_M")
-    print(f"   E_0 = m_e/(q0(q0-1)) = {mp.nstr(E0, 8)} MeV   (closed substrate form, no fit)")
+    print(f"   E_0 = m_e/(q0(q0-1))/(1-hbar_q^2) = {mp.nstr(E0, 8)} MeV   (ruled tower form)")
     print("=" * 92)
     print(f" {'atom':>9}{'A':>3}{'B_AME':>9}{'B_logfree':>11}{'log/AME':>9}"
           f"{'B_linear':>10}{'lin/AME':>9}")
