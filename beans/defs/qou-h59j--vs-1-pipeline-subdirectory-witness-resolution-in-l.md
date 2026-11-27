@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-11-19T07:06:02Z
-updated_at: 2026-11-21T06:50:00Z
+updated_at: 2026-11-27T19:00:00Z
 parent: qou-v6so
 ---
 
@@ -41,3 +41,5 @@ Deliverables 1+2 are PLATFORM code (cat-harness-tools); patch written + tested (
 
 Deliverables 1+2: the W13 diff is applied as litlfred/cat-harness-tools#2479 (head 8d6f863). It applies cleanly to cat-harness-tools main. Tests ran on the qou-pinned tree with the patch applied: 32/32 on the three touched suites, and pipeline/ 668 pass / 2 fail. The same 2 corpus-index failures occur without the patch. The PR waits for the merge manager.
 Pin-bump chain: qou's .folio-assistant-pin and build.yml `uses:` name a folio-assistant sha, not a cat-harness-tools sha. So after #2479 merges, folio-assistant's index.lock.json must re-pin cat-harness-tools past it. Only then can qou bump to that folio-assistant sha. Known break: build.yml `uses:` names publish.yml, which folio-assistant deleted in 0c5468ac46. Deliverable 3 still waits on the owner ask on #8526.
+
+2026-11-27 (W13 scheduled run, final): Deliverables 1 and 2 are on qou main. cat-harness-tools#2479 merged as 9e30984, which is an ancestor of the cat-harness-tools 6d48e106 that the folio-assistant pin 42bd8d605 (#8978) uses. Checked live against qou 307954bad: subdirectory Liquid resolves (qbeta/a3-branching-asymmetry-vs-required.computedAt), and the confinement :val renders in Markdown when the registry preload is used. Deliverable 3 (registry) is still waiting on the owner's answer on #8526, so this stays todo. Report: https://github.com/litlfred/qou/pull/8526#issuecomment-7225794529
