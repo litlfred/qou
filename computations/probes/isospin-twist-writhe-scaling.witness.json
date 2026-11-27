@@ -1,0 +1,106 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-27T21:42:41.146522+00:00",
+  "commitSha": "a65b912e8f02c683d98457c215be6c7a67aa8ce7",
+  "assertions": [
+    {
+      "name": "n_rows_incl_free_neutron",
+      "computed": "1010",
+      "expected": "1010",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "full_twist_reproduces_9706_median_315.8",
+      "computed": "315.8",
+      "expected": "315.8",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "chain_coeff_bounds_1_over_9A_to_2_over_9A",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "isospin-twist-writhe-scaling",
+  "scriptFile": "isospin_twist_writhe_scaling_probe.py",
+  "scriptHash": "31a77c78aa6f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "mpmath": "1.4.1",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/isospin_twist_writhe_scaling_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/isospin_twist_writhe_scaling_probe.py"
+  },
+  "description": "A-scaling of the G2 braid-channel T(T+1) term: block log-det per dimension of a word of writhe e is e*2c ln q/(N(N-1)) (Lean QOU.Nuclear.IsospinTwistWrithe). Full twist (e = N(N-1), #9706) vs the corpus nucleus words (chain e = A-1, T3 e = 3 floor(A/2)); Table 3.4b Q_beta medians as a comparison only.",
+  "data": {
+    "alpha_MeV": "3.74445965994161",
+    "kappa_MeV": "0.781399236251381",
+    "table_3_4b": {
+      "no_term": {
+        "median_rel_pct": "92.6874",
+        "exothermic": "1010/1010"
+      },
+      "full_twist": {
+        "median_rel_pct": "315.83",
+        "exothermic": "1010/1010"
+      },
+      "chain": {
+        "median_rel_pct": "92.3648",
+        "exothermic": "1010/1010"
+      },
+      "T3_valence": {
+        "median_rel_pct": "92.1864",
+        "exothermic": "1010/1010"
+      }
+    },
+    "TT1_share_of_B_MeV": {
+      "48Ca": {
+        "full_twist": "-15.628",
+        "chain": "-0.0356699",
+        "T3_valence": "-0.0546433"
+      },
+      "56Fe": {
+        "full_twist": "-4.6884",
+        "chain": "-0.00919097",
+        "T3_valence": "-0.0140371"
+      },
+      "132Sn": {
+        "full_twist": "-212.541",
+        "chain": "-0.178",
+        "T3_valence": "-0.269039"
+      },
+      "208Pb": {
+        "full_twist": "-395.388",
+        "chain": "-0.210533",
+        "T3_valence": "-0.317326"
+      }
+    },
+    "block_dimension_observation": {
+      "N": 624,
+      "T": 22,
+      "lnd_T_minus_lnd_0": "2.1886546",
+      "gaussian_minus_2T2_over_N": "-1.5512821",
+      "ln_2T_plus_1": "3.8066625",
+      "alpha_times_2_over_3_MeV_per_T2_over_A": "2.4963064"
+    }
+  }
+}
