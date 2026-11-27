@@ -78,3 +78,6 @@ directions, Part A.
 **2026-11-27 — Haar fact (1) proved (PR #9599, `haarState_torus`).** Next: when #9596 and #9599
 are both on main, add the corollary `h(Xa·Xa) = −h(w*w)` with no invariance hypothesis. Fact (2),
 positivity, is still open (Haar thread).
+
+## 2026-11-27T19:37Z — off-diagonal budget identities (PR #9608)
+`OqSU2BudgetAllDirections.lean`: `(X_{s0,sp,sm}a)* = -T_{q,q⁻¹}(X_{s0,sm,sp}(a*))`; for s²=q⁻¹, self-adjoint a, torus-invariant φ: φ(X₊a·X₋a) = -φ(w*w). Sorry-free, generic R. Conditional on Haar positivity (open, #9599): h(X₊a·X₋a) ≤ 0. Still open: which pairing is the transport budget; Haar positivity; Part A (qou-pa7n). Not closing.
