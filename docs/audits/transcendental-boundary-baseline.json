@@ -26,8 +26,7 @@
    "transcendental-function"
   ],
   "BraidKnotOctonion/CSMarginCorrelationConstant.lean": [
-   "real-completion",
-   "transcendental-function"
+   "real-completion"
   ],
   "BraidKnotOctonion/CatalanValueBounds.lean": [
    "transcendental-function"
@@ -55,12 +54,6 @@
   "BraidKnotOctonion/ClausenValueBounds.lean": [
    "analysis",
    "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/ClosureComponentsSignInvariant.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/ColSuperstandardEigen.lean": [
    "transcendental-function"
   ],
   "BraidKnotOctonion/ColourCubicBranchLocus.lean": [
@@ -143,9 +136,6 @@
    "transcendental-function"
   ],
   "BraidKnotOctonion/FlatTetrahedra.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/GSFiltrationUnitObstruction.lean": [
    "transcendental-function"
   ],
   "BraidKnotOctonion/HeckeCarrierSemisimpleReal.lean": [
@@ -271,6 +261,7 @@
   ],
   "BraidKnotOctonion/L6a4VolumeMaximum.lean": [
    "analysis",
+   "real-completion",
    "transcendental-function"
   ],
   "BraidKnotOctonion/LNaturalConcaveForm.lean": [
@@ -337,25 +328,7 @@
   "BraidKnotOctonion/MilnorVassilievGrading.lean": [
    "transcendental-function"
   ],
-  "BraidKnotOctonion/Model/GLnFaithful.lean": [
-   "transcendental-function"
-  ],
   "BraidKnotOctonion/MultiTetVolumeConcave.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/OS/Category.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/OS/Interpret.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/OS/Monoidal.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/OS/Syntax.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/OS/Universal.lean": [
    "transcendental-function"
   ],
   "BraidKnotOctonion/PLAlexander.lean": [
@@ -425,15 +398,6 @@
    "transcendental-function"
   ],
   "BraidKnotOctonion/QRogersPentagonArchimedean.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/QuantumGLCommutant.lean": [
-   "real-completion"
-  ],
-  "BraidKnotOctonion/QuantumGLHWSpecht.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/QuantumGLHWSpechtId.lean": [
    "transcendental-function"
   ],
   "BraidKnotOctonion/RivinConcavity.lean": [
@@ -512,6 +476,7 @@
   ],
   "BraidKnotOctonion/WhiteheadTailDecay.lean": [
    "analysis",
+   "real-completion",
    "transcendental-function"
   ],
   "BraidKnotOctonion/WhiteheadVolumeConjecture.lean": [
@@ -524,6 +489,7 @@
   ],
   "BraidKnotOctonion/WhiteheadWindowTaylor.lean": [
    "analysis",
+   "real-completion",
    "transcendental-function"
   ],
   "BraidKnotOctonion/YoungDiagramKernelPincer.lean": [
@@ -544,47 +510,13 @@
    "analysis",
    "transcendental-function"
   ],
-  "CompactQuantumMetrics/Bicommutant.lean": [
-   "transcendental-function"
-  ],
-  "CompactQuantumMetrics/FiniteRieffelQuantumMetric.lean": [
-   "transcendental-function"
-  ],
   "CompactQuantumMetrics/FrobeniusInnerProduct.lean": [
    "real-completion"
   ],
   "CompactQuantumMetrics/SDPStrongDuality.lean": [
-   "analysis",
-   "real-completion"
-  ],
-  "HeckeTemperleyLieb/BraidWordInvariance.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/BruhatConverse.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/BruhatReflection.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/BruhatSubword.lean": [
-   "transcendental-function"
+   "analysis"
   ],
   "HeckeTemperleyLieb/ChannelRangeGrowthClass.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/CompositionYoung.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/CoxeterA3Instantiation.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/CoxeterCommutingTransversal.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/CoxeterDeletion.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/CoxeterDihedralDescent.lean": [
    "transcendental-function"
   ],
   "HeckeTemperleyLieb/CoxeterDihedralOrder.lean": [
@@ -596,21 +528,6 @@
   "HeckeTemperleyLieb/CoxeterGeometricRepresentationFull.lean": [
    "transcendental-function"
   ],
-  "HeckeTemperleyLieb/CoxeterParabolicCoset.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/CoxeterParabolicTransversal.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/CoxeterRankTwo.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/CoxeterReflectionCocycle.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/CoxeterTitsResidueCollapse.lean": [
-   "transcendental-function"
-  ],
   "HeckeTemperleyLieb/ForcedLinkNormalisation.lean": [
    "transcendental-function"
   ],
@@ -620,14 +537,8 @@
   "HeckeTemperleyLieb/HeckeH2WedderburnReal.lean": [
    "real-completion"
   ],
-  "HeckeTemperleyLieb/HeckeTauAssignmentCanonicity.lean": [
-   "transcendental-function"
-  ],
   "HeckeTemperleyLieb/HoefsmitV21CosSymmetrization.lean": [
    "real-completion",
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/JucysMurphy.lean": [
    "transcendental-function"
   ],
   "HeckeTemperleyLieb/KZTwoStrandHecke.lean": [
@@ -640,12 +551,6 @@
   "HeckeTemperleyLieb/MarkovConventionSeparation.lean": [
    "real-completion"
   ],
-  "HeckeTemperleyLieb/Matsumoto.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/OVBaseSeminormalVector.lean": [
-   "transcendental-function"
-  ],
   "HeckeTemperleyLieb/QHookBound.lean": [
    "real-completion"
   ],
@@ -656,42 +561,12 @@
    "real-completion",
    "transcendental-function"
   ],
-  "HeckeTemperleyLieb/Specht.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/SpechtAbsolutelyIrreducible.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/SpechtCharFreeStandardBasis.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/SpechtClassification.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/SpechtCrossKappa.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/SpechtDominanceCore.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/SpechtIrreducible.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/SpechtStandardBasisCore.lean": [
-   "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/SpechtTriangularCore.lean": [
-   "transcendental-function"
-  ],
   "HeckeTemperleyLieb/SubstrateRegime.lean": [
    "real-completion"
   ],
   "HeckeTemperleyLieb/SymmetrySignAmGm.lean": [
    "real-completion",
    "transcendental-function"
-  ],
-  "HeckeTemperleyLieb/TwSpanning.lean": [
-   "real-completion"
   ],
   "HeckeTemperleyLieb/YoungChannelVertex.lean": [
    "transcendental-function"
@@ -749,20 +624,8 @@
    "analysis",
    "transcendental-function"
   ],
-  "MathlibExt/CauchyBinet.lean": [
-   "transcendental-function"
-  ],
   "MathlibExt/CechChernClass.lean": [
    "analysis",
-   "transcendental-function"
-  ],
-  "MathlibExt/CechColimit.lean": [
-   "transcendental-function"
-  ],
-  "MathlibExt/CechColimitConverse.lean": [
-   "transcendental-function"
-  ],
-  "MathlibExt/CechGerbe.lean": [
    "transcendental-function"
   ],
   "MathlibExt/CircleIntegralFinsetSum.lean": [
@@ -772,12 +635,6 @@
    "transcendental-function"
   ],
   "MathlibExt/ClausenFunctionMathlibFiller.lean": [
-   "transcendental-function"
-  ],
-  "MathlibExt/CombinatorialMapEuler.lean": [
-   "transcendental-function"
-  ],
-  "MathlibExt/CombinatorialMapQuotient.lean": [
    "transcendental-function"
   ],
   "MathlibExt/ComplexGaussianSumNonCancellation.lean": [
@@ -790,9 +647,6 @@
   "MathlibExt/ConstantOffOnePoint.lean": [
    "analysis"
   ],
-  "MathlibExt/CoproductDescent.lean": [
-   "transcendental-function"
-  ],
   "MathlibExt/Core.lean": [
    "real-completion"
   ],
@@ -800,9 +654,6 @@
    "analysis"
   ],
   "MathlibExt/CoshCosSeparation.lean": [
-   "transcendental-function"
-  ],
-  "MathlibExt/CycleCountSwap.lean": [
    "transcendental-function"
   ],
   "MathlibExt/DilogPartAConvergence.lean": [
@@ -954,8 +805,7 @@
    "transcendental-function"
   ],
   "MathlibExt/KZHolonomy/KZForm.lean": [
-   "analysis",
-   "transcendental-function"
+   "analysis"
   ],
   "MathlibExt/LiouvilleThird.lean": [
    "transcendental-function"
@@ -968,9 +818,6 @@
   ],
   "MathlibExt/ManifoldForms.lean": [
    "analysis"
-  ],
-  "MathlibExt/MapGenusNonneg.lean": [
-   "transcendental-function"
   ],
   "MathlibExt/MeromorphicPuncturedBounded.lean": [
    "analysis"
@@ -990,13 +837,7 @@
    "analysis",
    "transcendental-function"
   ],
-  "MathlibExt/PermInversion.lean": [
-   "transcendental-function"
-  ],
   "MathlibExt/Polylogarithm.lean": [
-   "transcendental-function"
-  ],
-  "MathlibExt/PresheafCentralExtensionObstruction.lean": [
    "transcendental-function"
   ],
   "MathlibExt/QGevreyOrder.lean": [
@@ -1041,9 +882,6 @@
   ],
   "MathlibExt/SinCubeBounds.lean": [
    "analysis",
-   "transcendental-function"
-  ],
-  "MathlibExt/SplayPoisson.lean": [
    "transcendental-function"
   ],
   "MathlibExt/StirlingRobbins.lean": [
@@ -1440,18 +1278,9 @@
   "QOU/Confinement/WedderburnMassFormula.lean": [
    "transcendental-function"
   ],
-  "QOU/Confinement/atomic_nf_witness.lean": [
-   "transcendental-function"
-  ],
   "QOU/Confinement/silver_ratio_beta_decay_null.lean": [
    "analysis",
    "real-completion"
-  ],
-  "QOU/Core/CategoricalDynamics.lean": [
-   "transcendental-function"
-  ],
-  "QOU/Core/CategoricalFoundations.lean": [
-   "transcendental-function"
   ],
   "QOU/Core/CategoricalHamiltonianLegendre.lean": [
    "analysis",
@@ -1570,15 +1399,6 @@
   ],
   "QOU/LiftingDescent/MultiplicativeIntegralCurvature.lean": [
    "analysis",
-   "transcendental-function"
-  ],
-  "QOU/LiftingDescent/PBWFilteredData.lean": [
-   "transcendental-function"
-  ],
-  "QOU/LiftingDescent/PBWFormalGroup.lean": [
-   "transcendental-function"
-  ],
-  "QOU/LiftingDescent/PBWIntegration.lean": [
    "transcendental-function"
   ],
   "QOU/LiftingDescent/tm_dilogarithm_evaluation.lean": [
@@ -1723,9 +1543,6 @@
   "QOU/MassTheory/ClassicalLogBindingCycleCount.lean": [
    "transcendental-function"
   ],
-  "QOU/MassTheory/ClassicalTraceFloorParity.lean": [
-   "transcendental-function"
-  ],
   "QOU/MassTheory/ClausenDoubleAngleSeries.lean": [
    "transcendental-function"
   ],
@@ -1752,9 +1569,6 @@
   ],
   "QOU/MassTheory/CoordinationSurfaceDeficit.lean": [
    "analysis"
-  ],
-  "QOU/MassTheory/CostOrderSensitivity.lean": [
-   "transcendental-function"
   ],
   "QOU/MassTheory/DeuteronTwoBodyKernel.lean": [
    "transcendental-function"
@@ -1820,9 +1634,6 @@
   "QOU/MassTheory/FiveTwoOhtsukiBridge.lean": [
    "analysis",
    "real-completion",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/FlipSymmetryAtOne.lean": [
    "transcendental-function"
   ],
   "QOU/MassTheory/FreeEnergyReadingIsSigned.lean": [
@@ -1928,15 +1739,8 @@
   "QOU/MassTheory/IntraOrderingInvariance.lean": [
    "transcendental-function"
   ],
-  "QOU/MassTheory/InvolutionSelectionRule.lean": [
-   "transcendental-function"
-  ],
   "QOU/MassTheory/KZHolonomy/ArtinGeneration.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/KZHolonomy/BraidGauge.lean": [
-   "transcendental-function"
+   "analysis"
   ],
   "QOU/MassTheory/KZHolonomy/ConfConnected.lean": [
    "analysis"
@@ -2057,9 +1861,6 @@
   ],
   "QOU/MassTheory/OrthoschemeWedgePair.lean": [
    "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/OwnSectorFromWeightGrading.lean": [
    "transcendental-function"
   ],
   "QOU/MassTheory/PhotonIRZeroMode.lean": [
@@ -2257,8 +2058,7 @@
    "real-completion"
   ],
   "QOU/Nuclear/E0WeightAllWords.lean": [
-   "analysis",
-   "transcendental-function"
+   "analysis"
   ],
   "QOU/Nuclear/E0WeightCandidates.lean": [
    "analysis",
@@ -2416,9 +2216,6 @@
   "QOU/Nuclear/N1FactorUniqueness.lean": [
    "transcendental-function"
   ],
-  "QOU/Nuclear/NeutronHeavierSign.lean": [
-   "transcendental-function"
-  ],
   "QOU/Nuclear/NewtonRealityInvariance.lean": [
    "analysis"
   ],
@@ -2516,9 +2313,6 @@
    "analysis",
    "transcendental-function"
   ],
-  "QOU/Observations/Basic.lean": [
-   "real-completion"
-  ],
   "QOU/Observations/CODATAChain.lean": [
    "real-completion"
   ],
@@ -2581,9 +2375,6 @@
    "analysis",
    "transcendental-function"
   ],
-  "QOU/StandardModel/ComponentFraming.lean": [
-   "transcendental-function"
-  ],
   "QOU/StandardModel/ElectroweakBosonThresholdsAndWeinberg.lean": [
    "analysis",
    "transcendental-function"
@@ -2600,9 +2391,6 @@
   ],
   "QOU/StandardModel/FormBVersusCSTowerClassicalLimit.lean": [
    "analysis",
-   "transcendental-function"
-  ],
-  "QOU/StandardModel/LowCrossingThreeBraidTauSelection.lean": [
    "transcendental-function"
   ],
   "QOU/StandardModel/QuaternionicElectroweak.lean": [
@@ -2625,9 +2413,6 @@
   "QOU/StandardModel/Su3Su2U1Z6GroupAndCommutant.lean": [
    "transcendental-function"
   ],
-  "QOU/StandardModel/TypeBFoldingChiralityObstruction.lean": [
-   "transcendental-function"
-  ],
   "ToricConicOpt/EDMultiplier.lean": [
    "analysis",
    "transcendental-function"
@@ -2637,9 +2422,6 @@
   ],
   "ToricConicOpt/LagrangianCollisionFlow.lean": [
    "analysis"
-  ],
-  "TwistedFrobeniusHopf/SplayBialgebra.lean": [
-   "transcendental-function"
   ]
  }
 }

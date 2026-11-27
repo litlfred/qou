@@ -27,12 +27,16 @@ BASELINE = ROOT / "docs/audits/transcendental-boundary-baseline.json"
 
 CLASSES = {
     "transcendental-function": r"\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b"
-        r"|\bComplex\.(exp|log|cos|sin|cpow)\b|\bReal\.rpow\b|\bπ\b|\bdilog\b|\bClausen\b|\bLobachevsky\b",
-    "real-completion": r"\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bsSup\b|\bsInf\b|\biSup\b|\biInf\b",
+        r"|\bComplex\.(exp|log|cos|sin|cpow)\b|\bReal\.rpow\b|\bdilog\b|\bClausen\b|\bLobachevsky\b",
+    "real-completion": r"\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\b|\bReal\.exists_isLUB\b|√",
     "analysis": r"\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTendsto\b"
         r"|\bContinuous\b|\bDifferentiable\b|\bHasSum\b|\btsum\b",
 }
 RX = {k: re.compile(v) for k, v in CLASSES.items()}
+# A bare `π` is Real.pi only under `open Real` / `open scoped Real`; elsewhere it is an
+# ordinary bound name (a permutation, an epimorphism, ...) and must not be counted.
+OPEN_REAL = re.compile(r"^\s*open\b[^\n]*\bReal\b", re.M)
+BARE_PI = re.compile(r"(?<![\w.])π(?![\w])")
 
 def strip_comments(src: str) -> str:
     out, i, depth, n = [], 0, 0, len(src)
@@ -60,7 +64,10 @@ def scan():
         if rel.startswith(".lake/") or rel.startswith(BOUNDARY):
             continue
         code = strip_comments(p.read_text(encoding="utf-8", errors="replace"))
-        cls = sorted(k for k, rx in RX.items() if rx.search(code))
+        cls = {k for k, rx in RX.items() if rx.search(code)}
+        if OPEN_REAL.search(code) and BARE_PI.search(code):
+            cls.add("transcendental-function")
+        cls = sorted(cls)
         if cls:
             hits[rel] = cls
     return hits
