@@ -5,8 +5,9 @@ Thread "Derive the tau lepton's word" (2026-11-27). Writeup:
 `docs/audits/2026-11-27-tau-lepton-word.md`.
 
 The electron is the half twist `Δ = σ₀σ₁σ₀ ∈ B₃` (owner ruling 2026-11-21, Hopf closure). No
-rule in the corpus says what the muon and tau words are on three strands. This file records one
-candidate rule and what it gives. It does not adopt the rule.
+rule in the corpus said what the muon and tau words are on three strands. This file records the
+rule the owner chose on 2026-11-27 (card "Universality ladder Δ, Δ3, Δ5"; a working conjecture,
+`docs/coordination/owner-rulings.md`) and what it gives.
 
 **The rule (lepton universality).** Every generation couples to the photon generators exactly as
 the electron does. Read as a statement about conjugation, a word `β` couples like `Δ` when

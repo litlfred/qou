@@ -60,7 +60,7 @@ Ring mass m(β) = [2]³ q^{-2w} tr_D(β), U = −q ∂_q log m.
   It also checks lk = 2k+1, the {0,2} sublink σ^{2k+1} (T(2,2k+1)), Seifert genus 3k.
 
 ## What this does and does not say
-* It does not adopt Δ⁵ as the tau. The generation rule is the owner's call (card in the thread).
+* Owner ruling 2026-11-27 (card 22:37Z): the universality ladder is adopted as a working conjecture, so τ = Δ⁵ = σ₀σ₁σ₀(σ₀σ₁)⁶.
 * Under the rule, the ring chart cannot make any heavier generation (scope (b), invariant:
   centrality of Δ²). The hierarchy, if the rule holds, must come from the mass map
   (the volume chart v/ℏ_q² vs the trace chart), which is bean `qou-se9w` / `qou-lsp9` territory.
