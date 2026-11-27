@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T20:11:35Z
-updated_at: 2026-11-27T22:10:09Z
+updated_at: 2026-11-27T22:17:38Z
 parent: qou-myts
 ---
 
@@ -30,3 +30,7 @@ The n−p EM term needs a derived energy-to-length map. All representations are 
 
 
 2026-11-27T22:30Z PR #9777 (audit §8): q-NS (q² from the #9752 Haar budget) and combinatorial factors (f^(2,1) = 2, Molien sum = 1, #9747 writhe ratio ≤ 1) neither supply the cell's ~4× nor fix its sign. Common factors cancel in τ_p/τ_n. A factor on E keeps the sign, and the largest derived one is q₀² = 1.232. A factor on the ratio would need q∂log g < −2 to flip the sign. Scope (a). The open part is the scale E or a second nucleon element (route 2), plus the orientation question in #9767.
+
+
+
+2026-11-27T22:35Z PR #9777 §9: reading the split in the nucleon's own chart gives L_p = +1.201 and w_p = +0.925, so m_n < m_p in both charts (−163 / −2029 MeV). Scope (a). Route 2 within γγ words is closed (scope b, NucleonFlavourTypedLetters / NucleonDownQuarkStrand). Remaining: interface word #7876, a derivation of E, and the #9767 orientation. A next-lever card is with Carl.
