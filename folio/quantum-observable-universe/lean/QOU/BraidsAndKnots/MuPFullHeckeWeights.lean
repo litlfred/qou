@@ -36,6 +36,8 @@ any statement.
 4. `pairCorrZ_su2`: at the SU(2) point it equals PR #9445's `pairCorr`.
 5. `pairCorrZ_at_one`: at `q = 1` it equals `(z − 1)/z`. So `O(w⁰)` vanishes
    only if `z(1) = 1`.
+5a. `pairCorrZ_eq_mul`, `F_one_one`: `⟨e₁⟩+⟨e₂⟩ = (z − q)·F` with `F(1,1) = 1`.
+   To leading order the observable is `z − q` itself.
 6. `pairCorrZ_degenerate`, `sign_only_weights`: at `z = q` (trivial
    representation only) every insertion correlator is `0` at every order; at
    `z = −q⁻¹` only the sign representation survives.
@@ -49,8 +51,11 @@ any statement.
 9. `general_z_w2_free`: in the general bar-covariant family
    `z = sinh h · (1 + 2c/h + 2k₁h + 2k₃h³)` (`q = eʰ`), the single insertion with
    `O(1) = O(w) = 0` has `w²` coefficient `(90k₃ + 1)/45`, and every target is
-   reached by one `k₃`. The `w²` coefficient is a free parameter of the trace,
-   not a consequence of the knot.
+   reached by one `k₃`. `c = 1/2`, `k₁ = 1/6` are exactly the values of the
+   trivial-only trace `z = q` (whose `k₃` is `−1/90`), so the surviving `w²`
+   coefficient `2(k₃ + 1/90)` measures how far the chosen trace departs from
+   the degenerate one at order `h⁴` (item 5a). It is a free parameter of the
+   trace, not a consequence of the knot.
 
 Items 7–9 take the `w`-Taylor coefficients from the probe (exact sympy series);
 only items 1–6 are derived here from the matrices.
@@ -210,6 +215,22 @@ theorem pairCorrZ_eq (q z : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0)
     (h4 : q ^ 4 + q ^ 2 + 1 ≠ 0) (hW : W q z ≠ 0) :
     pairCorrZ q z = -((z - q) * R q z) / ((q ^ 2 + 1) * W q z) := by
   rw [pairCorrZ, pairCorrZ_num q z hq h2 h4, trM41Z_eq q z hq h2 h4]
+  field_simp
+
+/-- The cofactor `F = −R/((q²+1)W)`, so that `⟨e₁⟩+⟨e₂⟩ = (z − q)·F`. -/
+def F (q z : K) : K := -R q z / ((q ^ 2 + 1) * W q z)
+
+theorem pairCorrZ_eq_mul (q z : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0)
+    (h4 : q ^ 4 + q ^ 2 + 1 ≠ 0) (hW : W q z ≠ 0) :
+    pairCorrZ q z = (z - q) * F q z := by
+  rw [pairCorrZ_eq q z hq h2 h4 hW, F]; ring
+
+/-- `F(1,1) = 1`. So to leading order the single insertion *is* `z − q`: once its
+`O(1)` and `O(w)` terms vanish, its `w²` coefficient is the `h⁴` coefficient of
+`z − q` (`q = eʰ`), a property of the chosen trace, not of `4₁`. -/
+theorem F_one_one (htwo : (2 : K) ≠ 0) : F (1 : K) 1 = 1 := by
+  simp only [F, R, W]
+  norm_num
   field_simp
 
 /-- Trivial-only trace: every single insertion vanishes identically. -/
