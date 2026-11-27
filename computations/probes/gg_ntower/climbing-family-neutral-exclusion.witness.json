@@ -1,0 +1,174 @@
+{
+ "computation": "climbing-family-neutral-exclusion",
+ "scriptFile": "climbing_family_neutral_exclusion_probe.py",
+ "kind": "structural filter check (exact integers; no q0, no search, no selection)",
+ "beans": [
+  "qou-cds1",
+  "qou-4f8t"
+ ],
+ "q0Anchor": "independent",
+ "q0AnchorReason": "pure braid-word combinatorics in exact integers; the producer imports only json and pathlib and never reads q0",
+ "lean": "QOU.MassTheory.ClimbingFamilyNeutralExclusion.not_neutral_support",
+ "scope": "(b) structural exclusion, invariant = writhe homomorphism; braid group algebra of B4 before the Hecke quotient. In H4(q), e0e2 Sigma1 = q^2 e0e2, so the Hecke image is not addressed.",
+ "checks": {
+  "c=0_kept": [
+   "1"
+  ],
+  "c=1_kept": [],
+  "c=2_kept": [],
+  "c=3_kept": [],
+  "c=4_kept": [],
+  "c=5_kept": [],
+  "c0_keeps_identity_only": true,
+  "c>=1_keeps_nothing": true,
+  "control_V_neutral": true,
+  "control_Sigma1_not_neutral": true
+ },
+ "rows": [
+  {
+   "c": 0,
+   "term": "1",
+   "writhe": 0,
+   "neutral": true
+  },
+  {
+   "c": 0,
+   "term": "s0",
+   "writhe": 1,
+   "neutral": false
+  },
+  {
+   "c": 0,
+   "term": "s2",
+   "writhe": 1,
+   "neutral": false
+  },
+  {
+   "c": 0,
+   "term": "s0s2",
+   "writhe": 2,
+   "neutral": false
+  },
+  {
+   "c": 1,
+   "term": "1",
+   "writhe": 4,
+   "neutral": false
+  },
+  {
+   "c": 1,
+   "term": "s0",
+   "writhe": 5,
+   "neutral": false
+  },
+  {
+   "c": 1,
+   "term": "s2",
+   "writhe": 5,
+   "neutral": false
+  },
+  {
+   "c": 1,
+   "term": "s0s2",
+   "writhe": 6,
+   "neutral": false
+  },
+  {
+   "c": 2,
+   "term": "1",
+   "writhe": 8,
+   "neutral": false
+  },
+  {
+   "c": 2,
+   "term": "s0",
+   "writhe": 9,
+   "neutral": false
+  },
+  {
+   "c": 2,
+   "term": "s2",
+   "writhe": 9,
+   "neutral": false
+  },
+  {
+   "c": 2,
+   "term": "s0s2",
+   "writhe": 10,
+   "neutral": false
+  },
+  {
+   "c": 3,
+   "term": "1",
+   "writhe": 12,
+   "neutral": false
+  },
+  {
+   "c": 3,
+   "term": "s0",
+   "writhe": 13,
+   "neutral": false
+  },
+  {
+   "c": 3,
+   "term": "s2",
+   "writhe": 13,
+   "neutral": false
+  },
+  {
+   "c": 3,
+   "term": "s0s2",
+   "writhe": 14,
+   "neutral": false
+  },
+  {
+   "c": 4,
+   "term": "1",
+   "writhe": 16,
+   "neutral": false
+  },
+  {
+   "c": 4,
+   "term": "s0",
+   "writhe": 17,
+   "neutral": false
+  },
+  {
+   "c": 4,
+   "term": "s2",
+   "writhe": 17,
+   "neutral": false
+  },
+  {
+   "c": 4,
+   "term": "s0s2",
+   "writhe": 18,
+   "neutral": false
+  },
+  {
+   "c": 5,
+   "term": "1",
+   "writhe": 20,
+   "neutral": false
+  },
+  {
+   "c": 5,
+   "term": "s0",
+   "writhe": 21,
+   "neutral": false
+  },
+  {
+   "c": 5,
+   "term": "s2",
+   "writhe": 21,
+   "neutral": false
+  },
+  {
+   "c": 5,
+   "term": "s0s2",
+   "writhe": 22,
+   "neutral": false
+  }
+ ],
+ "all_pass": true
+}
