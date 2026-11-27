@@ -121,3 +121,9 @@ Bean qou-rf43 (in-progress). Draft PR #9436, branch claude/binding-error-budget-
 - Kept open by owner choice: #8142 (core on main in QOU/Nuclear/DecayLadderConventionDPositivity.lean; q-beta-cos-resummation.lean fails Lean) and #8154 (salvaged parts on main: Confinement/ConfinementLPHomogeneity, BraidKnotOctonion/LevelLocalPathSumSupport).
 - No salvage PR: nothing in batch C imports Mathlib or the corpus. Open beans named by those PRs need fresh Mathlib statements, not ports.
 - 2026-11-27 ~14:45Z (old-PR salvage thread): of the 14 Aug-Nov PRs, closed 6 superseded (#6025 #7123 #7477 #7481 #7763 #7773) and 6 C/D-era research PRs by owner card (#5402 #6342 #6361 #6350 #7817 #7590; pointers in qou-cds1). Salvaging #6307 (LaurentQ fast path for hecke_core_symbolic) and #5861 (glossary sphere paragraph + barrett1993) into one new PR. Log: /mnt/project-files/qou-swarm-2026-11-27/S5-progress.md.
+
+## S2 handover (bulk Lean A, 44 PRs) — 2026-11-27 ~15:30Z
+- Owner card "Close 28, salvage 16". All 44 originals closed with comments, branches kept.
+- Superseded: #8143 #8144 #8290 #8160. Rejected per 2026-11-23 drain ledgers batch3/4: #8148 #8156 #8157 #8166 #8177 #8214 #8223 #8228 #8236 #8208 #8210 #8212 #8217 #8220 #8224 #8233 #8240 #8252 #8256 #8258 #8262 #8230 #8235 #8246. #8293 not ported (electron-trefoil vs 2026-11-21 Hopf ruling).
+- Salvage PR #9462 (head 81d89c3db, branch claude/salvage-lean-batch-a-2026-11-27): Lean-only port of 15 PRs, 52 files, lean-verify all green, 0 sorry/axiom. Probes/witnesses not ported (still on the old branches). Ready for the manager to merge.
+- Log: project files qou-swarm-2026-11-27/S2-progress.md
