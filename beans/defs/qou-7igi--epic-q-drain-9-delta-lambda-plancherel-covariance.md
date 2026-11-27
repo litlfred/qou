@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-11-23T20:55:50Z
-updated_at: 2026-11-24T03:18:16Z
+updated_at: 2026-11-27T21:52:48Z
 parent: qou-hksc
 blocking:
     - qou-xip2
@@ -34,3 +34,8 @@ blocking:
 - Enforce single-thread CPU caps (`LEAN_NUM_THREADS=1`, `nice -n 15`), zero float64 (`mpmath` >= 50-80 dps), and zero fitting.
 
 Batch 9 Q-Drain-9 complete on origin/claude/backlog-drain-batch9-10-20261123 (2dba8f02dcd): ClassicalTraceFloorParity.lean + DeltaLambdaRStarOrderBounds.lean (0 sorry) + 80-dps witness staged.
+
+## 2026-11-27: square-law inverse + large-tilt obstruction (PR #9757, session_01VQDpPgJRT1LXn57NpaDLVw)
+- NEW exact form: cov(n)<=0 iff [3-cycle]Q^{-1}<=0, Q=(1/n!)sum_x x^2 (Q acts on V^lambda by 1/f^lambda; Frobenius-Schur indicator 1). Checked in the class algebra n=3..7 with zero shared code. phi(s)=[sigma]Q^{-s}: phi(1)=kernel, phi'(0)=A2.
+- ELIMINATED (structural, Lean decide): "[sigma](e-Q)^m<=0 for all m", i.e. any tilt-uniform or increasing-psi(f) argument. Large-tilt sign = omega_3 at the max-dim shape: +3 at n=18, +1 at n=26; Cov(omega_3,f^s)>0 for s>362.94 at n=18. Lean: HeckeTemperleyLieb/YoungDiagramKernelLargeTilt.lean, not_forall_tiltedSum_nonpos.
+- A proof must use s=1 or a bounded s-window. Audit: docs/audits/2026-11-27-covariance-kernel-square-law-inverse.md.

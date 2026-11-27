@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-18T19:55:42Z
-updated_at: 2026-11-22T21:40:00Z
+updated_at: 2026-11-27T21:52:48Z
 parent: b9cj
 ---
 
@@ -163,3 +163,8 @@ Not formalised (it eliminates a route; formalising the co-transition identity is
 
 ## 2026-11-22: applicability review (owner instruction 21:27Z; session_01Qmmkt8qREoAzcE1YKVx5nz)
 Verdict: APPLIES. Premises: Plancherel measure f^2/k!, contents c, the 3-cycle character. No anchor, no z, no word, no colour. Checked against owner-rulings.md rows 2026-11-15..22 (gamma-gamma rule, convention D, b = -qX on colour singlets, strand colour, photon norm, block U(1)_em charge, jet-prolongation Frobenius drop): none touches it. Consumer still on main: WstdSuperExpBound.lean and DeltaLambdaDReduction.lean (D_of_T3_nonpos); the 2026-11-22 jet-prolongation ruling (row 104) is about T(A) in prop:jet-prolongation, not the GAP-A-3 tower weight. Open conjecture; stays open (rule 13a).
+
+## 2026-11-27: square-law inverse + large-tilt obstruction (PR #9757, session_01VQDpPgJRT1LXn57NpaDLVw)
+- NEW exact form: cov(n)<=0 iff [3-cycle]Q^{-1}<=0, Q=(1/n!)sum_x x^2 (Q acts on V^lambda by 1/f^lambda; Frobenius-Schur indicator 1). Checked in the class algebra n=3..7 with zero shared code. phi(s)=[sigma]Q^{-s}: phi(1)=kernel, phi'(0)=A2.
+- ELIMINATED (structural, Lean decide): "[sigma](e-Q)^m<=0 for all m", i.e. any tilt-uniform or increasing-psi(f) argument. Large-tilt sign = omega_3 at the max-dim shape: +3 at n=18, +1 at n=26; Cov(omega_3,f^s)>0 for s>362.94 at n=18. Lean: HeckeTemperleyLieb/YoungDiagramKernelLargeTilt.lean, not_forall_tiltedSum_nonpos.
+- A proof must use s=1 or a bounded s-window. Audit: docs/audits/2026-11-27-covariance-kernel-square-law-inverse.md.
