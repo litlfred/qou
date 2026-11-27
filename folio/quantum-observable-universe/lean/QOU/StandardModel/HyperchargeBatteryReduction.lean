@@ -68,6 +68,7 @@ import Mathlib.Algebra.Ring.Defs
 import Mathlib.Data.Int.Basic
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
 
 namespace QOU.StandardModel
 

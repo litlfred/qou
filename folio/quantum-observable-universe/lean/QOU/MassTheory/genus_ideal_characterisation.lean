@@ -138,7 +138,7 @@ noncomputable instance (m : ℕ) : CommRing (TruncPoly R m) where
     change ofPoly m (toPoly a * toPoly ⟨b.coeff + c.coeff⟩) =
       ⟨(ofPoly m (toPoly a * toPoly b)).coeff + (ofPoly m (toPoly a * toPoly c)).coeff⟩
     have hbc : toPoly (⟨b.coeff + c.coeff⟩ : TruncPoly R m) = toPoly b + toPoly c := by
-      simp [toPoly, Polynomial.monomial_add, Finset.sum_add_distrib]
+      simp [toPoly, map_add, Finset.sum_add_distrib]
     ext i
     rw [hbc, mul_add]
     exact Polynomial.coeff_add _ _ _
@@ -146,7 +146,7 @@ noncomputable instance (m : ℕ) : CommRing (TruncPoly R m) where
     change ofPoly m (toPoly ⟨a.coeff + b.coeff⟩ * toPoly c) =
       ⟨(ofPoly m (toPoly a * toPoly c)).coeff + (ofPoly m (toPoly b * toPoly c)).coeff⟩
     have hab : toPoly (⟨a.coeff + b.coeff⟩ : TruncPoly R m) = toPoly a + toPoly b := by
-      simp [toPoly, Polynomial.monomial_add, Finset.sum_add_distrib]
+      simp [toPoly, map_add, Finset.sum_add_distrib]
     ext i
     rw [hab, add_mul]
     exact Polynomial.coeff_add _ _ _

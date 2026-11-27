@@ -124,7 +124,12 @@ namespace QOU.ParticleInteractions.WeakIsospinT3
 inductive Quark
   | up | charm | top          -- up-type
   | down | strange | bottom   -- down-type
-deriving DecidableEq, Fintype
+deriving DecidableEq
+
+/-- Explicit enumeration (the `deriving Fintype` handler fails outside the module
+    system at Lean v4.35 / Mathlib 56a0058). -/
+instance : Fintype Quark :=
+  Fintype.ofList [.up, .charm, .top, .down, .strange, .bottom] (fun x => by cases x <;> simp)
 
 /-- The `ℤ/2` weak-isospin sector: up-type vs down-type. -/
 inductive WeakType

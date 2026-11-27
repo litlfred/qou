@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.NormNum
 

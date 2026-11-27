@@ -104,7 +104,7 @@ The instance uses the same closed-form expression as the canonical
 field is satisfied by `rfl`. This discharges the class abstraction with
 a concrete witness whose Markov-invariance is proved via
 `trm_hopf_sigma1_sq_markov_invariant`. -/
-noncomputable instance trMHopfSigma1SqClosedForm_canonical
+@[reducible] noncomputable def trMHopfSigma1SqClosedForm_canonical
     (q : ℝ) (hq : 1 < q) : TrMHopfSigma1SqClosedForm q where
   q_gt_one := hq
   trM_sigma1_sq :=

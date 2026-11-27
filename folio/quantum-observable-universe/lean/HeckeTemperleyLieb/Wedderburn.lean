@@ -1,7 +1,7 @@
 import Mathlib.Data.Matrix.Basic
 import Mathlib.LinearAlgebra.Matrix.PosDef
 import Mathlib.Data.Real.StarOrdered
-import Mathlib.Combinatorics.Enumerative.Partition
+import Mathlib.Combinatorics.Enumerative.Partition.Basic
 import Mathlib.Tactic
 import HeckeTemperleyLieb.Common
 import HeckeTemperleyLieb.HeckeAlgebra.Hoefsmit

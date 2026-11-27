@@ -30,7 +30,7 @@ theorem cnt_eq_colLen (t : List ℕ) (j : ℕ) : cnt t j = colLen t j := rfl
 every row `0,…,i` reaches column `j` (its length is `≥ l[i] > j`), so
 `colLen l j = (i + 1) + cnt (l.drop (i+1)) j`.  Hence the corpus leg `colLen l j − i − 1` is exactly
 the tail count `cnt (l.drop (i+1)) j`. -/
-theorem colLen_eq_succ_add_cnt_drop (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (i j : ℕ)
+theorem colLen_eq_succ_add_cnt_drop (l : List ℕ) (hl : List.Pairwise (· ≥ ·) l) (i j : ℕ)
     (hi : i < l.length) (hj : j < l.getD i 0) :
     colLen l j = (i + 1) + cnt (l.drop (i + 1)) j := by
   -- colLen l j = (l.filter (j < ·)).length; split l = l.take (i+1) ++ l.drop (i+1)
@@ -60,7 +60,7 @@ theorem colLen_eq_succ_add_cnt_drop (l : List ℕ) (hl : List.Sorted (· ≥ ·)
 /-- **Row-`i` factor of `prodHooks` as a `rowHookProd` (sorry-free).** For a weakly-decreasing `l` and
 `i < l.length`, the row-`i` hook product appearing in `prodHooks l` equals
 `rowHookProd (l.getD i 0) (l.drop (i+1))`. -/
-theorem prodHooks_row_eq_rowHookProd (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (i : ℕ)
+theorem prodHooks_row_eq_rowHookProd (l : List ℕ) (hl : List.Pairwise (· ≥ ·) l) (i : ℕ)
     (hi : i < l.length) :
     ((List.range (l.getD i 0)).map
         (fun j => ((l.getD i 0 - j) + (colLen l j - i) - 1))).prod
@@ -79,7 +79,7 @@ theorem prodHooks_row_eq_rowHookProd (l : List ℕ) (hl : List.Sorted (· ≥ ·
     prodHooks l = ∏_{i<|l|} rowHookProd (l[i]) (l.drop (i+1)).
 
 Each outer factor of the corpus `prodHooks` is rewritten by `prodHooks_row_eq_rowHookProd`. -/
-theorem prodHooks_eq_prod_rowHookProd (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
+theorem prodHooks_eq_prod_rowHookProd (l : List ℕ) (hl : List.Pairwise (· ≥ ·) l) :
     prodHooks l
       = ((List.range l.length).map
           (fun i => rowHookProd (l.getD i 0) (l.drop (i + 1)))).prod := by
@@ -91,12 +91,12 @@ theorem prodHooks_eq_prod_rowHookProd (l : List ℕ) (hl : List.Sorted (· ≥ �
   exact prodHooks_row_eq_rowHookProd l hl i hi
 
 /-- The tail of row `i` is weakly-decreasing (a suffix of a weakly-decreasing list). -/
-theorem drop_sorted (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (i : ℕ) :
-    List.Sorted (· ≥ ·) (l.drop (i + 1)) :=
+theorem drop_sorted (l : List ℕ) (hl : List.Pairwise (· ≥ ·) l) (i : ℕ) :
+    List.Pairwise (· ≥ ·) (l.drop (i + 1)) :=
   hl.sublist (List.drop_sublist _ _)
 
 /-- Every part of the tail of row `i` is `≤ l[i]` (weakly-decreasing). -/
-theorem drop_le_getD (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (i : ℕ) (hi : i < l.length) :
+theorem drop_le_getD (l : List ℕ) (hl : List.Pairwise (· ≥ ·) l) (i : ℕ) (hi : i < l.length) :
     ∀ p ∈ l.drop (i + 1), p ≤ l.getD i 0 := by
   intro p hp
   obtain ⟨k, hk, hke⟩ := List.mem_iff_getElem.mp hp
@@ -118,7 +118,7 @@ weakly-decreasing partition `l`,
 This is the hook-side identity (i) of the beta-number route to the general HLF:
 `∏_c h_λ(c) = (∏_i β_i!) / ∏_{i<j}(β_i − β_j)`, cleared of the Vandermonde denominator.  Sorry-free
 for every weakly-decreasing positive partition. -/
-theorem prodHooks_mul_betaGapProd (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
+theorem prodHooks_mul_betaGapProd (l : List ℕ) (hl : List.Pairwise (· ≥ ·) l) :
     prodHooks l *
         ((List.range l.length).map
           (fun i => betaGapProd (l.getD i 0) (l.drop (i + 1)))).prod

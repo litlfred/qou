@@ -25,6 +25,7 @@
 -/
 import QOU.StandardModel.Photon
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
+import Mathlib.Tactic.LinearCombination
 
 namespace QOU.MassTheory.PhotonBarClosure
 

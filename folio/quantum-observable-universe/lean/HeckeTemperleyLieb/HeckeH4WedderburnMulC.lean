@@ -1527,6 +1527,6 @@ theorem coordM_mul_coordMInv (q : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0)
 theorem coordMInv_mul_coordM (q : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0)
     (h3 : q ^ 4 + q ^ 2 + 1 ≠ 0) (h4 : q ^ 4 + 1 ≠ 0) :
     coordMInv q * coordM q = 1 :=
-  Matrix.mul_eq_one_comm.mp (coordM_mul_coordMInv q hq h2 h3 h4)
+  mul_eq_one_comm.mp (coordM_mul_coordMInv q hq h2 h3 h4)
 
 end QOU.Machinery.H4

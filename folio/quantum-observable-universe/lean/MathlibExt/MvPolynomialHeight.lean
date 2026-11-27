@@ -48,7 +48,7 @@ namespace MvPolynomial
 variable {σ : Type*}
 
 /-- `H(1) ≤ 1`: the base case of the product induction. -/
-theorem abs_coeff_one_le (n : σ →₀ ℕ) : |coeff n (1 : MvPolynomial σ ℤ)| ≤ 1 := by
+theorem abs_coeff_one_le (n : σ →₀ ℕ) : |(1 : MvPolynomial σ ℤ).coeff n| ≤ 1 := by
   classical
   rw [coeff_one]
   split_ifs <;> simp
@@ -61,23 +61,23 @@ survive, each bounded by `H(f)·H(g)`.
 
 ⚠ The easy direction.  See the module header. -/
 theorem abs_coeff_mul_le {f g : MvPolynomial σ ℤ} {Bf Bg : ℤ}
-    (hf : ∀ a, |coeff a f| ≤ Bf) (hg : ∀ b, |coeff b g| ≤ Bg) (n : σ →₀ ℕ) :
-    |coeff n (f * g)| ≤ (f.support.card : ℤ) * (Bf * Bg) := by
+    (hf : ∀ a, |f.coeff a| ≤ Bf) (hg : ∀ b, |g.coeff b| ≤ Bg) (n : σ →₀ ℕ) :
+    |(f * g).coeff n| ≤ (f.support.card : ℤ) * (Bf * Bg) := by
   classical
   have hBf : (0 : ℤ) ≤ Bf := le_trans (abs_nonneg _) (hf 0)
   have hBg : (0 : ℤ) ≤ Bg := le_trans (abs_nonneg _) (hg 0)
   set S := (Finset.antidiagonal n).filter (fun p => p.1 ∈ f.support) with hS
   rw [coeff_mul]
   refine le_trans (Finset.abs_sum_le_sum_abs _ _) ?_
-  have hfilter : ∑ p ∈ Finset.antidiagonal n, |coeff p.1 f * coeff p.2 g|
-      = ∑ p ∈ S, |coeff p.1 f * coeff p.2 g| := by
+  have hfilter : ∑ p ∈ Finset.antidiagonal n, |f.coeff p.1 * g.coeff p.2|
+      = ∑ p ∈ S, |f.coeff p.1 * g.coeff p.2| := by
     refine (Finset.sum_filter_of_ne ?_).symm
     intro p _ hne
     rw [mem_support_iff]
     intro h0
     exact hne (by rw [h0, zero_mul, abs_zero])
   rw [hfilter]
-  have hbound : ∀ p ∈ S, |coeff p.1 f * coeff p.2 g| ≤ Bf * Bg := by
+  have hbound : ∀ p ∈ S, |f.coeff p.1 * g.coeff p.2| ≤ Bf * Bg := by
     intro p _
     rw [abs_mul]
     exact mul_le_mul (hf _) (hg _) (abs_nonneg _) hBf
@@ -109,9 +109,9 @@ first slot, never a partial product, so the last factor contributes no support c
 carrying `S^{k-1}` through the induction costs more than it buys. -/
 theorem abs_coeff_multiset_prod_le {S B : ℤ} (hS1 : 1 ≤ S) (hB0 : 0 ≤ B)
     (t : Multiset (MvPolynomial σ ℤ))
-    (hS : ∀ f ∈ t, (f.support.card : ℤ) ≤ S) (hB : ∀ f ∈ t, ∀ n, |coeff n f| ≤ B)
+    (hS : ∀ f ∈ t, (f.support.card : ℤ) ≤ S) (hB : ∀ f ∈ t, ∀ n, |f.coeff n| ≤ B)
     (n : σ →₀ ℕ) :
-    |coeff n t.prod| ≤ (S * B) ^ Multiset.card t := by
+    |(t.prod).coeff n| ≤ (S * B) ^ Multiset.card t := by
   classical
   have hSB0 : (0 : ℤ) ≤ S * B := mul_nonneg (le_trans zero_le_one hS1) hB0
   revert hS hB n
@@ -122,10 +122,10 @@ theorem abs_coeff_multiset_prod_le {S B : ℤ} (hS1 : 1 ≤ S) (hB0 : 0 ≤ B)
   | cons f t ih =>
       intro hS hB n
       have hSf : (f.support.card : ℤ) ≤ S := hS f (Multiset.mem_cons_self f t)
-      have hBf : ∀ m, |coeff m f| ≤ B := hB f (Multiset.mem_cons_self f t)
+      have hBf : ∀ m, |f.coeff m| ≤ B := hB f (Multiset.mem_cons_self f t)
       have hSt : ∀ g ∈ t, (g.support.card : ℤ) ≤ S :=
         fun g hg => hS g (Multiset.mem_cons_of_mem hg)
-      have hBt : ∀ g ∈ t, ∀ m, |coeff m g| ≤ B :=
+      have hBt : ∀ g ∈ t, ∀ m, |g.coeff m| ≤ B :=
         fun g hg => hB g (Multiset.mem_cons_of_mem hg)
       rw [Multiset.prod_cons, Multiset.card_cons]
       have hstep := abs_coeff_mul_le (f := f) (g := t.prod) (Bf := B)
@@ -140,9 +140,9 @@ theorem abs_coeff_multiset_prod_le {S B : ℤ} (hS1 : 1 ≤ S) (hB0 : 0 ≤ B)
 /-- **`H(∏_{i ∈ s} Fᵢ) ≤ (S·B)^{#s}`** — the `Finset` form of the previous theorem. -/
 theorem abs_coeff_prod_le {ι : Type*} {S B : ℤ} (hS1 : 1 ≤ S) (hB0 : 0 ≤ B)
     (s : Finset ι) (F : ι → MvPolynomial σ ℤ)
-    (hS : ∀ i ∈ s, ((F i).support.card : ℤ) ≤ S) (hB : ∀ i ∈ s, ∀ n, |coeff n (F i)| ≤ B)
+    (hS : ∀ i ∈ s, ((F i).support.card : ℤ) ≤ S) (hB : ∀ i ∈ s, ∀ n, |(F i).coeff n| ≤ B)
     (n : σ →₀ ℕ) :
-    |coeff n (∏ i ∈ s, F i)| ≤ (S * B) ^ s.card := by
+    |(∏ i ∈ s, F i).coeff n| ≤ (S * B) ^ s.card := by
   classical
   rw [Finset.prod_eq_multiset_prod]
   have hcard : Multiset.card (s.val.map F) = s.card := by
@@ -170,17 +170,17 @@ supplying that for iterated `pderiv`s is `card_support_pderiv_le` in
 theorem abs_coeff_det_le {ι : Type*} [Fintype ι] [DecidableEq ι] {S B : ℤ}
     (hS1 : 1 ≤ S) (hB0 : 0 ≤ B) (M : Matrix ι ι (MvPolynomial σ ℤ))
     (hS : ∀ i j, ((M i j).support.card : ℤ) ≤ S)
-    (hB : ∀ i j, ∀ n, |coeff n (M i j)| ≤ B)
+    (hB : ∀ i j, ∀ n, |(M i j).coeff n| ≤ B)
     (n : σ →₀ ℕ) :
-    |coeff n M.det| ≤ ((Fintype.card ι).factorial : ℤ) * (S * B) ^ (Fintype.card ι) := by
+    |(M.det).coeff n| ≤ ((Fintype.card ι).factorial : ℤ) * (S * B) ^ (Fintype.card ι) := by
   classical
   have hsm : ∀ (p : Equiv.Perm ι) (q : MvPolynomial σ ℤ),
-      |coeff n (Equiv.Perm.sign p • q)| = |coeff n q| := by
+      |(Equiv.Perm.sign p • q).coeff n| = |q.coeff n| := by
     intro p q
     rw [Units.smul_def, coeff_smul, smul_eq_mul, abs_mul]
     rcases Int.units_eq_one_or (Equiv.Perm.sign p) with h | h <;> rw [h] <;> simp
   have hterm : ∀ p : Equiv.Perm ι,
-      |coeff n (Equiv.Perm.sign p • ∏ i, M (p i) i)| ≤ (S * B) ^ (Fintype.card ι) := by
+      |(Equiv.Perm.sign p • ∏ i, M (p i) i).coeff n| ≤ (S * B) ^ (Fintype.card ι) := by
     intro p
     rw [hsm]
     have h := abs_coeff_prod_le (σ := σ) hS1 hB0 Finset.univ (fun i => M (p i) i)

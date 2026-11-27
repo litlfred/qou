@@ -280,7 +280,7 @@ theorem exists_deltaBody {wa wb : E} {R' : Set E}
     intro t ht ht1; rw [insert_comm]; exact htb t ht ht1
   obtain ⟨ρb, hρb, hcb⟩ := cone_stable hsb (not_mem_cone_of_apex htb')
   have hTc : IsClosed (convexHull ℝ ({a, b, c} : Set E)) :=
-    ((toFinite _).isCompact_convexHull).isClosed
+    ((toFinite _).isCompact_convexHull ℝ).isClosed
   obtain ⟨δ, hδ, hδd⟩ := hdisj.exists_thickenings hR' hTc
   set ρ := min (min ρa ρb) (δ / 2)
   have hρ : 0 < ρ := by positivity

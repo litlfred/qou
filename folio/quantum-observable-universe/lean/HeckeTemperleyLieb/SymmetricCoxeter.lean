@@ -88,6 +88,9 @@ namespace QOU.Hecke.SymmetricCoxeter
 
 open CoxeterMatrix
 
+/-- Mathlib renamed `CoxeterMatrix.Aₙ` to `CoxeterMatrix.A`; keep the old spelling locally. -/
+local notation "Aₙ" => CoxeterMatrix.A
+
 variable {α : Type*} [DecidableEq α]
 
 theorem swap_braid_pow_three (a b c : α) (hab : a ≠ b) (hbc : b ≠ c) (hac : a ≠ c) :
@@ -148,9 +151,9 @@ theorem s_mul_self (n : ℕ) (i : Fin n) : s n i * s n i = 1 := by
 theorem s_rel (n : ℕ) (i j : Fin n) : (s n i * s n j) ^ (Aₙ n i j) = 1 := by
   by_cases hij : i = j
   · subst hij
-    simp [Aₙ, s_mul_self]
+    simp [CoxeterMatrix.A, s_mul_self]
   · have hAd : Aₙ n i j = if (j : ℕ) + 1 = i ∨ (i : ℕ) + 1 = j then 3 else 2 := by
-      simp [Aₙ, hij]
+      simp [CoxeterMatrix.A, hij]
     by_cases hadj : (j : ℕ) + 1 = i ∨ (i : ℕ) + 1 = j
     · rw [hAd, if_pos hadj]
       rcases hadj with h | h
@@ -209,7 +212,7 @@ the induction itself is not done — see the header. -/
     inclusion `Fin n ↪ Fin (n+1)` preserves them. -/
 theorem An_castSucc (n : ℕ) (i j : Fin n) :
     Aₙ (n + 1) i.castSucc j.castSucc = Aₙ n i j := by
-  simp only [Aₙ, Matrix.of_apply]
+  simp only [CoxeterMatrix.A, Matrix.of_apply]
   by_cases h : i = j
   · subst h; simp
   · have h' : i.castSucc ≠ j.castSucc := by simpa [Fin.ext_iff] using h
@@ -252,7 +255,7 @@ theorem gen_mul_self (j : ℕ) : gen N j * gen N j = 1 := by
 
 theorem An_val (i j : Fin N) :
     Aₙ N i j = if (i:ℕ) = j then 1 else (if (j:ℕ) + 1 = i ∨ (i:ℕ) + 1 = j then 3 else 2) := by
-  simp only [Aₙ, Matrix.of_apply, Fin.ext_iff]
+  simp only [CoxeterMatrix.A, Matrix.of_apply, Fin.ext_iff]
 
 /-- Two elements of order ≤ 2 whose product squares to 1 commute. -/
 theorem comm_of_sq_one {G : Type*} [Group G] {a b : G}

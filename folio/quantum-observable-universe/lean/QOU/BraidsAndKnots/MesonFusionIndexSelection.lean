@@ -3,6 +3,7 @@ import Mathlib.Algebra.Group.Invertible.Defs
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FinCases
+import Mathlib.Data.Fintype.Fin
 
 /-!
 # m_K/m_π: what the Lean credit on the strong core and the EM factor does and does not select

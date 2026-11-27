@@ -150,7 +150,7 @@ variable {K : Type*} [Field K]
 /-- The matrix of coefficients of `f` at the multi-indices `α`. -/
 noncomputable def coeffMatrix {m : ℕ} (α : Fin m → (σ →₀ ℕ)) (f : Fin m → MvPolynomial σ K) :
     Matrix (Fin m) (Fin m) K :=
-  Matrix.of fun i j => coeff (α i) (f j)
+  Matrix.of fun i j => (f j).coeff (α i)
 
 /-- **An independent family has a non-singular coefficient minor.**
 
@@ -189,12 +189,12 @@ theorem exists_coeffMatrix_det_ne_zero :
       intro β j
       ext i k
       simp [hN, coeffMatrix, Fin.succAbove_last, Fin.snoc_castSucc]
-    have hexp : ∀ β : σ →₀ ℕ, (N β).det = ∑ j, c j * coeff β (f j) := by
+    have hexp : ∀ β : σ →₀ ℕ, (N β).det = ∑ j, c j * (f j).coeff β := by
       intro β
       rw [Matrix.det_succ_row (N β) (Fin.last n)]
       refine Finset.sum_congr rfl fun j _ => ?_
       rw [hsub β j, hc]
-      have hentry : N β (Fin.last n) j = coeff β (f j) := by
+      have hentry : N β (Fin.last n) j = (f j).coeff β := by
         simp [hN, coeffMatrix, Fin.snoc_last]
       rw [hentry]
       ring
@@ -224,7 +224,7 @@ theorem linearIndependent_of_coeffMatrix_det_ne_zero {m : ℕ} (α : Fin m → (
   intro c hc
   have hker : coeffMatrix α f *ᵥ c = 0 := by
     funext i
-    have hi : coeff (α i) (∑ j, c j • f j) = 0 := by rw [hc]; simp
+    have hi : (∑ j, c j • f j).coeff (α i) = 0 := by rw [hc]; simp
     rw [coeff_sum] at hi
     simp only [Matrix.mulVec, dotProduct, coeffMatrix, Matrix.of_apply, Pi.zero_apply]
     rw [← hi]
@@ -250,8 +250,8 @@ which is invisible to a determinant being non-zero. -/
 section Bridge
 
 /-- Differentiating shifts the coefficient index and multiplies by the exponent. -/
-theorem coeff_pderiv [DecidableEq σ] (j : σ) (γ : σ →₀ ℕ) (g : MvPolynomial σ R) :
-    coeff γ (pderiv j g) = ((γ j : R) + 1) * coeff (γ + Finsupp.single j 1) g := by
+theorem coeff_pderiv' [DecidableEq σ] (j : σ) (γ : σ →₀ ℕ) (g : MvPolynomial σ R) :
+    (pderiv j g).coeff γ = ((γ j : R) + 1) * g.coeff (γ + Finsupp.single j 1) := by
   induction g using MvPolynomial.induction_on' with
   | monomial s a =>
     rw [pderiv_monomial, coeff_monomial, coeff_monomial]
@@ -280,10 +280,10 @@ theorem coeff_pderiv [DecidableEq σ] (j : σ) (γ : σ →₀ ℕ) (g : MvPolyn
 /-- A monomial with a positive exponent is detected by the matching partial derivative. -/
 theorem coeff_pderiv_of_pos [DecidableEq σ] {j : σ} {s : σ →₀ ℕ} (hs : s j ≠ 0)
     (p : MvPolynomial σ R) :
-    coeff (s - Finsupp.single j 1) (pderiv j p) = (s j : R) * coeff s p := by
+    (pderiv j p).coeff (s - Finsupp.single j 1) = (s j : R) * p.coeff s := by
   have hle : Finsupp.single j 1 ≤ s := by rw [Finsupp.single_le_iff]; omega
   have hback : s - Finsupp.single j 1 + Finsupp.single j 1 = s := tsub_add_cancel_of_le hle
-  rw [coeff_pderiv, hback]
+  rw [coeff_pderiv', hback]
   congr 1
   have hj : ((s - Finsupp.single j 1 : σ →₀ ℕ)) j = s j - 1 := by
     simp [Finsupp.tsub_apply, Finsupp.single_eq_same]
@@ -293,7 +293,7 @@ theorem coeff_pderiv_of_pos [DecidableEq σ] {j : σ} {s : σ →₀ ℕ} (hs : 
 
 /-- **A height bound for a partial derivative:** `H(∂ⱼ g) ≤ degⱼ(g) · H(g)` over `ℤ`.
 
-Immediate from `coeff_pderiv`, which is an *identity*: the coefficient of `γ` in `∂ⱼ g` is
+Immediate from `coeff_pderiv'`, which is an *identity*: the coefficient of `γ` in `∂ⱼ g` is
 `(γⱼ + 1)` times the coefficient of `γ + eⱼ` in `g`.  The factor `γⱼ + 1` is unbounded in
 `γ`, but it only ever multiplies a coefficient at exponent `γⱼ + 1` in the `j`-th variable —
 so beyond `degⱼ(g)` that coefficient is zero and the product vanishes.  The two cases in the
@@ -302,13 +302,13 @@ proof are exactly those.
 This grounds the height chain for the *entries* of a generalized Wronskian, whose matrix is
 built from iterated `pderiv`s of the auxiliary polynomial.  ⚠ It does **not** yet bound the
 determinant — see `QOU/Mathlib/SeparatedHeight.lean`. -/
-theorem abs_coeff_pderiv_le {g : MvPolynomial σ ℤ} {B : ℤ} (hg : ∀ m, |coeff m g| ≤ B)
+theorem abs_coeff_pderiv_le {g : MvPolynomial σ ℤ} {B : ℤ} (hg : ∀ m, |g.coeff m| ≤ B)
     (j : σ) (γ : σ →₀ ℕ) :
-    |coeff γ (pderiv j g)| ≤ (degreeOf j g : ℤ) * B := by
+    |(pderiv j g).coeff γ| ≤ (degreeOf j g : ℤ) * B := by
   classical
   have hB : (0 : ℤ) ≤ B := le_trans (abs_nonneg _) (hg 0)
-  rw [coeff_pderiv, abs_mul]
-  rcases eq_or_ne (coeff (γ + Finsupp.single j 1) g) 0 with h0 | hne
+  rw [coeff_pderiv', abs_mul]
+  rcases eq_or_ne (g.coeff (γ + Finsupp.single j 1)) 0 with h0 | hne
   · -- Past the degree in `xⱼ`: the shifted coefficient is zero, so the factor cannot matter.
     rw [h0, abs_zero, mul_zero]
     exact mul_nonneg (by positivity) hB
@@ -326,7 +326,7 @@ theorem abs_coeff_pderiv_le {g : MvPolynomial σ ℤ} {B : ℤ} (hg : ∀ m, |co
 /-- **Differentiating does not enlarge the support:** `#supp(∂ⱼ g) ≤ #supp(g)`.
 
 The support-size half of what `MvPolynomial.abs_coeff_det_le` needs, alongside the height half
-above.  Same source, `coeff_pderiv`: it makes `γ ↦ γ + eⱼ` a map from `supp(∂ⱼ g)` into
+above.  Same source, `coeff_pderiv'`: it makes `γ ↦ γ + eⱼ` a map from `supp(∂ⱼ g)` into
 `supp(g)`, and that map is injective because addition cancels. -/
 theorem card_support_pderiv_le [DecidableEq σ] (j : σ) (g : MvPolynomial σ R) :
     (pderiv j g).support.card ≤ g.support.card := by
@@ -335,7 +335,7 @@ theorem card_support_pderiv_le [DecidableEq σ] (j : σ) (g : MvPolynomial σ R)
   · intro γ hγ
     simp only [Finset.mem_coe, mem_support_iff] at hγ ⊢
     intro h0
-    rw [coeff_pderiv, h0, mul_zero] at hγ
+    rw [coeff_pderiv', h0, mul_zero] at hγ
     exact hγ rfl
   · intro a _ b _ hab
     have hab' : a + Finsupp.single j 1 = b + Finsupp.single j 1 := hab
@@ -347,18 +347,18 @@ Mathlib has the univariate `Polynomial.eq_C_of_derivative_eq_zero`; the multivar
 statement is a gap.  Characteristic zero is doing real work: over `𝔽ₚ` the polynomial `xᵖ`
 has every partial derivative zero and is not constant. -/
 theorem eq_C_of_pderiv_eq_zero [CharZero R] [IsDomain R] [DecidableEq σ]
-    {p : MvPolynomial σ R} (h : ∀ j, pderiv j p = 0) : p = C (coeff 0 p) := by
+    {p : MvPolynomial σ R} (h : ∀ j, pderiv j p = 0) : p = C (p.coeff 0) := by
   ext s
   rcases eq_or_ne s 0 with rfl | hs
   · simp
-  · have hcoeff : coeff s p = 0 := by
+  · have hcoeff : p.coeff s = 0 := by
       obtain ⟨j, hj⟩ : ∃ j, s j ≠ 0 := by
         by_contra hcon
         push_neg at hcon
         exact hs (Finsupp.ext hcon)
       have hzero := coeff_pderiv_of_pos (R := R) hj p
       rw [h j] at hzero
-      simp only [coeff_zero] at hzero
+      simp only [MvPolynomial.coeff_zero, Pi.zero_apply] at hzero
       have hne : (s j : R) ≠ 0 := Nat.cast_ne_zero.mpr hj
       exact (mul_eq_zero.mp hzero.symm).resolve_left hne
     rw [hcoeff, coeff_C, if_neg (Ne.symm hs)]
@@ -373,8 +373,8 @@ theorem degreeOf_pderiv_lt [DecidableEq σ] {j : σ} {p : MvPolynomial σ R}
     degreeOf j (pderiv j p) < degreeOf j p := by
   have hstep : ∀ t ∈ (pderiv j p).support, t j + 1 ≤ degreeOf j p := by
     intro t ht
-    rw [mem_support_iff, coeff_pderiv] at ht
-    have hne : coeff (t + Finsupp.single j 1) p ≠ 0 := fun h => ht (by rw [h, mul_zero])
+    rw [mem_support_iff, coeff_pderiv'] at ht
+    have hne : p.coeff (t + Finsupp.single j 1) ≠ 0 := fun h => ht (by rw [h, mul_zero])
     have hmem : t + Finsupp.single j 1 ∈ p.support := mem_support_iff.mpr hne
     have hle := monomial_le_degreeOf j hmem
     simpa [Finsupp.add_apply, Finsupp.single_eq_same] using hle
@@ -390,8 +390,8 @@ theorem degreeOf_pderiv_le [DecidableEq σ] (i j : σ) (p : MvPolynomial σ R) :
     degreeOf i (pderiv j p) ≤ degreeOf i p := by
   rw [degreeOf_le_iff]
   intro t ht
-  rw [mem_support_iff, coeff_pderiv] at ht
-  have hne : coeff (t + Finsupp.single j 1) p ≠ 0 := fun h0 => ht (by rw [h0, mul_zero])
+  rw [mem_support_iff, coeff_pderiv'] at ht
+  have hne : p.coeff (t + Finsupp.single j 1) ≠ 0 := fun h0 => ht (by rw [h0, mul_zero])
   have hle := monomial_le_degreeOf i (mem_support_iff.mpr hne)
   simp only [Finsupp.add_apply] at hle
   omega
@@ -536,20 +536,20 @@ theorem exists_multiIndexOf_eq (α : σ →₀ ℕ) : ∃ l : List σ, multiInde
     obtain ⟨l, hl⟩ := ih
     exact ⟨List.replicate b a ++ l, by rw [multiIndexOf_append, multiIndexOf_replicate, hl]⟩
 
-/-- **Iterating `coeff_pderiv` along a list.**
+/-- **Iterating `coeff_pderiv'` along a list.**
 
 ⚠ The constant depends only on `γ` and `l`, **never on `g`** — the quantifier order matters,
 because the whole point is to pull a single factor out of an entire matrix row. -/
 theorem exists_coeff_pderivList [DecidableEq σ] (l : List σ) (γ : σ →₀ ℕ) :
     ∃ c : ℕ, 0 < c ∧ ∀ g : MvPolynomial σ R,
-      coeff γ (pderivList l g) = (c : R) * coeff (γ + multiIndexOf l) g := by
+      (pderivList l g).coeff γ = (c : R) * g.coeff (γ + multiIndexOf l) := by
   induction l generalizing γ with
   | nil => exact ⟨1, Nat.one_pos, fun g => by simp⟩
   | cons j l' ih =>
     obtain ⟨c', hc', hstep⟩ := ih (γ + Finsupp.single j 1)
     refine ⟨(γ j + 1) * c', by positivity, fun g => ?_⟩
     have hcons : pderivList (j :: l') g = pderiv j (pderivList l' g) := rfl
-    rw [hcons, coeff_pderiv, hstep]
+    rw [hcons, coeff_pderiv', hstep]
     have hidx : γ + Finsupp.single j 1 + multiIndexOf l' = γ + multiIndexOf (j :: l') := by
       rw [multiIndexOf_cons]; abel
     rw [hidx]
@@ -572,7 +572,7 @@ variables to get the operator family; then `constantCoeff` is a ring hom, so it 
 with the determinant, and the resulting scalar matrix is `diagonal c * coeffMatrix α f`.
 
 ⚠ **Where characteristic zero enters, and why it cannot be avoided here.** The `c i` are
-positive integers — products of exponents thrown off by `coeff_pderiv`. Their product must
+positive integers — products of exponents thrown off by `coeff_pderiv'`. Their product must
 be non-zero *in `K`*, which is exactly `CharZero`. Over `𝔽ₚ` the same construction can
 produce a genuinely zero determinant from an independent family, which is the multivariate
 face of the failure that makes the univariate converse false in characteristic `p`. -/

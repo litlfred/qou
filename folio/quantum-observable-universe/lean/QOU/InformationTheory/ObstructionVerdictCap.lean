@@ -1,4 +1,4 @@
-import Mathlib.Logic.Basic
+import Mathlib.Basic.Logic.Basic
 
 /-!
 # QOU.Information.ObstructionVerdictCap — the single-verdict reading, and its counter-model

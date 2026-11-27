@@ -1,4 +1,5 @@
 import QOU.MassTheory.HolonomyConnectionSplit
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # The n − p difference of `tr(𝒟²)` on the nucleon weight blocks

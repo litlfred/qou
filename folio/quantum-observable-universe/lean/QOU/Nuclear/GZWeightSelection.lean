@@ -47,9 +47,12 @@ inductive FlatConn where
   | sigma0
   | sigma1
   | sigma1bar
-  deriving DecidableEq, Fintype
+  deriving DecidableEq
 
 open FlatConn
+
+instance : Fintype FlatConn :=
+  Fintype.ofList [sigma0, sigma1, sigma1bar] (fun x => by cases x <;> simp)
 
 /-- **Garoufalidis–Zagier representation weight** `κ` (2111.06645 eq. 3.7):
 `κ(σ₀) = 3/2` for the trivial connection, `0` for every non-trivial connection. The

@@ -214,7 +214,7 @@ theorem isHorizontal_closure {S : Set (Fin 3 → ℝ)} (hS : S ⊆ horizontal) :
 
 `AddSubgroup.zmultiples v` is `{n • v | n : ℤ}`; it is horizontal whenever `v` is, and
 it is countable, so it satisfies every hypothesis §4 needs. -/
-instance isHorizontal_zmultiples {v : Fin 3 → ℝ} (hv : v ∈ horizontal) :
+theorem isHorizontal_zmultiples {v : Fin 3 → ℝ} (hv : v ∈ horizontal) :
     IsHorizontal (AddSubgroup.zmultiples v) where
   le_horizontal := by
     rw [AddSubgroup.zmultiples_eq_closure, AddSubgroup.closure_le]

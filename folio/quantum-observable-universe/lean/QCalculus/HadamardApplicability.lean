@@ -65,7 +65,7 @@
   -- Ref: [faddeev1995] Faddeev, Lett. Math. Phys. 34 (1995) 249.
 -/
 import QCalculus.PhiBProd
-import Mathlib.Analysis.NormedSpace.MultipliableUniformlyOn
+import Mathlib.Analysis.Normed.Module.MultipliableUniformlyOn
 import Mathlib.Analysis.Complex.LocallyUniformLimit
 
 namespace QOU.Mathlib.HadamardApplicability

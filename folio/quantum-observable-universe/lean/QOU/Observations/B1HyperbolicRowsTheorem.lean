@@ -57,7 +57,12 @@ inductive HyperbolicRow
   | borromean
   | whitehead
   | twistKnot
-  deriving DecidableEq, Fintype
+  deriving DecidableEq
+
+/-- Explicit enumeration (the `deriving Fintype` handler fails outside the module
+    system at Lean v4.35 / Mathlib 56a0058). -/
+instance : Fintype HyperbolicRow :=
+  Fintype.ofList [.borromean, .whitehead, .twistKnot] (fun x => by cases x <;> simp)
 
 /-- **Bloch–Suslin regulator condition** — an external open input. -/
 -- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md

@@ -72,7 +72,7 @@ moreLeanArgs = ["-s", "65536"]
 [[require]]
 name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4"
-rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
+rev = "56a005855ea17e0b0958f73ec801ae140b0a1679"
 
 # Cross-paper dependency: Gröbner–Shirshov basis engine
 # (provides HeckeGS types for crossing energy / categorical mass)
@@ -97,7 +97,7 @@ path = "../../unital-groebner-bases/lean"
 # [[require]]
 # name = "doc-gen4"
 # git = "https://github.com/leanprover/doc-gen4"
-# rev = "1cd7a1113090e216703e323e8fdcdf099f0a9c8a"
+# rev = "0e1ffe2e4ba5ecfdfaf15c65b8d3805dbb7134ae"
 # --- END doc-gen4 (CI-only) ---
 
 # [[require]]

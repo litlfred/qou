@@ -2,7 +2,8 @@ import QOU.LiftingDescent.MassTraceIdentity
 import MathlibExt.YekutieliIntegration
 import QOU.Core.CategoricalLagrangianTwoTermBridge
 import Mathlib.Analysis.ODE.Gronwall
-import Mathlib.Analysis.Matrix
+import Mathlib.Analysis.ODE.ExistUnique
+import Mathlib.Analysis.Matrix.Normed
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Normed.Operator.Mul
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
@@ -731,10 +732,11 @@ theorem norm_isFundSol_step_truncation_le {X U : ℝ → A} (hXc : ContinuousOn 
     have hsub_eq : U b - (U a + ∫ s in a..b, X s * U a) =
         (∫ s in a..b, X s * U s) - ∫ s in a..b, X s * U a := by
       rw [hftc]; abel
+    have hi2 : IntervalIntegrable (fun s => X s * U a) MeasureTheory.volume a b :=
+      ((hXc.mono hsub).mul continuousOn_const).intervalIntegrable_of_Icc
+        (μ := MeasureTheory.volume) hab
     rw [hsub_eq, ← intervalIntegral.integral_sub
-      (hXUc.intervalIntegrable_of_Icc (μ := MeasureTheory.volume) hab)
-      (((hXc.mono hsub).mul continuousOn_const).intervalIntegrable_of_Icc
-        (μ := MeasureTheory.volume) hab)]
+      (hXUc.intervalIntegrable_of_Icc (μ := MeasureTheory.volume) hab) hi2]
     congr 1; funext s; rw [mul_sub]
   rw [hdiff_eq]
   have hUbound : ∀ s ∈ Icc (0 : ℝ) 1, ‖X s * U s‖ ≤ M * Real.exp M := by
@@ -802,7 +804,7 @@ theorem eulerOrderedProd_error_bound {X U : ℝ → A} (hXc : ContinuousOn X (Ic
         ≤ ‖(1 : A)‖ + ‖∫ s in a..b, X s‖ := norm_add_le _ _
       _ ≤ 1 + M * |b - a| := by
           rw [norm_one]
-          exact add_le_add_left (intervalIntegral.norm_integral_le_of_norm_le_const hbd) 1
+          exact add_le_add_right (intervalIntegral.norm_integral_le_of_norm_le_const hbd) 1
       _ = 1 + M / (N : ℝ) := by rw [hab_eq, abs_of_pos (by positivity)]; ring
       _ ≤ α := by linarith [Real.add_one_le_exp (M / (N : ℝ))]
   have hrec : ∀ k ≤ N, ‖U (meshPt N k) - eulerOrderedStep X N k‖ ≤ (k : ℝ) * α ^ k * τ := by
@@ -828,11 +830,11 @@ theorem eulerOrderedProd_error_bound {X U : ℝ → A} (hXc : ContinuousOn X (Ic
         _ ≤ τ + ‖S‖ * ‖U (meshPt N k) - eulerOrderedStep X N k‖ :=
             add_le_add (norm_isFundSol_step_truncation_le hXc hU hM0 hX hk) (norm_mul_le _ _)
         _ ≤ τ + α * ((k : ℝ) * α ^ k * τ) :=
-            add_le_add_left (mul_le_mul (hstep_norm k hk) (ih hk.le) (norm_nonneg _)
+            add_le_add_right (mul_le_mul (hstep_norm k hk) (ih hk.le) (norm_nonneg _)
               (by positivity)) τ
         _ = 1 * τ + (k : ℝ) * α ^ (k + 1) * τ := by rw [pow_succ']; ring
         _ ≤ α ^ (k + 1) * τ + (k : ℝ) * α ^ (k + 1) * τ :=
-            add_le_add_right (mul_le_mul_of_nonneg_right hα_pow hτ0) _
+            add_le_add_left (mul_le_mul_of_nonneg_right hα_pow hτ0) _
         _ = ((k + 1 : ℕ) : ℝ) * α ^ (k + 1) * τ := by push_cast; ring
   have hN_step := hrec N le_rfl
   have hmN : meshPt N N = 1 := div_self hNpos.ne'
@@ -876,6 +878,12 @@ end PicardAndGronwall
 /-! ## §4. Non-Commutative Matrix Substrate `FinMatObj R`, `matFrobHopf`, & `nablaEndo` Instantiation -/
 
 section MatrixSubstrate
+
+/- Lean 4.35 port: `FinMatObj` carriers (`(matObj R d).carrier = Fin d × Fin d`, the
+monoidal-structure fields) are no longer unfolded at implicit transparency, which
+breaks `rw`/`simp` against the section's own `stdVec`/`prodVec` lemmas. Mathlib uses
+the same switch where a structure literal's projections must unfold. -/
+set_option backward.isDefEq.respectTransparency false
 
 /-- Objects of `FinMatObj R`: finite index types carrying `Fintype` and `DecidableEq`. -/
 structure FinMatObj (R : Type*) where
@@ -1249,8 +1257,8 @@ lemma prodVec_stdVec (X Y : FinMatObj R) (x : X.carrier) (y : Y.carrier) :
           (stdVec (R := R) Z z)) =
       prodVec (X := X) (Y := Y ⊗ Z) (stdVec (R := R) X x)
         (prodVec (X := Y) (Y := Z) (stdVec (R := R) Y y) (stdVec (R := R) Z z)) := by
-  rw [prodVec_stdVec, prodVec_stdVec]
-  simpa using act_permHom_stdVec (X := (X ⊗ Y) ⊗ Z) (Y := X ⊗ (Y ⊗ Z))
+  simp only [prodVec_stdVec]
+  exact act_permHom_stdVec (X := (X ⊗ Y) ⊗ Z) (Y := X ⊗ (Y ⊗ Z))
     (Equiv.prodAssoc X.carrier Y.carrier Z.carrier) ((x, y), z)
 
 @[simp] lemma act_assoc_inv_std (X Y Z : FinMatObj R)
@@ -1261,15 +1269,15 @@ lemma prodVec_stdVec (X Y : FinMatObj R) (x : X.carrier) (y : Y.carrier) :
       prodVec (X := X ⊗ Y) (Y := Z)
         (prodVec (X := X) (Y := Y) (stdVec (R := R) X x) (stdVec (R := R) Y y))
         (stdVec (R := R) Z z) := by
-  rw [prodVec_stdVec, prodVec_stdVec]
-  simpa using act_permHom_stdVec (X := X ⊗ (Y ⊗ Z)) (Y := (X ⊗ Y) ⊗ Z)
+  simp only [prodVec_stdVec]
+  exact act_permHom_stdVec (X := X ⊗ (Y ⊗ Z)) (Y := (X ⊗ Y) ⊗ Z)
     (Equiv.prodAssoc X.carrier Y.carrier Z.carrier).symm (x, (y, z))
 
 @[simp] lemma act_braiding_hom_std (X Y : FinMatObj R) (x : X.carrier) (y : Y.carrier) :
     act (β_ X Y).hom (prodVec (X := X) (Y := Y) (stdVec (R := R) X x) (stdVec (R := R) Y y)) =
       prodVec (X := Y) (Y := X) (stdVec (R := R) Y y) (stdVec (R := R) X x) := by
-  rw [prodVec_stdVec]
-  simpa using act_permHom_stdVec (X := X ⊗ Y) (Y := Y ⊗ X)
+  simp only [prodVec_stdVec]
+  exact act_permHom_stdVec (X := X ⊗ Y) (Y := Y ⊗ X)
     (Equiv.prodComm X.carrier Y.carrier) (x, y)
 
 @[simp] lemma act_leftUnitor_hom_std (X : FinMatObj R) (x : X.carrier) :

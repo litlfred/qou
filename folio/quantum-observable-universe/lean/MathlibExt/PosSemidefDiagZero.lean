@@ -145,7 +145,7 @@ theorem Matrix.PosSemidef.entry_sq_le_diag_mul
   · nlinarith [sq_nonneg (C i i)]
   · have key : ∀ x : ℝ, 0 ≤ C i i * (x * x) + 2 * C i j * x + C j j := by
       intro x
-      have h := hC.2 (Pi.single i x + Pi.single j 1)
+      have h := hC.dotProduct_mulVec_nonneg (Pi.single i x + Pi.single j 1)
       rw [quadratic_form_two_index hC.1 x 1 hij] at h
       nlinarith [h]
     have hd : discrim (C i i) (2 * C i j) (C j j) ≤ 0 := discrim_le_zero key

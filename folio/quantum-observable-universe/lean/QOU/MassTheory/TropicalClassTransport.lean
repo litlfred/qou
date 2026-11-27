@@ -125,10 +125,10 @@ theorem tendsto_jacksonLogCorrection (q : ℝ) (hq : 1 < q) :
   have hpow : Tendsto (fun k : ℕ => (q⁻¹) ^ (k + 1)) atTop (𝓝 0) := by
     have := (tendsto_pow_atTop_nhds_zero_of_abs_lt_one hinv).comp
       (tendsto_add_atTop_nat 1)
-    simpa [Function.comp] using this
+    simpa [Function.comp_def] using this
   have hsub : Tendsto (fun k : ℕ => 1 - (q⁻¹) ^ (k + 1)) atTop (𝓝 1) := by
     simpa using tendsto_const_nhds.sub hpow
   have := (Real.continuousAt_log (by norm_num : (1 : ℝ) ≠ 0)).tendsto.comp hsub
-  simpa [Function.comp] using this
+  simpa [Function.comp_def] using this
 
 end QOU.Archimedean.TropicalClassTransport

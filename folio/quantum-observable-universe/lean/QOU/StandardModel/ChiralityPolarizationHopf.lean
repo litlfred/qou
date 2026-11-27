@@ -152,7 +152,7 @@ theorem hopf_orth {p₁ p₂ : BringCone R} (hp₁ : Quaternion.normSq p₁ = 1)
       + (star p₁ * p₂).imK * (star p₁ * p₂).imK) • hopf p₁) := by
   have hps := mul_star_self_of_normSq hp₁
   have hw : star p₁ * p₂ = orthW (star p₁ * p₂).imJ (star p₁ * p₂).imK := by
-    ext <;> simp [orthW, hre, hi]
+    ext <;> first | exact hre | exact hi | rfl
   have hp2 : p₂ = p₁ * (star p₁ * p₂) := by rw [← mul_assoc, hps, one_mul]
   conv_lhs => rw [hp2, hopf_mul, hw, orth_conj_unitI]
   rw [mul_neg, neg_mul, mul_smul_comm, smul_mul_assoc]

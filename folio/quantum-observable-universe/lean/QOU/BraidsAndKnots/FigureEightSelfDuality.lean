@@ -133,13 +133,13 @@ noncomputable def laurentBar : LaurentPolynomial ℤ →+* LaurentPolynomial ℤ
 theorem laurentBar_T (k : ℤ) :
     laurentBar (T k : LaurentPolynomial ℤ) = (T (-k) : LaurentPolynomial ℤ) := by
   unfold laurentBar T
-  exact AddMonoidAlgebra.domCongr_single ℤ ℤ negIntAddEquiv k (1 : ℤ)
+  exact AddMonoidAlgebra.domCongr_single (R := ℤ) (A := ℤ) negIntAddEquiv k (1 : ℤ)
 
 /-- Evaluating `T k : LaurentPolynomial ℤ` at exponent `m : ℤ` gives `if k = m then 1 else 0`. -/
 theorem coeff_T (k m : ℤ) :
-    (T k : LaurentPolynomial ℤ) m = if k = m then 1 else 0 := by
+    (T k : LaurentPolynomial ℤ).coeff m = if k = m then 1 else 0 := by
   unfold T
-  exact Finsupp.single_apply
+  exact AddMonoidAlgebra.coeff_single_apply
 
 /-- The Jones polynomial of the figure-eight knot `4₁` in `ℤ[q, q⁻¹]`:
 `J(4₁; q) = q² - q + 1 - q⁻¹ + q⁻²`. -/
@@ -176,16 +176,18 @@ theorem laurentBar_jonesTrefoil_ne :
     barOdd laurentBar jonesTrefoil ≠ 0 := by
   have hne : laurentBar jonesTrefoil ≠ jonesTrefoil := by
     intro h
-    have hcoeff : (laurentBar jonesTrefoil) 1 = jonesTrefoil 1 :=
-      congrArg (fun p : LaurentPolynomial ℤ => p 1) h
-    have hL : (laurentBar jonesTrefoil) 1 = 0 := by
+    have hcoeff : (laurentBar jonesTrefoil).coeff 1 = jonesTrefoil.coeff 1 :=
+      congrArg (fun p : LaurentPolynomial ℤ => p.coeff 1) h
+    have hL : (laurentBar jonesTrefoil).coeff 1 = 0 := by
       unfold jonesTrefoil
       rw [map_sub, map_add, laurentBar_T, laurentBar_T, laurentBar_T,
+        AddMonoidAlgebra.coeff_sub, AddMonoidAlgebra.coeff_add,
         Finsupp.sub_apply, Finsupp.add_apply, coeff_T, coeff_T, coeff_T]
       decide
-    have hR : jonesTrefoil 1 = 1 := by
+    have hR : jonesTrefoil.coeff 1 = 1 := by
       unfold jonesTrefoil
-      rw [Finsupp.sub_apply, Finsupp.add_apply, coeff_T, coeff_T, coeff_T]
+      rw [AddMonoidAlgebra.coeff_sub, AddMonoidAlgebra.coeff_add,
+        Finsupp.sub_apply, Finsupp.add_apply, coeff_T, coeff_T, coeff_T]
       decide
     rw [hL, hR] at hcoeff
     exact zero_ne_one hcoeff

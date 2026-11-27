@@ -89,7 +89,7 @@ class PlancherelSnData (n : ℕ) where
   /-- The partitions of `n`, as weakly-decreasing `List ℕ`. -/
   parts : Finset (List ℕ)
   /-- Each listed partition is weakly decreasing — the hypothesis (A) needs. -/
-  parts_sorted : ∀ l ∈ parts, l.Sorted (· ≥ ·)
+  parts_sorted : ∀ l ∈ parts, l.Pairwise (· ≥ ·)
   /-- Each listed partition has size `n`. -/
   parts_sz : ∀ l ∈ parts, sz l = n
   /-- The SYT dimension `dim(λ)`. -/

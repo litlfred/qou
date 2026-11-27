@@ -139,21 +139,21 @@ real `q > 0`, which is the regime the selection rule is stated in. -/
 
 theorem dimQ_two (q : R) (h2 : qInt q 2 ≠ 0) : dimQ q [2] = 1 := by
   simp [dimQ, hooks_two, qFact_two, qInt_one]
-  exact div_self h2
+  exact h2
 
 theorem dimQ_one_one (q : R) (h2 : qInt q 2 ≠ 0) : dimQ q [1, 1] = 1 := by
   simp [dimQ, hooks_one_one, qFact_two, qInt_one]
-  exact div_self h2
+  exact h2
 
 theorem dimQ_three (q : R) (h2 : qInt q 2 ≠ 0) (h3 : qInt q 3 ≠ 0) :
     dimQ q [3] = 1 := by
   simp [dimQ, hooks_three, qFact_three, qInt_one]
-  exact div_self (mul_ne_zero h3 h2)
+  exact ⟨h3, h2⟩
 
 theorem dimQ_one_one_one (q : R) (h2 : qInt q 2 ≠ 0) (h3 : qInt q 3 ≠ 0) :
     dimQ q [1, 1, 1] = 1 := by
   simp [dimQ, hooks_one_one_one, qFact_three, qInt_one]
-  exact div_self (mul_ne_zero h3 h2)
+  exact ⟨h3, h2⟩
 
 /-- **`dim_q V_{(2,1)} = [2]_q`** — the one non-trivial H₃ dimension, and the
 value the c=2 selection rule turns on.  Hooks `[3,1,1]` against `[3]_q!`:
@@ -248,12 +248,12 @@ theorem qInt_four_eq (q : R) (hq : q ≠ 0) :
 theorem dimQ_four (q : R) (h2 : qInt q 2 ≠ 0) (h3 : qInt q 3 ≠ 0)
     (h4 : qInt q 4 ≠ 0) : dimQ q [4] = 1 := by
   simp [dimQ, hooks_four, qFact_four, qInt_one]
-  exact div_self (mul_ne_zero h4 (mul_ne_zero h3 h2))
+  exact ⟨h4, h3, h2⟩
 
 theorem dimQ_one_four (q : R) (h2 : qInt q 2 ≠ 0) (h3 : qInt q 3 ≠ 0)
     (h4 : qInt q 4 ≠ 0) : dimQ q [1, 1, 1, 1] = 1 := by
   simp [dimQ, hooks_one_four, qFact_four, qInt_one]
-  exact div_self (mul_ne_zero h4 (mul_ne_zero h3 h2))
+  exact ⟨h4, h3, h2⟩
 
 theorem dimQ_three_one (q : R) (h2 : qInt q 2 ≠ 0) (h4 : qInt q 4 ≠ 0) :
     dimQ q [3, 1] = qInt q 3 := by

@@ -94,14 +94,14 @@ omit [Fintype G] [DecidableEq G] [DecidableRel (IsConj : G → G → Prop)] in
 coefficients at `h * g` gives `z g = z (h⁻¹ * g * h)`. -/
 theorem coeff_conj_eq_of_mem_center {z : MonoidAlgebra k G}
     (hz : z ∈ Subalgebra.center k (MonoidAlgebra k G)) (h g : G) :
-    z (h * g * h⁻¹) = z g := by
+    z.coeff (h * g * h⁻¹) = z.coeff g := by
   have hcomm : MonoidAlgebra.single h (1 : k) * z = z * MonoidAlgebra.single h (1 : k) :=
     Subalgebra.mem_center_iff.mp hz _
-  have hL : (MonoidAlgebra.single h (1 : k) * z) (h * g) = z g := by
-    rw [MonoidAlgebra.single_mul_apply]
+  have hL : (MonoidAlgebra.single h (1 : k) * z).coeff (h * g) = z.coeff g := by
+    rw [MonoidAlgebra.coeff_single_mul_apply]
     simp
-  have hR : (z * MonoidAlgebra.single h (1 : k)) (h * g) = z (h * g * h⁻¹) := by
-    rw [MonoidAlgebra.mul_single_apply]
+  have hR : (z * MonoidAlgebra.single h (1 : k)).coeff (h * g) = z.coeff (h * g * h⁻¹) := by
+    rw [MonoidAlgebra.coeff_mul_single_apply]
     simp
   rw [← hL, hcomm, hR]
 
@@ -109,7 +109,7 @@ omit [Fintype G] [DecidableEq G] [DecidableRel (IsConj : G → G → Prop)] in
 /-- The coefficients of a central element are constant on conjugacy classes. -/
 theorem coeff_eq_of_isConj {z : MonoidAlgebra k G}
     (hz : z ∈ Subalgebra.center k (MonoidAlgebra k G)) {g g' : G} (hc : IsConj g g') :
-    z g' = z g := by
+    z.coeff g' = z.coeff g := by
   obtain ⟨u, hu⟩ := hc
   have hg' : (u : G) * g * (u : G)⁻¹ = g' := by
     rw [hu.eq]; group
@@ -137,12 +137,12 @@ theorem center_le_span_classSum :
   classical
   intro z hz
   have hzc : z ∈ Subalgebra.center k (MonoidAlgebra k G) := hz
-  refine (Submodule.mem_span_range_iff_exists_fun k).mpr ⟨fun c => z c.out, ?_⟩
+  refine (Submodule.mem_span_range_iff_exists_fun k).mpr ⟨fun c => z.coeff c.out, ?_⟩
   -- expand each class sum and replace `z cᵒᵘᵗ` by `z g` inside the class
   have hstep : ∀ c : ConjClasses G,
-      (z c.out) • classSum (k := k) c
+      (z.coeff c.out) • classSum (k := k) c
         = ∑ g ∈ Finset.univ.filter (fun g : G => ConjClasses.mk g = c),
-            MonoidAlgebra.single g (z g) := by
+            MonoidAlgebra.single g (z.coeff g) := by
     intro c
     rw [classSum, Finset.smul_sum, carrier_toFinset_eq_filter]
     refine Finset.sum_congr rfl (fun g hg => ?_)
@@ -155,8 +155,8 @@ theorem center_le_span_classSum :
   -- the classes partition `G`
   rw [Finset.sum_fiberwise_of_maps_to (fun g _ => Finset.mem_univ (ConjClasses.mk g))]
   -- and `Σ_g single g (z g) = z`
-  rw [← Finsupp.sum_fintype z (fun g c => MonoidAlgebra.single g c) (by simp)]
-  exact Finsupp.sum_single z
+  rw [← Finsupp.sum_fintype z.coeff (fun g c => MonoidAlgebra.single g c) (by simp)]
+  exact MonoidAlgebra.sum_coeff_single z
 
 end Center
 
@@ -173,7 +173,7 @@ theorem finrank_center_le_card_conjClasses :
       ≤ Fintype.card (ConjClasses G) := by
   classical
   haveI : Module.Finite k (MonoidAlgebra k G) := by
-    unfold MonoidAlgebra; infer_instance
+    infer_instance
   exact (Submodule.finrank_mono center_le_span_classSum).trans
     (finrank_range_le_card _)
 

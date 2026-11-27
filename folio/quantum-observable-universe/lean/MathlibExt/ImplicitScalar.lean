@@ -178,7 +178,7 @@ theorem exists_hasDerivAt_implicit [CompleteSpace 𝕜]
     have hcomp := hinv.hasFDerivAt.comp_hasDerivAt x₀ hincl
     have hsnd : HasDerivAt (fun x : 𝕜 => (Ψ (x, 0)).2)
         (((straightenEquiv A hB).symm ((1 : 𝕜), (0 : 𝕜))).2) x₀ := by
-      simpa using (ContinuousLinearMap.snd 𝕜 𝕜 𝕜).hasFDerivAt.comp_hasDerivAt x₀ hcomp
+      simpa [Function.comp_def] using (ContinuousLinearMap.snd 𝕜 𝕜 𝕜).hasFDerivAt.comp_hasDerivAt x₀ hcomp
     rw [straightenEquiv_symm_apply] at hsnd
     convert hsnd using 1
     field_simp
@@ -200,7 +200,7 @@ theorem exists_sqrt_branch :
     have h2 : HasStrictFDerivAt (fun q : ℂ × ℂ => q.2 ^ 2)
         ((2 : ℂ) • ContinuousLinearMap.snd ℂ ℂ ℂ) ((1 : ℂ), (1 : ℂ)) := by
       simpa using (hasStrictFDerivAt_snd (𝕜 := ℂ) (p := ((1 : ℂ), (1 : ℂ)))).pow 2
-    simpa [hF'] using h2.sub hasStrictFDerivAt_fst
+    exact h2.sub hasStrictFDerivAt_fst
   have hB : F' (0, 1) ≠ 0 := by simp [hF']
   obtain ⟨g, hg0, hgeq, hgd⟩ :=
     exists_hasDerivAt_implicit hf (by norm_num) hB

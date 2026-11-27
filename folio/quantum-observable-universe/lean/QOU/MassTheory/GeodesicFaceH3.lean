@@ -71,7 +71,7 @@ def verticalPlane (n : ℝ × ℝ) (d : ℝ) : Set (Fin 3 → ℝ) :=
 /-- The Euclidean unit normal of the vertical plane with base normal `n` — the
 horizontal vector `(n.1, n.2, 0)`, as an element of `EuclideanSpace ℝ (Fin 3)`. -/
 noncomputable def verticalPlaneNormal (n : ℝ × ℝ) : EuclideanSpace ℝ (Fin 3) :=
-  ![n.1, n.2, 0]
+  WithLp.toLp 2 ![n.1, n.2, 0]
 
 /-- A point is on the vertical plane iff its horizontal projection is on the base
 line — the defining membership, restated for downstream `rw`. -/
@@ -103,7 +103,7 @@ def hemisphere (R : ℝ) : Set (Fin 3 → ℝ) :=
 /-- The Euclidean normal of the hemisphere of radius `R` at a point `p`: the
 radial vector `p / R`. -/
 noncomputable def hemisphereNormal (R : ℝ) (p : Fin 3 → ℝ) : EuclideanSpace ℝ (Fin 3) :=
-  ![p 0 / R, p 1 / R, p 2 / R]
+  WithLp.toLp 2 ![p 0 / R, p 1 / R, p 2 / R]
 
 /-- **The hemisphere normal is a Euclidean unit vector** at a point on the
 hemisphere (radius `R > 0`): `‖p / R‖ = ‖p‖ / R = R / R = 1`. -/

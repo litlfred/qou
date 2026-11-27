@@ -364,7 +364,7 @@ def vortexReductionSystem : SkeinObservationSystem ℕ ℕ where
 theorem vortexReductionSystem_regular (P : ℕ) :
     vortexReductionSystem.Regular P P := by
   have h := vortexReductionSystem.regular_of_len_nonincreasing P ?_
-  · simpa using h
+  · exact h
   · intro k
     rw [Function.iterate_succ_apply']
     exact Nat.sub_le _ 1
@@ -388,7 +388,7 @@ theorem vortexReductionSystem_halts (P : ℕ) :
 theorem vortexReductionSystem_regular_and_halts (P : ℕ) :
     vortexReductionSystem.Regular P P ∧ vortexReductionSystem.Halts P := by
   have h := vortexReductionSystem.regular_and_halts_of_len_orbit_descent P ?_ ?_
-  · simpa using h
+  · exact h
   · intro k
     rw [Function.iterate_succ_apply']
     exact Nat.sub_le _ 1

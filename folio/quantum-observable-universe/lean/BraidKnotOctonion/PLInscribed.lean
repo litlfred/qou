@@ -62,6 +62,7 @@ lemma mem_edge_iff {i : Fin (P.n + 1)} {x : E} :
     x ∈ P.edge i ↔ ∃ s ∈ Icc (0 : ℝ) 1, P.v i + s • (P.v (P.next i) - P.v i) = x := by
   rw [edge, segment_eq_image']; rfl
 
+set_option backward.isDefEq.respectTransparency false in
 /-- Every point of an inscribed edge is close to the image of a point of the source edge. -/
 theorem exists_near_of_mem_image_edge {φ : E →L[ℝ] F} {ε : ℝ} {i : Fin (P.n + 1)}
     (hd : ∀ z ∈ P.edge i, DifferentiableAt ℝ g z)
@@ -104,6 +105,7 @@ theorem disjoint_image_carrier (Q : Polygon E) {ε δ d M : ℝ} (hM : 0 ≤ M)
   have h3 := mul_le_mul_of_nonneg_left hab hM
   nlinarith
 
+set_option backward.isDefEq.respectTransparency false in
 /-- **The inscribed polygon is simple.** -/
 theorem isSimple_image {ε δ d M κ : ℝ} (hM : 0 ≤ M) (hinj : Function.Injective P.v)
     (φ : Fin (P.n + 1) → E →L[ℝ] F)

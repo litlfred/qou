@@ -94,7 +94,7 @@ namespace QOU.BraidKnot.GramSeminormalBlock
     summing to `n`. The empty list represents `n = 0`. -/
 structure Partition (n : ℕ) where
   parts : List ℕ
-  descending : parts.Sorted (· ≥ ·)
+  descending : parts.Pairwise (· ≥ ·)
   sum_eq : parts.sum = n
   positive : ∀ p ∈ parts, 0 < p
 

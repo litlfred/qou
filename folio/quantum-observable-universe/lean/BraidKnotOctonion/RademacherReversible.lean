@@ -134,13 +134,13 @@ def RLInv : SL2Z := ⟨!![1, -1; -1, 2], by simp [Matrix.det_fin_two_of]⟩
 def RmInv : SL2Z := ⟨!![1, -1; 0, 1], by simp [Matrix.det_fin_two_of]⟩
 
 @[simp] theorem Sm_mul_SmInv : Sm * SmInv = 1 := by
-  apply Matrix.SpecialLinearGroup.ext; decide
+  apply Matrix.SpecialLinearGroup.ext; intro i j; fin_cases i <;> fin_cases j <;> rfl
 
 @[simp] theorem RL_mul_RLInv : RL * RLInv = 1 := by
-  apply Matrix.SpecialLinearGroup.ext; decide
+  apply Matrix.SpecialLinearGroup.ext; intro i j; fin_cases i <;> fin_cases j <;> rfl
 
 @[simp] theorem Rm_mul_RmInv : Rm * RmInv = 1 := by
-  apply Matrix.SpecialLinearGroup.ext; decide
+  apply Matrix.SpecialLinearGroup.ext; intro i j; fin_cases i <;> fin_cases j <;> rfl
 
 theorem SmInv_eq : SmInv = Sm⁻¹ := (inv_eq_of_mul_eq_one_right Sm_mul_SmInv).symm
 
@@ -152,7 +152,7 @@ theorem RmInv_eq : RmInv = Rm⁻¹ := (inv_eq_of_mul_eq_one_right Rm_mul_RmInv).
 unrelated matrix that happens to have trace 3. -/
 theorem RL_eq_Rm_mul_Lm : RL = Rm * Lm := by
   apply Matrix.SpecialLinearGroup.ext
-  decide
+  intro i j; fin_cases i <;> fin_cases j <;> rfl
 
 /-- **The reversing conjugation, explicitly.**  `S · RL · S⁻¹ = (RL)⁻¹`.
 
@@ -160,7 +160,7 @@ Proved without inverting anything: `S · RL · S' = RL'` for the explicit
 `S' = !![0,-1;1,0]` and `RL' = !![1,-1;-1,2]`, together with `S · S' = 1` and
 `RL · RL' = 1`, which identify `S'` and `RL'` as the inverses. -/
 theorem Sm_conj_RL_inv_free : Sm * RL * SmInv = RLInv := by
-  apply Matrix.SpecialLinearGroup.ext; decide
+  apply Matrix.SpecialLinearGroup.ext; intro i j; fin_cases i <;> fin_cases j <;> rfl
 
 theorem Sm_conj_RL : Sm * RL * Sm⁻¹ = RL⁻¹ := by
   rw [← SmInv_eq, ← RLInv_eq]; exact Sm_conj_RL_inv_free

@@ -87,7 +87,7 @@ theorem rowHookProdF_cons_mul (f : ℕ → M) (a c : ℕ) (r : List ℕ) (hca : 
   unfold rowHookProdF
   simp_rw [hLfac]
   have hsplit : Finset.range a = Finset.range c ∪ Finset.Ico c a := by
-    rw [Finset.range_eq_Ico, Finset.Ico_union_Ico_eq_Ico (Nat.zero_le c) hca]
+    rw [Finset.range_eq_Ico, Finset.range_eq_Ico, Finset.Ico_union_Ico_eq_Ico (Nat.zero_le c) hca]
   have hdisj : Disjoint (Finset.range c) (Finset.Ico c a) := by
     rw [Finset.range_eq_Ico]; exact Finset.Ico_disjoint_Ico_consecutive 0 c a
   rw [hsplit, Finset.prod_union hdisj]
@@ -140,12 +140,12 @@ For a weakly-decreasing tail `t` with every part `≤ a`,
 At `f = id` over `(ℕ, ×)` this is `SYTBeta.rowHookProd_mul_betaGapProd`; at `f n = 1 − Q^n` over a
 field it is the q-analogue. -/
 theorem rowHookProdF_mul_betaGapProdF (f : ℕ → M) (a : ℕ) (t : List ℕ)
-    (ht : List.Sorted (· ≥ ·) t) (hta : ∀ p ∈ t, p ≤ a) :
+    (ht : List.Pairwise (· ≥ ·) t) (hta : ∀ p ∈ t, p ≤ a) :
     rowHookProdF f a t * betaGapProdF f a t = descFactF f (a + t.length) := by
   induction t generalizing a with
   | nil => simp [rowHookProdF_nil]
   | cons c r ih =>
-    obtain ⟨hcr, hr⟩ := List.sorted_cons.mp ht
+    obtain ⟨hcr, hr⟩ := List.pairwise_cons.mp ht
     have hca : c ≤ a := hta c (List.mem_cons_self ..)
     have hrc : ∀ p ∈ r, p ≤ c := fun p hp => hcr p hp
     have hra : ∀ p ∈ r, p ≤ a + 1 := fun p hp => le_trans (hrc p hp) (by omega)
@@ -226,7 +226,7 @@ This is the per-row half of the hook-length input that
 to assemble the rows (`SYTHookFormulaBetaProd.prodHooks_eq_prod_rowHookProd`, likewise arithmetic-free
 in shape) and to recognise the assembled β-gap product as the Vandermonde denominator. -/
 theorem rowHookProdF_one_sub_pow {R : Type*} [CommRing R] (Q : R) (a : ℕ) (t : List ℕ)
-    (ht : List.Sorted (· ≥ ·) t) (hta : ∀ p ∈ t, p ≤ a) :
+    (ht : List.Pairwise (· ≥ ·) t) (hta : ∀ p ∈ t, p ≤ a) :
     (∏ j ∈ Finset.range a, (1 - Q ^ ((a - j) + cnt t j)))
         * betaGapProdF (fun n => 1 - Q ^ n) a t
       = ∏ j ∈ Finset.range (a + t.length), (1 - Q ^ ((a + t.length) - j)) :=

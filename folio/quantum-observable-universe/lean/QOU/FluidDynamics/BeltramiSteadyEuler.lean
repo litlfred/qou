@@ -459,7 +459,7 @@ theorem nab_metric (hs : s ≠ 0) (u v w : L3) :
 /-- `V` is Killing: `ad_V` is skew for `g`, so right translations by `exp(tV)`
 are isometries. -/
 theorem V_killing (u v : L3) : g s (br eV u) v + g s u (br eV v) = 0 := by
-  simp [g, br, eV]; ring
+  simp [g, br, eV] <;> ring
 
 /-- Non-vacuity of `V_killing`: `ad_X` is never skew (the defect is `1 + s²`),
 so the left-invariant field `X` is not Killing and the property is specific

@@ -1,5 +1,6 @@
 import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+import Mathlib.LinearAlgebra.Dimension.Constructions
 import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
@@ -150,14 +151,21 @@ def hochschildRank (g : ℕ) : Fin 3 → ℕ
 abbrev CurveHochschildSpace (K : Type*) (g : ℕ) (k : Fin 3) : Type _ :=
   Fin (hochschildRank g k) → K
 
+/-- `finrank` of the model space is its rank (Lean v4.35: `simp` no longer sees
+through the `CurveHochschildSpace` abbreviation inside the module instance). -/
+theorem finrank_curveHochschildSpace (K : Type*) [Field K] (g : ℕ) (k : Fin 3) :
+    Module.finrank K (CurveHochschildSpace K g k) = hochschildRank g k :=
+  Module.finrank_fin_fun K
+
 /-- **HKR dimension identity**: for every `k : Fin 3` (`n = k − 1 ∈ {−1, 0, 1}`),
     `Module.finrank K (CurveHochschildSpace K g k)` equals the HKR Hodge sum
     `hkrHochschildDim g k` built from `(h^{0,0}, h^{1,0}, h^{0,1}, h^{1,1}) = (1, g, g, 1)`. -/
 -- Ref: [leitner2026] brings-surface/brings-euler-characteristic-proof.md
 theorem hkr_finrank_eq_hodge_sum (K : Type*) [Field K] (g : ℕ) (k : Fin 3) :
     Module.finrank K (CurveHochschildSpace K g k) = hkrHochschildDim g k := by
+  rw [finrank_curveHochschildSpace]
   fin_cases k <;>
-    simp [CurveHochschildSpace, hochschildRank, hkrHochschildDim,
+    simp [hochschildRank, hkrHochschildDim,
       curveHodgeNumber, Fin.sum_univ_two]
 
 /-- Sign `(−1)^n` at Hochschild degree `n = (k : ℤ) − 1 ∈ {−1, 0, 1}`. -/
@@ -175,7 +183,8 @@ noncomputable def hochschildEulerChar (K : Type*) [Field K] (g : ℕ) : ℤ :=
 -- Ref: [leitner2026] brings-surface/brings-euler-characteristic-proof.md
 theorem hochschild_euler_eq_two_sub_two_genus (K : Type*) [Field K] (g : ℕ) :
     hochschildEulerChar K g = 2 - 2 * (g : ℤ) := by
-  simp [hochschildEulerChar, hochschildDegreeSign, CurveHochschildSpace,
+  simp only [hochschildEulerChar, finrank_curveHochschildSpace]
+  simp [hochschildDegreeSign,
     hochschildRank, Fin.sum_univ_three]
   ring
 
@@ -201,9 +210,9 @@ theorem brings_euler_characteristic (K : Type*) [Field K] :
   refine ⟨hg4, ?_, hchi, ?_, ?_, ?_, ?_⟩
   · rw [hg4, hchi]
     norm_num
-  · simp [CurveHochschildSpace, hochschildRank, hg4]
-  · simp [CurveHochschildSpace, hochschildRank]
-  · simp [CurveHochschildSpace, hochschildRank, hg4]
+  · rw [finrank_curveHochschildSpace]; simp [hochschildRank, hg4]
+  · rw [finrank_curveHochschildSpace]; simp [hochschildRank]
+  · rw [finrank_curveHochschildSpace]; simp [hochschildRank, hg4]
   · rw [hochschild_euler_eq_two_sub_two_genus, hg4]
     norm_num
 

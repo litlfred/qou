@@ -84,7 +84,7 @@ theorem hasSum_int_geometric_ne_zero {q : ℝ} (hq0 : 0 ≤ q) (hq1 : q < 1) :
   have h := HasSum.of_nat_of_neg
     (f := fun m : ℤ => if m = 0 then (0 : ℝ) else q ^ m.natAbs) hpos hneg
   have hz : (fun m : ℤ => if m = 0 then (0 : ℝ) else q ^ m.natAbs) 0 = 0 := by simp
-  rw [hz] at h
+  rw [if_pos rfl] at h
   have hval : ((1 - q)⁻¹ - 1) + ((1 - q)⁻¹ - 1) - (0 : ℝ) = 2 * q / (1 - q) := by
     field_simp
     ring
@@ -128,7 +128,7 @@ theorem norm_jacobiTheta₂_sub_one_le (c a : ℝ) (ha : 0 < a) :
     have hb := norm_jacobiTheta₂_term_le (S := 0) (T := π / a)
       (by positivity) hzim (le_of_eq hτ.symm) n
     have hcast : ((n.natAbs : ℕ) : ℝ) = |(n : ℝ)| := by
-      rw [Int.cast_natAbs]; push_cast; ring
+      rw [Nat.cast_natAbs, Int.cast_abs]
     -- `|n| ≥ 1` because `n ≠ 0`, hence `|n| ≤ n²`
     have hone : (1 : ℝ) ≤ |(n : ℝ)| := by
       have h1 : 1 ≤ n.natAbs := Int.natAbs_pos.mpr h

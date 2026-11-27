@@ -125,11 +125,11 @@ theorem T4_sub_T2_add_one_ne_zero :
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem HA_ne_zero : HA ≠ 0 := by
   intro h
-  have h_eval : HA 1 = (0 : LaurentPolynomial ℤ) 1 := congrArg (fun f => f 1) h
+  have h_eval : HA.coeff 1 = (0 : LaurentPolynomial ℤ).coeff 1 :=
+    congrArg (fun f : LaurentPolynomial ℤ => f.coeff 1) h
   unfold HA q q_inv at h_eval
-  simp only [LaurentPolynomial.T] at h_eval
-  change (Finsupp.single 1 1 : ℤ →₀ ℤ) 1 - (Finsupp.single (-1) 1 : ℤ →₀ ℤ) 1 = (0 : ℤ →₀ ℤ) 1 at h_eval
-  simp only [Finsupp.single_apply, Finsupp.zero_apply, if_true] at h_eval
+  rw [AddMonoidAlgebra.coeff_sub, Finsupp.sub_apply, LaurentPolynomial.T_apply,
+    LaurentPolynomial.T_apply] at h_eval
   revert h_eval
   decide
 
@@ -231,14 +231,14 @@ noncomputable def helium_nf : H3_NF := helium_step3
 theorem helium_slot0_zero : helium_nf 0 = 0 := by
   unfold helium_nf helium_step3 helium_step2 helium_step1
   unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
-  ring
+  simp only [mul_zero, zero_mul, add_zero, zero_add, sub_zero, zero_sub, neg_zero] <;> ring
 
 /-- Helium NF has zero σ₀-coefficient (slot 1). -/
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_slot1_zero : helium_nf 1 = 0 := by
   unfold helium_nf helium_step3 helium_step2 helium_step1
   unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
-  ring
+  simp only [mul_zero, zero_mul, add_zero, zero_add, sub_zero, zero_sub, neg_zero] <;> ring
 
 /-- Helium NF has nonzero σ₁-coefficient (slot 2).
     This is 4·(q⁴ − q² + 1)/q² = 4·T(2) − 4 + 4·T(−2). -/
@@ -248,13 +248,16 @@ theorem helium_slot2_nonzero : helium_nf 2 ≠ 0 := by
   have h_poly : helium_nf 2 = (4 : R_q) * LaurentPolynomial.T 2 - (4 : R_q) * LaurentPolynomial.T 0 + (4 : R_q) * LaurentPolynomial.T (-2) := by
     unfold helium_nf helium_step3 helium_step2 helium_step1
     unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
-    have h_ring : (2 * 2 + (-2 * (LaurentPolynomial.T 1 - LaurentPolynomial.T (-1))) * (-2 * (LaurentPolynomial.T 1 - LaurentPolynomial.T (-1))) : R_q)
-      = (4 : R_q) * (LaurentPolynomial.T 1 * LaurentPolynomial.T 1) - (8 : R_q) * (LaurentPolynomial.T 1 * LaurentPolynomial.T (-1)) + (4 : R_q) * (LaurentPolynomial.T (-1) * LaurentPolynomial.T (-1)) + (4 : R_q) * LaurentPolynomial.T 0 := by
-      rw [LaurentPolynomial.T_zero]
-      ring
-    rw [h_ring]
-    simp only [← LaurentPolynomial.T_add, Int.reduceAdd, Int.reduceNeg]
-    ring
+    simp only [mul_zero, zero_mul, add_zero, zero_add, sub_zero, zero_sub, neg_zero]
+    have e1 : (LaurentPolynomial.T 1 * LaurentPolynomial.T 1 : R_q) = LaurentPolynomial.T 2 := by
+      rw [← LaurentPolynomial.T_add]; norm_num
+    have e2 : (LaurentPolynomial.T (-1) * LaurentPolynomial.T (-1) : R_q)
+        = LaurentPolynomial.T (-2) := by
+      rw [← LaurentPolynomial.T_add]; norm_num
+    have e3 : (LaurentPolynomial.T 1 * LaurentPolynomial.T (-1) : R_q) = LaurentPolynomial.T 0 := by
+      rw [← LaurentPolynomial.T_add]; norm_num
+    have e0 : (LaurentPolynomial.T 0 : R_q) = 1 := LaurentPolynomial.T_zero
+    linear_combination 4 * e1 + 4 * e2 - 8 * e3 - 4 * e0
   rw [h] at h_poly
   have h_mult : ((4 : R_q) * LaurentPolynomial.T 2 - (4 : R_q) * LaurentPolynomial.T 0 + (4 : R_q) * LaurentPolynomial.T (-2)) * LaurentPolynomial.T 2 = 0 := by
     rw [← h_poly, zero_mul]
@@ -279,7 +282,7 @@ theorem helium_slot3_nonzero : helium_nf 3 ≠ 0 := by
   have h_poly : helium_nf 3 = (-4 : R_q) * LaurentPolynomial.T 1 + (4 : R_q) * LaurentPolynomial.T (-1) := by
     unfold helium_nf helium_step3 helium_step2 helium_step1
     unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
-    ring
+    simp only [mul_zero, zero_mul, add_zero, zero_add, sub_zero, zero_sub, neg_zero] <;> ring
   rw [h] at h_poly
   have h_mult : ((-4 : R_q) * LaurentPolynomial.T 1 + (4 : R_q) * LaurentPolynomial.T (-1)) * LaurentPolynomial.T 1 = 0 := by
     rw [← h_poly, zero_mul]
@@ -305,14 +308,14 @@ theorem helium_slot3_nonzero : helium_nf 3 ≠ 0 := by
 theorem helium_slot4_zero : helium_nf 4 = 0 := by
   unfold helium_nf helium_step3 helium_step2 helium_step1
   unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
-  ring
+  simp only [mul_zero, zero_mul, add_zero, zero_add, sub_zero, zero_sub, neg_zero] <;> ring
 
 /-- Helium NF has zero σ₀σ₁σ₀-coefficient (slot 5). -/
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_slot5_zero : helium_nf 5 = 0 := by
   unfold helium_nf helium_step3 helium_step2 helium_step1
   unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
-  ring
+  simp only [mul_zero, zero_mul, add_zero, zero_add, sub_zero, zero_sub, neg_zero] <;> ring
 
 /-- **Shell closure theorem for helium (Z=2).**
 

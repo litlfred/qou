@@ -90,9 +90,13 @@ theorem qDimWith_congr_dual {A B₁ B₂ : C}
     (p₁ : ExactPairing A B₁) (p₂ : ExactPairing A B₂) :
     @qDimWith C _ _ _ A B₁ p₁ = @qDimWith C _ _ _ A B₂ p₂ := by
   have hη : η_ A B₁ ≫ (A ◁ (rightDualIso p₁ p₂).hom) = η_ A B₂ := by
-    simpa using (@coevaluation_comp_rightAdjointMate C _ _ A A ⟨B₂⟩ ⟨B₁⟩ (𝟙 A))
+    have h := @coevaluation_comp_rightAdjointMate C _ _ A A ⟨B₂⟩ ⟨B₁⟩ (𝟙 A)
+    simp only [MonoidalCategory.id_whiskerRight, Category.comp_id] at h
+    exact h
   have hε : ((rightDualIso p₁ p₂).hom ▷ A) ≫ ε_ A B₂ = ε_ A B₁ := by
-    simpa using (@rightAdjointMate_comp_evaluation C _ _ A A ⟨B₂⟩ ⟨B₁⟩ (𝟙 A))
+    have h := @rightAdjointMate_comp_evaluation C _ _ A A ⟨B₂⟩ ⟨B₁⟩ (𝟙 A)
+    simp only [MonoidalCategory.whiskerLeft_id, Category.id_comp] at h
+    exact h
   simp only [qDimWith]
   rw [← hη, ← hε]
   simp
@@ -105,7 +109,9 @@ carries meets the trace's own `β` and cancels, leaving `qDim(X)` exactly. -/
 theorem qDimWith_swap (X : C) [HasRightDual X] :
     @qDimWith C _ _ _ ((X : C)ᘁ) X (exactPairing_swap X ((X : C)ᘁ))
       = η_ X ((X : C)ᘁ) ≫ (β_ X ((X : C)ᘁ)).hom ≫ ε_ X ((X : C)ᘁ) := by
-  simp [qDimWith, exactPairing_swap, ExactPairing.coevaluation, ExactPairing.evaluation]
+  show (η_ X ((X : C)ᘁ) ≫ (β_ ((X : C)ᘁ) X).inv) ≫ (β_ ((X : C)ᘁ) X).hom ≫
+      ((β_ X ((X : C)ᘁ)).hom ≫ ε_ X ((X : C)ᘁ)) = _
+  simp
 
 /-- **The braided quantum dimension is conjugation-symmetric**: `qDim(Xᘁ) = qDim(X)`, in any
 braided right-rigid category, with no pivotal, spherical or transport hypothesis.

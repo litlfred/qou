@@ -453,7 +453,7 @@ theorem coneSpan_sum_apply {ι' : Type*} [Fintype ι']
     (v : ι' → EuclideanSpace ℝ (Fin p)) (x : ι' → ℝ) (q : Fin p) :
     (∑ i, x i • v i) q = ∑ i, x i * v i q := by
   show (∑ i, x i • v i) q = _
-  rw [Finset.sum_apply]
+  rw [WithLp.ofLp_sum, Finset.sum_apply]
   simp
 
 /-- Generators of `{Bl + s : l free, s ≥ 0} ⊆ ℝ^p`: the columns of `B`
@@ -486,7 +486,7 @@ theorem exists_solution_of_mem_coneSpan_ineqGens (B : Fin p → Fin k → ℝ)
       + x (Sum.inr q) := by
     conv_lhs => rw [hsum]
     rw [coneSpan_sum_apply]
-    simp [Fintype.sum_sum_type, ineqGens, EuclideanSpace.single_apply]
+    simp [Fintype.sum_sum_type, ineqGens, PiLp.single_apply]
   have hcol : ∀ j, B q j * (x (Sum.inl (Sum.inl j)) - x (Sum.inl (Sum.inr j)))
       = x (Sum.inl (Sum.inl j)) * B q j + x (Sum.inl (Sum.inr j)) * -B q j := by
     intro j; ring
@@ -514,7 +514,7 @@ theorem farkas_inequality (B : Fin p → Fin k → ℝ) (d : EuclideanSpace ℝ 
   obtain ⟨z, hz, hzd⟩ := farkas_vector (ineqGens B) hb
   refine ⟨fun q => z q, fun q => ?_, fun j => ?_, hzd⟩
   · have := hz (Sum.inr q)
-    simpa [ineqGens, EuclideanSpace.single_apply] using this
+    simpa [ineqGens, PiLp.single_apply] using this
   · have hpos := hz (Sum.inl (Sum.inl j))
     have hneg := hz (Sum.inl (Sum.inr j))
     simp only [ineqGens, Sum.elim_inl] at hpos hneg

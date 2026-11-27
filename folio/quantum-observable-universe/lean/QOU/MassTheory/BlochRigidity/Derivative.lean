@@ -102,8 +102,7 @@ theorem first_identity {φ : ℂ → ℝ} (hφ : ContDiffOn ℝ (⊤ : ℕ∞) �
   have d5 : HasDerivAt (fun y => (1 - x) / (1 - y)) ((1 - x) / (1 - y) ^ 2) y := by
     have := (hasDerivAt_const y (1 - x)).div ((hasDerivAt_const y (1 : ℂ)).sub (hasDerivAt_id y))
       h1y
-    convert this using 1
-    simp
+    convert this using 1 <;> first | rfl | simp
   have d4 : HasDerivAt (fun y => y / x * ((1 - x) / (1 - y)))
       ((1 - x) / (x * (1 - y) ^ 2)) y := by
     convert d1.mul d5 using 1
@@ -135,6 +134,7 @@ theorem first_identity {φ : ℂ → ℝ} (hφ : ContDiffOn ℝ (⊤ : ℕ∞) �
     simp only [ContinuousLinearMap.add_apply, ContinuousLinearMap.sub_apply,
       ContinuousLinearMap.comp_apply, ContinuousLinearMap.coe_restrictScalars',
       ContinuousLinearMap.smulRight_apply, ContinuousLinearMap.one_apply, smul_eq_mul,
+    ContinuousLinearMap.toSpanSingleton_apply,
       ContinuousLinearMap.zero_apply, fderiv_eq_re] at this
     rw [← this, hE]
     simp only [add_mul, sub_mul, neg_mul, add_re, sub_re, neg_re]
@@ -171,7 +171,7 @@ theorem gamma_im {φ : ℂ → ℝ} (hφ : ContDiffOn ℝ (⊤ : ℕ∞) φ {0, 
     (h0 : z ≠ 0) (h1 : z ≠ 1) : (gamma φ z).im = 0 := by
   have hs : IsSymmSndFDerivAt ℝ φ z :=
     (hφ.contDiffAt (isOpen_U.mem_nhds (mem_U'.2 ⟨h0, h1⟩))).isSymmSndFDerivAt
-      (by simp; exact WithTop.coe_le_coe.2 (le_top : ((2 : ℕ∞)) ≤ ⊤))
+      (by simp <;> exact WithTop.coe_le_coe.2 (le_top : ((2 : ℕ∞)) ≤ ⊤))
   have := hs I 1
   rw [gamma, (hasFDerivAt_omega hφ h0 h1).fderiv]
   simp [this]
@@ -194,6 +194,7 @@ theorem anti_comp_mul {ω g c : ℂ → ℂ} {g' c' x : ℂ} (hω : Differentiab
   simp only [ContinuousLinearMap.add_apply, ContinuousLinearMap.smul_apply,
     ContinuousLinearMap.comp_apply, ContinuousLinearMap.coe_restrictScalars',
     ContinuousLinearMap.smulRight_apply, ContinuousLinearMap.one_apply, smul_eq_mul,
+    ContinuousLinearMap.toSpanSingleton_apply,
     Function.comp_apply, one_mul]
   have hI2 : I * (ω (g x) * (I * c')) = -(ω (g x) * c') := by
     ring_nf; rw [I_sq]; ring
@@ -216,11 +217,9 @@ theorem mixed_identity {φ : ℂ → ℝ} (hφ : ContDiffOn ℝ (⊤ : ℕ∞) �
   obtain ⟨a0, a1, b0, b1, c0, c1⟩ := args_ne hx0 hx1 hy0 hy1 hxy
   -- holomorphic derivatives in `x`
   have g1 : HasDerivAt (fun x => y / x) (-y / x ^ 2) x := by
-    convert (hasDerivAt_const x y).div (hasDerivAt_id x) hx0 using 1
-    simp
+    convert (hasDerivAt_const x y).div (hasDerivAt_id x) hx0 using 1 <;> first | rfl | simp
   have g5 : HasDerivAt (fun x => (1 - x) / (1 - y)) (-1 / (1 - y)) x := by
-    convert ((hasDerivAt_const x (1 : ℂ)).sub (hasDerivAt_id x)).div_const (1 - y) using 1
-    simp
+    convert ((hasDerivAt_const x (1 : ℂ)).sub (hasDerivAt_id x)).div_const (1 - y) using 1 <;> first | rfl | simp
   have g4 : HasDerivAt (fun x => y / x * ((1 - x) / (1 - y))) (-y / (x ^ 2 * (1 - y))) x := by
     convert g1.mul g5 using 1
     field_simp

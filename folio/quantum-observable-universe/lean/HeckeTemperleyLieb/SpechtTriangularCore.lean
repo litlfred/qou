@@ -106,8 +106,11 @@ theorem colStab_inf_rowStab_eq_one (t : Specht.Tableau μ)
   -- `t` is injective (it is an `Equiv`), so `π.symm l = l` for all `l`.
   have hfix : ∀ l, π.symm l = l := fun l => t.injective (hcell l)
   -- Hence `π.symm = 1`, so `π = 1`.
-  have : π.symm = 1 := Equiv.ext hfix
-  simpa using congrArg Equiv.symm this
+  ext l
+  have h := congrArg π (hfix l)
+  rw [Equiv.apply_symm_apply] at h
+  rw [← h]
+  rfl
 
 /-! ## 2. FACT 1 — the diagonal coefficient is `1` (sorry-free) -/
 
@@ -142,7 +145,8 @@ theorem standardPolytabloid_diag_coeff (T : StandardYoungTableau μ) :
     have hmk : (Specht.Tabloid.mk ((π : Equiv.Perm (Fin (nOf μ))) • t)
                   = Specht.Tabloid.mk t)
                 ↔ (π : Equiv.Perm (Fin (nOf μ))) ∈ Specht.rowStab t := by
-      rw [Specht.Tabloid.mk, Specht.Tabloid.mk, Quotient.eq]
+      rw [Specht.Tabloid.mk, Specht.Tabloid.mk]
+      refine (Quotient.eq (r := Specht.rowEquiv _)).trans ?_
       rw [Specht.rowEquiv_iff, Specht.rowPattern_smul, Specht.mem_rowStab]
     by_cases h : (π : Equiv.Perm (Fin (nOf μ))) ∈ Specht.rowStab t
     · rw [if_pos (hmk.2 h), if_pos h]
@@ -218,7 +222,8 @@ underlying fillings (sorry-free). -/
 theorem leadTab_eq_iff (T₁ T₂ : StandardYoungTableau μ) :
     leadTab (μ := μ) T₁ = leadTab (μ := μ) T₂
       ↔ Specht.rowPattern (sytToTableau T₁) = Specht.rowPattern (sytToTableau T₂) := by
-  rw [leadTab, leadTab, Specht.Tabloid.mk, Specht.Tabloid.mk, Quotient.eq, Specht.rowEquiv_iff]
+  rw [leadTab, leadTab, Specht.Tabloid.mk, Specht.Tabloid.mk]
+  exact (Quotient.eq (r := Specht.rowEquiv _)).trans Specht.rowEquiv_iff
 
 /-- **Row-monotonicity upgrade.** The consecutive-step `row_strict` upgrades to a
 strict-monotonicity statement on a whole row: for cells `(i,j),(i,j') ∈ μ` with

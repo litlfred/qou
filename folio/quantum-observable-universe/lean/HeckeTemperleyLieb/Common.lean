@@ -161,7 +161,7 @@ theorem exists_weight_of_isLinearMap {n : ℕ} {f : HeckeElement n → ℝ}
   let L : HeckeElement n →ₗ[ℝ] ℝ := hf.mk' f
   let Lc : HeckeElement n →L[ℝ] ℝ := LinearMap.toContinuousLinearMap L
   refine ⟨(InnerProductSpace.toDual ℝ (HeckeElement n)).symm Lc, fun x => ?_⟩
-  have h := InnerProductSpace.toDual_apply (𝕜 := ℝ) (E := HeckeElement n)
+  have h := InnerProductSpace.toDual_apply_apply (𝕜 := ℝ) (E := HeckeElement n)
       (x := (InnerProductSpace.toDual ℝ (HeckeElement n)).symm Lc) (y := x)
   rw [LinearIsometryEquiv.apply_symm_apply] at h
   simp [frobeniusInner, Lc, L, IsLinearMap.mk']

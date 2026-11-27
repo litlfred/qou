@@ -159,7 +159,7 @@ noncomputable def decomp (φ : Blocks K d →ₐ[K] End K V) : V ≃ₗ[K] (∀ 
       intro i a; rw [← Module.End.mul_apply, ← map_mul, unit_mul_same]
     simp only [h]
     have hs : ∑ i, ∑ a : d i, φ (unit i a a) v = φ (∑ i, ∑ a : d i, unit i a a) v := by
-      simp only [map_sum, LinearMap.coeFn_sum, Finset.sum_apply]
+      simp only [map_sum, LinearMap.coe_sum, Finset.sum_apply]
     rw [hs, sum_unit_diag, map_one, Module.End.one_apply]
   right_inv w := by
     funext i a

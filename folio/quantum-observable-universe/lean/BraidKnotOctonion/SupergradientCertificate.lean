@@ -133,7 +133,7 @@ theorem sup_le_of_supergradient {ι : Type*} [Fintype ι]
     (u : ι → ℝ) :
     F u ≤ max V (F w + ∑ i, if 0 ≤ g i then g i * (hi i - w i) else g i * (lo i - w i)) := by
   by_cases hV : V ≤ F u
-  · refine le_trans (hconc u) (le_trans (add_le_add_left ?_ (F w)) (le_max_right _ _))
+  · refine le_trans (hconc u) (le_trans (add_le_add (le_refl (F w)) ?_) (le_max_right _ _))
     refine Finset.sum_le_sum fun i _ => ?_
     obtain ⟨h1, h2⟩ := hbox u hV i
     exact box_mul_sub_le (g i) (w i) (lo i) (hi i) (u i) h1 h2
@@ -187,7 +187,7 @@ theorem sum_charge_extend_le {ι κ : Type*} [Fintype ι] [Fintype κ] (g lo hi 
       ≤ (∑ a : ι, (if 0 ≤ g (Sum.inl a) then g (Sum.inl a) * (hi (Sum.inl a) - w (Sum.inl a))
                    else g (Sum.inl a) * (lo (Sum.inl a) - w (Sum.inl a)))) + B := by
   rw [Fintype.sum_sum_type]
-  exact add_le_add_left hB _
+  exact add_le_add le_rfl hB
 
 /-- **A capped maximum falling short proves nothing about the true one.**  `cap ≤ true` and
 `cap < other` are jointly satisfiable with `¬ (true ≤ other)`, so the inference is invalid.

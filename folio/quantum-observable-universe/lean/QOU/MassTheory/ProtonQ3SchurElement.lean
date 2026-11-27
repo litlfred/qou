@@ -3,6 +3,7 @@ Copyright (c) 2026 QOU contributors. All rights reserved.
 -/
 import QOU.MassTheory.PoincareCenteringOfQ3
 import Mathlib.Analysis.Calculus.Deriv.Mul
+import Mathlib.Analysis.Calculus.Deriv.Add
 
 /-!
 # The proton's `/q³`: it is the Schur element of the sign character of `H₃`
@@ -512,6 +513,7 @@ theorem hasDerivAt_trXMinus_zD {q : 𝕜} (h0 : q ≠ 0) (h1 : q ^ 2 + 1 ≠ 0) 
     (((hasDerivAt_id (q ^ 3 / (q ^ 2 + 1))).mul_const (q ^ 2 + 1)).sub_const (q ^ 3))).div_const
       (q ^ 4)
   convert hd using 1
+  try rfl
   simp only [id, one_mul]
   field_simp
   ring
@@ -541,6 +543,7 @@ theorem hasDerivAt_trXMinus_idempotent_coord {q : 𝕜} (h0 : q ≠ 0) (h1 : q ^
   have hd := ((hz.sub_const q).mul ((hz.mul_const (q ^ 2 + 1)).sub_const (q ^ 3))).div_const
     (q ^ 4)
   convert hd using 1
+  try rfl
   field_simp
   ring
 
@@ -565,6 +568,7 @@ theorem hasDerivAt_trXPlus_zero {q : 𝕜} (h0 : q ≠ 0) (h1 : q ^ 3 + q ≠ 0)
     exact right_ne_zero_of_mul h1
   have h3 : 1 + q ^ 2 ≠ 0 := by rwa [add_comm]
   convert hd using 1
+  try rfl
   simp only [id, mul_one, Pi.add_apply]
   field_simp
   ring

@@ -212,13 +212,13 @@ theorem cLiTwo_hasFPowerSeriesOnBall :
   refine (((FormalMultilinearSeries.ofScalars ℂ cLiTwoCoeff).hasFPowerSeriesOnBall
     hrad).mono (by norm_num) cLiTwo_radius_ge_one).congr ?_
   intro z hz
-  rw [mem_emetric_ball_zero_iff] at hz
+  rw [mem_eball_zero_iff] at hz
   have hz' : ‖z‖ < 1 := by
     rw [show (1 : ENNReal) = ((1 : NNReal) : ENNReal) by simp, enorm_lt_coe] at hz
     exact_mod_cast hz
   have hsum : (FormalMultilinearSeries.ofScalars ℂ cLiTwoCoeff).sum z
       = ∑' n : ℕ, cLiTwoCoeff n * z ^ n := by
-    simpa [smul_eq_mul] using
+    simpa [smul_eq_mul, FormalMultilinearSeries.ofScalarsSum] using
       congrFun (FormalMultilinearSeries.ofScalarsSum_eq_tsum cLiTwoCoeff) z
   rw [hsum, ← cLiTwo_eq_tsum_coeff hz']
 
@@ -231,7 +231,7 @@ what would give the complex reflection identity on the disc. That continuation
 step is **not** taken here; extending past `|z| = 1` needs the inversion
 formula on top. Bean `qou-gkco`. -/
 theorem cLiTwo_analyticOnNhd :
-    AnalyticOnNhd ℂ cLiTwo (EMetric.ball (0 : ℂ) 1) :=
+    AnalyticOnNhd ℂ cLiTwo (Metric.eball (0 : ℂ) 1) :=
   cLiTwo_hasFPowerSeriesOnBall.analyticOnNhd
 
 /-! ### The natural domain of the reflection identity: `ball(½, ½)`
@@ -291,7 +291,7 @@ sides analytic on the ball, which is the hypothesis the identity theorem
 /-- `cLiTwo` is analytic at each point of the open unit disc. -/
 theorem cLiTwo_analyticAt {z : ℂ} (hz : ‖z‖ < 1) : AnalyticAt ℂ cLiTwo z := by
   refine cLiTwo_analyticOnNhd z ?_
-  rw [mem_emetric_ball_zero_iff,
+  rw [mem_eball_zero_iff,
     show (1 : ENNReal) = ((1 : NNReal) : ENNReal) by simp, enorm_lt_coe]
   exact_mod_cast hz
 

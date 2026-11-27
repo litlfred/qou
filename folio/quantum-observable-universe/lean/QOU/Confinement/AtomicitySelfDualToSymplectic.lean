@@ -35,6 +35,8 @@ import Mathlib.Tactic
 
 open LieAlgebra Matrix
 
+attribute [local instance 100] LieRing.ofAssociativeRing
+
 namespace QOU.Atomicity
 
 /-- **Low-rank coincidence `𝔰𝔭(2) = 𝔰𝔩(2)` (`C₁ = A₁`).**

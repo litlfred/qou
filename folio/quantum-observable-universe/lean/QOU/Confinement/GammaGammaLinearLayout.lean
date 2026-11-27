@@ -81,9 +81,11 @@ def coordGraph (n : ℕ) (W : List Run) : SimpleGraph (Fin n) where
   Adj j k := j ≠ k ∧ ∃ r ∈ W, ∃ x y : ℕ, r.Touches x ∧ r.Touches y ∧
     blockOf x = j.val ∧ blockOf y = k.val
   symm := by
+    constructor
     rintro j k ⟨hne, r, hr, x, y, hx, hy, hxj, hyk⟩
     exact ⟨Ne.symm hne, r, hr, y, x, hy, hx, hyk, hxj⟩
   loopless := by
+    constructor
     rintro j ⟨hne, _⟩
     exact hne rfl
 

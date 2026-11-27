@@ -367,7 +367,7 @@ theorem worldlineLagrangian_hasDerivAt_momentum (m_in q v : ℝ)
   have hcone : 0 < lightconeSpeed q ^ 2 - v ^ 2 := lightcone_cone_interior_pos hq hv
   have hid : HasDerivAt (fun x : ℝ => x) 1 v := hasDerivAt_id v
   have hsq : HasDerivAt (fun x : ℝ => x ^ 2) (2 * v) v := by
-    simpa only [sq, one_mul, mul_one, ← two_mul] using hid.mul hid
+    simpa only [sq, one_mul, mul_one, ← two_mul] using hid.fun_mul hid
   have hinner : HasDerivAt (fun x : ℝ => lightconeSpeed q ^ 2 - x ^ 2) (0 - 2 * v) v :=
     (hasDerivAt_const v (lightconeSpeed q ^ 2)).sub hsq
   have hsqrt : HasDerivAt (fun x : ℝ => Real.sqrt (lightconeSpeed q ^ 2 - x ^ 2))

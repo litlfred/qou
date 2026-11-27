@@ -1,5 +1,7 @@
 import Mathlib.Tactic
-import Mathlib.Algebra.GeomSum
+import Mathlib.Algebra.Field.GeomSum
+import Mathlib.Algebra.Order.Field.GeomSum
+import Mathlib.Algebra.Order.Ring.GeomSum
 
 /-!
 # QOU.Common.BalancedQuantumTwist — the balanced/unbalanced quantum-integer twist

@@ -76,7 +76,7 @@ theorem cat_tail_le : |∑' i : ℕ, catTerm (i + 24)| ≤ 1 / 24 := by
       = ‖∑' i : ℕ, catTerm (i + 24)‖ := (Real.norm_eq_abs _).symm
     _ ≤ ∑' i : ℕ, ‖catTerm (i + 24)‖ := norm_tsum_le_tsum_norm hnorm
     _ ≤ ∑' i : ℕ, (1 / ((i : ℝ) + 24) - 1 / ((i : ℝ) + 25)) :=
-        tsum_le_tsum hb hnorm hasSum_telescope.summable
+        Summable.tsum_le_tsum hb hnorm hasSum_telescope.summable
     _ = 1 / 24 := hasSum_telescope.tsum_eq
 
 /-- The 24-term partial sum, exactly: a pure rational (the alternating odd

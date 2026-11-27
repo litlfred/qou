@@ -2,7 +2,7 @@
 Copyright (c) 2026 litlfred. All rights reserved.
 Released under Apache 2.0 license.
 -/
-import Mathlib.Algebra.TrivSqZeroExt
+import Mathlib.Algebra.TrivSqZeroExt.Basic
 import Mathlib.RingTheory.TensorProduct.Basic
 
 /-!

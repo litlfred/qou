@@ -1,6 +1,7 @@
 import QOU.Core.CategoricalFoundations
 import Mathlib.Algebra.Category.ModuleCat.Monoidal.Symmetric
 import Mathlib.Tactic.CategoryTheory.Coherence
+import Mathlib.Tactic.CategoryTheory.Monoidal.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Algebra.Category.ModuleCat.Kernels
 
@@ -44,22 +45,22 @@ variable (R : Type w) [CommRing R]
     `r ↦ r • 𝟙` with inverse `f ↦ f(1)`.  This is the `unitEndEquiv` obligation,
     and it holds over any commutative ring — no field needed. -/
 noncomputable def unitEndEquivModuleCat : R ≃+* End (𝟙_ (ModuleCat R)) where
-  toFun r := r • (𝟙 (𝟙_ (ModuleCat R)))
-  invFun f := f.hom (1 : R)
+  toFun r := End.of (r • (𝟙 (𝟙_ (ModuleCat R))))
+  invFun f := f.asHom.hom (1 : R)
   left_inv := by intro r; simp
   right_inv := by
-    intro f; apply ModuleCat.hom_ext; apply LinearMap.ext; intro x
+    intro f; apply End.ext; apply ModuleCat.hom_ext; apply LinearMap.ext; intro x
     simp only [ModuleCat.hom_smul, ModuleCat.hom_id, LinearMap.smul_apply,
       LinearMap.id_apply, smul_eq_mul]
     conv_rhs => rw [show x = x • (1 : R) by rw [smul_eq_mul, mul_one]]
     rw [map_smul, smul_eq_mul, mul_comm]
   map_mul' := by
-    intro a b; apply ModuleCat.hom_ext; apply LinearMap.ext; intro x
+    intro a b; apply End.ext; apply ModuleCat.hom_ext; apply LinearMap.ext; intro x
     simp only [ModuleCat.hom_smul, ModuleCat.hom_id, LinearMap.smul_apply,
-      LinearMap.id_apply, smul_eq_mul, End.mul_def, ModuleCat.hom_comp,
+      LinearMap.id_apply, smul_eq_mul, End.mul_asHom, ModuleCat.hom_comp,
       LinearMap.comp_apply]
     ring
-  map_add' := by intro a b; rw [← add_smul]
+  map_add' := by intro a b; apply End.ext; simp [add_smul]
 
 /-- **The Frobenius–Hopf object at the tensor unit.**
 
@@ -79,15 +80,15 @@ noncomputable def unitFrobHopf (C : Type*) [Category C] [MonoidalCategory C]
   antipode := 𝟙 _
   frobeniusForm := 𝟙 _
   coevaluation := (λ_ (𝟙_ C)).inv
-  pairing_snake_left := by coherence
-  pairing_snake_right := by coherence
-  frobenius_relation := by coherence
-  one_mul := by coherence
-  mul_one := by coherence
-  mul_assoc := by coherence
-  counit_comul := by coherence
-  comul_counit := by coherence
-  comul_assoc := by coherence
+  pairing_snake_left := by monoidal
+  pairing_snake_right := by monoidal
+  frobenius_relation := by monoidal
+  one_mul := by monoidal
+  mul_one := by monoidal
+  mul_assoc := by monoidal
+  counit_comul := by monoidal
+  comul_counit := by monoidal
+  comul_assoc := by monoidal
   antipode_anti_mul := by simp [MonoidalCategory.unitors_inv_equal]
   antipode_anti_comul := by simp [MonoidalCategory.unitors_inv_equal]
   antipode_unit := by simp
@@ -101,9 +102,10 @@ noncomputable def unitFrobHopf (C : Type*) [Category C] [MonoidalCategory C]
 noncomputable def trivialQU : QOU.QuantumUniverse.{w + 1, w, w, w} R where
   C := ModuleCat R
   frobHopf := unitFrobHopf (ModuleCat R)
-  fibreFunctor := (forget (ModuleCat R))
+  fibreFunctor := forget (ModuleCat R)
   frobenius_symmetric := by
     intro f
+    obtain ⟨g, rfl⟩ : ∃ g : 𝟙_ (ModuleCat R) ⟶ 𝟙_ (ModuleCat R), g = f := ⟨f, rfl⟩
     simp only [FrobeniusHopfData.leftTrace, FrobeniusHopfData.rightTrace,
       FrobeniusHopfData.ev, unitFrobHopf]
     rw [MonoidalCategory.whiskerRight_id, MonoidalCategory.id_whiskerLeft,

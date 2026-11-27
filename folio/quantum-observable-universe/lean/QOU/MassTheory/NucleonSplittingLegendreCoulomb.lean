@@ -297,10 +297,10 @@ theorem eps_flavour_eq_neg_three_q_sq_sub_one_mul_deltaT_allPairs {K : Type*} [F
     exact div_ne_zero hq2 hq
   have hqdim_ne : (q + q⁻¹) ^ 3 ≠ 0 := pow_ne_zero 3 hsum_ne
   refine ⟨?_, ?_⟩
-  · dsimp only
+  · try dsimp only
     field_simp [hq, h3, hqdim_ne]
     ring
-  · dsimp only
+  · try dsimp only
     ring
 
 end AllPairsWeightSpace

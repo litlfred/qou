@@ -44,7 +44,7 @@ open RealInnerProductSpace
 /-! ### 2D inner-product helpers -/
 
 /-- An explicit horizontal Euclidean 2-vector. -/
-noncomputable def v2 (a b : ℝ) : EuclideanSpace ℝ (Fin 2) := ![a, b]
+noncomputable def v2 (a b : ℝ) : EuclideanSpace ℝ (Fin 2) := WithLp.toLp 2 ![a, b]
 
 /-- Embed a base direction `n : ℝ²` as a horizontal Euclidean 2-vector. -/
 noncomputable def embN (n : ℝ × ℝ) : EuclideanSpace ℝ (Fin 2) := v2 n.1 n.2

@@ -1,5 +1,5 @@
 import ToricConicOpt.SDPDuality
-import Mathlib.Analysis.NormedSpace.HahnBanach.Separation
+import Mathlib.Analysis.LocallyConvex.Separation
 import Mathlib.Topology.Instances.Matrix
 import Mathlib.Data.Real.StarOrdered
 import Mathlib.Topology.Algebra.Module.FiniteDimension

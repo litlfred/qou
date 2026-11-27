@@ -85,11 +85,11 @@ reverse-inserting `y` into the resulting row recovers `r` and reports the insert
 
 `rowInsert` and `rowUninsert` are therefore mutually inverse on the bumping branch, which is the
 branch the RSK cascade runs on. -/
-theorem rowUninsert_rowInsert : ∀ (r : List ℕ), r.Sorted (· ≤ ·) → ∀ (x y : ℕ),
+theorem rowUninsert_rowInsert : ∀ (r : List ℕ), r.Pairwise (· ≤ ·) → ∀ (x y : ℕ),
     (rowInsert r x).2 = some y → rowUninsert (rowInsert r x).1 y = (r, some x)
   | [], _, x, y, hy => by simp [rowInsert] at hy
   | a :: r, hs, x, y, hy => by
-      rw [List.sorted_cons] at hs
+      rw [List.pairwise_cons] at hs
       obtain ⟨hle, hsr⟩ := hs
       rw [rowInsert_cons] at hy ⊢
       by_cases hx : x < a
@@ -183,18 +183,18 @@ theorem exists_lt_of_rowUninsert_some : ∀ (r : List ℕ) (y z : ℕ), (rowUnin
 
 The replaced entry is the rightmost one strictly below `y`, so everything after it is already
 `≥ y`; and everything before it is `≤` the old entry, which is `< y`. -/
-theorem rowUninsert_sorted : ∀ (r : List ℕ), r.Sorted (· ≤ ·) → ∀ (y : ℕ),
-    (rowUninsert r y).1.Sorted (· ≤ ·)
+theorem rowUninsert_sorted : ∀ (r : List ℕ), r.Pairwise (· ≤ ·) → ∀ (y : ℕ),
+    (rowUninsert r y).1.Pairwise (· ≤ ·)
   | [], _, _ => by simp
   | a :: r, hs, y => by
-      rw [List.sorted_cons] at hs
+      rw [List.pairwise_cons] at hs
       obtain ⟨hle, hsr⟩ := hs
       rw [rowUninsert_cons]
       rcases hr : rowUninsert r y with ⟨r', z⟩
       cases z with
       | some z =>
           simp only
-          rw [List.sorted_cons]
+          rw [List.pairwise_cons]
           refine ⟨fun b hb => ?_, ?_⟩
           · -- every entry of the rewritten tail is an old entry or `y`, and `a ≤` both
             rcases mem_rowUninsert r y b (by rw [hr]; exact hb) with h | h
@@ -210,13 +210,13 @@ theorem rowUninsert_sorted : ∀ (r : List ℕ), r.Sorted (· ≤ ·) → ∀ (y
       | none =>
           by_cases ha : a < y
           · simp only [ha, if_true]
-            rw [List.sorted_cons]
+            rw [List.pairwise_cons]
             refine ⟨fun b hb => ?_, hsr⟩
             -- the tail was untouched and is entirely `≥ y`
             have hall := forall_le_of_rowUninsert_none r y (by rw [hr])
             exact hall b hb
           · simp only [ha, if_false]
-            rw [List.sorted_cons]
+            rw [List.pairwise_cons]
             exact ⟨hle, hsr⟩
 
 end QOU.Mathlib.Schensted

@@ -1,6 +1,6 @@
 import Mathlib.Analysis.Complex.JensenFormula
-import Mathlib.Analysis.Complex.ValueDistribution.CountingFunction
-import Mathlib.Analysis.SpecialFunctions.Integrability.LogMeromorphic
+import Mathlib.Analysis.Complex.ValueDistribution.LogCounting.Basic
+import Mathlib.Analysis.SpecialFunctions.Integrability.Log
 
 /-!
 # Jensen's formula and the zero-counting bound for entire functions (PI-5 bridge)
@@ -77,7 +77,7 @@ theorem logCounting_zero_eq {f : ℂ → ℂ} (hf : Differentiable ℂ f) (hf0 :
     hd0, Int.cast_zero, zero_mul, add_zero]
   refine finsum_congr fun u => ?_
   rw [Function.locallyFinsuppWithin.toClosedBall,
-    Function.locallyFinsuppWithin.restrictMonoidHom_apply,
+    Function.locallyFinsuppWithin.restrictOrderMonoidHom_apply,
     MeromorphicOn.divisor_restrict han.meromorphicOn (subset_univ _)]
 
 /-- **Jensen's inequality.** If `‖f z‖ ≤ M` on `‖z‖ = |R|` with `1 ≤ M`, then
@@ -89,7 +89,7 @@ theorem jensen_entire_le {f : ℂ → ℂ} (hf : Differentiable ℂ f) (hf0 : f 
       ≤ log M - log ‖f 0‖ := by
   rw [jensen_entire hf hf0 hR]
   have hint : CircleIntegrable (log ‖f ·‖) 0 R :=
-    circleIntegrable_log_norm_meromorphicOn (fun z _ => (hf.analyticAt z).meromorphicAt)
+    MeromorphicOn.circleIntegrable_log_norm (fun z _ => (hf.analyticAt z).meromorphicAt)
   have hle : circleAverage (log ‖f ·‖) 0 R ≤ log M := by
     refine circleAverage_mono_on_of_le_circle hint fun z hz => ?_
     by_cases hz0 : f z = 0

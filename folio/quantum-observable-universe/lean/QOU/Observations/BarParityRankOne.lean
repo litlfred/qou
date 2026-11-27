@@ -117,6 +117,7 @@ lives in the probe.
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Ring
 
 namespace QOU.Observations.BarParityRankOne
 

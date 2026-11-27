@@ -1,5 +1,5 @@
 import Mathlib.Topology.FiberBundle.Basic
-import Mathlib.Topology.Covering
+import Mathlib.Topology.Covering.Basic
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Tactic.Group
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.FundamentalGroup
@@ -130,6 +130,7 @@ theorem continuous_mulLeft (a : G) : Continuous (C.mulLeft a) := by
     C.core.coordChange p.proj p₀.proj p.proj (Disc.of (a * C.fib p))
   simp only [core_coordChange, Disc.val_of, fib]
   congr 1
+  erw [core_coordChange, Disc.val_of]
   group
 
 /-- The lift of a path starting at fibre coordinate `g`. -/
@@ -198,7 +199,7 @@ theorem lift_eq_of_local {x y : X} (γ : Path x y) (g : G) (v : I → G) (hv0 : 
     simp
   have := (C.isCoveringMap.eq_liftPath_iff (Γ := fun s => C.pt (γ s) (v s))
     (γ := γ.toContinuousMap) (e := C.pt x g) γ.source).mpr
-    ⟨hcont, funext fun s => rfl, by simp [hv0, pt]⟩
+    ⟨hcont, funext fun s => rfl, by rw [hv0, γ.source]⟩
   exact (congrFun this t).symm
 
 /-- The transport of `γ` read off from a local description of its lift from `1`. -/
@@ -261,10 +262,10 @@ theorem transport_symm {x y : X} (γ : Path x y) : C.transport γ.symm = (C.tran
 
 theorem transportQ_comp {x y z : X} (p : Path.Homotopic.Quotient x y)
     (q : Path.Homotopic.Quotient y z) :
-    C.transportQ (p.comp q) = C.transportQ p * C.transportQ q := by
+    C.transportQ (p.trans q) = C.transportQ p * C.transportQ q := by
   induction p using Quotient.inductionOn
   induction q using Quotient.inductionOn
-  rw [← Path.Homotopic.comp_lift, transportQ_mk, transportQ_mk, transportQ_mk, transport_trans]
+  exact C.transport_trans _ _
 
 /-! ### Gauge between two cocycles with conjugate monodromy
 
@@ -297,31 +298,33 @@ theorem gaugeAlong_eq (h : ConjMonodromy C₁ C₂ x₀ c) {y : X} (γ γ' : Pat
 /-- **Conjugacy on generators suffices.**  If the monodromies are conjugate by `c` on a set of
 loop classes generating the fundamental group, they are conjugate on every loop. -/
 theorem conjMonodromy_of_closure (S : Set (FundamentalGroup X x₀))
-    (hS : ∀ g ∈ S, (C₁.transportQ g.hom)⁻¹ * c * C₂.transportQ g.hom = c)
+    (hS : ∀ g ∈ S, (C₁.transportQ g.asHom)⁻¹ * c * C₂.transportQ g.asHom = c)
     (hgen : Subgroup.closure S = ⊤) : ConjMonodromy C₁ C₂ x₀ c := by
   let K : Subgroup (FundamentalGroup X x₀) :=
-    { carrier := {g | (C₁.transportQ g.hom)⁻¹ * c * C₂.transportQ g.hom = c}
+    { carrier := {g | (C₁.transportQ g.asHom)⁻¹ * c * C₂.transportQ g.asHom = c}
       one_mem' := by
         show (C₁.transportQ ⟦Path.refl x₀⟧)⁻¹ * c * C₂.transportQ ⟦Path.refl x₀⟧ = c
-        simp [transportQ_mk, transport_refl]
+        rw [transportQ_mk, transportQ_mk, transport_refl, transport_refl, inv_one, one_mul,
+          mul_one]
       mul_mem' := by
         intro g h hg hh
-        show (C₁.transportQ (h.hom.comp g.hom))⁻¹ * c * C₂.transportQ (h.hom.comp g.hom) = c
+        show (C₁.transportQ (h.asHom.trans g.asHom))⁻¹ * c * C₂.transportQ (h.asHom.trans g.asHom) = c
         rw [C₁.transportQ_comp, C₂.transportQ_comp]
         simp only [Set.mem_setOf_eq] at hg hh
-        calc (C₁.transportQ h.hom * C₁.transportQ g.hom)⁻¹ * c *
-              (C₂.transportQ h.hom * C₂.transportQ g.hom)
-            = (C₁.transportQ g.hom)⁻¹ * ((C₁.transportQ h.hom)⁻¹ * c * C₂.transportQ h.hom) *
-                C₂.transportQ g.hom := by group
+        calc (C₁.transportQ h.asHom * C₁.transportQ g.asHom)⁻¹ * c *
+              (C₂.transportQ h.asHom * C₂.transportQ g.asHom)
+            = (C₁.transportQ g.asHom)⁻¹ * ((C₁.transportQ h.asHom)⁻¹ * c * C₂.transportQ h.asHom) *
+                C₂.transportQ g.asHom := by group
           _ = c := by rw [hh, hg]
       inv_mem' := by
         intro g hg
-        have hid : g.hom.comp g.inv = Quotient.mk _ (Path.refl x₀) := g.hom_inv_id
+        have hid : g.asHom.trans g⁻¹.asHom = Quotient.mk _ (Path.refl x₀) :=
+          CategoryTheory.Groupoid.comp_inv g.asHom
         have e₁ := congrArg C₁.transportQ hid
         have e₂ := congrArg C₂.transportQ hid
         rw [C₁.transportQ_comp, transportQ_mk, transport_refl] at e₁
         rw [C₂.transportQ_comp, transportQ_mk, transport_refl] at e₂
-        show (C₁.transportQ g.inv)⁻¹ * c * C₂.transportQ g.inv = c
+        show (C₁.transportQ g⁻¹.asHom)⁻¹ * c * C₂.transportQ g⁻¹.asHom = c
         rw [eq_inv_of_mul_eq_one_right e₁, eq_inv_of_mul_eq_one_right e₂]
         simp only [Set.mem_setOf_eq] at hg
         conv_lhs => rw [← hg]
@@ -329,7 +332,7 @@ theorem conjMonodromy_of_closure (S : Set (FundamentalGroup X x₀))
   have hK : Subgroup.closure S ≤ K := (Subgroup.closure_le K).mpr hS
   intro l
   let g : FundamentalGroup X x₀ :=
-    (CategoryTheory.Groupoid.isoEquivHom _ _).symm (Quotient.mk _ l)
+    CategoryTheory.End.of (Quotient.mk _ l)
   have hg : g ∈ K := hK (hgen ▸ Subgroup.mem_top g)
   exact hg
 

@@ -145,7 +145,7 @@ noncomputable def SU3xU2Subgroup : Subgroup (U3C × U2C) := prodDetHom.ker
 
 theorem mem_SU3xU2Subgroup_iff (p : U3C × U2C) :
     p ∈ SU3xU2Subgroup ↔ p.1.1.det * p.2.1.det = 1 := by
-  rw [SU3xU2Subgroup, MonoidHom.mem_ker, ← Subtype.coe_inj]
+  rw [SU3xU2Subgroup, MonoidHom.mem_ker, ← Circle.coe_inj]
   rfl
 
 /-- Helper: determinant of `scalarUnitaryHom (Fin 3) v * A` is `v³ * det A`. -/
@@ -205,7 +205,7 @@ noncomputable def smCoverHom : (SU3C × SU2C × Circle) →* ↥SU3xU2Subgroup w
       simp only [mul_assoc]
 
 /-- The subgroup `μ₆ ⊆ U(1)` of 6th roots of unity on the unit circle. -/
-abbrev rootsOfUnity6Circle : Subgroup Circle := (powMonoidHom 6 : Circle →* Circle).ker
+noncomputable abbrev rootsOfUnity6Circle : Subgroup Circle := (powMonoidHom 6 : Circle →* Circle).ker
 
 theorem mem_rootsOfUnity6Circle_iff (u : Circle) :
     u ∈ rootsOfUnity6Circle ↔ u ^ 6 = 1 :=
@@ -426,7 +426,7 @@ theorem zmod6ToRoots6_bijective : Function.Bijective zmod6ToRoots6 := by
     rw [← hθ]
     have hmod : (n : ℤ) = (k.val : ℤ) + 6 * (n / 6) := by
       have hv : (k.val : ℤ) = n % 6 := by
-        simpa [k] using (ZMod.val_intCast n)
+        exact ZMod.val_intCast n
       omega
     have hnr : (n : ℝ) = (k.val : ℝ) + 6 * ((n / 6 : ℤ) : ℝ) := by exact_mod_cast hmod
     have hθ_eq : θ = (k.val : ℝ) * (2 * Real.pi / 6) + ((n / 6 : ℤ) : ℝ) * (2 * Real.pi) := by

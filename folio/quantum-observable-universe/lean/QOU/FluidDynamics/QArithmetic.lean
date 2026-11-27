@@ -53,7 +53,7 @@ theorem qInteger_zero {R : Type*} [Field R] (q : R) : qInteger q 0 = 0 := by
 /-- [1]_q = 1 for q ≠ q⁻¹. -/
 theorem qInteger_one {R : Type*} [Field R] (q : R) (hq : q - q⁻¹ ≠ 0) :
     qInteger q 1 = 1 := by
-  simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]; simp [pow_one]; exact div_self hq
+  simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]; simp [pow_one]; exact hq
 
 /-- `[2]_q = q + q⁻¹` for `q ≠ q⁻¹` — closed form of the second
     q-integer.  Used by the Markov-parameter substitution

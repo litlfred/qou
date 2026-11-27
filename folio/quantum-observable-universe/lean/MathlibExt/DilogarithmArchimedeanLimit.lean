@@ -282,7 +282,7 @@ theorem partialProduct_log_eq (q x : ℝ) (n : ℕ)
       = ∑ k ∈ Finset.range n, -Real.log (1 - x * q ^ k) := by
   unfold partialProductLocal
   rw [Real.log_inv, denomPolyLocal_eq_prod,
-      Real.log_prod _ _ (fun k hk => (hpos k hk).ne')]
+      Real.log_prod (fun k hk => (hpos k hk).ne')]
   simp
 
 /-- **Second Part-A reduction:** each per-factor log becomes the `Li`-type power

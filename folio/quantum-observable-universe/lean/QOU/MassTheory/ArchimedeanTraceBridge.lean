@@ -64,7 +64,7 @@ the sum of the constituent free energies. Rest mass adds over the `A` nucleons. 
 theorem freeEnergy_prod {ι : Type*} (s : Finset ι) (T : ι → ℝ) (hT : ∀ i ∈ s, 0 < T i) :
     freeEnergy (∏ i ∈ s, T i) = ∑ i ∈ s, freeEnergy (T i) := by
   unfold freeEnergy
-  exact Real.log_prod s T (fun i hi => ne_of_gt (hT i hi))
+  exact Real.log_prod (fun i hi => ne_of_gt (hT i hi))
 
 /-- The interaction (connected) free energy of an assembly whose amplitude is the product of the
 constituent self-amplitudes times an interaction factor `I`. -/

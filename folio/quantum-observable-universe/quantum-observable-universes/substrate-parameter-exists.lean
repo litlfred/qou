@@ -5,7 +5,7 @@ import Mathlib.CategoryTheory.Preadditive.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
-import Mathlib.RingTheory.Real.Irrational
+import Mathlib.NumberTheory.Real.Irrational
 
 
 /-!

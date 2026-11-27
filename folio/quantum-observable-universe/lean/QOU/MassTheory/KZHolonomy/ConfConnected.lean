@@ -1,5 +1,5 @@
 import MathlibExt.KZHolonomy.KZForm
-import Mathlib.Analysis.NormedSpace.Connected
+import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.LinearAlgebra.Complex.FiniteDimensional
 
 /-!

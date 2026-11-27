@@ -93,6 +93,6 @@ theorem beta3IsLChi4_3_holds : beta3IsLChi4_3 := by
   convert h using 1
   · funext n
     rw [← sin_quarter_eq_chi4 n]; ring_nf
-  · simp [Nat.factorial]; ring
+  · ring
 
 end QOU.Infra.DirichletL

@@ -2,7 +2,7 @@
 -- Extracted via the non-compact modular double t -> i*t
 -- Computed by hecke-engine faddeev_ck.rs
 import Mathlib.Data.Real.Basic
-import Mathlib.Data.Real.Irrational
+import Mathlib.NumberTheory.Real.Irrational
 
 /-- The exact analytical coefficient f_1 of the topological mass ladder. -/
 noncomputable def f_1 : ℝ := - (7 / 6) * Real.sqrt 3

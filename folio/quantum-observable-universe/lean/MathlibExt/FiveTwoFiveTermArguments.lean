@@ -2,6 +2,8 @@ import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Algebra.Field.Basic
 import MathlibExt.FiveTwoLevelSevenLadder
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # `hA`, `hB`, `hC` are genuine five-term instances — the argument matching, proved

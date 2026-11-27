@@ -229,9 +229,11 @@ theorem argument_principle_annulus {f : ℂ → ℂ} {r R : ℝ} (hr : 0 < r) (h
     rw [hsplit]
     have hlogP : logDeriv P z = ∑ u ∈ S, (D u : ℂ) * (z - u)⁻¹ := by
       rw [hPdef]
-      rw [logDeriv_prod S (fun u z => (z - u) ^ (D u)) z
+      have hprod := logDeriv_prod (s := S) (f := fun u z => (z - u) ^ (D u)) (x := z)
         (fun u hu => zpow_ne_zero _ (sub_ne_zero.2 (hzu u hu)))
-        (fun u hu => (differentiableAt_id.sub_const u).zpow (Or.inl (sub_ne_zero.2 (hzu u hu))))]
+        (fun u hu => (differentiableAt_id.sub_const u).zpow (Or.inl (sub_ne_zero.2 (hzu u hu))))
+      rw [Finset.prod_fn] at hprod
+      rw [hprod]
       refine Finset.sum_congr rfl (fun u hu => ?_)
       have hd : DifferentiableAt ℂ (fun x : ℂ => x - u) z := differentiableAt_id.sub_const u
       rw [logDeriv_fun_zpow hd (D u)]

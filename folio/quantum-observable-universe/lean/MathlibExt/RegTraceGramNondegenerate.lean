@@ -73,6 +73,16 @@ theorem regTraceForm_algEquiv [FiniteDimensional K A] [FiniteDimensional K B]
     simp [LinearEquiv.conj_apply]
   rw [regTraceForm, hmul, hconj, LinearMap.trace_conj', regTraceForm]
 
+/-- Mathlib's `Nondegenerate` asks for separation on both sides; the regular trace form is
+symmetric (`regTraceForm_comm`), so left separation suffices. -/
+private theorem regTraceBilin_nondegenerate_of_left [FiniteDimensional K A]
+    (h : ∀ x : A, (∀ y, regTraceBilin K A x y = 0) → x = 0) :
+    (regTraceBilin K A).Nondegenerate := by
+  refine (LinearMap.IsRefl.nondegenerate_iff_separatingLeft ?_).mpr h
+  intro x y hxy
+  rw [regTraceBilin_apply] at hxy ⊢
+  rwa [regTraceForm_comm]
+
 /-- **Nondegeneracy of the regular trace form transports along an algebra isomorphism.**
 
 This is the step that lets a Gram determinant on one presentation of an algebra be settled
@@ -80,6 +90,7 @@ on another — here, transporting from the Wedderburn block product back to the 
 theorem regTraceBilin_nondegenerate_congr [FiniteDimensional K A] [FiniteDimensional K B]
     (e : A ≃ₐ[K] B) (h : (regTraceBilin K B).Nondegenerate) :
     (regTraceBilin K A).Nondegenerate := by
+  refine regTraceBilin_nondegenerate_of_left ?_
   intro x hx
   have hex : ∀ w : B, regTraceForm K B (e x) w = 0 := by
     intro w
@@ -87,7 +98,7 @@ theorem regTraceBilin_nondegenerate_congr [FiniteDimensional K A] [FiniteDimensi
     rw [regTraceBilin_apply] at this
     rw [← regTraceForm_algEquiv e x (e.symm w), AlgEquiv.apply_symm_apply] at this
     exact this
-  have : e x = 0 := h (e x) fun w => (regTraceBilin_apply (e x) w).trans (hex w)
+  have : e x = 0 := h.1 (e x) fun w => (regTraceBilin_apply (e x) w).trans (hex w)
   simpa using congrArg e.symm this
 
 /-- **Associativity of the regular trace form.**  Both sides are `trace (L_z)` for the same
@@ -149,6 +160,7 @@ theorem regTraceBilin_nondegenerate_of_isSimpleRing [FiniteDimensional K A] [IsS
     by_contra hne
     exact h (mem_regTraceRadical.mp
       (IsSimpleRing.one_mem_of_ne_bot (regTraceRadical K A) hne) 1)
+  refine regTraceBilin_nondegenerate_of_left ?_
   intro x hx
   have hmem : x ∈ regTraceRadical K A :=
     mem_regTraceRadical.mpr fun y => (regTraceBilin_apply x y).symm.trans (hx y)
@@ -194,9 +206,10 @@ Testing an `x` against `y = Pi.single j w` kills every summand of `regTraceForm_
 theorem regTraceBilin_nondegenerate_pi
     (h : ∀ i, (regTraceBilin K (B i)).Nondegenerate) :
     (regTraceBilin K (∀ i, B i)).Nondegenerate := by
+  refine regTraceBilin_nondegenerate_of_left ?_
   intro x hx
   funext j
-  refine h j (x j) fun w => ?_
+  refine (h j).1 (x j) fun w => ?_
   have hxj := hx (Pi.single j w)
   rw [regTraceBilin_apply, regTraceForm_pi] at hxj
   rw [Finset.sum_eq_single j] at hxj
@@ -219,7 +232,8 @@ nondegenerate for the trivial reason that `0` is its only element. -/
 theorem regTraceBilin_nondegenerate_matrix {ι : Type*} [Fintype ι] [DecidableEq ι] [CharZero K] :
     (regTraceBilin K (Matrix ι ι K)).Nondegenerate := by
   rcases isEmpty_or_nonempty ι with hι | hι
-  · intro x _
+  · refine regTraceBilin_nondegenerate_of_left ?_
+    intro x _
     exact Subsingleton.elim x 0
   · exact regTraceBilin_nondegenerate_of_isSimpleRing_charZero
 

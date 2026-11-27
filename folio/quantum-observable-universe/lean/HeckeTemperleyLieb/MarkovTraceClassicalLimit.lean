@@ -71,7 +71,7 @@ theorem state_zpow {σ : Perm α} (f : States σ) (i : ℤ) (x : α) :
   have hinv : ∀ y, f.1 (σ⁻¹ y) = f.1 y := by
     intro y
     have := f.2 (σ⁻¹ y)
-    rw [Perm.apply_inv_self] at this
+    rw [Perm.coe_inv, Equiv.apply_symm_apply] at this
     exact this.symm
   cases i with
   | ofNat k => simpa using hpos σ f.2 k x
@@ -118,7 +118,7 @@ theorem trClassical_one : trClassical (1 : Perm α) = 1 := by
 /-- Conjugation moves states by relabelling the strands. -/
 def statesConj (σ τ : Perm α) : States σ ≃ States (τ * σ * τ⁻¹) where
   toFun f := ⟨fun y => f.1 (τ⁻¹ y), fun y => by
-    simp only [Perm.mul_apply, Perm.inv_apply_self]
+    simp only [Perm.mul_apply, Perm.coe_inv, Equiv.symm_apply_apply]
     exact f.2 _⟩
   invFun g := ⟨fun x => g.1 (τ x), fun x => by
     have := g.2 (τ x)

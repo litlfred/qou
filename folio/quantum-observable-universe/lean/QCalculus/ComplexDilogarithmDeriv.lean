@@ -197,9 +197,11 @@ theorem hasDerivAt_cLiTwoExt {w : ℂ} (hw : w ∈ notCut) :
       exact ne_of_gt hz.1
     exact hasDerivAt_integrand hzne (hslit x (ball_subset_closedBall hx) z hzI)
   have key := intervalIntegral.hasDerivAt_integral_of_dominated_loc_of_deriv_le
-    (bound := fun _ : ℝ => δ⁻¹) hε hmeasF (hint w (mem_closedBall_self hε.le))
+    (bound := fun _ : ℝ => δ⁻¹) (Metric.ball_mem_nhds w hε) hmeasF (hint w (mem_closedBall_self hε.le))
     hmeasF' hb hbint hdiff
-  simpa [cLiTwoExt, hF, hF'] using key.2.neg
+  have h2 := key.2.neg
+  convert h2 using 1
+  · funext y; simp only [cLiTwoExt, hF, Pi.neg_apply]
 
 /-- The closed form, for `w ≠ 0`: `d/dw Li₂(w) = −log(1−w)/w`.
 

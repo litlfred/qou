@@ -71,7 +71,7 @@ theorem mem_elems {s : Finset (Fin m)} {x : Fin m} : x ∈ elems s ↔ x ∈ s :
 /-- **`elems` is strictly increasing** — inherited from `List.finRange` through
 `Sublist`, with no sorting step and no sortedness proof of its own. That is the
 whole reason `elems` is a `filter` rather than a `Finset.sort`. -/
-theorem elems_sorted (s : Finset (Fin m)) : (elems s).Sorted (· < ·) :=
+theorem elems_sorted (s : Finset (Fin m)) : (elems s).Pairwise (· < ·) :=
   (List.pairwise_lt_finRange m).sublist List.filter_sublist
 
 /-- **Every letter of a block is at most the block's top index.**

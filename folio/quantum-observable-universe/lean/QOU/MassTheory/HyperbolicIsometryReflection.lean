@@ -64,7 +64,7 @@ noncomputable def verticalReflectionIsom : IsDHIsometry (verticalReflection : E 
     -- `e₂` lies in the reflecting plane `(ℝ ∙ e₀)ᗮ` (it is orthogonal to `e₀`).
     have hmem : e2 ∈ (ℝ ∙ (EuclideanSpace.single (0 : Fin 3) (1 : ℝ)))ᗮ := by
       rw [Submodule.mem_orthogonal_singleton_iff_inner_right, EuclideanSpace.inner_single_left]
-      simp [he2, EuclideanSpace.single_apply]
+      simp [he2, PiLp.single_apply]
     have hfix : verticalReflection e2 = e2 :=
       Submodule.reflection_mem_subspace_eq_self hmem
     -- express the height coordinate through the inner product with `e₂`.

@@ -96,7 +96,7 @@ theorem sum_log_two_sin_endpoint {N : ℕ} (hN : N ≠ 0) :
       nlinarith [Real.pi_pos]
     have := Real.sin_pos_of_pos_of_lt_pi hjpos hjlt
     linarith
-  rw [← Real.log_prod _ _ (fun j hj => ne_of_gt (hpos j hj))]
+  rw [← Real.log_prod (fun j hj => ne_of_gt (hpos j hj))]
   rw [QOU.MathlibExt.prod_two_sin_pi_div N hN]
 
 /-- The single-factor reflection `sin((N−i)π/N) = sin(iπ/N)`, from

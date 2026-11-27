@@ -67,11 +67,11 @@ theorem sumElim_eq_mapDomain_add (i : σ →₀ ℕ) (j : τ →₀ ℕ) :
   ext x
   cases x with
   | inl a =>
-    rw [Finsupp.add_apply, Finsupp.mapDomain_apply Sum.inl_injective,
+    rw [Finsupp.add_apply, Finsupp.mapDomain_apply_of_injective Sum.inl_injective,
       Finsupp.mapDomain_notin_range (f := Sum.inr) j (Sum.inl a) (by simp),
       Finsupp.sumElim_inl, add_zero]
   | inr b =>
-    rw [Finsupp.add_apply, Finsupp.mapDomain_apply Sum.inr_injective,
+    rw [Finsupp.add_apply, Finsupp.mapDomain_apply_of_injective Sum.inr_injective,
       Finsupp.mapDomain_notin_range (f := Sum.inl) i (Sum.inr b) (by simp),
       Finsupp.sumElim_inr, zero_add]
 
@@ -98,18 +98,18 @@ Stated over any `CommRing`; no domain hypothesis, because the vanishing of the o
 established factor-by-factor rather than through `mul_ne_zero_iff`. -/
 theorem coeff_sumElim_rename_mul (u : MvPolynomial σ R) (v : MvPolynomial τ R)
     (i : σ →₀ ℕ) (j : τ →₀ ℕ) :
-    coeff (Finsupp.sumElim i j)
-        ((rename Sum.inl u : MvPolynomial (σ ⊕ τ) R) * rename Sum.inr v)
-      = coeff i u * coeff j v := by
+    ((rename Sum.inl u : MvPolynomial (σ ⊕ τ) R) * rename Sum.inr v).coeff
+        (Finsupp.sumElim i j)
+      = u.coeff i * v.coeff j := by
   classical
   rw [coeff_mul, Finset.sum_eq_single
     (Finsupp.mapDomain Sum.inl i, Finsupp.mapDomain Sum.inr j)]
   · rw [coeff_rename_mapDomain _ Sum.inl_injective, coeff_rename_mapDomain _ Sum.inr_injective]
   · rintro ⟨a, b⟩ hab hne
     dsimp only
-    rcases eq_or_ne (coeff a (rename Sum.inl u : MvPolynomial (σ ⊕ τ) R)) 0 with h0 | hna
+    rcases eq_or_ne ((rename Sum.inl u : MvPolynomial (σ ⊕ τ) R).coeff a) 0 with h0 | hna
     · rw [h0, zero_mul]
-    rcases eq_or_ne (coeff b (rename Sum.inr v : MvPolynomial (σ ⊕ τ) R)) 0 with h0 | hnb
+    rcases eq_or_ne ((rename Sum.inr v : MvPolynomial (σ ⊕ τ) R).coeff b) 0 with h0 | hnb
     · rw [h0, mul_zero]
     exfalso
     obtain ⟨d, hd, -⟩ := coeff_rename_ne_zero _ _ _ hna
@@ -121,13 +121,13 @@ theorem coeff_sumElim_rename_mul (u : MvPolynomial σ R) (v : MvPolynomial τ R)
     have hdi : d = i := by
       ext x
       have hx := congrArg (fun f => f (Sum.inl x)) hab
-      simpa [Finsupp.mapDomain_apply Sum.inl_injective,
+      simpa [Finsupp.mapDomain_apply_of_injective Sum.inl_injective,
         Finsupp.mapDomain_notin_range (f := Sum.inr) e (Sum.inl x) (by simp),
         Finsupp.sumElim_inl] using hx
     have hej : e = j := by
       ext y
       have hy := congrArg (fun f => f (Sum.inr y)) hab
-      simpa [Finsupp.mapDomain_apply Sum.inr_injective,
+      simpa [Finsupp.mapDomain_apply_of_injective Sum.inr_injective,
         Finsupp.mapDomain_notin_range (f := Sum.inl) d (Sum.inr y) (by simp),
         Finsupp.sumElim_inr] using hy
     rw [hdi, hej]
@@ -138,8 +138,8 @@ theorem coeff_sumElim_rename_mul (u : MvPolynomial σ R) (v : MvPolynomial τ R)
 
 Immediate from the identity: every coefficient of the product is a single product `uᵢvⱼ`. -/
 theorem abs_coeff_mul_separated_le {u : MvPolynomial σ ℤ} {v : MvPolynomial τ ℤ} {Bu Bv : ℤ}
-    (hu : ∀ i, |coeff i u| ≤ Bu) (hv : ∀ j, |coeff j v| ≤ Bv) (n : (σ ⊕ τ) →₀ ℕ) :
-    |coeff n ((rename Sum.inl u : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr v)| ≤ Bu * Bv := by
+    (hu : ∀ i, |u.coeff i| ≤ Bu) (hv : ∀ j, |v.coeff j| ≤ Bv) (n : (σ ⊕ τ) →₀ ℕ) :
+    |((rename Sum.inl u : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr v).coeff n| ≤ Bu * Bv := by
   have hBu : (0 : ℤ) ≤ Bu := le_trans (abs_nonneg _) (hu 0)
   rw [eq_sumElim n, coeff_sumElim_rename_mul, abs_mul]
   exact mul_le_mul (hu _) (hv _) (abs_nonneg _) hBu
@@ -158,18 +158,18 @@ product in *shared* variables, where the coefficients genuinely mix; in disjoint
 they do not mix, and the bound is free. -/
 theorem abs_coeff_le_of_mul_separated {u : MvPolynomial σ ℤ} {v : MvPolynomial τ ℤ}
     (hv : v ≠ 0) {B : ℤ}
-    (hB : ∀ n, |coeff n ((rename Sum.inl u : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr v)| ≤ B)
-    (i : σ →₀ ℕ) : |coeff i u| ≤ B := by
+    (hB : ∀ n, |((rename Sum.inl u : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr v).coeff n| ≤ B)
+    (i : σ →₀ ℕ) : |u.coeff i| ≤ B := by
   classical
   obtain ⟨j, hj⟩ : v.support.Nonempty :=
     Finset.nonempty_iff_ne_empty.mpr (fun h => hv (support_eq_empty.mp h))
-  have hvj : coeff j v ≠ 0 := mem_support_iff.mp hj
-  have h1 : (1 : ℤ) ≤ |coeff j v| := Int.one_le_abs (by omega)
-  calc |coeff i u| ≤ |coeff i u| * |coeff j v| :=
+  have hvj : v.coeff j ≠ 0 := mem_support_iff.mp hj
+  have h1 : (1 : ℤ) ≤ |v.coeff j| := Int.one_le_abs (by omega)
+  calc |u.coeff i| ≤ |u.coeff i| * |v.coeff j| :=
         le_mul_of_one_le_right (abs_nonneg _) h1
-    _ = |coeff i u * coeff j v| := (abs_mul _ _).symm
-    _ = |coeff (Finsupp.sumElim i j)
-          ((rename Sum.inl u : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr v)| := by
+    _ = |u.coeff i * v.coeff j| := (abs_mul _ _).symm
+    _ = |((rename Sum.inl u : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr v).coeff
+          (Finsupp.sumElim i j)| := by
         rw [coeff_sumElim_rename_mul]
     _ ≤ B := hB _
 
@@ -181,18 +181,18 @@ it.  The induction step of Roth's lemma calls for it: it bounds *both* factors o
 separated Wronskian, not just the first. -/
 theorem abs_coeff_le_of_mul_separated_right {u : MvPolynomial σ ℤ} {v : MvPolynomial τ ℤ}
     (hu : u ≠ 0) {B : ℤ}
-    (hB : ∀ n, |coeff n ((rename Sum.inl u : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr v)| ≤ B)
-    (j : τ →₀ ℕ) : |coeff j v| ≤ B := by
+    (hB : ∀ n, |((rename Sum.inl u : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr v).coeff n| ≤ B)
+    (j : τ →₀ ℕ) : |v.coeff j| ≤ B := by
   classical
   obtain ⟨i, hi⟩ : u.support.Nonempty :=
     Finset.nonempty_iff_ne_empty.mpr (fun h => hu (support_eq_empty.mp h))
-  have hui : coeff i u ≠ 0 := mem_support_iff.mp hi
-  have h1 : (1 : ℤ) ≤ |coeff i u| := Int.one_le_abs (by omega)
-  calc |coeff j v| ≤ |coeff i u| * |coeff j v| :=
+  have hui : u.coeff i ≠ 0 := mem_support_iff.mp hi
+  have h1 : (1 : ℤ) ≤ |u.coeff i| := Int.one_le_abs (by omega)
+  calc |v.coeff j| ≤ |u.coeff i| * |v.coeff j| :=
         le_mul_of_one_le_left (abs_nonneg _) h1
-    _ = |coeff i u * coeff j v| := (abs_mul _ _).symm
-    _ = |coeff (Finsupp.sumElim i j)
-          ((rename Sum.inl u : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr v)| := by
+    _ = |u.coeff i * v.coeff j| := (abs_mul _ _).symm
+    _ = |((rename Sum.inl u : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr v).coeff
+          (Finsupp.sumElim i j)| := by
         rw [coeff_sumElim_rename_mul]
     _ ≤ B := hB _
 
@@ -203,17 +203,17 @@ true statement about a different coefficient.  These two examples pin it down ag
 computed by hand: `(3x²)·(5y)` has coefficient `15` at `x²y` and `0` at `x¹y`. -/
 
 example :
-    coeff (Finsupp.sumElim (Finsupp.single () 2) (Finsupp.single () 1))
-      ((rename Sum.inl (C 3 * X () ^ 2 : MvPolynomial Unit ℤ) : MvPolynomial (Unit ⊕ Unit) ℤ)
-        * rename Sum.inr (C 5 * X () : MvPolynomial Unit ℤ)) = 15 := by
+    ((rename Sum.inl (C 3 * X () ^ 2 : MvPolynomial Unit ℤ) : MvPolynomial (Unit ⊕ Unit) ℤ)
+        * rename Sum.inr (C 5 * X () : MvPolynomial Unit ℤ)).coeff
+      (Finsupp.sumElim (Finsupp.single () 2) (Finsupp.single () 1)) = 15 := by
   rw [coeff_sumElim_rename_mul, coeff_C_mul, coeff_X_pow, if_pos rfl, mul_one,
     coeff_C_mul, coeff_X', if_pos rfl, mul_one]
   norm_num
 
 example :
-    coeff (Finsupp.sumElim (Finsupp.single () 1) (Finsupp.single () 1))
-      ((rename Sum.inl (C 3 * X () ^ 2 : MvPolynomial Unit ℤ) : MvPolynomial (Unit ⊕ Unit) ℤ)
-        * rename Sum.inr (C 5 * X () : MvPolynomial Unit ℤ)) = 0 := by
+    ((rename Sum.inl (C 3 * X () ^ 2 : MvPolynomial Unit ℤ) : MvPolynomial (Unit ⊕ Unit) ℤ)
+        * rename Sum.inr (C 5 * X () : MvPolynomial Unit ℤ)).coeff
+      (Finsupp.sumElim (Finsupp.single () 1) (Finsupp.single () 1)) = 0 := by
   rw [coeff_sumElim_rename_mul, coeff_C_mul, coeff_X_pow, if_neg (by simp), mul_zero, zero_mul]
 
 /-! ### Next

@@ -152,7 +152,7 @@ theorem eqvGen_plus_iff (σ τ : Perm D) (a b x y : D) :
     | symm u v _ ih => exact (S_equivalence _ a b).symm ih
     | trans u v w _ _ ih1 ih2 => exact (S_equivalence _ a b).trans ih1 ih2
   · have hmono : ∀ u v, EqvGen (step σ τ) u v → EqvGen (stepPlus σ τ a b) u v := fun u v h =>
-      EqvGen.mono (fun _ _ k => Or.inl k) h
+      EqvGen.mono (fun _ _ k => Or.inl k) _ _ h
     have hab : EqvGen (stepPlus σ τ a b) a b := EqvGen.rel _ _ (Or.inr ⟨rfl, rfl⟩)
     rintro (h | ⟨h1, h2⟩ | ⟨h1, h2⟩)
     · exact hmono _ _ h

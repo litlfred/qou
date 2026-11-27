@@ -78,7 +78,7 @@
 
 import BraidKnotOctonion.LobachevskyDerivative
 import BraidKnotOctonion.LobachevskyMaximum
-import Mathlib.Analysis.SpecialFunctions.Integrals.LogTrigonometric
+import Mathlib.Analysis.SpecialFunctions.Integrals.Log
 
 namespace QOU.Archimedean.HyperbolicVolume
 

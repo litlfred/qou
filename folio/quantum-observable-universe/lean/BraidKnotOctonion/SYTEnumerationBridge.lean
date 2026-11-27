@@ -101,7 +101,7 @@ theorem card_cellsOfRowLens (w : List ℕ) :
       simp [Function.Embedding.prodMap] at heq
 
 /-- `#cells (ofRowLens w hw) = ∑w`. -/
-theorem card_cells_ofRowLens (w : List ℕ) (hw : List.Sorted (· ≥ ·) w) :
+theorem card_cells_ofRowLens (w : List ℕ) (hw : w.SortedGE) :
     (YoungDiagram.ofRowLens w hw).cells.card = w.sum :=
   card_cellsOfRowLens w
 

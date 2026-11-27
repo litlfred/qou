@@ -150,10 +150,12 @@ theorem observation_energy_remainder_quadratic
         (ctx.S' (ctx.q + t) - ctx.dS_dq) t := by
     intro t
     have h1 : HasDerivAt (fun s : ℝ => ctx.S (ctx.q + s)) (ctx.S' (ctx.q + t)) t := by
-      simpa using (ctx.S_hasDeriv (ctx.q + t)).comp t ((hasDerivAt_id t).const_add ctx.q)
+      have h := (ctx.S_hasDeriv (ctx.q + t)).comp t ((hasDerivAt_id t).const_add ctx.q)
+      rw [mul_one] at h
+      exact h
     have h2 : HasDerivAt (fun s : ℝ => s * ctx.dS_dq) ctx.dS_dq t := by
       simpa using (hasDerivAt_id t).mul_const ctx.dS_dq
-    simpa using (h1.sub_const (ctx.S ctx.q)).sub h2
+    exact (h1.sub_const (ctx.S ctx.q)).sub h2
   -- the derivative is bounded by L·|δ| on the segment between 0 and δ
   have hbnd : ∀ x ∈ Set.uIcc (0 : ℝ) δ,
       ‖ctx.S' (ctx.q + x) - ctx.dS_dq‖ ≤ ctx.L * |δ| := by

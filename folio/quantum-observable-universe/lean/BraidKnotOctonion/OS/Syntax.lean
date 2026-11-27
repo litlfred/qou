@@ -188,7 +188,7 @@ abbrev PA := MonoidAlgebra R (FreeMonoid Step)
 variable {R}
 
 /-- The basis element of `PA R` attached to a list of layers. -/
-noncomputable def pth (π : List Step) : PA R := Finsupp.single (FreeMonoid.ofList π) 1
+noncomputable def pth (π : List Step) : PA R := MonoidAlgebra.single (FreeMonoid.ofList π) 1
 
 theorem pth_mul (π π' : List Step) : (pth π : PA R) * pth π' = pth (π ++ π') := by
   simp [pth, MonoidAlgebra.single_mul_single, FreeMonoid.ofList_append]
@@ -199,36 +199,36 @@ variable (R)
 
 /-- The `R`-submodule of `PA R` supported on valid strings from `x` to `y`: the hom-module
 `x ⟶ y` of the free linear monoidal category on the four generators. -/
-def supp (x y : Word) : Submodule R (PA R) :=
-  Finsupp.supported R R {m : FreeMonoid Step | Valid x (FreeMonoid.toList m) y}
+noncomputable def supp (x y : Word) : Submodule R (PA R) :=
+  MonoidAlgebra.supported R R {m : FreeMonoid Step | Valid x (FreeMonoid.toList m) y}
 
 variable {R}
 
 theorem pth_mem_supp {x y : Word} {π : List Step} (h : Valid x π y) : (pth π : PA R) ∈ supp R x y :=
-  Finsupp.single_mem_supported R _ h
+  MonoidAlgebra.mem_supported.mpr (Finsupp.single_mem_supported R _ h)
 
 /-- Whiskering on the path algebra, by `a` on the left and `b` on the right. -/
 noncomputable def whiskA (a b : Word) : PA R →ₗ[R] PA R :=
-  Finsupp.lmapDomain R R (FreeMonoid.map (Step.whisk a b))
+  MonoidAlgebra.mapDomainLinearMap R R (FreeMonoid.map (Step.whisk a b))
 
 theorem whiskA_single (a b : Word) (m : FreeMonoid Step) (r : R) :
-    whiskA a b (Finsupp.single m r : PA R) =
-      Finsupp.single (FreeMonoid.ofList (m.toList.map (Step.whisk a b))) r :=
-  Finsupp.mapDomain_single
+    whiskA a b (MonoidAlgebra.single m r : PA R) =
+      MonoidAlgebra.single (FreeMonoid.ofList (m.toList.map (Step.whisk a b))) r :=
+  MonoidAlgebra.mapDomainLinearMap_single _ _ _
 
 theorem whiskA_pth (a b : Word) (π : List Step) :
     whiskA a b (pth π : PA R) = pth (π.map (Step.whisk a b)) :=
   whiskA_single a b _ 1
 
 theorem whiskA_mul (a b : Word) (f g : PA R) : whiskA a b (f * g) = whiskA a b f * whiskA a b g :=
-  MonoidAlgebra.mapDomain_mul (FreeMonoid.map (Step.whisk a b)) f g
+  MonoidAlgebra.mapDomain_mul (R := R) (FreeMonoid.map (Step.whisk a b)) f g
 
 theorem whiskA_one (a b : Word) : whiskA a b (1 : PA R) = 1 := by
   rw [← pth_nil, whiskA_pth]; rfl
 
 theorem whiskA_whiskA (a b c d : Word) (f : PA R) :
     whiskA c d (whiskA a b f) = whiskA (c ++ a) (b ++ d) f := by
-  induction f using Finsupp.induction_linear with
+  induction f using MonoidAlgebra.induction_linear with
   | zero => simp
   | add f g hf hg => rw [map_add, map_add, map_add, hf, hg]
   | single m r =>
@@ -237,7 +237,7 @@ theorem whiskA_whiskA (a b c d : Word) (f : PA R) :
       simp [List.map_map, Step.whisk_comp]
 
 theorem whiskA_nil (f : PA R) : whiskA [] [] f = f := by
-  induction f using Finsupp.induction_linear with
+  induction f using MonoidAlgebra.induction_linear with
   | zero => simp
   | add f g hf hg => rw [map_add, hf, hg]
   | single m r =>
@@ -248,8 +248,9 @@ theorem whiskA_nil (f : PA R) : whiskA [] [] f = f := by
 theorem whiskA_mem_supp (a b : Word) {x y : Word} {f : PA R} (hf : f ∈ supp R x y) :
     whiskA a b f ∈ supp R (a ++ (x ++ b)) (a ++ (y ++ b)) := by
   classical
-  rw [supp, Finsupp.mem_supported] at hf ⊢
+  rw [supp, MonoidAlgebra.mem_supported] at hf ⊢
   intro m hm
+  rw [whiskA, MonoidAlgebra.coeff_mapDomainLinearMap] at hm
   obtain ⟨m', hm', rfl⟩ := Finset.mem_image.mp (Finsupp.mapDomain_support hm)
   show Valid _ (FreeMonoid.toList (FreeMonoid.map _ m')) _
   rw [FreeMonoid.toList_map]
@@ -340,14 +341,15 @@ theorem lhs_mem (ρ : Rel) : ρ.lhs t ∈ supp R ρ.src ρ.tgt := by
         (pth_mem_supp (by simp [Step.src, Step.tgt, Gen.src, Gen.tgt, src, tgt]))
 
 theorem rhs_mem (ρ : Rel) : ρ.rhs q qi δ ∈ supp R ρ.src ρ.tgt := by
-  cases ρ <;>
-    first
-    | exact pth_mem_supp (by simp [Step.src, Step.tgt, Gen.src, Gen.tgt, src, tgt])
-    | exact Submodule.smul_mem _ _
+  cases ρ
+  case quad =>
+    exact Submodule.add_mem _
+        (Submodule.smul_mem _ _ (pth_mem_supp (by simp [Step.src, Step.tgt, Gen.src, Gen.tgt, src, tgt])))
+        (Submodule.smul_mem _ _ (pth_mem_supp (by simp [Step.src, Step.tgt, Gen.src, Gen.tgt, src, tgt])))
+  case dim =>
+    exact Submodule.smul_mem _ _
         (pth_mem_supp (by simp [Step.src, Step.tgt, Gen.src, Gen.tgt, src, tgt]))
-    | exact Submodule.add_mem _
-        (Submodule.smul_mem _ _ (pth_mem_supp (by simp [Step.src, Step.tgt, Gen.src, Gen.tgt, src, tgt])))
-        (Submodule.smul_mem _ _ (pth_mem_supp (by simp [Step.src, Step.tgt, Gen.src, Gen.tgt, src, tgt])))
+  all_goals exact pth_mem_supp (by simp [Step.src, Step.tgt, Gen.src, Gen.tgt, src, tgt])
 
 theorem rel_mem (ρ : Rel) : ρ.rel q qi t δ ∈ supp R ρ.src ρ.tgt :=
   Submodule.sub_mem _ (ρ.lhs_mem t) (ρ.rhs_mem q qi δ)

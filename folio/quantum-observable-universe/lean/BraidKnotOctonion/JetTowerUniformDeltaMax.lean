@@ -1,5 +1,7 @@
 import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Algebra.GeomSum
+import Mathlib.Algebra.Field.GeomSum
+import Mathlib.Algebra.Order.Field.GeomSum
+import Mathlib.Algebra.Order.Ring.GeomSum
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Linarith
 

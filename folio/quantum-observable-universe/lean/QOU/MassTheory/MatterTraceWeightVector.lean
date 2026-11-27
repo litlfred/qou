@@ -77,7 +77,7 @@ theorem matrix_element_zero_of_equal_traces {F : Type*} [Field F] {n : Type*} [F
   have h : (q ^ 2 - 1) * trace (φp * Mp * ψp) = 0 := by
     have hqq : q * q⁻¹ = 1 := mul_inv_cancel₀ hq
     have := congrArg (fun x => q * x) hHoriz
-    simp only at this
+    try simp only at this
     linear_combination (-1 : F) * this + (trace (φp * Mp * ψp)) * hqq
   rcases mul_eq_zero.mp h with h1 | h1
   · exact absurd (sub_eq_zero.mp h1) hq2

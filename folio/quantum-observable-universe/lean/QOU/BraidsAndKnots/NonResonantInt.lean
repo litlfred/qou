@@ -37,8 +37,7 @@ theorem nonResonant_smul_intMatrix (M : Matrix ι ι ℤ) (c : ℂ) (hc : Transc
     have := Matrix.aeval_self_charpoly T
     rwa [show T = M.map (Int.castRingHom ℂ) from rfl, Matrix.charpoly_map] at this
   have hsplit : p = (p.roots.map fun a => X - C a).prod := by
-    conv_lhs => rw [eq_prod_roots_of_splits_id (IsAlgClosed.splits p)]
-    rw [hpm.leadingCoeff, C_1, one_mul]
+    exact (IsAlgClosed.splits p).eq_prod_roots_of_monic hpm
   set l := p.roots.toList
   set a : Fin l.length → ℂ := fun i => l[i]
   have hprod : (∏ i, (X - C (a i)) : ℂ[X]) = p := by

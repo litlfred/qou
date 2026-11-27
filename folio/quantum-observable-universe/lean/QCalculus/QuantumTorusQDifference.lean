@@ -27,7 +27,6 @@ variable {A : Type*} [CommRing A] [MulSemiringAction Ldeg A]
 theorem emb_injective : Function.Injective (emb : A →+* QuantumTorus A) := by
   intro a b h
   have := congrArg (fun x : QuantumTorus A => x.coeff (1 : Ldeg)) h
-  simp only at this
   rwa [coeff_emb, coeff_emb, if_pos rfl, if_pos rfl] at this
 
 /-- **The q-difference operator is inner (twisted).** `(L·a - a·L)·L⁻¹ = σ a - a`. -/
@@ -82,7 +81,7 @@ theorem scaleUnit_zpow (u : Rˣ) (n : ℤ) :
 
 /-- The scaling `M ↦ u·M` of `R[M^±]`, as an `R`-algebra map. -/
 noncomputable def scaleAlgHom (u : Rˣ) : R[T;T⁻¹] →ₐ[R] R[T;T⁻¹] :=
-  AddMonoidAlgebra.lift R ℤ R[T;T⁻¹] ((Units.coeHom _).comp (zpowersHom _ (scaleUnit u)))
+  AddMonoidAlgebra.lift R R[T;T⁻¹] ℤ ((Units.coeHom _).comp (zpowersHom _ (scaleUnit u)))
 
 theorem scaleAlgHom_T (u : Rˣ) (n : ℤ) :
     scaleAlgHom u (T n) = C ((u ^ n : Rˣ) : R) * T n := by
@@ -96,12 +95,14 @@ theorem scaleAlgHom_C_mul_T (u : Rˣ) (a : R) (n : ℤ) :
 
 /-- `σ` scales the `n`-th coefficient by `uⁿ`. -/
 theorem scaleAlgHom_apply (u : Rˣ) (f : R[T;T⁻¹]) (n : ℤ) :
-    scaleAlgHom u f n = ((u ^ n : Rˣ) : R) * f n := by
+    (scaleAlgHom u f).coeff n = ((u ^ n : Rˣ) : R) * f.coeff n := by
   induction f using LaurentPolynomial.induction_on' with
-  | add p q hp hq => rw [map_add, Finsupp.add_apply, Finsupp.add_apply, hp, hq, mul_add]
+  | add p q hp hq =>
+    rw [map_add, AddMonoidAlgebra.coeff_add, AddMonoidAlgebra.coeff_add, Finsupp.add_apply,
+      Finsupp.add_apply, hp, hq, mul_add]
   | C_mul_T m a =>
-    rw [scaleAlgHom_C_mul_T, ← single_eq_C_mul_T, ← single_eq_C_mul_T, Finsupp.single_apply,
-      Finsupp.single_apply]
+    rw [scaleAlgHom_C_mul_T, ← single_eq_C_mul_T, ← single_eq_C_mul_T,
+      AddMonoidAlgebra.coeff_single_apply, AddMonoidAlgebra.coeff_single_apply]
     split_ifs with h
     · subst h; ring
     · ring
@@ -133,24 +134,24 @@ unity). This is "q-difference zero ⇒ constant", proved by comparing coefficien
 theorem sigma_eq_self_iff [IsDomain R] (u : Rˣ) (hu : ∀ n : ℤ, n ≠ 0 → u ^ n ≠ 1)
     (f : R[T;T⁻¹]) :
     letI := scaleAction u
-    sigma f = f ↔ f = C (f 0) := by
+    sigma f = f ↔ f = C (f.coeff 0) := by
   letI := scaleAction u
   rw [sigma_scaleAction]
   constructor
   · intro h
     ext n
-    rw [C_eq_algebraMap, ← C_eq_algebraMap, ← mul_one (C (f 0)), ← T_zero,
-      ← single_eq_C_mul_T, Finsupp.single_apply]
+    rw [C_eq_algebraMap, ← C_eq_algebraMap, ← mul_one (C (f.coeff 0)), ← T_zero,
+      ← single_eq_C_mul_T, AddMonoidAlgebra.coeff_single_apply]
     split_ifs with hn
     · rw [hn]
-    · have hc := congrArg (fun g : R[T;T⁻¹] => g n) h
+    · have hc := congrArg (fun g : R[T;T⁻¹] => g.coeff n) h
       simp only [scaleAlgHom_apply] at hc
-      have h1 : (((u ^ n : Rˣ) : R) - 1) * f n = 0 := by rw [sub_mul, hc, one_mul, sub_self]
+      have h1 : (((u ^ n : Rˣ) : R) - 1) * f.coeff n = 0 := by rw [sub_mul, hc, one_mul, sub_self]
       rcases mul_eq_zero.1 h1 with h2 | h2
       · exact absurd (Units.val_eq_one.1 (sub_eq_zero.1 h2)) (hu n (Ne.symm hn))
       · exact h2
   · intro h
-    rw [h, ← mul_one (C (f 0)), ← T_zero, scaleAlgHom_C_mul_T, zpow_zero, Units.val_one,
+    rw [h, ← mul_one (C (f.coeff 0)), ← T_zero, scaleAlgHom_C_mul_T, zpow_zero, Units.val_one,
       mul_one]
 
 /-- **Zero q-derivative means constant, algebraically.** In the quantum torus over `R[M^±]`
@@ -158,7 +159,7 @@ with `σ(M) = u·M`, an element of the coefficient ring commutes with `L` iff it
 theorem twistedComm_eq_zero_iff_const [IsDomain R] (u : Rˣ) (hu : ∀ n : ℤ, n ≠ 0 → u ^ n ≠ 1)
     (f : R[T;T⁻¹]) :
     letI := scaleAction u
-    (Lgen * emb f - emb f * Lgen : QuantumTorus R[T;T⁻¹]) = 0 ↔ f = C (f 0) := by
+    (Lgen * emb f - emb f * Lgen : QuantumTorus R[T;T⁻¹]) = 0 ↔ f = C (f.coeff 0) := by
   letI := scaleAction u
   rw [twistedComm_emb_eq_zero_iff]
   exact sigma_eq_self_iff u hu f

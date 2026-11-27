@@ -294,7 +294,7 @@ theorem branch_subtree_no_oddPreimage (w : R) (hw : w ^ 2 + w + 1 = 0)
   have h1 : (w + 1) * ((w + 1) ^ n * branchEval w k) = 1 := by
     rw [hQ]; linear_combination Q * hw
   have hu : IsUnit ((w + 1) ^ n * branchEval w k) :=
-    isUnit_of_mul_eq_one _ (w + 1) (by linear_combination h1)
+    IsUnit.of_mul_eq_one (w + 1) (by linear_combination h1)
   -- unit-ness of `αⁿ·p` gives unit-ness of `p`, contradicting the norm.
   exact branchEval_not_isUnit w hw hindep hcoord k hk (isUnit_of_mul_isUnit_right hu)
 

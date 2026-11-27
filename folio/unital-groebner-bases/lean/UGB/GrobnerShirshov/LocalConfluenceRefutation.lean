@@ -48,7 +48,7 @@ theorem rel_coeff (m : Monomial SU2Gen) :
 
 theorem rel_support : rel.support = {wK, []} := by
   show (if (2:ℤ) = 0 then ∅ else {wK}) ∪ (if (1:ℤ) = 0 then ∅ else {[]}) = _
-  norm_num; exact Finset.pair_comm _ _
+  norm_num <;> exact Finset.pair_comm _ _
 
 theorem rel_support_nonempty : rel.support.Nonempty := by
   rw [rel_support]; exact ⟨wK, by simp⟩

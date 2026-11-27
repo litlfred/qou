@@ -1,6 +1,6 @@
 import Mathlib.Combinatorics.Young.YoungDiagram
 import Mathlib.Combinatorics.Young.SemistandardTableau
-import Mathlib.Combinatorics.Enumerative.Partition
+import Mathlib.Combinatorics.Enumerative.Partition.Basic
 import Mathlib.Tactic
 import HeckeTemperleyLieb.Common
 import HeckeTemperleyLieb.NumSYTPos

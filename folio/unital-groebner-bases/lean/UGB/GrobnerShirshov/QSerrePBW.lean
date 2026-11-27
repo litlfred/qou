@@ -107,14 +107,14 @@ theorem pbwWord_isChain (c a : ℕ) (n : ℤ) :
     intro j; induction j with
     | zero => simp
     | succ j ih =>
-      rw [List.replicate_succ, List.isChain_cons']
+      rw [List.replicate_succ, List.isChain_cons]
       refine ⟨?_, ih⟩
       cases j <;> simp [qSerreGood, List.replicate_succ]
   have hKi : ∀ j, (List.replicate j K_inv).IsChain (fun x y => qSerreGood x y = true) := by
     intro j; induction j with
     | zero => simp
     | succ j ih =>
-      rw [List.replicate_succ, List.isChain_cons']
+      rw [List.replicate_succ, List.isChain_cons]
       refine ⟨?_, ih⟩
       cases j <;> simp [qSerreGood, List.replicate_succ]
   have hk : ∀ n, (kPow n).IsChain (fun x y => qSerreGood x y = true) := by
@@ -126,7 +126,7 @@ theorem pbwWord_isChain (c a : ℕ) (n : ℤ) :
     intro a; induction a with
     | zero => simpa using hk n
     | succ a ih =>
-      rw [List.replicate_succ, List.cons_append, List.isChain_cons']
+      rw [List.replicate_succ, List.cons_append, List.isChain_cons]
       refine ⟨?_, ih⟩
       cases a with
       | succ a => simp [qSerreGood, List.replicate_succ]
@@ -138,7 +138,7 @@ theorem pbwWord_isChain (c a : ℕ) (n : ℤ) :
   induction c with
   | zero => simpa using ha a
   | succ c ih =>
-    rw [List.replicate_succ, List.cons_append, List.cons_append, List.isChain_cons']
+    rw [List.replicate_succ, List.cons_append, List.cons_append, List.isChain_cons]
     refine ⟨?_, by simpa [List.append_assoc] using ih⟩
     intro y _
     cases y <;> rfl
@@ -150,7 +150,7 @@ theorem exists_pbwWord_of_isChain (m : Monomial SU2Gen)
   induction m with
   | nil => exact ⟨0, 0, 0, rfl⟩
   | cons x l ih =>
-    rw [List.isChain_cons'] at h
+    rw [List.isChain_cons] at h
     obtain ⟨hx, hl⟩ := h
     obtain ⟨c, a, n, rfl⟩ := ih hl
     cases x with

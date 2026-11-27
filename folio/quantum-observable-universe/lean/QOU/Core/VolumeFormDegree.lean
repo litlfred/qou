@@ -111,8 +111,7 @@ theorem choose_eq_one_iff (n k : ℕ) : n.choose k = 1 ↔ k = 0 ∨ k = n := by
           exact absurd h (by norm_num)
         -- Absorption: `(m+1) · C(m, j) = C(m+1, j+1) · (j+1)`, and the right
         -- factor `C(m+1, j+1)` is the `1` we are assuming.
-        have habs := Nat.succ_mul_choose_eq m j
-        simp only [Nat.succ_eq_add_one] at habs
+        have habs := Nat.add_one_mul_choose_eq m j
         rw [h, one_mul] at habs
         have hpos : 0 < m.choose j := Nat.choose_pos (by omega)
         have hge : m + 1 ≤ j + 1 := by

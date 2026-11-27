@@ -104,33 +104,28 @@ theorem renorm_of_natCast
 
 /-- **De-axiomatisation (bean `zkst`): the hyperreals `ℝ*` are a genuine
     `BlowupField`.** Every field is a Mathlib theorem — `ω = Hyperreal.omega`
-    is infinite (`infinitePos_omega`), `st = Hyperreal.st` is additive on the
-    finite (`¬ Infinite`) elements (`Hyperreal.st_add`), fixes real constants
-    (`st_id_real`), and kills `ε = ω⁻¹` (`infinitesimal_epsilon`). So the
+    is infinite (`coe_lt_omega`), `st = ArchimedeanClass.stdPart` is additive on
+    the finite (`0 ≤ ArchimedeanClass.mk x`) elements (`stdPart_add`), fixes
+    natural constants (`stdPart_natCast`), and kills `ε = ω⁻¹` (`stdPart_epsilon`). So the
     blow-up calculus is realisable, not merely axiomatic. -/
 noncomputable instance instBlowupFieldHyperreal : BlowupField ℝ* where
   omega := Hyperreal.omega
   omega_infinite n := by
-    have h : ((n : ℝ) : ℝ*) < Hyperreal.omega := Hyperreal.infinitePos_omega (n : ℝ)
+    have h : ((n : ℝ) : ℝ*) < Hyperreal.omega := Hyperreal.coe_lt_omega (n : ℝ)
     exact_mod_cast h
-  st := Hyperreal.st
-  IsFinite x := ¬ x.Infinite
-  st_add _ _ hx hy := Hyperreal.st_add hx hy
-  st_natCast n := by
-    have h : Hyperreal.st ((n : ℝ) : ℝ*) = (n : ℝ) := Hyperreal.st_id_real (n : ℝ)
-    exact_mod_cast h
+  st := ArchimedeanClass.stdPart
+  IsFinite x := 0 ≤ ArchimedeanClass.mk x
+  st_add _ _ hx hy := ArchimedeanClass.stdPart_add hx hy
+  st_natCast n := ArchimedeanClass.stdPart_natCast n
   natCast_isFinite n := by
-    have h : ¬ (((n : ℝ) : ℝ*)).Infinite := (Hyperreal.isSt_refl_real (n : ℝ)).not_infinite
+    have h : 0 ≤ ArchimedeanClass.mk (((n : ℝ) : ℝ*)) :=
+      Hyperreal.archimedeanClassMk_coe_nonneg (n : ℝ)
     exact_mod_cast h
   st_omega_inv := by
-    have hωε : (Hyperreal.omega)⁻¹ = Hyperreal.epsilon := by
-      rw [← Hyperreal.inv_epsilon, inv_inv]
-    rw [hωε]
-    exact Hyperreal.IsSt.st_eq Hyperreal.infinitesimal_epsilon
+    rw [Hyperreal.inv_omega]
+    exact Hyperreal.stdPart_epsilon
   omega_inv_isFinite := by
-    have hωε : (Hyperreal.omega)⁻¹ = Hyperreal.epsilon := by
-      rw [← Hyperreal.inv_epsilon, inv_inv]
-    rw [hωε]
-    exact Hyperreal.infinitesimal_epsilon.not_infinite
+    rw [Hyperreal.inv_omega]
+    exact Hyperreal.archimedeanClassMk_epsilon_pos.le
 
 end QOU.AppendixSurreals

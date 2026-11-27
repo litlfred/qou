@@ -126,7 +126,6 @@ theorem QDilogarithm.eval_unique_of_pentagon_rigid {H : Type*} [AddCommGroup H]
     have h2 := L₂.pentagon x y
     rw [← h_mul, ← h_compl, ← h_div] at h2
     have h3 := congrArg₂ (· - ·) h1 h2
-    dsimp only at h3 ⊢
     abel_nf at h3 ⊢
     exact h3
   funext z

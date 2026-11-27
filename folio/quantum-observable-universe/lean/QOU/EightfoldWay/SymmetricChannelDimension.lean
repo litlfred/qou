@@ -92,7 +92,7 @@ def weightDiagram (N n : ℕ) : Set (Fin N →₀ ℕ) := { d | d.degree = n }
 This is the manuscript table's "Content" column as a theorem: the state `uds` *is* the multiset
 `{u, d, s}`, and the exponent vector `(1,1,1)` is the same datum written additively. The
 bijection is `Finsupp.toMultiset`, and it is what lets stars and bars count the diagram. -/
-def wdEquivSym (N n : ℕ) : ↥(weightDiagram N n) ≃ Sym (Fin N) n :=
+noncomputable def wdEquivSym (N n : ℕ) : ↥(weightDiagram N n) ≃ Sym (Fin N) n :=
   Equiv.subtypeEquiv (Finsupp.orderIsoMultiset).toEquiv (by
     intro d
     show d.degree = n ↔ Multiset.card (Finsupp.toMultiset d) = n
@@ -108,7 +108,7 @@ theorem card_weightDiagram : Fintype.card ↥(weightDiagram N n) = (N + n - 1).c
 /-- `Finsupp.degree` is `Finsupp.weight 1`, in the form the homogeneity predicate uses. -/
 theorem degree_eq_weight_one' (d : Fin N →₀ ℕ) :
     d.degree = Finsupp.weight (1 : Fin N → ℕ) d :=
-  congrFun (Finsupp.degree_eq_weight_one (σ := Fin N) (R := ℕ)) d
+  DFunLike.congr_fun (Finsupp.degree_eq_weight_one (σ := Fin N) (R := ℕ)) d
 
 omit [StrongRankCondition K] in
 /-- **The degree-`n` forms are exactly the polynomials supported on the weight diagram.**
@@ -118,7 +118,7 @@ vector space: `restrictSupport` carries a canonical basis indexed by the diagram
 theorem homogeneousSubmodule_eq_restrictSupport :
     homogeneousSubmodule (Fin N) K n = restrictSupport K (weightDiagram N n) := by
   ext p
-  rw [mem_homogeneousSubmodule, restrictSupport, Finsupp.mem_supported]
+  rw [mem_homogeneousSubmodule, restrictSupport, AddMonoidAlgebra.mem_supported]
   constructor
   · intro h d hd
     show d.degree = n

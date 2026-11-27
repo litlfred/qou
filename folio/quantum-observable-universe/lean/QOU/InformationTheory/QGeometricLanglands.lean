@@ -51,8 +51,10 @@ namespace QOU.QGeometricLanglands
      `QLocalSystem.{u_1, u_4} ≠ QLocalSystem.{u_1, u_2}` mismatches.
      We pin the universes once and tie every use site explicitly:
      `u` = base type `M`, `v` = local-system fibres, `w` = quantum
-     gauge group carrier, `x` = Langlands-dual group carrier. -/
-universe u v w x
+     gauge group carrier, `x` = Langlands-dual group carrier, `y` = carrier
+     of the q-Hecke algebra (pinned 2026-11-25: Lean 4.35 no longer
+     generalises a universe metavariable in a structure field). -/
+universe u v w x y
 
 /-! ## §1  q-Local Systems -/
 
@@ -144,7 +146,7 @@ structure QHeckeOperator (M : Type u) where
   /-- The substrate parameter. -/
   sp : ArchimedeanSubstrateField M
   /-- The Hecke algebra governing the operators. -/
-  hecke : QOU.PathIntegrals.HeckeAlgebra
+  hecke : QOU.PathIntegrals.HeckeAlgebra.{y}
   /-- Consistency: the Hecke parameter matches the substrate at
       a distinguished base point. -/
   basePoint : M
@@ -167,7 +169,7 @@ structure QHeckeOperator (M : Type u) where
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
 structure QHeckeEigensheaf (M : Type u) where
   /-- The q-Hecke operator data. -/
-  heckeOp : QHeckeOperator M
+  heckeOp : QHeckeOperator.{u, y} M
   /-- The eigenvalue q-local system. -/
   eigenvalue : QLocalSystem.{u, v} M
   /-- Tensor compatibility (encoded as the consistency condition on
@@ -284,7 +286,7 @@ class FibreFunctorRigidity (M : Type u) where
           `rem:fibre-functor-rigidity` -/
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
 theorem q_hecke_eigenvalue {M : Type u} [inst : FibreFunctorRigidity.{u, v} M]
-    (es : QHeckeEigensheaf.{u, v} M) (es' : QHeckeEigensheaf.{u, v} M)
+    (es : QHeckeEigensheaf.{u, v, y} M) (es' : QHeckeEigensheaf.{u, v, y} M)
     (_h_op : es.heckeOp = es'.heckeOp)
     (h_sp : es.eigenvalue.sp = es'.eigenvalue.sp)
     (h_res : ∀ p, es.eigenvalue.holonomyResidue p =
@@ -424,18 +426,18 @@ theorem q_gl_kummer_filtration_arithmetic (χ : ℤ) (hχ : χ ≠ 0) :
 -- Ref: [aganagic2018] Aganagic, Frenkel, Okounkov, "Quantum q-Langlands Correspondence," arXiv:1701.03146
 class QGeometricLanglandsConjecture (M : Type u) where
   /-- The Langlands functor: eigensheaves ↦ local systems. -/
-  langlandsFunctor : QHeckeEigensheaf.{u, v} M → QLocalSystem.{u, v} M
+  langlandsFunctor : QHeckeEigensheaf.{u, v, y} M → QLocalSystem.{u, v} M
   /-- Hecke compatibility: the functor intertwines Hecke operators
       with the local system action. -/
-  hecke_compatible : ∀ (es : QHeckeEigensheaf M),
+  hecke_compatible : ∀ (es : QHeckeEigensheaf.{u, v, y} M),
     (langlandsFunctor es).sp = es.heckeOp.sp
   /-- The functor recovers the eigenvalue local system. -/
-  recovers_eigenvalue : ∀ (es : QHeckeEigensheaf M),
+  recovers_eigenvalue : ∀ (es : QHeckeEigensheaf.{u, v, y} M),
     langlandsFunctor es = es.eigenvalue
   /-- Injectivity on q-opers: distinct q-opers produce distinct
       eigensheaves. -/
   oper_injective : ∀ (_op _op' : QOper.{u, w, x} M)
-    (es es' : QHeckeEigensheaf.{u, v} M),
+    (es es' : QHeckeEigensheaf.{u, v, y} M),
     langlandsFunctor es = langlandsFunctor es' →
     es.eigenvalue = es'.eigenvalue
 
@@ -458,8 +460,8 @@ class QGeometricLanglandsConjecture (M : Type u) where
 -- §"Conditional lemmas wear their hypothesis in the name"); the statement is
 -- unchanged.
 theorem q_gl_fiber_functor_of_conjecture {M : Type u}
-    [QGeometricLanglandsConjecture.{u, v, w, x} M] [FibreFunctorRigidity.{u, v} M]
-    (es : QHeckeEigensheaf.{u, v} M) :
+    [QGeometricLanglandsConjecture.{u, v, w, x, y} M] [FibreFunctorRigidity.{u, v} M]
+    (es : QHeckeEigensheaf.{u, v, y} M) :
     QGeometricLanglandsConjecture.langlandsFunctor es = es.eigenvalue :=
   QGeometricLanglandsConjecture.recovers_eigenvalue es
 
@@ -477,8 +479,8 @@ theorem q_gl_fiber_functor_of_conjecture {M : Type u}
 -- unchanged; the name now carries the `[QGeometricLanglandsConjecture]`
 -- hypothesis.
 theorem q_oper_hecke_of_conjecture {M : Type u}
-    [QGeometricLanglandsConjecture.{u, v, w, x} M]
-    (op op' : QOper.{u, w, x} M) (es es' : QHeckeEigensheaf.{u, v} M)
+    [QGeometricLanglandsConjecture.{u, v, w, x, y} M]
+    (op op' : QOper.{u, w, x} M) (es es' : QHeckeEigensheaf.{u, v, y} M)
     (h : QGeometricLanglandsConjecture.langlandsFunctor es =
          QGeometricLanglandsConjecture.langlandsFunctor es') :
     es.eigenvalue = es'.eigenvalue :=

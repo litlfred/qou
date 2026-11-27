@@ -4,7 +4,7 @@
 --
 -- Canonical declaration lives in: lean/QOU/LiftingDescent.lean
 -- This sibling is a documentation-mirror of the QOU library declaration.
-import Mathlib.Logic.Basic
+import Mathlib.Basic.Logic.Basic
 
 namespace QOU.LiftingDescent
 

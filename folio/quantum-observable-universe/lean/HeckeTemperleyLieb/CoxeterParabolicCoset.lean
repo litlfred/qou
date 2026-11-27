@@ -142,7 +142,7 @@ theorem isReduced_of_isReduced_concat {p : List B} {c : B}
     (h : cs.IsReduced (p ++ [c])) : cs.IsReduced p := by
   have h1 : ℓ (π (p ++ [c])) = p.length + 1 := by
     have := h
-    unfold IsReduced at this
+    unfold CoxeterSystem.IsReduced at this
     simpa using this
   have h2 : π (p ++ [c]) = π p * σ c := by
     rw [wordProd_append]
@@ -153,7 +153,7 @@ theorem isReduced_of_isReduced_concat {p : List B} {c : B}
     _ ≤ ℓ (π p) + ℓ (σ c) := cs.length_mul_le _ _
     _ = ℓ (π p) + 1 := by rw [cs.length_simple]
   have hle : ℓ (π p) ≤ p.length := cs.length_wordProd_le p
-  unfold IsReduced
+  unfold CoxeterSystem.IsReduced
   omega
 
 /-- **THE LIFTING LEMMA** (Bourbaki Lie IV §1 / BB Prop 2.4.4, core form),
@@ -185,11 +185,12 @@ theorem length_minRep_mul_wordProd (hexch : RightExchangeProp cs)
       omega
     · -- descent at the last letter: derive False
       exfalso
-      obtain ⟨ωu, hωlen, hωeq⟩ := cs.exists_reduced_word u
+      obtain ⟨ωu, hωred, hωeq⟩ := cs.exists_isReduced u
+      have hωlen : ωu.length = ℓ u := by rw [hωeq]; exact hωred.symm
       have hπcat : π (ωu ++ p') = u * π p' := by
         rw [wordProd_append, ← hωeq]
       have hcat_red : cs.IsReduced (ωu ++ p') := by
-        unfold IsReduced
+        unfold CoxeterSystem.IsReduced
         rw [hπcat, IH]
         simp
         omega
@@ -233,7 +234,7 @@ theorem length_minRep_mul_wordProd (hexch : RightExchangeProp cs)
         have hLlen : ℓ (π p' * σ c) = p'.length + 1 := by
           rw [← hsplit]
           have h6 := hred
-          unfold IsReduced at h6
+          unfold CoxeterSystem.IsReduced at h6
           simpa using h6
         have hRlen : ℓ (π (p'.eraseIdx (r - ωu.length))) ≤ p'.length :=
           (cs.length_wordProd_le _).trans

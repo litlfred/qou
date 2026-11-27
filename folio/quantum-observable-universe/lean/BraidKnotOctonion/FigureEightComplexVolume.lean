@@ -164,7 +164,7 @@ noncomputable instance : QOU.Knot.NeumannZagierParity.NeumannZagierEvenPotential
     coefficient vanishes. -/
 theorem nzPoly₄₁_no_u3 : nzPoly₄₁.coeff 3 = 0 := by
   have h := QOU.Knot.NeumannZagierParity.no_cubic_rung ℝ
-  simpa using h
+  exact h
 
 /-! ## T2 sign-flip invariant — the concrete `V₄₁` sharpens the open `u(q₀)`
 

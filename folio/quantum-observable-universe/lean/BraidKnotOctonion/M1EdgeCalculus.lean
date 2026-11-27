@@ -372,7 +372,8 @@ theorem diagLen_area_bound (a : ℕ) :
   have h3 : ∑ c ∈ Finset.range (a + diagLen μ a), diagLen μ c
       = (∑ c ∈ Finset.range a, diagLen μ c)
         + ∑ c ∈ Finset.Ico a (a + diagLen μ a), diagLen μ c := by
-    rw [← hsplit, Finset.range_eq_Ico]
+    rw [Finset.range_eq_Ico (a + diagLen μ a)]
+    exact hsplit.symm
   omega
 
 /-- The diagonals are disjoint and sit inside the diagram, so any initial run of
@@ -740,7 +741,7 @@ theorem card_eq_sum_diagLen_add {T T' : ℕ} (hT : μ.rowLen 0 ≤ T) (hT' : μ.
       + ∑ r ∈ Finset.Ico 1 T', diagLen μ.transpose r := by
   classical
   rw [sum_diagLen_eq_card_upper μ hT, sum_diagLen_eq_card_lower μ hT']
-  exact (Finset.filter_card_add_filter_neg_card_eq_card (s := μ.cells) _).symm
+  exact (Finset.card_filter_add_card_filter_not (s := μ.cells) _).symm
 
 /-- The symmetric form: sweeping both ways double-counts the main diagonal. -/
 theorem sum_diagLen_add_transpose {T T' : ℕ} (hT : μ.rowLen 0 ≤ T) (hT' : μ.colLen 0 < T') :
@@ -859,9 +860,9 @@ theorem sum_cells_transpose {M : Type*} [AddCommMonoid M] (f : ℕ → ℕ → M
   refine Finset.sum_nbij' (fun p => (p.2, p.1)) (fun q => (q.2, q.1)) ?_ ?_
     (fun _ _ => rfl) (fun _ _ => rfl) (fun _ _ => rfl)
   · rintro ⟨i, j⟩ hp
-    simpa only [YoungDiagram.mem_cells, YoungDiagram.mem_transpose] using hp
+    simpa only [YoungDiagram.mem_cells, YoungDiagram.mem_transpose, Prod.swap_prod_mk] using hp
   · rintro ⟨i, j⟩ hq
-    simpa only [YoungDiagram.mem_cells, YoungDiagram.mem_transpose] using hq
+    simpa only [YoungDiagram.mem_cells, YoungDiagram.mem_transpose, Prod.swap_prod_mk] using hq
 
 /-- Columns past `λ₁` are empty. -/
 theorem colLen_eq_zero_of_le {j : ℕ} (h : μ.rowLen 0 ≤ j) : μ.colLen j = 0 := by

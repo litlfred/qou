@@ -106,7 +106,7 @@ def signSum (w : List (Letter ι)) (c : ι) : ℤ :=
     signSum (A ++ B) c = signSum A c + signSum B c := by
   induction A with
   | nil => simp [signSum]
-  | cons a t ih => simp [signSum] at ih ⊢; rw [ih]; ring
+  | cons a t ih => simp [signSum, add_assoc]
 
 /-- Signed sum of a block containing no `c`-letters is zero. -/
 theorem signSum_eq_zero_of_absent {w : List (Letter ι)} {c : ι}

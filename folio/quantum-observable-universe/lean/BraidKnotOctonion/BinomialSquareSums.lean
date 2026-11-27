@@ -92,7 +92,7 @@ theorem two_mul_sum_mul_choose_sq (m : ℕ) :
 `k`-weighted binomial into an unweighted one at one lower order. -/
 theorem succ_mul_choose_succ (m k : ℕ) :
     (k + 1) * ((m + 1).choose (k + 1)) = (m + 1) * (m.choose k) := by
-  rw [Nat.mul_comm (k + 1) ((m + 1).choose (k + 1)), ← Nat.succ_mul_choose_eq]
+  rw [Nat.mul_comm (k + 1) ((m + 1).choose (k + 1)), ← Nat.add_one_mul_choose_eq]
 
 /-- **Second moment**: `Σ_{k ≤ m+1} k²·C(m+1, k)² = (m+1)²·C(2m, m)`. The `k = 0` term vanishes;
 absorption turns each remaining term into `(m+1)²·C(m, k−1)²`, and the zeroth moment finishes. -/

@@ -66,7 +66,7 @@ theorem exists_separated_representation (P : MvPolynomial (σ ⊕ τ) R) :
       P = ∑ n ∈ s, (rename Sum.inl (φ n) : MvPolynomial (σ ⊕ τ) R) * rename Sum.inr (ψ n) := by
   classical
   refine ⟨P.support,
-    fun n => monomial (Finsupp.sumFinsuppEquivProdFinsupp n).1 (coeff n P),
+    fun n => monomial (Finsupp.sumFinsuppEquivProdFinsupp n).1 (P.coeff n),
     fun n => monomial (Finsupp.sumFinsuppEquivProdFinsupp n).2 (1 : R), ?_⟩
   conv_lhs => rw [as_sum P]
   refine Finset.sum_congr rfl fun n _ => ?_
@@ -87,13 +87,13 @@ theorem exists_separated_representation_monomial (P : MvPolynomial (σ ⊕ τ) R
   classical
   refine ⟨P.support.image (fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).1),
     fun i => ∑ n ∈ P.support.filter (fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).1 = i),
-      monomial (Finsupp.sumFinsuppEquivProdFinsupp n).2 (coeff n P), ?_⟩
+      monomial (Finsupp.sumFinsuppEquivProdFinsupp n).2 (P.coeff n), ?_⟩
   conv_lhs => rw [as_sum P]
   rw [← Finset.sum_fiberwise_of_maps_to
     (g := fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).1)
     (t := P.support.image (fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).1))
     (fun n hn => Finset.mem_image_of_mem _ hn)
-    (fun n => monomial n (coeff n P))]
+    (fun n => monomial n (P.coeff n))]
   refine Finset.sum_congr rfl fun i _ => ?_
   dsimp only
   rw [map_sum, Finset.mul_sum]
@@ -175,7 +175,7 @@ theorem exists_separated_representation_monomial_right [DecidableEq τ]
   classical
   refine ⟨fun j =>
     ∑ n ∈ P.support.filter (fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).2 = j),
-      monomial (Finsupp.sumFinsuppEquivProdFinsupp n).1 (coeff n P), ?_, ?_⟩
+      monomial (Finsupp.sumFinsuppEquivProdFinsupp n).1 (P.coeff n), ?_, ?_⟩
   · intro j x
     refine le_trans (degreeOf_sum_le x _ _) (Finset.sup_le fun n hn => ?_)
     refine le_trans (degreeOf_monomial_le _ _ _) ?_
@@ -186,7 +186,7 @@ theorem exists_separated_representation_monomial_right [DecidableEq τ]
     (g := fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).2)
     (t := P.support.image (fun n => (Finsupp.sumFinsuppEquivProdFinsupp n).2))
     (fun n hn => Finset.mem_image_of_mem _ hn)
-    (fun n => monomial n (coeff n P))]
+    (fun n => monomial n (P.coeff n))]
   refine Finset.sum_congr rfl fun j _ => ?_
   dsimp only
   rw [map_sum, Finset.sum_mul]
@@ -279,18 +279,18 @@ theorem degreeOf_factor_le_of_indep [DecidableEq σ] {r : ℕ}
   classical
   rw [degreeOf_eq_sup j (φ k)]
   refine Finset.sup_le fun i hi => ?_
-  have hck : coeff i (φ k) ≠ 0 := mem_support_iff.mp hi
-  have hcne : (∑ l, coeff i (φ l) • ψ l) ≠ 0 := fun hz =>
-    hck (Fintype.linearIndependent_iff.mp hψ (fun l => coeff i (φ l)) hz k)
-  obtain ⟨j', hj'⟩ : ∃ j', coeff j' (∑ l, coeff i (φ l) • ψ l) ≠ 0 := by
+  have hck : (φ k).coeff i ≠ 0 := mem_support_iff.mp hi
+  have hcne : (∑ l, (φ l).coeff i • ψ l) ≠ 0 := fun hz =>
+    hck (Fintype.linearIndependent_iff.mp hψ (fun l => (φ l).coeff i) hz k)
+  obtain ⟨j', hj'⟩ : ∃ j', (∑ l, (φ l).coeff i • ψ l).coeff j' ≠ 0 := by
     by_contra hcon
     push_neg at hcon
     exact hcne (by ext j'; simpa using hcon j')
-  have hsplit : coeff j' (∑ l, coeff i (φ l) • ψ l)
-      = ∑ l, coeff i (φ l) * coeff j' (ψ l) := by
+  have hsplit : (∑ l, (φ l).coeff i • ψ l).coeff j'
+      = ∑ l, (φ l).coeff i * (ψ l).coeff j' := by
     rw [coeff_sum]
     exact Finset.sum_congr rfl fun l _ => by rw [coeff_smul, smul_eq_mul]
-  have hPcoeff : coeff (Finsupp.sumElim i j') P ≠ 0 := by
+  have hPcoeff : P.coeff (Finsupp.sumElim i j') ≠ 0 := by
     rw [hP, coeff_sum,
       Finset.sum_congr rfl (fun l (_ : l ∈ Finset.univ) =>
         coeff_sumElim_rename_mul (φ l) (ψ l) i j'), ← hsplit]

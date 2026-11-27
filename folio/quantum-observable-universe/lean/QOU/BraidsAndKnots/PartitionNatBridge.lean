@@ -1,5 +1,5 @@
 import QOU.BraidsAndKnots.DeltaLambdaSignRule
-import Mathlib.Combinatorics.Enumerative.Partition
+import Mathlib.Combinatorics.Enumerative.Partition.Basic
 
 /-!
 # QOU.BraidKnot.PartitionNatBridge — custom `Partition n` ≃ `Nat.Partition n`
@@ -56,7 +56,7 @@ noncomputable def partitionEquivNatPartition (n : ℕ) :
       pos := fun q hq => p.parts_pos (by rwa [Multiset.mem_sort] at hq)
       sum_eq := by
         rw [← Multiset.sum_coe, Multiset.sort_eq]; exact p.parts_sum
-      sorted := Multiset.sort_sorted (· ≥ ·) p.parts }
+      sorted := Multiset.pairwise_sort p.parts (· ≥ ·) }
   left_inv Λ := by
     apply Partition.ext
     show ((Λ.parts : Multiset ℕ)).sort (· ≥ ·) = Λ.parts

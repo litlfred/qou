@@ -1,6 +1,8 @@
 import QOU.BraidsAndKnots.WeakVertexCouplingNormalisation
 import Mathlib.Analysis.Calculus.Deriv.Add
 import Mathlib.Analysis.Calculus.Deriv.Pow
+import Mathlib.Analysis.Calculus.Deriv.Mul
+import Mathlib.Analysis.Calculus.Deriv.Inv
 
 /-!
 # Archimedean half of the coupling-normalisation result
@@ -38,10 +40,10 @@ theorem hasDerivAt_sSq_one : HasDerivAt (fun x : ℝ => sSq x) 0 1 := by
     have hx : HasDerivAt (fun x : ℝ => (x - 1) ^ 2) 0 1 := by
       have : HasDerivAt (fun x : ℝ => x - 1) 1 1 :=
         (hasDerivAt_id (1 : ℝ)).sub_const 1
-      simpa using this.pow 2
+      simpa using this.fun_pow 2
     have hinv : HasDerivAt (fun x : ℝ => x⁻¹) (-1) 1 := by
       simpa using hasDerivAt_inv (one_ne_zero : (1 : ℝ) ≠ 0)
-    have := hx.mul hinv
+    have := hx.fun_mul hinv
     simpa [div_eq_mul_inv] using this
   simpa [sSq, div_eq_mul_inv] using h
 
@@ -51,18 +53,18 @@ theorem hasDerivAt_weakVertexTrace_one :
     HasDerivAt (fun x : ℝ => weakVertexTrace x) 5 1 := by
   have hnum : HasDerivAt (fun x : ℝ => x ^ 14 + x ^ 10 - x ^ 2) 22 1 := by
     have h14 : HasDerivAt (fun x : ℝ => x ^ 14) 14 1 := by
-      simpa using (hasDerivAt_id (1 : ℝ)).pow 14
+      simpa using (hasDerivAt_id (1 : ℝ)).fun_pow 14
     have h10 : HasDerivAt (fun x : ℝ => x ^ 10) 10 1 := by
-      simpa using (hasDerivAt_id (1 : ℝ)).pow 10
+      simpa using (hasDerivAt_id (1 : ℝ)).fun_pow 10
     have h2 : HasDerivAt (fun x : ℝ => x ^ 2) 2 1 := by
-      simpa using (hasDerivAt_id (1 : ℝ)).pow 2
+      simpa using (hasDerivAt_id (1 : ℝ)).fun_pow 2
     convert (h14.add h10).sub h2 using 1
     norm_num
   have hden : HasDerivAt (fun x : ℝ => ((x ^ 2 + 1) ^ 2)⁻¹) (-1 / 2) 1 := by
     have hd : HasDerivAt (fun x : ℝ => (x ^ 2 + 1) ^ 2) 8 1 := by
       have h2 : HasDerivAt (fun x : ℝ => x ^ 2 + 1) 2 1 := by
-        simpa using ((hasDerivAt_id (1 : ℝ)).pow 2).add_const 1
-      convert h2.pow 2 using 1
+        simpa using ((hasDerivAt_id (1 : ℝ)).fun_pow 2).add_const 1
+      convert h2.fun_pow 2 using 1
       norm_num
     have hne : ((1 : ℝ) ^ 2 + 1) ^ 2 ≠ 0 := by norm_num
     have := hd.inv hne
@@ -75,7 +77,7 @@ theorem hasDerivAt_weakVertexTrace_one :
     rw [div_eq_mul_inv]
     ring_nf
   rw [hW]
-  have := hnum.mul hden
+  have := hnum.fun_mul hden
   convert this using 1
   norm_num
 

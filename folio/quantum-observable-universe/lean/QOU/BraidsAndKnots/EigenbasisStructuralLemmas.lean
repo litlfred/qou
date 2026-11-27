@@ -162,21 +162,21 @@ homogeneous** when every exponent in its support has parity `ε` (the zero
 polynomial vacuously, for every `ε`).  This is the literal "all exponents
 ≡ ε (mod 2)" content behind the `q ↦ −q` symmetry of `character_qneg_parity`. -/
 def ParityHom (ε : ZMod 2) (p : AddMonoidAlgebra ℝ ℤ) : Prop :=
-  ∀ k ∈ p.support, (k : ZMod 2) = ε
+  ∀ k ∈ p.coeff.support, (k : ZMod 2) = ε
 
 /-- Parity adds under multiplication of Laurent polynomials (the exponent of a
 product term is the sum of the factor exponents). -/
 theorem ParityHom.mul {a b : ZMod 2} {p r : AddMonoidAlgebra ℝ ℤ}
     (hp : ParityHom a p) (hr : ParityHom b r) : ParityHom (a + b) (p * r) := by
   intro k hk
-  obtain ⟨i, hi, j, hj, rfl⟩ := Finset.mem_add.mp (AddMonoidAlgebra.support_mul p r hk)
+  obtain ⟨i, hi, j, hj, rfl⟩ := Finset.mem_add.mp (AddMonoidAlgebra.support_coeff_mul_subset p r hk)
   push_cast
   rw [hp i hi, hr j hj]
 
 /-- The constant `1` is parity-`0` (its only exponent is `0`). -/
 theorem ParityHom.one : ParityHom 0 (1 : AddMonoidAlgebra ℝ ℤ) := by
   intro k hk
-  have hk0 : k ∈ ({0} : Finset ℤ) := AddMonoidAlgebra.support_one_subset hk
+  have hk0 : k ∈ ({0} : Finset ℤ) := AddMonoidAlgebra.support_coeff_one_subset hk
   rw [Finset.mem_singleton] at hk0
   subst hk0; rfl
 
@@ -188,7 +188,7 @@ theorem ParityHom.zero {ε : ZMod 2} : ParityHom ε (0 : AddMonoidAlgebra ℝ �
 theorem ParityHom.add {ε : ZMod 2} {p r : AddMonoidAlgebra ℝ ℤ}
     (hp : ParityHom ε p) (hr : ParityHom ε r) : ParityHom ε (p + r) := by
   intro k hk
-  rcases Finset.mem_union.mp (Finsupp.support_add hk) with h | h
+  rcases Finset.mem_union.mp (Finsupp.support_add (by simpa only [AddMonoidAlgebra.coeff_add] using hk)) with h | h
   · exact hp k h
   · exact hr k h
 

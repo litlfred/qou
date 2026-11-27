@@ -148,19 +148,22 @@ theorem e_sq (i : B) :
     e R δ Adj i * e R δ Adj i
       = algebraMap R (TemperleyLiebAlgebra R δ Adj) δ * e R δ Adj i := by
   have h := RingQuot.mkAlgHom_rel R (Rel.sq (R := R) (δ := δ) (Adj := Adj) i)
-  simpa [e, map_mul, AlgHom.commutes] using h
+  simp only [map_mul, AlgHom.commutes] at h
+  exact h
 
 /-- **The adjacency relation holds.** `e_i e_j e_i = e_i` for adjacent `i, j`. -/
 theorem e_adjacent {i j : B} (h : Adj i j) :
     e R δ Adj i * e R δ Adj j * e R δ Adj i = e R δ Adj i := by
   have h' := RingQuot.mkAlgHom_rel R (Rel.adjacent (R := R) (δ := δ) i j h)
-  simpa [e, map_mul] using h'
+  simp only [map_mul] at h'
+  exact h'
 
 /-- **Non-adjacent generators commute.** -/
 theorem e_farCommute {i j : B} (h : ¬ Adj i j) :
     e R δ Adj i * e R δ Adj j = e R δ Adj j * e R δ Adj i := by
   have h' := RingQuot.mkAlgHom_rel R (Rel.farCommute (R := R) (δ := δ) i j h)
-  simpa [e, map_mul] using h'
+  simp only [map_mul] at h'
+  exact h'
 
 /-- The commutation relation in the `Commute` form Mathlib's API expects. -/
 theorem commute_e {i j : B} (h : ¬ Adj i j) :
@@ -241,7 +244,7 @@ theorem hom_ext {A : Type w} [Ring A] [Algebra R A]
       = ψ.comp (RingQuot.mkAlgHom R (Rel R δ Adj)) := by
     apply FreeAlgebra.hom_ext
     funext i
-    simpa [e] using h i
+    exact h i
   apply AlgHom.ext
   intro x
   obtain ⟨y, rfl⟩ := RingQuot.mkAlgHom_surjective R (Rel R δ Adj) x

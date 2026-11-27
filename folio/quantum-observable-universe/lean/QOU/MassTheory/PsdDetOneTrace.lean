@@ -47,6 +47,7 @@ and the trace bound needs an order. This is an archimedean statement and lives
 on the archimedean side of the wall.
 -/
 import Mathlib.LinearAlgebra.Matrix.PosDef
+import Mathlib.Analysis.Matrix.PosDef
 import Mathlib.Data.Real.StarOrdered
 import Mathlib.Tactic
 
@@ -58,7 +59,7 @@ variable {M : Matrix (Fin 2) (Fin 2) ℝ}
 
 /-- The diagonal entries of a real PSD matrix are non-negative. -/
 theorem diag_nonneg (h : M.PosSemidef) (i : Fin 2) : 0 ≤ M i i := by
-  simpa using h.2 (Pi.single i 1)
+  exact h.diag_nonneg
 
 /-- A real PSD `2×2` matrix is symmetric in the off-diagonal entries. -/
 theorem offdiag_symm (h : M.PosSemidef) : M 0 1 = M 1 0 := by
@@ -154,7 +155,7 @@ theorem card_le_trace_of_det_one {d : ℕ} {A : Matrix (Fin d) (Fin d) ℝ}
     have ht := h1.trace_eq_sum_eigenvalues
     exact_mod_cast ht
   have hlog : ∑ i, Real.log (h1.eigenvalues i) = 0 := by
-    rw [← Real.log_prod _ _ (fun i _ => (hpos i).ne'), hprod, Real.log_one]
+    rw [← Real.log_prod (fun i _ => (hpos i).ne'), hprod, Real.log_one]
   have hstep : ∀ i ∈ Finset.univ,
       Real.log (h1.eigenvalues i) ≤ h1.eigenvalues i - 1 :=
     fun i _ => Real.log_le_sub_one_of_pos (hpos i)

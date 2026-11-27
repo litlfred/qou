@@ -20,7 +20,7 @@ Companion probes:
 Beans `qou-rwhv`, `qou-1pig`, `qou-vudb`, `qou-dhsn`, `qou-nial`.
 -/
 import Mathlib.Algebra.Ring.Defs
-import Mathlib.Algebra.Order.Field.Defs
+import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Linarith

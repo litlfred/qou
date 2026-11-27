@@ -52,7 +52,7 @@ variable {R : Type*} [CommRing R]
 
 /-- Coefficients correspond along `n ↦ Finsupp.single () n`. -/
 theorem coeff_pUnitAlgEquiv (Q : MvPolynomial Unit R) (n : ℕ) :
-    (pUnitAlgEquiv R Q).coeff n = MvPolynomial.coeff (Finsupp.single () n) Q := by
+    (pUnitAlgEquiv R Q).coeff n = Q.coeff (Finsupp.single () n) := by
   classical
   induction Q using MvPolynomial.induction_on' with
   | monomial s r =>

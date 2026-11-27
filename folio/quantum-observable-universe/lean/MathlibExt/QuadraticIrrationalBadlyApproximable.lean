@@ -1,6 +1,8 @@
-import Mathlib.RingTheory.Real.Irrational
+import Mathlib.NumberTheory.Real.Irrational
 import Mathlib.Algebra.Order.Round
 import Mathlib.Algebra.Order.Group.Abs
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # Quadratic surds are badly approximable — a Mathlib-gap lemma

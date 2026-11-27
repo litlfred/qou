@@ -81,17 +81,17 @@ theorem rowInsert_length (r : List ℕ) (x : ℕ) :
 /-- **The inserted row stays weakly increasing.**  This is the structural invariant that keeps the
 RSK insertion tableau well-formed: bumping the leftmost entry `> x` by the smaller `x` preserves
 sortedness, and appending `x` past a row all `≤ x` does too. -/
-theorem rowInsert_sorted {r : List ℕ} (h : r.Sorted (· ≤ ·)) (x : ℕ) :
-    (rowInsert r x).1.Sorted (· ≤ ·) := by
+theorem rowInsert_sorted {r : List ℕ} (h : r.Pairwise (· ≤ ·)) (x : ℕ) :
+    (rowInsert r x).1.Pairwise (· ≤ ·) := by
   induction r with
   | nil => simp [rowInsert]
   | cons a r ih =>
-    rw [List.sorted_cons] at h
+    rw [List.pairwise_cons] at h
     rw [rowInsert_cons]
     by_cases hx : x < a
-    · rw [if_pos hx, List.sorted_cons]
+    · rw [if_pos hx, List.pairwise_cons]
       exact ⟨fun b hb => le_of_lt (lt_of_lt_of_le hx (h.1 b hb)), h.2⟩
-    · rw [if_neg hx, List.sorted_cons]
+    · rw [if_neg hx, List.pairwise_cons]
       refine ⟨fun b hb => ?_, ih h.2⟩
       rcases mem_rowInsert hb with hbr | hbx
       · exact h.1 b hbr
@@ -114,7 +114,7 @@ tableau. -/
 def insertWord (w : List ℕ) : List (List ℕ) := w.foldl insert []
 
 /-- Every row of a tableau is weakly increasing. -/
-def RowsSorted (T : List (List ℕ)) : Prop := ∀ row ∈ T, row.Sorted (· ≤ ·)
+def RowsSorted (T : List (List ℕ)) : Prop := ∀ row ∈ T, row.Pairwise (· ≤ ·)
 
 @[simp] theorem rowsSorted_nil : RowsSorted [] := by intro _ h; simp at h
 
@@ -127,11 +127,11 @@ theorem insert_rowsSorted : ∀ {T : List (List ℕ)}, RowsSorted T → ∀ x, R
       intro row hrow
       rw [insert] at hrow
       rw [List.mem_singleton] at hrow
-      exact hrow ▸ List.sorted_singleton x
+      exact hrow ▸ List.pairwise_singleton _ x
   | row :: rest, h, x => by
-      have hrow : row.Sorted (· ≤ ·) := h row List.mem_cons_self
+      have hrow : row.Pairwise (· ≤ ·) := h row List.mem_cons_self
       have hrest : RowsSorted rest := fun r hr => h r (List.mem_cons_of_mem _ hr)
-      have hrow' : (rowInsert row x).1.Sorted (· ≤ ·) := rowInsert_sorted hrow x
+      have hrow' : (rowInsert row x).1.Pairwise (· ≤ ·) := rowInsert_sorted hrow x
       rw [insert]
       cases hb : (rowInsert row x).2 with
       | none =>
@@ -219,7 +219,7 @@ theorem insertWord_totalCells (w : List ℕ) : totalCells (insertWord w) = w.len
       intro T
       rw [List.foldl_cons, ih (insert T a), insert_totalCells]
       simp only [List.length_cons]; omega
-  simpa using key w []
+  simpa [insertWord] using key w []
 
 /-! ## Brick 4 — content preservation: `P(w)` holds exactly the multiset of `w`'s letters -/
 
@@ -287,7 +287,7 @@ theorem insertWord_content (w : List ℕ) : content (insertWord w) = (↑w : Mul
       intro T
       rw [List.foldl_cons, ih (insert T a), insert_content]
       simp only [← Multiset.cons_coe, ← Multiset.singleton_add]; abel
-  simpa using key w []
+  simpa [insertWord] using key w []
 
 /-! ## Brick 5 — bumping monotonicity (toward column-strictness)
 
@@ -382,10 +382,10 @@ theorem rowInsert_bump_eq_set {r : List ℕ} {x y : ℕ}
     by_cases hx : x < a
     · rw [if_pos hx] at h ⊢
       have hd : decide (x < a) = true := by simp [hx]
-      rw [List.findIdx_cons, hd, cond_true, List.set_cons_zero]
+      rw [List.findIdx_cons, hd, if_pos rfl, List.set_cons_zero]
     · rw [if_neg hx] at h ⊢
       have hd : decide (x < a) = false := by simp [hx]
-      rw [List.findIdx_cons, hd, cond_false, List.set_cons_succ, ih h]
+      rw [List.findIdx_cons, hd, if_neg Bool.false_ne_true, List.set_cons_succ, ih h]
 
 /-- **The bump position is valid** (`< row length`): there is an entry `> x`
 (the bumped one, `∈ r` and `> x`), so `findIdx` lands inside the row. -/
@@ -408,10 +408,10 @@ theorem rowInsert_bump_getElem? {r : List ℕ} {x y : ℕ}
     · rw [if_pos hx] at h
       simp only [Option.some.injEq] at h
       have hd : decide (x < a) = true := by simp [hx]
-      rw [List.findIdx_cons, hd, cond_true, List.getElem?_cons_zero, h]
+      rw [List.findIdx_cons, hd, if_pos rfl, List.getElem?_cons_zero, h]
     · rw [if_neg hx] at h
       have hd : decide (x < a) = false := by simp [hx]
-      rw [List.findIdx_cons, hd, cond_false, List.getElem?_cons_succ]
+      rw [List.findIdx_cons, hd, if_neg Bool.false_ne_true, List.getElem?_cons_succ]
       exact ih h
 
 /-! ### Bump-column monotonicity (the bumping-lemma heart)
@@ -434,7 +434,7 @@ theorem findIdx_le_of_getElem {α : Type*} (p : α → Bool) (l : List α) :
     by_cases hpa : p a = true
     · rw [hpa]; simp
     · rw [Bool.not_eq_true] at hpa
-      rw [hpa, cond_false]
+      rw [hpa, if_neg Bool.false_ne_true]
       cases c with
       | zero => simp only [List.getElem_cons_zero] at hp; rw [hp] at hpa; simp at hpa
       | succ c =>
@@ -454,8 +454,8 @@ theorem getD_le_of_lt_findIdx (x : ℕ) (l : List ℕ) (j : ℕ)
   | cons a l ih =>
     rw [List.findIdx_cons] at hj
     by_cases hx : x < a
-    · rw [show decide (x < a) = true from by simp [hx], cond_true] at hj; omega
-    · rw [show decide (x < a) = false from by simp [hx], cond_false] at hj
+    · rw [show decide (x < a) = true from by simp [hx], if_pos rfl] at hj; omega
+    · rw [show decide (x < a) = false from by simp [hx], if_neg Bool.false_ne_true] at hj
       cases j with
       | zero => simpa using le_of_not_gt hx
       | succ j => rw [List.getD_cons_succ]; exact ih j (by omega)
@@ -888,7 +888,7 @@ def tableauAllLt (Q : List (List ℕ)) (s : ℕ) : Prop :=
   ∀ row ∈ Q, ∀ e ∈ row, e < s
 
 /-- Every row of `Q` strictly increases (left to right). -/
-def RowsStrict (Q : List (List ℕ)) : Prop := ∀ row ∈ Q, row.Sorted (· < ·)
+def RowsStrict (Q : List (List ℕ)) : Prop := ∀ row ∈ Q, row.Pairwise (· < ·)
 
 /-- The Q-component of a no-bump `insertRec` appends the step index to the head
     Q-row. -/
@@ -950,12 +950,12 @@ theorem insertRec_snd_allLt :
 /-- Appending a strictly-larger element to a strictly-sorted list keeps it
     strictly sorted. -/
 theorem sorted_lt_append_singleton :
-    ∀ {l : List ℕ} {s : ℕ}, l.Sorted (· < ·) → (∀ a ∈ l, a < s) →
-      (l ++ [s]).Sorted (· < ·)
-  | [], s, _, _ => List.sorted_singleton s
+    ∀ {l : List ℕ} {s : ℕ}, l.Pairwise (· < ·) → (∀ a ∈ l, a < s) →
+      (l ++ [s]).Pairwise (· < ·)
+  | [], s, _, _ => List.pairwise_singleton _ s
   | a :: t, s, hl, hs => by
-      rw [List.sorted_cons] at hl
-      rw [List.cons_append, List.sorted_cons]
+      rw [List.pairwise_cons] at hl
+      rw [List.cons_append, List.pairwise_cons]
       refine ⟨fun b hb => ?_,
         sorted_lt_append_singleton hl.2 (fun c hc => hs c (List.mem_cons_of_mem a hc))⟩
       rcases List.mem_append.mp hb with hbt | hbs
@@ -973,7 +973,7 @@ theorem insertRec_snd_rowsStrict :
       intro _ _ row hrow
       simp only [insertRec, List.mem_singleton] at hrow
       subst hrow
-      exact List.sorted_singleton s
+      exact List.pairwise_singleton _ s
   | prow :: prest, Q, x, s => by
       intro hrs hlt
       cases hb : (rowInsert prow x).2 with
@@ -1387,7 +1387,7 @@ theorem rowsSorted_getD_le {T : List (List ℕ)} (h : RowsSorted T) {i j1 j2 : �
     by_contra hge; push_neg at hge
     rw [getD_row_past hge] at hj2; simp at hj2
   have hj1 : j1 < (T.getD i []).length := lt_of_le_of_lt hj hj2
-  have hsorted : (T.getD i []).Sorted (· ≤ ·) :=
+  have hsorted : (T.getD i []).Pairwise (· ≤ ·) :=
     h _ (by rw [getD_row_eq hi]; exact List.getElem_mem hi)
   have e1 : (T.getD i []).getD j1 0 = (T.getD i [])[j1] := by
     rw [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hj1, Option.getD_some]

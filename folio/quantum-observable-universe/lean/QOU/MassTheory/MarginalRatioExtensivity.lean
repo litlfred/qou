@@ -91,7 +91,7 @@ theorem prod_le_pow_of_le {r : ℕ → ℝ} {c : ℝ}
   unfold prodUpTo
   calc ∏ i ∈ range n, r i
       ≤ ∏ _i ∈ range n, c :=
-        Finset.prod_le_prod (fun i _ => h0 i) (fun i _ => hc i)
+        Finset.prod_le_prod₀ (fun i _ => h0 i) (fun i _ => hc i)
     _ = c ^ n := by simp
 
 /-! ### 2. The counterexample: rising to 1 is NOT sufficient

@@ -321,13 +321,14 @@ noncomputable def cmF (z : R) (μ : Fin 3 →₀ ℕ) : R :=
 
 /-- The trace of the counter-model: the linear extension of `cmF`. -/
 noncomputable def cmTr (z : R) : MvPolynomial (Fin 3) R →ₗ[R] R :=
-  Finsupp.linearCombination R (cmF R z)
+  (Finsupp.linearCombination R (cmF R z)).comp
+    (AddMonoidAlgebra.coeffLinearEquiv R).toLinearMap
 
 theorem cmTr_monomial (z : R) (μ : Fin 3 →₀ ℕ) (c : R) :
     cmTr z (monomial μ c) = c * cmF R z μ := by
   unfold cmTr
   rw [← single_eq_monomial]
-  exact (Finsupp.linearCombination_single _ _ _).trans (smul_eq_mul _ _)
+  exact (Finsupp.linearCombination_single R c μ).trans (smul_eq_mul c (cmF R z μ))
 
 /-- A monomial in the support of a polynomial supported on `{i | i < n}` has
 zero exponent at every index `≥ n`. -/

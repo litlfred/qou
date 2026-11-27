@@ -140,27 +140,27 @@ the pairwise weight `w₁` cancels in `b₃` and the 2-simplex weight enters wit
 `b₃ = -w₂`. -/
 theorem simplexEp_b3_eq_neg_w2 (w1 w2 w3 : R) :
     b3Sym (simplexEpCarrier w1 w2 w3 2) (simplexEpCarrier w1 w2 w3 3) = -w2 := by
-  unfold b3Sym simplexEpCarrier
+  simp only [b3Sym, simplexEpCarrier]
   ring
 
 /-- Under `(-1)^{d-1}` Euler–Poincaré grading, `b₄ = +w₃`. -/
 theorem simplexEp_b4_eq_pos_w3 (w1 w2 w3 : R) :
     b4Sym (simplexEpCarrier w1 w2 w3 2) (simplexEpCarrier w1 w2 w3 3)
       (simplexEpCarrier w1 w2 w3 4) = w3 := by
-  unfold b4Sym simplexEpCarrier
+  simp only [b4Sym, simplexEpCarrier]
   ring
 
 /-- Under the unsigned simplex measure, `b₃ = +w₂`. -/
 theorem simplexUnsigned_b3_eq_pos_w2 (w1 w2 w3 : R) :
     b3Sym (simplexUnsignedCarrier w1 w2 w3 2) (simplexUnsignedCarrier w1 w2 w3 3) = w2 := by
-  unfold b3Sym simplexUnsignedCarrier
+  simp only [b3Sym, simplexUnsignedCarrier]
   ring
 
 /-- Under the unsigned simplex measure, `b₄ = +w₃`. -/
 theorem simplexUnsigned_b4_eq_pos_w3 (w1 w2 w3 : R) :
     b4Sym (simplexUnsignedCarrier w1 w2 w3 2) (simplexUnsignedCarrier w1 w2 w3 3)
       (simplexUnsignedCarrier w1 w2 w3 4) = w3 := by
-  unfold b4Sym simplexUnsignedCarrier
+  simp only [b4Sym, simplexUnsignedCarrier]
   ring
 
 /-- Affine layered-word cell count `C(A) = α A + β`. -/
@@ -424,8 +424,8 @@ theorem qBinom2_defining_rel (q : F) :
     qBinom2 q 1 * qInt q 2 = qInt q 1 * qInt q 0 ∧
     qBinom2 q 2 * qInt q 2 = qInt q 2 * qInt q 1 ∧
     qBinom2 q 3 * qInt q 2 = qInt q 3 * qInt q 2 := by
-  unfold qBinom2 qInt
-  refine ⟨by ring, by ring, by ring⟩
+  simp only [qBinom2, qInt]
+  refine ⟨by ring, by ring, by first | ring | trivial⟩
 
 /-- Closed form in `ℚ(q)` for `b₃` of the `[j]_q` cell carrier: `(q - 1)² / q`. -/
 theorem qInt_b3_eq {q : F} (hq : q ≠ 0) :
@@ -433,7 +433,7 @@ theorem qInt_b3_eq {q : F} (hq : q ≠ 0) :
       (q - 1) ^ 2 / q := by
   have h0 : qInt q 0 = 0 := rfl
   rw [pauliWigner_b3_eq h0]
-  unfold qInt
+  simp only [qInt]
   field_simp [hq]
   ring
 
@@ -445,7 +445,7 @@ theorem qInt_b4_eq {q : F} (hq : q ≠ 0) :
       (q - 1) ^ 2 * (q ^ 2 - q + 1) / q ^ 2 := by
   have h0 : qInt q 0 = 0 := rfl
   rw [pauliWigner_b4_eq h0]
-  unfold qInt
+  simp only [qInt]
   field_simp [hq]
   ring
 
@@ -459,10 +459,10 @@ theorem qBinom2_cumulants_eq {q : F} (hq : q ≠ 0) :
   have h0 : qBinom2 q 0 = 0 := rfl
   refine ⟨pauliWignerCellSum_deuteron h0, ?_, ?_⟩
   · rw [pauliWigner_b3_eq h0]
-    unfold qBinom2
+    simp only [qBinom2]
     ring
   · rw [pauliWigner_b4_eq h0]
-    unfold qBinom2
+    simp only [qBinom2]
     field_simp [hq]
     ring
 
@@ -507,14 +507,14 @@ theorem qSimplex_b2_and_b3_eq [LinearOrder F] [IsStrictOrderedRing F]
     nlinarith
   have hq2ne : q ^ 2 + 1 ≠ 0 := ne_of_gt hq2pos
   have hq4ne : q ^ 4 + q ^ 2 + 1 ≠ 0 := ne_of_gt hq4pos
-  have h0 : qSimplexKernel q 0 = 0 := by unfold qSimplexKernel qInt qBinom2 qBinom3; simp
+  have h0 : qSimplexKernel q 0 = 0 := by simp only [qSimplexKernel, qInt, qBinom2, qBinom3]; simp
   refine ⟨?_, ?_⟩
   · rw [pauliWignerCellSum_deuteron h0]
-    unfold qSimplexKernel qInt qBinom2 qBinom3
+    simp only [qSimplexKernel, qInt, qBinom2, qBinom3]
     field_simp [hqne, hq2ne]
     ring
   · rw [pauliWigner_b3_eq h0]
-    unfold qSimplexKernel qInt qBinom2 qBinom3
+    simp only [qSimplexKernel, qInt, qBinom2, qBinom3]
     field_simp [hqne, hq2ne, hq4ne]
     ring
 
@@ -556,9 +556,9 @@ theorem epQSimplex_b3_eq [LinearOrder F] [IsStrictOrderedRing F]
   have hq2ne : q ^ 2 + 1 ≠ 0 := ne_of_gt (by nlinarith)
   have h4 : 0 ≤ q ^ 4 := by positivity
   have hq4ne : q ^ 4 + q ^ 2 + 1 ≠ 0 := ne_of_gt (by nlinarith)
-  have h0 : epQSimplexKernel q 0 = 0 := by unfold epQSimplexKernel qInt qBinom2 qBinom3; simp
+  have h0 : epQSimplexKernel q 0 = 0 := by simp only [epQSimplexKernel, qInt, qBinom2, qBinom3]; simp
   rw [pauliWigner_b3_eq h0]
-  unfold epQSimplexKernel qInt qBinom2 qBinom3
+  simp only [epQSimplexKernel, qInt, qBinom2, qBinom3]
   field_simp [hqne, hq2ne, hq4ne]
   ring
 

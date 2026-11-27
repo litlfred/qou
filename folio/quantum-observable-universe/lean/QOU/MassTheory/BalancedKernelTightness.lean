@@ -169,7 +169,7 @@ theorem isTightMeasureSet_of_integral_sq_le {ι : Type*}
         (tendsto_pow_atTop (two_ne_zero))
     simpa using ENNReal.tendsto_ofReal hdiv
   exact tendsto_of_tendsto_of_tendsto_of_le_of_le' tendsto_const_nhds hzero
-    (Filter.Eventually.of_forall fun r => zero_le _) hupper
+    (Filter.Eventually.of_forall fun r => zero_le) hupper
 
 /-- A convergent real sequence is bounded above — the uniform-bound step
 for a family whose second moments converge (Mathlib's

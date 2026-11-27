@@ -810,7 +810,11 @@ inductive ExteriorWeylMultiplet : Type
   | downQuarkRc      -- d_R^c = (1, 3*)_{y_3} ∈ Λ¹ F
   | quarkDoubletL    -- Q_L = (2, 3)_{-y_2 - y_3} = W_2* ⊗ W_3
   | upQuarkRc        -- u_R^c = (1, 3*)_{-2 y_3} = Λ² W_3
-  deriving DecidableEq, Fintype
+  deriving DecidableEq
+
+instance : Fintype ExteriorWeylMultiplet :=
+  Fintype.ofList [.leptonDoubletL, .chargedLeptonRc, .downQuarkRc, .quarkDoubletL, .upQuarkRc]
+    (fun x => by cases x <;> simp)
 
 /-- $\mathrm{SU}(3)_c$ $(a, b)$-tensor type (`a` fundamentals, `b` antifundamentals) determining
     each multiplet's central $Z(\mathrm{SU}(3)_c) \cong \mu_3$ Kummer twist $\mathcal{L}^{t(m)}$

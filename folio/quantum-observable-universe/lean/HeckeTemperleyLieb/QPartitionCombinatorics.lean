@@ -401,7 +401,7 @@ theorem hookLength_addBoxRow_same_row
     rw [List.getElem?_eq_getElem hr]; rfl
   have hget : (addBoxRow lam r)[r]? = some ((lam[r]?).getD 0 + 1) := by
     unfold addBoxRow
-    rw [List.getElem?_set_self (by simpa using hr)]
+    rw [List.getElem?_set_self (by exact hr)]
   unfold Partition.hookLength
   rw [hget, hlam, drop_addBoxRow lam r r (le_refl r)]
   set m := (lam[r]?).getD 0 with hm
@@ -462,6 +462,7 @@ theorem countP_drop_addBoxRow_at_threshold
   · rw [List.getElem_drop]
     have hidx : i + 1 + (r - (i + 1)) = r := by omega
     simp [hidx, List.getElem?_eq_getElem hr]
+    exact le_refl _
   · simp
 
 /-- **Setting one entry to another with the same `p`-value leaves the count
@@ -554,7 +555,7 @@ theorem length_addBoxRow (lam : Partition) (r : ℕ) :
 theorem getElem?_addBoxRow_self (lam : Partition) (r : ℕ) (hr : r < lam.length) :
     (addBoxRow lam r)[r]? = some ((lam[r]?).getD 0 + 1) := by
   unfold addBoxRow
-  rw [List.getElem?_set_self (by simpa using hr)]
+  rw [List.getElem?_set_self (by exact hr)]
 
 /-- Every other row is untouched. -/
 theorem getElem?_addBoxRow_ne (lam : Partition) (r i : ℕ) (h : i ≠ r) :
@@ -643,7 +644,7 @@ theorem length_addBoxNewRow (lam : Partition) :
 theorem getElem?_addBoxNewRow_lt (lam : Partition) (i : ℕ) (h : i < lam.length) :
     (addBoxNewRow lam)[i]? = lam[i]? := by
   unfold addBoxNewRow
-  rw [List.getElem?_append_left (by simpa using h)]
+  rw [List.getElem?_append_left (by exact h)]
 
 theorem getElem?_addBoxNewRow_self (lam : Partition) :
     (addBoxNewRow lam)[lam.length]? = some 1 := by
@@ -812,7 +813,7 @@ theorem hookLength_addBoxRow_of_ne_corner
       have hlam : lam[i]? = some ((lam[i]?).getD 0) := by
         rw [List.getElem?_eq_getElem hi]; rfl
       have hget : (addBoxRow lam i)[i]? = some ((lam[i]?).getD 0 + 1) := by
-        unfold addBoxRow; rw [List.getElem?_set_self (by simpa using hr)]
+        unfold addBoxRow; rw [List.getElem?_set_self (by exact hr)]
       rw [if_neg (by rintro (⟨_, h'⟩ | ⟨h', _⟩) <;> omega), Nat.add_zero]
       unfold Partition.hookLength
       rw [hget, hlam]

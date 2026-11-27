@@ -69,11 +69,11 @@ theorem integral_weight (a b : ℝ) :
       ((x - a) * (b - x)) x := by
     intro x
     have h3 : HasDerivAt (fun y : ℝ => y ^ 3) (3 * x ^ 2) x := by
-      simpa using (hasDerivAt_id x).pow 3
+      simpa using (hasDerivAt_id' x).fun_pow 3
     have h2 : HasDerivAt (fun y : ℝ => y ^ 2) (2 * x) x := by
-      simpa using (hasDerivAt_id x).pow 2
-    have h := ((h3.neg.div_const 3).add ((h2.const_mul (a + b)).div_const 2)).sub
-      ((hasDerivAt_id x).const_mul (a * b))
+      simpa using (hasDerivAt_id' x).fun_pow 2
+    have h := ((h3.fun_neg.div_const 3).fun_add ((h2.const_mul (a + b)).div_const 2)).sub
+      ((hasDerivAt_id' x).const_mul (a * b))
     convert h using 1
     ring
   have hcont : Continuous fun x : ℝ => (x - a) * (b - x) := by fun_prop
@@ -102,18 +102,18 @@ theorem integral_eq_trapezoid_sub {f f' f'' : ℝ → ℝ} {a b : ℝ}
         ((x - a) * (b - x) * f'' x + 2 * f x) x := by
     intro x hx
     have hxa : HasDerivAt (fun y : ℝ => y - a) 1 x := by
-      simpa using (hasDerivAt_id x).sub_const a
+      simpa using (hasDerivAt_id' x).sub_const a
     have hbx : HasDerivAt (fun y : ℝ => b - y) (-1) x := by
-      simpa using (hasDerivAt_id x).const_sub b
+      simpa using (hasDerivAt_id' x).const_sub b
     have hw : HasDerivAt (fun y : ℝ => (y - a) * (b - y)) (a + b - 2 * x) x := by
-      have := hxa.mul hbx
+      have := hxa.fun_mul hbx
       convert this using 1
       ring
     have hw' : HasDerivAt (fun y : ℝ => a + b - 2 * y) (-2) x := by
-      have := ((hasDerivAt_id x).const_mul (2:ℝ)).const_sub (a + b)
+      have := ((hasDerivAt_id' x).const_mul (2:ℝ)).const_sub (a + b)
       convert this using 1
       ring
-    have := (hw.mul (hf' x hx)).sub (hw'.mul (hf x hx))
+    have := (hw.fun_mul (hf' x hx)).fun_sub (hw'.fun_mul (hf x hx))
     convert this using 1
     ring
   have hint : IntervalIntegrable
@@ -122,7 +122,9 @@ theorem integral_eq_trapezoid_sub {f f' f'' : ℝ → ℝ} {a b : ℝ}
     · exact (hwcont.mul hcont).intervalIntegrable
     · exact (continuousOn_const.mul hfcont).intervalIntegrable
   have hftc := integral_eq_sub_of_hasDerivAt hF hint
-  rw [integral_add ((hwcont.mul hcont).intervalIntegrable)
+  rw [integral_add
+    (f := fun x => (x - a) * (b - x) * f'' x) (g := fun x => 2 * f x)
+    ((hwcont.mul hcont).intervalIntegrable)
     ((continuousOn_const.mul hfcont).intervalIntegrable)] at hftc
   rw [intervalIntegral.integral_const_mul] at hftc
   -- `w` vanishes at both ends, so the boundary term is `(b−a)·(f a + f b)`;
@@ -223,7 +225,7 @@ theorem abs_trapezoid_sub_integral_log_two_sin_le {a b M : ℝ}
   · intro x hx
     have hs : 0 < Real.sin x := hmem x hx
     exact (continuousWithinAt_const.div
-      ((Real.continuous_sin.continuousWithinAt).pow 2) (by positivity)).neg
+      ((Real.continuous_sin.continuousWithinAt).pow 2) (pow_pos hs 2).ne').neg
   · intro x hx
     have hs : 0 < Real.sin x := hmem x hx
     have : (0 : ℝ) < 1 / Real.sin x ^ 2 := by positivity

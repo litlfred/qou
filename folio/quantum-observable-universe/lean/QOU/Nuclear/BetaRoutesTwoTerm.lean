@@ -51,7 +51,7 @@ theorem offDiag_sum_eq {ι R : Type*} [DecidableEq ι] [CommRing R] (s : Finset 
   have hprod : (∑ i ∈ s, f i) ^ 2 = ∑ p ∈ s ×ˢ s, f p.1 * f p.2 := by
     rw [sq, Finset.sum_mul_sum, Finset.sum_product]
   have hdiag : ∑ p ∈ s.diag, f p.1 * f p.2 = ∑ i ∈ s, f i ^ 2 := by
-    rw [Finset.diag, Finset.sum_filter]
+    rw [Finset.diag_eq_filter, Finset.sum_filter]
     rw [Finset.sum_product]
     refine Finset.sum_congr rfl fun i _ => ?_
     rw [Finset.sum_ite_eq]

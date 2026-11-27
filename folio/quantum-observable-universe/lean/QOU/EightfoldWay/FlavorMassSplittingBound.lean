@@ -239,7 +239,7 @@ theorem flavor_mass_splitting_bound_of_split
       calc ((q - 1) / q) ^ 2 * (q - q⁻¹) *
               (Real.sqrt q + Real.sqrt q⁻¹)
           < ((q - 1) / q) ^ 2 * (q - q⁻¹) * (3 * (q + q⁻¹)) := by
-            exact (mul_lt_mul_left h_prefactor_pos).mpr h_step
+            exact mul_lt_mul_of_pos_left h_step h_prefactor_pos
         _ = ((q - 1) / q) ^ 2 * (q - q⁻¹) * (q + q⁻¹) * 3 := by ring
     exact key
   refine ⟨?_, ?_⟩

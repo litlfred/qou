@@ -6,6 +6,7 @@ import Mathlib.Analysis.Calculus.BumpFunction.InnerProduct
 import Mathlib.Analysis.Convolution
 import Mathlib.Analysis.Calculus.Deriv.Inv
 import QOU.MassTheory.BlochRigidity.Algebra
+import Mathlib.Analysis.Calculus.ContDiff.Convolution
 
 
 /-!

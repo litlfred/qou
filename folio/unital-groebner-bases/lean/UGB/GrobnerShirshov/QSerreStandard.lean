@@ -72,7 +72,7 @@ theorem toMA_single [DecidableEq k] (w : Monomial G) :
   · rw [single_coeff_of_ne _ h, if_neg (Ne.symm h)]
 
 /-- The `k`-span of the words-in-context `a · x · b`, `x ∈ R`. -/
-def ctxSpan (R : Set (MA G k)) : Submodule k (MA G k) :=
+noncomputable def ctxSpan (R : Set (MA G k)) : Submodule k (MA G k) :=
   Submodule.span k {y | ∃ x ∈ R, ∃ a b : Monomial G, y = ofW a * x * ofW b}
 
 theorem single_eq_smul_ofW (w : FreeMonoid G) (c : k) :
@@ -120,7 +120,7 @@ theorem ctxSpan_mul_right (R : Set (MA G k)) {y : MA G k} (hy : y ∈ ctxSpan R)
     exact Submodule.smul_mem _ c (ctxSpan_mul_ofW R hy _)
 
 /-- `ctxSpan R`, as a two-sided ideal. -/
-def ctxIdeal (R : Set (MA G k)) : TwoSidedIdeal (MA G k) :=
+noncomputable def ctxIdeal (R : Set (MA G k)) : TwoSidedIdeal (MA G k) :=
   TwoSidedIdeal.mk' (ctxSpan R) (zero_mem _) add_mem neg_mem
     (fun hy => ctxSpan_mul_left R hy _) (fun hx => ctxSpan_mul_right R hx _)
 
@@ -221,6 +221,7 @@ theorem uq_ideal_eq :
   apply le_antisymm
   · rw [TwoSidedIdeal.span_le]
     rintro x ⟨r, hr, rfl⟩
+    rw [SetLike.mem_coe]
     simp only [qSerreRewritingSystem, RewritingSystem.mem_ofList_rules, qSerreRules, List.mem_cons, List.not_mem_nil,
       or_false] at hr
     rcases hr with rfl | rfl | rfl | rfl | rfl | rfl | rfl
@@ -263,7 +264,7 @@ theorem uq_ideal_eq :
     intro x hx
     simp only [uqStdRels, gE, gF, gK, gKi, ← ofW_append, List.cons_append, List.nil_append,
       ofW_nil, Set.mem_insert_iff, Set.mem_singleton_iff] at hx
-    rcases hx with rfl | rfl | rfl | rfl | rfl
+    rcases hx with rfl | rfl | rfl | rfl | rfl <;> rw [SetLike.mem_coe]
     · convert t1 using 1; simp only [ofW_nil]; module
     · convert t2 using 1; simp only [ofW_nil]; module
     · -- K E K⁻¹ − q² E = r₃ K⁻¹ + q² E r₁

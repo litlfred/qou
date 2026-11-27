@@ -1128,8 +1128,8 @@ theorem count_dom_of_top {A B S : Finset ℕ} (hBA : ∀ b ∈ B, ∀ a ∈ A, b
       rcases hxAB with hxA | hxB
       · exact ⟨hxA, hxw⟩
       · exact absurd hxw (not_lt.mpr (hb x hxB))
-  have hAeq := Finset.filter_card_add_filter_neg_card_eq_card (s := A) (p := (· ≤ w))
-  have hSeq := Finset.filter_card_add_filter_neg_card_eq_card (s := S) (p := (· ≤ w))
+  have hAeq := Finset.card_filter_add_card_filter_not (s := A) (p := (· ≤ w))
+  have hSeq := Finset.card_filter_add_card_filter_not (s := S) (p := (· ≤ w))
   have hAneg : (A.filter (fun x => ¬ x ≤ w)).card = (A.filter (fun x => w < x)).card := by
     congr 1; apply Finset.filter_congr; intro x _; simp [not_le]
   have hSneg : (S.filter (fun x => ¬ x ≤ w)).card = (S.filter (fun x => w < x)).card := by

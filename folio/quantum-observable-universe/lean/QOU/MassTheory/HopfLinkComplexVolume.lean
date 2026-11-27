@@ -58,6 +58,7 @@ import Mathlib.LinearAlgebra.Matrix.Notation
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+import Mathlib.Tactic.LinearCombination
 
 namespace QOU.Archimedean.HopfLinkComplexVolume
 

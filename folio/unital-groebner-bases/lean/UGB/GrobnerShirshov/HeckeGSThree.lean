@@ -187,7 +187,7 @@ theorem ruleProxy_of_le_two {n : ℕ} (hn : 0 < n) (h2 : n ≤ 2) (hp : HeckePar
       have h := DegenerateYbBs.relations_add_eq_zero hi w
       linarith
     · rw [if_neg hc] at hj
-      exact Option.noConfusion hj
+      cases hj
 
 /-- **With at most two generators the defining Hecke relations are a
 Gröbner–Shirshov basis**, for every `HeckeParams`. -/

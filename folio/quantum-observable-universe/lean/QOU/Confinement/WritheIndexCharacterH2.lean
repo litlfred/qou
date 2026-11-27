@@ -88,7 +88,7 @@ theorem chi_nf (q : R) (hq : q ≠ 0) (w : List Bool) : chi q (nf q w) = q ^ wri
 theorem chi_nf_append_two (q : R) (hq : q ≠ 0) (w : List Bool) :
     chi q (nf q (w ++ [true, true])) = q ^ 2 * chi q (nf q w) := by
   rw [chi_nf q hq, chi_nf q hq, writhe_append]
-  simp only [writhe]; rw [zpow_add₀ hq]; norm_num; rw [mul_comm]; norm_cast
+  simp only [writhe]; rw [zpow_add₀ hq]; norm_num; rw [mul_comm]
 
 theorem nf_replicate_succ (q : R) (m : ℕ) :
     nf q (List.replicate (m + 1) true) = mulS q (nf q (List.replicate m true)) := by

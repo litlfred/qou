@@ -1,5 +1,6 @@
 import QOU.BraidsAndKnots.FuchsianAnalytic
 import Mathlib.Analysis.ODE.Gronwall
+import Mathlib.Analysis.ODE.ExistUnique
 
 /-!
 # The KZ associator `Φ_KZ` as a renormalised connection matrix
@@ -77,6 +78,7 @@ theorem isKZSol_G₁ (A B : R) (H₁ : ℕ → R) (h0 : H₁ 0 = 1)
   have h := hw.scomp t hc
   unfold G₁
   convert h using 1
+  · rfl
   rw [neg_one_smul, ← neg_mul]
   congr 1
   unfold kzΩ
@@ -166,7 +168,9 @@ theorem exists_isUnit_series {H : ℕ → R} (hb : BoundedOn H 1) (h0 : H 0 = 1)
   rw [this]
   exact (Units.oneSub _ h1).isUnit
 
-theorem isUnit_tpow (A : R) (t : ℝ) : IsUnit (tpow A t) := NormedSpace.isUnit_exp ℝ _
+theorem isUnit_tpow (A : R) (t : ℝ) : IsUnit (tpow A t) := by
+  letI : NormedAlgebra ℚ R := NormedAlgebra.restrictScalars ℚ ℝ R
+  exact NormedSpace.isUnit_exp _
 
 /-- **The KZ associator.** For residues `A, B` and the normalised formal solutions `H₀` (at `0`,
 coefficients `kzM0 A B`) and `H₁` (at `1`, coefficients `kzM0 B A`), there is a unique `Φ` with

@@ -85,13 +85,13 @@ theorem sz_decrementRow_lt {l : List ℕ} {i : ℕ} (hi : i ∈ removableCornerI
 
 /-- **Corner removal preserves the partition shape.** Decrementing a removable corner keeps the row
 lengths weakly decreasing — the invariant the strong-induction hypotheses are stated over. -/
-theorem decrementRow_sorted {l : List ℕ} {i : ℕ} (hl : List.Sorted (· ≥ ·) l)
-    (hi : i ∈ removableCornerIdxs l) : List.Sorted (· ≥ ·) (decrementRow l i) := by
+theorem decrementRow_sorted {l : List ℕ} {i : ℕ} (hl : List.Pairwise (· ≥ ·) l)
+    (hi : i ∈ removableCornerIdxs l) : List.Pairwise (· ≥ ·) (decrementRow l i) := by
   rw [mem_removableCornerIdxs] at hi
   obtain ⟨hlen, hgt⟩ := hi
   have hgdi : l.getD i 0 = l[i] := by
     simp [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hlen]
-  rw [List.Sorted, List.pairwise_iff_getElem] at hl
+  rw [List.pairwise_iff_getElem] at hl
   have hcorner : ∀ c (hc : c < l.length), i < c → l[i] > l[c] := by
     intro c hc hic
     have hi1 : i + 1 < l.length := by omega
@@ -103,7 +103,7 @@ theorem decrementRow_sorted {l : List ℕ} {i : ℕ} (hl : List.Sorted (· ≥ �
     · exact lt_of_le_of_lt (hl (i + 1) c hi1 hc h1) hstep
     · have hc' : c = i + 1 := by omega
       subst hc'; exact hstep
-  rw [decrementRow, List.Sorted, List.pairwise_iff_getElem]
+  rw [decrementRow, List.pairwise_iff_getElem]
   intro a b ha hb hab
   rw [List.length_set] at ha hb
   simp only [List.getElem_set]
@@ -180,10 +180,10 @@ recursion on every positive-size sorted shape, `numSYTenum = dimHLF` for **all**
 strong induction on `sz`, with `sz_decrementRow_lt` the termination measure and `sz = 0` the base.
 This reduces the general-`n` hook-length formula (hence `dimAitkenIdentity`) to exactly (A) + (B). -/
 theorem numSYTenum_eq_dimHLF_of_branchings
-    (hB : ∀ m, List.Sorted (· ≥ ·) m → 0 < sz m → numSYTenum m = branchSum numSYTenum m)
-    (hA : ∀ m, List.Sorted (· ≥ ·) m → 0 < sz m → dimHLF m = branchSum dimHLF m)
-    (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) : numSYTenum l = dimHLF l := by
-  suffices H : ∀ n l, sz l = n → List.Sorted (· ≥ ·) l → numSYTenum l = dimHLF l from
+    (hB : ∀ m, List.Pairwise (· ≥ ·) m → 0 < sz m → numSYTenum m = branchSum numSYTenum m)
+    (hA : ∀ m, List.Pairwise (· ≥ ·) m → 0 < sz m → dimHLF m = branchSum dimHLF m)
+    (l : List ℕ) (hl : List.Pairwise (· ≥ ·) l) : numSYTenum l = dimHLF l := by
+  suffices H : ∀ n l, sz l = n → List.Pairwise (· ≥ ·) l → numSYTenum l = dimHLF l from
     H (sz l) l rfl hl
   intro n
   induction n using Nat.strong_induction_on with

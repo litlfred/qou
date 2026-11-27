@@ -74,10 +74,10 @@ def invSet (w : Perm (Fin n)) : Finset (Fin n × Fin n) :=
 def invCount (w : Perm (Fin n)) : ℕ := (invSet w).card
 
 @[simp] theorem invCount_one : invCount (1 : Perm (Fin n)) = 0 := by
-  simp only [invCount, invSet, Perm.coe_one, id_eq, card_eq_zero, filter_eq_empty_iff]
-  rintro ⟨a, b⟩ -
-  simp only [not_and, not_lt]
-  exact fun h => le_of_lt h
+  unfold invCount invSet
+  rw [Finset.card_eq_zero, Finset.filter_eq_empty_iff]
+  rintro ⟨a, b⟩ - ⟨h1, h2⟩
+  exact lt_asymm h1 h2
 
 /-- **A permutation with no inversions is the identity.** -/
 theorem eq_one_of_invCount_eq_zero {w : Perm (Fin n)} (h : invCount w = 0) : w = 1 := by

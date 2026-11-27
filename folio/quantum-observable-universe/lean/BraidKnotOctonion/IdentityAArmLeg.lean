@@ -308,8 +308,6 @@ theorem sum_armleg_eq_card_bigNE (μ : YoungDiagram) :
   congr 1
   rw [← fiber_card μ i j hc]
   congr 1
-  ext p
-  simp only [Finset.mem_filter, Prod.mk.injEq]
 
 /-- `card(bigSW) = card(bigNE)` by the swap involution `(P,Q) ↦ (Q,P)`. -/
 theorem card_bigSW_eq (μ : YoungDiagram) : (bigSW μ).card = (bigNE μ).card := by

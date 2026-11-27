@@ -165,7 +165,7 @@ theorem degreeOf_translate_monomial (α : σ → R) (j : σ) (v : σ →₀ ℕ)
 theorem degreeOf_translate (α : σ → R) (j : σ) (P : MvPolynomial σ R) :
     degreeOf j (translate α P) ≤ degreeOf j P := by
   classical
-  have hP : translate α P = ∑ v ∈ P.support, translate α (monomial v (coeff v P)) := by
+  have hP : translate α P = ∑ v ∈ P.support, translate α (monomial v (P.coeff v)) := by
     conv_lhs => rw [P.as_sum]
     simp only [translate, map_sum]
   rw [hP]
@@ -401,7 +401,7 @@ theorem index_le_card [Fintype σ] (d : σ → ℕ) (α : σ → R) (P : MvPolyn
 theorem support_pderiv_subset [DecidableEq σ] (i : σ) (P : MvPolynomial σ R) :
     (pderiv i P).support ⊆ P.support.image (fun s => s - Finsupp.single i 1) := by
   classical
-  have hP : P = ∑ v ∈ P.support, monomial v (coeff v P) :=
+  have hP : P = ∑ v ∈ P.support, monomial v (P.coeff v) :=
     (support_sum_monomial_coeff P).symm
   intro t ht
   rw [hP, map_sum] at ht
@@ -546,12 +546,12 @@ theorem monomial_one_dvd_iff_support {s : σ →₀ ℕ} {x : MvPolynomial σ R}
   · intro h i hi
     by_contra hle
     rw [mem_support_iff] at hi
-    exact hi (by rw [← coeff_modMonomial_of_not_le x hle, h, coeff_zero])
+    exact hi (by rw [← coeff_modMonomial_of_not_le x hle, h]; simp)
   · intro h
     ext i
     by_cases hle : s ≤ i
-    · rw [coeff_modMonomial_of_le x hle, coeff_zero]
-    · rw [coeff_modMonomial_of_not_le x hle, coeff_zero]
+    · rw [coeff_modMonomial_of_le x hle]; simp
+    · rw [coeff_modMonomial_of_not_le x hle]; simp only [MvPolynomial.coeff_zero, Finsupp.coe_zero, Pi.zero_apply]
       by_contra hne
       exact hle (h i (mem_support_iff.mpr hne))
 
@@ -600,7 +600,7 @@ theorem idxWeight_mapDomain_of_injective {τ : Type*} [DecidableEq τ] (f : σ �
   unfold idxWeight
   rw [Finsupp.mapDomain_support_of_injective hf, Finset.sum_image (fun a _ b _ h => hf h)]
   refine Finset.sum_congr rfl fun k _ => ?_
-  rw [Finsupp.mapDomain_apply hf]
+  rw [Finsupp.mapDomain_apply_of_injective hf]
   rfl
 
 /-- **The index is invariant under an injective renaming**, with the weights and base point

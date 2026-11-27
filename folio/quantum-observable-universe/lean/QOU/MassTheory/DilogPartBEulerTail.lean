@@ -70,7 +70,9 @@ theorem euler_tail_coeff_limit (j : ℕ) (hj : 1 ≤ j) :
       mul_one] at h
     exact h.mono_left nhdsWithin_le_nhds
   have hjne : (j : ℝ) ≠ 0 := Nat.cast_ne_zero.mpr (by omega)
-  simpa using hnum.div hden hjne
+  have := hnum.div hden hjne
+  simp only [one_div] at this ⊢
+  exact this
 
 /-- **V1 — Euler-tail coefficient uniform bound.**  For `0 < p < 1` and `j ≥ 1`,
     `(1−p)·pʲ/(1−pʲ) ≤ 1/j`.  Together with `euler_tail_coeff_limit` (the termwise

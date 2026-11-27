@@ -58,7 +58,7 @@ noncomputable def onShort (e : MA G k) (f : G → MA G k) : List G → MA G k
 
 /-- Replace each term `F p • p` of `F` by `F p • Φ p`. -/
 noncomputable def termSum (F : MA G k) (Φ : List G → MA G k) : MA G k :=
-  ∑ p ∈ F.support, F p • Φ (FreeMonoid.toList p)
+  ∑ p ∈ F.coeff.support, F.coeff p • Φ (FreeMonoid.toList p)
 
 theorem termSum_ofW (F : MA G k) : termSum F ofW = F := (ma_eq_sum F).symm
 
@@ -91,7 +91,7 @@ structure BlockData (G : Type u) [DecidableEq G] (k : Type v) [CommRing k]
   wt : G → ℕ
   /-- The product of two letters of a block is a combination of the unit and
       letters of that block, of weight at most the sum of the weights. -/
-  μ_short : ∀ a b, blk a = blk b → ∀ p ∈ (μ a b).support,
+  μ_short : ∀ a b, blk a = blk b → ∀ p ∈ (μ a b).coeff.support,
     FreeMonoid.toList p = [] ∨
       ∃ d, FreeMonoid.toList p = [d] ∧ blk d = blk a ∧ wt d ≤ wt a + wt b
   /-- The order refines the weight filtration: a shorter word of no larger total
@@ -101,7 +101,7 @@ structure BlockData (G : Type u) [DecidableEq G] (k : Type v) [CommRing k]
   /-- Across blocks the swapped word is smaller (`x ≪ x'` for `blk x < blk x'`). -/
   swap_lt : ∀ a b, blk b < blk a → ord.lt [b, a] [a, b]
   /-- **Strong filtration**: every monomial of `π(a, b)` is below `a b`. -/
-  π_lt : ∀ a b, blk b < blk a → ∀ p ∈ (π a b).support, ord.lt (FreeMonoid.toList p) [a, b]
+  π_lt : ∀ a b, blk b < blk a → ∀ p ∈ (π a b).coeff.support, ord.lt (FreeMonoid.toList p) [a, b]
 
 variable {ord : AdmissibleOrder G} {ι : Type w} [LinearOrder ι]
 
@@ -121,10 +121,11 @@ theorem R_same {a b : G} (h : D.blk a = D.blk b) : D.R a b = D.μ a b := by
   simp [R, h]
 
 theorem R_lt (p : G × G) (hp : D.blk p.2 ≤ D.blk p.1) (w : FreeMonoid G)
-    (hw : w ∈ (D.R p.1 p.2).support) : ord.lt (FreeMonoid.toList w) [p.1, p.2] := by
+    (hw : w ∈ (D.R p.1 p.2).coeff.support) : ord.lt (FreeMonoid.toList w) [p.1, p.2] := by
   classical
   rcases lt_or_eq_of_le hp with h | h
   · rw [D.R_cross h] at hw
+    rw [MonoidAlgebra.coeff_add] at hw
     have hw' := Finsupp.support_add hw
     rcases Finset.mem_union.mp hw' with h1 | h1
     · have : w = FreeMonoid.ofList [p.2, p.1] := by
@@ -172,7 +173,7 @@ theorem jm2 {v : Monomial G} (hv : v.length = 3) {a b : G} (h : D.blk b ≤ D.bl
 
 /-- `F` is a combination of the unit and letters of the block `B` of weight at most `n`. -/
 def Short (B : ι) (n : ℕ) (F : MA G k) : Prop :=
-  ∀ p ∈ F.support, FreeMonoid.toList p = [] ∨
+  ∀ p ∈ F.coeff.support, FreeMonoid.toList p = [] ∨
     ∃ d, FreeMonoid.toList p = [d] ∧ D.blk d = B ∧ D.wt d ≤ n
 
 theorem jm_termSum {v : Monomial G} {B : ι} {n : ℕ} {F : MA G k} (hF : D.Short B n F)
@@ -226,7 +227,7 @@ theorem commR_jm {v : Monomial G} (hv : v.length = 3) {c : G} {B : ι} (hB : D.b
   rw [D.R_cross hlt] at this
   have e : ofW ([d] ++ [c]) - ofW ([c] ++ [d]) - onShort 0 (fun d => D.π d c) [d] =
       ofW [d, c] - (ofW [c, d] + D.π d c) := by simp [onShort]; abel
-  simp only at e ⊢
+  try simp only at e ⊢
   rw [e]; exact this
 
 theorem commL_jm {v : Monomial G} (hv : v.length = 3) {a : G} {B : ι} (hB : B < D.blk a)
@@ -239,7 +240,7 @@ theorem commL_jm {v : Monomial G} (hv : v.length = 3) {a : G} {B : ι} (hB : B <
   rw [D.R_cross hlt] at this
   have e : ofW ([a] ++ [d]) - ofW ([d] ++ [a]) - onShort 0 (fun d => D.π a d) [d] =
       ofW [a, d] - (ofW [d, a] + D.π a d) := by simp [onShort]; abel
-  simp only at e ⊢
+  try simp only at e ⊢
   rw [e]; exact this
 
 theorem short_μ {a b : G} (h : D.blk a = D.blk b) :

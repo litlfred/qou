@@ -178,6 +178,6 @@ theorem freeEnergy_closureNorm_assemble {δ : ℝ} (hδ : 0 < δ) (s : Finset ι
   rw [hC]
   unfold freeEnergy
   rw [Real.log_div (ne_of_gt hprod) (ne_of_gt (pow_pos hδ m)), Real.log_pow,
-      Real.log_prod s _ (fun i hi => ne_of_gt (hpos i hi))]
+      Real.log_prod (fun i hi => ne_of_gt (hpos i hi))]
 
 end QOU.Mass.ClosureNormalisationDefect

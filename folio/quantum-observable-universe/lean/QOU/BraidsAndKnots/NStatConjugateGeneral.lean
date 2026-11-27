@@ -212,12 +212,12 @@ theorem length_conjugate_le (a : ℕ) (l : List ℕ) (hbound : ∀ x ∈ l, x �
     `aStat_cons`, `sumChoose2 ∘ conjugate` by `sumChoose2_addRow_ge` (its
     `c.length ≤ a` hypothesis furnished by `length_conjugate_le` from
     decreasingness) together with `sum_conjugate`. -/
-theorem aStat_eq_sumChoose2_conjugate (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
+theorem aStat_eq_sumChoose2_conjugate (l : List ℕ) (hl : List.Pairwise (· ≥ ·) l) :
     aStat l = sumChoose2 (conjugate l) := by
   induction l with
   | nil => simp [aStat, conjugate, sumChoose2]
   | cons a l ih =>
-    rw [List.sorted_cons] at hl
+    rw [List.pairwise_cons] at hl
     obtain ⟨hhead, htail⟩ := hl
     have hbound : ∀ x ∈ l, x ≤ a := fun x hx => hhead x hx
     have hlen : (conjugate l).length ≤ a := length_conjugate_le a l hbound
@@ -243,7 +243,7 @@ def chiralityParity (N : ℕ) : ℤ := (-1 : ℤ) ^ N
     conjugate Young subgroup — the leg left conditional at `n ≤ 5` in
     `DeltaLambdaDTIndexGeneralN`, now closed for all `n` by (†). -/
 theorem chiralityParity_eq_w0_sign_general
-    (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
+    (l : List ℕ) (hl : List.Pairwise (· ≥ ·) l) :
     chiralityParity (aStat l) = (-1 : ℤ) ^ (sumChoose2 (conjugate l)) := by
   unfold chiralityParity
   rw [aStat_eq_sumChoose2_conjugate l hl]
@@ -270,7 +270,7 @@ theorem conjugate_parts (p : PartitionOf5) : conjugate p.parts = p.conjParts := 
     confirming (†) subsumes the finite enum. -/
 theorem nStat_eq_sumChoose2_conj_via_general (p : PartitionOf5) :
     p.nStat = sumChoose2 p.conjParts := by
-  have hsorted : List.Sorted (· ≥ ·) p.parts := by cases p <;> decide
+  have hsorted : List.Pairwise (· ≥ ·) p.parts := by cases p <;> decide
   rw [← aStat_parts, ← conjugate_parts, aStat_eq_sumChoose2_conjugate p.parts hsorted]
 
 end QOU.BraidsAndKnots

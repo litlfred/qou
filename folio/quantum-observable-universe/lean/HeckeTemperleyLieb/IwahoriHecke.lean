@@ -71,7 +71,9 @@ noncomputable def σ (i : Fin n) : IwahoriHecke K q n := mk K q n (ι K i)
 theorem σ_quadratic (i : Fin n) :
     σ K q n i * σ K q n i = (q - 1) • σ K q n i + q • 1 := by
   have h := RingQuot.mkAlgHom_rel (S := K) (HeckeRel.quadratic (q := q) i)
-  simpa only [σ, mk, map_mul, map_add, map_smul, map_one] using h
+  simp only [σ, mk, map_mul, map_add, map_smul, map_one]
+  simp only [map_mul, map_add, map_smul, map_one] at h
+  exact h
 
 /-- **The braid relation holds in `H` (sorry-free):**
     `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}`. -/
@@ -79,14 +81,18 @@ theorem σ_braid (i : Fin n) (hi : (i : ℕ) + 1 < n) :
     σ K q n i * σ K q n ⟨(i : ℕ) + 1, hi⟩ * σ K q n i
       = σ K q n ⟨(i : ℕ) + 1, hi⟩ * σ K q n i * σ K q n ⟨(i : ℕ) + 1, hi⟩ := by
   have h := RingQuot.mkAlgHom_rel (S := K) (HeckeRel.braid (q := q) i hi)
-  simpa only [σ, mk, map_mul] using h
+  simp only [σ, mk, map_mul]
+  simp only [map_mul] at h
+  exact h
 
 /-- **The commutation relation holds in `H` (sorry-free):**
     `σ_i σ_j = σ_j σ_i` for `j + 2 ≤ i`. -/
 theorem σ_commute (i j : Fin n) (h : (j : ℕ) + 2 ≤ (i : ℕ)) :
     σ K q n i * σ K q n j = σ K q n j * σ K q n i := by
   have hr := RingQuot.mkAlgHom_rel (S := K) (HeckeRel.commute (q := q) i j h)
-  simpa only [σ, mk, map_mul] using hr
+  simp only [σ, mk, map_mul]
+  simp only [map_mul] at hr
+  exact hr
 
 /-- The quadratic relation in factored form: `(σ_i - q)(σ_i + 1) = 0`. -/
 theorem σ_quadratic_factored (i : Fin n) :

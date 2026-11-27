@@ -72,7 +72,7 @@ theorem SkeinObservationSystem.birthdayShadow_lt_omega0 {S : Type*} {V : Type*}
     (sys : SkeinObservationSystem S V) (P : S) :
     sys.birthdayShadow P < Ordinal.omega0 := by
   unfold SkeinObservationSystem.birthdayShadow
-  exact Ordinal.nat_lt_omega0 _
+  exact Ordinal.natCast_lt_omega0 _
 
 /-! ## Transseries levels of a cost-growth function -/
 

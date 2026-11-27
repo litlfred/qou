@@ -119,7 +119,7 @@ theorem dvd_of_isPrimitive_of_map_dvd_map {A P : ℤ[X]} (hA : A.IsPrimitive) (h
     isUnit_C.mpr (isUnit_iff_ne_zero.mpr hcq)
   have h2 : A.map (algebraMap ℤ ℚ) ∣ P.primPart.map (algebraMap ℤ ℚ) :=
     hunit.dvd_mul_left.mp h
-  exact (hA.dvd_of_fraction_map_dvd_fraction_map (isPrimitive_primPart P) h2).trans
+  exact (hA.dvd_of_fraction_map_dvd_fraction_map h2).trans
     (primPart_dvd P)
 
 /-- Powers of a primitive polynomial are primitive. -/

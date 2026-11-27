@@ -5,8 +5,8 @@ import HeckeTemperleyLieb.BraidHeckeFactor
 import BraidKnotOctonion.JMProjectorContinuity
 import BraidKnotOctonion.TensorEmbedding
 import BraidKnotOctonion.JimboActionKernel
-import Mathlib.Analysis.Matrix
-import Mathlib.Analysis.NormedSpace.Connected
+import Mathlib.Analysis.Matrix.Normed
+import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Topology.Algebra.Module.Cardinality
 import Mathlib.LinearAlgebra.Complex.FiniteDimensional
 

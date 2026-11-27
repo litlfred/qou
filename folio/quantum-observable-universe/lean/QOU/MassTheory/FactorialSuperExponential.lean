@@ -60,7 +60,7 @@ theorem superExponential_of_factorial_le {a : ℕ → ℝ}
   intro M K
   have key : ∀ n : ℕ, M * K ^ (2 * n) = M * (K ^ 2) ^ n := by
     intro n; rw [← pow_mul, mul_comm 2 n]
-  rcases le_or_lt M 0 with hM | hM
+  rcases le_or_gt M 0 with hM | hM
   · refine ⟨2 * 1, ?_⟩
     have hsq : (0:ℝ) ≤ (K ^ 2) ^ 1 := by positivity
     have hle : M * K ^ (2 * 1) ≤ 0 := by

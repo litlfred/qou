@@ -51,7 +51,7 @@ theorem log_partialProduct_eq_neg_sum {q x : ℝ} (hx0 : 0 < x) (hx1 : x < 1)
         _ = x := mul_one x
     exact ne_of_gt (by linarith)
   unfold partialProductLocal
-  rw [Real.log_inv, denomPolyLocal_eq_prod, Real.log_prod _ _ hfac]
+  rw [Real.log_inv, denomPolyLocal_eq_prod, Real.log_prod hfac]
 
 /-- **Brick 2 — the Riemann-sum structure.**  The rescaled sum
     `(1-q)·Σ_{k<n} −log(1 - x qᵏ)` is *exactly* the left-endpoint Riemann sum of

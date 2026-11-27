@@ -55,8 +55,8 @@ theorem sub_cube_div_six_lt_sin {x : ℝ} (hx : 0 < x) :
       (Real.cos y - 1 + y ^ 2 / 2) y := by
     intro y
     have h3 : HasDerivAt (fun z : ℝ => z ^ 3) (3 * y ^ 2) y := by
-      have h := (hasDerivAt_id y).pow 3; norm_num at h; convert h using 1
-    have h := ((Real.hasDerivAt_sin y).sub (hasDerivAt_id y)).add (h3.div_const 6)
+      have h := hasDerivAt_pow 3 y; norm_num at h; exact h
+    have h := ((Real.hasDerivAt_sin y).fun_sub (hasDerivAt_id' y)).fun_add (h3.div_const 6)
     convert h using 1
     ring
   have hmono : StrictMonoOn (fun z : ℝ => Real.sin z - z + z ^ 3 / 6)
@@ -83,11 +83,11 @@ theorem cos_lt_one_sub_sq_div_two_add_pow_four_div_24 {x : ℝ} (hx : 0 < x) :
       (-y + y ^ 3 / 6 + Real.sin y) y := by
     intro y
     have h2 : HasDerivAt (fun z : ℝ => z ^ 2) (2 * y) y := by
-      have h := (hasDerivAt_id y).pow 2; norm_num at h; convert h using 1
+      have h := hasDerivAt_pow 2 y; norm_num at h; exact h
     have h4 : HasDerivAt (fun z : ℝ => z ^ 4) (4 * y ^ 3) y := by
-      have h := (hasDerivAt_id y).pow 4; norm_num at h; convert h using 1
-    have h := (((hasDerivAt_const y (1 : ℝ)).sub (h2.div_const 2)).add
-      (h4.div_const 24)).sub (Real.hasDerivAt_cos y)
+      have h := hasDerivAt_pow 4 y; norm_num at h; exact h
+    have h := (((hasDerivAt_const y (1 : ℝ)).fun_sub (h2.div_const 2)).fun_add
+      (h4.div_const 24)).fun_sub (Real.hasDerivAt_cos y)
     convert h using 1
     ring
   have hmono : StrictMonoOn

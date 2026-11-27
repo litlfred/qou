@@ -133,7 +133,10 @@ class TheoremB where
     default would silently prove `agrees_at N` for every `N`.
     Restrict to the verified index `N = 5`; the `N = 5`
     arithmetic is verified by `field_simp; ring`. -/
-instance defaultTheoremB (zeta3 : ℝ) : TheoremB where
+-- Port note (Lean v4.35): an `instance` whose explicit argument `zeta3` cannot be inferred is
+-- now rejected; it was never usable by instance search, so it is a plain `abbrev` (use
+-- `defaultTheoremB z` explicitly, e.g. `haveI := defaultTheoremB z`).
+abbrev defaultTheoremB (zeta3 : ℝ) : TheoremB where
   zeta3_value := zeta3
   agrees_at N := N = 5
   agrees_at_5 := rfl

@@ -331,7 +331,7 @@ lemma eta_wordProd (ω : List B) (t : W) :
 
 lemma etaHom_apply (w t : W) (ε : ZMod 2) :
     etaHom cs w (t, ε) = (w * t * w⁻¹, ε + eta cs w t) := by
-  obtain ⟨ω, -, rfl⟩ := cs.exists_reduced_word w
+  obtain ⟨ω, -, rfl⟩ := cs.exists_isReduced w
   rw [etaHom_wordProd, cocycleWord_apply, eta_wordProd]
 
 /-- **The cocycle law**: `η(uv, t) = η(v, t) + η(u, v t v⁻¹)`. -/
@@ -442,10 +442,7 @@ theorem eta_eq_one_of_isRightInversion {w t : W}
     have harg : t * t * t⁻¹ = t := by group
     rw [harg, h0, add_zero, eta_isReflection_self cs h.1] at this
     exact this
-  obtain ⟨ω, hlen, hw⟩ := cs.exists_reduced_word (w * t)
-  have hred : cs.IsReduced ω := by
-    unfold CoxeterSystem.IsReduced
-    rw [← hw, hlen]
+  obtain ⟨ω, hred, hw⟩ := cs.exists_isReduced (w * t)
   have hlt : ℓ (π ω * t) < ℓ (π ω) := by
     apply length_mul_lt_of_eta_eq_one cs hred
     rw [← hw]

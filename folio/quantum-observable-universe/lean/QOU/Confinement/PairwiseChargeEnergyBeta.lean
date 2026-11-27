@@ -1,4 +1,5 @@
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # A pairwise charge energy escapes the conserved-charge no-go for `n ⊗ ν → p ⊗ e⁻`

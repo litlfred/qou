@@ -101,7 +101,7 @@ which is **fully rational in `q`**. So the note that used to sit here — that
 real-valued `q^{1/2}` requires `Real.sqrt`, used via `Real.sqrt_pos` for the
 positivity proof — no longer applies: convention D removes every square root
 from this instance, positivity included. -/
-noncomputable instance markovTraceTower_canonical (q : ℝ) (hq : 1 < q) :
+@[reducible] noncomputable def markovTraceTower_canonical (q : ℝ) (hq : 1 < q) :
     MarkovTraceTower q where
   z := q ^ 3 / (q ^ 2 + 1)
   z_pos := by

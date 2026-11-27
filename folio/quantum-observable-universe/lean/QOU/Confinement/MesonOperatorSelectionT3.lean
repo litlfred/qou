@@ -105,7 +105,12 @@ namespace QOU.ParticleInteractions.MesonOperatorSelectionT3
 inductive Quark
   | up | charm | top          -- up-type
   | down | strange | bottom   -- down-type
-deriving DecidableEq, Fintype
+deriving DecidableEq
+
+/-- Explicit enumeration (the `deriving Fintype` handler fails outside the module
+    system at Lean v4.35 / Mathlib 56a0058). -/
+instance : Fintype Quark :=
+  Fintype.ofList [.up, .charm, .top, .down, .strange, .bottom] (fun x => by cases x <;> simp)
 
 /-- The signed integer `κ = ±n` attached to a quark.  Magnitude `|κ| = n` is
     the crossing count of the quark's lepton partner `T(2,n)` — a generation
@@ -170,7 +175,12 @@ inductive Meson
   | etaPhi  -- s̄ s
   | Dmeson  -- c̄ u   (D̄⁰, open charm)
   | K0      -- d̄ s   (K⁰)
-deriving DecidableEq, Fintype
+deriving DecidableEq
+
+/-- Explicit enumeration (the `deriving Fintype` handler fails outside the module
+    system at Lean v4.35 / Mathlib 56a0058). -/
+instance : Fintype Meson :=
+  Fintype.ofList [.pion, .kaon, .etaPhi, .Dmeson, .K0] (fun x => by cases x <;> simp)
 
 /-- The `(antiquark, quark)` constituent pair of each meson. -/
 def constituents : Meson → Quark × Quark

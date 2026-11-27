@@ -72,7 +72,12 @@ def ameMap : BindingMap ℚ where
 /-- The connected three-body cumulant of the AME map, exactly. -/
 theorem ame_b3_eq (i j k : Fin 4) :
     ameMap.b3 i j k = 2852445 / 2000000 := by
-  simp [BindingMap.b3, ameMap]
+  -- rewrite with the field values first: unfolding `ameMap` inside `simp` makes
+  -- the kernel re-check the rational literals by deep recursion (Lean v4.35).
+  have p1 : ∀ a b : Fin 4, ameMap.pair a b = 2224566 / 1000000 := fun _ _ => rfl
+  have p2 : ∀ a b c : Fin 4, ameMap.triple a b c = (8481798 + 7718043) / 2000000 :=
+    fun _ _ _ => rfl
+  rw [BindingMap.b3, p1, p1, p1, p2]
   norm_num
 
 theorem ame_b3_ne_zero (i j k : Fin 4) : ameMap.b3 i j k ≠ 0 := by

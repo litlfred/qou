@@ -1,4 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+import Mathlib.Topology.Baire.CompleteMetrizable
 import Mathlib.Tactic
 
 /-!

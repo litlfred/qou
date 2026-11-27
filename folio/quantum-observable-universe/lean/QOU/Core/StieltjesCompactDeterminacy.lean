@@ -225,7 +225,7 @@ theorem eq_of_hasStieltjesMoments_of_Ioi_null {μ ν : Measure ℝ}
       (C := R ^ k) (sμ.mono fun s hs => by
         rw [Real.norm_eq_abs, abs_pow, abs_of_nonneg hs.1]
         exact pow_le_pow_left₀ hs.1 hs.2 k)
-    rw [measureReal_univ_eq_one, mul_one, Real.norm_eq_abs] at this
+    rw [probReal_univ, mul_one, Real.norm_eq_abs] at this
     exact le_trans (le_abs_self _) this
   exact stieltjesDeterminate_of_moment_bound hR hM μ ν inferInstance inferInstance hμ hν
 

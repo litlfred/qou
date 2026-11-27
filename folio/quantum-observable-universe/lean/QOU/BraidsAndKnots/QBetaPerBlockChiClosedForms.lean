@@ -1056,7 +1056,7 @@ private lemma iteratedDeriv_polysum_one (c : ℕ → ℝ) (j : ℕ) :
         = (fun x : ℝ => ∑ m ∈ range M, c m * x ^ m) + (fun x : ℝ => c M * x ^ M) := by
       funext x; simp [Finset.sum_range_succ]
     rw [hsplit, iteratedDeriv_add (by fun_prop) (by fun_prop), ihM,
-        iteratedDeriv_const_mul (by fun_prop), iteratedDeriv_pow_eq M j,
+        iteratedDeriv_const_mul_field, iteratedDeriv_pow_eq M j,
         Finset.sum_range_succ]
     simp
 

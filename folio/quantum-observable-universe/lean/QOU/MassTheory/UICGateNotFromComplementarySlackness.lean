@@ -187,15 +187,15 @@ theorem exists_lpData_activeSet_gateSet_disjoint :
 
 /-- `ctxW` carries exactly the witness cost vector. -/
 theorem ctxW_t : @OperatorSelectionLpContext.t ℤ _ _ _ ctxW = t2 := by
-  dsimp [ctxW, OperatorSelectionLpContext.ofCertificate]
+  rfl
 
 /-- `ctxW` carries exactly the witness multipliers. -/
 theorem ctxW_s : @OperatorSelectionLpContext.s ℤ _ _ _ ctxW = s2 := by
-  dsimp [ctxW, OperatorSelectionLpContext.ofCertificate]
+  rfl
 
 /-- `ctxW` carries exactly the witness Gram matrix. -/
 theorem ctxW_G : @OperatorSelectionLpContext.G ℤ _ _ _ ctxW = G2 := by
-  dsimp [ctxW, OperatorSelectionLpContext.ofCertificate]
+  rfl
 
 /-- Under a diagonal Gram over a domain without zero divisors, any active dual
 index (`s i ≠ 0`) with non-vanishing diagonal entry (`G i i ≠ 0`) forces the

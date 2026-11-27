@@ -101,7 +101,8 @@ theorem exists_local_log {w₀ : ℂ} (hw₀ : w₀ ≠ 0) :
     · have h1 : HasDerivAt (fun w : ℂ => -w) (-1) w₀ := (hasDerivAt_id w₀).neg
       have h2 := ((hasDerivAt_log h).comp w₀ h1).add_const (π * I : ℂ)
       convert h2 using 1
-      field_simp
+      · rfl
+      · field_simp
     · filter_upwards [hev] with w hw
       rw [Complex.exp_add, exp_log (neg_ne_zero.mpr hw), exp_pi_mul_I]; ring
 

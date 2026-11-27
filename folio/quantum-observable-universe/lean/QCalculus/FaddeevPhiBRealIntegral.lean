@@ -236,6 +236,7 @@ private lemma majorant_inv : IntegrableOn (fun t : ℝ => (t ^ 2)⁻¹) (Set.Ioi
     (show (0 : ℝ) < 1 by norm_num)
   refine h.congr_fun (fun t ht => ?_) measurableSet_Ioi
   have ht0 : (0 : ℝ) < t := lt_trans one_pos ht
+  show t ^ (-2 : ℝ) = (t ^ 2)⁻¹
   rw [Real.rpow_neg ht0.le, ← Real.rpow_natCast t 2]
   norm_num
 
@@ -379,6 +380,8 @@ private lemma abs_sin_sub_le_cube (y : ℝ) : |Real.sin y - y| ≤ 2 * |y| ^ 3 :
         norm_num
       rw [h2]
     have h4 : |y| ^ 4 ≤ |y| ^ 3 :=
+      pow_le_pow_of_le_one (abs_nonneg y) hy (by norm_num)
+    have h5 : |y| ^ 5 ≤ |y| ^ 3 :=
       pow_le_pow_of_le_one (abs_nonneg y) hy (by norm_num)
     nlinarith [pow_nonneg (abs_nonneg y) 3]
   · have habs : |Real.sin y| ≤ 1 := Real.abs_sin_le_one y

@@ -173,7 +173,8 @@ noncomputable def qDeformedMobiusFrobeniusContext : MobiusFrobeniusKernelContext
 theorem qDeformedMobiusFrobeniusContext_q_dependent :
     qDeformedMobiusFrobeniusContext.K_FH 2 0 1 ≠
       qDeformedMobiusFrobeniusContext.K_FH 1 0 1 := by
-  simp [qDeformedMobiusFrobeniusContext]
+  show (2 : ℝ) * (1 / ‖(0 : ℝ) - 1‖ ^ 2) ≠ 1 * (1 / ‖(0 : ℝ) - 1‖ ^ 2)
+  norm_num
 
 /-- **So `MobiusFrobeniusKernelContext` is inhabitable**, witnessed by the
     genuinely `q`-dependent context `qDeformedMobiusFrobeniusContext`. -/

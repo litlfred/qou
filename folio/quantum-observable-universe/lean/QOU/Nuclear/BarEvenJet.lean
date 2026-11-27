@@ -37,12 +37,18 @@ def dconj : DualNumber K →+* DualNumber K where
   map_one' := by ext <;> simp
   map_mul' x y := by
     ext
-    · simp
-    · simp only [DualNumber.snd_mul, TrivSqZeroExt.fst_mul, TrivSqZeroExt.fst_mk,
-        TrivSqZeroExt.snd_mk]
+    · rfl
+    · erw [DualNumber.snd_mul, DualNumber.snd_mul]
+      simp only [TrivSqZeroExt.snd_mk]
+      change _ = fst x * -snd y + -snd x * fst y
       ring
   map_zero' := by ext <;> simp
-  map_add' x y := by ext <;> simp [add_comm]
+  map_add' x y := by
+    ext
+    · rfl
+    · erw [TrivSqZeroExt.snd_add, TrivSqZeroExt.snd_add]
+      simp only [TrivSqZeroExt.snd_mk]
+      ring
 
 @[simp] theorem fst_dconj (x : DualNumber K) : (dconj x).fst = x.fst := rfl
 @[simp] theorem snd_dconj (x : DualNumber K) : (dconj x).snd = -x.snd := rfl
@@ -75,7 +81,7 @@ def onePlusEps : (DualNumber K)ˣ where
 
 theorem dconj_onePlusEps : dconj ((onePlusEps : (DualNumber K)ˣ) : DualNumber K)
     = ((onePlusEps⁻¹ : (DualNumber K)ˣ) : DualNumber K) := by
-  ext <;> simp [onePlusEps, dconj]
+  ext <;> simp [onePlusEps]
 
 /-- `dconj` sends `(1+ε)^n` to `(1+ε)^(−n)`. -/
 theorem dconj_zpow (n : ℤ) : dconj (((onePlusEps : (DualNumber K)ˣ) ^ n : (DualNumber K)ˣ) :
@@ -112,7 +118,7 @@ noncomputable def laurentFixedPointJet : FixedPointJet K[T;T⁻¹] K where
         simp only [hι, map_mul, invert_C, invert_T, laurentJet, eval₂_C, eval₂_T]
         rw [dconj_zpow]
         congr 1
-        ext <;> simp [dconj, TrivSqZeroExt.algebraMap_eq_inl]
+        ext <;> simp [TrivSqZeroExt.algebraMap_eq_inl]
 
 /-- **Corollary.** A bar-even Laurent polynomial (`f(q⁻¹) = f(q)`) over a ring where `2` is a
 unit has zero first-order part at `q = 1`. No analysis. -/

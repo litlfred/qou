@@ -86,7 +86,8 @@ theorem finrank_su3 (e : Fin 8 → ℚ) :
   have h := LinearMap.finrank_range_add_finrank_ker (V := ↥Der𝕆) (evOct e)
   have h14 : finrank ℚ (↥Der𝕆) = 14 := octonion_derivation_dim
   simp only [su3]
-  omega
+  rw [h14] at h
+  exact Nat.eq_sub_of_add_eq' h
 
 /-- **The `S⁶ = G₂/SU(3)` gate:** the colour stabilizer is `8`-dimensional (the
 Lie algebra of `SU(3)`) **iff** the evaluation has rank `6` (`= dim S⁶`). The

@@ -242,7 +242,7 @@ theorem tr_blockProd_pn (isP : ℕ → Prop) [DecidablePred isP] (wp wn : List (
       = T.tr (wordVal T 0 wp) ^ ((Finset.range (n + 1)).filter isP).card
         * T.tr (wordVal T 0 wn) ^ ((Finset.range (n + 1)).filter (fun k => ¬ isP k)).card := by
   rw [tr_blockProd_words T (fun k => if isP k then wp else wn)
-    (fun k => by dsimp only; split_ifs; exacts [hp, hn]) n]
+    (fun k => by split_ifs; exacts [hp, hn]) n]
   have e : ∀ k, T.tr (wordVal T 0 (if isP k then wp else wn))
       = if isP k then T.tr (wordVal T 0 wp) else T.tr (wordVal T 0 wn) := fun k => by
     split_ifs <;> rfl

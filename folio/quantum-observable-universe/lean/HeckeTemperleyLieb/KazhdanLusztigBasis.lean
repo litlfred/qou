@@ -183,7 +183,8 @@ theorem bar_smul_self_iff [Nontrivial R] (K : KLBasis W R M B) (r : R) (w : W) :
     intro h
     rw [K.bar_smul r w] at h
     have h1 := congrArg (fun m : M => K.basis.repr m w) h
-    simpa using h1
+    simp at h1
+    exact h1
   · -- `IsBarFixed` is a `def … : Prop` — it IS the equation, so it is used
     -- rather than rewritten with.
     intro h

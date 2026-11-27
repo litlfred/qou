@@ -345,12 +345,6 @@ theorem der_comp1 {D : Der𝕆} (hD : D ∈ su3 stdIm) (m : Fin 8) (hm0 : m ≠ 
 theorem toMatrix'_entry (D : (Fin 8 → ℚ) →ₗ[ℚ] (Fin 8 → ℚ)) (r m : Fin 8) :
     LinearMap.toMatrix' D r m = D (Pi.single m 1) r := by
   rw [LinearMap.toMatrix'_apply]
-  have e : (fun j' => if j' = m then (1 : ℚ) else 0) = Pi.single m 1 := by
-    funext j'
-    by_cases h : j' = m
-    · subst h; simp
-    · simp [Pi.single_apply, h]
-  rw [e]
 
 /-- The level subspaces of the imaginary part: `L(e₁) = s` on `Im 𝕆 ∩ span(e₂..e₇)`. -/
 def levelSpace (s : K) : Set (Fin 8 → K) := {x | x 0 = 0 ∧ x 1 = 0 ∧ omul eOne x = s • x}

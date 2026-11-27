@@ -129,7 +129,7 @@ theorem whiteheadS_log {N n k : ℕ} (hN : 2 ≤ N) (hkn : k + n ≤ N - 1) :
           (Real.log 2 + 2 * Real.log (Real.sin (((k : ℝ) + j) * π / N))
             - Real.log (Real.sin ((j : ℝ) * π / N))) := by
   unfold whiteheadS
-  rw [Real.log_prod _ _ (fun j hj => by
+  rw [Real.log_prod (fun j hj => by
     obtain ⟨hj1, hjn⟩ := Finset.mem_Icc.mp hj
     exact ne_of_gt (whiteheadS_factor_pos hN hj1 hjn hkn))]
   apply Finset.sum_congr rfl

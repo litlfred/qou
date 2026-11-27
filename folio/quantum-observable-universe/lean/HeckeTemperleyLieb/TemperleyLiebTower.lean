@@ -5,7 +5,7 @@ import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Combinatorics.Enumerative.Catalan
+import Mathlib.Combinatorics.Enumerative.Catalan.Basic
 
 -- Ref: [jones1987] (Markov trace factors through the Temperley–Lieb quotient)
 -- Ref: [kimlee2018] (dim TL_n = Catalan(n), standard-monomial count)
@@ -589,8 +589,11 @@ variable {R : Type*} [AddCommMonoid R] [PartialOrder R] [CovariantClass R R (· 
 analytic content of the propagation. -/
 theorem terms_zero_of_sum_zero {ι : Type*} (s : Finset ι) (y : ι → R)
     (hnn : ∀ i ∈ s, 0 ≤ y i) (hsum : ∑ i ∈ s, y i = 0) :
-    ∀ i ∈ s, y i = 0 :=
-  (Finset.sum_eq_zero_iff_of_nonneg hnn).mp hsum
+    ∀ i ∈ s, y i = 0 := by
+  haveI : IsOrderedAddMonoid R :=
+    { add_le_add_left := fun a b h c => by
+        rw [add_comm a, add_comm b]; exact CovariantClass.elim c h }
+  exact (Finset.sum_eq_zero_iff_of_nonneg hnn).mp hsum
 
 /-- **One level of propagation.**
 

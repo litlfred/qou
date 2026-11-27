@@ -145,7 +145,7 @@ noncomputable def tauEval {N : Type*} [AddCommGroup N] [Module R N] :
     (fun a₁ a₂ n => by simp [map_add, add_smul])
     (fun r a n => by simp [map_smul, mul_smul])
     (fun a n₁ n₂ => by simp [smul_add])
-    (fun r a n => by dsimp only; exact smul_comm (τ a) r n))
+    (fun r a n => smul_comm (τ a) r n))
 
 @[simp]
 theorem tauEval_tmul {N : Type*} [AddCommGroup N] [Module R N] (a : A) (n : N) :

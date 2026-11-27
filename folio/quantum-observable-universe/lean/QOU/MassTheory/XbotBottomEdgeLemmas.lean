@@ -244,7 +244,7 @@ theorem frameObjective_bottom_raise_lt [LinearOrder R] [IsStrictOrderedRing R]
   rw [pairObjective_succ_bottom, pairObjective_succ_bottom]
   simp only [bottomZero]
   -- the untouched upper block is literally the same on both sides
-  apply add_lt_add_right
+  apply add_lt_add_left
   -- one-body piece of the raised bottom row
   have hphi0 : framePhi eps W a c P (n + 1) 0 0 = 0 := by simp [framePhi]
   have hphi : framePhi eps W a c P (n + 1) 0 (u 0) ≤ (u 0 : R) * (eps 1 - a * P) := by

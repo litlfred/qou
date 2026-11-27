@@ -99,7 +99,7 @@ theorem monoEquiv_comp_tensorPerm (σ : Perm α) :
       = precompLin (R := R) (indexPerm σ⁻¹ κ) ∘ₗ
         (monoEquiv (R := R) (α := α) (κ := κ)).toLinearMap := by
   ext x g
-  simpa using monoEquiv_tensorPerm σ (PiTensorProduct.tprod R x) g
+  exact monoEquiv_tensorPerm σ (PiTensorProduct.tprod R x) g
 
 /-- **The permutation character on the tensor power, as `LinearMap.trace`.**
 

@@ -2,7 +2,7 @@ import Mathlib.Tactic
 import Mathlib.Data.Matrix.Basic
 import Mathlib.LinearAlgebra.UnitaryGroup
 import Mathlib.LinearAlgebra.Matrix.Trace
-import Mathlib.LinearAlgebra.Matrix.Spectrum
+import Mathlib.Analysis.Matrix.Spectrum
 
 /-!
 # QOU.QuantumObservableUniverse.fai_projector_coadjoint_orbit
@@ -204,6 +204,7 @@ theorem fai_projector_coadjoint_orbit_orbit
   -- Spectral decomposition of the Hermitian `ρ`.
   have hH : ρ.IsHermitian := hherm
   have hspec := hH.spectral_theorem
+  rw [Unitary.conjStarAlgAut_apply] at hspec
   set Um : Matrix (Fin 2) (Fin 2) ℂ := ↑hH.eigenvectorUnitary with hUm
   set ev : Fin 2 → ℂ := RCLike.ofReal ∘ hH.eigenvalues with hev
   have hUsU : star Um * Um = 1 := Matrix.UnitaryGroup.star_mul_self _

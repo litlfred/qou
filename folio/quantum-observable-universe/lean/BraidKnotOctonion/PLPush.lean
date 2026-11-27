@@ -175,7 +175,7 @@ lemma pullTime_dist_le {C : ℝ} (hC0 : 0 ≤ C) (hC : ∀ x, gauge S x ≤ C * 
     have : (y - τ' • w) - (y' - τ' • w') = (y - y') - τ' • (w - w') := by
       rw [smul_sub]; abel
     rw [this]
-    refine (norm_sub_le _ _).trans (add_le_add_left ?_ _)
+    refine (norm_sub_le _ _).trans (add_le_add le_rfl ?_)
     rw [norm_smul, Real.norm_of_nonneg h0']
     exact mul_le_of_le_one_left (norm_nonneg _) h1'
   have hbound : |τ' - pushCoef S (y - τ' • w)| ≤ C * (‖y - y'‖ + ‖w - w'‖) := by
@@ -229,7 +229,7 @@ lemma continuous_pull_family {v : E} (hv : gauge S v < 1) :
       pullTime S ((p'.1 : ℝ) • v) p'.2| < (1 - gauge S v) * ε := by
     have h1 : (1 - gauge S v) * |pullTime S ((p.1 : ℝ) • v) p.2 -
         pullTime S ((p'.1 : ℝ) • v) p'.2| ≤ C * (dist p'.2 p.2 + dist (p'.1 : ℝ) p.1 * ‖v‖) := by
-      refine le_trans ?_ (hb.trans (mul_le_mul_of_nonneg_left (add_le_add_left hnw _) hC0))
+      refine le_trans ?_ (hb.trans (mul_le_mul_of_nonneg_left (add_le_add le_rfl hnw) hC0))
       exact mul_le_mul_of_nonneg_right (by linarith) (abs_nonneg _)
     have hδ : C * (dist p'.2 p.2 + dist (p'.1 : ℝ) p.1 * ‖v‖) <
         (1 - gauge S v) * ε := by

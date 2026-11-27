@@ -246,7 +246,7 @@ theorem gLim_far (m k : ℕ) (hk : k + 1 < m) :
   have hmm : m < m + 1 := by omega
   rw [gLim_eq K q qi m (m + 1) hmm, gLim_eq K q qi k (m + 1) hkm,
     ← map_mul, ← map_mul]
-  exact congrArg _ (σ_commute K q qi (m + 1) ⟨m, hmm⟩ ⟨k, hkm⟩ (by simpa using hk))
+  exact congrArg _ (σ_commute K q qi (m + 1) ⟨m, hmm⟩ ⟨k, hkm⟩ (by show k + 2 ≤ m; omega))
 
 /-! ## The generators are units exactly when `q * qi = 1` -/
 

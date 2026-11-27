@@ -1,4 +1,4 @@
-import Mathlib.Combinatorics.Enumerative.Partition
+import Mathlib.Combinatorics.Enumerative.Partition.Basic
 import Mathlib.Data.Multiset.Sort
 import Mathlib.Data.List.Sort
 
@@ -42,9 +42,9 @@ variable {n : ℕ}
 def toList (p : Nat.Partition n) : List ℕ := p.parts.sort (· ≥ ·)
 
 /-- `toList p` is weakly decreasing — the hypothesis the Identity I `(A)` proof consumes
-(`l.Sorted (· ≥ ·)`). -/
-theorem toList_sorted (p : Nat.Partition n) : (toList p).Sorted (· ≥ ·) :=
-  Multiset.sort_sorted _ _
+(`l.Pairwise (· ≥ ·)`). -/
+theorem toList_sorted (p : Nat.Partition n) : (toList p).Pairwise (· ≥ ·) :=
+  Multiset.pairwise_sort _ _
 
 /-- `toList p` carries exactly the parts multiset (sorting forgets nothing). -/
 theorem toList_coe (p : Nat.Partition n) : (toList p : Multiset ℕ) = p.parts :=
@@ -84,17 +84,17 @@ theorem ofList_toList (p : Nat.Partition n)
 sides are weakly-decreasing lists with the same underlying multiset, hence equal
 (`List.eq_of_perm_of_sorted`, using antisymmetry of `· ≥ ·` on `ℕ`). -/
 theorem toList_ofList (l : List ℕ) (hpos : ∀ a ∈ l, 0 < a) (hsum : l.sum = n)
-    (hsorted : l.Sorted (· ≥ ·)) :
+    (hsorted : l.Pairwise (· ≥ ·)) :
     toList (ofList l hpos hsum) = l := by
   have hperm : (toList (ofList l hpos hsum)).Perm l := by
     rw [← Multiset.coe_eq_coe, toList_coe]; rfl
-  exact List.eq_of_perm_of_sorted hperm (toList_sorted _) hsorted
+  exact hperm.eq_of_pairwise' (toList_sorted _) hsorted
 
 /-- **The bridge `Equiv`** — `Nat.Partition n ≃ {weakly-decreasing positive lists summing to n}`.
 The right-hand subtype is precisely the computable model the Identity I combinatorics range over,
 so an abstract `∑_{Λ : Nat.Partition n}` transports to a sum over the sorted-list model and back. -/
 def equivSortedList (n : ℕ) :
-    Nat.Partition n ≃ {l : List ℕ // l.Sorted (· ≥ ·) ∧ (∀ a ∈ l, 0 < a) ∧ l.sum = n} where
+    Nat.Partition n ≃ {l : List ℕ // l.Pairwise (· ≥ ·) ∧ (∀ a ∈ l, 0 < a) ∧ l.sum = n} where
   toFun p := ⟨toList p, toList_sorted p, toList_pos p, toList_sum p⟩
   invFun l := ofList l.1 l.2.2.1 l.2.2.2
   left_inv p := ofList_toList p (toList_pos p) (toList_sum p)

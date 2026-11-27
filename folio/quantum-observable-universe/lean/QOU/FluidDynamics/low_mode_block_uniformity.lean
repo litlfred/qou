@@ -108,7 +108,7 @@ theorem uniformity_reduction (k e : ℕ → K) (B m : ℕ) (kB : K)
     blockEnstrophy k e m
       ≤ kB ^ 2 * blockEnergy e m + tailEnstrophy k e B m := by
   rw [enstrophy_split k e B m]
-  exact add_le_add_right (banded_enstrophy_le k e B m kB he hk) _
+  exact add_le_add (banded_enstrophy_le k e B m kB he hk) le_rfl
 
 /-- The trivial converse: the tail never exceeds the total (spectral
     energies nonnegative), so unbounded tail forces unbounded total —

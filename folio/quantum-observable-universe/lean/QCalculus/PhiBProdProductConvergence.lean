@@ -1,6 +1,6 @@
 import QCalculus.LocalUniformLimitEntire
 import QCalculus.PhiBProdMeromorphic
-import Mathlib.Analysis.NormedSpace.MultipliableUniformlyOn
+import Mathlib.Analysis.Normed.Module.MultipliableUniformlyOn
 
 /-!
 # The `phiBProd` partial products converge locally uniformly (input-1 closure)

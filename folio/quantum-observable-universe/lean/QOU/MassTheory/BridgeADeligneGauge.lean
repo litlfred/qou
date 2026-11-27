@@ -243,7 +243,7 @@ theorem monodromy_mul (hinjK : Function.Injective (algebraMap K S)) {ω : ι →
     (F : FundamentalSolution (Γ := Γ) (K := K) D ω) (γ δ : Γ) :
     F.M (γ * δ) = F.M γ * F.M δ := by
   have hcst : actM γ (cst (S := S) (F.M δ)) = cst (F.M δ) := by ext i k; simp [actM, hΓK]
-  have hact : actM (γ * δ) F.Φ = actM γ (actM δ F.Φ) := by ext i k; simp [actM, MulAction.mul_smul]
+  have hact : actM (γ * δ) F.Φ = actM γ (actM δ F.Φ) := by ext i k; simp [actM, mul_smul]
   have h : F.Φ * cst (F.M (γ * δ)) = F.Φ * cst (F.M γ * F.M δ) := by
     rw [← F.deck, hact, F.deck, actM_mul, F.deck, hcst, Matrix.mul_assoc]
     congr 1

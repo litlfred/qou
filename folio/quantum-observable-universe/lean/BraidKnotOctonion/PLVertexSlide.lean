@@ -50,6 +50,8 @@ namespace QOU.MathlibExt.PL
 
 open Set
 
+set_option backward.isDefEq.respectTransparency false
+
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
 /-- `(i + m) % (m + 1)` is `i - 1`, cyclically. -/
@@ -87,7 +89,7 @@ theorem rotate_rot (r : ℕ) : (P.rot r).rotate = P.rot (r + 1) := by
   simp only [Function.comp_apply]
   congr 1
   apply Fin.ext
-  simp only [sh, finRotate_succ_apply, Fin.val_add]
+  simp only [sh, finRotate_apply, Fin.val_add]
   have h1 : (1 : Fin (P.n + 1)).val = 1 := by
     have := P.two_le
     simp [Nat.mod_eq_of_lt (show 1 < P.n + 1 by omega)]

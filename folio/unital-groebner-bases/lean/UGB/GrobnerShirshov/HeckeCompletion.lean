@@ -505,7 +505,7 @@ theorem mem_heckeCompletedRewritingSystem_rules {n : ℕ} (hn : 0 < n) (hp : Hec
       exact Or.inr (Or.inr (Or.inr ⟨i', i, j, hc.1, hc.2,
         (Option.some.injEq _ _ ▸ hj).symm⟩))
     · simp only [if_neg hc] at hj
-      exact Option.noConfusion hj
+      cases hj
 
 /-- **Every rule of `heckeCompletedRewritingSystem` is one of four families**, and
 its leading monomial is the explicit word listed here. The first three cases are
@@ -3104,7 +3104,7 @@ theorem farComm_transport_snd {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (x : Fin
     have key := ih (a ++ [(⟨yi⟩ : HeckeGen n)]) (fun z hz => hw z (by simp [hz]))
       (fun u v huv => by
         have := hpw ((⟨yi⟩ : HeckeGen n) :: u) v (by rw [List.cons_append, huv])
-        simpa only [List.append_assoc, List.singleton_append, List.cons_append] using this)
+        simpa only [List.append_assoc, List.singleton_append, List.cons_append, List.nil_append] using this)
     simp only [List.append_assoc, List.singleton_append] at key
     show MultiStepReduction _ _ (AlgElement.ofTerms
       [(a ++ ((⟨x⟩ : HeckeGen n) :: (⟨yi⟩ : HeckeGen n) :: w), c), (p, d)]) _
@@ -3154,7 +3154,7 @@ theorem farComm_transport_fst {n : ℕ} (hn : 0 < n) (hp : HeckeParams) (x : Fin
     have key := ih (a ++ [(⟨yi⟩ : HeckeGen n)]) (fun z hz => hw z (by simp [hz]))
       (fun u v huv => by
         have := hpw ((⟨yi⟩ : HeckeGen n) :: u) v (by rw [List.cons_append, huv])
-        simpa only [List.append_assoc, List.singleton_append, List.cons_append] using this)
+        simpa only [List.append_assoc, List.singleton_append, List.cons_append, List.nil_append] using this)
     simp only [List.append_assoc, List.singleton_append] at key
     show MultiStepReduction _ _ (AlgElement.ofTerms
       [(p, d), (a ++ ((⟨x⟩ : HeckeGen n) :: (⟨yi⟩ : HeckeGen n) :: w), c)]) _
@@ -3617,7 +3617,7 @@ theorem farComm_transport_left_sources {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
       (fun u v huv _ => by
         have := hcol ((⟨yi⟩ : HeckeGen n) :: u) v (by rw [List.cons_append, huv])
           (by simp)
-        simpa only [List.append_assoc, List.singleton_append, List.cons_append] using this)
+        simpa only [List.append_assoc, List.singleton_append, List.cons_append, List.nil_append] using this)
     simp only [List.append_assoc, List.singleton_append] at key
     show MultiStepReduction _ _ (AlgElement.ofTerms
       (L₁ ++ (a ++ ((⟨yi⟩ : HeckeGen n) :: (w ++ ((⟨z⟩ : HeckeGen n) :: b))), c) :: L₂)) _
@@ -3630,7 +3630,7 @@ theorem farComm_transport_left_sources {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
           = a ++ ((⟨yi⟩ : HeckeGen n) :: ((⟨z⟩ : HeckeGen n) :: (w ++ b))) by simp]
       refine ofTerms_coeff_mid L₁ L₂ _ c (fun r hr => ?_)
       have := hcol [(⟨yi⟩ : HeckeGen n)] w rfl (by simp) r hr
-      simpa only [List.singleton_append, List.cons_append] using this
+      simpa only [List.singleton_append, List.cons_append, List.nil_append] using this
     refine ⟨farCommRelation yi z, farCommRelation_mem hn hp hy, a, w ++ b, c, ?_, ?_, ?_⟩
     · rw [hv]; exact hc
     · rw [hv, farCommRelation_lc yi z (by omega)]; ring
@@ -5014,7 +5014,7 @@ theorem farComm_transport_right_sources {n : ℕ} (hn : 0 < n) (hp : HeckeParams
     have key := ih (a ++ [(⟨yi⟩ : HeckeGen n)]) b (fun t ht => hw t (by simp [ht]))
       (fun u v huv hv => by
         have := hcol ((⟨yi⟩ : HeckeGen n) :: u) v (by rw [List.cons_append, huv]) hv
-        simpa only [List.append_assoc, List.singleton_append, List.cons_append] using this)
+        simpa only [List.append_assoc, List.singleton_append, List.cons_append, List.nil_append] using this)
     simp only [List.append_assoc, List.singleton_append] at key
     show MultiStepReduction _ _ (AlgElement.ofTerms
       (L₁ ++ (a ++ ((⟨x⟩ : HeckeGen n) :: ((⟨yi⟩ : HeckeGen n) :: (w ++ b))), c) :: L₂)) _
@@ -5143,7 +5143,7 @@ theorem blockTransportRightSources {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
           have := hcol P (S ++ [(⟨xi⟩ : HeckeGen n)]) u v x
             (by rw [← hPS]; simp) huv hv r hr
           simpa only [List.append_assoc, List.cons_append,
-            List.singleton_append] using this)
+            List.singleton_append, List.nil_append] using this)
       simp only [List.append_assoc, List.cons_append] at hstep hrec ⊢
       exact MultiStepReduction.trans hstep hrec
 
@@ -15025,7 +15025,7 @@ theorem resolves_of_T0 (hn : 0 < n) (hp : HeckeParams) {i i₁ j₁ j₂ : Fin n
   have hz : E.isZero := by
     intro m
     have hm := hce m
-    simpa using hm
+    simpa [AlgElement.ofTerms] using hm
   exact reducesToZero_congr
     ⟨E, ⟨hchain, isNormalForm_of_isZero hz⟩, hz⟩
     (fun m => oc_spoly_coeff h₁ hj₁ hj₂ m)
@@ -15892,7 +15892,7 @@ theorem descWord_last {n : ℕ} {i j : Fin n} (hj : j.val ≤ i.val) :
     exact ⟨[], by rw [descWord_self]; rfl⟩
   · have hlt' : j.val + 1 < n := by omega
     refine ⟨descWord i ⟨j.val + 1, hlt'⟩, ?_⟩
-    exact descWord_snoc (j := ⟨j.val + 1, hlt'⟩) rfl (by simpa using hlt)
+    exact descWord_snoc (j := ⟨j.val + 1, hlt'⟩) rfl (by exact hlt)
 
 /-- **In a duplicate-free list, a letter pins its own position.** -/
 theorem nodup_split_unique {α : Type*} {L A C T S : List α} {z : α}
@@ -16008,9 +16008,9 @@ theorem lm_not_proper_interior (hn : 0 < n) (hp : HeckeParams)
   rcases lm_split hn hp hr₂ hlm₂ with
     ⟨hm, -⟩ | ⟨i, j, hj, -, hm, -⟩ | ⟨i, j, hj, -, hm, -⟩
     | ⟨i', i, j, hb₁, hb₂, -, hm, -⟩
-  · rw [hm] at hmid₂; have := congrArg List.length hmid₂; simp at this; omega
-  · rw [hm] at hmid₂; have := congrArg List.length hmid₂; simp at this; omega
-  · rw [hm] at hmid₂; have := congrArg List.length hmid₂; simp at this; omega
+  · rw [hm] at hmid₂; have := congrArg List.length hmid₂; simp at this <;> omega
+  · rw [hm] at hmid₂; have := congrArg List.length hmid₂; simp at this <;> omega
+  · rw [hm] at hmid₂; have := congrArg List.length hmid₂; simp at this <;> omega
   rw [hm] at hmid₂
   -- Inside a duplicate-free strictly-descending run, `lm₁` has nowhere to sit:
   -- three of its four shapes repeat their head as their last letter, and the

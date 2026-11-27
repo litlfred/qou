@@ -219,7 +219,7 @@ lemma logDeriv_zpow_sub_mul_split {g : ℂ → ℂ} {w z : ℂ} {n : ℤ}
   have hdf : DifferentiableAt ℂ (fun ζ => ζ - w) z := (differentiableAt_id).sub_const w
   have hdpow : DifferentiableAt ℂ (fun ζ => (ζ - w) ^ n) z := hdf.zpow (Or.inl hzw)
   have hpne : ((z - w) ^ n) ≠ 0 := zpow_ne_zero n hzw
-  rw [logDeriv_mul z hpne hgz hdpow hg]
+  rw [logDeriv_fun_mul z hpne hgz hdpow hg]
   congr 1
   rw [logDeriv_fun_zpow hdf n]
   have h2 : logDeriv (fun ζ => ζ - w) z = (z - w)⁻¹ := by
@@ -415,7 +415,7 @@ lemma circleIntegrable_sum_simple_poles {c : ℂ} {R : ℝ} (hR : 0 ≤ R) (T : 
   intro z hz
   have hne : z ≠ u := by
     intro h
-    have hzc : dist z c = R := by simpa using hz
+    have hzc : dist z c = R := Metric.mem_sphere.mp hz
     have huc : dist u c < R := hT u hu
     rw [h] at hzc
     exact absurd hzc (by linarith)
@@ -551,7 +551,7 @@ theorem argument_principle {f : ℂ → ℂ} {c : ℂ} {R : ℝ} (hR : 0 < R)
       (fun z => (∑ u ∈ S, (D u : ℂ) * (z - u)⁻¹) + logDeriv g z) (Metric.sphere c R) := by
     intro z hz
     have hzU : z ∈ U := by simpa only [hUdef] using Metric.sphere_subset_closedBall hz
-    have hzdist : dist z c = R := by simpa using hz
+    have hzdist : dist z c = R := Metric.mem_sphere.mp hz
     have hznS : z ∉ S := by
       intro h; have := hSball z h; rw [Metric.mem_ball, hzdist] at this; exact lt_irrefl R this
     have hzu : ∀ u ∈ S, z ≠ u := by
@@ -610,7 +610,7 @@ theorem argument_principle {f : ℂ → ℂ} {c : ℂ} {R : ℝ} (hR : 0 < R)
     -- logDeriv P z = ∑ u ∈ S, D u * (z - u)⁻¹
     have hlogP : logDeriv P z = ∑ u ∈ S, (D u : ℂ) * (z - u)⁻¹ := by
       rw [hPdef]
-      rw [logDeriv_prod S (fun u z => (z - u) ^ (D u)) z
+      rw [logDeriv_fun_prod (s := S) (f := fun u z => (z - u) ^ (D u)) (x := z)
         (fun u hu => zpow_ne_zero _ (sub_ne_zero.2 (hzu u hu)))
         (fun u hu => (differentiableAt_id.sub_const u).zpow (Or.inl (sub_ne_zero.2 (hzu u hu))))]
       refine Finset.sum_congr rfl (fun u hu => ?_)

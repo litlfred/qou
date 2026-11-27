@@ -4,7 +4,9 @@ import Mathlib.Data.List.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
-import Mathlib.Algebra.GeomSum
+import Mathlib.Algebra.Field.GeomSum
+import Mathlib.Algebra.Order.Field.GeomSum
+import Mathlib.Algebra.Order.Ring.GeomSum
 import Mathlib.Analysis.SpecificLimits.Basic
 
 

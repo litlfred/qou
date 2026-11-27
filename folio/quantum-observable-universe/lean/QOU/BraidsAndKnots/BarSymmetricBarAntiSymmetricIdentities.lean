@@ -100,7 +100,7 @@ theorem Q_over_P_eq_tanh (m : ℕ) (η : ℝ)
 theorem P_plus_Q (m : ℕ) (η : ℝ) :
     P_m m η + Q_m m η = Real.exp ((2 * m + 1) * η) / (2 * Real.cosh η) := by
   unfold P_m Q_m
-  rw [div_add_div_same, ← Real.cosh_add_sinh]
+  rw [← add_div, ← Real.cosh_add_sinh]
 
 /-- The difference identity: $P_m - Q_m = e^{-(2m+1)\eta} / (2 \cosh η)$.
 

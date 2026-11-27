@@ -1,5 +1,6 @@
 import QOU.MassTheory.CoordinationBulkCriterion
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
 import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
 import Mathlib.Tactic
 
@@ -296,9 +297,15 @@ theorem affine_over_affine_not_surfaceTerm (αc βc αs βs : ℝ) (hαc : 0 < �
     filter_upwards [eventually_gt_atTop (0 : ℝ)] with A hA
     field_simp
   have hnum : Tendsto (fun A : ℝ => αs + βs / A) atTop (nhds (αs + 0)) :=
-    tendsto_const_nhds.add (by simpa [div_eq_mul_inv] using tendsto_inv_atTop_zero.const_mul βs)
+    tendsto_const_nhds.add (by
+      have h := tendsto_inv_atTop_zero.const_mul βs
+      rw [mul_zero] at h
+      exact h.congr (fun A => (div_eq_mul_inv βs A).symm))
   have hden : Tendsto (fun A : ℝ => αc + βc / A) atTop (nhds (αc + 0)) :=
-    tendsto_const_nhds.add (by simpa [div_eq_mul_inv] using tendsto_inv_atTop_zero.const_mul βc)
+    tendsto_const_nhds.add (by
+      have h := tendsto_inv_atTop_zero.const_mul βc
+      rw [mul_zero] at h
+      exact h.congr (fun A => (div_eq_mul_inv βc A).symm))
   have hlim : Tendsto (fun A : ℝ => (αs + βs / A) / (αc + βc / A)) atTop (nhds ((αs + 0) / (αc + 0))) :=
     hnum.div hden (by simpa using hαc.ne')
   have h' := Filter.Tendsto.congr' heq h

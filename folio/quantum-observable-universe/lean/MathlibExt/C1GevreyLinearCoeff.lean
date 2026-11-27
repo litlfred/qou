@@ -132,7 +132,7 @@ theorem tendsto_log_qInt_sub (hq : 1 < q) :
     have hc : ContinuousAt Real.log (1 - 0) := by
       apply Real.continuousAt_log; norm_num
     have := hc.tendsto.comp (tendsto_const_nhds.sub hsmall)
-    simpa using this
+    simpa [Function.comp_def] using this
   refine (hlog1.sub_const (Real.log (q - q⁻¹))).congr' ?_ |>.trans (by simp)
   · filter_upwards [eventually_ge_atTop 1] with n hn
     have hn0 : n ≠ 0 := by omega
@@ -327,7 +327,7 @@ theorem tendsto_ratio_zero (hq : 1 < q) (hk : 1 ≤ k) (hb : ∀ m, 0 < b m)
   have hq0 : 0 < q := by linarith
   have hε : Tendsto (fun m : ℕ => 1 / qInt q (m + k + 1)) atTop (𝓝 0) := by
     have := (tendsto_qInt_atTop hq).comp (tendsto_add_atTop_nat (k + 1))
-    simpa [Function.comp, add_assoc] using this.inv_tendsto_atTop
+    simpa [Function.comp_def, Pi.inv_def, add_assoc] using this.inv_tendsto_atTop
   refine tendsto_zero_of_two_step_contraction (ρ := q⁻¹)
     (fun m => (div_pos (hb _) (hb _)).le) hε (inv_nonneg.mpr hq0.le)
     (inv_lt_one_of_one_lt₀ hq) ?_
@@ -346,7 +346,7 @@ theorem two_step_increment_tendsto (hq : 1 < q) (hk : 1 ≤ k) (hb : ∀ m, 0 < 
   have hlog1 : Tendsto (fun m => Real.log (1 + b (m + 1) / b m)) atTop (𝓝 0) := by
     have hc : ContinuousAt Real.log (1 + 0) := by
       apply Real.continuousAt_log; norm_num
-    simpa using hc.tendsto.comp (tendsto_const_nhds.add hr)
+    simpa [Function.comp_def] using hc.tendsto.comp (tendsto_const_nhds.add hr)
   have hQ := (tendsto_log_qInt_sub hq).comp (tendsto_add_atTop_nat k)
   have hsum : Tendsto (fun m : ℕ =>
       ((Real.log (qInt q (m + k)) - ((m + k : ℕ) : ℝ) * Real.log q)

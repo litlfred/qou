@@ -347,7 +347,7 @@ theorem vtx_three_eq_one_iff {q a b a' h : ℝ} (hq : 0 < q) (hb : b ≠ 0)
   constructor
   · intro h3
     have := congrArg (fun M : Matrix (Fin 2) (Fin 2) ℝ => M 0 1) h3
-    simp only at this
+    try simp only at this
     rw [vtx_three hqinv hh ha ha' hbb hq1, vtx_entries] at this
     simp [Matrix.add_apply, Matrix.smul_apply] at this
     -- this : 2 * h ^ 2 + h ^ 4 = 0 ∨ q = 0 ∨ b = 0

@@ -1,4 +1,5 @@
 import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Ring
 
 /-!
 # The 5₂ sum rule: the algebraic core of Routes 8 and 9

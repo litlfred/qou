@@ -4,6 +4,7 @@ import Mathlib.Data.Matrix.Mul
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FinCases
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # The hydrogen capture braid on four strands: the weight-space reduction

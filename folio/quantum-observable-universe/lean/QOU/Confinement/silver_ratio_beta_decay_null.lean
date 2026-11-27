@@ -242,6 +242,7 @@ theorem tendsto_volTerm_atTop (V : ℝ) :
   have h2 : Filter.Tendsto (fun q : ℝ => V / (hbarQ q) ^ 2) Filter.atTop
       (nhds (V / (1 : ℝ) ^ 2)) :=
     Filter.Tendsto.div tendsto_const_nhds h1 (by norm_num)
-  simpa [volTerm] using h2
+  have hv : volTerm V = fun q : ℝ => V / (hbarQ q) ^ 2 := rfl
+  rw [hv]; simpa using h2
 
 end QOU.ParticleInteractions.SilverRatioBetaDecayNull

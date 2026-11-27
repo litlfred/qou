@@ -44,7 +44,6 @@ noncomputable abbrev todd : PowerSeries A := bernoulli'PowerSeries A
 /-- **Defining equation of the Todd series:** `Todd(t) · (1 − e^{−t}) = t`. -/
 theorem todd_mul_one_sub_exp_neg : todd A * (1 - evalNegHom (exp A)) = X := by
   have h := congrArg (· * evalNegHom (exp A)) (bernoulli'PowerSeries_mul_exp_sub_one A)
-  simp only at h
   have hee : exp A * evalNegHom (exp A) = 1 := exp_mul_exp_neg_eq_one
   calc todd A * (1 - evalNegHom (exp A))
       = bernoulli'PowerSeries A * (exp A - 1) * evalNegHom (exp A) := by

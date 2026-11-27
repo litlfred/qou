@@ -139,9 +139,15 @@ theorem not_stokesSurfaceTerm_of_bounds (cells sing : ℝ → ℝ) (αc βc αs 
   rintro ⟨-, h0⟩
   -- the comparison ratio tends to αs/αc > 0
   have hnum : Tendsto (fun A : ℝ => αs + βs / A) atTop (nhds (αs + 0)) :=
-    tendsto_const_nhds.add (by simpa [div_eq_mul_inv] using tendsto_inv_atTop_zero.const_mul βs)
+    tendsto_const_nhds.add (by
+      have h := tendsto_inv_atTop_zero.const_mul βs
+      rw [mul_zero] at h
+      exact h.congr (fun A => (div_eq_mul_inv βs A).symm))
   have hden : Tendsto (fun A : ℝ => αc + βc / A) atTop (nhds (αc + 0)) :=
-    tendsto_const_nhds.add (by simpa [div_eq_mul_inv] using tendsto_inv_atTop_zero.const_mul βc)
+    tendsto_const_nhds.add (by
+      have h := tendsto_inv_atTop_zero.const_mul βc
+      rw [mul_zero] at h
+      exact h.congr (fun A => (div_eq_mul_inv βc A).symm))
   have hlim : Tendsto (fun A : ℝ => (αs + βs / A) / (αc + βc / A)) atTop
       (nhds ((αs + 0) / (αc + 0))) := hnum.div hden (by simpa using hαc.ne')
   have hpos : (0 : ℝ) < (αs + 0) / (αc + 0) := by simp; positivity

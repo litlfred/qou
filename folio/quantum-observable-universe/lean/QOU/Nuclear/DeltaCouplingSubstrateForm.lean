@@ -115,7 +115,7 @@ Construction:
 Ref: probe_delta_coupling_leading_form.py (numerical witness at q_0, ⁴He).
 Ref: docs/audits/2026-05-17-delta-coupling-substrate-derivation.md
 -/
-noncomputable instance deltaCouplingSubstrateForm_canonical
+@[reducible] noncomputable def deltaCouplingSubstrateForm_canonical
     (q : ℝ) (hq : 1 < q) (m_e : ℝ) : DeltaCouplingSubstrateForm where
   q0 := q
   q0_gt_one := hq

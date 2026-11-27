@@ -3,6 +3,7 @@ import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.FinCases
 import Mathlib.Data.Fin.Basic
+import Mathlib.Data.Fintype.Fin
 
 /-!
 # Jimbo's `gl₃` braiding and the colour singlet (working assumption, issue #9106)

@@ -6,7 +6,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
-import Mathlib.RingTheory.Real.Irrational
+import Mathlib.NumberTheory.Real.Irrational
 import Mathlib.Analysis.PSeries
 import Mathlib.Analysis.SpecificLimits.Normed
 

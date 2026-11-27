@@ -210,7 +210,7 @@ theorem degree_eq (hL : LinearLayout G) (hc : Chained G) (v : Fin n) :
 /-- `#{v : Fin n | 0 < v} = n − 1`. -/
 theorem card_filter_pos (hn : 1 ≤ n) :
     (Finset.univ.filter fun v : Fin n => 0 < v.val).card = n - 1 := by
-  have h := Finset.filter_card_add_filter_neg_card_eq_card
+  have h := Finset.card_filter_add_card_filter_not
     (s := (Finset.univ : Finset (Fin n))) (fun v : Fin n => 0 < v.val)
   have hneg : (Finset.univ.filter fun v : Fin n => ¬ 0 < v.val).card = 1 := by
     rw [Finset.card_eq_one]
@@ -229,7 +229,7 @@ theorem card_filter_pos (hn : 1 ≤ n) :
 /-- `#{v : Fin n | v + 1 < n} = n − 1`. -/
 theorem card_filter_lt (hn : 1 ≤ n) :
     (Finset.univ.filter fun v : Fin n => v.val + 1 < n).card = n - 1 := by
-  have h := Finset.filter_card_add_filter_neg_card_eq_card
+  have h := Finset.card_filter_add_card_filter_not
     (s := (Finset.univ : Finset (Fin n))) (fun v : Fin n => v.val + 1 < n)
   have hneg : (Finset.univ.filter fun v : Fin n => ¬ v.val + 1 < n).card = 1 := by
     rw [Finset.card_eq_one]

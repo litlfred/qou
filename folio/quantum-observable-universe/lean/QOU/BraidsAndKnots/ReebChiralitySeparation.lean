@@ -40,11 +40,11 @@ def A5Irrep.firstEll : A5Irrep → ℕ
     multiplicity entry is nonzero at its `firstEll` (and the table is the
     derived I-character branching).  Entry order is [A, T₁, T₂, G, H]. -/
 theorem firstEll_appears :
-    (icosBranchingMult (A5Irrep.A.firstEll)).get! 0 = 1 ∧
-    (icosBranchingMult (A5Irrep.T₁.firstEll)).get! 1 = 1 ∧
-    (icosBranchingMult (A5Irrep.H.firstEll)).get! 4 = 1 ∧
-    (icosBranchingMult (A5Irrep.T₂.firstEll)).get! 2 = 1 ∧
-    (icosBranchingMult (A5Irrep.G.firstEll)).get! 3 = 1 := by
+    (icosBranchingMult (A5Irrep.A.firstEll))[0]! = 1 ∧
+    (icosBranchingMult (A5Irrep.T₁.firstEll))[1]! = 1 ∧
+    (icosBranchingMult (A5Irrep.H.firstEll))[4]! = 1 ∧
+    (icosBranchingMult (A5Irrep.T₂.firstEll))[2]! = 1 ∧
+    (icosBranchingMult (A5Irrep.G.firstEll))[3]! = 1 := by
   decide
 
 /-- Reeb-spin Casimir at first appearance: `ℓ(ℓ+1)` (classical limit of the

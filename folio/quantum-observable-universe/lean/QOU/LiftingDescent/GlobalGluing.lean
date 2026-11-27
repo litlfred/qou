@@ -24,6 +24,8 @@ LaTeX label: `prop:global-gluing`
 
 namespace QOU.Torsion
 
+universe u v w x
+
 /-- **Local deformation algebra**: at each point p, the algebra
     `𝒪_{q(p)}(G)` of functions on the quantum group deformed by
     the local substrate parameter `q(p)`. -/
@@ -39,9 +41,9 @@ attribute [instance] LocalDeformation.instRing LocalDeformation.instModule
 /-- **Twisted quantization map**: Yekutieli's construction that
     produces a global algebra from compatible local deformations. -/
 -- Ref: [yekutieli2008] §4, [yekutieli2015-twisted-dq] Theorem 0.10.1
-structure TwistedQuantizationMap (R : Type*) [CommRing R] where
-  localData : LocalDeformation R
-  GlobalAlgebra : Type*
+structure TwistedQuantizationMap (R : Type u) [CommRing R] where
+  localData : LocalDeformation.{u, v} R
+  GlobalAlgebra : Type w
   [instGlobalRing : Ring GlobalAlgebra]
   localToGlobal : ∀ i, localData.localAlgebra i →+* GlobalAlgebra
   -- Each local-to-global map embeds the local algebra; Yekutieli's
@@ -57,11 +59,11 @@ attribute [instance] TwistedQuantizationMap.instGlobalRing
     map produces a well-defined global algebra, and the vacuum state
     τ is globally consistent. -/
 -- Ref: [yekutieli2008] Main Theorem, [leitner2026] §3
-structure GlobalGluing (R : Type*) [CommRing R] where
-  tqm : TwistedQuantizationMap R
+structure GlobalGluing (R : Type u) [CommRing R] where
+  tqm : TwistedQuantizationMap.{u, v, w} R
   -- Ref: [yekutieli2008] Main Theorem
   unique_patches : tqm.localData.numPatches > 0
-  VacuumWellDefined : Type*
+  VacuumWellDefined : Type x
   [instVac : Nonempty VacuumWellDefined]
 
 attribute [instance] GlobalGluing.instVac

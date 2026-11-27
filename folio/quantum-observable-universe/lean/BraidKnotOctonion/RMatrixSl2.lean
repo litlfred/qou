@@ -240,12 +240,12 @@ noncomputable def heckeAction (hqi : q * qi = 1) :
 
 @[simp] theorem heckeAction_sigma_zero (hqi : q * qi = 1) :
     heckeAction q qi hqi (QOU.IwahoriHecke.Balanced.sigma coxA2 q qi 0) = rc1 q qi := by
-  simpa using QOU.IwahoriHecke.Balanced.liftBalanced_sigma (M := coxA2) hqi
+  exact QOU.IwahoriHecke.Balanced.liftBalanced_sigma (M := coxA2) hqi
     ![rc1 q qi, rc2 q qi] _ _ coxA2_symm 0
 
 @[simp] theorem heckeAction_sigma_one (hqi : q * qi = 1) :
     heckeAction q qi hqi (QOU.IwahoriHecke.Balanced.sigma coxA2 q qi 1) = rc2 q qi := by
-  simpa using QOU.IwahoriHecke.Balanced.liftBalanced_sigma (M := coxA2) hqi
+  exact QOU.IwahoriHecke.Balanced.liftBalanced_sigma (M := coxA2) hqi
     ![rc1 q qi, rc2 q qi] _ _ coxA2_symm 1
 
 end QOU.IwahoriHecke.RMatrix

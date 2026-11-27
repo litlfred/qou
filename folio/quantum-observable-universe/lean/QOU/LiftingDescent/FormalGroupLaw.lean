@@ -172,12 +172,12 @@ def map {S : Type*} [CommRing S] (φ : R →+* S) (G : FormalGroupLaw R ι) :
     funext j
     have := congrArg (MvPowerSeries.map φ) (congrFun G.unit_left j)
     rw [map_subst2 φ (noConst_coords 0) noConst_zero] at this
-    simpa [coords] using this
+    simp only [coords, Pi.zero_apply, map_zero, MvPowerSeries.map_X] at this ⊢; exact this
   unit_right := by
     funext j
     have := congrArg (MvPowerSeries.map φ) (congrFun G.unit_right j)
     rw [map_subst2 φ noConst_zero (noConst_coords 0)] at this
-    simpa [coords] using this
+    simp only [coords, Pi.zero_apply, map_zero, MvPowerSeries.map_X] at this ⊢; exact this
   assoc := by
     funext j
     have := congrArg (MvPowerSeries.map φ) (congrFun G.assoc j)
@@ -186,14 +186,14 @@ def map {S : Type*} [CommRing S] (φ : R →+* S) (G : FormalGroupLaw R ι) :
       map_subst2 φ (noConst_coords 0)
         (noConst_subst2 (noConst_coords 1) (noConst_coords 2) G.noConst)] at this
     simp only [map_subst2 φ (noConst_coords _) (noConst_coords _)] at this
-    simpa [coords] using this
+    simp only [coords, Pi.zero_apply, map_zero, MvPowerSeries.map_X] at this ⊢; exact this
 
 theorem map_isComm {S : Type*} [CommRing S] (φ : R →+* S) {G : FormalGroupLaw R ι}
     (hG : G.IsComm) : (G.map φ).IsComm := by
   intro j
   have := congrArg (MvPowerSeries.map φ) (hG j)
   rw [map_subst2 φ (noConst_coords 1) (noConst_coords 0)] at this
-  simpa [map, coords] using this
+  simp only [coords, MvPowerSeries.map_X] at this ⊢; exact this
 
 /-- The additive formal group law `F(X, Y) = X + Y`. -/
 def additive : FormalGroupLaw R ι where

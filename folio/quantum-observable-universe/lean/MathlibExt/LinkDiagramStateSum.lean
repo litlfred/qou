@@ -810,7 +810,7 @@ variable {E F : Type u} (M : Model R ι)
 omit [Fintype ι] [DecidableEq ι] in
 theorem xw_map (f : E → F) (xs : Multiset (Crossing E)) (L : F → ι) :
     xw M (xs.map (Crossing.map f)) L = xw M xs (L ∘ f) := by
-  simp [xw, Multiset.map_map, Crossing.map]
+  simp [xw, Multiset.map_map, Crossing.map, Function.comp_def]
 
 omit [Fintype ι] in
 theorem jw_map (f : E → F) (js : Multiset (E × E × ℤ)) (L : F → ι) :
@@ -993,7 +993,8 @@ theorem writhe_ofJs {E : Type*} (js : Multiset (E × E × ℤ)) : writhe (Code.o
   simp [writhe, Code.ofJs]
 
 theorem writhe_map {E F : Type u} (f : E → F) (D : Code E) : writhe (D.map f) = writhe D := by
-  simp [writhe, Code.map, Multiset.map_map, Crossing.map]
+  simp [writhe, Code.map, Multiset.map_map, Crossing.map, Function.comp_def]
+  rfl
 
 /-- The sign `±1` of a crossing sign, as an integer. -/
 def signZ (s : Bool) : ℤ := if s then 1 else -1

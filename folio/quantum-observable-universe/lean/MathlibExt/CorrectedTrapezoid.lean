@@ -161,7 +161,8 @@ theorem integral_eq_corrected_trapezoid_sub
     · exact (hwcont.mul hcont).intervalIntegrable
     · exact (continuousOn_const.mul hfcont).intervalIntegrable
   have hftc := integral_eq_sub_of_hasDerivAt hF hint
-  rw [integral_sub ((hwcont.mul hcont).intervalIntegrable)
+  rw [integral_sub (f := fun x => (x - a) ^ 2 * (b - x) ^ 2 * f'''' x) (g := fun x => 24 * f x)
+    ((hwcont.mul hcont).intervalIntegrable)
     ((continuousOn_const.mul hfcont).intervalIntegrable)] at hftc
   rw [intervalIntegral.integral_const_mul] at hftc
   linear_combination -hftc / 24
@@ -331,7 +332,8 @@ theorem integral_weight_sq_mul_deriv4_eq {g₂ g₃ g₄ : ℝ → ℝ} {a b : �
       volume a b :=
     ((hwc.mul hc4).sub (hw2c.mul hc2)).intervalIntegrable
   have hftc := integral_eq_sub_of_hasDerivAt hF hint
-  rw [integral_sub (hwc.mul hc4).intervalIntegrable
+  rw [integral_sub (f := fun x => (x - a) ^ 2 * (b - x) ^ 2 * g₄ x)
+    (g := fun x => (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) * g₂ x) (hwc.mul hc4).intervalIntegrable
     (hw2c.mul hc2).intervalIntegrable] at hftc
   -- both boundary terms vanish: `w` and `w′` have double/simple roots at `a`, `b`
   have hb : (b - a) ^ 2 * (b - b) ^ 2 * g₃ b
@@ -408,7 +410,8 @@ theorem integral_eq_corrected_trapezoid_sub_deriv2 {g g₁ g₂ : ℝ → ℝ} {
       = -12 * (∫ x in a..b, (x - a) * (b - x) * g₂ x)
         + 2 * (b - a) ^ 2 * (g₁ b - g₁ a) := by
     simp_rw [hpt]
-    rw [integral_add (hw1g.const_mul _) (hg2int.const_mul _),
+    rw [integral_add (f := fun x => -12 * ((x - a) * (b - x) * g₂ x))
+      (g := fun x => 2 * (b - a) ^ 2 * g₂ x) (hw1g.const_mul _) (hg2int.const_mul _),
       intervalIntegral.integral_const_mul, intervalIntegral.integral_const_mul, hftc]
   rw [hsplit]
   linarith [hord1]
@@ -440,7 +443,8 @@ theorem abs_integral_weight_sq_deriv2_mul_le {g₂ : ℝ → ℝ} {a b D : ℝ} 
             - g₂ a * (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) := by
       intro x; ring
     simp_rw [hpt]
-    rw [integral_sub hWg2 (hWint.const_mul _),
+    rw [integral_sub (f := fun x => (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) * g₂ x)
+      (g := fun x => g₂ a * (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2)) hWg2 (hWint.const_mul _),
       intervalIntegral.integral_const_mul, integral_weight_sq_deriv2]
     ring
   rw [hshift]

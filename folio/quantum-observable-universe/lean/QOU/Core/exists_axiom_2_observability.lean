@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Lie.Classical
 import Mathlib.Algebra.Lie.Abelian
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # QOU.QuantumObservableUniverse.exists_axiom_2_observability

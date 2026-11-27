@@ -6,6 +6,7 @@ import Mathlib.Algebra.DualNumber
 import Mathlib.Algebra.Polynomial.Derivative
 import Mathlib.Algebra.Polynomial.Taylor
 import Mathlib.RingTheory.TensorProduct.Basic
+import Mathlib.RingTheory.TensorProduct.Maps
 
 /-!
 # The additive group has no invariant integral in characteristic zero
@@ -36,6 +37,13 @@ namespace QOU.LiftingDescent
 open Polynomial TensorProduct DualNumber
 
 variable {k : Type*} [CommRing k]
+
+/- Lean 4.35 port: `Algebra.TensorProduct.tmul_mul_tmul` now asks for
+`IsScalarTower k k[ε] k[ε]` and `SMulCommClass k k[ε] k[ε]`, which instance search does
+not find at this Mathlib (`TrivSqZeroExt.smul` vs `Algebra.toSMul`). Both are `Prop`s,
+supplied here from the `Algebra` laws. -/
+private instance : IsScalarTower k k[ε] k[ε] := ⟨fun a b c => Algebra.smul_mul_assoc a b c⟩
+private instance : SMulCommClass k k[ε] k[ε] := ⟨fun a b c => (Algebra.mul_smul_comm a b c).symm⟩
 
 /-- The additive coproduct `Δ p = p(X ⊗ 1 + 1 ⊗ X)` on `k[X]`. -/
 noncomputable def addComul : k[X] →ₐ[k] k[X] ⊗[k] k[X] :=

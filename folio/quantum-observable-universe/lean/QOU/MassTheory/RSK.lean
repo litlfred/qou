@@ -87,7 +87,7 @@ theorem rowBump_mem (row : List ℕ) (x b : ℕ)
 
 /-- The bumped element (if any) is > x. -/
 theorem rowBump_bumped_gt (row : List ℕ) (x : ℕ) (b : ℕ)
-    (hsort : row.Sorted (· < ·))
+    (hsort : row.Pairwise (· < ·))
     (hbump : (rowBump row x).2 = some b) :
     x < b := by
   induction row with
@@ -101,16 +101,16 @@ theorem rowBump_bumped_gt (row : List ℕ) (x : ℕ) (b : ℕ)
       assumption
     · -- x ≥ a: recurse
       next hge =>
-      have hsort_rest : rest.Sorted (· < ·) := by
+      have hsort_rest : rest.Pairwise (· < ·) := by
         cases hsort with
         | cons h1 h2 => exact h2
       exact ih hsort_rest (by simpa using hbump)
 
 /-- rowBump preserves sortedness (for fresh x ∉ row). -/
 theorem rowBump_sorted (row : List ℕ) (x : ℕ)
-    (hsort : row.Sorted (· < ·))
+    (hsort : row.Pairwise (· < ·))
     (hfresh : x ∉ row) :
-    (rowBump row x).1.Sorted (· < ·) := by
+    (rowBump row x).1.Pairwise (· < ·) := by
   induction row with
   | nil => simp [rowBump]
   | cons a rest ih =>
@@ -118,8 +118,8 @@ theorem rowBump_sorted (row : List ℕ) (x : ℕ)
     split
     · -- x < a: result = x :: rest, need x < all of rest
       next hlt =>
-      rw [List.sorted_cons] at hsort
-      refine List.sorted_cons.mpr ⟨?_, hsort.2⟩
+      rw [List.pairwise_cons] at hsort
+      refine List.pairwise_cons.mpr ⟨?_, hsort.2⟩
       intro b hb
       exact lt_trans hlt (hsort.1 b hb)
     · -- x ≥ a: result = a :: (rowBump rest x).1
@@ -129,10 +129,10 @@ theorem rowBump_sorted (row : List ℕ) (x : ℕ)
       have hax : a < x := by omega
       have hfresh_rest : x ∉ rest := by
         intro hm; exact hfresh (List.mem_cons_of_mem a hm)
-      rw [List.sorted_cons] at hsort
+      rw [List.pairwise_cons] at hsort
       have ih_result := ih hsort.2 hfresh_rest
       -- Need: a < all elements of (rowBump rest x).1.  Use rowBump_mem:
-      refine List.sorted_cons.mpr ⟨?_, ih_result⟩
+      refine List.pairwise_cons.mpr ⟨?_, ih_result⟩
       intro b hb
       rcases rowBump_mem rest x b hb with hrest | rfl
       · exact hsort.1 b hrest

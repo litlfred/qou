@@ -41,6 +41,8 @@ Companion probe: `computations/qbeta/qbeta_holonomy_t2_is_a_bar_symmetry_test_pr
 -/
 import Mathlib.Analysis.Calculus.Deriv.Inv
 import Mathlib.Analysis.Calculus.Deriv.Comp
+import Mathlib.Analysis.Calculus.Deriv.Pow
+import Mathlib.Analysis.Calculus.Deriv.Add
 import Mathlib.Tactic
 
 namespace QOU.QBeta.BarEven

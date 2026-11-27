@@ -3,6 +3,8 @@ import HeckeTemperleyLieb.YoungDiagramTranspose
 import Mathlib.Data.List.Sort
 import Mathlib.Data.List.GetD
 
+set_option backward.isDefEq.respectTransparency false
+
 /-!
 # QOU.BraidsAndKnots.YoungDiagramTransposeBridge — the sorted-List ↔ cell-model transpose bridge
 
@@ -117,24 +119,24 @@ theorem contentSq_eq_csq (l : List ℕ) : contentSq l = csq (cells l) := by
 /-! ## The staircase equivalence and `conj` on sorted lists -/
 
 /-- Every element of a weakly-decreasing list is at most its head. -/
-theorem mem_le_headD (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (x : ℕ) (hx : x ∈ l) :
+theorem mem_le_headD (l : List ℕ) (hs : l.Pairwise (· ≥ ·)) (x : ℕ) (hx : x ∈ l) :
     x ≤ l.headD 0 := by
   cases l with
   | nil => cases hx
   | cons a t =>
       rcases List.mem_cons.mp hx with rfl | hxt
       · simp
-      · exact (List.sorted_cons.mp hs).1 x hxt
+      · exact (List.pairwise_cons.mp hs).1 x hxt
 
 /-- **The staircase equivalence** for a weakly-decreasing list: `c < #{x ∈ l : r < x} ↔ r < l_c`.
 The count of parts exceeding `r` is an initial segment of row indices, so membership of `c` in it
 is exactly the cell condition `r < l_c` — the heart of the transpose correspondence. -/
-theorem lt_countP_iff (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (r c : ℕ) :
+theorem lt_countP_iff (l : List ℕ) (hs : l.Pairwise (· ≥ ·)) (r c : ℕ) :
     c < l.countP (fun x => decide (r < x)) ↔ r < l.getD c 0 := by
   induction l generalizing c with
   | nil => simp
   | cons a t ih =>
-      obtain ⟨ha, hst⟩ := List.sorted_cons.mp hs
+      obtain ⟨ha, hst⟩ := List.pairwise_cons.mp hs
       rw [List.countP_cons]
       by_cases hra : r < a
       · rw [if_pos (by simpa using hra)]
@@ -163,7 +165,7 @@ theorem lt_countP_iff (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (r c : ℕ) :
 /-- **`conj` in `countP` normal form** on a sorted list: `(conj l)_c = #{x ∈ l : c < x}`, valid at
 every index `c` (in range via the defining `range`-map, out of range because a sorted list has no
 part exceeding its head). -/
-theorem conj_getD (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (c : ℕ) :
+theorem conj_getD (l : List ℕ) (hs : l.Pairwise (· ≥ ·)) (c : ℕ) :
     (conj l).getD c 0 = l.countP (fun x => decide (c < x)) := by
   unfold conj
   by_cases hc : c < l.headD 0
@@ -192,7 +194,7 @@ theorem mem_transpose (D : Finset (ℕ × ℕ)) (p : ℕ × ℕ) :
 list-level conjugate is the coordinate-swap transpose of the cell set:
 `cells (conj l) = transpose (cells l)`. This is the statement the two parent files each assumed
 about the other in prose. Proof: both memberships reduce to the staircase `r < l_c`. -/
-theorem cells_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) :
+theorem cells_conj (l : List ℕ) (hs : l.Pairwise (· ≥ ·)) :
     cells (conj l) = transpose (cells l) := by
   ext p
   rw [mem_cells, mem_transpose, mem_cells, conj_getD l hs, lt_countP_iff l hs]
@@ -202,7 +204,7 @@ theorem cells_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) :
 `YoungDiagramKernel` carried only as `decide`-bounded `k ≤ 6`
 (`contentSq_conj_invariant_of_le_six`). Transport through the cell model and apply the abstract
 transpose-evenness `csq_transpose`. -/
-theorem contentSq_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) :
+theorem contentSq_conj (l : List ℕ) (hs : l.Pairwise (· ≥ ·)) :
     contentSq (conj l) = contentSq l := by
   rw [contentSq_eq_csq, contentSq_eq_csq, cells_conj l hs, csq_transpose]
 
@@ -211,7 +213,7 @@ theorem contentSq_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) :
 `(f^λ)³·ω₃(λ)` pairs off along `λ ↔ λ'` at every level `k` — provided the dimension is also
 conjugation-invariant, which holds by hook-length transpose symmetry and is the remaining
 (separate) list-level lemma. -/
-theorem omega3_conj (k : ℕ) (l : List ℕ) (hs : l.Sorted (· ≥ ·)) :
+theorem omega3_conj (k : ℕ) (l : List ℕ) (hs : l.Pairwise (· ≥ ·)) :
     omega3 k (conj l) = omega3 k l := by
   unfold omega3
   rw [contentSq_conj l hs]
@@ -226,7 +228,7 @@ theorem length_conj (m : List ℕ) : (conj m).length = m.headD 0 := by
   simp
 
 /-- `conj` of ANY list is weakly decreasing: the count of parts exceeding `j` is antitone. -/
-theorem conj_sorted (m : List ℕ) : (conj m).Sorted (· ≥ ·) := by
+theorem conj_sorted (m : List ℕ) : (conj m).Pairwise (· ≥ ·) := by
   unfold conj
   exact List.Pairwise.map _
     (fun a b hab => List.countP_mono_left fun x _ hx => by
@@ -244,7 +246,7 @@ theorem countP_range_lt (n k : ℕ) :
       by_cases h : m < k <;> simp [h] <;> omega
 
 /-- Counting parts of `conj l` exceeding `c` caps the staircase: `min (headD) (l_c)`. -/
-theorem countP_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (c : ℕ) :
+theorem countP_conj (l : List ℕ) (hs : l.Pairwise (· ≥ ·)) (c : ℕ) :
     (conj l).countP (fun x => decide (c < x)) = min (l.headD 0) (l.getD c 0) := by
   unfold conj
   have hfun : ((fun x => decide (c < x)) ∘ fun j => l.countP fun x => decide (j < x))
@@ -258,7 +260,7 @@ theorem countP_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (c : ℕ) :
 /-- **`conj` is an involution on sorted positive lists**: `conj (conj l) = l`. The staircase
 equivalence makes this getD-extensional: `(conj (conj l))_c = min (headD) (l_c) = l_c`. Positivity
 is genuinely needed (a trailing `0` part is erased by `conj`). -/
-theorem conj_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (hpos : ∀ x ∈ l, 0 < x) :
+theorem conj_conj (l : List ℕ) (hs : l.Pairwise (· ≥ ·)) (hpos : ∀ x ∈ l, 0 < x) :
     conj (conj l) = l := by
   have hlen : (conj (conj l)).length = l.length := by
     rw [length_conj, ← getD_zero_eq_headD, conj_getD l hs 0]
@@ -294,7 +296,7 @@ theorem card_cells (l : List ℕ) : (cells l).card = l.sum := by
 
 /-- **Conjugation preserves the size** `|λ'| = |λ|` — via the cell bijection, not arithmetic:
 `(conj l).sum = |cells (conj l)| = |transpose (cells l)| = |cells l| = l.sum`. -/
-theorem sum_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) : (conj l).sum = l.sum := by
+theorem sum_conj (l : List ℕ) (hs : l.Pairwise (· ≥ ·)) : (conj l).sum = l.sum := by
   rw [← card_cells, ← card_cells, cells_conj l hs]
   unfold transpose
   exact Finset.card_map _
@@ -330,7 +332,7 @@ theorem hookProd_eq_prod_cells (l : List ℕ) :
 /-- **Hook products are transpose-invariant** (list level): `hookProd (conj l) = hookProd l`.
 Transport the cell product along `cells_conj` and identify hooks pairwise via `conj_conj`
 (`hook_{λ'}(j,i) = hook_λ(i,j)`). -/
-theorem hookProd_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (hpos : ∀ x ∈ l, 0 < x) :
+theorem hookProd_conj (l : List ℕ) (hs : l.Pairwise (· ≥ ·)) (hpos : ∀ x ∈ l, 0 < x) :
     hookProd (conj l) = hookProd l := by
   rw [hookProd_eq_prod_cells, hookProd_eq_prod_cells, cells_conj l hs]
   unfold transpose
@@ -343,7 +345,7 @@ theorem hookProd_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (hpos : ∀ x �
 /-- **The hook-length dimension is conjugation-invariant** (list level):
 `sytDim (conj l) = sytDim l` — i.e. `f^{λ'} = f^λ`, since `|λ'| = |λ|` and the hook multiset is
 preserved. This is the remaining factor the kernel-summand pairing needed beyond `omega3_conj`. -/
-theorem sytDim_conj (l : List ℕ) (hs : l.Sorted (· ≥ ·)) (hpos : ∀ x ∈ l, 0 < x) :
+theorem sytDim_conj (l : List ℕ) (hs : l.Pairwise (· ≥ ·)) (hpos : ∀ x ∈ l, 0 < x) :
     sytDim (conj l) = sytDim l := by
   unfold sytDim
   rw [sum_conj l hs, hookProd_conj l hs hpos]
@@ -357,7 +359,7 @@ invariant (`sytDim_conj`, `omega3_conj`), so the kernel `Σ_λ (f^λ)³ ω₃(λ
 Scope-honest: a structural symmetry of the summand; it supplies **no** sign information
 (`YoungDiagramTranspose` proves the summand is transpose-even), so
 `covariance_kernel_conjecture` stays open. -/
-theorem kernel_summand_conj (k : ℕ) (l : List ℕ) (hs : l.Sorted (· ≥ ·))
+theorem kernel_summand_conj (k : ℕ) (l : List ℕ) (hs : l.Pairwise (· ≥ ·))
     (hpos : ∀ x ∈ l, 0 < x) :
     (sytDim (conj l) : ℤ) ^ 3 * omega3 k (conj l)
       = (sytDim l : ℤ) ^ 3 * omega3 k l := by
@@ -373,7 +375,7 @@ therefore `conj` — an involution on exactly this member set — permutes `part
 /-- **Soundness** of the enumeration: every member of `partsFuel f n maxP` is a weakly-decreasing
 list of positive parts `≤ maxP` summing to `n`. -/
 theorem partsFuel_mem (f : ℕ) : ∀ (n maxP : ℕ) (l : List ℕ), l ∈ partsFuel f n maxP →
-    l.sum = n ∧ (∀ x ∈ l, 0 < x) ∧ (∀ x ∈ l, x ≤ maxP) ∧ l.Sorted (· ≥ ·) := by
+    l.sum = n ∧ (∀ x ∈ l, 0 < x) ∧ (∀ x ∈ l, x ≤ maxP) ∧ l.Pairwise (· ≥ ·) := by
   induction f with
   | zero =>
       intro n maxP l hl
@@ -406,19 +408,19 @@ theorem partsFuel_mem (f : ℕ) : ∀ (n maxP : ℕ) (l : List ℕ), l ∈ parts
             rcases List.mem_cons.mp hx with rfl | hx
             · exact hiM
             · exact le_trans (hle x hx) hiM
-          · rw [List.sorted_cons]
+          · rw [List.pairwise_cons]
             exact ⟨fun b hb => hle b hb, hsort⟩
 
 /-- The three `partsOf` member facts used downstream. -/
 theorem partsOf_facts (k : ℕ) (l : List ℕ) (hl : l ∈ partsOf k) :
-    l.sum = k ∧ (∀ x ∈ l, 0 < x) ∧ l.Sorted (· ≥ ·) := by
+    l.sum = k ∧ (∀ x ∈ l, 0 < x) ∧ l.Pairwise (· ≥ ·) := by
   obtain ⟨h1, h2, _, h4⟩ := partsFuel_mem k k k l hl
   exact ⟨h1, h2, h4⟩
 
 /-- **Completeness** of the enumeration: every weakly-decreasing positive list summing to `n`
 with parts `≤ maxP` and at most `f` parts is a member of `partsFuel f n maxP`. -/
 theorem mem_partsFuel (l : List ℕ) : ∀ (f n maxP : ℕ), l.sum = n →
-    (∀ x ∈ l, 0 < x) → (∀ x ∈ l, x ≤ maxP) → l.Sorted (· ≥ ·) → l.length ≤ f →
+    (∀ x ∈ l, 0 < x) → (∀ x ∈ l, x ≤ maxP) → l.Pairwise (· ≥ ·) → l.length ≤ f →
     l ∈ partsFuel f n maxP := by
   induction l with
   | nil =>
@@ -429,7 +431,7 @@ theorem mem_partsFuel (l : List ℕ) : ∀ (f n maxP : ℕ), l.sum = n →
   | cons a t iht =>
       intro f n maxP hsum hpos hle hsort hfuel
       have ha : 0 < a := hpos a List.mem_cons_self
-      obtain ⟨hat, hst⟩ := List.sorted_cons.mp hsort
+      obtain ⟨hat, hst⟩ := List.pairwise_cons.mp hsort
       rw [List.sum_cons] at hsum
       rw [List.length_cons] at hfuel
       cases f with

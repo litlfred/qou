@@ -108,7 +108,7 @@ theorem rowHookProd_cons_mul (a c : ℕ) (r : List ℕ) (hca : c ≤ a) (hr : �
   simp_rw [hLfac]
   -- split range a into [0,c) and [c,a)
   have hsplit : Finset.range a = Finset.range c ∪ Finset.Ico c a := by
-    rw [Finset.range_eq_Ico, Finset.Ico_union_Ico_eq_Ico (Nat.zero_le c) hca]
+    rw [Finset.range_eq_Ico a, Finset.range_eq_Ico c, Finset.Ico_union_Ico_eq_Ico (Nat.zero_le c) hca]
   have hdisj : Disjoint (Finset.range c) (Finset.Ico c a) := by
     rw [Finset.range_eq_Ico]; exact Finset.Ico_disjoint_Ico_consecutive 0 c a
   rw [hsplit, Finset.prod_union hdisj]
@@ -179,12 +179,12 @@ This is `∏_{c ∈ row i} h(i,c) = β_i! / ∏_{j>i}(β_i − β_j)` (the per-r
 beta-number HLF) cleared of its denominator.  Proved by induction on the tail via the recursion
 `rowHookProd_cons_mul`; no division, no archimedean input. -/
 theorem rowHookProd_mul_betaGapProd (a : ℕ) (t : List ℕ)
-    (ht : List.Sorted (· ≥ ·) t) (hta : ∀ p ∈ t, p ≤ a) :
+    (ht : List.Pairwise (· ≥ ·) t) (hta : ∀ p ∈ t, p ≤ a) :
     rowHookProd a t * betaGapProd a t = Nat.factorial (a + t.length) := by
   induction t generalizing a with
   | nil => simp [rowHookProd_nil]
   | cons c r ih =>
-    obtain ⟨hcr, hr⟩ := List.sorted_cons.mp ht
+    obtain ⟨hcr, hr⟩ := List.pairwise_cons.mp ht
     have hca : c ≤ a := hta c (List.mem_cons_self ..)
     have hrc : ∀ p ∈ r, p ≤ c := fun p hp => hcr p hp
     have hra : ∀ p ∈ r, p ≤ a + 1 := fun p hp => le_trans (hrc p hp) (by omega)

@@ -60,6 +60,10 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
         linarith
       · linarith
 
+/- Lean 4.35 port: `BraneBoundary` carries a `Type*` field, whose universe is no
+longer generalised automatically; it is pinned as `vTM` in `TopologicalMassDecomposition`. -/
+universe uTM vTM
+
 /-- **Topological Decomposition of Mass** (conjecture carrier).
     LaTeX: `\label{conj:topological-mass}` (demoted from `thm:` 2026-11-20,
     bean `qou-27ys`; the label in this docstring read `thm:` until bean
@@ -91,10 +95,10 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
     decompose `τ(ℒ_q)` — both the `𝒟²` term and the matter term — not a single
     `‖tr(γ)‖`; whether the blow-up decomposition applies to the matter term is
     not addressed anywhere in the corpus. -/
-structure TopologicalMassDecomposition (M : Type*) where
+structure TopologicalMassDecomposition (M : Type uTM) where
   mi : ArchimedeanMassIdentity M
   di : DescentInvolution (M → ℝ)
-  bb : BraneBoundary M
+  bb : BraneBoundary.{uTM, vTM} M
   numBlowups : ℕ
   baselineHolonomy : ℝ
   baseline_nonneg : 0 ≤ baselineHolonomy

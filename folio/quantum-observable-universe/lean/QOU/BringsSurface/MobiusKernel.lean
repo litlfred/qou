@@ -1,5 +1,8 @@
 import Mathlib.Tactic
-import Mathlib.MeasureTheory.Integral.Bochner
+import Mathlib.MeasureTheory.Integral.Bochner.Basic
+import Mathlib.MeasureTheory.Integral.Bochner.L1
+import Mathlib.MeasureTheory.Integral.Bochner.VitaliCaratheodory
+import Mathlib.MeasureTheory.Measure.Haar.OfBasis
 
 /-!
 # QOU.Geometry.MobiusKernel — the classical Möbius-energy integrand

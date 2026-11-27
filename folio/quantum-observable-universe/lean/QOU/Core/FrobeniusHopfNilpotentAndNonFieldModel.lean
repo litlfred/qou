@@ -88,8 +88,9 @@ end scalar
 variable {C : Type u} [Category.{v} C] [MonoidalCategory C] [BraidedCategory C]
 variable (F : QOU.FrobeniusHopfData C)
 
-/-- The scalar `σ = η ≫ ε = ε(1)`, typed as an element of the ring `End (𝟙_C)`. -/
-def unitCounit : End (𝟙_ C : C) := F.unit ≫ F.counit
+/-- The scalar `σ = η ≫ ε = ε(1)`, a morphism `𝟙_C ⟶ 𝟙_C`; as an element of the ring
+`End (𝟙_C)` it is `End.of F.unitCounit`. -/
+def unitCounit : (𝟙_ C : C) ⟶ 𝟙_ C := F.unit ≫ F.counit
 
 theorem id_eq_comul_mul_scalarAct (hconv : F.ConvolutionLeft) :
     𝟙 F.obj = F.comul ≫ F.mul ≫ scalarAct F.obj (F.unit ≫ F.counit) := by
@@ -108,25 +109,25 @@ theorem retract_of_unit (hconv : F.ConvolutionLeft) :
   simp only [Category.assoc]
 
 theorem id_eq_comp_scalarAct_pow (hconv : F.ConvolutionLeft) (n : ℕ) :
-    ∃ M : F.obj ⟶ F.obj, 𝟙 F.obj = M ≫ scalarAct F.obj (F.unitCounit ^ n) := by
+    ∃ M : F.obj ⟶ F.obj, 𝟙 F.obj = M ≫ scalarAct F.obj (End.of F.unitCounit ^ n).asHom := by
   induction n with
-  | zero => exact ⟨𝟙 F.obj, by simp [scalarAct, pow_zero, End.one_def]⟩
+  | zero => exact ⟨𝟙 F.obj, by simp [scalarAct, pow_zero, End.one_asHom]⟩
   | succ k ih =>
     obtain ⟨M, hM⟩ := ih
     refine ⟨M ≫ F.comul ≫ F.mul, ?_⟩
     have h1 : 𝟙 F.obj = F.comul ≫ F.mul ≫ scalarAct F.obj F.unitCounit :=
       id_eq_comul_mul_scalarAct F hconv
-    calc 𝟙 F.obj = M ≫ scalarAct F.obj (F.unitCounit ^ k) ≫ 𝟙 F.obj := by
+    calc 𝟙 F.obj = M ≫ scalarAct F.obj (End.of F.unitCounit ^ k).asHom ≫ 𝟙 F.obj := by
           rw [Category.comp_id, ← hM]
-      _ = M ≫ scalarAct F.obj (F.unitCounit ^ k) ≫ F.comul ≫ F.mul
+      _ = M ≫ scalarAct F.obj (End.of F.unitCounit ^ k).asHom ≫ F.comul ≫ F.mul
             ≫ scalarAct F.obj F.unitCounit := by rw [← h1]
-      _ = (M ≫ F.comul ≫ F.mul) ≫ scalarAct F.obj (F.unitCounit ^ (k + 1)) := by
+      _ = (M ≫ F.comul ≫ F.mul) ≫ scalarAct F.obj (End.of F.unitCounit ^ (k + 1)).asHom := by
           rw [scalarAct_natural_assoc F.comul, scalarAct_natural_assoc F.mul, scalarAct_comp,
-            pow_succ', End.mul_def]
+            pow_succ', End.mul_asHom]
           simp only [Category.assoc]
 
 theorem id_eq_zero_of_unitCounit_nilpotent [Preadditive C] [MonoidalPreadditive C]
-    (hconv : F.ConvolutionLeft) (h : IsNilpotent F.unitCounit) :
+    (hconv : F.ConvolutionLeft) (h : IsNilpotent (End.of F.unitCounit)) :
     𝟙 F.obj = 0 := by
   obtain ⟨n, hn⟩ := h
   obtain ⟨M, hM⟩ := id_eq_comp_scalarAct_pow F hconv n
@@ -135,9 +136,9 @@ theorem id_eq_zero_of_unitCounit_nilpotent [Preadditive C] [MonoidalPreadditive 
 
 theorem dichotomy_of_scalars_nilpotent_or_isIso [Preadditive C] [MonoidalPreadditive C]
     (hconv : F.ConvolutionLeft)
-    (hscal : ∀ σ : End (𝟙_ C : C), IsNilpotent σ ∨ IsIso σ) :
+    (hscal : ∀ σ : End (𝟙_ C : C), IsNilpotent σ ∨ IsIso σ.asHom) :
     𝟙 F.obj = 0 ∨ IsIso F.unitCounit := by
-  rcases hscal F.unitCounit with h | h
+  rcases hscal (End.of F.unitCounit) with h | h
   · exact Or.inl (F.id_eq_zero_of_unitCounit_nilpotent hconv h)
   · exact Or.inr h
 
@@ -329,6 +330,7 @@ instance : MonoidalPreadditive (Obj R) where
   whiskerLeft_add f g := hom_ext (by simp only [v_whiskerLeft, v_add]; ring)
   add_whiskerRight f g := hom_ext (by simp only [v_whiskerRight, v_add]; ring)
 
+set_option backward.isDefEq.respectTransparency false in
 /-- The (symmetric) braiding: the identity element `X.e · Y.e`. -/
 instance : BraidedCategory (Obj R) where
   braiding X Y := isoOfEq (X ⊗ Y) (Y ⊗ X) (mul_comm _ _)
@@ -411,6 +413,7 @@ theorem id_ne_zero (A : Obj R) (h : A.e ≠ 0) : 𝟙 (model A).obj ≠ 0 := by
   intro h0
   apply h
   have := congrArg v h0
+  erw [v_zero] at this
   simpa [model] using this
 
 /-- The object is not isomorphic to the tensor unit when `e ≠ 1`. -/

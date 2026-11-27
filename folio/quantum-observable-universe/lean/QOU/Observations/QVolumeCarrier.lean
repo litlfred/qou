@@ -62,7 +62,7 @@ theorem sum_family_leading {α R : Type*} [Field R] [TopologicalSpace R]
   have hden : Tendsto (fun q => Te q + c * 0) l (𝓝 te) := by
     simpa using hTe
   have := hnum.div hden hte
-  simpa using this
+  simpa [Pi.div_def] using this
 
 /-- **The carrier forces `c = T_e(1)`.** If the sum family's leading carrier is `V`
 (that is, `m_μ/m_e ~ V/ℏ_q²`) and `V ≠ 0`, the coefficient of the volume term must be the

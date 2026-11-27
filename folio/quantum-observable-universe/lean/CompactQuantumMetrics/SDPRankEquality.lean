@@ -1,5 +1,5 @@
 import Mathlib.LinearAlgebra.Matrix.PosDef
-import Mathlib.LinearAlgebra.Matrix.Spectrum
+import Mathlib.Analysis.Matrix.Spectrum
 import Mathlib.LinearAlgebra.Matrix.Rank
 import Mathlib.Tactic
 import CompactQuantumMetrics.PosSemidefTraceZero

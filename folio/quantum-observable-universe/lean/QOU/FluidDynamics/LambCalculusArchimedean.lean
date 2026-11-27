@@ -43,9 +43,9 @@ noncomputable def coord : LambCalculus SField (Fin 3 → SField) where
   lamb u hu := by
     ext i x y z
     fin_cases i
-    · simpa [LambCalculus.crossLin_apply] using lamb₁ (toV u) hu x y z
-    · simpa [LambCalculus.crossLin_apply] using lamb₂ (toV u) hu x y z
-    · simpa [LambCalculus.crossLin_apply] using lamb₃ (toV u) hu x y z
+    · simp only [LambCalculus.crossLin_apply]; exact lamb₁ (toV u) hu x y z
+    · simp only [LambCalculus.crossLin_apply]; exact lamb₂ (toV u) hu x y z
+    · simp only [LambCalculus.crossLin_apply]; exact lamb₃ (toV u) hu x y z
 
 /-! ## Left-invariant fields on `sl₂(ℝ)` -/
 

@@ -56,7 +56,7 @@ theorem integral_exp_nat_mul_swGaussian (v : ℝ) (hv : 1 ≤ v) (k : ℕ) :
   have hv0 : 0 < v := lt_of_lt_of_le one_pos hv
   rw [← exp_log (pow_pos hv0 (k.choose 2)), log_pow, Nat.cast_choose_two]
   congr 1
-  simp only [NNReal.coe_mk]
+  change -log v / 2 * (k : ℝ) + log v * (k : ℝ) ^ 2 / 2 = _
   ring
 
 /-- **`G_k` is a moment sequence.** The `k`-th moment of the log-normal `LN(−L/2, L)`,

@@ -49,9 +49,9 @@ theorem rotation_step (σ : R →+* R) {ι q x h0 h1 h2 : R}
       ↔ oddStep q x n h0 h1 h2 := by
   unfold evenStep oddStep
   have hιu : IsUnit (ι ^ n) :=
-    (isUnit_of_mul_eq_one ι (-ι) (by rw [mul_neg, hι, neg_neg])).pow n
+    (IsUnit.of_mul_eq_one (a := ι) (-ι) (by rw [mul_neg, hι, neg_neg])).pow n
   have hqu : IsUnit (q ^ (n + 1)) :=
-    (isUnit_of_mul_eq_one q (σ q) (by rw [mul_comm]; exact hq)).pow (n + 1)
+    (IsUnit.of_mul_eq_one (a := q) (σ q) (by rw [mul_comm]; exact hq)).pow (n + 1)
   have hqn : (σ q) ^ (n + 1) * q ^ (n + 1) = 1 := by
     rw [← mul_pow, hq, one_pow]
   constructor
