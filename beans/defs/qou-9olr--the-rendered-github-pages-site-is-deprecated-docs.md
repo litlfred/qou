@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-27T07:41:07Z
-updated_at: 2026-10-04T15:25:00Z
+updated_at: 2026-11-27T14:30:00Z
 parent: qou-n4r9
 ---
 
@@ -89,3 +89,7 @@ an owner decision, framed in `qou-w5av`.
 **`qou-w5av`** (*"Deprecate qou's own rendering in favour of folio-assistant
 justthepages"*, `todo`, parent `qou-n4r9`). This bean should have been an append
 to it. Keeping it as the record of the retraction, cross-referenced both ways.
+
+
+## 2026-11-27 — site state re-measured (thread "Get QOU site running on harness", PR #9440)
+The gh-pages site is NOT deprecated any more: since #9396 (owner ruling 2026-11-24, "1 qou is platform later") the root is the platform Documents landing built by cat-harness-tools build-instance-site.ts. Live on 2026-11-27: landing, 5 papers under en/, /accuracy/, /lean/ load; /qa/ and /beans/ absent (cat-harness-tools #2511/#2512 still draft; site-step.sh skips them). Last publish 2026-11-25 17:18Z by publish-main-local.sh from 9686001, 3 commits behind main. PR #9440 makes site-publish.yml the canonical caller (publish on push to main, owner decision pending) and fixes Paper PDF (0/100 green: latexpand missing, exit 127 after a clean 1064-page build).
