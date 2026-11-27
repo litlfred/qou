@@ -1,9 +1,6 @@
 {
   "$schema": "folio-index-config/v1",
   "_comment": "qou as a platform LAYER (owner ruling 2026-11-24, \"1 qou is platform later\"), laid out as the dth-hrh folio is: the layers it runs on are mounted at the repository root from index.lock.json (gitignored), and the site is built by cat-harness-tools' build-instance-site.ts from the recipe under site.build. The `folio-assistant/` platform link (scripts/setup-folio-assistant.sh, .folio-assistant-pin) is kept as a COMPATIBILITY path for the hooks and scripts that still name it; each moves to the root mounts on its own. The qou entry overlays qou.config.json, which the compatibility path still reads.",
-  "mountApprovers": [
-    "litlfred"
-  ],
   "instances": [
     {
       "name": "qou",
@@ -156,7 +153,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "5593bb6d56fa149ffed4e7f94364ce9afa2beb45",
+          "ref": "8d630b142fdcbd60660514b0fdec69891a5a3992",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -174,9 +171,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-25",
-              "ref": "5593bb6d56fa149ffed4e7f94364ce9afa2beb45",
-              "evidence": "litlfred 2026-11-25, card answer \"Merge + re-pin\": merge cat-harness-tools#2515, folio-assistant-sci#222 and folio-assistant-core#874, then re-pin qou#9396 to their merge commits; the owner consents to those refs. cat-harness-tools 5593bb6 is the merge commit of #2515."
+              "on": "2026-11-27",
+              "ref": "8d630b142fdcbd60660514b0fdec69891a5a3992",
+              "evidence": "litlfred 2026-11-27: asked for the QOU site \"up and running on proper harness\" (thread \"Get QOU site running on harness\"), and approved, on the merge manager card, merging cat-harness-tools#2511 (beans-board, /beans/), #2512 (qa-page-standalone, /qa/), #2519 and #2520 so qou can re-pin; 8d630b1 is the merge commit of #2519, the last of the four on main."
             }
           }
         }
@@ -232,5 +229,8 @@
   ],
   "site": {
     "landing": "qou"
-  }
+  },
+  "mountApprovers": [
+    "litlfred"
+  ]
 }
