@@ -892,6 +892,9 @@ import HeckeTemperleyLieb.MarkovTraceClassicalLimit
 -- 5-fold rotation is the golden ratio (parameter-free; validates irrepToRotation).
 import BraidKnotOctonion.IcosahedralCharacterGoldenRatio
 import QOU.BraidsAndKnots.TFromTraceCyclicity
+import QOU.BraidsAndKnots.TFromTraceCyclicityH3
+import QOU.BraidsAndKnots.TFromTraceCyclicityAll
+import QOU.BraidsAndKnots.MarkovMirrorRefutation
 -- D15 Pachner–Pentagon (conj:pachner-pentagon-borromean): §3b conjecture-class
 -- with sorry-free consumer theorems. Wired so CI type-checks it (not an orphan).
 import BraidKnotOctonion.PachnerPentagonBorromean
