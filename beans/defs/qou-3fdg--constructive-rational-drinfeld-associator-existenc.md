@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T21:30:55Z
+updated_at: 2026-11-27T21:53:26Z
 parent: qou-dk7p
 ---
 
@@ -110,3 +110,22 @@ STILL OPEN (this bean stays open): the bridge u = 0 in U4 N ⇒ cocycle(s) ∈ F
 ## 2026-11-27: Friedrichs criterion proved (PR #9728, branch claude/friedrichs-2026-11-27)
 RationalAssociator/Friedrichs.lean (sorry-free; axioms propext, Classical.choice, Quot.sound) proves `isLieElt_of_primitive`: if h in Q<X,Y> is primitive for the shuffle coproduct `cop` (Delta(iota i) = iota i (x) 1 + 1 (x) iota i), then IsLieElt h. It needs no homogeneity or constant-term hypothesis, and the zero constant term follows (`algebraMapInv_eq_zero_of_primitive`). The route is Dynkin-Specht-Wever: the antipode identity, D*S is Lie-valued, the Euler derivation D is a coderivation, then induction on word length. Audit §17a.
 Remaining for B1: prove that the degree-d parts h_i of differences of group-like associators are primitive for this `cop`. That gives the IsLieElt hypothesis of grtU4_of_lie. Not done here.
+
+
+## 2026-11-27 — B1 steps (2)–(4) and the induction step (PR #9750, branch claude/grt-b1-steps-2026-11-27)
+
+Proved sorry-free in RationalAssociator/BaseChangeK.lean (axioms: propext, Classical.choice, Quot.sound):
+- step 2: assocK_shiftK
+- step 3: compKK_congr
+- step 4: assocK_shift_finset
+- AssocK.proj
+- grtU4_of_lin_primitive: Lie-ness discharged by isLieElt_of_primitive
+- inductionStep_of_primitiveLayer
+
+Still open: the hypothesis hprim. It says that every rational contraction of the top layer is primitive and homogeneous modulo FF(d+1), and it is NOT re-derived at d+1. Closing it needs four pieces:
+- group-likeness over K, plus a filtration on F⊗F;
+- invariance under compKK and the exponential of a primitive;
+- extraction of the primitive layer, which needs cop to commute with the grading;
+- group-likeness of the rational lift.
+
+Details in audit §17b. Bean stays open.
