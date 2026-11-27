@@ -33,9 +33,9 @@
   -- Ref: [leitner2026] QOU/Knot/KashaevAsymptotic.lean
   -- Ref: [leitner2026] QOU/Knot/LobTaylorSaddle.lean
 -/
-import BraidKnotOctonion.KashaevAsymptotic
-import BraidKnotOctonion.FigureEightVolumeSaddle
-import BraidKnotOctonion.LobTaylorSaddle
+import QOU.Transcendental.BraidKnotOctonion.KashaevAsymptotic
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolumeSaddle
+import QOU.Transcendental.BraidKnotOctonion.LobTaylorSaddle
 
 namespace QOU.Knot.FigureEightVolume
 

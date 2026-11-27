@@ -30,7 +30,7 @@
   -- Ref: [andersen-hansen2006] https://doi.org/10.1142/S0218216506004555
 -/
 
-import BraidKnotOctonion.FigureEightVolumeSaddle
+import QOU.Transcendental.BraidKnotOctonion.FigureEightVolumeSaddle
 
 namespace QOU.Knot.FigureEightVolume
 

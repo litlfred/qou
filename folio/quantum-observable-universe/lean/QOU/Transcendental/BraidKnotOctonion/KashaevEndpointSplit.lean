@@ -60,7 +60,7 @@
   -- Ref: [leitner2026] computations/probes/kashaev_endpoint_split_probe.py
   -- Ref: [leitner2026] computations/probes/kashaev_reflection_probe.py
 -/
-import BraidKnotOctonion.KashaevReflectionTrapezoid
+import QOU.Transcendental.BraidKnotOctonion.KashaevReflectionTrapezoid
 
 namespace QOU.Knot.FigureEightVolume
 

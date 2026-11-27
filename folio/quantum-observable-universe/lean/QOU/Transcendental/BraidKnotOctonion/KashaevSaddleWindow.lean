@@ -26,7 +26,7 @@
   -- Ref: [leitner2026] QOU/Knot/KashaevWindowAssembly.lean
   -- Ref: [leitner2026] QOU/Knot/KashaevRatioExpansion.lean
 -/
-import BraidKnotOctonion.KashaevWindowAssembly
+import QOU.Transcendental.BraidKnotOctonion.KashaevWindowAssembly
 
 namespace QOU.Knot.FigureEightVolume
 

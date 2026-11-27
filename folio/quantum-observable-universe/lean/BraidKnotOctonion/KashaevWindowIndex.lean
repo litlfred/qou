@@ -16,7 +16,7 @@
   -- Ref: [leitner2026] QOU/Knot/KashaevWindowSum.lean
   -- Ref: [leitner2026] QOU/MathlibExt/GaussianWindowSum.lean
 -/
-import BraidKnotOctonion.KashaevWindowSum
+import QOU.Transcendental.BraidKnotOctonion.KashaevWindowSum
 import MathlibExt.GaussianWindowSum
 
 namespace QOU.Knot.FigureEightVolume

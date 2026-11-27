@@ -28,7 +28,7 @@
   -- Ref: [leitner2026] QOU/OneLoopPrefactorInvariance.lean
   -- Ref: [leitner2026] QOU/Knot/KashaevAsymptoticBounds.lean
 -/
-import BraidKnotOctonion.KashaevAsymptoticBounds
+import QOU.Transcendental.BraidKnotOctonion.KashaevAsymptoticBounds
 import MathlibExt.OneLoopPrefactorInvariance
 
 namespace QOU.Knot.FigureEightVolume

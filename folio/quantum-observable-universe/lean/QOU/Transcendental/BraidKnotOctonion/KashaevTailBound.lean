@@ -77,8 +77,8 @@
   -- Ref: [leitner2026] QOU/MathlibExt/GaussianThetaSum.lean
   -- Ref: [leitner2026] QOU/MathlibExt/GaussianSumBound.lean
 -/
-import BraidKnotOctonion.KashaevArgmax
-import BraidKnotOctonion.LobTaylorSaddle
+import QOU.Transcendental.BraidKnotOctonion.KashaevArgmax
+import QOU.Transcendental.BraidKnotOctonion.LobTaylorSaddle
 import MathlibExt.TrapezoidRule
 import MathlibExt.GaussianSumBound
 import Mathlib.Analysis.Calculus.MeanValue

@@ -111,10 +111,6 @@
    "analysis",
    "transcendental-function"
   ],
-  "BraidKnotOctonion/FigureEightVolumeSaddle.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
   "BraidKnotOctonion/FigureEightVolumeSqueeze.lean": [
    "analysis",
    "transcendental-function"
@@ -162,70 +158,6 @@
   "BraidKnotOctonion/JonquiereCyclotomicTateRationality.lean": [
    "transcendental-function"
   ],
-  "BraidKnotOctonion/Kashaev.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevArgmax.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevAsymptotic.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevAsymptoticBounds.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevBeyondWindow.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevCSigma.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevEndpointSplit.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevFullSum.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevLogAsymptotic.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevPeakValue.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevProdEndpoint.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevRatioExpansion.lean": [
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevReflectionTrapezoid.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevSaddleWindow.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevTailBound.lean": [
-   "analysis",
-   "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevWindowAssembly.lean": [
-   "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/KashaevWindowSum.lean": [
-   "transcendental-function"
-  ],
   "BraidKnotOctonion/KeystoneHeckeMTC.lean": [
    "real-completion"
   ],
@@ -238,10 +170,6 @@
   ],
   "BraidKnotOctonion/KeystoneVerlindeSMatrixBridge.lean": [
    "real-completion"
-  ],
-  "BraidKnotOctonion/KummerDilogHalf.lean": [
-   "analysis",
-   "transcendental-function"
   ],
   "BraidKnotOctonion/KummerRadial.lean": [
    "analysis",
@@ -266,19 +194,6 @@
    "transcendental-function"
   ],
   "BraidKnotOctonion/LobNearZero.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/LobTaylorSaddle.lean": [
-   "analysis",
-   "real-completion",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/LobachevskyDerivative.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/LobachevskyMaximum.lean": [
    "analysis",
    "transcendental-function"
   ],
@@ -458,10 +373,6 @@
    "transcendental-function"
   ],
   "BraidKnotOctonion/WhiteheadPhaseAlgebra.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "BraidKnotOctonion/WhiteheadSaddleClausen.lean": [
    "analysis",
    "transcendental-function"
   ],

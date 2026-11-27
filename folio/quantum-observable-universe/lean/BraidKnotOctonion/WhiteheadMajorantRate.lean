@@ -79,7 +79,7 @@ Audit: `docs/audits/2026-08-19-volume-conjecture-work-overlap-sweep.md`.
 -/
 
 import BraidKnotOctonion.WhiteheadLinkScaffold
-import BraidKnotOctonion.WhiteheadSaddleClausen
+import QOU.Transcendental.BraidKnotOctonion.WhiteheadSaddleClausen
 
 namespace QOU.Knot.FigureEightVolume
 

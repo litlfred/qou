@@ -31,7 +31,7 @@
   -- Ref: [leitner2026] QOU/Knot/KashaevArgmax.lean
   -- Ref: [leitner2026] QOU/OneLoopPrefactorInvariance.lean
 -/
-import BraidKnotOctonion.LobachevskyDerivative
+import QOU.Transcendental.BraidKnotOctonion.LobachevskyDerivative
 import MathlibExt.TaylorRemainder
 import MathlibExt.TrapezoidRule
 

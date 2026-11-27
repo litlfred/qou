@@ -38,7 +38,7 @@
   -- Ref: [leitner2026] QOU/Knot/FigureEightVolumeSaddle.lean
   -- Ref: [leitner2026] QOU/OneLoopPrefactorInvariance.lean
 -/
-import BraidKnotOctonion.KashaevProdEndpoint
+import QOU.Transcendental.BraidKnotOctonion.KashaevProdEndpoint
 
 namespace QOU.Knot.FigureEightVolume
 

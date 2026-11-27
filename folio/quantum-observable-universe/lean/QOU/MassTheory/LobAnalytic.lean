@@ -35,7 +35,7 @@
   -- Ref: [thurston1978] Ch. 7
   -- Ref: [leitner2026] beans qou-w3eg (H4-5 obtuse, step 1), qou-idvt
 -/
-import BraidKnotOctonion.KummerDilogHalf
+import QOU.Transcendental.BraidKnotOctonion.KummerDilogHalf
 import QOU.Transcendental.MathlibExt.BlochWignerLobachevsky
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 

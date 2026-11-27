@@ -1,5 +1,5 @@
 import BraidKnotOctonion.MultiTetVolumeConcave
-import BraidKnotOctonion.LobachevskyMaximum
+import QOU.Transcendental.BraidKnotOctonion.LobachevskyMaximum
 
 /-!
 # QOU.Knot.M004VolumeMaximum — the regular point IS the m004 volume maximiser

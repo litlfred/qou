@@ -76,8 +76,8 @@
   -- Ref: [leitner2026] beans qou-w3eg (H4-4), qou-5gai (H4), qou-idvt (T1/T2)
 -/
 
-import BraidKnotOctonion.LobachevskyDerivative
-import BraidKnotOctonion.LobachevskyMaximum
+import QOU.Transcendental.BraidKnotOctonion.LobachevskyDerivative
+import QOU.Transcendental.BraidKnotOctonion.LobachevskyMaximum
 import Mathlib.Analysis.SpecialFunctions.Integrals.LogTrigonometric
 
 namespace QOU.Archimedean.HyperbolicVolume

@@ -84,7 +84,7 @@
   -- Ref: [thurston1978] Ch. 7
   -- Ref: [leitner2026] beans qou-w3eg (H4-5, obtuse), qou-idvt
 -/
-import BraidKnotOctonion.LobachevskyMaximum
+import QOU.Transcendental.BraidKnotOctonion.LobachevskyMaximum
 
 namespace QOU.Archimedean
 

@@ -37,7 +37,7 @@
 
   -- Ref: [zagier1986], [milnor1982], [neumann-zagier1985]
 -/
-import BraidKnotOctonion.KummerDilogHalf
+import QOU.Transcendental.BraidKnotOctonion.KummerDilogHalf
 import BraidKnotOctonion.IdealTetLawOfSines
 import BraidKnotOctonion.RivinConcavity
 

@@ -25,7 +25,7 @@
 
 import BraidKnotOctonion.RivinConcavity
 import BraidKnotOctonion.LobNearZero
-import BraidKnotOctonion.LobachevskyMaximum
+import QOU.Transcendental.BraidKnotOctonion.LobachevskyMaximum
 
 namespace QOU.Archimedean.LobMonotonicity
 

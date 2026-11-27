@@ -24,8 +24,8 @@
   -- Ref: [leitner2026] QOU/Knot/KashaevTailBound.lean
   -- Ref: [leitner2026] QOU/Knot/KashaevSaddleWindow.lean
 -/
-import BraidKnotOctonion.KashaevSaddleWindow
-import BraidKnotOctonion.KashaevTailBound
+import QOU.Transcendental.BraidKnotOctonion.KashaevSaddleWindow
+import QOU.Transcendental.BraidKnotOctonion.KashaevTailBound
 
 namespace QOU.Knot.FigureEightVolume
 
