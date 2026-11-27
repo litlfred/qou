@@ -271,21 +271,21 @@ python3 scripts/compute-qa.py --gate accuracy-scorecard
 | Upstream Witness / Dataset | SHA-256 (`[:12]`) | Gate Status | Scorecard Sections Fed |
 |---|---:|---|---|
 | [`computations/master-atlas-80dps.witness.json`](computations/master-atlas-80dps.witness.json) | `6046a80c1f13` | `allPassed: true` | §1, §2, §3.1, §3.3, §3.4 |
-| [`computations/per-observable-100x-status.witness.json`](computations/per-observable-100x-status.witness.json) | `68ea5bed9677` | `allPassed: true` | §2, §3.1a, §3.2a (tower E_0), §3.4a |
+| [`computations/per-observable-100x-status.witness.json`](computations/per-observable-100x-status.witness.json) | `04745791ccce` | `allPassed: true` | §2, §3.1a, §3.2a (tower E_0), §3.4a |
 | [`computations/alpha-em-schwinger-ladder.witness.json`](computations/alpha-em-schwinger-ladder.witness.json) | `ea2dde2dea79` | `allPassed: true` | §1, §2, §3.3a, §5.1 |
-| [`computations/alpha/alpha_em_two_loop_bloch_schwinger_probe.witness.json`](computations/alpha/alpha_em_two_loop_bloch_schwinger_probe.witness.json) | `a0c07ac36abe` | `allPassed: true` | §1, §2, §3.3a, §5.1 |
+| [`computations/alpha/alpha_em_two_loop_bloch_schwinger_probe.witness.json`](computations/alpha/alpha_em_two_loop_bloch_schwinger_probe.witness.json) | `648a4b8f74ff` | `allPassed: true` | §1, §2, §3.3a, §5.1 |
 | [`computations/alpha/alpha-em-seifert-kappa-pairing.witness.json`](computations/alpha/alpha-em-seifert-kappa-pairing.witness.json) | `5ddbb194b6c7` | `allPassed: true` | §3.3a, §5.1 |
 | [`computations/atom-electron-mass.witness.json`](computations/atom-electron-mass.witness.json) | `f58f4af4309f` | `allPassed: true` | §3.3a |
 | [`computations/probes/electroweak-bring-schwinger-bridge.witness.json`](computations/probes/electroweak-bring-schwinger-bridge.witness.json) | `d39e8c3c3fb5` | `allPassed: true` | §2, §3.4a, §5.1 |
-| [`computations/mass-table-comprehensive.witness.json`](computations/mass-table-comprehensive.witness.json) | `28a5344181a1` | `allPassed: true` | §2, §3.1b–c, §3.2b, §3.4b, §3.5b, §4 |
+| [`computations/mass-table-comprehensive.witness.json`](computations/mass-table-comprehensive.witness.json) | `2612f071334b` | `allPassed: true` | §2, §3.1b–c, §3.2b, §3.4b, §3.5b, §4 |
 | [`computations/data/ame2020.json`](computations/data/ame2020.json) | `a74f4204c189` | Reference dataset (`3558` entries) | §2, §3.1b–c, §3.2a–b, §3.4b, §3.5b |
-| [`computations/probes/gap1b_4he_tetrahedral_k4_flux_ring/gap1b-4he-tetrahedral-k4-flux-ring.witness.json`](computations/probes/gap1b_4he_tetrahedral_k4_flux_ring/gap1b-4he-tetrahedral-k4-flux-ring.witness.json) | `63f0971cb24d` | `allPassed: true` | §2, §3.2a, §3.5b |
+| [`computations/probes/gap1b_4he_tetrahedral_k4_flux_ring/gap1b-4he-tetrahedral-k4-flux-ring.witness.json`](computations/probes/gap1b_4he_tetrahedral_k4_flux_ring/gap1b-4he-tetrahedral-k4-flux-ring.witness.json) | `3e2c233b0e95` | `allPassed: true` | §2, §3.2a, §3.5b |
 | [`computations/probes/gap2b_mtau_s3_circulant_koide_test/gap2b-mtau-s3-circulant-koide-probe.witness.json`](computations/probes/gap2b_mtau_s3_circulant_koide_test/gap2b-mtau-s3-circulant-koide-probe.witness.json) | `cf26dc3f95b7` | `allPassed: true` | §2, §3.1a |
-| [`computations/probes/gap3b_t29_composite_decay_threshold/gap3b-t29-composite-decay-threshold.witness.json`](computations/probes/gap3b_t29_composite_decay_threshold/gap3b-t29-composite-decay-threshold.witness.json) | `63e4f241724f` | `allPassed: true` | §2, §3.5a |
-| [`computations/u1-hypercharge-assignment.witness.json`](computations/u1-hypercharge-assignment.witness.json) | `54d9572eeffe` | `allPassed: true` | §2, §3.3a |
+| [`computations/probes/gap3b_t29_composite_decay_threshold/gap3b-t29-composite-decay-threshold.witness.json`](computations/probes/gap3b_t29_composite_decay_threshold/gap3b-t29-composite-decay-threshold.witness.json) | `9b70d2c86ec5` | `allPassed: true` | §2, §3.5a |
+| [`computations/u1-hypercharge-assignment.witness.json`](computations/u1-hypercharge-assignment.witness.json) | `a2b8923c9cc0` | `allPassed: true` | §2, §3.3a |
 | [`computations/charge-coulomb-tn3he-derived.witness.json`](computations/charge-coulomb-tn3he-derived.witness.json) | `37b4cc873f59` | `allPassed: true` | §2, §3.3a |
-| [`computations/mirror-nuclei-coulomb-systematics.witness.json`](computations/mirror-nuclei-coulomb-systematics.witness.json) | `1988687496a1` | `allPassed: true` | §2, §3.3a |
-| [`computations/beta-decay-from-q.witness.json`](computations/beta-decay-from-q.witness.json) | `0942e65e786f` | Audit witness (`verified`) | §2, §3.4a, §5.1 |
+| [`computations/mirror-nuclei-coulomb-systematics.witness.json`](computations/mirror-nuclei-coulomb-systematics.witness.json) | `620295b2d26b` | `allPassed: true` | §2, §3.3a |
+| [`computations/beta-decay-from-q.witness.json`](computations/beta-decay-from-q.witness.json) | `4a7c38a8f780` | Audit witness (`verified`) | §2, §3.4a, §5.1 |
 | [`computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json`](computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json) | `7b152b846217` | `allPassed: true` | §2, §3.5a–b |
-| [`computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json`](computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json) | `3b6ebd774736` | `allPassed: true` | §3.2a (ruled trace-pipeline row) |
+| [`computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json`](computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json) | `21d99eb9cffd` | `allPassed: true` | §3.2a (ruled trace-pipeline row) |
 | [`computations/scorecard-epistemic-status.witness.json`](computations/scorecard-epistemic-status.witness.json) | `abad095f3ba1` | `allPassed: true` | §2, §3.1a, §3.2a, §3.3a, §3.4a (row labels) |

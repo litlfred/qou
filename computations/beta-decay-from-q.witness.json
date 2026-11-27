@@ -1,7 +1,7 @@
 {
   "computation": "beta-decay-from-q",
   "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
-  "timestamp": "2026-11-27T15:05:03.298594+00:00",
+  "timestamp": "2026-11-27T18:57:39.995683+00:00",
   "description": "Verification that beta decay half-lives depend on q and \u03bc\u2080 alone. All standard-physics constants (G_F, m_e) decompose into q-dependent factors times the single dimensional scale \u03bc\u2080.",
   "substrate_parameter": {
     "q": "1.10997858275138080759166909561076887987449912187357873607281",
@@ -111,10 +111,10 @@
   ],
   "scriptFile": "beta-decay-from-q.py",
   "scriptHash": "fa8ff5600190",
-  "scriptCommitSha": "85b72bec662d83a998e1586f2435a2af292d7a1a",
-  "commitSha": "461e3e6ac9193120b6b0ecd02a3daf41d3c89e08",
+  "scriptCommitSha": "7692cdf8deeffe09236033935725458b43868f5d",
+  "commitSha": "7692cdf8deeffe09236033935725458b43868f5d",
   "engine": "python",
-  "computedAt": "2026-11-27T15:05:03.540047+00:00",
+  "computedAt": "2026-11-27T18:57:40.002239+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
