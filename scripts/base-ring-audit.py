@@ -24,8 +24,8 @@ Modes
              GREW), or if a count dropped and the baseline was not shrunk (STALE)
 
 Post-merge QA, not a pre-merge gate (owner ruling 2026-11-27: the KG JSON-LD
-check is the only red gate before a merge). Run it on `main` after a merge, as
-`publish-main-local.sh` does. A failure becomes a bean and a follow-up PR.
+check is the only red gate before a merge). Run it on `main` after a merge (skill
+`post-merge-rebuild`). A failure becomes a bean and a follow-up PR.
 
 Never raise a baseline count by hand to get past --check. Restate the new
 statement over a ring instead.
