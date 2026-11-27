@@ -4,29 +4,34 @@ import QOU.FluidDynamics.q_ns_component_lap
 # QOU.FluidDynamics.q_ns_component_lap_quadrants — `L = X₊X₋` on the other quadrants
 
 Thread "Audit the q-Bessel special-function dictionary" (2026-11-27), Peter–Weyl step 2c.
-`q_ns_component_lap` treats the components `α^a β^m K[ζ]`. This file treats `α^a γ^m K[ζ]`.
+`q_ns_component_lap` treats the components `α^a β^m K[ζ]`. This file treats the other three
+quadrants of the PBW basis: `α^a γ^m K[ζ]`, `δ^a β^m K[ζ]` and `δ^a γ^m K[ζ]`. Together with the
+first file, every PBW monomial lies in at least one component (the components overlap only where
+`a = 0` or `m = 0`), and over a field where `q²` is not a root of unity `L` has an eigenbasis on
+each component. Assembling these into one basis of `O_q(SU(2))` is not stated here.
 
 ## Results
 
-Over a commutative ring `R`, `q : Rˣ`, `ζ = βγ`, `[n]_x = 1 + x + ⋯ + x^{n-1}`:
+Over a commutative ring `R`, `q : Rˣ`, `ζ = βγ`, `[n]_x = 1 + x + ⋯ + x^{n-1}`, `x = q²`, `y = q⁻²`:
 
-* `fieldPlus_alpha_gamma`: `X₊(α^a γ^m) = 0`.
-* `lap_alpha_gamma`: `L(α^a γ^m) = [a+m]_{q⁻²} · α^a γ^m`.
-* `lap_ag_zeta_pow`: for every `a, m, k`,
-  `L(α^a γ^m ζ^{k+1}) = q [m+k+1]_{q⁻²} [k+1]_{q²} · α^a γ^m ζ^k
-      + [a+m+k+1]_{q⁻²} [k+2]_{q²} · α^a γ^m ζ^{k+1}`.
+| component | `L(f)` for the head `f` | diagonal on `f ζ^k` | subdiagonal `f ζ^{k+1} → f ζ^k` |
+|---|---|---|---|
+| `α^a γ^m` | `[a+m]_y f` (`lap_alpha_gamma`) | `[a+m+k]_y [k+1]_x` = `cdiag (a+m) 0` | `q [m+k+1]_y [k+1]_x` |
+| `δ^a β^m` | `0` (`lap_delta_beta`) | `[k]_y [a+m+k+1]_x` = `cdiag 0 (a+m)` | `q [k+1]_y [m+k+1]_x` |
+| `δ^a γ^m` | `[m]_y [a+1]_x f` (`lap_delta_gamma`) | `[m+k]_y [a+k+1]_x` = `cdiag m a` | `q [m+k+1]_y [k+1]_x` |
 
-So `L` is lower bidiagonal on `α^a γ^m R[ζ]`, with diagonal `[a+m+k]_{q⁻²} [k+1]_{q²}`. That is
-the diagonal `cdiag (a+m) 0 k` of the first quadrant, so over a field with `q²` not a root of
-unity it is injective in `k` and `L` has an eigenbasis on the component (`compPolyAG`).
+The bidiagonal actions are `lap_ag_zeta_pow`, `lap_db_zeta_pow` and `lap_dg_zeta_pow`. Every
+diagonal is a `cdiag` of the first quadrant, so `cdiag_injective` applies, and the triangular
+lemma gives the eigenbases `compPolyAG`, `compPolyDB`, `compPolyDG` with their span and
+leading-coefficient lemmas. `bidiag_transport` moves a bidiagonal action on `u · K[ζ]` to `K[X]`.
 
 The closed forms were first checked in exact rational arithmetic (sympy, the PBW model) for
 `a, m, k ≤ 3`.
 
 ## Not established
 
-* The components `δ^a β^m K[ζ]` and `δ^a γ^m K[ζ]` (same bidiagonal shape in the model).
 * Haar orthogonality between a component and its dual.
+* The full Peter–Weyl decomposition (matching these eigenvectors to matrix coefficients).
 
 No empirical value enters any proof. Sorry-free.
 -/
@@ -694,5 +699,56 @@ theorem coeff_compPolyDB_ne_zero (hp : ∀ n : ℕ, ((q : K) * q) ^ (n + 1) ≠ 
   coeff_triPoly_ne_zero _ _ (LcDB_tri q a m) (cdiag_injective q hp 0 (a + m)) n
 
 end ComponentDB
+
+/-! ## The component `δ^a γ^m K[ζ]` -/
+
+section ComponentDG
+
+open Polynomial
+
+variable {K : Type*} [Field K] (q : Kˣ)
+
+local notation "qi" => (((q⁻¹ : Kˣ) : K))
+
+/-- `L` on `δ^a γ^m K[ζ]`, transported to `K[X]`. -/
+noncomputable def LcDG (a m : ℕ) : K[X] →ₗ[K] K[X] := bidiag (cdiag q m a) (csubAG q m)
+
+/-- **`L` preserves the component.** `L(δ^a γ^m Q(ζ)) = δ^a γ^m (LcDG a m Q)(ζ)`. -/
+theorem lap_dg_ev (a m : ℕ) (Q : K[X]) :
+    lap q (δ (R := K) q ^ a * γ q ^ m * ev q Q) = δ q ^ a * γ q ^ m * ev q (LcDG q a m Q) := by
+  refine bidiag_transport (lap q) (ev q) _ _ _ ?_ ?_ Q
+  · rw [ev_X_pow, pow_zero, mul_one, lap_delta_gamma, cdiag]
+    simp
+  · intro k
+    rw [ev_X_pow, ev_X_pow, lap_dg_zeta_pow, csubAG, cdiag,
+      show m + (k + 1) = m + k + 1 by omega, show a + (k + 1) + 1 = a + k + 2 by omega]
+
+/-- `LcDG a m` is lower triangular with diagonal `cdiag m a`. -/
+theorem LcDG_tri (a m n : ℕ) : LcDG q a m (X ^ n) - cdiag q m a n • X ^ n ∈ degreeLT K n :=
+  bidiag_tri _ _ n
+
+/-- `p^{(a,m),δγ}_n`: the degree-`n` eigenpolynomial of `L` on `δ^a γ^m K[ζ]`. -/
+noncomputable def compPolyDG (a m n : ℕ) : K[X] := triPoly (LcDG q a m) (cdiag q m a) n
+
+/-- **Eigen-equation on the component.**
+`L(δ^a γ^m p_n(ζ)) = [m+n]_{q⁻²} [a+n+1]_{q²} · δ^a γ^m p_n(ζ)`. -/
+theorem lap_compPolyDG (a m n : ℕ) :
+    lap q (δ (R := K) q ^ a * γ q ^ m * ev q (compPolyDG q a m n)) =
+      cdiag q m a n • (δ q ^ a * γ q ^ m * ev q (compPolyDG q a m n)) := by
+  rw [lap_dg_ev, compPolyDG, tri_triPoly _ _ (LcDG_tri q a m), map_smul, mul_smul_comm]
+
+theorem compPolyDG_mem (a m n : ℕ) : compPolyDG q a m n ∈ degreeLT K (n + 1) :=
+  triPoly_mem _ _ (LcDG_tri q a m) n
+
+/-- **The eigenpolynomials span `K[X]`.** -/
+theorem compPolyDG_span (hp : ∀ n : ℕ, ((q : K) * q) ^ (n + 1) ≠ 1) (a m : ℕ) :
+    Submodule.span K (Set.range (compPolyDG q a m)) = ⊤ :=
+  triPoly_span _ _ (LcDG_tri q a m) (cdiag_injective q hp m a)
+
+theorem coeff_compPolyDG_ne_zero (hp : ∀ n : ℕ, ((q : K) * q) ^ (n + 1) ≠ 1) (a m n : ℕ) :
+    (compPolyDG q a m n).coeff n ≠ 0 :=
+  coeff_triPoly_ne_zero _ _ (LcDG_tri q a m) (cdiag_injective q hp m a) n
+
+end ComponentDG
 
 end QOU.FluidDynamics.ComponentLap
