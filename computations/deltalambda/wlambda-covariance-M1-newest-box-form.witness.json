@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-27T23:23:31.927029+00:00",
-  "commitSha": "153ad44e6eb1f4f5e9774a1a33be8d35df185850",
+  "computedAt": "2026-11-27T23:56:03.007244+00:00",
+  "commitSha": "e048ae0d6224752d7b6911d4afd7bef0179f805a",
   "assertions": [
     {
       "name": "m1_newest_box_form",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "identities n=4..10; SC + lower half n=4..45"
+      "source": "identities n=4..10; SC + lower half + upper tail n=4..45"
     }
   ],
   "allPassed": true,
   "durationMs": 2,
   "computation": "wlambda-covariance-M1-newest-box-form",
   "scriptFile": "wlambda_covariance_M1_newest_box_form.py",
-  "scriptHash": "88d10b1c30dc",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ec73f02a71f7",
+  "scriptCommitSha": "b7897ad8c6669cba4b63ced9fb32fe95b30af154",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     ],
     "reproduce": "python3 -u computations/deltalambda/wlambda_covariance_M1_newest_box_form.py 10 45 14"
   },
-  "description": "Newest-box form of the covariance-kernel first moment: with the n-th Plancherel-growth box at (i,j), s=i+j, c=j−i, m=min(i,j): E[c²]=n−1, M₁=(n/3)Cov(s,c²), P=(n/3)Cov(|c|,c²), N=−(2n/3)Cov(m,c²), and ρ_n(s)=E[1{s}(c²−(n−1))]/((n−1)(n−2)), all equal exactly to the three-box and hook-formula sides. Lower half of single crossing (ρ_n≤0 for (s−2)²≤n−1) checked; single crossing checked; two candidate sufficient conditions (monotone regression, per-ν covariance) FAIL. Single crossing for all n is NOT proved. No fit; nothing wired.",
+  "description": "Newest-box form of the covariance-kernel first moment: with the n-th Plancherel-growth box at (i,j), s=i+j, c=j−i, m=min(i,j): E[c²]=n−1, M₁=(n/3)Cov(s,c²), P=(n/3)Cov(|c|,c²), N=−(2n/3)Cov(m,c²), and ρ_n(s)=E[1{s}(c²−(n−1))]/((n−1)(n−2)), all equal exactly to the three-box and hook-formula sides. Lower half of single crossing (ρ_n≤0 for (s−2)²≤n−1) and upper tail (ρ_n≥0 for s²≥5n−1) checked; single crossing checked; two candidate sufficient conditions (monotone regression, per-ν covariance) FAIL. Single crossing for all n is NOT proved. No fit; nothing wired.",
   "data": {
     "identity_rows": [
       {
@@ -107,6 +107,12 @@
         "single_crossing": true,
         "threshold_s": 5,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          4,
+          4
+        ],
         "monotone_regression": true
       },
       {
@@ -114,6 +120,9 @@
         "single_crossing": true,
         "threshold_s": 5,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": null,
         "monotone_regression": true
       },
       {
@@ -121,6 +130,12 @@
         "single_crossing": true,
         "threshold_s": 5,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          5,
+          5
+        ],
         "monotone_regression": true
       },
       {
@@ -128,6 +143,12 @@
         "single_crossing": true,
         "threshold_s": 5,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          5,
+          5
+        ],
         "monotone_regression": true
       },
       {
@@ -135,6 +156,12 @@
         "single_crossing": true,
         "threshold_s": 6,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          5,
+          6
+        ],
         "monotone_regression": true
       },
       {
@@ -142,6 +169,12 @@
         "single_crossing": true,
         "threshold_s": 6,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          5,
+          6
+        ],
         "monotone_regression": true
       },
       {
@@ -149,6 +182,12 @@
         "single_crossing": true,
         "threshold_s": 6,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          6,
+          6
+        ],
         "monotone_regression": true
       },
       {
@@ -156,6 +195,12 @@
         "single_crossing": true,
         "threshold_s": 6,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          6,
+          7
+        ],
         "monotone_regression": true
       },
       {
@@ -163,6 +208,12 @@
         "single_crossing": true,
         "threshold_s": 7,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          6,
+          7
+        ],
         "monotone_regression": true
       },
       {
@@ -170,6 +221,12 @@
         "single_crossing": true,
         "threshold_s": 7,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          6,
+          7
+        ],
         "monotone_regression": true
       },
       {
@@ -177,6 +234,12 @@
         "single_crossing": true,
         "threshold_s": 7,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          6,
+          8
+        ],
         "monotone_regression": true
       },
       {
@@ -184,6 +247,12 @@
         "single_crossing": true,
         "threshold_s": 7,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          6,
+          8
+        ],
         "monotone_regression": true
       },
       {
@@ -191,6 +260,12 @@
         "single_crossing": true,
         "threshold_s": 7,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          6,
+          8
+        ],
         "monotone_regression": true
       },
       {
@@ -198,6 +273,12 @@
         "single_crossing": true,
         "threshold_s": 8,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          9
+        ],
         "monotone_regression": true
       },
       {
@@ -205,6 +286,12 @@
         "single_crossing": true,
         "threshold_s": 8,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          9
+        ],
         "monotone_regression": true
       },
       {
@@ -212,6 +299,12 @@
         "single_crossing": true,
         "threshold_s": 8,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          9
+        ],
         "monotone_regression": true
       },
       {
@@ -219,6 +312,12 @@
         "single_crossing": true,
         "threshold_s": 8,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          9
+        ],
         "monotone_regression": true
       },
       {
@@ -226,6 +325,12 @@
         "single_crossing": true,
         "threshold_s": 8,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          10
+        ],
         "monotone_regression": true
       },
       {
@@ -233,6 +338,12 @@
         "single_crossing": true,
         "threshold_s": 8,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          10
+        ],
         "monotone_regression": true
       },
       {
@@ -240,6 +351,12 @@
         "single_crossing": true,
         "threshold_s": 9,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          10
+        ],
         "monotone_regression": true
       },
       {
@@ -247,6 +364,12 @@
         "single_crossing": true,
         "threshold_s": 9,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          10
+        ],
         "monotone_regression": false
       },
       {
@@ -254,6 +377,12 @@
         "single_crossing": true,
         "threshold_s": 9,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          11
+        ],
         "monotone_regression": false
       },
       {
@@ -261,6 +390,12 @@
         "single_crossing": true,
         "threshold_s": 9,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          11
+        ],
         "monotone_regression": false
       },
       {
@@ -268,6 +403,12 @@
         "single_crossing": true,
         "threshold_s": 9,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          11
+        ],
         "monotone_regression": false
       },
       {
@@ -275,6 +416,12 @@
         "single_crossing": true,
         "threshold_s": 9,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          11
+        ],
         "monotone_regression": false
       },
       {
@@ -282,6 +429,12 @@
         "single_crossing": true,
         "threshold_s": 9,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          11
+        ],
         "monotone_regression": false
       },
       {
@@ -289,6 +442,12 @@
         "single_crossing": true,
         "threshold_s": 10,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          12
+        ],
         "monotone_regression": false
       },
       {
@@ -296,6 +455,12 @@
         "single_crossing": true,
         "threshold_s": 10,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          12
+        ],
         "monotone_regression": false
       },
       {
@@ -303,6 +468,12 @@
         "single_crossing": true,
         "threshold_s": 10,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          12
+        ],
         "monotone_regression": false
       },
       {
@@ -310,6 +481,12 @@
         "single_crossing": true,
         "threshold_s": 10,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          12
+        ],
         "monotone_regression": false
       },
       {
@@ -317,6 +494,12 @@
         "single_crossing": true,
         "threshold_s": 10,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          12
+        ],
         "monotone_regression": false
       },
       {
@@ -324,6 +507,12 @@
         "single_crossing": true,
         "threshold_s": 10,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          13
+        ],
         "monotone_regression": false
       },
       {
@@ -331,6 +520,12 @@
         "single_crossing": true,
         "threshold_s": 10,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          13
+        ],
         "monotone_regression": false
       },
       {
@@ -338,6 +533,12 @@
         "single_crossing": true,
         "threshold_s": 10,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          13
+        ],
         "monotone_regression": false
       },
       {
@@ -345,6 +546,12 @@
         "single_crossing": true,
         "threshold_s": 11,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          13
+        ],
         "monotone_regression": false
       },
       {
@@ -352,6 +559,12 @@
         "single_crossing": true,
         "threshold_s": 11,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          13
+        ],
         "monotone_regression": false
       },
       {
@@ -359,6 +572,12 @@
         "single_crossing": true,
         "threshold_s": 11,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          14
+        ],
         "monotone_regression": false
       },
       {
@@ -366,6 +585,12 @@
         "single_crossing": true,
         "threshold_s": 11,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          14
+        ],
         "monotone_regression": false
       },
       {
@@ -373,6 +598,12 @@
         "single_crossing": true,
         "threshold_s": 11,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          14
+        ],
         "monotone_regression": false
       },
       {
@@ -380,6 +611,12 @@
         "single_crossing": true,
         "threshold_s": 11,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          14
+        ],
         "monotone_regression": false
       },
       {
@@ -387,6 +624,12 @@
         "single_crossing": true,
         "threshold_s": 11,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          14
+        ],
         "monotone_regression": false
       },
       {
@@ -394,6 +637,12 @@
         "single_crossing": true,
         "threshold_s": 11,
         "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          14
+        ],
         "monotone_regression": false
       }
     ],

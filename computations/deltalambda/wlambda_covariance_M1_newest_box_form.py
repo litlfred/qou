@@ -20,6 +20,8 @@ is in docs/audits/2026-11-27-covariance-kernel-M1-newest-box-form.md.
 Also measured:
   * lower half of single crossing: ρ_n(s) ≤ 0 whenever (s−2)² ≤ n−1 (proved in the audit;
     checked here),
+  * upper tail: ρ_n(s) ≥ 0 whenever s² ≥ 5n − 1, from i·j ≤ n for an addable cell (proved in
+    the audit; checked here, together with i·j ≤ n on every cell),
   * single crossing of ρ_n for n = 4..NSC,
   * two candidate sufficient conditions, both FAIL: E[c² | s] non-decreasing in s, and
     Cov(s, c²) ≥ 0 under every single transition measure p_ν.
@@ -126,21 +128,31 @@ def main():
                         "N": str(part["P"] - part["M1"]), "E_c2": str(Ec2), "match": good})
         print(f"  n={n}: M1={part['M1']} P={part['P']} N={part['P'] - part['M1']}  {good}")
     sc_rows, lower_ok, sc_ok, mono_first_fail = [], True, True, None
+    upper_ok = True
     print("single crossing, lower half, monotone regression")
     for n in range(4, nsc + 1):
         W = newest_box_table(n)
         sg = sign_pattern(n, W)
         sc, t = single_crossing(sg)
         low = all(sg[s] <= 0 for s in sg if (s - 2) ** 2 <= n - 1)
+        # upper tail: an addable cell (i,j) of ν ⊢ n−1 has i·j ≤ n, so c² ≥ s² − 4n;
+        # every cell with s² ≥ 5n − 1 then has c² ≥ n − 1, hence ρ_n(s) ≥ 0.
+        cells_ok = all((s * s - c * c) // 4 <= n for (s, c, m) in W)
+        up = all(sg[s] >= 0 for s in sg if s * s >= 5 * n - 1)
+        open_window = [s for s in sorted(sg) if (s - 2) ** 2 > n - 1 and s * s < 5 * n - 1]
+        upper_ok = upper_ok and up and cells_ok
         mono, bad = monotone_regression_ok(W)
         if not mono and mono_first_fail is None:
             mono_first_fail = {"n": n, "decrease_into_s": bad}
         sc_ok &= sc
         lower_ok &= low
         sc_rows.append({"n": n, "single_crossing": sc, "threshold_s": t, "lower_half": low,
+                        "upper_tail": up, "cells_ij_le_n": cells_ok,
+                        "open_window": [open_window[0], open_window[-1]] if open_window else None,
                         "monotone_regression": mono})
-        print(f"  n={n}: SC {sc} t={t} lower-half {low} monotone {mono}", flush=True)
-    ok &= sc_ok and lower_ok
+        print(f"  n={n}: SC {sc} t={t} lower-half {low} upper-tail {up} "
+              f"window {open_window[:1] + open_window[-1:]} monotone {mono}", flush=True)
+    ok &= sc_ok and lower_ok and upper_ok
     nu_rows = []
     print("per-ν transition covariance Cov_{p_ν}(s, c²) < 0")
     for k in range(1, knu + 1):
@@ -148,7 +160,7 @@ def main():
         nu_rows.append({"k": k, "negative_count": len(neg), "examples": [list(x) for x in neg[:3]]})
         print(f"  |ν|={k}: {len(neg)} negative {neg[:3]}", flush=True)
     print(f"RESULT identities n=4..{nid}: {all(r['match'] for r in id_rows)}; "
-          f"SC n=4..{nsc}: {sc_ok}; lower half: {lower_ok}; "
+          f"SC n=4..{nsc}: {sc_ok}; lower half: {lower_ok}; upper tail: {upper_ok}; "
           f"monotone regression first fails: {mono_first_fail}")
     try:
         sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "substrate"))
@@ -159,7 +171,7 @@ def main():
             "growth box at (i,j), s=i+j, c=j−i, m=min(i,j): E[c²]=n−1, M₁=(n/3)Cov(s,c²), "
             "P=(n/3)Cov(|c|,c²), N=−(2n/3)Cov(m,c²), and ρ_n(s)=E[1{s}(c²−(n−1))]/((n−1)(n−2)), "
             "all equal exactly to the three-box and hook-formula sides. Lower half of single "
-            "crossing (ρ_n≤0 for (s−2)²≤n−1) checked; single crossing checked; two candidate "
+            "crossing (ρ_n≤0 for (s−2)²≤n−1) and upper tail (ρ_n≥0 for s²≥5n−1) checked; single crossing checked; two candidate "
             "sufficient conditions (monotone regression, per-ν covariance) FAIL. Single crossing "
             "for all n is NOT proved. No fit; nothing wired.")
         w.add_data("identity_rows", id_rows)
@@ -167,7 +179,7 @@ def main():
         w.add_data("monotone_regression_first_failure", mono_first_fail)
         w.add_data("per_nu_negative_covariance", nu_rows)
         w.add_assertion("m1_newest_box_form", computed=str(int(ok)), expected="1", tolerance=0,
-                        source=f"identities n=4..{nid}; SC + lower half n=4..{nsc}")
+                        source=f"identities n=4..{nid}; SC + lower half + upper tail n=4..{nsc}")
         print(f"Witness: {w.save()}")
     except ImportError as e:
         print(f"(witness skipped — witness_base unavailable: {e})")
