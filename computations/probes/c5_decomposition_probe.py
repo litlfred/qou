@@ -46,7 +46,7 @@ from pathlib import Path
 import mpmath as mp
 
 from experimental_constants import MU_OVER_E
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from witness_base import WitnessBuilder
 from _precision import set_compute_dps  # noqa: E402
 
@@ -54,7 +54,7 @@ from _precision import set_compute_dps  # noqa: E402
 def main() -> int:
     set_compute_dps()
 
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     qi = 1 / q
     h = q - qi
 

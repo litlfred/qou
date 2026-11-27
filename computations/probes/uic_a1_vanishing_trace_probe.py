@@ -98,7 +98,7 @@ import hecke_core_legacy as H  # noqa: E402
 from hecke_core import (  # noqa: E402
     q_factorial, partitions_of, partition_dimension, wedderburn_weight,
 )
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 
@@ -112,7 +112,7 @@ def check(name: str, ok: bool, detail: str = "") -> None:
 
 def main() -> int:
     set_compute_dps()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
 
     print("=" * 74)
     print("  Why term 1 is negative: ln of a structurally-zero Markov trace")

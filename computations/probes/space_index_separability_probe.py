@@ -71,7 +71,7 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 CORPUS_DEGENERATE_VALUE = "0.18614164195799085217"   # qou-kj4v
@@ -82,7 +82,7 @@ LEAN_DECLS = (
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     qi = mp.mpf(1) / q
     z = q ** 3 / (q ** 2 + 1)
     mu_p = (z + qi) / (q + qi)

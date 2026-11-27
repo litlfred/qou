@@ -65,7 +65,7 @@ sys.path.insert(0, str(_ROOT / "computations" / "substrate"))
 
 mp.mp.dps = 60
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402
 
 
@@ -123,7 +123,7 @@ def c3_extracted(q, z, me, Q_exp):
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     me = mp.mpf(M_E_MEV)
     Q_exp = mp.mpf(str(Q_BETA_MEV))
     s = substrate(q)

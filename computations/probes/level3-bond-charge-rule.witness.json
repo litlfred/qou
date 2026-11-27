@@ -1,6 +1,6 @@
 {
   "schema": "witness/v1",
-  "computedAt": "2026-08-30T12:59:46.918016+00:00",
+  "computedAt": "2026-11-20T15:43:55.408281+00:00",
   "description": "closed_form_tau_M.interface_factor implements the CENTRED SUM of the two nucleon charges, (Q_i + Q_j - 1)*h/2, exactly -- not the Coulomb product Q_i*Q_j*h/2. The two agree on pp and pn and differ only on nn, where the sum rule charges two neutral objects -h/2 and the product rule charges them 0. Summed over a nucleus the sum rule gives (A-1)Z, linear, and the product rule gives Z(Z-1)/2, quadratic -- the degree gap CrossingCountAffine proves no linear functional of the crossing counts can close, here traced to its source.",
   "q0_pin": "proton",
   "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -245,12 +245,12 @@
     "qou-vudb"
   ],
   "allPassed": true,
-  "scriptHash": "6757f677f53a",
-  "scriptCommitSha": "unknown",
-  "commitSha": "ff21b475e78dd43635812f9afb0c277a3f202353",
+  "scriptFile": "level3_bond_charge_rule_probe.py",
+  "scriptHash": "6331c2870dfc",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "level3_bond_charge_rule_probe.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

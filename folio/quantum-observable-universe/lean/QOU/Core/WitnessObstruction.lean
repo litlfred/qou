@@ -105,4 +105,13 @@ theorem not_subsingleton_unit_hom_of_nontrivial
   intro hsub
   exact qou_needs_nongenerating_unit incl hsub hnontrivial hgen
 
+/-- **In `ModuleCat R`, the source of any nonzero morphism has a non-subsingleton
+    hom-set from the monoidal unit.** Specialisation of `no_qou_on_moduleCat`.
+    Ported from closed PR #8491 (owner decision 2026-11-27). -/
+theorem moduleCat_not_subsingleton_unit_hom_of_ne_zero (R : Type) [CommRing R]
+    {adjointObj A : ModuleCat R} (incl : adjointObj ⟶ A)
+    (hnontrivial : incl ≠ 0) :
+    ¬ Subsingleton ((𝟙_ (ModuleCat R)) ⟶ adjointObj) :=
+  fun hvanish => no_qou_on_moduleCat R incl hvanish hnontrivial
+
 end QOU.WitnessObstruction

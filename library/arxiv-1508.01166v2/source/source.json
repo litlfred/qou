@@ -1,0 +1,27 @@
+{
+ "url": "https://export.arxiv.org/src/1508.01166v2",
+ "content_type": "application/gzip",
+ "sha256": "dabe52a06d615f214e15a9503a8b4ea3ae58d85e2b88acc7cdee61e1e5284fd6",
+ "bytes": 4962565,
+ "fetched": "2026-11-25T15:44:40+00:00",
+ "files": [
+  {
+   "path": "files/NavierStokesDEC.bbl",
+   "role": "bbl",
+   "sha256": "29734c2b0b5b7628c7f766d1a8c4ac979618d42047d0a46936969b802858e8d3",
+   "bytes": 6500
+  },
+  {
+   "path": "files/NavierStokesDEC.tex",
+   "role": "tex",
+   "sha256": "e8285d5b96f2da705b3d22177ccbb55fdda54caa7591cd9647e29b4cce2bbd47",
+   "bytes": 92897
+  },
+  {
+   "path": "files/elsarticle.cls",
+   "role": "cls",
+   "sha256": "be11acd7f2752a63191552fbec43c46883f95fa7edb28a2040a7969b4bfab802",
+   "bytes": 24955
+  }
+ ]
+}

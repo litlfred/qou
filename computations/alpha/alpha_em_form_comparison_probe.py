@@ -29,7 +29,7 @@ _ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(_ROOT / "computations" / "substrate"))
 sys.path.insert(0, str(_ROOT / "tools" / "qou-substrate" / "python"))
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.codata import codata  # noqa: E402
 
 sys.path.insert(0, str(_ROOT / "computations"))
@@ -124,7 +124,7 @@ def main() -> int:
     print(f"CODATA-2018 (for the historical comparison): {c18}")
     print()
 
-    pins = [("proton", mp.mpf(Q_50_DIGIT_STR)), ("muon", _muon_q())]
+    pins = [("proton", Q_MP), ("muon", _muon_q())]
 
     for pin_name, q in pins:
         print(f"--- {pin_name} pin  q0 = {mp.nstr(q, 18)}")

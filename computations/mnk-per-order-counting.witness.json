@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-11T22:28:16.917249+00:00",
-  "commitSha": "ccaaf71f9961d2d892468775785d15093f0c2314",
+  "computedAt": "2026-11-20T15:38:00.027400+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "pairwise_backbone_recovers_coulomb_mirror_split",
@@ -17,8 +17,8 @@
   "durationMs": 4,
   "computation": "mnk-per-order-counting",
   "scriptFile": "mnk_per_order_counting.py",
-  "scriptHash": "61bdd86c56b0",
-  "scriptCommitSha": "bb071a5805303cf16e533947e3d65b1d362d15b9",
+  "scriptHash": "1830dae262b1",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,8 +26,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mnk_per_order_counting.py"
+    ],
+    "reproduce": "python3 -u computations/mnk_per_order_counting.py"
   },
   "description": "Per-order sub-link count M_n(K)=C(A,n) for the body-order coordination tower (qou-v0yw, sharpened by #3582). The n=2 pairwise backbone B_2=B(D)·C(A,2) is pinned by the SINGLE deuteron datum (a_D^(2)=1, C(2,2)=1) and reproduces A=3 binding to a small ~1–2 MeV M_3 residual; the ³H−³He residual difference EQUALS the Coulomb mirror split (recovering #3564/#3570); ⁴He residual is the magic 4-body. So M_n=C(A,n) fits the 2-body backbone with zero extra parameters; the M_3/M_4 weights + large-A saturation stay open. Scope-(a), no per-isotope fit.",
   "data": {

@@ -46,43 +46,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "./scripts/precommit-precision-warn.sh",
-            "timeout": 130
-          },
-          {
-            "type": "command",
-            "command": "./scripts/precommit-voice-ratchet-warn.sh",
-            "timeout": 30
-          },
-          {
-            "type": "command",
-            "command": "./scripts/precommit-bean-id-warn.sh",
-            "timeout": 15
-          },
-          {
-            "type": "command",
-            "command": "./scripts/precommit-ledger-shrink-warn.sh",
-            "timeout": 20
-          },
-          {
-            "type": "command",
-            "command": "./scripts/precommit-bootstrap-order-warn.sh",
-            "timeout": 120
-          },
-          {
-            "type": "command",
-            "command": "./scripts/precommit-tolerance-floor-warn.sh",
-            "timeout": 70
-          },
-          {
-            "type": "command",
-            "command": "./scripts/precommit-tolerance-tautology-warn.sh",
-            "timeout": 70
-          },
-          {
-            "type": "command",
-            "command": "./scripts/prebranch-bean-loss-warn.sh",
-            "timeout": 15
+            "command": "\"${CLAUDE_PROJECT_DIR:-.}\"/scripts/pretooluse-bash-dispatch.sh",
+            "timeout": 140
           }
         ]
       }

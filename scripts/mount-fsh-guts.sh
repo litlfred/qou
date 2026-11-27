@@ -29,6 +29,28 @@ if command -v bun >/dev/null 2>&1; then
   # disk. The folio-assistant/ link is the compatibility path, kept for a
   # checkout that has it and no root mounts (scripts/lib/platform-root.sh).
   STATE=""
+  # Replay index.lock.json at the root when its layers are not on disk, or the
+  # lock moved past the replay stamp (owner, 2026-11-25). Before this, a fresh
+  # session got only the light platform under folio-assistant/, on which
+  # gen-block-jsonld emits the shared default @context and would rewrite every
+  # qou node -- so agents generated none, and the 2026-11-25 photon PRs left 11
+  # block nodes stale (fixed after the fact by #9433). Measured 2026-11-25 on a
+  # cold cache: mount-from-lock 29 s + bun install 12 s, about 500 MB
+  # (layers 170 MB, node_modules 330 MB). Idempotent: a current mount is a no-op.
+  if [ -f index.lock.json ] && [ "${QOU_SKIP_LOCK_MOUNT:-0}" != "1" ]; then
+    stamp=$(git rev-parse --git-path cat-mounted-lock 2>/dev/null)
+    want=$(sha256sum index.lock.json | cut -d' ' -f1)
+    if [ ! -f cat-harness-tools/package.json ] || [ ! -d node_modules ] \
+       || [ "$(cat "$stamp" 2>/dev/null)" != "$want" ]; then
+      echo "mount-fsh-guts: replaying index.lock.json at the root (layer mounts)"
+      if timeout 600 bash .github/mount-from-lock.sh >"${TMPDIR:-/tmp}/qou-mount-from-lock.log" 2>&1 \
+         && timeout 600 bun install >"${TMPDIR:-/tmp}/qou-bun-install.log" 2>&1; then
+        . scripts/lib/platform-root.sh && qou_platform_shim "$ROOT"
+      else
+        echo "mount-fsh-guts: lock replay failed (logs: ${TMPDIR:-/tmp}/qou-mount-from-lock.log, qou-bun-install.log); falling back to the light platform. scripts/gen-block-jsonld.sh will refuse to run until the root mounts exist." >&2
+      fi
+    fi
+  fi
   if [ -f cat-harness-tools/scripts/state-mount.ts ] && [ -d node_modules ]; then
     STATE=cat-harness-tools/scripts/state-mount.ts
     . scripts/lib/platform-root.sh && qou_platform_shim "$ROOT"

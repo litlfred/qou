@@ -1,7 +1,7 @@
 {
-  "commitSha": "de21861068134deceb1da50a10b6451d2890e7a8",
+  "commitSha": "28488bb4f7c533dea5ff310ea41d0cc4c50c6bd8",
   "compute": "yekutieli_mi_k3_structural_h6_scaffold",
-  "computedAt": "2026-08-23T19:56:02.643878+00:00",
+  "computedAt": "2026-11-21T02:51:12.378852+00:00",
   "description": "Path B scaffold step 1: extract the structural h\u2076 coefficient of the Borromean Markov trace closed form, and solve for the C_6 required to close each anchor's Higgs residual with the augmented formula m_H = m_anchor \u00b7 (P/P) \u00b7 (6/5) \u00b7 (1 - h\u2074\u00b72G - h\u2076\u00b7C_6). Confirms PR #1167's negative finding that no single C_6 closes both anchors, and identifies the research-grade ~1 month CBH expansion needed for full closure.",
   "durationMs": 0,
   "engine": "sympy",
@@ -16,9 +16,9 @@
     "from_Z_anchor": 58.06235754578311,
     "single_coefficient_works": false
   },
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "scriptFile": "yekutieli_mi_k3_h6_scaffold.py",
-  "scriptHash": "031442cb17a4",
+  "scriptHash": "228bd831cf35",
   "status": "exploratory",
   "structural_candidates_tested": [
     {

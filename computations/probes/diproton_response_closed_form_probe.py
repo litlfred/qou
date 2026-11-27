@@ -59,7 +59,7 @@ import sympy as sp  # noqa: E402
 from _precision import fmt, set_compute_dps  # noqa: E402
 from hoefsmit_symbolic import Q, chi_lambda_symbolic  # noqa: E402
 from markov_weights_symbolic import solve_y_lambda, tr_M_canonical  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 DPS = 60
 set_compute_dps(DPS)
@@ -99,11 +99,14 @@ def bond_word(m: int) -> list[tuple[int, str]]:
 
 def main() -> int:
     t0 = time.time()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     qi = 1 / q
     h = q - qi
     h2 = h**2
-    qv = sp.Rational(Q_50_DIGIT_STR)
+    # BOTH LAYERS CARRY THE SAME q (bean qou-ayzx, owner ruling D 2026-11-21): the sympy
+    # value is read from the 70-digit Q_MP, not the 50-digit string, so no straddle.
+    with mp.workdps(DPS + 15):
+        qv = sp.Rational(mp.nstr(Q_MP, DPS + 10, strip_zeros=False))
 
     print(f"qou-ales step 10 probe — the diproton response in closed form "
           f"(proton pin, {DPS} dps)")

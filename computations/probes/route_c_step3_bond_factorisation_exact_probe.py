@@ -79,7 +79,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
 
 try:
-    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 except Exception:  # pragma: no cover
     Q_50_DIGIT_STR = None
 try:
@@ -440,7 +440,7 @@ def main() -> int:
     # ── diagnostic at the proton pin (comparison boundary; nothing adjusted) ──
     anchor = {}
     if Q_50_DIGIT_STR is not None:
-        q0 = mp.mpf(Q_50_DIGIT_STR)
+        q0 = Q_MP
         anchor = {"q0": Q_50_DIGIT_STR, "h0": mp.nstr(q0 - 1 / q0, 30), "eps0": mp.nstr(q0 - 1, 30)}
         if M_E_MEV_STR is not None:
             me = mp.mpf(M_E_MEV_STR)

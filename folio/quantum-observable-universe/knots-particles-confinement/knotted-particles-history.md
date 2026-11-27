@@ -19,8 +19,12 @@ vortex atoms needed a table of knots, and Tait set out to make one
 \cite{tait1877knots}. With Thomas Kirkman and Charles Little he
 classified knot diagrams up to ten crossings, and in doing so stated
 the conjectures on crossing number, writhe and flypes that bear his
-name. The first of these was proved a century later, in 1987, with the
-Jones polynomial \cite{jones1985} \cite{kauffman1987}.
+name. The first of these was proved a century later, in 1987,
+independently by Kauffman, Murasugi and Thistlethwaite, with the Jones
+polynomial \cite{jones1985} \cite{kauffman1987} \cite{murasugi1987}
+\cite{thistlethwaite1987}; Menasco and Thistlethwaite proved the
+flyping conjecture in 1991 \cite{menasco-thistlethwaite1991}
+\cite{menasco-thistlethwaite1993}.
 
 The vortex atom itself did not survive. The ether was given up, the
 electron was found inside the atom, and by about 1900 the theory had
@@ -56,6 +60,31 @@ charge from external ribbon twists, it works in the finite-dimensional
 quotient $H_3(q)$ generated from the $\mathcal{O}_q(\mathrm{SU}(2))$
 braiding on $B_3$ and evaluates observables through the convention-D
 Markov trace.
+
+The braid lineage continued through division algebras. Gresnigt used
+the Clifford braiding theorem of Kauffman and Lomonaco
+\cite{kauffman-lomonaco-2016} to show that the complex numbers and the
+quaternions carry representations of exactly the two braid groups of
+the Bilson-Thompson model, the braid group $B_2$ of the twists and the
+circular braid group $B_3^c$ of the ribbons \cite{gresnigt2017}. He then
+identified the framed braids with the basis states of the minimal left
+ideals of the complex octonions, which, following Furey
+\cite{furey2016}, carry one generation of leptons and quarks under the
+unbroken symmetry $SU(3)_c \times U(1)_{\mathrm{em}}$ \cite{gresnigt2018}.
+Chester, Arsiwalla and Kauffman mapped the twists of the same states
+onto the weight lattice of $SU(3)_c \times U(1)_{\mathrm{em}}$ and the
+crossings onto chirality through the homomorphism
+$B_3 \to PSL(2,\mathbb{Z})$, and observed that the model captures only
+that unbroken sector \cite{chester-arsiwalla-kauffman-2025}. In these
+programmes the braid acts through a group, and a deformation parameter,
+where one appears, sits beside the braiding rather than in it: in
+Gresnigt's review the quantum group $SU_q(3)$ is a flavour symmetry with
+$q$ a root of unity \cite{gresnigt2017}, and in Finkelstein's model $q$
+deforms the symmetry of the knot. Here every generator of $H_n(q)$
+satisfies $\sigma_i - \sigma_i^{-1} = (q - q^{-1})\mathbf{1}$ with $q$
+a formal parameter, so a particle can be a linear combination of braid
+words rather than a single braid, as the four-term
+[photon](#def:photon) is.
 
 This chapter keeps the combinatorial half of that lineage and drops the
 mechanical half. The vortex atom tried to derive the stability of matter

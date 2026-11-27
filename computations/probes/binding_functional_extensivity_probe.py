@@ -81,7 +81,7 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.constants import M_E_MEV  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -98,7 +98,7 @@ B_AME = {"2H": "2.224566", "3H": "8.481798", "4He": "28.295673", "7Li": "39.2445
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - mp.mpf(1) / q
     alpha = mp.mpf(str(M_E_MEV)) / (q * (q - 1))
     z_C = mp.sqrt(q) / (q + 1)

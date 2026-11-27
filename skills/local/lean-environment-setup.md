@@ -11,6 +11,8 @@ allowed-tools: Read Edit Bash Grep Glob
 
 # Lean Environment Setup
 
+> **Platform rules win (owner, 2026-11-27).** Where this local skill differs from the cat-harness KG rules (`req:agent-workflow`, `req:content-lifecycle`) or from [`lean-cache-manager`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/lean-cache-manager.md), those win. In short: questions only on cards; beans are the tracker; threads never self-merge and send the PR number and full head SHA to the merge manager; the KG JSON-LD check is the only red pre-merge gate and all other QA runs after the merge; merges run under time-boxed grants, with the owner's card outside one; no repository secrets; one shared non-constructive axiom; no unverified external report as a source. The Lake cache branch, its overlays, lean-direct verification for threads without Lean, and pin drift are the merge manager's Lean cache lane.
+
 > **CPU & Verification Guard ([`lean-build-hygiene.md`](lean-build-hygiene.md)):** On shared/8-core hosts, ALWAYS export `LEAN_NUM_THREADS=1 RAYON_NUM_THREADS=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1`, prefix commands with `nice -n 15`, pass `-j 1` to cone scripts, and verify edits via `scripts/lean-overlay-env.sh` rather than bare `lake build`.
 
 ## ⮕ FAST ROUTE — read this BEFORE declaring Lean "unavailable"

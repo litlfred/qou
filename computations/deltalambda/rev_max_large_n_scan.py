@@ -55,7 +55,7 @@ if _COMPUTATIONS not in sys.path:
 
 from mpmath import mp  # noqa: E402
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 from hmin_closed_form_and_rev_sublinearity_probe import H_min_closed  # noqa: E402
 
@@ -127,7 +127,7 @@ def main() -> int:
     for n in ns:
         # --- scan at reduced precision, purely to SELECT the argmax
         mp.dps = args.scan_dps
-        Q0 = mp.mpf(Q_50_DIGIT_STR)
+        Q0 = Q_MP
         lnq = mp.log(Q0)
         T = Q0 ** 2
         et = [mp.mpf(0)] + [-mp.log(1 - T ** (-m)) for m in range(1, 4 * n + 400)]
@@ -137,7 +137,7 @@ def main() -> int:
 
         # --- RECOMPUTE the winner at full precision; only this number is reported
         mp.dps = 60
-        Q0 = mp.mpf(Q_50_DIGIT_STR)
+        Q0 = Q_MP
         lnq = mp.log(Q0)
         T = Q0 ** 2
         et60 = [mp.mpf(0)] + [-mp.log(1 - T ** (-m)) for m in range(1, 4 * n + 400)]

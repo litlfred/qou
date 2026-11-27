@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-math-0103228v2/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Nilpotent and parabolic coideal subalgebras",
+  "pageStart": 34,
+  "pageEnd": 37,
+  "contains": [
+    "library/arxiv-math-0103228v2/blocks/prose-sec-005",
+    "library/arxiv-math-0103228v2/blocks/prop-sec-005-01",
+    "library/arxiv-math-0103228v2/blocks/prop-sec-005-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0103228v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0103228v2",
+  "provenance": "ingested"
+}

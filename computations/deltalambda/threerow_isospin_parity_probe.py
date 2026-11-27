@@ -96,7 +96,7 @@ from collections import Counter  # noqa: E402
 from schur_principal_mpmath import (  # noqa: E402
     partitions_of, _f_lambda, schur_principal_mpmath, _wenzl_constants)
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from threerow_chi_sparse import chi_atom_sparse  # noqa: E402
@@ -104,7 +104,7 @@ from threerow_chi_sparse import chi_atom_sparse  # noqa: E402
 warnings.filterwarnings("ignore")
 set_compute_dps(50)
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 # Convention C's pole, kept ONLY to show the live level function is regular where C had
 # one. It bounds no sweep and enters no result. Under D, Q^r = Q^2 is entire.

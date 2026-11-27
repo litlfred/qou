@@ -132,7 +132,7 @@ import mpmath as mp  # noqa: E402
 from _precision import (  # noqa: E402
     set_compute_dps, fmt, str_at_true_precision,
 )
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from hecke_core import (  # noqa: E402
     _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
 )
@@ -294,7 +294,7 @@ def committed_sweep_refs():
 
 def main() -> int:
     t0 = time.monotonic()
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     qb_obs = mp.mpf(str(_Q_BETA_N))
     isotopes = build_set(ISOTOPES_LOW)
     heldout = build_set(ISOTOPES_HELDOUT)

@@ -110,9 +110,9 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
-from qou_substrate.constants import Q_50_DIGIT_STR             # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP             # noqa: E402
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)          # EXPERIMENTAL PROTON ANCHOR
+Q0 = Q_MP          # EXPERIMENTAL PROTON ANCHOR
 TOL_ZERO = 1e-8
 
 ISOTOPES = [("D", 1, 1), ("T", 1, 2), ("He3", 2, 1), ("He4", 2, 2)]

@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T04:15:09.433809+00:00",
-  "commitSha": "dcc2e65caebec9249d70aefeb8363c663c2d0ef0",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T19:08:55.176884+00:00",
+  "commitSha": "e08ddb48ba3b1e7ee94bafdd365730c793cecc0b",
   "assertions": [
     {
       "name": "roast_figure_divided_by_E0_is_ln2",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "extensive-term-energy-scale-reconciliation-probe",
   "scriptFile": "extensive_term_energy_scale_reconciliation_probe.py",
-  "scriptHash": "1e7a708f142d",
-  "scriptCommitSha": "5f7e9aa1e789446840794d0c0e20f44a0cbcba36",
+  "scriptHash": "3c3074174fda",
+  "scriptCommitSha": "8a51be2e1185d397db5b6dafc674326efda41dce",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,10 +48,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

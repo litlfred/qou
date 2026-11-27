@@ -1,20 +1,36 @@
-# Site publish: the platform's reusable folio-site-publish.yml, which runs
-# cat-harness-tools' stage-local.ts / build-instance-site.ts on the recipe
-# index.config.json declares under `site.build` (the same route the dth-hrh
-# folio publishes by). qou is a platform layer since the owner ruling of
-# 2026-11-24 ("1 qou is platform later").
+# qou: the canonical caller, pinned to the cat-harness-tools commit
+# index.lock.json names (move both together: `bun run cat workflow-pins`).
+# It replaces the dispatch-only caller that stood here, so a merge to main
+# publishes the site on its own instead of waiting for an agent to run
+# scripts/publish-main-local.sh by hand. That script stays as the fallback
+# for when Actions cannot run.
 #
-# DISPATCH-ONLY, like every workflow here (owner directive 2026-06-30: Actions
-# billing). dth-hrh's caller runs on push to main; this one does not. While
-# Actions is not enabled, the agent that merges runs
-# `bash scripts/publish-main-local.sh --deploy` (skill post-merge-rebuild),
-# which builds with the same command.
+# Site publish: runs the agent's own `stage-local.ts` on a GitHub runner, from
+# the steps this folio's instance declares under `site.build`. It runs on every
+# push to main (a merged PR), and by hand.
 #
-# Pinned to the cat-harness-tools commit index.lock.json names; move both
-# together (`bun run cat workflow-pins`).
+# Written by `folio_init` from cat-harness-tools/templates/document/. The
+# steps are the platform's reusable
+# litlfred/cat-harness-tools/.github/workflows/folio-site-publish.yml. On main
+# it publishes the gh-pages root; on any other branch, branches/<branch>/.
+# Runs queue one at a time per repository (the reusable workflow's
+# concurrency group), so two quick merges publish in turn. The same run
+# refreshes the layer's QA reports (layer-qa-publish.yml) on a push to main.
+#
+# This is the CANONICAL caller for every harnessed repository, a document
+# folio or an IG alike (cat-harness-tools#1879): the publisher is read from
+# the repository (index.config.json `site.publisher`, else what it declares or
+# calls), not from this file. `check:site-publish-caller` reports a repository
+# whose caller is missing or differs from this one other than in comments and
+# the pinned commit; `bun run cat site-publish-caller --write` writes it, and
+# `bun run cat workflow-pins` pins it to the commit index.lock.json names.
 name: Site publish
 
 on:
+  push:
+    # main only (owner, 2026-11-15): a repository whose default branch is
+    # still `master` renames it to `main` rather than this trigger growing.
+    branches: [main]
   workflow_dispatch:
     inputs:
       plan:
@@ -24,10 +40,14 @@ on:
 
 permissions:
   contents: write
+  # A preview reads the cone run's report (`preview-qa-<sha>`, an artifact of
+  # the PR's `preview` checks run) to put "This change (preview)" on top of
+  # its QA pages (scripts/preview-qa.ts). Granted here first: the reusable
+  # workflow can only ask for it once every caller grants it.
   actions: read
 
 jobs:
   publish:
-    uses: litlfred/cat-harness-tools/.github/workflows/folio-site-publish.yml@5593bb6d56fa149ffed4e7f94364ce9afa2beb45 # index.lock.json
+    uses: litlfred/cat-harness-tools/.github/workflows/folio-site-publish.yml@25cdacffd3bd113fc2c21824a7461ab62d32cff6 # index.lock.json
     with:
       plan: ${{ inputs.plan == true }}

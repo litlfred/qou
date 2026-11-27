@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1507.06276v2/blocks/cor-sec-033-01",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 42,
+  "pageEnd": 42,
+  "text": "cor-sec-033-01.md",
+  "derivedFrom": "library/arxiv-1507.06276v2/sections/sec-033",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1507.06276v2",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "7.7",
+    "source_kind": "corollary"
+  }
+}

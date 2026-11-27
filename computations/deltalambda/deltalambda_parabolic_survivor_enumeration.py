@@ -62,13 +62,13 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 
 # Experimental / Physical-Observations pin (proton). AGENTS.md §q0-anchor:
 # "ALL AGENTS AND ALL PRODUCTION CODE DEFAULT TO THE EXPERIMENTAL (PROTON) ANCHOR."
-Q0 = mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 RHO_STRONG_3 = mpf("3.8128")
 RHO_STRONG_4 = mpf("13.0316")
 DET_CAP = {2: 1, 3: 3, 4: 6}          # C(A,2)

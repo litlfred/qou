@@ -152,4 +152,32 @@ theorem trace_rho_commutatorSum_eq_zero_of_commute {ι : Type*} (s : Finset ι)
     rw [(h k hk).eq, sub_self]
   rw [hz, mul_zero, Matrix.trace_zero]
 
+/-- **Three-factor Leibniz rule for the matrix ring commutator.**
+
+`⁅X·Y·W, Z⁆ = X·Y·⁅W,Z⁆ + X·⁅Y,Z⁆·W + ⁅X,Z⁆·Y·W`, expanding the commutator of a three-word
+product into three dressed single-letter commutator terms. -/
+theorem commutator_mul_three (X Y W Z : Matrix n n R) :
+    (X * Y * W) * Z - Z * (X * Y * W) =
+      X * Y * (W * Z - Z * W) + X * (Y * Z - Z * Y) * W + (X * Z - Z * X) * Y * W := by
+  noncomm_ring
+
+/-- **Right-commuting factor passes out of the ring commutator.**
+
+When `Y` commutes with `Z` (such as a distant generator `σ_g` with `|g − a| ≥ 2` relative
+to a local germ `Z = A_a`), the commutator `⁅X·Y, Z⁆` reduces to `⁅X, Z⁆·Y`. -/
+theorem commutator_mul_of_right_commute (X Y Z : Matrix n n R)
+    (hYZ : Commute Y Z) :
+    (X * Y) * Z - Z * (X * Y) = (X * Z - Z * X) * Y := by
+  have hcomm : Y * Z - Z * Y = 0 := sub_eq_zero.mpr hYZ.eq
+  rw [commutator_mul_left, hcomm, mul_zero, zero_add]
+
+/-- **Left-commuting factor passes out of the ring commutator.**
+
+When `X` commutes with `Z`, the commutator `⁅X·Y, Z⁆` reduces to `X·⁅Y, Z⁆`. -/
+theorem commutator_mul_of_left_commute (X Y Z : Matrix n n R)
+    (hXZ : Commute X Z) :
+    (X * Y) * Z - Z * (X * Y) = X * (Y * Z - Z * Y) := by
+  have hcomm : X * Z - Z * X = 0 := sub_eq_zero.mpr hXZ.eq
+  rw [commutator_mul_left, hcomm, zero_mul, add_zero]
+
 end QOU.MassTheory

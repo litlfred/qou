@@ -122,7 +122,7 @@ import numpy as np  # noqa: E402
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 from nucleus_real_sdp import load_cost  # noqa: E402
 from pyhecke.atom import D_PN  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR, q_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -198,7 +198,7 @@ def main() -> int:
 
     # ── A1. the sibling's spectra are exact ───────────────────────────
     print("\n  1. the sibling's transfer-matrix rates, recomputed")
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
 
     def rate(c, d):

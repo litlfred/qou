@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-04T06:14:59.859895+00:00",
-  "commitSha": "9219efdb220a9560808452d396de4f819a344702",
+  "computedAt": "2026-11-20T15:50:20.438868+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "complete_convention_vol_cs",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 45,
+  "durationMs": 42,
   "computation": "qbeta-c3-barodd-pole-seed-newton",
   "scriptFile": "qbeta_c3_barodd_pole_seed_newton_probe.py",
-  "scriptHash": "f62964d9a9c6",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "2cb4a460cfc4",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-0712.2456v4/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Constraint equations",
+  "pageStart": 11,
+  "pageEnd": 12,
+  "contains": [
+    "library/arxiv-0712.2456v4/blocks/prose-sec-005"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0712.2456v4",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0712.2456v4",
+  "provenance": "ingested"
+}

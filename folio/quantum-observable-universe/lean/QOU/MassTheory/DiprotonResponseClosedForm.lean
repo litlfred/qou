@@ -341,4 +341,20 @@ theorem binding_of_closedForm {α q trFree trAtom : ℝ} (hα : 0 < α) (hq1 : 1
   rw [hcf.ratio_eq]
   exact binding_ceiling_on_interval hα hq1 hq2
 
+
+/-- **Classical `q = 1` evaluations of `nucleonPoly`, `responsePoly`, `responseCoeff`, `respPP`, and `nucleonTrace` (`qou-ales`).**
+At `q = 1`, `nucleonPoly 1 = 4`, `responsePoly 1 = 1`, `responseCoeff 1 = 3 / 8`, `respPP 1 = 0`,
+and `nucleonTrace 1 = 1 / 2`. -/
+theorem classical_values_at_one :
+    nucleonPoly 1 = 4 ∧
+      responsePoly 1 = 1 ∧
+      responseCoeff 1 = 3 / 8 ∧
+      respPP 1 = 0 ∧
+      nucleonTrace 1 = 1 / 2 := by
+  refine ⟨by unfold nucleonPoly; norm_num,
+          by unfold responsePoly; norm_num,
+          by unfold responseCoeff responsePoly nucleonPoly; norm_num,
+          by unfold respPP responsePoly nucleonPoly; norm_num,
+          by unfold nucleonTrace nucleonPoly; norm_num⟩
+
 end QOU.Mass.DiprotonResponseClosedForm

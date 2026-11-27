@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T21:21:26.209548+00:00",
-  "commitSha": "925d5d02b4c04229a6389b24c59096d65865d576",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:45:57.496419+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "jones_4one_validates",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 16,
   "computation": "qbeta-5two-jones-barodd",
   "scriptFile": "qbeta_5two_jones_barodd_probe.py",
-  "scriptHash": "e8ac594faa5c",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "1e7ccba29aee",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -73,7 +73,7 @@
   "q0Anchor": "comparison",
   "q0Values": {
     "muon": "1.109978595642739046681795129380001752700065561029000",
-    "proton": "1.109978582751380807591669095610768879874499121873600"
+    "proton": "1.109978582751380807591669095610768879874499121873579"
   },
   "q0AnchorReason": "the bar-odd Jones datum is evaluated at BOTH pins and the cross-anchor drift is the measured quantity"
 }

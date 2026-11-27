@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-10-10T08:07:31.726933+00:00",
-  "commitSha": "dad0098b93fcab52d3336b0bb185a6e8e3f0fc9a",
+  "computedAt": "2026-11-20T15:04:16.590056+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "jet_rank_0_derivation_q_independent_and_matches_textbook",
@@ -18,8 +18,8 @@
   "durationMs": 4,
   "computation": "casimir-jet-order-derivation",
   "scriptFile": "casimir_jet_order_derivation.py",
-  "scriptHash": "50cc8560f32c",
-  "scriptCommitSha": "63818809830f4c1d9b7166d39c99ca7d973e8207",
+  "scriptHash": "8c34509528cd",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,14 +27,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.17",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "2986fe4aa825b156"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -59,7 +59,7 @@
         "expected_textbook_force": "0.0411233516712056609118103791661506297304737475301699609433890"
       },
       {
-        "q_input": "1.10997858275138080759166909561076887987449912187360000000000",
+        "q_input": "1.10997858275138080759166909561076887987449912187357873607281",
         "zeta_neg_3_used": "0.00833333333333333333333333333333333333333333333333333333333333",
         "energy_prefactor_c_q": "0.0137077838904018869706034597220502099101579158433899869811297",
         "force_prefactor_3c_q": "0.0411233516712056609118103791661506297304737475301699609433890",

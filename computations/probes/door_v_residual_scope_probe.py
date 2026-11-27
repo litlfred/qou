@@ -45,7 +45,7 @@ from __future__ import annotations
 import sympy as sp
 from mpmath import mp
 
-from qou_substrate.constants import Q_50_DIGIT_STR
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP
 
 q = sp.Symbol("q", positive=True)
 E_LO, E_HI = -8, 10
@@ -87,7 +87,7 @@ def main() -> int:
     print("(1) GGM sign-flip THRESHOLD at the proton q0 (mpmath, package dps)")
     print("=" * 78)
     mp.dps = 60
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     print(f"  q0 = {mp.nstr(q0, 25)}  (proton pin, qou_substrate.constants.Q_50_DIGIT_STR)")
     ratio = mp.log(2) / mp.log(q0)
     print(f"  log 2 / log q0 = {mp.nstr(ratio, 12)}")

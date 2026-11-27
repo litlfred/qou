@@ -92,6 +92,8 @@ export default chapter({
       title: "Baryon multiplets and the Borromean decuplet",
       label: "sec:baryon-multiplets",
       blocks: [
+        // Owner ruling 2026-11-27: the flavour fundamental W as an axiom datum.
+        "flavoured-quantum-observable-universe",
         "schur-weyl-eightfold",
         "borromean-decuplet-derivation",
         // The N = 2 Delta quartet with its faithful 2I3 labelling (owner

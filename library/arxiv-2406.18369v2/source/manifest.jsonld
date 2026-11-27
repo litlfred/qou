@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-2406.18369v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2406.18369v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2406.18369v2",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2406.18369&metadataPrefix=arXiv), <license> element, read 2026-11-25",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2406.18369v2",
+    "format": "latex",
+    "url": "https://export.arxiv.org/src/2406.18369v2",
+    "content_type": "application/gzip",
+    "sha256": "7b5dd10e3096461af4baaca7f9d6fd9ebf5e53c1a7534c8d9bac5b84284603d0",
+    "bytes": 102593,
+    "fetched": "2026-11-25T15:44:47+00:00",
+    "files": [
+      {
+        "path": "source/files/2024_sept_arxiv.tex",
+        "role": "tex",
+        "sha256": "357e32d07fd3a57275440e1fc10ebb0ea15e1233c1cdec56a8e8cda357626a6c",
+        "bytes": 198458
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "q0": "1.10997858275138080759166909561",
+  "E0_order_zero": "4.18598136329448",
+  "E0_tower_summed": "4.22748335562903",
+  "z_D": "0.6126880371464652516",
+  "h": "0.20906029879563931543",
+  "delta": "0.0013757108070270960086",
+  "scope": "single-crossing interface letters (superseded by 2026-11-15 gg ruling)",
+  "nuclei": [
+    {
+      "nucleus": "2H",
+      "L": "0.67682159238634338966",
+      "B_AME": "2.2245662",
+      "B_E0": "2.833162572",
+      "err_E0_pct": "27.35798",
+      "B_E0t": "2.861252017",
+      "err_E0t_pct": "28.620673",
+      "required_scale_MeV": "3.286783733",
+      "required_over_E0": "0.785188334048"
+    },
+    {
+      "nucleus": "3H",
+      "L": "1.5840838579195562903",
+      "B_AME": "8.4817962",
+      "B_E0": "6.630945507",
+      "err_E0_pct": "-21.821447",
+      "B_E0t": "6.696688143",
+      "err_E0t_pct": "-21.046345",
+      "required_scale_MeV": "5.35438585375",
+      "required_over_E0": "1.27912319455"
+    },
+    {
+      "nucleus": "3He",
+      "L": "1.1667209766414782411",
+      "B_AME": "7.71804132",
+      "B_E0": "4.883872264",
+      "err_E0_pct": "-36.721351",
+      "B_E0t": "4.932293509",
+      "err_E0t_pct": "-36.093974",
+      "required_scale_MeV": "6.61515604375",
+      "required_over_E0": "1.58031187185"
+    },
+    {
+      "nucleus": "4He",
+      "L": "2.0739832421746911417",
+      "B_AME": "28.2956624",
+      "B_E0": "8.6816552",
+      "err_E0_pct": "-69.31807",
+      "B_E0t": "8.767729636",
+      "err_E0t_pct": "-69.013874",
+      "required_scale_MeV": "13.6431490017",
+      "required_over_E0": "3.25924743032"
+    }
+  ],
+  "minimax_pairs": [
+    {
+      "pair": "2H-3H",
+      "minimax_rel_err_pct": "23.927341",
+      "best_scale_harmonic_MeV": "4.073223688"
+    },
+    {
+      "pair": "2H-3He",
+      "minimax_rel_err_pct": "33.613336",
+      "best_scale_harmonic_MeV": "4.3915814"
+    },
+    {
+      "pair": "2H-4He",
+      "minimax_rel_err_pct": "61.171922",
+      "best_scale_harmonic_MeV": "5.297372519"
+    },
+    {
+      "pair": "3H-3He",
+      "minimax_rel_err_pct": "10.533153",
+      "best_scale_harmonic_MeV": "5.918371521"
+    },
+    {
+      "pair": "3H-4He",
+      "minimax_rel_err_pct": "43.63073",
+      "best_scale_harmonic_MeV": "7.690543491"
+    },
+    {
+      "pair": "3He-4He",
+      "minimax_rel_err_pct": "34.69191",
+      "best_scale_harmonic_MeV": "8.910080026"
+    }
+  ],
+  "deuteron_letter_candidates": [
+    {
+      "candidate": "colour-weighted d=-h(1/2-delta/4) [live]",
+      "mu_pn": "0.508229789376739",
+      "B_E0": "2.833162572",
+      "err_E0_pct": "27.35798",
+      "B_E0t": "2.861252017",
+      "err_E0t_pct": "28.620673"
+    },
+    {
+      "candidate": "colour-blind average d=-h/2",
+      "mu_pn": "0.508157887748646",
+      "B_E0": "2.833754824",
+      "err_E0_pct": "27.384603",
+      "B_E0t": "2.861850141",
+      "err_E0t_pct": "28.64756"
+    },
+    {
+      "candidate": "derived crossing weight w=1/(q^2+1)",
+      "mu_pn": "0.497290545604916",
+      "B_E0": "2.924246314",
+      "err_E0_pct": "31.452429",
+      "B_E0t": "2.95323881",
+      "err_E0t_pct": "32.755717"
+    },
+    {
+      "candidate": "geometric mean sqrt(z(z-h))",
+      "mu_pn": "0.497290545604916",
+      "B_E0": "2.924246314",
+      "err_E0_pct": "31.452429",
+      "B_E0t": "2.95323881",
+      "err_E0t_pct": "32.755717"
+    },
+    {
+      "candidate": "bare sigma, d=0 (pp letter)",
+      "mu_pn": "0.612688037146465",
+      "B_E0": "2.050709692",
+      "err_E0_pct": "-7.8152993",
+      "B_E0t": "2.071041493",
+      "err_E0t_pct": "-6.9013324"
+    },
+    {
+      "candidate": "bare sigma^-1, d=-h (nn letter)",
+      "mu_pn": "0.403627738350826",
+      "B_E0": "3.797782935",
+      "err_E0_pct": "70.720158",
+      "B_E0t": "3.835436127",
+      "err_E0t_pct": "72.412766"
+    },
+    {
+      "candidate": "isospin T=1 projector mu+",
+      "mu_pn": "0.752702113251965",
+      "B_E0": "1.189177569",
+      "err_E0_pct": "-46.543395",
+      "B_E0t": "1.200967693",
+      "err_E0t_pct": "-46.013398"
+    },
+    {
+      "candidate": "isospin T=0 projector mu- (deuteron channel)",
+      "mu_pn": "0.247297886748035",
+      "B_E0": "5.848492628",
+      "err_E0_pct": "162.90486",
+      "B_E0t": "5.90647762",
+      "err_E0t_pct": "165.51143"
+    }
+  ],
+  "identities_D": {
+    "crossing_weight_mu_minus_1/[2]_q": "-9.0557e-72",
+    "geometric_mean_minus_1/[2]_q": "-9.0557e-72",
+    "mu_minus_minus_1/[2]_q^2": "4.5278e-72"
+  },
+  "diagnostic_not_a_target": {
+    "mu_req_at_E0": "0.587762444555595",
+    "d_req_over_h": "-0.119226810324",
+    "note": "what AME would need; choosing d or E0 to hit it is a fit and is not done"
+  },
+  "assertions": {
+    "identities_exact_to_1e-60": true
+  }
+}

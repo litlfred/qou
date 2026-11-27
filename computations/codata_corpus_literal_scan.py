@@ -434,8 +434,35 @@ def _classify(spans, lineno: int, col: int) -> str:
     return "code"
 
 
+def _tracked_files():
+    """The files git tracks, or None when git cannot answer.
+
+    Walking the tree with rglob scans whatever happens to be on disk. The
+    session-start hook mounts gitignored platform layers at the repo root
+    (`cat-harness-tools/`, `folio-assistant/`, `beans/`), and those carry
+    their own copies of CODATA literals. Measured 2026-11-27 on main 461e3e6:
+    a checkout with the mounts scanned 44704 files and went RED on one CODE
+    site, `cat-harness-tools/pipeline/render-value-latex.test.ts:32`
+    (137.035999084, a platform test fixture); a clean worktree of the same
+    commit scanned 33965 files and was green with 0 CODE sites. The verdict
+    depended on the checkout, the same defect the `worktrees` skip fixed for
+    one directory. Asking git fixes it for every mount at once.
+    """
+    import subprocess
+    try:
+        out = subprocess.run(
+            ["git", "-C", str(REPO), "ls-files", "-z"],
+            check=True, capture_output=True,
+        ).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return None
+    return {REPO / p for p in out.decode("utf-8", "surrogateescape").split("\0") if p}
+
+
 def _iter_files():
-    for path in REPO.rglob("*"):
+    tracked = _tracked_files()
+    candidates = sorted(tracked) if tracked is not None else REPO.rglob("*")
+    for path in candidates:
         if not path.is_file() or path.suffix not in SCAN_EXTS:
             continue
         if any(part in SKIP_DIRS for part in path.parts):

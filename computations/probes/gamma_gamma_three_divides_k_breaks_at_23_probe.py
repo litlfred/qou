@@ -116,7 +116,7 @@ for _p in ("tools/qou-substrate/python", "computations/substrate", "computations
 
 import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 DPS = 60
 set_compute_dps(DPS)          # corpus convention, not a bare `mp.dps =`
@@ -151,7 +151,7 @@ def theta_of(x):
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
     x = h ** 2
     th = theta_of(x)

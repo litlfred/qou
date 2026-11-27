@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-10T17:36:32.769453+00:00",
-  "commitSha": "56e9680162560f9e3c8639adba2ffda1ade01318",
+  "computedAt": "2026-11-20T15:04:49.581360+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "connected_magnitude_is_charge_symmetry_invariant",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 6,
   "computation": "connected-magnitude-charge-symmetric",
   "scriptFile": "connected_magnitude_charge_symmetric.py",
-  "scriptHash": "3ad0cac7e488",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "a68bf8743659",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,12 +26,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/connected_magnitude_charge_symmetric.py"
+    ],
+    "reproduce": "python3 -u computations/connected_magnitude_charge_symmetric.py"
   },
   "description": "Re-runs #3548's connected-magnitude probe (irreducible Ursell/Mayer A-body cluster b_A^c, SU(4) C(4,A) gate) on the CHARGE-SYMMETRIC kernel (f_pp=f_nn=f_pn isoscalar) vs the charge-breaking #2089 kernel. FINDING: |b_Ac| is charge-symmetry-invariant (⁴He 1.961→1.972, +0.5%), so #3548's PARTIAL magnitude (⁴He ~×1.5 vs ×2.09 needed) is robust — charge symmetry does NOT close the magnitude gap. ⇒ the two binding levers are decoupled: charge structure (mirror split, fixed by #3575) vs connected magnitude (#3548, still open). Scope-(a), reuses #3548 machinery, no fit, no wiring.",
   "data": {
@@ -65,5 +73,7 @@
         "need_symm": 0.9588256465905409
       }
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

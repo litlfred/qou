@@ -44,6 +44,9 @@ import QOU.EightfoldWay.Sym2AdjointSpinTwo
 -- import Fred2005
 
 import QOU.Core.Basic
+import QOU.Core.LawvereCut
+import QOU.Core.TarskiSign
+import QOU.Core.TarskiSignKashaev
 import MathlibExt.Core
 import MathlibExt.QuadraticIrrationalBadlyApproximable
 import QOU.Core.MarkovTrace
@@ -174,6 +177,8 @@ import QOU.Core.OctonionSU3BracketClosure
 import QOU.Core.OctonionColourActionBaseModule
 import QOU.Core.OctonionComplexStructure
 import QOU.Core.CalculusDimensionObstruction
+import QOU.Core.HeckeGoldmanIwahori
+import QOU.Core.IntentHolonomy
 import QOU.Core.SelfDualityDegree
 import QOU.StandardModel.ColourStabilizerAction
 import QOU.StandardModel.ColourBridge
@@ -401,6 +406,7 @@ import QOU.BraidsAndKnots.KnotTheory
 import QOU.BraidsAndKnots.Brunnian
 import QOU.BraidsAndKnots.KnotRegistry
 import QOU.MassTheory.MassDerivation
+import QOU.MassTheory.LinkingWeightWedderburn
 -- Also brings QOU.Mass.ChainTraceFactor under the umbrella; nothing had
 -- imported it, so it was invisible to blueprint/doc-gen import walks.
 import QOU.MassTheory.IntraOrderingInvariance
@@ -1904,7 +1910,14 @@ import QOU.MassTheory.GPMTThreeRowCumulantBridge
 import QOU.MassTheory.ThreeRowSpringerSYTDerivation
 import QOU.MassTheory.H4GPMTModifiedDimensionCumulants
 import QOU.EightfoldWay.USpinColemanGlashowLambdaSigma
+import QOU.EightfoldWay.AlternatingChannelRowCap
+import QOU.EightfoldWay.HyperchargeUniqueness
+import QOU.EightfoldWay.ColourSingletSelectionRule
 import QOU.StandardModel.OctonionColourTripletSplitting
+import QOU.StandardModel.ColourOnSingleFibreThreeStrands
+import QOU.StandardModel.OctonionColourTripletComplexType
+import QOU.StandardModel.GaugeHeckeCanonicalFaithfulness
+import QOU.Core.FlavouredQuantumObservableUniverse
 import QOU.StandardModel.ElectroweakBringSchwingerBridge
 import QOU.StandardModel.ElectroweakSweedlerScaleAndRGThresholds
 import QOU.StandardModel.ElectroweakVevFixedPointDecomposition
@@ -1982,6 +1995,9 @@ import QOU.EightfoldWay.GellMannOkuboIdentity
 import QOU.EightfoldWay.GellMannOkuboSecondOrder
 import HeckeTemperleyLieb.HeckeBraidingNonSymmetric
 import QOU.EightfoldWay.HyperbolicMesonClaspAndDiquarkSplit
+import QOU.EightfoldWay.MesonRatioSelectionStatus
+import QOU.EightfoldWay.MesonTwelveDimChannels
+import QOU.EightfoldWay.MesonLabelEmbeddings
 import QOU.EightfoldWay.MirrorSwapCompatibility
 import QOU.EightfoldWay.NonetMixingUnconstrained
 import QOU.EightfoldWay.ObstructionArithmeticCore

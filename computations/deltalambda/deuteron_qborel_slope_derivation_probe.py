@@ -93,7 +93,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 import mpmath as mp  # noqa: E402
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.precision import COMPUTE_DPS  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -168,7 +168,7 @@ def d2(f, n):
 
 def main() -> int:
     mp.mp.dps = COMPUTE_DPS
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     lnq = mp.log(q0)
 
     D = degrees(NMAX + 1)

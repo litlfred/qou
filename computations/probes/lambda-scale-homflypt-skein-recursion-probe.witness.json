@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T20:18:31.767012+00:00",
-  "commitSha": "acf5d779bd55b61669ee70b1980d78b63f6a6fe3",
+  "computedAt": "2026-11-20T15:43:54.735817+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "Multi-knot HOMFLYPT PSLQ — no closure relation expected for either target",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 14,
   "computation": "lambda-scale-homflypt-skein-recursion-probe",
   "scriptFile": "lambda_scale_homflypt_skein_recursion_probe.py",
-  "scriptHash": "62e839a6a15d",
-  "scriptCommitSha": "acebd1cd9004c3a1731556f8ab60415568d275e4",
+  "scriptHash": "42c09002e2ec",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,14 +27,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

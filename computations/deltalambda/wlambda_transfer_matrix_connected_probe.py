@@ -57,8 +57,8 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 
 # Canonical substrate q0 — the muon-anchored computations-layer value carried by
 # computations/q-pinning-50-digit.witness.json (AGENTS.md "q0 anchor convention").
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
+Q0 = Q_MP
 
 
 def qint(k):                       # balanced q-integer [k]_q

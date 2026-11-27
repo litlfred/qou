@@ -93,7 +93,7 @@ from math import comb  # noqa: E402
 
 import mpmath as mp  # noqa: E402
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -132,7 +132,7 @@ def fmt(x, n=8):
 
 
 def main() -> int:
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     print("mu2_vanishing_is_a_normalisation_identity_probe")
     print("=" * 78)
     print("THE FLAG.  deltalambda_kappa_interface_residual_simplex_probe sets")

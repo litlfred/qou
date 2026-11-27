@@ -71,4 +71,11 @@ theorem fixedColourings_sequential_eq_four_mul_interleaved :
     fixedColourings sequential = 4 * fixedColourings interleaved := by
   rw [fixedColourings_sequential, fixedColourings_interleaved]
 
+/-- **Strict ordering of the fixed-point counts (`qou-prjo`).**
+The interleaved 4-cycle fixes strictly fewer two-colourings than the sequential transposition (`2 < 8`). -/
+theorem fixedColourings_interleaved_lt_sequential :
+    fixedColourings interleaved < fixedColourings sequential := by
+  rw [fixedColourings_interleaved, fixedColourings_sequential]
+  norm_num
+
 end QOU.Mass.CrossTermFixedPointCount

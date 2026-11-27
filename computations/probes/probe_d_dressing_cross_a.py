@@ -48,7 +48,7 @@ import mpmath as mp  # noqa: E402
 DPS = 50
 mp.mp.dps = DPS + 10
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV,
     AME_B_DEUTERON_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION,
@@ -66,11 +66,11 @@ ATOMS = (
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     m_e = mp.mpf(str(M_E_MEV))
     h = q - 1 / q
     import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
-    E0 = _qbeta_e0.order_zero_scaled(m_e, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
+    E0 = _qbeta_e0.tower_summed_scaled(m_e, q)  # ruled tower E_0 (owner ruling 2026-11-25, qou-of4i)
     dress = 1 - h / 2
 
     print("=" * 76)

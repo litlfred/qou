@@ -1,0 +1,87 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1503.06237v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1503.06237v2",
+  "contains": [
+    "library/arxiv-1503.06237v2/sections/sec-front-matter",
+    "library/arxiv-1503.06237v2/sections/sec-000",
+    "library/arxiv-1503.06237v2/sections/sec-001",
+    "library/arxiv-1503.06237v2/sections/sec-002",
+    "library/arxiv-1503.06237v2/sections/sec-003",
+    "library/arxiv-1503.06237v2/sections/sec-004",
+    "library/arxiv-1503.06237v2/sections/sec-005",
+    "library/arxiv-1503.06237v2/sections/sec-006",
+    "library/arxiv-1503.06237v2/sections/sec-007",
+    "library/arxiv-1503.06237v2/sections/sec-008",
+    "library/arxiv-1503.06237v2/sections/sec-009",
+    "library/arxiv-1503.06237v2/sections/sec-010",
+    "library/arxiv-1503.06237v2/sections/sec-011",
+    "library/arxiv-1503.06237v2/sections/sec-012",
+    "library/arxiv-1503.06237v2/sections/sec-013",
+    "library/arxiv-1503.06237v2/sections/sec-014",
+    "library/arxiv-1503.06237v2/sections/sec-015",
+    "library/arxiv-1503.06237v2/sections/sec-016",
+    "library/arxiv-1503.06237v2/sections/sec-017",
+    "library/arxiv-1503.06237v2/sections/sec-018",
+    "library/arxiv-1503.06237v2/sections/sec-019",
+    "library/arxiv-1503.06237v2/sections/sec-020",
+    "library/arxiv-1503.06237v2/sections/sec-021",
+    "library/arxiv-1503.06237v2/sections/sec-022",
+    "library/arxiv-1503.06237v2/sections/sec-023",
+    "library/arxiv-1503.06237v2/sections/sec-024",
+    "library/arxiv-1503.06237v2/sections/sec-025",
+    "library/arxiv-1503.06237v2/sections/sec-026",
+    "library/arxiv-1503.06237v2/sections/sec-027",
+    "library/arxiv-1503.06237v2/sections/sec-028",
+    "library/arxiv-1503.06237v2/sections/sec-029",
+    "library/arxiv-1503.06237v2/sections/sec-030",
+    "library/arxiv-1503.06237v2/sections/sec-031",
+    "library/arxiv-1503.06237v2/sections/sec-032"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence — We propose a family of exactly solvable toy models for the AdS/CFT correspondence based on a novel\n\n**Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence**\n\n65 pp, 34 sections.\n\n**Abstract.** We propose a family of exactly solvable toy models for the AdS/CFT correspondence based on a novel construction of quantum error-correcting codes with a tensor network structure. Our building block is a special type of tensor with maximal entanglement along any bipartition, which gives rise to an isometry from the bulk Hilbert space to the boundary Hilbert space. The entire tensor network is an encoder for a quantum error-correcting code, where the bulk and boundary degrees of freedom may be identiﬁed as logical and physical degrees of freedom respectively. These models capture key features of entanglement in the AdS/CFT correspondence; in particular, the Ryu-Takayanagi formula and the negativity of tripartite information are obeyed exactly in many cases.\n\n**Outline.** Front matter; 1 Introduction; 2 Isometries and perfect tensors; 3 Construction of holographic quantum states a; 4 Entanglement structure of holographic states; 4.1 Ryu-Takayanagi formula; 4.2 Bipartite entanglement of disconnected reg; 4.3 A map of multipartite entanglement; 4.4 Negative tripartite information; 5 Quantum error correction in holographic code; 5.1 AdS-Rindler reconstruction as error correc; 5.2 The physical interpretation of holographic; 5.3 Bulk reconstruction from tensor pushing; 5.4 Connected reconstruction and the causal we; 5.5 Disconnected reconstruction and the entang; 5.6 Erasure threshold; 5.7 Holographic stabilizer codes; 5.8 Are local gauge constraints enough?\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: The pentagon-tiling tensor network is an isometric tensor from the bulk\n- Theorem 2: Suppose that we have a holographic state associated to a simply-connected\n- Theorem 3: For a holographic state or code, if A is a (not necessarily connected)\n- Theorem 4: Suppose the 2n indices of a perfect tensor state are partitioned into four\n- Theorem 5: SupposeA is a connected boundary region. Then any bulk local operator\n- Theorem 6: Consider a holographic code deﬁned by a contracted network of perfect",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-27"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1503.06237&metadataPrefix=arXiv), <license> element, read 2026-11-25",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1503.06237v2",
+    "title_source": "slug",
+    "source_file": "1503.06237v2.pdf",
+    "source_sha256": "55572e7133514f4adc54f5bfb025111fc3fcb911c87ca22bae0a9e30955d1e05",
+    "pages": 65,
+    "arxiv": {
+      "id": "1503.06237",
+      "version": "2",
+      "primary_class": "hep-th",
+      "stamp_date": "22 Jul 2015"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

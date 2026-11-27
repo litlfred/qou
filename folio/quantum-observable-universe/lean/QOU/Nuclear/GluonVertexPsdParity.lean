@@ -154,6 +154,17 @@ theorem one_crossing_not_psd {q : R} (hq : 0 < q) :
   have : Even 1 := (vertex_psd_iff_even hq 1).mp h
   exact (Nat.not_even_iff_odd.mpr ⟨0, rfl⟩) this
 
+/-- **Four-crossing neutron gluon vertex is PSD and two-crossing product is unity (`qou-1qsw`).**
+For `0 < q`, `k = 4` is PSD (`0 ≤ symEigenPow q 4 ∧ 0 ≤ altEigenPow q 4`), and at `k = 2`
+the product of the symmetric and alternating eigenvalues `q² · (-q⁻¹)²` equals `1`. -/
+theorem four_crossings_psd_and_two_prod_one {q : R} (hq : 0 < q) :
+    (0 ≤ symEigenPow q 4 ∧ 0 ≤ altEigenPow q 4) ∧
+    symEigenPow q 2 * altEigenPow q 2 = 1 := by
+  refine ⟨(vertex_psd_iff_even hq 4).mpr ⟨2, rfl⟩, ?_⟩
+  unfold symEigenPow altEigenPow
+  have hq0 : q ≠ 0 := hq.ne'
+  rw [neg_sq, inv_pow, mul_inv_cancel₀ (pow_ne_zero 2 hq0)]
+
 end Ordered
 
 end QOU.QBeta.GluonVertexPsdParity

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:31:15.233870+00:00",
-  "commitSha": "7791294df1215689e2253b1d72f9c7b9a379299f",
+  "computedAt": "2026-11-20T15:44:50.476318+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "f_pn_strict_averaged",
@@ -20,7 +20,7 @@
     },
     {
       "name": "weight_form_bar_odd_worst_defect",
-      "computed": "1.51929e-64",
+      "computed": "5.3479e-62",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-45",
@@ -82,7 +82,7 @@
     },
     {
       "name": "geometric_mean_eq_z_over_q2",
-      "computed": "0.0",
+      "computed": "3.88938e-62",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-50",
@@ -90,7 +90,7 @@
     },
     {
       "name": "geometric_mean_realised_by_eps",
-      "computed": "3.88938e-62",
+      "computed": "0.0",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-50",
@@ -121,7 +121,7 @@
     },
     {
       "name": "product_of_factors_eq_closed_form",
-      "computed": "3.88938e-62",
+      "computed": "0.0",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-50",
@@ -136,7 +136,7 @@
     },
     {
       "name": "quarter_minus_product_is_a_square",
-      "computed": "1.61045e-62",
+      "computed": "5.71253e-62",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-50",
@@ -159,11 +159,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 8,
   "computation": "pn-offset-bar-odd-class",
   "scriptFile": "pn_offset_bar_odd_class_probe.py",
-  "scriptHash": "97c7702adcbe",
-  "scriptCommitSha": "37e3a33bc6eb6f3b817a7fedacf29968f1610ac8",
+  "scriptHash": "c1704c786a04",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -171,14 +171,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

@@ -136,6 +136,18 @@ square and the asymmetry square, with equal and opposite coefficients. -/
 theorem four_mul_ZN (Z N : R) : 4 * (Z * N) = (Z + N) ^ 2 - (N - Z) ^ 2 := by
   ring
 
+/-- **Isobaric mirror difference of `bondSum` on `k`-regular colour classes (`qou-qve5`).**
+When the proton and neutron colour classes have degrees `k * Z` and `k * N` and both mirror
+nuclei `(Z, N)` and `(N, Z)` share the same cut `2 * npn`, the mirror difference
+`bondSum epp epn enn (k * Z - npn) (2 * npn) (k * N - npn) - bondSum epp epn enn (k * N - npn) (2 * npn) (k * Z - npn)`
+equals `k * (epp - enn) * (Z - N)`, independent of `epn` and `npn`. -/
+theorem bondSum_mirror_diff_cut_invariant (epp epn enn k Z N npn : R) :
+    bondSum epp epn enn (k * Z - npn) (2 * npn) (k * N - npn) -
+      bondSum epp epn enn (k * N - npn) (2 * npn) (k * Z - npn) =
+      k * (epp - enn) * (Z - N) := by
+  unfold bondSum
+  ring
+
 end Ring
 
 /-! ## Layouts: what the cut does to the composition dependence (field) -/

@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2202.03067v4/blocks/prose-sec-005",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Third order jets bundle over a noncommutative algebra",
+  "pageStart": 8,
+  "pageEnd": 13,
+  "text": "../sections/sec-005-32-third-order-jets-bundle-over-a-noncommutative.md",
+  "derivedFrom": "library/arxiv-2202.03067v4/manifest",
+  "sourceDocument": "library/arxiv-2202.03067v4/manifest",
+  "provenance": "ingested"
+}

@@ -13,6 +13,10 @@ This file verifies the concrete empirical residual of the formula
 against CODATA 2022 values, showing the match is within 0.25 ppm.
 
 See: `folio/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md`
+
+**Superseded (2026-11-27, bean `qou-5o1v`).** `QOU.Core.MassInRing` states the same identity
+as an element of a field `ℚ(q, v)` with no opaque `F_Bor` and no CODATA value in any proof.
+This file is kept until its consumers move; do not add new uses.
 -/
 
 namespace QOU.Substrate.ProtonMassSubstrateIdentity

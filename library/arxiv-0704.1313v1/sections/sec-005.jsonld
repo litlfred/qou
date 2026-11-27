@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-0704.1313v1/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Weight systems via Lie algebras",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "contains": [
+    "library/arxiv-0704.1313v1/blocks/prose-sec-005"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0704.1313v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0704.1313v1",
+  "provenance": "ingested"
+}

@@ -63,7 +63,7 @@ sys.path.insert(0, str(COMP))
 
 import _path_bridge  # noqa: F401,E402 — substrate path bridge
 import mpmath as mp  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 mp.mp.dps = 50
@@ -72,7 +72,7 @@ mp.mp.dps = 50
 B_AME_DEUTERON = AME_B_DEUTERON_MEV_VALIDATION   # MeV, AME2020 — diagnostic only
 B_BARE_CATEGORICAL = mp.mpf("0.380")  # MeV, m_e·|Σ y_λ χ^λ sgn f^λ|
 C_KNOT_TARGET = mp.mpf("5.853")       # the deficit ratio to explain
-q0 = mp.mpf(Q_50_DIGIT_STR)
+q0 = Q_MP
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Temperley–Lieb TL_2 Kauffman-bracket state sum.

@@ -265,10 +265,10 @@ print("\nT8  the substrate q_0 has infinite order, so no order-2 symmetry suppli
 
 try:
     import mpmath as mp
-    from qou_substrate.constants import Q_50_DIGIT_STR
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP
 
     mp.mp.dps = 60
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     check(
         "|q_0| > 1, so q_0^n != 1 for every n >= 1: q_0 is NOT a root of unity",
         q0 > 1,

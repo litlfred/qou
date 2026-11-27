@@ -29,7 +29,7 @@ import mpmath as mp  # noqa: E402
 from _precision import fmt, set_compute_dps  # noqa: E402
 from hoefsmit_mpmath import BlockCacheMP, seminormal_matrices_mp  # noqa: E402
 from hecke_characters import standard_young_tableaux  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from y_lambda_su_n import y_lambda_su_n, partitions_of  # noqa: E402
 
 DPS = 60
@@ -111,7 +111,7 @@ def centred_spectrum(vecs):
 def main() -> int:
     t0 = time.time()
     mp.mp.dps = DPS
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     dev3, dev4 = jm_check(3, q), jm_check(4, q)
     print(f"JM eigenvalue check vs Hoefsmit: n=3 {mp.nstr(dev3, 3)}, n=4 {mp.nstr(dev4, 3)}")
     rows = []

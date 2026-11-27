@@ -21,7 +21,7 @@ sys.path.insert(0, str(HERE.parents[2] / "tools/qou-substrate/python"))
 import bring_route2_probe as R2  # noqa: E402
 import option1_ropelength_probe as O1  # noqa: E402
 import bring_route2_qdeformed_probe as QD  # noqa: E402
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 60
 WORDLEN = 13
@@ -92,7 +92,7 @@ def main():
     top = set(sl["isometry_classes"][0])
     checks["top_loop_has_90"] = len(top) == 90
 
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     t = QD.t
     rows = []
     for c in sorted(classes):

@@ -1,9 +1,9 @@
 {
   "scriptFile": "nv_categorical_derivation_probe.py",
   "engine": "python",
-  "auditOnly": "docs/audits/_deprecated/2026-05-05-nv-categorical-impasse.md",
+  "auditOnly": "fsh-guts/deprecated/docs/audits/2026-05-05-nv-categorical-impasse.md",
   "computation": "nv-categorical-derivation-probe",
-  "computedAt": "2026-08-29T00:58:06.857408+00:00",
+  "computedAt": "2026-11-20T15:44:29.475342+00:00",
   "description": "Probe for closed-form N_v ≈ factor · q_0^(90 + δ) with factor a small categorical constant and δ a clean q-rational correction.  Best fit is 120·q^(90 + h²) at -0.13% (5× better than the bare 120·q^90 at -0.58% from docs/audits/n-v-derivation-candidates.md).  Neither factor=120 nor L=90 nor δ=h² have categorical derivations; the closure is suggestive numerology pending paper-side work.",
   "N_v_target": "1445519.447193341144468823",
   "q_0": "1.1099785827513808075916690956107688798744991218736",
@@ -173,9 +173,9 @@
     "Categorical justification for δ = h² correction",
     "Multi-q test impossible (N_v is q-independent)"
   ],
-  "scriptHash": "d6b357b5ba90",
-  "scriptCommitSha": "12c69f9586b5c98344a3417304de0b16be5636c9",
-  "commitSha": "07cc5ee67781228dcc45440e2926f3be75666cf0",
+  "scriptHash": "b5fb8e16ef74",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

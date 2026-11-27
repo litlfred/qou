@@ -60,7 +60,7 @@ import sympy as sp  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 
@@ -219,7 +219,7 @@ def main() -> int:
           "pairing normalisation); only the z-free -2/[3]_q is identified. So "
           "ALL of mu's convention-dependence is now derived")
 
-    qv = mp.mpf(Q_50_DIGIT_STR)
+    qv = Q_MP
     zDv = qv**3 / (qv**2 + 1)
 
     def num(e):

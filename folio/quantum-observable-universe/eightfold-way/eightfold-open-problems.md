@@ -16,25 +16,25 @@ the list cannot silently break the pointers.
 | Root/weight lattices, Weyl group, Kazhdan–Lusztig multiplicities are $q$-independent | standard (Drinfeld–Jimbo), not proved here | [$q$-deformation](#rem:q-deformation-weight-lattice) |
 | Quantum Schur–Weyl duality $\mathcal{U}_q(\mathfrak{gl}_N) \leftrightarrow H_n(q)$ | standard \cite{jimbo1986}; the duality itself is not proved here, only its row-cap consequence | [Schur–Weyl](#prop:schur-weyl-eightfold) |
 | $\mathbf{3} \otimes \bar{\mathbf{3}} = \mathbf{8} \oplus \mathbf{1}$; $\dim \mathrm{Sym}^3(W_3^*) = \binom{5}{3} = 10$; quantum $[3]_q^3 = (q^2 + q^{-2})[5]_q + 2[2]_q[4]_q + 1$; weight tables | traceless/scalar vector-space split, polynomial-module dimension $10 \neq 4$, and generic-$q$ quantum dimension balance **proved**; $\mathrm{SU}(3)_{\mathrm{f}}$ equivariance and applicability **conditional on $N = 3$** | [meson octet](#prop:meson-octet-decomposition), [decuplet](#prop:borromean-decuplet) |
-| $N = 2$ cannot host the eightfold-way decomposition | **standard**, with a proved *arithmetic* instance: $\dim V_{(1^3)}$ is taken to be $\binom{N}{3}$, and $\binom{N}{3} = 0 \iff N < 3$ is proved. The hook-content formula and the row cap $\ell(\lambda) \le N$ are cited, not proved — same caveat as the $q$-deformation row | [Schur–Weyl](#prop:schur-weyl-eightfold) |
-| $\dim V = N = 3$ for the flavour fundamental | **open**: framework supplies $\dim V = 2$; no $q$ raises the row cap. The *obstruction* is proved; the *construction* is missing | item *The $N = 3$ problem* |
+| $N = 2$ cannot host the eightfold-way decomposition | **standard**, with a proved *arithmetic* instance: $\dim V_{(1^3)}$ is taken to be $\binom{N}{3}$, and $\binom{N}{3} = 0 \iff N < 3$ is proved. For the singlet channel the row cap is now **proved on the actual module**: the alternating part of $(\mathbb{Q}^N)^{\otimes 3}$ is zero if and only if $N < 3$ (`altChannel_eq_bot_iff`, `QOU/EightfoldWay/AlternatingChannelRowCap.lean`; pigeonhole one way, a determinant witness the other), with no hook-content formula. The general row cap $\ell(\lambda) \le N$ and the hook-content dimensions of the other channels stay cited, and the $q$-deformed statement rests on the cited flatness, as in the $q$-deformation row | [Schur–Weyl](#prop:schur-weyl-eightfold) |
+| $\dim V = N = 3$ for the flavour fundamental | **postulated** (owner ruling 2026-11-27): the framework supplies $\dim V = 2$ and no $q$ raises the row cap, so $N = 3$ enters as the axiom datum $W$ of [the flavoured definition](#def:flavoured-quantum-observable-universe) ($\Lambda^3 W \cong \mathbf{1}$, $W$ not self-dual). The *obstruction* is proved; a *construction* of $W$ from the substrate is still missing | item *The $N = 3$ problem* |
 | No object of the single-fibre category reaches $\dim W = 3$ through the $\mathrm{Sym}^2$ gate | **proved**, and at *object* level rather than only for irreducible summands: the Frobenius--Schur count forces a passing $W$ to be a sum of pairwise *distinct* even-dimensional irreps, so $\dim W$ is even, and $3$ is odd | item *The $N = 3$ problem* |
 | Inequivalent fibre functors of the single-fibre category | **standard** \cite{bichon2003}: they exist at every dimension $n \ge 2$ and are real at $q_0$; and **proved** that none of them supplies a one-dimensional summand of $V^{\otimes 3}$ --- the spin-$0$ object is absent by Clebsch--Gordan parity, so the fusion rules, which every fibre functor preserves, exclude $\mathbf{10} \oplus \mathbf{8} \oplus \mathbf{8} \oplus \mathbf{1}$ at every $n$ | item *The $N = 3$ problem* |
 | Writhe-to-isospin map $w \mapsto I_3$ on the nucleon doublet | derived, scale-free, no fitted parameters, for the writhe of the inter-nucleon arc; the ruled nucleon word has writhe $0$ for both nucleons | [flavour charges](#rem:flavor-charge-assignments) |
-| Hypercharge $Y$ and split-bundle $F = V_2 \oplus W_3^*$ coupling | **conditionally coupled** to $N = 3$: single-fibre writhe map falsified ($p$, $n$ share $Y = +1$); on $F = V_2 \oplus W_3^*$ ($z_3 = q^3/[3]_q$), tracelessness $2y_2 + 3y_3 = 0 \iff y_3 = -\tfrac{2}{3}y_2$ is **proved** (fixing doublet $y_2 + y_3 = +\tfrac{1}{3}$, Killing Weinberg ratio $3/8$, and separating $\bar u = -\tfrac{2}{3}$ from $d = -\tfrac{1}{3}$); **open**: categorical construction of $W_3$ | [flavour charges](#rem:flavor-charge-assignments), item *Hypercharge $Y$* |
+| Hypercharge $Y$ and split-bundle $F = V_2 \oplus W_3^*$ coupling | **conditionally coupled** to $N = 3$: single-fibre writhe map falsified ($p$, $n$ share $Y = +1$); on $F = V_2 \oplus W_3^*$ ($z_3 = q^3/[3]_q$), tracelessness $2y_2 + 3y_3 = 0 \iff y_3 = -\tfrac{2}{3}y_2$ is **proved** (fixing doublet $y_2 + y_3 = +\tfrac{1}{3}$, Killing Weinberg ratio $3/8$, and separating $\bar u = -\tfrac{2}{3}$ from $d = -\tfrac{1}{3}$); and, given the postulated $W$ of [the flavoured definition](#def:flavoured-quantum-observable-universe), the hypercharge generator is **unique up to scale**: a traceless operator on $V \oplus W^*$ commuting with $\mathfrak{sl}(V)$ and $\mathfrak{sl}(W^*)$ is a multiple of $\mathrm{diag}(3,3,-2,-2,-2)$ (`hypercharge_unique`), tracelessness coming from $\Lambda^5 F \cong \Lambda^2 V \otimes \Lambda^3 W^* \cong \mathbf{1}$; **open**: categorical construction of $W_3$, the scale, and the crossing-invariant route | [flavour charges](#rem:flavor-charge-assignments), item *Hypercharge $Y$* |
 | Baryon octet weight degeneracy and $H_3(q)$ $S^{(2,1)}$ diquark split | **proved** (exclusion + operator split), **open** (scale): weight-only formulas give $m_\Lambda = m_{\Sigma^0}$ (excluded at $77\;\mathrm{MeV}$), while internal $S^{(2,1)}$ diquark projectors $P_\Lambda, P_{\Sigma^0}$ give $\mathrm{tr}(P_\Lambda V^3) - \mathrm{tr}(P_{\Sigma^0} V^3) = (q - q^{-1})^3(q^2 + q^{-2})[3]_q/[2]_q \neq 0$ ($31.5\;\mathrm{MeV}$ at $q_0$ vs empirical $77.0\;\mathrm{MeV}$) | [baryon octet](#prop:baryon-octet-decomposition) |
 | Ordered 3-strand gluon clasp $\beta_{\mathrm{clasp}}(n_1, n_2)$ on neutral mesons | **proved** (invariants), **open** (absolute mass scale): $\mathrm{SL}_2(\mathbb{Z})$ trace $2n_1n_2 + n_1 + n_2 + 3 \ge 27 > 2$ across $\{3,5,7\}^2$, separating $\bar D^0 = (-5,+3)$ from $K^0 = (+3,-5)$ in both $z_2$ and $z_3$ Markov traces | [meson mass splitting](#rem:meson-mass-splitting), [dictionary supplement](#rem:dictionary-flavor-layer) |
 | $\mathrm{PSL}(2,7) \cong \mathrm{GL}(3,\mathbb{F}_2)$, order $168$, irreps $\{1,3,\bar 3,6,7,8\}$ | standard; machine-verified numerically | [colour from $G_2$](#prop:color-su3-from-g2) |
 | $S_4$ bridge: transitive on local Fano lines | verified numerically | [colour from $G_2$](#prop:color-su3-from-g2) |
 | The $S_4$ bridge selects the Klein quartic | **refuted** (verified by exact computation), and not narrowly: the $S_4$-invariant quartics form a pencil, so *infinitely many* pairwise non-isomorphic genus-3 curves admit $S_4$ (Fermat is the member $t = 0$ of the pencil, $t$ being the pencil parameter, not a partition). The datum has essentially no separating power | [colour from $G_2$](#prop:color-su3-from-g2) |
 | Bring $\to$ Klein-quartic genus degeneration | **excluded** under its own three premises (scope-(b)): the pinch supplies an $S_4$-stable pair of marked points, and $S_4$ has *no orbit of size $\le 2$* on $\mathbb{P}^2$, since the $3$-dimensional representation and its restriction to $A_4$ are both absolutely irreducible. No smooth plane quartic carries such a pair, and Klein is not hyperelliptic. Rescue requires explicitly dropping one premise: hyperelliptic target, multi-node/separating pinch, or non-faithful $S_4$ | [colour from $G_2$](#prop:color-su3-from-g2) |
-| Octonionic $\mathbf{3}$ not excluded by the $\mathrm{Sym}^2$ gate | literature decomposition: at dimension three, passing the gate forces a complex-type summand (**proved**), and that the Günaydin--Gürsey triple is complex type is the cited $\mathrm{SU}(3)_{\mathrm{c}}$-irreducibility input, not a proved one | [Schur–Weyl](#prop:schur-weyl-eightfold) |
+| Octonionic $\mathbf{3}$ passes the $\mathrm{Sym}^2$ gate | **proved**: at dimension three, passing the gate forces a complex-type summand, and the Günaydin--Gürsey triple is complex type --- every $J_6$-compatible $\mathfrak{su}(3)$-invariant bilinear form on the colour triplet vanishes, so $\mathrm{Sym}^2(\mathbf{3})$ has no singlet and $\mathbf{3} \not\cong \bar{\mathbf{3}}$ (`OctonionColourTripletComplexType.lean`) | [Schur–Weyl](#prop:schur-weyl-eightfold) |
 | The octonion algebra $\mathbb{O}$ and $G_2 = \mathrm{Aut}(\mathbb{O})$ | **established**: [definition](#def:octonion-algebra) in [the colour-algebra section](#sec:color-algebra), with $\mathrm{Der}(\mathbb{O}) = \mathfrak{g}_2$ (\cite{baez2002}) and the Baez-convention multiplication | [definition](#def:octonion-algebra) |
-| Continuous $G_2$ completion ($S^6 = G_2/\mathrm{SU}(3)_{\mathrm{c}}$) | **open**: the continuous Lie group $G_2$ is not constructed here — an infrastructure gap, not a structural one | item *Continuous $G_2$ completion* |
+| Continuous $G_2$ completion ($S^6 = G_2/\mathrm{SU}(3)_{\mathrm{c}}$) | Lie-algebra level **proved**: $\dim \mathrm{Der}(\mathbb{O}) = 14$ (`octonion_derivation_dim`) and the stabilizer of a unit imaginary has $\dim = 8$ (`finrank_su3_e1`), so $\dim \mathfrak{g}_2 - \dim \mathfrak{su}(3) = 6 = \dim S^6$. **Open**: the continuous Lie group $G_2$ and the coset $S^6$ themselves — an infrastructure gap, not a structural one | item *Continuous $G_2$ completion* |
 | Flavour vs. colour ($\mathrm{SU}(3)_{\mathrm{f}}$ vs. $\mathrm{SU}(3)_{\mathrm{c}}$) | **open**: whether same, different, or groupoid-dual | item *Flavour versus colour separation* |
 | Gell-Mann–Okubo has no discriminating power | **proved**: $4m_K^2 - 3m_\eta^2 - m_\pi^2 = 0$ identically for *any* first-order octet breaking | [meson mass splitting](#rem:meson-mass-splitting) |
 | Meson mass splitting; the GMO **deviation** | **partially resolved** (sign), **open** (magnitude): rational quantum Casimir gives $(4M_K - 3M_\eta - M_\pi)/(M_\pi - M_\eta) = -((q-1)/(q+1))^2$ (**proved**, matching both meson $+$ and baryon $-$ signs at $q_0$), but accounts for only $1.21\%$ of the $6.43\%$ meson deviation; $\eta$--$\eta'$ mixing remains open | [meson mass splitting](#rem:meson-mass-splitting), item *The Gell-Mann--Okubo deviation* |
-| Spin–flavour–colour selection of the Young symmetriser | **open**: decuplet identification currently matches dimensions and weights only | item *Spin--flavour--colour selection rule* |
+| Spin–flavour–colour selection of the Young symmetriser | **reduced to two labelled inputs**: given Fermi statistics and a colour singlet, the spin $\otimes$ flavour factor is forced symmetric, and at $N_c = 3$ the colour singlet is unique up to scale (**proved**, `ColourSingletSelectionRule.lean`). **Open**: deriving either input from the braid structure; the Cauchy pairing of spin $3/2$ with the decuplet stays cited | item *Spin--flavour--colour selection rule* |
 | Truncation ("freeze-out") mechanism | **open**: heuristic, no derivation | item *Truncation mechanism* |
 | Three generations | **open**: not addressed here | item *Three generations* |
 
@@ -60,14 +60,17 @@ Gell-Mann--Nishijima relation.
    (the alternating channel
    $\binom{N}{3}$ vanishes iff $N < 3$, and the decuplet dimension forces
    $N = 3$) --- so the obstruction is settled and only the construction is
-   missing.  *Open:* construct a
+   missing.  **Owner ruling 2026-11-27:** the flavour fundamental is now
+   *postulated* as the axiom datum $W$ of
+   [the flavoured definition](#def:flavoured-quantum-observable-universe), with
+   condition (iii) kept for $V$; results that use $W$ are consequences of the
+   extended axioms, not derivations from the original ones.  *Open:* construct a
    three-dimensional object $W$ in the multi-fibre groupoid whose
    symmetric square $\mathrm{Sym}^2(W)$ is irreducible (no singlet).
    The octonion $G_2$ route supplies a colour $\mathrm{SU}(3)_{\mathrm{c}}$ candidate
-   that the gate does not exclude --- *not excluded* rather than
-   *passes*, since the singlet count $0$ that would make it pass is the
-   cited $\mathrm{SU}(3)_{\mathrm{c}}$-irreducibility input and not a proved one
-   (see the ledger).  Whether it yields *flavour*
+   that **passes** the gate: the singlet count $0$ of
+   $\mathrm{Sym}^2(\mathbf{3})$ is proved over $\mathbb{Q}$, together with
+   $\mathbf{3} \not\cong \bar{\mathbf{3}}$ (see the ledger).  Whether it yields *flavour*
    $\mathrm{SU}(3)_{\mathrm{f}}$ is untested.
 
    **What such a construction must supply is now a theorem, and it is one
@@ -214,7 +217,9 @@ Gell-Mann--Nishijima relation.
    The discrete skeleton of $\mathrm{SU}(3)_{\mathrm{c}} \subset G_2 =
    \mathrm{Aut}(\mathbb{O})$ is verified
    ($\mathrm{GL}(3, \mathbb{F}_2) \cong \mathrm{PSL}(2,7)$ Fano
-   symmetry of the associator).  The continuous Lie-group completion
+   symmetry of the associator), and so is the Lie-algebra level:
+   $\mathrm{Der}(\mathbb{O})$ has dimension $14$ and the stabilizer of
+   $e_1$ has dimension $8$, matching $\dim S^6 = 14 - 8$.  The continuous Lie-group completion
    --- specifically the coset $S^6 = G_2/\mathrm{SU}(3)_{\mathrm{c}}$ --- not
    constructed here: the continuous Lie group $G_2$ is not available.
    This is an infrastructure obstruction, not a structural one.
@@ -231,7 +236,7 @@ Gell-Mann--Nishijima relation.
    objects** and establishes only that those two differ, not that one
    construction cannot supply both roles. (The $T_1$ comparison is in
    [the Schur--Weyl proposition](#prop:schur-weyl-eightfold), where it
-   is stated as *not excluded* on a literature decomposition.)
+   is now stated as a proved pass: the octonionic triple is complex type.)
 
    The failure is structural, not a repairable gap in the inference.
    It is proved that
@@ -304,6 +309,17 @@ Gell-Mann--Nishijima relation.
    constraint from the braid structure, and show that together they
    determine the Young symmetriser.  Compatibility with it is what the
    chapter currently establishes.
+
+   **The step between the inputs and the conclusion is now proved.**  If the
+   three-quark wavefunction $\chi(c)\,\varphi(r)$ is alternating under
+   simultaneous permutation (Fermi statistics) and the colour factor $\chi$ is
+   a nonzero colour singlet, then $\varphi$ is symmetric
+   (`symmetric_of_alternating_product`); at $N_c = 3$ the colour-singlet
+   channel is one-dimensional, spanned by the determinant
+   (`colourSinglet_eq_smul_det`).  What remains open is exactly the two
+   inputs --- Fermi statistics and colour antisymmetry are not derived from the
+   braid structure --- together with the cited Cauchy decomposition that pairs
+   spin $3/2$ with the decuplet ($4 \cdot 10 + 2 \cdot 8 + 0 \cdot 1 = 56$).
 
    **This item is where item 4's discriminator lives.**  Item 4 asks
    what separates flavour from colour and shows that no invariant of

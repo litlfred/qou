@@ -19,7 +19,7 @@
   ],
   "checks_passed": 3,
   "checks_total": 3,
-  "computedAt": "2026-10-13T15:19:55.151129+00:00",
+  "computedAt": "2026-11-20T15:17:36.800916+00:00",
   "deficit_spectrum_identified_as": "excess total hook length H(lambda) - H_min(n)",
   "dps": 60,
   "growth_diagnostics_MEASURED_not_derived": [
@@ -203,9 +203,8 @@
       "H_min": 18,
       "REV": "4.523312514362",
       "dominant_shape": [
-        3,
+        4,
         2,
-        1,
         1
       ],
       "energy_only": "2.4715589573718",
@@ -232,8 +231,8 @@
       "REV": "6.1780709311752",
       "dominant_shape": [
         4,
-        3,
-        1,
+        2,
+        2,
         1
       ],
       "energy_only": "3.052761003157",
@@ -336,11 +335,11 @@
       "REV": "17.329283095949",
       "dominant_shape": [
         7,
-        6,
+        5,
         4,
         3,
         2,
-        1,
+        2,
         1
       ],
       "energy_only": "6.2373452197044",
@@ -429,7 +428,7 @@
         2,
         1
       ],
-      "err": "1.556e-61",
+      "err": "0.0",
       "n": 3,
       "n_partitions": 3
     },
@@ -439,7 +438,7 @@
         3,
         1
       ],
-      "err": "3.112e-61",
+      "err": "0.0",
       "n": 4,
       "n_partitions": 5
     },
@@ -468,12 +467,11 @@
     {
       "REV": "4.52331251436",
       "dominant_shape": [
-        3,
+        4,
         2,
-        1,
         1
       ],
-      "err": "0.0",
+      "err": "1.245e-60",
       "n": 7,
       "n_partitions": 15
     },
@@ -485,7 +483,7 @@
         1,
         1
       ],
-      "err": "1.245e-60",
+      "err": "6.223e-61",
       "n": 8,
       "n_partitions": 22
     },
@@ -493,8 +491,8 @@
       "REV": "6.17807093118",
       "dominant_shape": [
         4,
-        3,
-        1,
+        2,
+        2,
         1
       ],
       "err": "6.223e-61",
@@ -509,7 +507,7 @@
         2,
         1
       ],
-      "err": "1.245e-60",
+      "err": "6.223e-61",
       "n": 10,
       "n_partitions": 42
     },

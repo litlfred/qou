@@ -107,8 +107,8 @@ def main() -> int:
 
     print()
     print("2. AT THE PROTON-PINNED q0 (mpmath, dps=50)")
-    from qou_substrate.constants import Q_50_DIGIT_STR        # noqa: PLC0415
-    q0 = mpf(Q_50_DIGIT_STR)
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP        # noqa: PLC0415
+    q0 = Q_MP
     z0 = q0**3 / (q0**2 + 1)
     h0 = q0 - 1 / q0
     delta0 = (q0 - 1) ** 2 * (1 - q0**-4) / 3

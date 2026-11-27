@@ -8,6 +8,8 @@ allowed-tools: Read, Grep, Glob, Bash, Edit, Write, Agent, SendMessage, Schedule
 
 # /dispatch-agent — parallel dispatch with a live 2-minute status heartbeat
 
+> **Platform rules win (owner, 2026-11-27).** Where this local skill differs from the cat-harness KG rules (`req:agent-workflow`, `req:content-lifecycle`) or from [`dispatch-agent`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/dispatch-agent.md), [`swarm-management`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/swarm-management.md) and [`research-manager`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/research-manager.md), those win. In short: questions only on cards; beans are the tracker; threads never self-merge and send the PR number and full head SHA to the merge manager; the KG JSON-LD check is the only red pre-merge gate and all other QA runs after the merge; merges run under time-boxed grants, with the owner's card outside one; no repository secrets; one shared non-constructive axiom; no unverified external report as a source. Stalled children are prodded; children paused on a usage limit are reported, not prodded.
+
 The expensive failure mode of multi-agent dispatch is **going dark**: you
 launch N background agents, then can't say what any of them is doing until
 it completes 20 minutes later. This skill fixes that with two halves that
@@ -44,6 +46,17 @@ Rules for an interactive research child:
 - It inherits every repository discipline (anti-fit, NO-FLOAT64, Strict Lean, no `lake build`, fences); put the essentials in the prompt, because it starts with no context.
 - The parent records the child's session id on the bean and in its progress report, so the owner can find it.
 - If a background agent turns out to need owner input, stop it, check its worktree for unpushed work, and relaunch the front as an interactive child session with that context.
+
+## 0b. Handoff envelope — open every prompt and message with it (owner directive 2026-11-25, STRICT)
+
+Owner, verbatim: *"(improve swarm managem,etc. process, when passing to child sibling, then give them the porcess/task they are enging in , their role, your role. this should be a part of general agent to agenet communication use by swarm/merge managers, etc. .)"*
+
+Every dispatched agent prompt, child-session prompt and `send_message` opens
+with **PROCESS / TASK** (process or skill by name, task, done-criteria),
+**YOUR ROLE** (what it decides, where it escalates: owner or sender) and
+**MY ROLE** (sender's role, session id, reply route), in four to six lines,
+before the §1 contract and the body. The canonical rule and template are in
+the platform skill `folio-assistant/cat-harness/sdlc/skills/sdlc-core/agent-handoff.md` §0 (litlfred/cat-harness#1405). This copy points to it and does not restate it.
 
 ## 0. When to use
 

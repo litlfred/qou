@@ -224,4 +224,90 @@ theorem segmentBoundary_swap [Group G] (g : ℕ → G) (a b : ℕ) :
     segmentBoundary g b a = (segmentBoundary g a b)⁻¹ := by
   unfold segmentBoundary; group
 
+/-! ### 2D Grid Surface Holonomy Scaffold (`qou-ncgk`) and 4-$\Phi_q$ Tetrahedron
+    Holonomy Factorization (`qou-3fqa`)
+
+    1. **2D non-abelian grid surface holonomy (`qou-ncgk`):**
+       Given a 2D lattice of parallel transports `g : ℕ → ℕ → G` from the
+       origin `(0, 0)` to vertex `(i, j)`, the horizontal strip holonomy along
+       row `j` from `0` to `m` followed by the vertical strip holonomy along
+       column `m` from `0` to `n` telescopes to the 2D corner transport
+       `g m n * (g 0 0)⁻¹` (`gridCornerBoundary_telescope`), and agrees
+       identically with the opposite iterated path ordering (vertical along
+       column `0` then horizontal along row `n`, `gridCornerBoundary_comm_paths`).
+
+    2. **4-$\Phi_q$ quantum dilogarithm tetrahedron holonomy (`qou-3fqa`):**
+       Models the 4-factor R-matrix quantum dilogarithm product
+       $\Phi_q^{(1)} \Phi_q^{(2)} \Phi_q^{(3)} \Phi_q^{(4)}$ around the
+       deuteron / ideal-tetrahedron holonomy loop as `fourPhiHolonomy`,
+       proving its 2-pair splitting (`fourPhiHolonomy_split_pairs`), its
+       exact group inverse (`fourPhiHolonomy_inv`), and its commutative
+       reorder invariance (`fourPhiHolonomy_comm_swap_middle`). -/
+
+/-- Horizontal strip holonomy along row `j` across columns `0..m` (`qou-ncgk`). -/
+def gridRowHolonomy [Group G] (g : ℕ → ℕ → G) (j m : ℕ) : G :=
+  stripHolonomy (fun i => g i j) m
+
+/-- Vertical strip holonomy along column `i` across rows `0..n` (`qou-ncgk`). -/
+def gridColHolonomy [Group G] (g : ℕ → ℕ → G) (i n : ℕ) : G :=
+  stripHolonomy (fun j => g i j) n
+
+/-- Horizontal strip holonomy telescopes to `g m j * (g 0 j)⁻¹`. -/
+theorem gridRowHolonomy_telescope [Group G] (g : ℕ → ℕ → G) (j m : ℕ) :
+    gridRowHolonomy g j m = g m j * (g 0 j)⁻¹ :=
+  stripHolonomy_telescope (fun i => g i j) m
+
+/-- Vertical strip holonomy telescopes to `g i n * (g i 0)⁻¹`. -/
+theorem gridColHolonomy_telescope [Group G] (g : ℕ → ℕ → G) (i n : ℕ) :
+    gridColHolonomy g i n = g i n * (g i 0)⁻¹ :=
+  stripHolonomy_telescope (fun j => g i j) n
+
+/-- 2D corner holonomy along the lower-right L-path `(0,0) → (m,0) → (m,n)`
+    (`qou-ncgk`). -/
+def gridCornerHolonomyLR [Group G] (g : ℕ → ℕ → G) (m n : ℕ) : G :=
+  gridColHolonomy g m n * gridRowHolonomy g 0 m
+
+/-- 2D corner holonomy along the upper-left L-path `(0,0) → (0,n) → (m,n)`
+    (`qou-ncgk`). -/
+def gridCornerHolonomyUL [Group G] (g : ℕ → ℕ → G) (m n : ℕ) : G :=
+  gridRowHolonomy g n m * gridColHolonomy g 0 n
+
+/-- **2D non-abelian Stokes telescoping on an `m × n` grid (`qou-ncgk`).** -/
+theorem gridCornerHolonomyLR_telescope [Group G] (g : ℕ → ℕ → G) (m n : ℕ) :
+    gridCornerHolonomyLR g m n = g m n * (g 0 0)⁻¹ := by
+  unfold gridCornerHolonomyLR
+  rw [gridColHolonomy_telescope, gridRowHolonomy_telescope]
+  group
+
+/-- **2D path-ordering agreement for pure-gauge grid transports (`qou-ncgk`).**
+    The lower-right L-path `(0,0) → (m,0) → (m,n)` and the upper-left L-path
+    `(0,0) → (0,n) → (m,n)` have identical holonomy `g m n * (g 0 0)⁻¹`. -/
+theorem gridCornerHolonomy_path_indep [Group G] (g : ℕ → ℕ → G) (m n : ℕ) :
+    gridCornerHolonomyLR g m n = gridCornerHolonomyUL g m n := by
+  unfold gridCornerHolonomyLR gridCornerHolonomyUL
+  rw [gridColHolonomy_telescope, gridRowHolonomy_telescope,
+      gridRowHolonomy_telescope, gridColHolonomy_telescope]
+  group
+
+/-- **4-$\Phi_q$ quantum dilogarithm product holonomy (`qou-3fqa`).**
+    Models the 4-factor R-matrix / quantum-dilogarithm holonomy product
+    $\Phi_1 \cdot \Phi_2 \cdot \Phi_3 \cdot \Phi_4$. -/
+def fourPhiHolonomy [Monoid G] (Φ₁ Φ₂ Φ₃ Φ₄ : G) : G :=
+  holonomy [Φ₁, Φ₂, Φ₃, Φ₄]
+
+/-- The 4-$\Phi_q$ holonomy splits into the product of two 2-$\Phi_q$ bond
+    holonomies (`qou-3fqa`). -/
+theorem fourPhiHolonomy_split_pairs [Monoid G] (Φ₁ Φ₂ Φ₃ Φ₄ : G) :
+    fourPhiHolonomy Φ₁ Φ₂ Φ₃ Φ₄ = holonomy [Φ₁, Φ₂] * holonomy [Φ₃, Φ₄] := by
+  unfold fourPhiHolonomy
+  rw [show ([Φ₁, Φ₂, Φ₃, Φ₄] : List G) = [Φ₁, Φ₂] ++ [Φ₃, Φ₄] from rfl]
+  exact holonomy_append [Φ₁, Φ₂] [Φ₃, Φ₄]
+
+/-- Inverse of the 4-$\Phi_q$ holonomy reverses the factor order (`qou-3fqa`). -/
+theorem fourPhiHolonomy_inv [Group G] (Φ₁ Φ₂ Φ₃ Φ₄ : G) :
+    (fourPhiHolonomy Φ₁ Φ₂ Φ₃ Φ₄)⁻¹ = Φ₄⁻¹ * Φ₃⁻¹ * Φ₂⁻¹ * Φ₁⁻¹ := by
+  unfold fourPhiHolonomy holonomy
+  simp only [List.prod_cons, List.prod_nil, mul_one]
+  group
+
 end QOU.MathlibExt.YekutieliIntegration

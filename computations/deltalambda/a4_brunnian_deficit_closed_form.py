@@ -69,7 +69,7 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 _T0 = time.time()
 # Separate MONOTONIC baseline for the witness. WitnessBuilder computes its
@@ -182,7 +182,7 @@ def sign_on_grid(expr, points):
 set_compute_dps()
 
 def main():
-    q0_mp = mp.mpf(Q_50_DIGIT_STR)
+    q0_mp = Q_MP
     # exact rational pin close to q₀ for exact-arithmetic sign decisions
     q0_rat = sp.Rational(110997858275, 100000000000)
     # Rational pin in s = √q. Since the deficit is rational in s (the y_λ carry
@@ -190,7 +190,7 @@ def main():
     # rational — the substrate pin is then q = s₀², itself an exact rational
     # agreeing with q₀ to ~20 digits. This is what makes the sign claim exact.
     s0_rat = sp.Rational(
-        int(mp.floor(mp.sqrt(mp.mpf(Q_50_DIGIT_STR)) * 10**20)), 10**20)
+        int(mp.floor(mp.sqrt(Q_MP) * 10**20)), 10**20)
     q_from_s0 = s0_rat ** 2
     grid = [sp.Rational(101, 100), sp.Rational(21, 20), sp.Rational(11, 10), q0_rat,
             sp.Rational(6, 5)]

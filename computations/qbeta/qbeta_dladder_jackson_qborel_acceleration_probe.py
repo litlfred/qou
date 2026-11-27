@@ -103,7 +103,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 60
 GATE_TOL = mp.mpf("0.15")          # pre-registered estimator-consistency gate
@@ -212,7 +212,7 @@ def main() -> int:
     # ---------------- ARM 1: fixed-base class mismatch --------------------
     print("\n  [ARM 1] fixed-base Jackson q-Borel — class mismatch (structural):")
     arm1 = {}
-    q0sub = mp.mpf(Q_50_DIGIT_STR)
+    q0sub = Q_MP
     for tag, Q, s in [("substrate q0", q0sub, mp.mpf(1)),
                       ("Q=2", mp.mpf(2), mp.mpf(1)),
                       ("Q=3", mp.mpf(3), mp.mpf("0.5")),
@@ -355,7 +355,7 @@ def main() -> int:
     print("\n  [ARM 4] Borel–Leroy back-transform self-check at the meridian + A2:")
     s_bt = s_star if s_star is not None else mp.mpf("0.2")
     arm4 = {}
-    for tag, qv in [("proton-q0", mp.mpf(Q_50_DIGIT_STR)), ("q_star(A2)", QSTAR)]:
+    for tag, qv in [("proton-q0", Q_MP), ("q_star(A2)", QSTAR)]:
         u0 = u_of_q(qv)
         direct = mp.fsum(d[k] * u0**k for k in range(1, KMAX + 1))
         bg = leroy(d, KMAX, s_bt, gamma=True)

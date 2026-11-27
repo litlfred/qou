@@ -82,8 +82,8 @@ def main():
         print(f"Infra unavailable: {_IMPORT_ERR}")
         return
 
-    from q_parameter import Q_50_DIGIT_STR
-    q = mpf(Q_50_DIGIT_STR)
+    from q_parameter import Q_50_DIGIT_STR, Q_MP
+    q = Q_MP
     m_e = mpf(str(M_E_MEV))
     from mpmath import catalan
     VOL_B3 = 8 * catalan

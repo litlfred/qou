@@ -1,44 +1,60 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-28T04:40:59.915575+00:00",
-  "commitSha": "bc44957b45c651c81245f367871ed18da68f5d13",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:36:20.442302+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "sub_ppm",
-      "computed": 1,
+      "computed": 0,
       "expected": 1,
-      "passed": true,
+      "passed": false,
       "tolerance": 0,
       "source": "Third factor closes to < 1 ppm (sub-ppm milestone)"
     }
   ],
-  "allPassed": true,
-  "durationMs": 63,
+  "allPassed": false,
+  "durationMs": 173,
   "computation": "habiro-sub-ppm-third-factor",
   "scriptFile": "habiro_sub_ppm_third_factor.py",
-  "scriptHash": "f30d49f2f418",
-  "scriptCommitSha": "cb573cdd51355c4c1b56a59754ceffe7e4baf100",
+  "scriptHash": "38edd789bf8e",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
-  "description": "Third correction factor search for Habiro bridge (FITTED, not derived). Tightest fit c₃ = 1/1256 at 0.001848 ppm; structural near-match 1/1260 = 1/(C(9,4)·10) at 0.02666 ppm. Ladder: 9495 → 319 → 7.8 → 0.001848 ppm.",
+  "environment": {
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro/habiro_sub_ppm_third_factor.py"
+    ],
+    "reproduce": "python3 -u computations/habiro/habiro_sub_ppm_third_factor.py"
+  },
+  "description": "Third correction factor search for Habiro bridge (FITTED, not derived). Tightest fit c₃ = 1/12 at 6.914e+05 ppm; structural near-match 1/1260 = 1/(C(9,4)·10) at 6.928e+05 ppm. Ladder: 9495 → 319 → 7.8 → 6.914e+05 ppm.",
   "auditOnly": "docs/audits/2026-05-28-habiro-product-correction-7ppm.md",
   "data": {
-    "c3_observed": "0.000796366545799253",
-    "tightest_fit_candidate": "1/1256",
-    "tightest_fit_residual_ppm": 0.0018475986008222218,
+    "c3_observed": "70.5680298710524",
+    "tightest_fit_candidate": "1/12",
+    "tightest_fit_residual_ppm": 691395.7779782754,
     "structural_candidate": "1/1260 = 1/(C(9,4)·10)",
-    "structural_residual_ppm": 0.02666084307150045,
+    "structural_residual_ppm": 692766.3179053183,
     "ladder": {
-      "level_0_ppm": 9494.628571926663,
-      "level_1_ppm": -319.42409499568794,
-      "level_2_ppm": 7.818080505939115,
-      "level_3_tightest_ppm": 0.0018475986008222218,
-      "level_3_structural_1260_ppm": 0.02666084307150045
+      "level_0_ppm": 708838.456423727,
+      "level_1_ppm": 692225.5625534492,
+      "level_2_ppm": 692779.5069549743,
+      "level_3_tightest_ppm": 691395.7779782754,
+      "level_3_structural_1260_ppm": 692766.3179053183
     }
   }
 }

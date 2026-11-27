@@ -3,7 +3,7 @@
   "engine": "python",
   "auditOnly": "docs/audits/2026-05-06-delta-I-interface-knot-refinement.md",
   "computation": "nv-pslq-tr-pure-basis",
-  "computedAt": "2026-08-29T00:58:05.120666+00:00",
+  "computedAt": "2026-11-20T15:38:07.861266+00:00",
   "description": "Re-run of constrained PSLQ for N_v using bar-self-dual cell-content trace tr_pure(σ_1^4 σ_3^6 σ_5^8) as the structural input, replacing the demoted Plancherel-weighted N_sym from the prior basis. Tests three ansatz shapes B1/B2/B3 against CODATA-G_F precision.",
   "reference_blocks": [
     "conj:hoefsmit-ew-cell-content",
@@ -35,9 +35,9 @@
   },
   "verdict": "no-conclusive-closed-form",
   "conclusion": "Bar-self-duality of tr_pure imposes a strong structural constraint. The bar-symmetric ansatz B3 yields a smaller basis (lower FDR) than the prior monomial search. Any hit found is suggestive but still requires categorical authoring of the F-shape, not just numerical confirmation.",
-  "scriptHash": "2aa563d2b35e",
-  "scriptCommitSha": "12c69f9586b5c98344a3417304de0b16be5636c9",
-  "commitSha": "07cc5ee67781228dcc45440e2926f3be75666cf0",
+  "scriptHash": "21220473abb0",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

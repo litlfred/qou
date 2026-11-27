@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T20:54:46.429029+00:00",
-  "commitSha": "b4e8e36db5bdc3a9ed778ddd7a22646bab313822",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:49:26.961290+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "delta_reproduces_the_corpus_NF_vector",
@@ -160,11 +160,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3102,
+  "durationMs": 3247,
   "computation": "qbeta-alpha-commutator-floor",
   "scriptFile": "qbeta_alpha_commutator_floor_probe.py",
-  "scriptHash": "582ccd9e520d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "46173cb06d28",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -172,12 +172,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -189,17 +191,17 @@
   "data": {
     "split_C": {
       "convention": "C",
-      "two_alpha": "-0.104672240536457677597729053779868341226096634012801697916808",
-      "trace_difference": "-0.0903127046489272274892204440653924324492095328130850994492046",
-      "commutator_floor": "-0.0143595358875304501085086097144759087768871011997172248968326",
-      "floor_share_of_two_alpha": "0.137185712409862647723252466527192018041241766134357985435266"
+      "two_alpha": "-0.104672240536457677597729053779868341226096634012782988563838",
+      "trace_difference": "-0.0903127046489272274892204440653924324492095328130712344822710",
+      "commutator_floor": "-0.0143595358875304501085086097144759087768871011997122343439755",
+      "floor_share_of_two_alpha": "0.137185712409862647723252466527192018041241766134334598744052"
     },
     "split_D": {
       "convention": "D",
-      "two_alpha": "-0.0809715546812855298376945581304288945762746765078261239345707",
-      "trace_difference": "-0.0666120187937550797291859484159529857993875753081086902279951",
-      "commutator_floor": "-0.0143595358875304501085086097144759087768871011997172248968326",
-      "floor_share_of_two_alpha": "0.177340498697986387804413035828701241144716218960269295121801"
+      "two_alpha": "-0.0809715546812855298376945581304288945762746765078159340191135",
+      "trace_difference": "-0.0666120187937550797291859484159529857993875753081048481287244",
+      "commutator_floor": "-0.0143595358875304501085086097144759087768871011997122343439755",
+      "floor_share_of_two_alpha": "0.177340498697986387804413035828701241144716218960230205937916"
     },
     "commutator_floor_symbolic": "-(q - 1)**2*(q + 1)**2/((q**2 - q + 1)*(q**2 + q + 1))",
     "trace_difference_symbolic_general_z": "(q - 1)*(q + 1)*(q**4*z - q**4 + q**3 + q**2*z - q**2 - q + z - 1)/(q*(q**2 - q + 1)*(q**2 + q + 1))",
@@ -249,7 +251,7 @@
       },
       {
         "assertion": "the_floor_is_numerically_identical_in_C_and_D",
-        "note": "(net(dC) = -0.0143595358875304501085086097144759087768871011997172248968326 in both)"
+        "note": "(net(dC) = -0.0143595358875304501085086097144759087768871011997122343439755 in both)"
       },
       {
         "assertion": "the_floor_is_not_a_rounding_term",

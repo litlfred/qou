@@ -39,7 +39,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
@@ -49,7 +49,7 @@ set_compute_dps()
 # (+0.0769 ppb); the proton leg was the 50-digit string re-typed by hand. A
 # hardcoded pin cannot be checked against the name it is bound to.
 Q = {"muon": mp.mpf(mp.nstr(q_muon_at(50), 50, strip_zeros=False)),
-     "proton": mp.mpf(Q_50_DIGIT_STR)}
+     "proton": Q_MP}
 VOL_5_2 = mp.mpf("2.8281220883307831627638988092766349427709813173006")
 
 

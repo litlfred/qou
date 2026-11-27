@@ -58,12 +58,15 @@ from _precision import fmt, set_compute_dps  # noqa: E402
 from hoefsmit_symbolic import Q  # noqa: E402
 from hecke_character_symbolic import q_character_on_braid_word  # noqa: E402
 from markov_weights_symbolic import solve_y_lambda  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from gamma_gamma_isospin_channel_probe import nucleon  # noqa: E402
 
 DPS = 60
 set_compute_dps(DPS)
-QV = sp.Rational(Q_50_DIGIT_STR)
+# BOTH LAYERS CARRY THE SAME q (bean qou-ayzx, owner ruling D 2026-11-21): the sympy
+# value is read from the 70-digit Q_MP, not the 50-digit string, so no straddle.
+with mp.workdps(DPS + 15):
+    QV = sp.Rational(mp.nstr(Q_MP, DPS + 10, strip_zeros=False))
 NGEN = 5          # H_6, generators 0..4; interface letter is generator 2
 S2 = [(2, "sigma")]
 PAIRS = ("pp", "pn", "np", "nn")
@@ -117,7 +120,7 @@ def _job(args):
 
 def main() -> int:
     t0 = time.time()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     from qou_substrate.constants import M_E_MEV  # noqa: PLC0415
     me = mp.mpf(str(M_E_MEV))
     z = q ** 3 / (q ** 2 + 1)

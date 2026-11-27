@@ -44,7 +44,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from _li_2_q_util import flavor_split_leading, li_2_q  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_P_MEV_VALIDATION
 
@@ -109,7 +109,7 @@ def analyze(q, label):
 
 
 def main() -> int:
-    qp = mpf(Q_50_DIGIT_STR)
+    qp = Q_MP
     qm = _muon_q0()
     res_p = analyze(qp, "proton_q0")
     res_m = analyze(qm, "muon_q0")

@@ -98,7 +98,7 @@ for _p in ("computations/substrate", "computations", "tools/pyhecke/python",
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_2022_source import (  # noqa: E402
     M_E_MEV, Q_BETA_MEV_AME, Q_BETA_MEV_AME_ERR as Q_BETA_ERR,
 )
@@ -112,7 +112,7 @@ _spec = importlib.util.spec_from_file_location("_census", _CEN)
 _census = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_census)
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 H0 = Q0 - 1 / Q0
 ZD = Q0 ** 3 / (Q0 ** 2 + 1)
 E0 = mp.mpf(str(M_E_MEV)) / (Q0 * (Q0 - 1))

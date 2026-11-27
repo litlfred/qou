@@ -45,7 +45,7 @@ from pathlib import Path
 import mpmath as mp
 
 from _precision import set_compute_dps
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from witness_base import WitnessBuilder
 from _precision import set_compute_dps  # noqa: E402
 
@@ -133,7 +133,7 @@ def gram_entry_symbolic_D(q: mp.mpf, i: int, j: int) -> mp.mpf:
 def main() -> int:
     set_compute_dps()
 
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     u = mp.sqrt(q)
 
     # Canonical (D) and legacy (C) symbolic Grams from the Lean transcriptions

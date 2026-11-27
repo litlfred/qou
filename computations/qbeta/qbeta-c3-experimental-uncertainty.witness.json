@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T07:07:07.567358+00:00",
-  "commitSha": "901e7d0b8442301c74410b524a416d003cd5d4d3",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:50:21.027269+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "extraction_gain_is_the_inverse_rung",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 7,
   "computation": "qbeta-c3-experimental-uncertainty",
   "scriptFile": "qbeta_c3_experimental_uncertainty_probe.py",
-  "scriptHash": "8eab4b4d6492",
-  "scriptCommitSha": "fb5c209af1389b7e6b848d8f5305c7e65d41ce58",
+  "scriptHash": "df139f75f440",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,12 +46,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -61,13 +63,13 @@
   },
   "description": "c_3 is extracted with gain 1/(b^3 hbar_q^6) = 1.618e6, so the CODATA-2022 mass uncertainties give sigma(c_3) = 1.16 -- c_3 = -1.76 +/- 1.16, 66 % relative, with -2 INSIDE 1 sigma. The published 3.47 % 'near-match' is a central value quoted without its uncertainty. Scope (a); convention C; nothing wired.",
   "data": {
-    "extraction_gain": "1618468.22929443317814446757022999386841248777383615340778209",
-    "c3_extracted": "-1.76045485833244113729941248537926622785094899889109153352946",
-    "sigma_c3": "1.16017117428251229957155307821896557007723256980296610527667",
+    "extraction_gain": "1618468.22929443317814446757022999386841248777383784810120158",
+    "c3_extracted": "-1.76045485833244113729941248537926622785094908051041752971353",
+    "sigma_c3": "1.16017117428251229957155307821896557007723256980412241101503",
     "sigma_Q_ppb": "716.833617884183946801101924673526621301136220463514648087232",
-    "one_sigma_lo": "-2.92062603261495343687096556359823179792818156869405763880614",
-    "one_sigma_hi": "-0.600283684049928837727859407160300657773716429088125428252790",
-    "two_mass_split_dc3": "0.310315168558093932670591753938479366255857745530708917575837"
+    "one_sigma_lo": "-2.92062603261495343687096556359823179792818165031453994072856",
+    "one_sigma_hi": "-0.600283684049928837727859407160300657773716510706295118698498",
+    "two_mass_split_dc3": "0.310315168558093932670591753938479366255857745531018198842306"
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

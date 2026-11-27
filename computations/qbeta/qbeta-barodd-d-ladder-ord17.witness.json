@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-26T07:05:21.348771+00:00",
-  "commitSha": "c163685180ca862574e36d7aedf782f27b63e9b0",
+  "computedAt": "2026-11-20T15:49:55.750739+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "two_variable_form_holds_all_valid_orders",
@@ -27,8 +27,8 @@
   "durationMs": 15,
   "computation": "qbeta-barodd-d-ladder-ord17",
   "scriptFile": "qbeta_barodd_d_ladder_ord17_probe.py",
-  "scriptHash": "cb36a2f3404f",
-  "scriptCommitSha": "9d52483f519dfa887dbf3eacd70314e37ae2ee13",
+  "scriptHash": "e3dfe30cb3cd",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,14 +36,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

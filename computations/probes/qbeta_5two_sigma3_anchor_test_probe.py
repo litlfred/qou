@@ -55,7 +55,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 from qou_substrate.witness import apply_q0_comparison  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
@@ -67,7 +67,7 @@ set_compute_dps()
 # mu-vs-p comparison whose muon leg is a retired literal compares live proton
 # against yesterday's muon, which is the failure it exists to measure.
 # Exception E1 of the 2026-08-30 ruling: both pins are read here on purpose.
-Q0_PROTON = mp.mpf(Q_50_DIGIT_STR)
+Q0_PROTON = Q_MP
 Q0_MUON = q_muon_at(50)
 SWING_REQUIREMENT = mp.mpf("3.84e6")     # |dS/dq| the c₃ swing needs
 FOURONE_NULL_FLOOR = mp.mpf("9.2e-9")    # #3923 4₁ odd-phase null floor

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T13:57:54.021522+00:00",
-  "commitSha": "837b5acb3b07d6cda32c950271818b04c01571c2",
+  "computedAt": "2026-11-20T15:36:44.025282+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "su_n_quantum_dimension_matches_minus_bracket_N",
@@ -33,11 +33,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 131,
+  "durationMs": 142,
   "computation": "homflypt-su-n-mass-tower",
   "scriptFile": "homflypt_su_n_mass_tower.py",
-  "scriptHash": "aaf52ac27150",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "c27f97dc462d",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,14 +45,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "9916510690677ea8"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

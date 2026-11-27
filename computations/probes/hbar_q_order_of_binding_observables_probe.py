@@ -154,7 +154,7 @@ if str(HERE) not in sys.path:
 
 import b_over_a_evaluator as BOA  # noqa: E402
 import tr_m_atom_via_transfer as TR  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
@@ -206,7 +206,7 @@ def loglog_order(f, e1="1e-3", e2="1e-6") -> mp.mpf | None:
 
 
 def main() -> int:
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     w = WitnessBuilder("hbar-q-order-of-binding-observables-probe")
     w.set_description(
         "Classifies the framework's binding observables by their behaviour as q -> 1. "

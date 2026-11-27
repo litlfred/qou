@@ -52,7 +52,7 @@ sys.path.insert(0, str(REPO / "tools" / "qou-substrate" / "python"))
 
 import mpmath as mp  # noqa: E402
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.precision import set_compute_dps  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
@@ -74,7 +74,7 @@ def check(label: str, ok: bool, detail: str = "") -> None:
         FAILURES.append(label)
 
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 
 def q_int(n: int) -> mp.mpf:

@@ -68,8 +68,10 @@ category with $\sigma_i^2 \neq 1$ and testing whether dimensionless
 invariants can be read off closed braids through a Markov trace. Four
 scope boundaries fix what is and is not claimed: every Frobenius object
 used in the construction has finite rank; the proton-to-electron ratio
-$m_{\mathfrak{p}}/m_e$ serves as the calibration pin that fixes the
-evaluation point $q_0$, not as a derived output; the overall magnitude
+$m_{\mathfrak{p}}/m_e$ serves as the numerical pin that fixes the
+evaluation point $q_0$, not as a derived output (the ideal calibration
+proxy for the same modulus is $m_\mu/m_e$;
+[which pin the numbers use](#rem:epistemic-status-of-calibrations)); the overall magnitude
 of nuclear binding energies is open; and a derivation of the
 fermion generation count from Bring's curve is not established. How far
 the derived ratios agree with experiment within those boundaries is the

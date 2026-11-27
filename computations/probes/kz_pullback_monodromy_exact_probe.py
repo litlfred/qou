@@ -57,7 +57,7 @@ import _path_bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 
 try:
-    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 except Exception:  # pragma: no cover
     Q_50_DIGIT_STR = None
 
@@ -140,7 +140,7 @@ def main() -> int:
     checks.append(("invariant matching condition q^2 = e^{i pi hbar}", sp.simplify(qKZ ** 2 - sp.exp(sp.I * sp.pi * hb)) == 0))
     level = {}
     if Q_50_DIGIT_STR is not None:
-        q0 = mp.mpf(Q_50_DIGIT_STR)
+        q0 = Q_MP
         hbar_val = 2 * mp.log(q0) / (mp.pi * mp.mpc(0, 1))      # ħ = (2/iπ) ln q₀, purely imaginary
         level = {
             "q0": Q_50_DIGIT_STR,

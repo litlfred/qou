@@ -16,9 +16,13 @@ of freedom of the first cohomology of the genus-four state space
 
 - the electron mass $m_e$ fixes the unit of mass, the *scale*;
 - the neutron $\beta$-decay channel fixes the substrate parameter
-  $q_0$, the *modulus*; because that modulus is overdetermined, its
-  numerical value is read off the most precisely measured mass ratio
-  available;
+  $q_0$, the *modulus*. Its ideal proxy is the muon-to-electron mass
+  ratio, through the figure-eight relation
+  $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$. Because the modulus is
+  overdetermined, the computed values read its numerical value off the
+  most precisely measured mass ratio available, $m_{\mathfrak{p}}/m_e$,
+  and at that pin the muon ratio becomes a prediction
+  ([which pin the numbers use](#rem:epistemic-status-of-calibrations));
 - the pion channel fixes the one remaining *orthogonal* class, the
   meson scale.
 

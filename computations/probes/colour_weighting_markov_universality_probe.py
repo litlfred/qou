@@ -90,7 +90,7 @@ set_compute_dps()
 import rho_k_h3a_refinement as R  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from canonical_braid_crossings import atom_canonical_crossings, d_for_ctype  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -134,8 +134,11 @@ def implied_k(q, crossings, n_strands, d_blind, d_w):
 
 
 def main() -> int:
-    q = mp.mpf(Q_50_DIGIT_STR)
-    q_sym = sp.sympify(Q_50_DIGIT_STR)
+    q = Q_MP
+    # BOTH LAYERS CARRY THE SAME q (bean qou-ayzx, owner ruling D 2026-11-21): the sympy
+    # value is read from the 70-digit Q_MP, not the 50-digit string, so no straddle.
+    with mp.workdps(mp.mp.dps + 15):
+        q_sym = sp.Rational(mp.nstr(Q_MP, mp.mp.dps + 10, strip_zeros=False))
     h = q - mp.mpf(1) / q
     delta = mp.mpf(
         str(sp.sympify(flavor_split_leading(sp.Symbol("q")))

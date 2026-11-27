@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T17:14:19.802593+00:00",
-  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:50:26.100013+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "composite_first_test_at_least_one_passes_10_ppm",
@@ -16,8 +16,8 @@
   "durationMs": 4,
   "computation": "qbeta-composite-operator-first-test",
   "scriptFile": "qbeta_composite_operator_first_test.py",
-  "scriptHash": "7803b049b0b1",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "53c2ef48d5e8",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,14 +25,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

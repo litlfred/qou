@@ -1,0 +1,3381 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T17:48:03.724246+00:00",
+  "commitSha": "0f2558848c63186e067797aafac640047798b598",
+  "assertions": [
+    {
+      "name": "K0_free_word_passes_and_traces_agree",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "corpus seminormal trace vs independent Schur-Weyl trace; V^3 is classically trivial"
+    },
+    {
+      "name": "K1_independent_trace_agrees_on_every_passing_word",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "max |seminormal - Schur-Weyl| = 4.3622e-40"
+    },
+    {
+      "name": "K2_reproduces_corpus_count_408_of_5334_and_14_pure",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "PR #9426 results.md Phase A table, V^3 row"
+    },
+    {
+      "name": "K3_all_passing_ratios_positive",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "log law defined"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "binding-ceiling-q0",
+  "scriptFile": "binding_ceiling_q0_probe.py",
+  "scriptHash": "d237267d5905",
+  "scriptCommitSha": "520c7aadaf5bf95b645dfc0dce080dcbb7244cde",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_ceiling_q0/binding_ceiling_q0_probe.py",
+      "6",
+      "2"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_ceiling_q0/binding_ceiling_q0_probe.py 6 2"
+  },
+  "description": "PROBE (bean qou-brng, brief C2): the classical merge ceiling ln2*(n-1) of ClassicalLogBindingCycleCount tested at the proton-pin q0 on every gamma-gamma bond word of 1..6 vertices on the 6-strand A=2 word with V^3 nucleons (every junction bonded). Reading 3 selects (corpus seminormal helpers); the trace is recomputed with an independent Schur-Weyl trace. Ratio reported, never used to select. AME not read. Nothing fitted or wired.",
+  "auditOnly": "docs/audits/2026-11-27-binding-ceiling-at-q0.md",
+  "parameters": {
+    "L": 6,
+    "A": 2,
+    "n_strands": 6,
+    "E0_tower_MeV": "4.2274833556290305503"
+  },
+  "data": {
+    "summary": {
+      "n_words": 5334,
+      "n_pass": 408,
+      "n_pure_junction_pass": 14,
+      "ceiling_ln2_n_minus_1": "3.4657359027997265471",
+      "max_minus_ln_r": "1.7720374803340654063",
+      "max_word": "V1V2V1V3V2V2",
+      "n_pass_above_ceiling": 0,
+      "max_seminormal_vs_schur_weyl_dev": "4.3622e-40"
+    },
+    "by_merges": {
+      "0": {
+        "n_words": 46,
+        "n_pure_junction": 12,
+        "classical_ln2_m": "0.0",
+        "minus_ln_r_min": "-0.0352459487270219",
+        "minus_ln_r_max": "0.00590224038351759",
+        "min_word": "V1V2V1V2",
+        "max_word": "V2V2V2V2V2V2",
+        "n_above_classical": 34,
+        "n_above_ceiling": 0
+      },
+      "2": {
+        "n_words": 362,
+        "n_pure_junction": 2,
+        "classical_ln2_m": "1.38629436111989",
+        "minus_ln_r_min": "0.789463348778343",
+        "minus_ln_r_max": "1.77203748033407",
+        "min_word": "V1V2V2V1V2V2",
+        "max_word": "V1V2V1V3V2V2",
+        "n_above_classical": 74,
+        "n_above_ceiling": 0
+      }
+    },
+    "passing": [
+      {
+        "word": "V2V3",
+        "length": 2,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2520583081164054965147765",
+        "minus_ln_r": "1.378094836820957196103912"
+      },
+      {
+        "word": "V3V2",
+        "length": 2,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2520583081164054965147765",
+        "minus_ln_r": "1.378094836820957196103912"
+      },
+      {
+        "word": "V1V1V1",
+        "length": 3,
+        "pure_junction": true,
+        "merges": 0,
+        "ratio": "0.9984971606328126471579442",
+        "minus_ln_r": "0.001503969762946583903815825"
+      },
+      {
+        "word": "V1V2V3",
+        "length": 3,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.255254755878213563804876",
+        "minus_ln_r": "1.365493189875039718528533"
+      },
+      {
+        "word": "V2V2V2",
+        "length": 3,
+        "pure_junction": true,
+        "merges": 0,
+        "ratio": "0.9984971606328126471579442",
+        "minus_ln_r": "0.001503969762946583903815825"
+      },
+      {
+        "word": "V2V3V1",
+        "length": 3,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2520583081164054965147765",
+        "minus_ln_r": "1.378094836820957196103912"
+      },
+      {
+        "word": "V3V1V2",
+        "length": 3,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.255254755878213563804876",
+        "minus_ln_r": "1.365493189875039718528533"
+      },
+      {
+        "word": "V0V1V0V1",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "1.031690602208843855894601",
+        "minus_ln_r": "-0.03119881804795122443660386"
+      },
+      {
+        "word": "V1V0V1V0",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "1.031690602208843855894601",
+        "minus_ln_r": "-0.03119881804795122443660386"
+      },
+      {
+        "word": "V1V2V0V3",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2494638992898999543450027",
+        "minus_ln_r": "1.388441066484343405251657"
+      },
+      {
+        "word": "V1V2V1V2",
+        "length": 4,
+        "pure_junction": true,
+        "merges": 0,
+        "ratio": "1.035874449473969437276346",
+        "minus_ln_r": "-0.03524594872702185431924248"
+      },
+      {
+        "word": "V1V2V3V0",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2494638992898999543450027",
+        "minus_ln_r": "1.388441066484343405251657"
+      },
+      {
+        "word": "V1V2V3V3",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3481887546421477092106613",
+        "minus_ln_r": "1.055010547855528204947443"
+      },
+      {
+        "word": "V2V1V2V1",
+        "length": 4,
+        "pure_junction": true,
+        "merges": 0,
+        "ratio": "1.032898459120391289316083",
+        "minus_ln_r": "-0.03236888822992980070804543"
+      },
+      {
+        "word": "V2V2V3V3",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2518099917574733876666713",
+        "minus_ln_r": "1.379080476834815012880442"
+      },
+      {
+        "word": "V2V3V2V3",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "1.031065353225887693566534",
+        "minus_ln_r": "-0.03059259121781395702629669"
+      },
+      {
+        "word": "V2V3V3V1",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3431038307868545393026",
+        "minus_ln_r": "1.069722163960435118102675"
+      },
+      {
+        "word": "V2V3V3V2",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2344329050036372092382086",
+        "minus_ln_r": "1.450585851423238859235559"
+      },
+      {
+        "word": "V3V1V1V2",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1875904737251548478988222",
+        "minus_ln_r": "1.673494023416004805892009"
+      },
+      {
+        "word": "V3V1V2V0",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2494638992898999543450027",
+        "minus_ln_r": "1.388441066484343405251657"
+      },
+      {
+        "word": "V3V1V2V3",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3481887546421477092106613",
+        "minus_ln_r": "1.055010547855528204947443"
+      },
+      {
+        "word": "V3V2V2V3",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2518099917574733876666713",
+        "minus_ln_r": "1.379080476834815012880442"
+      },
+      {
+        "word": "V3V2V3V2",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "1.031065353225887693566534",
+        "minus_ln_r": "-0.03059259121781395702629669"
+      },
+      {
+        "word": "V3V3V1V2",
+        "length": 4,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3481887546421477092106613",
+        "minus_ln_r": "1.055010547855528204947443"
+      },
+      {
+        "word": "V0V0V0V2V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V0V0V0V3V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V0V0V2V0V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3421178015252682833375764",
+        "minus_ln_r": "1.072600152324143640741918"
+      },
+      {
+        "word": "V0V0V2V0V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V0V0V2V3V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V0V0V3V0V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V0V0V3V2V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V0V2V0V0V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3420845570517460702574192",
+        "minus_ln_r": "1.072697329637643453468531"
+      },
+      {
+        "word": "V0V2V0V0V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V0V2V0V2V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3421178015252682833375764",
+        "minus_ln_r": "1.072600152324143640741918"
+      },
+      {
+        "word": "V0V2V0V3V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V0V2V3V0V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V0V3V0V0V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V0V3V0V2V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V0V3V1V0V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1871018265630421896673344",
+        "minus_ln_r": "1.676102283253529035401561"
+      },
+      {
+        "word": "V0V3V2V0V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V1V0V2V2V1",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3454075899922039181281337",
+        "minus_ln_r": "1.063030139011272782890189"
+      },
+      {
+        "word": "V1V0V2V3V1",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2607253410387900700070812",
+        "minus_ln_r": "1.344287758935481742157756"
+      },
+      {
+        "word": "V1V1V0V2V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3473101286390205326181217",
+        "minus_ln_r": "1.057537155709713510478193"
+      },
+      {
+        "word": "V1V1V0V2V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2599835974910466483205587",
+        "minus_ln_r": "1.347136736529548366041206"
+      },
+      {
+        "word": "V1V1V1V2V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2550156573423904867319858",
+        "minus_ln_r": "1.366430334365988397838968"
+      },
+      {
+        "word": "V1V1V1V3V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2518873233814868083757269",
+        "minus_ln_r": "1.378773420901432970577905"
+      },
+      {
+        "word": "V1V1V2V3V1",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2582121051041985540220853",
+        "minus_ln_r": "1.353973919003182657632557"
+      },
+      {
+        "word": "V1V1V3V1V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.343185824564202357577784",
+        "minus_ln_r": "1.069483215938710956851079"
+      },
+      {
+        "word": "V1V1V3V2V1",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2462033322300118434199172",
+        "minus_ln_r": "1.401597530676699558209222"
+      },
+      {
+        "word": "V1V2V0V3V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3402895437660995909418028",
+        "minus_ln_r": "1.077958424464831891670567"
+      },
+      {
+        "word": "V1V2V1V3V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2558890360509326285828346",
+        "minus_ln_r": "1.36301138139649329231092"
+      },
+      {
+        "word": "V1V2V2V3V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2590451456464974957234368",
+        "minus_ln_r": "1.350752924956954820555191"
+      },
+      {
+        "word": "V1V2V3V0V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3402895437660995909418028",
+        "minus_ln_r": "1.077958424464831891670567"
+      },
+      {
+        "word": "V1V2V3V1V1",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2550156573423904867319858",
+        "minus_ln_r": "1.366430334365988397838968"
+      },
+      {
+        "word": "V1V2V3V3V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3402895437660995909418028",
+        "minus_ln_r": "1.077958424464831891670567"
+      },
+      {
+        "word": "V1V3V1V1V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.343185824564202357577784",
+        "minus_ln_r": "1.069483215938710956851079"
+      },
+      {
+        "word": "V1V3V1V3V1",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3414490172653400461531543",
+        "minus_ln_r": "1.074556901700896663822586"
+      },
+      {
+        "word": "V1V3V2V0V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3395692994244742469192875",
+        "minus_ln_r": "1.080077230797325994036989"
+      },
+      {
+        "word": "V1V3V2V1V1",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2516404600124470152782999",
+        "minus_ln_r": "1.379753956224249700727799"
+      },
+      {
+        "word": "V1V3V2V1V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2462033322300118434199172",
+        "minus_ln_r": "1.401597530676699558209222"
+      },
+      {
+        "word": "V1V3V2V3V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3395692994244742469192875",
+        "minus_ln_r": "1.080077230797325994036989"
+      },
+      {
+        "word": "V1V3V3V2V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3564283019278370210269243",
+        "minus_ln_r": "1.031622175966402082769997"
+      },
+      {
+        "word": "V2V0V0V0V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V2V0V0V2V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3420845570517460702574192",
+        "minus_ln_r": "1.072697329637643453468531"
+      },
+      {
+        "word": "V2V0V0V3V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V2V0V2V0V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3421178015252682833375764",
+        "minus_ln_r": "1.072600152324143640741918"
+      },
+      {
+        "word": "V2V0V3V0V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V2V1V1V1V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2515369655301150486214131",
+        "minus_ln_r": "1.38016532000385415149023"
+      },
+      {
+        "word": "V2V1V1V3V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1858894126869735324919621",
+        "minus_ln_r": "1.682603337533493019814207"
+      },
+      {
+        "word": "V2V1V3V1V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2516404600124470152782999",
+        "minus_ln_r": "1.379753956224249700727799"
+      },
+      {
+        "word": "V2V1V3V3V1",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2540488305076978862500239",
+        "minus_ln_r": "1.370228784347213860959176"
+      },
+      {
+        "word": "V2V1V3V3V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3482439594161644674059477",
+        "minus_ln_r": "1.054852012011309489704442"
+      },
+      {
+        "word": "V2V2V1V1V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3442722738295996697212236",
+        "minus_ln_r": "1.066322440983990934647544"
+      },
+      {
+        "word": "V2V2V1V3V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3513253978681396206057893",
+        "minus_ln_r": "1.046042425517097836294062"
+      },
+      {
+        "word": "V2V2V2V2V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2504624808714429380178331",
+        "minus_ln_r": "1.384446146635214229868361"
+      },
+      {
+        "word": "V2V2V2V3V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2507253347309296099421064",
+        "minus_ln_r": "1.383397222956688790799123"
+      },
+      {
+        "word": "V2V2V3V2V1",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2543098793995245179020698",
+        "minus_ln_r": "1.369201757920067141359314"
+      },
+      {
+        "word": "V2V2V3V2V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2344183351684732602366328",
+        "minus_ln_r": "1.450648002629934145192088"
+      },
+      {
+        "word": "V2V3V0V0V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V2V3V1V1V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2604398258549839798835133",
+        "minus_ln_r": "1.345383439270649136711193"
+      },
+      {
+        "word": "V2V3V1V1V1",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2547301421585843966084179",
+        "minus_ln_r": "1.367550560227362802727161"
+      },
+      {
+        "word": "V2V3V2V2V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2507253347309296099421064",
+        "minus_ln_r": "1.383397222956688790799123"
+      },
+      {
+        "word": "V2V3V3V3V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2566214718334306421829986",
+        "minus_ln_r": "1.360153152072938244887304"
+      },
+      {
+        "word": "V3V0V0V0V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V3V0V0V2V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V3V0V1V0V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1871018265630421896673344",
+        "minus_ln_r": "1.676102283253529035401561"
+      },
+      {
+        "word": "V3V0V2V0V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V3V1V0V2V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1871018265630421896673344",
+        "minus_ln_r": "1.676102283253529035401561"
+      },
+      {
+        "word": "V3V1V1V0V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2599835974910466483205587",
+        "minus_ln_r": "1.347136736529548366041206"
+      },
+      {
+        "word": "V3V1V1V1V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2550156573423904867319858",
+        "minus_ln_r": "1.366430334365988397838968"
+      },
+      {
+        "word": "V3V1V1V3V1",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.343185824564202357577784",
+        "minus_ln_r": "1.069483215938710956851079"
+      },
+      {
+        "word": "V3V1V1V3V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2554448595085074265581903",
+        "minus_ln_r": "1.364748706686304974224258"
+      },
+      {
+        "word": "V3V1V2V0V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3402895437660995909418028",
+        "minus_ln_r": "1.077958424464831891670567"
+      },
+      {
+        "word": "V3V1V2V1V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2558890360509326285828346",
+        "minus_ln_r": "1.36301138139649329231092"
+      },
+      {
+        "word": "V3V1V2V3V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3402895437660995909418028",
+        "minus_ln_r": "1.077958424464831891670567"
+      },
+      {
+        "word": "V3V1V2V3V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2424593606801063729026342",
+        "minus_ln_r": "1.416921167472808502316406"
+      },
+      {
+        "word": "V3V1V3V1V1",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.343185824564202357577784",
+        "minus_ln_r": "1.069483215938710956851079"
+      },
+      {
+        "word": "V3V1V3V1V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1823425849091080832392536",
+        "minus_ln_r": "1.701868026611790269976972"
+      },
+      {
+        "word": "V3V2V0V0V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V3V2V1V1V1",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2515369655301150486214131",
+        "minus_ln_r": "1.38016532000385415149023"
+      },
+      {
+        "word": "V3V2V1V2V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2613400553503409180538768",
+        "minus_ln_r": "1.341932825626788410330551"
+      },
+      {
+        "word": "V3V2V1V3V1",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2516404600124470152782999",
+        "minus_ln_r": "1.379753956224249700727799"
+      },
+      {
+        "word": "V3V2V1V3V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2462033322300118434199172",
+        "minus_ln_r": "1.401597530676699558209222"
+      },
+      {
+        "word": "V3V2V2V1V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3513253978681396206057893",
+        "minus_ln_r": "1.046042425517097836294062"
+      },
+      {
+        "word": "V3V2V2V2V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2504624808714429380178331",
+        "minus_ln_r": "1.384446146635214229868361"
+      },
+      {
+        "word": "V3V2V3V3V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2566214718334306421829986",
+        "minus_ln_r": "1.360153152072938244887304"
+      },
+      {
+        "word": "V3V3V1V0V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2436972634075929660774038",
+        "minus_ln_r": "1.411828547763254824110586"
+      },
+      {
+        "word": "V3V3V1V2V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3402895437660995909418028",
+        "minus_ln_r": "1.077958424464831891670567"
+      },
+      {
+        "word": "V3V3V1V2V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2424593606801063729026342",
+        "minus_ln_r": "1.416921167472808502316406"
+      },
+      {
+        "word": "V3V3V1V3V0",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2436972634075929660774038",
+        "minus_ln_r": "1.411828547763254824110586"
+      },
+      {
+        "word": "V3V3V2V2V1",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3513253978681396206057893",
+        "minus_ln_r": "1.046042425517097836294062"
+      },
+      {
+        "word": "V3V3V2V3V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2566214718334306421829986",
+        "minus_ln_r": "1.360153152072938244887304"
+      },
+      {
+        "word": "V3V3V3V2V3",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2566214718334306421829986",
+        "minus_ln_r": "1.360153152072938244887304"
+      },
+      {
+        "word": "V3V3V3V3V2",
+        "length": 5,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2566214718334306421829986",
+        "minus_ln_r": "1.360153152072938244887304"
+      },
+      {
+        "word": "V0V0V0V1V1V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941151436189189096276606",
+        "minus_ln_r": "0.005902240383517590242893384"
+      },
+      {
+        "word": "V0V0V0V1V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V0V0V0V2V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941922922429424183377383",
+        "minus_ln_r": "0.005824638074467446789931405"
+      },
+      {
+        "word": "V0V0V0V2V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V0V0V0V3V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V0V0V1V1V1V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941151436189189096276606",
+        "minus_ln_r": "0.005902240383517590242893384"
+      },
+      {
+        "word": "V0V0V2V0V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V0V0V2V2V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3481213166068135979421962",
+        "minus_ln_r": "1.055204249019218127419869"
+      },
+      {
+        "word": "V0V0V2V2V2V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941922922429424183377383",
+        "minus_ln_r": "0.005824638074467446789931405"
+      },
+      {
+        "word": "V0V0V2V3V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V0V0V2V3V1V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V0V0V3V0V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V0V1V0V0V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3476537121900431911448418",
+        "minus_ln_r": "1.056548374542031725294212"
+      },
+      {
+        "word": "V0V1V0V0V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2547839178715258441959334",
+        "minus_ln_r": "1.367339473949830264260017"
+      },
+      {
+        "word": "V0V1V0V1V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1871018265630421896673344",
+        "minus_ln_r": "1.676102283253529035401561"
+      },
+      {
+        "word": "V0V1V0V1V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2555022761164376606705076",
+        "minus_ln_r": "1.364523960898850127267035"
+      },
+      {
+        "word": "V0V1V0V2V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2607253410387900700070812",
+        "minus_ln_r": "1.344287758935481742157756"
+      },
+      {
+        "word": "V0V1V0V3V1V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3574794140445997539136224",
+        "minus_ln_r": "1.028677501598073258587731"
+      },
+      {
+        "word": "V0V1V0V3V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546829896816199890680566",
+        "minus_ln_r": "1.367735684929306539634874"
+      },
+      {
+        "word": "V0V1V1V1V0V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941151436189189096276606",
+        "minus_ln_r": "0.005902240383517590242893384"
+      },
+      {
+        "word": "V0V1V2V0V0V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V0V1V2V0V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "1.033176140226229679672599",
+        "minus_ln_r": "-0.03263768888949762480969064"
+      },
+      {
+        "word": "V0V1V2V0V3V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V0V1V2V0V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1871018265630421896673344",
+        "minus_ln_r": "1.676102283253529035401561"
+      },
+      {
+        "word": "V0V1V2V3V0V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V0V1V2V3V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1871018265630421896673344",
+        "minus_ln_r": "1.676102283253529035401561"
+      },
+      {
+        "word": "V0V1V3V0V1V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3574794140445997539136224",
+        "minus_ln_r": "1.028677501598073258587731"
+      },
+      {
+        "word": "V0V1V3V0V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546829896816199890680566",
+        "minus_ln_r": "1.367735684929306539634874"
+      },
+      {
+        "word": "V0V1V3V2V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2552224806081161055288249",
+        "minus_ln_r": "1.365619641234017521820472"
+      },
+      {
+        "word": "V0V2V2V2V0V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941922922429424183377383",
+        "minus_ln_r": "0.005824638074467446789931405"
+      },
+      {
+        "word": "V0V2V3V1V0V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V0V2V3V1V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2599511786928713216520255",
+        "minus_ln_r": "1.347261439856589798335319"
+      },
+      {
+        "word": "V0V3V0V0V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V0V3V1V0V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2547839178715258441959334",
+        "minus_ln_r": "1.367339473949830264260017"
+      },
+      {
+        "word": "V0V3V1V0V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1871018265630421896673344",
+        "minus_ln_r": "1.676102283253529035401561"
+      },
+      {
+        "word": "V0V3V1V0V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3574794140445997539136224",
+        "minus_ln_r": "1.028677501598073258587731"
+      },
+      {
+        "word": "V0V3V1V0V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546829896816199890680566",
+        "minus_ln_r": "1.367735684929306539634874"
+      },
+      {
+        "word": "V0V3V1V2V0V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V0V3V1V3V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3574794140445997539136224",
+        "minus_ln_r": "1.028677501598073258587731"
+      },
+      {
+        "word": "V0V3V1V3V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546829896816199890680566",
+        "minus_ln_r": "1.367735684929306539634874"
+      },
+      {
+        "word": "V0V3V2V1V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2600506269385038772009177",
+        "minus_ln_r": "1.346878947927646405241389"
+      },
+      {
+        "word": "V1V0V0V0V1V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.996999631699444114230082",
+        "minus_ln_r": "0.003004878429149185721569583"
+      },
+      {
+        "word": "V1V0V0V0V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2547839178715258441959334",
+        "minus_ln_r": "1.367339473949830264260017"
+      },
+      {
+        "word": "V1V0V0V2V0V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2547839178715258441959334",
+        "minus_ln_r": "1.367339473949830264260017"
+      },
+      {
+        "word": "V1V0V0V2V2V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3476537121900431911448418",
+        "minus_ln_r": "1.056548374542031725294212"
+      },
+      {
+        "word": "V1V0V0V2V3V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2547839178715258441959334",
+        "minus_ln_r": "1.367339473949830264260017"
+      },
+      {
+        "word": "V1V0V0V2V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1843940259633467806087227",
+        "minus_ln_r": "1.690680365546336797442449"
+      },
+      {
+        "word": "V1V0V1V0V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2594949503289339900890709",
+        "minus_ln_r": "1.349018035798922090053782"
+      },
+      {
+        "word": "V1V0V1V0V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2600118495502720088614005",
+        "minus_ln_r": "1.347028073811773013311329"
+      },
+      {
+        "word": "V1V0V1V2V0V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1871018265630421896673344",
+        "minus_ln_r": "1.676102283253529035401561"
+      },
+      {
+        "word": "V1V0V1V2V3V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1871018265630421896673344",
+        "minus_ln_r": "1.676102283253529035401561"
+      },
+      {
+        "word": "V1V0V1V3V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2600118495502720088614005",
+        "minus_ln_r": "1.347028073811773013311329"
+      },
+      {
+        "word": "V1V0V1V3V2V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2555022761164376606705076",
+        "minus_ln_r": "1.364523960898850127267035"
+      },
+      {
+        "word": "V1V0V2V1V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2561695622911963816785756",
+        "minus_ln_r": "1.361915701061325897757483"
+      },
+      {
+        "word": "V1V0V2V3V1V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3556510886060005057645504",
+        "minus_ln_r": "1.033805116915970228576667"
+      },
+      {
+        "word": "V1V0V3V1V0V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3574794140445997539136224",
+        "minus_ln_r": "1.028677501598073258587731"
+      },
+      {
+        "word": "V1V0V3V1V3V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3574794140445997539136224",
+        "minus_ln_r": "1.028677501598073258587731"
+      },
+      {
+        "word": "V1V0V3V2V1V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546829896816199890680566",
+        "minus_ln_r": "1.367735684929306539634874"
+      },
+      {
+        "word": "V1V0V3V2V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2534884535039241353018111",
+        "minus_ln_r": "1.372437005296246455119032"
+      },
+      {
+        "word": "V1V0V3V2V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3548876483165351576336165",
+        "minus_ln_r": "1.035954023213623624599395"
+      },
+      {
+        "word": "V1V1V0V0V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.996999631699444114230082",
+        "minus_ln_r": "0.003004878429149185721569583"
+      },
+      {
+        "word": "V1V1V0V3V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546829896816199890680566",
+        "minus_ln_r": "1.367735684929306539634874"
+      },
+      {
+        "word": "V1V1V0V3V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3539732771024817890354111",
+        "minus_ln_r": "1.038533857108824494356803"
+      },
+      {
+        "word": "V1V1V1V0V0V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941151436189189096276606",
+        "minus_ln_r": "0.005902240383517590242893384"
+      },
+      {
+        "word": "V1V1V1V1V1V1",
+        "length": 6,
+        "pure_junction": true,
+        "merges": 0,
+        "ratio": "0.9941424708813527389455282",
+        "minus_ln_r": "0.005874751729898206505583715"
+      },
+      {
+        "word": "V1V1V1V1V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2523078567426950776733741",
+        "minus_ln_r": "1.377105283341600399590463"
+      },
+      {
+        "word": "V1V1V1V2V2V2",
+        "length": 6,
+        "pure_junction": true,
+        "merges": 0,
+        "ratio": "0.9969256683703882597878122",
+        "minus_ln_r": "0.003079067095181146209442025"
+      },
+      {
+        "word": "V1V1V1V2V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2489717043684461138170779",
+        "minus_ln_r": "1.390416026049124576428709"
+      },
+      {
+        "word": "V1V1V1V3V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2523078567426950776733741",
+        "minus_ln_r": "1.377105283341600399590463"
+      },
+      {
+        "word": "V1V1V1V3V3V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941922922429424183377383",
+        "minus_ln_r": "0.005824638074467446789931405"
+      },
+      {
+        "word": "V1V1V2V1V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2590451456464974957234368",
+        "minus_ln_r": "1.350752924956954820555191"
+      },
+      {
+        "word": "V1V1V2V2V2V1",
+        "length": 6,
+        "pure_junction": true,
+        "merges": 0,
+        "ratio": "0.9969414344635952742555244",
+        "minus_ln_r": "0.003063252507353367798151046"
+      },
+      {
+        "word": "V1V1V2V3V1V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2489717043684461138170779",
+        "minus_ln_r": "1.390416026049124576428709"
+      },
+      {
+        "word": "V1V1V2V3V1V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3522228253903884522627583",
+        "minus_ln_r": "1.043491276983671144051467"
+      },
+      {
+        "word": "V1V1V3V0V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546829896816199890680566",
+        "minus_ln_r": "1.367735684929306539634874"
+      },
+      {
+        "word": "V1V1V3V0V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3539732771024817890354111",
+        "minus_ln_r": "1.038533857108824494356803"
+      },
+      {
+        "word": "V1V1V3V1V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2444513200306505120669399",
+        "minus_ln_r": "1.408739089969401327014672"
+      },
+      {
+        "word": "V1V1V3V1V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1768712040535228955475602",
+        "minus_ln_r": "1.732333471996425428498464"
+      },
+      {
+        "word": "V1V1V3V3V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3478626043177842374750822",
+        "minus_ln_r": "1.055947692346476884257879"
+      },
+      {
+        "word": "V1V1V3V3V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9971286085017853171292384",
+        "minus_ln_r": "0.002875521851251230209945864"
+      },
+      {
+        "word": "V1V2V0V0V0V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V1V2V0V0V3V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V1V2V0V1V2V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "1.033176140226229679672599",
+        "minus_ln_r": "-0.03263768888949762480969064"
+      },
+      {
+        "word": "V1V2V0V2V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2531682980901158278715816",
+        "minus_ln_r": "1.373700801566258507278315"
+      },
+      {
+        "word": "V1V2V0V3V0V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V1V2V0V3V1V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1871018265630421896673344",
+        "minus_ln_r": "1.676102283253529035401561"
+      },
+      {
+        "word": "V1V2V1V1V1V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2523078567426950776733741",
+        "minus_ln_r": "1.377105283341600399590463"
+      },
+      {
+        "word": "V1V2V1V1V3V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3478626043177842374750822",
+        "minus_ln_r": "1.055947692346476884257879"
+      },
+      {
+        "word": "V1V2V1V2V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2659124737073359737433627",
+        "minus_ln_r": "1.324588070561044148857119"
+      },
+      {
+        "word": "V1V2V1V2V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2561695622911963816785756",
+        "minus_ln_r": "1.361915701061325897757483"
+      },
+      {
+        "word": "V1V2V1V3V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1699862920243297355711737",
+        "minus_ln_r": "1.772037480334065406333561"
+      },
+      {
+        "word": "V1V2V2V1V2V2",
+        "length": 6,
+        "pure_junction": true,
+        "merges": 2,
+        "ratio": "0.4540884170102890928464316",
+        "minus_ln_r": "0.7894633487783426143014888"
+      },
+      {
+        "word": "V1V2V2V2V1V1",
+        "length": 6,
+        "pure_junction": true,
+        "merges": 0,
+        "ratio": "0.9969256683703882597878122",
+        "minus_ln_r": "0.003079067095181146209442025"
+      },
+      {
+        "word": "V1V2V2V2V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546584865678150678287316",
+        "minus_ln_r": "1.367831899806619316283435"
+      },
+      {
+        "word": "V1V2V2V3V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2561695622911963816785756",
+        "minus_ln_r": "1.361915701061325897757483"
+      },
+      {
+        "word": "V1V2V2V3V2V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2531682980901158278715816",
+        "minus_ln_r": "1.373700801566258507278315"
+      },
+      {
+        "word": "V1V2V3V0V0V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V1V2V3V0V1V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1871018265630421896673344",
+        "minus_ln_r": "1.676102283253529035401561"
+      },
+      {
+        "word": "V1V2V3V1V1V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2523078567426950776733741",
+        "minus_ln_r": "1.377105283341600399590463"
+      },
+      {
+        "word": "V1V2V3V1V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "1.032549990943190794309349",
+        "minus_ln_r": "-0.03203146205936035739938347"
+      },
+      {
+        "word": "V1V2V3V1V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3471046570615730692745398",
+        "minus_ln_r": "1.058128939144268809308459"
+      },
+      {
+        "word": "V1V2V3V1V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2464266508750567896137884",
+        "minus_ln_r": "1.400690892152854285275873"
+      },
+      {
+        "word": "V1V2V3V2V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2550890923125814085733699",
+        "minus_ln_r": "1.366142413225289759506444"
+      },
+      {
+        "word": "V1V2V3V3V1V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1781869496323120050736571",
+        "minus_ln_r": "1.724922001013773589679882"
+      },
+      {
+        "word": "V1V2V3V3V3V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2598757868187357137650887",
+        "minus_ln_r": "1.347551505127020767311925"
+      },
+      {
+        "word": "V1V3V0V1V0V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3574794140445997539136224",
+        "minus_ln_r": "1.028677501598073258587731"
+      },
+      {
+        "word": "V1V3V0V1V3V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3574794140445997539136224",
+        "minus_ln_r": "1.028677501598073258587731"
+      },
+      {
+        "word": "V1V3V0V2V1V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546829896816199890680566",
+        "minus_ln_r": "1.367735684929306539634874"
+      },
+      {
+        "word": "V1V3V0V2V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2534884535039241353018111",
+        "minus_ln_r": "1.372437005296246455119032"
+      },
+      {
+        "word": "V1V3V0V2V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3548876483165351576336165",
+        "minus_ln_r": "1.035954023213623624599395"
+      },
+      {
+        "word": "V1V3V1V0V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3538200021705753863426031",
+        "minus_ln_r": "1.038966963606981083190724"
+      },
+      {
+        "word": "V1V3V1V1V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3471046570615730692745398",
+        "minus_ln_r": "1.058128939144268809308459"
+      },
+      {
+        "word": "V1V3V1V2V1V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2444513200306505120669399",
+        "minus_ln_r": "1.408739089969401327014672"
+      },
+      {
+        "word": "V1V3V1V2V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1856725329157332265154306",
+        "minus_ln_r": "1.6837707326256843038246"
+      },
+      {
+        "word": "V1V3V2V0V1V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2552224806081161055288249",
+        "minus_ln_r": "1.365619641234017521820472"
+      },
+      {
+        "word": "V1V3V2V1V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546829896816199890680566",
+        "minus_ln_r": "1.367735684929306539634874"
+      },
+      {
+        "word": "V1V3V2V1V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2554116150349852134780331",
+        "minus_ln_r": "1.364878858598733409311867"
+      },
+      {
+        "word": "V1V3V2V1V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2561695622911963816785756",
+        "minus_ln_r": "1.361915701061325897757483"
+      },
+      {
+        "word": "V1V3V2V2V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1861476563258302767337513",
+        "minus_ln_r": "1.681215068988007241972879"
+      },
+      {
+        "word": "V1V3V2V3V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3484316629805122437665381",
+        "minus_ln_r": "1.05431315701809494349682"
+      },
+      {
+        "word": "V1V3V2V3V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2642965414828159010671862",
+        "minus_ln_r": "1.330683543031419217173921"
+      },
+      {
+        "word": "V1V3V3V1V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3567110767279719680179492",
+        "minus_ln_r": "1.030829133754967681939672"
+      },
+      {
+        "word": "V1V3V3V2V0V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2408143110141572782293346",
+        "minus_ln_r": "1.423729136191514629775128"
+      },
+      {
+        "word": "V1V3V3V2V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3442820088755513691211943",
+        "minus_ln_r": "1.066294164212799848331415"
+      },
+      {
+        "word": "V1V3V3V2V3V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2408143110141572782293346",
+        "minus_ln_r": "1.423729136191514629775128"
+      },
+      {
+        "word": "V1V3V3V3V1V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9971286085017853171292384",
+        "minus_ln_r": "0.002875521851251230209945864"
+      },
+      {
+        "word": "V1V3V3V3V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2596711549719239631082488",
+        "minus_ln_r": "1.34833923705625900168109"
+      },
+      {
+        "word": "V2V0V0V0V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9971298439413016560465695",
+        "minus_ln_r": "0.002874282854856529625976802"
+      },
+      {
+        "word": "V2V0V0V0V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2547839178715258441959334",
+        "minus_ln_r": "1.367339473949830264260017"
+      },
+      {
+        "word": "V2V0V0V3V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2547839178715258441959334",
+        "minus_ln_r": "1.367339473949830264260017"
+      },
+      {
+        "word": "V2V0V1V0V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.347511902426513722266636",
+        "minus_ln_r": "1.056956362976772596537769"
+      },
+      {
+        "word": "V2V0V1V0V1V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2634544750741358645798608",
+        "minus_ln_r": "1.333874696044327423238371"
+      },
+      {
+        "word": "V2V0V1V0V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1898765648363476898038974",
+        "minus_ln_r": "1.661381076697407487219523"
+      },
+      {
+        "word": "V2V0V1V2V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "1.031690602208843855894601",
+        "minus_ln_r": "-0.03119881804795122443660386"
+      },
+      {
+        "word": "V2V0V1V3V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1898765648363476898038974",
+        "minus_ln_r": "1.661381076697407487219523"
+      },
+      {
+        "word": "V2V0V3V0V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2547839178715258441959334",
+        "minus_ln_r": "1.367339473949830264260017"
+      },
+      {
+        "word": "V2V0V3V1V0V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V2V0V3V1V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1871018265630421896673344",
+        "minus_ln_r": "1.676102283253529035401561"
+      },
+      {
+        "word": "V2V1V1V0V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2605352548799660229593864",
+        "minus_ln_r": "1.345017091513997440628311"
+      },
+      {
+        "word": "V2V1V1V1V2V2",
+        "length": 6,
+        "pure_junction": true,
+        "merges": 0,
+        "ratio": "0.9969128717616451060203256",
+        "minus_ln_r": "0.003091903248646694199041223"
+      },
+      {
+        "word": "V2V1V1V1V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2505213881323981643668982",
+        "minus_ln_r": "1.384210980335972548514754"
+      },
+      {
+        "word": "V2V1V1V2V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3450692378776898028286448",
+        "minus_ln_r": "1.064010192585671021259021"
+      },
+      {
+        "word": "V2V1V1V2V1V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2575712058086075499962546",
+        "minus_ln_r": "1.356459069692935889861415"
+      },
+      {
+        "word": "V2V1V1V3V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2605352548799660229593864",
+        "minus_ln_r": "1.345017091513997440628311"
+      },
+      {
+        "word": "V2V1V1V3V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1915376575777675014300022",
+        "minus_ln_r": "1.652670844378879125843436"
+      },
+      {
+        "word": "V2V1V1V3V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3420501535848574603911951",
+        "minus_ln_r": "1.072797904762345420137966"
+      },
+      {
+        "word": "V2V1V1V3V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2440698205817517848213954",
+        "minus_ln_r": "1.410300944696804321803929"
+      },
+      {
+        "word": "V2V1V2V0V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2606127326608891343081881",
+        "minus_ln_r": "1.344719756463891954024185"
+      },
+      {
+        "word": "V2V1V2V1V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1858894126869735324919621",
+        "minus_ln_r": "1.682603337533493019814207"
+      },
+      {
+        "word": "V2V1V2V3V1V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2555056474366837863871915",
+        "minus_ln_r": "1.364510766112269389770836"
+      },
+      {
+        "word": "V2V1V2V3V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2540157035068612680599887",
+        "minus_ln_r": "1.370359189044514041659352"
+      },
+      {
+        "word": "V2V1V2V3V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2459921275396533168800403",
+        "minus_ln_r": "1.402455745433173036628701"
+      },
+      {
+        "word": "V2V1V3V2V1V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2523534700963617673670006",
+        "minus_ln_r": "1.376924515165538254593359"
+      },
+      {
+        "word": "V2V1V3V2V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1811541464400005546705951",
+        "minus_ln_r": "1.708406972363953222448988"
+      },
+      {
+        "word": "V2V1V3V2V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3474833243796690066852705",
+        "minus_ln_r": "1.057038602525358135909818"
+      },
+      {
+        "word": "V2V2V0V0V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9971298439413016560465695",
+        "minus_ln_r": "0.002874282854856529625976802"
+      },
+      {
+        "word": "V2V2V0V1V0V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3481213166068135979421962",
+        "minus_ln_r": "1.055204249019218127419869"
+      },
+      {
+        "word": "V2V2V1V1V0V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2561721421834011022944248",
+        "minus_ln_r": "1.361905630078689853787357"
+      },
+      {
+        "word": "V2V2V1V1V1V2",
+        "length": 6,
+        "pure_junction": true,
+        "merges": 0,
+        "ratio": "0.9969256683703882597878122",
+        "minus_ln_r": "0.003079067095181146209442025"
+      },
+      {
+        "word": "V2V2V1V1V2V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3426911421437231221426622",
+        "minus_ln_r": "1.070925697696422200601107"
+      },
+      {
+        "word": "V2V2V1V1V3V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2561721421834011022944248",
+        "minus_ln_r": "1.361905630078689853787357"
+      },
+      {
+        "word": "V2V2V1V2V2V1",
+        "length": 6,
+        "pure_junction": true,
+        "merges": 2,
+        "ratio": "0.4443965152963392266030165",
+        "minus_ln_r": "0.811038062614779281640348"
+      },
+      {
+        "word": "V2V2V1V2V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2518873233814868083757269",
+        "minus_ln_r": "1.378773420901432970577905"
+      },
+      {
+        "word": "V2V2V1V3V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3470934309154078261478534",
+        "minus_ln_r": "1.058161281918933996732037"
+      },
+      {
+        "word": "V2V2V2V0V0V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941922922429424183377383",
+        "minus_ln_r": "0.005824638074467446789931405"
+      },
+      {
+        "word": "V2V2V2V1V1V1",
+        "length": 6,
+        "pure_junction": true,
+        "merges": 0,
+        "ratio": "0.9969372865008917740843594",
+        "minus_ln_r": "0.003067413204450831866430946"
+      },
+      {
+        "word": "V2V2V2V1V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546584865678150678287316",
+        "minus_ln_r": "1.367831899806619316283435"
+      },
+      {
+        "word": "V2V2V2V2V2V2",
+        "length": 6,
+        "pure_junction": true,
+        "merges": 0,
+        "ratio": "0.9941151436189189096276606",
+        "minus_ln_r": "0.005902240383517590242893384"
+      },
+      {
+        "word": "V2V2V2V2V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2514653099393457198417268",
+        "minus_ln_r": "1.380450231602662205830628"
+      },
+      {
+        "word": "V2V2V2V3V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2550890923125814085733699",
+        "minus_ln_r": "1.366142413225289759506444"
+      },
+      {
+        "word": "V2V2V2V3V3V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941424708813527389455282",
+        "minus_ln_r": "0.005874751729898206505583715"
+      },
+      {
+        "word": "V2V2V3V1V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2491047764589651821561526",
+        "minus_ln_r": "1.389881682032461613671601"
+      },
+      {
+        "word": "V2V2V3V1V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2459921275396533168800403",
+        "minus_ln_r": "1.402455745433173036628701"
+      },
+      {
+        "word": "V2V2V3V1V3V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3428162277377380653435558",
+        "minus_ln_r": "1.070560754587422946584014"
+      },
+      {
+        "word": "V2V2V3V2V3V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2450116457478429493643264",
+        "minus_ln_r": "1.406449535902433807351491"
+      },
+      {
+        "word": "V2V2V3V3V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2428088238890772172884065",
+        "minus_ln_r": "1.415480878245141144633034"
+      },
+      {
+        "word": "V2V2V3V3V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9969862602753520713778498",
+        "minus_ln_r": "0.003018290183109992880728245"
+      },
+      {
+        "word": "V2V3V0V0V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2547839178715258441959334",
+        "minus_ln_r": "1.367339473949830264260017"
+      },
+      {
+        "word": "V2V3V0V1V0V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V2V3V0V1V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1871018265630421896673344",
+        "minus_ln_r": "1.676102283253529035401561"
+      },
+      {
+        "word": "V2V3V1V0V0V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2509715971213268524284416",
+        "minus_ln_r": "1.382415505132478058990027"
+      },
+      {
+        "word": "V2V3V1V0V1V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2599511786928713216520255",
+        "minus_ln_r": "1.347261439856589798335319"
+      },
+      {
+        "word": "V2V3V1V1V0V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3552616221063898260091153",
+        "minus_ln_r": "1.034900797251137623130104"
+      },
+      {
+        "word": "V2V3V1V1V1V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.249269698338414834260938",
+        "minus_ln_r": "1.389219842817936111982217"
+      },
+      {
+        "word": "V2V3V1V1V3V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3552616221063898260091153",
+        "minus_ln_r": "1.034900797251137623130104"
+      },
+      {
+        "word": "V2V3V1V2V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2518873233814868083757269",
+        "minus_ln_r": "1.378773420901432970577905"
+      },
+      {
+        "word": "V2V3V1V2V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "1.031065353225887693566534",
+        "minus_ln_r": "-0.03059259121781395702629669"
+      },
+      {
+        "word": "V2V3V1V3V1V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3544992769785620570591435",
+        "minus_ln_r": "1.037048972564751093934383"
+      },
+      {
+        "word": "V2V3V1V3V1V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3467714310517935568435729",
+        "minus_ln_r": "1.059089416212451819904335"
+      },
+      {
+        "word": "V2V3V1V3V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546301957462473393435781",
+        "minus_ln_r": "1.367942999159812411761682"
+      },
+      {
+        "word": "V2V3V1V3V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3449280606696701733606076",
+        "minus_ln_r": "1.064419403492110509575214"
+      },
+      {
+        "word": "V2V3V1V3V3V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2566214718334306421829986",
+        "minus_ln_r": "1.360153152072938244887304"
+      },
+      {
+        "word": "V2V3V2V1V0V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2523534700963617673670006",
+        "minus_ln_r": "1.376924515165538254593359"
+      },
+      {
+        "word": "V2V3V2V1V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.257595426507466215737729",
+        "minus_ln_r": "1.356365039150749486969682"
+      },
+      {
+        "word": "V2V3V2V1V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2590451456464974957234368",
+        "minus_ln_r": "1.350752924956954820555191"
+      },
+      {
+        "word": "V2V3V2V1V3V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2523534700963617673670006",
+        "minus_ln_r": "1.376924515165538254593359"
+      },
+      {
+        "word": "V2V3V2V2V1V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3468430540907368541186678",
+        "minus_ln_r": "1.058882895037556962680214"
+      },
+      {
+        "word": "V2V3V2V2V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2515311374737992969675525",
+        "minus_ln_r": "1.380188490052923897577114"
+      },
+      {
+        "word": "V2V3V2V2V3V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2450116457478429493643264",
+        "minus_ln_r": "1.406449535902433807351491"
+      },
+      {
+        "word": "V2V3V2V3V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1869455105286590098517111",
+        "minus_ln_r": "1.676938092136428525600525"
+      },
+      {
+        "word": "V2V3V2V3V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2618298155287180798421786",
+        "minus_ln_r": "1.340060545326614740378178"
+      },
+      {
+        "word": "V2V3V3V1V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1812427696827084380456866",
+        "minus_ln_r": "1.707917877448782730121899"
+      },
+      {
+        "word": "V2V3V3V2V1V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546301957462473393435781",
+        "minus_ln_r": "1.367942999159812411761682"
+      },
+      {
+        "word": "V2V3V3V2V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2428088238890772172884065",
+        "minus_ln_r": "1.415480878245141144633034"
+      },
+      {
+        "word": "V2V3V3V2V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2618298155287180798421786",
+        "minus_ln_r": "1.340060545326614740378178"
+      },
+      {
+        "word": "V2V3V3V2V3V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.4527970865948101615131759",
+        "minus_ln_r": "0.7923111863126042286442359"
+      },
+      {
+        "word": "V2V3V3V3V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9969862602753520713778498",
+        "minus_ln_r": "0.003018290183109992880728245"
+      },
+      {
+        "word": "V2V3V3V3V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2564202444122944916380672",
+        "minus_ln_r": "1.360937600686308729443424"
+      },
+      {
+        "word": "V3V0V0V0V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V3V0V1V0V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2547839178715258441959334",
+        "minus_ln_r": "1.367339473949830264260017"
+      },
+      {
+        "word": "V3V0V1V0V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1871018265630421896673344",
+        "minus_ln_r": "1.676102283253529035401561"
+      },
+      {
+        "word": "V3V0V1V0V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3574794140445997539136224",
+        "minus_ln_r": "1.028677501598073258587731"
+      },
+      {
+        "word": "V3V0V1V0V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546829896816199890680566",
+        "minus_ln_r": "1.367735684929306539634874"
+      },
+      {
+        "word": "V3V0V1V2V0V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V3V0V1V3V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3574794140445997539136224",
+        "minus_ln_r": "1.028677501598073258587731"
+      },
+      {
+        "word": "V3V0V1V3V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546829896816199890680566",
+        "minus_ln_r": "1.367735684929306539634874"
+      },
+      {
+        "word": "V3V0V2V1V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2600506269385038772009177",
+        "minus_ln_r": "1.346878947927646405241389"
+      },
+      {
+        "word": "V3V1V0V0V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2547839178715258441959334",
+        "minus_ln_r": "1.367339473949830264260017"
+      },
+      {
+        "word": "V3V1V0V0V2V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2547839178715258441959334",
+        "minus_ln_r": "1.367339473949830264260017"
+      },
+      {
+        "word": "V3V1V0V1V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2594949503289339900890709",
+        "minus_ln_r": "1.349018035798922090053782"
+      },
+      {
+        "word": "V3V1V0V1V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2607253410387900700070812",
+        "minus_ln_r": "1.344287758935481742157756"
+      },
+      {
+        "word": "V3V1V0V1V2V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1871018265630421896673344",
+        "minus_ln_r": "1.676102283253529035401561"
+      },
+      {
+        "word": "V3V1V0V2V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3556510886060005057645504",
+        "minus_ln_r": "1.033805116915970228576667"
+      },
+      {
+        "word": "V3V1V0V3V1V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3574794140445997539136224",
+        "minus_ln_r": "1.028677501598073258587731"
+      },
+      {
+        "word": "V3V1V0V3V2V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546829896816199890680566",
+        "minus_ln_r": "1.367735684929306539634874"
+      },
+      {
+        "word": "V3V1V1V0V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3539732771024817890354111",
+        "minus_ln_r": "1.038533857108824494356803"
+      },
+      {
+        "word": "V3V1V1V1V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2523078567426950776733741",
+        "minus_ln_r": "1.377105283341600399590463"
+      },
+      {
+        "word": "V3V1V1V1V3V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941922922429424183377383",
+        "minus_ln_r": "0.005824638074467446789931405"
+      },
+      {
+        "word": "V3V1V1V2V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3522228253903884522627583",
+        "minus_ln_r": "1.043491276983671144051467"
+      },
+      {
+        "word": "V3V1V1V3V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3539732771024817890354111",
+        "minus_ln_r": "1.038533857108824494356803"
+      },
+      {
+        "word": "V3V1V2V0V0V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2579479468351585848174996",
+        "minus_ln_r": "1.354997470868964426033563"
+      },
+      {
+        "word": "V3V1V2V0V3V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2369587878059124250077406",
+        "minus_ln_r": "1.43986904408211218903953"
+      },
+      {
+        "word": "V3V1V2V1V1V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2523078567426950776733741",
+        "minus_ln_r": "1.377105283341600399590463"
+      },
+      {
+        "word": "V3V1V2V1V1V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3478626043177842374750822",
+        "minus_ln_r": "1.055947692346476884257879"
+      },
+      {
+        "word": "V3V1V2V1V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2659124737073359737433627",
+        "minus_ln_r": "1.324588070561044148857119"
+      },
+      {
+        "word": "V3V1V2V2V1V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1825194489443168644856003",
+        "minus_ln_r": "1.700898542079822158937085"
+      },
+      {
+        "word": "V3V1V2V2V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546584865678150678287316",
+        "minus_ln_r": "1.367831899806619316283435"
+      },
+      {
+        "word": "V3V1V2V2V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2590451456464974957234368",
+        "minus_ln_r": "1.350752924956954820555191"
+      },
+      {
+        "word": "V3V1V2V3V0V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2369587878059124250077406",
+        "minus_ln_r": "1.43986904408211218903953"
+      },
+      {
+        "word": "V3V1V2V3V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "1.032549990943190794309349",
+        "minus_ln_r": "-0.03203146205936035739938347"
+      },
+      {
+        "word": "V3V1V2V3V2V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3395692994244742469192875",
+        "minus_ln_r": "1.080077230797325994036989"
+      },
+      {
+        "word": "V3V1V2V3V3V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2369587878059124250077406",
+        "minus_ln_r": "1.43986904408211218903953"
+      },
+      {
+        "word": "V3V1V2V3V3V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2598757868187357137650887",
+        "minus_ln_r": "1.347551505127020767311925"
+      },
+      {
+        "word": "V3V1V3V0V1V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3574794140445997539136224",
+        "minus_ln_r": "1.028677501598073258587731"
+      },
+      {
+        "word": "V3V1V3V0V2V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546829896816199890680566",
+        "minus_ln_r": "1.367735684929306539634874"
+      },
+      {
+        "word": "V3V1V3V1V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3538200021705753863426031",
+        "minus_ln_r": "1.038966963606981083190724"
+      },
+      {
+        "word": "V3V1V3V1V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3471046570615730692745398",
+        "minus_ln_r": "1.058128939144268809308459"
+      },
+      {
+        "word": "V3V1V3V1V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1781869496323120050736571",
+        "minus_ln_r": "1.724922001013773589679882"
+      },
+      {
+        "word": "V3V1V3V2V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2561695622911963816785756",
+        "minus_ln_r": "1.361915701061325897757483"
+      },
+      {
+        "word": "V3V1V3V3V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3442820088755513691211943",
+        "minus_ln_r": "1.066294164212799848331415"
+      },
+      {
+        "word": "V3V1V3V3V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2596711549719239631082488",
+        "minus_ln_r": "1.34833923705625900168109"
+      },
+      {
+        "word": "V3V2V0V1V0V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2634544750741358645798608",
+        "minus_ln_r": "1.333874696044327423238371"
+      },
+      {
+        "word": "V3V2V1V0V1V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2600506269385038772009177",
+        "minus_ln_r": "1.346878947927646405241389"
+      },
+      {
+        "word": "V3V2V1V0V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2600506269385038772009177",
+        "minus_ln_r": "1.346878947927646405241389"
+      },
+      {
+        "word": "V3V2V1V0V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546829896816199890680566",
+        "minus_ln_r": "1.367735684929306539634874"
+      },
+      {
+        "word": "V3V2V1V1V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2575712058086075499962546",
+        "minus_ln_r": "1.356459069692935889861415"
+      },
+      {
+        "word": "V3V2V1V2V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2606127326608891343081881",
+        "minus_ln_r": "1.344719756463891954024185"
+      },
+      {
+        "word": "V3V2V1V2V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2659124737073359737433627",
+        "minus_ln_r": "1.324588070561044148857119"
+      },
+      {
+        "word": "V3V2V1V2V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2555056474366837863871915",
+        "minus_ln_r": "1.364510766112269389770836"
+      },
+      {
+        "word": "V3V2V1V2V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2554448595085074265581903",
+        "minus_ln_r": "1.364748706686304974224258"
+      },
+      {
+        "word": "V3V2V1V3V0V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546829896816199890680566",
+        "minus_ln_r": "1.367735684929306539634874"
+      },
+      {
+        "word": "V3V2V1V3V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2554116150349852134780331",
+        "minus_ln_r": "1.364878858598733409311867"
+      },
+      {
+        "word": "V3V2V1V3V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2561695622911963816785756",
+        "minus_ln_r": "1.361915701061325897757483"
+      },
+      {
+        "word": "V3V2V2V1V1V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2561721421834011022944248",
+        "minus_ln_r": "1.361905630078689853787357"
+      },
+      {
+        "word": "V3V2V2V1V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.185747925485096197053703",
+        "minus_ln_r": "1.683364763763747964174363"
+      },
+      {
+        "word": "V3V2V2V1V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3470934309154078261478534",
+        "minus_ln_r": "1.058161281918933996732037"
+      },
+      {
+        "word": "V3V2V2V2V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546584865678150678287316",
+        "minus_ln_r": "1.367831899806619316283435"
+      },
+      {
+        "word": "V3V2V2V2V3V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941424708813527389455282",
+        "minus_ln_r": "0.005874751729898206505583715"
+      },
+      {
+        "word": "V3V2V2V3V1V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3428162277377380653435558",
+        "minus_ln_r": "1.070560754587422946584014"
+      },
+      {
+        "word": "V3V2V2V3V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2450116457478429493643264",
+        "minus_ln_r": "1.406449535902433807351491"
+      },
+      {
+        "word": "V3V2V3V1V1V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3552616221063898260091153",
+        "minus_ln_r": "1.034900797251137623130104"
+      },
+      {
+        "word": "V3V2V3V1V3V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2566214718334306421829986",
+        "minus_ln_r": "1.360153152072938244887304"
+      },
+      {
+        "word": "V3V2V3V2V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3468430540907368541186678",
+        "minus_ln_r": "1.058882895037556962680214"
+      },
+      {
+        "word": "V3V2V3V2V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2450116457478429493643264",
+        "minus_ln_r": "1.406449535902433807351491"
+      },
+      {
+        "word": "V3V2V3V2V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1869455105286590098517111",
+        "minus_ln_r": "1.676938092136428525600525"
+      },
+      {
+        "word": "V3V2V3V3V2V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2546301957462473393435781",
+        "minus_ln_r": "1.367942999159812411761682"
+      },
+      {
+        "word": "V3V2V3V3V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2428088238890772172884065",
+        "minus_ln_r": "1.415480878245141144633034"
+      },
+      {
+        "word": "V3V3V1V1V1V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941922922429424183377383",
+        "minus_ln_r": "0.005824638074467446789931405"
+      },
+      {
+        "word": "V3V3V1V2V0V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2369587878059124250077406",
+        "minus_ln_r": "1.43986904408211218903953"
+      },
+      {
+        "word": "V3V3V1V2V1V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3478626043177842374750822",
+        "minus_ln_r": "1.055947692346476884257879"
+      },
+      {
+        "word": "V3V3V1V2V3V0",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2369587878059124250077406",
+        "minus_ln_r": "1.43986904408211218903953"
+      },
+      {
+        "word": "V3V3V1V3V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.1781869496323120050736571",
+        "minus_ln_r": "1.724922001013773589679882"
+      },
+      {
+        "word": "V3V3V2V1V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2561695622911963816785756",
+        "minus_ln_r": "1.361915701061325897757483"
+      },
+      {
+        "word": "V3V3V2V2V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941424708813527389455282",
+        "minus_ln_r": "0.005874751729898206505583715"
+      },
+      {
+        "word": "V3V3V2V2V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.3428162277377380653435558",
+        "minus_ln_r": "1.070560754587422946584014"
+      },
+      {
+        "word": "V3V3V2V2V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2450116457478429493643264",
+        "minus_ln_r": "1.406449535902433807351491"
+      },
+      {
+        "word": "V3V3V2V3V1V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2566214718334306421829986",
+        "minus_ln_r": "1.360153152072938244887304"
+      },
+      {
+        "word": "V3V3V2V3V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2450116457478429493643264",
+        "minus_ln_r": "1.406449535902433807351491"
+      },
+      {
+        "word": "V3V3V2V3V3V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.4527970865948101615131759",
+        "minus_ln_r": "0.7923111863126042286442359"
+      },
+      {
+        "word": "V3V3V3V1V1V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941922922429424183377383",
+        "minus_ln_r": "0.005824638074467446789931405"
+      },
+      {
+        "word": "V3V3V3V1V2V3",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2598757868187357137650887",
+        "minus_ln_r": "1.347551505127020767311925"
+      },
+      {
+        "word": "V3V3V3V2V2V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 0,
+        "ratio": "0.9941424708813527389455282",
+        "minus_ln_r": "0.005874751729898206505583715"
+      },
+      {
+        "word": "V3V3V3V2V3V1",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2566214718334306421829986",
+        "minus_ln_r": "1.360153152072938244887304"
+      },
+      {
+        "word": "V3V3V3V3V1V2",
+        "length": 6,
+        "pure_junction": false,
+        "merges": 2,
+        "ratio": "0.2598757868187357137650887",
+        "minus_ln_r": "1.347551505127020767311925"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 enters through cf.Q (committed y-lambda-at-q0 witness, proton pin)"
+}

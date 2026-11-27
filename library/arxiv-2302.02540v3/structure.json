@@ -1,0 +1,1338 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2302.02540v3",
+ "source": {
+  "file": "2302.02540v3.pdf",
+  "sha256": "0dfe07df944902ec2185f2ba754e2bb239e781d7965a060e61c0e6a33f4051bc",
+  "bytes": 814350,
+  "pages": 49,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-25T15:43:09Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2302.02540",
+   "version": "3",
+   "primary_class": "math.GT",
+   "stamp_date": "9 Feb 2026"
+  },
+  "doi": null,
+  "title": "Linear programming bounds for hyperbolic surfaces",
+  "authors_raw": "MAXIME FORTIER BOURQUE AND BRAM PETRI",
+  "title_lines": [
+   "LINEAR PROGRAMMING BOUNDS FOR HYPERBOLIC SURFACES"
+  ],
+  "abstract": "We adapt linear programming methods from sphere packings to closed hy- perbolic surfaces and obtain new upper bounds on their systole, their kissing number, the first positive eigenvalue of their Laplacian, the multiplicity of their first eigenvalue, and their number of small eigenvalues. Apart from a few exceptions, the resulting bounds are the current best known both in low genus and as the genus tends to infinity. Our methods also provide lower bounds on the systole (achieved in genus 2 to 7, 14, and 17) that are sufficient for surfaces to have a spectral gap larger than 1/4. 1.Introduction The goal of this paper is to prove new upper bounds on five invariants associated to a closed, oriented, hyperbolic surfaceM: (1) itssystolesys(M), the length of any shortest non-contractible closed curve inM; (2) itskissing numberkiss(M), the number of homotopy classes of oriented non- contractible closed curves of minimal length inM; (3) thefirst positive eigenvalue\u03bb 1(M) (which coincides with thespectral gap) of the Laplace\u2013Beltrami operator \u2206M onM; (4) themultiplicitym 1(M) of the eigenvalue\u03bb 1(M), that is, the dimension of the corresponding eigenspace; (5) the numberN small(M), counting multiplicity, ofsmall eigenvaluesof \u2206 M, that is, those contained in the interval [0,1/4]. We bound the first four invariants in terms of the genus ofMonly, but the fifth one in terms of the genus and the systole. In low genus (or for small systole), our bounds are illustrated in Figures 1 and 2 (see also Tables 1 to 7). They beat all previous upper bounds except for the systole and kissing number in genus 2, for\u03bb 1 in genus 2, 3, 4, and 6, and forN small when the systole is smaller than 2.317. Note thatN small(M)< 2 if and only if\u03bb 1(M)>1/4. We use this to show that there exist surfaces with a spectral gap larger than 1/4 in genus 4 to 7, 14, and 17 (this was already known in genus 2 and 3). Whether such surfaces exist in every genus is a well-known open problem related to Selberg\u2019s eigen",
+  "docinfo": {
+   "Author": "Maxime Fortier Bourque; Bram Petri",
+   "Creator": "arXiv GenPDF (tex2pdf:57610bf)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Linear programming bounds for hyperbolic surfaces"
+  },
+  "title_raw": "Linear programming bounds for hyperbolic surfaces",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Linear programming bounds for hyperbolic surfaces",
+   "outline": "Introduction",
+   "text": "Linear programming bounds for hyperbolic surfaces",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 2,
+   "title": "Context",
+   "page": 3,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "Organization",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "The Fourier transform",
+   "page": 5,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 1,
+   "title": "The Selberg trace formula",
+   "page": 5,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 1,
+   "title": "Linear programming",
+   "page": 6,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "Certifying inequalities on intervals",
+   "page": 7,
+   "source": "outline",
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 2,
+   "title": "Certifying error bounds on integrals",
+   "page": 8,
+   "source": "outline",
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "Ancillary files",
+   "page": 8,
+   "source": "outline",
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 1,
+   "title": "Bessel functions",
+   "page": 9,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 1,
+   "title": "Systole",
+   "page": 10,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
+  },
+  {
+   "level": 2,
+   "title": "The criterion",
+   "page": 10,
+   "source": "outline",
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
+  },
+  {
+   "level": 2,
+   "title": "Low genus",
+   "page": 11,
+   "source": "outline",
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics",
+   "page": 12,
+   "source": "outline",
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
+  },
+  {
+   "level": 1,
+   "title": "Kissing numbers",
+   "page": 19,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
+  },
+  {
+   "level": 2,
+   "title": "The criterion",
+   "page": 19,
+   "source": "outline",
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
+  },
+  {
+   "level": 2,
+   "title": "Low genus",
+   "page": 21,
+   "source": "outline",
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics",
+   "page": 22,
+   "source": "outline",
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
+  },
+  {
+   "level": 1,
+   "title": "First eigenvalue",
+   "page": 25,
+   "source": "outline",
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
+  },
+  {
+   "level": 2,
+   "title": "The criterion",
+   "page": 25,
+   "source": "outline",
+   "number": "8.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
+  },
+  {
+   "level": 2,
+   "title": "Low genus",
+   "page": 26,
+   "source": "outline",
+   "number": "8.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics",
+   "page": 28,
+   "source": "outline",
+   "number": "8.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
+  },
+  {
+   "level": 1,
+   "title": "Multiplicity of the first eigenvalue",
+   "page": 32,
+   "source": "outline",
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
+  },
+  {
+   "level": 2,
+   "title": "The criterion",
+   "page": 32,
+   "source": "outline",
+   "number": "9.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
+  },
+  {
+   "level": 2,
+   "title": "Low genus",
+   "page": 33,
+   "source": "outline",
+   "number": "9.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics",
+   "page": 36,
+   "source": "outline",
+   "number": "9.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
+  },
+  {
+   "level": 1,
+   "title": "Small eigenvalues",
+   "page": 39,
+   "source": "outline",
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
+  },
+  {
+   "level": 2,
+   "title": "The criterion",
+   "page": 39,
+   "source": "outline",
+   "number": "10.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics",
+   "page": 40,
+   "source": "outline",
+   "number": "10.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
+  },
+  {
+   "level": 2,
+   "title": "Numerical results for small systole",
+   "page": 43,
+   "source": "outline",
+   "number": "10.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
+  },
+  {
+   "level": 2,
+   "title": "Ramanujan surfaces",
+   "page": 43,
+   "source": "outline",
+   "number": "10.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 45,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Upper bounds and current record holders for the maximization of geometric and spectral invariants associated to hyperbolic surfaces",
+   "page": 2,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Upper bounds on the number of small eigenvalues and lower bounds on the systole that imply a spectral gap larger than a quarter",
+   "page": 3,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Bounds on the maximum of sys. The dagger indicates where the linear programming bound fails to beat the previous best upper bound",
+   "page": 12,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Bounds on the maximum of 1",
+   "page": 22,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Bounds on the supremum of \u03bb1. The daggers indicate where the linear programming bounds fail to beat the previous best upper bound",
+   "page": 27,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "Some congruence subgroups of the modular group, their signatures, and the genus of their plumbing",
+   "page": 28,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "table",
+   "number": "5",
+   "title": "Bounds on the maximum of the multiplicity m1",
+   "page": 34,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "34"
+  },
+  {
+   "kind": "table",
+   "number": "6",
+   "title": "Lower bounds on sys(M ) sufficient for Nsmall(M )/(2g \u2212 2) to be strictly smaller than given values",
+   "page": 43,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "43"
+  },
+  {
+   "kind": "table",
+   "number": "7",
+   "title": "Lower bounds on sys(M ) sufficient for \u03bb1(M ) > 1/4",
+   "page": 44,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "44"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 682,
+   "n_words": 110,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4430,
+   "n_words": 757,
+   "label_start": "1",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-context",
+   "number": null,
+   "title": "Context",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3398,
+   "n_words": 575,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-002-organization",
+   "number": null,
+   "title": "Organization",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1558,
+   "n_words": 259,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-003-2-the-fourier-transform",
+   "number": "2",
+   "title": "The Fourier transform",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1113,
+   "n_words": 170,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-004-3-the-selberg-trace-formula",
+   "number": "3",
+   "title": "The Selberg trace formula",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1936,
+   "n_words": 313,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-005-4-linear-programming",
+   "number": "4",
+   "title": "Linear programming",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 3615,
+   "n_words": 582,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-006-41-certifying-inequalities-on-intervals",
+   "number": "4.1",
+   "title": "Certifying inequalities on intervals",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1658,
+   "n_words": 270,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-007-42-certifying-error-bounds-on-integrals",
+   "number": "4.2",
+   "title": "Certifying error bounds on integrals",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1832,
+   "n_words": 279,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-008-43-ancillary-files",
+   "number": "4.3",
+   "title": "Ancillary files",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1226,
+   "n_words": 185,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-009-5-bessel-functions",
+   "number": "5",
+   "title": "Bessel functions",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2917,
+   "n_words": 523,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-010-6-systole",
+   "number": "6",
+   "title": "Systole",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-011-61-the-criterion",
+   "number": "6.1",
+   "title": "The criterion",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1829,
+   "n_words": 287,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-012-62-low-genus",
+   "number": "6.2",
+   "title": "Low genus",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2286,
+   "n_words": 359,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-013-63-asymptotics",
+   "number": "6.3",
+   "title": "Asymptotics",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 19,
+   "n_chars": 12385,
+   "n_words": 2181,
+   "label_start": "12",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-014-7-kissing-numbers",
+   "number": "7",
+   "title": "Kissing numbers",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "19",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-015-71-the-criterion",
+   "number": "7.1",
+   "title": "The criterion",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 3606,
+   "n_words": 628,
+   "label_start": "19",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-016-72-low-genus",
+   "number": "7.2",
+   "title": "Low genus",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 2998,
+   "n_words": 508,
+   "label_start": "21",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-017-73-asymptotics",
+   "number": "7.3",
+   "title": "Asymptotics",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 6434,
+   "n_words": 1091,
+   "label_start": "22",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-018-8-first-eigenvalue",
+   "number": "8",
+   "title": "First eigenvalue",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "25",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-019-81-the-criterion",
+   "number": "8.1",
+   "title": "The criterion",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1149,
+   "n_words": 180,
+   "label_start": "25",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-020-82-low-genus",
+   "number": "8.2",
+   "title": "Low genus",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 5776,
+   "n_words": 943,
+   "label_start": "26",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-021-83-asymptotics",
+   "number": "8.3",
+   "title": "Asymptotics",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 32,
+   "n_chars": 6875,
+   "n_words": 1171,
+   "label_start": "28",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-022-9-multiplicity-of-the-first-eigenvalue",
+   "number": "9",
+   "title": "Multiplicity of the first eigenvalue",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "32",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-023-91-the-criterion",
+   "number": "9.1",
+   "title": "The criterion",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 2313,
+   "n_words": 391,
+   "label_start": "32",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-024-92-low-genus",
+   "number": "9.2",
+   "title": "Low genus",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 10705,
+   "n_words": 1787,
+   "label_start": "33",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-025-93-asymptotics",
+   "number": "9.3",
+   "title": "Asymptotics",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 39,
+   "n_chars": 4405,
+   "n_words": 775,
+   "label_start": "36",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-026-10-small-eigenvalues",
+   "number": "10",
+   "title": "Small eigenvalues",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "39",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-027-101-the-criterion",
+   "number": "10.1",
+   "title": "The criterion",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 1766,
+   "n_words": 279,
+   "label_start": "39",
+   "label_end": "40"
+  },
+  {
+   "id": "sec-028-102-asymptotics",
+   "number": "10.2",
+   "title": "Asymptotics",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 43,
+   "n_chars": 4357,
+   "n_words": 775,
+   "label_start": "40",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-029-103-numerical-results-for-small-systole",
+   "number": "10.3",
+   "title": "Numerical results for small systole",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 866,
+   "n_words": 147,
+   "label_start": "43",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-030-104-ramanujan-surfaces",
+   "number": "10.4",
+   "title": "Ramanujan surfaces",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 45,
+   "n_chars": 3319,
+   "n_words": 551,
+   "label_start": "43",
+   "label_end": "45"
+  },
+  {
+   "id": "sec-031-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 49,
+   "n_chars": 16347,
+   "n_words": 2302,
+   "label_start": "45",
+   "label_end": "49"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 32,
+  "toc_inferred_entries": 0,
+  "figure_entries": 9,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 33,
+  "chars_total": 111781,
+  "furniture_lines_stripped": 0
+ }
+}

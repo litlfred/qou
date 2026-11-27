@@ -1,0 +1,1010 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2202.03067v4",
+ "source": {
+  "file": "2202.03067v4.pdf",
+  "sha256": "22cf51d9d54ff681940a05efdcf02d467c4e68288790cccec984fabda1d07558",
+  "bytes": 1571897,
+  "pages": 43,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-27T14:39:16Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2202.03067",
+   "version": "4",
+   "primary_class": "math.QA",
+   "stamp_date": "16 May 2023"
+  },
+  "doi": null,
+  "title": "QUANTUM JET BUNDLES",
+  "authors_raw": "SHAHN MAJID AND FRANCISCO SIM \u00c3O",
+  "title_lines": [
+   "QUANTUM JET BUNDLES"
+  ],
+  "abstract": "We formulate a notion of jet bundles over a possibly noncommutative algebra A equipped with a torsion free connection. Among the conditions needed for 3rd-order jets and above is that the connection also be \ufb02at and its \u2018generalised braiding tensor\u2019 \u03c3 \u2236\u21261\u2297A \u21261 \u2192 \u21261\u2297A \u21261 obey the Yang-Baxter equation or braid relations. We also cover the case of jet bundles of a given \u2018vector bundle\u2019 over A in the form of a bimodule E with a \ufb02at bimodule connection with its braiding \u03c3E obeying the coloured braid relations. Examples include the permutation group S3 with its 2-cycles calculus, M2(C), the bicrossproduct model quantum spacetime in two dimensions and Cq[SL2] for q a 4th root of unity.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20230517003435Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": ""
+  },
+  "title_raw": "QUANTUM JET BUNDLES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "outline": "Introduction",
+   "text": "QUANTUM JET BUNDLES",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 4,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "Jet bundles JkA over a noncommutative algebra to order 3",
+   "page": 6,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "First and second order jet bundles over a noncommutative algebra",
+   "page": 6,
+   "source": "outline",
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "Third order jets bundle over a noncommutative algebra",
+   "page": 8,
+   "source": "outline",
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 1,
+   "title": "General jet bundle JkA over a noncommutative algebra",
+   "page": 13,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
+  },
+  {
+   "level": 2,
+   "title": "Higher order Leibniz rules",
+   "page": 14,
+   "source": "outline",
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
+  },
+  {
+   "level": 2,
+   "title": "Jet bimodules JkA",
+   "page": 19,
+   "source": "outline",
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
+  },
+  {
+   "level": 2,
+   "title": "Reduced jet bundle",
+   "page": 20,
+   "source": "outline",
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
+  },
+  {
+   "level": 1,
+   "title": "Jets JkE for a vector bundle",
+   "page": 21,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
+  },
+  {
+   "level": 2,
+   "title": "First and second order jet bundles for the vector bundle case",
+   "page": 22,
+   "source": "outline",
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
+  },
+  {
+   "level": 2,
+   "title": "Higher order Leibniz rules for the JkE case",
+   "page": 25,
+   "source": "outline",
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
+  },
+  {
+   "level": 2,
+   "title": "Higher Jet bundles for a generic bimodule E",
+   "page": 28,
+   "source": "outline",
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
+  },
+  {
+   "level": 1,
+   "title": "Construction of noncommutative examples",
+   "page": 30,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
+  },
+  {
+   "level": 2,
+   "title": "The algebra M2(C) with its 2D calculus.",
+   "page": 31,
+   "source": "outline",
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
+  },
+  {
+   "level": 2,
+   "title": "Functions on the group S3",
+   "page": 33,
+   "source": "outline",
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
+  },
+  {
+   "level": 2,
+   "title": "Bicrossproduct Minkowski spacetime in 1+1 dimensions with its 2D calculus",
+   "page": 34,
+   "source": "outline",
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
+  },
+  {
+   "level": 2,
+   "title": "The quantum group Cq[SL2]",
+   "page": 37,
+   "source": "outline",
+   "number": "6.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
+  },
+  {
+   "level": 2,
+   "title": "Constructions for J3E",
+   "page": 40,
+   "source": "outline",
+   "number": "6.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
+  },
+  {
+   "level": 1,
+   "title": "Concluding remarks",
+   "page": 41,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
+  },
+  {
+   "level": 1,
+   "title": "Declaration",
+   "page": 43,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 43,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Conditions for the connection \u2207: (a) torsion-free and its conse-",
+   "page": 9,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "String diagramss used in the proof of Lemma 4.3",
+   "page": 15,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Conditions for J",
+   "page": 23,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "23"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 750,
+   "n_words": 127,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 12044,
+   "n_words": 2056,
+   "label_start": null,
+   "label_end": "4"
+  },
+  {
+   "id": "sec-001-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 296,
+   "n_words": 44,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-002-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 6478,
+   "n_words": 1177,
+   "label_start": "4",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-003-3-jet-bundles-jka-over-a-noncommutative-algebra",
+   "number": "3",
+   "title": "Jet bundles JkA over a noncommutative algebra to order 3",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 793,
+   "n_words": 146,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-004-31-first-and-second-order-jet-bundles-over-a-non",
+   "number": "3.1",
+   "title": "First and second order jet bundles over a noncommutative algebra",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 5336,
+   "n_words": 899,
+   "label_start": "6",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-005-32-third-order-jets-bundle-over-a-noncommutative",
+   "number": "3.2",
+   "title": "Third order jets bundle over a noncommutative algebra",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 13,
+   "n_chars": 11518,
+   "n_words": 1932,
+   "label_start": "8",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-006-4-general-jet-bundle-jka-over-a-noncommutative-a",
+   "number": "4",
+   "title": "General jet bundle JkA over a noncommutative algebra",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2615,
+   "n_words": 459,
+   "label_start": "13",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-007-41-higher-order-leibniz-rules",
+   "number": "4.1",
+   "title": "Higher order Leibniz rules",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 19,
+   "n_chars": 17132,
+   "n_words": 2180,
+   "label_start": "14",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-008-42-jet-bimodules-jka",
+   "number": "4.2",
+   "title": "Jet bimodules JkA",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 4801,
+   "n_words": 805,
+   "label_start": "19",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-009-43-reduced-jet-bundle",
+   "number": "4.3",
+   "title": "Reduced jet bundle",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2191,
+   "n_words": 388,
+   "label_start": "20",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-010-5-jets-jke-for-a-vector-bundle",
+   "number": "5",
+   "title": "Jets JkE for a vector bundle",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1883,
+   "n_words": 358,
+   "label_start": "21",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-011-51-first-and-second-order-jet-bundles-for-the-ve",
+   "number": "5.1",
+   "title": "First and second order jet bundles for the vector bundle case",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 8492,
+   "n_words": 1356,
+   "label_start": "22",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-012-52-higher-order-leibniz-rules-for-the-jke-case",
+   "number": "5.2",
+   "title": "Higher order Leibniz rules for the JkE case",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 9224,
+   "n_words": 1283,
+   "label_start": "25",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-013-53-higher-jet-bundles-for-a-generic-bimodule-e",
+   "number": "5.3",
+   "title": "Higher Jet bundles for a generic bimodule E",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 3590,
+   "n_words": 638,
+   "label_start": "28",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-014-6-construction-of-noncommutative-examples",
+   "number": "6",
+   "title": "Construction of noncommutative examples",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 4757,
+   "n_words": 877,
+   "label_start": "30",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-015-61-the-algebra-m2c-with-its-2d-calculus",
+   "number": "6.1",
+   "title": "The algebra M2(C) with its 2D calculus.",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 3548,
+   "n_words": 590,
+   "label_start": "31",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-016-62-functions-on-the-group-s3",
+   "number": "6.2",
+   "title": "Functions on the group S3",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 4743,
+   "n_words": 708,
+   "label_start": "33",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-017-63-bicrossproduct-minkowski-spacetime-in-11-dime",
+   "number": "6.3",
+   "title": "Bicrossproduct Minkowski spacetime in 1+1 dimensions with its 2D calculus",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 37,
+   "n_chars": 6816,
+   "n_words": 1077,
+   "label_start": "34",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-018-64-the-quantum-group-cqsl2",
+   "number": "6.4",
+   "title": "The quantum group Cq[SL2]",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 40,
+   "n_chars": 7935,
+   "n_words": 1244,
+   "label_start": "37",
+   "label_end": "40"
+  },
+  {
+   "id": "sec-019-65-constructions-for-j3e",
+   "number": "6.5",
+   "title": "Constructions for J3E",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 1623,
+   "n_words": 316,
+   "label_start": "40",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-020-7-concluding-remarks",
+   "number": "7",
+   "title": "Concluding remarks",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 7557,
+   "n_words": 1260,
+   "label_start": "41",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-021-declaration",
+   "number": null,
+   "title": "Declaration",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 199,
+   "n_words": 33,
+   "label_start": "43",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-022-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 3261,
+   "n_words": 478,
+   "label_start": "43",
+   "label_end": "43"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 23,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 24,
+  "chars_total": 127582,
+  "furniture_lines_stripped": 0
+ }
+}

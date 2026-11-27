@@ -63,12 +63,12 @@ for _p in (_COMP, os.path.join(_COMP, "hecke"), os.path.join(_COMP, "substrate")
 
 from hecke_characters import partitions_of, dim_q, qfac  # noqa: E402
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 import mpmath as mp  # noqa: E402
 from _precision import fmt, set_compute_dps  # noqa: E402
 
 set_compute_dps()
-Q0_MP = mp.mpf(Q_50_DIGIT_STR)   # same proton pin as Q0_PROTON, at compute dps
+Q0_MP = Q_MP   # same proton pin as Q0_PROTON, at compute dps
 
 KMAX = 10
 

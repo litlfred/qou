@@ -107,7 +107,7 @@ import sympy as sp  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import Q_NEUTRON_MEV, M_E_MEV  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from hecke_core import (  # noqa: E402
     _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
 )
@@ -161,7 +161,7 @@ def num(e):
     return mp.mpf(str(sp.N(sp.simplify(sp.sympify(e)).subs(q, Q0), 60)))
 
 
-_H_NUM = mp.mpf(Q_50_DIGIT_STR) - 1 / mp.mpf(Q_50_DIGIT_STR)
+_H_NUM = Q_MP - 1 / Q_MP
 
 
 def _d_sym(d):
@@ -376,7 +376,7 @@ def main() -> int:
     # ---- pricing, each model consistently ---------------------------------
     me = mp.mpf(str(M_E_MEV))
     Qexp = mp.mpf(str(Q_NEUTRON_MEV))
-    qn = mp.mpf(Q_50_DIGIT_STR)
+    qn = Q_MP
     import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
     E0 = _qbeta_e0.order_zero_scaled(me, qn)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
 

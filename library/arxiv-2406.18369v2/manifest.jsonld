@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2406.18369v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2406.18369v2",
+  "contains": [
+    "library/arxiv-2406.18369v2/sections/sec-front-matter",
+    "library/arxiv-2406.18369v2/sections/sec-000",
+    "library/arxiv-2406.18369v2/sections/sec-001",
+    "library/arxiv-2406.18369v2/sections/sec-002",
+    "library/arxiv-2406.18369v2/sections/sec-003",
+    "library/arxiv-2406.18369v2/sections/sec-004",
+    "library/arxiv-2406.18369v2/sections/sec-005",
+    "library/arxiv-2406.18369v2/sections/sec-006",
+    "library/arxiv-2406.18369v2/sections/sec-007",
+    "library/arxiv-2406.18369v2/sections/sec-008",
+    "library/arxiv-2406.18369v2/sections/sec-009",
+    "library/arxiv-2406.18369v2/sections/sec-010",
+    "library/arxiv-2406.18369v2/sections/sec-011"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "112 years of listening to Riemannian manifolds — In1910, HendrikAntoonLorentzdelvedintotheenigmaticLaplace eigenvalue equation, also known as the Helmholtz equation, pondering to what extent the\n\n**112 years of listening to Riemannian manifolds**\n\n*GUSTAV MÅRDBY AND JULIE ROWLETT*\n\n42 pp, 13 sections.\n\n**Abstract.** In1910, HendrikAntoonLorentzdelvedintotheenigmaticLaplace eigenvalue equation, also known as the Helmholtz equation, pondering to what extent the geometry in which one solves the equation can be recovered from knowledge of the eigenvalues. Lorentz, inspired by physical and musical analo- gies, conjectured a fundamental relationship between eigenvalues, domain vol- ume, and dimensionality. While his conjecture initially seemed insurmount- able, Hermann Weyl’s groundbreaking proof in 1912 illuminated the deep con- nection between eigenvalues and geometric properties. Over the ensuing 112 years, mathematicians and physicists have continued to decipher the intricate interplay between eigenvalues and geometry.\n\n**Outline.** Front matter; 1 Introduction; Acknowledgements; 2 Weyl's asymptotic law; 2.1 Preliminaries; 3 Listening to flat tori; 4 One cannot hear the shape of a Riemannian ma; 4.1 Geometric preliminaries; 4.2 What could Kac hear?; 5 One cannot hear...; 6 One cannot hear the shape of a drum, but one; 7 We're still listening...; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.3: Let Ω be a domain with piecewise smooth boundary. Ifλk denotes\n- Theorem 2.5: Let Ω⊂ R2 be a bounded domain and let0 < λ1≤\n- Theorem 3.1: The spectrum of a flat torusRn/Γ is the multi-set\n- Theorem 3.3: Two flat tori are isospectral if and only if their\n- Theorem 3.5: LetP andQ be the associated matrices of two even\n- Theorem 4.2: If Ω has r holes, thenχ(Ω) = 1−r.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-27"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2406.18369&metadataPrefix=arXiv), <license> element, read 2026-11-25",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2406.18369v2",
+    "title_source": "slug",
+    "source_file": "2406.18369v2.pdf",
+    "source_sha256": "20b3f8dbc40eacc3a331043d508ba50b4343352919973e717dc0bdb61d285de0",
+    "pages": 42,
+    "arxiv": {
+      "id": "2406.18369",
+      "version": "2",
+      "primary_class": "math.SP",
+      "stamp_date": "19 Sep 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -27,7 +27,7 @@ This script computes that coefficient and compares to −G (Catalan).
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
 import time
@@ -138,7 +138,7 @@ def main() -> int:
     # q₀ from q_parameter (proton pin, AGENTS.md 2026-08-07 directive).
     # Was a direct read of q-pinning-50-digit.witness.json, which is the
     # MUON anchor’s definition and bypasses the manifest entirely.
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     tr_q0 = borromean_markov_trace_at_q(q0)
     print(f"  tr_M(β_Borromean, q_0) = {mp.nstr(tr_q0, 20)}")
     print(f"  |tr_M| at q_0          = {mp.nstr(abs(tr_q0), 15)}")

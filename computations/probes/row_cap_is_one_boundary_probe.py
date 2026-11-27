@@ -487,9 +487,9 @@ def main() -> int:
     print("\n[4b] THE N=3 CONSTRUCTION IS NOT MISSING — IT IS THE NEXT MEMBER")
     print("-" * 78)
     import mpmath as mp
-    from q_parameter import Q_50_DIGIT_STR
+    from q_parameter import Q_50_DIGIT_STR, Q_MP
     mp.mp.dps = 40
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
 
     def qint(N):
         return (q ** N - q ** (-N)) / (q - 1 / q)

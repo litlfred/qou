@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T08:37:23.021753+00:00",
-  "commitSha": "f61a551c8d128d088d3731b89d84e9162ffc5ead",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:47:05.805089+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "quantized_theta_fails_the_a_free_curve",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 29,
+  "durationMs": 4,
   "computation": "qbeta-qnnq-theta-is-im-u",
   "scriptFile": "qbeta_qnnq_theta_is_im_u_probe.py",
-  "scriptHash": "e378f2ab9f9f",
-  "scriptCommitSha": "e0a3c777c732bddda65869eeed7486cbe92caaea",
+  "scriptHash": "4e1c35e4e0a8",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,10 +34,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_qnnq_theta_is_im_u_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_qnnq_theta_is_im_u_probe.py"
   },
   "description": "The derivational move for qou-qnnq, with its own premise corrected. theta_K has NO corpus definition: SDeformedVolumeChannel has zero instances and constrains its field u not at all, and the T5 docstring's 'Re u = ln q0 (proved: meridian_holonomy_boost)' cites a lemma that does not exist — hRe is an undischarged hypothesis (bean qou-5nze). What is tested here is the CONJUNCTION of that channel with the substrate-matched Murakami meridian (Im u = -2*pi*k, proved sorry-free), which would quantize theta in units of 2*pi. It fails three ways: it forces the degenerate colour N = 1 (the meridian's real part is N*t, not t); the k_mu = 0 rows pass the straddling condition — a first for this arc — then miss the A-free ratio by >= 890x; and common k = 0 is excluded by the measured sign flip. All three proved sorry-free in QOU/QBeta/ChannelMeridianIdentification.lean. Scope (a): both source objects stand; only their conjunction is excluded. Includes a coincidence guard against the (1,2) row's spurious 1.9% magnitude agreement. Nothing fitted.",
   "contentBlock": "conj:im-q-physical-role",

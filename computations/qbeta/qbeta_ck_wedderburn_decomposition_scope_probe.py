@@ -59,8 +59,8 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 
 def main() -> int:
-    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-    Q0_MP = mp.mpf(Q_50_DIGIT_STR)
+    from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
+    Q0_MP = Q_MP
     Z_MARKOV = Q0_MP**3 / (Q0_MP**2 + 1)
 
     t0 = time.monotonic()

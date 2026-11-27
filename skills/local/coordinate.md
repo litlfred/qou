@@ -7,6 +7,8 @@ user_invocable: true
 
 # /coordinate — multi-agent / multi-PR coordination
 
+> **Platform rules win (owner, 2026-11-27).** Where this local skill differs from the cat-harness KG rules (`req:agent-workflow`, `req:content-lifecycle`) or from [`coordinate`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/coordinate.md) and [`research-manager`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/research-manager.md), those win. In short: questions only on cards; beans are the tracker; threads never self-merge and send the PR number and full head SHA to the merge manager; the KG JSON-LD check is the only red pre-merge gate and all other QA runs after the merge; merges run under time-boxed grants, with the owner's card outside one; no repository secrets; one shared non-constructive axiom; no unverified external report as a source. Alternatives go on `New research path` cards and each chosen path gets a bean and a sibling.
+
 > **Bib human-review axis (2026-06-09).** Coordination now tracks a
 > **bib human-review** axis: every `references.ts` entry must be `validated`
 > or `issue-open` (not `unreviewed`/stale). Run

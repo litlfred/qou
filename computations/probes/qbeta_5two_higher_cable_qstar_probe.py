@@ -45,7 +45,7 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
-from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP, q_muon_at  # noqa: E402
 from qou_substrate.witness import q0_comparison  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
@@ -65,7 +65,7 @@ BRAID_TREF = [1, 1, 1]
 # against yesterday's muon, which is the failure it exists to measure.
 # Exception E1 of the 2026-08-30 ruling: both pins are read here on purpose.
 Q_MUON = q_muon_at(50)
-Q_PROTON = mp.mpf(Q_50_DIGIT_STR)
+Q_PROTON = Q_MP
 Q_STAR = mp.mpf("1.10997859303152")
 
 

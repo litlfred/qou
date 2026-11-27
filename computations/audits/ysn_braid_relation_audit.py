@@ -31,7 +31,7 @@ from mpmath import mp  # noqa: E402
 mp.dps = 50
 
 import hecke_core_legacy as H  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 try:
     from scipy.sparse import issparse
@@ -44,7 +44,7 @@ try:
 except ImportError:  # pragma: no cover
     _P = None
 
-Q = mp.mpf(Q_50_DIGIT_STR)
+Q = Q_MP
 H_Q = Q - 1 / Q
 TOL = mp.mpf("1e-12")          # far looser than float64 eps: only real defects fire
 

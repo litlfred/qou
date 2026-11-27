@@ -1,0 +1,397 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0704.1313v1",
+ "source": {
+  "file": "0704.1313v1.pdf",
+  "sha256": "a75bb39c60ec9b15816ed10044bf77bd06e0dfe3170323cb180ac9a9411de2d0",
+  "bytes": 287133,
+  "pages": 13,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-25T15:43:15Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0704.1313",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "10 Apr 2007"
+  },
+  "doi": null,
+  "title": "Mutant knots and intersection graphs",
+  "authors_raw": "S. V. Chmutov \u2217, S. K. Lando \u2020",
+  "title_lines": [
+   "Mutant knots and intersection graphs"
+  ],
+  "abstract": "We prove that if a \ufb01nite order knot invariant does not disting uish mutant knots, then the corresponding weight system depends on the interse ction graph of a chord diagram rather than on the diagram itself. The convers e statement is easy and well known. We discuss relationship between our res ults and certain Lie algebra weight systems.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180724184456-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_raw": "Mutant knots and intersection graphs",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "outline": "Introduction",
+   "text": "Mutant knots and intersection graphs",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 1,
+   "title": "Proof",
+   "page": 3,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "Representability of graphs as the intersection graphs of chord diagrams",
+   "page": 3,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem ??",
+   "page": 6,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 1,
+   "title": "Lie algebra weight systems and intersection graphs",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 2,
+   "title": "Weight systems via Lie algebras",
+   "page": 8,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "The 4-bialgebra of graphs",
+   "page": 8,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "The sl(2) weight system",
+   "page": 9,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 2,
+   "title": "The gl(1|1) weight system",
+   "page": 11,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 474,
+   "n_words": 80,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4512,
+   "n_words": 754,
+   "label_start": "1",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-proof",
+   "number": null,
+   "title": "Proof",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-representability-of-graphs-as-the-intersection-g",
+   "number": null,
+   "title": "Representability of graphs as the intersection graphs of chord diagrams",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 7854,
+   "n_words": 1573,
+   "label_start": "3",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-003-proof-of-theorem",
+   "number": null,
+   "title": "Proof of Theorem ??",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1718,
+   "n_words": 351,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-004-lie-algebra-weight-systems-and-intersection-grap",
+   "number": null,
+   "title": "Lie algebra weight systems and intersection graphs",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2387,
+   "n_words": 388,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-005-weight-systems-via-lie-algebras",
+   "number": null,
+   "title": "Weight systems via Lie algebras",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2532,
+   "n_words": 469,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-006-the-4-bialgebra-of-graphs",
+   "number": null,
+   "title": "The 4-bialgebra of graphs",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1954,
+   "n_words": 391,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-007-the-sl2-weight-system",
+   "number": null,
+   "title": "The sl(2) weight system",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 4722,
+   "n_words": 873,
+   "label_start": "9",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-008-the-gl11-weight-system",
+   "number": null,
+   "title": "The gl(1|1) weight system",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 5768,
+   "n_words": 978,
+   "label_start": "11",
+   "label_end": "13"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 31921,
+  "furniture_lines_stripped": 0
+ }
+}

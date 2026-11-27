@@ -761,4 +761,15 @@ with its hypothesis, as the `(−2,3,7)` counterexample requires. -/
 theorem nineTwelve_prediction :
     nineTwelveDegree = 17 ∧ nineTwelveDegree + 1 = 18 := by decide
 
+
+/-- **Shift bijection between `deltaDegrees` and `hWeights` and `9₁₂` excess (`qou-ckbv`).**
+`hWeights` is obtained from `deltaDegrees` by the uniform shift `d ↦ d - 1`, both
+`decompositionDims` and `proseDims` sum to rank `6`, and `9₁₂`'s trace-field degree
+exceeds its ideal-tetrahedron count by `7`. -/
+theorem delta_hweight_shift_and_nineTwelve_gap :
+    hWeights = deltaDegrees.map (fun d => d - 1) ∧
+      decompositionDims.sum = 6 ∧
+      proseDims.sum = 6 ∧
+      nineTwelveDegree - nineTwelveTetrahedra = 7 := by decide
+
 end QOU.QBeta.GZThirdKnotRankGrading

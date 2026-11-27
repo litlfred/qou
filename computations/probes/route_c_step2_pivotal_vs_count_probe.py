@@ -60,7 +60,7 @@ import _path_bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 
 try:
-    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 except Exception:  # pragma: no cover
     Q_50_DIGIT_STR = None
 
@@ -329,7 +329,7 @@ def main() -> int:
     # ---- (6) proton pin, diagnostic only -------------------------------------------------
     anchor = {}
     if Q_50_DIGIT_STR is not None:
-        q0 = mp.mpf(Q_50_DIGIT_STR)
+        q0 = Q_MP
         f = {k: sp.lambdify(q, v, modules="mpmath") for k, v in
              {"z_D": z_D, "z_J": z_J, "Delta_D": D_D, "Delta_J": D_J, "I_D": I_D, "I_J": I_J, "S_D": S_D, "S_J": S_J}.items()}
         vals = {k: fn(q0) for k, fn in f.items()}

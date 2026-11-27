@@ -15,10 +15,11 @@ are read off their most precisely measured **proxies** — the masses
 $m_\mathfrak{e}$, $m_\pi$ and the $Q$-value $\mathfrak{Q}_\beta =
 \hbar/P_{\mathrm{skew}}^{\beta}$. $m_\mathfrak{e}$ sets the unit, so the
 (dimensionless) modulus $q_0$ is pinned by the ratio $m_\mu/m_\mathfrak{e}$
-— the most precise anchor for CAL-2.
+— the ideal proxy for CAL-2. The computed values take the numerical pin on
+the proton ratio $m_{\mathfrak{p}}/m_\mathfrak{e}$ instead
+([which pin the numbers use](#rem:epistemic-status-of-calibrations)).
 
-$\mathfrak{Q}_\beta$ is the **measured proxy for CAL-2** ($P_{\mathrm{skew}}^{\beta}$),
-the bar-odd $\sinh$ partner of the bar-even $\cosh$ meson scale $m_\pi$;
+$\mathfrak{Q}_\beta$ is the **measured proxy for CAL-2** ($P_{\mathrm{skew}}^{\beta}$);
 it is **not** a fourth calibration. Because the modulus is overdetermined,
 $\mathfrak{Q}_\beta$ and the lepton ratio $m_\mu/m_\mathfrak{e}$ are
 alternative handles on the *same* CAL-2 — whichever is used to pin $q_0$,

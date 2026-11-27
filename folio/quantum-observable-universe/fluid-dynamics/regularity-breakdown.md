@@ -8,7 +8,7 @@ The global regularity theorem ([$q$-NS well-posedness](#thm:q-ns-wellposedness))
 $$
 \Omega(q) = \sup_{t \geq 0} \sum_k [k]_q^2\, |\hat{v}_k(t)|^2 .
 $$
-For each $q > 1$, $\Omega(q) < \infty$. Part A asserts that, for suitable data, $\Omega(q) \to +\infty$ as $q \to 1^+$, with $\Omega(q) \sim (q - 1)^{-\alpha}$ for some critical exponent $\alpha > 0$.
+The initial amplitudes $|\hat{v}_k(0)|$ are held fixed in the substrate layer of [the unit layers](#def:qns-unit-layers), independently of $q$. For each $q > 1$, $\Omega(q) < \infty$. Part A asserts that, for suitable such data, $\Omega(q) \to +\infty$ as $q \to 1^+$, with $\Omega(q) \sim (q - 1)^{-\alpha}$ for some critical exponent $\alpha > 0$.
 
 *Part B (classical model).* There exists a nonzero backward discretely self-similar solution of the classical Navier--Stokes equation on $\mathbb{R}^3$ with fixed viscosity, in the sense of [the discretely self-similar Leray profile](#def:leray-profile): a smooth profile $V(y, s)$, periodic in $s = -\log(T^* - t)$ with some period $P > 0$, with $|V(y, s)| = O(|y|^{-1})$ as $|y| \to \infty$ and $V(\cdot, s) \notin L^3(\mathbb{R}^3)$. No value of $P$ is asserted.
 

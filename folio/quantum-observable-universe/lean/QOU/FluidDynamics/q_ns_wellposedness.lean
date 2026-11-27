@@ -16,8 +16,11 @@ Navier--Stokes system admits a **unique global solution**
 1. **smoothness**: `t ↦ v(t)` is smooth in the internal hom of `𝐂`;
 2. **energy inequality**: `‖v(t)‖_A² + 2ν_q ∫₀ᵗ ‖d_q v(s)‖_A² ds ≤ ‖v₀‖_A²`
    for all `t ≥ 0`;
-3. **spectral decay**: the `Δ_q`-eigencomponents satisfy
-   `|v̂_k(t)| ≤ |v̂_k(0)| · exp(−ν_q [k]_q² t)`.
+3. **spectral decay, for transfer-free flows only** (weakened
+   2026-11-27, owner ruling): if the nonlinear mode transfer into the
+   `k`-th `Δ_q`-eigencomponent is nonpositive, then
+   `|v̂_k(t)| ≤ |v̂_k(0)| · exp(−ν_q [k]_q² t)`.  The unrestricted
+   per-mode clause was the modal law of the linear Stokes equation.
 
 ## Disposition (integrity) — what is assumed, and what is proved
 
@@ -39,12 +42,13 @@ only the genuinely open ones are hypotheses:
 | existence + uniqueness | `existence_uniqueness` — **assumed** (Millennium-adjacent; bean `qou-t28w`, tier B) |
 | (i) smoothness | `smooth_of_isSolution` — **assumed** (regularity; the same open problem) |
 | (ii) energy inequality | `q_ns_energy_inequality` — **proved** here |
-| (iii) spectral decay | `q_ns_spectral_decay` — **proved** here |
+| (iii) spectral decay | `q_ns_spectral_decay_of_no_transfer` — **proved** here, for transfer-free flows only (2026-11-27) |
 
 (ii) and (iii) are discharged by
 [`q_ns_energy_and_decay`](q_ns_energy_and_decay.lean), from the
 *equations* — the pointwise energy balance `E' + 2ν_q D ≤ 0` and the
-modal inequality `d/dt|v̂_k| ≤ −ν_q [k]_q² |v̂_k|` — rather than from any
+modal balance `d/dt|v̂_k| ≤ −ν_q [k]_q² |v̂_k| + T_k` with nonlinear
+transfer `T_k` — rather than from any
 assumption about the integrated bounds themselves.  No field of the
 class is, or implies, either conclusion.
 
@@ -69,14 +73,15 @@ open Set
       eigencomponent functionals, the rate functionals, and the opaque
       `Smooth` / `IsSolution` *predicates* (which fix what the words
       mean, and assert nothing);
-    * **the equations** — `energy_balance` and `modal_inequality`, the
+    * **the equations** — `energy_balance` and `modal_balance`, the
       pointwise differential statements the q-NS system makes, plus the
       analytic regularity needed to integrate them;
     * **the open inputs** — `existence_uniqueness` and
       `smooth_of_isSolution`, and nothing else.
 
     Neither the energy inequality nor the spectral-decay bound appears
-    as a field; both are theorems below. -/
+    as a field.  The energy inequality is a theorem below; spectral decay
+    is a theorem for transfer-free flows only. -/
 class QNsWellposednessContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
@@ -154,14 +159,27 @@ class QNsWellposednessContext where
   modal_hasDeriv : ∀ sol, IsSolution sol → ∀ (k : ℕ) (T : ℝ), ∀ t ∈ Ico 0 T,
     HasDerivWithinAt (fun s => v_hat k (sol s).1)
       (modalRate k (fun s => (sol s).1) t) (Ici t) t
-  /-- **THE EQUATION** (modal inequality): `Δ_q` acts on the `k`-th
+  /-- The nonlinear mode-transfer term in the `k`-th modal equation:
+      the rate at which the advection term moves amplitude into the
+      `k`-th `Δ_q`-eigencomponent along a trajectory.  Opaque data; the
+      class assumes nothing about its sign.  For the linear Stokes flow,
+      and for Beltrami eigenfields (Lamb vector zero), it vanishes. -/
+  transfer : ℕ → (ℝ → Velocity) → ℝ → ℝ
+  /-- **THE EQUATION** (modal balance): `Δ_q` acts on the `k`-th
       eigenspace by `[k]_q²`, so the eigencomponent obeys
-      `d/dt |v̂_k| ≤ −ν_q [k]_q² |v̂_k|`.  Again a statement about the
-      rate; the exponential bound is derived in
-      `q_ns_spectral_decay`. -/
-  modal_inequality : ∀ sol, IsSolution sol → ∀ (k : ℕ) (t : ℝ), 0 ≤ t →
+      `d/dt |v̂_k| ≤ −ν_q [k]_q² |v̂_k| + T_k`, with `T_k` the nonlinear
+      transfer.  **Weakened 2026-11-27** (owner ruling, Carl, card "Weaken
+      decay clause, keep Part A"): this field used to read
+      `d/dt |v̂_k| ≤ −ν_q [k]_q² |v̂_k|` with no transfer term.  That is the
+      modal law of the *linear* Stokes equation and forbids the triad
+      transfer of the nonlinear flow (audit
+      `2026-11-27-qns-part-a-enstrophy-order-parameter.md`).  Per-mode
+      decay is now a theorem only for transfer-free flows
+      (`q_ns_spectral_decay_of_no_transfer`). -/
+  modal_balance : ∀ sol, IsSolution sol → ∀ (k : ℕ) (t : ℝ), 0 ≤ t →
     modalRate k (fun s => (sol s).1) t
       ≤ -(ν_q * (q_int k) ^ 2) * v_hat k (sol t).1
+          + transfer k (fun s => (sol s).1) t
 
 /-- **Energy inequality** ([`thm:q-ns-wellposedness`] property (ii)):
     `‖v(t)‖_A² + 2ν_q ∫₀ᵗ ‖d_q v(s)‖_A² ds ≤ ‖v₀‖_A²`.
@@ -188,13 +206,19 @@ theorem q_ns_energy_inequality [ctx : QNsWellposednessContext]
   rw [← ctx.initial_datum sol hsol]
   exact key
 
-/-- **`Δ_q`-spectral decay** ([`thm:q-ns-wellposedness`] property (iii)):
-    `|v̂_k(t)| ≤ |v̂_k(0)| · exp(−ν_q [k]_q² t)`.
+/-- **`Δ_q`-spectral decay for transfer-free flows**
+    ([`thm:q-ns-wellposedness`] property (iii), as weakened 2026-11-27):
+    if the nonlinear transfer into mode `k` is nonpositive along the
+    solution, then `|v̂_k(t)| ≤ |v̂_k(0)| · exp(−ν_q [k]_q² t)`.
 
-    **Proved**, from the modal differential inequality — not assumed. -/
-theorem q_ns_spectral_decay [ctx : QNsWellposednessContext]
+    **Proved**, from the modal balance.  The hypothesis `hnt` holds for the
+    linear Stokes flow and for Beltrami eigenfields; it does **not** hold
+    for the nonlinear flow in general, where triads move energy between
+    modes. -/
+theorem q_ns_spectral_decay_of_no_transfer [ctx : QNsWellposednessContext]
     (sol : ℝ → ctx.Velocity × ctx.Pressure) (hsol : ctx.IsSolution sol)
-    (k : ℕ) (t : ℝ) (ht : 0 ≤ t) :
+    (k : ℕ) (hnt : ∀ s, 0 ≤ s → ctx.transfer k (fun s => (sol s).1) s ≤ 0)
+    (t : ℝ) (ht : 0 ≤ t) :
     ctx.v_hat k (sol t).1
       ≤ ctx.v_hat k ctx.v₀ * Real.exp (-(ctx.ν_q * (ctx.q_int k) ^ 2) * t) := by
   have key :=
@@ -204,7 +228,10 @@ theorem q_ns_spectral_decay [ctx : QNsWellposednessContext]
       (c := ctx.ν_q * (ctx.q_int k) ^ 2) (T := t)
       (ctx.modal_continuousOn sol hsol k t)
       (fun s hs => ctx.modal_hasDeriv sol hsol k t s hs)
-      (fun s hs => ctx.modal_inequality sol hsol k s hs.1)
+      (fun s hs => by
+        have h1 := ctx.modal_balance sol hsol k s hs.1
+        have h2 := hnt s hs.1
+        linarith)
       t ⟨ht, le_rfl⟩
   rw [← ctx.initial_datum sol hsol]
   exact key
@@ -212,14 +239,11 @@ theorem q_ns_spectral_decay [ctx : QNsWellposednessContext]
 /-- **Global regularity of the q-deformed Navier--Stokes equation**
     ([`thm:q-ns-wellposedness`]).
 
-    The block's full claim, assembled.  Existence, uniqueness and
-    smoothness are the class's open inputs; the energy inequality and the
-    spectral decay are the two theorems above, and are **derived** from
-    the equations rather than assumed.
-
-    This is a conditional theorem in the §3b-cond sense and is honest
-    about which conjunct carries the open problem — unlike the previous
-    encoding, in which every conjunct was assumed at once. -/
+    The block's claim, assembled.  Existence, uniqueness and smoothness
+    are the class's open inputs; the energy inequality is **derived** from
+    the energy balance.  Per-mode spectral decay is no longer a conjunct
+    (owner ruling 2026-11-27): it holds only for transfer-free flows and
+    is stated separately as `q_ns_spectral_decay_of_no_transfer`. -/
 theorem q_ns_wellposedness [ctx : QNsWellposednessContext] :
     (∃! sol : ℝ → ctx.Velocity × ctx.Pressure, ctx.IsSolution sol) ∧
     (∀ sol : ℝ → ctx.Velocity × ctx.Pressure, ctx.IsSolution sol →
@@ -227,20 +251,15 @@ theorem q_ns_wellposedness [ctx : QNsWellposednessContext] :
       (∀ t : ℝ, 0 ≤ t →
         ctx.norm_sq (sol t).1
           + 2 * ctx.ν_q * ctx.dissipation (fun s => (sol s).1) t
-          ≤ ctx.norm_sq ctx.v₀) ∧
-      (∀ (k : ℕ) (t : ℝ), 0 ≤ t →
-        ctx.v_hat k (sol t).1
-          ≤ ctx.v_hat k ctx.v₀
-              * Real.exp (-(ctx.ν_q * (ctx.q_int k) ^ 2) * t))) :=
+          ≤ ctx.norm_sq ctx.v₀)) :=
   ⟨ctx.existence_uniqueness, fun sol hsol =>
     ⟨ctx.smooth_of_isSolution sol hsol,
-     fun t ht => q_ns_energy_inequality sol hsol t ht,
-     fun k t ht => q_ns_spectral_decay sol hsol k t ht⟩⟩
+     fun t ht => q_ns_energy_inequality sol hsol t ht⟩⟩
 
 /-- Canonical resting-fluid instance of `QNsWellposednessContext` at substrate
     parameter `q = 2` (`ν_q = 1/4 > 0`), with `Velocity = Unit`, `Pressure = Unit`,
     and unique stationary equilibrium trajectory `sol = fun _ => ((), ())`.
-    Witnesses that all 22 fields and differential hypotheses of
+    Witnesses that all fields and differential hypotheses of
     `QNsWellposednessContext` are mutually consistent and non-vacuous. -/
 noncomputable def canonicalQNsWellposednessContext : QNsWellposednessContext where
   q := 2
@@ -260,6 +279,7 @@ noncomputable def canonicalQNsWellposednessContext : QNsWellposednessContext whe
   energyRate := fun _ _ => 0
   dissipationRate := fun _ _ => 0
   modalRate := fun _ _ _ => 0
+  transfer := fun _ _ _ => 0
   existence_uniqueness := ⟨fun _ => ((), ()), rfl, fun _ h => h⟩
   smooth_of_isSolution := fun _ _ => trivial
   initial_datum := fun _ _ => rfl
@@ -271,7 +291,7 @@ noncomputable def canonicalQNsWellposednessContext : QNsWellposednessContext whe
   modal_continuousOn := fun _ _ _ _ => continuousOn_const
   modal_hasDeriv := fun _ _ _ _ t _ => by
     simpa using (hasDerivWithinAt_const t (Ici t) (0 : ℝ))
-  modal_inequality := fun _ _ _ _ _ => by norm_num
+  modal_balance := fun _ _ _ _ _ => by norm_num
 
 /-- `QNsWellposednessContext` is non-vacuously inhabitable. -/
 theorem nonempty_qNsWellposednessContext : Nonempty QNsWellposednessContext :=

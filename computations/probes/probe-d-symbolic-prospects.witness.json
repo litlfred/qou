@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T01:59:04.793848+00:00",
-  "commitSha": "389c49b89251dc5d5206dbd482bd9b0ab6581d5b",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:44:54.626914+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "chi21_garside_zero_symbolic",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 17,
   "computation": "probe-d-symbolic-prospects",
   "scriptFile": "probe_d_symbolic_prospects.py",
-  "scriptHash": "18c81ec18669",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptHash": "bf5c9bf9c8a7",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,13 +32,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/probe_d_symbolic_prospects.py"
+    ],
+    "reproduce": "python3 -u computations/probes/probe_d_symbolic_prospects.py"
   },
   "description": "Deuteron-restricted symbolic prospects for the four A≥3-binding open items: P1 Δ_λ(D)≈1/h sharpened + the Q_β/h ≈ m_e·8G cross-coincidence; P2 χ^{(2,1)}(Δ)=0 reproduced symbolically + α₃ near-match + D tower-gap exponent; P3 per-λ under-determination theorem-shape statement (1 eq, 11 unknowns) + per-λ atom vector; P4 scope statements. Exploratory; nothing wired.",
   "auditOnly": "docs/audits/2026-07-03-deuteron-from-scratch-error-ledger.md",
@@ -48,22 +55,22 @@
   },
   "data": {
     "P1_delta_lambda": {
-      "Delta_tr": "0.55654466040443821190477222413",
-      "Q_beta_production_MeV": "0.7828046899668827573528469",
+      "Delta_tr": "0.14704667798040846910949472902",
+      "Q_beta_production_MeV": "0.7828046898093869123009924",
       "Q_beta_symbolic_proxy_MeV": "0.7836458273746212130749398",
-      "Q_beta_form_spread_rel": 0.0010745175885111787,
-      "Delta_lambda_D": "5.1061303215553251633549",
-      "Delta_lambda_D_times_h_minus_1": 0.06748913071383014,
-      "q0_exponent_of_Delta_lambda_D": "15.6261317415",
-      "exponent_gap_vs_15": 0.6261317414673025,
-      "B_candidate_Qb_dtr_over_h_MeV": "2.083923981982310453309264",
-      "B_candidate_err_vs_AME_rel": -0.06322231184564862,
-      "B_candidate_symbolicQb_err_vs_AME_rel": -0.062215727743201936,
-      "QbOverH_MeV": "3.744396685915436423368916",
+      "Q_beta_form_spread_rel": 0.0010745177899216698,
+      "Delta_lambda_D": "19.32576516105441383261967",
+      "Delta_lambda_D_times_h_minus_1": 3.040250239024392,
+      "q0_exponent_of_Delta_lambda_D": "28.3823916395",
+      "exponent_gap_vs_15": 13.382391639461325,
+      "B_candidate_Qb_dtr_over_h_MeV": "0.5506010935939380476074377",
+      "B_candidate_err_vs_AME_rel": -0.7524905783455947,
+      "B_candidate_symbolicQb_err_vs_AME_rel": -0.7522246250688538,
+      "QbOverH_MeV": "3.744396685162085136878075",
       "plateau_me_8G_MeV": "3.744459659941610263218649",
-      "QbOverH_vs_plateau_rel": -1.681792084650789e-05,
+      "QbOverH_vs_plateau_rel": -1.6818122037428584e-05,
       "E0_MeV": "4.185981363294475896945062",
-      "QbOverH_over_E0": 0.8945086852867637,
+      "QbOverH_over_E0": 0.8945086851067936,
       "tier": "ALL observation-tier NEAR-MATCHES; no invariant forces Δ_λ(D)·h = 1 — NOT wired (formalize-first: the candidate class 'B_D = Q_β·Δtr/h' needs a structural argument for the 1/h before any cross-A wiring)"
     },
     "P2_alpha_k": {
@@ -74,9 +81,9 @@
       "alpha3_eq_1_near_match_pct": 10.438805825918164,
       "z_at_q0": "0.6126880371464652516",
       "h_at_q0": "0.20906029879563931543",
-      "tower_D_B_MeV": "0.606879231048088",
-      "tower_D_gap": 3.66558301255119,
-      "tower_D_gap_q0_exponent": "12.44947701",
+      "tower_D_B_MeV": "0.709992911756564",
+      "tower_D_gap": 3.1332231113354276,
+      "tower_D_gap_q0_exponent": "10.94550832",
       "tier": "(a) k=3 break DERIVED exact (reproduced symbolically); (b) α₃=1 NEAR-MATCH 10.4%; (c) D tower gap exponent ~12.4 NOT near-integer — no q₀-power closes the D tower"
     },
     "P3_per_lambda": {
@@ -84,7 +91,7 @@
       "scalar_constraints_at_D": 1,
       "solution_space_dim": 10,
       "required_scalar": "0.53143241857369587192",
-      "scalar_from_trace_Delta": "0.5565446604044382119",
+      "scalar_from_trace_Delta": "0.14704667798040846911",
       "per_lambda_atom_vector": [
         {
           "lambda": [
@@ -100,8 +107,8 @@
             1
           ],
           "y_lambda": "0.078952962475926678988",
-          "chi_atom": "3.2163173422358811759",
-          "y_chi_contribution": "0.25393778243222175278"
+          "chi_atom": "-0.68228501276057044641",
+          "y_chi_contribution": "-0.0538684230103724738"
         },
         {
           "lambda": [
@@ -109,8 +116,8 @@
             2
           ],
           "y_lambda": "0.046032434692020426937",
-          "chi_atom": "1.6743952620342553432",
-          "y_chi_contribution": "0.077076490548220288917"
+          "chi_atom": "0.32908034753961323776",
+          "y_chi_contribution": "0.015148369606544631353"
         },
         {
           "lambda": [
@@ -119,7 +126,7 @@
             1
           ],
           "y_lambda": "0.0",
-          "chi_atom": "-0.46980588637769473837",
+          "chi_atom": "-1.2048051340890402241",
           "y_chi_contribution": "0.0"
         },
         {
@@ -128,8 +135,8 @@
             3
           ],
           "y_lambda": "0.015123810098023319304",
-          "chi_atom": "4.2494020229176567667",
-          "y_chi_contribution": "0.064267149224762777931"
+          "chi_atom": "0.71394515175138574642",
+          "y_chi_contribution": "0.010797570895492398842"
         },
         {
           "lambda": [
@@ -138,7 +145,7 @@
             1
           ],
           "y_lambda": "0.0",
-          "chi_atom": "-1.972272446151549689",
+          "chi_atom": "0.38502861152691393838",
           "y_chi_contribution": "0.0"
         },
         {
@@ -149,7 +156,7 @@
             1
           ],
           "y_lambda": "0.0",
-          "chi_atom": "-0.49012565232303073667",
+          "chi_atom": "1.0043722855323384097",
           "y_chi_contribution": "0.0"
         },
         {
@@ -159,7 +166,7 @@
             2
           ],
           "y_lambda": "0.0",
-          "chi_atom": "-3.4972944065129530522",
+          "chi_atom": "-1.1804319536021514605",
           "y_chi_contribution": "0.0"
         },
         {
@@ -170,7 +177,7 @@
             1
           ],
           "y_lambda": "0.0",
-          "chi_atom": "-0.81965494850448376186",
+          "chi_atom": "-0.036698171845523450423",
           "y_chi_contribution": "0.0"
         },
         {
@@ -182,7 +189,7 @@
             1
           ],
           "y_lambda": "0.0",
-          "chi_atom": "2.1552553374487206415",
+          "chi_atom": "-0.33826264068270096746",
           "y_chi_contribution": "0.0"
         },
         {

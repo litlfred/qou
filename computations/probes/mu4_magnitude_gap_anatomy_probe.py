@@ -87,7 +87,7 @@ import time
 import mpmath as mp  # noqa: E402
 
 from _precision import fmt  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 50
@@ -126,7 +126,7 @@ def main() -> int:
     print("    => k_n ~ a*r^n is 2 params on 2 points: UNDERDETERMINED, not a finding.")
 
     # ---- (2)/(3) convention frame of the live scope-(b) exclusion ----------
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     zC = mp.sqrt(q0) / (q0 + 1)
     zD = q0 ** 3 / (q0 ** 2 + 1)
     ceiling = 1 / mp.sqrt(5)

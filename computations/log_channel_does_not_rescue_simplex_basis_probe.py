@@ -105,7 +105,7 @@ from math import comb, factorial  # noqa: E402
 
 import mpmath as mp  # noqa: E402
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 50
 PIN = (2, 3, 4)
@@ -136,7 +136,7 @@ def fmt(x, n=8):
 
 
 def main() -> int:
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     lq = mp.log(q0)
 
     print("log_channel_does_not_rescue_simplex_basis_probe")

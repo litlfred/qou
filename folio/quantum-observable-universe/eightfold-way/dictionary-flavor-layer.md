@@ -31,7 +31,7 @@ $\Delta^{++}$ & symmetric $(uuu)$ & $+\tfrac{3}{2}$ & $+1$ & decuplet \\
 $\Omega^-$    & symmetric $(sss)$ & $0$ & $-2$ & decuplet \\
 \hline
 \multicolumn{5}{c}{\textit{Color charge (orthogonal to flavor)}} \\
-$r, g, b$ & $G_2$ stabilizer (\S\ref{sec:color-algebra}) & --- & --- & not excluded by the Sym$^2$ gate \\
+$r, g, b$ & $G_2$ stabilizer (\S\ref{sec:color-algebra}) & --- & --- & passes the Sym$^2$ gate (complex type, proved) \\
 \hline
 \end{tabular}
 \end{center}

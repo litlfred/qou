@@ -56,7 +56,7 @@ from hecke_character_symbolic import hoefsmit_matrices_symbolic, q_character_on_
 from canonical_braid_crossings import d_for_ctype  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from markov_weights_symbolic import solve_y_lambda  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from gamma_gamma_isospin_channel_probe import nucleon  # noqa: E402
 
 DPS = 60
@@ -154,7 +154,7 @@ def _job(args):
 
 def main() -> int:
     t0 = time.time()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     from qou_substrate.constants import M_E_MEV  # noqa: PLC0415
     me = mp.mpf(str(M_E_MEV))
     s = 1 / (q + 1 / q)

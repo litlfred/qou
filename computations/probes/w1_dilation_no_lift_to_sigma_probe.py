@@ -193,9 +193,9 @@ def section5():
     print('§5  the substrate dilation lambda = q0^2 (canonical PROTON pin)')
     print(HR)
     import mpmath as mp
-    from qou_substrate.constants import Q_50_DIGIT_STR
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP
     mp.mp.dps = 60
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     lam_val = q0**2
     print(f'  q0 (proton pin, 50-digit)  = {mp.nstr(q0, 25)}')
     print(f'  lambda = q0^2              = {mp.nstr(lam_val, 25)}')

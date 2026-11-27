@@ -67,14 +67,14 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # CODATA-2022
 
 mp.mp.dps = 80
 
 
 def main() -> int:
-    Q0 = mp.mpf(Q_50_DIGIT_STR)
+    Q0 = Q_MP
     h = Q0 - 1 / Q0
     h2 = h * h
     h4 = h2 * h2

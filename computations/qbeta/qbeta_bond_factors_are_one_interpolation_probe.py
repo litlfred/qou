@@ -136,8 +136,8 @@ def main() -> int:
 
     print()
     print("4. NUMERICAL SANITY AT THE PROTON-PINNED q0  (mpmath, dps=60)")
-    from qou_substrate.constants import Q_50_DIGIT_STR          # noqa: PLC0415
-    q0 = mpf(Q_50_DIGIT_STR)
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP          # noqa: PLC0415
+    q0 = Q_MP
     # MEASURED values, verbatim from qbeta_bond_factors_derived_probe
     measured = {"b_pp": "0.6126880371464652516",
                 "b_pn": "0.50822978937673896258",

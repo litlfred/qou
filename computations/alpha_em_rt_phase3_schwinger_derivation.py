@@ -103,7 +103,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def main() -> int:
@@ -244,7 +244,7 @@ def main() -> int:
     print()
 
     # ── Part D: numerical at q_0 ────────────────────────────────
-    q_val = mpf(Q_50_DIGIT_STR)
+    q_val = Q_MP
     h_val = q_val - 1/q_val
     alpha_val = mpf("1") / mpf("137.035999084")
     schwinger_val = 1 - h_val**2 * alpha_val

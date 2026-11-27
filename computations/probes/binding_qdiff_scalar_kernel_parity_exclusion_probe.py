@@ -230,9 +230,9 @@ def t4_slope_half_corroboration(M: int = 160) -> None:
     ramification AMPLITUDE: nonzero amplitude with mean -1/2 is the signature of
     slope 1/2; an unramified integer slope would give amplitude 0.
     """
-    from qou_substrate.constants import Q_50_DIGIT_STR
+    from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP
 
-    q0 = mp.mpf(Q_50_DIGIT_STR)              # proton pin (AGENTS.md default)
+    q0 = Q_MP              # proton pin (AGENTS.md default)
     lnq = mp.log(q0)
     qint = lambda k: (q0 ** k - 1) / (q0 - 1)   # noqa: E731
 

@@ -44,11 +44,11 @@ from nucleus_real_sdp import load_cost, dim_specht  # noqa: E402
 from lr_coefficients import get_lr_table  # noqa: E402
 from pyhecke.lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402  (Jones-Markov y_lambda, NOT the Plancherel w_lambda)
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from mpmath import mp, mpf  # noqa: E402
 
 mp.dps = 60
-Q0 = mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 SIDES = {
     "initial": [("deuteron", 6), ("tritium", 9)],

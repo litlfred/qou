@@ -25,6 +25,8 @@ Ref: [wenzl1988] https://doi.org/10.1007/BF01393699 (Markov-trace)
 Ref: [jones1987] https://www.jstor.org/stable/1971403 (Hecke characters)
 -/
 
+import Mathlib.Data.Rat.Defs
+
 namespace QOU.BraidKnot
 
 /-- The three crossing conventions used in the canonical atomic braid.
@@ -78,7 +80,7 @@ structure IsotopeRecord where
   Z : Nat
   N : Nat
   -- Optional spectroscopy
-  spin_J : Option Float := none
+  spin_J : Option ℚ := none
   parity : Option String := none
   -- Braid identification
   markov_closure : Option String := none
@@ -89,10 +91,10 @@ structure IsotopeRecord where
   calibration_source : CalibrationSource := CalibrationSource.CAL_1
   prediction_MeV_50dps : Option String := none
   -- Empirical comparison
-  B_AME_MeV : Option Float := none
-  err_MeV : Option Float := none
-  err_pct : Option Float := none
-  err_ppb : Option Float := none
+  B_AME_MeV : Option ℚ := none
+  err_MeV : Option ℚ := none
+  err_pct : Option ℚ := none
+  err_ppb : Option ℚ := none
   deriving Repr
 
 /-- Mass number `A = Z + N` — derived (computed), not a stored/overridable

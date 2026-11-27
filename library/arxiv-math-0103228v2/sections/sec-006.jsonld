@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-math-0103228v2/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Quantum symmetric pairs",
+  "pageStart": 37,
+  "pageEnd": 62,
+  "contains": [
+    "library/arxiv-math-0103228v2/blocks/prose-sec-006",
+    "library/arxiv-math-0103228v2/blocks/prop-sec-006-01",
+    "library/arxiv-math-0103228v2/blocks/thm-sec-006-02",
+    "library/arxiv-math-0103228v2/blocks/prop-sec-006-03",
+    "library/arxiv-math-0103228v2/blocks/thm-sec-006-04",
+    "library/arxiv-math-0103228v2/blocks/thm-sec-006-05",
+    "library/arxiv-math-0103228v2/blocks/lem-sec-006-06",
+    "library/arxiv-math-0103228v2/blocks/thm-sec-006-07",
+    "library/arxiv-math-0103228v2/blocks/thm-sec-006-08",
+    "library/arxiv-math-0103228v2/blocks/cor-sec-006-09",
+    "library/arxiv-math-0103228v2/blocks/thm-sec-006-10",
+    "library/arxiv-math-0103228v2/blocks/thm-sec-006-11",
+    "library/arxiv-math-0103228v2/blocks/thm-sec-006-12",
+    "library/arxiv-math-0103228v2/blocks/thm-sec-006-13",
+    "library/arxiv-math-0103228v2/blocks/thm-sec-006-14"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0103228v2",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0103228v2",
+  "provenance": "ingested"
+}

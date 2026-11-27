@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.16",
-  "computedAt": "2026-10-13T14:33:25.315437+00:00",
-  "commitSha": "d6019fd4c044f86ed6c0ef36b5a6ea3244375302",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:48:03.287389+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "both published figures are the correct roundings of the bare-form inversion at their CODATA vintage — the numbers were right, only unwitnessed",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "substrate_consistency_window_q_from_alpha_em_probe",
   "scriptFile": "substrate_consistency_window_q_from_alpha_em_probe.py",
-  "scriptHash": "9455f98a1296",
-  "scriptCommitSha": "02cc36cd7b121a22e9878f7695e56e9d66e025a2",
+  "scriptHash": "227c3469fedd",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,14 +36,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.16",
-    "numpy": "2.5.3",
-    "scipy": "1.18.1",
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

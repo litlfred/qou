@@ -2,12 +2,12 @@
   "schema": "witness/v1",
   "computation": "wlambda-transfer-matrix-connected",
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "scriptFile": "wlambda_transfer_matrix_connected_probe.py",
-  "commitSha": "e3c66da566c33dfd24e5d710d9136d567ddac837",
-  "scriptHash": "271738452162",
+  "commitSha": "f603607f097ad30e397038d5345d39e2fe740ba0",
+  "scriptHash": "d72ee34c346f",
   "description": "W_lambda transfer-matrix reformulation of binding: validates the defect-cubic gate (n=7 Z-crossing), the deuteron single-bond bracket (#2528), and the connected-part mechanism (diagonal/disjoint=0, braided!=0). Fit-free; NOT a binding closure.",
-  "generated": "2026-08-24T16:32:30.406830+00:00",
+  "generated": "2026-11-20T15:21:27.504670+00:00",
   "assertions": [
     {
       "name": "defect_cubic_sign_flip_at_n7",
@@ -69,8 +69,8 @@
     "walls": "single-trace W_lambda surface EXHAUSTED (#2584); W_lambda != production weight y_lambda",
     "scope": "mechanism validation only; NOT a binding closure; no fit; nothing wired"
   },
-  "scriptCommitSha": "d6e6e6ada93e69f06578bd71a13a7625f5088109",
-  "computedAt": "2026-08-24T16:32:30.419140+00:00",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "computedAt": "2026-11-20T15:21:27.514524+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

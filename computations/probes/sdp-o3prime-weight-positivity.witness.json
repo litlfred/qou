@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T07:53:14.320572+00:00",
-  "commitSha": "b73122aa083debd8af4f1a1d4c2cc34b70a0155f",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:48:01.594132+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "partitions with > 2 rows vanish exactly, every n = 3..12",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 6,
   "computation": "sdp-o3prime-weight-positivity",
   "scriptFile": "sdp_o3prime_weight_positivity_probe.py",
-  "scriptHash": "904d8e8e3a64",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4ba6525f3e4a",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,14 +58,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -76,7 +76,7 @@
   "description": "O3' falsifier for the operator-selection replacement: every SURVIVING SU(2) Markov weight must be strictly positive or the radical degeneracy returns one level up. Measured n = 3..12 at the proton pin: partitions with > 2 rows vanish exactly (structural), every partition with <= 2 rows is strictly positive, and sum y f = 1 throughout. Cross-validated at n=3 against the independently-solved weights from sdp_o3_falsifier_probe, to 14 digits. NOT falsified.",
   "auditOnly": "docs/proposals/2026-09-05-operator-selection-objective-replacement.md",
   "parameters": {
-    "q0": "1.10997858275138080759166909561076887987449912187360000000000"
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281"
   },
   "data": {
     "per_n": [
@@ -87,7 +87,7 @@
         "over_2_rows_all_zero": true,
         "n_le_2_rows": 2,
         "survivors_all_positive": true,
-        "min_surviving_y": "0.247297886748034598406220648379763862169824401125094333617684",
+        "min_surviving_y": "0.247297886748034598406220648379763862169824401125095318673972",
         "sum_y_times_dim": "1.00000000000000000000000000000000000000000000000000000000000"
       },
       {
@@ -97,7 +97,7 @@
         "over_2_rows_all_zero": true,
         "n_le_2_rows": 3,
         "survivors_all_positive": true,
-        "min_surviving_y": "0.0611562447900437462409904316004856595727131338952434562603034",
+        "min_surviving_y": "0.0611562447900437462409904316004856595727131338952439434649801",
         "sum_y_times_dim": "1.00000000000000000000000000000000000000000000000000000000000"
       },
       {
@@ -107,7 +107,7 @@
         "over_2_rows_all_zero": true,
         "n_le_2_rows": 3,
         "survivors_all_positive": true,
-        "min_surviving_y": "0.0611562447900437462409904316004856595727131338952434562603034",
+        "min_surviving_y": "0.0611562447900437462409904316004856595727131338952439434649801",
         "sum_y_times_dim": "1.00000000000000000000000000000000000000000000000000000000000"
       },
       {
@@ -117,7 +117,7 @@
         "over_2_rows_all_zero": true,
         "n_le_2_rows": 4,
         "survivors_all_positive": true,
-        "min_surviving_y": "0.0151238100980233193044702778139041150733963204144722934848800",
+        "min_surviving_y": "0.0151238100980233193044702778139041150733963204144724742119104",
         "sum_y_times_dim": "1.00000000000000000000000000000000000000000000000000000000000"
       },
       {
@@ -127,7 +127,7 @@
         "over_2_rows_all_zero": true,
         "n_le_2_rows": 4,
         "survivors_all_positive": true,
-        "min_surviving_y": "0.0151238100980233193044702778139041150733963204144722934848800",
+        "min_surviving_y": "0.0151238100980233193044702778139041150733963204144724742119104",
         "sum_y_times_dim": "1.00000000000000000000000000000000000000000000000000000000000"
       },
       {
@@ -137,7 +137,7 @@
         "over_2_rows_all_zero": true,
         "n_le_2_rows": 5,
         "survivors_all_positive": true,
-        "min_surviving_y": "0.00374008627681975285574530824774770575234488025620680305299017",
+        "min_surviving_y": "0.00374008627681975285574530824774770575234488025620686264420710",
         "sum_y_times_dim": "1.00000000000000000000000000000000000000000000000000000000000"
       },
       {
@@ -147,7 +147,7 @@
         "over_2_rows_all_zero": true,
         "n_le_2_rows": 5,
         "survivors_all_positive": true,
-        "min_surviving_y": "0.00374008627681975285574530824774770575234488025620680305299017",
+        "min_surviving_y": "0.00374008627681975285574530824774770575234488025620686264420710",
         "sum_y_times_dim": "1.00000000000000000000000000000000000000000000000000000000000"
       },
       {
@@ -157,7 +157,7 @@
         "over_2_rows_all_zero": true,
         "n_le_2_rows": 6,
         "survivors_all_positive": true,
-        "min_surviving_y": "0.000924915432512849620353758502359142532989105882020953867574992",
+        "min_surviving_y": "0.000924915432512849620353758502359142532989105882020972288552512",
         "sum_y_times_dim": "1.00000000000000000000000000000000000000000000000000000000000"
       },
       {
@@ -167,7 +167,7 @@
         "over_2_rows_all_zero": true,
         "n_le_2_rows": 6,
         "survivors_all_positive": true,
-        "min_surviving_y": "0.000924915432512849620353758502359142532989105882020953867574992",
+        "min_surviving_y": "0.000924915432512849620353758502359142532989105882020972288552512",
         "sum_y_times_dim": "1.00000000000000000000000000000000000000000000000000000000000"
       },
       {
@@ -177,13 +177,13 @@
         "over_2_rows_all_zero": true,
         "n_le_2_rows": 7,
         "survivors_all_positive": true,
-        "min_surviving_y": "0.000228729631881072123068852392075537818220405495875624690800801",
+        "min_surviving_y": "0.000228729631881072123068852392075537818220405495875630157363376",
         "sum_y_times_dim": "1.00000000000000000000000000000000000000000000000000000000000"
       }
     ],
     "n3_cross_validation": {
-      "(3,)": "0.505404226503930803187558703240472275660351197749811332764632",
-      "(2, 1)": "0.247297886748034598406220648379763862169824401125094333617684",
+      "(3,)": "0.505404226503930803187558703240472275660351197749809362652056",
+      "(2, 1)": "0.247297886748034598406220648379763862169824401125095318673972",
       "(1, 1, 1)": "0.0",
       "independent_solve": {
         "(3,)": "0.50540422650393",

@@ -48,7 +48,7 @@ from mpmath import mp, mpf, cos, sqrt  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402
 
 
@@ -56,7 +56,7 @@ def main() -> int:
     set_compute_dps()
     wb = WitnessBuilder("qbeta-sa-qa-chain-gamma", engine="mpmath")
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     me = mpf(M_E_MEV)
     Q_codata = mpf(Q_BETA_MEV)  # already mpf; idempotent cast preserves full precision
 

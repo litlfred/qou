@@ -1,0 +1,100 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T15:10:35.275456+00:00",
+  "commitSha": "128621e81b5cc3e94815bcbc88418f8aa6154fce",
+  "assertions": [
+    {
+      "name": "proton_coulomb_lowers_and_inverse_consistent",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "muon_coulomb_lowers_and_inverse_consistent",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 26,
+  "computation": "nucleon-split-gibbs-coulomb",
+  "scriptFile": "nucleon_split_gibbs_coulomb_probe.py",
+  "scriptHash": "19d7b5062c7f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a22b08f9db48ed97"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/nucleon_split_gibbs_coulomb_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/nucleon_split_gibbs_coulomb_probe.py"
+  },
+  "description": "80-dps evaluation of the exact Gibbs n-p split 2E0 log q - lambda/3 (QOU.QBeta.NucleonSplitGibbsCoulomb) for the on-record Coulomb scales alpha*E0 and alpha*E0_tower at both q0 anchors; the lambda each CODATA reading would need is a diagnostic only.",
+  "data": {
+    "lean_module": "QOU.QBeta.NucleonSplitGibbsCoulomb",
+    "beans_referenced": [
+      "qou-myts",
+      "qou-99qc"
+    ],
+    "lambda_status": "not derived; alpha*E0 candidates are on-record scales, alpha_em conditional on the Witten-kappa Gram sorry",
+    "anchors": {
+      "proton": {
+        "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+        "E0_ord0": "4.18598136329447589694506215875900841014348689087960498278367",
+        "E0_tower": "4.22748335562903055026805602658721115361518419806561475207637",
+        "alpha_em_inv": "137.035935093975604658795689994226849580386867151104275013002",
+        "cell_c0": "0.873536621380459821746434074984571553678259416295994588435349",
+        "lambda_alphaE0_ord0": "0.0305465961203814244509237319211302411648605449578037515301689",
+        "split_alphaE0_ord0": "0.863354422673666013596126164344194806623305901310060004591959",
+        "split_alphaE0_ord0_vs_dm_np": "-0.332457495656962946368582226125132502373031741612943755204948",
+        "split_alphaE0_ord0_vs_qbeta": "0.103563067695989585703518814250564412008856357378010079463786",
+        "lambda_alphaE0_tower": "0.0308494509321947906986820808148364060340399937215752106202693",
+        "split_alphaE0_tower": "0.863253471069728224846873381379626085000246085055469518228592",
+        "split_alphaE0_tower_vs_dm_np": "-0.332535551070522285992120169174726702725313782566658346639263",
+        "split_alphaE0_tower_vs_qbeta": "0.103434028614466832524550647963467184119058425791704285349677",
+        "diag_lambda_for_qbeta": "0.273609186211379465239302224953714661034778248887983765306047",
+        "diag_lambda_for_dm_np": "-1.25938766585862053476069777504628533896522175111201623469395",
+        "diag_lambda_for_qbeta_over_alphaE0": "8.95710884227852896747803116391335157514159282333107824223923"
+      },
+      "muon": {
+        "q0": "1.10997859564273904668179512938000175270006556102901155697405",
+        "E0_ord0": "4.18598082401017136779972443048525839338975170253696642520986",
+        "E0_tower": "4.22748281985034987154227704566888462315634168857177243197923",
+        "alpha_em_inv": "137.035946015042149327277514413577188646984724612180624215142",
+        "cell_c0": "0.873536606074301440157125707447638906612873189545819536614871",
+        "lambda_alphaE0_ord0": "0.0305465897506241537773727712214398011431667460506550900913424",
+        "split_alphaE0_ord0": "0.863354409490760055564668117040492306231817607528934506584423",
+        "split_alphaE0_ord0_vs_dm_np": "-0.332457505849937959446586464419353143584229853211580905374115",
+        "split_alphaE0_ord0_vs_qbeta": "0.103563050845241204592941849777762547446480201190660727127670",
+        "lambda_alphaE0_tower": "0.0308494445638833180291890320467613934611503143133454939047224",
+        "split_alphaE0_tower": "0.863253457886340334147396030098718442125823084774704371979963",
+        "split_alphaE0_tower_vs_dm_np": "-0.332535561263869927658900316285470592457446937002531257812453",
+        "split_alphaE0_tower_vs_qbeta": "0.103434011763102431990692957326663300346236919727191361433766",
+        "diag_lambda_for_qbeta": "0.273609140292904320471377122342916719838619568637458609844612",
+        "diag_lambda_for_dm_np": "-1.25938771177709567952862287765708328016138043136254139015539",
+        "diag_lambda_for_qbeta_over_alphaE0": "8.95710920684079658763175068914047660576081484624110544059642"
+      }
+    },
+    "codata_comparison_only": {
+      "dm_np": "1.29333251000000000000000000000000000000000000000000000000000",
+      "qbeta": "0.782333559310000000000000000000000000000000000000000000000000"
+    }
+  },
+  "q0Anchor": "comparison"
+}

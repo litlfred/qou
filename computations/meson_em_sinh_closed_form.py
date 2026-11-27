@@ -55,7 +55,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def q_int(k, q):
@@ -137,7 +137,7 @@ def alpha_em_inv_derived(q, order=None):
 def main():
     _t0 = time.perf_counter()
     set_compute_dps()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     hbar_q = (q - 1)/q
     qi2 = 1/q**2
 

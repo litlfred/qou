@@ -135,11 +135,18 @@ representation-theoretic content is proved: at dimension three, passing
 the gate forces a complex-type summand,
 so the icosahedral triple $T_1$ --- a rotation representation of
 $A_5 \subset \mathrm{SO}(3)$, hence real --- fails
-, while the octonionic $\mathbf{3}$ is *not
-excluded*, on the decomposition $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}
-\oplus \mathbb{C}^3$ taken from the literature \cite{gunaydin-gursey1973}.
-That the Günaydin--Gürsey triple is complex type is the cited input, not a
-proved one, so the octonionic route is *not excluded* rather than
-*proved to pass*.  Whether the route yields *flavour*
+, while the octonionic $\mathbf{3}$ of the decomposition
+$\mathrm{Im}(\mathbb{O}) \cong \mathbb{R} \oplus \mathbb{C}^3$
+\cite{gunaydin-gursey1973} **passes**.  That the Günaydin--Gürsey triple is
+complex type is now proved rather than cited: on the colour triplet
+$(\mathbb{Q}^6, J_6)$ with the stabilizer $\mathfrak{su}(3) \subset
+\mathrm{Der}(\mathbb{O})$ acting, every $J_6$-compatible invariant bilinear
+form vanishes, so $\mathrm{Sym}^2(\mathbf{3})$ has no singlet and
+$\mathbf{3} \not\cong \bar{\mathbf{3}}$
+(`colourTriple_invariant_complexBilinear_eq_zero` in
+`QOU/StandardModel/OctonionColourTripletComplexType.lean`; two stabilizer
+elements already force it).  The underlying real $\mathbf{6}$ does carry the
+invariant norm form, and it fails exactly the $J_6$-compatibility, so the
+statement is about the complex triple.  Whether the route yields *flavour*
 $\mathrm{SU}(3)_{\mathrm{f}}$ (not just colour $\mathrm{SU}(3)_{\mathrm{c}}$)
 remains open.

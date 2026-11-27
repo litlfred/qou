@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-07T11:21:00.600461+00:00",
-  "commitSha": "1a3f96e72efd999f3eb3b745301c5e7b0ad7b40e",
+  "computedAt": "2026-11-20T15:01:10.139164+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "alpha_em_not_at_100x_target",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "alpha-em-form-ladder",
   "scriptFile": "alpha_em_form_ladder_probe.py",
-  "scriptHash": "11a0e06135fd",
-  "scriptCommitSha": "01ba57351bb3d0500c13470cb6f311430a5faea7",
+  "scriptHash": "c4f92b5e5615",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -100,7 +100,7 @@
   "q0Anchor": "comparison",
   "q0Values": {
     "muon": "1.109978595642739046681795129380001752700065561029012",
-    "proton": "1.109978582751380807591669095610768879874499121873600"
+    "proton": "1.109978582751380807591669095610768879874499121873579"
   },
   "q0AnchorReason": "anchor-dependence ladder: both pins are read on purpose and each is reported under its own key; the proton (default) leg is the scored one, the muon leg measures the mu-p substrate tension on 1/alpha"
 }

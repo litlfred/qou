@@ -377,8 +377,8 @@ def section4() -> None:
     # corpus.  Read the 50-digit STRING instead; that is the whole fix, and it
     # is at the import, where AGENTS.md says to make it.
     try:
-        from qou_substrate.constants import Q_50_DIGIT_STR      # noqa: E402
-        q0 = mp.mpf(Q_50_DIGIT_STR)
+        from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP      # noqa: E402
+        q0 = Q_MP
         src = "qou_substrate.constants.Q_50_DIGIT_STR (proton pin, 2026-08-07)"
     except Exception as exc:                                   # pragma: no cover
         print(f"    substrate constant unavailable ({exc}); skipping")

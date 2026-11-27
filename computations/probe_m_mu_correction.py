@@ -6,12 +6,12 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from _precision import set_compute_dps  # noqa: E402
 
 def main():
     set_compute_dps()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     
     # 1. Quantum integers
     print("q =", q)

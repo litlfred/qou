@@ -73,7 +73,7 @@ for p in (HERE.parent, HERE.parent / "substrate"):
 
 import mpmath as mp
 
-from q_parameter import Q_50_DIGIT_STR
+from q_parameter import Q_50_DIGIT_STR, Q_MP
 from qbeta_utils import c3_proton_extracted
 
 mp.mp.dps = max(50, mp.mp.dps)
@@ -94,7 +94,7 @@ def main() -> int:
     # c_3 RECOMPUTED by the canonical extraction (qbeta_ck_cache's), not typed:
     # the literal this file carried until 2026-10-13 is reproduced by no producer.
     C3_EXTRACTED = c3_proton_extracted()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     u = (q - 1) ** 2 * mp.sqrt(q**4 + q**2 + 1) / (q**4 + q**2)
     u3 = u**3 * mp.mpf(10) ** 9
     u4 = u**4 * mp.mpf(10) ** 9

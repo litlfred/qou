@@ -40,7 +40,7 @@ from mpmath import mp, mpf, sqrt  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def quantum_int(n: int, q: mpf) -> mpf:
@@ -150,7 +150,7 @@ def main() -> int:
     set_compute_dps()
     wb = WitnessBuilder("qbeta-composite-operator-first-test", engine="mpmath")
 
-    q_mp = mpf(Q_50_DIGIT_STR)
+    q_mp = Q_MP
     target_c3 = mpf("-2.06934257711516783787971951725")
 
     candidates = {

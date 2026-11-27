@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T14:00:22.850901+00:00",
-  "commitSha": "61e488304ab14fd48a78a66016a110d30f58ff6d",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:37:55.166870+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "c2_pivot_matches_c4_truncation_reexam_witness",
@@ -41,8 +41,8 @@
   "durationMs": 4,
   "computation": "meson-habiro-c2-off-integer-pivot",
   "scriptFile": "meson_habiro_c2_off_integer_pivot.py",
-  "scriptHash": "72c5b4513458",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "a901e22a4397",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,14 +50,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "9916510690677ea8"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -78,13 +78,13 @@
     "b_squared_two_routes": {
       "skein_h2_plus_3_over_h2_plus_4": "0.7527021132519654015937794",
       "hoefsmit_one_plus_d1_d2": "0.7527021132519654015937794",
-      "difference": "0.0"
+      "difference": "7.7787691e-62"
     },
     "q_bracket_two_routes_gap": {
       "[2]_q": "-3.1115076e-61",
-      "[3]_q": "-3.1115076e-61",
-      "[4]_q": "-6.2230153e-61",
-      "[5]_q": "-1.8669046e-60"
+      "[3]_q": "-9.3345229e-61",
+      "[4]_q": "-1.2446031e-60",
+      "[5]_q": "-2.4892061e-60"
     },
     "upstream_witness_hashes": [
       {

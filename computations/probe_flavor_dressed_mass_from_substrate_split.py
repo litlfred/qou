@@ -55,7 +55,7 @@ from codata_constants import (  # noqa: E402
     M_N_MEV_VALIDATION,
     M_P_MEV_VALIDATION,
 )
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -79,7 +79,7 @@ def main() -> int:
 
     set_compute_dps(50)
     with mp.workdps(50):
-        q = mp.mpf(Q_50_DIGIT_STR)
+        q = Q_MP
         m_p = mp.mpf(M_P_MEV_VALIDATION)
         m_n = mp.mpf(M_N_MEV_VALIDATION)
         M_N = (m_p + m_n) / 2

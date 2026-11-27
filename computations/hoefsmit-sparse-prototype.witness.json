@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:09:30.537558+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:36:43.032408+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "the structured path reproduces chi_numpy on every partition to better than 1e-12 — it is the same arithmetic in a different summation order, not a different object",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 133,
+  "durationMs": 175,
   "computation": "hoefsmit-sparse-prototype",
   "scriptFile": "hoefsmit_sparse_prototype_probe.py",
-  "scriptHash": "cd26fcdad475",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "aa3fc14e86c6",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,14 +25,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -47,9 +47,9 @@
       {
         "partition": "(5, 2, 2)",
         "dim": 120,
-        "t_dense_sec": "0.013410329818725586",
-        "t_structured_sec": "0.008860588073730469",
-        "rel_diff": "1.89553e-16",
+        "t_dense_sec": "0.045551300048828125",
+        "t_structured_sec": "0.007857799530029297",
+        "rel_diff": "0.0",
         "generator_bytes_dense": 921600,
         "generator_bytes_structured": 14208,
         "memory_ratio": "64.86486486486487",
@@ -58,9 +58,9 @@
       {
         "partition": "(3, 3, 3)",
         "dim": 42,
-        "t_dense_sec": "0.0023016929626464844",
-        "t_structured_sec": "0.0026426315307617188",
-        "rel_diff": "0.0",
+        "t_dense_sec": "0.00278472900390625",
+        "t_structured_sec": "0.0029144287109375",
+        "rel_diff": "1.91306e-16",
         "generator_bytes_dense": 112896,
         "generator_bytes_structured": 4704,
         "memory_ratio": "24.0",
@@ -69,9 +69,9 @@
       {
         "partition": "(4, 3, 2)",
         "dim": 168,
-        "t_dense_sec": "0.02557682991027832",
-        "t_structured_sec": "0.01593470573425293",
-        "rel_diff": "5.05569e-16",
+        "t_dense_sec": "0.022176027297973633",
+        "t_structured_sec": "0.017922163009643555",
+        "rel_diff": "0.0",
         "generator_bytes_dense": 1806336,
         "generator_bytes_structured": 20832,
         "memory_ratio": "86.70967741935483",
@@ -80,9 +80,9 @@
       {
         "partition": "(7, 1, 1)",
         "dim": 28,
-        "t_dense_sec": "0.0013713836669921875",
-        "t_structured_sec": "0.0017004013061523438",
-        "rel_diff": "3.83528e-16",
+        "t_dense_sec": "0.001665353775024414",
+        "t_structured_sec": "0.0018491744995117188",
+        "rel_diff": "5.70917e-16",
         "generator_bytes_dense": 50176,
         "generator_bytes_structured": 2800,
         "memory_ratio": "17.92",
@@ -91,16 +91,16 @@
       {
         "partition": "(4, 4, 1)",
         "dim": 84,
-        "t_dense_sec": "0.005805253982543945",
-        "t_structured_sec": "0.0053713321685791016",
-        "rel_diff": "6.81178e-16",
+        "t_dense_sec": "0.006947517395019531",
+        "t_structured_sec": "0.006652355194091797",
+        "rel_diff": "5.53918e-16",
         "generator_bytes_dense": 451584,
         "generator_bytes_structured": 9744,
         "memory_ratio": "46.3448275862069",
         "agrees_below_1e-12": true
       }
     ],
-    "worst_rel_diff": "6.81178e-16",
+    "worst_rel_diff": "5.70917e-16",
     "tier": "exploratory"
   },
   "q0Anchor": "proton",

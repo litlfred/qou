@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T10:55:12.506489+00:00",
-  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
+  "computedAt": "2026-11-20T15:04:16.095462+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "b_sq_exact",
-      "computed": "0.7527021132519654015937793516202361378301755988749056663823160062595939",
+      "computed": "0.7527021132519654015937793516202361378301755988749046813260281571023248",
       "expected": "0.7527021132519654015937793516202361378301755988749056663823160062595939",
       "passed": true,
       "tolerance": "1e-10",
@@ -26,8 +26,8 @@
   "durationMs": 4,
   "computation": "c3-hopf-habiro-analysis",
   "scriptFile": "c3_hopf_habiro_analysis.py",
-  "scriptHash": "a787d001aec4",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "b30850c91eb6",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,14 +35,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -65,7 +65,7 @@
       "formula": "(h^2+3)/(h^2+4)",
       "value": "0.7527021132519655",
       "b_witness": "0.7527021132519655",
-      "match_ppm": "1.0827804289976543e-64",
+      "match_ppm": "1.3086934000933406e-45",
       "shared_denominator_with_trM": "h^2+4"
     },
     "upstream_witness_hashes": [

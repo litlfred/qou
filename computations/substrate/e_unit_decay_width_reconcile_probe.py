@@ -41,9 +41,9 @@ sys.path.insert(0, _HERE)
 
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
-q = mp.mpf(Q_50_DIGIT_STR)
+q = Q_MP
 me = mp.mpf("0.51099895069")
 v = mp.sqrt(q)
 two_v = v + 1 / v

@@ -57,7 +57,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 
@@ -83,7 +83,7 @@ def main() -> int:
     print("=" * 78)
 
     # (A) real substrate q₀ > 1 — the mass / real-q / Rogers saddle.
-    Q0 = mp.mpf(Q_50_DIGIT_STR)
+    Q0 = Q_MP
     print("\n(A) REAL SUBSTRATE (mass / real-q face):")
     report("q₀ substrate", Q0)
     aA = mp.fabs(q_tilde_from_q(Q0))

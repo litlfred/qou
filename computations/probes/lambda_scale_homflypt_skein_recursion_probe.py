@@ -90,7 +90,7 @@ import mpmath as mp  # noqa: E402
 from mpmath import mpf, pslq  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 # Reuse Strategy G's Borromean HOMFLYPT closed form.
 #
@@ -161,7 +161,7 @@ def main() -> int:
         "α ∈ {q_0, q_0⁻¹, q_0^{1/2}}; z = q_0 − q_0⁻¹",
     )
 
-    Q0 = mpf(Q_50_DIGIT_STR)
+    Q0 = Q_MP
     HBAR_Q = (Q0 - 1) / Q0
     h = Q0 - 1 / Q0
     G = mp.catalan

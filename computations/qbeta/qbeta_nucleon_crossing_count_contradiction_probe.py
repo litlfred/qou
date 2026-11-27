@@ -67,7 +67,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from hecke_core import (  # noqa: E402
     _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
 )
@@ -77,7 +77,7 @@ set_compute_dps(50)
 ROOT = _pl.Path(__file__).resolve().parents[2]
 CONTENT = ROOT / "folio" / "quantum-observable-universe"
 
-Q = mp.mpf(Q_50_DIGIT_STR)
+Q = Q_MP
 H = Q - 1 / Q
 TOL = mp.mpf("1e-30")
 

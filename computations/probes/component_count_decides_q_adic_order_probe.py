@@ -69,7 +69,7 @@ from markov_trace_n4_interleaved_cross_term_probe import route_rep  # noqa: E402
 from interleaving_cross_term_q_adic_order_probe import poly_val_at_one  # noqa: E402
 
 try:
-    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 except Exception:  # pragma: no cover
     Q_50_DIGIT_STR = None
 try:
@@ -188,7 +188,7 @@ def main() -> int:
     # ---- 5. magnitudes at the proton pin (diagnostic; comparison boundary) ----
     anchor = {}
     if Q_50_DIGIT_STR is not None:
-        q0 = mp.mpf(Q_50_DIGIT_STR)
+        q0 = Q_MP
         fdef = sp.lambdify(q, deficit, modules="mpmath")
         ftau = sp.lambdify(q, tau_w3, modules="mpmath")
         fI, fS = sp.lambdify(q, I4, modules="mpmath"), sp.lambdify(q, S4, modules="mpmath")

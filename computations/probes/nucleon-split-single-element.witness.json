@@ -1,0 +1,185 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-27T14:46:44.777247+00:00",
+  "commitSha": "b6e1ca4c045aae54cb2a05d12a5cba15ede4624f",
+  "assertions": [
+    {
+      "name": "exact_A1_inverse",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_intertwine_all_letters",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_V3_trace_n_eq_p",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_V3_tauP_eq_q_t",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_V3_tauN_eq",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_V6_trace_n_eq_p",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_V6_tauP_eq_q_t",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_V6_tauN_eq",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_photon_pair_symbolic_trace_n_eq_p",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_photon_pair_symbolic_tauP_eq_q_t",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_photon_pair_symbolic_tauN_eq",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_mixed_word_s1_s2i_s2i_s1i_s2_trace_n_eq_p",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_mixed_word_s1_s2i_s2i_s1i_s2_tauP_eq_q_t",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "exact_mixed_word_s1_s2i_s2i_s1i_s2_tauN_eq",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "proton_linear_neg_gibbs_pos",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "muon_linear_neg_gibbs_pos",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 39,
+  "computation": "nucleon-split-single-element",
+  "scriptFile": "nucleon_split_single_element_probe.py",
+  "scriptHash": "177908e9b69d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a22b08f9db48ed97"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/nucleon_split_single_element_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/nucleon_split_single_element_probe.py"
+  },
+  "description": "Exact Q(q) re-check of the single-element theorem (QOU.QBeta.NucleonSplitSingleElement) on V^3, V^6, a symbolic two-photon product and a word with inverse letters, plus 80-dps linear-map sign and Gibbs-map cell at both q0 anchors; the coupling c needed by the Gibbs map is printed as a diagnostic only.",
+  "data": {
+    "lean_module": "QOU.QBeta.NucleonSplitSingleElement",
+    "beans_referenced": [
+      "qou-myts",
+      "qou-99qc",
+      "qou-wxhi"
+    ],
+    "trace_V3_exact": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/q**6",
+    "anchors": {
+      "proton": {
+        "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+        "t_V3": "2.99418581297996408672819936801871670008913958251181483468283",
+        "S_mass_channel": "945.763730704502275215650751721151509289808355737164766519229",
+        "linear_split_c0": "-72.8053975962132045818781272681347791893840151607950513927715",
+        "E0_ord0": "4.18598136329447589694506215875900841014348689087960498278367",
+        "gibbs_cell_c0_ord0": "0.873536621380459821746434074984571553678259416295994588435349",
+        "gibbs_vs_dm_np_ord0": "-0.324584656593485134193035884496113413496225022367995227742826",
+        "gibbs_vs_qbeta_ord0": "0.116578230583510696957773939654890392328476598910883283191710",
+        "diag_c_for_dm_np_ord0": "0.257900786493761405234348953266241330115165788974552012411082",
+        "diag_c_for_qbeta_ord0": "-0.0595331033269809969351844208665741077777719736919278202020806",
+        "E0_twr": "4.22748335562903055026805602658721115361518419806561475207637",
+        "gibbs_cell_c0_twr": "0.882197316930225041262327987588075186486589880651820588341200",
+        "gibbs_vs_dm_np_twr": "-0.317888238245689005944551732030554782476944091777434259082222",
+        "gibbs_vs_qbeta_twr": "0.127648566818867584265906502504571928647346422692757319523915",
+        "diag_c_for_dm_np_twr": "0.250473815971322123974420463898718939069541006436858757811934",
+        "diag_c_for_qbeta_twr": "-0.0646059196225814889312770071930442886142333035186701378777599"
+      },
+      "muon": {
+        "q0": "1.10997859564273904668179512938000175270006556102901155697405",
+        "t_V3": "2.99418581036323740913656373060256326968864974621146012164371",
+        "S_mass_channel": "945.763701928263675414027552152481735851551559339997876950436",
+        "linear_split_c0": "-72.8054031869338175950782566487775325425306922906439753247610",
+        "E0_ord0": "4.18598082401017136779972443048525839338975170253696642520986",
+        "gibbs_cell_c0_ord0": "0.873536606074301440157125707447638906612873189545819536614871",
+        "gibbs_vs_dm_np_ord0": "-0.324584668428151210583018818998341805687020741830869513505950",
+        "gibbs_vs_qbeta_ord0": "0.116578211018763410533062726742097307016869289600026038048129",
+        "diag_c_for_dm_np_ord0": "0.257900824025600206885252801716549346756420983757290955279046",
+        "diag_c_for_qbeta_ord0": "-0.0595331002887436609744688615583754372088418588401638211576773",
+        "E0_twr": "4.22748281985034987154227704566888462315634168857177243197923",
+        "gibbs_cell_c0_twr": "0.882197303319638657573070474646289138243300219596532338080243",
+        "gibbs_vs_dm_np_twr": "-0.317888248769344971021357473921158033641866607376526599427828",
+        "gibbs_vs_qbeta_twr": "0.127648549421446469296125476785906662658797120797300772103372",
+        "diag_c_for_dm_np_twr": "0.250473851183255069742782664374889704543605169937888952534994",
+        "diag_c_for_qbeta_twr": "-0.0646059182476461778783105418825626382353497176258606447923946"
+      }
+    },
+    "codata_comparison_only": {
+      "dm_np": "1.29333251000000000000000000000000000000000000000000000000000",
+      "qbeta": "0.782333559310000000000000000000000000000000000000000000000000"
+    }
+  },
+  "q0Anchor": "comparison"
+}

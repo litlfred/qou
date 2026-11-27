@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:11:51.027301+00:00",
-  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:38:08.306039+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "bring_variant_search_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "ocneanu-12-bring-zero-mode-variants",
   "scriptFile": "ocneanu_12_bring_zero_mode_variants.py",
-  "scriptHash": "662ad470611c",
-  "scriptCommitSha": "592fe76b52d8ec3f79c8f3fc50f4f93be1277551",
+  "scriptHash": "1dff1aed57bc",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -48,9 +48,9 @@
   "data": {
     "k_required": "11.99960972984508386212587",
     "residual_target": "0.0003902701549161378741312839",
-    "baseline_A_ppb": "261.13993732",
+    "baseline_A_ppb": "261.139933553",
     "best_variant_name": "(A) bare (α_em/π)/dim H_3",
-    "best_variant_ppb": "261.13993732",
+    "best_variant_ppb": "261.139933553",
     "verdict": "NO IMPROVEMENT — bare (A) at 261.14 ppb remains the tightest tested form. The Bring zero-mode template's (3q²−1)/(2q²) sinh-truncation does NOT transfer to the proton term; the structural mechanism appears to be different."
   },
   "q0Anchor": "proton",

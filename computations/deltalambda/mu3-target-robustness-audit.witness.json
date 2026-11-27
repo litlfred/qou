@@ -2,7 +2,7 @@
   "schema": "witness/v1",
   "producer": "computations/deltalambda/mu3_target_robustness_audit_probe.py",
   "description": "RED-TEAM robustness audit of the A=3 magnitude target \u03bc\u2083\u2248+0.4708 (numerator of r*=\u03bc\u2083/c\u2083\u22481.585). \u03bc\u2083 = \u03c1_strong(3) \u2212 \u03c1_grad(3) = B(\u00b3H)/B(\u00b2H) \u2212 [3]_q is a ~12% residual of two O(3.4) numbers (condition number \u22488), and \u03bc\u2083 = M(3) EXACTLY (unit-triangular 3\u00d73 solve, \u03bc\u2082=0 forced) \u2014 NOT a statistical moment, so there is no raw/Richardson/cumulant method freedom. FINDINGS after fairness checks: (a) within the isospin-corrected-strong isotope family \u03bc\u2083 is stable \u00b1~8% (0.445\u20130.509 \u21d2 r*\u2208[1.50,1.71]); it only collapses to 0.127 under the physically-inconsistent raw-\u00b3He (no-Coulomb) choice, which is not defensible. (b) the q-integer convention is PINNED: \u03c1_grad=[A]_q! is the coinvariant graded dimension \u21d2 Gaussian/unbalanced is forced by Chevalley, so the 1.63\u00d7 balanced swing is NOT a legitimate re-choice; the q\u2080 pin (muon vs proton) is not a lever (identical to 7sf, swing 1.0000001x). (c) sign(\u03bc\u2083)=+/sign(\u03bc\u2084)=\u2212 are corpus-PROVED robust (#4300 / DampingNonMonotoneWall \u2014 holds raw+corrected, non-monotone \u21d2 not a damping). VERDICT scope-(a): \u03bc\u2083 is NOT a decomposition artifact \u2014 its sign, \u22653-body purity, and O(1.6) magnitude are well-posed structural facts and the cross-channel hunt is JUSTIFIED. What is NOT well-posed is the 3-sig-fig VALUE 0.4708 / r*=1.585: a condition-number-8 residual with an irreducible \u00b18% isospin-correction band, honest target r*\u22481.6\u00b10.1. Siblings should score by sign + landing in [1.50,1.71], NOT by matching 1.585 to 3 sf (that would over-fit the isospin convention). Nothing wired.",
-  "scriptHash": "ad18cd86e251",
+  "scriptHash": "dd57812faace",
   "results": {
     "canonical": {
       "rho_strong3_triton": "3.8127981",
@@ -112,7 +112,7 @@
       "advice_to_siblings": "The cross-channel hunt IS justified \u2014 the target (sign + O(1.6) magnitude) is a real structural fact, not an artifact. BUT: score a derived c\u2083 by SIGN and by landing r* within the [1.50,1.71] band (~\u00b18%), NOT by matching 1.585 to 3 sig figs. A mechanism tuned to reproduce 1.585 exactly would be over-fitting the isospin-correction convention inside a 12%-residual \u2014 the residual simply cannot carry 3 sig figs of meaning."
     }
   },
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "scriptFile": "mu3_target_robustness_audit_probe.py",
   "q0Anchor": "comparison",
   "q0Values": {
@@ -120,8 +120,8 @@
     "proton": "1.1099785827513808075916690956107688798744991218736"
   },
   "q0AnchorReason": "Axis (b) of this red-team audit IS the q0 pin swing: rho_grad3 and mu3 are evaluated at BOTH the ideal-CAL-2 (muon) and experimental (proton) pins and their ratio is published as axis_b_q0_pin_muon_vs_proton_swing_LIVE. Both legs are read by name -- muon from q_parameter.q_muon_at(70), proton from q_parameter.Q_50_DIGIT_STR. This is a comparison, not a layer straddle (bean qou-9ugp).",
-  "commitSha": "4581fe0a86324bc8ef9f68a7eef8adcd53b83586",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "engine": "python",
-  "computedAt": "2026-09-04T00:53:32.272642+00:00",
+  "computedAt": "2026-11-20T15:08:05.663505+00:00",
   "durationMs": 0
 }

@@ -96,9 +96,9 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+Q0 = Q_MP
 
 # The deuteron bar-even near-match coefficient (2026-07-24-eunit-magnus-order2 §F3).
 # COMPARISON TARGET ONLY — never an input to anything computed below.

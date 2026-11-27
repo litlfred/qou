@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T02:44:00.600411+00:00",
-  "commitSha": "96c43b34e0ce0a61e734b393be9cf0f477f4cf12",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-27T15:32:59.730776+00:00",
+  "commitSha": "58be958ddf1173362eba805e98f50ee0e8c629e0",
   "assertions": [
     {
       "name": "the colour weighting closes under 0.1% of the deuteron binding gap",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 27,
   "computation": "deuteron-interface-colour-weighting",
   "scriptFile": "deuteron_interface_colour_weighting_probe.py",
-  "scriptHash": "0e675e640664",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a36e03ac1afa",
+  "scriptCommitSha": "58be958ddf1173362eba805e98f50ee0e8c629e0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,14 +58,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "a22b08f9db48ed97"
   },
   "invocation": {
     "argv": [
@@ -80,7 +81,7 @@
     "B_AME_MeV": "2.224566"
   },
   "data": {
-    "z_D": "0.61268803714646525159582986394589924802630839154509",
+    "z_D": "0.61268803714646525159582986394589924802630839154506",
     "alpha_MeV": "4.18598136329447589694506215876",
     "mu_colour_blind": "0.5081578877486455938804067573810617760964",
     "mu_colour_weighted": "0.5082297893767389625779957976558936038983",

@@ -22,7 +22,7 @@ import mpmath as mp
 import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools/qou-substrate/python"))
-from qou_substrate.constants import Q_50_DIGIT_STR  # proton pin (owner directive 2026-08-07)
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # proton pin (owner directive 2026-08-07)
 
 mp.mp.dps = 70
 q = sp.symbols("q", positive=True)
@@ -145,7 +145,7 @@ check("tau_D((s1 s2)^N P_R) at N = 3k equals tau_D(P_R) = y21 (the full twist is
       all(sp.simplify(right_values[n - 1] - y21) == 0 for n in (3, 6, 9)))
 
 # --- 3. numbers at the proton q0 (mpmath, 70 dps) -----------------------------------------
-q0 = mp.mpf(Q_50_DIGIT_STR)
+q0 = Q_MP
 f = sp.lambdify(q, [tb, tL, tR], modules="mpmath")
 vb, vl, vr = f(q0)
 print("\nat q0 =", mp.nstr(q0, 20))

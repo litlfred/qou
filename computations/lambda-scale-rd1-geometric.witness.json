@@ -1,15 +1,15 @@
 {
   "engine": "mpmath+sympy",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T16:58:59.695999+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:36:55.767102+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [],
   "allPassed": true,
   "durationMs": 25,
   "computation": "lambda-scale-rd1-geometric",
   "scriptFile": "lambda_scale_rd1_geometric.py",
-  "scriptHash": "d5064a3aa843",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "c6be534c5d37",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,11 +17,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/lambda_scale_rd1_geometric.py"
+    ],
+    "reproduce": "python3 -u computations/lambda_scale_rd1_geometric.py"
   },
   "description": "R&D 1: Yekutieli-Stokes geometric family — λ_geom = π_alg − Σ_geom. Tests if Family A's +3h²/4 minus a geometric Σ_geom = (5/3)·h² + ... matches the empirical λ_p with negative h² coefficient.",
   "contentBlock": "conj:lambda-scale-substrate-form",
@@ -30,9 +39,9 @@
   },
   "data": {
     "pi_alg_at_q0": 2.5327796563993914,
-    "lambda_p_target": 2.459952271695782,
-    "Sigma_geom_implied_h2_coeff": "1.666293809251804724252593",
-    "Sigma_geom_minus_3_4_minus_G": "0.0003282150745857091979899576"
+    "lambda_p_target": 2.4599522717037905,
+    "Sigma_geom_implied_h2_coeff": "1.666293809068566124364536",
+    "Sigma_geom_minus_3_4_minus_G": "0.0003282148913471093099326854"
   },
   "caveats": [
     "R&D probe — Σ_geom structural origin is still open."

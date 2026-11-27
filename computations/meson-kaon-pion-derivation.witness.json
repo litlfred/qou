@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T10:52:02.091600+00:00",
-  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
+  "computedAt": "2026-11-20T15:37:55.673703+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "m_K_over_m_pi_within_500ppm",
-      "computed": "3.536093921682372283258628487134157209679021436127971572271919416029774",
+      "computed": "3.536093921682372283258628487134157209679021436127264482328042775377697",
       "expected": "3.537118438946828191853587283090632619139346103424945649288505964624732",
       "passed": true,
       "tolerance": "0.002",
@@ -14,7 +14,7 @@
     },
     {
       "name": "chi5_equals_h_times_5q",
-      "computed": 3.622271631530685e-71,
+      "computed": 0.0,
       "expected": 0,
       "passed": true,
       "tolerance": "1e-40",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 29,
+  "durationMs": 41,
   "computation": "meson-kaon-pion-derivation",
   "scriptFile": "meson_kaon_pion_derivation.py",
-  "scriptHash": "c821dfc23eeb",
-  "scriptCommitSha": "de0a31477159c7d0667f1ba8b5fe62ddd9223e78",
+  "scriptHash": "8353427c2643",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,14 +50,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -68,11 +68,11 @@
   "description": "Derive m_K/m_π = χ_{(2,1)}(σ₁⁵) × (V_Seifert(T(2,5))/V_Seifert(T(2,3)))² = (q₀⁵ − q₀⁻⁵) × (9/5)² ≈ 3.536 (vs PDG 3.537, 290 ppm). The algebraic part is the Hecke character of the strange-quark braid on the standard (2,1) representation. The squaring reflects the 2-quark meson structure (one Seifert volume factor per constituent). SUPERSEDED for the accuracy dashboard: this (9/5)² form was formerly scored there and was withdrawn from that role. The canonical closure is [3]_q[4]_q + (α_em/π)(1 + log(1+ℏ_q)) (prop:meson-em-sinh-closed-form), at 51.5 ppb. This form's 290 ppm misses the observable's 263.6 ppb target by 1099x, so do NOT quote 290 ppm as the framework's accuracy on m_K/m_π.",
   "data": {
     "hecke_characters": {
-      "chi_21_sigma1_5": "1.091387012864929717055132249115480620271302912385176411195036856799313",
-      "chi_21_sigma1_3": "0.6363181294019515139253712488142545739471077114434062722276332671955224",
-      "h_times_5q": "1.091387012864929717055132249115480620271302912385176411195036856799313",
-      "[5]_q": "5.220441275326898244960433252993901451232448302223232617797601555360284",
-      "[3]_q": "3.043706208532521989402019335677388309768213960713522216242847344641826",
+      "chi_21_sigma1_5": "1.091387012864929717055132249115480620271302912384958173558037893635092",
+      "chi_21_sigma1_3": "0.636318129401951513925371248814254573947107711443285652540847508353677",
+      "h_times_5q": "1.091387012864929717055132249115480620271302912384958173558037893635092",
+      "[5]_q": "5.220441275326898244960433252993901451232448302223150673793231822439806",
+      "[3]_q": "3.04370620853252198940201933567738830976821396071350610903595079685529",
       "jones_ratio_[5]/[3]": "1.7151593871616988",
       "markov_trace_ratio_H2": "1.554399088054551",
       "note": "χ_{(2,1)}(σ₁ⁿ) = qⁿ + (−q⁻¹)ⁿ = qⁿ − q⁻ⁿ for odd n"

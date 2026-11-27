@@ -1,8 +1,8 @@
 {
   "engine": "mpmath50",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T19:27:32.175959+00:00",
-  "commitSha": "9d73d6eb518e6d5664f5b7b9341a5edcb48219de",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:21:25.537859+00:00",
+  "commitSha": "f603607f097ad30e397038d5345d39e2fe740ba0",
   "assertions": [
     {
       "name": "wenzl_level_is_constant_two",
@@ -39,8 +39,8 @@
   "durationMs": 7,
   "computation": "threerow-qcross-trend",
   "scriptFile": "threerow_qcross_trend_probe.py",
-  "scriptHash": "57ef57881ba2",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptHash": "d5d44c9634c8",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,14 +48,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

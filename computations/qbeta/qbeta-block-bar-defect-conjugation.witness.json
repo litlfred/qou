@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T03:20:47.941841+00:00",
-  "commitSha": "6bc0f6047ccb22cf734cba71445ee35ab9465570",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:50:00.087365+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "master_identity_reproduces_two_alpha_CONTROL",
@@ -104,11 +104,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2319,
+  "durationMs": 3260,
   "computation": "qbeta-block-bar-defect-conjugation",
   "scriptFile": "qbeta_block_bar_defect_conjugation_probe.py",
-  "scriptHash": "514a3c8075c9",
-  "scriptCommitSha": "86f0652100b6a2c4420993784193466f9e9218b0",
+  "scriptHash": "5a0ac8a93b36",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -116,14 +116,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -144,7 +144,7 @@
       {
         "block": "(3)",
         "defect_D": "(q - 1)**2*(q + 1)**2*(q**2 + q + 1)/(2*q**2*(q**2 - q + 1))",
-        "defect_D_over_h2": "1.48922059503199613033368169076360261947298081023728693146310",
+        "defect_D_over_h2": "1.48922059503199613033368169076360261947298081023730296805136",
         "defect_C_is_z_dependent": true,
         "chi_of_delta": "(1 - q**4)/(2*q**2)"
       },
@@ -158,7 +158,7 @@
       {
         "block": "(1,1,1)",
         "defect_D": "(q - 1)**2*(q + 1)**2*(q**2 - q + 1)/(2*q**2*(q**2 + q + 1))",
-        "defect_D_over_h2": "0.167873047709650236260645902760080108009094455629559871707997",
+        "defect_D_over_h2": "0.167873047709650236260645902760080108009094455629561208090352",
         "defect_C_is_z_dependent": true,
         "chi_of_delta": "(q**4 - 1)/(2*q**2)"
       }
@@ -166,7 +166,7 @@
     "floor": {
       "expr": "-(q - 1)**2*(q + 1)**2/((q**2 - q + 1)*(q**2 + q + 1))",
       "defect_D": "2*(-q**4 + 2*q**2 - 1)/(q**4 + q**2 + 1)",
-      "defect_D_over_h2": "-0.657093642741646366594327593523682727482075265866832771156366"
+      "defect_D_over_h2": "-0.657093642741646366594327593523682727482075265866838116685786"
     },
     "conjugation": {
       "characters_equivariant": true,
@@ -177,8 +177,8 @@
     "z_eq_h_over_2": {
       "in_full_bar_class": true,
       "bar_odd": true,
-      "value_at_q0": "0.104530149397819657715423106564837471929878747631530905510685",
-      "slope_at_q0": "0.905826877182879029066107419104440921629417383007789260839566",
+      "value_at_q0": "0.104530149397819657715423106564837471929878747631511527966537",
+      "slope_at_q0": "0.905826877182879029066107405740617371168439152305106925082156",
       "excluded_by": "two-row cap (qou-06wh: admissible set exactly {q, z_D}) and the anchor filter (needs 0.4991 / +400.29)"
     },
     "q0_anchor": {

@@ -67,7 +67,7 @@ sys.path.insert(0, str(HERE))
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_P_MEV_VALIDATION,
@@ -79,7 +79,7 @@ from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
 def main():
     set_compute_dps()
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     m_e = mpf(M_E_MEV)
     m_mu = m_e * mpf(M_MU_OVER_M_E)
     m_p_codata = mpf(M_P_MEV_VALIDATION)
@@ -113,7 +113,7 @@ def main():
 
     # PSLQ test (at 20 dps for convergence)
     mp.dps = 20
-    q20 = mpf(Q_50_DIGIT_STR)
+    q20 = Q_MP
     h20 = q20 - 1 / q20
     eps20 = mpf(str(float(dP_over_P)))
     Li2_20 = polylog(2, q20 ** (-2))

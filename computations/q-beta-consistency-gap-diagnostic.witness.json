@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T13:25:00.781237+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-11-20T15:49:17.736994+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "gap_exists",
-      "computed": 2113.0256965033946,
+      "computed": 2113.219436614827,
       "expected": 2113,
       "passed": true,
       "tolerance": 100,
@@ -14,7 +14,7 @@
     },
     {
       "name": "pathC_improves_m_n",
-      "computed": 0.20948629401784966,
+      "computed": 0.21229635362618368,
       "expected": 0.24,
       "passed": true,
       "tolerance": "0.5",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 4,
   "computation": "q-beta-consistency-gap-diagnostic",
   "scriptFile": "q_beta_consistency_gap_diagnostic.py",
-  "scriptHash": "f5fe679829de",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "45941741e056",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,49 +34,56 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/q_beta_consistency_gap_diagnostic.py"
+    ],
+    "reproduce": "python3 -u computations/q_beta_consistency_gap_diagnostic.py"
   },
   "description": "Decompose the gap between mass-derived Q_beta (Path A: flavor-split) and N=3 categorical Q_beta (Path B: precision ladder). Test Path C: m_n via categorical Q_beta.",
   "data": {
     "path_A_mass_derived": {
-      "m_p_pred_MeV": "938.2718913339220679338282683542384779857348145042889673656377555179765",
-      "m_n_pred_MeV": "939.5635706033249628047032117681768556526838032766354686523578215817524",
-      "Q_beta_MeV": "0.7806803187128948619631481655153731440293339261550950367200660637758824",
-      "Q_beta_ppm_vs_codata": "-2113.025696503383224391213010252023226010555386266319316301019593280007",
-      "flavor_split_X": "0.001375710807027096008551109274106550622225476011937774931321338387473873",
-      "flavor_split_X_codata": "0.001377469939781030532567730156263309388397278523147870679655128295250126",
-      "flavor_split_X_residual_pct": "-0.1277075239997008"
+      "m_p_pred_MeV": "938.271889963686928891272742096643752161308232949004848860324365763337",
+      "m_n_pred_MeV": "939.5635692312034789407202576821448542883198854372930985398280088146871",
+      "Q_beta_MeV": "0.7806803168265500494475155855011021270116524882882491140601711512956584",
+      "Q_beta_ppm_vs_codata": "-2113.219436614827010295512742674335459663526615210286934889654768990756",
+      "flavor_split_X": "0.001375710807027096008551109274106550622225476011937039426149964855503759",
+      "flavor_split_X_codata": "0.0013774700975660380574326305055634426044552084977238495418599537900028",
+      "flavor_split_X_residual_pct": "-0.1277189640668556"
     },
     "path_B_categorical": {
-      "Q_beta_MeV": "0.7823334093100000000000000000000000000000000000000326173041633116137717",
-      "Q_beta_ppb_vs_codata": "1.1391300872965406e-08"
+      "Q_beta_MeV": "0.7823335593100000000000000000000000000000000000001137349690169144619648",
+      "Q_beta_ppb_vs_codata": "2.315042981618636e-62"
     },
     "path_C_m_n_via_categorical_Q_beta": {
-      "m_n_pred_MeV": "939.5652236939220679427400636026614825086544693504804062329419188295903",
-      "m_n_ppm_vs_codata": "-0.20948629401784966",
-      "improvement_over_pathA": "9.398737679850386"
+      "m_n_pred_MeV": "939.5652224736869288912727420966437521613082329490049631607368545778534",
+      "m_n_ppm_vs_codata": "-0.21229635362618368",
+      "improvement_over_pathA": "9.288329282251174"
     },
     "gap_decomposition": {
-      "total_gap_keV": "-1.653090597105138",
-      "total_gap_ppm": "-2113.0256965033946",
-      "m_p_residual_contribution_keV": "-0.0002713088656198133",
-      "flavor_split_contribution_keV": "-1.652819288239518",
+      "total_gap_keV": "-1.6532424834499506",
+      "total_gap_ppm": "-2113.219436614827",
+      "m_p_residual_contribution_keV": "-0.00027494824822235024",
+      "flavor_split_contribution_keV": "-1.6529675352017283",
       "dominant_source": "flavor-split X"
     },
     "upstream_witness_hashes": [
       {
         "path": "q-beta-operator-valued-N3.witness.json",
-        "sha256": "895ce0f3477a26332ae4acb30c2f4ca908c38982777051290c5ee43dd5e8889c",
-        "size_bytes": 5560,
-        "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
-        "scriptCommitSha": "890ee81e8fb0ad89fc0861c56a54487b5eb82353",
-        "computedAt": "2026-06-22T14:32:18.810430+00:00"
+        "sha256": "ccc915ce5b98f6c6f827c319097234d025a79efa521e9fdb18206bc8a847001d",
+        "size_bytes": 5678,
+        "commitSha": "f947b235843af807c4ec7dea26af544fda4c2e8f",
+        "scriptCommitSha": "f947b235843af807c4ec7dea26af544fda4c2e8f",
+        "computedAt": "2026-08-21T16:24:01.734853+00:00"
       }
     ]
   }

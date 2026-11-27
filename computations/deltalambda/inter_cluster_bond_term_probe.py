@@ -83,12 +83,12 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import M_E_MEV, M_PI_PM_MEV_VALIDATION, _ame_binding_mev  # noqa: E402
 from experimental_constants import ALPHA_EM_INV  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps()
 
 # ── derived scales (all corpus-derived; binding_qhamiltonian_rotational_scale.py)
-Q = mp.mpf(Q_50_DIGIT_STR)
+Q = Q_MP
 M_E = mp.mpf(str(M_E_MEV))
 M_PI = mp.mpf(str(M_PI_PM_MEV_VALIDATION))
 H = Q - 1 / Q                       # q - q^-1

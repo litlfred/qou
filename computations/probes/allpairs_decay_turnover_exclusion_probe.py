@@ -163,7 +163,7 @@ import mpmath as mp  # noqa: E402
 
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from codata_constants import _ame_binding_mev  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -205,7 +205,7 @@ def ladder_miss():
 def bond_constants():
     """L_XY and the DERIVED spectral-gap decay rates r_XY.  Same closed forms as
     spectral_gap_bond_decay_probe / allpairs_distance_decay_probe."""
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
     z = q**3 / (q**2 + 1)
     dx = flavor_split_leading(q)

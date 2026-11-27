@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-09T22:40:22.355458+00:00",
-  "commitSha": "91d03c79c26ec860af7dea28c1aaebba175d161e",
+  "computedAt": "2026-11-21T02:48:38.320126+00:00",
+  "commitSha": "97f6f00912e0770b3cd6270637d80dccba1efd11",
   "assertions": [
     {
       "name": "family_beta_literal_kashaev_tower_at_least_one_passes_10_ppm",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 45,
+  "durationMs": 28,
   "computation": "qbeta-kashaev-habiro-chain-beta",
   "scriptFile": "qbeta_kashaev_habiro_chain_beta.py",
-  "scriptHash": "78279bb1a153",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptHash": "952eb1d9a845",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,13 +25,21 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_kashaev_habiro_chain_beta.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_kashaev_habiro_chain_beta.py"
   },
   "data": {
     "targets": {
@@ -84,14 +92,14 @@
             "passed": false
           },
           "3": {
-            "computed": "0.0",
+            "computed": "-9.05567907882671236750911929089e-72",
             "target": "-2.06934257711516783787971951725",
             "err_ppm": 1000000.0,
             "err_ppm_undefined_reason": null,
             "passed": false
           },
           "4": {
-            "computed": "1.81113581576534247350182385818e-71",
+            "computed": "0.0",
             "target": "0.0",
             "err_ppm": null,
             "err_ppm_undefined_reason": "target below the 1e-30 precision floor — relative error undefined",

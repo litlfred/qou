@@ -65,6 +65,47 @@ chat-app / project memory. Current headline rulings: the photon form above;
 backup)**; the up quark is an unknot strand; Q_β from γγ pair production;
 two-term Lagrangian trace on the scoreboard and all β-decay routes.
 
+## 🟥 AGENT PROCESS RULES LIVE IN THE KG (owner directive 2026-11-27) — STRICT
+
+Verbatim: *"make it not a project instruction but a KG process instruction.
+NO PROJECT MEMORY.... put in KG"*. The canonical statements are KG requirement
+nodes in cat-harness. Where this file repeats one of them, the KG node wins.
+
+- **Questions:** [`req:agent-workflow`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/agent-workflow.json) `#question-on-a-card`, `#no-close-with-open-question`,
+  `#research-paths-on-a-card` (procedure: cat-harness skill `ask-the-person`).
+- **Merging:** [`req:agent-workflow`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/agent-workflow.json) `#never-self-merge`.
+- **Tracking:** [`req:agent-workflow`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/agent-workflow.json) `#beans-primary-tracker`.
+- **Context:** [`req:agent-workflow`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/agent-workflow.json) `#context-stays-small`.
+- **Proofs:** [`req:content-lifecycle`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/content-lifecycle.json) `#no-measured-values-in-proofs`, `#one-nonconstructive-axiom`.
+- **Owner's commands:** cat-harness `memory/interaction.json`,
+  `users.litlfred.commands` (one paste-ready line from `~/space_cats`, branch
+  switch first).
+
+## 🟥 FAST MERGES: ONE PRE-MERGE GATE, QA AFTER (owner ruling 2026-11-27) — STRICT
+
+Verbatim: *"i dont want to have slow merge times, no red gates (excpet
+json(ld) KG publication). all QA runs after. can be agent, does not need to be
+github action w/ runner queue issues."* (and: *"current harness merge/CI
+workflow WAY TOO SLOW"*). Recorded in
+[`docs/coordination/owner-rulings.md`](docs/coordination/owner-rulings.md), 2026-11-27.
+
+- **Before a merge, only two things can block it:** the merge guard run by the
+  merging agent, `bun run cat merge:guard <pr>` (never `--full-tier`; CI is
+  advisory on a non-release merge), and the JSON-LD KG publication check
+  (`gen-block-jsonld --check` on the PR head). Nothing else is a red gate.
+- **Everything else runs after the merge, on `main`:** the Lean sweep,
+  `scripts/precision-gates.sh`, `scripts/check-sidecars.sh`, producer re-runs,
+  and the site + QA publish (`site-publish.yml` on push to main;
+  `scripts/publish-main-local.sh --deploy` when Actions cannot run). A
+  post-merge failure becomes a bean and a follow-up PR, never a revert by
+  default.
+- **No GitHub Actions merge gating on qou:** no `harness-pr-checks.yml`, no
+  Actions merge-guard callers, no required status checks.
+- **This supersedes** the Phase 1b / Phase 4 "verification gate" in §Branch +
+  PR workflow rule 10 and in `prepare-merge-auto`, wherever they make the
+  listed checks pre-merge. Those checks still run; they run after.
+- **KG node:** [`req:agent-workflow`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/agent-workflow.json) `#never-self-merge`.
+
 ## 🟥 REBUILD THE SITE AFTER EVERY MERGE TO MAIN (owner directive 2026-11-23) — STRICT
 
 Verbatim: *"agents should rebuild when merge to main if github actions not
@@ -112,7 +153,37 @@ Adapt ALL responses accordingly:
 - **Short answers.** One-liners when possible — but read this together
   with **Terse ≠ compressed** below: "short" cuts ceremony, never
   evidence, implications, or options.
-- **Offer choices as numbered lists** so the user can reply "1" or "2".
+- **Every question is a card with numbered options and a recommendation**: [`req:agent-workflow`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/agent-workflow.json) `#question-on-a-card` (see §AGENT PROCESS RULES above).
+- **🟥 ASK WITH A CARD. NEVER WITH PROSE THE USER HAS TO ANSWER BY TYPING
+  (STRICT, owner instruction 2026-11-20).** Verbatim: *"If you have questions
+  use cards"* / *"Please tell every sibling that you can access to only use
+  cards when asking questions. I am disabled and it is really hard to type all
+  of these things out"*.
+
+  **"Card" = an `AskUserQuestion` call with clickable options.** Every question
+  put to the owner goes through one. A question asked as a chat sentence — even
+  a numbered list, even a single yes/no — is a defect, because answering it
+  costs the owner keystrokes that a click would not. This is the whole reason
+  the rule exists; it is an accessibility requirement, not a formatting
+  preference.
+
+  This **does not** relax the mirror rule below: the card's question, every
+  option label and the full evidence still go into the chat prose immediately
+  above the call, because the chat is the durable record and the card is
+  ephemeral. The card is **in addition to** the prose, never instead of it —
+  and the prose is there to be *read*, not to be answered by typing.
+
+  **The failure mode is the trailing question.** Ending a turn with *"want me
+  to also do X?"*, *"should I use A or B?"*, or *"let me know if you would
+  rather…"* forces the owner to type. Put it in a card with `multiSelect: true`
+  so "all of them" or "1 and 3" is one click, and include the no-op as an
+  option so declining is also a click. §"NAMING A DECISION IS ASKING A
+  QUESTION" below applies in full: a card is owed wherever a decision is
+  handed over, not only where a question mark appears.
+
+  **Propagate it.** The owner asked that every reachable sibling be told. A
+  session that opens or comments on a PR should state the rule there; this
+  file is the durable channel for every later session.
 - **Run commands proactively** — don't ask "shall I run X?", just run it.
 - **Branch/commit/push without asking** unless destructive.
 - **Files attached in chat are not in the repo (owner directive 2026-11-22).** When the owner attaches a file to a chat message, decide by context, or ask once with numbered options, whether it goes into `library/` (fully ingested), into `uploads/` (parked), or is used for the task only. Papers default to `library/`. Ingest fully and verify each section holds real text. The procedure lives in folio-assistant core, `skills/library/ingestion/document-intake.md` §Files attached in the agent chat (litlfred/folio-assistant-core#866); in qou the ingested-document directory is `library/`.
@@ -538,6 +609,33 @@ Concretely:
   assessment — is a source of robustness. The cheapest way to catch a
   wrong turn is a second agent walking in from a different direction.
 
+## Handoff envelope (owner directive 2026-11-25)
+
+Verbatim: *"(improve swarm managem,etc. process, when passing to child sibling, then give them the porcess/task they are enging in , their role, your role. this should be a part of general agent to agenet communication use by swarm/merge managers, etc. .)"*
+
+Every agent-to-agent handoff opens with four to six lines before the body.
+That covers an `Agent`-tool subagent, a child session created with
+`create_session`, and a `send_message` to a sibling, swarm or merge-manager
+session:
+
+```
+PROCESS / TASK: <process or skill by name, e.g. "merge (prepare-merge-auto)",
+                "research swarm front", "library intake (document-intake)">
+                — <the task>; done when <criteria>.
+YOUR ROLE:      <merge manager | research child | verifier | …>. You decide <…>;
+                escalate <…> to <the owner directly | me>.
+MY ROLE:        <coordinator | swarm manager | …>, session <id>; reply by
+                <send_message to <id> | the PR>.
+```
+
+Then the existing body: the owner's words verbatim, constraints, fences and
+the reporting format. The rules on questions to the owner are unchanged.
+The canonical rule is the platform skill
+`folio-assistant/cat-harness/sdlc/skills/sdlc-core/agent-handoff.md` §0 (litlfred/cat-harness#1405). `dispatch-agent`, `swarm-management`, `swarm-monitor` and
+`merge-manager-watcher` point to it. Since AGENTS.md edits do not reach
+subagents in the session that makes them (§Subagents below), put the
+envelope in the prompt itself.
+
 ## Subagents with persistent memory (`.claude/agents/`)
 
 Five subagents are defined under [`.claude/agents/`](.claude/agents/), each
@@ -664,6 +762,16 @@ procedure. Memory summarises; the skill governs. Where the two disagree, the
 skill wins and the memory entry is wrong — fix it.
 
 ## Agent work-plan policy (STRICT)
+
+> **🟥 BEANS ARE THE TRACKER; GITHUB ISSUES ARE INTAKE ONLY (owner ruling 2026-11-27).**
+> Every work item an agent plans, claims, works or closes is a **bean** on the beans
+> branch, managed with the `beans` CLI and pushed with `branch-store.ts push --id beans`.
+> Do **not** open a GitHub issue to track your own work, and do not make a session epic
+> an issue. GitHub issues are the **submission channel** for the owner and for reviewers:
+> when one arrives, mirror it into a bean that cites the issue number (check before you
+> create), work the bean, and close the issue from the bean's result. Ledger row:
+> [`owner-rulings.md`](docs/coordination/owner-rulings.md), 2026-11-27. KG node:
+> [`req:agent-workflow`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/agent-workflow.json) `#beans-primary-tracker`.
 
 Every session must run from a **prioritized work-plan** maintained
 as **beans** — the [`beans`](https://github.com/hmans/beans) CLI
@@ -1578,7 +1686,15 @@ ephemeral.
     >   content-block siblings only) — nothing but the agent checks it.
     > - **Content blocks changed** → [`scripts/check-sidecars.sh`](scripts/check-sidecars.sh)
     >   clean + `qa-sweep` on the touched criteria; math-bearing `.md`
-    >   also needs the render-QA gate.
+    >   also needs the render-QA gate. **Its knowledge-graph step is
+    >   BLOCKING** (owner, 2026-11-25, after the photon PRs left 11 block
+    >   nodes stale): it runs `scripts/gen-block-jsonld.sh --check --paper
+    >   <paper>` for every paper the branch touches and exits 1 on a stale
+    >   or missing `<block>.jsonld`. Regenerate with
+    >   `scripts/gen-block-jsonld.sh --paper <paper>`. The wrapper refuses
+    >   (exit 3) on the light platform, which would rewrite every node; the
+    >   session-start hook now replays `index.lock.json` so the root mounts
+    >   are there.
     > - **Compute changed** → the producer re-run + witness refreshed.
     >
     > Do **not** write "CI green" in a PR or merge rationale unless a

@@ -47,7 +47,7 @@ for _p in ("computations", "computations/qbeta", "computations/substrate",
 
 import mpmath as mp  # noqa: E402
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_2022_source import M_E_MEV, Q_BETA_MEV_AME  # noqa: E402
 from qbeta_e0 import canonical as e0_canonical  # noqa: E402
 
@@ -107,7 +107,7 @@ def word(tail, extra=()):
     return CORE + list(tail) + GLUON + list(extra)
 
 
-E0 = e0_canonical(q=mp.mpf(Q_50_DIGIT_STR), m_e=mp.mpf(str(M_E_MEV)))
+E0 = e0_canonical(q=Q_MP, m_e=mp.mpf(str(M_E_MEV)))
 QB = mp.mpf(str(Q_BETA_MEV_AME))
 
 
@@ -172,7 +172,7 @@ def main() -> int:
     nfn, nfp = nf_of(word(N_TAIL)), nf_of(word(P_TAIL))
     zz = sp.Symbol("zz")
     f = tr([a - b for a, b in zip(nfn, nfp)], zz)
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     zD = lambda qq: qq ** 3 / (qq ** 2 + 1)
 
     def fnum(qq):

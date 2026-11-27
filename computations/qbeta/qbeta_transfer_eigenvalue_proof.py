@@ -53,13 +53,13 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def main():
     set_compute_dps()
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     hbar = 1 - 1 / q
 
     w = record_upstream(HERE / "q-beta-operator-valued-N3.witness.json", _UPSTREAM_RECORDS)
@@ -190,7 +190,7 @@ def derive_b_closed_form():
       SAME DENOMINATOR — both are rational functions with pole at h^2=-4.
     """
     set_compute_dps()
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
     hbar = 1 - 1 / q
 

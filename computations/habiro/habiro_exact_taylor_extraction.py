@@ -143,13 +143,13 @@ def main():
     set_compute_dps()
 
     try:
-        from q_parameter import Q_50_DIGIT_STR, vol_4_1_at
+        from q_parameter import Q_50_DIGIT_STR, Q_MP, vol_4_1_at
     except ImportError:
         from qou_substrate.constants import Q_50_DIGIT_STR, vol_4_1_at
 
     set_compute_dps()
 
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     hbar_q = (q0 - 1) / q0
     eps = hbar_q**2
     vol = vol_4_1_at(50)

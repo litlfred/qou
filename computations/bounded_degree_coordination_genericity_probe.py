@@ -64,7 +64,7 @@ import mpmath as mp  # noqa: E402
 
 from closed_form_tau_M import markov_z, hecke_h  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -73,7 +73,7 @@ def constants():
     """The same substrate quantities `derived_bond_graph_binding` uses, read at the
     50-digit pin (not the float64 `q_parameter.Q` — see bean qou-vsqh)."""
     from codata_constants import M_E_MEV as me
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     h = q0 - 1 / q0
     me = me if isinstance(me, mp.mpf) else mp.mpf(str(me))
     z = q0**3 / (q0**2 + 1)                       # convention D

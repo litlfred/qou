@@ -63,8 +63,8 @@ set_compute_dps()
 # Canonical muon-pinned substrate q₀ (computations/q_parameter.py::Q); the
 # bar-symmetry argument is q-independent, so the exact value is only used for
 # the illustrative numerics below.
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-Q0 = mp.mpf(Q_50_DIGIT_STR)
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
+Q0 = Q_MP
 # a567 witnessed magic factor f(⁴He)/Z·N (binding-factor-f-sequence.witness.json).
 TARGET = mp.mpf("2.0715")
 BAR_EVEN_TOL = mp.mpf("1e-18")
@@ -163,7 +163,7 @@ def _emit_witness(excluded, survivors) -> None:
         "docs/audits/2026-06-25-he4-magic-factor-bar-even-pruning.md")
     out = w.save({"q0Anchor": "proton",
          "q0AnchorReason": (
-            'Resolves q0 through `q_parameter` -- `Q0 = mp.mpf(Q_50_DIGIT_STR)` '
+            'Resolves q0 through `q_parameter` -- `Q0 = Q_MP` '
             'at module scope -- and EVALUATES at it: `f(Q0)` is the bar-even '
             'predicate that decides the prune, and `f(Q0)` is tabulated. The '
             'stem is listed `physical_proton` in q0_anchor_manifest.json, so '

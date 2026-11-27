@@ -1,0 +1,150 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0704.1313v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "a75bb39c60ec9b15816ed10044bf77bd06e0dfe3170323cb180ac9a9411de2d0",
+  "file": "0704.1313v1.pdf"
+ },
+ "provenance": {
+  "title": "Mutant knots and intersection graphs",
+  "authors": "S. V. Chmutov \u2217, S. K. Lando \u2020",
+  "arxiv": {
+   "id": "0704.1313",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "10 Apr 2007"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "theorem": 7,
+   "lemma": 2
+  },
+  "formalization_candidates": 9
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "If a \ufb01nite order knot invariant does not distinguish mutants , then the",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "Two chord diagrams have the same intersection graph if and on ly if they",
+   "section_file": "sections/sec-002-representability-of-graphs-as-the-intersection-g.md",
+   "section_title": "Representability of graphs as the intersection graphs of chord diagrams",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "The universal weight systems associated to the Lie algebra sl(2) and",
+   "section_file": "sections/sec-004-lie-algebra-weight-systems-and-intersection-grap.md",
+   "section_title": "Lie algebra weight systems and intersection graphs",
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4",
+   "name": null,
+   "statement": "The universal weight system associated to the Lie algebra sl(2) depends",
+   "section_file": "sections/sec-004-lie-algebra-weight-systems-and-intersection-grap.md",
+   "section_title": "Lie algebra weight systems and intersection graphs",
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5",
+   "name": null,
+   "statement": "The universal weight systems associated to the Lie superalg ebra gl(1|1)",
+   "section_file": "sections/sec-004-lie-algebra-weight-systems-and-intersection-grap.md",
+   "section_title": "Lie algebra weight systems and intersection graphs",
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": null,
+   "statement": "Suppose the intersection graph of a chord diagram is the resu lt of identi-",
+   "section_file": "sections/sec-007-the-sl2-weight-system.md",
+   "section_title": "The sl(2) weight system",
+   "pages": "9-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": null,
+   "statement": "(i) The value of the universal sl(2) weight system on the 1-product of chord",
+   "section_file": "sections/sec-007-the-sl2-weight-system.md",
+   "section_title": "The sl(2) weight system",
+   "pages": "9-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "Consider the part C2 participating in the Whitney twist and apply to",
+   "section_file": "sections/sec-007-the-sl2-weight-system.md",
+   "section_title": "The sl(2) weight system",
+   "pages": "9-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6",
+   "name": null,
+   "statement": "The gl(1|1) universal weight system is the pullback of the framed Conway",
+   "section_file": "sections/sec-008-the-gl11-weight-system.md",
+   "section_title": "The gl(1|1) weight system",
+   "pages": "11-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

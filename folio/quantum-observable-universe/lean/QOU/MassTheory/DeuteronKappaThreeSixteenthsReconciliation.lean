@@ -294,4 +294,26 @@ theorem deuteron_kappa_three_way_reconciliation :
   · unfold kappa_borromean; norm_num
   · unfold kappa_borromean; norm_num
 
+/-- **Isospin-mirror antisymmetry of the `A = 3` intra-nucleon `κ` term (`qou-6he8`):**
+Swapping proton and neutron counts `(Z, N) ↔ (N, Z)` negates `intraA3 Z N = (Z - N) · κ`,
+so mirror nuclei (`³He` vs `T`) sum to zero while their difference is `2(Z - N) · κ`. -/
+theorem intraA3_isospin_mirror_antisymm (Z N : ℤ) :
+    intraA3 Z N + intraA3 N Z = 0 ∧
+    intraA3 Z N - intraA3 N Z = 2 * (Z - N : ℚ) * kappa_borromean := by
+  unfold intraA3
+  constructor <;> ring
+
+/-- **Residual `≥ 3`-body `κ`-verdict vs 2-body deuteron refutation (`qou-6he8`):**
+On the 2-body deuteron (`Z = N = 1`), the `A = 3` intra-nucleon slope `intraA3 1 1` vanishes,
+the first-order `pp + pn` chain sum `κ = 3/16` exceeds the 2-body deuteron `c₁(pn) = 1/16`
+by `(2/3)κ = 1/8`, and the net second-order `|S| = 2` deuteron coefficient `deuteron_S2_total = -1/16`
+differs from `-κ = -3/16` by `+1/8`. -/
+theorem deuteron_residual_three_body_gap :
+    intraA3 1 1 = 0 ∧
+    (QOU.MassTheory.c1_pp + QOU.MassTheory.c1_pn) - QOU.MassTheory.c1_pn =
+      (2 / 3) * kappa_borromean ∧
+    deuteron_S2_total - (-kappa_borromean) = (2 / 3) * kappa_borromean := by
+  unfold intraA3 QOU.MassTheory.c1_pp QOU.MassTheory.c1_pn deuteron_S2_total kappa_borromean
+  norm_num
+
 end QOU.MassTheory.DeuteronKappaReconciliation

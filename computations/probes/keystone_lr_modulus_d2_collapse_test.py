@@ -45,7 +45,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
@@ -80,7 +80,7 @@ def main():
     # no comparison leg here, so the 2026-08-30 owner ruling puts this producer
     # on the PROTON default; the pin moves 11.54 ppb. `q_parameter`, not
     # `qou_substrate.constants`, so the witness resolves its anchor stamp.
-    Q0 = mp.mpf(Q_50_DIGIT_STR)   # zeta-side uses 1/q0
+    Q0 = Q_MP   # zeta-side uses 1/q0
     # q-grid inside the convergence disk |q|<1: 1/q₀ and a few real interior points.
     qs = [1 / Q0, mp.mpf("0.85"), mp.mpf("0.7"), mp.mpf("0.55"), mp.mpf("0.4")]
     colors = [1, 2, 3, 4]

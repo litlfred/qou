@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:11:50.790816+00:00",
-  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:38:08.056819+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "alt_geometry_scan_completed",
@@ -17,8 +17,8 @@
   "durationMs": 3,
   "computation": "ocneanu-12-alt-knot-geometries",
   "scriptFile": "ocneanu_12_alt_knot_geometries.py",
-  "scriptHash": "fc636014bdf8",
-  "scriptCommitSha": "592fe76b52d8ec3f79c8f3fc50f4f93be1277551",
+  "scriptHash": "d5551e3570e6",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -46,10 +46,10 @@
     "q_60dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "baseline_dim_H_3_ppb": "261.13993732",
+    "baseline_dim_H_3_ppb": "261.139933553",
     "best_name": "|S_3| = 6 (baseline)",
     "best_denominator": "6.0",
-    "best_ppb": "261.13993732",
+    "best_ppb": "261.139933553",
     "verdict": "BASELINE STANDS: dim H_3 = 6 remains the tightest denominator (54 ppb). No alternative knot-operator geometry on Bring's surface improves the fit."
   },
   "q0Anchor": "proton",

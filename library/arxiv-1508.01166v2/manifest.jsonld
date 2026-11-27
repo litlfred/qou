@@ -1,0 +1,71 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1508.01166v2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1508.01166v2",
+  "contains": [
+    "library/arxiv-1508.01166v2/sections/sec-front-matter",
+    "library/arxiv-1508.01166v2/sections/sec-000",
+    "library/arxiv-1508.01166v2/sections/sec-001",
+    "library/arxiv-1508.01166v2/sections/sec-002",
+    "library/arxiv-1508.01166v2/sections/sec-003",
+    "library/arxiv-1508.01166v2/sections/sec-004",
+    "library/arxiv-1508.01166v2/sections/sec-005",
+    "library/arxiv-1508.01166v2/sections/sec-006",
+    "library/arxiv-1508.01166v2/sections/sec-007",
+    "library/arxiv-1508.01166v2/sections/sec-008",
+    "library/arxiv-1508.01166v2/sections/sec-009",
+    "library/arxiv-1508.01166v2/sections/sec-010",
+    "library/arxiv-1508.01166v2/sections/sec-011",
+    "library/arxiv-1508.01166v2/sections/sec-012",
+    "library/arxiv-1508.01166v2/sections/sec-013",
+    "library/arxiv-1508.01166v2/sections/sec-014",
+    "library/arxiv-1508.01166v2/sections/sec-015",
+    "library/arxiv-1508.01166v2/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Discrete exterior calculus discretization of incompressible Navier-Stokes equations over surface simplicial meshes — A conservative discretization of incompressible Navier-Stokes equations is de\n\n**Discrete exterior calculus discretization of incompressible Navier-Stokes equations over surface simplicial meshes**\n\n*Mamdouh S. Mohameda,1,∗, Anil N. Hiranib, Ravi Samtaneya*\n\n35 pp, 18 sections.\n\n**Abstract.** A conservative discretization of incompressible Navier-Stokes equations is de- veloped based on discrete exterior calculus (DEC). A distinguishing feature of our method is the use of an algebraic discretization of the interior product op- erator and a combinatorial discretization of the wedge product. The governing equations are ﬁrst rewritten using the exterior calculus notation, replacing vector calculus diﬀerential operators by the exterior derivative, Hodge star and wedge product operators. The discretization is then carried out by substituting with the corresponding discrete operators based on the DEC framework. Numerical exper- iments for ﬂows over surfaces reveal a second order accuracy for the developed scheme when using structured-triangular meshes, and ﬁrst order accuracy for oth- erwise unstructured meshes.\n\n**Outline.** Front matter; 1 Introduction; 2 Navier-Stokes equations in exterior calculus; 3 The discretization method; 3.1 The domain discretization; 3.2 Discrete exterior calculus; 3.3 Two dimensional discretization; 3.4 Three dimensional discretization; 4 Results and Discussion; 4.1 Driven cavity; 4.2 Taylor-Green vortices; 4.3 Poiseuille flow; 4.4 Double periodic shear layer; 4.5 Taylor vortices on flat surfaces; 4.6 Taylor vortices on a spherical surface; 4.7 A ring of vortices on a spherical surface; 5 Conclusions; Appendix A The complementary contribution to t",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-27"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1508.01166&metadataPrefix=arXiv), <license> element, read 2026-11-25",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1508.01166v2",
+    "title_source": "slug",
+    "source_file": "1508.01166v2.pdf",
+    "source_sha256": "0abff3bfd7d3d3e439c322c0c9fe534a98fb8d48026f134b63e6f156cb84c05b",
+    "pages": 35,
+    "arxiv": {
+      "id": "1508.01166",
+      "version": "2",
+      "primary_class": "physics.flu-dyn",
+      "stamp_date": "11 Feb 2016"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

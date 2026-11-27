@@ -40,7 +40,7 @@ sys.path.insert(0, str(REPO / "tools" / "qou-substrate" / "python"))
 
 import mpmath as mp  # noqa: E402
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 70
@@ -156,7 +156,7 @@ def main() -> None:
     checks.append(("c0_A2_matches_c2_witness_a0", floors[2] == Fr(1, 8), "c2 witness rows a0 = 1/8 at A = 2"))
 
     # ------------------------------------------------------------ q0 contrasts (proton pin)
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     jet_ratio = q0 ** -2
     checks.append(("jet_tower_remainder_ratio_below_one", jet_ratio < 1,
                    f"q0^-2 = {mp.nstr(jet_ratio, 20)} (the jet tower IS geometrically ordered)"))

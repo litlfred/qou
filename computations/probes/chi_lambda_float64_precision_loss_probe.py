@@ -83,7 +83,7 @@ from mpmath import mp  # noqa: E402
 # comment.
 assert mp.dps >= 50, f"exact side needs >= 50 dps, got {mp.dps}"
 
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A, chi_lambda_of_word  # noqa: E402
 from hoefsmit_mpmath import (BlockCacheMP, chi_lambda_of_word_sparse_mp,  # noqa: E402
                              seminormal_matrices_mp)
@@ -188,7 +188,7 @@ def consumer_census() -> None:
     print("   Digits past the 14th are not determined by the computation.")
 
 def main() -> int:
-    q_exact = mp.mpf(Q_50_DIGIT_STR)
+    q_exact = Q_MP
     q_f64 = float(q_exact)
     h_f64 = q_f64 - 1.0 / q_f64
     print(f"mp.dps = {mp.dps}   q = {mp.nstr(q_exact, 20)} (proton pin)\n")

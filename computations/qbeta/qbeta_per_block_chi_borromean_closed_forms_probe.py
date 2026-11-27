@@ -156,12 +156,12 @@ def main() -> int:
     # agreement against an unrelated implementation settles that by measurement
     # rather than by reading the call site.
     import mpmath as mp
-    from q_parameter import Q_50_DIGIT_STR
+    from q_parameter import Q_50_DIGIT_STR, Q_MP
     from chi_general_word import chi_all_lambda_any
     from mass_at_3A_proper import atom_braid_word_3A
 
     mp.mp.dps = 50
-    q0_mp = mp.mpf(Q_50_DIGIT_STR)
+    q0_mp = Q_MP
     q0_sym = sp.Rational(Q_50_DIGIT_STR.replace(".", ""), 10 ** (len(Q_50_DIGIT_STR) - 2))
     num_p = chi_all_lambda_any(atom_braid_word_3A(1, 0, q=q0_mp), 3, dps=50, q=q0_mp)
     num_n = chi_all_lambda_any(atom_braid_word_3A(0, 1, q=q0_mp), 3, dps=50, q=q0_mp)

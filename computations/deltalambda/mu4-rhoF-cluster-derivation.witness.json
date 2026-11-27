@@ -3,13 +3,13 @@
   "producer": "computations/deltalambda/mu4_rhoF_cluster_derivation_probe.py",
   "computation": "mu4-rhoF-cluster-derivation",
   "description": "\u0394_\u03bb residual simplex moments \u03bc\u2083=+0.4708, \u03bc\u2084=\u22124.591 tested against the DERIVED (0-fit, q\u2080-only) \u03c1_F cluster integrals. Decomposition \u03bc_k = s_k \u2212 g_k with g_k the DERIVED graded (q-factorial) simplex coeffs (g\u2082=1,g\u2083=0.342,g\u2084=8.371) and s_k the AME strong-binding simplex (targets). Derived \u03c1_F connected 3-body cluster c\u2083<0 (T \u22121.769, \u00b3He \u22121.405 MeV, H_9 joint trace); derived 4-body product-model beyond-pairwise content c\u2084<0. SIGN GATE: \u03bc\u2083>0 \u2260 c\u2083<0 (WALL, Lean-proved by productModel_3body_nonpos + markovParam_le_half: no pairwise interface product gives a positive 3-body cluster for any q>0); \u03bc\u2084<0 sign-consistent with c\u2084<0 but its magnitude is dominated by the DERIVED graded g\u2084=+8.37 subtraction, not an \u03c1_F cluster. FREE PARAMS: a single N>0 cannot map same-sign (c\u2083,c\u2084) to opposite-sign (\u03bc\u2083,\u03bc\u2084); no 0\u20131-param derivation lands both moments. VERDICT: WALL (split) \u2014 scope-(b) proved sign exclusion of the pairwise-product route for \u03bc\u2083; scope-(a) sign-consistent-but-not-derived for \u03bc\u2084. NOT infra-gated. Nothing wired.",
-  "timestamp": "2026-09-04T03:02:15.902911+00:00",
+  "timestamp": "2026-11-20T15:08:05.961201+00:00",
   "parameters": {
     "free_parameters": 0,
-    "q0": "1.1099785827513808075916690956107688798744991218736",
-    "z": "0.6126880371464652515958298639458992480263083915450870140747738279321425",
-    "h": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
-    "E0_MeV": "4.185981363294475896945062158759008410143486890878715448622304367024271",
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "z": "0.6126880371464652515958298639458992480263083915450647597242866851041912",
+    "h": "0.2090602987956393154308462131296749438597574952630245553816960544589759",
+    "E0_MeV": "4.185981363294475896945062158759008410143486890879604982783672079638251",
     "note": "AME \u03c1_strong enters only as the \u03bc_k target; \u03c1_F clusters use q\u2080 + derived factors."
   },
   "results": {
@@ -40,9 +40,9 @@
       "sign": "negative"
     },
     "derived_rhoF_4body_beyond_pairwise": {
-      "deficit_1_minus_prod_f": "0.9835008764774789672412144000214477601749818288349789004264048090590514",
-      "onebond_sum": "2.950765066995752961927203294614302032213907148506620963939807957716167",
-      "beyond_pairwise_c4": "-1.967264190518273994685988894592854272038925319671642063513403148657115",
+      "deficit_1_minus_prod_f": "0.9835008764774789672412144000214477601749818288349792300647492249740983",
+      "onebond_sum": "2.950765066995752961927203294614302032213907148506639128183439199457833",
+      "beyond_pairwise_c4": "-1.967264190518273994685988894592854272038925319671659898118689974483735",
       "sign": "negative",
       "bonds": "K4 tetrahedron: pp, nn, pn\u00d74"
     },
@@ -65,14 +65,14 @@
       "anti_fit": "no normalization wired; \u03bc_k targets AME-side only; \u03c1_F clusters q\u2080-only, 0 fit."
     }
   },
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0Value": "1.109978582751380807591669095610768879874499121873578736072814240181799",
   "q0AnchorReason": "experimental/Physical-Observations pin per the AGENTS.md owner directive of 2026-08-07 (all production compute defaults to the proton anchor). Emitted by the producer so a re-run preserves it.",
   "scriptFile": "mu4_rhoF_cluster_derivation_probe.py",
-  "scriptHash": "c224896f4d9d",
-  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
+  "scriptHash": "ed0b0a89c8ae",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "engine": "python",
-  "computedAt": "2026-09-04T03:02:16.062993+00:00",
+  "computedAt": "2026-11-20T15:08:05.971529+00:00",
   "durationMs": 0
 }

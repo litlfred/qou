@@ -1,0 +1,496 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1711.09011v1",
+ "source": {
+  "file": "1711.09011v1.pdf",
+  "sha256": "d046698777f3863420d3ca0c0d3942c8bedef34ca3abecab8c437329006e3ed2",
+  "bytes": 554920,
+  "pages": 10,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-22T18:41:33Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1711.09011",
+   "version": "1",
+   "primary_class": "physics.gen-ph",
+   "stamp_date": "21 Nov 2017"
+  },
+  "doi": null,
+  "title": "Quantum groups and braid groups as fundamental symmetries",
+  "authors_raw": "Niels G. Gresnigt\u2217\u2020",
+  "title_lines": [
+   "Quantum groups and braid groups as fundamental",
+   "symmetries"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "CreationDate": "D:20171127013235Z",
+   "Creator": "TeX",
+   "Producer": "pdfTeX-1.40.17"
+  },
+  "title_raw": "Quantum groups and braid groups as fundamental symmetries",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "text": "Quantum groups and braid groups as fundamental symmetries",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "1"
+  },
+  {
+   "level": 1,
+   "title": "The Helon model",
+   "page": 4,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 1,
+   "title": "Normed division algebras",
+   "page": 4,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "3"
+  },
+  {
+   "level": 1,
+   "title": "Clifford algebra representations of circular Artin braid groups",
+   "page": 5,
+   "source": "inferred",
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "The complex numbers and a representation of the Artin braid group B2",
+   "page": 6,
+   "source": "inferred",
+   "number": "5.1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "The quaternions and a representation of the circular Artin braid group Bc",
+   "page": 6,
+   "source": "inferred",
+   "number": "5.2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "The octonions and a representation of the circular Artin braid group Bc",
+   "page": 7,
+   "source": "inferred",
+   "number": "5.3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "6"
+  },
+  {
+   "level": 1,
+   "title": "Common elements of the Helon model and normed division algebra model",
+   "page": 7,
+   "source": "inferred",
+   "number": "6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "6"
+  },
+  {
+   "level": 1,
+   "title": "Discussion",
+   "page": 8,
+   "source": "inferred",
+   "number": "7",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "7"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 9,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "8"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 9,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "8"
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The Helon model of Bilson-Thompson in which the \ufb01rst generation SM fermions are represented as braids of three (possibly twisted) ribbons, and the embedding of such braids into a braided ribbon network",
+   "page": 4,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Decuplet baryon mass formula",
+   "page": 4,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Quaternion multiplication I2 = J2 = K2 = IJK = \u22121, and octonion multiplication represented using a Fano plane",
+   "page": 5,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "4"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1058,
+   "n_words": 146,
+   "label_start": null,
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 6186,
+   "n_words": 1062,
+   "label_start": "1",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-3-the-helon-model",
+   "number": "3",
+   "title": "The Helon model",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1314,
+   "n_words": 215,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-4-normed-division-algebras",
+   "number": "4",
+   "title": "Normed division algebras",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2427,
+   "n_words": 426,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-5-clifford-algebra-representations-of-circular-a",
+   "number": "5",
+   "title": "Clifford algebra representations of circular Artin braid groups",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1540,
+   "n_words": 282,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-004-51-the-complex-numbers-and-a-representation-of-t",
+   "number": "5.1",
+   "title": "The complex numbers and a representation of the Artin braid group B2",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 837,
+   "n_words": 155,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-005-52-the-quaternions-and-a-representation-of-the-c",
+   "number": "5.2",
+   "title": "The quaternions and a representation of the circular Artin braid group Bc",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1095,
+   "n_words": 223,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-006-53-the-octonions-and-a-representation-of-the-cir",
+   "number": "5.3",
+   "title": "The octonions and a representation of the circular Artin braid group Bc",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 973,
+   "n_words": 195,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-007-6-common-elements-of-the-helon-model-and-normed",
+   "number": "6",
+   "title": "Common elements of the Helon model and normed division algebra model",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2739,
+   "n_words": 504,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-008-7-discussion",
+   "number": "7",
+   "title": "Discussion",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2021,
+   "n_words": 328,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-009-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 135,
+   "n_words": 19,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 4592,
+   "n_words": 619,
+   "label_start": "8",
+   "label_end": "9"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "toc_inferred_entries": 11,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 24917,
+  "furniture_lines_stripped": 0
+ }
+}

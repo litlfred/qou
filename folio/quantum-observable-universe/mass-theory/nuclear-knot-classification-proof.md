@@ -31,7 +31,9 @@ conjecture.
 
 **Comparison boundary.** At the substrate parameter, the figure-eight
 volume $\mathrm{Vol}(4_1) \approx 2.030$ is the volume through which
-$q_0$ is pinned, via $\hbar_q^2 = \mathrm{Vol}(4_1)/(m_\mu/m_e)$ with
-the measured lepton mass ratio. The remark that $A = 3$ nuclei then bind
+the ideal calibration pins $q_0$, via $\hbar_q^2 = \mathrm{Vol}(4_1)/(m_\mu/m_e)$ with
+the measured lepton mass ratio; the computed values use the numerical
+proton pin, about $11.6$ ppb away
+([which pin the numbers use](#rem:epistemic-status-of-calibrations)). The remark that $A = 3$ nuclei then bind
 at the substrate scale is a statement about that evaluation, not part of
 the argument above.

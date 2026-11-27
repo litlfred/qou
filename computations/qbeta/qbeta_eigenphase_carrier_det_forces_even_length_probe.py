@@ -89,7 +89,7 @@ import sympy as sp  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps(50)
 
@@ -188,7 +188,7 @@ def main() -> int:
         f"through the 2-dim block's determinant and the carrier's det_eq.",
     )
 
-    q0n = mp.mpf(Q_50_DIGIT_STR)
+    q0n = Q_MP
     allp = all(r["passed"] for r in RESULTS)
     print(f"  {sum(r['passed'] for r in RESULTS)}/{len(RESULTS)} checks passed")
 

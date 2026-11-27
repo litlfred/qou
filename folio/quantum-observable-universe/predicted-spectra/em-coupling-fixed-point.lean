@@ -110,17 +110,6 @@ theorem fixedPoint_iff_cubic (q α : ℝ) (hα : α ≠ 0) :
   · intro h; linear_combination -h
   · intro h; linear_combination -h
 
-/-- CODATA 2022 value of the inverse fine-structure constant,
-    `137.035999177(21)`.
-
-    Was the CODATA-2018 Cs-recoil value `137.035999084`. Those are
-    different DETERMINATIONS, not merely older digits -- they sit 4.4 sigma
-    apart on the 2022 uncertainty -- so this was an owner decision rather
-    than a mechanical drain (2026-08-22). The shift is 0.68 ppb against the
-    `1e-6` class bound and ~690x smaller than the 468 ppb structural gap the
-    CS tower actually carries, so no conclusion here moves. -/
-def codataInvAlpha : ℝ := 137.035999177
-
 /-- **B₃(ℂ) O(α²) normalization class** (the sole open input; §3b-cond).
 
     The class is indexed by the substrate parameter `q` and a candidate
@@ -135,9 +124,13 @@ def codataInvAlpha : ℝ := 137.035999177
       class in the Bloch group `B₃(ℂ)`; equivalently, `α` solves the
       self-consistency relation `IsAlphaEmFixedPoint q α`. The tree term
       `q[9]_q[10]_q` and the zero-mode `2/(3π)` are proved sorry-free
-      upstream — they are NOT part of this hypothesis;
-    · `codata_consistent` — the B₃(ℂ) correction lands the root at the
-      measured value (the empirical face of the conjecture).
+      upstream — they are NOT part of this hypothesis.
+
+    No measured value appears here (owner ruling 2026-11-27: no empirical
+    predictions in formal statements). The comparison of the root with
+    CODATA `1/α` is made in the block prose, at the comparison boundary.
+    A former field `codata_consistent : |1/α − 137.035999177| < 1e-3` was
+    removed for that reason; nothing consumed it.
 
     The class carries HYPOTHESES, not the conclusion: the downstream
     theorem `alpha_em_is_fixed_point_root` DERIVES `P(α) = 0` from
@@ -154,8 +147,6 @@ class AlphaEmFixedPointNormalization (q α : ℝ) : Prop where
   /-- The conjectural B₃(ℂ) O(α²) normalization: `α` solves the
       self-consistent fixed point. -/
   b3_normalization : IsAlphaEmFixedPoint q α
-  /-- The B₃(ℂ) correction lands the root CODATA-consistently. -/
-  codata_consistent : |1 / α - codataInvAlpha| < 1e-3
 
 /-- **Theorem (conditional on the B₃(ℂ) O(α²) normalization class).**
 
@@ -163,18 +154,16 @@ class AlphaEmFixedPointNormalization (q α : ℝ) : Prop where
     constant `α` is a root of the characteristic cubic
     `P(α) = −h²H·α³ + H·α² + T·α − 1` built from the proved tree term
     `q[9]_q[10]_q`, the proved zero-mode `2/(3π)`, and the
-    `H = [2]_q/(8π)` normalization, and its inverse is CODATA-consistent.
+    `H = [2]_q/(8π)` normalization.
 
     The root characterization `alphaCubic q α = 0` is DERIVED from the
     class' `b3_normalization` field through the sorry-free algebraic
     equivalence `fixedPoint_iff_cubic` — it is not read off a stored
-    conclusion field. The CODATA bound is the carried empirical
-    hypothesis. -/
+    conclusion field. -/
 -- Ref: [leitner2026] prop:em-coupling-fixed-point
 theorem alpha_em_is_fixed_point_root (q α : ℝ)
     [inst : AlphaEmFixedPointNormalization q α] :
-    alphaCubic q α = 0 ∧ |1 / α - codataInvAlpha| < 1e-3 := by
-  refine ⟨?_, inst.codata_consistent⟩
+    alphaCubic q α = 0 := by
   have hα : α ≠ 0 := ne_of_gt inst.alpha_pos
   exact (fixedPoint_iff_cubic q α hα).mp inst.b3_normalization
 

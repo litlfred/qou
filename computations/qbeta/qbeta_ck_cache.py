@@ -65,7 +65,7 @@ sys.path.insert(0, str(HERE.parent))
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402
 
 
@@ -73,7 +73,7 @@ def main(convention: str = "D") -> int:
     set_compute_dps()
     wb = WitnessBuilder("qbeta-ck-cache", engine="mpmath")
 
-    q = mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     me = mpf(M_E_MEV)
     Q_codata = mpf(str(Q_BETA_MEV))
 

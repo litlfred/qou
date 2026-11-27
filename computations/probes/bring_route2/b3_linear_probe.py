@@ -19,7 +19,7 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import signed_candidates_probe as SC  # noqa: E402  (also puts the repo packages on sys.path)
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 60
 TOL = mp.mpf(10) ** -25
@@ -72,7 +72,7 @@ def ser(o):
 
 
 def main():
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     h = q - 1 / q
     NH = {i: -S(i, q ** 2) / q for i in (0, 1)}
     NB = {i: S(i, -q) for i in (0, 1)}

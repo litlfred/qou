@@ -46,7 +46,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 mp.mp.dps = 80
 
@@ -74,7 +74,7 @@ def main() -> int:
     q, h = sp.symbols('q h', positive=True)
     G_sym = sp.Symbol('G')  # Catalan, left symbolic
     G_mp = mp.catalan
-    Q0 = mp.mpf(Q_50_DIGIT_STR)
+    Q0 = Q_MP
     h0 = Q0 - 1 / Q0
     h0_sq = h0 * h0
     h0_fourth = h0_sq * h0_sq

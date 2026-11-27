@@ -111,7 +111,7 @@ for _p in ("computations/substrate", "computations", "tools/pyhecke/python",
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 set_compute_dps(60)
 mp.mp.dps = 60
@@ -130,7 +130,10 @@ ZERO, ONE = _census.ZERO, _census.ONE
 q = sp.Symbol("q", positive=True)
 z = sp.Symbol("z")
 
-Q0 = sp.Rational(Q_50_DIGIT_STR)
+# BOTH LAYERS CARRY THE SAME q (bean qou-ayzx, owner ruling D 2026-11-21): the sympy
+# value is read from the 70-digit Q_MP, not the 50-digit string, so no straddle.
+with mp.workdps(mp.mp.dps + 15):
+    Q0 = sp.Rational(mp.nstr(Q_MP, mp.mp.dps + 10, strip_zeros=False))
 H0 = Q0 - 1 / Q0
 
 # ---- experimental / calibration inputs, from the corpus's own tables -------
@@ -138,7 +141,7 @@ from codata_2022_source import (  # noqa: E402
     M_E_MEV, Q_BETA_MEV_AME, Q_BETA_MEV_AME_ERR,
 )
 
-MP_Q0 = mp.mpf(Q_50_DIGIT_STR)
+MP_Q0 = Q_MP
 MP_ME = mp.mpf(str(M_E_MEV))
 MP_QB = mp.mpf(str(Q_BETA_MEV_AME))
 MP_QB_ERR = mp.mpf(str(Q_BETA_MEV_AME_ERR))

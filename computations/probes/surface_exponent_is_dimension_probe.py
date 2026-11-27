@@ -65,7 +65,7 @@ mp.mp.dps = 50
 Q, TOL = ct.Q, ct.TOL
 M_E = mp.mpf(str(M_E_MEV))
 import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
-E0 = _qbeta_e0.order_zero_scaled(M_E, Q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
+E0 = _qbeta_e0.tower_summed_scaled(M_E, Q)  # ruled tower E_0 (owner ruling 2026-11-25, card B, qou-of4i)
 EPS = E0 * mp.log((Q ** 2 + 1) / Q)
 ROOT = Path(__file__).resolve().parents[2]
 AME = ROOT / "qou-mass/src/qou_mass/data/ame2020.json"
@@ -336,7 +336,7 @@ def main() -> int:
     # ---- the chain's magnitude, for the record ------------------------------
     plateau = max(B / A for (A, Z, N, B) in rows)
     print(f"\n  for the record — the chain's plateau is ε = {mp.nstr(EPS, 6)} MeV against a measured peak "
-          f"B/A of {mp.nstr(plateau, 6)} MeV (factor {mp.nstr(plateau / EPS, 6)}; qou-ib3g's 3.0075)")
+          f"B/A of {mp.nstr(plateau, 6)} MeV (factor {mp.nstr(plateau / EPS, 6)}; qou-ib3g's 3.0075 on order-zero E_0; 2.978 on the ruled tower E_0)")
 
     # ---- arithmetic discipline ---------------------------------------------
     checks.append(("NO-FLOAT64: every reported quantity is an mpmath mpf",

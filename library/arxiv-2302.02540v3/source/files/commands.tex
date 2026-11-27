@@ -1,0 +1,193 @@
+%math
+\newcommand{\nc}{\newcommand}
+\nc{\dmo}{\DeclareMathOperator}
+\usepackage{dsfont}
+
+%%%%%%%%%%%%%%%
+% general
+%%%%%%%%%%%%%%%
+%- absolute value
+\nc{\abs}[1]{\left| #1 \right|}
+% - big-O
+\nc{\bigO}[1]{O\left(#1\right)}
+% - cardinality
+\nc{\card}[1]{\left|#1\right|}
+% - ceiling
+\nc{\ceil}[1]{\left\lceil #1 \right\rceil}
+% - complex numbers
+\nc{\CC}{\mathbb{C}}
+% - dilogarithm
+\nc{\dilog}{\mathcal{L}}
+% - floor
+\nc{\floor}[1]{\left\lfloor #1 \right\rfloor}
+% - indicator function
+\nc{\ind}{\mathds{1}}
+% - integers
+\nc{\ZZ}{\mathbb{Z}}
+%- length
+\nc{\len}[1]{\left| #1 \right|}
+% - little-O
+\nc{\littleo}[1]{o\left(#1\right)}
+%  Mat
+\dmo{\Mat}{Mat}
+% - natural numbers
+\nc{\NN}{\mathbb{N}}
+%- norm
+\nc{\norm}[1]{\left|\left| #1 \right|\right|}
+% - rationals
+\nc{\QQ}{\mathbb{Q}}
+% - real numbers
+\nc{\RR}{\mathbb{R}}
+% - set
+\nc{\st}[2]{\left\{\, #1 \,:\, #2\,\right\}}
+%- support
+\dmo{\supp}{supp}
+% - trace
+\nc{\tr}[1]{\mathrm{tr}\left(#1\right)}
+% - Fourier transform
+\nc{\what}{\widehat}
+% - Imaginary part
+\dmo{\im}{Im}
+% - Real part
+\dmo{\re}{Re}
+% - epsilon
+\nc{\eps}{\varepsilon}
+% - logarithmic integral
+\dmo{\li}{li}
+
+%%%%%%%%%%%%%%%
+% geometry
+%%%%%%%%%%%%%%%
+%  arccosh
+\dmo{\arccosh}{arccosh}
+%  arcsinh
+\dmo{\arcsinh}{arcsinh}
+%  area
+\dmo{\area}{area}
+%  convex hull
+\dmo{\conv}{conv}
+% - diameter
+\dmo{\diam}{diam}
+% - disk
+\dmo{\DD}{\mathbb{D}}
+%- distance
+\dmo{\dist}{\mathrm{d}}
+% - hyperbolic plane
+\nc{\HH}{\mathbb{H}}
+%- isometries
+\dmo{\Isom}{Isom}
+% - mapping class group
+\dmo{\MCG}{MCG}
+% - minimal pants length
+\dmo{\MPL}{MPL}
+% - moduli space
+\dmo{\Mod}{\mathcal{M}}
+% - pants length
+\dmo{\PL}{PL}
+% - sphere
+\nc{\Sphere}{\mathbb{S}}
+% - systole
+\dmo{\sys}{sys}
+% - Kissing number
+\dmo{\kiss}{kiss}
+% - teichmueller space
+\dmo{\Teich}{\mathcal{T}}
+% - torus
+\nc{\Torus}{\mathbb{T}}
+% - volume
+\dmo{\vol}{vol}
+% - Weil-Petersson
+\dmo{\WP}{WP}
+% - number of small eigenvalues
+\nc{\Nsmall}{N_\mathrm{small}}
+% - rectangular function
+\dmo{\rect}{rect}
+
+%%%%%%%%%%%%%%%
+% probability
+%%%%%%%%%%%%%%%
+%- convergence total variational distance
+\dmo{\convTV}{\;\stackrel{\mathrm{TV}}{\longrightarrow}\;}
+% - expected value
+\nc{\ExV}[2]{\mathbb{E}_{#1}\left[#2\right]}
+% - expected value
+\dmo{\EE}{\mathbb{E}}
+% - probability
+\nc{\Pro}[2]{\mathbb{P}_{#1}\left[#2\right]}
+% - probability
+\dmo{\PP}{\mathbb{P}}
+%- total variational distance
+\nc{\distTV}[2]{\mathrm{d}_{\rm TV}\left(#1,#2\right)}
+% - uniform probability
+\dmo{\UU}{\mathbb{U}}
+% - variance
+\nc{\Var}[2]{\mathbb{V}\mathrm{ar}_{#1}\left[#2\right]}
+
+
+
+
+%%%%%%%%%%%%%%%
+% algebra
+%%%%%%%%%%%%%%%
+% - alternating group
+\dmo{\alt}{\mathfrak{A}}
+% - Aut
+\dmo{\Aut}{Aut}
+% - Fix
+\dmo{\Fix}{Fix}
+% - GL
+\dmo{\GL}{GL}
+% - Hom
+\dmo{\Hom}{Hom}
+% - Identity
+\dmo{\id}{Id}
+% - PSL
+\dmo{\PSL}{PSL}
+% - PGL
+\dmo{\PGL}{PGL}
+% - PO
+\dmo{\PO}{PO}
+% - Rep
+\dmo{\Rep}{Rep}
+% - SL
+\dmo{\SL}{SL}
+% - SO
+\dmo{\SO}{SO}
+% - symmetric group
+\dmo{\sym}{\mathfrak{S}}
+% - involutions
+\dmo{\inv}{\mathcal{I}}
+% - orbits
+\dmo{\orb}{\mathcal{O}}
+% - stabilizer
+\dmo{\stab}{Stab}
+
+%%%%%%%%%%%%%%%
+% caligraphy
+%%%%%%%%%%%%%%%
+\dmo{\calA}{\mathcal{A}}
+\dmo{\calB}{\mathcal{B}}
+\dmo{\calC}{\mathcal{C}}
+\dmo{\calD}{\mathcal{D}}
+\dmo{\calE}{\mathcal{E}}
+\dmo{\calF}{\mathcal{F}}
+\dmo{\calG}{\mathcal{G}}
+\dmo{\calH}{\mathcal{H}}
+\dmo{\calI}{\mathcal{I}}
+\dmo{\calJ}{\mathcal{J}}
+\dmo{\calK}{\mathcal{K}}
+\dmo{\calL}{\mathcal{L}}
+\dmo{\calM}{\mathcal{M}}
+\dmo{\calN}{\mathcal{N}}
+\dmo{\calO}{\mathcal{O}}
+\dmo{\calP}{\mathcal{P}}
+\dmo{\calQ}{\mathcal{Q}}
+\dmo{\calR}{\mathcal{R}}
+\dmo{\calS}{\mathcal{S}}
+\dmo{\calT}{\mathcal{T}}
+\dmo{\calU}{\mathcal{U}}
+\dmo{\calV}{\mathcal{V}}
+\dmo{\calW}{\mathcal{W}}
+\dmo{\calX}{\mathcal{X}}
+\dmo{\calY}{\mathcal{Y}}
+\dmo{\calZ}{\mathcal{Z}}

@@ -19,6 +19,7 @@ export default conjecture({
     "def:q-dilogarithm",
     "prop:thurston-volume-additivity",
     "def:archimedean-realization-functor",
+    "prop:pre-archimedean-figure-eight-bloch-class",
   ],
   cites: ["kashaev1997", "murakami-murakami2001"],
 });

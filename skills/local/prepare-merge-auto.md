@@ -8,6 +8,18 @@ roles:
 
 # /prepare-merge-auto — Autonomous merge pipeline
 
+> **Platform rules win (owner, 2026-11-27).** Where this local skill differs from the cat-harness KG rules (`req:agent-workflow`, `req:content-lifecycle`) or from [`prepare-merge-auto`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/prepare-merge-auto.md) and [`merge-manager-watcher`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/merge-manager-watcher.md), those win. In short: questions only on cards; beans are the tracker; threads never self-merge and send the PR number and full head SHA to the merge manager; the KG JSON-LD check is the only red pre-merge gate and all other QA runs after the merge; merges run under time-boxed grants, with the owner's card outside one; no repository secrets; one shared non-constructive axiom; no unverified external report as a source. Only the merge manager runs the merge phase.
+
+> **🟥 FAST MERGES override (owner ruling 2026-11-27, AGENTS.md §"FAST MERGES").**
+> Before a merge only two things block: `bun run cat merge:guard <pr>` run by
+> the merging agent (never `--full-tier`), and the JSON-LD KG publication check
+> (`gen-block-jsonld --check` on the head). The Phase 1 build, Phase 1b checks
+> (lean-direct, precision gates, sidecars, producer re-runs, review waits) and
+> the Phase 4 verification gate below are NOT pre-merge gates any more: run them
+> in Phase 5, on `main`, after the merge, and file a bean + follow-up PR for
+> anything red. Owner, verbatim: *"no red gates (excpet json(ld) KG
+> publication). all QA runs after."*
+
 Runs the full `/prepare-merge` workflow PLUS:
 
 1. **Sibling coordination** (before starting)
@@ -136,6 +148,17 @@ way (`qou-tqr9`). The script is additive and skips any entry whose
 > (lean-direct on changed `.lean`, `scripts/precision-gates.sh --changed`,
 > `scripts/check-sidecars.sh`, run-validate, producer re-runs) and record what ran in
 > the PR. The text below is history.
+
+> **🟥 BLOCKING (owner 2026-11-25): the block knowledge-graph nodes.** Verbatim:
+> *"how can coding agent avoid before sending to merge PR - day's photon PRs left 11
+> knowledge-graph nodes stale or missing,? improive process"*. Before the PR goes to the
+> merge manager, and again after the rebase onto `main`, run
+> `scripts/gen-block-jsonld.sh --check --paper <paper>` for every paper the branch
+> touches (`scripts/check-sidecars.sh` does this and exits 1 on a failure). On a stale
+> or missing node, run `scripts/gen-block-jsonld.sh --paper <paper>` and commit the
+> regenerated `.jsonld` in the same PR. Exit 3 means the root layer mounts are absent:
+> run `bash .github/mount-from-lock.sh && bun install`, never the light platform, and
+> never mark the check as passed. Record the check's last line in the PR.
 
 ~~Wait for the Copilot review to land before proceeding.~~
 Do NOT skip ahead — the review is the input to Phase 2.

@@ -21,6 +21,7 @@ values; `--check` fails when that block drifts.
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import hashlib
 import html
 import json
@@ -53,7 +54,7 @@ HUNDRED = mpf("100")
 
 UPSTREAM_SPECS: list[tuple[str, str]] = [
     ("computations/master-atlas-80dps.witness.json", "§1, §2, §3.1, §3.3, §3.4"),
-    ("computations/per-observable-100x-status.witness.json", "§2, §3.1a, §3.4a"),
+    ("computations/per-observable-100x-status.witness.json", "§2, §3.1a, §3.2a (tower E_0), §3.4a"),
     ("computations/alpha-em-schwinger-ladder.witness.json", "§1, §2, §3.3a, §5.1"),
     ("computations/alpha/alpha_em_two_loop_bloch_schwinger_probe.witness.json", "§1, §2, §3.3a, §5.1"),
     ("computations/alpha/alpha-em-seifert-kappa-pairing.witness.json", "§3.3a, §5.1"),
@@ -69,6 +70,8 @@ UPSTREAM_SPECS: list[tuple[str, str]] = [
     ("computations/mirror-nuclei-coulomb-systematics.witness.json", "§2, §3.3a"),
     ("computations/beta-decay-from-q.witness.json", "§2, §3.4a, §5.1"),
     ("computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json", "§2, §3.5a–b"),
+    ("computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json", "§3.2a (ruled trace-pipeline row)"),
+    ("computations/scorecard-epistemic-status.witness.json", "§2, §3.1a, §3.2a, §3.3a, §3.4a (row labels)"),
 ]
 
 FORBIDDEN_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
@@ -190,6 +193,95 @@ def load_and_validate_upstream(root: Path) -> tuple[dict[str, dict[str, Any]], d
     return loaded, hashes, errors
 
 
+def check_consumed_witness_staleness(root: Path) -> tuple[list[str], list[str]]:
+    """Every consumed witness must still describe its producer.
+
+    `allPassed` and byte-identity say nothing about whether the numbers on the
+    scorecard would come out the same if the producers ran today. Two
+    directions are checked, for every witness in UPSTREAM_SPECS that names a
+    producer:
+
+      SELF  the producer file changed since the witness (`scriptHash`);
+      CONE  a first-party module in the producer's transitive import cone was
+            committed after the witness's `computedAt`
+            (`witness_import_cone_staleness_audit.py`; provenance-only modules
+            such as witness.py are ignored, as there).
+
+    SELF is an error. CONE is returned as a warning, printed by --check but
+    not failing it: it is a commit-time heuristic, and a comment-only commit
+    to a cone module trips it. Worse, WitnessBuilder keeps the on-disk stamp
+    when a re-run reproduces the payload, so a re-run that proves nothing
+    moved cannot clear it (measured 2026-11-27: atom-electron-mass and
+    alpha_decay_n126_qalpha_probe re-ran byte-identical and stay flagged).
+    Re-run the flagged producer and diff the payload; a move is the finding.
+    Modules whose age a shallow clone cannot tell are skipped, so a shallow run
+    is a lower bound. Bean qou-myts (B3).
+
+    Returns (errors, warnings).
+    """
+    if root.resolve() != REPO_ROOT.resolve():
+        return [], []  # self-test fixtures carry no git history
+    comp = REPO_ROOT / "computations"
+    if str(comp) not in sys.path:
+        sys.path.insert(0, str(comp))
+    try:
+        import witness_import_cone_staleness_audit as cone_audit
+        from witness_dependency_drift import check_self_staleness
+    except Exception as exc:  # noqa: BLE001 — report, never pass silently
+        return [f"witness staleness check could not load: {exc}"], []
+    index = cone_audit._build_producer_index([comp, REPO_ROOT / "tools"])
+    errors: list[str] = []
+    warnings: list[str] = []
+    for rel, _sections in UPSTREAM_SPECS:
+        wp = root / rel
+        try:
+            w = json.loads(wp.read_text(encoding="utf-8"))
+        except Exception:  # noqa: BLE001 — load_and_validate_upstream reports it
+            continue
+        script_file = w.get("scriptFile") or (
+            Path(str(w["producer"])).name if w.get("producer") else None)
+        if not script_file:
+            continue  # reference data (e.g. ame2020.json), no producer
+        cands = index.get(script_file, [])
+        if not cands:
+            errors.append(f"producer `{script_file}` of {rel} not found")
+            continue
+        producer = cone_audit._resolve_producer(cands, wp)
+        if check_self_staleness(wp, index) is not None:
+            errors.append(f"witness SELF-stale (producer changed since it ran): {rel}")
+            continue
+        try:
+            when = datetime.fromisoformat(str(w.get("computedAt")))
+        except ValueError:
+            errors.append(f"witness has no usable computedAt: {rel}")
+            continue
+        if when.tzinfo is None:
+            when = when.replace(tzinfo=timezone.utc)
+        movers = []
+        for mod in cone_audit.import_cone(producer, index):
+            rel_mod = cone_audit._rel(mod)
+            if cone_audit._is_provenance_only(rel_mod):
+                continue
+            ct = cone_audit._git_commit_time(mod)
+            if ct and ct > when:
+                movers.append((ct, rel_mod))
+        if movers:
+            movers.sort(reverse=True)
+            newest = ", ".join(f"{m} ({t.date()})" for t, m in movers[:3])
+            warnings.append(
+                f"witness IMPORT-CONE stale ({len(movers)} module(s) in its "
+                f"producer's cone committed after {when.date()}; newest: {newest}); "
+                f"re-run `{_rel_to_repo(producer)}` and diff the payload: {rel}")
+    return errors, warnings
+
+
+def _rel_to_repo(p: Path) -> str:
+    try:
+        return str(p.resolve().relative_to(REPO_ROOT.resolve()))
+    except ValueError:
+        return str(p)
+
+
 def render_scorecard(root: Path) -> tuple[str, list[str]]:
     """Render ACCURACY.md only (kept for callers that need the scorecard alone)."""
     scorecard, _dashboard, errors = render_all(root)
@@ -227,6 +319,20 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
     bd_top = loaded["computations/beta-decay-from-q.witness.json"]
     bd = bd_top.get("data", bd_top)
     ad = loaded["computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json"]["data"]
+
+    # Per-row epistemic labels come from their own witness, never from this file
+    # (owner dispatch 2026-11-27). A row without a label is a render error.
+    es_rows = loaded["computations/scorecard-epistemic-status.witness.json"]["data"]["rows"]
+    gg_bond = loaded["computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json"]["data"]
+
+    def _status(rid: str) -> str:
+        if rid not in es_rows:
+            errors.append(f"no epistemic-status label for row `{rid}`")
+            return "Unclassified"
+        return es_rows[rid]["status"]
+
+    def _st(rid: str) -> str:
+        return f"**{_status(rid)}**"
 
     anc = ma["anchors"]
     obs = ma["observables"]
@@ -408,22 +514,22 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
         )
 
     elem_rows = [
-        _elem_row("Electron $m_e$", "m_e_MeV", "m_e", "Calibration input 1"),
-        _elem_row("Muon $m_\\mu$", "m_mu_MeV", "m_mu", "Derived (proton $q_0$)"),
+        _elem_row("Electron $m_e$", "m_e_MeV", "m_e", _st("m_e") + ": calibration input 1"),
+        _elem_row("Muon $m_\\mu$", "m_mu_MeV", "m_mu", _st("m_mu") + " (proton $q_0$)"),
         (
             f"| Tau/electron $m_\\tau / m_e$ | `{_fmt_fixed(mtau_pred, 6)}` | "
             f"`{_fmt_fixed(mtau_exp_cod, 2)} ± {_fmt_fixed(mtau_sig_cod, 2)}` | "
             f"`—` | `{_fmt_rel_human(mtau_rel_cod)}` (`{_fmt_rel_human(mtau_rel_p24)}` PDG-24) | "
             f"`{_fmt_ppq(mtau_rel_cod)}` | "
             f"**`{_fmt_fixed(mtau_pull_cod, 2, signed=True)}σ`** (`{_fmt_fixed(mtau_pull_p24, 2, signed=True)}σ` PDG-24) | "
-            f"No | Conditional (`KoideTopologicalProtectionHypothesis`, `< 1σ`) |"
+            f"No | {_st('m_tau_over_m_e')} (`KoideTopologicalProtectionHypothesis`, `< 1σ`) |"
         ),
-        _elem_row("Charged pion $m_{\\pi^\\pm}$", "m_pi_pm_MeV", None, "Calibration input 3"),
-        _elem_row("Meson ratio $m_{K^\\pm}/m_{\\pi^\\pm}$", "mk_over_mpi", "m_K/m_pi", "Derived (`< 0.002σ`, beats $100\\times$!)"),
-        _elem_row("Charged kaon $m_{K^\\pm}$", "m_k_pm_MeV", None, "Derived (`< 0.002σ`)"),
-        _elem_row("Proton $m_p$", "m_p_MeV", "m_p", "Calibration input 2 ($q_0$ pin)"),
-        _elem_row("Neutron $m_n$", "m_n_MeV", "m_n", "Conditional ($m_p + m_e + Q_{\\beta^-}$)"),
-        _elem_row("Nucleon split $\\Delta m_{np}$", "delta_m_np_MeV", "Delta_pn", "Conditional (`C1–C3`)"),
+        _elem_row("Charged pion $m_{\\pi^\\pm}$", "m_pi_pm_MeV", None, _st("m_pi") + ": calibration input 3"),
+        _elem_row("Meson ratio $m_{K^\\pm}/m_{\\pi^\\pm}$", "mk_over_mpi", "m_K/m_pi", _st("mk_over_mpi") + " (the $(3,4)$ fusion pair is scan-selected; `< 0.002σ`)"),
+        _elem_row("Charged kaon $m_{K^\\pm}$", "m_k_pm_MeV", None, _st("m_k") + " (inherits $m_K/m_\\pi$; `< 0.002σ`)"),
+        _elem_row("Proton $m_p$", "m_p_MeV", "m_p", _st("m_p") + ": calibration input 2 ($q_0$ pin)"),
+        _elem_row("Neutron $m_n$", "m_n_MeV", "m_n", _st("m_n") + " ($m_p + m_e + Q_{\\beta^-}$)"),
+        _elem_row("Nucleon split $\\Delta m_{np}$", "delta_m_np_MeV", "Delta_pn", _st("delta_m_np") + " (`C1–C3`)"),
     ]
 
     # ── Representative nuclide benchmarks (3.1c) ──────────────────────────────
@@ -499,6 +605,17 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
     b3_jun = _m(j_un["per_A"]["A=3"]["bind_MeV"])
     b4_jun = _m(j_un["per_A"]["A=4"]["bind_MeV"])
 
+    # Ruled trace pipeline: gamma-gamma bond V(2)^3 between the V^3 nucleons (selected by the
+    # cheapest-passing rule, owner card 1, 2026-11-25), log law B = -E_0 ln(tr_atom/tr_free) at the
+    # ruled tower E_0. The trace ratio is read from the producer; only the E_0 chart is applied here.
+    gg_rows = gg_bond["results"]["V^3"]["rows"]
+    gg_sel = [r for r in gg_rows if r["bond"] == "V(2)^3" and r["reading3_every_level"] is True]
+    if len(gg_sel) != 1:
+        errors.append("gg-deuteron-bond: expected exactly one passing V(2)^3 row at m = 3")
+        b2_gg = mpf(0)
+    else:
+        b2_gg = -_m(po["qbeta_ruled_base"]["E0_MeV"]) * mp.log(_m(gg_sel[0]["ratio"]))
+
     fewbody_rows = [
         (
             f"| AME2020 Experimental Reference | `{_fmt_fixed(b2_ame, 5)}` | `{_fmt_fixed(b3h_ame, 5)}` | "
@@ -508,6 +625,11 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
         (
             f"| 1D Symbolic Hecke Chain (`mass-table`) | {_fb_cell(b2_chain, b2_ame)} | {_fb_cell(b3_chain, b3h_ame)} | "
             f"`—` (omitted) | `—` (omitted) | `{_fmt_fixed(b3_chain / b2_chain, 3)}` | `3.000` (asymptotic) |"
+        ),
+        (
+            f"| Ruled trace pipeline (γγ bond $V(2)^3$, tower $E_0$, log law) | "
+            f"`{_fmt_fixed(b2_gg, 5)}` (`{_fmt_fixed((b2_gg - b2_ame) / b2_ame * HUNDRED, 2, signed=True)}%`) | "
+            f"`—` (p = n cell) | `—` (p = n cell) | `—` (not computed) | `—` | `—` |"
         ),
         (
             f"| 3D $K_A$ Plaquette Exact (`M3a`, $E_{{\\mathrm{{osc}}}}$) | {_fb_cell(b2_m3a, b2_ame)} | "
@@ -534,6 +656,10 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
             f"`{_fmt_fixed(_m(j_un['scaling_ratios_vs_A2']['A4_over_A2']), 3)}` |"
         ),
     ]
+    _fb_status = ["Reference", _st("hecke_1d_chain"), _st("ruled_trace_2h")] + [_st("ka_rows")] * (
+        len(fewbody_rows) - 3
+    )
+    fewbody_rows = [row + f" {st} |" for row, st in zip(fewbody_rows, _fb_status)]
 
     # ── Category 3: Charge, EM, Coulomb, Molecular ────────────────────────────
     alpha_cs_ppb = _m(alpha_cs["rel_ppb"])
@@ -542,6 +668,8 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
     coul_dhe = _m(cc["derived_coulomb_dHe_MeV"])
     coul_ame = _m(cc["ame_split_MeV"])
     coul_rel = (coul_dhe - coul_ame) / coul_ame
+    coul_frac = _m(cc["fraction_of_split_covered"])
+    coul_short = _m(cc["remaining_factor"])
     mirror_mean = _m(mn["ratio_mean"])
     mirror_rms = _m(mn["ratio_rms_scatter"])
     mirror_rel = mirror_mean - mpf(1)
@@ -550,54 +678,54 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
         (
             f"| Electric charge quantization $Q(p), Q(n)$ | `+1, 0` ($c = {u1['Q1_c_structural_status']['value']}$) | "
             f"`+1, 0` ($\\|Q_p + Q_e\\|/e < 10^{{-21}}$) | `0` (exact) | `0` | Exact | "
-            f"Proved topological writhe $Q = \\tfrac{{1}}{{2}}\\operatorname{{writhe}}(H)$ |"
+            f"{_st('charge_Q')}: proved topological writhe $Q = \\tfrac{{1}}{{2}}\\operatorname{{writhe}}(H)$ |"
         ),
         (
             f"| Fine-structure $\\alpha_{{\\mathrm{{EM}}}}^{{-1}}$ (Schwinger Form B, 4-topology) | `{_fmt_fixed(_m(alpha_fb['pred']), 9)}` | "
             f"`{_fmt_fixed(alpha_exp, 9)} ± 2.1e-8` | `{_fmt_fixed(alpha_fb_ppb, 3, signed=True)} ppb` | "
             f"`{_fmt_ppq(alpha_fb_ppb / TEN_9)}` | `{_fmt_fixed(alpha_fb_pull, 2, signed=True)}σ` | "
-            f"Derived 4-topology `(1 - h_A^2 α)` loop factor; conditional Bring zero-mode |"
+            f"{_st('alpha_form_b')}: 4-topology `(1 - h_A^2 α)` loop factor proved; value conditional on `ArchimedeanLimit`, `BlochSuslinUniqueness`, `BringZeroModeBlochClass` |"
         ),
         (
             f"| Fine-structure $\\alpha_{{\\mathrm{{EM}}}}^{{-1}}$ (2-loop Bloch-$B_3$ Form C) | `{_fmt_fixed(_m(alpha_fc['pred']), 9)}` | "
             f"`{_fmt_fixed(alpha_exp, 9)} ± 2.1e-8` | `{_fmt_fixed(alpha_fc_ppb, 3, signed=True)} ppb` | "
             f"`{_fmt_ppq(alpha_fc_ppb / TEN_9)}` | **`{_fmt_fixed(alpha_fc_pull, 2, signed=True)}σ`** | "
-            f"Conditional two-loop Bloch-$B_3(\\mathbb{{C}})$ trilogarithm defect (within $1\\sigma_{{\\mathrm{{exp}}}}$!) |"
+            f"{_st('alpha_form_c')}: two-loop Bloch-$B_3(\\mathbb{{C}})$ trilogarithm defect (within $1\\sigma_{{\\mathrm{{exp}}}}$!) |"
         ),
         (
             f"| Fine-structure $\\alpha_{{\\mathrm{{EM}}}}^{{-1}}$ ($8\\times 8$ Seifert $\\kappa_{{\\mathrm{{Seifert}}}}$) | `{_fmt_fixed(_m(alpha_seif['pred']), 9)}` | "
             f"`{_fmt_fixed(alpha_exp, 9)} ± 2.1e-8` | `{_fmt_fixed(alpha_seif_ppb, 2, signed=True)} ppb` | "
             f"`{_fmt_ppq(alpha_seif_ppb / TEN_9)}` | `{_fmt_fixed(alpha_seif_pull, 1, signed=True)}σ` | "
-            f"Homological $b_1(\\Sigma_4)=8$ Seifert pairing (`19.1x` closer than Witten $2\\times 2$) |"
+            f"{_st('alpha_seifert')}: homological $b_1(\\Sigma_4)=8$ Seifert pairing (`19.1x` closer than Witten $2\\times 2$) |"
         ),
         (
             f"| Fine-structure $\\alpha_{{\\mathrm{{EM}}}}^{{-1}}$ (legacy Witten $2\\times 2$ CS) | `{_fmt_fixed(_m(alpha_cs['pred']), 9)}` | "
             f"`{_fmt_fixed(alpha_exp, 9)} ± 2.1e-8` | `{_fmt_fixed(alpha_cs_ppb, 2, signed=True)} ppb` | "
             f"`{_fmt_ppq(alpha_cs_ppb / TEN_9)}` | `{_fmt_fixed(alpha_cs_pull, 1, signed=True)}σ` | "
-            f"Legacy $2\\times 2$ Chern–Simons baseline (`-0.468 ppm` gap vs Form B) |"
+            f"{_st('alpha_legacy_cs')}: legacy $2\\times 2$ Chern–Simons baseline (`-0.468 ppm` gap vs Form B) |"
         ),
         (
             f"| Rydberg constant $R_\\infty h c$ (Schwinger Form B) | `{_fmt_fixed(_m(ry_fb['pred']), 9)} eV` | "
             f"`{_fmt_fixed(_m(ry_fb['exp']), 9)} ± 1.5e-11 eV` | `{_fmt_fixed(ry_fb_ppb, 3, signed=True)} ppb` | "
             f"`{_fmt_ppq(ry_fb_ppb / TEN_9)}` | `{_fmt_fixed(ry_fb_zcomb, 2, signed=True)}σ` ($z_{{\\mathrm{{comb}}}}$) | "
-            f"Derived $\\tfrac{{1}}{{2}}m_e c^2 \\alpha_{{\\mathrm{{EM}}}}^2$ ($\\sigma_{{\\mathrm{{pred}}}} = 0.313\\;\\mathrm{{ppb}}$ from $m_e$) |"
+            f"{_st('rydberg_form_b')}: $\\tfrac{{1}}{{2}}m_e c^2 \\alpha_{{\\mathrm{{EM}}}}^2$ with Form B $\\alpha$ ($\\sigma_{{\\mathrm{{pred}}}} = 0.313\\;\\mathrm{{ppb}}$ from $m_e$) |"
         ),
         (
             f"| Rydberg constant $R_\\infty h c$ (2-loop Bloch-$B_3$ Form C) | `{_fmt_fixed(_m(ry_fc['pred']), 9)} eV` | "
             f"`{_fmt_fixed(_m(ry_fc['exp']), 9)} ± 1.5e-11 eV` | `{_fmt_fixed(ry_fc_ppb, 3, signed=True)} ppb` | "
             f"`{_fmt_ppq(ry_fc_ppb / TEN_9)}` | **`{_fmt_fixed(ry_fc_zcomb, 2, signed=True)}σ`** ($z_{{\\mathrm{{comb}}}}$) | "
-            f"Conditional two-loop Bloch-$B_3$ Rydberg (within $1\\sigma_{{\\mathrm{{comb}}}}$!) |"
+            f"{_st('rydberg_form_c')}: two-loop Bloch-$B_3$ Rydberg (within $1\\sigma_{{\\mathrm{{comb}}}}$!) |"
         ),
         (
             f"| Bare topological ${{}}^3\\mathrm{{H}}\\text{{--}}{{}}^3\\mathrm{{He}}$ Coulomb | `{_fmt_fixed(coul_dhe, 4)} MeV` | "
-            f"`{_fmt_fixed(coul_ame, 4)} MeV` | `{_fmt_fixed(coul_rel * HUNDRED, 2, signed=True)}%` (`29.0%` covered) | "
-            f"`{_fmt_ppq(coul_rel)}` | `3.45x` short | Zero-fit $\\tanh(\\ln q_0) B_{{pp}}$; nuclear-geometry factor open |"
+            f"`{_fmt_fixed(coul_ame, 4)} MeV` | `{_fmt_fixed(coul_rel * HUNDRED, 2, signed=True)}%` (`{_fmt_fixed(coul_frac * HUNDRED, 1)}%` covered) | "
+            f"`{_fmt_ppq(coul_rel)}` | `{_fmt_fixed(coul_short, 2)}x` short | {_st('coulomb_3h_3he')}: zero-fit $\\tanh(\\ln q_0) B_{{pp}}$ on the ruled nucleon word; scope-limited negative, nuclear-geometry factor open |"
         ),
         (
             f"| Mirror-nuclei Coulomb systematics ($N={len(mn['mirror_pairs'])}$, $A=3\\text{{--}}39$) | "
             f"Ratio `{_fmt_fixed(mirror_mean, 4)}` | `1.0000` (AME2020 splits) | "
             f"`{_fmt_fixed(mirror_rel * HUNDRED, 2, signed=True)}%` mean | `{_fmt_ppq(mirror_rel)}` | "
-            f"`±{_fmt_fixed(mirror_rms * HUNDRED, 2)}%` RMS | Canonical nuclear-radius Coulomb scaling across mirror doublets |"
+            f"`±{_fmt_fixed(mirror_rms * HUNDRED, 2)}%` RMS | {_st('mirror_coulomb')}: canonical nuclear-radius Coulomb scaling across mirror doublets |"
         ),
     ]
 
@@ -652,14 +780,14 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
         pull = _m(bo["pull_exp"])
         beta_bench_rows.append(
             f"| {b_lbl} | {b_form} | `{_fmt_fixed(pred, 5)} MeV` | `{_fmt_fixed(exp, 5)} MeV` | "
-            f"`{_fmt_rel_human(rel_frac)}` | `{_fmt_ppq(rel_frac)}` | `{_fmt_fixed(pull, 1, signed=True)}σ` | {b_stat} |"
+            f"`{_fmt_rel_human(rel_frac)}` | `{_fmt_ppq(rel_frac)}` | `{_fmt_fixed(pull, 1, signed=True)}σ` | {_st('q_beta_free_neutron' if b_key == 'q_beta_base_MeV' else 'beta_tm_rows')}: {b_stat} |"
         )
     beta_bench_rows.append(
         f"| Electroweak VEV $v_{{\\mathrm{{weak}}}}$ ($N_v = {_fmt_fixed(nv_pred, 6)}$) | "
         f"Bring–Schwinger fixed point $1/\\alpha_v = T_{{\\mathrm{{EW}}}} - \\alpha_v H(1 - \\hbar_q^2 \\alpha_v)$ | "
         f"`{_fmt_fixed(vew_pred, 6)} GeV` | `{_fmt_fixed(vew_exp, 6)} ± {_fmt_sci(vew_sig_exp, 2)} GeV` | "
         f"**`{_fmt_fixed(vew_ppb, 2, signed=True)} ppb`** | `{_fmt_ppq(vew_ppb / TEN_9)}` | "
-        f"**`{_fmt_fixed(vew_pull, 2, signed=True)}σ`** | Conditional Bring–Schwinger fixed point ($G_F$ within $1\\sigma_{{\\mathrm{{exp}}}}$!) |"
+        f"**`{_fmt_fixed(vew_pull, 2, signed=True)}σ`** | {_st('v_weak')}: Bring–Schwinger fixed point ($G_F$ within $1\\sigma_{{\\mathrm{{exp}}}}$!) |"
     )
 
     beta_records: list[dict[str, Any]] = []
@@ -789,13 +917,50 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
 
     mk_ppb_val = _m(obs["mk_over_mpi"]["rel_ppb"])
     elem_med_ppm = (abs(_m(obs["m_mu_MeV"]["rel_ppb"])) / TEN_3 + abs(mtau_rel_cod) * TEN_6) / mpf(2)
+    # Within 1σ counting only rows the status witness labels Derived (owner dispatch
+    # 2026-11-27): the honest headline. Pairs are (row id, display label, pull or None).
+    def _derived_within(pairs: list[tuple[str, str, Any]], n_total: int) -> str:
+        hits = [lbl for rid, lbl, pull in pairs
+                if pull is not None and abs(pull) <= mpf(1) and _status(rid) == "Derived"]
+        return f"**`{len(hits)} / {n_total}`**" + (f" ({', '.join(hits)})" if hits else "")
+
+    cat1_pairs = [
+        ("m_mu", "$m_\\mu$", _m(obs["m_mu_MeV"]["pull_exp"])),
+        ("m_tau_over_m_e", "$m_\\tau/m_e$", mtau_pull_cod),
+        ("mk_over_mpi", "$m_K/m_\\pi$", _m(obs["mk_over_mpi"]["pull_exp"])),
+        ("m_k", "$m_K$", _m(obs["m_k_pm_MeV"]["pull_exp"])),
+        ("m_n", "$m_n$", _m(obs["m_n_MeV"]["pull_exp"])),
+        ("delta_m_np", "$\\Delta m_{np}$", _m(obs["delta_m_np_MeV"]["pull_exp"])),
+    ]
+    cat3_pairs = [
+        ("charge_Q", "$Q$", mpf(0)),
+        ("alpha_form_b", "Form B $\\alpha_{\\mathrm{EM}}$", alpha_fb_pull),
+        ("alpha_form_c", "Form C $\\alpha_{\\mathrm{EM}}$", alpha_fc_pull),
+        ("alpha_seifert", "Seifert $\\alpha_{\\mathrm{EM}}$", alpha_seif_pull),
+        ("alpha_legacy_cs", "CS $\\alpha_{\\mathrm{EM}}$", alpha_cs_pull),
+        ("rydberg_form_b", "Form B $R_\\infty$", ry_fb_zcomb),
+        ("rydberg_form_c", "Form C $R_\\infty$", ry_fc_zcomb),
+    ] + [("vsepr", "VSEPR", mpf(0))] * mol_1s
+    cat4_pairs = [("v_weak", "$v_{\\mathrm{weak}}$", vew_pull)] + [
+        ("q_beta_free_neutron" if k == "q_beta_base_MeV" else "beta_tm_rows", k, _m(obs[k]["pull_exp"]))
+        for _l, _f, k, _s in beta_bench_specs
+    ]
+    def _group(pairs: list[tuple[str, str, Any]]) -> str:
+        seen: dict[str, list[str]] = {}
+        for rid, lbl, _p in pairs:
+            names = seen.setdefault(_status(rid), [])
+            if lbl not in names:
+                names.append(lbl)
+        order = ["Derived", "Selected", "Conditional", "Unclassified", "Calibration"]
+        return "; ".join(f"{k} ({', '.join(seen[k])})" for k in order if k in seen)
+
     exec_rows = [
         (
             f"| **1. Mass** (Elementary & Hadrons) | $m_\\mu, m_\\tau/m_e, m_K/m_\\pi, m_K, m_n$ (+ 3 pins) | `6` (+3 pins) | "
             f"`81.1 ppm` (`136 ppb` excl. $m_n, m_\\tau$) | `{_fmt_fixed(elem_med_ppm, 1)} ppm` (`211 ppb` $m_\\mu$) | `5.14e+07` to `4.86e+11` | "
             f"**`3 / 6`** ($m_K/m_\\pi, m_K, m_\\tau/m_e$) | **`3 / 6`** ($m_K/m_\\pi, m_K, m_\\tau/m_e$) | "
-            f"**High** on $m_K/m_\\pi$ (`{_fmt_fixed(mk_ppb_val, 3, signed=True)} ppb`, `<0.002σ`), $m_\\mu$ (`+211 ppb`), & cond. $m_\\tau/m_e$ (`{_fmt_fixed(mtau_pull_cod, 2, signed=True)}σ` / `{_fmt_fixed(mtau_pull_p24, 2, signed=True)}σ` PDG-24); $m_n$ (`-486 ppm`) open | "
-            f"**Not at `1 ppQ`** (input floor `3.13e5 ppQ`) | Derived ($m_\\mu, m_K$); Conditional ($m_\\tau/m_e, m_n$) |"
+            f"**High** on selected $m_K/m_\\pi$ (`{_fmt_fixed(mk_ppb_val, 3, signed=True)} ppb`, `<0.002σ`), $m_\\mu$ (`+211 ppb`), & cond. $m_\\tau/m_e$ (`{_fmt_fixed(mtau_pull_cod, 2, signed=True)}σ` / `{_fmt_fixed(mtau_pull_p24, 2, signed=True)}σ` PDG-24); $m_n$ (`-486 ppm`) open | "
+            f"**Not at `1 ppQ`** (input floor `3.13e5 ppQ`) | {_group(cat1_pairs)} |"
         ),
         (
             f"| **1. Mass** (Nuclear Rest Mass $A \\ge 2$) | Symbolic Q-CLT `m_symbolic_MeV` vs AME2020 | `{len(nuclide_records)}` | "
@@ -809,8 +974,8 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
             f"`4` ($K_A$) / `{len(nuclide_records)}` (Q-CLT) | `7.13%` ($K_A$) / `{_fmt_fixed(_mean(all_b_rels) * HUNDRED, 1)}%` (Q-CLT) | "
             f"`4.96%` ($K_A$) / `{_fmt_fixed(_median(all_b_rels) * HUNDRED, 1)}%` (Q-CLT) | `3.65e+13` ($K_4$) to `{_fmt_ppq(_median(all_b_rels))}` | "
             f"`0 / {len(nuclide_records)}` | `0 / {len(nuclide_records)}` | "
-            f"**Few-body $K_4$ strong** (`+1.8%` ${{}}^2\\mathrm{{H}}$, `+3.65%` ${{}}^4\\mathrm{{He}}$); **$A \\ge 5$ underbound `~69%`** | "
-            f"**Not at `1 ppQ`** | Derived ($A \\le 4$); Open saturation ($A \\ge 5$) |"
+            f"**Few-body $K_4$ (selected cell)** (`+1.8%` ${{}}^2\\mathrm{{H}}$, `+3.65%` ${{}}^4\\mathrm{{He}}$); **$A \\ge 5$ underbound `~69%`** | "
+            f"**Not at `1 ppQ`** | {_status('ka_rows')} ($K_A$, $A \\le 4$: grid cell nearest AME, Table 3.2a note); Open saturation ($A \\ge 5$) |"
         ),
         (
             f"| **3. Charge, $\\alpha_{{\\mathrm{{EM}}}}$, $R_\\infty$ & Geometry** | $Q$, $\\alpha_{{\\mathrm{{EM}}}}^{{-1}}$ (Form B/C & Seifert), $R_\\infty h c$, Coulomb (`8`), VSEPR (`7`) | `22` | "
@@ -818,7 +983,7 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
             f"`0` ($Q$), `{_fmt_ppq(alpha_fc_ppb / TEN_9)}` (Form C), `{_fmt_ppq(alpha_fb_ppb / TEN_9)}` (Form B) | "
             f"`{3 + mol_1s} / 22` ($Q$, Form C $\\alpha_{{\\mathrm{{EM}}}}$, Form C $R_\\infty$, $\\mathrm{{CH_4, CO_2}}$) | `{5 + mol_3s} / 22` (+ Form B $\\alpha_{{\\mathrm{{EM}}}} \\& R_\\infty$) | "
             f"**Exact** $Q$; **proved 4-topo Form B** (`-2.38σ`), **cond. Form C** (`-0.16σ`), **Seifert CS** (`-24.5 ppb`), **$R_\\infty$** (`+0.725 ppb`) | "
-            f"$Q$ exact (`0 ppQ`); Form B `3.65e5 ppQ`, Form C `2.41e4 ppQ` | Proved ($Q$, 1-loop $h_A^2$); Cond. (Bring / Bloch-$B_3$) |"
+            f"$Q$ exact (`0 ppQ`); Form B `3.65e5 ppQ`, Form C `2.41e4 ppQ` | {_group(cat3_pairs)}; 1-loop $h_A^2$ factor proved |"
         ),
         (
             f"| **4. Weak $\\beta$-Decay & $v_{{\\mathrm{{weak}}}}$** | $v_{{\\mathrm{{weak}}}}$ ($N_v$), free $n$, `6` TM skein, `{len(beta_records) - 1}` composite $\\beta^-$ | `{len(beta_records) + 1}` | "
@@ -837,6 +1002,15 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
             f"**Not at `1 ppQ`** | Derived WKB/MJ; Open heavy $Q_\\alpha$ |"
         ),
     ]
+    _exec_derived = [
+        _derived_within(cat1_pairs, 6),
+        f"`0 / {len(nuclide_records)}`",
+        f"`0 / {len(nuclide_records)}`",
+        _derived_within(cat3_pairs, 22),
+        _derived_within(cat4_pairs, len(beta_records) + 1),
+        f"`0 / {len(alpha_records)}`",
+    ]
+    exec_rows = [row + f" {cell} |" for row, cell in zip(exec_rows, _exec_derived, strict=True)]
 
     # ── Section 5.3: Deterministic Witness Provenance Rows ────────────────────
     prov_rows: list[str] = []
@@ -895,6 +1069,7 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
         "MOLECULAR_ROWS": "\n".join(mol_rows),
         "ALPHA_CS_REL_PPB": _fmt_fixed(alpha_cs_ppb, 2, signed=True),
         "TANH_LN_Q0": _fmt_fixed(tanh_ln_q0, 6),
+        "COULOMB_3H3HE_COVERED_PCT": _fmt_fixed(coul_frac * HUNDRED, 1),
         "MIRROR_MEAN_RATIO": _fmt_fixed(mirror_mean, 4),
         "MIRROR_RMS_PCT": _fmt_fixed(mirror_rms * HUNDRED, 2),
         "BETA_BENCHMARK_ROWS": "\n".join(beta_bench_rows),
@@ -960,23 +1135,24 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
     n_beta_comp_exo = sum(1 for x in beta_records if x["exo"] and x["A"] >= 2)
     beta_comp_med = _median([x["rel"] for x in beta_records if x["A"] >= 2])
     dash_rows = [
-        _obs_row("Muon mass (MeV)", "m_mu_MeV", 7, "Derived"),
+        _obs_row("Muon mass (MeV)", "m_mu_MeV", 7, _status("m_mu")),
         (
             f"| Tau-to-electron mass ratio | ${_fmt_fixed(mtau_pred, 2)}$ | ${_fmt_fixed(mtau_exp_cod, 2)}$ | "
-            f"{_rel(mtau_rel_cod)}{_sig(mtau_pull_cod)} | Conditional |"
+            f"{_rel(mtau_rel_cod)}{_sig(mtau_pull_cod)} | {_status('m_tau_over_m_e')} |"
         ),
-        _obs_row("Kaon-to-pion mass ratio", "mk_over_mpi", 7, "Derived", with_pull=False),
-        _obs_row("Inverse fine-structure constant", "alpha_em_inv_form_b", 9, "Conditional"),
-        _obs_row("Electroweak scale (GeV)", "v_ew_GeV", 5, "Conditional"),
-        _obs_row("Neutron mass (MeV)", "m_n_MeV", 4, "Conditional", with_pull=False),
-        _obs_row("Neutron–proton mass difference (MeV)", "delta_m_np_MeV", 4, "Conditional", with_pull=False),
-        _obs_row("Neutron $\\beta$-decay $Q$-value (MeV)", "q_beta_base_MeV", 4, "Conditional", with_pull=False),
+        _obs_row("Kaon-to-pion mass ratio", "mk_over_mpi", 7, _status("mk_over_mpi"), with_pull=False),
+        _obs_row("Inverse fine-structure constant", "alpha_em_inv_form_b", 9, _status("alpha_form_b")),
+        _obs_row("Electroweak scale (GeV)", "v_ew_GeV", 5, _status("v_weak")),
+        _obs_row("Neutron mass (MeV)", "m_n_MeV", 4, _status("m_n"), with_pull=False),
+        _obs_row("Neutron–proton mass difference (MeV)", "delta_m_np_MeV", 4, _status("delta_m_np"), with_pull=False),
+        _obs_row("Neutron $\\beta$-decay $Q$-value (MeV)", "q_beta_base_MeV", 4, _status("q_beta_free_neutron"), with_pull=False),
         (
             f"| $\\beta^-$ decays of nuclei, exothermic | ${n_beta_comp_exo}$ of ${n_beta_comp}$ | "
             f"${n_beta_comp}$ of ${n_beta_comp}$ | median ${_fmt_fixed(beta_comp_med * HUNDRED, 0)}\\%$ in $Q$ | Open |"
         ),
-        _bind_row("Deuteron binding (MeV)", b2_m3a, b2_ame, 3, "Few-body model"),
-        _bind_row("Helium-4 binding (MeV)", b4_m3a, b4_ame, 2, "Few-body model"),
+        _bind_row("Deuteron binding (MeV)", b2_m3a, b2_ame, 3, _status("ka_rows")),
+        _bind_row("Deuteron binding, ruled trace pipeline (MeV)", b2_gg, b2_ame, 5, _status("ruled_trace_2h")),
+        _bind_row("Helium-4 binding (MeV)", b4_m3a, b4_ame, 2, _status("ka_rows")),
         _bind_row("Iron-56 binding (MeV)", b56_pred, b56_ame, 1, "Open"),
         (
             f"| Binding, all ${len(nuclide_records)}$ nuclides with $A \\ge 2$ | chain proxy | AME2020 | "
@@ -1236,6 +1412,10 @@ def run_check(root: Path, qa_report: bool = False, html_out: Path | None = None)
                 html_out.parent.mkdir(parents=True, exist_ok=True)
                 html_out.write_text(html_doc, encoding="utf-8")
     errors.extend(check_readme_link(root))
+    stale_errors, stale_warnings = check_consumed_witness_staleness(root)
+    errors.extend(stale_errors)
+    for w in stale_warnings:
+        print(f"WARN accuracy-scorecard: {w}", file=sys.stderr)
 
     elapsed_ms = (time.monotonic_ns() - t0_ns) // 1_000_000
     seconds_dec = f"{elapsed_ms // 1000}.{(elapsed_ms % 1000) // 100}"

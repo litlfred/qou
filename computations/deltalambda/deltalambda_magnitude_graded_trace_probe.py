@@ -70,7 +70,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
               _Path_qp(__file__).resolve().parent.parent / 'substrate'):
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 
 
 def n_lambda(lam):
@@ -115,7 +115,7 @@ def main():
     except Exception:                                # noqa: BLE001 (substrate optional in sandbox)
         # matches the primary q_at (proton pin) for cross-environment consistency; the
         # magnitude≠q-dim result is q₀-insensitive (4.41% gap ≫ the 11.5 ppb μ–p diff).
-        q0 = mp.mpf(Q_50_DIGIT_STR)
+        q0 = Q_MP
         q0src = "fallback (q_at proton pin, hardcoded high-precision)"
 
     assertions = []

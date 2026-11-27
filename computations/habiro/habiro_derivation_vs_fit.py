@@ -35,7 +35,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 try:
-    from q_parameter import Q_50_DIGIT_STR, vol_4_1_at  # noqa: E402
+    from q_parameter import Q_50_DIGIT_STR, Q_MP, vol_4_1_at  # noqa: E402
 except ImportError:
     from qou_substrate.constants import Q_50_DIGIT_STR, vol_4_1_at  # noqa: E402
 
@@ -127,7 +127,7 @@ def main():
     # Evaluate at q₀ to get numerical bridge
     # ---------------------------------------------------------------
     set_compute_dps()
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = Q_MP
     u0 = mp.sqrt(q0)
     vol = vol_4_1_at(mp.mp.dps)
     hbar_q = (q0 - 1) / q0

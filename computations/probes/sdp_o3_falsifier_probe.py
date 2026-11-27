@@ -61,7 +61,7 @@ import pyhecke_native as PHN  # noqa: E402
 
 from pyhecke.gram import NF_BASIS, NF_NAMES, TR_M  # noqa: E402
 from hecke_core import partitions_of, partition_dimension  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 
@@ -84,7 +84,7 @@ def check(name: str, ok: bool, detail: str = "") -> None:
 
 def main() -> int:
     set_compute_dps()
-    q = mp.mpf(Q_50_DIGIT_STR)
+    q = Q_MP
     parts = [tuple(p) for p in partitions_of(3)]
     dims = [partition_dimension(p) for p in parts]
 

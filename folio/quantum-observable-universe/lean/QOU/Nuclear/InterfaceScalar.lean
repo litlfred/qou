@@ -640,6 +640,54 @@ theorem common_factor_preserves_degeneracy (x y g : R) (h : x = y) :
 
 end SpaceIndexSeparability
 
+section TensorSpaceCoupling
+
+variable {R : Type*} [CommRing R]
+
+/-- **An additive separable interface is likewise degenerate on `³S₁` and `¹S₀` (`qou-7zob`).**
+Under the Pauli lock (`fSpin s1 = fIso t1`, `fSpin s0 = fIso t0`), any additive
+combination `fSpin s + fIso t + fSpace ell` takes identical values on `(s1, t0, ell)`
+and `(s0, t1, ell)`. -/
+theorem additive_separable_interface_degenerate
+    {Sp Is Sp3 : Type*} (fSpin : Sp → R) (fIso : Is → R) (fSpace : Sp3 → R)
+    (s1 s0 : Sp) (t1 t0 : Is) (ell : Sp3)
+    (hplus : fSpin s1 = fIso t1) (hminus : fSpin s0 = fIso t0) :
+    fSpin s1 + fIso t0 + fSpace ell = fSpin s0 + fIso t1 + fSpace ell := by
+  rw [hplus, hminus]
+  ring
+
+/-- **Non-separable spin–space tensor coupling isolates the `³S₁ − ¹S₀` splitting (`qou-7zob`).**
+For an interface `F s t ell = fSpin s * fIso t * fSpace ell + gTensor s ell * fIso t`
+combining a separable base with a spin–space tensor coupling `gTensor : Sp → Sp3 → R`,
+the separable base cancels identically under the Pauli lock, leaving the channel splitting
+equal to `gTensor s1 ell * fIso t0 - gTensor s0 ell * fIso t1`. -/
+theorem coupled_spin_space_splitting_identity
+    {Sp Is Sp3 : Type*} (fSpin : Sp → R) (fIso : Is → R) (fSpace : Sp3 → R)
+    (gTensor : Sp → Sp3 → R)
+    (s1 s0 : Sp) (t1 t0 : Is) (ell : Sp3)
+    (hplus : fSpin s1 = fIso t1) (hminus : fSpin s0 = fIso t0) :
+    (fSpin s1 * fIso t0 * fSpace ell + gTensor s1 ell * fIso t0) -
+      (fSpin s0 * fIso t1 * fSpace ell + gTensor s0 ell * fIso t1) =
+      gTensor s1 ell * fIso t0 - gTensor s0 ell * fIso t1 := by
+  rw [hplus, hminus]
+  ring
+
+/-- **When the spin singlet `S = 0` carries zero tensor operator (`gTensor s0 ell = 0`),
+the `³S₁ − ¹S₀` splitting equals `gTensor s1 ell * fIso t0` (`qou-7zob`).** -/
+theorem coupled_spin_space_splitting_of_singlet_zero
+    {Sp Is Sp3 : Type*} (fSpin : Sp → R) (fIso : Is → R) (fSpace : Sp3 → R)
+    (gTensor : Sp → Sp3 → R)
+    (s1 s0 : Sp) (t1 t0 : Is) (ell : Sp3)
+    (hplus : fSpin s1 = fIso t1) (hminus : fSpin s0 = fIso t0)
+    (hsing : gTensor s0 ell = 0) :
+    (fSpin s1 * fIso t0 * fSpace ell + gTensor s1 ell * fIso t0) -
+      (fSpin s0 * fIso t1 * fSpace ell + gTensor s0 ell * fIso t1) =
+      gTensor s1 ell * fIso t0 := by
+  rw [coupled_spin_space_splitting_identity fSpin fIso fSpace gTensor s1 s0 t1 t0 ell hplus hminus,
+      hsing, zero_mul, sub_zero]
+
+end TensorSpaceCoupling
+
 section ConjugationInvariance
 
 variable {A : Type*} [Ring A] {K : Type*}
@@ -802,6 +850,42 @@ theorem markov_stabilisation_fails_on_repeat
     (q - q⁻¹) hadd hsmul hhecke hone hσ hrepeat
   have hneg := conventionD_markov_defect_neg q hq
   linarith [hquad, hneg]
+
+/-- **Closed form of the convention-D singlet (`T = 0`) projector weight (`qou-5d6k`).**
+With `z = q³/(q² + 1)`, the antisymmetric projector trace `(q - z)/(q + q⁻¹)` simplifies
+identically to `q²/(q² + 1)²`. -/
+theorem mu_singlet_closed_form_conventionD (q : R) (hq : 0 < q) :
+    (q - q ^ 3 / (q ^ 2 + 1)) / (q + q⁻¹) = q ^ 2 / (q ^ 2 + 1) ^ 2 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hden : q ^ 2 + 1 ≠ 0 := by positivity
+  have hsum : q + q⁻¹ ≠ 0 := by
+    have : 0 < q + q⁻¹ := by positivity
+    exact ne_of_gt this
+  field_simp
+  ring
+
+/-- **Closed form of the convention-D triplet (`T = 1`) projector weight (`qou-5d6k`).**
+With `z = q³/(q² + 1)`, the symmetric projector trace `(z + q⁻¹)/(q + q⁻¹)` simplifies
+identically to `(q⁴ + q² + 1)/(q² + 1)²`. -/
+theorem mu_triplet_closed_form_conventionD (q : R) (hq : 0 < q) :
+    (q ^ 3 / (q ^ 2 + 1) + q⁻¹) / (q + q⁻¹) = (q ^ 4 + q ^ 2 + 1) / (q ^ 2 + 1) ^ 2 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hden : q ^ 2 + 1 ≠ 0 := by positivity
+  have hsum : q + q⁻¹ ≠ 0 := by
+    have : 0 < q + q⁻¹ := by positivity
+    exact ne_of_gt this
+  field_simp
+  ring
+
+/-- **Closed form of the convention-D stacked-crossing trace `h·z + 1` (`qou-5d6k`).**
+With `h = q - q⁻¹` and `z = q³/(q² + 1)`, the stacked crossing `σ² = h·σ + 1` has
+Markov trace `(q⁴ + 1)/(q² + 1)`. -/
+theorem stacked_crossing_trace_conventionD (q : R) (hq : 0 < q) :
+    (q - q⁻¹) * (q ^ 3 / (q ^ 2 + 1)) + 1 = (q ^ 4 + 1) / (q ^ 2 + 1) := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hden : q ^ 2 + 1 ≠ 0 := by positivity
+  field_simp
+  ring
 
 end MarkovRepeatConventionD
 
