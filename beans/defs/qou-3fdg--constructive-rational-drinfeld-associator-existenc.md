@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T19:02:01Z
+updated_at: 2026-11-27T19:07:50Z
 parent: qou-dk7p
 ---
 
@@ -58,3 +58,6 @@ KEY for research leg (p.854, Remark 2 after 5.8): without 5.3, obstruction to li
 
 
 2026-11-27: #9570 merged. #9575 (FarRelation.lean): far_of_tcompat derives hfar from t-compatibility TCompat (g(v,w) v g(v,w)^-1 = g(u,w)(v+w)g(u,w)^-1 - w) at two triples + (5.13) + g's pentagon; swapped pentagon obtained via swap23Hom = lift. Exact-Q: (5.13)+(5.14) imply TCompat through degree 3 of g. Open: TCompat from (5.14) in all degrees ~ grt subset krv (Alekseev-Torossian); G units still hypotheses.
+
+
+2026-11-27: #9580 (stacked on #9575): HexagonAction.lean, hexagon_act_all: GRT right action preserves the hexagon given g's (5.13), (5.14) and one TCompat instance; transported3_dk3. Exact-Q check through degree 5 in U(t3). Open: TCompat (grt subset krv), unit existence for G's. Carl card pending: TCompat as hypothesis vs prove grt in krv.
