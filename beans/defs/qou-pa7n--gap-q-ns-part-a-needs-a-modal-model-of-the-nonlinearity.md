@@ -33,3 +33,10 @@ Stays open (rule 13a): its subject is an open conjecture.
 - Audit: `docs/audits/2026-11-27-qns-part-a-triad-model-and-dec-refinement.md`.
 
 **Still open.** Part A needs infinitely many modes, and in the DEC picture it needs three dimensions. The missing pieces are the q-Clebsch–Gordan coefficients of `μ∘(v⊗∇_q v)` and a 3-complex DEC model (gap bean `qou-q3dc`). Do not close: Part A is an open conjecture.
+
+## 2026-11-27T20:41:00Z — triad front (thread "Part A of conj:regularity-breakdown"), PR #9681
+
+- Property 3 vs anomaly: already settled by 9a8e9d9 (owner card "Weaken decay clause, keep Part A"). Property 3 is now a modal balance with transfer T_k, so it does not forbid an anomaly. Property 2 (the energy inequality) does not forbid one either.
+- On the block K[ζ]: the X₊X₋ pair budget term is 2νq² times the energy rate of u̇ = −νLu, h(u·Lu) ≥ 0, and that flow dissipates (q_ns_block_viscous_dissipation.lean).
+- A candidate triad coupling: X₊ζ^{j+1}·X₋ζ^{k+1} = [j+1]_{q²}[k+1]_{q²}(q ζ^{j+k+1} + q² ζ^{j+k+2}). That is forward-only in ζ-degree, with coefficients ≥ (j+1)(k+1) for q ≥ 1 (q_ns_block_pair_cascade.lean). Sorry-free.
+- Still open: (i) that this pair product is the q-NS advection (no ∇_q on O_q(SU(2))); (ii) the coefficients in the little q-Jacobi basis; (iii) a transfer lower bound along a solution; (iv) Part A. This bean stays open.

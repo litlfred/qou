@@ -90,3 +90,10 @@ PR #9662 `q_ns_cartan_transport_budget.lean`: for the Cartan field X, `h(Xu·u)+
 
 ## 2026-11-27T20:26Z — from q-Bessel thread, PR #9666 (OqSU2BudgetLittleQJacobi.lean)
 On the torus-invariant block K[ζ], ζ=βγ: Cartan field kills K[ζ] (cartanField_ev), so h(Xu·Xu)=0 there and the X₊/X₋ pair carries the whole budget. L=X₊X₋ lower bidiagonal, diagonal λ_n = q[n]_q[n+1]_q, Haar-symmetric; h(X₊a·X₋b) = −q⁻² h(a·Lb). Per-mode factor q⁻¹[n]_q[n+1]_q → n(n+1) as q→1 (finite per mode). Consequence for point 1: on K[ζ] the Cartan identification of #9662 is vacuous; the pair term still needs its own transport identification. Open: other weight blocks, existence of eigenpolynomials p_n, relation to the mixed term h(X₊u·(u−θu)). Part A qou-pa7n open.
+
+## 2026-11-27T20:41:00Z — triad front (thread "Part A of conj:regularity-breakdown"), PR #9681
+
+- Property 3 vs anomaly: already settled by 9a8e9d9 (owner card "Weaken decay clause, keep Part A"). Property 3 is now a modal balance with transfer T_k, so it does not forbid an anomaly. Property 2 (the energy inequality) does not forbid one either.
+- On the block K[ζ]: the X₊X₋ pair budget term is 2νq² times the energy rate of u̇ = −νLu, h(u·Lu) ≥ 0, and that flow dissipates (q_ns_block_viscous_dissipation.lean).
+- A candidate triad coupling: X₊ζ^{j+1}·X₋ζ^{k+1} = [j+1]_{q²}[k+1]_{q²}(q ζ^{j+k+1} + q² ζ^{j+k+2}). That is forward-only in ζ-degree, with coefficients ≥ (j+1)(k+1) for q ≥ 1 (q_ns_block_pair_cascade.lean). Sorry-free.
+- Still open: (i) that this pair product is the q-NS advection (no ∇_q on O_q(SU(2))); (ii) the coefficients in the little q-Jacobi basis; (iii) a transfer lower bound along a solution; (iv) Part A. This bean stays open.
