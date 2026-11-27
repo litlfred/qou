@@ -177,7 +177,7 @@ theorem log_sup_le_log_kashaev (N : ℕ) (hN : 1 ≤ N) :
   obtain ⟨k, hk, hEq⟩ := Finset.exists_mem_eq_sup' hne (kashaevProd N)
   have hle : (Finset.range N).sup' hne (kashaevProd N) ≤ kashaev N := by
     rw [hEq]
-    unfold kashaev
+    rw [kashaev_eq_sum]
     exact Finset.single_le_sum (fun i _ => kashaevProd_nonneg N i) hk
   exact Real.log_le_log (by linarith) hle
 
@@ -194,7 +194,7 @@ theorem log_kashaev_le_log_add (N : ℕ) (hN : 1 ≤ N) :
   have hsup1 := one_le_sup_kashaevProd N hN
   have hNpos : (0 : ℝ) < (N : ℝ) := by exact_mod_cast hN
   have hsum : kashaev N ≤ (N : ℝ) * (Finset.range N).sup' hne (kashaevProd N) := by
-    unfold kashaev
+    rw [kashaev_eq_sum]
     calc ∑ k ∈ Finset.range N, kashaevProd N k
         ≤ ∑ _k ∈ Finset.range N, (Finset.range N).sup' hne (kashaevProd N) :=
           Finset.sum_le_sum (fun i hi => Finset.le_sup' (kashaevProd N) hi)

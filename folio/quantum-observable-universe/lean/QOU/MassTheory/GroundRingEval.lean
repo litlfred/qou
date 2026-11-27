@@ -1,5 +1,5 @@
 import MathlibExt.GroundRingCore
-import QOU.Core.AetherParameter
+import QOU.Core.SubstrateParameter
 import Mathlib.Data.Real.Basic
 
 /-!

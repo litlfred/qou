@@ -2,12 +2,13 @@ import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.LinearAlgebra.Matrix.Notation
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FinCases
+import Mathlib.LinearAlgebra.Matrix.Trace
 
 /-!
 # QOU.BraidsAndKnots.explicit_alpha_k_h4
 
 The `H₄(R, q)` class-function representatives of
-[`conj:explicit-alpha-k-h4`](explicit-alpha-k-h4.md), in exact `ℚ(q)` form.
+[`prop:explicit-alpha-k-h4`](explicit-alpha-k-h4.md), in exact `ℚ(q)` form.
 
 ## 2026-11-20 rewrite (W8b, gap 2 of bean `qou-w8cg`)
 
@@ -27,10 +28,11 @@ discharged by `ring`:
 
 * `charTableH4 q μ C` — `q³ · χ_μ(T_{w_C})`, the `H₄(q)` characters on the five
   class representatives `1, σ₁, σ₁σ₃, σ₁σ₂, σ₁σ₂σ₃` (normalisation
-  `(σ − q)(σ + q⁻¹) = 0`), scaled by `q³` to clear `q⁻¹`. **Input data, not
-  derived here:** computed from Young's seminormal form in sympy on
-  2026-11-20, with the Hecke and braid relations checked symbolically on every
-  representation. The `e` column `q³·(1, 3, 2, 3, 1)` is the dimensions.
+  `(σ − q)(σ + q⁻¹) = 0`), scaled by `q³` to clear `q⁻¹`. First computed from
+  Young's seminormal form in sympy (2026-11-20); **derived in Lean since
+  2026-11-27** from five explicit representations with entries in `ℤ[q²]`
+  (`charTableH4_derived`, section `Derived` below). The `e` column
+  `q³·(1, 3, 2, 3, 1)` is the dimensions.
 * `repNumH4 q λ C` — `D_λ · c_C(λ)`: the block's table row `λ` times its
   common denominator `D_λ`, where
   `D = (q³(q²+1)[3]', q²(q²+1), (q²+1)², q(q²+1), (q²+1)[3]')` and
@@ -139,5 +141,113 @@ convention D satisfies (three-row shapes carry Ocneanu weight `0`). -/
 theorem markov_pairing_rep_eq_zero {R : Type*} [CommRing R] (q : R) (y : Fin 5 → R)
     (hy : y 4 = 0) : ∑ mu : Fin 5, y mu * pairH4 q 4 mu = 0 := by
   rw [markov_pairing_rep, hy, zero_mul]
+
+/-! ## The character table, derived (2026-11-27)
+
+`charTableH4` above was **input data** (sympy, Young's seminormal form). It is now
+**derived** in Lean: five explicit representations of `H₄` with entries polynomial
+in `Q = q²`, in the normalisation `T² = (Q−1)T + Q` (`T = q·σ`):
+
+* `(4)`: `T ↦ Q`; `(1⁴)`: `T ↦ −1`;
+* `(3,1)`: the reflection representation `refl₃₁` (3×3);
+* `(2,1,1)`: its twist `T ↦ (Q−1) − T` (the involution `T ↦ −Q T⁻¹`);
+* `(2,2)`: the `H₃` reflection representation pulled back along
+  `T₁, T₂, T₃ ↦ T₁, T₂, T₁` (`refl₂₂`).
+
+`refl31_relations`, `refl211_relations`, `refl22_relations` check the Hecke, braid
+and far-commutation relations; `charTableH4_derived` checks that
+`q^{3−ℓ(w)} · tr ρ_μ(T_w)` is entry `(μ, C)` of `charTableH4` on every class
+representative `w = 1, T₁, T₁T₃, T₁T₂, T₁T₂T₃` (lengths `0, 1, 2, 2, 3`). Since
+`T_w = q^{ℓ(w)} σ_w`, this is `q³ · χ_μ(σ_w)`, the table's definition. Everything is
+a polynomial identity over a generic commutative ring.
+-/
+
+section Derived
+
+open Matrix
+
+variable {R : Type*} [CommRing R]
+
+/-- Reflection representation `(3,1)` of `H₄`, generators `T₁, T₂, T₃`. -/
+def refl31 (Q : R) : Fin 3 → Matrix (Fin 3) (Fin 3) R :=
+  ![!![-1, 0, 0; Q, Q, 0; 0, 0, Q],
+    !![Q, 1, 0; 0, -1, 0; 0, Q, Q],
+    !![Q, 0, 0; 0, Q, 1; 0, 0, -1]]
+
+/-- The twisted representation `(2,1,1)`: `T ↦ (Q − 1) − T`, written out
+(`refl211_eq_twist` checks it is the twist of `refl31`). -/
+def refl211 (Q : R) : Fin 3 → Matrix (Fin 3) (Fin 3) R :=
+  ![!![Q, 0, 0; -Q, -1, 0; 0, 0, -1],
+    !![-1, -1, 0; 0, Q, 0; 0, -Q, -1],
+    !![-1, 0, 0; 0, -1, -1; 0, 0, Q]]
+
+theorem refl211_eq_twist (Q : R) (i : Fin 3) :
+    refl211 Q i = (Q - 1) • (1 : Matrix (Fin 3) (Fin 3) R) - refl31 Q i := by
+  fin_cases i <;> ext a b <;> fin_cases a <;> fin_cases b <;>
+    simp [refl211, refl31]
+
+/-- The representation `(2,2)`: the `H₃` reflection representation on `T₁, T₂, T₁`. -/
+def refl22 (Q : R) : Fin 3 → Matrix (Fin 2) (Fin 2) R :=
+  ![!![Q, 1; 0, -1], !![-1, 0; Q, Q], !![Q, 1; 0, -1]]
+
+/-- Hecke, braid and far-commutation relations, stated for a family of three
+generators in any ring. -/
+def IsH4Rep {M : Type*} [Ring M] [Algebra R M] (Q : R) (T : Fin 3 → M) : Prop :=
+  (∀ i, T i * T i = (Q - 1) • T i + Q • (1 : M)) ∧
+  T 0 * T 1 * T 0 = T 1 * T 0 * T 1 ∧
+  T 1 * T 2 * T 1 = T 2 * T 1 * T 2 ∧
+  T 0 * T 2 = T 2 * T 0
+
+theorem refl31_relations (Q : R) : IsH4Rep Q (refl31 Q) := by
+  refine ⟨fun i => ?_, ?_, ?_, ?_⟩
+  · fin_cases i <;> ext a b <;> fin_cases a <;> fin_cases b <;>
+      simp [refl31, Matrix.mul_apply, Fin.sum_univ_three] <;> ring
+  all_goals ext a b; fin_cases a <;> fin_cases b <;>
+    simp [refl31, Matrix.mul_apply, Fin.sum_univ_three]
+
+theorem refl211_relations (Q : R) : IsH4Rep Q (refl211 Q) := by
+  refine ⟨fun i => ?_, ?_, ?_, ?_⟩
+  · fin_cases i <;> ext a b <;> fin_cases a <;> fin_cases b <;>
+      simp [refl211, Matrix.mul_apply, Fin.sum_univ_three] <;> ring
+  all_goals ext a b; fin_cases a <;> fin_cases b <;>
+    simp [refl211, Matrix.mul_apply, Fin.sum_univ_three]
+
+theorem refl22_relations (Q : R) : IsH4Rep Q (refl22 Q) := by
+  refine ⟨fun i => ?_, ?_, ?_, ?_⟩
+  · fin_cases i <;> ext a b <;> fin_cases a <;> fin_cases b <;>
+      simp [refl22, Matrix.mul_apply, Fin.sum_univ_two] <;> ring
+  all_goals ext a b; fin_cases a <;> fin_cases b <;>
+    simp [refl22, Matrix.mul_apply, Fin.sum_univ_two]
+
+/-- The one-dimensional representations satisfy the relations. -/
+theorem triv_sign_relations (Q : R) :
+    IsH4Rep Q (fun _ : Fin 3 => Q) ∧ IsH4Rep Q (fun _ : Fin 3 => (-1 : R)) := by
+  refine ⟨⟨fun _ => ?_, ?_, ?_, ?_⟩, ⟨fun _ => ?_, ?_, ?_, ?_⟩⟩ <;>
+    simp only [smul_eq_mul, mul_one] <;> ring
+
+/-- Values of a representation on the class words `1, T₁, T₁T₃, T₁T₂, T₁T₂T₃`,
+rescaled by `q^{3 − ℓ}`: this is `q³ · χ(σ_w)`. -/
+def classRow {n : Type*} [Fintype n] [DecidableEq n] (q : R)
+    (T : Fin 3 → Matrix n n R) : Fin 5 → R :=
+  ![q ^ 3 * trace (1 : Matrix n n R), q ^ 2 * trace (T 0), q * trace (T 0 * T 2),
+    q * trace (T 0 * T 1), trace (T 0 * T 1 * T 2)]
+
+/-- The same row for a one-dimensional representation `T ↦ t`. -/
+def classRow1 (q t : R) : Fin 5 → R :=
+  ![q ^ 3, q ^ 2 * t, q * t ^ 2, q * t ^ 2, t ^ 3]
+
+/-- **The `H₄` character table, derived.** With `Q = q²`, the explicit
+representations reproduce every row of `charTableH4`. -/
+theorem charTableH4_derived (q : R) (C : Fin 5) :
+    classRow1 q (q ^ 2) C = charTableH4 q 0 C ∧
+    classRow q (refl31 (q ^ 2)) C = charTableH4 q 1 C ∧
+    classRow q (refl22 (q ^ 2)) C = charTableH4 q 2 C ∧
+    classRow q (refl211 (q ^ 2)) C = charTableH4 q 3 C ∧
+    classRow1 q (-1) C = charTableH4 q 4 C := by
+  fin_cases C <;> refine ⟨?_, ?_, ?_, ?_, ?_⟩ <;>
+    simp [classRow, classRow1, charTableH4, refl31, refl211, refl22, Matrix.trace,
+      Fin.sum_univ_three, Fin.sum_univ_two] <;> ring
+
+end Derived
 
 end QOU.BraidsAndKnots

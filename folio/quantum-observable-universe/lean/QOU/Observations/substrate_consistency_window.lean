@@ -2,7 +2,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Linarith
 
 /-!
-# QOU.Observations.aether_consistency_window
+# QOU.Observations.substrate_consistency_window
 
 **Canonical declaration** for content block
 [`prop:aether-consistency-window`](../../../quantum-observable-universe/observations/substrate-consistency-window.md): *Overdetermination of the substrate parameter*.

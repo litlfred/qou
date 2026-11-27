@@ -1,6 +1,6 @@
 import QOU.Core.CategoricalFoundations
 import QOU.Core.CRRealisation
-import QOU.Core.AetherParameter
+import QOU.Core.SubstrateParameter
 
 /-!
 # §9  Volume Form, SU(2) Emergence, and q-Hodge Star

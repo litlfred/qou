@@ -83,7 +83,7 @@ The constant emerges from the universal $k \to \infty$ asymptotics.
 Option B utilises existing infrastructure and clarifies the relationship between the mass and coupling formulas.
 
 A practical execution follows:
-1. Implement Option B in $H_3$ ([explicit $d_1, d_2$ on $H_3(q)$](#conj:spectral-sequence-h3-explicit)).
+1. Implement Option B in $H_3$ ([explicit $d_1, d_2$ on $H_3(q)$](#prop:spectral-sequence-h3-explicit)).
 2. Define the depth-$\ell$ coupling functional.
 3. Compute the value at $q_0$ for each $\ell$ to isolate $2/(3\pi)$.
 4. Generalise to higher $H_n$ and verify consistency.

@@ -1050,7 +1050,7 @@
 | [conj:binding-manybody-eq-jet-filtration](#conj:binding-manybody-eq-jet-filtration) | Binding many-body series equals the jet-order filtration: $B(K)=\sum_n m_e\,a_D^{(n)}$ | Ch 11 |
 | [conj:jones-birthday](#conj:jones-birthday) | Birthday refinement of the Jones polynomial | Ch 25 |
 | [conj:bring-hyperbolic-knot-bloch-decomposition](#conj:bring-hyperbolic-knot-bloch-decomposition) | Bloch-group decomposition of $2/(3\pi)$ from $S_5$-equivariantly embeddable hyperbolic knots in Bring's surface | Ch 14 |
-| [conj:block-multiplicativity-v-free](#conj:block-multiplicativity-v-free) | Block-multiplicativity of per-generator $\hat{V}$ on the disjoint Hecke product | Ch 11 |
+| [prop:block-multiplicativity-v-free](#prop:block-multiplicativity-v-free) | Block-multiplicativity of per-generator $\hat{V}$ on the disjoint Hecke product | Ch 11 |
 | [conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula) | Borromean baryon mass formula with common Borromean term $\mathfrak{m}_{\mathcal{B}_3}(q_0)$ | Ch 11 |
 | [conj:borromean-bloch-group-element](#conj:borromean-bloch-group-element) | Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$ | Ch 11 |
 | [conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro) | Brane tower lives in the $z$-Habiro ring | Ch 11 |
@@ -1104,10 +1104,10 @@
 | [conj:three-calibration-inputs](#conj:three-calibration-inputs) | Exactly three calibration inputs: every observable factors through $m_e$, $m_\pi$ and $q_0$ | Ch 11 |
 | [conj:gs-residue-at-root-existence](#conj:gs-residue-at-root-existence) | Existence of the cyclotomic residue at each filtration level | Ch 11 |
 | [conj:gs-graded-markov-trace-existence](#conj:gs-graded-markov-trace-existence) | Existence of the graded Markov trace on the GS filtration (categorical existence) | Ch 11 |
-| [conj:explicit-alpha-k-h4](#conj:explicit-alpha-k-h4) | Explicit $\alpha_3$ at $H_4(R, q)$ via Wedderburn-orthogonal class-function $r_3$ | Ch 11 |
-| [conj:spectral-sequence-h3-explicit](#conj:spectral-sequence-h3-explicit) | Explicit $d_1, d_2$ on $H_3(q)$ over $\mathbb{R}[q, q^{-1}]$ | Ch 11 |
+| [prop:explicit-alpha-k-h4](#prop:explicit-alpha-k-h4) | Explicit $\alpha_3$ at $H_4(R, q)$ via Wedderburn-orthogonal class-function $r_3$ | Ch 11 |
+| [prop:spectral-sequence-h3-explicit](#prop:spectral-sequence-h3-explicit) | Explicit $d_1, d_2$ on $H_3(q)$ over $\mathbb{R}[q, q^{-1}]$ | Ch 11 |
 | [conj:explicit-formula](#conj:explicit-formula) | Explicit formula as a spectral--geometric trace identity | Ch 22 |
-| [conj:explicit-alpha-k-h3](#conj:explicit-alpha-k-h3) | Explicit α_k at H_3(R, q): structural prefactors closed form | Ch 11 |
+| [prop:explicit-alpha-k-h3](#prop:explicit-alpha-k-h3) | Explicit α_k at H_3(R, q): structural prefactors closed form | Ch 11 |
 | [conj:archimedean-remainder-exponential-decay](#conj:archimedean-remainder-exponential-decay) | Exponential decay of the archimedean brane-tower truncation remainder | Ch 12 |
 | [conj:q-gl-fiber-functor](#conj:q-gl-fiber-functor) | Fibre-functor mediation of the $q$-Langlands correspondence | Ch 22 |
 | [conj:gs-spectral-sum-finite](#conj:gs-spectral-sum-finite) | Finiteness of the GS residue spectral sum | Ch 11 |

@@ -24,6 +24,16 @@
 
   Archimedean (ℝ): uses Real.cos / Real.log (§7c — genuinely archimedean).
 
+  ALGEBRAIC SOURCE (bean qou-28qh, phase 3): `kashaev N` is DEFINED as the
+  archimedean reading of the single Habiro element
+  `QCalculus.HabiroSeries.figureEight ∈ ℤ̂[q]` (= Σ_n (q;q)_n (q⁻¹;q⁻¹)_n),
+  evaluated by the ring map `evalRoot` at `ζ_N = exp(2πi/N)`. Everything that
+  does not need the embedding into ℂ (truncation, bar invariance, the
+  per-N polynomial of TarskiSignKashaev, the q = 1 + h expansion) is proved
+  about the Habiro element. The only transcendental input here is
+  `ζ^j + ζ^{-j} = 2 cos(2πj/N)` (`kashaev_factor_eq`), which gives the
+  cosine form `kashaev_eq_sum` used by the saddle program.
+
   -- Ref: [kashaev1997] https://doi.org/10.1007/BF01239527
   -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
 -/
@@ -32,6 +42,9 @@ import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Tactic
 import MathlibExt.ClausenFunctionMathlibFiller
+import QCalculus.HabiroCyclotomicSeries
+import Mathlib.RingTheory.Polynomial.Cyclotomic.Roots
+import Mathlib.RingTheory.RootsOfUnity.Complex
 
 namespace QOU.Knot.FigureEightVolume
 
@@ -41,9 +54,70 @@ open Real
 noncomputable def kashaevProd (N k : ℕ) : ℝ :=
   ∏ j ∈ Finset.Icc 1 k, (2 - 2 * Real.cos (2 * π * j / N))
 
-/-- The figure-eight Kashaev invariant at the N-th root of unity. -/
+/-! ### The Kashaev invariant as the archimedean reading of a Habiro element -/
+
+section HabiroReading
+
+open Polynomial Complex QCalculus.HabiroSeries
+
+/-- `ζ_N = exp(2πi/N)`. -/
+noncomputable def kashaevRoot (N : ℕ) : ℂ := Complex.exp (2 * Real.pi * I / N)
+
+theorem aeval_kashaevRoot_cyclotomic {N : ℕ} (hN : N ≠ 0) :
+    aeval (kashaevRoot N) (cyclotomic N ℤ) = 0 := by
+  have h := (Complex.isPrimitiveRoot_exp N hN).isRoot_cyclotomic (Nat.pos_of_ne_zero hN)
+  simpa [aeval_def, eval₂_eq_eval_map, IsRoot.def] using h
+
+/-- One factor: `(1 - ζ^{-j})(1 - ζ^j) = 2 - 2 cos(2πj/N)`. -/
+theorem kashaev_factor_eq (N j : ℕ) :
+    (1 - (kashaevRoot N)⁻¹ ^ j) * (1 - kashaevRoot N ^ j) =
+      ((2 - 2 * Real.cos (2 * Real.pi * j / N) : ℝ) : ℂ) := by
+  have hj : kashaevRoot N ^ j = Complex.exp ((2 * Real.pi * j / N : ℝ) * I) := by
+    rw [kashaevRoot, ← Complex.exp_nat_mul]; congr 1; push_cast; ring
+  have hji : (kashaevRoot N)⁻¹ ^ j = Complex.exp (-(2 * Real.pi * j / N : ℝ) * I) := by
+    rw [inv_pow, hj, ← Complex.exp_neg]; congr 1; ring
+  have hprod : kashaevRoot N ^ j * (kashaevRoot N)⁻¹ ^ j = 1 := by
+    rw [hj, hji, ← Complex.exp_add]; simp
+  push_cast at hj hji ⊢
+  rw [Complex.two_cos, ← hj, ← hji]
+  linear_combination hprod
+
+/-- The value of the Habiro element `figureEight` at `ζ_N` is the real cosine sum. -/
+theorem evalRoot_figureEight_eq_sum {N : ℕ} (hN : N ≠ 0) :
+    evalRoot hN (kashaevRoot N) (aeval_kashaevRoot_cyclotomic hN) (figureEight (R := ℤ)) =
+      ((∑ k ∈ Finset.range N, kashaevProd N k : ℝ) : ℂ) := by
+  rw [evalRoot_figureEight_field]
+  push_cast
+  refine Finset.sum_congr rfl fun k _ => ?_
+  rw [kashaevProd, poch, poch, ← Finset.prod_mul_distrib]
+  push_cast
+  have hIcc : Finset.Icc 1 k = Finset.Ico 1 (k + 1) := rfl
+  rw [hIcc, Finset.prod_Ico_eq_prod_range, Nat.add_sub_cancel]
+  refine Finset.prod_congr rfl fun i _ => ?_
+  rw [kashaev_factor_eq]
+  push_cast
+  rw [add_comm (1 : ℂ) (i : ℂ)]
+
+/-- **The figure-eight Kashaev invariant** `⟨4₁⟩_N`: the real part of the Habiro
+    element `figureEight` evaluated at `ζ_N = exp(2πi/N)` (and `0` at `N = 0`). -/
 noncomputable def kashaev (N : ℕ) : ℝ :=
-  ∑ k ∈ Finset.range N, kashaevProd N k
+  if hN : N = 0 then 0
+  else (evalRoot hN (kashaevRoot N) (aeval_kashaevRoot_cyclotomic hN)
+    (figureEight (R := ℤ))).re
+
+/-- The cosine form `⟨4₁⟩_N = Σ_{k<N} ∏_{j=1}^{k} (2 - 2 cos(2πj/N))`. -/
+theorem kashaev_eq_sum (N : ℕ) : kashaev N = ∑ k ∈ Finset.range N, kashaevProd N k := by
+  by_cases hN : N = 0
+  · subst hN; simp [kashaev]
+  · rw [kashaev, dif_neg hN, evalRoot_figureEight_eq_sum hN, Complex.ofReal_re]
+
+/-- The Habiro value is real and equals `⟨4₁⟩_N`. -/
+theorem kashaev_eq_evalRoot {N : ℕ} (hN : N ≠ 0) :
+    ((kashaev N : ℝ) : ℂ) =
+      evalRoot hN (kashaevRoot N) (aeval_kashaevRoot_cyclotomic hN) (figureEight (R := ℤ)) := by
+  rw [kashaev_eq_sum, evalRoot_figureEight_eq_sum hN]
+
+end HabiroReading
 
 /-- Each factor `2 - 2·cos x ≥ 0` (since `cos x ≤ 1`). -/
 theorem factor_nonneg (x : ℝ) : 0 ≤ 2 - 2 * Real.cos x := by
@@ -66,7 +140,7 @@ theorem kashaev_ge_one (N : ℕ) (hN : 1 ≤ N) : 1 ≤ kashaev N := by
   calc (1 : ℝ) = kashaevProd N 0 := (kashaevProd_zero N).symm
     _ ≤ ∑ k ∈ Finset.range N, kashaevProd N k :=
         Finset.single_le_sum (fun k _ => kashaevProd_nonneg N k) h0
-    _ = kashaev N := rfl
+    _ = kashaev N := (kashaev_eq_sum N).symm
 
 /-- In particular the Kashaev sum is positive, so `log ⟨4_1⟩_N` is well-defined
     and non-negative for N ≥ 1. -/

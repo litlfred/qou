@@ -1,12 +1,12 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:spectral-sequence-h3-explicit",
+export default proposition({
+  label: "prop:spectral-sequence-h3-explicit",
   title:
     "Explicit $d_1, d_2$ on $H_3(q)$ over $\\mathbb{R}[q, q^{-1}]$",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.BraidKnot.SpectralSequenceH3Explicit",
-    validation: "not_checked",
+    ref: "qou:QOU.BraidKnot.h3_trace_standard_basis",
+    validation: "leanok",
   },
   uses: ["prop:e-infinity-page-identifications"],
   tags: [
@@ -16,6 +16,11 @@ export default conjecture({
     "computation",
   ],
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-27",
+      body: "**Restated and promoted to `proposition` (2026-11-27, PR #9670 and its follow-up).** The old statement (Hochschild pages, $d_1$ acting through the Hecke relation) was measured false on 2026-11-20 ($d_1 = 0$; see the caveat above). The block now states what a trace actually sees: the length filtration on the cocentre $\\mathrm{HH}_0(H_3)$, with $E_1$ ranks $1,2,2,1$, $E_\\infty$ ranks $1,1,1,0$, the three kills given as explicit commutator identities, and independence via the trivial, sign and reflection characters (determinant $(Q+1)(Q^2+Q+1)$). Lean: `BraidKnotOctonion/spectral_sequence_h3_explicit.lean`, section `Cocentre`.",
+    },
     {
       kind: "caveat",
       date: "2026-11-24",

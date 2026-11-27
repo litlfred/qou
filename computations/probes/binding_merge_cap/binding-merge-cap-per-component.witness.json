@@ -1,0 +1,262 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T20:23:48.560101+00:00",
+  "commitSha": "e8ab3e2c4edcda5a98358f8970df9026b605126a",
+  "assertions": [
+    {
+      "name": "H_per_component_cap_2_violated_only_by_length_5_words",
+      "computed": [
+        5
+      ],
+      "expected": [
+        5
+      ],
+      "passed": true,
+      "tolerance": 0,
+      "source": "(H) holds on every word of length <= 4; its counterexamples are length-5 A = 3 words"
+    },
+    {
+      "name": "S9_classical_admissible_with_merges_ge_4_has_top_level_zero",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "exhaustive over S_9, Young's rule a_k"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "binding-merge-cap-per-component",
+  "scriptFile": "merge_cap_summary.py",
+  "scriptHash": "71be45783209",
+  "scriptCommitSha": "9f8929fe5653b48f13d8e3d2ff281d1d5911911e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_merge_cap/merge_cap_summary.py",
+      "1",
+      "2"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_merge_cap/merge_cap_summary.py 1 2"
+  },
+  "description": "PROBE (bean qou-brng, brief C2 front B): per-support-component merge counts of every gamma-gamma bond word in the reading-3 censuses at the proton-pin q0 (A = 2, 3, 4). Tests (H): every q0-passing word has each support component merging <= 2 (falsified at A = 3, length 5); exhaustive S_n (n <= 9) top-level-zero fact. Counts only; no ratio; AME not read; nothing fitted or wired.",
+  "auditOnly": "docs/audits/2026-11-27-binding-merge-cap-invariant.md",
+  "data": {
+    "rows_per_source": {
+      "A2-L6-census": 5334,
+      "A3-L4-census": 1360,
+      "A4-L4-checkpoint": 330,
+      "merge-cap-A3-L5-m4-c1": 284,
+      "merge-cap-A3-L5-m6-c1": 0,
+      "merge-cap-A4-L5-m4-c1": 34,
+      "merge-cap-A4-L5-m6-c2": 84,
+      "merge-cap-A4-L5-m8-c2": 8
+    },
+    "tallies": {
+      "A2-L6-census": {
+        "pass_q0=False,classical=False,max_component_merges=2,components=1": 1267,
+        "pass_q0=False,classical=False,max_component_merges=4,components=1": 3334,
+        "pass_q0=False,classical=True,max_component_merges=2,components=1": 325,
+        "pass_q0=True,classical=False,max_component_merges=2,components=1": 4,
+        "pass_q0=True,classical=True,max_component_merges=0,components=1": 46,
+        "pass_q0=True,classical=True,max_component_merges=2,components=1": 358
+      },
+      "A3-L4-census": {
+        "pass_q0=False,classical=False,max_component_merges=2,components=1": 18,
+        "pass_q0=False,classical=False,max_component_merges=2,components=2": 390,
+        "pass_q0=False,classical=False,max_component_merges=4,components=1": 281,
+        "pass_q0=False,classical=False,max_component_merges=4,components=2": 156,
+        "pass_q0=False,classical=False,max_component_merges=6,components=1": 342,
+        "pass_q0=False,classical=False,max_component_merges=8,components=1": 24,
+        "pass_q0=False,classical=True,max_component_merges=2,components=1": 1,
+        "pass_q0=False,classical=True,max_component_merges=2,components=2": 24,
+        "pass_q0=False,classical=True,max_component_merges=4,components=1": 96,
+        "pass_q0=True,classical=False,max_component_merges=2,components=1": 2,
+        "pass_q0=True,classical=True,max_component_merges=2,components=1": 26
+      },
+      "A4-L4-checkpoint": {
+        "pass_q0=False,classical=False,max_component_merges=2,components=2": 3,
+        "pass_q0=False,classical=False,max_component_merges=2,components=3": 98,
+        "pass_q0=False,classical=False,max_component_merges=4,components=2": 93,
+        "pass_q0=False,classical=False,max_component_merges=4,components=3": 10,
+        "pass_q0=False,classical=False,max_component_merges=6,components=2": 24,
+        "pass_q0=False,classical=False,max_component_merges=8,components=1": 6,
+        "pass_q0=False,classical=True,max_component_merges=2,components=2": 12,
+        "pass_q0=False,classical=True,max_component_merges=4,components=2": 72,
+        "pass_q0=True,classical=True,max_component_merges=2,components=2": 12
+      },
+      "merge-cap-A3-L5-m4-c1": {
+        "pass_q0=False,classical=True,max_component_merges=4,components=1": 262,
+        "pass_q0=True,classical=True,max_component_merges=4,components=1": 22
+      },
+      "merge-cap-A3-L5-m6-c1": {},
+      "merge-cap-A4-L5-m4-c1": {
+        "pass_q0=False,classical=True,max_component_merges=4,components=1": 34
+      },
+      "merge-cap-A4-L5-m6-c2": {
+        "pass_q0=False,classical=True,max_component_merges=4,components=2": 84
+      },
+      "merge-cap-A4-L5-m8-c2": {
+        "pass_q0=False,classical=True,max_component_merges=4,components=2": 8
+      }
+    },
+    "marginal_failures": {
+      "A3-L4-census: classical value on every q0-failing cell is 0 = True": 120,
+      "merge-cap-A3-L5-m4-c1: classical value on every q0-failing cell is 0 = False": 23,
+      "merge-cap-A3-L5-m4-c1: classical value on every q0-failing cell is 0 = True": 239,
+      "merge-cap-A4-L5-m4-c1: classical value on every q0-failing cell is 0 = False": 7,
+      "merge-cap-A4-L5-m4-c1: classical value on every q0-failing cell is 0 = True": 27,
+      "merge-cap-A4-L5-m6-c2: classical value on every q0-failing cell is 0 = True": 79,
+      "merge-cap-A4-L5-m6-c2: classical value on every q0-failing cell is 0 = False": 5,
+      "merge-cap-A4-L5-m8-c2: classical value on every q0-failing cell is 0 = True": 8
+    },
+    "violations_of_H": [
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V1V2V3V5V6"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V1V2V3V6V5"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V1V4V2V5V5"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V1V4V2V5V6"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V1V6V4V2V5"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V2V3V4V6V4"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V2V3V5V6V6"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V2V3V6V6V5"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V2V5V3V1V6"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V2V5V5V4V3"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V2V6V5V3V1"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V3V2V5V5V4"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V3V4V6V4V2"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V4V2V3V4V6"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V4V2V3V6V4"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V4V6V4V2V3"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V5V3V1V2V6"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V5V3V2V6V6"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V5V5V4V3V2"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V6V4V2V3V4"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V6V5V3V1V2"
+      },
+      {
+        "source": "merge-cap-A3-L5-m4-c1",
+        "word": "V6V6V5V3V2"
+      }
+    ],
+    "classical_exhaustive_top_level_zero": {
+      "4": {
+        "merges=0,top_level_zero=False": 1,
+        "merges=1,top_level_zero=True": 5
+      },
+      "5": {
+        "merges=0,top_level_zero=False": 1,
+        "merges=1,top_level_zero=False": 9,
+        "merges=2,top_level_zero=True": 10
+      },
+      "6": {
+        "merges=0,top_level_zero=False": 1,
+        "merges=1,top_level_zero=False": 14,
+        "merges=2,top_level_zero=False": 37,
+        "merges=3,top_level_zero=True": 40
+      },
+      "7": {
+        "merges=0,top_level_zero=False": 1,
+        "merges=1,top_level_zero=False": 20,
+        "merges=2,top_level_zero=False": 93,
+        "merges=3,top_level_zero=True": 262,
+        "merges=4,top_level_zero=True": 120
+      },
+      "8": {
+        "merges=0,top_level_zero=False": 1,
+        "merges=1,top_level_zero=False": 27,
+        "merges=2,top_level_zero=False": 193,
+        "merges=3,top_level_zero=False": 560,
+        "merges=3,top_level_zero=True": 353,
+        "merges=4,top_level_zero=True": 684
+      },
+      "9": {
+        "merges=0,top_level_zero=False": 1,
+        "merges=1,top_level_zero=False": 35,
+        "merges=2,top_level_zero=False": 355,
+        "merges=2,top_level_zero=True": 54,
+        "merges=3,top_level_zero=False": 2457,
+        "merges=4,top_level_zero=True": 7988,
+        "merges=5,top_level_zero=True": 1368
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 enters through the censuses via cf.Q (committed y-lambda-at-q0 witness, proton pin)"
+}

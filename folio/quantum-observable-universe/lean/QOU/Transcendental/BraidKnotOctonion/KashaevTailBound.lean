@@ -918,15 +918,16 @@ theorem le_sum_kashaevProd {N m : ℕ} (hN : 6 ≤ N) (hm : m ≤ 5 * N / 6)
 
 /-! ### The same two statements, phrased for `⟨4₁⟩_N`
 
-`kashaev N` is DEFINITIONALLY `∑ k ∈ Finset.range N, kashaevProd N k`, so these
-are the two theorems above with no proof at all — but they are the ones to cite,
+`kashaev N` equals `∑ k ∈ Finset.range N, kashaevProd N k` (`kashaev_eq_sum`; since
+bean qou-28qh it is defined from the Habiro element `figureEight`), so these
+are the two theorems above with a one-line rewrite — but they are the ones to cite,
 because they say "the Kashaev invariant" rather than "a sum". -/
 
 /-- `⟨4₁⟩_N ≥ e^{−1}·m·g_{k*}` when `√3πm² ≤ N`. -/
 theorem le_kashaev {N m : ℕ} (hN : 6 ≤ N) (hm : m ≤ 5 * N / 6)
     (hsq : Real.sqrt 3 * π * (m : ℝ) ^ 2 ≤ N) :
-    kashaevProd N (5 * N / 6) * ((m : ℝ) * Real.exp (-1)) ≤ kashaev N :=
-  le_sum_kashaevProd hN hm hsq
+    kashaevProd N (5 * N / 6) * ((m : ℝ) * Real.exp (-1)) ≤ kashaev N := by
+  rw [kashaev_eq_sum]; exact le_sum_kashaevProd hN hm hsq
 
 /-- `⟨4₁⟩_N` bounded above by the three regions. -/
 theorem kashaev_le_split {N w : ℕ} (hN : 6 ≤ N) (hw1 : 6 * w ≤ 5 * N)
@@ -934,8 +935,8 @@ theorem kashaev_le_split {N w : ℕ} (hN : 6 ≤ N) (hw1 : 6 * w ≤ 5 * N)
     kashaev N
       ≤ (w : ℝ) * max 1 (kashaevProd N w)
         + kashaevProd N (5 * N / 6) * (2 + Real.sqrt (Real.sqrt 3 * (N : ℝ)) / 2)
-        + kashaevProd N (5 * N / 6) * (2 + Real.sqrt ((N : ℝ) / Real.sqrt 3) / 2) :=
-  sum_kashaevProd_le_split hN hw1 hw2 hwk
+        + kashaevProd N (5 * N / 6) * (2 + Real.sqrt ((N : ℝ) / Real.sqrt 3) / 2) := by
+  rw [kashaev_eq_sum]; exact sum_kashaevProd_le_split hN hw1 hw2 hwk
 
 /-! ## Part 10 — collapsing the below-window region against the peak
 
