@@ -54,7 +54,7 @@ HUNDRED = mpf("100")
 
 UPSTREAM_SPECS: list[tuple[str, str]] = [
     ("computations/master-atlas-80dps.witness.json", "§1, §2, §3.1, §3.3, §3.4"),
-    ("computations/per-observable-100x-status.witness.json", "§2, §3.1a, §3.4a"),
+    ("computations/per-observable-100x-status.witness.json", "§2, §3.1a, §3.2a (tower E_0), §3.4a"),
     ("computations/alpha-em-schwinger-ladder.witness.json", "§1, §2, §3.3a, §5.1"),
     ("computations/alpha/alpha_em_two_loop_bloch_schwinger_probe.witness.json", "§1, §2, §3.3a, §5.1"),
     ("computations/alpha/alpha-em-seifert-kappa-pairing.witness.json", "§3.3a, §5.1"),
@@ -70,6 +70,7 @@ UPSTREAM_SPECS: list[tuple[str, str]] = [
     ("computations/mirror-nuclei-coulomb-systematics.witness.json", "§2, §3.3a"),
     ("computations/beta-decay-from-q.witness.json", "§2, §3.4a, §5.1"),
     ("computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json", "§2, §3.5a–b"),
+    ("computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json", "§3.2a (ruled trace-pipeline row)"),
     ("computations/scorecard-epistemic-status.witness.json", "§2, §3.1a, §3.2a, §3.3a, §3.4a (row labels)"),
 ]
 
@@ -322,6 +323,7 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
     # Per-row epistemic labels come from their own witness, never from this file
     # (owner dispatch 2026-11-27). A row without a label is a render error.
     es_rows = loaded["computations/scorecard-epistemic-status.witness.json"]["data"]["rows"]
+    gg_bond = loaded["computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json"]["data"]
 
     def _status(rid: str) -> str:
         if rid not in es_rows:
@@ -603,6 +605,17 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
     b3_jun = _m(j_un["per_A"]["A=3"]["bind_MeV"])
     b4_jun = _m(j_un["per_A"]["A=4"]["bind_MeV"])
 
+    # Ruled trace pipeline: gamma-gamma bond V(2)^3 between the V^3 nucleons (selected by the
+    # cheapest-passing rule, owner card 1, 2026-11-25), log law B = -E_0 ln(tr_atom/tr_free) at the
+    # ruled tower E_0. The trace ratio is read from the producer; only the E_0 chart is applied here.
+    gg_rows = gg_bond["results"]["V^3"]["rows"]
+    gg_sel = [r for r in gg_rows if r["bond"] == "V(2)^3" and r["reading3_every_level"] is True]
+    if len(gg_sel) != 1:
+        errors.append("gg-deuteron-bond: expected exactly one passing V(2)^3 row at m = 3")
+        b2_gg = mpf(0)
+    else:
+        b2_gg = -_m(po["qbeta_ruled_base"]["E0_MeV"]) * mp.log(_m(gg_sel[0]["ratio"]))
+
     fewbody_rows = [
         (
             f"| AME2020 Experimental Reference | `{_fmt_fixed(b2_ame, 5)}` | `{_fmt_fixed(b3h_ame, 5)}` | "
@@ -612,6 +625,11 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
         (
             f"| 1D Symbolic Hecke Chain (`mass-table`) | {_fb_cell(b2_chain, b2_ame)} | {_fb_cell(b3_chain, b3h_ame)} | "
             f"`—` (omitted) | `—` (omitted) | `{_fmt_fixed(b3_chain / b2_chain, 3)}` | `3.000` (asymptotic) |"
+        ),
+        (
+            f"| Ruled trace pipeline (γγ bond $V(2)^3$, tower $E_0$, log law) | "
+            f"`{_fmt_fixed(b2_gg, 5)}` (`{_fmt_fixed((b2_gg - b2_ame) / b2_ame * HUNDRED, 2, signed=True)}%`) | "
+            f"`—` (p = n cell) | `—` (p = n cell) | `—` (not computed) | `—` | `—` |"
         ),
         (
             f"| 3D $K_A$ Plaquette Exact (`M3a`, $E_{{\\mathrm{{osc}}}}$) | {_fb_cell(b2_m3a, b2_ame)} | "
@@ -638,7 +656,9 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
             f"`{_fmt_fixed(_m(j_un['scaling_ratios_vs_A2']['A4_over_A2']), 3)}` |"
         ),
     ]
-    _fb_status = ["Reference", _st("hecke_1d_chain")] + [_st("ka_rows")] * (len(fewbody_rows) - 2)
+    _fb_status = ["Reference", _st("hecke_1d_chain"), _st("ruled_trace_2h")] + [_st("ka_rows")] * (
+        len(fewbody_rows) - 3
+    )
     fewbody_rows = [row + f" {st} |" for row, st in zip(fewbody_rows, _fb_status)]
 
     # ── Category 3: Charge, EM, Coulomb, Molecular ────────────────────────────
@@ -1128,6 +1148,7 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
             f"${n_beta_comp}$ of ${n_beta_comp}$ | median ${_fmt_fixed(beta_comp_med * HUNDRED, 0)}\\%$ in $Q$ | Open |"
         ),
         _bind_row("Deuteron binding (MeV)", b2_m3a, b2_ame, 3, _status("ka_rows")),
+        _bind_row("Deuteron binding, ruled trace pipeline (MeV)", b2_gg, b2_ame, 5, _status("ruled_trace_2h")),
         _bind_row("Helium-4 binding (MeV)", b4_m3a, b4_ame, 2, _status("ka_rows")),
         _bind_row("Iron-56 binding (MeV)", b56_pred, b56_ame, 1, "Open"),
         (
