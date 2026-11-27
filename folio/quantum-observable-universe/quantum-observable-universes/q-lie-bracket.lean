@@ -1,4 +1,4 @@
-import QOU.Core.AetherParameter
+import QOU.Core.SubstrateParameter
 
 /-!
 # QOU.qLieBracket

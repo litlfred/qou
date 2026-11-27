@@ -1,6 +1,6 @@
 import QOU.Core.Basic
 import QOU.StandardModel.PathIntegrals
-import QOU.Core.AetherParameter
+import QOU.Core.SubstrateParameter
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Int.Lemmas
 import Mathlib.Data.Finset.Basic

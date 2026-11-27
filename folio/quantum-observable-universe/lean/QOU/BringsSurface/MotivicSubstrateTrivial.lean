@@ -1,4 +1,4 @@
-import QOU.BringsSurface.MotivicBaseRing
+import QOU.BringsSurface.MotivicSubstrate
 
 /-!
 # Trivial witness for `MotivicBaseRing`

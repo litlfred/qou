@@ -1,7 +1,7 @@
 import QOU.Core.Basic
 import QOU.Core.Glossary
 import QOU.Core.CRRealisation
-import QOU.Core.AetherParameter
+import QOU.Core.SubstrateParameter
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
