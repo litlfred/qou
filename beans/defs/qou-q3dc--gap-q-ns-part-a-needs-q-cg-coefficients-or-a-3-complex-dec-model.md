@@ -22,3 +22,10 @@ Open conjecture: do not close until Part A is proved or refuted. QOU-formalised 
 
 ## 2026-11-27 progress (route 1, q-CG; PR pending)
 `q_ns_triad_derivation.lean` (sorry-free): triad conservation is now DERIVED for the advection from the Leibniz rule and `τ∘X = 0` (`transport_skew`, `advectionTriad`). The corpus q-connection field is a derivation (`qField`). `parseval` and `transfer_eq_advection` tie the Galerkin transfer to the advection. Remaining hypotheses: the Clebsch–Gordan selection rule `hsel`; incompressibility; a commutative trace setting (the O_q(SU(2)) Haar state is not tracial, so the noncommutative picture needs a twisted Leibniz rule; open); and the numerical q-CG values. Audit `docs/audits/2026-11-27-qns-triad-conservation-from-leibniz.md`. Part A stays open; do not close.
+
+## 2026-11-27 progress: noncommutative case
+`q_ns_triad_noncomm.lean` (PR #9545, sorry-free): triad conservation holds for ANY linear functional
+on a noncommutative algebra, given an untwisted divergence-free derivation; the energy sees only the
+symmetrised form. Traciality is not needed, so the Haar modular twist is no obstruction. Remaining gap:
+is `∇_q` an untwisted derivation on O_q(SU(2))? Twisted derivations break the argument. Still open:
+q-CG selection rule derivation, numerical couplings, infinite-mode Part A.
