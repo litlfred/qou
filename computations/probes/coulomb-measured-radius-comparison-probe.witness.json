@@ -1,0 +1,88 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-27T21:19:29.101405+00:00",
+  "commitSha": "5e2fe0517e3ddc64b5ddd99026355dc7c253c765",
+  "assertions": [
+    {
+      "name": "shape_not_length_is_right_at_A3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "With the measured 3He radius the derived f lands within 2 % of the split (-0.27 %), while the model radius misses by +24.15 %: the miss is the length."
+    },
+    {
+      "name": "derived_f_beats_ball_at_measured_radius",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "At the measured radius: derived f -0.27 % vs uniform ball -10.86 %."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2,
+  "computation": "coulomb-measured-radius-comparison-probe",
+  "scriptFile": "coulomb_measured_radius_comparison_probe.py",
+  "scriptHash": "ae01e40c5580",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a22b08f9db48ed97"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/coulomb_measured_radius_comparison_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/coulomb_measured_radius_comparison_probe.py"
+  },
+  "description": "COMPARISON ARM (bean qou-usft): E_C at A=3,4 with the derived q-Hankel shape factor and alpha_EM from q0, swapping only r_rms between the CAL-3 model radius and the measured charge radius (Angeli-Marinova 2013). Localises the A=3 Coulomb miss in the length, not the shape. Measured radii are never a model input.",
+  "data": {
+    "split_AME_3H_minus_3He_MeV": "0.76375488",
+    "f_derived": "0.520010562994850862465840107227",
+    "f_uniform_ball": "0.464758001544890026221511847974",
+    "alpha_hbar_c_MeV_fm": "1.43996521992482043319461632141",
+    "rows": {
+      "Z2_A3": {
+        "r_rms_measured_fm": "1.9661",
+        "r_rms_measured_err_fm": "0.0030",
+        "r_rms_model_fm": "1.5794621447699294708",
+        "r_model_over_measured_minus_1": "-0.196652182102",
+        "E_C_derived_f_model_r_MeV": "0.94816723171948230589",
+        "E_C_derived_f_measured_r_MeV": "0.76170807660455735942",
+        "E_C_ball_measured_r_MeV": "0.68077448543452276208",
+        "E_C_derived_f_measured_r_err_MeV": "0.00116226"
+      },
+      "Z2_A4": {
+        "r_rms_measured_fm": "1.6755",
+        "r_rms_measured_err_fm": "0.0028",
+        "r_rms_model_fm": "1.7384230314711265972",
+        "r_model_over_measured_minus_1": "0.0375547785563",
+        "E_C_derived_f_model_r_MeV": "0.86146710110305721119",
+        "E_C_derived_f_measured_r_MeV": "0.8938193073185438522",
+        "E_C_ball_measured_r_MeV": "0.79884853226667574009",
+        "E_C_derived_f_measured_r_err_MeV": "0.0014937"
+      }
+    },
+    "rel_to_split": {
+      "derived_f_model_r": "0.241454891548",
+      "derived_f_measured_r": "-0.00267992185587",
+      "ball_measured_r": "-0.108647940247"
+    },
+    "r_rms_implied_by_split_fm_NOT_AN_INPUT": "1.9608310056391655715"
+  }
+}
