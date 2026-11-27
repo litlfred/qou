@@ -1,0 +1,190 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T19:21:39.740348+00:00",
+  "commitSha": "3c0d3e1838abb16964fe83a6ebad4ac230d89772",
+  "assertions": [
+    {
+      "name": "bound_geometric_for_some_weight",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "recorded, not required: A >= 3 has none"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "bond-rules-3b-passing-sum-A2",
+  "scriptFile": "rule3b_passing_sum.py",
+  "scriptHash": "0618d8e21a0d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bond_rules_length_bound/rule3b_passing_sum.py",
+      "4",
+      "2"
+    ],
+    "reproduce": "python3 -u computations/probes/bond_rules_length_bound/rule3b_passing_sum.py 4 2"
+  },
+  "description": "PROBE (bean qou-brng, brief C2 front E): rule (3b), weighted average of per-word trace ratios over the bond words that pass reading 3 individually, truncated at the measured length, with a proved norm/count bound on the unmeasured longer words where it is geometric. Per-word ratios from the committed ceiling witness. Weights are corpus quantities, none derived. Scorecard only.",
+  "auditOnly": "docs/audits/2026-11-27-bond-rules-and-length-cutoff.md",
+  "parameters": {
+    "A": 2,
+    "L_measured": 6,
+    "KMAX": 4
+  },
+  "data": {
+    "mu": {
+      "0": "1.0",
+      "1": "1.1988582111448163577",
+      "2": "1.4372610104293490801",
+      "3": "1.5984957466116561678",
+      "4": "1.7984197019646471061"
+    },
+    "beta_per_vertex_norm_growth": "1.1580378728147497782",
+    "x_norm": "1.033113768199839519",
+    "rule3b": {
+      "h": {
+        "t": "0.20906029879563931543",
+        "ratio_truncated": "0.37062866365962294532",
+        "minus_ln_r": "0.992554624194018",
+        "B_MeV_tower": "4.19600815333",
+        "geometric_factor": "0.968398974829273",
+        "bound_available": true,
+        "truncated_by_L": {
+          "2": {
+            "n_words": 2,
+            "ratio": "0.252058308116405",
+            "B_MeV_tower": "5.825872985"
+          },
+          "3": {
+            "n_words": 7,
+            "ratio": "0.354983407765041",
+            "B_MeV_tower": "4.378337841"
+          },
+          "4": {
+            "n_words": 24,
+            "ratio": "0.392147657169729",
+            "B_MeV_tower": "3.957418333"
+          },
+          "5": {
+            "n_words": 114,
+            "ratio": "0.371245414701212",
+            "B_MeV_tower": "4.188979183"
+          },
+          "6": {
+            "n_words": 408,
+            "ratio": "0.370628663659623",
+            "B_MeV_tower": "4.196008153"
+          }
+        },
+        "ratio_error_bound": "122.5109076",
+        "minus_ln_r_interval": [
+          "-4.81122077108",
+          "unbounded"
+        ],
+        "B_MeV_interval": [
+          "-20.33935573",
+          "unbounded"
+        ]
+      },
+      "q*h": {
+        "t": "0.23205245416676393127",
+        "ratio_truncated": "0.37400279198879969028",
+        "minus_ln_r": "0.983492016384775",
+        "B_MeV_tower": "4.15769612966",
+        "geometric_factor": "1.07490212161889",
+        "bound_available": false,
+        "truncated_by_L": {
+          "2": {
+            "n_words": 2,
+            "ratio": "0.252058308116405",
+            "B_MeV_tower": "5.825872985"
+          },
+          "3": {
+            "n_words": 7,
+            "ratio": "0.362147089522325",
+            "B_MeV_tower": "4.293875242"
+          },
+          "4": {
+            "n_words": 24,
+            "ratio": "0.403097851001051",
+            "B_MeV_tower": "3.840989664"
+          },
+          "5": {
+            "n_words": 114,
+            "ratio": "0.375385968852837",
+            "B_MeV_tower": "4.142090441"
+          },
+          "6": {
+            "n_words": 408,
+            "ratio": "0.3740027919888",
+            "B_MeV_tower": "4.15769613"
+          }
+        }
+      },
+      "h/q": {
+        "t": "0.18834624563424194187",
+        "ratio_truncated": "0.3659814350488626415",
+        "minus_ln_r": "1.00517267077748",
+        "B_MeV_tower": "4.24935073524",
+        "geometric_factor": "0.872448342587688",
+        "bound_available": true,
+        "truncated_by_L": {
+          "2": {
+            "n_words": 2,
+            "ratio": "0.252058308116405",
+            "B_MeV_tower": "5.825872985"
+          },
+          "3": {
+            "n_words": 7,
+            "ratio": "0.348050078574697",
+            "B_MeV_tower": "4.461723582"
+          },
+          "4": {
+            "n_words": 24,
+            "ratio": "0.381466299005081",
+            "B_MeV_tower": "4.074164246"
+          },
+          "5": {
+            "n_words": 114,
+            "ratio": "0.366018568738643",
+            "B_MeV_tower": "4.248921823"
+          },
+          "6": {
+            "n_words": 408,
+            "ratio": "0.365981435048863",
+            "B_MeV_tower": "4.249350735"
+          }
+        },
+        "ratio_error_bound": "21.35868898",
+        "minus_ln_r_interval": [
+          "-3.07844850033",
+          "unbounded"
+        ],
+        "B_MeV_interval": [
+          "-13.0140898",
+          "unbounded"
+        ]
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 enters through cf.Q (committed y-lambda-at-q0 witness, proton pin)"
+}

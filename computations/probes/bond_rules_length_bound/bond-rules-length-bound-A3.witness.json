@@ -1,0 +1,346 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T20:55:11.616253+00:00",
+  "commitSha": "f0c8067060af951459f079476ba06ad7a34405f0",
+  "assertions": [
+    {
+      "name": "K0_sw_trace_matches_corpus_on_free_word",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "seminormal vs Schur-Weyl"
+    },
+    {
+      "name": "K1_level_characters_equal_corpus_seminormal",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "29 (level, block) pairs, 3 words"
+    },
+    {
+      "name": "K2_rho_S_at_least_n_minus_2",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "V(s) fixes |0...0>"
+    },
+    {
+      "name": "K4_uniform_limit_is_trivial_block_weight_over_tr_x",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "closed form y_(n)/tr(x) = 0.022217975724711074214"
+    },
+    {
+      "name": "K3_power_average_tends_to_spectral_limit",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "L=1024 0.0222179757247 vs projector 0.0222179757247"
+    },
+    {
+      "name": "K5_truncation_error_within_norm_bound",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "every (t, L0) with a geometric norm bound"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "bond-rules-length-bound-A3",
+  "scriptFile": "bond_rules_length_bound_probe.py",
+  "scriptHash": "83b2492518f9",
+  "scriptCommitSha": "f0c8067060af951459f079476ba06ad7a34405f0",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bond_rules_length_bound/bond_rules_length_bound_probe.py",
+      "4",
+      "3"
+    ],
+    "reproduce": "python3 -u computations/probes/bond_rules_length_bound/bond_rules_length_bound_probe.py 4 3"
+  },
+  "description": "PROBE (bean qou-brng, brief C2 front E): rule (3) 'sum over all gamma-gamma bond words' without a length cutoff, as the inclusion-exclusion resolvent of S = sum of chiral vertices V(s), with a per-vertex weight t taken from corpus quantities (h, qh, h/q; none derived as the bond weight), and the weight-free uniform limit L -> infinity. Spectrum, radius of convergence, norm tail bounds. Reading 3 on the whole summed element. Schur-Weyl rep, convention D, proton pin. Scorecard only: AME not read, nothing fitted, selected or wired.",
+  "auditOnly": "docs/audits/2026-11-27-bond-rules-and-length-cutoff.md",
+  "parameters": {
+    "A": 3,
+    "n_strands": 9,
+    "E0_tower_MeV": "4.2274833556290305503"
+  },
+  "data": {
+    "norms": {
+      "V": "1.1988582111448163577",
+      "S": "7.0",
+      "x": "1.0500796062662369374",
+      "q_squared": "1.2320524541667639313"
+    },
+    "spectrum": {
+      "rho_S": "7.0",
+      "n_minus_2": 7,
+      "n_eigs_at_rho": 10,
+      "second_abs_eig": "6.621069105557368319934471",
+      "uniform_limit_rate": "0.9458670150796240457",
+      "top": [
+        [
+          5,
+          "7.0",
+          "-5.76530262118641e-40"
+        ],
+        [
+          4,
+          "7.0",
+          "1.2106618183631e-39"
+        ],
+        [
+          3,
+          "7.0",
+          "-3.86250063547727e-40"
+        ],
+        [
+          1,
+          "7.0",
+          "-2.14302108528265e-41"
+        ],
+        [
+          7,
+          "7.0",
+          "0.0"
+        ],
+        [
+          2,
+          "7.0",
+          "0.0"
+        ],
+        [
+          6,
+          "7.0",
+          "1.22564315160834e-39"
+        ],
+        [
+          0,
+          "7.0",
+          "0.0"
+        ]
+      ],
+      "rho_by_dropped_junctions": {
+        "()": "7.0",
+        "(0,)": "5.0",
+        "(1,)": "5.0",
+        "(0, 1)": "3.0"
+      },
+      "t_star": "0.1428571428571428571428571"
+    },
+    "rule3a_weighted_resolvent": {
+      "h": {
+        "t": "0.20906029879563931543",
+        "converges": false,
+        "Z": "44.673060340737225702",
+        "ratio": "0.04206063432410980220676802",
+        "minus_ln_r": "3.1686430274111829657",
+        "B_MeV_tower": "13.3953856583",
+        "reading3_pass": false,
+        "n_negative_level_chars": 2,
+        "most_negative": [
+          "(6, (5, 1))",
+          "-0.034033483"
+        ]
+      },
+      "q*h": {
+        "t": "0.23205245416676393127",
+        "converges": false,
+        "Z": "14.169099288361030293",
+        "ratio": "-1.385962776061908522578597",
+        "minus_ln_r": null,
+        "B_MeV_tower": null,
+        "reading3_pass": false,
+        "n_negative_level_chars": 28,
+        "most_negative": [
+          "(9, (6, 3))",
+          "-35.967787"
+        ]
+      },
+      "h/q": {
+        "t": "0.18834624563424194187",
+        "converges": false,
+        "Z": "-35.165116943400396015",
+        "ratio": "0.1343206538180750847549258",
+        "minus_ln_r": "2.007525398609487895",
+        "B_MeV_tower": "8.48678020862",
+        "reading3_pass": true,
+        "n_negative_level_chars": 0,
+        "most_negative": null
+      },
+      "t*/2": {
+        "t": "0.071428571428571428571",
+        "converges": true,
+        "Z": "0.16161616161616161616",
+        "ratio": "0.05555623334673273976619236",
+        "minus_ln_r": "2.8903595577293977136",
+        "B_MeV_tower": "12.2189469221",
+        "reading3_pass": false,
+        "n_negative_level_chars": 6,
+        "most_negative": [
+          "(8, (6, 2))",
+          "-0.10298075"
+        ]
+      }
+    },
+    "rule3inf_uniform_limit": {
+      "by_L": {
+        "1": {
+          "count": "0",
+          "ratio": null,
+          "minus_ln_r": null
+        },
+        "2": {
+          "count": "8.0",
+          "ratio": "0.06100193511949740480945361",
+          "minus_ln_r": "2.7968496920415488466"
+        },
+        "4": {
+          "count": "1232.0",
+          "ratio": "0.0551977430354648766328567",
+          "minus_ln_r": "2.8968332135736649478"
+        },
+        "8": {
+          "count": "4990112.0",
+          "ratio": "0.04499828229247451615516105",
+          "minus_ln_r": "3.101130961218703165"
+        },
+        "16": {
+          "count": "3.29277978351e+13",
+          "ratio": "0.03223634272213904623031222",
+          "minus_ln_r": "3.4346608069180230908"
+        },
+        "32": {
+          "count": "1.10438110812e+27",
+          "ratio": "0.02537143418302679927237394",
+          "minus_ln_r": "3.6741313763015470481"
+        },
+        "64": {
+          "count": "1.21976048655e+54",
+          "ratio": "0.02269816060110312226270738",
+          "minus_ln_r": "3.7854713885663604669"
+        },
+        "128": {
+          "count": "1.4878156472e+108",
+          "ratio": "0.02223142871211787050178968",
+          "minus_ln_r": "3.8062482835202696097"
+        },
+        "256": {
+          "count": "2.21359540005e+216",
+          "ratio": "0.02221798656309930748904398",
+          "minus_ln_r": "3.8068531125982277896"
+        },
+        "512": {
+          "count": "4.90000459511e+432",
+          "ratio": "0.02221797572471811247474927",
+          "minus_ln_r": "3.8068536004184813407"
+        },
+        "1024": {
+          "count": "2.40100450321e+865",
+          "ratio": "0.02221797572471107421432668",
+          "minus_ln_r": "3.806853600418798123"
+        }
+      },
+      "spectral_limit_ratio": "0.02221797572471107421432668",
+      "closed_form": "y_(n)/tr(x), y_(n) = [n+1]_q/[2]_q^n",
+      "limit_element_reading3_pass": true,
+      "spectral_limit_minus_ln_r": "3.806853600418798123",
+      "B_MeV_tower": "16.0934102331"
+    },
+    "tail_bounds": {
+      "h": {
+        "t_norm_S": "1.46342209156948",
+        "geometric": false,
+        "tail_factor_L4": null,
+        "tail_factor_L6": null
+      },
+      "q*h": {
+        "t_norm_S": "1.62436717916735",
+        "geometric": false,
+        "tail_factor_L4": null,
+        "tail_factor_L6": null
+      },
+      "h/q": {
+        "t_norm_S": "1.31842371943969",
+        "geometric": false,
+        "tail_factor_L4": null,
+        "tail_factor_L6": null
+      },
+      "t*/2": {
+        "t_norm_S": "0.5",
+        "geometric": true,
+        "tail_factor_L4": "0.0625",
+        "tail_factor_L6": "0.015625"
+      }
+    },
+    "truncation_vs_exact": {
+      "h": {
+        "bound_available": false
+      },
+      "q*h": {
+        "bound_available": false
+      },
+      "h/q": {
+        "bound_available": false
+      },
+      "t*/2": {
+        "2": {
+          "ratio_truncated": "0.061001935119497404809",
+          "abs_error": "0.0054457018",
+          "proved_bound": null,
+          "bound_holds": null
+        },
+        "4": {
+          "ratio_truncated": "0.057481458071402042734",
+          "abs_error": "0.0019252247",
+          "proved_bound": "2.5483951",
+          "bound_holds": true
+        },
+        "6": {
+          "ratio_truncated": "0.056487622484009587623",
+          "abs_error": "0.00093138914",
+          "proved_bound": "0.15317732",
+          "bound_holds": true
+        },
+        "8": {
+          "ratio_truncated": "0.055905287085944808145",
+          "abs_error": "0.00034905374",
+          "proved_bound": "0.03034097",
+          "bound_holds": true
+        }
+      }
+    },
+    "subset_norms": {
+      "()": "7.0",
+      "(0,)": "5.0",
+      "(1,)": "5.0",
+      "(0, 1)": "3.1141207295892513825"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 enters through cf.Q (committed y-lambda-at-q0 witness, proton pin)"
+}
