@@ -116,3 +116,7 @@ Observation (thread "Derive hypercharge and gauge structure"): if the matter con
 
 ## 2026-11-27T22:10Z — Lambda^odd anomaly freedom (PR #9754, commit 957b64c0f)
 QOU/StandardModel/OddExteriorAnomalyFreedom.lean: for any traceless y : Fin 5 -> K, sum over odd S of y_S = 8 p1 = 0 and of y_S^3 = p1(2p1^2+6p2) = 0. No 2+3 split used. Open Check A reduces to "matter = Lambda^odd(V + W*)" plus W (qou-j3w6).
+
+
+## 2026-11-27T23:25Z — matter convention agreed
+Matter = EVEN exterior part Λ⁰⊕Λ²⊕Λ⁴ = 1⊕10⊕5̄ (Spin(10) 16); odd part = conjugate. Agreed between the hypercharge thread and the per-fermion braid words thread (#9811). Recorded in OddExteriorAnomalyFreedom.lean (PR #9827, adds evenExterior_cubic). Notation only; chirality derivation stays open.
