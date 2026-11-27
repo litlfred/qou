@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-bring-map-euler-characteristic",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:bring-map-euler-characteristic",
+  "kind": "lemma",
+  "title": "Euler characteristic of the Bring map",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-bring-map-euler-characteristic"
+  ],
+  "tags": [
+    "euler-characteristic",
+    "brings-surface",
+    "combinatorial-map"
+  ],
+  "leanRef": "qou:QOU.BringsSurface.BringMapChain.bring_chi",
+  "text": "bring-map-euler-characteristic.md",
+  "provenance": "authored"
+}
