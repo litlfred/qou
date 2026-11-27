@@ -396,6 +396,144 @@ theorem lap_db_zeta_pow (a m k : ℕ) :
 
 end QuadrantDB
 
+/-! ## The quadrant `δ^a γ^m R[ζ]` -/
+
+section QuadrantDG
+
+variable {R : Type*} [CommRing R] (q : Rˣ)
+
+local notation "qi" => (((q⁻¹ : Rˣ) : R))
+local notation "tw" => torusScaleAlgHom q q⁻¹ q⁻¹⁻¹
+
+/-- `X₋(δ^a γ^{m+1}) = q^{-m} [m+1]_{q²} δ^{a+1} γ^m`. -/
+theorem fieldMinus_delta_gamma_succ (a m : ℕ) :
+    fieldMinus q (δ (R := R) q ^ a * γ q ^ (m + 1)) =
+      (qi ^ m * jk ((q : R) * q) (m + 1)) • (δ q ^ (a + 1) * γ q ^ m) := by
+  rw [field_leibniz, fieldMinus_delta_pow, zero_mul, zero_add, fieldMinus_gamma_pow_succ,
+    mul_smul_comm, ← mul_assoc, ← pow_succ]
+
+/-- `X₊(δ^{a+1} γ^m) = q^{-m} [a+1]_{q²} δ^a γ^{m+1}`. -/
+theorem fieldPlus_delta_succ_gamma (a m : ℕ) :
+    fieldPlus q (δ (R := R) q ^ (a + 1) * γ q ^ m) =
+      (jk ((q : R) * q) (a + 1) * qi ^ m) • (δ q ^ a * γ q ^ (m + 1)) := by
+  rw [field_leibniz, fieldPlus_gamma_pow, mul_zero, add_zero, fieldPlus_delta_pow_succ,
+    tw_gamma_pow, smul_mul_smul_comm, mul_assoc, ← pow_succ']
+
+/-- `L(δ^a γ^m) = [m]_{q⁻²} [a+1]_{q²} δ^a γ^m`. -/
+theorem lap_delta_gamma (a m : ℕ) :
+    lap q (δ (R := R) q ^ a * γ q ^ m) =
+      (jk (qi * qi) m * jk ((q : R) * q) (a + 1)) • (δ q ^ a * γ q ^ m) := by
+  cases m with
+  | zero =>
+    rw [pow_zero, mul_one, lap_apply, fieldMinus_delta_pow, map_zero, jk_zero, zero_mul,
+      zero_smul]
+  | succ m =>
+    rw [lap_apply, fieldMinus_delta_gamma_succ, map_smul, fieldPlus_delta_succ_gamma, smul_smul,
+      ← jk_rev' q m]
+    congr 1
+    rw [mul_pow]; ring
+
+/-- `δ^{a+1} γ^m · ζ^k αγ = q^{-m} q^{-2k} (δ^a γ^{m+1} ζ^k + q⁻¹ δ^a γ^{m+1} ζ^{k+1})`. -/
+theorem nf_dg_alpha (a m k : ℕ) :
+    δ (R := R) q ^ (a + 1) * γ q ^ m * (zetaB q ^ k * (α q * γ q)) =
+      (qi ^ m * (qi * qi) ^ k) • (δ q ^ a * γ q ^ (m + 1) * zetaB q ^ k) +
+      (qi ^ m * (qi * qi) ^ k * qi) • (δ q ^ a * γ q ^ (m + 1) * zetaB q ^ (k + 1)) := by
+  have h := nf_ag_delta q 0 m k
+  simp only [pow_zero, one_mul] at h
+  calc δ q ^ (a + 1) * γ q ^ m * (zetaB q ^ k * (α q * γ q))
+      = δ q ^ a * (δ q * γ q ^ m * (zetaB q ^ k * (α q * γ q))) := by
+        rw [pow_succ]; simp only [mul_assoc]
+    _ = _ := by
+        rw [h, mul_add, mul_smul_comm, mul_smul_comm]; simp only [mul_assoc]
+
+/-- `δ^a γ^{m+1} · ζ^k βδ = q^m q^{2(k+1)} δ^{a+1} γ^m ζ^{k+1}`. -/
+theorem nf_dg_beta (a m k : ℕ) :
+    δ (R := R) q ^ a * γ q ^ (m + 1) * (zetaB q ^ k * (β q * δ q)) =
+      ((q : R) ^ m * ((q : R) * q) ^ (k + 1)) • (δ q ^ (a + 1) * γ q ^ m * zetaB q ^ (k + 1)) := by
+  have hgz : γ (R := R) q * zetaB q ^ k = zetaB q ^ k * γ q := ((gamma_zeta q).pow_right k).eq
+  have hin : γ (R := R) q ^ (m + 1) * (zetaB q ^ k * β q) = γ q ^ m * zetaB q ^ (k + 1) := by
+    rw [pow_succ, mul_assoc, ← mul_assoc (γ q), hgz, mul_assoc, gamma_beta_zetaB, ← pow_succ]
+  calc δ q ^ a * γ q ^ (m + 1) * (zetaB q ^ k * (β q * δ q))
+      = δ q ^ a * ((γ q ^ (m + 1) * (zetaB q ^ k * β q)) * δ q) := by simp only [mul_assoc]
+    _ = ((q : R) * q) ^ (k + 1) • (δ q ^ a * ((γ q ^ m * δ q) * zetaB q ^ (k + 1))) := by
+        rw [hin, mul_assoc, zeta_pow_delta, mul_smul_comm, mul_smul_comm]; simp only [mul_assoc]
+    _ = _ := by
+        rw [skew_pow_left (rel_gd q), smul_mul_assoc, mul_smul_comm, smul_smul,
+          mul_comm (((q : R) * q) ^ (k + 1))]
+        congr 1
+        rw [pow_succ (δ q) a]; simp only [mul_assoc]
+
+/-- `X₋(δ^a γ^m) · ζ^k αγ`. -/
+theorem fieldMinus_dg_mul (a m k : ℕ) :
+    fieldMinus q (δ (R := R) q ^ a * γ q ^ m) * (zetaB q ^ k * (α q * γ q)) =
+      ((qi * qi) ^ k * jk (qi * qi) m) • (δ q ^ a * γ q ^ m * zetaB q ^ k) +
+      ((qi * qi) ^ k * jk (qi * qi) m * qi) • (δ q ^ a * γ q ^ m * zetaB q ^ (k + 1)) := by
+  cases m with
+  | zero =>
+    rw [pow_zero, mul_one, fieldMinus_delta_pow, zero_mul, jk_zero, mul_zero, zero_mul,
+      zero_smul, zero_smul, add_zero]
+  | succ m =>
+    rw [fieldMinus_delta_gamma_succ, smul_mul_assoc, nf_dg_alpha, smul_add, smul_smul, smul_smul,
+      ← jk_rev' q m]
+    congr 2
+    · rw [mul_pow]; ring
+    · rw [mul_pow]; ring
+
+/-- `X₊(δ^a γ^m) · ζ^k βδ`. -/
+theorem fieldPlus_dg_mul (a m k : ℕ) :
+    fieldPlus q (δ (R := R) q ^ a * γ q ^ m) * (zetaB q ^ k * (β q * δ q)) =
+      (jk ((q : R) * q) a * ((q : R) * q) ^ (k + 1)) •
+        (δ q ^ a * γ q ^ m * zetaB q ^ (k + 1)) := by
+  cases a with
+  | zero =>
+    rw [pow_zero, one_mul, fieldPlus_gamma_pow, zero_mul, jk_zero, zero_mul, zero_smul]
+  | succ a =>
+    rw [fieldPlus_delta_succ_gamma, smul_mul_assoc, nf_dg_beta, smul_smul]
+    congr 1
+    have hq : qi * (q : R) = 1 := qi_mul_q q
+    calc jk ((q : R) * q) (a + 1) * qi ^ m * ((q : R) ^ m * ((q : R) * q) ^ (k + 1))
+        = jk ((q : R) * q) (a + 1) * (qi * q) ^ m * ((q : R) * q) ^ (k + 1) := by
+          rw [mul_pow]; ring
+      _ = _ := by rw [hq, one_pow, mul_one]
+
+/-- **`L` on `δ^a γ^m ζ^{k+1}`.** Lower bidiagonal in `k`:
+`L(δ^a γ^m ζ^{k+1}) = q [m+k+1]_{q⁻²} [k+1]_{q²} δ^a γ^m ζ^k
+  + [m+k+1]_{q⁻²} [a+k+2]_{q²} δ^a γ^m ζ^{k+1}`. -/
+theorem lap_dg_zeta_pow (a m k : ℕ) :
+    lap q (δ (R := R) q ^ a * γ q ^ m * zetaB q ^ (k + 1)) =
+      ((q : R) * jk (qi * qi) (m + k + 1) * jk ((q : R) * q) (k + 1)) •
+          (δ q ^ a * γ q ^ m * zetaB q ^ k) +
+      (jk (qi * qi) (m + k + 1) * jk ((q : R) * q) (a + k + 2)) •
+          (δ q ^ a * γ q ^ m * zetaB q ^ (k + 1)) := by
+  rw [lap_mul_of_tw q _ _ (tw_zeta_pow q (k + 1)), lap_delta_gamma, fieldPlus_zeta_pow,
+    fieldMinus_zeta_pow, map_smul (torusScaleAlgHom q q⁻¹ q⁻¹⁻¹),
+    map_mul (torusScaleAlgHom q q⁻¹ q⁻¹⁻¹), tw_zeta_pow, tw_betaDelta]
+  simp only [mul_smul_comm, smul_smul]
+  rw [fieldMinus_dg_mul, fieldPlus_dg_mul, lap_zeta_pow]
+  simp only [mul_add, mul_smul_comm, smul_add, smul_smul, smul_mul_assoc]
+  have hA : jk (qi * qi) (m + k + 1) =
+      jk (qi * qi) (k + 1) + (qi * qi) ^ (k + 1) * jk (qi * qi) m := by
+    rw [show m + k + 1 = (k + 1) + m by omega]; exact jk_add _ _ _
+  have hB : jk ((q : R) * q) (a + k + 2) =
+      jk ((q : R) * q) (k + 2) + ((q : R) * q) ^ (k + 2) * jk ((q : R) * q) a := by
+    rw [show a + k + 2 = (k + 2) + a by omega]; exact jk_add _ _ _
+  have hB2 : jk ((q : R) * q) (k + 2) = jk ((q : R) * q) (k + 1) + ((q : R) * q) ^ (k + 1) :=
+    jk_succ _ _
+  have hA1 : jk ((q : R) * q) (a + 1) = 1 + (q : R) * q * jk ((q : R) * q) a := jk_succ' _ _
+  have hq : (q : R) * qi = 1 := q_mul_qi q
+  have hxy : ((q : R) * q) ^ (k + 1) * (qi * qi) ^ (k + 1) = 1 := by
+    rw [← mul_pow, show (q : R) * q * (qi * qi) = 1 by linear_combination ((q : R) * qi + 1) * hq,
+      one_pow]
+  match_scalars
+  · linear_combination jk (qi * qi) m * hA1 +
+      (-((qi * qi) ^ (k + 1) * jk (qi * qi) m)) * hB2 + (-jk ((q : R) * q) (a + k + 2)) * hA +
+      (-(jk (qi * qi) (k + 1) + (qi * qi) ^ (k + 1) * jk (qi * qi) m)) * hB +
+      (-(jk (qi * qi) m + (q : R) * q * jk (qi * qi) m * jk ((q : R) * q) a)) * hxy
+  · linear_combination (-((q : R) * jk ((q : R) * q) (k + 1))) * hA +
+      (-(jk ((q : R) * q) (k + 1) * jk (qi * qi) m * (qi * qi) ^ k * qi)) * hq
+
+end QuadrantDG
+
 /-! ## Bidiagonal maps on `K[X]` -/
 
 section Bidiag
