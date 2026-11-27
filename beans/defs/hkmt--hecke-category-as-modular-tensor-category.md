@@ -2,7 +2,7 @@
 # hkmt
 title: 'BWH-1: the root-of-unity Hecke/TL quotient is a modular tensor category (S,T from Markov trace)'
 status: in-progress
-pr: 9743
+pr: 9765
 type: task
 priority: high
 tags:
@@ -43,3 +43,9 @@ Working on the restated goal (pending owner card): the semisimplified type-A₁ 
 ## 2026-11-27 21:50Z — owner ruling: restated at a root of unity
 
 Owner chose "Root-of-unity quotient" on the card. Goal: the semisimplified Hecke/TL quotient at q a primitive 2l-th root of unity is modular, S and T from the Markov trace. The generic-q HeckeMTC bundle stays as modular data only. Recorded in docs/coordination/owner-rulings.md (PR #9743).
+
+## 2026-11-27 — twist relation (ST)³ = p₊S² at every level (PR #9765)
+
+#9743 merged (fd2009fb86). Same file, new section: `sMatrix_twist` (δ·STS = −G·T⁻¹ST⁻¹, G = Σ_{c<2ℓ} ω^{c²}, ω a primitive 4ℓ-th root, ζ = ω²), `sMatrix_tMatrix_cube` (δ·(ST)³ = −G·S²), `gaussSum_ne_zero`. Sorry-free, axioms [propext, Classical.choice, Quot.sound], generic CommRing domain. With S² = D²·1 these are the projective SL₂(ℤ) relations. T = diag(ω^{(j+1)²}) = ω·θ_j is cited as the ribbon twist (Kirby–Melvin), not derived from the corpus braiding.
+
+**next**: Verlinde fusion N_{ij}^m = truncated Clebsch–Gordan; derive S, T from the corpus braiding (needs qou-pbjv / qou-ltwg); higher rank SU(N)_k. Bean stays open: the corpus-braiding identification is still cited.
