@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T18:40:00Z
-updated_at: 2026-11-27T19:10:00Z
+updated_at: 2026-11-27T21:34:07Z
 parent: qou-pa7n
 ---
 
@@ -101,3 +101,7 @@ On the torus-invariant block K[ζ], ζ=βγ: Cartan field kills K[ζ] (cartanFie
 ## 2026-11-27T21:20Z — PR #9713: h∘X₊ = 0 / h∘X₋ = 0 on the blocks (sorry-free)
 
 `QOU/FluidDynamics/q_ns_haar_field_invariance.lean`: h(X₊ x) = 0 for x ∈ K[ζ] ∪ βδ·K[ζ], h(X₋ x) = 0 for x ∈ K[ζ] ∪ αγ·K[ζ]. The βδ case reduces to h(Lζ^{k+1}) = 0; the αγ case uses βδ·αγ = ζ + q⁻¹ζ² and the Jackson moments. GAP kept open: h∘X₊ = 0 on all of O_q(SU(2)) needs a PBW-type spanning of the weight-(0,−2) part or full Haar invariance; neither is in the corpus. Part A remains open.
+
+
+
+**2026-11-27 (thread 'Prove PBW spanning for the Haar algebra'), PR #9731.** PBW basis of O_q(SU(2)) over any comm ring, any unit q: `CompactQuantumMetrics/OqSU2PBW.lean` (mono_span, mono_linearIndependent, pbwBasis, pbwEquiv, monoRep_faithful). Whole-algebra Haar vanishing for q not a root of unity: `QOU/FluidDynamics/q_ns_haar_field_invariance_full.lean` (haarState_fieldPlus_eq_zero, haarState_fieldMinus_eq_zero, haarState_fieldZero_eq_zero). Closes #9713's open whole-algebra item. Still open: (id⊗h)Δ = h(·)1; roots of unity; ∇_q link.
