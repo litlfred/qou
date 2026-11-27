@@ -2962,6 +2962,20 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "silver2006knotorigins" },
   { id: "przytycki2007knothistory" },
   { id: "faddeevniemi1997" },
+  // ── Braid-preon and quantum-symmetric-pair prior art (owner chat upload, 2026-11-22) ──
+  // Metadata read off page 1 of each PDF; journal references are added only
+  // where page 1 prints one (none of the five does).
+  { id: "gresnigt2017" },
+  { id: "gresnigt2018" },
+  { id: "chester-arsiwalla-kauffman-2025" },
+  { id: "letzter2001" },
+  { id: "balagovic-kolb-2015" },
+  // 2026-11-22: knotted-particles-history bibliographic review (ported from PR #9095).
+  { id: "kauffman-lomonaco-2016" },
+  { id: "murasugi1987" },
+  { id: "thistlethwaite1987" },
+  { id: "menasco-thistlethwaite1991" },
+  { id: "menasco-thistlethwaite1993" },
   // 2026-11-23: relational space, trace-radical quotient, and Rieffel–Kantorovich prior art (bean qou-u58f).
   { id: "leibniz-clarke1717" },
   { id: "temperley-lieb1971" },
@@ -3043,6 +3057,17 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "finkelstein2007" },
   { id: "dixon1994" },
   { id: "boyle2020" },
+  { id: "turaev-virelizier2010" },
+  { id: "pastawski2015" },
+  { id: "levin2005" },
+  { id: "bhattacharyya2008" },
+  { id: "bredberg2011" },
+  { id: "mohamed2016" },
+  { id: "fortierbourque2023" },
+  { id: "mardby2024" },
+  { id: "chmutov2007" },
+  { id: "ciubotaru2014" },
+  { id: "granssamuelsson2020" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

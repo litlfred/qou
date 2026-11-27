@@ -192,6 +192,7 @@ export default chapter({
         "vorticity-lower-bound-argument",
         "root-of-unity-truncation",
         "root-of-unity-truncation-interpretation",
+        "tv-rt-string-net-root-of-unity-only",
         "townsend-biot-savart-strain",
         "hyperbolic-overlap-saturation",
         "crow-approach-amplification",
