@@ -116,18 +116,18 @@ This replaces the hand-placed weight `1` of the unit `m_e/ℏ_q²`. With CAL-1 t
 
 **Two charts, two rules, no conflict.** The β-dictionary energies (radius gaps, log binding law) are `k = 0` readings and use §2's unit. Masses on the mass-formula scale are `k = 1` readings and use `m_e/w_e`. Each unit is fixed by CAL-1 within its own chart. Neither is placed by hand any more.
 
-**n–p cell in the mass chart** (`np_cell_energy_reading`, `hasDerivAt_inv_sq_mul`). With `ε_n = q⁻²ε_p`, the two readings differ by exactly `−2` for any `ε_p`. So the cell is `2/w_e(q)` electron masses: 0.6243 m_e at q₀, and `2/3` at `q = 1`.
+**n–p cell in the mass chart** (`np_cell_energy_reading`, `hasDerivAt_inv_sq_mul`). With `ε_n = q⁻²ε_p`, the two readings differ by exactly `−2` for any `ε_p`. With the CAL-1 orientation (`w_e > 0`), the cell is therefore **`m_n − m_p = −2/w_e(q)`** electron masses: −0.6243 m_e at q₀ and `−2/3` at `q = 1`. So **in this chart the neutron lies below the proton**, which is the opposite sign to the log chart of §2 (`derived_cell_pos`). The scale-unification thread (#9767, `EnergyScaleBridge.np_cell_mass_neg`, `sign_agree_iff`) shows that the two charts agree in sign on X iff `L_X·w_X < 0`, so every pure power `q^k` flips. Re-solving q₀ does not change this.
 
 | at q₀ (proton pin) | value |
 |---|---|
 | `w_e(q₀)` | 3.203481 (hand-placed: 1) |
 | `W_μ = 2 Im G` | 207.2446 |
 | `m_μ/m_e = W_μ/w_e` | 64.694 |
-| n–p cell | 0.6243 m_e |
+| n–p cell | −0.6243 m_e (neutron below proton) |
 
 **Comparison boundary.**
 - `m_μ/m_e` is 64.69 against 206.77 (0.313×). This is #9692's "Vol/3", now with the exact `w_e(q₀)`.
-- The n–p cell is 0.319 MeV against 1.293 MeV (4.05× short).
+- The n–p cell is −0.319 MeV against +1.293 MeV: wrong sign, and 4.05× short in magnitude.
 - CAL-2 defines q₀ through the carrier with the hand-placed weight. If CAL-2 were re-solved with `w_e`, then `W_μ(q)/w_e(q) = m_μ/m_e` gives **q₀' = 1.059529** (ℏ = 0.05618, against q₀ = 1.109979, ℏ = 0.09908). This is computed for comparison only and **not adopted**: re-solving q₀ moves every number in the corpus and is an owner decision.
 
 **Scope.** Given the corpus's own premises (additivity; the carrier's `ℏ_q⁻²` order), the electron's mass-chart weight is derived, not placed. What this does not do: say why the carrier's coefficient should be `Vol` and not `Vol/w_e(1) = Vol/3`. That question returns to CAL-2's definition of q₀.
