@@ -1,0 +1,1044 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "woronowicz1987-twisted-su2",
+ "source": {
+  "file": "woronowicz1987-twisted-su2.pdf",
+  "sha256": "108358dd4da571a3f4715ce3afb6b838c76061f659f30d5858cf86b95aa5efe6",
+  "bytes": 5403715,
+  "pages": 66,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-27T18:54:55Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "PubL RIMS, Kyoto Univ. 23 (1987), 117-181 Twisted SU(2) Group. An Example of a",
+  "authors_raw": "Non-Commutative Differential Calculus",
+  "title_lines": [
+   "PubL RIMS, Kyoto Univ",
+   "23 (1987), 117-181",
+   "Twisted SU(2) Group. An Example of a"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Author": "PRIMS 23 (1987) 1 117-182",
+   "Creator": "",
+   "Producer": "",
+   "Title": "",
+   "CreationDate": "D:20051230194416"
+  },
+  "title_raw": "PubL RIMS, Kyoto Univ. 23 (1987), 117-181 Twisted SU(2) Group. An Example of a",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "text": "PubL RIMS, Kyoto Univ. 23 (1987), 117-181 Twisted SU(2) Group. An Example of a",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "\u00a7 1. The Pseudogroup",
+   "page": 5,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "121"
+  },
+  {
+   "level": 1,
+   "title": "\u00a72. First Order Differential Calculus",
+   "page": 14,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "130"
+  },
+  {
+   "level": 1,
+   "title": "2 =\u2014(DO",
+   "page": 25,
+   "source": "inferred",
+   "number": "0",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "141"
+  },
+  {
+   "level": 2,
+   "title": "</(CAO=rfCAC'+(-l)8WC'",
+   "page": 30,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "146"
+  },
+  {
+   "level": 3,
+   "title": "C^flo^iA^+^i^A^o+^oA^i",
+   "page": 33,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "149"
+  },
+  {
+   "level": 4,
+   "title": "\u00a74 Extended BImodules",
+   "page": 35,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "151"
+  },
+  {
+   "level": 4,
+   "title": "Ak=(id\u00aeri)v",
+   "page": 44,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "160"
+  },
+  {
+   "level": 1,
+   "title": "S intertwines v with v'",
+   "page": 45,
+   "source": "inferred",
+   "number": "I",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "161"
+  },
+  {
+   "level": 2,
+   "title": "<42Wx)Q =S ^^(8)^-A^AC+i; ^(8)rf^AC",
+   "page": 55,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "171"
+  },
+  {
+   "level": 3,
+   "title": "Af\"\u00b0 = A^Bf + I\u00aeAa",
+   "page": 58,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "174"
+  },
+  {
+   "level": 3,
+   "title": "A2. Structure of the Algebra A",
+   "page": 62,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "178"
+  },
+  {
+   "level": 3,
+   "title": "References",
+   "page": 64,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.7,
+   "evidence": [
+    "style",
+    "stock-name"
+   ],
+   "page_label": "180"
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "118",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "119",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "120",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "121",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "122",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "123",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "124",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "125",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "126",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "127",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "128",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "129",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "130",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "131",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "132",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "133",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "134",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "135",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "136",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "137",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "138",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "139",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "140",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "141",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "142",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "143",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "144",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "145",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "146",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "147",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "148",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "149",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "150",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "151",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "152",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "153",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "154",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "155",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "156",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "157",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "158",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "159",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "160",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "161",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "162",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "163",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "164",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "165",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "166",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "167",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "168",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "169",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "170",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "171",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "172",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "173",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "174",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "175",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "176",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "177",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "178",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "179",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "180",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "181",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 9260,
+   "n_words": 1508,
+   "label_start": null,
+   "label_end": "121"
+  },
+  {
+   "id": "sec-000-1-the-pseudogroup",
+   "number": null,
+   "title": "\u00a7 1. The Pseudogroup",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 14,
+   "n_chars": 13100,
+   "n_words": 2421,
+   "label_start": "121",
+   "label_end": "130"
+  },
+  {
+   "id": "sec-001-2-first-order-differential-calculus",
+   "number": null,
+   "title": "\u00a72. First Order Differential Calculus",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 25,
+   "n_chars": 13071,
+   "n_words": 2559,
+   "label_start": "130",
+   "label_end": "141"
+  },
+  {
+   "id": "sec-002-0-2-do",
+   "number": "0",
+   "title": "2 =\u2014(DO",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 30,
+   "n_chars": 7029,
+   "n_words": 1346,
+   "label_start": "141",
+   "label_end": "146"
+  },
+  {
+   "id": "sec-003-caorfcac-l8wc",
+   "number": null,
+   "title": "</(CAO=rfCAC'+(-l)8WC'",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 33,
+   "n_chars": 2798,
+   "n_words": 528,
+   "label_start": "146",
+   "label_end": "149"
+  },
+  {
+   "id": "sec-004-cfloiaiaooai",
+   "number": null,
+   "title": "C^flo^iA^+^i^A^o+^oA^i",
+   "level": 3,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 1872,
+   "n_words": 364,
+   "label_start": "149",
+   "label_end": "151"
+  },
+  {
+   "id": "sec-005-4-extended-bimodules",
+   "number": null,
+   "title": "\u00a74 Extended BImodules",
+   "level": 4,
+   "page_start": 35,
+   "page_end": 44,
+   "n_chars": 12500,
+   "n_words": 2378,
+   "label_start": "151",
+   "label_end": "160"
+  },
+  {
+   "id": "sec-006-akidriv",
+   "number": null,
+   "title": "Ak=(id\u00aeri)v",
+   "level": 4,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 1323,
+   "n_words": 257,
+   "label_start": "160",
+   "label_end": "161"
+  },
+  {
+   "id": "sec-007-i-s-intertwines-v-with-v",
+   "number": "I",
+   "title": "S intertwines v with v'",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 55,
+   "n_chars": 12627,
+   "n_words": 2387,
+   "label_start": "161",
+   "label_end": "171"
+  },
+  {
+   "id": "sec-008-42wxq-s-8-aaci-8rfac",
+   "number": null,
+   "title": "<42Wx)Q =S ^^(8)^-A^AC+i; ^(8)rf^AC",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 58,
+   "n_chars": 4030,
+   "n_words": 784,
+   "label_start": "171",
+   "label_end": "174"
+  },
+  {
+   "id": "sec-009-af-abf-iaa",
+   "number": null,
+   "title": "Af\"\u00b0 = A^Bf + I\u00aeAa",
+   "level": 3,
+   "page_start": 58,
+   "page_end": 62,
+   "n_chars": 5301,
+   "n_words": 1004,
+   "label_start": "174",
+   "label_end": "178"
+  },
+  {
+   "id": "sec-010-a2-structure-of-the-algebra-a",
+   "number": null,
+   "title": "A2. Structure of the Algebra A",
+   "level": 3,
+   "page_start": 62,
+   "page_end": 64,
+   "n_chars": 2864,
+   "n_words": 560,
+   "label_start": "178",
+   "label_end": "180"
+  },
+  {
+   "id": "sec-011-references",
+   "number": null,
+   "title": "References",
+   "level": 3,
+   "page_start": 64,
+   "page_end": 66,
+   "n_chars": 1022,
+   "n_words": 161,
+   "label_start": "180",
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 1,
+  "likely_scanned": false,
+  "toc_entries": 12,
+  "toc_inferred_entries": 25,
+  "toc_inferred_mean_confidence": 0.628,
+  "toc_inferred_empty_share": 0.04,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 13,
+  "chars_total": 86797,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "r*r=rf",
+    "page": 5,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "e(ab)=e(a)e(b)",
+    "page": 16,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "Table 1",
+    "page": 19,
+    "action": "dropped",
+    "why": "a figure, table or box caption"
+   },
+   {
+    "title": "dl=0",
+    "page": 20,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "Table 4",
+    "page": 25,
+    "action": "dropped",
+    "why": "a figure, table or box caption"
+   },
+   {
+    "title": "where x takes values (2. 27) coincides with the linear span of",
+    "page": 28,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "if C is odd",
+    "page": 31,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "\u2014 daf\\df",
+    "page": 32,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "Table 6",
+    "page": 33,
+    "action": "dropped",
+    "why": "a figure, table or box caption"
+   },
+   {
+    "title": "frnp**c:S*",
+    "page": 39,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "\u00bb(\u00ab*)/ \\-\u00bb, of",
+    "page": 45,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "Table 8",
+    "page": 47,
+    "action": "dropped",
+    "why": "a figure, table or box caption"
+   },
+   {
+    "title": "Table 9",
+    "page": 47,
+    "action": "dropped",
+    "why": "a figure, table or box caption"
+   }
+  ]
+ }
+}
