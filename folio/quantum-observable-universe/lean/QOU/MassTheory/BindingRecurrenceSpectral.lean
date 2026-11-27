@@ -1,4 +1,5 @@
-import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
@@ -12,15 +13,22 @@ The fibre q-difference kernel for the binding generating function is depth-2,
 
 The body-order recurrence `a_{n+2} = τ·a_{n+1} − a_n`
 (`QOU.Mass.BindingQDifferenceRecurrence`, depth `2`, kernel `[−1, τ]`) has
-characteristic roots `λ_± = (τ ± √(τ²−4))/2`. This file proves the three
+characteristic roots `λ_± = (τ ± √(τ²−4))/2`. This file proves, for a root
+`λ` carried as a parameter with its defining quadratic `λ² − τλ + 1 = 0` (no
+`Real.sqrt`; owner ruling 2026-11-27, transcendental boundary), the three
 structural facts that make the kernel **extensive** (its solutions grow), which
 is exactly the property the saturating `|χ|` joint trace lacks
 (`productModel_3body_nonpos`; PR #2703: `B_joint` is A-independent, λ_eff ≈ 1):
 
-* `lambdaPlus_isRoot`     — `λ₊` solves `x² − τx + 1 = 0`;
-* `lambda_product_eq_one` — `λ₊ · λ₋ = 1` (the `det = 1` / reciprocal-roots fact);
-* `lambdaPlus_gt_one`     — for `τ > 2`, the dominant root `λ₊ > 1` (extensive
-  growth), whence `λ₋ = 1/λ₊ < 1`.
+* `root_mul_partner_eq_one` — a root `λ` and its partner `τ − λ` multiply to `1`
+  (the `det = 1` / reciprocal-roots fact);
+* `root_add_partner`        — the two roots sum to `τ`;
+* `dominantRoot_gt_one`     — for `τ > 2`, a root with `τ ≤ 2λ` (the dominant
+  one) exceeds `1` (extensive growth), whence its partner `1/λ < 1`.
+
+The real roots `lambdaPlus τ = (τ + √(τ²−4))/2` and `lambdaMinus τ`, and the
+proof that `lambdaPlus` is the dominant root, live behind the boundary in
+`QOU.Transcendental.MassTheory.BindingRecurrenceSpectralReal`.
 
 The `τ > 2` hypothesis is **discharged for every substrate** `0 < q` (no fit, no
 geometric input) in `QOU.Mass.BindingTauAnchorClosure`: the selection-rule trace
@@ -59,51 +67,36 @@ LaTeX label: `prop:binding-recurrence-extensive` (interprets
 
 namespace QOU.Mass
 
-open Real
+variable {K : Type*}
 
-/-- Dominant root of the depth-2 binding kernel `x² − τx + 1`. -/
-noncomputable def lambdaPlus (τ : ℝ) : ℝ := (τ + Real.sqrt (τ ^ 2 - 4)) / 2
+/-- The partner of a root `λ` of `x² − τx + 1` is `τ − λ`, and the two are reciprocal:
+`λ · (τ − λ) = 1` (the `det = 1` constant term). -/
+theorem root_mul_partner_eq_one [CommRing K] {τ l : K} (hl : l ^ 2 - τ * l + 1 = 0) :
+    l * (τ - l) = 1 := by
+  linear_combination -hl
 
-/-- Sub-dominant root of the depth-2 binding kernel `x² − τx + 1`. -/
-noncomputable def lambdaMinus (τ : ℝ) : ℝ := (τ - Real.sqrt (τ ^ 2 - 4)) / 2
+/-- The partner `τ − λ` is itself a root of `x² − τx + 1`. -/
+theorem partner_isRoot [CommRing K] {τ l : K} (hl : l ^ 2 - τ * l + 1 = 0) :
+    (τ - l) ^ 2 - τ * (τ - l) + 1 = 0 := by
+  linear_combination hl
 
-/-- `λ₊` is a root of the characteristic polynomial `x² − τx + 1`. -/
-theorem lambdaPlus_isRoot {τ : ℝ} (hτ : 2 < τ) :
-    (lambdaPlus τ) ^ 2 - τ * lambdaPlus τ + 1 = 0 := by
-  unfold lambdaPlus
-  have hs : Real.sqrt (τ ^ 2 - 4) ^ 2 = τ ^ 2 - 4 := Real.sq_sqrt (by nlinarith)
-  have expand :
-      ((τ + Real.sqrt (τ ^ 2 - 4)) / 2) ^ 2 - τ * ((τ + Real.sqrt (τ ^ 2 - 4)) / 2) + 1
-        = (Real.sqrt (τ ^ 2 - 4) ^ 2 - (τ ^ 2 - 4)) / 4 := by ring
-  rw [expand, hs]; ring
+/-- **Trace identity.** The two roots sum to `τ`. -/
+theorem root_add_partner [CommRing K] (τ l : K) : l + (τ - l) = τ := by ring
 
-/-- **det = 1**: the two roots are reciprocal, `λ₊ · λ₋ = 1` (the constant term). -/
-theorem lambda_product_eq_one {τ : ℝ} (hτ : 2 < τ) :
-    lambdaPlus τ * lambdaMinus τ = 1 := by
-  unfold lambdaPlus lambdaMinus
-  have hs : Real.sqrt (τ ^ 2 - 4) ^ 2 = τ ^ 2 - 4 := Real.sq_sqrt (by nlinarith)
-  have expand :
-      (τ + Real.sqrt (τ ^ 2 - 4)) / 2 * ((τ - Real.sqrt (τ ^ 2 - 4)) / 2)
-        = (τ ^ 2 - Real.sqrt (τ ^ 2 - 4) ^ 2) / 4 := by ring
-  rw [expand, hs]; ring
-
-/-- **Extensive growth.** For `τ > 2` the dominant root exceeds `1`; with
-`λ₊ · λ₋ = 1` this forces `λ₋ < 1`. The depth-2 binding kernel therefore has a
-growing (extensive) general solution — the property a saturating multiplicative
-trace (`τ = 2`, `λ = 1`) lacks. -/
-theorem lambdaPlus_gt_one {τ : ℝ} (hτ : 2 < τ) : 1 < lambdaPlus τ := by
-  unfold lambdaPlus
-  have hpos : (0 : ℝ) < τ ^ 2 - 4 := by nlinarith
-  have hs : 0 < Real.sqrt (τ ^ 2 - 4) := Real.sqrt_pos.mpr hpos
+/-- **Extensive growth.** For `τ > 2`, the dominant root (`τ ≤ 2λ`) of `x² − τx + 1`
+exceeds `1`; with `λ · (τ − λ) = 1` its partner is `< 1`. The depth-2 binding kernel
+therefore has a growing (extensive) general solution — the property a saturating
+multiplicative trace (`τ = 2`, `λ = 1`) lacks. -/
+theorem dominantRoot_gt_one [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+    {τ l : K} (hτ : 2 < τ) (hdom : τ ≤ 2 * l) : 1 < l := by
   linarith
 
-/-- **Trace identity for the depth-2 binding roots (`qou-jgk6`).**
-For any trace parameter `τ : ℝ`, the sum of the dominant and sub-dominant roots
-`lambdaPlus τ + lambdaMinus τ` equals `τ`. -/
-theorem lambda_sum_eq_tau (τ : ℝ) :
-    lambdaPlus τ + lambdaMinus τ = τ := by
-  dsimp [lambdaPlus]
-  dsimp [lambdaMinus]
-  ring
+/-- The partner of the dominant root lies strictly between `0` and `1`. -/
+theorem partner_lt_one [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+    {τ l : K} (hτ : 2 < τ) (hl : l ^ 2 - τ * l + 1 = 0) (hdom : τ ≤ 2 * l) :
+    0 < τ - l ∧ τ - l < 1 := by
+  have h1 := dominantRoot_gt_one hτ hdom
+  have hp := root_mul_partner_eq_one hl
+  constructor <;> nlinarith
 
 end QOU.Mass
