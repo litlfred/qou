@@ -74,3 +74,25 @@ Lean proof that the Markov trace's normalised moments converge. Lean has no
 general-`n` Markov trace yet (`markovTraceH2/H3A/H4A` only). Proposed route: the
 cumulant / additive-formal-group argument over `QOU/LiftingDescent/FormalGroupLaw.lean`,
 with the Markov factorisation as the key lemma (owner card pending).
+
+## Classical CLT for tr_M, step 1: the exact second moment (owner pick "cumulant route")
+
+`QOU/Observations/QCltMarkovSecondMoment.lean`, lean-direct exit 0, standard axioms. For
+**every** Markov trace `T : MarkovTower δ ε` on the Temperley–Lieb tower:
+
+- `tau_e`: `τ_n(e_i) = ε`; `tau_e_mul_e`: `τ_n(e_i e_j) = ε²` for all `i ≠ j`, adjacent or not.
+  The Markov property kills every off-diagonal covariance.
+- `tau_S_sq`: `τ_n(S_n²) = n·(δε − ε²)` exactly, `S_n = Σ_i (e_i − ε)`.
+- `secondMoment_converges`: `τ_n(S_n²)/n → v = δε − ε²` (`= 1 − δ⁻²` at `ε = δ⁻¹`, the spin
+  chain of PR #9817).
+
+This is the `k = 1` field of `QCltCut`, which holds for every `q` (the second q-Gaussian
+moment is 1). Remaining for `ClassicalClt` (bean `qou-e1uf`):
+
+1. cluster factorisation (locality of the product state) for words of `X_i`;
+2. the leading-order pair count `(2k−1)!! v^k n^k` (nearest-neighbour pairs contribute 0 by
+   step 1, so crossings weigh 1);
+3. a bound `O(n^{k−1})` on the rest, and **`[Archimedean K]`**: the `k ≥ 2` moments carry
+   `O(1/n)` corrections, and `b/n` is not a located-cut limit in a non-Archimedean field. So a
+   `tr_M` instance of the class exists only over an Archimedean `K`; in a surreal or
+   hyperreal field the statement is a standard-part one.

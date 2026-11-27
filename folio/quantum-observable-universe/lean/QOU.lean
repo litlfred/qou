@@ -906,6 +906,7 @@ import QOU.Core.Infra
 import CompactQuantumMetrics.AlgebraicGnsEmbedding
 import QOU.Observations.InhomogeneousLeptonLoopResolvent
 import QOU.Transcendental.QCltNonCommutative
+import QOU.Observations.QCltMarkovSecondMoment
 import QOU.Observations.TraceLocalityMeetsGsNonLocality
 import MathlibExt.RootsOfUnityProduct
 import MathlibExt.GaussianThetaSum
