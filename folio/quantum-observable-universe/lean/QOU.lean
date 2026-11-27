@@ -1907,6 +1907,7 @@ import QOU.MassTheory.ThreeRowSpringerSYTDerivation
 import QOU.MassTheory.H4GPMTModifiedDimensionCumulants
 import QOU.EightfoldWay.USpinColemanGlashowLambdaSigma
 import QOU.EightfoldWay.AlternatingChannelRowCap
+import QOU.EightfoldWay.ColourSingletSelectionRule
 import QOU.StandardModel.OctonionColourTripletSplitting
 import QOU.StandardModel.ColourOnSingleFibreThreeStrands
 import QOU.StandardModel.OctonionColourTripletComplexType
