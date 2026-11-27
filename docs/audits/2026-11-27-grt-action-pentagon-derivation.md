@@ -473,3 +473,57 @@ Lean: `RationalAssociator/GRTFlow.lean`, no `sorry`, axioms `propext`, `Classica
 - **(A)** top-defect additivity: error-carrying copies of `comp_inv512`, `comp_tcompat`,
   `pentagon_act_U4` and `hexagon_act_U4_universal`. Not attempted; it is the bulk.
 - The congruence `Φ ∘ g ≡ Φ + y` (§9.2) is still not in Lean.
+
+## 12. Stage 4 closed: `Exp(xy) ∈ GRT₁` for `y ∈ grt`, with the bound `N ≤ K`
+
+Lean: `RationalAssociator/GRTValued.lean` and `RationalAssociator/GRTFlowExact.lean`. Neither has a
+`sorry`. Checked with `lean -DautoImplicit=false -s 65536`, exit 0. `#print axioms` gives
+`propext`, `Classical.choice` and `Quot.sound` for `grt1U4_expPoly`, `hdouble_of_le` and
+`grt1U4_expPoly_via_doubling`; the check ran in a scratch copy.
+
+**Result.** `grt1U4_expPoly (hy : GrtU4 N y) (hK : 2 ≤ K) (hNK : N ≤ K) (x : ℚ) :
+GRT1U4 N (expPoly (x • y) K)` holds unconditionally. `hdouble_of_le` proves the hypothesis
+`hdouble` of `grt1U4_expPoly_of_doubling` under the same bounds, so the §11 statement is also
+closed through its own route (`grt1U4_expPoly_via_doubling`).
+
+**The extra hypothesis `N ≤ K` is needed.** With only `2 ≤ K`, `expPoly (x•y) K` is a truncation
+of the exponential, not the exponential. Example: take `K = 2`, so `G = 1 + xy`. Then `(5.12)`
+fails at order `x²`, because of the term `y(a,b)·y(b,a)`. This argument was worked by hand and is
+**not machine-checked**. With `K ≥ N`, every term `e_k(a,b)` with `k ≥ K` already vanishes in
+`U4 N`, since it lies in `Fil N k` (`eval_expTerm_eq_zero`). So the truncation is exact.
+
+**Route: an exact flow in dual numbers, not doubling.** Neither (P) nor (A) of §10–§11 was proved.
+The proof goes around both.
+
+- Work in `D = DualNumber (U4 N)`. `Hh y a b = 1 + ε·y(a,b)` is a unit, by (5.17).
+- **The flow identity** `evD_EP`: evaluating `Exp(xy)` at `x + ε` equals `actEval` of `Exp(xy)` by
+  `Hh`. Its inputs:
+  - the Leibniz chain rule;
+  - `L_y(e_k) = (k+1) e_{k+1}`;
+  - the exactness `e_K = 0` from `N ≤ K`.
+
+  This identity is the exact replacement for (P).
+- **Value-function action theorems** (`GRTValued.lean`). These are the action theorems of §4–§8,
+  restated for a value function `γ` and a defect, not for a single element:
+  - `inv_actV`;
+  - `tc_actV`;
+  - `hexagon_actV`;
+  - `pentagon_actV`, with `far_of_tcompatV` and `transported_dk4V`.
+
+  Each one shows that a defect of `φ ∘ γ` equals a unit times the same defect of `φ` at a
+  transported family. They replace (A): additivity is never needed, because the identity is exact.
+- **The `GoodAt` filtration.** `GoodAt d z` means `fst z ∈ Fil d` and `snd z ∈ Fil (d+1)`.
+  `goodAt_liftD` says that an algebra map `U4 N → D` with generator values `GoodAt 1` sends `Fil d`
+  into `GoodAt d`. The theorems `goodAt_inv`, `goodAt_tc`, `goodAt_hex` and `goodAt_pent` then
+  show: if a defect at `x` lies in `Fil d`, the defect at `x + ε` is `GoodAt d`.
+- **The induction** `evq_eq_zero_of_flow`. The `ε`-part of the defect at `x + ε` is
+  `Σ_j j x^{j−1} P_j`. If it lies in `Fil (d+1)` for every `x`, then every `P_j ∈ Fil (d+1)`,
+  using `P_0 = 0` (`coeff_zero_defectPoly`). Hence `P ∈ Fil N = 0`.
+- **Transfer.** The universal defects are carried to arbitrary pairs and `DK3` triples by
+  `liftU3`, the lift extended by zeros.
+
+**Still open.**
+- Nothing in the `hdouble` / Stage-4 item.
+- The congruence `Φ ∘ g ≡ Φ + y` (§9.2) is still not in Lean.
+- Matching the polynomial form of `GrtU4`'s t-compatibility to Drinfeld's (5.19) is still a paper
+  step, as stated in §11.
