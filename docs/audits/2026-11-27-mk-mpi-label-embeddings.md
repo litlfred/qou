@@ -34,3 +34,11 @@ The axioms used are only propext, Classical.choice and Quot.sound. lean-direct e
 This is a negative of scope (a). It excludes the four embeddings listed. It is not a structural exclusion of every definition of K and π.
 
 The row stays **Selected**. The half-sum observation shows where (3, 4) would have to come from: the labels must enter additively, halved, and the two numbers must be multiplied. That is a reading, not a consequence of the meson definitions.
+
+## Addendum: no meson-total ratio is 12 (Carl's pick, same day)
+
+`no_meson_total_ratio_twelve`: let a, b, c, d be quark labels, each in {3, 5, 7}. Then a+b ≠ 12(c+d) and ab ≠ 12cd.
+
+The largest possible ratio of label sums is 14/6, and the largest ratio of label products is 49/9. So no ratio of label totals between any two mesons is 12, kaon to pion included. The proof checks all 81 cases.
+
+One meson does have a label total of exactly 12, the pair (5, 7). That is a single meson's total, though, not a ratio between two mesons, and (5, 7) is neither the kaon nor the pion.

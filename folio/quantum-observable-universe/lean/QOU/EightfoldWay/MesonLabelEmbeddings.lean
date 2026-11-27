@@ -32,6 +32,9 @@ core of `m_K² / m_π²` as `[3]_q [4]_q`, whose classical value is `12`.
    not as a kaon-to-pion ratio. Reading `m_K² / m_π²` as that product is the `sl₂` fusion
    reading `dim (V₃ ⊗ V₄)`, which the corpus already records as a post-hoc spin assignment.
 
+4. `no_meson_total_ratio_twelve`: for any two mesons with labels in `{3, 5, 7}`, no ratio of
+   label sums or label products is `12`.
+
 **Scope.** This excludes the four embeddings listed (scope (a), not a structural exclusion of
 every possible definition of `K` and `π`). The row stays labelled **Selected**.
 -/
@@ -80,6 +83,21 @@ theorem half_sum_product_eq_twelve :
     (pionLabels.1 + pionLabels.2) / 2 = 3 ∧ (kaonLabels.1 + kaonLabels.2) / 2 = 4 ∧
       (pionLabels.1 + pionLabels.2) / 2 * ((kaonLabels.1 + kaonLabels.2) / 2) = 12 := by
   decide
+
+/-- Labels allowed for a quark strand: `{3, 5, 7}` (the generation labels). -/
+def IsGenLabel (n : ℕ) : Prop := n = 3 ∨ n = 5 ∨ n = 7
+
+/-- **No ratio of meson totals is 12.** For any two mesons with quark labels in `{3, 5, 7}`,
+neither the label sums nor the label products stand in ratio `12`: the largest sum ratio is
+`14 / 6` and the largest product ratio is `49 / 9`. So `12` cannot be a kaon-to-pion
+(or any meson-to-meson) ratio of label totals. -/
+theorem no_meson_total_ratio_twelve (a b c d : ℕ)
+    (ha : IsGenLabel a) (hb : IsGenLabel b) (hc : IsGenLabel c) (hd : IsGenLabel d) :
+    a + b ≠ 12 * (c + d) ∧ a * b ≠ 12 * (c * d) := by
+  unfold IsGenLabel at ha hb hc hd
+  rcases ha with rfl | rfl | rfl <;> rcases hb with rfl | rfl | rfl <;>
+    rcases hc with rfl | rfl | rfl <;> rcases hd with rfl | rfl | rfl <;>
+    exact ⟨by norm_num, by norm_num⟩
 
 end MesonLabelEmbeddings
 end QOU.EightfoldWay
