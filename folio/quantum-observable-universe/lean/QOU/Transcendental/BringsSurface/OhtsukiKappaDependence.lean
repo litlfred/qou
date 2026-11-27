@@ -1,5 +1,5 @@
 import QOU.BringsSurface.DominationTowers
-import QOU.MassTheory.HyperbolicVolumeTranscendence
+import QOU.Transcendental.MassTheory.HyperbolicVolumeTranscendence
 import QOU.BringsSurface.OhtsukiKappaFormal
 
 /-!

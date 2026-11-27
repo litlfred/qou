@@ -1,4 +1,4 @@
-import QOU.MassTheory.BorromeanVolumeCatalan
+import QOU.Transcendental.MassTheory.BorromeanVolumeCatalan
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.NormNum
 

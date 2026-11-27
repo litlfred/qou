@@ -1,4 +1,4 @@
-import QOU.MassTheory.HyperbolicVolumeTranscendence
+import QOU.Transcendental.MassTheory.HyperbolicVolumeTranscendence
 import Mathlib.Analysis.SpecificLimits.Basic
 
 /-!

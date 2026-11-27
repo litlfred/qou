@@ -1,4 +1,4 @@
-import QOU.MassTheory.HyperbolicVolumeTranscendence
+import QOU.Transcendental.MassTheory.HyperbolicVolumeTranscendence
 
 /-!
 # QOU.Archimedean.HyperbolicVolumeIndependence — conjectural witness (§3b)
