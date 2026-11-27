@@ -2,7 +2,7 @@ import Mathlib.MeasureTheory.Function.Jacobian
 import Mathlib.Analysis.Calculus.FDeriv.Mul
 import Mathlib.Analysis.Calculus.Deriv.Inv
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
-import QOU.MassTheory.HyperbolicVolumeMeasure
+import QOU.Transcendental.MassTheory.HyperbolicVolumeMeasure
 
 /-!
 # H2 (Möbius): `hypVolume` is invariant under inversion in the unit sphere

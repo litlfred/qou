@@ -37,7 +37,7 @@ Archimedean (ℝ): `exp`, `log`, `‖·‖`, ordering `0 < z` — §7c.
   -- Ref: [leitner2026] beans qou-v8u3 (horizontal separation), qou-322e (metric walls)
 -/
 
-import QOU.MassTheory.HyperbolicMetric
+import QOU.Transcendental.MassTheory.HyperbolicMetric
 
 namespace QOU.Archimedean.HyperbolicMetric
 

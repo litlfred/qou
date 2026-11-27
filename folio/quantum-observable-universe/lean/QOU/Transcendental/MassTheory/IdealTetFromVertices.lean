@@ -32,8 +32,8 @@ Archimedean (ℝ): `sin`, `cos`, `Real.sqrt`, ordering — §7c.
   -- Ref: [leitner2026] beans qou-idvt (T2), qou-473l (T2 vertex-independence)
 -/
 
-import QOU.MassTheory.IdealBoundaryGeodesicPlane
-import QOU.MassTheory.OrthoschemeTiling
+import QOU.Transcendental.MassTheory.IdealBoundaryGeodesicPlane
+import QOU.Transcendental.MassTheory.OrthoschemeTiling
 
 namespace QOU.Archimedean
 

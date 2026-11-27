@@ -55,9 +55,9 @@ Archimedean (ℝ): `dH`, `‖·‖`, ordering `0 < z` — §7c.
   --   qou-0a0z (WALL-2), qou-xidi (WALL-4), qou-473l (T2), qou-idvt (T2)
 -/
 
-import QOU.MassTheory.HyperbolicNormalization
-import QOU.MassTheory.HyperbolicGeodesic
-import QOU.MassTheory.HyperbolicGeodesicZAxisUniqueness
+import QOU.Transcendental.MassTheory.HyperbolicNormalization
+import QOU.Transcendental.MassTheory.HyperbolicGeodesic
+import QOU.Transcendental.MassTheory.HyperbolicGeodesicZAxisUniqueness
 
 namespace QOU.Archimedean
 

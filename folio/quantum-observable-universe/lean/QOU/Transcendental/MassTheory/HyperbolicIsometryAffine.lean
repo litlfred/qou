@@ -49,7 +49,7 @@ Archimedean (ℝ): `‖·‖`, inner product, ordering `0 < s` — §7c.
   -- Ref: [leitner2026] beans qou-ztp3 (T2 WALL-1), qou-473l (T2), qou-idvt (T2)
 -/
 
-import QOU.MassTheory.HyperbolicMetric
+import QOU.Transcendental.MassTheory.HyperbolicMetric
 import Mathlib.Analysis.Calculus.FDeriv.Add
 import Mathlib.Analysis.Calculus.FDeriv.Mul
 

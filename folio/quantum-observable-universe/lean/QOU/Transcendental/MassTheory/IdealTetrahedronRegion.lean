@@ -54,7 +54,7 @@
   -- Ref: [leitner2026] beans qou-5gai (H3), qou-w3eg, qou-idvt (T2)
 -/
 
-import QOU.MassTheory.HyperbolicVolumeMeasure
+import QOU.Transcendental.MassTheory.HyperbolicVolumeMeasure
 
 namespace QOU.Archimedean.HyperbolicVolume
 

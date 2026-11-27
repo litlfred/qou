@@ -1,5 +1,5 @@
-import QOU.MassTheory.TotallyGeodesicFaces
-import QOU.MassTheory.HyperbolicGeodesicUniqueness
+import QOU.Transcendental.MassTheory.TotallyGeodesicFaces
+import QOU.Transcendental.MassTheory.HyperbolicGeodesicUniqueness
 
 /-!
 # T2 — the totally-geodesic classification, made UNCONDITIONAL (zero citation).

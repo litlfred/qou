@@ -75,8 +75,8 @@ Archimedean (ℝ): `‖·‖`, ordering — §7c.
   --   geodesic-uniqueness wall)
 -/
 
-import QOU.MassTheory.HyperbolicIsometryReflection
-import QOU.MassTheory.HyperbolicIsometryInversion
+import QOU.Transcendental.MassTheory.HyperbolicIsometryReflection
+import QOU.Transcendental.MassTheory.HyperbolicIsometryInversion
 
 namespace QOU.Archimedean
 

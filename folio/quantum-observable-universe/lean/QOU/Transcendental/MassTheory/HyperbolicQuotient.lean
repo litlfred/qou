@@ -73,7 +73,7 @@
   -- Ref: [thurston1978] Ch. 4 (quotients of H³ by discrete groups)
   -- Ref: [ratcliffe] §8 (fundamental domains and the volume of a quotient)
 -/
-import QOU.MassTheory.HyperbolicVolumeMeasure
+import QOU.Transcendental.MassTheory.HyperbolicVolumeMeasure
 import Mathlib.MeasureTheory.Group.FundamentalDomain
 
 namespace QOU.Archimedean.HyperbolicQuotient

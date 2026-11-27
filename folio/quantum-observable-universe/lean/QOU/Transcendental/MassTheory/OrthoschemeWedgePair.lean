@@ -52,7 +52,7 @@
   -- Ref: [leitner2026] beans qou-w3eg (H4-5), qou-5gai (H4)
 -/
 
-import QOU.MassTheory.OrthoschemePolarReduction
+import QOU.Transcendental.MassTheory.OrthoschemePolarReduction
 
 namespace QOU.Archimedean.HyperbolicVolume
 

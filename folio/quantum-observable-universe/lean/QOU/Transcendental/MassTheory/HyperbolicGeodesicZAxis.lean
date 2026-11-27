@@ -23,8 +23,8 @@ Archimedean (ℝ): `exp`, `log`, `‖·‖`, ordering `0 < z` — §7c.
   -- Ref: [leitner2026] beans qou-6eco (T2 WALL-3), qou-473l (T2), qou-idvt (T2)
 -/
 
-import QOU.MassTheory.HyperbolicMetric
-import QOU.MassTheory.HyperbolicIsometryAffine
+import QOU.Transcendental.MassTheory.HyperbolicMetric
+import QOU.Transcendental.MassTheory.HyperbolicIsometryAffine
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
 namespace QOU.Archimedean

@@ -44,7 +44,7 @@
 -/
 
 import QOU.MassTheory.OrthoschemeBaseIntegral
-import QOU.MassTheory.HyperbolicVolumeFubini
+import QOU.Transcendental.MassTheory.HyperbolicVolumeFubini
 import Mathlib.Analysis.SpecialFunctions.PolarCoord
 
 namespace QOU.Archimedean.HyperbolicVolume

@@ -33,8 +33,8 @@ Archimedean (ℝ): `sin`, `cos`, `Real.sqrt`, ordering — §7c.
   -- Ref: [leitner2026] beans qou-idvt (T2), qou-473l (T2 vertex-independence)
 -/
 
-import QOU.MassTheory.IdealTetFromVertices
-import QOU.MassTheory.IdealTetrahedronRegion
+import QOU.Transcendental.MassTheory.IdealTetFromVertices
+import QOU.Transcendental.MassTheory.IdealTetrahedronRegion
 
 namespace QOU.Archimedean
 
