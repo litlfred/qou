@@ -1,10 +1,11 @@
 ---
 # qou-d2tt
 title: 'GAP: q-NS item 5, true blowup exponent alpha from the q-NS spectrum'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-11-27T17:26:53Z
-updated_at: 2026-11-27T17:26:53Z
+updated_at: 2026-11-27T17:29:57Z
 parent: qou-a3n3
 ---
 
@@ -13,3 +14,6 @@ Item (5) of qou-innq (sibling of that bean, same parent). Open conjecture; do no
 State: p2-critical-exponent gives two heuristic values, and the CriticalExponent carrier no longer fixes alpha=4/3 (qou-4670). Part A (PR #9485, q_ns_enstrophy_order_parameter.lean) shows two things: alpha=2 on the physical layer is a unit-conversion artifact, and Part A is FALSE on substrate-layer data. So alpha has no derived value yet. Deriving one depends on two things: the Part A layer ruling, still pending with the owner; and a modal law with triad transfer, which QNsWellposednessContext cannot see (stokesContext satisfies it). The q_turbulence_spectrum file carries 8 sorries.
 
 Next honest step: after the Part A layer ruling, define alpha as a limit of a QOU-defined spectral quantity, then prove or refute that the limit exists. No fitting: alpha may not be chosen to match K41 or any measured exponent. Sources rule 2026-11-27: QOU-formalized work only.
+
+## 2026-11-27 progress (thread 'Find q-NS Part B route')
+Part A layer ruled substrate. New sorry-free Lean q_ns_alpha_dissipation_bound.lean: from the energy equality, a uniform energy loss delta>0 on a fixed window gives (q-1) Omega_max(q) >= delta/T, i.e. alpha >= 1. So the dissipation-closure value is now a theorem, conditional on a dissipation anomaly, which stays open. No upper bound. While property 3 of thm:q-ns-wellposedness stands, the anomaly is unsatisfiable inside QNsWellposednessContext. Audit docs/audits/2026-11-27-qns-true-alpha-dissipation-bound.md. Stays open.
