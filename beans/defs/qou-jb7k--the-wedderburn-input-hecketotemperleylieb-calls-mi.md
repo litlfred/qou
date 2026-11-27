@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-27T07:42:40Z
-updated_at: 2026-11-27T15:20:00Z
+updated_at: 2026-11-27T15:45:00Z
 parent: qou-0cyu
 ---
 
@@ -222,4 +222,8 @@ Parent set to `qou-0cyu`: old parent `qou-weeq` is not an epic/milestone/feature
 - **The plain inclusion is FALSE.** `tlKernelPulled_not_le_rad`: at n = 2 the pulled-back relator lies in `tlKernelPulled` and not in `rad(wtrace)`. `skeinCoxeterEquiv` sends σᵢ ↦ q⁻¹Tᵢ, so Uᵢ = Tᵢ + 1 lives on the q (same-row) eigenspace; on the one-row block (3) the relator is (q²+1)(q⁴+q²+1) ≠ 0. So the relator kills ≤2-**column** blocks while `rad(wtrace)` is cut out by ≤2-**row** blocks.
 - **The twisted inclusion HOLDS at every n.** `theta_mem_rad`: θ(tlKernelPulled) ⊆ rad(wtrace) over ℝ, q ≠ 0 not a root of unity, θ: σᵢ ↦ (q − q⁻¹) − σᵢ = −σᵢ⁻¹ (an involution, `theta_theta`). Core `eq_zero_of_twoRow`: on a ≤2-row shape the joint −q⁻¹ eigenspace of adjacent seminormal generators is zero (pigeonhole on rows of k, k+1, k+2 plus one admissible swap). Passed to the kernel through `heckeTLEquiv`.
 - **Still open:** the reverse inclusion rad(wtrace) ⊆ θ(tlKernelPulled). Tracked on `qou-tlrv`. This bean stays open (rule 13a: the ideal equality is an open conjecture).
+
+## 2026-11-27 — ideal equality closed (PR #9488, see `qou-tlrv`)
+
+tlKernelPulled = θ(rad(wtrace)) exactly. The question in this bean's title is answered. Left open for the owner to close.
 
