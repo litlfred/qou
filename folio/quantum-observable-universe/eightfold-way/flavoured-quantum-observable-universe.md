@@ -48,3 +48,13 @@ the object and the phase are still supplied. The balancing twist does not provid
 because it is natural but not monoidal. Lean: `QOU/Core/FlavourCentralPhase.lean`
 (`phase_pow_of_volume`, `not_selfDual_of_phase`, `fundamental_phase_cannot_separate`,
 `FlavouredQuantumObservableUniverse.ofCentralPhase`), over a generic commutative ring.
+
+**The octonions supply the phase, but only after adjoining $\sqrt 3$.** The complex structure
+$J$ on the colour triple (left multiplication by a unit imaginary octonion, $J^2 = -1$,
+commuting with the $\mathfrak{su}(3)$ stabiliser) gives
+$\Omega = \tfrac12(\sqrt 3\, J - 1)$, which satisfies $\Omega^2 + \Omega + 1 = 0$ and so $\Omega^3 = 1$,
+over any commutative ring containing $\tfrac12$ and $\sqrt 3$; it commutes with everything that
+commutes with $J$. Over $\mathbb{Q}$ no element $a + bJ$ is a nontrivial cube root of unity,
+since $\mathbb{Q}(J) \cong \mathbb{Q}(i)$ does not contain $\omega$. This is a phase on the colour
+triple; identifying it with flavour is still open. Lean: `QOU/StandardModel/OctonionCubeRootPhase.lean`
+(`cubeRootPhase_cube`, `cubeRootPhase_commute`, `colourTriple_no_rational_cubeRoot_phase`).
