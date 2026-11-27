@@ -15831,6 +15831,52 @@ arises from the multi-fibre groupoid or octonionic stabilization.
 \phantomsection\label{rem:meson-mass-splitting}\phantomsection\label{rem:vector-meson-nonet}\section{Baryon multiplets and the Borromean decuplet}
 \label{sec:baryon-multiplets}
 \sectionannot{sec:baryon-multiplets}
+\begin{definition}[{Flavoured quantum observable universe}]
+  \label{def:flavoured-quantum-observable-universe}
+  \blockannot[compiled]{def:flavoured-quantum-observable-universe}{QOU.FlavouredQuantumObservableUniverse}{quantum-observable-universe/eightfold-way/flavoured-quantum-observable-universe.md}
+  \uses{def:quantum-observable-universe, prop:schur-weyl-eightfold}
+\emph{A \defterm{flavoured-quantum-observable-universe}{flavoured quantum observable universe} is a
+\hyperref[def:quantum-observable-universe]{quantum observable universe} together with a second object
+$W$ of its category, the \defterm{flavour-fundamental}{flavour fundamental}, and the following
+data:}
+
+\begin{enumerate}
+  \item \emph{an antisymmetrisation $\pi_3 \colon W \otimes W \otimes W \twoheadrightarrow \Lambda^3 W$,
+an epimorphism;}
+  \item \emph{a flavour volume constraint, an isomorphism $\varepsilon_3 \colon \Lambda^3 W \cong\allowbreak{} \mathbf{1}$;}
+  \item \emph{non-self-duality: $\mathrm{Hom}(\mathbf{1}, W \otimes W) =\allowbreak{} 0$.}
+\end{enumerate}
+
+\emph{Condition (iii) of the definition of a quantum observable universe, $\Lambda^2 V \cong \mathbf{1}$,
+is kept unchanged for the fundamental $V$.}
+
+\begin{quote}
+\textbf{Scope.} This is an \textbf{axiom datum}, not a derivation. Nothing in the framework produces
+$W$; the block postulates it. Every flavour-$\mathrm{SU}(3)$ statement proved from it ---
+the meson octet, the baryon octet and decuplet, the split-bundle hypercharge relations ---
+is a consequence of the \emph{extended} axioms, and is labelled that way.
+\end{quote}
+
+\textbf{Why each clause is there.} At the level of a fibre of dimension $n$, the volume constraint
+$\Lambda^3 W \cong \mathbf{1}$ forces $n = 3$, exactly as $\Lambda^2 V \cong \mathbf{1}$ forces
+$\dim V = 2$; the two constraints cannot hold on one fibre, so $V$ and $W$ are different
+objects. The constraint alone is not enough: inside the fibre's own category the spin-$1$
+object $\mathrm{Sym}^2 V$ is, at $q = 1$, three-dimensional with $\Lambda^3 \cong \mathbf{1}$, but it is
+self-dual and yields $\mathrm{SO}(3)$, not $\mathrm{SU}(3)$. Clause 3 excludes it, and since
+every $\mathrm{SU}(2)$ irrep is self-dual it excludes every object of the single-fibre
+category (\hyperref[prop:schur-weyl-eightfold]{the Schur--Weyl proposition}). So the datum asks for
+genuinely new structure, which is the content of the $N = 3$ problem.
+
+\textbf{A model of clause 3.} The octonionic colour triple realises clause 3 at the level of linear
+algebra: the stabilizer $\mathfrak{su}(3) \subset \mathrm{Der}(\mathbb{O})$ of a unit imaginary
+leaves no nonzero bilinear pairing $\mathbf{3} \otimes \mathbf{3} \to\allowbreak{} \mathbf{1}$ invariant.
+Whether the flavour triple and the colour triple coincide is a separate open problem.
+
+The Lean structure is \texttt{QOU.\allowbreak{}Flavoured\allowbreak{}Quantum\allowbreak{}Observable\allowbreak{}Universe} in
+\texttt{QOU/\allowbreak{}Core/\allowbreak{}Flavoured\allowbreak{}Quantum\allowbreak{}Observable\allowbreak{}Universe.\allowbreak{}lean}, with \texttt{flavour\_\allowbreak{}fibre\_\allowbreak{}rank\_\allowbreak{}three},
+\texttt{fibre\_\allowbreak{}and\_\allowbreak{}flavour\_\allowbreak{}ranks} and \texttt{octonion\allowbreak{}Triple\_\allowbreak{}realises\_\allowbreak{}not\_\allowbreak{}self\allowbreak{}Dual}.
+\end{definition}
+
 \begin{proposition}[{Eightfold-way multiplets via quantum Schur--Weyl duality}]
   \label{prop:schur-weyl-eightfold}
   \blockannot[compiled]{prop:schur-weyl-eightfold}{MathlibExt.RowCapObstruction.weyl_dim_alt_eq_zero_iff}{quantum-observable-universe/eightfold-way/schur-weyl-eightfold.md}
@@ -15986,11 +16032,19 @@ representation-theoretic content is proved: at dimension three, passing
 the gate forces a complex-type summand,
 so the icosahedral triple $T_1$ --- a rotation representation of
 $A_5 \subset \mathrm{SO}(3)$, hence real --- fails
-, while the octonionic $\mathbf{3}$ is \emph{not
-excluded}, on the decomposition $\mathrm{Im}(\mathbb{O}) \cong\allowbreak{} \mathbb{R} \oplus\allowbreak{} \mathbb{C}^3$ taken from the literature \cite{gunaydin-gursey1973}.
-That the Günaydin--Gürsey triple is complex type is the cited input, not a
-proved one, so the octonionic route is \emph{not excluded} rather than
-\emph{proved to pass}.  Whether the route yields \emph{flavour}
+, while the octonionic $\mathbf{3}$ of the decomposition
+$\mathrm{Im}(\mathbb{O}) \cong\allowbreak{} \mathbb{R} \oplus\allowbreak{} \mathbb{C}^3$
+\cite{gunaydin-gursey1973} \textbf{passes}.  That the Günaydin--Gürsey triple is
+complex type is now proved rather than cited: on the colour triplet
+$(\mathbb{Q}^6, J_6)$ with the stabilizer $\mathfrak{su}(3) \subset
+\mathrm{Der}(\mathbb{O})$ acting, every $J_6$-compatible invariant bilinear
+form vanishes, so $\mathrm{Sym}^2(\mathbf{3})$ has no singlet and
+$\mathbf{3} \not\cong\allowbreak{} \bar{\mathbf{3}}$
+(\texttt{colour\allowbreak{}Triple\_\allowbreak{}invariant\_\allowbreak{}complex\allowbreak{}Bilinear\_\allowbreak{}eq\_\allowbreak{}zero} in
+\texttt{QOU/\allowbreak{}Standard\allowbreak{}Model/\allowbreak{}Octonion\allowbreak{}Colour\allowbreak{}Triplet\allowbreak{}Complex\allowbreak{}Type.\allowbreak{}lean}; two stabilizer
+elements already force it).  The underlying real $\mathbf{6}$ does carry the
+invariant norm form, and it fails exactly the $J_6$-compatibility, so the
+statement is about the complex triple.  Whether the route yields \emph{flavour}
 $\mathrm{SU}(3)_{\mathrm{f}}$ (not just colour $\mathrm{SU}(3)_{\mathrm{c}}$)
 remains open.
 \end{proposition}
@@ -72292,7 +72346,7 @@ The surjective part of this picture is standard and is not the conjectural conte
 
 Consequences, contingent on the conjecture: gauge invariance of an observable becomes equivalent to topological invariance of the corresponding Hecke class, and the generators of the gauge symmetry acquire the concrete matrix realisations (Hoefsmit) already used by the compute layer. Neither consequence is available unconditionally.
 
-The linear-representation literature both supports and sharpens the conjecture. The Burau representation — the $(n-1)$-dimensional Hecke summand — is unfaithful for $n \geq 5$, so a realisation cannot factor through Burau alone; but the Lawrence–Krammer representation, constructed by Lawrence as a topologically-defined summand in the Jones-representation orbit, is faithful for all $n$ \cite{bigelow2001}, so faithful linear realisation of braid symmetry is the generic-parameter situation. Two residues make the conjecture nontrivial nonetheless: faithfulness at \emph{generic} parameters does not imply faithfulness of the specialisation at the substrate anchor $q_0$, and the gauge automorphism monoids of the state groupoid must first be identified with braid groups for the cited results to apply. Both residues are open.
+Read through the canonical quotient, with the gauge automorphisms of an $n$-strand state identified with $B_n$, the conjecture is the faithfulness of the Iwahori--Hecke representation $B_n \to H_n(q)^{\times}$. Its status in the literature is sharp. The reduced Burau representation is a summand of $H_n(q)$, so Burau faithfulness gives Hecke faithfulness at generic $q$: this covers $n = 3$ (Magnus--Peluso) and $n = 4$ (Bharathram--Birman--Brendle, a 2026 preprint, arXiv.05283). Burau is unfaithful for $n \geq 5$, and whether the full Hecke representation of $B_n$ is faithful for $n \geq 5$ is an open problem; for those $n$ the conjecture contains it. The Lawrence--Krammer representation, faithful for all $n$ \cite{bigelow2001}, does \textbf{not} support the conjecture: it factors through the Birman--Murakami--Wenzl algebra, not through $H_n(q)$. The case $n = 2$ is proved exactly: on $B_2 \cong \mathbb{Z}$ the quotient is injective if and only if $q$ is not a root of unity (\texttt{braid\allowbreak{}Two\_\allowbreak{}hecke\_\allowbreak{}injective\_\allowbreak{}iff} in \texttt{QOU/\allowbreak{}Standard\allowbreak{}Model/\allowbreak{}Gauge\allowbreak{}Hecke\allowbreak{}Canonical\allowbreak{}Faithfulness.\allowbreak{}lean}). Two residues remain open. Faithfulness at generic $q$ does not imply faithfulness at a specialised value; for $B_3$ the faithful real specialisations of Burau are classified only partially. And the gauge automorphism monoids of the state groupoid must first be identified with braid groups. The Lean class \texttt{Gauge\allowbreak{}Hecke\allowbreak{}Realization} asks only for \emph{some} injective homomorphism into $H$, which is weaker than the canonical reading stated here; the canonical reading is \texttt{Faithful\allowbreak{}Via} in the same module.
 \end{conjecture}
 
 \begin{conjecture}[{Standard-Model truncation: $\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)$ in the archimedean gauge image}]
@@ -72683,7 +72737,7 @@ Ingredient & Status & Where \\
 Gauge symmetry as action groupoid; reversal, gauge equivalence, residual-symmetry monoid & proved & \hyperref[def:gauge-action-groupoid]{gauge action groupoid} \\
 Braid group onto $H_n(q)$ by the Hecke relation & standard & \hyperref[rem:hecke-algebra-from-braiding]{Hecke algebra from braiding} \\
 Fibre gauge group $\mathrm{Aut}^{\otimes}(\tau) \cong\allowbreak{} \mathrm{SU}(2)$ & proved in the framework & \hyperref[thm:su2-emergence]{$\mathrm{SU}(2)$ emergence} \\
-Faithful Hecke realization of gauge automorphisms & conjectural (class, no instance) & \hyperref[conj:gauge-hecke-realization]{Hecke realization} \\
+Faithful Hecke realization of gauge automorphisms & conjectural. Via the canonical quotient on $B_n$: proved for $n = 2$ (iff $q$ is not a root of unity); faithful at generic $q$ for $n = 3, 4$ (Burau, literature); \textbf{open problem} for $n \geq 5$ & \hyperref[conj:gauge-hecke-realization]{Hecke realization} \\
 Coulomb charge $Q = w/2$ & derived, no fitted scale & \hyperref[def:coulomb-charge]{Coulomb charge} \\
 Writhe-to-isospin map $w \mapsto I_3$ & derived (sign and ratio, scale-free) & \hyperref[conj:sm-gauge-truncation]{gauge truncation} \\
 Hypercharge $Y$ & open: writhe map falsified; candidate second datum defined — the strand twist, with gauge invariance proved and the first-generation spectrum battery run — but that battery corroborates \textbf{nothing}, as is proved: it collapses to the single linear equation $T = 3Q$ per flavour (the $-2I_3$ common to candidate and target cancels, leaving the \emph{defining} equation of $Q_{\mathrm{twist}}$ rather than a test of it), the nucleon check is entailed by charge additivity, and the $\mathbb{Z}_6$ condition never sees the assignment. Each flavour is therefore filtered independently, so the $4$ survivors are $1 \times 2 \times 2 \times 1$ multiset counting against totals $3Q = (2,-1,0,-3)$ — \textbf{not} a $2500\!:\!1$ filter — and the "uniquely determined" $u$ and $e$ multisets are simply the two totals admitting a single multiset. Whether the twist multisets are \emph{forced} by the categorical braid words is the entire open content; the braid words are \textbf{not} missing — \hyperref[tbl:knot-particle-dictionary-table4-data]{the knot-particle dictionary} gives the quark braid element in $\mathcal{B}_3$ as a single generator ($\sigma_i$ for $\mathfrak{u}$, $\sigma_i^{-1}$ for $\mathfrak{d}$, $\mathfrak{s}$, $\mathfrak{b}$), so the quark writhe is $\pm 1$; what this \emph{closes off} is the braid element as carrier, since the anti-up and the down share $\sigma_i^{-1}$ yet carry $-2/3$ and $-1/3$. The genuinely missing datum is the \textbf{environment} label — \hyperref[def:up-quark]{the up quark} is "the unknot distinguished by its environment", and nothing defines that colour-tube datum. Chirality ($u_L$ vs $u_R$) is likewise unrepresented & \hyperref[def:strand-twist-datum]{strand twist datum}; \hyperref[conj:sm-hypercharge-invariant]{hypercharge invariant} \\
@@ -81109,7 +81163,7 @@ R{\'{e}}amonn Ó~Buachalla.
 \chapter*{Glossary of Definitions}
 \label{app:definition-glossary}
 \addcontentsline{toc}{chapter}{Glossary of Definitions}
-Every definition in the text, alphabetically (275 entries). Each term links to its definition; $\forall$ links its Lean declaration.
+Every definition in the text, alphabetically (276 entries). Each term links to its definition; $\forall$ links its Lean declaration.
 \begin{multicols}{2}\small\raggedright
 \par\medskip{\bfseries A}\par\nopagebreak
 \hangindent=1em\hyperref[def:adelic-substrate]{Adelic substrate $\mathbb{A}$}\dotfill\ref{def:adelic-substrate}, p.\,\pageref{def:adelic-substrate}\,\folioleanhref{QOU.BringsSurface.AdelicSubstrate}{$\forall$}\par
@@ -81205,6 +81259,7 @@ Every definition in the text, alphabetically (275 entries). Each term links to i
 \hangindent=1em\hyperref[def:hadron-fibre-embedding]{Fibre-compatible hadron embedding}\dotfill\ref{def:hadron-fibre-embedding}, p.\,\pageref{def:hadron-fibre-embedding}\,\folioleanhref{QOU.HadronFibreEmbedding}{$\forall$}\par
 \hangindent=1em\hyperref[def:lp-duality-hypothesis-class]{Finite LP strong-duality + complementary-slackness }\dotfill\ref{def:lp-duality-hypothesis-class}, p.\,\pageref{def:lp-duality-hypothesis-class}\,\folioleanhref{QOU.BraidsAndKnots.BraidKnot.HasFiniteLPDuality}{$\forall$}\par
 \hangindent=1em\hyperref[def:flavor-dressing-functor]{Flavor dressing functor}\dotfill\ref{def:flavor-dressing-functor}, p.\,\pageref{def:flavor-dressing-functor}\,\folioleanhref{QOU.EightfoldWay.FlavorDressingFunctor}{$\forall$}\par
+\hangindent=1em\hyperref[def:flavoured-quantum-observable-universe]{Flavoured quantum observable universe}\dotfill\ref{def:flavoured-quantum-observable-universe}, p.\,\pageref{def:flavoured-quantum-observable-universe}\,\folioleanhref{QOU.FlavouredQuantumObservableUniverse}{$\forall$}\par
 \hangindent=1em\hyperref[def:frobenius-dual-h3]{Frobenius dual $K^\vee$ in $H_3(q)$}\dotfill\ref{def:frobenius-dual-h3}, p.\,\pageref{def:frobenius-dual-h3}\,\folioleanhref{QOU.MassTheory.Archimedean.frobeniusDual}{$\forall$}\par
 \hangindent=1em\hyperref[def:frobenius-pairing]{Frobenius pairing}\dotfill\ref{def:frobenius-pairing}, p.\,\pageref{def:frobenius-pairing}\,\folioleanhref{QOU.FrobeniusPairing}{$\forall$}\par
 \hangindent=1em\hyperref[def:frobenius-self-pairing-chirality]{Frobenius self-pairing chirality factor $a_K(\beta) = \tau(\beta\beta^{\ast})/\tau(1)$}\dotfill\ref{def:frobenius-self-pairing-chirality}, p.\,\pageref{def:frobenius-self-pairing-chirality}\,\folioleanhref{QOU.BraidsAndKnots.BraidKnot.chiralityFactor}{$\forall$}\par
