@@ -1,5 +1,5 @@
 import Mathlib.Data.Complex.Basic
-import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Analysis.Complex.Norm
 import Mathlib.Tactic
 import BraidKnotOctonion.RamificationParityMonodromy
 
@@ -143,32 +143,28 @@ theorem w_real_root_mem_Ioo : ∃ w ∈ Set.Ioo (-2 : ℝ) (-1), wCubic w = 0 :=
 
 /-- **A real `w` with `w² < 4` gives branch points of modulus exactly one.**
 
-The roots of `z² − wz + 1` are `(w ± i√(4−w²))/2`, whose squared modulus is
-`(w² + (4−w²))/4 = 1`. So the bar-fixed branch points sit *on* the unit
-circle — and the unit circle is therefore **not** an admissible contour. -/
-theorem normSq_root_eq_one (w : ℝ) (hw : w ^ 2 < 4) :
-    Complex.normSq ((w / 2 : ℝ) + (Real.sqrt (4 - w ^ 2) / 2 : ℝ) * Complex.I) = 1 := by
-  have h4 : (0 : ℝ) ≤ 4 - w ^ 2 := by linarith
-  have hsq : Real.sqrt (4 - w ^ 2) ^ 2 = 4 - w ^ 2 := Real.sq_sqrt h4
+The roots of `z² − wz + 1` are `(w ± i·s)/2` with `s² = 4 − w²`, whose squared
+modulus is `(w² + (4−w²))/4 = 1`. So the bar-fixed branch points sit *on* the
+unit circle — and the unit circle is therefore **not** an admissible contour.
+
+The imaginary part is a root `s` of `s² = 4 − w²` rather than `Real.sqrt (4 − w²)`
+(transcendental boundary, owner ruling 2026-11-27); both signs of `s` are covered. -/
+theorem normSq_root_eq_one (w s : ℝ) (hs : s ^ 2 = 4 - w ^ 2) :
+    Complex.normSq ((w / 2 : ℝ) + (s / 2 : ℝ) * Complex.I) = 1 := by
   rw [Complex.normSq_add_mul_I]
   field_simp
-  nlinarith [hsq]
+  nlinarith [hs]
 
 /-- The root really is a root of `z² − wz + 1`, so the modulus computation above
 is about the branch points and not about an unrelated complex number. -/
-theorem is_root_of_w (w : ℝ) (hw : w ^ 2 < 4) :
-    ((w / 2 : ℝ) + (Real.sqrt (4 - w ^ 2) / 2 : ℝ) * Complex.I) ^ 2
-      - (w : ℂ) * ((w / 2 : ℝ) + (Real.sqrt (4 - w ^ 2) / 2 : ℝ) * Complex.I) + 1 = 0 := by
-  have h4 : (0 : ℝ) ≤ 4 - w ^ 2 := by linarith
-  -- `simp` normalises `w ^ 2` to `w * w` inside the radicand, so supply the
-  -- hypothesis in exactly that shape as well.
-  have h4' : (0 : ℝ) ≤ 4 - w * w := by nlinarith
-  have hsq' : Real.sqrt (4 - w * w) * Real.sqrt (4 - w * w) = 4 - w * w :=
-    Real.mul_self_sqrt h4'
+theorem is_root_of_w (w s : ℝ) (hs : s ^ 2 = 4 - w ^ 2) :
+    ((w / 2 : ℝ) + (s / 2 : ℝ) * Complex.I) ^ 2
+      - (w : ℂ) * ((w / 2 : ℝ) + (s / 2 : ℝ) * Complex.I) + 1 = 0 := by
+  have hs' : s * s = 4 - w * w := by nlinarith [hs]
   apply Complex.ext <;>
     simp [Complex.add_re, Complex.add_im, Complex.mul_re, Complex.mul_im, pow_two,
       Complex.I_re, Complex.I_im] <;>
-    nlinarith [hsq']
+    nlinarith [hs']
 
 /-! ## 2. No residue survives — stated in the corpus's own local model
 
