@@ -10,13 +10,15 @@
 
 Part 1 left open whether the classical ceiling `−ln r ≤ ln 2·(n − 1)` survives the deformation to
 `q₀`. On every γγ bond word measured it does, with a wide margin: the largest `−ln r` is 2.56 merge
-units on six strands (ceiling 5) and 2.47 on nine (ceiling 8). The sharper finding is that reading 3
-itself caps the merge count at small `A`. On six strands no passing word merges more than two
-components, and that cap is a theorem at `q = 1` (`six_strands_three_cycles` plus parity). On nine
-strands every passing word again merges exactly two, although 120 four-merge words pass reading 3
-classically: at `q₀` all 120 fail. **The cap is not 2 for every `A`.** At `A = 4` (12 strands) every
-word bonding all three junctions merges at least 4, and some pass: `V2V3V4V8` passes reading 3 at
-`q₀` with `−ln r = 2.8101`, 4.05 merge units against its classical 4 (§7, run in progress).
+units on six strands (ceiling 5) and 2.47 on nine (ceiling 8). Reading 3 itself caps the merge count.
+On six strands no passing word merges more than two components, and that cap is a theorem at `q = 1`
+(`six_strands_three_cycles` plus parity). On nine strands, **through length 4**, every passing word
+merges exactly two, although 120 four-merge words pass reading 3 classically: at `q₀` all 120 fail.
+**That length-4 cap is not a cap.** At length 5, four-merge words pass at `q₀` (22 of 284 classes;
+PRs #9587, #9618), and the classical bound `n − ⌈log₂(n+1)⌉` is sharp at every `n` and at all levels
+(PR #9590), so there is no `q₀`-specific cap. At `A = 4` (12 strands, length ≤ 4, run complete) every
+bond word merges at least 4, and exactly one class passes at `q₀`: the twelve rearrangements of
+`V2V3V4V8`, `−ln r = 2.8101`, 4.05 merge units against its classical 4 (§7).
 
 ## 1. Population and method
 
@@ -93,12 +95,13 @@ data. No empirical number appears in it.
   count is +0.386 (A = 2, `V1V2V1V3V2V2`, 1.772 against 1.386).
 - **Classically, reading 3 costs only a logarithm**, `⌈log₂(n+1)⌉` cycles. The per-nucleon bound stays
   `E₀ ln 8` asymptotically. Classical reading 3 does not by itself make binding non-extensive.
-- **At q₀ the measured cap is 2 merges at A = 2 and A = 3**, stronger than the classical cap at
-  A = 3, which allows 4. **It does not stay at 2**: at A = 4 a passing word merges 4 (§7). So this
-  bond class is not shown to be non-extensive, and the count of merges available per junction is the
-  live question.
+- **At q₀ the measured cap is 2 merges at A = 2, and at A = 3 only up to length 4.** At A = 3,
+  length 5, four-merge words pass (#9587, #9618). At A = 4 the one passing class merges 4 (§7). The
+  classical bound is sharp at every `n` and every level (#9590), and no `q₀`-specific cap has been
+  found. So this bond class is not shown to be non-extensive, and the count of merges available per
+  junction is the live question.
 
-The A = 3 population stops at length 4, and the caps are measured, not proved.
+The A = 3 population in §2 and the A = 4 population in §7 both stop at length 4. The caps above are measured on those populations, not proved.
 
 ## 5. Scorecard (not a derivation, not a selection)
 
@@ -114,23 +117,33 @@ Tower `E₀ = 4.2274834` MeV. The merge unit is `E₀ ln 2 = 2.930268` MeV.
 
 ## 6. Open, with options
 
-1. **How do the admissible merges grow with A?** A = 2, 3 give 2; A = 4 gives at least 4 (§7).
-   Finish the A = 4 population, then find the invariant that bounds the q₀ merges per junction.
+1. **How do the admissible merges grow with A?** A = 2 gives 2. A = 3 gives 2 through length 4 and 4
+   from length 5 (#9587, #9618). A = 4 gives 4 at length ≤ 4 (§7). No invariant tighter than the
+   classical bound (#9590) is known.
 2. **Bond selection** (owner question). This is restated, with the data above, on the decision card in
    the thread. The A = 4 result weakens the case for deferring it. "Cheapest bond" gives ²H −99.7 %. "Cheapest bond that merges" gives `V2V3`: 5.826 MeV
    (+162 %) for ²H and 5.906 MeV for the A = 3 analogue. Choosing the second because it binds would
    be fitting unless the merge requirement is derived independently.
 3. **Three-body permutations** (part 1 item 3). Unchanged.
 
-## 7. A = 4 (12 strands), in progress
+## 7. A = 4 (12 strands), length ≤ 4, complete
 
 Producer `binding_ceiling_q0_a4_probe.py`: 1392 words of length 3–4 that bond all three junctions,
-reading 3 at `q₀` with the same corpus helpers (about 19 s per word). Classically every one merges at
-least 4 (length 3: all merge 6; length 4: 48 merge 4, 1008 merge 6, 288 merge 8), and 96 pass reading 3
-at `q = 1`. Those 96 run first. The free word passes, `tr = 0.99426104770`.
+reading 3 at `q₀` with the same corpus helpers. Witness `binding-ceiling-q0-A4-L4.witness.json`
+(2/2 assertions). The free word passes, `tr = 0.99426104769824286396`.
 
-First passing words: `V2V3V4V8` and `V2V3V8V4`, merges 4. For `V2V3V4V8`, `r = 0.0602007318`,
-`−ln r = 2.8100708`, against `ln 2·4 = 2.7725887` classically, far below the ceiling `11 ln 2 = 7.62`.
-At tower `E₀` that is 11.88 MeV (scorecard only). The word is an A = 3 two-junction bond (`V2V3V4`) plus
-a single vertex on the third junction, and it merges 2 + 2. This section is replaced by the full table
-when the run finishes.
+| merges | pass classically | words | pass reading 3 at q₀ |
+|---|---|---|---|
+| 4 | yes | 24 | 12 |
+| 4 | no | 24 | 0 |
+| 6 | yes | 72 | 0 |
+| 6 | no | 984 | 0 |
+| 8 | no | 288 | 0 |
+
+No word that fails classically passes at `q₀` (0 of 1296), so here the `q₀` pass set lies inside the
+classical one, unlike A = 2 and A = 3 (§2). The twelve passing words are the rearrangements of
+`V2V3V4V8`: an A = 3 two-junction bond `V2V3V4` plus one vertex on the third junction, merging
+2 + 2. All twelve have trace `0.0598552426554833`, so `r = 0.0602007318` and
+`−ln r = 2.810070771`. That is 4.0541 merge units against `ln 2·4 = 2.7726` classically, far below
+the ceiling `11 ln 2 = 7.62`. At tower `E₀` it is 11.88 MeV (scorecard only). Length 5 at A = 4 is
+not run.
