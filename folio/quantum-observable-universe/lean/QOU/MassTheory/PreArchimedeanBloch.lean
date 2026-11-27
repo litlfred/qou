@@ -35,13 +35,15 @@ both, over an arbitrary field, with no analysis:
    the ratio is `(1 − X)(1 − X⁻¹)`, and `(1 − X)(1 − X⁻¹) = 1 ↔ X² − X + 1 = 0`
    (`nahm41_iff_phi6`). Every solution is therefore a class in `B(F)`
    (`nahm41_mem_blochGroup`).
-6. **A wrong orientation elsewhere in the corpus.** The appendix block
-   `bloch-group-quotient-construction.lean` generates its "pentagon subgroup" by
+6. **A wrong orientation elsewhere in the corpus (fixed with this file).** Until
+   2026-11-27 the appendix block `bloch-group-quotient-construction.lean` generated
+   its "pentagon subgroup" by
    `[x] − [y] + [y/x] − [(1 − y⁻¹)/(1 − x⁻¹)] + [(1 − y)/(1 − x)]`: the last two
    arguments are the **inverses** of Suslin's. That combination is not a relation of
    `P(F)`: over `ℚ` at `(x, y) = (2, 3)` the pairing `v₂ ∧ v₃` of the 2- and 3-adic
    valuations sends it to `4 ≠ 0` (`appendixRel_two_three`), while it kills every
-   Suslin relation. Hence `appendixRel_not_mem_pentagonSubgroup`.
+   Suslin relation. Hence `appendixRel_not_mem_pentagonSubgroup`. The appendix
+   block now uses Suslin's orientation.
 
 ## Scope
 
@@ -54,7 +56,7 @@ agree for knots other than `4₁` is open (see
 `docs/audits/2026-11-27-dilog-bloch-pre-archimedean.md`).
 
 -- Ref: [suslin1991] Suslin, K_3 of a field, and the Bloch group, Trudy Mat. Inst. Steklova 183 (1991) 217-239.
--- Ref: [zagier2007] Zagier, The dilogarithm function, in Frontiers in Number Theory, Physics and Geometry II (2007), §II.
+-- Ref: [zagier-dilogarithm] Zagier, The dilogarithm function, in Frontiers in Number Theory, Physics and Geometry II (2007), §II.
 -- Ref: [habiro2002] Habiro, On the colored Jones polynomials of some simple links, RIMS Kokyuroku 1172 (2000).
 -- Ref: [thurston1978] Thurston, The Geometry and Topology of Three-Manifolds, ch. 4.
 -/
@@ -348,8 +350,8 @@ theorem nahm41_mem_blochGroup {X : F} (hX : X ≠ 0) (h : (1 - X) * (1 - X⁻¹)
 /-! ## The appendix orientation is not a relation of `P(F)` -/
 
 /-- The combination the appendix block `bloch-group-quotient-construction.lean`
-(`QOU.Archimedean.BlochQuotient.rogersGenerator`) quotients by: Suslin's last two
-arguments inverted. -/
+(`QOU.Archimedean.BlochQuotient.rogersGenerator`) quotiented by until 2026-11-27:
+Suslin's last two arguments inverted. -/
 def appendixRel (x y : F) : PreBlochGroup F :=
   gen x - gen y + gen (y / x) - gen ((1 - y⁻¹) / (1 - x⁻¹)) + gen ((1 - y) / (1 - x))
 
