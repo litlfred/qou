@@ -3,6 +3,7 @@ import QOU.StandardModel.SignCoherentTwist
 import QOU.EightfoldWay.USpinColemanGlashowLambdaSigma
 import Mathlib.Data.Int.ModEq
 import Mathlib.Tactic
+import QOU.StandardModel.AnomalyFreeHyperchargeUniqueness
 
 set_option autoImplicit false
 
@@ -293,13 +294,37 @@ theorem baez_huerta_z6_congruence_iff (tau w w' T : ℤ) (hw : (2 : ℤ) ∣ (w 
     refine ⟨r + k, ?_⟩
     omega
 
-/-- **Rule-13a Open Conjecture Carrier (`qou-qvpl` Open Check A):**
-Records that deriving `Y_t = 2 (T(t) / 3 - I₃)` from QOU categorical axioms (rather than selecting
-it by Gell-Mann–Nishijima consistency `Q_twist = Q`) remains an open conjecture (`AGENTS.md`
-Rule 13a; **zero instances**). -/
-class CategoricalRibbonHyperchargeDerivationHypothesis : Prop where
-  hypercharge_from_ribbon_axioms :
-    ∀ (T twoI3 : ℤ), ∃ Y3 : ℤ, Y3 = 2 * T - 3 * twoI3
+/-- **Rule-13a Open Conjecture Carrier (`qou-qvpl` Open Check A), restated 2026-11-27.**
+
+The earlier field `∀ T twoI3, ∃ Y3, Y3 = 2T − 3·twoI3` was provable by `rfl`, so the class
+recorded nothing.  `QOU.StandardModel.AnomalyFreeHypercharge` shows that on the
+`SU(3) × SU(2)` content of one generation an anomaly-free abelian charge with a neutral lepton
+is the Standard Model hypercharge up to the `u ↔ d` label.  So Check A is now exactly the claim
+that the QOU ribbon structure supplies such a charge:
+
+* `ribbonCharges`: the abelian charges the ribbon twist assigns to `Q, u^c, d^c, L, e^c`
+  (read off the strand-twist datum, `def:strand-twist-datum`);
+* `anomalyFree`: these satisfy the four anomaly conditions as a consequence of the QOU axioms;
+* `neutral`: the neutrino is neutral (`nu_framing_is_zero`).
+
+The QOU content is that `ribbonCharges` comes from the ribbon twist and that `anomalyFree`
+follows from the axioms; neither is derived.  **Zero instances** (`AGENTS.md` Rule 13a): an
+instance written by quoting the Standard Model table would be a fit, not a derivation.
+`hypercharge_of_ribbon` gives what an instance would buy. -/
+class CategoricalRibbonHyperchargeDerivationHypothesis (K : Type*) [Field K] [CharZero K] where
+  ribbonCharges : QOU.StandardModel.AnomalyFreeHypercharge.Charges K
+  anomalyFree : QOU.StandardModel.AnomalyFreeHypercharge.AnomalyFree ribbonCharges
+  neutral : QOU.StandardModel.AnomalyFreeHypercharge.HasNeutralLepton ribbonCharges
+
+/-- What Check A would buy: an instance of the carrier forces the Standard Model hypercharge
+ratios, `yQ = ± 1/6`, and the `3/8` trace ratio. -/
+theorem hypercharge_of_ribbon {K : Type*} [Field K] [CharZero K]
+    [h : CategoricalRibbonHyperchargeDerivationHypothesis K] :
+    QOU.StandardModel.AnomalyFreeHypercharge.IsChiralSolution h.ribbonCharges ∧
+      (h.ribbonCharges.yQ = 1 / 6 ∨ h.ribbonCharges.yQ = -1 / 6) :=
+  let r := QOU.StandardModel.AnomalyFreeHypercharge.anomalyFree_neutral_forces_hypercharge
+    h.ribbonCharges h.anomalyFree h.neutral
+  ⟨r.1, r.2.1⟩
 
 /-! ## Section 4: Charge-Value-Free U-Spin Coleman–Glashow Theorem (`qou-pwz4`, `qou-krgl`) -/
 
