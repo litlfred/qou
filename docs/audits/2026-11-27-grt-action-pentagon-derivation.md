@@ -334,8 +334,31 @@ that `GRT₁(K)` mod degree `n+1` surjects onto `grt_n(K)`. Two routes, neither 
   `g₁` and the `GRT₁` conditions of `g₂`. These are two of the four closure statements Route A
   needs.
 
+**4. Closure of (5.12) and (5.14) under (5.16), now proved** (`GRTClosure.lean`, sorry-free,
+axioms `propext`, `Classical.choice`, `Quot.sound`). The setting is a nil ideal `S` of a
+`ℚ`-algebra `R`. Write `compEval g₁ g₂ a b := g₁(G a G', b)·G` with `G = g₂(a,b)` and
+`G' = g₂(b,a)`.
+
+- `comp_inv512`: if `g₁` and `g₂` satisfy (5.12) on `S`, then
+  `compEval(a,b)·compEval(b,a) = 1` for all `a, b ∈ S`.
+- `comp_tcompat`: suppose `g₂` satisfies (5.12) on `S`, and `g₁`, `g₂` satisfy (5.14) at every
+  `DK3` family in `S`. Then the composite satisfies (5.14) at every `DK3` family in `S`.
+  - The proof: the transported family `(G_u u G_u', G_v v G_v', w)` is again `DK3`, because
+    `u+v+w` commutes with every `G`.
+  - So `g₁`'s (5.14) applies there. `g₁`'s (5.12) is not needed.
+- `tcompat_iff_poly`: equates the unit form `TCompat` of §6 with the polynomial form used here,
+  given (5.12) at the pairs.
+- `compEval_eq_actEval`: identifies `compEval` with `actEval` of §7.
+
+Together with the pentagon and hexagon cases above, all four conditions are closed under
+(5.16) at the level of evaluations. Every hypothesis is a named argument.
+
 **Still open (bean `qou-3fdg`).**
 
-1. Closure of (5.12) and (5.14) under (5.16).
-2. The flow argument of Route A, and with it (S4).
+1. Lifting the evaluation-level closure to an element `g₁ ∘ g₂` of the truncated free algebra
+   (substitute `G a G'` for `A` in `g₁`). This is needed for the pentagon and hexagon to apply
+   to the composite as a polynomial.
+2. The flow argument of Route A, and with it (S4). Two pieces are missing:
+   - the derivative of each condition along `g ↦ g ∘ (1 + εy)`;
+   - uniqueness for the resulting linear equation in the graded nilpotent setting.
 3. The congruence `Φ ∘ g ≡ Φ + y`.
