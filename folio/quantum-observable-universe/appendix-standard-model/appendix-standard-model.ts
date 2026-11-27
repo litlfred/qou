@@ -41,6 +41,7 @@ export default chapter({
         "neutral-lepton-fixes-charges",
         "fermi-pair-wedge",
         "hecke-sign-channel-is-fermi",
+        "markov-trace-keeps-both-channels",
         "strand-slot-separates-gen1",
         "cal2-higgs-knot-coupling",
         "a5-orbital-degeneracy-fracture",

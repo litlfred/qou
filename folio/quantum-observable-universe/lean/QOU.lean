@@ -1959,6 +1959,7 @@ import QOU.EightfoldWay.HyperchargeUniqueness
 import QOU.EightfoldWay.NeutralLeptonFixesCharges
 import QOU.EightfoldWay.FermiPairWedge
 import QOU.EightfoldWay.HeckeSignChannelIsFermi
+import QOU.EightfoldWay.MarkovTraceKeepsBothChannels
 import QOU.EightfoldWay.StrandSlotSeparatesGen1
 import QOU.EightfoldWay.ColourSingletSelectionRule
 import QOU.StandardModel.OctonionColourTripletSplitting
