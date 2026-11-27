@@ -1993,6 +1993,7 @@ import QOU.StandardModel.ElectroweakBringSchwingerBridge
 import QOU.StandardModel.ElectroweakSweedlerScaleAndRGThresholds
 import QOU.StandardModel.ElectroweakVevFixedPointDecomposition
 import QOU.StandardModel.ElectroweakVevGaps
+import QOU.Transcendental.StandardModel.ElectroweakVevGapsReal
 import QOU.StandardModel.NeutrinoUnknotSweedlerMassLift
 import QOU.MassTheory.BringSchwingerNormalizationDerivation
 import QOU.Transcendental.MassTheory.BringSchwingerNormalizationDerivationReal

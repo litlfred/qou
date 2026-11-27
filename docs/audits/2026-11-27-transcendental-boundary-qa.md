@@ -10,21 +10,21 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 
 | quantity | count |
 |---|---:|
-| Lean modules (paper package tree) | 4246 |
-| inside the boundary `QOU/Transcendental/` | 369 |
-| outside, using a transcendental/analytic API directly | 384 |
+| Lean modules (paper package tree) | 4256 |
+| inside the boundary `QOU/Transcendental/` | 372 |
+| outside, using a transcendental/analytic API directly | 378 |
 | outside, algebraic but importing one transitively (tainted) | 205 |
-| outside, algebraic and import-clean (pure) | 3288 |
+| outside, algebraic and import-clean (pure) | 3301 |
 
 ## Direct use by class
 
 | class | modules | matched API |
 |---|---:|---|
-| transcendental-function | 260 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
-| real-completion | 67 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
+| transcendental-function | 258 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
+| real-completion | 63 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
 | analysis | 184 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
 
-Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 14. These are the cheapest to move:
+Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 10. These are the cheapest to move:
 `Real.sqrt` of an algebraic number is algebraic, so most of them can become a root in an
 algebraic extension.
 
@@ -33,25 +33,25 @@ algebraic extension.
 | directory | modules |
 |---|---:|
 | `MathlibExt` | 72 |
-| `QOU/Nuclear` | 69 |
+| `QOU/Nuclear` | 68 |
 | `QOU/MassTheory` | 58 |
 | `BraidKnotOctonion` | 55 |
-| `QOU/BraidsAndKnots` | 26 |
+| `QOU/BraidsAndKnots` | 25 |
 | `QCalculus` | 15 |
 | `QOU/BringsSurface` | 13 |
-| `QOU/Observations` | 13 |
-| `QOU/StandardModel` | 12 |
+| `QOU/Observations` | 12 |
+| `QOU/StandardModel` | 11 |
 | `HeckeTemperleyLieb` | 10 |
 | `QOU/MassTheory/KZHolonomy` | 10 |
 | `QOU/Core` | 8 |
 | `QOU/Confinement` | 5 |
 | `MathlibExt/KZHolonomy` | 4 |
-| `QOU/EightfoldWay` | 3 |
 | `QOU/InformationTheory` | 3 |
 | `QOU/LiftingDescent` | 3 |
 | `CompactQuantumMetrics` | 2 |
 | `ToricConicOpt` | 2 |
 | `HeckeTemperleyLieb/KZHolonomy` | 1 |
+| `QOU/EightfoldWay` | 1 |
 
 ## Strangler targets: transcendental modules most imported by algebraic ones
 

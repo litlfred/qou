@@ -85,8 +85,8 @@ theorem substrate_to_bound_ratio {R : Type*} [Field R]
 
 /-- At `q > 1`, the substrate split factor is strictly positive. -/
 -- Ref: [leitner2026] braids-and-knots/flavor-mass-splitting-bound
-private lemma aether_split_factor_pos {q : ℝ} (hq : 1 < q) :
-    0 < aether_split_factor q := by
+private lemma aether_split_factor_pos {t q : ℝ} (ht : 0 < t) (hq : 1 < q) :
+    0 < aether_split_factor t q := by
   have hq0 : 0 < q := by linarith
   have hq_ne : q ≠ 0 := ne_of_gt hq0
   have hq_inv_pos : 0 < q⁻¹ := inv_pos.mpr hq0
@@ -99,9 +99,7 @@ private lemma aether_split_factor_pos {q : ℝ} (hq : 1 < q) :
     rw [h_pow]
     have : (q ^ 4 : ℝ)⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq4_gt_1
     linarith
-  have h_sqrt_q : 0 < Real.sqrt q := Real.sqrt_pos.mpr hq0
-  have h_sqrt_qinv : 0 < Real.sqrt q⁻¹ := Real.sqrt_pos.mpr hq_inv_pos
-  have h_sqrt_sum_pos : 0 < Real.sqrt q + Real.sqrt q⁻¹ := by linarith
+  have h_sqrt_sum_pos : 0 < t + t⁻¹ := by have := inv_pos.mpr ht; linarith
   have h_qpqinv_pos : 0 < q + q⁻¹ := by linarith
   unfold aether_split_factor
   apply mul_pos
@@ -111,42 +109,34 @@ private lemma aether_split_factor_pos {q : ℝ} (hq : 1 < q) :
 @[deprecated (since := "2026-11-27")] alias substrate_split_factor_pos := aether_split_factor_pos
 
 /-- The Skein-side AM-GM inequality:  at `q > 1`,
-    `√q + √q⁻¹ < 3·(q + q⁻¹)`.  Used to derive the strict upper
-    bound from `substrate_to_bound_ratio`. -/
-private lemma sqrt_sum_lt_three_mul_qq_inv {q : ℝ} (hq : 1 < q) :
-    Real.sqrt q + Real.sqrt q⁻¹ < 3 * (q + q⁻¹) := by
+    `t + t⁻¹ < 3·(q + q⁻¹)` for the symbol `t = √q` (`t > 0`, `t² = q`).
+    Used to derive the strict upper bound from `substrate_to_bound_ratio`. -/
+private lemma sqrt_sum_lt_three_mul_qq_inv {t q : ℝ} (ht : 0 < t) (ht2 : t ^ 2 = q)
+    (hq : 1 < q) :
+    t + t⁻¹ < 3 * (q + q⁻¹) := by
   have hq0 : 0 < q := by linarith
-  have hq_ne : q ≠ 0 := ne_of_gt hq0
-  have hq_inv_pos : 0 < q⁻¹ := inv_pos.mpr hq0
-  have h_sqrt_q_pos : 0 < Real.sqrt q := Real.sqrt_pos.mpr hq0
-  have h_sqrt_qinv_pos : 0 < Real.sqrt q⁻¹ := Real.sqrt_pos.mpr hq_inv_pos
-  have h_sum_pos : 0 < Real.sqrt q + Real.sqrt q⁻¹ := by linarith
-  -- (√q + √q⁻¹)² = q + 2 + q⁻¹
-  have h_sqrt_sq : (Real.sqrt q + Real.sqrt q⁻¹) ^ 2 = q + q⁻¹ + 2 := by
-    have hsqrt_mul : Real.sqrt q * Real.sqrt q⁻¹ = 1 := by
-      rw [← Real.sqrt_mul hq0.le, mul_inv_cancel₀ hq_ne, Real.sqrt_one]
-    have h1 : Real.sqrt q ^ 2 = q := Real.sq_sqrt hq0.le
-    have h2 : Real.sqrt q⁻¹ ^ 2 = q⁻¹ := Real.sq_sqrt hq_inv_pos.le
-    nlinarith [h1, h2, hsqrt_mul]
+  have h_sum_pos : 0 < t + t⁻¹ := by have := inv_pos.mpr ht; linarith
+  -- (t + t⁻¹)² = q + 2 + q⁻¹
+  have h_sqrt_sq : (t + t⁻¹) ^ 2 = q + q⁻¹ + 2 := by
+    rw [← ht2]; field_simp; ring
   -- AM-GM strict at q ≠ 1:  q + q⁻¹ > 2
   have h_qpqinv_gt_2 : q + q⁻¹ > 2 := by
     have hpos : 0 < (q - 1) ^ 2 / q := div_pos (pow_pos (show (0:ℝ) < q - 1 by linarith) 2) hq0
     have h_eq : (q - 1) ^ 2 / q = q + q⁻¹ - 2 := by field_simp; ring
     linarith
   -- (√q + √q⁻¹)² > 4, hence √q + √q⁻¹ > 2
-  have h_sum_gt_2 : Real.sqrt q + Real.sqrt q⁻¹ > 2 := by
-    have hsq_gt : (Real.sqrt q + Real.sqrt q⁻¹) ^ 2 > 4 := by
+  have h_sum_gt_2 : t + t⁻¹ > 2 := by
+    have hsq_gt : (t + t⁻¹) ^ 2 > 4 := by
       rw [h_sqrt_sq]; linarith
     nlinarith [h_sum_pos]
   -- Goal:  √q + √q⁻¹ < 3·(q + q⁻¹) = 3·(s² − 2)  for  s = √q + √q⁻¹
   --     ⟺ 3·s² − s − 6 > 0,  which holds at s > 2.
   have h_target_sq :
-      3 * (q + q⁻¹) - (Real.sqrt q + Real.sqrt q⁻¹) =
-        3 * (Real.sqrt q + Real.sqrt q⁻¹) ^ 2 -
-          (Real.sqrt q + Real.sqrt q⁻¹) - 6 := by
+      3 * (q + q⁻¹) - (t + t⁻¹) =
+        3 * (t + t⁻¹) ^ 2 - (t + t⁻¹) - 6 := by
     rw [h_sqrt_sq]; ring
   nlinarith [h_sum_gt_2, h_target_sq,
-             sq_nonneg (Real.sqrt q + Real.sqrt q⁻¹ - 2)]
+             sq_nonneg (t + t⁻¹ - 2)]
 
 /-- **Substrate bound on the dressed-quark splitting.**
     For substrate parameter `q > 1`, nucleon average mass `M_N > 0`,
@@ -174,11 +164,11 @@ private lemma sqrt_sum_lt_three_mul_qq_inv {q : ℝ} (hq : 1 < q) :
     conditional on `conj:flavor-split-aether-mass`. -/
 -- Ref: [leitner2026] braids-and-knots/flavor-mass-splitting-bound
 theorem flavor_mass_splitting_bound_of_split
-    (F : FlavorDressingFunctor) (M_N q : ℝ)
-    (hM : 0 < M_N) (hq : 1 < q)
+    (F : FlavorDressingFunctor) (M_N t q : ℝ)
+    (hM : 0 < M_N) (ht : 0 < t) (ht2 : t ^ 2 = q) (hq : 1 < q)
     (h_derive :
       F.μ Flavor.down - F.μ Flavor.up
-        = M_N * aether_split_factor q) :
+        = M_N * aether_split_factor t q) :
     0 < F.μ Flavor.down - F.μ Flavor.up ∧
     F.μ Flavor.down - F.μ Flavor.up
       < M_N * (((q - 1)/q)^2 * (q - q⁻¹) * (q + q⁻¹)) := by
@@ -192,9 +182,6 @@ theorem flavor_mass_splitting_bound_of_split
     apply div_pos _ hq0
     nlinarith
   have h_sub_div_sq_pos : 0 < ((q - 1) / q) ^ 2 := pow_pos (div_pos (show (0:ℝ) < q - 1 by linarith) hq0) 2
-  have h_sqrt_q : 0 < Real.sqrt q := Real.sqrt_pos.mpr hq0
-  have h_sqrt_qinv : 0 < Real.sqrt q⁻¹ := Real.sqrt_pos.mpr hq_inv_pos
-  have h_sqrt_sum_pos : 0 < Real.sqrt q + Real.sqrt q⁻¹ := by linarith
   have hq4_pos : 0 < q ^ 4 := pow_pos hq0 4
   have hq4_gt_1 : 1 < q ^ 4 := by nlinarith [sq_nonneg (q - 1), sq_nonneg (q + 1)]
   have hq4_ne : q ^ 4 ≠ 1 := ne_of_gt hq4_gt_1
@@ -213,40 +200,40 @@ theorem flavor_mass_splitting_bound_of_split
     have := h_ratio
     rw [div_eq_iff hdenom_ne] at this
     linarith
-  -- aether_split_factor q = ((q-1)/q)² · (q-q⁻¹) · (√q + √q⁻¹) / 3
+  -- aether_split_factor t q = ((q-1)/q)² · (q-q⁻¹) · (t + t⁻¹) / 3
   have h_factor_form :
-      aether_split_factor q
+      aether_split_factor t q
         = ((q - 1) / q) ^ 2 * (q - q⁻¹) *
-            (Real.sqrt q + Real.sqrt q⁻¹) / 3 := by
+            (t + t⁻¹) / 3 := by
     unfold aether_split_factor
     rw [h_numerator_form]
     field_simp
   -- Strict upper bound on the factor.
   have h_factor_lt :
-      aether_split_factor q
+      aether_split_factor t q
         < ((q - 1) / q) ^ 2 * (q - q⁻¹) * (q + q⁻¹) := by
     rw [h_factor_form]
     have h_prefactor_pos :
         0 < ((q - 1) / q) ^ 2 * (q - q⁻¹) :=
       mul_pos h_sub_div_sq_pos h_qmqinv_pos
-    have h_step : Real.sqrt q + Real.sqrt q⁻¹ < 3 * (q + q⁻¹) :=
-      sqrt_sum_lt_three_mul_qq_inv hq
+    have h_step : t + t⁻¹ < 3 * (q + q⁻¹) :=
+      sqrt_sum_lt_three_mul_qq_inv ht ht2 hq
     -- Rearrange:  ((q-1)/q)² · (q-q⁻¹) · S / 3  <  ((q-1)/q)² · (q-q⁻¹) · (q+q⁻¹)
     --   ⟺  S < 3 · (q + q⁻¹)
     have key :
         ((q - 1) / q) ^ 2 * (q - q⁻¹) *
-            (Real.sqrt q + Real.sqrt q⁻¹) / 3
+            (t + t⁻¹) / 3
           < ((q - 1) / q) ^ 2 * (q - q⁻¹) * (q + q⁻¹) := by
       rw [div_lt_iff₀ (by norm_num : (0 : ℝ) < 3)]
       calc ((q - 1) / q) ^ 2 * (q - q⁻¹) *
-              (Real.sqrt q + Real.sqrt q⁻¹)
+              (t + t⁻¹)
           < ((q - 1) / q) ^ 2 * (q - q⁻¹) * (3 * (q + q⁻¹)) := by
             exact (mul_lt_mul_left h_prefactor_pos).mpr h_step
         _ = ((q - 1) / q) ^ 2 * (q - q⁻¹) * (q + q⁻¹) * 3 := by ring
     exact key
   refine ⟨?_, ?_⟩
   · rw [h_derive]
-    exact mul_pos hM (aether_split_factor_pos hq)
+    exact mul_pos hM (aether_split_factor_pos ht hq)
   · rw [h_derive]
     exact mul_lt_mul_of_pos_left h_factor_lt hM
 
@@ -261,13 +248,14 @@ theorem flavor_mass_splitting_bound_of_split
     and then bounded by `flavor_mass_splitting_bound_of_split`. -/
 -- Ref: [leitner2026] braids-and-knots/flavor-mass-splitting-bound
 theorem flavor_mass_splitting_bound
-    (F : FlavorDressingFunctor) (m_p m_n q : ℝ)
+    (F : FlavorDressingFunctor) (m_p m_n t q : ℝ)
     [h : FlavorSplitSubstrateMass m_p m_n q]
-    (h_skein : PairSkeinNucleonSplit F m_p m_n q) :
+    (ht : 0 < t) (ht2 : t ^ 2 = q)
+    (h_skein : PairSkeinNucleonSplit F m_p m_n t q) :
     0 < F.μ Flavor.down - F.μ Flavor.up ∧
     F.μ Flavor.down - F.μ Flavor.up
       < (m_p + m_n) / 2 * (((q - 1)/q)^2 * (q - q⁻¹) * (q + q⁻¹)) :=
-  flavor_mass_splitting_bound_of_split F ((m_p + m_n) / 2) q h.M_N_pos h.q_gt_one
-    (dressed_mass_from_substrate_split F m_p m_n q h_skein).1
+  flavor_mass_splitting_bound_of_split F ((m_p + m_n) / 2) t q h.M_N_pos ht ht2 h.q_gt_one
+    (dressed_mass_from_substrate_split F m_p m_n t q h_skein).1
 
 end QOU.FlavorDressing
