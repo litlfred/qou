@@ -16,6 +16,8 @@ user_invocable: true
 
 # `/swarm-sibling-launch` — Mandatory Sibling & Merge-Steward Launch Briefing
 
+> **Platform rules win (owner, 2026-11-27).** Where this local skill differs from the cat-harness KG rules (`req:agent-workflow`, `req:content-lifecycle`) or from [`swarm-management`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/swarm-management.md), [`merge-manager-watcher`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/merge-manager-watcher.md) and [`research-manager`](https://github.com/litlfred/cat-harness/blob/main/sdlc/skills/sdlc-core/research-manager.md), those win. In short: questions only on cards; beans are the tracker; threads never self-merge and send the PR number and full head SHA to the merge manager; the KG JSON-LD check is the only red pre-merge gate and all other QA runs after the merge; merges run under time-boxed grants, with the owner's card outside one; no repository secrets; one shared non-constructive axiom; no unverified external report as a source.
+
 Whenever a Swarm Manager / Coordinator spawns subagents or sibling sessions on `litlfred/qou` (see [`folio-assistant/cat-harness/sdlc/skills/sdlc-core/swarm-management.md`](../../folio-assistant/cat-harness/sdlc/skills/sdlc-core/swarm-management.md) and [`dispatch-agent.md`](dispatch-agent.md)), **never rely on siblings discovering repository rules mid-flight**. Inject the mandatory skills, process contracts, and safety fences below directly into each sibling's initial prompt.
 
 ---
