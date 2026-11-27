@@ -120,7 +120,7 @@ Readings, all scope (a):
 
 `StrandEndMergeCeiling.lean`: `Y`, `qint_div_eq_Y`, `Y_three_pow_eq`, `Y_mul_strand_factor`,
 `inter_factor_at_one`. Generic `Field K`, no logarithm, no number. The logarithmic reading in §2 is
-transcendental and is stated here, not in Lean. Verification result: see the PR body.
+transcendental and is stated here, not in Lean. Verified 2026-11-27: `lean -DautoImplicit=false -s 65536` exit 0, sorry-free, `#print axioms` = `[propext, Classical.choice, Quot.sound]` on `qint_div_eq_Y`, `Y_three_pow_eq`, `Y_mul_strand_factor`.
 
 ## 6. For the sibling threads
 
