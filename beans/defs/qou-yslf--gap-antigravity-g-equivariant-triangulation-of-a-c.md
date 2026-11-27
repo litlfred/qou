@@ -10,7 +10,7 @@ tags:
     - lean
     - mathlib-gap
 created_at: 2026-11-21T07:30:00Z
-updated_at: 2026-11-27T22:05:08Z
+updated_at: 2026-11-27T22:05:44Z
 parent: qou-6qbv
 ---
 
@@ -46,3 +46,7 @@ Unchanged. PR #9726's new theorem starts from the same combinatorial map, so Rad
 
 
 Correction to the entry above: the two split-out beans are  (monodromy as voltages) and  (Radó plus combinatorial chi = analytic chi).
+
+
+
+Correction: the split-out beans are qou-gu23 (monodromy as voltages) and qou-0nr6 (Radó plus combinatorial chi = analytic chi).
