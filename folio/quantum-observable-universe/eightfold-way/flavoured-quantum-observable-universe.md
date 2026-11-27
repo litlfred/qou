@@ -58,3 +58,17 @@ commutes with $J$. Over $\mathbb{Q}$ no element $a + bJ$ is a nontrivial cube ro
 since $\mathbb{Q}(J) \cong \mathbb{Q}(i)$ does not contain $\omega$. This is a phase on the colour
 triple; identifying it with flavour is still open. Lean: `QOU/StandardModel/OctonionCubeRootPhase.lean`
 (`cubeRootPhase_cube`, `cubeRootPhase_commute`, `colourTriple_no_rational_cubeRoot_phase`).
+
+**On the octonionic triple the phase is colour's, not flavour's.** Any rational
+$6 \times 6$ operator that commutes with three explicit generators of the colour
+$\mathfrak{su}(3) \subset \mathrm{Der}(\mathbb{O})$ has the form $a + bJ$. So the commutant of
+colour on the octonionic triple is the commutative field $\mathbb{Q}(J)$. Two consequences follow.
+First, the phase $\Omega$ above is a function of colour's own complex structure, i.e. it is the
+centre of colour $\mathrm{SU}(3)$. Second, no non-abelian flavour algebra can act on the same
+six-dimensional carrier while commuting with colour, and over $\mathbb{Q}$ the commutant contains
+no nontrivial cube root of unity at all. A flavour $\mathrm{SU}(3)$ that commutes with colour
+therefore needs a different carrier, such as a tensor factor or another fibre. What flavour and
+colour share is the abstract $\mathbb{Z}/3$ grading forced by any degree-3 volume form, not an
+operator. A flavour action that does not commute with colour is not excluded by this argument.
+Lean: `QOU/StandardModel/ColourTripletCommutant.lean` (`commutant_end`,
+`commutant_commutative`, `no_cubeRoot_phase_in_commutant`).
