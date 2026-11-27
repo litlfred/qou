@@ -289,3 +289,29 @@ Under the universality ruling the generations differ only by full twists `Δ²`,
 | dilatation `φ² = (3+√5)/2` satisfies `λ + λ⁻¹ = 3` | `golden_dilatation` |
 
 **What it derives.** The Nielsen–Thurston classification (cited) via `B₃/Z ≅ PSL(2,ℤ)` selects `σ₁σ₂⁻¹` as the minimal hyperbolic (pseudo-Anosov) 3-braid, and its square closes to `4₁`. That is a reason, not a fit, for `4₁` being the volume carrier. With one carrier shared by all generations and the universality ruling unchanged, `trace_mul_delta_sq` shows that the type, trace and dilatation are the same for `e`, `μ` and `τ`. So the selector explains the carrier but not the hierarchy. A generation-dependent hyperbolic factor needs a non-central change of the words, which is the open revisit of the ruling (tau thread). Candidate families for that revisit, such as the powers `(σ₁σ₂⁻¹)^m` (`m = 2`: 4₁, `m = 3`: Borromean, `m = 4`: 8₁₈), are handed over unscored.
+
+## 16. Closure ∪ axis: the braid axis as a convolution operator (card "Convolution op of closure ∪ axis")
+
+**Lean.** `QOU/Observations/AxisConvolutionOperator.lean`. No `sorry`, no new axiom. Probe `computations/probes/coloured_ladder/axis_convolution_probe.py` (40/40).
+
+Under the least-trace ruling (23:35Z) `e = σ₁σ₂σ₁` and `μ = σ₁²σ₂⁻¹` both close to the Hopf link, so every closure invariant agrees on them. The braid axis `A` is an unknot that encircles the three strands. `closure(β) ∪ A` is the 4-strand closure of `β·σ₃σ₂σ₁σ₁σ₂σ₃`.
+
+| statement | Lean / probe |
+|---|---|
+| on the spin-`J` part of `V_j^{⊗3}` the axis (colour `N`) acts by `s_J = [N(2J+1)]/[2J+1]`, so `m_N(β ∪ A) = f^{−6} Σ_J χ_J(β) s_J` | probe, N = 2, 3, 4, two values of q |
+| Hopf fusion sum `Σ_K [d_K] θ_K = θ_J θ_j [d_J d_j]` (the full twist of the axis around a block, traced) | `hopf_encircling` |
+| `s_J` is the character of `V_j` at `K = q^{2J+1}`: `[a]·Σ_{m<N} q^{a(N−1−2m)} = [aN]` | `charSum_mul`, `charSum_two` |
+| the axis is a central convolution operator, one scalar per block | `axisOp` (a `ConvOp`) |
+| at `q = 1` every `s_J = N`, so the axis only multiplies by `N` | `charSum_at_one`, `axisMass_at_one` |
+
+**Reading.** The axis sees the braid's isotypic split `χ_J(β)` (the multiplicity traces of `β` on each spin-`J` block), which is finer than its closure. At N = 2, `χ(e) = (3.00514, 0)` and `χ(μ) = (3.70249, −0.69735)` on `(J = 3/2, 1/2)`. The sums agree, which is the Hopf closure. At `q = 1` the axis cannot separate them: `U(1)` of `β ∪ A` is the closure's `U(1)` plus `12j(j+1)` (`= 3·lk` with the axis at N = 2), so e and μ both read 12. The separation is in the `q`-dependence only.
+
+**Values at q₀ (display only; per the no-comparison-first rule, not scored against any measurement).**
+
+| N | m(e ∪ A) | m(μ ∪ A) | m(τ ∪ A) | μ/e | τ/e |
+|---|---|---|---|---|---|
+| 2 | 2.557635 | 2.593907 | 1.987022 | 1.01418 | 0.77690 |
+| 3 | 1.968392 | 2.146213 | 1.275525 | 1.09034 | 0.64800 |
+| 4 | 1.148855 | 1.428926 | 0.710123 | 1.24378 | 0.61811 |
+
+The framing factor `f^{−6}` is common to all three words, so the ratios do not depend on how the axis is framed. Which reading of `β ∪ A` is the mass (trace at fixed `N`, growth in `N`, or growth at `ζ_N` on the mapping-torus volumes 0, 5.33349, 6.35459) is not fixed here.
