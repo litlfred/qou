@@ -29,3 +29,10 @@ on a noncommutative algebra, given an untwisted divergence-free derivation; the 
 symmetrised form. Traciality is not needed, so the Haar modular twist is no obstruction. Remaining gap:
 is `∇_q` an untwisted derivation on O_q(SU(2))? Twisted derivations break the argument. Still open:
 q-CG selection rule derivation, numerical couplings, infinite-mode Part A.
+
+## 2026-11-27 progress: twisted transport
+The corpus 3D calculus on O_q(SU(2)) (ex:connection-su2) has twisted vector fields, so the untwisted
+result does not apply. `q_ns_twisted_transport.lean` (sorry-free) proves the exact budget
+φ(Xu·u)+φ(u·Xu) = φ(Xu·(u−θu)) for a θ-twisted, φ-divergence-free X. For the q-difference
+D = (θ−id)/c with φ∘θ = φ, it is −c·φ(Du·Du): q-difference transport dissipates at first order in c.
+Open: build the 3D-calculus vector fields on OqSU2 and get the sign and size of c; Part A.
