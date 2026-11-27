@@ -8,7 +8,7 @@ tags:
     - compute-accuracy
     - reorg-2026-10-04
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-11-27T18:06:00Z
+updated_at: 2026-11-27T20:08:56Z
 parent: qou-v2om
 ---
 
@@ -3599,3 +3599,7 @@ At q0, on every γγ bond word measured, the ceiling holds by a wide margin: max
 ## 2026-11-27 — C2 front C: bond-selection rule search (PR #9622)
 
 Six corpus rules applied to the passing γγ bond words (probe `bond_selection_rules`, 6/6; audit `docs/audits/2026-11-27-bond-selection-rule-search.md`). Whole-word linking neutrality / pure zero-linking pick V(s)^3 per junction at A = 2, 3, 4 under both cost functions (merges 0, keV; ²H −99.7 %). Unrestricted FrobeniusSelected picks V2V3 (A = 2) and V2V3V4 (A = 3); these telescope to single crossings σ₂σ₄⁻¹ / σ₂σ₅⁻¹ (Lean `GammaGammaVertexTelescope`, sorry-free), and at A = 2 one merge is inside a nucleon. It coincides with "cheapest that merges" everywhere, so V2V3 needs no merge clause. Card-1 junction-only rule is cost-dependent (written: V(2)^3; reduced: V1V2V1V2, unbinds) and gives a 69-way tie at A = 3. Measured: no passing merging word is linking-neutral (0/362, 0/97). Recommendation (judgement): extend linking neutrality to bonds; needs an owner ruling (2026-11-25 clause iv). Note: "cheapest γγ bond" has been used for both V2V3 (R1) and V(2)^3 (R2). Bean stays open.
+
+## 2026-11-27 — C2 front A: three-nucleon bond words that are not pair products (PR #9587)
+
+Nine strands, 2727 γγ bond words (all of length ≤ 4, plus length-5 non-products and nonzero classical b3), reading 3 at q0 with the corpus helpers, independent Schur–Weyl check. 116 pass at q0: 87 are word-level non-products of their pair bonds, 16 intrinsically three-body (π ∉ Sym{0..5}·Sym{3..8} ∪ reverse, first at length 5). Every passing word has classical b3 ∈ {0, −2}; the 671 words with classical b3 = +2 (30 pass reading 3 at q = 1) all fail at q0. Max merges 4 (nine length-5 non-products), below 3·m(²H) = 6, so the "A = 3 cap is 2" holds only through length 4. b3(q0) > 0 on 93 passing words (≤ +0.655 merge units), all deformation. Scope (a); open: whether classical b3 > 0 ⇒ q0 reading-3 failure is a theorem. Audit docs/audits/2026-11-27-binding-three-body-perms.md.
