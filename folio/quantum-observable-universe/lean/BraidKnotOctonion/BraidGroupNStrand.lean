@@ -219,17 +219,9 @@ def markovZN {R : Type*} [Field R] (u : R) : R := u / (u^2 + 1)
 noncomputable def markovZN_real (q : ℝ) (_hq : 0 < q) : ℝ :=
   q ^ 2 * markovZN q
 
-/-- **Legacy unsafe form** of `markovZN` — `Real.sqrt q` without the
-    `0 < q` hypothesis. Kept for backward compatibility with the
-    pre-Tier-2 callsites; new code should use one of:
-      - generic `markovZN (u : R)` with explicit `u² = q` for `[Field R]`
-        (Tier 2 — preferred; avoids `Real.sqrt` entirely)
-      - `markovZN_real (q : ℝ) (hq : 0 < q)` (Tier 5 archimedean shim)
-    Do NOT migrate to `markovZN (Real.sqrt q)` — that still triggers
-    the `q-usage-positivity-implicit` warning. -/
-@[deprecated "Migrate to (a) the generic `markovZN (u : R)` with explicit `u² = q` (Tier 2 — preferred), or (b) `markovZN_real q hq` carrying `0 < q` (Tier 5). Avoid `markovZN (Real.sqrt q)` — still positivity-implicit. See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md." (since := "2026-08-03")]
-noncomputable def markovZN_legacy (q : ℝ) : ℝ :=
-  1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
+/- The deprecated **legacy form** `markovZN_legacy q = 1/(√q + 1/√q)` lives behind the
+   transcendental boundary, in `QOU.Transcendental.BraidKnotOctonion.MarkovZNLegacy`
+   (owner ruling 2026-11-27, bean `qou-dk7p`). -/
 
 /-- **Markov-trace axioms** for n-strand braids: the four Jones
     axioms M1-M4 encoded via the explicit-residual pattern. Each
@@ -251,9 +243,14 @@ class MarkovTraceN (n : ℕ) (q : ℝ) : Type where
   tau_cyclic_residual_eq_zero : tau_cyclic_residual = 0
   /-- M3 + M4: stabilisation factor — adding a single trailing
       `σ_n` (positive or inverse) multiplies `τ` by the Markov-Jones
-      parameter `z = 1/(√q + 1/√q)`. -/
+      parameter `z = 1/(√q + 1/√q)` (convention C, kept as recorded). The square root is
+      carried as a parameter (owner ruling 2026-11-27): for every `u ≥ 0` with `u² = q`,
+      the factor is `markovZN u = u/(u² + 1)`. For `q ≥ 0` this is exactly the old pin
+      `tau_stab_factor = markovZN_legacy q`
+      (`QOU.Transcendental.BraidKnotOctonion.MarkovZNLegacy`); for `q < 0` no such `u`
+      exists and the field no longer pins the factor to `0`. -/
   tau_stab_factor : ℝ
-  tau_stab_factor_eq_z : tau_stab_factor = markovZN_legacy q
+  tau_stab_factor_eq_z : ∀ u : ℝ, u ^ 2 = q → 0 ≤ u → tau_stab_factor = markovZN u
 
 /-! ## Specialisations
 

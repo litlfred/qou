@@ -1,5 +1,6 @@
 import Mathlib.Tactic
 import BraidKnotOctonion.BraidGroupNStrand
+import QOU.Transcendental.BraidKnotOctonion.MarkovZNLegacy
 import HeckeTemperleyLieb.MarkovAxiomsPrimitive
 
 /-!
@@ -91,9 +92,9 @@ of the inductive-limit axioms. -/
     inductive-limit class, every `MarkovTraceN n q` follows. Both
     `markovZax_legacy` (here) and `markovZN_legacy` (in
     `braid-group-n-strand`) are local copies of the Markov-Jones
-    parameter `1/(√q + 1/√q)`; they are definitionally equal so the
-    `tau_stab_factor_eq_z : tau_stab_factor = markovZN_legacy q` field
-    is discharged by `rfl`. Both names are `@[deprecated]` — Phase 2
+    parameter `1/(√q + 1/√q)`. The `tau_stab_factor_eq_z` field pins the factor
+    to `markovZN u` for every root `u ≥ 0` of `q`, discharged by
+    `markovZN_legacy_eq_markovZN` (transcendental boundary, 2026-11-27). Both names are `@[deprecated]` — Phase 2
     migrates this instance to the generic `markovZN (u : R)` form. -/
 noncomputable instance markovTraceN_from_inductive_limit (q : ℝ) (n : ℕ)
     [MarkovTraceInductiveLimit q] : MarkovTraceN n q where
@@ -102,7 +103,7 @@ noncomputable instance markovTraceN_from_inductive_limit (q : ℝ) (n : ℕ)
   tau_cyclic_residual := 0
   tau_cyclic_residual_eq_zero := rfl
   tau_stab_factor := markovZN_legacy q
-  tau_stab_factor_eq_z := rfl
+  tau_stab_factor_eq_z := fun _ hu hu0 => markovZN_legacy_eq_markovZN hu hu0
 
 /-! ## Status
 

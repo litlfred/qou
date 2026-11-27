@@ -57,6 +57,17 @@ them. If it fails, do not publish: regenerate with
 it, then rebuild. Exit 3 means the root layer mounts are absent; run
 `bash .github/mount-from-lock.sh && bun install` first.
 
+## Lean ratchets (post-merge QA, run by hand)
+
+After a merge, on `main`, run `scripts/transcendental-boundary-audit.py --check`
+(analytic results stay in `QOU/Transcendental/`) and `scripts/base-ring-audit.py
+--check` (§7c: no new `[Field _]` / `[DivisionRing _]` binder or `field_simp` on the
+algebraic side; restate over a ring, with `q : Rˣ` for an invertible parameter).
+Both baselines only shrink. A red result becomes a bean and a follow-up PR; neither
+is a pre-merge gate, and neither stops the publish. They are not yet wired into
+`publish-main-local.sh`: that file is fenced for the public release, and wiring it
+waits on the owner's card.
+
 ## The Lean render needs Lean
 
 `build-site.sh` builds `lean/` only when `lake` is on `PATH`. It restores the

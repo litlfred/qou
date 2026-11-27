@@ -98,20 +98,20 @@ theorem nilIdeal_Fil : NilIdeal (Fil N 1) where
   nil x hx := ⟨N, eq_zero_of_mem_Fil (pow_mem_Fil hx N)⟩
 
 /-- A sum of generators of `U4 N`. -/
-noncomputable def tsum (N : ℕ) (l : List (Fin 6)) : U4 N := (l.map (t N)).sum
+noncomputable def genSum (N : ℕ) (l : List (Fin 6)) : U4 N := (l.map (t N)).sum
 
-theorem tsum_mem (l : List (Fin 6)) : tsum N l ∈ Fil N 1 := by
+theorem genSum_mem (l : List (Fin 6)) : genSum N l ∈ Fil N 1 := by
   induction l with
-  | nil => simp [tsum]
-  | cons i l ih => simpa [tsum] using add_mem (t_mem_Fil_one (N := N) i) ih
+  | nil => simp [genSum]
+  | cons i l ih => simpa [genSum] using add_mem (t_mem_Fil_one (N := N) i) ih
 
 /-- The unit `g(Σ_{i∈l} tᵢ, Σ_{j∈m} tⱼ)` of `U4 N`, for `g` with constant term `1`. -/
 noncomputable def gU (N : ℕ) {g : FreeAlgebra ℚ (Fin 2)} (hg : FreeAlgebra.algebraMapInv g = 1)
     (l m : List (Fin 6)) : (U4 N)ˣ :=
-  evalUnit nilIdeal_Fil (tsum_mem l) (tsum_mem m) hg
+  evalUnit nilIdeal_Fil (genSum_mem l) (genSum_mem m) hg
 
 @[simp] theorem val_gU {g : FreeAlgebra ℚ (Fin 2)} (hg : FreeAlgebra.algebraMapInv g = 1)
-    (l m : List (Fin 6)) : (gU N hg l m : U4 N) = eval (tsum N l) (tsum N m) g := by
+    (l m : List (Fin 6)) : (gU N hg l m : U4 N) = eval (genSum N l) (genSum N m) g := by
   simp [gU]
 
 /-- **The pentagon action theorem in `U4 N`, units discharged.** For `g` with constant term `1`
@@ -132,9 +132,9 @@ theorem pentagon_act_U4 (φ g : FreeAlgebra ℚ (Fin 2)) (hg1 : FreeAlgebra.alge
         actEval φ (t N 0) (t N 3) (gU N hg1 [0] [3]) :=
   pentagon_act_universal_of_tcompat φ g _ _ _ _ _ (gU N hg1 [1] [3]) (gU N hg1 [3] [4])
     (gU N hg1 [1] [3, 5]) (gU N hg1 [0, 3] [4]) (gU N hg1 [5] [3]) (gU N hg1 [4] [3])
-    (by simp [tsum]) (by simp [tsum]) (by simp [tsum]) (by simp [tsum]) (by simp [tsum])
-    (by simp [tsum]) (by simp [tsum]) (by simp [tsum]) (by simp [tsum]) (by simp [tsum])
-    (by simp [tsum]) hg hφ hu1 hu2 hA hB
+    (by simp [genSum]) (by simp [genSum]) (by simp [genSum]) (by simp [genSum]) (by simp [genSum])
+    (by simp [genSum]) (by simp [genSum]) (by simp [genSum]) (by simp [genSum]) (by simp [genSum])
+    (by simp [genSum]) hg hφ hu1 hu2 hA hB
 
 /-- **The hexagon action theorem in `U4 N`, units discharged**, at the three-strand family
 `(t₁₂, t₁₃, t₂₃)`. For `g` with constant term `1` satisfying (5.13) at `(t₂₃,t₁₂)`, (5.14) and
@@ -152,7 +152,7 @@ theorem hexagon_act_U4 (φ g E : FreeAlgebra ℚ (Fin 2)) (hg1 : FreeAlgebra.alg
         actEval φ (t N 3) (t N 1) (gU N hg1 [3] [1]) * eval (t N 3) 0 E *
           actEval φ (t N 0) (t N 3) (gU N hg1 [0] [3]) :=
   hexagon_act φ g E (dk4 N).d4 _ _ _ (gU N hg1 [3] [0])
-    (by simp [tsum]) (by simp [tsum]) (by simp [tsum]) (by simp [tsum]) h513 h514 htc hφ
+    (by simp [genSum]) (by simp [genSum]) (by simp [genSum]) (by simp [genSum]) h513 h514 htc hφ
 
 end U4
 

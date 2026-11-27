@@ -79,10 +79,10 @@ theorem rotate_of_isUnit {R : Type*} [Ring R] {x y z : R} (hx : IsUnit x)
 /-- `eval` at a pair of sums of generators of the composite is `actEval` with `G = gU`. -/
 theorem eval_compPoly_gU (g1 g2 : FreeAlgebra ℚ (Fin 2)) (hg1 : FreeAlgebra.algebraMapInv g2 = 1)
     (h512 : Inv512 (Fil N 1) g2) (l m : List (Fin 6)) :
-    eval (tsum N l) (tsum N m) (compPoly g1 g2) =
-      actEval g1 (tsum N l) (tsum N m) (gU N hg1 l m) := by
+    eval (genSum N l) (genSum N m) (compPoly g1 g2) =
+      actEval g1 (genSum N l) (genSum N m) (gU N hg1 l m) := by
   rw [eval_compPoly]
-  exact compEval_eq_actEval g1 g2 _ (by simp) (h512 _ _ (tsum_mem l) (tsum_mem m))
+  exact compEval_eq_actEval g1 g2 _ (by simp) (h512 _ _ (genSum_mem l) (genSum_mem m))
 
 /-- `DK3` is invariant under reversing the triple. -/
 theorem DK3.rev {R : Type*} [Ring R] {a b c : R} (h : DK3 a b c) : DK3 c b a :=
@@ -99,10 +99,10 @@ theorem pentagon_compPoly_U4 (g1 g2 : FreeAlgebra ℚ (Fin 2))
     Pentagon (compPoly g1 g2) (t N 0) (t N 1) (t N 3) (t N 4) (t N 5) := by
   have m := fun i => t_mem_Fil_one (N := N) i
   have hA : TCompat (t N 1) (t N 3) (gU N hg1 [0] [3]) (gU N hg1 [1] [3]) :=
-    (tcompat_iff_poly g2 _ _ (by simp [tsum]) (by simp [tsum]) (h512 _ _ (m 0) (m 3))
+    (tcompat_iff_poly g2 _ _ (by simp [genSum]) (by simp [genSum]) (h512 _ _ (m 0) (m 3))
       (h512 _ _ (m 1) (m 3))).2 (h514 _ _ _ (m 0) (m 1) (m 3) (dk4 N).d4)
   have hB : TCompat (t N 4) (t N 3) (gU N hg1 [5] [3]) (gU N hg1 [4] [3]) :=
-    (tcompat_iff_poly g2 _ _ (by simp [tsum]) (by simp [tsum]) (h512 _ _ (m 5) (m 3))
+    (tcompat_iff_poly g2 _ _ (by simp [genSum]) (by simp [genSum]) (h512 _ _ (m 5) (m 3))
       (h512 _ _ (m 4) (m 3))).2 (h514 _ _ _ (m 5) (m 4) (m 3) (dk4 N).d0.rev)
   have key := pentagon_act_U4 g1 g2 hg1 hg hφ (h512 _ _ (m 5) (m 3)) (h512 _ _ (m 4) (m 3))
     hA hB
@@ -112,7 +112,7 @@ theorem pentagon_compPoly_U4 (g1 g2 : FreeAlgebra ℚ (Fin 2))
   have e3 := e [3] [5]
   have e4 := e [0, 1] [4, 5]
   have e5 := e [0] [3]
-  simp only [tsum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, add_zero]
+  simp only [genSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, add_zero]
     at e1 e2 e3 e4 e5
   unfold Pentagon
   rw [e1, e2, e3, e4, e5]
@@ -133,14 +133,14 @@ theorem hexagon_compPoly_U4 (g1 g2 E : FreeAlgebra ℚ (Fin 2))
     simp only [Hexagon, map_one, mul_one] at this
     rw [← this]
   have htc : TCompat (t N 1) (t N 0) (gU N hg1 [3] [0]) (gU N hg1 [1] [0]) :=
-    (tcompat_iff_poly g2 _ _ (by simp [tsum]) (by simp [tsum]) (h512 _ _ (m 3) (m 0))
+    (tcompat_iff_poly g2 _ _ (by simp [genSum]) (by simp [genSum]) (h512 _ _ (m 3) (m 0))
       (h512 _ _ (m 1) (m 0))).2 (h514 _ _ _ (m 3) (m 1) (m 0) (dk4 N).d4.rev)
   have key := hexagon_act_U4_universal g1 g2 E hg1 (h512 _ _ (m 3) (m 0)) hcyc htc hφ
   have e := fun l m' => eval_compPoly_gU (N := N) g1 g2 hg1 h512 l m'
   have e1 := e [1] [0]
   have e2 := e [3] [1]
   have e3 := e [0] [3]
-  simp only [tsum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, add_zero]
+  simp only [genSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, add_zero]
     at e1 e2 e3
   unfold Hexagon
   rw [e1, e2, e3]

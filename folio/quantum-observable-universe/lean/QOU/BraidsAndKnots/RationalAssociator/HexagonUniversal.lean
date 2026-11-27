@@ -91,9 +91,9 @@ theorem hexagon_act_U4_universal (φ g E : FreeAlgebra ℚ (Fin 2))
         actEval φ (t N 3) (t N 1) (gU N hg1 [3] [1]) * eval (t N 3) 0 E *
           actEval φ (t N 0) (t N 3) (gU N hg1 [0] [3]) := by
   have hDK := (dk4 N).d4
-  have h1 : (gU N hg1 [1] [0] : U4 N) = eval (t N 1) (t N 0) g := by simp [tsum]
-  have h3 : (gU N hg1 [0] [3] : U4 N) = eval (t N 0) (t N 3) g := by simp [tsum]
-  have hK : (gU N hg1 [3] [0] : U4 N) = eval (t N 3) (t N 0) g := by simp [tsum]
+  have h1 : (gU N hg1 [1] [0] : U4 N) = eval (t N 1) (t N 0) g := by simp [genSum]
+  have h3 : (gU N hg1 [0] [3] : U4 N) = eval (t N 0) (t N 3) g := by simp [genSum]
+  have hK : (gU N hg1 [3] [0] : U4 N) = eval (t N 3) (t N 0) g := by simp [genSum]
   have hsum := transported3_sum g hDK (gU N hg1 [1] [0]) (gU N hg1 [0] [3]) (gU N hg1 [3] [0])
     h3 hK h513 htc
   refine hexagon_act_U4 φ g E hg1 h513 h514 htc ?_
