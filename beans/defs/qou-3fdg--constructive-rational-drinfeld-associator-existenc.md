@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T18:10:25Z
+updated_at: 2026-11-27T18:31:31Z
 parent: qou-dk7p
 ---
 
@@ -43,3 +43,6 @@ Stage 3 decomposition: 3a pentagon<=>five-cycle (or stay in t_4); 3b right actio
 
 2026-11-27 Drinfeld 1991 IS in library: library/drinfeld1991-quasitriangular (OCR, sections/page-012..014). §5: GRT_1 eqs (5.12)-(5.15); group law (5.16) (g1∘g2)(A,B) = g1(g2 A g2^-1, B)·g2; grt_1 (5.17)-(5.20), bracket (5.21), D_ψ(A)=[ψ,A], D_ψ(B)=0. Right action on M_μ: φ~(A,B) = φ(g A g^-1, B)·g(A,B) (p.852); Prop 5.5 free+transitive. Prop 5.3 (M_μ(Q) nonempty) nonconstructive via M_μ(C). Prop 5.8: M_μ^(r+1)(k) -> M_μ^(r)(k) surjective, proof uses 5.3 + GRT^(r+1)->GRT^(r) surjective (Prop 5.7: (5.17),(5.18),(5.20) imply (5.19)). Prop 5.9: (5.12),(5.13),(5.15) imply (5.14), via Exp: grt_1 -> GRT_1 of (5.16).
 KEY for research leg (p.854, Remark 2 after 5.8): without 5.3, obstruction to lifting lies in r-th component of H^4 of Drinfeld's complex L'^ (Harrison-type subcomplex of the t_n complex); 'The author does not know whether H^4 = 0'. H^n=L^n=0 for n<=2... H^3 = graded grt_1. So dropping the hypothesis = proving the needed degree components of H^4 vanish: open in 1991. (From memory, unverified here: later work relates this complex to Kontsevich's graph complex GC2, where the corresponding vanishing is still conjectural.)
+
+
+2026-11-27: #9549 (DK infrastructure) and #9546 merged. Stage 3a up as #9559: UniversalDK.lean builds U4 N = U(t4)/(deg >= N) as RingQuot of the free Q-algebra, with dk4, word_eq_zero, lift/lift_t (universal property). Sorry-free. Next: 3b, GRT right action phi -> phi(g A g^-1, B) g preserves the pentagon (Drinfeld 5.16, Furusho Lemma 8).
