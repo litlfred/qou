@@ -12,19 +12,19 @@ stripped before matching. This is a measurement, not a verdict on any one file.
 |---|---:|
 | Lean modules (paper package tree) | 3973 |
 | inside the boundary `QOU/Transcendental/` | 0 |
-| outside, using a transcendental/analytic API directly | 781 |
-| outside, algebraic but importing one transitively (tainted) | 597 |
-| outside, algebraic and import-clean (pure) | 2595 |
+| outside, using a transcendental/analytic API directly | 709 |
+| outside, algebraic but importing one transitively (tainted) | 313 |
+| outside, algebraic and import-clean (pure) | 2951 |
 
 ## Direct use by class
 
 | class | modules | matched API |
 |---|---:|---|
-| transcendental-function | 568 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
-| real-completion | 172 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bsSup\b|\bsInf\b|\biSup\b|\biInf\b…` |
+| transcendental-function | 495 | `\bReal\.(exp|log|pi|cos|sin|tan|arctan|arcsin|arccos|cosh|sinh|tanh|Gamma|logb)\b|\bComple…` |
+| real-completion | 171 | `\bReal\.sqrt\b|\bNNReal\.sqrt\b|\bReal\.sSup\b|\bReal\.sInf\b|\bReal\.iSup\b|\bReal\.iInf\…` |
 | analysis | 337 | `\bintervalIntegral\b|\bMeasureTheory\b|∫|\bHasDerivAt\b|\bderiv\b|\bFilter\.Tendsto\b|\bTe…` |
 
-Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 73. These are the cheapest to move:
+Modules whose only use is `real-completion` (`Real.sqrt`, `sSup`, …): 71. These are the cheapest to move:
 `Real.sqrt` of an algebraic number is algebraic, so most of them can become a root in an
 algebraic extension.
 
@@ -32,31 +32,28 @@ algebraic extension.
 
 | directory | modules |
 |---|---:|
-| `QOU/MassTheory` | 156 |
-| `BraidKnotOctonion` | 151 |
-| `QOU/Nuclear` | 108 |
-| `MathlibExt` | 106 |
-| `HeckeTemperleyLieb` | 45 |
+| `QOU/MassTheory` | 151 |
+| `BraidKnotOctonion` | 145 |
+| `QOU/Nuclear` | 107 |
+| `MathlibExt` | 94 |
 | `QCalculus` | 42 |
 | `QOU/BraidsAndKnots` | 42 |
-| `QOU/Observations` | 19 |
+| `QOU/Observations` | 18 |
+| `HeckeTemperleyLieb` | 17 |
 | `QOU/BringsSurface` | 15 |
-| `QOU/Core` | 15 |
-| `QOU/StandardModel` | 15 |
+| `QOU/Core` | 13 |
 | `QOU/FluidDynamics` | 13 |
+| `QOU/StandardModel` | 12 |
 | `QOU/MassTheory/BlochRigidity` | 7 |
-| `QOU/MassTheory/KZHolonomy` | 7 |
-| `QOU/Confinement` | 6 |
-| `QOU/LiftingDescent` | 6 |
-| `BraidKnotOctonion/OS` | 5 |
-| `CompactQuantumMetrics` | 4 |
+| `QOU/MassTheory/KZHolonomy` | 6 |
+| `QOU/Confinement` | 5 |
 | `QOU/BraidsAndKnots/Drinfeld` | 4 |
 | `QOU/InformationTheory` | 4 |
 | `MathlibExt/KZHolonomy` | 3 |
 | `QOU/EightfoldWay` | 3 |
+| `QOU/LiftingDescent` | 3 |
 | `ToricConicOpt` | 3 |
-| `BraidKnotOctonion/Model` | 1 |
-| `TwistedFrobeniusHopf` | 1 |
+| `CompactQuantumMetrics` | 2 |
 
 ## Strangler targets: transcendental modules most imported by algebraic ones
 
@@ -65,15 +62,9 @@ algebraic modules.
 
 | module | algebraic importers |
 |---|---:|
-| `QOU.Core.CategoricalFoundations` | 17 |
-| `QOU.Observations.Basic` | 10 |
-| `HeckeTemperleyLieb.SpechtClassification` | 8 |
 | `MathlibExt.TauRhoHodgeLiftInterface` | 6 |
 | `QOU.BraidsAndKnots.QBetaCategoricalPrecisionLadder` | 6 |
-| `HeckeTemperleyLieb.Specht` | 5 |
 | `BraidKnotOctonion.KeystoneC8SuperExpBound` | 5 |
-| `HeckeTemperleyLieb.SpechtStandardBasisCore` | 4 |
-| `BraidKnotOctonion.OS.Universal` | 4 |
 | `BraidKnotOctonion.PLMaps` | 4 |
 | `QCalculus.FaddeevQuantumDilogarithm` | 4 |
 | `QCalculus.PhiBProd` | 4 |
@@ -84,12 +75,18 @@ algebraic modules.
 | `BraidKnotOctonion.PLPrismPush` | 3 |
 | `BraidKnotOctonion.PLAmbientIsotopy` | 3 |
 | `HeckeTemperleyLieb.QPlancherel` | 3 |
-| `BraidKnotOctonion.QuantumGLCommutant` | 3 |
 | `MathlibExt.Core` | 3 |
 | `MathlibExt.LocalCocycleTransport` | 3 |
-| `MathlibExt.CauchyBinet` | 3 |
 | `QCalculus.ComplexDilogarithmDeriv` | 3 |
 | `QOU.BraidsAndKnots.DeltaLambdaSignRule` | 3 |
+| `QOU.BraidsAndKnots.InterNucleonChannelColorTube` | 3 |
+| `QOU.BraidsAndKnots.Drinfeld.Hexagon` | 3 |
+| `QOU.BraidsAndKnots.KZHexagon` | 3 |
+| `QOU.Nuclear.InterfaceScalar` | 3 |
+| `QOU.MassTheory.BalancedMomentConfluence` | 3 |
+| `QOU.Nuclear.ReebTowerJacobiAnger` | 3 |
+| `QOU.MassTheory.BlochRigidity.Regularity` | 3 |
+| `QOU.MassTheory.BridgeAStokesNBody` | 3 |
 
 ## Gate
 
