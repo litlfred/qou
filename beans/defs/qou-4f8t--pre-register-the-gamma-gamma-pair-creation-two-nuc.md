@@ -57,3 +57,7 @@ B (reopening the z_D base) is held.
 **C.** `docs/audits/2026-11-27-cds1-route-c-gamma-gamma-ladder-gaps.md`. The H₃ endpoint V³ is selected, but only inside H₃. Still open: the H₆→H₃ and H₁₂→H₆ descents, derived quark letters, and a per-step residue for the ruled photon grammar on ≥ 4 strands. The audit lists three steps to close C.
 
 Q_β magnitude remains OPEN; this bean stays open.
+
+## 2026-11-27 — route C step 1: six-strand neutral selection (litlfred/qou#9536)
+
+On six strands, V-words of length ≤ 6 (V_i = σ_iσ_{i+1}⁻¹, i=0..3): 5460 enumerated, 1906 neutral, 58 pass reading 3 at q₀, 11/10, 23/20 (exact, convention D). Every survivor uses each vertex a multiple of 3 times; minimal survivors are exactly V_i³; the rest are products of two cubes (overlapping non-commuting triples must be in blocks). Scope (a), length ≤ 6. No magnitude information; the Q_β gap stays open. Next: H₆→H₃ residue of the survivors (route C step 2). Audit: docs/audits/2026-11-27-cds1-six-strand-neutral-selection.md.
