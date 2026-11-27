@@ -1908,6 +1908,7 @@ import QOU.MassTheory.H4GPMTModifiedDimensionCumulants
 import QOU.EightfoldWay.USpinColemanGlashowLambdaSigma
 import QOU.StandardModel.OctonionColourTripletSplitting
 import QOU.StandardModel.OctonionColourTripletComplexType
+import QOU.StandardModel.GaugeHeckeCanonicalFaithfulness
 import QOU.StandardModel.ElectroweakBringSchwingerBridge
 import QOU.StandardModel.ElectroweakSweedlerScaleAndRGThresholds
 import QOU.StandardModel.ElectroweakVevFixedPointDecomposition
