@@ -1,4 +1,4 @@
-import QOU.MassTheory.BridgeADeligneKZ
+import QOU.Transcendental.MassTheory.BridgeADeligneKZ
 import QOU.MassTheory.LagrangianKZIdentification
 import QOU.BraidsAndKnots.ColourFlavourMirror
 
