@@ -30,7 +30,7 @@ Over a commutative ring `R` with `q : Rˣ`:
 
 Over a field `K`, with the Haar state `h` of `OqSU2HaarState`:
 
-* `haarState_zeta_pow`: `h(ζ^m) = (−q)^m / [m+1]`. These are the moments of the
+* `haarState_zetaB_pow`: `h(ζ^m) = (−q)^m / [m+1]`. These are the moments of the
   Jackson q-integral on `[0, 1]` in base `q²`, up to the sign convention of `β`.
 * `haarState_zeta_pow_mul_lap`: for `j, n ≥ 0`,
   `h(ζ^j · L ζ^{n+1}) = −q³ (−q)^{j+n} [j][n+1] / ([j+n+1][j+n+2])`.
@@ -131,8 +131,10 @@ variable {R : Type*} [CommRing R] (q : Rˣ)
 
 /-! ## The block generator `ζ = β γ` and commutation -/
 
-/-- The torus-invariant generator `ζ = β γ`. -/
-noncomputable def zeta : OqSU2 R q := β q * γ q
+/-- The torus-invariant generator `ζ = βγ`. Named `zetaB` because `OqSU2HaarPositivity` already declares
+`zeta` (an `abbrev` with the same body) in this namespace, and the two files are imported
+together downstream. -/
+noncomputable def zetaB : OqSU2 R q := β q * γ q
 
 local notation "qi" => (((q⁻¹ : Rˣ) : R))
 
@@ -140,7 +142,7 @@ theorem qi_mul_q : qi * (q : R) = 1 := by simp
 
 theorem q_mul_qi : (q : R) * qi = 1 := by simp
 
-theorem gamma_beta : γ q * β q = zeta (R := R) q := (rel_bg q).symm
+theorem gamma_beta_zetaB : γ q * β q = zetaB (R := R) q := (rel_bg q).symm
 
 theorem delta_beta : δ q * β q = qi • (β (R := R) q * δ q) := by
   rw [rel_bd, smul_smul, qi_mul_q, one_smul]
@@ -150,8 +152,8 @@ theorem delta_gamma : δ q * γ q = qi • (γ (R := R) q * δ q) := by
 
 /-- `β δ ζ = q⁻² ζ β δ`. -/
 theorem betaDelta_zeta :
-    (β (R := R) q * δ q) * zeta q = (qi * qi) • (zeta q * (β q * δ q)) := by
-  unfold zeta
+    (β (R := R) q * δ q) * zetaB q = (qi * qi) • (zetaB q * (β q * δ q)) := by
+  unfold zetaB
   calc β q * δ q * (β q * γ q) = β q * ((δ q * β q) * γ q) := by simp only [mul_assoc]
     _ = qi • (β q * (β q * (δ q * γ q))) := by
         rw [delta_beta, smul_mul_assoc, mul_smul_comm]; simp only [mul_assoc]
@@ -164,8 +166,8 @@ theorem betaDelta_zeta :
           _ = β q * γ q * (β q * δ q) := by simp only [mul_assoc]
 
 /-- `α ζ = q² ζ α`. -/
-theorem alpha_zeta : α (R := R) q * zeta q = ((q : R) * q) • (zeta q * α q) := by
-  unfold zeta
+theorem alpha_zeta : α (R := R) q * zetaB q = ((q : R) * q) • (zetaB q * α q) := by
+  unfold zetaB
   calc α q * (β q * γ q) = (α q * β q) * γ q := by simp only [mul_assoc]
     _ = (q : R) • (β q * (α q * γ q)) := by
         rw [rel_ab, smul_mul_assoc]; simp only [mul_assoc]
@@ -174,34 +176,34 @@ theorem alpha_zeta : α (R := R) q * zeta q = ((q : R) * q) • (zeta q * α q) 
 
 /-- `α γ ζ = q² ζ α γ`. -/
 theorem alphaGamma_zeta :
-    (α (R := R) q * γ q) * zeta q = ((q : R) * q) • (zeta q * (α q * γ q)) := by
-  have hγ : γ (R := R) q * zeta q = zeta q * γ q := by
-    unfold zeta
+    (α (R := R) q * γ q) * zetaB q = ((q : R) * q) • (zetaB q * (α q * γ q)) := by
+  have hγ : γ (R := R) q * zetaB q = zetaB q * γ q := by
+    unfold zetaB
     calc γ q * (β q * γ q) = (γ q * β q) * γ q := by simp only [mul_assoc]
       _ = (β q * γ q) * γ q := by rw [← rel_bg]
-  calc α q * γ q * zeta q = α q * (γ q * zeta q) := by simp only [mul_assoc]
-    _ = (α q * zeta q) * γ q := by rw [hγ]; simp only [mul_assoc]
-    _ = ((q : R) * q) • (zeta q * (α q * γ q)) := by
+  calc α q * γ q * zetaB q = α q * (γ q * zetaB q) := by simp only [mul_assoc]
+    _ = (α q * zetaB q) * γ q := by rw [hγ]; simp only [mul_assoc]
+    _ = ((q : R) * q) • (zetaB q * (α q * γ q)) := by
         rw [alpha_zeta, smul_mul_assoc]; simp only [mul_assoc]
 
-theorem alpha_delta : α (R := R) q * δ q = 1 + (q : R) • zeta q := by
+theorem alpha_delta : α (R := R) q * δ q = 1 + (q : R) • zetaB q := by
   have := rel_det_left (R := R) q
-  unfold zeta; rw [← this]; abel
+  unfold zetaB; rw [← this]; abel
 
 /-- `α γ β δ = q² ζ + q³ ζ²`. -/
 theorem alphaGamma_betaDelta :
     (α (R := R) q * γ q) * (β q * δ q) =
-      ((q : R) * q) • zeta q + ((q : R) * q * q) • (zeta q * zeta q) := by
+      ((q : R) * q) • zetaB q + ((q : R) * q * q) • (zetaB q * zetaB q) := by
   calc α q * γ q * (β q * δ q) = (α q * (γ q * β q)) * δ q := by simp only [mul_assoc]
-    _ = (α q * zeta q) * δ q := by rw [gamma_beta]
-    _ = ((q : R) * q) • (zeta q * (α q * δ q)) := by
+    _ = (α q * zetaB q) * δ q := by rw [gamma_beta_zetaB]
+    _ = ((q : R) * q) • (zetaB q * (α q * δ q)) := by
         rw [alpha_zeta, smul_mul_assoc]; simp only [mul_assoc]
-    _ = ((q : R) * q) • zeta q + ((q : R) * q * q) • (zeta q * zeta q) := by
+    _ = ((q : R) * q) • zetaB q + ((q : R) * q * q) • (zetaB q * zetaB q) := by
         rw [alpha_delta, mul_add, mul_one, mul_smul_comm, smul_add, smul_smul]
 
 /-- `αγ ζ^k = q^{2k} ζ^k αγ`. -/
 theorem alphaGamma_zeta_pow (k : ℕ) :
-    (α (R := R) q * γ q) * zeta q ^ k = ((q : R) * q) ^ k • (zeta q ^ k * (α q * γ q)) := by
+    (α (R := R) q * γ q) * zetaB q ^ k = ((q : R) * q) ^ k • (zetaB q ^ k * (α q * γ q)) := by
   induction k with
   | zero => simp
   | succ k ih =>
@@ -213,8 +215,8 @@ theorem alphaGamma_zeta_pow (k : ℕ) :
 
 /-! ## The twist and the fields on `R[ζ]` -/
 
-theorem tw_zeta : torusScaleAlgHom (R := R) q q⁻¹ q⁻¹⁻¹ (zeta q) = zeta q := by
-  unfold zeta
+theorem tw_zeta : torusScaleAlgHom (R := R) q q⁻¹ q⁻¹⁻¹ (zetaB q) = zetaB q := by
+  unfold zetaB
   obtain ⟨-, hb, hg, -⟩ := field_twist_generators (R := R) q
   rw [map_mul, hb, hg, smul_mul_smul_comm, q_mul_qi, one_smul]
 
@@ -223,23 +225,23 @@ theorem tw_betaDelta :
   obtain ⟨-, hb, -, hd⟩ := field_twist_generators (R := R) q
   rw [map_mul, hb, hd, smul_mul_smul_comm]
 
-theorem fieldMinus_zeta : fieldMinus (R := R) q (zeta q) = β q * δ q := by
-  unfold zeta
+theorem fieldMinus_zeta : fieldMinus (R := R) q (zetaB q) = β q * δ q := by
+  unfold zetaB
   obtain ⟨-, hb, hg, -⟩ := fieldMinus_generators (R := R) q
   rw [field_leibniz, hb, hg, zero_mul, zero_add]
 
-theorem fieldPlus_zeta : fieldPlus (R := R) q (zeta q) = qi • (α q * γ q) := by
-  unfold zeta
+theorem fieldPlus_zeta : fieldPlus (R := R) q (zetaB q) = qi • (α q * γ q) := by
+  unfold zetaB
   obtain ⟨-, hb, hg, -⟩ := fieldPlus_generators (R := R) q
   obtain ⟨-, -, tg, -⟩ := field_twist_generators (R := R) q
   rw [field_leibniz, hb, hg, tg, mul_zero, add_zero, mul_smul_comm]
 
 theorem fieldPlus_betaDelta :
-    fieldPlus (R := R) q (β q * δ q) = (q : R) • (1 : OqSU2 R q) + ((q : R) * q + 1) • zeta q := by
+    fieldPlus (R := R) q (β q * δ q) = (q : R) • (1 : OqSU2 R q) + ((q : R) * q + 1) • zetaB q := by
   obtain ⟨-, hb, -, hd⟩ := fieldPlus_generators (R := R) q
   obtain ⟨-, -, -, td⟩ := field_twist_generators (R := R) q
   rw [field_leibniz, hb, hd, td, mul_smul_comm, alpha_delta,
-    show β (R := R) q * γ q = zeta q from rfl]
+    show β (R := R) q * γ q = zetaB q from rfl]
   module
 
 theorem fieldPlus_one : fieldPlus (R := R) q 1 = 0 := field_one q 0 1 0
@@ -248,25 +250,25 @@ theorem fieldMinus_one : fieldMinus (R := R) q 1 = 0 := field_one q 0 0 1
 
 /-- `X₋ ζ^{k+1} = [k+1]_{q⁻²} · ζ^k β δ`. -/
 theorem fieldMinus_zeta_pow (k : ℕ) :
-    fieldMinus (R := R) q (zeta q ^ (k + 1)) =
-      jk (qi * qi) (k + 1) • (zeta q ^ k * (β q * δ q)) := by
+    fieldMinus (R := R) q (zetaB q ^ (k + 1)) =
+      jk (qi * qi) (k + 1) • (zetaB q ^ k * (β q * δ q)) := by
   induction k with
   | zero => simp [fieldMinus_zeta]
   | succ k ih =>
     rw [pow_succ, field_leibniz, ih, tw_zeta, fieldMinus_zeta, smul_mul_assoc, mul_assoc,
-      betaDelta_zeta, mul_smul_comm, smul_smul, ← mul_assoc (zeta q ^ k), ← pow_succ,
+      betaDelta_zeta, mul_smul_comm, smul_smul, ← mul_assoc (zetaB q ^ k), ← pow_succ,
       jk_succ' (qi * qi) (k + 1)]
     module
 
 /-- `X₊ ζ^{k+1} = q⁻¹ [k+1]_{q²} · ζ^k α γ`. -/
 theorem fieldPlus_zeta_pow (k : ℕ) :
-    fieldPlus (R := R) q (zeta q ^ (k + 1)) =
-      (qi * jk ((q : R) * q) (k + 1)) • (zeta q ^ k * (α q * γ q)) := by
+    fieldPlus (R := R) q (zetaB q ^ (k + 1)) =
+      (qi * jk ((q : R) * q) (k + 1)) • (zetaB q ^ k * (α q * γ q)) := by
   induction k with
   | zero => simp [fieldPlus_zeta]
   | succ k ih =>
     rw [pow_succ, field_leibniz, ih, tw_zeta, fieldPlus_zeta, smul_mul_assoc, mul_assoc,
-      alphaGamma_zeta, mul_smul_comm, smul_smul, ← mul_assoc (zeta q ^ k), ← pow_succ,
+      alphaGamma_zeta, mul_smul_comm, smul_smul, ← mul_assoc (zetaB q ^ k), ← pow_succ,
       mul_smul_comm, jk_succ' ((q : R) * q) (k + 1)]
     module
 
@@ -280,9 +282,9 @@ theorem lap_one : lap (R := R) q 1 = 0 := by rw [lap_apply, fieldMinus_one, map_
 /-- **`L` on `ζ^{k+1}`.** Lower bidiagonal on `R[ζ]`, with diagonal entry
 `[k+1]_{q⁻²} [k+2]_{q²}` and subdiagonal entry `[k+1]_{q⁻²} q [k+1]_{q²}`. -/
 theorem lap_zeta_pow (k : ℕ) :
-    lap (R := R) q (zeta q ^ (k + 1)) =
-      (jk (qi * qi) (k + 1) * ((q : R) * jk ((q : R) * q) (k + 1))) • zeta q ^ k +
-      (jk (qi * qi) (k + 1) * jk ((q : R) * q) (k + 2)) • zeta q ^ (k + 1) := by
+    lap (R := R) q (zetaB q ^ (k + 1)) =
+      (jk (qi * qi) (k + 1) * ((q : R) * jk ((q : R) * q) (k + 1))) • zetaB q ^ k +
+      (jk (qi * qi) (k + 1) * jk ((q : R) * q) (k + 2)) • zetaB q ^ (k + 1) := by
   rw [lap_apply, fieldMinus_zeta_pow, map_smul, field_leibniz, tw_betaDelta, fieldPlus_betaDelta]
   rcases k with _ | m
   · rw [pow_zero, fieldPlus_one, zero_mul, zero_add, one_mul, pow_one,
@@ -290,8 +292,8 @@ theorem lap_zeta_pow (k : ℕ) :
     simp only [jk_one]
     module
   · rw [fieldPlus_zeta_pow, smul_mul_assoc, mul_smul_comm, smul_smul,
-      mul_assoc (zeta q ^ m), alphaGamma_betaDelta]
-    simp only [mul_add, mul_smul_comm, mul_one, ← mul_assoc (zeta q ^ m), ← pow_succ]
+      mul_assoc (zetaB q ^ m), alphaGamma_betaDelta]
+    simp only [mul_add, mul_smul_comm, mul_one, ← mul_assoc (zetaB q ^ m), ← pow_succ]
     rw [show m + 1 + 2 = m + 1 + 1 + 1 from rfl, jk_succ' ((q : R) * q) (m + 1 + 1),
       jk_succ' ((q : R) * q) (m + 1)]
     have hs : qi * jk ((q : R) * q) (m + 1) * ((q : R) * q) = (q : R) * jk ((q : R) * q) (m + 1) := by
@@ -305,16 +307,16 @@ section Haar
 
 variable {K : Type*} [Field K] (q : Kˣ)
 
-theorem monoRep_zeta_pow (m : ℕ) : monoRep q (zeta q ^ m) (eb K 0 0 0) = eb K 0 m m := by
+theorem monoRep_zetaB_pow (m : ℕ) : monoRep q (zetaB q ^ m) (eb K 0 0 0) = eb K 0 m m := by
   induction m with
   | zero => simp
   | succ m ih =>
     rw [pow_succ', map_mul, Module.End.mul_apply, ih]
-    simp [zeta, monoRep]
+    simp [zetaB, monoRep]
 
 /-- `h(ζ^m) = (−q)^m / [m+1]_{q²}`: the Jackson moments. -/
-theorem haarState_zeta_pow (m : ℕ) : haarState q (zeta q ^ m) = haarMoment q m := by
-  rw [haarState, zeroWeightFunctional_apply, monoRep_zeta_pow, zeroRead_e]
+theorem haarState_zetaB_pow (m : ℕ) : haarState q (zetaB q ^ m) = haarMoment q m := by
+  rw [haarState, zeroWeightFunctional_apply, monoRep_zetaB_pow, zeroRead_e]
   simp
 
 theorem qSqNum_eq_jk (m : ℕ) : qSqNum q m = jk ((q : K) * q) (m + 1) := by
@@ -335,7 +337,7 @@ theorem jk_inv_eq (k : ℕ) :
 /-- **The block form against the Haar state.** For `j, k ≥ 0`,
 `h(ζ^j · L ζ^{k+1}) = −q³ (−q)^{j+k} [j][k+1] / ([j+k+1][j+k+2])`, `[n] = [n]_{q²}`. -/
 theorem haarState_zeta_pow_mul_lap (hq : ∀ n, qSqNum q n ≠ 0) (j k : ℕ) :
-    haarState q (zeta q ^ j * lap q (zeta q ^ (k + 1))) =
+    haarState q (zetaB q ^ j * lap q (zetaB q ^ (k + 1))) =
       -((q : K) ^ 3 * (-(q : K)) ^ (j + k) * jk ((q : K) * q) j * jk ((q : K) * q) (k + 1)) /
         (jk ((q : K) * q) (j + k + 1) * jk ((q : K) * q) (j + k + 2)) := by
   have hq0 : (q : K) ≠ 0 := q.ne_zero
@@ -343,7 +345,7 @@ theorem haarState_zeta_pow_mul_lap (hq : ∀ n, qSqNum q n ≠ 0) (j k : ℕ) :
   have h2 : jk ((q : K) * q) (j + k + 2) ≠ 0 := by
     rw [show j + k + 2 = (j + k + 1) + 1 from rfl, ← qSqNum_eq_jk]; exact hq _
   rw [lap_zeta_pow, mul_add, mul_smul_comm, mul_smul_comm, ← pow_add, ← pow_add, map_add,
-    map_smul, map_smul, haarState_zeta_pow, haarState_zeta_pow, haarMoment, haarMoment,
+    map_smul, map_smul, haarState_zetaB_pow, haarState_zetaB_pow, haarMoment, haarMoment,
     qSqNum_eq_jk, qSqNum_eq_jk, smul_eq_mul, smul_eq_mul, jk_inv_eq,
     show j + (k + 1) + 1 = j + k + 2 by omega, show j + (k + 1) = j + k + 1 by omega]
   have e2 : jk ((q : K) * q) (j + k + 2) = 1 + (q : K) * q * jk ((q : K) * q) (j + k + 1) :=
@@ -370,7 +372,7 @@ theorem haarState_zeta_pow_mul_lap (hq : ∀ n, qSqNum q n ≠ 0) (j k : ℕ) :
     (1 + (q : K) * q * (B + X * ((q : K) * q) * A))))) * hY
 
 theorem haarState_lap_const (hq : ∀ n, qSqNum q n ≠ 0) (k : ℕ) :
-    haarState q (lap q (zeta q ^ k)) = 0 := by
+    haarState q (lap q (zetaB q ^ k)) = 0 := by
   rcases k with _ | k
   · rw [pow_zero, lap_one, map_zero]
   · have := haarState_zeta_pow_mul_lap q hq 0 k
@@ -379,8 +381,8 @@ theorem haarState_lap_const (hq : ∀ n, qSqNum q n ≠ 0) (k : ℕ) :
 
 /-- **`L` is symmetric for the Haar state on the block.** -/
 theorem haarState_lap_symm (hq : ∀ n, qSqNum q n ≠ 0) (j n : ℕ) :
-    haarState q (zeta q ^ j * lap q (zeta q ^ n)) =
-      haarState q (zeta q ^ n * lap q (zeta q ^ j)) := by
+    haarState q (zetaB q ^ j * lap q (zetaB q ^ n)) =
+      haarState q (zetaB q ^ n * lap q (zetaB q ^ j)) := by
   rcases n with _ | n
   · rw [pow_zero, lap_one, mul_zero, map_zero, one_mul, haarState_lap_const q hq]
   rcases j with _ | j
@@ -390,9 +392,9 @@ theorem haarState_lap_symm (hq : ∀ n, qSqNum q n ≠ 0) (j n : ℕ) :
   ring
 
 /-- Evaluation `K[X] → O_q(SU(2))`, `X ↦ ζ`: the torus-invariant block. -/
-noncomputable def ev : Polynomial K →ₐ[K] OqSU2 K q := Polynomial.aeval (zeta q)
+noncomputable def ev : Polynomial K →ₐ[K] OqSU2 K q := Polynomial.aeval (zetaB q)
 
-theorem ev_monomial (n : ℕ) (c : K) : ev q (Polynomial.monomial n c) = c • zeta q ^ n := by
+theorem ev_monomial (n : ℕ) (c : K) : ev q (Polynomial.monomial n c) = c • zetaB q ^ n := by
   rw [ev, Polynomial.aeval_monomial, Algebra.smul_def]
 
 theorem ev_comm (P Q : Polynomial K) : ev q P * ev q Q = ev q Q * ev q P := by
@@ -426,19 +428,19 @@ theorem haarState_eigen_orthogonal (hq : ∀ n, qSqNum q n ≠ 0) {P Q : Polynom
 
 /-- **Integration by parts on the block.** `h(X₊ ζ^j · X₋ ζ^k) = −q⁻² h(ζ^j · L ζ^k)`. -/
 theorem haarState_budget_zeta_pow (hq : ∀ n, qSqNum q n ≠ 0) (j k : ℕ) :
-    haarState q (fieldPlus q (zeta q ^ j) * fieldMinus q (zeta q ^ k)) =
-      -((q : K)⁻¹ * (q : K)⁻¹) * haarState q (zeta q ^ j * lap q (zeta q ^ k)) := by
+    haarState q (fieldPlus q (zetaB q ^ j) * fieldMinus q (zetaB q ^ k)) =
+      -((q : K)⁻¹ * (q : K)⁻¹) * haarState q (zetaB q ^ j * lap q (zetaB q ^ k)) := by
   rcases k with _ | k
   · rw [pow_zero, fieldMinus_one, lap_one, mul_zero, mul_zero, map_zero, mul_zero]
   rcases j with _ | j
   · rw [pow_zero, fieldPlus_one, zero_mul, map_zero, one_mul, haarState_lap_const q hq, mul_zero]
   have hq0 : (q : K) ≠ 0 := q.ne_zero
   rw [haarState_zeta_pow_mul_lap q hq, fieldPlus_zeta_pow, fieldMinus_zeta_pow, smul_mul_assoc,
-    mul_smul_comm, smul_smul, mul_assoc (zeta q ^ j), ← mul_assoc (α q * γ q),
-    alphaGamma_zeta_pow, smul_mul_assoc, mul_smul_comm, smul_smul, mul_assoc (zeta q ^ k),
-    alphaGamma_betaDelta, ← mul_assoc (zeta q ^ j), ← pow_add, mul_add, mul_smul_comm,
+    mul_smul_comm, smul_smul, mul_assoc (zetaB q ^ j), ← mul_assoc (α q * γ q),
+    alphaGamma_zeta_pow, smul_mul_assoc, mul_smul_comm, smul_smul, mul_assoc (zetaB q ^ k),
+    alphaGamma_betaDelta, ← mul_assoc (zetaB q ^ j), ← pow_add, mul_add, mul_smul_comm,
     mul_smul_comm, ← mul_assoc, ← pow_succ, ← pow_succ, map_smul, map_add, map_smul, map_smul,
-    haarState_zeta_pow, haarState_zeta_pow, haarMoment, haarMoment, qSqNum_eq_jk, qSqNum_eq_jk,
+    haarState_zetaB_pow, haarState_zetaB_pow, haarMoment, haarMoment, qSqNum_eq_jk, qSqNum_eq_jk,
     jk_inv_eq, qi_eq_inv, smul_eq_mul, smul_eq_mul, smul_eq_mul]
   rw [show j + 1 + k = j + k + 1 by omega]
   have h2 : jk ((q : K) * q) (j + k + 1 + 1) ≠ 0 := by rw [← qSqNum_eq_jk]; exact hq _
@@ -472,8 +474,8 @@ theorem haarState_budget_poly (hq : ∀ n, qSqNum q n ≠ 0) (P Q : Polynomial K
 
 /-- Every torus scaling fixes `ζ`. -/
 theorem torus_zeta {S : Type*} [CommRing S] (p u b : Sˣ) :
-    torusScaleAlgHom p u b (zeta p) = zeta p := by
-  simp only [zeta, map_mul, torusScaleAlgHom, liftQuadruple_beta, liftQuadruple_gamma,
+    torusScaleAlgHom p u b (zetaB p) = zetaB p := by
+  simp only [zetaB, map_mul, torusScaleAlgHom, liftQuadruple_beta, liftQuadruple_gamma,
     smul_mul_smul_comm, Units.mul_inv, one_smul]
 
 /-- **The Cartan field kills the block.** For any twist `u` and normalisation `c⁻¹`, the
