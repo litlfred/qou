@@ -401,3 +401,35 @@ Length from the model's own proton separation S = B_QOU(³H) − B_QOU(²H) = 3.
 Reading (scope a): this removes the selected coefficient on ℏc/m_π, but adds a shape choice worth about ±20 %, and
 couples the Coulomb row to the ³H binding miss (−35 %). Not a derivation yet; not on the scorecard. A derived
 tail-to-rms step (the model's own ³He wave-function shape) is what would close it. Bean stays in-progress.
+
+## 2026-11-27 CORRECTION — the "exponential 0.454663" rows are wrong, and so is "required f above all classical shapes"
+
+Flagged by a sibling thread (PR #9665) and checked here with mpmath, 30 dps.
+For a normalised exponential charge density ρ ∝ e^{−r/b}: self-energy
+(1/2)∬ρρ/r₁₂ = 5Q²/(32b), and r_rms = √12·b, so
+
+    f_exp = 5√3/16 = 0.541266   (NOT 0.454663)
+
+The uniform-ball (0.464758) and Gaussian (√3/(2√π) = 0.488603) values are unchanged.
+The corrected rows, with the same r_rms = 1.9661 fm:
+
+    exponential   0.541266   E_C(3He) = 0.79284 MeV   +3.80 % vs expt   1.038 x required
+    shape spread (uniform → exponential) = 16.46 %, not 7.30 %
+
+What this withdraws:
+- RESULT 3's "spread from shape alone = 7.30 %" was an understatement. The real
+  spread is about 2.3× the Nolen-Schiffer anomaly, so the governing constraint
+  ("derive the density PROFILE, not just a scale") holds MORE strongly.
+- STEP 3's "required f is above all three classical shapes" is FALSE. The
+  required 0.5214134 lies between the Gaussian (0.937×) and the exponential
+  (1.038×). A classical, exponential-like shape can close the CDE, so this bean
+  cannot conclude "more peaked than any classical shape or strong CSB".
+
+Sibling result, not wired (PR #9665; audit docs/audits/2026-11-27-coulomb-shape-factor-qbessel.md):
+the Hahn–Exton q-Bessel state J_{1/2}(p^k; p²) with p = 1/q₀ on the full Jackson
+lattice gives f = 0.520011, which is −0.27 % from the required value. Caveats from
+that thread: f is nearly flat in q (0.5224 at q = 1.05, 0.5168 at q = 1.2), so it
+fixes a shape class, not q₀; convention alternates span 0.5165–0.5283; no radius
+is claimed. Combining that f with a DERIVED radius is still the open part of this
+bean. The path-1 binding-tail radius carries a ±20 % shape choice of its own and
+is not derived.
