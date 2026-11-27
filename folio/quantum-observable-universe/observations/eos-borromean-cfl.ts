@@ -18,7 +18,7 @@ export default proposition({
     "CFL",
     "fermi-gas",
   ],
-  lean: { ref: "qou:QOU.MassTheory.eos_borromean_cfl",
+  lean: { ref: "qou:QOU.Transcendental.MassTheory.eos_borromean_cfl",
     validation: "not_checked",
   },
   uses: ["prop:borromean-hopf-energy-crossover"],
