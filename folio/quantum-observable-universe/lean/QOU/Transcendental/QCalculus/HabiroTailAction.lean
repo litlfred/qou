@@ -1,3 +1,4 @@
+import QCalculus.HabiroTailFactor
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic.Ring
@@ -106,21 +107,11 @@ lemma inv_div_one_add : phi⁻¹ / (1 + phi⁻¹) = (phi⁻¹) ^ 2 := by
 lemma log_inv_phi : Real.log (phi⁻¹) = - Real.log phi := by
   rw [Real.log_inv]
 
-/-! ## Bar-evenness (sorry-free, pure algebra) -/
+/-! ## Bar-evenness (sorry-free, pure algebra)
 
-/-- The `j`-th factor of the 4₁ Habiro cyclotomic tail at real `q`:
-    `(1 - q^j)(1 - q^{-j})`. -/
-noncomputable def habiroFactor (q : ℝ) (j : ℕ) : ℝ :=
-  (1 - q ^ j) * (1 - (q⁻¹) ^ j)
-
-/-- **The 4₁ Habiro tail factor is bar-even** (`q ↔ q⁻¹`-invariant, `q ≠ 0`),
-    so `S(q) = S(q⁻¹)`: no bar-odd datum (4₁ amphichirality; #3923 null).
-    ⇒ the odd-channel b3ix needs the chiral 5₂ tail. -/
-theorem habiroFactor_bar_even (q : ℝ) (j : ℕ) :
-    habiroFactor q j = habiroFactor q⁻¹ j := by
-  unfold habiroFactor
-  rw [inv_inv]
-  ring
+`habiroFactor` and `habiroFactor_bar_even` now live in
+`QCalculus.HabiroTailFactor` over any field; at `q : ℝ` they instantiate
+with `K := ℝ`. -/
 
 /-! ## Classical dilogarithm functional equations (cited scaffold) -/
 
