@@ -60,7 +60,7 @@ and shows `—` for a chapter that has not been published.
 
 <!-- folio:toc:begin -->
 
-### On the Mechanics of Quantum Observable Universes
+### On the Mechanics of Quantum Observables
 
 [`folio/quantum-observable-universe/`](folio/quantum-observable-universe/) · [full PDF](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/quantum-observable-universe.pdf)
 
@@ -159,7 +159,7 @@ had drifted badly while this table was maintained by hand.
 
 | Paper | Block kind | Total | With Lean sibling | Fully formalized |
 |-------|------------|------:|------------------:|-----------------:|
-| On the Mechanics of Quantum Observable Universes | Provable claims | 750 | 740 | **739 sorry-free (98.5%)** |
+| On the Mechanics of Quantum Observables | Provable claims | 750 | 740 | **739 sorry-free (98.5%)** |
 | | Conjectures (open) | 182 | 177 | **168 class-axiomatised (92.3%)** |
 | | Definitions | 265 | 265 | — |
 | Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings | Provable claims | 10 | 10 | **10 sorry-free (100%)** |
@@ -181,7 +181,7 @@ by Lean modulo a single, named, axiomatised input.
 
 <!-- folio:lean-modules:begin -->
 
-**On the Mechanics of Quantum Observable Universes**
+**On the Mechanics of Quantum Observables**
 
 | Module | Source |
 |--------|--------|

@@ -17,7 +17,7 @@ export default folio({
       // as text and cannot follow an import; an import made the README fall back
       // to the directory name (S3, bean qou-4rhu). It read "Quantum Observable
       // Universe" until 2026-10-05, the same drift identity.ts was made to end.
-      title: "On the Mechanics of Quantum Observable Universes",
+      title: "On the Mechanics of Quantum Observables",
       description:
         "A framework for quantum physics via rigid monoidal categories, " +
         "higher-form symmetries, and observable algebras.",
