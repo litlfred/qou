@@ -5,7 +5,7 @@ status: todo
 type: feature
 priority: high
 created_at: 2026-10-12T19:14:51Z
-updated_at: 2026-11-22T21:45:00Z
+updated_at: 2026-11-27T21:55:00Z
 parent: qou-vo9t
 ---
 
@@ -37,3 +37,8 @@ Tier status on main: T1 (CentralExtensionObstruction), T2/T2b (PresheafCentralEx
 ## 2026-11-22 applicability review (wave-2 sibling bring-riemann-gerbes, session_01Qmmkt7Jw9nSDCzSdsd8hLX)
 
 APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2026-11-22: photon with fixed constant 1, γγ linking neutrality, derived quark charges, potential-energy sign, m_p = m_n at q = 1, gluon open, electron σ₀σ₁σ₀ with T(2,n) as backup, S₅ two-test rule, T(A) tangent algebra) and git log on the Lean/content paths since the last update. Tier status unchanged since 2026-11-21 (no commits to CentralExtension*/Cech*/StackGerbe* since 2026-11-20). The self-assuming carriers YekutieliLifting / YekutieliLiftingCondition are still the reason for the bean.
+
+## 2026-11-27 (thread "Build the brane-tower gerbes", PR #9730)
+
+T1 lifted from cochains to a class. `MathlibExt/CentralExtensionH2.lean` builds `H2 H A` (trivial-action cocycles mod coboundaries, a CommGroup), `obstructionClass`, `obstructionClass_section_indep` and `obstructionClass_eq_one_iff` (lift iff class = 1). `QOU.YekutieliLiftingCondition.ofCentralExtensions` (block def:yekutieli-lifting-condition) discharges both fields of the definition from that theorem for any tower of central group extensions. Sorry-free, standard axioms.
+Next: retire the self-assuming `QOU.YekutieliLifting` carrier (prop:yekutieli-lifting); its `persistence` field is the retracted jet-tower claim (qou-lx8f).
