@@ -482,8 +482,9 @@ theorem categoricalHiggs_mH_sq_eq_two_lam_v_sq
   have hlam : 0 < 2 * inst.higgs_self_coupling := by linarith [inst.higgs_self_coupling_pos]
   have hv : 0 < inst.vev_v_GeV := inst.vev_v_pos
   refine ⟨?_, ?_⟩
-  · rw [mul_pow, Real.sq_sqrt hlam.le]
-  · positivity
+  · rw [mul_pow, inst.higgs_root_sq]
+  · have := inst.higgs_root_pos
+    positivity
 
 /-- Bridge to remediated `QOU.BraidKnot.scalarOverGaugeRatio` (`catalanG = Cl_2 (π / 2)`):
 for every `|h| ≤ 1 / 2`, the `h⁴` Borromean-Catalan scalar/gauge factor `(6 / 5)(1 - 2 G h⁴)` is

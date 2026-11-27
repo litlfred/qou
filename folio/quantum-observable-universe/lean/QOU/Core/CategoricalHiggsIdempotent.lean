@@ -50,12 +50,17 @@ class CategoricalHiggsIdempotent where
       This is the SM convention where the doublet is parametrised as
       $\Phi = (\phi^+, \phi^0)^\top$ with $\langle \phi^0 \rangle = v/\sqrt{2}$. -/
   vev_lower_component_GeV : ℝ
+  /-- The square root of `2` as a symbol: `sqrt_two > 0`, `sqrt_two² = 2`
+      (no `Real.sqrt`, bean `qou-dk7p`). -/
+  sqrt_two : ℝ
+  sqrt_two_pos : 0 < sqrt_two
+  sqrt_two_sq : sqrt_two ^ 2 = 2
   /-- The doublet decomposition: $\\langle \\Phi \\rangle_{\\text{lower}} = v / \\sqrt{2}$.
       This is the SM CONVENTION for the Higgs-doublet VEV; the
       $\sqrt{2}$ comes from the doublet's component structure
       ($\Phi \in V_{1/2, 1/2}$), not from a deeper categorical fact. -/
   vev_lower_component_eq_v_over_sqrt2 :
-    vev_lower_component_GeV = vev_v_GeV / Real.sqrt 2
+    vev_lower_component_GeV = vev_v_GeV / sqrt_two
 
   /-- The $\mathrm{SU}(2)_L$ gauge coupling $g$.
       SM measured value: $g \approx 0.6520$ at the $Z$ scale. -/
@@ -65,12 +70,20 @@ class CategoricalHiggsIdempotent where
   gauge_coupling_g_prime : ℝ
   /-- Both gauge couplings are positive. -/
   gauge_couplings_pos : 0 < gauge_coupling_g ∧ 0 < gauge_coupling_g_prime
+  /-- The norm $\sqrt{g^2 + g'^2}$ as a symbol: positive, with square `g² + g'²`. -/
+  gauge_norm : ℝ
+  gauge_norm_pos : 0 < gauge_norm
+  gauge_norm_sq : gauge_norm ^ 2 = gauge_coupling_g ^ 2 + gauge_coupling_g_prime ^ 2
 
   /-- The Higgs self-coupling $\lambda$.
       SM measured value: $\lambda \approx 0.129$ at the EW scale. -/
   higgs_self_coupling : ℝ
   /-- The Higgs self-coupling is positive (vacuum stability). -/
   higgs_self_coupling_pos : 0 < higgs_self_coupling
+  /-- The root $\sqrt{2\lambda}$ as a symbol: positive, with square `2λ`. -/
+  higgs_root : ℝ
+  higgs_root_pos : 0 < higgs_root
+  higgs_root_sq : higgs_root ^ 2 = 2 * higgs_self_coupling
 
   /-- The Weinberg angle $\theta_W$ derived from gauge couplings:
       $\\cos\\theta_W = g / \\sqrt{g^2 + g'^2}$.
@@ -79,8 +92,7 @@ class CategoricalHiggsIdempotent where
   cos_theta_W : ℝ
   /-- Definition: $\\cos\\theta_W = g/\\sqrt{g^2 + g'^2}$. -/
   cos_theta_W_def :
-    cos_theta_W = gauge_coupling_g /
-      Real.sqrt (gauge_coupling_g ^ 2 + gauge_coupling_g_prime ^ 2)
+    cos_theta_W = gauge_coupling_g / gauge_norm
 
 namespace CategoricalHiggsIdempotent
 
@@ -92,11 +104,11 @@ noncomputable def m_W_GeV : ℝ :=
 
 /-- Z boson mass: $m_Z = \\sqrt{g^2 + g'^2}\,v/2$. -/
 noncomputable def m_Z_GeV : ℝ :=
-  Real.sqrt (gauge_coupling_g ^ 2 + gauge_coupling_g_prime ^ 2) * vev_v_GeV / 2
+  gauge_norm * vev_v_GeV / 2
 
 /-- Higgs boson mass: $m_H = \\sqrt{2\\lambda}\,v$. -/
 noncomputable def m_H_GeV : ℝ :=
-  Real.sqrt (2 * higgs_self_coupling) * vev_v_GeV
+  higgs_root * vev_v_GeV
 
 /-- The W/Z ratio identity: $m_W / m_Z = \\cos\\theta_W$.
 
@@ -110,11 +122,7 @@ theorem m_W_over_m_Z_eq_cos_theta_W :
   -- m_W/m_Z = (g·v/2) / (√(g²+g'²)·v/2) = g/√(g²+g'²)
   -- Requires v ≠ 0; uses vev_v_pos
   have hv : vev_v_GeV ≠ 0 := ne_of_gt vev_v_pos
-  have hgg : gauge_coupling_g ^ 2 + gauge_coupling_g_prime ^ 2 > 0 := by
-    have := gauge_couplings_pos
-    nlinarith [this.1, this.2, sq_nonneg gauge_coupling_g, sq_nonneg gauge_coupling_g_prime]
-  have hgg_sqrt : Real.sqrt (gauge_coupling_g ^ 2 + gauge_coupling_g_prime ^ 2) > 0 :=
-    Real.sqrt_pos.mpr hgg
+  have hgg_sqrt : gauge_norm ≠ 0 := ne_of_gt gauge_norm_pos
   field_simp
 
 /- Status: ratio identity proved; absolute m_W, m_Z, m_H values
