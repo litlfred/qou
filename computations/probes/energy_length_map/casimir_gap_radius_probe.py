@@ -7,8 +7,10 @@ On spin j, h^2 C = q^(2j+1) + q^-(2j+1). Gap between isospin 3/2 and 1/2:
   dC = (q^4 + q^-4 - q^2 - q^-2) / h^2   (classical limit 15/4 - 3/4 = 3).
 The h^2-scaled operator h^2 C (as written in BlockChargeSectorTrace) is
 also reported; its gap vanishes at q = 1, so it has no classical limit.
-Energy unit: quantum temperature E0 = m_e/(q(q-1)) (mass-formula unit) and
-the trace-pipeline unit E0/R, R = tau_e/hbar_q^2 (ElectronUnitSplit).
+Energy unit (owner card 2026-11-27, PR #9718): the DERIVED per-nat unit
+m_e/(-ln tau_e) (qbeta_e0.electron_log_unit_scaled), listed first. Reading a Casimir
+eigenvalue as an energy PER NAT is an assumption carried over from #9708, not derived.
+Comparison only: E0 = m_e/(q(q-1)) and the linear-trace unit E0/R, R = tau_e/hbar_q^2.
 Radius: SU_q(2) route D = sqrt(q/2)/sqrt(eps), eps = gap/M.
 Measured values printed last, comparison only. mpmath 50 dps.
 """
@@ -20,6 +22,8 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "computations" / "substrate"))
 sys.path.insert(0, str(ROOT / "computations"))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+sys.path.insert(0, str(ROOT / "computations" / "qbeta"))
+import qbeta_e0  # noqa: E402
 
 mp.dps = 50
 q = mpf(Q_50_DIGIT_STR)
@@ -46,7 +50,8 @@ print("d(h^2 C)                ", mp.nstr(dC_h2, 15))
 print("sign: isospin 3/2 above 1/2 (dC > 0):", dC > 0)
 rows = []
 for opname, d in (("C", dC), ("h^2 C", dC_h2)):
-    for uname, unit in (("mass-formula E0", E0), ("trace E0/R", E0 / R)):
+    for uname, unit in (("DERIVED log unit", qbeta_e0.electron_log_unit_scaled(1, q)),
+                        ("cmp: E0", E0), ("cmp: trace E0/R", E0 / R)):
         gap = unit * d
         eps = gap / M
         D = sqrt(q / 2) / sqrt(eps)
