@@ -18,6 +18,15 @@ Here it is shown to be an alternating `(n + 1)`-form, `ceDAlt ω`.
   (`bracketPart_isAltMulti`); the only non-recursive input is `B ω (x :: x :: z) = 0`, which
   is `⁅x, x⁆ = 0` plus `ι_x ι_x = 0`.
 
+Then the rest of the Cartan calculus, each identity proved by induction on degree from
+Cartan's formula and contraction (`ext_curryLeft`), with no index juggling:
+
+* `curryLeft_ceDAlt` — `ι_y d = L_y - d ι_y` on forms (Cartan's formula);
+* `curryLeft_lieDerivAlt` — `ι_y L_x = L_x ι_y - ι_{⁅x,y⁆}`;
+* `lieDerivAlt_comm` — `[L_x, L_y] = L_{⁅x,y⁆}` (Jacobi + module Leibniz in the base case);
+* `lieDerivAlt_ceDAlt` — `[L_x, d] = 0`;
+* `ceDAlt_ceDAlt` — **`d ∘ d = 0`**: alternating forms with `ceDAlt` are a cochain complex.
+
 No division by `2` is used, so `R` is arbitrary (characteristic `2` included).
 -/
 
@@ -299,5 +308,127 @@ def ceDAlt {n : ℕ} (ω : L [⋀^Fin n]→ₗ[R] M) : L [⋀^Fin (n + 1)]→ₗ
       actionMap]
 
 end Action
+
+
+section Calculus
+
+variable [LieRingModule L M] [LieModule R L M]
+
+/-- The Lie derivative `L_x ω` as an alternating form. -/
+def lieDerivAlt {n : ℕ} (x : L) (ω : L [⋀^Fin n]→ₗ[R] M) : L [⋀^Fin n]→ₗ[R] M :=
+  actionMap ω x - (theta_isAltMulti (R := R) x ω).toAlt
+
+@[simp] theorem lieDerivAlt_apply {n : ℕ} (x : L) (ω : L [⋀^Fin n]→ₗ[R] M) (v : Fin n → L) :
+    lieDerivAlt x ω v = lieDeriv x ω v := by
+  simp [lieDerivAlt, actionMap, lieDeriv, theta]
+
+omit [LieRingModule L M] [LieModule R L M] in
+/-- Forms of positive degree are determined by their contractions. -/
+lemma ext_curryLeft {n : ℕ} {f g : L [⋀^Fin (n + 1)]→ₗ[R] M}
+    (h : ∀ y, f.curryLeft y = g.curryLeft y) : f = g := by
+  ext v
+  rw [← Fin.cons_self_tail v]
+  have := congrArg (fun φ => φ (Fin.tail v)) (h (v 0))
+  simpa [AlternatingMap.curryLeft_apply_apply, Matrix.vecCons] using this
+
+/-- **Cartan's formula for forms**: `ι_y (dω) = L_y ω - d(ι_y ω)`. -/
+theorem curryLeft_ceDAlt {n : ℕ} (ω : L [⋀^Fin (n + 1)]→ₗ[R] M) (y : L) :
+    (ceDAlt ω).curryLeft y = lieDerivAlt y ω - ceDAlt (ω.curryLeft y) := by
+  ext z
+  simp only [AlternatingMap.curryLeft_apply_apply, AlternatingMap.sub_apply, ceDAlt_apply,
+    lieDerivAlt_apply, Matrix.vecCons]
+  rw [← cartan_formula y ω z]
+  abel
+
+/-- Degree `0`: `ι_y (dω) = L_y ω`. -/
+theorem curryLeft_ceDAlt_zero (ω : L [⋀^Fin 0]→ₗ[R] M) (y : L) :
+    (ceDAlt ω).curryLeft y = lieDerivAlt y ω := by
+  ext z
+  simp only [AlternatingMap.curryLeft_apply_apply, ceDAlt_apply, lieDerivAlt_apply]
+  rw [Subsingleton.elim z ![]]
+  exact cartan_formula_zero y ω
+
+/-- **The second Cartan identity** `ι_y L_x = L_x ι_y - ι_{⁅x,y⁆}`. -/
+theorem curryLeft_lieDerivAlt {n : ℕ} (x : L) (ω : L [⋀^Fin (n + 1)]→ₗ[R] M) (y : L) :
+    (lieDerivAlt x ω).curryLeft y = lieDerivAlt x (ω.curryLeft y) - ω.curryLeft ⁅x, y⁆ := by
+  ext z
+  simp only [AlternatingMap.curryLeft_apply_apply, AlternatingMap.sub_apply, lieDerivAlt_apply,
+    lieDeriv, Matrix.vecCons]
+  rw [show (∑ i, ω (Function.update (Fin.cons y z : Fin (n + 1) → L) i
+      ⁅x, (Fin.cons y z : Fin (n + 1) → L) i⁆)) = theta x ω (Fin.cons y z) from rfl, theta_cons]
+  simp [theta, AlternatingMap.curryLeft_apply_apply, Matrix.vecCons]
+  abel
+
+
+omit [LieRingModule L M] [LieModule R L M] in
+lemma curryLeft_sub {n : ℕ} (f g : L [⋀^Fin (n + 1)]→ₗ[R] M) (y : L) :
+    (f - g).curryLeft y = f.curryLeft y - g.curryLeft y := by
+  ext z; simp [AlternatingMap.curryLeft_apply_apply]
+
+lemma lieDerivAlt_sub {n : ℕ} (x : L) (ω₁ ω₂ : L [⋀^Fin n]→ₗ[R] M) :
+    lieDerivAlt x (ω₁ - ω₂) = lieDerivAlt x ω₁ - lieDerivAlt x ω₂ := by
+  ext v
+  simp only [lieDerivAlt_apply, AlternatingMap.sub_apply, lieDeriv, lie_sub,
+    Finset.sum_sub_distrib]
+  abel
+
+omit [LieModule R L M] in
+lemma ceD_eq {n : ℕ} (ω : L [⋀^Fin n]→ₗ[R] M) (v : Fin (n + 1) → L) :
+    ceD ω v = firstSum ω v + bracketPart ω v := by
+  cases n <;> simp [ceD, bracketPart]
+
+lemma ceDAlt_sub {n : ℕ} (ω₁ ω₂ : L [⋀^Fin n]→ₗ[R] M) :
+    ceDAlt (ω₁ - ω₂) = ceDAlt ω₁ - ceDAlt ω₂ := by
+  ext v
+  simp only [ceDAlt_apply, AlternatingMap.sub_apply, ceD_eq]
+  have hB : bracketPart (ω₁ - ω₂) v = bracketPart ω₁ v - bracketPart ω₂ v := by
+    rw [sub_eq_add_neg, bracketPart_add, show -ω₂ = (-1 : R) • ω₂ by simp, bracketPart_smul]
+    simp [sub_eq_add_neg]
+  have hF : firstSum (ω₁ - ω₂) v = firstSum ω₁ v - firstSum ω₂ v := by
+    simp only [firstSum, AlternatingMap.sub_apply, lie_sub, smul_sub, Finset.sum_sub_distrib]
+  rw [hB, hF]
+  abel
+
+/-- **`[L_x, L_y] = L_{⁅x,y⁆}`** on forms of every degree. -/
+theorem lieDerivAlt_comm : ∀ {n : ℕ} (x y : L) (ω : L [⋀^Fin n]→ₗ[R] M),
+    lieDerivAlt x (lieDerivAlt y ω) - lieDerivAlt y (lieDerivAlt x ω) = lieDerivAlt ⁅x, y⁆ ω
+  | 0, x, y, ω => by
+    ext v
+    simp [lieDeriv, lie_lie]
+  | n + 1, x, y, ω => by
+    refine ext_curryLeft fun v0 => ?_
+    have IH := lieDerivAlt_comm x y (ω.curryLeft v0)
+    simp only [curryLeft_sub, curryLeft_lieDerivAlt, lieDerivAlt_sub]
+    rw [lie_lie, map_sub, ← IH]
+    abel
+
+/-- **`[L_x, d] = 0`**: the Lie derivative commutes with the differential. -/
+theorem lieDerivAlt_ceDAlt : ∀ {n : ℕ} (x : L) (ω : L [⋀^Fin n]→ₗ[R] M),
+    lieDerivAlt x (ceDAlt ω) = ceDAlt (lieDerivAlt x ω)
+  | 0, x, ω => by
+    refine ext_curryLeft fun y => ?_
+    rw [curryLeft_lieDerivAlt, curryLeft_ceDAlt_zero, curryLeft_ceDAlt_zero,
+      curryLeft_ceDAlt_zero, ← lieDerivAlt_comm]
+    abel
+  | n + 1, x, ω => by
+    refine ext_curryLeft fun y => ?_
+    have IH := lieDerivAlt_ceDAlt x (ω.curryLeft y)
+    rw [curryLeft_lieDerivAlt, curryLeft_ceDAlt, curryLeft_ceDAlt, curryLeft_ceDAlt,
+      curryLeft_lieDerivAlt, lieDerivAlt_sub, ceDAlt_sub, IH, ← lieDerivAlt_comm]
+    abel
+
+/-- **`d ∘ d = 0`.** The Chevalley–Eilenberg forms form a cochain complex. -/
+theorem ceDAlt_ceDAlt : ∀ {n : ℕ} (ω : L [⋀^Fin n]→ₗ[R] M), ceDAlt (ceDAlt ω) = 0
+  | 0, ω => by
+    refine ext_curryLeft fun x => ?_
+    rw [curryLeft_ceDAlt, curryLeft_ceDAlt_zero, lieDerivAlt_ceDAlt, sub_self]
+    ext; simp
+  | n + 1, ω => by
+    refine ext_curryLeft fun x => ?_
+    rw [curryLeft_ceDAlt, curryLeft_ceDAlt, ceDAlt_sub, ceDAlt_ceDAlt (ω.curryLeft x),
+      lieDerivAlt_ceDAlt, sub_zero, sub_self]
+    ext; simp
+
+end Calculus
 
 end QOU.LieDerivative
