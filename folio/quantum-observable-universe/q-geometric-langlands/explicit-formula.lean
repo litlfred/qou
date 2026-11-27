@@ -681,4 +681,93 @@ theorem not_qExplicitFormulaSeq_of_summable (D : QZetaDatumSeq)
     _ = ∑ n ∈ Finset.range N, a n := h2
     _ ≤ ∑' n, a n := h3
 
+/-! ### The trivial zeros, weighted like every other zero (owner card 2026-11-27)
+
+Every spectral term is `X^ρ/[ρ]_q`. In the classical formula the tail
+`−½·log(1 − x^{−2}) = Σ_{k≥1} x^{−2k}/(2k)` is exactly the trivial-zero part
+`−Σ_{ρ=−2k} x^ρ/ρ` of the spectral sum. Weighted the same way as the other
+zeros, the trivial zeros `ρ = −2k` contribute `−X^{−2k}/[−2k]_q = X^{−2k}/[2k]_q`
+(`trivialZero_term`, from the oddness `qInteger_neg`). That is not the term
+`−½·ln_q(1 − X^{−2})` the statement above carries: there the trivial zeros
+are weighted `1/(2k·log q)` instead of `1/[2k]_q`.
+
+The q-consistent statement therefore has **no separate tail**: the trivial
+zeros are part of the spectrum (`spectralSideQ`, `QExplicitFormulaQ`,
+`QExplicitFormulaSeqQ`). This removes the `X → 1⁺` blow-up that made the
+finite form uninhabitable (`not_qExplicitFormula`), and the finite form is now
+satisfiable (`qExplicitFormulaQ_witness`). That witness has no ideals, so it
+establishes satisfiability of the shape and nothing about any geometry.
+-/
+
+/-- The q-integer is odd: `[−ρ]_q = −[ρ]_q`. -/
+theorem qInteger_neg (q : ℝ) (hq : 1 < q) (ρ : ℂ) :
+    qInteger q hq (-ρ) = -qInteger q hq ρ := by
+  unfold qInteger
+  rw [neg_neg]
+  ring
+
+/-- The `k`-th trivial zero, `ρ = −2(k+1)`. -/
+def trivialZero (k : ℕ) : ReebEigenvalue := ⟨-(2 * ((k : ℂ) + 1))⟩
+
+/-- A trivial zero's contribution to `−Σ X^ρ/[ρ]_q` is `X^{−2(k+1)}/[2(k+1)]_q`. -/
+theorem trivialZero_term (q : ℝ) (hq : 1 < q) (X : ℝ) (k : ℕ) :
+    -((X : ℂ) ^ (trivialZero k).val / qInteger q hq (trivialZero k).val)
+      = (X : ℂ) ^ (-(2 * ((k : ℂ) + 1))) / qInteger q hq (2 * ((k : ℂ) + 1)) := by
+  simp only [trivialZero, qInteger_neg, div_neg, neg_neg]
+
+/-- The spectral side with the trivial zeros inside the spectrum: no separate
+    tail term. -/
+noncomputable def spectralSideQ
+    (q : ℝ) (hq : 1 < q) (spectrum : List ReebEigenvalue)
+    (Omega_q : ℝ) (X : ℝ) : ℂ :=
+  (X : ℂ) - (spectrum.map fun ρ => (X : ℂ) ^ ρ.val / qInteger q hq ρ.val).sum
+    - ((qLog q (2 * Real.pi * Omega_q) : ℝ) : ℂ)
+
+/-- **Conjecture (q-explicit formula, trivial zeros in the spectrum).** -/
+-- Ref: [leitner2026] Ch. 8 §explicit-formula
+class QExplicitFormulaQ (D : QZetaDatum) : Prop where
+  /-- The identity, at every `X > 1`. -/
+  formula : ∀ X : ℝ, 1 < X →
+    ((QChebyshevFunction D.hbar_q D.hbar_pos D.ideals X : ℝ) : ℂ) =
+      spectralSideQ D.q D.hq D.spectrum D.Omega_q X
+
+/-- `[1]_q = 1` for `q > 1`. -/
+theorem qInteger_one (q : ℝ) (hq : 1 < q) : qInteger q hq 1 = 1 := by
+  have hq0 : (0 : ℝ) < q := lt_trans one_pos hq
+  have hne : (q : ℂ) - (q : ℂ)⁻¹ ≠ 0 := by
+    have hr : (0 : ℝ) < q - q⁻¹ := by
+      have : q⁻¹ < 1 := by rw [inv_lt_one₀ hq0]; exact hq
+      linarith
+    have : ((q - q⁻¹ : ℝ) : ℂ) ≠ 0 := by exact_mod_cast hr.ne'
+    simpa using this
+  unfold qInteger
+  rw [Complex.cpow_one, Complex.cpow_neg_one, div_self hne]
+
+/-- **The trivial-zero form is satisfiable.** The datum with no ideals, spectrum
+    `[1]` and `Ω_q = 1/(2π)` satisfies it at every `q > 1`. Contrast
+    `not_qExplicitFormula`, which shows the form with the `ln_q` tail is
+    satisfied by no datum. The witness has no ideals: it shows the shape is
+    satisfiable, not that any geometry satisfies it. -/
+theorem qExplicitFormulaQ_witness (q : ℝ) (hq : 1 < q) (hbar : ℝ) (hbar_pos : 0 < hbar) :
+    QExplicitFormulaQ ⟨q, hq, hbar, hbar_pos, [], [⟨1⟩], 1 / (2 * Real.pi), by positivity⟩ := by
+  refine ⟨fun X _ => ?_⟩
+  have h1 : 2 * Real.pi * (1 / (2 * Real.pi)) = 1 := by
+    have := Real.pi_pos; field_simp
+  simp only [QChebyshevFunction, List.map_nil, List.sum_nil, spectralSideQ, List.map_cons,
+    List.sum_cons, add_zero, h1, Complex.cpow_one, qInteger_one, div_one]
+  simp [qLog]
+
+/-- The ordered-spectrum carrier with the trivial zeros in the spectrum. -/
+noncomputable def QZetaDatumSeq.partialSideQ (D : QZetaDatumSeq) (N : ℕ) (X : ℝ) : ℂ :=
+  spectralSideQ D.q D.hq ((List.range N).map D.spectrum) D.Omega_q X
+
+/-- **Conjecture (q-explicit formula, ordered spectrum, trivial zeros in the
+    spectrum).** No instance is provided. -/
+-- Ref: [leitner2026] Ch. 8 §explicit-formula
+class QExplicitFormulaSeqQ (D : QZetaDatumSeq) : Prop where
+  /-- The identity, as a limit of ordered partial sums, at every `X > 1`. -/
+  formula : ∀ X : ℝ, 1 < X →
+    Filter.Tendsto (fun N => D.partialSideQ N X) Filter.atTop
+      (nhds ((QChebyshevFunction D.hbar_q D.hbar_pos D.ideals X : ℝ) : ℂ))
+
 end QOU.AlgebraicSubstrate
