@@ -143,6 +143,7 @@ import MathlibExt.RigidityReductionScope
 import CompactQuantumMetrics.PosSemidefTraceZero
 import MathlibExt.PosSemidefDiagZero
 import CompactQuantumMetrics.FrobeniusInnerProduct
+import QOU.Transcendental.FrobeniusNorm
 import MathlibExt.CauchyBinet
 import MathlibExt.RankMinor
 import BraidKnotOctonion.BraidedSlide

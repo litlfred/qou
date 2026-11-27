@@ -15,8 +15,8 @@ Compute: `computations/keystone_c8_superexp_proof.py` (witness verified `k = 3..
 
 Everything **except** the two SYT-dimension identities is now *proved*, not assumed:
 
-* **Cauchy–Schwarz (input B) — PROVED**, `weighted_cs`, from Mathlib's
-  `sum_mul_sq_le_sq_mul_sq` (weighted via `Real.sqrt`). (An earlier draft carried
+* **Cauchy–Schwarz (input B) — PROVED**, `weighted_cs`, by the weighted Lagrange identity
+  (no square root). (An earlier draft carried
   this as a hypothesis; it is a general inequality and belongs proved.)
 * **Involution numbers `I(k)` — CONCRETE**, `involutionNumber` (the recurrence
   `I(n+2)=I(n+1)+(n+1)I(n)`), with `involution_le_factorial : I n ≤ n!` proved.
@@ -36,13 +36,14 @@ These are supplied as `f g : ι → ℝ` sum hypotheses — the minimal irreduci
 `s5-so3-keystone.md` line 40 / #2634). Building `StandardYoungTableau` + the
 hook-length formula in Mathlib would discharge (A)/(C) too; that is the open fill.
 
-Base ring `ℝ`: the statement uses `Real.sqrt` (Cauchy–Schwarz) and division/order
-(AGENTS.md §7c: archimedean ordered field is the correct home).
+Base ring: `weighted_cs` holds over any linearly ordered field and takes no square root
+(owner ruling 2026-11-27: keep transcendental and completion operations behind the
+boundary). The C8 bound itself uses division and order and is stated on `ℝ`.
 
 -- Ref: [leitner2026] docs/audits/2026-07-11-keystone-c8-superexp-proof.md
 -/
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
-import Mathlib.Data.Real.Sqrt
+import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 import MathlibExt.InvolutionNumbers
 
@@ -53,20 +54,26 @@ open Finset
 /-! ## Cauchy–Schwarz, weighted form (proved from Mathlib) -/
 
 /-- **Weighted Cauchy–Schwarz.** For nonnegative weights `g`,
-`(Σ f g)² ≤ (Σ f² g)(Σ g)`. Proved from `sum_mul_sq_le_sq_mul_sq` applied to
-`f·√g` and `√g`. -/
-theorem weighted_cs {ι : Type*} (s : Finset ι) (f g : ι → ℝ)
-    (hg : ∀ i ∈ s, 0 ≤ g i) :
+`(Σ f g)² ≤ (Σ f² g)(Σ g)`. Proved with no square root, over any linearly ordered
+field: the double sum `Σᵢ Σⱼ gᵢ gⱼ (fᵢ − fⱼ)²` is nonnegative and equals
+`2·(Σ f² g)(Σ g) − 2·(Σ f g)²` (Lagrange's identity, weighted form). -/
+theorem weighted_cs {K ι : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+    (s : Finset ι) (f g : ι → K) (hg : ∀ i ∈ s, 0 ≤ g i) :
     (∑ i ∈ s, f i * g i) ^ 2 ≤ (∑ i ∈ s, f i ^ 2 * g i) * (∑ i ∈ s, g i) := by
-  have h := sum_mul_sq_le_sq_mul_sq s (fun i => f i * Real.sqrt (g i))
-    (fun i => Real.sqrt (g i))
-  have e1 : ∑ i ∈ s, (f i * Real.sqrt (g i)) * Real.sqrt (g i) = ∑ i ∈ s, f i * g i :=
-    sum_congr rfl fun i hi => by rw [mul_assoc, Real.mul_self_sqrt (hg i hi)]
-  have e2 : ∑ i ∈ s, (f i * Real.sqrt (g i)) ^ 2 = ∑ i ∈ s, f i ^ 2 * g i :=
-    sum_congr rfl fun i hi => by rw [mul_pow, Real.sq_sqrt (hg i hi)]
-  have e3 : ∑ i ∈ s, Real.sqrt (g i) ^ 2 = ∑ i ∈ s, g i :=
-    sum_congr rfl fun i hi => Real.sq_sqrt (hg i hi)
-  simpa only [e1, e2, e3] using h
+  have hnn : 0 ≤ ∑ i ∈ s, ∑ j ∈ s, g i * g j * (f i - f j) ^ 2 :=
+    sum_nonneg fun i hi => sum_nonneg fun j hj =>
+      mul_nonneg (mul_nonneg (hg i hi) (hg j hj)) (sq_nonneg _)
+  have hexp : ∑ i ∈ s, ∑ j ∈ s, g i * g j * (f i - f j) ^ 2 =
+      2 * ((∑ i ∈ s, f i ^ 2 * g i) * (∑ i ∈ s, g i)) - 2 * (∑ i ∈ s, f i * g i) ^ 2 := by
+    calc ∑ i ∈ s, ∑ j ∈ s, g i * g j * (f i - f j) ^ 2
+        = ∑ i ∈ s, ∑ j ∈ s, ((f i ^ 2 * g i) * g j + g i * (f j ^ 2 * g j)
+            - 2 * ((f i * g i) * (f j * g j))) :=
+          sum_congr rfl fun i _ => sum_congr rfl fun j _ => by ring
+      _ = 2 * ((∑ i ∈ s, f i ^ 2 * g i) * (∑ i ∈ s, g i))
+            - 2 * (∑ i ∈ s, f i * g i) ^ 2 := by
+          simp only [sum_sub_distrib, sum_add_distrib, ← mul_sum, ← sum_mul]
+          ring
+  linarith
 
 /-! ## The C8 lower bound (arithmetic core, proved) -/
 

@@ -87,7 +87,10 @@ def graph():
 
 def report(path, hits):
     mods, imps = graph()
-    trans = {n for n, r in mods.items() if r in hits}
+    # A module inside the boundary is transcendental by definition, so importing it
+    # taints the importer exactly as a direct use would. Without this, moving a
+    # result behind the boundary would launder its consumers into the pure count.
+    trans = {n for n, r in mods.items() if r in hits or r.startswith(BOUNDARY)}
     tainted, memo = {}, {}
     def via(n, stack=()):
         if n in memo: return memo[n]
@@ -121,7 +124,7 @@ def report(path, hits):
          "## Summary", "", "| quantity | count |", "|---|---:|",
          f"| Lean modules (paper package tree) | {len(mods)} |",
          f"| inside the boundary `{BOUNDARY}` | {sum(1 for r in mods.values() if r.startswith(BOUNDARY))} |",
-         f"| outside, using a transcendental/analytic API directly | {len(trans)} |",
+         f"| outside, using a transcendental/analytic API directly | {len(hits)} |",
          f"| outside, algebraic but importing one transitively (tainted) | {len(tainted)} |",
          f"| outside, algebraic and import-clean (pure) | {len(pure)} |", "",
          "## Direct use by class", "", "| class | modules | matched API |", "|---|---:|---|"]
@@ -142,7 +145,7 @@ def report(path, hits):
           "module outside the boundary starts using a transcendental/analytic API (NEW), or when a",
           "baseline entry has become clean and should be dropped (GONE). The baseline only shrinks.", ""]
     Path(path).write_text("\n".join(L))
-    print(f"wrote {path}: direct {len(trans)}, tainted {len(tainted)}, pure {len(pure)}")
+    print(f"wrote {path}: direct {len(hits)}, tainted {len(tainted)}, pure {len(pure)}")
 
 def main():
     hits = scan()

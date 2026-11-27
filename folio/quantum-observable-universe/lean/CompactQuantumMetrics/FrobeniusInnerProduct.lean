@@ -8,9 +8,9 @@ import Mathlib.Tactic
 The Frobenius inner product on matrices, `⟨A, B⟩_F := tr(A^T · B)`.
 This is the canonical inner-product structure for SDP analysis:
 the PSD cone is self-polar w.r.t. this inner product
-(`PosSemidefTraceZero`), the Frobenius norm `‖A‖_F := sqrt(⟨A, A⟩)`
-is rotation-invariant, and the strict-convexity arguments needed
-for SDP uniqueness all live here.
+(`PosSemidefTraceZero`), and the strict-convexity arguments needed
+for SDP uniqueness all live here. Everything in this file is algebraic
+over `ℝ`: no square root is taken.
 
 ## What this module provides
 
@@ -20,8 +20,10 @@ for SDP uniqueness all live here.
 - `Matrix.frobeniusInner_self_nonneg` — non-negativity on the
   diagonal (Mathlib via `Matrix.trace_transpose_mul_self_nonneg`).
 - `Matrix.frobeniusInner_self_eq_zero_iff` — non-degeneracy.
-- `Matrix.frobeniusNorm` — sqrt of the diagonal value (extends
-  to a `Norm` instance once paired with the metric topology).
+- The Frobenius norm `‖A‖_F := √⟨A, A⟩` is not here. It takes a real
+  square root, so it lives behind the transcendental boundary in
+  `QOU.Transcendental.FrobeniusNorm` (owner ruling 2026-11-27). Use the
+  squared form `frobeniusInner A A` wherever it suffices.
 
 ## Categorical content
 
@@ -108,22 +110,5 @@ theorem Matrix.frobeniusInner_self_eq_zero_iff
     rw [h]
     unfold Matrix.frobeniusInner
     simp
-
-/-- **Frobenius norm** on matrices, `‖A‖_F := √(tr A^T · A)`. -/
-noncomputable def Matrix.frobeniusNorm (A : Matrix (Fin n) (Fin n) ℝ) : ℝ :=
-  Real.sqrt (Matrix.frobeniusInner A A)
-
-/-- **Frobenius norm is non-negative.** -/
-theorem frobeniusNorm_nonneg (A : Matrix (Fin n) (Fin n) ℝ) :
-    0 ≤ Matrix.frobeniusNorm A :=
-  Real.sqrt_nonneg _
-
-/-- **Frobenius norm is zero iff matrix is zero.** -/
-theorem frobeniusNorm_eq_zero_iff
-    (A : Matrix (Fin n) (Fin n) ℝ) :
-    Matrix.frobeniusNorm A = 0 ↔ A = 0 := by
-  unfold Matrix.frobeniusNorm
-  rw [Real.sqrt_eq_zero (Matrix.frobeniusInner_self_nonneg A)]
-  exact Matrix.frobeniusInner_self_eq_zero_iff A
 
 end QOU.MathlibExt.FrobeniusInnerProduct
