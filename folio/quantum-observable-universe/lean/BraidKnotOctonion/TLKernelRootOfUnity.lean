@@ -41,9 +41,10 @@ The headline is `not_rad_le_tlKernel_rootOfUnity`.
 This file proves the failure at `[3]_q = 0` only. On three strands there is a second failure,
 at `[4]_q = 0` (`q⁴ = −1`). The exact three-strand statement, rad = `θ(ker π)` iff
 `(q⁴ + q² + 1)(q⁴ + 1) ≠ 0`, is `TLKernelThresholdThree.rad_eq_tlKernel_iff`. For `n`
-generators (`n + 1` strands) the literature threshold is `[k]_q ≠ 0` for `3 ≤ k ≤ n + 2`.
-That general statement, and the identification of `H/rad` with the semisimple quotient of
-`TL` (Jones 1983; Goodman–de la Harpe–Jones; Wenzl 1988), are not formalised.
+generators (`n + 1` strands) the threshold is `[k]_q ≠ 0` for `3 ≤ k ≤ n + 2`, proved as
+`TLKernelThreshold.rad_eq_tlKernel_iff` (2026-11-27). The identification of `H/rad` with the
+semisimple quotient of `TL` (Jones 1983; Goodman–de la Harpe–Jones; Wenzl 1988) is not
+formalised.
 
 (Correction, 2026-11-27: this paragraph first gave the range as `2 ≤ k ≤ n + 1`, which is
 one short; the `n = 2` Gram determinant `−(q⁴+1)(q⁴+q²+1)⁴/(q²+1)¹⁰` shows the `[4]` factor.)
