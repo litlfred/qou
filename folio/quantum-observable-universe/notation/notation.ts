@@ -62,6 +62,8 @@ export default chapter({
         "glossary-reeb-gauge-group",
         "glossary-categorical-transport",
         "glossary-categorical-q-torsion-leaf",
+        "glossary-aether",
+        "glossary-brane",
         "glossary-descent",
         "glossary-s3-group",
         "glossary-q-bit",
