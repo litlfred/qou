@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T22:34:23Z
+updated_at: 2026-11-27T22:38:53Z
 parent: qou-dk7p
 ---
 
@@ -144,3 +144,14 @@ Still open, so this bean stays open: assembling the full induction. Two pieces a
 - eps(Phi+x) = 1
 
 Audit §17c.
+
+
+
+## 2026-11-27 — chain assembled (PR #9801, stacked on #9768; audit §17d)
+AssociatorChain.lean (sorry-free, axioms propext/Classical.choice/Quot.sound):
+rational_associator_of_groupLikeK: N ≥ 2, ε(E)=1, AssocK K N E Ψ₀ ∧ GLK K N Ψ₀ ⟹ ∃ Φ : ℚ⟨X,Y⟩, AssocU4 N E Φ ∧ GL N Φ.
+rational_associator_of_tower: the same for every N ≥ 2 from the hypothesis structure GroupLikeKAssociatorTower K E. That structure is a hypothesis, not an axiom.
+STILL OPEN, which is why this bean stays open:
+(1) the existence of group-like K-associators (the KZ analytic input) is assumed, not derived;
+(2) Φ is chosen separately for each N, with no compatibility across N, so there is no rational associator in the completion yet;
+(3) N ∈ {0,1} is not stated.
