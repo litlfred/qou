@@ -1,5 +1,5 @@
 import QOU.Transcendental.MathlibExt.DilogPartAConvergence
-import QOU.MassTheory.ArchimedeanLimitDomain
+import QOU.Transcendental.MassTheory.ArchimedeanLimitDomain
 
 /-!
 # `ArchimedeanLimit x` for `-1 < x < 0` (bean `qou-adgd`, issue #7942)

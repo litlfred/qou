@@ -815,18 +815,6 @@
   "QOU/MassTheory/AlphaEmFormCConditionalContent.lean": [
    "transcendental-function"
   ],
-  "QOU/MassTheory/ArchimedeanLimitDomain.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/ArchimedeanLimitEndpoints.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/ArchimedeanLimitNegative.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
   "QOU/MassTheory/ArchimedeanTraceBridge.lean": [
    "transcendental-function"
   ],
@@ -931,9 +919,6 @@
   "QOU/MassTheory/GrowingWidthCutShapeExclusion.lean": [
    "real-completion"
   ],
-  "QOU/MassTheory/IdealTetObtuseReduction.lean": [
-   "transcendental-function"
-  ],
   "QOU/MassTheory/IdealTetrahedronShapeBridge.lean": [
    "transcendental-function"
   ],
@@ -1020,10 +1005,6 @@
   ],
   "QOU/MassTheory/NZBarEvenVolumeFace.lean": [
    "real-completion",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/OrthoschemeBaseIntegral.lean": [
-   "analysis",
    "transcendental-function"
   ],
   "QOU/MassTheory/PhotonIRZeroMode.lean": [
@@ -1287,9 +1268,6 @@
   "QOU/Nuclear/FiveTwoRootStructure.lean": [
    "analysis",
    "real-completion"
-  ],
-  "QOU/Nuclear/FiveTwoStepALogAlgebra.lean": [
-   "transcendental-function"
   ],
   "QOU/Nuclear/FiveTwoSumRuleIntegrand.lean": [
    "analysis",

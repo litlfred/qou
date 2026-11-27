@@ -1,4 +1,4 @@
-import QOU.MassTheory.ArchimedeanLimitNegative
+import QOU.Transcendental.MassTheory.ArchimedeanLimitNegative
 
 /-!
 # `ArchimedeanLimit` at the endpoints `x = 1` and `x = -1` (bean `qou-adgd`, issue #7942)
