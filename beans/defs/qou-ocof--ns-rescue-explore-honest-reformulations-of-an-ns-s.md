@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T20:26:55Z
-updated_at: 2026-11-27T15:35:00Z
+updated_at: 2026-11-27T17:45:00Z
 parent: qou-vo9t
 ---
 
@@ -36,25 +36,15 @@ Two independent defects were found:
 
 The bean stays open: the 3D NS question on M remains the open Clay-type problem.
 
-## 2026-10-12: external claim noted by the owner. UNVERIFIED, not a corpus fact
-The owner relayed a report that OpenAI published a 166-page paper, "Finite Time Blowup for Navier–Stokes", with a claimed Lean formalization. It asserts finite-time blowup for 3D incompressible NS with a smooth, compactly supported FORCE f, starting from rest, with bounded energy and ||u||_∞ → ∞. That is Fefferman's Alternatives (C) on R^3 and (D) on T^3, and it explicitly does NOT address the unforced (A)/(B). Status per the relay: under review. Not held in library/, not read by any agent, and not checked.
-
-**Bearing on this corpus (my analysis, conditional on the claim):**
-- It does not rescue thm:ns-singularity-descartes. It is analytic, on R^3/T^3, and forced; the corpus chain is a topological obstruction on Bring's surface.
-- It is consistent with this bean's regular-solution finding. One explicit smooth NS flow on UT(Σ₄) and some forced blowup elsewhere do not conflict.
-- torus-ns-regular asserts that "all smooth initial data" give global smooth solutions. Read in 2D this is true. Read in 3D on T^3 it is unforced Alternative (B), which remains open and which the paper does not settle. Only a FORCED-regularity claim on T^3 would be contradicted by (D), and torus-ns-regular makes none as written.
-- No corpus block cites Fefferman's alternatives or makes a forced-regularity claim (grep: 0 hits).
-
-**Before any content cites it:** ingest the PDF into uploads/ -> library/, read the forcing construction and the Lean statement, and check that the formal statement matches the prose one.
-
+## Torus reading (corpus-only)
+- torus-ns-regular asserts that "all smooth initial data" give global smooth solutions. Read in 2D this is true. Read in 3D on T^3 it is unforced Alternative (B), which remains open.
 
 **2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch B):** in-progress → todo. Stale claim (session ended); work not finished — see docs/coordination/2026-11-20-dangling-claims-proposal.md.
 
 ## 2026-11-21 (bean-drain sibling bring-gerbe-ns, session_01Qmmkt6JCxoNkQcgaG1tFNF, issue #8808)
 
 Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
-No change. The external forced-blowup report is still unverified and not held in library/. Stays open.
+No change. Stays open.
 
-## 2026-11-27: OpenAI reliance flagged under the owner's no-OpenAI rule
-
-Owner rule (Carl, 2026-11-27): do not use any OpenAI-announced NS work. The 2026-10-12 section above relays such a report and draws conditional conclusions from it. Treat that section as out of bounds for q-NS reasoning; nothing here may rest on it. Not stripped yet: removing or re-scoping it is the owner's call. Status unchanged.
+## 2026-11-27: re-scoped under the owner's no-OpenAI rule
+Owner decision 2026-11-27 ("Yes, re-scope both"; ruling recorded via PR #9494): removed the 2026-10-12 section relaying an OpenAI forced-blowup report and the conclusions drawn from it; kept only the corpus-only torus-ns-regular reading. Subject (honest NS reformulations on Bring) unchanged; status unchanged.

@@ -5,11 +5,11 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T21:00:36Z
-updated_at: 2026-11-27T15:35:00Z
+updated_at: 2026-11-27T17:45:00Z
 parent: qou-vo9t
 ---
 
-Owner idea (2026-10-12): treat knot convolution # (see the sibling ILP/SDP operator-selection work) as the external FORCE f, making the corpus's NS question a forced one, closer to the reported OpenAI construction (Fefferman C/D). Assess honestly.
+Owner idea (2026-10-12): treat knot convolution # (see the sibling ILP/SDP operator-selection work) as the external FORCE f, making the corpus's NS question a forced one (Fefferman's Alternatives C/D). Assess honestly.
 
 ## 2026-10-12 — assessment (audit `docs/audits/2026-10-12-ns-vector-k-knot-convolution-force.md`)
 
@@ -29,6 +29,5 @@ Verdict: (d) as stated. A narrow conditional (a) can be stated but adds nothing 
 Superseded-premise check (owner, 2026-11-21: photon L±, virtual photons, old γγ letters, T(2,n_s), convention C, single-term trace, trefoil electron, c_2 = −1, χ₍₂,₁₎ = 2 − h⁴, fitted α/CODATA in proofs, project memory): none found in this bean; its subject is surface topology / gerbes / NS and touches none of them.
 No change; the optional amplitude-budget lemma (audit §5c) was not written. Stays open.
 
-## 2026-11-27: excluded under the owner's no-OpenAI rule
-
-Owner rule (Carl, 2026-11-27): q-NS work uses only what is formalized in QOU and does not use any OpenAI-announced NS work. This bean was framed as "closer to the reported OpenAI construction" (forced NS, Fefferman C/D), so it is excluded as an attack vector for the q-NS classical gaps (qou-innq Part A, Part B). Do not work it as a route. Status unchanged; retiring or re-scoping it is the owner's call.
+## 2026-11-27: re-scoped under the owner's no-OpenAI rule
+Owner decision 2026-11-27 ("Yes, re-scope both"; ruling recorded via PR #9494): removed the framing "closer to the reported OpenAI construction" from the description. The subject (knot convolution as a forcing term, assessed against Fefferman's classical alternatives) does not rest on that report and stays; the 2026-10-12 assessment is corpus-only. Not a q-NS attack vector for qou-innq. Status unchanged.
