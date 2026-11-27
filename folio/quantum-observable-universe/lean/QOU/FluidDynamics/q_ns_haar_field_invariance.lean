@@ -29,10 +29,11 @@ nonvanishing of `[n+1]_{q²}` that every Haar moment needs.
 
 ## Not established
 
-* `h ∘ X₊ = 0` on the whole algebra. That needs either that the weight-`(0, −2)` part of
-  `O_q(SU(2))` is spanned by `βδ · K[ζ]` (a PBW-type statement the corpus does not have:
-  `OqSU2HaarState` builds the Haar state on a monomial model without proving it faithful),
-  or the full invariance `(id ⊗ h)Δ = h(·)1`, which `OqSU2HaarState` also leaves open.
+* `h ∘ X₊ = 0` on the whole algebra is **not proved in this file**. It is now proved in
+  `q_ns_haar_field_invariance_full` (`haarState_fieldPlus_eq_zero`,
+  `haarState_fieldMinus_eq_zero`, for `q` not a root of unity), from the PBW basis of
+  `CompactQuantumMetrics.OqSU2PBW` and the block lemmas below. The full invariance
+  `(id ⊗ h)Δ = h(·)1` is still open.
   The rows above are exactly the blocks that `q_ns_block_weight_lap` and
   `q_ns_block_ladder` produce at block index `0` and `±1`.
 * The blocks `(αγ)^s K[ζ]`, `(βδ)^s K[ζ]` for `s ≥ 2`, whose image under `X∓` has weight
