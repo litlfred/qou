@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-aether",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-aether",
+  "kind": "remark",
+  "title": "Aether",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate",
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+    "papers/quantum-observable-universe/blocks/rem-einstein-ether-substrate",
+    "papers/quantum-observable-universe/blocks/rem-substrate-line-bundle-base-not-fibre",
+    "papers/quantum-observable-universe/blocks/rem-glossary-brane"
+  ],
+  "tags": [
+    "glossary",
+    "aether",
+    "terminology"
+  ],
+  "defines": [
+    "aether",
+    "aether-parameter"
+  ],
+  "text": "glossary-aether.md",
+  "provenance": "authored"
+}

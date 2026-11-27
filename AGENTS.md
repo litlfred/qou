@@ -5345,6 +5345,24 @@ author approval per the skill's §3 "Apply mechanical fixes").
 Prior to that, banners lived in prose; the migration is gradual —
 new authoring should use `authorNotes` from the start.
 
+### 4e. Aether, not substrate; brane is a base (owner ruling 2026-11-27)
+
+*Aether* is the preferred term. See `rem:glossary-aether` and
+`rem:glossary-brane` (Ch 8).
+
+| Old usage | New term | Meaning |
+|---|---|---|
+| substrate (the medium, Frobenius–Hopf algebra `A`) | **aether** | the categorical medium, no state of motion |
+| substrate parameter `q ∈ End(𝟙)` | **aether parameter** | the fibre coordinate `q` |
+| substrate-derived / -pure / -only | **aether-derived / -pure / -only** | built from `q` and `(C, A, τ)` alone, no empirical input |
+| substrate layer, substrate→archimedean wall (§7c) | **algebraic layer**, **algebraic→archimedean wall** | statements over a generic ring `R` |
+| adelic / motivic / Hahn substrate | **adelic / motivic / Hahn base ring** | a coefficient ring |
+| brane, brane tower, brane point, brane fluid | unchanged | always a *base* object; never a synonym for aether |
+
+New prose uses the new terms. Existing labels (`def:substrate-parameter`, …)
+and Lean identifiers (`SubstrateParameter`, …) are renamed in phased PRs;
+Lean renames keep a `@[deprecated]` alias for the old name.
+
 ### 5. Tactic strategy (try in order)
 
 | Goal pattern | Try first | Then try |
