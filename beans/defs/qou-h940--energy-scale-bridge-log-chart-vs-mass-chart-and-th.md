@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T22:03:24Z
-updated_at: 2026-11-27T22:25:42Z
+updated_at: 2026-11-27T22:41:40Z
 parent: qou-myts
 ---
 
@@ -23,3 +23,5 @@ Open: the orientation (which convention carries the sign). Nothing wired. Relate
 2026-11-27 relay from isospin thread (#9747 335b6c7e2): the C(3A,n_d) weight count read through B += alpha*ln(count) gives (N-Z)^2/A with coefficient alpha/6, which is 0.62 MeV at alpha=8G m_e, about 37x below the classical 23 MeV. It is a test term for any derived log-count scale. With the CAL-1 log-chart unit |m_e/L_e| = 2.707 m_e = 1.383 MeV/nat, alpha/6 = 0.23 MeV, which is about 100x below. Noted, not wired.
 
 2026-11-27 no-go (Lean log_chart_np_delta_opposite / mass_chart_np_delta_opposite): in either chart, for ANY electron unit, n-p (pure power) and Delta-N (bar-even) get opposite signs. The #9789 reading [4]/q^3 turns n-p positive (+0.805 m_e mass chart) but Delta-N negative (-0.166). Getting both right needs pure powers and bar-even cells read with different sign, which is a second structural input.
+
+2026-11-27 relay from the gg binding thread (#9803): on the ruled gg chain the mass chart gives 2H..4He positive binding (6, 12, 15, 21 keV) and the log chart gives negative binding. That is consistent with sign_agree_iff, since gg bond letters have L*w>0. So on the ruled gg letters the mass chart gets the binding sign right, and the old ruled-law letters (f<1 increasing) get it wrong in both charts.
