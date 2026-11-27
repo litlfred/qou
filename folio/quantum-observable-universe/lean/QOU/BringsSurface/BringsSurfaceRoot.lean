@@ -316,8 +316,8 @@ structure YekutieliLiftingData where
     **The statement below is vacuous**: it only builds a record whose single
     field is `9 > 0`, and says nothing about the obstruction class. It is no
     longer the formalisation of `prop:yekutieli-lifting`: that block now
-    points at `QOU.YekutieliLifting` (sibling `yekutieli-lifting.lean`),
-    which carries the general lift-iff-obstruction-vanishes criterion.
+    points at `QOU.YekutieliLifting.lift_iff` (sibling `yekutieli-lifting.lean`),
+    the derived group-level lift-iff-obstruction-vanishes criterion.
 
     LaTeX: `\label{prop:brings-is-qou}` (item 3) -/
 -- Ref: [yekutieli2015] Amnon Yekutieli, *Nonabelian Multiplicative Integration on Surfaces*, 2015
