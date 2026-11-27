@@ -7,7 +7,7 @@ priority: high
 tags:
     - 8f-index
 created_at: 2026-11-27T14:25:39Z
-updated_at: 2026-11-27T14:55:50Z
+updated_at: 2026-11-27T19:52:14Z
 parent: qou-0uga
 ---
 
@@ -77,3 +77,7 @@ Merged by merge manager: #9444 (A1), #9446 (A3), #9450 (B), #9451 (A4). Open: #9
 - C3 → PR #9460 (merged 9da17f024): selection rule proved between its labelled inputs (Fermi statistics, colour singlet); colour singlet at N_c=3 is 1-dim.
 - C1 uniqueness → PR #9461: traceless operator on V ⊕ W* commuting with sl(V), sl(W*) is a multiple of diag(3,3,-2,-2,-2).
 - C1 crossing-invariant route, bounded read: blocked exactly where `qou-h0zz` says. Q = w/2 is hadron-level, with no per-chiral-fermion charge; the total twist T = 3Q is pinned by the SM target, not computed; chirality has no braid word (`qou-wqto`); the 1/3 normalisation is the helon precedent. No closure available without a new construction of per-fermion braid words.
+
+
+## 2026-11-27 — overlap found in my own C1 work
+`QOU/EightfoldWay/HyperchargeUniqueness.lean` (PR #9461) re-proves Section 2 of the pre-existing `QOU/StandardModel/Su3Su2U1Z6GroupAndCommutant.lean` (1-dim traceless commutant of sl3⊕sl2 on the 5, spanned by diag(-2,-2,-2,3,3); same statement up to index order and sign). Missed because that module is not imported in QOU.lean (orphan). Both stay; cite the earlier one. Next tranche: per-fermion charges (qou-h0zz), sibling threads for generations and constructing W.

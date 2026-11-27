@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-open
 created_at: 2026-08-10T18:34:14Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T19:52:14Z
 parent: qou-8lxd
 ---
 
@@ -397,3 +397,14 @@ Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-fi
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8200, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-10-12: "qou-h0zz: the lepton half of the braid-word blocker is already derived"). The work may be partly or fully done. Read the bean before you close it.
+
+
+## 2026-11-27 — the charges qᵢ derived from one neutral lepton (epic qou-x08k, PR pending)
+
+Owner picked "Per-fermion braid words" on the next-gap card. Inventory first: the braid words and framings are already closed on main (lepton framings incl. the Hopf electron σ₀σ₁σ₀ in `HopfFramingAndHirzebruchDefect.lean`; u={0,1,1}, d={-1,0,0}; quark element σᵢ^±1 cannot carry charge, `QuarkBraidChargeObstruction`). What stays open is item 1 of this bean, the per-fermion charge, i.e. owner ruling 2026-11-22 "Needs to derive the q_i".
+
+New: `QOU/EightfoldWay/NeutralLeptonFixesCharges.lean` (lean-direct rc=0, 0 warnings, 0 sorry), block `prop:neutral-lepton-fixes-charges`. On 5 = C ⊕ V with Q(α)=T₃+αY₀ (Su3Su2U1Z6GroupAndCommutant): the 5̄ doublet has a neutral member iff α=±1/6 iff the 5̄⊕10 trace ratio is 3/8; at α=1/6 the full gen-1 table follows (+2/3, −1/3 are consequences); α=−1/6 is charge conjugation; colour singlets integer.
+
+Inputs, stated: (1) matter content 5̄ ⊕ Λ²5 (Georgi–Glashow / baez-huerta2010, NOT derived); (2) one lepton has charge 0 (a vanishing, not a measured number). The triple in 5 is COLOUR, so this needs neither the flavour W nor the rung-5 fibre of rem:su5-hypercharge-n3-gate.
+
+Still open (rule 13a — do not close): deriving the matter content, and the braid-environment datum that should carry the charge at strand level (owner card pending).
