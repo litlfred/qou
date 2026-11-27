@@ -67,11 +67,11 @@ theorem apply_isolated_eq_zero (w : WeightSystem R n) {D : ChordDiagram n}
 /-- The four-term relation: a weight system annihilates every four-term
 relator. -/
 theorem apply_fourTerm_eq_zero (w : WeightSystem R n) (D : ChordDiagram n)
-    (i j : Fin (2 * n)) :
-    w (AReduced.proj (fourTermRelator R D i j)) = 0 := by
-  have hmem : fourTermRelator R D i j ∈ relationsSubmodule (R := R) (n := n) :=
-    fourTermRelator_mem_relations (R := R) D i j
-  have : AReduced.proj (R := R) (fourTermRelator R D i j) = 0 := by
+    (p m : Fin (2 * n)) (h : FourTermAdmissible D p) :
+    w (AReduced.proj (fourTermRelator R D p m)) = 0 := by
+  have hmem : fourTermRelator R D p m ∈ relationsSubmodule (R := R) (n := n) :=
+    fourTermRelator_mem_relations (R := R) D p m h
+  have : AReduced.proj (R := R) (fourTermRelator R D p m) = 0 := by
     unfold AReduced.proj
     rw [Submodule.mkQ_apply, Submodule.Quotient.mk_eq_zero]
     exact hmem
