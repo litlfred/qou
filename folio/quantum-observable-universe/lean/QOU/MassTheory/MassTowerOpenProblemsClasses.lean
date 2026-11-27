@@ -18,9 +18,12 @@ them as Lean typeclasses in the §3b-cond pattern:
   (1+h) via the Kauffman framing on H_n(R, q).
 * `ZHabiroConvergenceClass` — closes the |V|≈1 brane-tower
   divergence via a uniform z-Habiro bound.
-* `AlphaOver4PiClass` — closes the α/(4π) next-order term in the
-  additive Bring zero-mode form via a higher Bloch group
-  B_n(ℂ) (multivariate polylogarithm regulator).
+* (retired 2026-11-27) `AlphaOver4PiClass` asked for a type, a map to `ℝ`
+  and an element hitting `α/(4π)`. `(ℝ, id)` satisfies that, so the class
+  asserted nothing about a higher Bloch group and was removed together with
+  its instance. The open question (a regulator on `B_n(ℂ)`, `n ≥ 3`, whose
+  output is the `1/(4π)` coefficient) stays open; a non-vacuous carrier needs
+  a higher Bloch group and its regulator as actual structure.
 
 Each class encapsulates a single missing structural fact; a
 sorry-free conditional theorem follows the same pattern as
@@ -214,17 +217,15 @@ theorem brane_tower_finite [hZ : ZHabiroConvergenceClass] :
   hZ.uniform_bound
 
 
-/-! The α/(4π) next-order carrier — a magnitude `π`, not an angle — lives in
-`QOU.Transcendental.MassTheory.MassTowerOpenProblemsClassesReal`
-(transcendental-boundary strangler, bean `qou-dk7p`; owner ruling 2026-11-27:
-roots of unity cover angles, magnitudes stay behind the boundary). -/
+/-! The α/(4π) next-order carrier `AlphaOver4PiClass` was retired on 2026-11-27:
+it was satisfied by `(ℝ, id)` and so carried no content (bean `qou-dk7p`). -/
 
 /-! ## Unconditional class instances (where formal content is
     purely existential)
 
 The four classes above are §3b-cond surrogates for substantive
-upstream conjectures. Three of them — Chirality, ZHabiro, and
-AlphaOver4Pi — have formal content that reduces to a purely
+upstream conjectures. Two of them — Chirality and ZHabiro (and formerly
+AlphaOver4Pi, retired 2026-11-27 for exactly this reason) — have formal content that reduces to a purely
 existential statement (`∃ z, z = <named real>`) and can therefore
 be inhabited unconditionally inside Lean: the witness is the
 named real itself, with `rfl`. We provide those instances here so
@@ -272,7 +273,7 @@ instance zHabiroConvergenceInstance : ZHabiroConvergenceClass where
 
     With the instances
     above in scope, `brane_tower_finite` closes unconditionally
-    (`alpha_over_4pi_structural` likewise, in the Transcendental companion) — the `[Instance]` arguments are inferred.
+    — the `[Instance]` arguments are inferred.
     The §3b-cond hooks are formally discharged; the substantive
     structural content sits entirely in the upstream conjecture blocks.
 

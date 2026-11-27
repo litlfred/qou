@@ -14,7 +14,8 @@ facts that close it without choosing any `w`:
     model's per-nucleon prediction `g_w(A) = E₀·S(⌊wA⌋)/A` is non-decreasing in
     `A` (verified for 581 values of `w` across `[0.10, 3.00]`);
   * the AME per-nucleon binding is NOT non-decreasing — it peaks at ⁴He
-    (7.0739 MeV) and dips at ⁶Li (5.3323 MeV).
+    and dips at ⁶Li (the AME values are in the probe and in
+    `QOU.Observations.GrowingWidthCutMeasuredSpread`).
 
 `no_constant_scale_matches_of_mono` below is the exclusion those two facts feed:
 a model non-decreasing across two points, times ANY non-negative constant, stays
@@ -23,19 +24,18 @@ failure is in the SHAPE, not the normalisation — which is why it survives an
 arbitrary overall rescaling on top of `w`, and excludes the whole two-parameter
 family at once.
 
-`best_constant_error_lower_bound` is the quantitative form: given the spread of
-the per-isotope required rescalings, every constant misses by at least the
-square root of that spread.  Instantiated at the measured spread
-(`rmin = 0.5130070` at ²H, `rmax = 2.3770636` at ⁴He),
-`measured_constant_error_at_least_two` gives a floor of 2× — the probe's dense
-figure is 2.1526×.
+`best_constant_error_lower_bound_of_sq` is the quantitative form: given the spread
+of the per-isotope required rescalings, every constant misses by at least the
+square root of that spread, and `constant_error_at_least_two_of_four_le` gives the
+factor-two floor whenever the spread is at least four. The measured spread and its
+instantiation live in the comparison layer,
+`QOU.Observations.GrowingWidthCutMeasuredSpread`.
 
 WHAT IS NOT PROVED.  That `S(k)/k` is monotone for ALL `k`: it is measured
 monotone on `1..64`, which is all the light isotopes reach, and it enters here
 as a hypothesis (`hg`), not as a theorem.  Nor is anything here a claim about
 what the missing binding term IS — only that this one-parameter family is not
-it.  The numbers in `measured_constant_error_at_least_two` are measured inputs
-carried in as literals, not derived in Lean.
+it.  No measured value enters this file.
 
 This file is over `ℝ` (AGENTS.md §7c): it compares model to measurement and
 needs an ordering. The square root is a ring symbol `s` with `0 ≤ s` and
@@ -111,22 +111,22 @@ theorem best_constant_error_lower_bound_of_sq
   exact le_max_of_sq_eq_mul (le_of_lt (div_pos hrmax hc)) (le_of_lt (div_pos hc hmin)) hs
     (hs2.trans e.symm)
 
-/-- **Instantiated at the measured spread.**  With `rmin = 0.5130070` (²H) and
-`rmax = 2.3770636` (⁴He) — the rescalings the balanced cut `w = 3/2` would need
-— every constant is off by at least a factor of two somewhere.  The probe's
-dense value is 2.1526×; two is the floor this bound certifies. No square root is
-needed: if both ratios were below `2`, their product `rmax/rmin` would be below `4`.
+/-- **The factor-two floor from a spread of at least four.**  If the required
+rescalings span `[rmin, rmax]` with `4·rmin ≤ rmax`, every positive constant `c` is off
+by at least a factor of two somewhere. No square root is needed: if both ratios were
+below `2`, their product `rmax/rmin` would be below `4`.
 
-The two literals are measured inputs, not Lean-derived. -/
-theorem measured_constant_error_at_least_two
-    {c : ℝ} (hc : 0 < c) :
-    (2 : ℝ) ≤ max ((23770636 : ℝ) / 10000000 / c) (c / ((5130070 : ℝ) / 10000000)) := by
+This file carries no measured values. The instantiation at the measured spread is in
+`QOU.Observations.GrowingWidthCutMeasuredSpread`, the comparison layer. -/
+theorem constant_error_at_least_two_of_four_le
+    {rmin rmax c : ℝ} (hmin : 0 < rmin) (h4 : 4 * rmin ≤ rmax) (hc : 0 < c) :
+    (2 : ℝ) ≤ max (rmax / c) (c / rmin) := by
   by_contra hlt
   push_neg at hlt
-  have h1 : (23770636 : ℝ) / 10000000 / c < 2 := lt_of_le_of_lt (le_max_left _ _) hlt
-  have h2 : c / ((5130070 : ℝ) / 10000000) < 2 := lt_of_le_of_lt (le_max_right _ _) hlt
+  have h1 : rmax / c < 2 := lt_of_le_of_lt (le_max_left _ _) hlt
+  have h2 : c / rmin < 2 := lt_of_le_of_lt (le_max_right _ _) hlt
   rw [div_lt_iff₀ hc] at h1
-  rw [div_lt_iff₀ (by norm_num)] at h2
+  rw [div_lt_iff₀ hmin] at h2
   nlinarith
 
 end QOU.MassTheory
