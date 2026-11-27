@@ -41,3 +41,7 @@ Partial: `QOU/QFTMath/InfinitesimalPureBraid.lean` on `claude/qft-math-cores-202
 ## 2026-11-27 (later) — Bar-Natan 4T in place (owner card "Yes, replace it in this thread"; PR #9729)
 
 `FourTermRelation.lean` now encodes Bar-Natan's 4T (re-insertion via `gapPerm`, slides across both ends of a chord cancel, all rotations). The old relator survives as `slideRelator` in `FourTermEncodingCollapse.lean` with its collapse proof. `FourTermDegreeTwo.lean` shows that the crossed diagram survives in degree 2 and that a non-zero weight system exists. Still open: matching Bar-Natan in degree ≥ 3 as a theorem, linking the near relation [t_ij, t_ik+t_jk]=0 to this 4T via closure, and Kohno's theorem.
+
+## 2026-11-27 (round 2) — U(𝔱ₙ), rank check, closure evidence (PR #9754)
+
+`QOU/StandardModel/DrinfeldKohnoAlgebra.lean`: `UT R n` = U(𝔱ₙ) for all n, universal property (`lift`, `lift_unique`), `toPerm` to R[Sₙ], and DK3/DK4 for any family, so RationalAssociator results apply. `computations/probes/chord_diagram_4t_rank_probe.py` (exact): dim 𝒜ₙ = 0, 1, 1, 3, 4 for n = 1..5 under the new 4T, matching the literature. Cyclic closure of w[t_ij, t_il + t_jl]w' lies in the 4T span in 320/320 cases. Next: the closure link as a Lean theorem (positional combinatorics), then Kohno.

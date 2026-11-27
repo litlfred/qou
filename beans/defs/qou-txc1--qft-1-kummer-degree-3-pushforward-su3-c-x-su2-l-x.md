@@ -39,3 +39,7 @@ Parts (a) & (b) proved sorry-free in Su3Su2U1Z6GroupAndCommutant.lean (83a784c4b
 ## 2026-11-27 — status check (thread "Derive hypercharge and gauge structure")
 
 Parts (a) and (b) are on main in `QOU/StandardModel/Su3Su2U1Z6GroupAndCommutant.lean` (0 sorry; imported via `EightfoldWay/NeutralLeptonFixesCharges`), so the 2026-11-20 file-loss reopening is resolved for them. PR litlfred/qou#9729 adds that the SU(5) charge pattern feeding (b) is itself forced by anomaly freedom, and that 3/8 ⇔ one neutral lepton on any anomaly-free chiral solution. Part (c) (Bring Kummer pushforward produces the embedding) stays open in `BringKummerSU5EmbeddingHypothesis`.
+
+## 2026-11-27 (round 2) — part (c) carrier is satisfied by α = 1/6 (PR #9754)
+
+`QOU/StandardModel/BringKummerCarrierVacuity.lean`: `bringKummerCarrier_satisfied` builds `BringKummerSU5EmbeddingHypothesis K` from the constant 1/6. The fields never mention Bring's curve. Real content of (c): Bring's degree-3 Kummer pushforward realises the flavour fundamental W of `FlavouredQuantumObservableUniverse` (bean qou-j3w6, flavour W thread). Given V, W the embedding, commutant and α = ±1/6 are proved. χ = −6 thread caution: H¹(M₀) = 2W₄ has no A₅-equivariant 3 ⊕ 2. Owner card on whether to retire the carrier and re-point (c) at qou-j3w6.

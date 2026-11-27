@@ -108,3 +108,7 @@ Finding: `CategoricalRibbonHyperchargeDerivationHypothesis` is inhabited by `rfl
 ## 2026-11-27 (later) — carrier restated (owner card "Restate it with the two open inputs"; PR #9729)
 
 `CategoricalRibbonHyperchargeDerivationHypothesis K` now has the fields ribbonCharges / anomalyFree / neutral, with zero instances. `hypercharge_of_ribbon` shows that an instance forces the SM ratios. Open Check A = provide that instance from the ribbon twist and the QOU axioms. B and C stay as before.
+
+## 2026-11-27 (round 2) — input 2 reduces to input 1 via the exterior algebra
+
+Observation (thread "Derive hypercharge and gauge structure"): if the matter content is the odd exterior algebra Λ^odd F of F = V ⊕ W* (Baez–Huerta; V, W from `FlavouredQuantumObservableUniverse`), then Λ^odd F = F ⊕ (Λ²F)^* ⊕ Λ⁵F, i.e. the conjugate 5̄ ⊕ 10 pattern plus a neutral singlet. Any abelian generator commuting with sl(V), sl(W*) and preserving Λ⁵F ≅ 1 is traceless (`HyperchargeUniqueness`), and `su5Pattern_anomalyFree` then gives anomaly freedom with no further input. The abelian identity holds for every N ≥ 3: Σ_{|S| odd} y_S^3 = 2^{N-3}(4 − 6 + 2) p₃ = 0 when p₁ = 0. So Open Check A = "QOU matter is Λ^odd(V ⊕ W*)" (exterior states of the two fundamentals, with chirality as the ℤ/2 grading), plus "W from the substrate" (qou-j3w6). Not yet formalised as one statement.
