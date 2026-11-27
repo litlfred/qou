@@ -2,7 +2,6 @@
 # qou-wqto
 title: 'V9: chirality grading u_L vs u_R -- no braid word distinguishes them'
 status: todo
-pr: 8200
 type: task
 priority: normal
 tags:
@@ -10,7 +9,7 @@ tags:
     - 8f-gen
     - 8f-open
 created_at: 2026-08-10T18:57:48Z
-updated_at: 2026-11-21T14:33:40Z
+updated_at: 2026-11-27T20:32:49Z
 parent: qou-8lxd
 ---
 
@@ -500,3 +499,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8200, closed o
 ## 2026-11-21 — lean-build-red drain (issue #8817, session https://claude.ai/code/session_01Qmmkt5eovX5GYdZNHqjZdu)
 
 `QOU.BringConeGauge` and `QOU.BringConeIcosahedral` (both from this bean, 2026-11-15) each defined `QOU.Tetraplectic.unitJ`, so the library root `QOU.lean` failed with "environment already contains 'QOU.Tetraplectic.unitJ'". Minimal fix on branch `claude/lean-build-red-2026-11-21` (`d07507f2df`): `BringConeGauge` imports `BringConeIcosahedral` and drops its identical def. No statement changed; axioms clean.
+
+
+
+2026-11-27 (PR #9674): StrandSlotSeparatesGen1.lean, sorry-free. The strand slot (colour strand in 5̄; colour∧3, colour∧4, colour∧colour pair in Λ²5) plus a dual flag separates the 8 gen-1 quark states and reproduces their charges at α=1/6; the dual flag is the helicity (chirality xor particle). This supplies V9's open label, conditional on the Georgi-Glashow slot assignment (a definition, not derived). Why the slot assignment holds stays open.

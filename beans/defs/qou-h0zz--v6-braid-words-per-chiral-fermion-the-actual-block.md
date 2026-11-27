@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-open
 created_at: 2026-08-10T18:34:14Z
-updated_at: 2026-11-27T20:04:31Z
+updated_at: 2026-11-27T20:32:48Z
 parent: qou-8lxd
 ---
 
@@ -416,3 +416,7 @@ Still open (rule 13a — do not close): deriving the matter content, and the bra
 
 
 2026-11-27 (PR #9651): FermiPairWedge.lean, sorry-free. Fermi exchange on a strand pair forces Λ² over Sym² (10 wedges 3+6+1, no colour sextet; Sym² would add a charge-2 colour singlet). Cubic Y0 trace: 5̄ -30, Λ²5 30, 5 30, Sym²5 270; a·5̄+c·Λ²5 cancels iff a=c. Still open: why one strand (5̄) and one strand pair (Λ²5), and what excludes vector-like 5⊕5̄ (cubic trace does not). Lead from the flavour-W thread (#9649): a Z/3 central phase on braid words may tie N-ality to strand count.
+
+
+
+2026-11-27 (PR #9674): StrandSlotSeparatesGen1.lean, sorry-free. The strand slot (colour strand in 5̄; colour∧3, colour∧4, colour∧colour pair in Λ²5) plus a dual flag separates the 8 gen-1 quark states and reproduces their charges at α=1/6; the dual flag is the helicity (chirality xor particle). This supplies V9's open label, conditional on the Georgi-Glashow slot assignment (a definition, not derived). Why the slot assignment holds stays open.
