@@ -8,7 +8,7 @@ import Mathlib.LinearAlgebra.Matrix.Trace
 # QOU.BraidsAndKnots.explicit_alpha_k_h4
 
 The `H₄(R, q)` class-function representatives of
-[`conj:explicit-alpha-k-h4`](explicit-alpha-k-h4.md), in exact `ℚ(q)` form.
+[`prop:explicit-alpha-k-h4`](explicit-alpha-k-h4.md), in exact `ℚ(q)` form.
 
 ## 2026-11-20 rewrite (W8b, gap 2 of bean `qou-w8cg`)
 

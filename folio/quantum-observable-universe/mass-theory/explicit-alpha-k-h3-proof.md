@@ -1,17 +1,18 @@
 ## Proof sketch
 
-By [spectral sequence collapse](#prop:spectral-sequence-collapse),
-$\mathrm{HH}^k(H_3(R, q)) = 0$ for $k \geq 1$ at generic $q$, so only
-$\mathrm{HH}^0 = Z(H_3) = \bigoplus_\lambda R \cdot e_\lambda$ survives.
-Per [explicit $H_3$ pages](#conj:spectral-sequence-h3-explicit), the
-four surviving $E_\infty^{p, *}$ classes are:
+A trace factors through the cocentre $\mathrm{HH}_0(H_3) = H_3/[H_3, H_3]$. Per
+[explicit $H_3$ pages](#prop:spectral-sequence-h3-explicit), the length-filtered
+cocentre has three classes $[\mathbf{1}], [\sigma_1], [\sigma_1\sigma_2]$, and the
+representatives $r_k$ sit as follows:
 
-| $p$ | $E_\infty^{p, *}$ representative |
-|:--:|--|
-| $0$ | $[\mathbf{1}]$ |
-| $1$ | $[\sigma_1 - \sigma_2]$ |
-| $2$ | $[\sigma_1 \sigma_2 + \sigma_2 \sigma_1]$ |
-| $3$ | $[\sigma_1 \sigma_2 \sigma_1] / d_2\text{-image}$ |
+| $k$ | $r_k$ | in the cocentre |
+|:--:|--|--|
+| $0$ | $\mathbf{1}$ | $[\mathbf{1}]$ |
+| $1$ | $\sigma_1 - \sigma_2$ | $0$ (a sum of commutators) |
+| $2$ | $\sigma_1 \sigma_2$ | $[\sigma_1\sigma_2]$ |
+| $3$ | $\sigma_1 \sigma_2 \sigma_1$ | $h\,[\sigma_1\sigma_2] + [\sigma_1]$ |
+
+(The earlier sketch listed four surviving classes in $\mathrm{HH}^0 = Z(H_3)$, which has rank $3$. The trace pairing lives on $\mathrm{HH}_0$.)
 
 The $\alpha_k$ are extracted via the Markov-trace pairing on each class.
 
@@ -33,11 +34,9 @@ $$
   \;=\; z - z \;=\; 0.
 $$
 
-The vanishing is exact (verified to canonical precision $10^{-16}$ in
-[explicit α_k witness](#witness:alpha-k-jones-markov-h3)). An
-$\alpha_1$ value beyond zero would require a higher Hochschild
-operation (Gerstenhaber bracket on $HH^*(H_3(R, q))$) — not the
-direct trace pairing.
+The vanishing is exact and holds for every trace, because
+$\sigma_1 - \sigma_2 = [\sigma_1, \sigma_2\sigma_1] - [\sigma_2, \sigma_1\sigma_2] - h\,[\sigma_1, \sigma_2]$
+by the Hecke and braid relations.
 
 **$\alpha_2 = z^2$.** By Markov factorisation:
 
@@ -68,9 +67,6 @@ $$
 
 
 $\square$
-
-canonical evaluation at $q_0 \approx 1.110$ matches the symbolic
-forms above to $\sim 10^{-16}$.
 
 ## Alternative derivation via Wenzl-bridge
 

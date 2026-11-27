@@ -1,12 +1,12 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:explicit-alpha-k-h4",
+export default proposition({
+  label: "prop:explicit-alpha-k-h4",
   title:
     "Explicit $\\alpha_3$ at $H_4(R, q)$ via Wedderburn-orthogonal class-function $r_3$",
   lean: {
     ref: "qou:QOU.BraidsAndKnots.explicit_alpha_k_h4",
-    validation: "not_checked",
+    validation: "leanok",
   },
   uses: [
     "conj:wedderburn-bratteli-recursion",
@@ -22,6 +22,11 @@ export default conjecture({
     "depth-3-stratum",
   ],
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-27",
+      body: "**Promoted to `proposition` (2026-11-27, PR #9670 and its follow-up).** The table was already proved to be a dual basis. The remaining gap was that the $H_4$ characters were sympy input data. They are now derived in Lean (`charTableH4_derived`) from five explicit representations with entries in $\\mathbb{Z}[q^2]$, each checked against the Hecke, braid and far-commutation relations. The `uses` edge to `conj:wedderburn-bratteli-recursion` is citational, and the proof does not depend on it.",
+    },
     {
       kind: "note",
       date: "2026-11-24",

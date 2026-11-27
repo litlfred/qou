@@ -7,7 +7,7 @@ export default remark({
   interprets: "conj:alpha-k-derivation-procedure",
   uses: [
     "conj:alpha-k-derivation-procedure",
-    "conj:explicit-alpha-k-h3",
+    "prop:explicit-alpha-k-h3",
   ],
   tags: [
     "jones-markov",

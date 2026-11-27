@@ -36,7 +36,7 @@
         prop:recursive-atom-knot-atlas,
         prop:gb-spectral-sequence,
         prop:spectral-sequence-collapse,
-        conj:spectral-sequence-h3-explicit,
+        prop:spectral-sequence-h3-explicit,
         prop:e-infinity-page-identifications.
 -/
 
