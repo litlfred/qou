@@ -82,9 +82,10 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
     * `σ` is injective on global points as soon as `η` has a left inverse
       `ψ : A ⟶ 𝟙`, which is the one hypothesis `hsplit`.  It is not derivable
       from the Frobenius–Hopf axioms alone (they do not force `ε ∘ η` or
-      `∫_A ∘ η` to be invertible: in characteristic `p` the group algebra
-      `k[ℤ/p]` has `∫_A(1) = p = 0`), so it is stated rather than assumed
-      silently.  For a Haar-normalised form (`∫_A ∘ η = 1`) take `ψ = ∫_A`.
+      `∫_A ∘ η` to be invertible, and `ψ` must be a morphism of `C`: for
+      `A = Fun(ℤ/2, 𝔽₂)` in `Rep_{𝔽₂}(ℤ/2)` every equivariant `A ⟶ 𝟙` is a
+      multiple of the Haar sum, which sends `1` to `2 = 0`), so it is stated
+      rather than assumed silently.  For a Haar-normalised form (`∫_A ∘ η = 1`) take `ψ = ∫_A`.
 
     What this does not give: the coadjoint-orbit geometry `P(V) ≅ S² ⊂ su(2)`
     of the archimedean picture.  `P := 𝟙` is the orbit of the unit, the
