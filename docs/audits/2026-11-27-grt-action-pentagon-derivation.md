@@ -84,3 +84,46 @@ pentagon of `φ` to `s`, and the action theorem holds at every truncated family.
 2. Prove DK3 for the `{12,3,4}`, `{1,2,34}` and `{1,23,4}` cofaces, then assemble `DK4 s`.
 3. Prove that the augmentation ideal of `U4 N` has `I^N = 0`, so that words in `s` vanish.
 4. Compose with `lift` to get the unconditional theorem.
+
+## 5. Stage 3c outcome: the far relation `[s₁₃, s₂₄] = 0`
+
+Lean: `RationalAssociator/TransportedDK4.lean`, no `sorry`. Scripts:
+`computations/rational_associator/grt_far_relation/`.
+
+**Decision.** The pentagon of `g` alone does not force the far relation. Adding (5.13) does not
+force it either. The evidence, exact over ℚ:
+
+- Give `g` the degree-2 part `[X, Y]`. That part satisfies the pentagon to its order and also
+  `g(X,Y) g(Y,X) = 1`.
+- Then the degree-4 part of `[s₁₃, s₂₄]` is not in the degree-4 Drinfeld–Kohno ideal of the free
+  algebra: 995 relations against 1296 words, so `dim U(𝔱₄)₄ = 301`, and the reduction leaves a
+  nonzero residual.
+- That degree-4 part depends only on the degree-2 part of `g`.
+- Drinfeld associators with `μ ≠ 0` satisfy the pentagon and (5.13) and have exactly this kind of
+  degree-2 part (Drinfeld 1991, Prop. 5.3 and Thm. A). So they are counterexamples.
+
+The μ = 0 hexagon (5.14) of `GRT` excludes a degree-2 part. Evidence that GRT is enough:
+
+- In degree 3, the only Lie direction satisfying the pentagon is `σ₃ = [X,[X,Y]] + [Y,[X,Y]]`.
+- For `σ₃`, `[s₁₃, s₂₄]₅` lies in the ideal; for the other three directions tested it does not.
+- This was checked modulo two primes, not over ℚ, and it covers the leading order only.
+- So it is evidence that (5.14) is what makes `hfar` hold. It is not a proof.
+
+**Proved in Lean.**
+
+- `dk4_of_locals`: ten bracketing-local commutations plus `[s₁₃, s₂₄] = 0` imply `DK4`. The
+  degree-2 rank count supports this: the locals span 10, and adding the far relation gives 11.
+- `transported_dk4`: given the pentagon of `g` and `hfar`, the transported family (with
+  `s₁₄ = t₁₄+t₂₄+t₃₄ − s₂₄ − s₃₄`) is a `DK4` family.
+- Nilpotence: in `U4 N`, a word of length `N` in elements of `Fil N 1` vanishes. Every `sᵢⱼ`
+  lies in `Fil N 1`.
+- `pentagon_act_universal`: in `U4 N`, the pentagons of `φ` and `g` together with `hfar` imply
+  the pentagon of `φ̃`. It is obtained through `lift`.
+
+**Still open (bean `qou-3fdg`).**
+
+1. Derive `hfar` in Lean from the hexagon (5.14), and (5.13) if needed. This probably means
+   relabelling strands by permutation automorphisms of `U4 N`, obtained through `lift`, and
+   comparing two transports of `t₁₃`.
+2. The five units `G` remain hypotheses. They exist whenever `g` has constant term 1, because
+   `Fil N 1` is nilpotent, but that is not yet written in Lean.
