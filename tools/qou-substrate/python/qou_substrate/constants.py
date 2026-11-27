@@ -109,6 +109,15 @@ MASS_RATIO_MU_E_ERR  = float(_MU_E.uncertainty)  # 22.2 ppb
 # q is DERIVED (never hardcoded): f64 Newton solve of the proton
 # substrate identity below; the arbitrary-precision derivation is
 # q_at() (mpmath findroot). m_μ-anchor cross-check: q_muon_at().
+# ── SHADOW ANCHOR (owner card 2026-11-27, "Shadow run first, decide after") ──
+# QOU_Q0_SHADOW=derived_we re-solves the proton pin with the DERIVED mass-chart
+# electron weight w_e = q d/dq log tau_e (PR #9733) in place of the hand-placed 1:
+#     m_p/m_e = [2 (Vol/hbar_q^2) F_Bor(q) - 12] / w_e(q).
+# SHADOW ONLY: never set in a committed witness run; q0 is not adopted by this.
+import os as _os_shadow
+_SHADOW_DERIVED_WE = _os_shadow.environ.get("QOU_Q0_SHADOW", "").strip().lower() == "derived_we"
+
+
 def _solve_q_proton_f64(mp_me, vol, iters=80):
     """f64 Newton solve of the RAW proton substrate identity
         m_p/m_e = 2·(vol/ℏ_q²)·F_Bor(q) − 12
@@ -130,8 +139,11 @@ def _solve_q_proton_f64(mp_me, vol, iters=80):
         hbar2 = hbar_q ** 2
         trM = abs((4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4))
         qf3 = (q**2 + 1 + q**-2) * (q + 1.0 / q)
-        return 2 * vol / hbar2 * (trM * qf3 / q**3) - 12
-    q = 1.11
+        w = 2 * vol / hbar2 * (trM * qf3 / q**3) - 12
+        if _SHADOW_DERIVED_WE:
+            w = w / (3 + 4 * q**2 * (q**2 - 1) / ((q**4 + 1) * (q**2 + 1)))
+        return w
+    q = 1.0634 if _SHADOW_DERIVED_WE else 1.11
     # f64 central difference: dq = q·1e-10 is the right scale for f64
     # (machine ε ≈ 2.2e-16); a dps-scaled dq would underflow here. The
     # arbitrary-precision path is q_at() (mpmath findroot, no manual dq).
@@ -396,9 +408,12 @@ try:
                 hbar_sq = (1 - 1 / q) ** 2
                 trM = _mp.fabs((4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4))
                 qf3 = (q**2 + 1 + q**(-2)) * (q + q**(-1))
-                return 2 * vol / hbar_sq * (trM * qf3 / q**3) - 12 - mp_me
+                w = 2 * vol / hbar_sq * (trM * qf3 / q**3) - 12
+                if _SHADOW_DERIVED_WE:
+                    w = w / (3 + 4 * q**2 * (q**2 - 1) / ((q**4 + 1) * (q**2 + 1)))
+                return w - mp_me
 
-            q = _mp.findroot(_resid, _mp.mpf("1.10997858"))
+            q = _mp.findroot(_resid, _mp.mpf("1.0633633" if _SHADOW_DERIVED_WE else "1.10997858"))
             _mp.mp.dps = max(prev, dps)
             return +q
         finally:
