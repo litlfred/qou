@@ -30220,7 +30220,7 @@ bearing on the arithmetic mechanism is unproven.
 
 \begin{enumerate}
   \item \emph{Arithmetic} (the substance): $D(n)$ is non-cyclotomic from $n=6$. This is
-\textbf{verified through $n=11$} but \textbf{not proved for all $n \geq 6$}; the
+\textbf{proved for $6 \le n \le 14$} (finite Lean certificates) but \textbf{not for all $n \geq 6$}; the
 cofactor's non-$q$-holonomic degree growth is the structural reason, not
 yet a proof. Generic high-degree bar-even integer polynomials are
 non-cyclotomic, so non-cyclotomicity is the \emph{expected} outcome — the
@@ -30239,17 +30239,21 @@ said is the dovetail with $S(n)=\allowbreak{}\sum_{\lambda\vdash n}\dim_q(\lambd
 $E_8$ marks carries the Verlinde measure $W_\lambda$. Specific root
 magnitudes are not interpreted.
 
-\textbf{What is proved.} \emph{Proved:} the Tier-1 base-case
-factorizations $D(4)=\Phi_1^2\Phi_3$ and $D(5)=\allowbreak{}2\,\Phi_1^2\Phi_2^2\Phi_3\Phi_6$
-(with the factors verified equal to the cyclotomic polynomials); the
-palindrome identity $C_6(z)=z^4\,\tilde C(z+z^{-1})$; and the full n = 6
-non-cyclotomicity of the deg-8 core $C_6$ — that $C_6$ is \emph{not} a product of
-cyclotomic polynomials — derived using only the elementary direction of
-Kronecker's dichotomy (roots of cyclotomics are roots of unity, hence of
-modulus 1), \emph{not} the hard converse. The entire n = 6 chain rests on a
-\textbf{single} cited classical input: that $\tilde C(y)=y^4+4y^3+2y^2-10y-8$ has a
-non-real root (immediate from $\mathrm{disc}(\tilde C)=-44208<0$). The full Tier-2 claim (non-cyclotomic
-for \emph{all} $n\geq 6$) is not proved — it remains verified through $n=11$.
+\textbf{What is proved.} \emph{Derived from the definition} (Lean,
+\texttt{QOU.\allowbreak{}Mass.\allowbreak{}Cyclotomic\allowbreak{}Boundary\allowbreak{}Certified}): for $2 \le n \le 9$, over a generic field with the hook
+brackets nonzero, the hook-length definition above gives $q^{m_n}D(n) = P_n(q)$ for an explicit
+$P_n \in \mathbb{Z}[q]$. In particular $D(2) = D(3) = 0$, $D(4) = q^{-2}\Phi_1^2\Phi_3$ and
+$D(5) =\allowbreak{} 2q^{-4}\Phi_1^2\Phi_2^2\Phi_3\Phi_6$, so the forward direction holds for every $n \le 5$.
+\emph{The converse through $n = 14$:} for $6 \le n \le 14$, $P_n$ is not $c\,q^j\prod_k\Phi_k$. The
+certificate is finite integer arithmetic: if $P = c\,q^j\prod\Phi_k$ and $p \mid P(a)$,
+$p \nmid a$, $p \nmid P(b)$, then $a^k \equiv 1 \pmod p$ for some factor $\Phi_k$, so the
+order $m$ of $a$ mod $p$ divides $k$ and $\varphi(m) \le\allowbreak{} \varphi(k) \le\allowbreak{} \deg P$. One witness
+$(p, a)$ with $\varphi(m) > \deg P_n$ per $n$ refutes the factorisation (for example $n = 6$:
+$p = 47$, $a = 28$, $m = 23$, $\varphi(23) = 22 > 14$). This uses no analysis and no
+discriminant. The polynomials $P_{10}, \dots, P_{14}$ in the certificate are computed by
+\texttt{computations/\allowbreak{}cyclotomic\_\allowbreak{}boundary\_\allowbreak{}certificates.\allowbreak{}py}; for $n \le 9$ they are derived in Lean.
+The earlier $n = 6$ route (the deg-8 core $C_6$, palindrome identity, $\mathrm{disc}(\tilde C) =\allowbreak{} -44208 <\allowbreak{} 0$) remains proved in \texttt{QOU.\allowbreak{}Mass.\allowbreak{}Cyclotomic\allowbreak{}Boundary\allowbreak{}Keystone}.
+\emph{Open:} non-cyclotomicity for \textbf{every} $n \ge 6$. No uniform family of witnesses is known.
 \end{conjecture}
 
 \phantomsection\label{rem:bring-curve-weyl-e8-prior-art}\begin{proposition}[{The binding multiplier is the unsigned coordination count, not a Gauss linking number: forced by Brunnian topology and bar-parity}]
@@ -46065,6 +46069,8 @@ The characters $\chi_\mu$ are the characters of five explicit representations of
 \]
 
 \emph{So the per-edge factor is $F_q = [d \pm 1]_q / ([2]_q [d]_q)$, depending on which row receives the cell. Each single edge determines $y_\lambda^{(n+1)}$ from one parent; summing these factors over all parents of $\lambda$ would double-count.}
+
+\emph{Derivation.} The closed form is the Markov-trace weight, not a postulate: $y_{(a,b)}$ equals the Ocneanu weight $w_{(a,b)}(z)$ at $z = q^3/(q^2+1)$, the weight of the unique Markov trace on the Hecke tower at that parameter. On two rows the hook-content product telescopes to $q^{2b}(1 +\allowbreak{} q^2 +\allowbreak{} \cdots +\allowbreak{} q^{2(a-b)})/(q^2+\allowbreak{}1)^{a+b}$, which is $[a-b+1]_q/[2]_q^{a+b}$. Every shape with three or more rows has weight $0$ there, so the trace factors through the Temperley–Lieb quotient.
 
 This recursion confirms that $\alpha_k(H_n)$ at a fixed $k$ involves only finitely many strata. The tower of Jones-Markov weights propagates without requiring expensive $p(n) \times p(n)$ linear-system solves.
 \end{conjecture}
