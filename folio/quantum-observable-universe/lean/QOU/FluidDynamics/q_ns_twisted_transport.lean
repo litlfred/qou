@@ -1,4 +1,5 @@
 import QOU.FluidDynamics.q_ns_triad_noncomm
+import CompactQuantumMetrics.OqSU2ModularNakayama
 
 /-!
 # QOU.FluidDynamics.q_ns_twisted_transport
@@ -35,6 +36,23 @@ corpus transport.
   self-adjoint `Du`, the right side has the sign of `−c`. So `q`-difference
   transport is not energy-conserving. It carries an intrinsic dissipation term
   that is first order in the step `c`.
+* **The sign is set by orientation (`qDiff_neg`).** `D` with step `−c` is
+  `−D` with step `c`, so the backward difference has the opposite budget, as
+  upwind and downwind schemes do. The sign is a choice of the operator, not a
+  property of the algebra.
+* **The balanced difference conserves energy (`qCen_energy_conserving`).**
+  For an automorphism `θ` with `φ ∘ θ = φ`, the operator `(θ − θ⁻¹)/c` (the
+  one behind balanced `q`-integers) gives `φ(Xu·u) + φ(u·Xu) = 0` exactly,
+  for every `u` and every `c`.
+* **Instantiated on `O_q(SU(2))` (`theta3D`, `theta3D_energy`).** The
+  automorphism that Hadfield–Krähmer attach to Woronowicz's 3D calculus,
+  `(a, b, c, d) ↦ (q⁻²a, q⁴b, q⁻⁴c, q²d)` (the twist of its cyclic cocycle), is
+  the corpus torus automorphism `torusScaleAlgEquiv q (q⁻²) (q⁴)`. For any
+  functional invariant under it, the one-sided budget is `−c·φ(Du·Du)` and the
+  balanced budget is `0`. Invariance of the Haar state is a hypothesis here.
+  This `σ` is **not** the Leibniz twist of a left-invariant field: that twist is
+  a right translation `(u, u⁻¹)`, while `σ` is a two-sided translation
+  (`OqSU2Coproduct.lean`, `hk_sigma_eq_two_sided`, `cartanField`).
 * **Non-vacuity (`qDiff_energy_budget_ne_zero`).** On `ℚ × ℚ` with the swap
   automorphism and the invariant functional `(a, b) ↦ a + b`, the budget for
   `u = (1, 0)`, `c = 1` is `−2`, not `0`.
@@ -45,8 +63,11 @@ corpus transport.
   corpus names the 3D calculus but does not define `∇_q` on the
   noncommutative algebra. The vector fields of that calculus are
   combinations of such twisted operators. Their exact form is not built here.
+* Which difference (one-sided or balanced) the corpus vector fields are.
+  The vector fields of the 3D calculus are not built here.
 * Any sign for the dissipation on `O_q(SU(2))`, which needs positivity of the
-  Haar state and a `*`-structure. Neither is used.
+  Haar state and a `*`-structure. Neither is used. Haar invariance under
+  `theta3D` is carried as a hypothesis.
 * Anything about Part A, which stays open (bean `qou-pa7n`).
 
 No empirical value enters any proof.
@@ -57,6 +78,10 @@ No empirical value enters any proof.
 - [woronowicz1989] Woronowicz, *Differential calculus on compact matrix
   pseudogroups (quantum groups)*, Comm. Math. Phys. 122 (1989): the 3D
   calculus and its bimodule relations.
+- [hadfield-krahmer-2005] Hadfield, Krähmer, *Twisted homology of quantum
+  SL(2)*, arXiv:math/0405249, section "three dimensional left-covariant
+  calculus": the automorphism `σ` used for `theta3D`
+  (library `arxiv-math-0405249v5`).
 -/
 
 namespace QOU.FluidDynamics.ModalTriad
@@ -137,5 +162,77 @@ theorem qDiff_energy_budget_ne_zero :
     sumQ (qDiff swapQ 1 (1, 0) * (1, 0)) + sumQ ((1, 0) * qDiff swapQ 1 (1, 0)) = -2 := by
   simp [qDiff_apply, swapQ, sumQ]
   norm_num
+
+/-! ### Orientation, and the balanced (centred) q-difference -/
+
+/-- Reversing the step reverses the operator: `D_{−c} = −D_c`. So the sign of
+    the budget term `−c·φ(Du·Du)` is set by the orientation of the transport,
+    not by the calculus. -/
+theorem qDiff_neg (θ : A →ₐ[K] A) (c : K) (f : A) :
+    qDiff θ (-c) f = -qDiff θ c f := by
+  rw [qDiff_apply, qDiff_apply, inv_neg, neg_smul]
+
+/-- The balanced `q`-difference `(θ − θ⁻¹)/c`, the operator behind balanced
+    `q`-integers `[n]_q = (qⁿ − q⁻ⁿ)/(q − q⁻¹)`. -/
+noncomputable def qCen (θ : A ≃ₐ[K] A) (c : K) : A →ₗ[K] A :=
+  c⁻¹ • (θ.toLinearMap - θ.symm.toLinearMap)
+
+theorem qCen_apply (θ : A ≃ₐ[K] A) (c : K) (f : A) :
+    qCen θ c f = c⁻¹ • (θ f - θ.symm f) := rfl
+
+/-- **The balanced `q`-difference conserves energy.** For a `θ`-invariant
+    functional, `φ(Xu·u) + φ(u·Xu) = 0` with `X = (θ − θ⁻¹)/c`, for every
+    `u` and every step `c`. The one-sided terms of the two orientations
+    cancel exactly. -/
+theorem qCen_energy_conserving (θ : A ≃ₐ[K] A) (c : K) (φ : A →ₗ[K] K)
+    (hφ : ∀ f, φ (θ f) = φ f) (u : A) :
+    φ (qCen θ c u * u) + φ (u * qCen θ c u) = 0 := by
+  have h1 : φ (θ.symm u * u) = φ (u * θ u) := by
+    rw [← hφ (θ.symm u * u), map_mul, AlgEquiv.apply_symm_apply]
+  have h2 : φ (u * θ.symm u) = φ (θ u * u) := by
+    rw [← hφ (u * θ.symm u), map_mul, AlgEquiv.apply_symm_apply]
+  simp only [qCen_apply, smul_mul_assoc, mul_smul_comm, map_smul, smul_eq_mul,
+    sub_mul, mul_sub, map_sub, h1, h2]
+  ring
+
+/-! ### The Hadfield–Krähmer automorphism of the 3D calculus on `O_q(SU(2))` -/
+
+section OqSU2
+
+open QOU.AlgebraicSubstrate QOU.AlgebraicSubstrate.OqSU2
+
+/-- The automorphism Hadfield–Krähmer attach to Woronowicz's three-dimensional
+    left-covariant calculus (the twist of its cyclic 3-cocycle),
+    `(α, β, γ, δ) ↦ (q⁻² α, q⁴ β, q⁻⁴ γ, q² δ)` (Hadfield–Krähmer, eq.
+    `3dcalc_aut`), as the corpus torus automorphism. -/
+noncomputable def theta3D (q : Kˣ) : OqSU2 K q ≃ₐ[K] OqSU2 K q :=
+  torusScaleAlgEquiv q (q⁻¹ ^ 2) (q ^ 4)
+
+theorem theta3D_alpha (q : Kˣ) :
+    theta3D q (α q) = (((q⁻¹ ^ 2 : Kˣ) : K)) • α q := by
+  simp [theta3D, torusScaleAlgEquiv, torusScaleAlgHom]
+
+theorem theta3D_beta (q : Kˣ) :
+    theta3D q (β q) = (((q ^ 4 : Kˣ) : K)) • β q := by
+  simp [theta3D, torusScaleAlgEquiv, torusScaleAlgHom]
+
+/-- The 3D-calculus `q`-difference is a twisted derivation of `O_q(SU(2))`. -/
+theorem theta3D_qDiff_leibniz (q : Kˣ) (c : K) (f g : OqSU2 K q) :
+    qDiff (theta3D q).toAlgHom c (f * g) =
+      qDiff (theta3D q).toAlgHom c f * theta3D q g + f * qDiff (theta3D q).toAlgHom c g :=
+  qDiff_leibniz _ c f g
+
+/-- **On `O_q(SU(2))`, for any `θ₃D`-invariant functional** (the Haar state is
+    invariant under the torus, which is carried as the hypothesis `hφ`): the
+    one-sided 3D-calculus transport changes the energy at rate
+    `−c·φ(Du·Du)`, and the balanced one conserves it. -/
+theorem theta3D_energy (q : Kˣ) (c : K) (hc : c ≠ 0) (φ : OqSU2 K q →ₗ[K] K)
+    (hφ : ∀ f, φ (theta3D q f) = φ f) (u : OqSU2 K q) :
+    φ (qDiff (theta3D q).toAlgHom c u * u) + φ (u * qDiff (theta3D q).toAlgHom c u) =
+        -c * φ (qDiff (theta3D q).toAlgHom c u * qDiff (theta3D q).toAlgHom c u) ∧
+      φ (qCen (theta3D q) c u * u) + φ (u * qCen (theta3D q) c u) = 0 :=
+  ⟨qDiff_energy_budget _ c hc φ hφ u, qCen_energy_conserving _ c φ hφ u⟩
+
+end OqSU2
 
 end QOU.FluidDynamics.ModalTriad

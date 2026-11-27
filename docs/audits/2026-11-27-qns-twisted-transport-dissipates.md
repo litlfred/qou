@@ -51,3 +51,34 @@ here.
   names the 3D calculus but does not define ∇_q on the noncommutative algebra.
 - The sign of the dissipation on `O_q(SU(2))`.
 - Part A.
+
+## Update: orientation, the balanced difference, and the 3D-calculus twist
+
+Three further results, all sorry-free (axioms: propext, Classical.choice,
+Quot.sound), in the same file:
+
+- `qDiff_neg`: the q-difference with step −c is minus the one with step c. So
+  the sign of the dissipation term is set by the orientation of the difference
+  (forward or backward), not by the algebra.
+- `qCen_energy_conserving`: for an automorphism θ with φ∘θ = φ, the balanced
+  difference (θ − θ⁻¹)/c, the operator behind the corpus's balanced q-integers,
+  conserves the quadratic energy exactly, for every u and c.
+- `theta3D`, `theta3D_energy`: the twist of Woronowicz's 3D calculus,
+  (a, b, c, d) ↦ (q⁻²a, q⁴b, q⁻⁴c, q²d) (Hadfield–Krähmer, library
+  `arxiv-math-0405249v5`), is the corpus torus automorphism
+  `torusScaleAlgEquiv q (q⁻²) (q⁴)` on `OqSU2`. For any functional invariant
+  under it, the one-sided budget is −c·φ(Du·Du) and the balanced budget is 0.
+
+So whether q-NS transport on O_q(SU(2)) conserves or changes energy depends on
+which difference the vector fields of the 3D calculus are. That is the next
+open question. Haar invariance under θ is still a hypothesis, and positivity
+and the *-structure are still not built.
+
+**Scope of `theta3D` (corrected the same day).** The Hadfield–Krähmer σ is the
+twist of the calculus's cyclic 3-cocycle, not the Leibniz twist of its vector
+fields. With the coproduct built in PR #9565 (`OqSU2Coproduct.lean`), the
+Leibniz twist of a left-invariant Cartan field (ε − χ_u)/c is a right
+translation `(uα, u⁻¹β, uγ, u⁻¹δ)`, and σ is a two-sided translation (left at q,
+right at q⁻³). So `theta3D_energy` is an instance of the general budgets, not
+the budget of the corpus Cartan field. That field is the one-sided `qDiff` with
+θ = R_u (`cartanField`), so its budget is −c·φ(Du·Du).
