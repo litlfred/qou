@@ -42,3 +42,7 @@ APPLIES. Premises checked against owner-rulings.md on origin/main (all rows to 2
 
 T1 lifted from cochains to a class. `MathlibExt/CentralExtensionH2.lean` builds `H2 H A` (trivial-action cocycles mod coboundaries, a CommGroup), `obstructionClass`, `obstructionClass_section_indep` and `obstructionClass_eq_one_iff` (lift iff class = 1). `QOU.YekutieliLiftingCondition.ofCentralExtensions` (block def:yekutieli-lifting-condition) discharges both fields of the definition from that theorem for any tower of central group extensions. Sorry-free, standard axioms.
 Next: retire the self-assuming `QOU.YekutieliLifting` carrier (prop:yekutieli-lifting); its `persistence` field is the retracted jet-tower claim (qou-lx8f).
+
+## 2026-11-27 owner ruling
+
+Carl chose "Both: conditional now, build 4.17" (card in thread "Build the brane-tower gerbes"): merge the conditional restatement of prop:yekutieli-lifting (PR #9755; group-level lift_iff derived, persistence a hypothesis) AND keep building stack-level Yekutieli Thm 4.17 (next: gerbe vs 2-cocycle, qou-0xk8; central extension of gerbes, Def 3.21).
