@@ -85,3 +85,7 @@ as A, the Markov curl on the last strand is +A³, and (A³)^{n+1}A^{n(n+1)} = ω
 ## 2026-11-27 — Markov trace built (PR #9817)
 
 `HeckeTemperleyLieb/TLSpinChainMarkovTrace.lean` gives `spinMarkovTower : MarkovTower δ δ⁻¹` at every `δ = q + q⁻¹` with `q ≠ 0` and `δ ≠ 0`, over any field. It is the U_q(sl₂) spin-chain quantum trace with weight ∏ g(τₜ). `vacuum_row_spin` makes the vacuum row of S at a root of unity unconditional. The file is sorry-free and uses only the standard axioms. Still open: the off-vacuum S rows (Hopf link of two JW projectors), which are next, and full modularity of the Hecke category.
+
+## 2026-11-27 — off-vacuum row S_{1,j} from braiding (PR #9822)
+
+`HeckeTemperleyLieb/TLHopfLinkRow.lean`, sorry-free: `hopf_trace` evaluates the Hopf link of one strand with `p_n` for any Markov tower, `δ^{n+2}τ_{n+1}((p_n⊗1)·hopfW) = [n+2](A^{2(n+2)}+A^{−2(n+2)}) = [2(n+2)]`, by recursion through the Wenzl identity. `hopf_row_eq_sMatrix` identifies this with `sMatrix ζ k 1 (n+1)` at ζ = ω². With #9817 it is unconditional. Still open: rows S_{b,j} with b ≥ 2 (these need the cabled projector p_{b−1} on the encircling bundle), the ribbon twist on p_n via interior curls, and full modularity. The bean stays open.
