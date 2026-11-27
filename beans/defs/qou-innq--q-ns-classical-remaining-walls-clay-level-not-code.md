@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-07-24T15:49:33Z
-updated_at: 2026-11-27T15:35:00Z
+updated_at: 2026-11-27T16:05:00Z
 parent: qou-a3n3
 ---
 
@@ -32,3 +32,14 @@ Neither PR settles any wall. #9428 (holography / q-NS essay review) works on Bri
 ## 2026-11-27: item (3) has no subject on main
 
 Item (3), "Levi branch value: compute β = limsup log C_L / log κ", no longer has a subject. Owner ruling Q1 (2026-10-13, bean qou-fm7s) re-scoped the Levi chain onto Θ = f·ξ♭ on the 3D flow domain, where the Levi form is 1 × 1 (the scalar ξ·curl ξ). C_L, β and the trichotomy are withdrawn as undefined (`conj:levi-degeneracy`, `QOU/FluidDynamics/levi_growth_trichotomy.lean` header, checked on main `ba53c84cd5`). Branch (A) is withdrawn (`beltrami_refutes_branchA`). What survives is branch (B) on the Levi scalar, an open conjecture carried by `LeviDegeneracyQ1.LeviDegeneracy` (no instance), tracked in qou-fm7s. Suggested restatement of item (3), pending the owner: "branch (B) of conj:levi-degeneracy on ξ·curl ξ (see qou-fm7s)", or drop it from this list. Not edited above; status unchanged.
+
+## 2026-11-27 Part A (sibling thread "Prove q-NS Part A blowup") — PR #9485
+
+Part A now has Lean: `QOU/FluidDynamics/q_ns_enstrophy_order_parameter.lean` (sorry-free).
+Relative to `QNsWellposednessContext` (scope (b), invariant = field `modal_inequality` + `qIntBal_mono`):
+substrate-layer (q-independent) data -> Part A FALSE (Omega attained at t=0, monotone in q, bounded as q->1+);
+physical-layer data -> alpha = 2 by unit conversion only (artifact); free q-dependent data -> empty.
+`stokesContext` (linear Stokes flow) satisfies every field, so the context cannot see nonlinear mode transfer.
+Part A stays OPEN for a modal law with triad transfer. Owner decision pending: weaken thm:q-ns-wellposedness
+property 3 / withdraw Part A / record physical-layer reading as artifact. Audit:
+docs/audits/2026-11-27-qns-part-a-enstrophy-order-parameter.md
