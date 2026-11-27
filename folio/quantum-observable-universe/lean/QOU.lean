@@ -1908,6 +1908,7 @@ import QOU.MassTheory.H4GPMTModifiedDimensionCumulants
 import QOU.EightfoldWay.USpinColemanGlashowLambdaSigma
 import QOU.EightfoldWay.AlternatingChannelRowCap
 import QOU.StandardModel.OctonionColourTripletSplitting
+import QOU.StandardModel.ColourOnSingleFibreThreeStrands
 import QOU.StandardModel.OctonionColourTripletComplexType
 import QOU.StandardModel.GaugeHeckeCanonicalFaithfulness
 import QOU.Core.FlavouredQuantumObservableUniverse
