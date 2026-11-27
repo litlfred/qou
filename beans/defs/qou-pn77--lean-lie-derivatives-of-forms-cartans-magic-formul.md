@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T17:48:59Z
-updated_at: 2026-11-27T18:01:20Z
+updated_at: 2026-11-27T19:04:45Z
 parent: qou-rtxm
 ---
 
@@ -14,3 +14,5 @@ Owner 2026-11-27: 'Dispatch sibling to do lie derivatives on manifolds'. Route p
 2026-11-27: PR #9532 opened, head 50a2727ad5c7. cartan_formula + corollaries + derivation instance sorry-free. Handed to merge manager. Follow-ups remain open (dω alternating, d²=0, L_x as AlternatingMap, [L_x,i_y]=i_[x,y], analytic bridge).
 
 2026-11-27: PR #9540 (head 26fef9cf7bbc): LieDerivativeComplex.lean — ceDAlt (d on forms), bracketPart_isAltMulti, lieDerivAlt, i_y L_x = L_x i_y - i_[x,y], [L_x,L_y]=L_[x,y], [L_x,d]=0, d∘d=0. All sorry-free, any CommRing. Remaining: analytic bridge to Mathlib extDeriv inside QOU/Transcendental boundary (#9533).
+
+2026-11-27: analytic bridge done in PR #9576 (QOU/Transcendental/Calculus/LieDerivativeExtDeriv.lean): ceDAlt_toCE (Koszul d = Mathlib extDeriv), lieDerivAlt_toCE, cartan_constField. Sorry-free. Scope: constant vector fields only; non-constant fields (VectorField.lieBracket, C^inf(E)-linear cochains) not covered. Classical.choice from Mathlib analysis, not yet on Coev.
