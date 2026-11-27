@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - compute-accuracy
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-11-27T18:40:00Z
+updated_at: 2026-11-28T02:00:00Z
 parent: qou-v2om
 ---
 
@@ -1078,3 +1078,7 @@ Added time per extra nucleon: 33 s (2H->3H), 30 s (3H->4He), 39 s (4He->6Li), 63
 Measured (witness `binding-scale-tl.witness.json`): every A = 2..11 cell on both γγ routes (chain; sequential capture over/under) and the ¹²C chain computed; all unbind (B_log < 0, preregistered P1). Sequential cell cost: ⁶Li 0.5 s, ⁷Li 2.8 s, ⁸Be 15 s, ⁹Be 105 s, ¹⁰B 520 s, ¹¹B 3,366 s (~×5 per nucleon); ¹²C chain 241 s. ¹²C sequential still running.
 
 Precision trap found: at 768 bits the sequential sweep loses every digit at A = 9 (ball 0 ± 1e59). The probe now escalates precision until the certified relative radius < 1e-40 and records `prec_bits`.
+
+## 2026-11-27 — 12C sequential cells (PR #9802, head fbc25df8e15)
+
+over −234.18 keV (15575 s), under −251.00 keV (15482 s), both at 3072 bits, width 14, 2.67e6 terms. Both unbind. The A = 9–12 grid is now complete. Sequential cost runs from 0.5 s (6Li) to 15500 s (12C), about ×4.6 per nucleon.
