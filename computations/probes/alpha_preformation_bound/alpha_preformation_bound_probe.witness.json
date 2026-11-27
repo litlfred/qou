@@ -1,0 +1,160 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-27T20:34:18.204036+00:00",
+  "commitSha": "3adac28cc68dedb24ae7c36afe87640eea7b0abf",
+  "assertions": [
+    {
+      "name": "n_emitters",
+      "computed": 7,
+      "expected": 7,
+      "passed": true,
+      "tolerance": 0,
+      "source": "qou-i2jl witness part A"
+    },
+    {
+      "name": "n_blocked_barrier_side",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "tolerance": 0,
+      "source": "S_required > 1 (8Be, 222Rn, 226Ra, 238U)"
+    },
+    {
+      "name": "literal_MJ_worse_for_open_shell_Po",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "210Po rule read literally"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 51,
+  "computation": "alpha_preformation_bound_probe",
+  "scriptFile": "alpha_preformation_bound_probe.py",
+  "scriptHash": "77f29024573d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "mpmath": "1.4.1",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/alpha_preformation_bound/alpha_preformation_bound_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/alpha_preformation_bound/alpha_preformation_bound_probe.py"
+  },
+  "description": "Partition of bare-WKB alpha emitters by whether an admissible preformation factor 0 < S <= 1 can close the half-life miss (Lean AlphaPreformationBound); literal reading of the 210Po Mayer-Jensen rule for 212Po and 214Po (scope-(a) test, no fitting).",
+  "parameters": {
+    "work_dps": 80,
+    "source_witness": "computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json"
+  },
+  "data": {
+    "emitters": [
+      {
+        "nuclide": "8Be",
+        "Z": "4",
+        "N": "4",
+        "regime": "81.9 as (resonance)",
+        "dex_bare_WKB": "0.885271643444",
+        "S_required": "7.67841610411",
+        "preformation_can_close": false
+      },
+      {
+        "nuclide": "212Po",
+        "Z": "84",
+        "N": "128",
+        "regime": "294.4 ns (open shell, N=128)",
+        "dex_bare_WKB": "-0.349546775700",
+        "S_required": "0.447149988892",
+        "preformation_can_close": true
+      },
+      {
+        "nuclide": "214Po",
+        "Z": "84",
+        "N": "130",
+        "regime": "163.6 us (open shell, N=130)",
+        "dex_bare_WKB": "-0.138824283092",
+        "S_required": "0.726399801622",
+        "preformation_can_close": true
+      },
+      {
+        "nuclide": "222Rn",
+        "Z": "86",
+        "N": "136",
+        "regime": "3.8215 d (open shell, N=136)",
+        "dex_bare_WKB": "0.143999942255",
+        "S_required": "1.39315661771",
+        "preformation_can_close": false
+      },
+      {
+        "nuclide": "210Po",
+        "Z": "84",
+        "N": "126",
+        "regime": "138.3763 d (magic N=126)",
+        "dex_bare_WKB": "-1.25729872966",
+        "S_required": "0.0552969617967",
+        "preformation_can_close": true
+      },
+      {
+        "nuclide": "226Ra",
+        "Z": "88",
+        "N": "138",
+        "regime": "1600 y (open shell, N=138)",
+        "dex_bare_WKB": "0.189379019439",
+        "S_required": "1.54660360960",
+        "preformation_can_close": false
+      },
+      {
+        "nuclide": "238U",
+        "Z": "92",
+        "N": "146",
+        "regime": "4.468 Gy (open shell, N=146)",
+        "dex_bare_WKB": "0.404980039403",
+        "S_required": "2.54085592265",
+        "preformation_can_close": false
+      }
+    ],
+    "partition": {
+      "closable_by_preformation": [
+        "212Po",
+        "214Po",
+        "210Po"
+      ],
+      "blocked_barrier_side": [
+        "8Be",
+        "222Rn",
+        "226Ra",
+        "238U"
+      ]
+    },
+    "literal_mayer_jensen_open_shell": {
+      "212Po": {
+        "S_literal_MJ": "0.0100000000000",
+        "dex_bare_WKB": "-0.349546775700",
+        "dex_with_literal_MJ": "1.65045322430",
+        "worse_than_bare": true
+      },
+      "214Po": {
+        "S_literal_MJ": "0.0100000000000",
+        "dex_bare_WKB": "-0.138824283092",
+        "dex_with_literal_MJ": "1.86117571691",
+        "worse_than_bare": true
+      }
+    }
+  },
+  "caveats": [
+    "T_exp is the comparison target only. S_required is a diagnostic, not a predicted value. The bound S <= 1 is the normalisation of a probability."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561"
+}
