@@ -782,9 +782,6 @@
   "QCalculus/PhiBProdZeroIsolation.lean": [
    "transcendental-function"
   ],
-  "QOU/BraidsAndKnots/AssociatorKZ.lean": [
-   "analysis"
-  ],
   "QOU/BraidsAndKnots/BarSymmetricBarAntiSymmetricIdentities.lean": [
    "transcendental-function"
   ],
@@ -811,31 +808,12 @@
   "QOU/BraidsAndKnots/DeltaLambdaSignRule.lean": [
    "transcendental-function"
   ],
-  "QOU/BraidsAndKnots/Drinfeld/Braiding.lean": [
-   "transcendental-function"
-  ],
-  "QOU/BraidsAndKnots/Drinfeld/BraidingVV.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/BraidsAndKnots/Drinfeld/Hexagon.lean": [
-   "transcendental-function"
-  ],
-  "QOU/BraidsAndKnots/Drinfeld/RibbonDH.lean": [
-   "transcendental-function"
-  ],
-  "QOU/BraidsAndKnots/DrinfeldAssociator.lean": [
-   "analysis"
-  ],
   "QOU/BraidsAndKnots/Flat2D.lean": [
    "analysis"
   ],
   "QOU/BraidsAndKnots/FuchsianAnalytic.lean": [
    "analysis",
    "transcendental-function"
-  ],
-  "QOU/BraidsAndKnots/FuchsianParam.lean": [
-   "analysis"
   ],
   "QOU/BraidsAndKnots/HiggsCategoricalMassFormula.lean": [
    "transcendental-function"
@@ -846,48 +824,6 @@
   ],
   "QOU/BraidsAndKnots/JHopfQOneProvenance.lean": [
    "real-completion"
-  ],
-  "QOU/BraidsAndKnots/KZ4.lean": [
-   "analysis"
-  ],
-  "QOU/BraidsAndKnots/KZComplex.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/BraidsAndKnots/KZCorner.lean": [
-   "analysis"
-  ],
-  "QOU/BraidsAndKnots/KZEdge.lean": [
-   "analysis"
-  ],
-  "QOU/BraidsAndKnots/KZFunctorial.lean": [
-   "analysis"
-  ],
-  "QOU/BraidsAndKnots/KZHalfMonodromy.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/BraidsAndKnots/KZHexagon.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/BraidsAndKnots/KZHexagonCentral.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/BraidsAndKnots/KZIntertwine.lean": [
-   "analysis"
-  ],
-  "QOU/BraidsAndKnots/KZPentagon.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/BraidsAndKnots/KZShift.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/BraidsAndKnots/KZShiftPhi.lean": [
-   "analysis"
   ],
   "QOU/BraidsAndKnots/KeystoneN5LevelSixSuffices.lean": [
    "transcendental-function"
@@ -917,9 +853,6 @@
   "QOU/BraidsAndKnots/QBetaReebSinhParity.lean": [
    "transcendental-function"
   ],
-  "QOU/BraidsAndKnots/SmallHbar.lean": [
-   "transcendental-function"
-  ],
   "QOU/BraidsAndKnots/SubstrateEWHypotheses.lean": [
    "transcendental-function"
   ],
@@ -934,9 +867,6 @@
   ],
   "QOU/BraidsAndKnots/YoungDiagramKernelA2MomentSkeleton.lean": [
    "transcendental-function"
-  ],
-  "QOU/BraidsAndKnots/ZigZag.lean": [
-   "analysis"
   ],
   "QOU/BraidsAndKnots/mobius_frobenius_kernel.lean": [
    "analysis"
@@ -1136,15 +1066,6 @@
   "QOU/MassTheory/BranchingConvergence.lean": [
    "real-completion"
   ],
-  "QOU/MassTheory/BridgeAColourSplit.lean": [
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/BridgeADeligneKZ.lean": [
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/BridgeAP2Regular.lean": [
-   "analysis"
-  ],
   "QOU/MassTheory/BringSchwingerNormalizationDerivation.lean": [
    "transcendental-function"
   ],
@@ -1318,10 +1239,6 @@
   "QOU/MassTheory/KZHolonomy/FlatGauge.lean": [
    "analysis"
   ],
-  "QOU/MassTheory/KZHolonomy/LocalMonodromy.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
   "QOU/MassTheory/KZHolonomy/ODETransport.lean": [
    "analysis"
   ],
@@ -1335,20 +1252,9 @@
    "analysis",
    "transcendental-function"
   ],
-  "QOU/MassTheory/KohnoAssembly.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
-  "QOU/MassTheory/KohnoAssemblyGL.lean": [
-   "analysis",
-   "transcendental-function"
-  ],
   "QOU/MassTheory/KohnoTwoPoint.lean": [
    "analysis",
    "transcendental-function"
-  ],
-  "QOU/MassTheory/KohnoWeighted.lean": [
-   "analysis"
   ],
   "QOU/MassTheory/LinearChainBondFactorization.lean": [
    "transcendental-function"
