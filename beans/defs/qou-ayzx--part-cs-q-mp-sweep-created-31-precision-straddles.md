@@ -7,7 +7,7 @@ priority: normal
 tags:
     - compute-accuracy
 created_at: 2026-11-21T04:30:36Z
-updated_at: 2026-11-27T15:40:00Z
+updated_at: 2026-11-27T15:20:00Z
 parent: qou-9nnz
 ---
 
@@ -177,3 +177,9 @@ The owner chose (2026-11-27) to split #8560 into small PRs from main: #9471 (Lea
 **What this bean now means:** if the q-precision ceiling is lifted again, redo the sweep from main so that it moves the sympy spelling (`sp.Rational`/`sp.sympify(Q_50_DIGIT_STR)`) **together with** the mpmath one, using the verified pattern
 `with mp.workdps(DPS + 15): QV = sp.Rational(mp.nstr(Q_MP, DPS + 10, strip_zeros=False))`,
 and gate every touched witness on both the value gate and the provenance gate (#9472). Not started.
+
+## 2026-11-27 15:20 UTC — CORRECTION: #8560 merged, so the straddles are now ON MAIN
+
+The note above went stale within the hour. #8560 was revived (main merged in at `dd6ec5ccea`) and merged as `22b1f41263`. Main now carries the 70-digit sweep, and with it the straddles. Checked on main: `delta_lambda_binding_reading_probe` (line 66 `sp.Rational(Q_50_DIGIT_STR)` against line 120 `q = Q_MP`), `diproton_response_closed_form_probe` (lines 102 and 106), `two_nucleon_bond_response_arity_probe` (lines 140 and 142), `colour_weighting_markov_universality_probe` (lines 137 and 138), `deuteron_interface_colour_weighting_probe` (lines 108 and 109), `long_braid_limit_dominant_line_probe` (lines 90 to 92), and `qbeta_option_e_required_level_probe` (lines 133 and 141). `two_nucleon_binding_law_comparison_probe` is already fixed.
+
+The task is again: **close the 7 straddles at the producers** (owner ruling D, 2026-11-21), using the verified pattern, starting with `delta_lambda` (1.19× margin). The "redo the sweep from main" re-scope above is withdrawn.
