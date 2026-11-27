@@ -9,9 +9,10 @@ tags:
     - bring-foundations
     - lean
 created_at: 2026-11-18T19:26:09Z
-updated_at: 2026-11-22T21:59:12Z
+updated_at: 2026-11-27T22:04:48Z
 parent: qou-6qbv
 ---
+
 **For agy.** Written 2026-11-18 by the Bring-foundations thread at ofri's request ("bean up for agy to do: C + A"). Parent bean `qou-qhcr` must never be closed.
 
 ## Context
@@ -143,3 +144,7 @@ Parent set to `qou-6qbv`: old parent `qou-qhcr` is not an epic/milestone/feature
 ## 2026-11-27 — χ = −6 chain thread (session_01VQDpPbyS5NspZ1YQT2xsE6, PR #9726)
 
 PR #9726 adds `chi_le_neg_six_of_A5_map`, which uses the same map interface (`exists_genus_nonneg`, `quotient_genus`) for the A₅ action alone. The triangulation gap (`qou-yslf`) is unchanged.
+
+
+
+2026-11-27: step 3 narrowed. See qou-yslf,  and ; the lift step is proved in MathlibExt/VoltageLift.lean.

@@ -10,9 +10,10 @@ tags:
     - lean
     - mathlib-gap
 created_at: 2026-11-21T07:30:00Z
-updated_at: 2026-11-22T21:59:12Z
+updated_at: 2026-11-27T22:04:48Z
 parent: qou-6qbv
 ---
+
 Created 2026-11-21 by W9 (session_01VQDpPcjxVSqN8ELUBjiBHk). The owner ruling of 2026-11-21 says resource-limited work goes to a bean for Antigravity.
 
 **Target.** `QOU.BringsSurface.GenusFourFromEquivariantMap.chi_eq_neg_six_of_equivariant_map` (merged, #8719) starts from a connected combinatorial map (darts D, rotation σ, fixed-point-free involution α) with G-actions. Its hypotheses: the actions commute with σ and α, act freely on edges and faces, and have cyclic vertex stabilisers.
@@ -37,3 +38,7 @@ Parent set to `qou-6qbv`: old parent `qou-m3tr` is not an epic/milestone/feature
 ## 2026-11-27 — χ = −6 chain thread (session_01VQDpPbyS5NspZ1YQT2xsE6, PR #9726)
 
 Unchanged. PR #9726's new theorem starts from the same combinatorial map, so Radó plus the equivariant refinement remains the only topological input. Not attempted (Mathlib gap).
+
+
+
+2026-11-27 (branch claude/equivariant-triangulation-2026-11-27): the combinatorial half is proved. MathlibExt/VoltageLift.lean: a dart-free action has cyclic cell stabilisers (cycle_stabilizer_isCyclic); the voltage lift liftPerm is equivariant, free on darts and edges, and its quotient is the base map. BraidKnotOctonion/A5VoltageMapChi.lean: chi_le_neg_six_of_A5_voltage_map needs only face freeness, connectedness and hyperbolicity. What remains is split into  (monodromy as voltages) and  (Radó plus combinatorial chi = analytic chi). Stays open.
