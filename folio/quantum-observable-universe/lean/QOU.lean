@@ -295,6 +295,7 @@ import QOU.BraidsAndKnots.SeminormalDimSmall
 import QOU.Core.Glossary
 import QOU.Transcendental.BraidsAndKnots.AssociatorKZ
 import QOU.Transcendental.BraidsAndKnots.BlockResidues
+import QOU.Transcendental.BraidsAndKnots.HiggsCategoricalMassFormulaReal
 import QOU.Transcendental.BraidsAndKnots.Drinfeld.Assoc
 import QOU.Transcendental.BraidsAndKnots.Drinfeld.Braiding
 import QOU.Transcendental.BraidsAndKnots.Drinfeld.BraidingVV
@@ -842,6 +843,7 @@ import BraidKnotOctonion.SecondMomentKernelVanishes
 import QOU.Confinement.FlavorDressing
 import QOU.MassTheory.ArchimedeanMassFormula
 import QOU.Observations.CODATAChain
+import QOU.Transcendental.Observations.CODATAChainReal
 import QOU.Core.ClassicalLimitObstruction
 import QOU.StandardModel.FeynmanPathIntegrals
 import QOU.Core.MathConstants
@@ -1023,7 +1025,7 @@ import QOU.MassTheory.IdealTetVolumeRigidity
 -- The Li₂-continuation / scalar-IFT chain this lane rests on is wired at the
 -- top of this file (with the other MathlibExt imports), not here — it is
 -- general analytic infrastructure, not 5₂ content.
-import QCalculus.LiTwoNegOne
+import QOU.Transcendental.QCalculus.LiTwoNegOne
 import QOU.Nuclear.FiveTwoDiscriminant
 import QOU.Nuclear.FiveTwoCutAvoidance
 import QOU.Nuclear.FiveTwoDeformedSaddle
@@ -1224,7 +1226,8 @@ import QOU.BraidsAndKnots.DerivedCharacterCatalogue
 -- CI); registered here for coverage. Transitively pulls HeckeH3Characters,
 -- HeckeH3BlockRep, HeckeH2Wedderburn, HeckeBraidedCategoryScaffold,
 -- MatrixSemisimple.
-import HeckeTemperleyLieb.HeckeH2WedderburnReal
+import QOU.Transcendental.HeckeTemperleyLieb.HeckeH2WedderburnReal
+import QOU.Transcendental.HeckeTemperleyLieb.QHookBoundReal
 import HeckeTemperleyLieb.HeckeH3Semisimple
 import HeckeTemperleyLieb.HeckeH3GramNondegeneracy
 import HeckeTemperleyLieb.HeckeH4AlgebraLaws

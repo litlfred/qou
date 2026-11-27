@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Trilogarithm imaginary part at $\\zeta_5$: Tate-rational closed form $4\\pi^3/125$ via Kummer reflection (50-dps verified)",
   lean: {
-    ref: "qou:BraidKnotOctonion.BringTrilogImaginaryTateRational.im_li3_zeta5_closed_form",
+    ref: "qou:QOU.Transcendental.BraidKnotOctonion.BringTrilogImaginaryTateRational.im_li3_zeta5_closed_form",
     validation: "not_checked",
   },
   computation: {

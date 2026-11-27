@@ -46,8 +46,6 @@ Ref: [casimir1948] https://dwc.knaw.nl/DL/publications/PU00018547.pdf
 
 namespace QOU.AppendixSurreals
 
-open scoped Real
-
 /-- **`ζ(−3) = 1/120`.** The Riemann zeta value at `−3`, from Mathlib's
 negative-integer Bernoulli formula `riemannZeta (−k) = −B'_{k+1}/(k+1)`
 with `B'_4 = −1/30`. This is the regularised value of the cubic mode
@@ -69,13 +67,18 @@ theorem riemannZeta_neg_three_re : (riemannZeta (-3 : ℂ)).re = 1 / 120 := by
 transverse geometric factor `π²/6` times the regularised cubic
 mode-sum `|ζ(−3)| = 1/120` is the textbook Casimir energy prefactor.
 The right-hand side is `q`-free — no Hecke `y_λ` enters, because the
-leading-order modes are disjoint unknots. -/
-theorem casimir_prefactor_factorization :
-    (π ^ 2 / 6) * (1 / 120) = π ^ 2 / 720 := by ring
+leading-order modes are disjoint unknots.
+
+`π` enters only as a magnitude, so it is a symbol `p` here and the
+identity holds over any field of characteristic zero (bean `qou-dk7p`). -/
+theorem casimir_prefactor_factorization {K : Type*} [Field K] [CharZero K] (p : K) :
+    (p ^ 2 / 6) * (1 / 120) = p ^ 2 / 720 := by ring
 
 /-- The prefactor is strictly positive (its sign as a *force* is fixed
 separately by the `∂_d` of the energy; here we record the magnitude is
-nonzero, so the leading Casimir term does not vanish). -/
-theorem casimir_prefactor_pos : 0 < π ^ 2 / 720 := by positivity
+nonzero, so the leading Casimir term does not vanish). Stated for any
+nonzero symbol `p` standing for `π` in an ordered field. -/
+theorem casimir_prefactor_pos {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+    (p : K) (hp : p ≠ 0) : 0 < p ^ 2 / 720 := by positivity
 
 end QOU.AppendixSurreals

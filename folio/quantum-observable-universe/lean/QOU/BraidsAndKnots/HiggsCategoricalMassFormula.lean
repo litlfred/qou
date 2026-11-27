@@ -143,9 +143,9 @@ theorem vol_borromean_over_four_eq_two_catalan :
   unfold volBorromean
   ring
 
-/-- `catalanG` is definitionally `Cl_2 (π / 2)` (no decimal truncation). -/
-theorem catalanG_eq_cl2_pi_div_two :
-    catalanG = QOU.Archimedean.Cl_2 (Real.pi / 2) := rfl
+/- `catalanG_eq_cl2_pi_div_two` (`catalanG = Cl₂(π/2)`, by `rfl`) lives in the
+   companion `QOU.Transcendental.BraidsAndKnots.HiggsCategoricalMassFormulaReal`
+   (bean `qou-dk7p`). -/
 
 /-- `volBorromean` agrees definitionally with `QOU.Archimedean.Vol_Borromean = 8 · Cl_2 (π / 2)`. -/
 theorem volBorromean_eq_Vol_Borromean :
