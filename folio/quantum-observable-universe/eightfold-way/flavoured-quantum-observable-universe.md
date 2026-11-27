@@ -95,3 +95,9 @@ antisymmetric one. The fundamental $V$ has the same feature: $\binom{N}{2} = 1$ 
 $N = 2$ only once $\Lambda^2 V$ is pinned. Lean:
 `QOU/Core/FlavourVolumeForcesDimThree.lean` (`exteriorCubeDim_eq_one_iff`,
 `exteriorCubeDim_ne_zero_iff`).
+
+**The antisymmetric pin and the braiding scalar on $W$.** The structure now requires the exterior cube to be antisymmetric: the twist acts on $W$ by a scalar $t$, both adjacent crossings act on $\pi_3 \colon W^{\otimes 3} \twoheadrightarrow \Lambda^3 W$ by one scalar $c$, and $1 - c$ is regular on $\mathrm{End}(\mathbf{1})$. That last condition is what excludes the one-dimensional $W$, whose braiding is the identity. Balancing on $\Lambda^3 W \cong \mathbf{1}$ gives
+$$
+(c^2 t)^3 = 1 ,
+$$
+so the twist fixes the braiding scalar only up to a cube root of unity. That ambiguity is the $\mathbb{Z}/3$ phase above, and no field of the structure chooses the root. The Drinfeld–Jimbo normalisation is the choice $c^2 t = 1$. Lean: `QOU/Core/ExteriorQuotientNormalisation.lean` (`exteriorCube_balancing_unit`).

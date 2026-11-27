@@ -78,6 +78,27 @@ structure FlavouredQuantumObservableUniverse (R : Type*) [CommRing R]
   `Hom(𝟙, W ⊗ W) = 0` in the linear category.  Excludes `Sym²V` and every other object of
   the single-fibre category. -/
   flavour_not_selfDual : Subsingleton ((𝟙_ C) ⟶ (flavourObj ⊗ flavourObj))
+  /-- **Twist scalar on `W`**: `θ_W = t • 𝟙_W`. -/
+  flavourTwistScalar : R
+  twist_flavour : _root_.QOU.MathlibExt.BalancedCategory.twist flavourObj
+    = flavourTwistScalar • 𝟙 flavourObj
+  /-- The scalar `c` by which each adjacent crossing acts on `Λ³W`. -/
+  flavourBraidScalar : R
+  /-- **`Λ³W` is an antisymmetric quotient** (adopted 2026-11-27, proposal
+      `docs/audits/2026-11-27-pin-exterior-quotients-proposal.md`): the first crossing acts
+      by `c`. -/
+  exteriorCube_antisym₁ : (β_ flavourObj flavourObj).hom ▷ flavourObj ≫ exteriorCubeProj
+    = flavourBraidScalar • exteriorCubeProj
+  /-- The second crossing acts by the same `c`. -/
+  exteriorCube_antisym₂ : (α_ flavourObj flavourObj flavourObj).hom ≫
+      flavourObj ◁ (β_ flavourObj flavourObj).hom ≫ (α_ flavourObj flavourObj flavourObj).inv ≫
+      exteriorCubeProj = flavourBraidScalar • exteriorCubeProj
+  /-- **`c` is not the symmetric value `1`**: `1 - c` acts without torsion on `End 𝟙`.  Without
+      it a one-dimensional `W` with trivial braiding (`c = 1`) met every field
+      (`FlavourLabelCarrier.unit_flavour_meets_axioms`).  The normalisation of `c` is fixed by
+      the twist only up to a cube root of unity, `(c²t)³ = 1`
+      (`ExteriorQuotientNormalisation.exteriorCube_balancing_unit`); no field chooses the root. -/
+  flavourBraid_regular : ∀ f : 𝟙_ C ⟶ 𝟙_ C, (1 - flavourBraidScalar) • f = 0 → f = 0
 
 namespace FlavouredQuantumObservableUniverse
 
