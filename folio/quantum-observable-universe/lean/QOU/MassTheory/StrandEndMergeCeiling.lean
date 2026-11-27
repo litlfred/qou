@@ -43,8 +43,9 @@ def Y (u : K) (n : ℕ) : K := (1 - u ^ (n + 1)) / ((1 - u) * (1 + u) ^ n)
 /-- `q^(n+1) · (q⁻¹)^(2(n+1)) = (q⁻¹)^(n+1)`. -/
 lemma pow_mul_inv_sq_pow (q : K) (hq : q ≠ 0) (n : ℕ) :
     q ^ (n + 1) * (q⁻¹ ^ 2) ^ (n + 1) = q⁻¹ ^ (n + 1) := by
-  rw [← pow_mul, show 2 * (n + 1) = (n + 1) + (n + 1) by ring, pow_add, ← mul_assoc,
-    ← mul_pow, mul_inv_cancel₀ hq, one_pow, one_mul]
+  rw [← mul_pow]
+  congr 1
+  field_simp
 
 /-- The quantum integer numerator identity: `(q^(n+1) − q^-(n+1))·(1 − u) = q^(n+1)(1 − u)(1 − u^(n+1))`
 with `u = q⁻²`. -/
@@ -53,7 +54,7 @@ lemma qint_num (q : K) (hq : q ≠ 0) (n : ℕ) :
   rw [mul_sub, mul_one, pow_mul_inv_sq_pow q hq]
 
 /-- `y_(n) = [n+1]_q / [2]_q^n` equals `Y (q⁻²) n`. -/
-theorem qint_div_eq_Y (q : K) (hq : q ≠ 0) (h1 : 1 - q⁻¹ ^ 2 ≠ 0) (h2 : 1 + q⁻¹ ^ 2 ≠ 0)
+theorem qint_div_eq_Y (q : K) (hq : q ≠ 0) (h2 : 1 + q⁻¹ ^ 2 ≠ 0)
     (n : ℕ) :
     (q ^ (n + 1) - q⁻¹ ^ (n + 1)) / (q - q⁻¹) / (q + q⁻¹) ^ n = Y (q⁻¹ ^ 2) n := by
   have hd : q - q⁻¹ = q * (1 - q⁻¹ ^ 2) := by field_simp
@@ -76,7 +77,6 @@ theorem Y_three_pow_eq (u : K) (h1 : 1 - u ≠ 0) (h2 : 1 + u ≠ 0) (A : ℕ)
   have hA : (1 - u) ^ A ≠ 0 := pow_ne_zero _ h1
   have h2A : (1 + u) ^ (3 * A) ≠ 0 := pow_ne_zero _ h2
   field_simp
-  ring
 
 /-- The `A`-nucleon weight is the per-strand factor to the `3A` times a bounded remainder:
 `Y(3A) · (1 + u)^(3A) · (1 − u) = 1 − u^(3A+1)`. -/
