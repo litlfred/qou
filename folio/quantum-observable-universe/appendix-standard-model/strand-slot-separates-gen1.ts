@@ -21,7 +21,8 @@ export default proposition({
       date: "2026-11-27",
       body:
         "Sorry-free (`StrandSlotSeparatesGen1.lean`). The slot assignment is " +
-        "the Georgi-Glashow embedding, stated as a definition, not derived. " +
+        "the Georgi-Glashow embedding, stated as a definition here; it is " +
+        "forced by the charges via prop:slot-from-even-shape. " +
         "Closes the open label of V9 (bean qou-wqto) conditionally. Bean qou-h0zz.",
     },
   ],

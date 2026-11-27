@@ -1975,6 +1975,7 @@ import QOU.EightfoldWay.FermiPairWedge
 import QOU.EightfoldWay.HeckeSignChannelIsFermi
 import QOU.EightfoldWay.MarkovTraceKeepsBothChannels
 import QOU.EightfoldWay.StrandSlotSeparatesGen1
+import QOU.EightfoldWay.SlotFromEvenShape
 import QOU.EightfoldWay.ColourSingletSelectionRule
 import QOU.StandardModel.OctonionColourTripletSplitting
 import QOU.StandardModel.ColourOnSingleFibreThreeStrands

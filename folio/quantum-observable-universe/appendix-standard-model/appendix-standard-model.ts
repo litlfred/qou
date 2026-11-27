@@ -44,6 +44,7 @@ export default chapter({
         "markov-trace-keeps-both-channels",
         "even-strand-generation",
         "strand-slot-separates-gen1",
+        "slot-from-even-shape",
         "cal2-higgs-knot-coupling",
         "a5-orbital-degeneracy-fracture",
       ],
