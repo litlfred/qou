@@ -25,6 +25,7 @@
   -- Ref: [leitner2026] QOU/Knot/KashaevBeyondWindow.lean
 -/
 import QOU.Transcendental.BraidKnotOctonion.KashaevBeyondWindow
+import QOU.Transcendental.BraidKnotOctonion.KashaevWindowSum
 
 namespace QOU.Knot.FigureEightVolume
 
