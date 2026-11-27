@@ -1,5 +1,5 @@
 import QOU.Observations.BirthdayFaithful
-import QOU.Observations.HyperrealLimitTransfer
+import QOU.Transcendental.HyperrealLimitTransfer
 
 /-!
 # A faithful but non-simple birthday on `ℝ*` (beans `hypr`, `qou-dx7g`)
