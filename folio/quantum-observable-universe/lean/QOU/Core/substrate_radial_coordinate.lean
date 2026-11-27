@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.substrate_radial_coordinate — Reeb rotation `𝓛_ξ Z = J·ℏ_q·Z`
+# QOU.aether_radial_coordinate — Reeb rotation `𝓛_ξ Z = J·ℏ_q·Z`
 
 **Proposition** ([`prop:aether-radial-coordinate`](../../../quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.md)).
 
@@ -56,9 +56,11 @@ class SubstrateRadialContext where
 
     For every affine coordinate `Z`, `𝓛_ξ Z = J(ℏ_q · Z)`. -/
 -- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.md
-theorem substrate_radial_coordinate
+theorem aether_radial_coordinate
     [ctx : SubstrateRadialContext] (Z : ctx.Z_type) :
     ctx.lieXi Z = ctx.J (ctx.smul (quantumPlanck ctx.q) Z) :=
   ctx.claim_reeb_rotation Z
+
+@[deprecated (since := "2026-11-27")] alias substrate_radial_coordinate := aether_radial_coordinate
 
 end QOU

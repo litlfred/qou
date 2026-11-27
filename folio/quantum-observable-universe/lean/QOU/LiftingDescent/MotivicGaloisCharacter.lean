@@ -1,6 +1,6 @@
 import Mathlib.Algebra.Ring.Defs
 import Mathlib.Data.Nat.Prime.Basic
-import QOU.BringsSurface.MotivicSubstrate
+import QOU.BringsSurface.MotivicBaseRing
 
 /-!
 # Motivic Galois character of the Frobenius–Hopf substrate
@@ -33,12 +33,12 @@ open QOU.AlgebraicSubstrate
     Axiomatic class encoding the cyclotomic-Galois action on the
     motivic class `[A]` of the substrate.  Parameters:
     * `K0 Mhat` — Grothendieck ring + dimension-completion
-      ([`MotivicSubstrate`](MotivicSubstrate)).
+      ([`MotivicBaseRing`](MotivicBaseRing)).
     * `Target` — realisation target functor (passed through to
-      `MotivicSubstrate`).
+      `MotivicBaseRing`).
     * `motiveA : Mhat` — the motivic class of the substrate $A$.
 
-    The class **takes a `MotivicSubstrate` instance as a
+    The class **takes a `MotivicBaseRing` instance as a
     hypothesis** (per `def:motivic-galois-character` narrative),
     making the Galois character genuinely local to a substrate
     rather than free-floating type parameters.
@@ -60,7 +60,7 @@ open QOU.AlgebraicSubstrate
 class MotivicGaloisCharacter
     (K0 Mhat : Type*) [CommRing K0] [CommRing Mhat]
     (Target : Place → Type*) [∀ v, CommRing (Target v)]
-    [sub : MotivicSubstrate K0 Mhat Target]
+    [sub : MotivicBaseRing K0 Mhat Target]
     (motiveA : Mhat) where
   /-- Local Frobenius eigenvalue at a finite prime `p`,
       represented as an element of the dimension-completion. -/
@@ -82,7 +82,7 @@ class MotivicGaloisCharacter
       **Scope — what this does NOT encode.**  The full compatibility of
       `χ^mot_{A,p}` with the realization tower would relate
       `frobenius_at p` to a Frobenius *operator* on `Target
-      (Place.finite p)` and to `motiveA` through it.  `MotivicSubstrate`
+      (Place.finite p)` and to `motiveA` through it.  `MotivicBaseRing`
       supplies no such operator, so that statement is not expressible
       here.  What is encoded is the non-degeneracy half: the character
       does not vanish where the tower is non-degenerate. -/
@@ -101,7 +101,7 @@ class MotivicGaloisCharacter
 theorem not_forall_frobenius_eq_zero
     {K0 Mhat : Type*} [CommRing K0] [CommRing Mhat]
     {Target : Place → Type*} [∀ v, CommRing (Target v)]
-    [inst : MotivicSubstrate K0 Mhat Target]
+    [inst : MotivicBaseRing K0 Mhat Target]
     {motiveA : Mhat}
     (hχ : MotivicGaloisCharacter K0 Mhat Target motiveA) :
     ¬ (∀ p : Nat.Primes, hχ.frobenius_at p = 0) := by

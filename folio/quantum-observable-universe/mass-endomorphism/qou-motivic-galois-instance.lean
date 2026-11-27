@@ -21,7 +21,7 @@ its unconditional Habiro cyclotomic-truncation foundation:
 
 2. **§3b Conditional Hypothesis Class (`HabiroMotivicCoherenceHypothesis`)**:
    Encodes the open conjectural input of `conj:qou-motivic-galois-instance` relative to a
-   `MotivicSubstrate K0 Mhat Target`:
+   `MotivicBaseRing K0 Mhat Target`:
    - at each prime `p : Nat.Primes`, a sequence of Habiro expansion terms
      `habiro_terms p : ℕ → Target (Place.finite p)` satisfying the Pochhammer vanishing
      condition `∀ m ≥ 2 * p.val, habiro_terms p m = 0`,
@@ -88,7 +88,7 @@ theorem habiro_pochhammer_truncation_sum_eq
 class HabiroMotivicCoherenceHypothesis
     (K0 Mhat : Type*) [CommRing K0] [CommRing Mhat]
     (Target : Place → Type*) [∀ v, CommRing (Target v)]
-    [sub : MotivicSubstrate K0 Mhat Target]
+    [sub : MotivicBaseRing K0 Mhat Target]
     (motiveA : Mhat) where
   /-- The sequence of Habiro expansion terms $a_m(\zeta_{2p}) (\zeta_{2p}; \zeta_{2p})_m$
       evaluated in `Target (Place.finite p)` for each prime $p$. -/
@@ -115,7 +115,7 @@ class HabiroMotivicCoherenceHypothesis
 def qouMotivicGaloisCharacterOfCoherence
     (K0 Mhat : Type*) [CommRing K0] [CommRing Mhat]
     (Target : Place → Type*) [∀ v, CommRing (Target v)]
-    [sub : MotivicSubstrate K0 Mhat Target]
+    [sub : MotivicBaseRing K0 Mhat Target]
     (motiveA : Mhat)
     [H : HabiroMotivicCoherenceHypothesis K0 Mhat Target motiveA] :
     MotivicGaloisCharacter K0 Mhat Target motiveA where
@@ -132,7 +132,7 @@ def qouMotivicGaloisCharacterOfCoherence
 theorem qouMotivicGaloisCharacter_realize_eq_finite_sum
     (K0 Mhat : Type*) [CommRing K0] [CommRing Mhat]
     (Target : Place → Type*) [∀ v, CommRing (Target v)]
-    [sub : MotivicSubstrate K0 Mhat Target]
+    [sub : MotivicBaseRing K0 Mhat Target]
     (motiveA : Mhat)
     [H : HabiroMotivicCoherenceHypothesis K0 Mhat Target motiveA]
     (p : Nat.Primes) (N : ℕ) (hN : 2 * p.val ≤ N) :
@@ -151,7 +151,7 @@ theorem qouMotivicGaloisCharacter_realize_eq_finite_sum
 theorem qouMotivicGaloisCharacter_nondegenerate
     (K0 Mhat : Type*) [CommRing K0] [CommRing Mhat]
     (Target : Place → Type*) [∀ v, CommRing (Target v)]
-    [sub : MotivicSubstrate K0 Mhat Target]
+    [sub : MotivicBaseRing K0 Mhat Target]
     (motiveA : Mhat)
     [H : HabiroMotivicCoherenceHypothesis K0 Mhat Target motiveA] :
     ¬ (∀ p : Nat.Primes,

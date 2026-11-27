@@ -4,7 +4,7 @@ export default definition({
   label: "def:frobenius-hopf-aether",
   renamedFrom: ["def:frobenius-hopf-substrate"],
   title: "The quantum vacuum as a Frobenius--Hopf algebra",
-  lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.FrobeniusHopfSubstrate",
+  lean: { ref: "qou:QOU.Core.AlgebraicSubstrate.FrobeniusHopfAether",
     validation: "not_checked",
   },
   uses: ["def:frobenius-pairing"],
@@ -196,7 +196,7 @@ export default definition({
         "tested multiplicativity; its 7/7 held only with the removed sentence " +
         "ignored. With the sentence removed, its claim applies to the definition " +
         "as now stated, for the axioms the probe checks. The Lean carriers " +
-        "(`FrobeniusHopfData`, `FrobeniusHopfSubstrate`) never had this field, " +
+        "(`FrobeniusHopfData`, `FrobeniusHopfAether`) never had this field, " +
         "so no proof changes.",
     },
   ],

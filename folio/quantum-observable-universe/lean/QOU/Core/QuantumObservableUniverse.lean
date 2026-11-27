@@ -7,7 +7,7 @@ import QOU.Core.CategoricalFoundations
 import QOU.Core.Structures
 import QOU.Core.Instanton
 import QOU.Core.CRRealisation
-import QOU.Core.SubstrateParameter
+import QOU.Core.AetherParameter
 import QOU.Core.Particles
 import QOU.Core.Propositions
 import QOU.Core.GaugeTheory

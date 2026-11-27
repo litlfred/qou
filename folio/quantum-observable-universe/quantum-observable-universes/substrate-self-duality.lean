@@ -25,9 +25,9 @@ universe u v
     nothing else.
 
     This is a file-local minimal carrier, **not** a Frobenius–Hopf
-    substrate.  It was named `FrobeniusHopfSubstrate` until 2026-09-15,
+    substrate.  It was named `FrobeniusHopfAether` until 2026-09-15,
     which collided — at the *fully qualified* name
-    `QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate` — with the canonical
+    `QOU.AlgebraicSubstrate.FrobeniusHopfAether` — with the canonical
     eight-field structure in `frobenius-hopf-substrate.lean` and with a
     third three-field carrier in `categorical-reeb-derivation.lean`.
     Nothing imported two of the three, so the collision was latent

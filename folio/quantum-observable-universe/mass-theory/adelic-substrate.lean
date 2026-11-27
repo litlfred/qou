@@ -21,7 +21,7 @@ namespace QOU.AlgebraicSubstrate
     quantum-geometric state at the `p`-th cyclotomic / Kummer
     level of the Habiro completion, and the archimedean projection
     with the classical-limit functor on the substrate. -/
-structure AdelicSubstrate where
+structure AdelicBaseRing where
   /-- The carrier ring of the substrate. -/
   Carrier : Type*
   /-- Local non-archimedean rings, indexed by rational primes. -/
@@ -30,5 +30,8 @@ structure AdelicSubstrate where
   archimedean : Carrier → Real
   /-- Non-archimedean projection π_p : A → Loc p at each prime p. -/
   nonArchimedean : (p : Nat) → Carrier → Loc p
+
+@[deprecated AdelicBaseRing (since := "2026-11-27")]
+abbrev AdelicSubstrate := @AdelicBaseRing
 
 end QOU.AlgebraicSubstrate

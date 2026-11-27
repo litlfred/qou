@@ -13,7 +13,7 @@ import Mathlib.Tactic
 
 
 /-!
-# QOU.SubstrateParameter
+# QOU.AetherParameter
 
 The substrate parameter is the fibre coordinate q ∈ k× on the
 one-parameter family of interpolations between the full differential d
@@ -36,9 +36,9 @@ meaningful** there.  Those properties belong to the *archimedean
 realisation* `q : M → ℝ`, on the far side of the substrate→archimedean
 wall.  We therefore split:
 
-* `SubstrateParameter M` — the **categorical** modulus field
+* `AetherParameter M` — the **categorical** modulus field
   `field : M → R_q` (formal; no order, no inverse axioms);
-* `ArchimedeanSubstrateField M` — the **archimedean** field
+* `ArchimedeanAetherField M` — the **archimedean** field
   `field : M → ℝ` carrying the classicality bound `q(p) ≥ 1`, on which
   positivity, invertibility and the Planck displacement `ℏ_q = 1 − q⁻¹`
   are genuine theorems.
@@ -65,15 +65,18 @@ noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
     parameter becomes a field `q : M → R_q`.  This is the **formal**
     modulus field over the (un-ordered, non-field) ground ring `R_q`;
     the archimedean properties (`q(p) > 0`, `q(p) ≥ 1`, not a root of
-    unity) live on `ArchimedeanSubstrateField` below, after the
+    unity) live on `ArchimedeanAetherField` below, after the
     substrate→archimedean wall (AGENTS.md §7c).
 
     LaTeX: `\label{def:aether-parameter}` -/
-structure SubstrateParameter (M : Type*) where
+structure AetherParameter (M : Type*) where
   /-- The categorical substrate field `q : M → R_q`.
       Records the local value of the `End(𝟙) ≅ R_q`-element at each
       point `p`. -/
   field : M → R_q
+
+@[deprecated AetherParameter (since := "2026-11-27")]
+abbrev SubstrateParameter := @AetherParameter
 
 /-- **Archimedean substrate field**: the realisation of the substrate
     parameter as a genuine real field `q : M → ℝ` at and around the
@@ -87,7 +90,7 @@ structure SubstrateParameter (M : Type*) where
     * `q(p) = 1` is the classical limit (`ℏ_q = 0`);
     * `q(p) > 1` is the quantum regime (the physical substrate sits here,
       `q₀ ≈ 1.1097`). -/
-structure ArchimedeanSubstrateField (M : Type*) where
+structure ArchimedeanAetherField (M : Type*) where
   /-- The archimedean substrate field `q : M → ℝ`. -/
   field : M → ℝ
   /-- Classicality bound: `q(p) ≥ 1` at every point. -/
@@ -106,9 +109,12 @@ structure ArchimedeanSubstrateField (M : Type*) where
       justify. Whether the block should state it is an owner call. -/
   not_root_of_unity : ∀ (p : M) (k : ℕ), k ≥ 1 → field p ^ k ≠ 1
 
-namespace ArchimedeanSubstrateField
+@[deprecated ArchimedeanAetherField (since := "2026-11-27")]
+abbrev ArchimedeanSubstrateField := @ArchimedeanAetherField
 
-variable {M : Type*} (qf : ArchimedeanSubstrateField M) (p : M)
+namespace ArchimedeanAetherField
+
+variable {M : Type*} (qf : ArchimedeanAetherField M) (p : M)
 
 /-- The substrate field is strictly positive (from `q(p) ≥ 1 > 0`). -/
 theorem field_pos : 0 < qf.field p :=
@@ -140,6 +146,6 @@ theorem planck_classical (hq : qf.field p = 1) : qf.planck p = 0 := by
 theorem field_ne_one_of_one_lt (h : 1 < qf.field p) : qf.field p ≠ 1 :=
   ne_of_gt h
 
-end ArchimedeanSubstrateField
+end ArchimedeanAetherField
 
 end QOU

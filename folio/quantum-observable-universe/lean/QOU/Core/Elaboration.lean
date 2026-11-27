@@ -96,7 +96,7 @@ structure GeneralisedLeviConditions (M : Type*) where
   /-- Kohn–Rossi finite-dimensionality. -/
   kohn_rossi : KohnRossiFiniteDim M
   /-- Non-degeneracy of the substrate: `q > 1` is attainable. -/
-  substrate_nondeg : ∃ (sp : ArchimedeanSubstrateField M) (p : M),
+  substrate_nondeg : ∃ (sp : ArchimedeanAetherField M) (p : M),
     sp.field p > 1
   /-- QOU vanishing: adjoint and state sections vanish.  Modelled as
       the existence of a CQuantumObservableUniverse structure on `M`. -/
@@ -180,12 +180,12 @@ structure BringsSurfaceCircleBundle where
 /-- The explicit `d_q²` obstruction: `d_q²(α) = q⁻¹(1 − q⁻¹) · (dθ ∧ L_ξ α)`.
 
     Here `dtheta_Lxi_alpha` represents `dθ ∧ L_ξ α` at each point. -/
-noncomputable def dq_squared_explicit {M : Type*} (sp : ArchimedeanSubstrateField M)
+noncomputable def dq_squared_explicit {M : Type*} (sp : ArchimedeanAetherField M)
     (dtheta_Lxi_alpha : M → ℝ) (p : M) : ℝ :=
   (sp.field p)⁻¹ * (1 - (sp.field p)⁻¹) * dtheta_Lxi_alpha p
 
 /-- At `q = 1`, `d_q² = 0` (recovers the classical `d² = 0`). -/
-theorem dq_squared_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem dq_squared_classical {M : Type*} (sp : ArchimedeanAetherField M)
     (dtheta_Lxi_alpha : M → ℝ) (p : M) (hq : sp.field p = 1) :
     dq_squared_explicit sp dtheta_Lxi_alpha p = 0 := by
   unfold dq_squared_explicit
@@ -193,7 +193,7 @@ theorem dq_squared_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
 
 /-- When `q ≠ 1` and `dθ ∧ L_ξ α ≠ 0`, `d_q² α ≠ 0`.
     This is the precise statement that the Jacobi identity fails. -/
-theorem dq_squared_nonzero {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem dq_squared_nonzero {M : Type*} (sp : ArchimedeanAetherField M)
     (dtheta_Lxi_alpha : M → ℝ) (p : M)
     (hq_ne : sp.field p ≠ 1)
     (hq_ne_zero : sp.field p ≠ 0)
@@ -208,14 +208,14 @@ theorem dq_squared_nonzero {M : Type*} (sp : ArchimedeanSubstrateField M)
 
 /-- `d_q²` does not vanish in general (unlike the classical `d² = 0`). -/
 theorem dq_squared_nonvanishing :
-    ¬ ∀ (M : Type*) (sp : ArchimedeanSubstrateField M)
+    ¬ ∀ (M : Type*) (sp : ArchimedeanAetherField M)
       (f : M → ℝ) (p : M),
       qExtDeriv sp (fun p' => qExtDeriv sp f (fun _ => 0) (fun _ => 0) p')
         (fun _ => 0) (fun _ => 0) p = 0 := by
   -- Ref: [witten1988] https://doi.org/10.1007/BF01223371
   -- Witness: M = PUnit, q = 2, f(·) = 1; then d_q²(f) = 2⁻¹(1 − 2⁻¹) · 1 = 1/4 ≠ 0.
   --
-  -- The statement is quantified over ARBITRARY `ArchimedeanSubstrateField`s,
+  -- The statement is quantified over ARBITRARY `ArchimedeanAetherField`s,
   -- whose `field` is independent of any categorical substrate parameter — so on
   -- its own this could be refuting a real-valued function with no substrate
   -- behind it.  It is not: `QOU.Archimedean.dq_witness_realisable`
@@ -225,8 +225,8 @@ theorem dq_squared_nonvanishing :
   -- framework can actually produce.  Kept concrete here deliberately; the
   -- realisability is proved there rather than imported into this file.
   intro h
-  -- Construct a ArchimedeanSubstrateField on PUnit with constant q = 2
-  let sp : ArchimedeanSubstrateField PUnit := {
+  -- Construct a ArchimedeanAetherField on PUnit with constant q = 2
+  let sp : ArchimedeanAetherField PUnit := {
     field := fun _ => 2
     -- `field_pos` is no longer a field: positivity is derived from
     -- `field_ge_one` (bean `qou-6ome`), so the witness need not supply it.
@@ -255,7 +255,7 @@ theorem dq_squared_nonvanishing :
 
     LaTeX: `\label{prop:q-jacobiator}` -/
 -- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
-noncomputable def q_jacobiator {M : Type*} (sp : ArchimedeanSubstrateField M)
+noncomputable def q_jacobiator {M : Type*} (sp : ArchimedeanAetherField M)
     (dtheta_VW dtheta_WU dtheta_UV : M → ℝ)
     (LxiU LxiV LxiW : M → ℝ)
     (p : M) : ℝ :=
@@ -263,7 +263,7 @@ noncomputable def q_jacobiator {M : Type*} (sp : ArchimedeanSubstrateField M)
     (dtheta_VW p * LxiU p + dtheta_WU p * LxiV p + dtheta_UV p * LxiW p)
 
 /-- The Jacobiator vanishes at `q = 1` (classical Jacobi identity). -/
-theorem q_jacobiator_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem q_jacobiator_classical {M : Type*} (sp : ArchimedeanAetherField M)
     (dtheta_VW dtheta_WU dtheta_UV : M → ℝ)
     (LxiU LxiV LxiW : M → ℝ)
     (p : M) (hq : sp.field p = 1) :
@@ -280,7 +280,7 @@ theorem q_jacobiator_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
     of the Levi form), the Jacobiator is non-zero.
 
     LaTeX: Proposition in `qou-elaboration.tex`, lines 551–572. -/
-theorem jacobi_identity_violation {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem jacobi_identity_violation {M : Type*} (sp : ArchimedeanAetherField M)
     (dtheta_VW dtheta_WU dtheta_UV : M → ℝ)
     (LxiU LxiV LxiW : M → ℝ)
     (p : M)
@@ -330,7 +330,7 @@ correct algebraic classification for `(𝔛(M), [·,·]_q)` when `q ≠ 1`. -/
     Leibniz algebra.
 
     LaTeX: `\label{prop:q-jacobiator}`, conclusion at line 571. -/
-structure IsLeibnizAlgebra {M : Type*} (sp : ArchimedeanSubstrateField M)
+structure IsLeibnizAlgebra {M : Type*} (sp : ArchimedeanAetherField M)
     (bracket : (M → ℝ) → (M → ℝ) → (M → ℝ)) : Prop where
   /-- Left Leibniz identity:
       `[U, [V, W]] = [[U, V], W] + [V, [U, W]]` pointwise. -/

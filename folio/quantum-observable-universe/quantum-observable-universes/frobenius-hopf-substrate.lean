@@ -3,7 +3,7 @@ import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 import Mathlib.CategoryTheory.Category.Basic
 
 /-!
-# QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate
+# QOU.AlgebraicSubstrate.FrobeniusHopfAether
 
 The quantum vacuum as a self-dual Frobenius–Hopf algebra in a rigid
 monoidal category.
@@ -29,7 +29,7 @@ universe u v
 
     LaTeX: `\label{def:frobenius-hopf-aether}`
     Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
-structure FrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
+structure FrobeniusHopfAether (C : Type u) [Category.{v} C]
     [MonoidalCategory C] [BraidedCategory C] where
   /-- The underlying object `A` in `C`. -/
   obj : C
@@ -110,6 +110,9 @@ structure FrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
       non-unimodular Hopf algebras (`H_4`), `S ≫ λ = modulusShift ≫ λ`. -/
   antipode_frobeniusForm : antipode ≫ frobeniusForm = frobeniusForm
 
+@[deprecated FrobeniusHopfAether (since := "2026-11-27")]
+abbrev FrobeniusHopfSubstrate := @FrobeniusHopfAether
+
 /-- **Pivotal & modular-twisted Frobenius–Hopf substrate** (`TN-1`), replacing
     `S² = id` and `S ≫ λ = λ` with `S ≫ S = pivotalAut.hom` and
     `S ≫ λ = modulusShift ≫ λ` for `q ≠ 1` quantum groups and non-unimodular
@@ -151,10 +154,10 @@ structure TwistedPivotalFrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
   antipode_sq_eq_pivotal : antipode ≫ antipode = pivotalAut.hom
   antipode_frobeniusForm_twisted : antipode ≫ frobeniusForm = modulusShift ≫ frobeniusForm
 
-/-- Every classical `FrobeniusHopfSubstrate` embeds into `TwistedPivotalFrobeniusHopfSubstrate`. -/
-def FrobeniusHopfSubstrate.toTwistedPivotal {C : Type u} [Category.{v} C]
+/-- Every classical `FrobeniusHopfAether` embeds into `TwistedPivotalFrobeniusHopfSubstrate`. -/
+def FrobeniusHopfAether.toTwistedPivotal {C : Type u} [Category.{v} C]
     [MonoidalCategory C] [BraidedCategory C]
-    (S : FrobeniusHopfSubstrate C) : TwistedPivotalFrobeniusHopfSubstrate C where
+    (S : FrobeniusHopfAether C) : TwistedPivotalFrobeniusHopfSubstrate C where
   obj := S.obj
   mul := S.mul
   unit := S.unit

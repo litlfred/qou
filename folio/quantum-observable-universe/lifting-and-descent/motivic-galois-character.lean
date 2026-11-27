@@ -1,6 +1,6 @@
 import Mathlib.Algebra.Ring.Defs
 import Mathlib.Data.Nat.Prime.Basic
-import QOU.BringsSurface.MotivicSubstrate
+import QOU.BringsSurface.MotivicBaseRing
 
 /-!
 # Motivic Galois character of the Frobenius–Hopf substrate
@@ -37,7 +37,7 @@ resolved to a class that **assumes the perpetual obstruction**, which is
 exactly what "Axiomatization is NOT a Proof" forbids, while the compiled
 class does not.  The mirror also predated `frobenius_realize_ne_zero`, the
 Prop field that stops `⟨fun _ => 0⟩` inhabiting the class, and carried a
-superseded three-parameter signature with no `Target` / `MotivicSubstrate`.
+superseded three-parameter signature with no `Target` / `MotivicBaseRing`.
 
 Same defect family as beans `qou-a5dr` / `qou-ngac` — a stale sibling
 manufacturing a false reading that survives the corpus-grep checklist —
@@ -58,12 +58,12 @@ open QOU.AlgebraicSubstrate
     Axiomatic class encoding the cyclotomic-Galois action on the
     motivic class `[A]` of the substrate.  Parameters:
     * `K0 Mhat` — Grothendieck ring + dimension-completion
-      ([`MotivicSubstrate`](MotivicSubstrate)).
+      ([`MotivicBaseRing`](MotivicBaseRing)).
     * `Target` — realisation target functor (passed through to
-      `MotivicSubstrate`).
+      `MotivicBaseRing`).
     * `motiveA : Mhat` — the motivic class of the substrate $A$.
 
-    The class **takes a `MotivicSubstrate` instance as a
+    The class **takes a `MotivicBaseRing` instance as a
     hypothesis** (per `def:motivic-galois-character` narrative),
     making the Galois character genuinely local to a substrate
     rather than free-floating type parameters.
@@ -72,7 +72,7 @@ open QOU.AlgebraicSubstrate
 class MotivicGaloisCharacter
     (K0 Mhat : Type*) [CommRing K0] [CommRing Mhat]
     (Target : Place → Type*) [∀ v, CommRing (Target v)]
-    [sub : MotivicSubstrate K0 Mhat Target]
+    [sub : MotivicBaseRing K0 Mhat Target]
     (motiveA : Mhat) where
   /-- Local Frobenius eigenvalue at a finite prime `p`,
       represented as an element of the dimension-completion. -/
@@ -90,7 +90,7 @@ class MotivicGaloisCharacter
 
       **Scope.**  The full compatibility of `χ^mot_{A,p}` with the
       realization tower would relate `frobenius_at p` to a Frobenius
-      *operator* on `Target (Place.finite p)`.  `MotivicSubstrate` supplies
+      *operator* on `Target (Place.finite p)`.  `MotivicBaseRing` supplies
       no such operator, so that statement is not expressible here.  What is
       encoded is the non-degeneracy half. -/
   frobenius_realize_ne_zero :

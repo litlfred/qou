@@ -3,7 +3,7 @@ import Mathlib.Tactic
 
 
 /-!
-# QOU.substrate_radial_coordinate — q governs radial/phase coordinates
+# QOU.aether_radial_coordinate — q governs radial/phase coordinates
 
 Within the contact affine chart U_ξ, the substrate parameter q
 governs radial and phase coordinates:

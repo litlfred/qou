@@ -4,7 +4,7 @@ export default theorem({
   label: "thm:aether-parameter-exists",
   renamedFrom: ["thm:substrate-parameter-exists"],
   title: "Existence of the aether parameter",
-  lean: { ref: "qou:QOU.ArchimedeanSubstrateField.ofReebDecomposition",
+  lean: { ref: "qou:QOU.ArchimedeanAetherField.ofReebDecomposition",
     validation: "not_checked",
   },
   uses: ["def:aether-parameter"],

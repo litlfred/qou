@@ -644,8 +644,10 @@ theorem delta_m_over_M_N_eq_factored_over_3 {K : Type*} [Field K] (q : K) (hq : 
     identity between the two forms.
 
     LaTeX: `\label{prop:flavor-split-aether}` -/
-theorem flavor_split_substrate {K : Type*} [Field K] (q : K) (hq : q ≠ 0) :
+theorem flavor_split_aether {K : Type*} [Field K] (q : K) (hq : q ≠ 0) :
     delta_m_over_M_N_substrate q = delta_m_over_mu_avg_factored q / 3 :=
   delta_m_over_M_N_eq_factored_over_3 q hq
+
+@[deprecated (since := "2026-11-27")] alias flavor_split_substrate := flavor_split_aether
 
 end QOU.HadronicMass

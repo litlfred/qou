@@ -1,4 +1,4 @@
-import QOU.Core.SubstrateParameter
+import QOU.Core.AetherParameter
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Order.Field.Basic
 
@@ -15,7 +15,7 @@ That file no longer exists — the library was split, and `qExtDeriv` now lives 
 categorical `d_q` (cf. `def:categorical-q-ext-deriv`): the differential
 forms and the substrate field are evaluated over `ℝ` at the substrate
 point `q(p) = sp.field p`. The substrate parameter
-(`QOU.ArchimedeanSubstrateField`) carries `field : M → ℝ`, so the per-point
+(`QOU.ArchimedeanAetherField`) carries `field : M → ℝ`, so the per-point
 evaluation lives in `ℝ`.
 -/
 
@@ -28,13 +28,13 @@ universe u v
     point `q(p) = sp.field p`.
 
     LaTeX: `\label{def:q-ext-deriv}` -/
-noncomputable def qExtDeriv {M : Type*} (sp : ArchimedeanSubstrateField M)
+noncomputable def qExtDeriv {M : Type*} (sp : ArchimedeanAetherField M)
     (d_alpha : M → ℝ) (lieDerivReeb : M → ℝ) (theta : M → ℝ) (p : M) : ℝ :=
   (sp.field p)⁻¹ * d_alpha p +
     (1 - (sp.field p)⁻¹) * (theta p * lieDerivReeb p)
 
 /-- The q-deformed exterior derivative recovers the classical `d` at `q = 1`. -/
-theorem qExtDeriv_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
+theorem qExtDeriv_classical {M : Type*} (sp : ArchimedeanAetherField M)
     (d_alpha lieDerivReeb theta : M → ℝ) (p : M) (hq : sp.field p = 1) :
     qExtDeriv sp d_alpha lieDerivReeb theta p = d_alpha p := by
   simp [qExtDeriv, hq, inv_one, sub_self, one_mul, zero_mul, add_zero]

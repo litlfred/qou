@@ -878,7 +878,7 @@ import QOU.StandardModel.su2_emergence_dagger_unitarity
 import QOU.StandardModel.su2_emergence_volume_determinant
 import TwistedFrobeniusHopf.frobenius_dagger_positive_definite
 import QOU.Core.volume_from_rigidity
-import QOU.Core.substrate_radial_coordinate
+import QOU.Core.aether_radial_coordinate
 -- Symmetry-eigenspace selection rules: bar-parity (c₃ ≠ −Vol(4₁), scope-(b)) +
 -- sign-positivity (Δ_λ rows B/E). Generic base ring §7c, sorry-free. Wired so
 -- CI type-checks it (not an orphan).

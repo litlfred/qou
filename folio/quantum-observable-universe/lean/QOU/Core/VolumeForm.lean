@@ -1,6 +1,6 @@
 import QOU.Core.CategoricalFoundations
 import QOU.Core.CRRealisation
-import QOU.Core.SubstrateParameter
+import QOU.Core.AetherParameter
 
 /-!
 # §9  Volume Form, SU(2) Emergence, and q-Hodge Star
@@ -92,7 +92,7 @@ structure QHodgeStar (C : Type u) [CategoryTheory.Category.{v} C]
 /-- **q-Weighted Yang–Mills–Levi functional**.
     LaTeX: `\label{def:q-yang-mills-levi}` -/
 structure QYangMillsLevi (cqou : CQuantumObservableUniverse)
-    (sp : ArchimedeanSubstrateField cqou.M) where
+    (sp : ArchimedeanAetherField cqou.M) where
   /-- The integrand `q(p) · ‖F_A⁺|_H‖²(p)` at each point. -/
   integrand : cqou.M → ℝ
   /-- The total action value `S_q[A, θ]`. -/

@@ -42,7 +42,7 @@ structure CategoricalProton where
 
 /-- The CODATA substrate parameter q₀ ≈ 1.1097, the unique root q > 1
     of `(1 - q⁻¹)² = Vol(4₁)/(m_μ/m_e)`.
-    See `QOU.Experimental.LocalSubstrateQ`. -/
+    See `QOU.Experimental.LocalAetherQ`. -/
 noncomputable def q₀ : ℝ := 1.10998
 
 /-- q₀ > 1. -/
