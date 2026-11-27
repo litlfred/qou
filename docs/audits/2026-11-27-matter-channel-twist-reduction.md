@@ -43,3 +43,24 @@ the current axioms do not supply. That would be an axiom change and is the owner
 
 This is a negative about the ribbon twist only, scope (a). The matter channel stays a
 stated input.
+
+## Follow-up: does the photon's chiral vertex fix the sign? (2026-11-27)
+
+The photon is `γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁·σ₀σ₁⁻¹ ∈ H₃(q)`. By hand:
+
+1. On a one-dimensional channel every `σᵢ` acts by the same scalar `λ ∈ {q, -q⁻¹}`. So
+   `σ₀σ₁⁻¹` acts by `λλ⁻¹ = 1` on both the fully symmetric and the fully antisymmetric
+   channel. The chiral vertex cannot tell them apart. It acts non-trivially only on the
+   mixed `(2,1)` channel.
+2. The terms that do separate the channels are `φ₀σ₀ + φ₁σ₁`, through `q` versus `-q⁻¹`.
+   They are not chiral, and their coefficients are free. On the Borromean factor
+   `γ(0,0,qh)`, where `φ₀ = φ₁ = 0`, `γ` acts by the same scalar `1 + φ₀₁` on both channels.
+3. The vertex's handedness is a mirror datum: `σᵢ ↦ σᵢ⁻¹` sends `σ₀σ₁⁻¹` to `σ₀⁻¹σ₁`. The
+   even/odd choice is a charge-conjugation datum: `S ↦ Sᶜ` negates the charge. Fixing one
+   does not fix the other. The Standard Model's choice, "the even part is left-handed",
+   links the two. A link between mirror and complement would be needed, and neither the
+   photon nor the strand grading supplies one.
+
+So the photon's chiral vertex does not fix the sign. This is a scope-(a) negative about
+the photon only. What remains is a P–C link: a statement that the mirror of the braid
+acts on strand states as complementation.
