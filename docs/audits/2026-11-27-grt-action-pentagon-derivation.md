@@ -1352,3 +1352,63 @@ now be restated on `GroupLikeKAssociatorTower` by composing with the new theorem
 no output against the symlink overlay holding every module up to `QuasiYBE`. `#print axioms` on
 `rational_associator_compatible_of_groupLikeTower`, `exists_grt_layer`, `realign` and the
 corollary shows only `propext`, `Classical.choice`, `Quot.sound`. No `lake build` was run.
+
+## 17h. The one-degree lifting obstruction, and field independence (bean `qou-3fdg`)
+
+Scope, per Carl's choice of "Furusho first": this section formalises the obstruction theory and
+its field independence only. The general vanishing (an `H⁴`/`H³` argument in the Drinfeld–Kohno /
+`grt` deformation complex) and explicit low-degree existence were **not attempted**; a separate
+front is doing Furusho's pentagon ⇒ hexagons.
+
+**Follow-up from §17g, done.** `quasiYBE_compatible_of_groupLikeTower` (`QuasiYBE.lean`) states
+the quasi-Yang–Baxter conclusion of `quasiYBE_compatible_of_tower` on the weaker hypothesis
+`GroupLikeKAssociatorTower K E`, by composing with `rational_associator_compatible_of_groupLikeTower`.
+`QuasiYBE.lean` now imports `AssociatorRealign` instead of `AssociatorTower`.
+
+**Proved (`RationalAssociator/Obstruction.lean`, sorry-free, purely algebraic over `ℚ`).**
+Throughout `ε(E) = ε(Φ) = 1` and `d ≥ 1`; "a lift" means `x ∈ FF d` with `AssocU4 (d+1) E (Φ+x)`
+and `GL (d+1) (Φ+x)`.
+
+- `GL_add_iff`: `GL (d+1) (Φ + x) ↔ glDefect Φ + primDef x ∈ FF2 (d+1)`, with
+  `glDefect Φ = ΔΦ − Φ⊗Φ`. The coproduct condition one degree up is linear in the correction,
+  like the associator equations (`assocU4_add_iff`).
+- `obsLin d : ℚ⟨X,Y⟩ →ₗ[ℚ] AssocTarget (d+1) × (F2⊗F2 ⧸ FF2 (d+1))`,
+  `x ↦ (assocLin (d+1) x, [primDef x])`: the linearised inversion, hexagon and pentagon together
+  with the linearised coproduct condition. `obstruction d E Φ = (−assocDefect (d+1) E Φ,
+  [−glDefect Φ])`.
+- `lift_iff_obsLin`: a lift exists **iff** `∃ x ∈ FF d, obsLin d x = obstruction d E Φ`.
+- `lift_iff_homog`: equivalently with `x` homogeneous of degree `d` (`obsLin d` kills `FF (d+1)`).
+- `lift_iff_primitive`: if `GL (d+1) Φ`, a lift exists iff there is `h ∈ FF d`, homogeneous of
+  degree `d` and primitive, with `assocLin (d+1) h = −assocDefect (d+1) E Φ`. This is the form in
+  the task statement; the extra hypothesis `GL (d+1) Φ` is needed, because when `Φ` is only
+  group-like modulo `FF2 d` the correction must also cancel the degree-`d` group-likeness defect
+  and is then not primitive.
+- `liftSolvableOver_iff`, `lift_iff_liftSolvableOver`: for any nontrivial commutative
+  `ℚ`-algebra `K` (any field `K ⊇ ℚ`, e.g. `ℂ`), the lifting equation is solvable after base
+  change to `K` iff a rational lift exists (`exists_of_baseChange`, no finiteness used). The
+  existence question at each degree is field-independent.
+- `obstruction_mem_range_of_groupLikeK`: a group-like `K`-associator modulo `N ≥ d+1` agreeing
+  with `1⊗Φ` modulo `FFK d` puts the obstruction in the range of `obsLin d` over `ℚ`.
+- `AssociatorObstructionVanishes E` (a `def … : Prop`, **not an axiom, not proved**): for every
+  `d ≥ 1` and every `Φ` with `AssocU4 d E Φ` and `GL d Φ`,
+  `∃ x ∈ FF d, obsLin d x = obstruction d E Φ`.
+  `compatible_of_obstructionVanishes`: this `Prop` alone (no field `K`) gives a sequence
+  `Φ : ℕ → ℚ⟨X,Y⟩` with `AssocU4 N E (Φ N) ∧ GL N (Φ N)` for `N ≥ 1` and
+  `Φ (N+1) − Φ N ∈ FF N`. The induction starts from `AssocU4 1 E 1` and `GL 1 1`.
+
+**Not proved.** `AssociatorObstructionVanishes E` itself. Classically it follows from the KZ
+associator plus `GRT₁`-transitivity; an algebraic proof would show the obstruction is a cocycle
+and the relevant deformation cohomology vanishes, which Bar-Natan (1998) records as unknown.
+The converse implication `GroupLikeKAssociatorTower K E → AssociatorObstructionVanishes E` is
+also **not** formalised: it should follow from `realign` applied with target `Φ + 0` at each
+degree below `d`, but that needs `AssocU4 M E Φ → AssocU4 N E Φ` for `N ≤ M` (a level map
+`U4 M → U4 N`, surjective onto `Fil N 1`), which is not in the repository.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` exits 0 with no output (no warnings) on
+`Obstruction.lean` and `QuasiYBE.lean`, against the symlink overlay plus freshly built
+`AssociatorRealign`, `QuasiYBE` and `Obstruction` oleans. `#print axioms` on
+`quasiYBE_compatible_of_groupLikeTower`, `GL_add_iff`, `lift_iff_obsLin`, `lift_iff_homog`,
+`lift_iff_primitive`, `liftSolvableOver_iff`, `lift_iff_liftSolvableOver`,
+`obstruction_mem_range_of_groupLikeK` and `compatible_of_obstructionVanishes` shows only
+`propext`, `Classical.choice`, `Quot.sound`. The `RationalAssociator/` directory and this audit
+are byte-identical between the verified base and `origin/main` after rebase. No `lake build`.
