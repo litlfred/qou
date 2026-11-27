@@ -146,6 +146,7 @@ import MathlibExt.PosSemidefDiagZero
 import CompactQuantumMetrics.FrobeniusInnerProduct
 import QOU.Transcendental.FrobeniusNorm
 import QOU.Transcendental.HoefsmitSqrt
+import QOU.Transcendental.RpowSqrtHelpers
 import MathlibExt.CauchyBinet
 import MathlibExt.RankMinor
 import BraidKnotOctonion.BraidedSlide
