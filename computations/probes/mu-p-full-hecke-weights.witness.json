@@ -1,0 +1,183 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-27T17:39:28.598890+00:00",
+  "commitSha": "2fa843cadb3ce5e29918570c67179e8f144167d5",
+  "assertions": [
+    {
+      "name": "weights_are_ocneanu_and_su2_point_kills_y111",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "exact sympy over Q(q,z)"
+    },
+    {
+      "name": "su2_specialisation_reproduces_pr9445",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "closed form and Taylor table of PR #9445"
+    },
+    {
+      "name": "every_observable_has_factor_z_minus_q",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "exact Q(q,z)"
+    },
+    {
+      "name": "bar_covariant_families_are_even_in_h",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "exact series to h^4"
+    },
+    {
+      "name": "suN_O1_Ow_vanish_only_at_degenerate_N_pm1",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "solve over Q(N)"
+    },
+    {
+      "name": "suN_coefficient_matrix_rank3",
+      "computed": "3",
+      "expected": "3",
+      "passed": true,
+      "source": "rank over Q(N)"
+    },
+    {
+      "name": "general_family_w2_equals_twice_k3_deformation_of_trivial_trace",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "O1=Ow=0 pins c=1/2, k1=1/6 (the z=q values); Ow2 = 2(k3 + 1/90)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 37,
+  "computation": "mu-p-full-hecke-weights",
+  "scriptFile": "mu_p_full_hecke_weights_probe.py",
+  "scriptHash": "e0d4b3342f21",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/mu_p_full_hecke_weights_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/mu_p_full_hecke_weights_probe.py"
+  },
+  "description": "Photon-projector insertion correlators on 4_1 = (s1 s2^-1)^2 under the full Ocneanu Markov trace on H_3 with symbolic z (y_111 != 0; comparison family to convention D). Exact Q(q,z) closed forms, SU(N) and general bar-covariant w-Taylor data, and the non-forcing of the w^2 coefficient (qou-6gf9).",
+  "data": {
+    "weights": {
+      "y3": "(q*z + 1)*(q**3*z + q*z + 1)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+      "y21": "-q*(-q + z)*(q*z + 1)/((q**2 - q + 1)*(q**2 + q + 1))",
+      "y111": "q**2*(-q + z)*(-q**3 + q**2*z + z)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))"
+    },
+    "observables_Qqz": {
+      "pair": {
+        "closed_form": "(-q + z)*(q**7*z + q**6 - 2*q**5*z - 2*q**3*z - 2*q**2 + q*z + 1)/((q**2 + 1)*(-q**6*z + q**5*z**2 - q**5 + 4*q**4*z - 3*q**3*z**2 + 2*q**3 - 4*q**2*z + q*z**2 - q + z))",
+        "at_q_eq_1": "(z - 1)/z"
+      },
+      "S1": {
+        "closed_form": "4*(-q + z)*(q**7*z + q**6 - 2*q**5*z - 2*q**3*z - 2*q**2 + q*z + 1)/((q**2 + 1)*(-q**6*z + q**5*z**2 - q**5 + 4*q**4*z - 3*q**3*z**2 + 2*q**3 - 4*q**2*z + q*z**2 - q + z))",
+        "at_q_eq_1": "4*(z - 1)/z"
+      },
+      "D": {
+        "closed_form": "2*(-q + z)*(5*q**9*z + 5*q**8 - 3*q**7*z + 17*q**6 - 38*q**5*z - 18*q**4 - 3*q**3*z - 3*q**2 + 5*q*z + 5)/((q**2 + 1)**2*(-q**6*z + q**5*z**2 - q**5 + 4*q**4*z - 3*q**3*z**2 + 2*q**3 - 4*q**2*z + q*z**2 - q + z))",
+        "at_q_eq_1": "(z - 1)*(17*z - 3)/z**2"
+      },
+      "C": {
+        "closed_form": "2*q**2*(-q + z)*(q*z + 1)*(-2*q**10*z + 2*q**9*z**2 - 7*q**9 + 26*q**8*z - 24*q**7*z**2 + 27*q**7 - 82*q**6*z + 58*q**5*z**2 - 40*q**5 + 82*q**4*z - 24*q**3*z**2 + 27*q**3 - 26*q**2*z + 2*q*z**2 - 7*q + 2*z)/((q**2 + 1)**2*(-q**6*z + q**5*z**2 - q**5 + 4*q**4*z - 3*q**3*z**2 + 2*q**3 - 4*q**2*z + q*z**2 - q + z)**2)",
+        "at_q_eq_1": "7*(z - 1)*(z + 1)/z**2"
+      }
+    },
+    "trM_41": "-(-q**6*z + q**5*z**2 - q**5 + 4*q**4*z - 3*q**3*z**2 + 2*q**3 - 4*q**2*z + q*z**2 - q + z)/q**3",
+    "general_family_w_taylor": {
+      "pair": [
+        "(2*c - 1)/(2*c)",
+        "-(40*c**2 - 12*c*k1 - 9)/(24*c**3)",
+        "-(1176*c**4 - 260*c**3*k1 - 80*c**3*k3 + 80*c**2*k1**2 - 515*c**2 + 180*c*k1 + 45)/(160*c**5)"
+      ],
+      "S1": [
+        "2*(2*c - 1)/c",
+        "-(40*c**2 - 12*c*k1 - 9)/(6*c**3)",
+        "-(1176*c**4 - 260*c**3*k1 - 80*c**3*k3 + 80*c**2*k1**2 - 515*c**2 + 180*c*k1 + 45)/(40*c**5)"
+      ],
+      "D": [
+        "(2*c - 1)*(34*c - 3)/(4*c**2)",
+        "(816*c**4 - 1600*c**3 + 480*c**2*k1 - 72*c**2 - 72*c*k1 + 360*c - 27)/(48*c**4)",
+        "(26640*c**6 - 47040*c**5 + 10400*c**4*k1 + 3200*c**4*k3 - 7864*c**4 - 3200*c**3*k1**2 + 1000*c**3*k1 - 480*c**3*k3 + 20600*c**3 + 720*c**2*k1**2 - 7200*c**2*k1 - 585*c**2 + 720*c*k1 - 1800*c + 135)/(320*c**6)"
+      ],
+      "C": [
+        "7*(2*c - 1)*(2*c + 1)/(4*c**2)",
+        "(816*c**4 - 872*c**2 + 168*c*k1 + 153)/(48*c**4)",
+        "(239760*c**6 - 362456*c**4 + 103800*c**3*k1 + 10080*c**3*k3 - 15120*c**2*k1**2 + 123435*c**2 - 36720*c*k1 - 10935)/(2880*c**6)"
+      ]
+    },
+    "suN_family_w_taylor": {
+      "pair": [
+        "1 - N",
+        "10*N*(N - 1)*(N + 1)/3",
+        "-7*N*(N - 1)*(N + 1)*(52*N**2 - 63)/30"
+      ],
+      "S1": [
+        "-4*(N - 1)",
+        "40*N*(N - 1)*(N + 1)/3",
+        "-14*N*(N - 1)*(N + 1)*(52*N**2 - 63)/15"
+      ],
+      "D": [
+        "(N - 1)*(3*N - 17)",
+        "-(N - 1)*(N + 1)*(33*N**2 - 200*N + 51)/3",
+        "(N - 1)*(N + 1)*(2408*N**4 - 14560*N**3 + 903*N**2 + 17640*N - 4995)/60"
+      ],
+      "C": [
+        "-7*(N - 1)*(N + 1)",
+        "(N - 1)*(N + 1)*(167*N**2 - 51)/3",
+        "-(N - 1)*(N + 1)*(56456*N**4 - 75629*N**2 + 14985)/180"
+      ]
+    },
+    "suN_O1_Ow_zero_loci": {
+      "pair": [
+        "1"
+      ],
+      "S1": [
+        "1"
+      ],
+      "D": [
+        "1"
+      ],
+      "C": [
+        "-1",
+        "1"
+      ]
+    },
+    "suN_delta": "-8*N*(N - 1)**2*(N + 1)**2*(7*N**4 + 126*N**2 - 621)/45",
+    "general_pair_w2_on_O1_Ow_zero": "(90*k3 + 1)/45",
+    "comparison": {
+      "q_p": "1.10997858275138080759166909561076887987449912187357873607281",
+      "target_w2_coeff_minus_3alpha_over_4pi": "-0.00174211459814649667188105611676406730456607650740364312089304",
+      "k3_that_would_hit_target": "-0.0119821684101843594470516391694931447633941493648129326715576",
+      "note": "alpha is CODATA-2022 here; diagnostic only. Choosing k3 (i.e. z) to hit it would be selection against the target and is not done. Never an input to the algebra or the Lean."
+    }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.10997859564273904668179512938000175270006556102901155697405",
+    "proton": "1.10997858275138080759166909561076887987449912187357873607281"
+  },
+  "q0AnchorReason": "algebra is pin-free; comparison evaluates alpha only"
+}
