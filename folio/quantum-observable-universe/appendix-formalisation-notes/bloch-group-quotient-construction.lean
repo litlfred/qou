@@ -91,7 +91,7 @@ def pentagonGenerator (s : PentagonShape F) : PreBlochGroup F :=
     derived parameters `y/x, (1-x⁻¹)/(1-y⁻¹), (1-x)/(1-y)` are
     all in `F \ {0, 1}` for any `Field F`. -/
 -- Ref: [bloch2000] AMS CRM 11
-structure RogersPair (F : Type*) [Field F] [DecidableEq F] where
+structure RogersPair (F : Type*) [CommRing F] [DecidableEq F] where
   x : F
   y : F
   hx_ne_zero : x ≠ 0
@@ -140,7 +140,7 @@ private theorem one_sub_inv_ne_zero
 
 /-- Helper: in a field, `1 - y ≠ 0` whenever `y ≠ 1`. -/
 private theorem one_sub_ne_zero_of_ne_one
-    {F : Type*} [Field F] {y : F} (hy1 : y ≠ 1) :
+    {F : Type*} [CommRing F] {y : F} (hy1 : y ≠ 1) :
     (1 - y) ≠ 0 := by
   rw [sub_ne_zero]
   exact fun h => hy1 h.symm

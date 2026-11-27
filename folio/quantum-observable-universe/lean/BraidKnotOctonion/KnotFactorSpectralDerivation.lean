@@ -52,7 +52,7 @@ namespace QOU.BraidKnot
 /-- Central-idempotent character expansion of a braid in `H_n(q)`,
     over the Hecke base ring `R` (§7c: generic; `R := ℚ(q)` is the
     intended instance, `R := ℝ` the archimedean one). -/
-structure HeckeExpansion (R : Type*) [Field R] (n : ℕ) where
+structure HeckeExpansion (R : Type*) [CommRing R] (n : ℕ) where
   partitions : Finset (List ℕ)
   c : List ℕ → R                       -- χ_λ(β)
   weight : List ℕ → R                  -- Plancherel w_λ(q)

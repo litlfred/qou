@@ -33,7 +33,7 @@ formalised [kassel1995, Ch. VII]. Until 2026-11-21 this file stated the
 claim over a class of free natural numbers (`hom_dim = total_hom_dim - 1`),
 which did not encode the representation (round-trip audit pass 2, C06; QA
 on #8888). -/
-theorem exists_axiom_2_observability {K : Type*} [Field K] (h2 : (2 : K) ≠ 0) :
+theorem exists_axiom_2_observability {K : Type*} [CommRing K] [IsDomain K] (h2 : (2 : K) ≠ 0) :
     LieModule.maxTrivSubmodule K (sl (Fin 2) K) (sl (Fin 2) K) = ⊥ := by
   ext x
   simp only [LieSubmodule.mem_bot, LieModule.mem_maxTrivSubmodule]
