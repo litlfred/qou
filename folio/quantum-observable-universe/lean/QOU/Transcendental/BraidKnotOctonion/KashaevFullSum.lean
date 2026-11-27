@@ -56,7 +56,7 @@ theorem kashaev_split {N W w : ℕ} (hwW : w ≤ 5 * N / 6 - W)
     simp only [Finset.mem_Ico, Finset.mem_Icc]
     omega
   rw [e4] at e3
-  unfold kashaev
+  rw [kashaev_eq_sum]
   rw [Finset.range_eq_Ico, ← e1, ← e2, ← e3, ← Finset.range_eq_Ico]
   ring
 
