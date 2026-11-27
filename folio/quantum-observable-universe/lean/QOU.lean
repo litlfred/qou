@@ -174,6 +174,8 @@ import QOU.Core.OctonionSU3BracketClosure
 import QOU.Core.OctonionColourActionBaseModule
 import QOU.Core.OctonionComplexStructure
 import QOU.Core.CalculusDimensionObstruction
+import QOU.Core.HeckeGoldmanIwahori
+import QOU.Core.IntentHolonomy
 import QOU.Core.SelfDualityDegree
 import QOU.StandardModel.ColourStabilizerAction
 import QOU.StandardModel.ColourBridge
