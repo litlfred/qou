@@ -1,0 +1,113 @@
+{
+  "producer": "computations/probes/strand_end_merge_ceiling/strand_end_merge_ceiling_probe.py",
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669095610768879874",
+  "q0AnchorReason": "q0 enters through cf.Q (binding_ceiling_q0 helpers, proton pin)",
+  "parameters": {
+    "E0_tower_MeV": "4.2274833556290305503"
+  },
+  "data": {
+    "t1_free_nucleon_trace": "0.998562163836787265951213135146650202094",
+    "ln_t1": "-0.001438870841546400373086782631174819182876",
+    "per_strand_ln_1_plus_q_minus2": "0.5942401045746543637224564474676943452842",
+    "per_strand_bulk_with_t1": "0.5937604809608055635980941865906360722232",
+    "per_nucleon_bulk_MeV": "7.5303376514762802288",
+    "constant_term_ln_1_minus_q_minus2": "-1.669473277964215961538549345607490517945",
+    "classical_per_strand_ln2": "0.6931471805599453094172321214581765680755",
+    "ruled_bond_minus_ln_z_minus_h_over_2": "0.676963077 (nucleus-bond-valence witness)",
+    "table": [
+      {
+        "A": 1,
+        "minus_ln_r": "0.68095785053066294888",
+        "B_MeV_tower": "2.8787379790033",
+        "B_per_A_MeV": "2.878737979"
+      },
+      {
+        "A": 2,
+        "minus_ln_r": "2.157130028865682965",
+        "B_MeV_tower": "9.11923129295724",
+        "B_per_A_MeV": "4.55961564648"
+      },
+      {
+        "A": 3,
+        "minus_ln_r": "3.806853600418798123",
+        "B_MeV_tower": "16.0934102330869",
+        "B_per_A_MeV": "5.3644700777"
+      },
+      {
+        "A": 4,
+        "minus_ln_r": "5.5243027819730792917",
+        "B_MeV_tower": "23.3538980622463",
+        "B_per_A_MeV": "5.83847451556"
+      },
+      {
+        "A": 6,
+        "minus_ln_r": "9.0373666343989793999",
+        "B_MeV_tower": "38.2053170256388",
+        "B_per_A_MeV": "6.36755283761"
+      },
+      {
+        "A": 12,
+        "minus_ln_r": "19.706347457313996025",
+        "B_MeV_tower": "83.3082558760374",
+        "B_per_A_MeV": "6.94235465634"
+      },
+      {
+        "A": 16,
+        "minus_ln_r": "26.831066047234146589",
+        "B_MeV_tower": "113.427885128466",
+        "B_per_A_MeV": "7.08924282053"
+      },
+      {
+        "A": 40,
+        "minus_ln_r": "69.581784437343262699",
+        "B_MeV_tower": "294.155835563836",
+        "B_per_A_MeV": "7.3538958891"
+      },
+      {
+        "A": 56,
+        "minus_ln_r": "98.082287523451119206",
+        "B_MeV_tower": "414.641237987411",
+        "B_per_A_MeV": "7.4043078212"
+      },
+      {
+        "A": 120,
+        "minus_ln_r": "212.08429986792578693",
+        "B_MeV_tower": "896.582847681892",
+        "B_per_A_MeV": "7.47152373068"
+      },
+      {
+        "A": 208,
+        "minus_ln_r": "368.83706684157845572",
+        "B_MeV_tower": "1559.25256101181",
+        "B_per_A_MeV": "7.49640654333"
+      },
+      {
+        "A": 238,
+        "minus_ln_r": "422.27551012805095645",
+        "B_MeV_tower": "1785.16269055609",
+        "B_per_A_MeV": "7.50068357377"
+      }
+    ]
+  },
+  "assertions": [
+    {
+      "name": "K1_free_trace_multiplicative",
+      "passed": true,
+      "detail": "t1 = 0.998562163836787265951213135147, max |tr_A - t1^A| (A=2,3) = 1.03e-40"
+    },
+    {
+      "name": "K2_y_closed_form",
+      "passed": true,
+      "detail": "max rel dev n=1..240: 2.79e-39"
+    },
+    {
+      "name": "K3_reproduces_3inf_A2_A3",
+      "passed": true,
+      "detail": "A=2 2.15713002887, A=3 3.80685360042 (audit 2.1571300, 3.8068536)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 220,
+  "auditOnly": true
+}
