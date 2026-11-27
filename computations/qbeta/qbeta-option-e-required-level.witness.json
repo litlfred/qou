@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-08T08:56:34.850151+00:00",
-  "commitSha": "b4dbaacd9e13d76f0c6d3adead7db0b1d3625fcd",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-27T15:33:00.774448+00:00",
+  "commitSha": "58be958ddf1173362eba805e98f50ee0e8c629e0",
   "assertions": [
     {
       "name": "census_slot_order_pinned",
@@ -190,11 +190,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 38,
   "computation": "qbeta-option-e-required-level",
   "scriptFile": "qbeta_option_e_required_level_probe.py",
-  "scriptHash": "c71d7bdc0615",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7afdd097f060",
+  "scriptCommitSha": "58be958ddf1173362eba805e98f50ee0e8c629e0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -202,14 +202,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "a22b08f9db48ed97"
   },
   "invocation": {
     "argv": [

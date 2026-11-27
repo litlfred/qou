@@ -139,7 +139,10 @@ def main() -> int:
     t0 = time.time()
     q = Q_MP
     h2 = (q - 1 / q) ** 2
-    qv = sp.Rational(Q_50_DIGIT_STR)
+    # BOTH LAYERS CARRY THE SAME q (bean qou-ayzx, owner ruling D 2026-11-21): the sympy
+    # value is read from the 70-digit Q_MP, not the 50-digit string, so no straddle.
+    with mp.workdps(DPS + 15):
+        qv = sp.Rational(mp.nstr(Q_MP, DPS + 10, strip_zeros=False))
     h2_sym = sp.cancel((Q - 1 / Q) ** 2)
 
     print(f"qou-ales step 11 — bond response arity + placement (proton pin, {DPS} dps)")

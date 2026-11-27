@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.18",
-  "computedAt": "2026-11-20T15:41:08.012712+00:00",
-  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-27T15:32:59.730776+00:00",
+  "commitSha": "58be958ddf1173362eba805e98f50ee0e8c629e0",
   "assertions": [
     {
       "name": "the colour weighting closes under 0.1% of the deuteron binding gap",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 27,
   "computation": "deuteron-interface-colour-weighting",
   "scriptFile": "deuteron_interface_colour_weighting_probe.py",
-  "scriptHash": "2268510305f0",
-  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "scriptHash": "a36e03ac1afa",
+  "scriptCommitSha": "58be958ddf1173362eba805e98f50ee0e8c629e0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,14 +58,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.18",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "cvxpy": "absent",
-    "pyhecke_native_build": "930c010e26215e56"
+    "clarabel": "0.11.1",
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "a22b08f9db48ed97"
   },
   "invocation": {
     "argv": [
