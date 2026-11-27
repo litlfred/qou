@@ -553,6 +553,7 @@ import BraidKnotOctonion.SkewSYTBranchingBijection
 import BraidKnotOctonion.SkewBranchingSum
 import BraidKnotOctonion.SkewBranchingTwoOne
 import QOU.MassTheory.WStdSuperExponential
+import QOU.Transcendental.MassTheory.WStdSuperExponentialReal
 import HeckeTemperleyLieb.YoungLatticeExchange
 import BraidKnotOctonion.YoungLatticeCornerCount
 import QOU.MassTheory.LinearChainBondCount
