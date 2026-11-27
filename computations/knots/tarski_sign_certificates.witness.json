@@ -1,0 +1,251 @@
+{
+  "producer": "computations/knots/tarski_sign_certificates.py",
+  "bean": "qou-rc4t",
+  "arithmetic": "exact (sympy Rational)",
+  "levels": [
+    {
+      "N": 3,
+      "deg_psi": 1,
+      "psi": "x + 1",
+      "reduced": "13",
+      "embedding_depth": 0,
+      "decision_depth": 0,
+      "value": "13",
+      "floor": 13,
+      "lean_lo": "13",
+      "lean_hi": "13"
+    },
+    {
+      "N": 4,
+      "deg_psi": 1,
+      "psi": "x",
+      "reduced": "27",
+      "embedding_depth": 0,
+      "decision_depth": 0,
+      "value": "27",
+      "floor": 27,
+      "lean_lo": "27",
+      "lean_hi": "27"
+    },
+    {
+      "N": 5,
+      "deg_psi": 2,
+      "psi": "x**2 + x - 1",
+      "reduced": "4*x + 48",
+      "embedding_depth": 2,
+      "embedding_window": [
+        "0",
+        "1"
+      ],
+      "floor": 50,
+      "decision_depth": 6,
+      "signs": "+-+--+",
+      "decision_window": [
+        "9/16",
+        "5/8"
+      ]
+    },
+    {
+      "N": 6,
+      "deg_psi": 1,
+      "psi": "x - 1",
+      "reduced": "89",
+      "embedding_depth": 0,
+      "decision_depth": 0,
+      "value": "89",
+      "floor": 89,
+      "lean_lo": "89",
+      "lean_hi": "89"
+    },
+    {
+      "N": 7,
+      "deg_psi": 3,
+      "psi": "x**3 + x**2 - 2*x - 1",
+      "reduced": "11*x**2 + 25*x + 103",
+      "embedding_depth": 3,
+      "embedding_window": [
+        "1",
+        "2"
+      ],
+      "floor": 151,
+      "decision_depth": 10,
+      "signs": "++---+++++",
+      "decision_window": [
+        "159/128",
+        "5/4"
+      ]
+    },
+    {
+      "N": 8,
+      "deg_psi": 2,
+      "psi": "x**2 - 2",
+      "reduced": "45*x + 187",
+      "embedding_depth": 3,
+      "embedding_window": [
+        "1",
+        "2"
+      ],
+      "floor": 250,
+      "decision_depth": 9,
+      "signs": "++--++-+-",
+      "decision_window": [
+        "45/32",
+        "91/64"
+      ]
+    },
+    {
+      "N": 9,
+      "deg_psi": 3,
+      "psi": "x**3 - 3*x + 1",
+      "reduced": "55*x**2 + 85*x + 148",
+      "embedding_depth": 3,
+      "embedding_window": [
+        "1",
+        "2"
+      ],
+      "floor": 407,
+      "decision_depth": 12,
+      "signs": "++-+---+----",
+      "decision_window": [
+        "49/32",
+        "785/512"
+      ]
+    },
+    {
+      "N": 10,
+      "deg_psi": 2,
+      "psi": "x**2 - x - 1",
+      "reduced": "194*x + 338",
+      "embedding_depth": 3,
+      "embedding_window": [
+        "1",
+        "2"
+      ],
+      "floor": 651,
+      "decision_depth": 13,
+      "signs": "++-+--++++---",
+      "decision_window": [
+        "207/128",
+        "1657/1024"
+      ]
+    },
+    {
+      "N": 11,
+      "deg_psi": 5,
+      "psi": "x**5 + x**4 - 4*x**3 - 3*x**2 + 3*x + 1",
+      "reduced": "37*x**4 + 87*x**3 + 35*x**2 - 26*x + 264",
+      "embedding_depth": 3,
+      "embedding_window": [
+        "1",
+        "2"
+      ],
+      "floor": 1030,
+      "decision_depth": 15,
+      "signs": "++-+-+-+++-+-++",
+      "decision_window": [
+        "6891/4096",
+        "1723/1024"
+      ]
+    },
+    {
+      "N": 12,
+      "deg_psi": 2,
+      "psi": "x**2 - 3",
+      "reduced": "374*x + 963",
+      "embedding_depth": 3,
+      "embedding_window": [
+        "1",
+        "2"
+      ],
+      "floor": 1610,
+      "decision_depth": 12,
+      "signs": "++-+-+++-++-",
+      "decision_window": [
+        "443/256",
+        "887/512"
+      ]
+    },
+    {
+      "N": 13,
+      "deg_psi": 6,
+      "psi": "x**6 + x**5 - 5*x**4 - 4*x**3 + 6*x**2 + 3*x - 1",
+      "reduced": "33*x**5 + 174*x**4 + 113*x**3 - 223*x**2 - 106*x + 469",
+      "embedding_depth": 4,
+      "embedding_window": [
+        "3/2",
+        "2"
+      ],
+      "floor": 2495,
+      "decision_depth": 17,
+      "signs": "++-++---+-+-+-++-",
+      "decision_window": [
+        "14507/8192",
+        "29015/16384"
+      ]
+    },
+    {
+      "N": 14,
+      "deg_psi": 3,
+      "psi": "x**3 - x**2 - 2*x + 1",
+      "reduced": "799*x**2 + 643*x + 83",
+      "embedding_depth": 3,
+      "embedding_window": [
+        "1",
+        "2"
+      ],
+      "floor": 3835,
+      "decision_depth": 17,
+      "signs": "++-++--++-+-+--+-",
+      "decision_window": [
+        "14761/8192",
+        "29523/16384"
+      ]
+    },
+    {
+      "N": 15,
+      "deg_psi": 4,
+      "psi": "x**4 - x**3 - 4*x**2 + 4*x + 1",
+      "reduced": "1229*x**3 + 1153*x**2 - 2969*x - 65",
+      "embedding_depth": 4,
+      "embedding_window": [
+        "3/2",
+        "2"
+      ],
+      "floor": 5855,
+      "decision_depth": 18,
+      "signs": "++-++-+--+++-++++-",
+      "decision_window": [
+        "29935/16384",
+        "59871/32768"
+      ]
+    },
+    {
+      "N": 16,
+      "deg_psi": 4,
+      "psi": "x**4 - 4*x**2 + 2",
+      "reduced": "785*x**3 + 1408*x**2 - 453*x - 39",
+      "embedding_depth": 3,
+      "embedding_window": [
+        "1",
+        "2"
+      ],
+      "floor": 8883,
+      "decision_depth": 18,
+      "signs": "++-++-++--+-----++",
+      "decision_window": [
+        "60547/32768",
+        "15137/8192"
+      ]
+    }
+  ],
+  "scriptFile": "tarski_sign_certificates.py",
+  "scriptHash": "d88174d5dddd",
+  "scriptCommitSha": "unknown",
+  "commitSha": "356f1fcc71aaf0174744d8bead2891448855c4cb",
+  "engine": "sympy",
+  "computedAt": "2026-11-27T18:31:29.966250+00:00",
+  "durationMs": 0,
+  "engineVersion": "1.14.0",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}
