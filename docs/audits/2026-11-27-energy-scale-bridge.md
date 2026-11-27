@@ -73,3 +73,35 @@ The magnitude of the #9733 n − p cell, 0.319 MeV, is right. Its sign, read wit
 - **Settled:** how the two scales relate (the Euler derivative, with the explicit gap and the sign criterion above), and that a mass difference must be read in the chart of its masses.
 - **Not settled:** the orientation. Either the letters (`τ_n/τ_p = q^{−2}`, the bond letters `f < 1`) or the energy dictionary's sign carries a convention that is not yet derived. Candidates worth a derivation front: the bar involution `q ↦ q⁻¹` (it reverses `δ`), the convention C / D choice behind `markov_forces_K`, and the 2026-11-25 law's `T > 0`.
 - **Not adopted.** Nothing is wired. The production mass table, scorecard and radius probes are unchanged.
+
+## 7. Orientation: framing against the bar-even part (owner decision A)
+
+Carl chose "derive the orientation first". Lean:
+`QOU/Observations/EnergyScaleOrientation.lean` (sorry-free, lean-direct exit 0, axioms
+`propext, Classical.choice, Quot.sound`). Probe:
+`computations/probes/energy_scale_bridge/orientation_probe.py` (19/19).
+
+The electron trace factors as `τ_e = q³ · y₃` with `y₃ = (q⁴+1)/(q²+1)²`. Here `3` is the
+writhe of `σ₀σ₁σ₀`, and `y₃` is the framing-corrected trace.
+
+- `y₃` is bar-invariant (`y3_bar`). Its Euler weight `ω = q∂_q log y₃` is bar-odd
+  (`omega_bar`).
+- So `L_e = ℓ_e + 3β` and `w_e = ω_e + 3`, with `ℓ_e = log y₃` bar-even.
+- `unit_signs_iff` shows where each unit gets its sign. The log-chart unit takes it from the
+  framing-free part `ℓ_e`. The mass-chart unit takes it from the writhe.
+- The values at q₀ are `ℓ_e = −0.6824`, `3β = 0.3130`, `ω_e = 0.2035`. In the log chart
+  `|ℓ_e| > 3β`, and in the mass chart `3 > |ω_e|`.
+- At `q = 1`, `ℓ_e = −ln 2` and `ω_e = 0`, so the conflict is already present in the
+  classical limit (`split_at_classical_limit`). It is not an accident of q₀.
+- The log-chart unit changes sign only where `τ_e = 1`, at `q* = 1.2414`, which is above q₀.
+- If both charts use `y₃`, the log chart keeps `L < 0` and the mass chart gets `ω > 0`.
+  So framing correction does not remove the conflict (`L·ω = −0.139`). The mass-chart unit
+  `ω` also vanishes at `q = 1`.
+
+What decides the orientation is therefore one question: does the sign of energy come from the
+electron's framing (its writhe) or from its framing-free part? In a TQFT, framing is a gauge
+choice, which argues for the framing-free reading (the log chart sign). But the mass chart's
+positivity comes entirely from the writhe. This is stated here and not decided.
+
+The n−p cell `τ_n = q⁻² τ_p` is a pure power. If that power is a framing difference, then any
+framing-free chart gives n−p = 0 (`framing_cell_zero`). Whether it is one is not checked.
