@@ -177,4 +177,22 @@ theorem colourSinglet_charges_integer [CharZero K] (α : K) (hα : α = 1 / 6 �
     · rw [qWeight10, h3, h4, h]; push_cast; ring
     · rw [hc i hi, h]; ring
 
+/-- **Strand labels separate the anti-up from the down.** `QuarkBraidChargeObstruction` proves
+that the anti-up and the down share the braid element `σᵢ⁻¹`, so no function of the crossing
+carries the charge. In `Λ²5` they are different label pairs: the anti-up is a colour–colour wedge
+and the down a colour–isospin wedge. Their charges, `−2/3` and `−1/3`, are the sums of the strand
+weights. So the datum the crossing lacks is the label of the partner strand. This file does not
+derive that label. -/
+theorem antiUp_ne_down_by_labels [CharZero K] :
+    qWeight10 (1 / 6 : K) 0 1 = -(2 / 3) ∧ qWeight10 (1 / 6 : K) 0 4 = -(1 / 3) ∧
+      qWeight10 (1 / 6 : K) 0 1 ≠ qWeight10 (1 / 6 : K) 0 4 := by
+  obtain ⟨-, -, -, hcc, -, hc4, -⟩ := charges_at_one_sixth (K := K)
+  have h1 := hcc 0 1 (by decide) (by decide)
+  have h2 := hc4 0 (by decide)
+  refine ⟨h1, h2, ?_⟩
+  rw [h1, h2]
+  intro h
+  have : (1 : K) = 0 := by linear_combination -3 * h
+  exact one_ne_zero this
+
 end QOU.EightfoldWay.NeutralLeptonFixesCharges
