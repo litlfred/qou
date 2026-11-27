@@ -2,7 +2,7 @@
   "$schema": "folio-bean-index/v1",
   "tile": {
     "beans": {
-      "count": 1790,
+      "count": 1791,
       "unit": "open beans"
     }
   },
@@ -36445,7 +36445,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T14:50:13Z",
-      "updatedAt": "2026-11-27T23:08:06Z",
+      "updatedAt": "2026-11-27T23:15:09Z",
       "preview": "Doc item 6. 26 files (QClt, Stieltjes, FrechetShohat, Plancherel asymptotics). Options 6.1 Touchard-Riordan pair-partition moments, RSK counts (recommended); 6.2 finite-n only; 6.3 leave.\n\n2026-11-27 (qou#9747, 84dd6045d): exact probe — for tr_M(S_n^k) under convention D (U_q(sl2) quantum trace, product state), m4/m2^2 -> 3 exactly at q=11/10,3/2,2; pinned q-Gaussian 2+q fails for q != 1 (classica",
       "file": "beans/defs/qou-e1uf--constructive-6-moments-and-q-clt-as-combinatorial.md"
     },
@@ -42092,7 +42092,7 @@
       ],
       "blockedBy": [],
       "createdAt": "2026-08-10T18:34:14Z",
-      "updatedAt": "2026-11-27T20:32:48Z",
+      "updatedAt": "2026-11-27T23:16:02Z",
       "preview": "sm-open-problems.md names this itself: hypercharge Y open, 'framework braid words\nper chiral fermion STILL MISSING'.\n\nThis is the real blocker, upstream of everything else on the T(t) front. Without a\nbraid word per chiral fermion there is nothing to read t off, so T(t) is a free\nlabel BY CONSTRUCTION -- which is exactly why the published battery returns a\ntautology (TwistBatteryVacuity.lean: the ",
       "file": "beans/defs/qou-h0zz--v6-braid-words-per-chiral-fermion-the-actual-block.md"
     },
@@ -47480,12 +47480,12 @@
       "title": "GAP: single crossing of rho_n (last-box signed measure) for all n>=79, which implies M1>0",
       "status": "todo",
       "type": "task",
-      "priority": "",
+      "priority": "normal",
       "parent": "qou-h315",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T22:17:45Z",
-      "updatedAt": "2026-11-27T22:17:45Z",
+      "updatedAt": "2026-11-27T23:24:09Z",
       "preview": "Conjecture (SC). Let rho_n(s) = E_PG[1{i_n+j_n=s}/(r_{n-1} r_{n-2})] over Plancherel growth, with r_k = c(k+1)-c(k) and (i_n,j_n) the 1-indexed position of box n. It is a mass-zero signed measure, and M1(n) = (n(n-1)(n-2)/3) sum_s s rho_n(s) (Jucys-Murphy + Young orthogonal form; verified exactly against the hook formula n=3..7).\nClaim: rho_n is <=0 then >=0 in s (one sign change). Checked exactly",
       "file": "beans/defs/qou-jmgu--gap-single-crossing-of-rho-n-last-box-signed-measu.md"
     },
@@ -49024,6 +49024,20 @@
       "updatedAt": "2026-10-04T15:13:05Z",
       "preview": "Found 2026-08-21 diagnosing qou-3zby (the red L1 tr_M gate).\n\n  computations/habiro-coefficients-extended.witness.json        q0Anchor=ambiguous\n  computations/habiro/habiro-coefficients-extended.witness.json q0Anchor=ABSENT\n\nIdentical payload (json-equal 'data') and identical scriptHash 6fdad0d63cff,\nboth computedAt 2026-07-18. They differ ONLY in the anchor field.\n\nWhy it matters beyond tidiness",
       "file": "beans/defs/qou-kcii--habiro-coefficients-extendedwitnessjson-exists-twi.md"
+    },
+    {
+      "id": "qou-kdh5",
+      "title": "GAP: Peter–Weyl step 3 — Haar biorthogonality of L-eigenbases on dual components (Lean)",
+      "status": "in-progress",
+      "type": "task",
+      "priority": "normal",
+      "parent": "",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-27T23:10:57Z",
+      "updatedAt": "2026-11-27T23:24:28Z",
+      "preview": "Thread 'Audit the q-Bessel special-function dictionary' 2026-11-27. After PR #9804 + #9812 (L = X₊X₋ lower bidiagonal with eigenbasis on all four PBW quadrants alpha^a beta^m, alpha^a gamma^m, delta^a beta^m, delta^a gamma^m times K[zeta]).\n\nMEASURED (exact sympy, PBW model, eigenvectors n,n' <= 3, (a,m) in {(1,0),(1,1),(2,1)}): for the dual pairs (alpha^a beta^m <-> delta^a gamma^m) and (alpha^a ",
+      "file": "beans/defs/qou-kdh5--gap-peterweyl-step-3-haar-biorthogonality-of-l-eig.md"
     },
     {
       "id": "qou-kdmr",
@@ -87843,8 +87857,8 @@
         "share": null
       }
     ],
-    "orphanOpen": 136,
-    "openTotal": 1790,
+    "orphanOpen": 137,
+    "openTotal": 1791,
     "coveredOpen": 1646,
     "duplicateIds": 0
   }
