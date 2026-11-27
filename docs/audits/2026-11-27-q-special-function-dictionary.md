@@ -10,7 +10,8 @@ needed (Bring's surface)?
 
 **Short answer.**
 
-* The **sphere side** (Cartan block of `O_q(SU(2))`) is now complete in Lean. The little
+* The **sphere side** (Cartan block of `O_q(SU(2))`) is now complete in Lean, and so is every
+  weight block `B_s` (#9785 and its follow-up). The little
   q-Jacobi polynomials form a basis of the Cartan block. They are orthogonal for a
   nondegenerate Haar pairing with nonzero norms, and the q-NS budget is diagonal in them.
   Every weight-block pairing is nondegenerate too.
@@ -31,7 +32,7 @@ needed (Bring's surface)?
 | Algebra / subalgebra | Special functions | Operator basis | Spectrum and dissipation | Transform | Lean status | Consumed by |
 |---|---|---|---|---|---|---|
 | **Cartan block** `K[ζ]`, `ζ = βγ` (torus-biinvariant; sphere `S² = SU(2)/T`) | little q-Jacobi `p_n(ζ; 1, 1; q²)` | `L = X₊X₋` (q-Casimir); `X₀` vanishes on the block | `λ_n = [n]_{q⁻²}[n+1]_{q²} = q[n]_q[n+1]_q` (symmetric q-integers), pairwise distinct; `n(n+1)` at `q = 1`. Budget `h(X₊a·X₋a) = −q⁻² Σ λ_n c_n² h(p_n²)`. | Jackson q-integral on `[0,1]`, base `q²`: `h(ζ^m) = (−q)^m/[m+1]_{q²}`. Little q-Jacobi expansion **complete** | Lean ✓: #9666 (L, moments, symmetry, budget); **#9746**: pairing nondegenerate, `ζ` transcendental, `p_n` span `K[ζ]`, `h(p_m p_n) = 0` for `m ≠ n`, `h(p_n²) ≠ 0` | **none** |
-| **Weight blocks** `B_s = (αγ)^s K[ζ]` | expected: little q-Jacobi with `α = s` | `L` preserves `B_s` (#9707); `X±` move between blocks | integration by parts `h(X₊a·X₋b) = −q^{2(s−1)} h(a·Lb)` (#9714) | pairing `K[ζ](βδ)^s × B_s` | Lean ✓: #9707, #9713, #9714; **#9746**: pairing nondegenerate on both sides. **Gap**: `L` self-adjoint per block, so no per-block basis yet | none |
+| **Weight blocks** `B_s = (αγ)^s K[ζ]` | eigenpolynomials `blockPoly r n` (`s = r+1`), a little q-Jacobi family with `α = s` (normalisation not yet matched) | `L` preserves `B_s` (#9707); `X±` move between blocks; `L` is upper triangular in `ζ^n` | diagonal `q^{2−2n−4s}(q^{2(n+1)}−1)(q^{2(n+2s)}−1)/(q²−1)²`, pairwise distinct; integration by parts `h(a·Lb) = q^{−2(2s−1)} h(X₋X₊a·b)` | pairing `K[ζ](βδ)^s × B_s`; per-block expansion **complete** | Lean ✓: #9707, #9713, #9714; #9746 (nondegenerate); **#9785**: `L` self-adjoint per block; **follow-up**: distinct diagonal, eigenbasis spans, orthogonal, nonzero norms (`q_ns_block_self_adjoint.lean`) | none |
 | **Full** `O_q(SU(2))` | matrix coefficients `t^l_{mn}` = little q-Jacobi × torus characters (Koornwinder) | PBW basis `α^a β^b γ^c` / `δ^a β^b γ^c` (#9731); `h ∘ X± = h ∘ X₀ = 0` on the whole algebra (#9731) | Casimir on all blocks: per block via #9707; global spectral theorem not stated | Peter–Weyl | Lean: PBW ✓ (#9731). **Gap**: Peter–Weyl / Schur orthogonality for `t^l_{mn}` | none |
 | **Torus** `T = Aut⊗(τ)` | characters `z^n` | `R_u` scalings; Cartan field `c⁻¹(f − R_u f)` | zero on `K[ζ]` (`cartanField_ev`) | Fourier series on `T` | Lean: #9722 (open PR); `torus_zeta`, `cartanField_ev` ✓ | none directly |
 | **Borel** `U_q(𝔟)` / upper-triangular part | — | — | — | — | **absent** from the corpus | — |
@@ -85,8 +86,8 @@ Candidate updates, ranked by how cleanly each is derived (not by accuracy):
 
 ## 4. Open gaps, ranked
 
-1. `L` self-adjoint on each weight block, giving a per-block little q-Jacobi basis
-   (parameter `α = s`).
+1. ~~`L` self-adjoint on each weight block, giving a per-block basis~~: closed by #9785 and
+   its follow-up. Left: matching `blockPoly` to the classical little q-Jacobi normalisation.
 2. Peter–Weyl / Schur orthogonality for the full `O_q(SU(2))` (PBW #9731 is the base).
 3. q-Hankel orthogonality and inversion in Lean.
 4. Whether the Cartan budget is the q-NS transport budget (bean `qou-pa7n`).
