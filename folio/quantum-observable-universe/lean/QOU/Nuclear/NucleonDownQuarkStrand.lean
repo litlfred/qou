@@ -43,15 +43,17 @@ So the core carries no orientation datum on any single strand: it cannot mark on
   The bar involution swaps them (`zD_bar`), so u ↔ d is the bar involution here too.
 * `vertex_curls_bar_even`: a γγ vertex read as two stabilisations carries one curl of each sign,
   `z_D·z̄_D = q²/(q²+1)²`, which is bar-even — flavour-blind.
-* `curl_split`, `curl_split_eq_twice_through`: the Gibbs map `E·log(τ_d-curl ratio)` gives
-  `4E·log q` for the curl reading, twice the through-strand cell `2E·log q`.
+* `curl_split`, `curl_split_eq_twice_through` (in `QOU.Transcendental.Nuclear.NucleonDownQuarkStrandGibbs`):
+  the Gibbs map `E·log(τ_d-curl ratio)` gives `4E·log q` for the curl reading, twice the
+  through-strand cell `2E·log q`.
 
 ## What is NOT claimed
 
 * That either reading in C is the corpus's. Neither is forced: γγ (A, B) does not place a flavour
   sign on any strand, and `def:down-quark` makes the down quark the same unknot as the up quark with
   the opposite crossing orientation, not a different object. Which reading, if any, is an owner call.
-* No numerical value enters. Generic `[Field R]` except the `Real.log` statements (§7c).
+* No numerical value enters. Generic `[Field R]` throughout; the `Real.log` statements live
+  under `QOU/Transcendental/` (§7c, transcendental boundary).
 
 -- Ref: [leitner2026] docs/audits/2026-11-27-nucleon-down-quark-strand.md
 -- Ref: [jones1987] https://doi.org/10.2307/1971403 §5 (Markov trace, `tr(xσ_n^{±1})`)
@@ -202,29 +204,5 @@ theorem vertex_curls_bar_even (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0) :
 theorem through_ratio (q : R) (hq : q ≠ 0) : q = q ^ 2 * q⁻¹ := by field_simp
 
 end C
-
-section Real
-
-/-- Curl reading of the Gibbs split: `E·log(z_D/z̄_D) = 4E·log q`. -/
-theorem curl_split (q E : ℝ) (hq : 0 < q) :
-    E * Real.log (zD q / zbarD q) = 4 * E * Real.log q := by
-  have hq0 : q ≠ 0 := hq.ne'
-  have hq2 : q ^ 2 + 1 ≠ 0 := by positivity
-  have hz : zbarD q ≠ 0 := by
-    rw [zbarD_eq q hq0 hq2]; positivity
-  rw [curl_ratio q hq0 hq2, mul_div_assoc, div_self hz, mul_one, Real.log_pow]
-  push_cast; ring
-
-/-- Through reading: `E·log(q/q⁻¹) = 2E·log q` (the existing `K`-weight cell). -/
-theorem through_split (q E : ℝ) (hq : 0 < q) :
-    E * Real.log (q / q⁻¹) = 2 * E * Real.log q := by
-  have : q / q⁻¹ = q ^ 2 := by field_simp
-  rw [this, Real.log_pow]; push_cast; ring
-
-theorem curl_split_eq_twice_through (q E : ℝ) (hq : 0 < q) :
-    E * Real.log (zD q / zbarD q) = 2 * (E * Real.log (q / q⁻¹)) := by
-  rw [curl_split q E hq, through_split q E hq]; ring
-
-end Real
 
 end QOU.Nuclear.NucleonDownQuarkStrand
