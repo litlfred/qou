@@ -6,13 +6,13 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/conj-explicit-alpha-k-h4",
+  "@id": "papers/quantum-observable-universe/blocks/prop-explicit-alpha-k-h4",
   "@type": [
-    "folio-assistant-sci:Conjecture",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
-  "label": "conj:explicit-alpha-k-h4",
-  "kind": "conjecture",
+  "label": "prop:explicit-alpha-k-h4",
+  "kind": "proposition",
   "title": "Explicit $\\alpha_3$ at $H_4(R, q)$ via Wedderburn-orthogonal class-function $r_3$",
   "uses": [
     "papers/quantum-observable-universe/blocks/conj-wedderburn-bratteli-recursion",

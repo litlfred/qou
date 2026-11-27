@@ -4,7 +4,7 @@ import HeckeTemperleyLieb.BraidedBlockShiftTrace
 # Block multiplicativity of the per-generator `V̂` on the disjoint Hecke product
 
 Content block
-[`conj:block-multiplicativity-v-free`](../../../mass-theory/block-multiplicativity-v-free.md).
+[`prop:block-multiplicativity-v-free`](../../../mass-theory/block-multiplicativity-v-free.md).
 
 ## 2026-11-27 rewrite: the conjecture is a theorem, under convention D
 

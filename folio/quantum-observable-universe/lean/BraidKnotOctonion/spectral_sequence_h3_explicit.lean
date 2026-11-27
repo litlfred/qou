@@ -11,7 +11,7 @@ import Mathlib.Tactic.FinCases
 # QOU.BraidKnot.spectral_sequence_h3_explicit — conjecture carrier
 
 Content block
-[`conj:spectral-sequence-h3-explicit`](../../../quantum-observable-universe/mass-theory/spectral-sequence-h3-explicit.md).
+[`prop:spectral-sequence-h3-explicit`](../../../quantum-observable-universe/mass-theory/spectral-sequence-h3-explicit.md).
 
 **Conjecture, not a proposition (owner, 2026-11-20, bean `qou-6qbv`).** The
 block claims explicit formulas for the differentials `d₁`, `d₂` of the

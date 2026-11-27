@@ -10,4 +10,6 @@
 
 *where $\Phi_{(4)} = q^6 + 2q^4 + 2q^2 + 1$.*
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the algebraic→archimedean wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.
+*The table is a dual basis to the characters: $\chi_\mu(r_\lambda) = \delta_{\lambda\mu}\,\kappa_\lambda$, where each $\kappa_\lambda$ factors through $q$, $q^2+1$, $q^4+1$ and $q^4+q^2+1$ only, so $\kappa_\lambda \neq 0$ at generic $q$. For any trace $\mathrm{tr} = \sum_\mu y_\mu \chi_\mu$ this gives $\mathrm{tr}(r_\lambda) = y_\lambda \kappa_\lambda$.*
+
+The characters $\chi_\mu$ are the characters of five explicit representations of $H_4$ with entries in $\mathbb{Z}[q^2]$: trivial, sign, the reflection representation $(3,1)$, its twist $T \mapsto (Q-1) - T$ for $(2,1,1)$, and the $H_3$ reflection representation pulled back along $T_1, T_2, T_3 \mapsto T_1, T_2, T_1$ for $(2,2)$. The Lean sibling checks the Hecke and braid relations for each of them and recomputes every entry of the character table. The statement holds over a generic commutative ring.
