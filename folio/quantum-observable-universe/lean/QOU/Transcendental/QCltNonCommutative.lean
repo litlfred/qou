@@ -26,9 +26,9 @@ states convergence with `Filter.Tendsto` and carries an analytic
 characteristic-function clause, so it lives behind the boundary
 `QOU/Transcendental/`. The algebraic statement is
 `QOU.Observations.QCltCut.QCltCut`: moments converge as located cuts to the
-ℤ[q] q-Gaussian moments. `toQCltCut` below shows that an instance of this class
-whose limit moments are the q-Gaussian ones gives an instance of that one, so
-this class can be deleted once nothing cites it.
+ℤ[q] q-Gaussian moments of a tracial state. Since 2026-11-27 that class computes
+its moments from a state and a sum; this one keeps them as a free field, so no
+bridge exists and this class is superseded (delete once nothing cites it).
 
 ## References
 
@@ -126,15 +126,10 @@ theorem convergesTo_of_tendsto {R : Type u} [Field R] [LinearOrder R]
   exact ⟨N, fun n hn => abs_lt.mpr
     ⟨by linarith [(hN n hn).1], by linarith [(hN n hn).2]⟩⟩
 
-/-- An instance of the topological class whose limit moments are the ℤ[q]
-q-Gaussian moments at `q` gives an instance of the cut form. -/
-def QCltNonCommutative.toQCltCut {R : Type u} [Field R] [LinearOrder R]
-    [IsStrictOrderedRing R] [TopologicalSpace R] [OrderTopology R]
-    [inst : QCltNonCommutative R] (q : R)
-    (hpin : ∀ k, inst.limitMoment k = evalAt q (qGaussMoment k)) : QCltCut R q where
-  momentSequence := inst.momentSequence
-  momentConverges k := by
-    rw [← hpin k]
-    exact convergesTo_of_tendsto (inst.momentConvergence k)
+/-! The bridge `toQCltCut` was removed 2026-11-27 (bean `qou-e1uf`). This class
+carries `momentSequence` as a free field, not computed from a state, so it
+cannot supply the state-based `QCltCut` restated that day. It is superseded;
+`QCltCut` (with `ClassicalClt` as its `q = 1` member) is the algebraic
+statement. -/
 
 end QOU.Observations.QCltNonCommutative
