@@ -1,5 +1,8 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Group.Basic
+import MathlibExt.CentralExtensionH2
+
+set_option autoImplicit false
 
 
 /-!
@@ -58,5 +61,44 @@ theorem YekutieliLiftingCondition.lift_iff
   · intro ⟨_⟩
     by_contra h
     exact (ylc.no_lift_of_nonzero n h).elim ‹_›
+
+/-! ### The condition is satisfied by central group extensions (derived)
+
+The two fields `lift_of_zero` and `no_lift_of_nonzero` are the content of the
+definition. The construction below shows they are **satisfiable by derived
+theorems, not by assumption**: for any tower of central group extensions
+`1 → Aₙ → Eₙ → Gₙ → 1` and homomorphisms `φₙ : Hₙ →* Gₙ`, both fields are
+discharged by `QOU.CentralExtension.obstructionClass_eq_one_iff`. The
+obstruction space is `∏ₙ H²(Hₙ, Aₙ)` (written additively), and level `n`
+places its class `κ(φₙ)` in the `n`-th factor.
+
+This is the group-level (single-object groupoid) case of Yekutieli Thm 4.17;
+the gerbe-level case over a site is the subject of bean `qou-533l`, tiers
+T3–T4. -/
+
+open QOU.CentralExtension in
+/-- **Derived instance** of `def:yekutieli-lifting-condition` for a tower of
+central group extensions. No field is assumed: each is proved from the
+class-form lifting criterion. -/
+noncomputable def YekutieliLiftingCondition.ofCentralExtensions
+    {A E G H : ℕ → Type*} [∀ n, CommGroup (A n)] [∀ n, Group (E n)]
+    [∀ n, Group (G n)] [∀ n, Group (H n)]
+    (S : ∀ n, GroupExtension (A n) (E n) (G n))
+    (hcen : ∀ n (a : A n) (e : E n), (S n).inl a * e = e * (S n).inl a)
+    (σ : ∀ n, (S n).Section) (φ : ∀ n, H n →* G n) :
+    YekutieliLiftingCondition where
+  ObstructionSpace := ∀ n, Additive (H2 (H n) (A n))
+  obstruction n := Pi.single n (Additive.ofMul (obstructionClass (hcen n) (σ n) (φ n)))
+  LiftType n := {ψ : H n →* E n // (S n).rightHom.comp ψ = φ n}
+  lift_of_zero n h := by
+    have h' : obstructionClass (hcen n) (σ n) (φ n) = 1 := by
+      simpa using congrFun h n
+    obtain ⟨ψ, hψ⟩ := (obstructionClass_eq_one_iff (hcen n) (σ n) (φ n)).mp h'
+    exact ⟨⟨ψ, hψ⟩⟩
+  no_lift_of_nonzero n h := by
+    refine ⟨fun ⟨ψ, hψ⟩ => h ?_⟩
+    have h1 := (obstructionClass_eq_one_iff (hcen n) (σ n) (φ n)).mpr ⟨ψ, hψ⟩
+    rw [h1]
+    simp
 
 end QOU
