@@ -145,8 +145,9 @@ theorem writhe_eq_psum (w : List Letter) :
     ∀ (v : List Letter) (p : List Nat), writhe v = psum w v p pairs6
   | [], p => by rw [psum_nil]; rfl
   | (i, e) :: v, p => by
-      rw [psum_cons, indSum_pairs6 _ _ (Nat.mod_lt _ (by decide)) (Nat.mod_lt _ (by decide)),
-        ← writhe_eq_psum w v (swapAt p i)]
+      have hx : comp w (pairAt p i).1 < 6 := Nat.mod_lt _ (by decide)
+      have hy : comp w (pairAt p i).2 < 6 := Nat.mod_lt _ (by decide)
+      rw [psum_cons, indSum_pairs6 _ _ hx hy, ← writhe_eq_psum w v (swapAt p i)]
       rfl
 
 theorem psum_eq_zero_of_neutral (w : List Letter) (h : Neutral w) :
@@ -230,7 +231,8 @@ theorem vword_of_writhe_zero (t : List (Fin 4 × Fin 4)) (h : writhe (termWord t
     obtain ⟨i, c⟩ := a
     simp only [sigCount] at hc
     have hv : IsVChoice c := by
-      by_contra hn; simp [hn] at hc
+      refine Decidable.byContradiction fun hn => ?_
+      simp [hn] at hc
     have ht : sigCount t = 0 := by simp [hv] at hc; exact hc
     obtain ⟨hall, hw⟩ := ih ht
     refine ⟨?_, ?_⟩
