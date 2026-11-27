@@ -17,10 +17,11 @@ Bean `qou-3fdg` (stage 3d of the rational-associator plan, epic `qou-dk7p`). Bui
 * `pentagon_act_universal_of_tcompat`: `pentagon_act_universal` with `hfar` replaced by the
   t-compatibility and (5.13) hypotheses.
 
-**What is not proved here.** `TCompat` is a hypothesis. Exact computation over `ℚ`
-(`computations/rational_associator/grt_far_relation/t3.py`) shows that (5.13) and the μ = 0
-hexagon (5.14) imply `TCompat` through degree 3 of `g`; a derivation for all degrees is open
-(`docs/audits/2026-11-27-grt-action-pentagon-derivation.md` §6). Nothing analytic is used.
+**`TCompat` is a defining condition of `GRT₁`.** It is Drinfeld's (5.14),
+`A + g(A,B)⁻¹ B g(A,B) + g(A,C)⁻¹ C g(A,C) = 0` for `A + B + C = 0` (Drinfeld 1991, §5). This
+file's "(5.13)" and "(5.14)" are Drinfeld's (5.12) and (5.13). So for `g ∈ GRT₁`, `TCompat` holds
+by definition and does not need to be derived (`docs/audits/2026-11-27-grt-action-pentagon-derivation.md`
+§9). Nothing analytic is used.
 -/
 
 namespace QOU.BraidsAndKnots.RationalAssociator
