@@ -1,6 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import MathlibExt.Core
+import QOU.Transcendental.RpowSqrtHelpers
 import QOU.Core.Glossary
 import QOU.BraidsAndKnots.KnotTheory
 import QOU.LiftingDescent.Torsion
