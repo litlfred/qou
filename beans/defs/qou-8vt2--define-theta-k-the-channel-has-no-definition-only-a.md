@@ -955,3 +955,9 @@ PR [#9736](https://github.com/litlfred/qou/pull/9736) adds `HeckeTemperleyLieb/Q
 * over ℝ, `g_λ = 0` iff all contents are 0 (`cellBracketSqSum_eq_zero_iff`), so the shift 2N is pinned by "vacuum has zero rate".
 
 Still open (unchanged guard: no anchor matching): the mode set Λ (hence d = |Λ| and a_j = e_j({(q−1)μ_λ})), then c₃, then ϑ_K via the AV5 reparametrisation. ϑ_K is **still undefined**. Status unchanged.
+
+## 2026-11-27 (later) — mode set Λ: rates are blind to conjugation (PR #9751). #9736 merged.
+
+* Lean `HeckeTemperleyLieb/QHeatKernelModeSet.lean` (sorry-free): g_{λᵀ} = g_λ, so conjugate partitions share μ_λ, and the q-difference depth |Λ| (= number of distinct rates in Z_q(t) = Σ_λ d_λ exp_q(−μ_λ t)) is at most the number of partitions up to conjugation.
+* Probe `qbeta_thetak_mode_set_depth_probe.py` (exact): for n ≤ 7 the bound is attained, |Λ| = 1,1,2,3,4,6,8. The first collision is at n = 8 (|Λ| = 10 < 12). At n = 3 the depth is 2.
+* Still open: whether Λ = all of Irr H_n(q) (the proposition's wording; not derived), which n, then the a_j, c₃ and ϑ_K. No anchor input. Status unchanged.
