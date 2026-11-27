@@ -2,6 +2,7 @@ import Mathlib.Data.Nat.Totient
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
 import QOU.MassTheory.EmCouplingBringZeroMode
+import QOU.Transcendental.MassTheory.EmCouplingBringZeroModeBloch
 
 
 /-!

@@ -1,4 +1,5 @@
 import QOU.Transcendental.MassTheory.AlphaEmTwoLoopBlochSchwinger
+import Mathlib.Analysis.PSeries
 
 /-!
 # What the Form C conditional (`AlphaEmTwoLoopBlochSchwingerClass`) actually asserts
