@@ -1,0 +1,328 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-25T11:29:19.605555+00:00",
+  "commitSha": "a06ae62c2b2c669f3b70a605966a935c6b82dce5",
+  "assertions": [
+    {
+      "name": "K1_nucleon_V3_V6_pass_reading3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "h2-gg-atom.witness.json H3 rows"
+    },
+    {
+      "name": "K2_interface_ratio_eq_zD_plus_d_m3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "|ratio-(z_D+d)| = 2.2959e-41"
+    },
+    {
+      "name": "K2_interface_ratio_eq_zD_plus_d_m6",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "|ratio-(z_D+d)| = 3.4438e-41"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "gg-deuteron-bond",
+  "scriptFile": "gg_deuteron_bond_probe.py",
+  "scriptHash": "e0e3aec612cf",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "1.9.3",
+    "pyhecke_native_build": "248f1a54d4f699f2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gg_deuteron_bond/gg_deuteron_bond_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gg_deuteron_bond/gg_deuteron_bond_probe.py"
+  },
+  "description": "PROBE (bean qou-xj4p; owner rulings 2026-11-15 A/B, 2026-11-25): deuteron with a gamma-gamma-selected p-n bond. 6 strands, nucleons V^m (m in {3,6}), bond V(s)^k (s in {1,2}, k in {1,2,3}); reading 3 at every level, convention D, proton pin. Pre-registered (a06ae62c2b2). Trace ratio and B = -E0 ln r reported, never used to select. p and n are the same word in this cell. Nothing fitted or wired.",
+  "auditOnly": "computations/probes/gg_deuteron_bond/results.md",
+  "parameters": {
+    "q0": "1.109978582751380807591669095610768879874",
+    "E0_MeV": "4.1859813632944758969"
+  },
+  "data": {
+    "results": {
+      "V^3": {
+        "bare_tr": "0.99712639504640677421841220987",
+        "bare_reading3_every_level": true,
+        "bare_failing_levels": [],
+        "bare_negative": [],
+        "rows": [
+          {
+            "m": 3,
+            "bond": "V(1)^1",
+            "site": 1,
+            "k": 1,
+            "reading3_every_level": false,
+            "failing_levels": [
+              4,
+              5,
+              6
+            ],
+            "negative": [
+              "4:(2, 2)=-0.9093679454",
+              "4:(3, 1)=-0.07239482223",
+              "5:(3, 2)=-0.9760638571",
+              "6:(3, 3)=-0.9628744794",
+              "6:(4, 2)=-0.04606546465"
+            ],
+            "ratio": "0.2504339657866614992057649",
+            "B_MeV": "5.7957423682613597034",
+            "B_err_vs_AME_pct": "160.533598337571"
+          },
+          {
+            "m": 3,
+            "bond": "V(1)^2",
+            "site": 1,
+            "k": 2,
+            "reading3_every_level": false,
+            "failing_levels": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "negative": [
+              "3:(2, 1)=-0.02728557968",
+              "4:(2, 2)=-1.04220553",
+              "5:(3, 2)=-0.8835277915",
+              "6:(3, 3)=-0.8668136207"
+            ],
+            "ratio": "0.2848189975166291811323666",
+            "B_MeV": "5.2571798415820680528",
+            "B_err_vs_AME_pct": "136.32382086818"
+          },
+          {
+            "m": 3,
+            "bond": "V(1)^3",
+            "site": 1,
+            "k": 3,
+            "reading3_every_level": true,
+            "failing_levels": [],
+            "negative": [],
+            "ratio": "0.9984971606328126471579442",
+            "B_MeV": "0.0062955893986528110308",
+            "B_err_vs_AME_pct": "-99.71699698581"
+          },
+          {
+            "m": 3,
+            "bond": "V(2)^1",
+            "site": 2,
+            "k": 1,
+            "reading3_every_level": false,
+            "failing_levels": [
+              5,
+              6
+            ],
+            "negative": [
+              "5:(3, 2)=-1.118717886",
+              "6:(3, 3)=-1.032763018",
+              "6:(4, 2)=-0.1418394283"
+            ],
+            "ratio": "0.2434340728720333796164733",
+            "B_MeV": "5.9144112488576583411",
+            "B_err_vs_AME_pct": "165.868071215757"
+          },
+          {
+            "m": 3,
+            "bond": "V(2)^2",
+            "site": 2,
+            "k": 2,
+            "reading3_every_level": false,
+            "failing_levels": [
+              4,
+              5,
+              6
+            ],
+            "negative": [
+              "4:(2, 2)=-0.05913588211",
+              "5:(3, 2)=-0.8457211541",
+              "6:(3, 3)=-0.9469112557"
+            ],
+            "ratio": "0.2778191046020010615430751",
+            "B_MeV": "5.3613424751023560172",
+            "B_err_vs_AME_pct": "141.006200449434"
+          },
+          {
+            "m": 3,
+            "bond": "V(2)^3",
+            "site": 2,
+            "k": 3,
+            "reading3_every_level": true,
+            "failing_levels": [],
+            "negative": [],
+            "ratio": "0.9984971606328126471579442",
+            "B_MeV": "0.0062955893986528110308",
+            "B_err_vs_AME_pct": "-99.71699698581"
+          }
+        ]
+      },
+      "V^6": {
+        "bare_tr": "0.988547012265476954268170183067",
+        "bare_reading3_every_level": true,
+        "bare_failing_levels": [],
+        "bare_negative": [],
+        "rows": [
+          {
+            "m": 6,
+            "bond": "V(1)^1",
+            "site": 1,
+            "k": 1,
+            "reading3_every_level": false,
+            "failing_levels": [
+              4,
+              5,
+              6
+            ],
+            "negative": [
+              "4:(2, 2)=-0.7679180283",
+              "4:(3, 1)=-0.1031740905",
+              "5:(3, 2)=-0.8615184087",
+              "6:(3, 3)=-0.8388437919"
+            ],
+            "ratio": "0.2541721169845813046001913",
+            "B_MeV": "5.7337212470785495661",
+            "B_err_vs_AME_pct": "157.745588649084"
+          },
+          {
+            "m": 6,
+            "bond": "V(1)^2",
+            "site": 1,
+            "k": 2,
+            "reading3_every_level": false,
+            "failing_levels": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "negative": [
+              "3:(2, 1)=-0.01006834076",
+              "4:(2, 2)=-1.163943642",
+              "5:(3, 2)=-0.9383127529",
+              "6:(3, 3)=-0.8977025124"
+            ],
+            "ratio": "0.2903299558600415127245484",
+            "B_MeV": "5.1769589707626090734",
+            "B_err_vs_AME_pct": "132.717685396938"
+          },
+          {
+            "m": 6,
+            "bond": "V(1)^3",
+            "site": 1,
+            "k": 3,
+            "reading3_every_level": true,
+            "failing_levels": [],
+            "negative": [],
+            "ratio": "0.9984196779540238057575558",
+            "B_MeV": "0.0066204312180853297669",
+            "B_err_vs_AME_pct": "-99.7023945064847"
+          },
+          {
+            "m": 6,
+            "bond": "V(2)^1",
+            "site": 2,
+            "k": 1,
+            "reading3_every_level": false,
+            "failing_levels": [
+              5,
+              6
+            ],
+            "negative": [
+              "5:(3, 2)=-1.136902328",
+              "6:(3, 3)=-0.9637341931",
+              "6:(4, 2)=-0.1522801854"
+            ],
+            "ratio": "0.2404598502723781066253557",
+            "B_MeV": "5.9658696225320513001",
+            "B_err_vs_AME_pct": "168.181258104706"
+          },
+          {
+            "m": 6,
+            "bond": "V(2)^2",
+            "site": 2,
+            "k": 2,
+            "reading3_every_level": false,
+            "failing_levels": [
+              4,
+              5,
+              6
+            ],
+            "negative": [
+              "4:(2, 2)=-0.0734481873",
+              "5:(3, 2)=-0.8635231747",
+              "6:(3, 3)=-1.069881043"
+            ],
+            "ratio": "0.2759897328268716614235723",
+            "B_MeV": "5.3889973028777143542",
+            "B_err_vs_AME_pct": "142.249356430827"
+          },
+          {
+            "m": 6,
+            "bond": "V(2)^3",
+            "site": 2,
+            "k": 3,
+            "reading3_every_level": true,
+            "failing_levels": [],
+            "negative": [],
+            "ratio": "0.9984471235439372896181907",
+            "B_MeV": "0.0065053642263325322011",
+            "B_err_vs_AME_pct": "-99.7075670651504"
+          }
+        ]
+      }
+    },
+    "outcome": {
+      "outcome": "(i) gamma-gamma bond(s) pass",
+      "passing": [
+        {
+          "m": 3,
+          "bond": "V(1)^3",
+          "B_MeV": "0.0062955893986528110308",
+          "B_err_vs_AME_pct": "-99.71699698581"
+        },
+        {
+          "m": 3,
+          "bond": "V(2)^3",
+          "B_MeV": "0.0062955893986528110308",
+          "B_err_vs_AME_pct": "-99.71699698581"
+        },
+        {
+          "m": 6,
+          "bond": "V(1)^3",
+          "B_MeV": "0.0066204312180853297669",
+          "B_err_vs_AME_pct": "-99.7023945064847"
+        },
+        {
+          "m": 6,
+          "bond": "V(2)^3",
+          "B_MeV": "0.0065053642263325322011",
+          "B_err_vs_AME_pct": "-99.7075670651504"
+        }
+      ]
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

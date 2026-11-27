@@ -1,5 +1,8 @@
 # The residual shape on the normalised bond-counting law — the asymmetry signal drops from −0.80 to −0.70, the surface signal rises from −0.18 to −0.30, and the residual has the SEMF shape with `R² = 0.96`
 
+
+> **Scale note (2026-11-25, owner card B, bean `qou-of4i`).** The factor `3.0075` below is on the order-zero `E₀ = 4.185981` MeV. The owner has since ruled the tower-summed `E₀ = 4.227483` MeV for the log binding law (×1.0099145), on which the same factor is **2.9780**, 0.73 % below 3 rather than 0.25 % above it. The audit's numbers are kept as recorded.
+
 **Date:** 2026-09-04 · **Beans:** `qou-yau0` (this), `qou-hfjc` (the normalisation it follows),
 `qou-q7ga` (#6611's roast, one row revised), `qou-ib3g` (#6668, cross-referenced) ·
 **Arc:** binding law · **Scope:** a diagnostic probe, no fit wired, no Lean needed (everything

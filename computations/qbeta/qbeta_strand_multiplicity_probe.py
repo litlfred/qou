@@ -2,6 +2,10 @@
 """The missing factor is 3.0075 and there are 3 strands per nucleon — but the
 mechanism that would deliver it is NOT the one the word already has.
 
+SCALE NOTE (owner ruling 2026-11-25, card B, bean qou-of4i): 3.0075 is computed on
+the order-zero E_0 this probe still uses. On the ruled tower E_0 (x 1.0099145) the
+same factor is 2.9780, i.e. 0.73 % BELOW 3 rather than 0.25 % above it.
+
 `qou-ib3g` records the gap as "B_sym/A saturates at 2.998 MeV/nucleon vs
 nature's 8.790". This probe pins the number, names the only candidate mechanism,
 **refutes the mechanism that is already parameterised**, and states what the
