@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T18:42:25Z
+updated_at: 2026-11-27T18:52:28Z
 parent: qou-dk7p
 ---
 
@@ -52,3 +52,6 @@ KEY for research leg (p.854, Remark 2 after 5.8): without 5.3, obstruction to li
 
 
 2026-11-27: #9559 merged. Stage 3b partial as #9564 (GRTAction.lean): pentagon_act proves phi~ = phi(gAg^-1,B)g satisfies the pentagon at a DK4 family t, GIVEN g's pentagon at t and phi's pentagon at the transported family s (((12)3)4 coordinates). transported_d4/d0 proved. Open: s is DK4. Degree-2 rank check: coface triples give 10 of 11 relations; the missing one is the far relation [s13,s24]=0, and it is unknown whether g's pentagon alone forces it or (5.13)/(5.14) is needed. Write-up: docs/audits/2026-11-27-grt-action-pentagon-derivation.md.
+
+
+2026-11-27: #9564 merged. #9570: TransportedDK4.lean proves transported family is DK4 given g's pentagon + far relation hfar=[s13,s24]=0; pentagon_act_universal in U4 N. Exact-Q finding: hfar does NOT follow from g's pentagon + (5.13) (degree-2 counterexample, nonzero in U(t4)_4, dim 301); the mu=0 hexagon (5.14) kills degree 2; degree-3 evidence (mod two primes, leading order) suggests (5.14) suffices. Open: derive hfar from (5.14); build G units from nilpotence.
