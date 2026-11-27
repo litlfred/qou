@@ -56,3 +56,10 @@ Open: build the 3D-calculus vector fields on OqSU2 and get the sign and size of 
 - From Woronowicz 1987 (owner upload, now library/woronowicz1987-twisted-su2): χ₁ = (ε − f₁)/(1 − ν⁻²), f₁ = diag char at ν⁻² ((2.2), (2.5)); values (2.3) and Leibniz (2.7) proved in `OqSU2WoronowiczCartan.lean`.
 - Dictionary: β = −νγ*, δ = α*, q = ν. So u = q⁻², c = 1 − q⁻²; one-sided budget −c·φ(Du·Du) = (q⁻² − 1)φ(Du·Du).
 - Still open: sign (positivity, *-structure), χ₀/χ₂ (separate thread B), Haar (thread C), Part A (qou-pa7n).
+
+**2026-11-27 — `*`-structure (PR #9581).** `CompactQuantumMetrics/OqSU2Star.lean`, sorry-free.
+The corpus `compactStar` matches Woronowicz's `*`; `Δ(x*) = (*⊗*)Δx`; torus and characters
+intertwine with `u ↦ u⁻¹`; for the Cartan field, `(Xa)* = −T_{u⁻¹,u}(X(a*))`, and for `a* = a`,
+`Xa·Xa = −(T(Xa))*·Xa`. So the budget integrand is minus a twisted square. Positivity of `φ`
+alone does not sign it; the Haar modular property is needed. Still open: that step, χ₀/χ₂,
+Haar invariance, Part A (`qou-pa7n`).
