@@ -77,7 +77,24 @@ c₂(8_18) = q⁶ − 3q⁵ + 9q³ − 8q² − 6q + 16 − 6q⁻¹ − 8q⁻² 
 
 The roots of c₁(8_18) in x are the squares of the golden ratio and of its inverse, (3 ± √5)/2. That is an observation, not a claim of meaning.
 
-Through k = 7, c_k(8_18)(e^{2πi/M}) is negative on long runs of M for every k ≥ 1 (see `habiro-K7.log`). The 10_123 coefficients are positive at almost every tested M, with isolated negatives (k = 1 at M = 5, k = 6 at M = 14). Table of the Kashaev-point Habiro terms t_k(N) = c_k(e^{2πi/N})·Π4sin² for N ≤ K + 1: `weaving-habiro.result.json`, key `kashaev_terms` (section 4b below, filled from the K = 13 run).
+Through k = 7, c_k(8_18)(e^{2πi/M}) is negative on long runs of M for every k ≥ 1 (see `habiro-K7.log`). The 10_123 coefficients are positive at almost every tested M, with isolated negatives (k = 1 at M = 5, k = 6 at M = 14). Full per-term tables: `weaving-habiro.result.json`, key `kashaev_terms`.
+
+### 4b. The Kashaev-point Habiro terms, N ≤ 14 (run with K = 13, `habiro-K13.log`)
+
+For N ≤ 14 every coefficient needed is known, so each ⟨K⟩_N splits exactly into its N Habiro terms t_k(N) = c_k(e^{2πi/N})·Π_{j≤k} 4 sin²(πj/N).
+
+**Cross-check.** The sums Σ_k t_k(N) agree with the Q1 values to every printed digit. For example, ⟨8_18⟩_11 = 8744099146.7265990122 by both routes, and ⟨10_123⟩_12 = 203293768051548.60238 by both. The two routes are independent: Q1 evaluates the state model at the root of unity in mpmath, while Q4 solves for the exact polynomials and then evaluates them. So evaluating at the root of unity commutes with the state sum, as it should.
+
+| N | negative Habiro terms of 8_18 (k) | negative Habiro terms of 10_123 (k) |
+|---|---|---|
+| 2–4 | none | none |
+| 5 | 1 | 1 |
+| 6–9 | 1, 2 | none |
+| 10–12 | 1 | none |
+| 13 | 1, 5 | none |
+| 14 | 1, 4, 5, 6 | 6 |
+
+Through k = 13, each c_k(8_18) is negative on long runs of roots of unity. The 10_123 coefficients are positive at every tested M (k + 1 ≤ M ≤ 60) for k = 2..12; the only exceptions are k = 1 at M = 5, k = 6 at M = 14 and k = 13 at M = 28. So **⟨10_123⟩_N is a term-wise positive Habiro sum for every N = 6..13**, and fails only at N = 5 and N = 14 in the range computed. Whether the negatives stay sparse and small as N grows is the question behind bean `qou-8xyf`.
 
 **Verdict.**
 * "The Habiro sum of 8_18 is term-wise non-negative at the Kashaev point": **false**. This is scope (b) for the Habiro route, because the expansion is unique and c₁(8_18)(e^{2πi/N}) < 0 is exact algebra (x² − 3x + 1 < 0 on 2cos(2π/N) ∈ (φ⁻², φ²)). It is scope (a) for the wider claim "8_18 has no positive formula": other decompositions are not excluded.
