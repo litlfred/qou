@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/woronowicz1987-twisted-su2",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "woronowicz1987-twisted-su2",
+  "contains": [
+    "library/woronowicz1987-twisted-su2/sections/sec-front-matter",
+    "library/woronowicz1987-twisted-su2/sections/sec-000",
+    "library/woronowicz1987-twisted-su2/sections/sec-001",
+    "library/woronowicz1987-twisted-su2/sections/sec-002",
+    "library/woronowicz1987-twisted-su2/sections/sec-003",
+    "library/woronowicz1987-twisted-su2/sections/sec-004",
+    "library/woronowicz1987-twisted-su2/sections/sec-005",
+    "library/woronowicz1987-twisted-su2/sections/sec-006",
+    "library/woronowicz1987-twisted-su2/sections/sec-007",
+    "library/woronowicz1987-twisted-su2/sections/sec-008",
+    "library/woronowicz1987-twisted-su2/sections/sec-009",
+    "library/woronowicz1987-twisted-su2/sections/sec-010",
+    "library/woronowicz1987-twisted-su2/sections/sec-011"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "woronowicz1987-twisted-su2",
+    "source_file": "woronowicz1987-twisted-su2.pdf",
+    "source_sha256": "108358dd4da571a3f4715ce3afb6b838c76061f659f30d5858cf86b95aa5efe6",
+    "granularity": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}
