@@ -49,7 +49,7 @@ operator, cinquefoil framing) remain conjectural (open; bean `qou-n2un`).
 
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import QOU.BraidsAndKnots.QBetaCategoricalPrecisionLadder
+import QOU.BraidsAndKnots.QBetaLadderPrimitives
 
 open Real
 

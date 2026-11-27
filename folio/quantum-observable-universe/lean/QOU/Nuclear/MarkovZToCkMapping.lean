@@ -1,6 +1,6 @@
 import Mathlib.Tactic
 import HeckeTemperleyLieb.MarkovParameterRecursion
-import QOU.BraidsAndKnots.QBetaCategoricalPrecisionLadder
+import QOU.BraidsAndKnots.QBetaLadderPrimitives
 import QOU.Nuclear.ToroidalHarmonicsBasis
 
 /-!
