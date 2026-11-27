@@ -35,6 +35,12 @@ calls when someone dispatches it:
    `accuracy-scorecard`), failing fast before the site build if `ACCURACY.md`
    drifted from its 12 upstream witnesses, failed public-reader hygiene, or lost
    its `README.md` link;
+0a. the Lean ratchets, warn-only: `scripts/transcendental-boundary-audit.py --check`
+   (analytic results stay in `QOU/Transcendental/`) and `scripts/base-ring-audit.py
+   --check` (§7c: no new `[Field _]` / `[DivisionRing _]` binder or `field_simp` on the
+   algebraic side; restate over a ring, with `q : Rˣ` for an invertible parameter).
+   Both baselines only shrink. A red result becomes a bean and a follow-up PR; it
+   does not stop the publish, and neither is a pre-merge gate;
 1. `scripts/build-site.sh`, the folio site plus `_site/accuracy/index.html`
    (`/accuracy/`) plus the Lean library render (folio-assistant-sci skill
    `lean-html-docs`), staged at `_site/lean/`;

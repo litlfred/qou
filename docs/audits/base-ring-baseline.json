@@ -1,0 +1,4224 @@
+{
+ "boundary": "QOU/Transcendental/",
+ "classes": {
+  "field-class": "\\[\\s*(?:Field|DivisionRing|LinearOrderedField|IsROrC|RCLike)\\s",
+  "field-tactic": "\\bfield_simp\\b"
+ },
+ "files": {
+  "BraidKnotOctonion/AJFigureEight.lean": {
+   "field-class": 3,
+   "field-tactic": 5
+  },
+  "BraidKnotOctonion/AJFigureEightAnnihilation.lean": {
+   "field-class": 1,
+   "field-tactic": 7
+  },
+  "BraidKnotOctonion/AJFigureEightTelescope.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/AJTrefoil.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/AJTrefoilAnnihilation.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/AJTrefoilRootEval.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/AddableCellIndexing.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/BWVacuumRowStokesMonodromy.lean": {
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/BarLiftAmbiguity.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/BarParityInvariant.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/BarTransport.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/BindingConcentration.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/BondChiralitySixStrand.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/BondChiralitySixStrand/CaseGLeft.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/BondChiralitySixStrand/CaseGRight.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/BondChiralitySixStrand/CaseGpLeft.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/BondChiralitySixStrand/CaseGpRight.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/BondChiralitySixStrand/Core.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/BorromeanCanonicalTraceDerivation.lean": {
+   "field-class": 2,
+   "field-tactic": 13
+  },
+  "BraidKnotOctonion/BorromeanChiPerRep.lean": {
+   "field-class": 4,
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/BorromeanFrobeniusReconstruction.lean": {
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/BorromeanLevelTrace.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "BraidKnotOctonion/BorromeanMarkovTrace.lean": {
+   "field-tactic": 5
+  },
+  "BraidKnotOctonion/BorromeanSubLinkChannelSum.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/BorromeanTraceConventionSplit.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/BranchingGenericity.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/BringDescendingTower.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/BrunnianIsotypeExclusion.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/CechGenus4Space.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/CechPLComplex.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/CechSphereGood.lean": {
+   "field-tactic": 4
+  },
+  "BraidKnotOctonion/CentralIdempotentInvolution.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/CentralIdempotentSignTwist.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/Chi21GarsideZero.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/Cl3Zeta5OrbitSum.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/ClosureUnseen.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/CoCasimirDimQNotForced.lean": {
+   "field-class": 2,
+   "field-tactic": 3
+  },
+  "BraidKnotOctonion/CoCasimirDimQTraces.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/CoCasimirHeckeBridge.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/CoCasimirMarkovDescentForcesZD.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/CoCasimirTau0NotDescend.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/ColSuperstandardEigen.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/ColourCubicBranchLocus.lean": {
+   "field-tactic": 3
+  },
+  "BraidKnotOctonion/ColourCubicDiscriminant.lean": {
+   "field-class": 5,
+   "field-tactic": 4
+  },
+  "BraidKnotOctonion/ColourCubicDiscriminantValues.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/ColourCurveBarVsBranch.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/ColourCurveModulus.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/ColourRelabel.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/ColourSingletDownstream.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/ColourStructureConstantCommutator.lean": {
+   "field-class": 4,
+   "field-tactic": 9
+  },
+  "BraidKnotOctonion/ColourTwistMarkov.lean": {
+   "field-class": 1,
+   "field-tactic": 15
+  },
+  "BraidKnotOctonion/CompositionCosetReduce.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/CompositionCosetReduceMirror.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/CompositionCosetSum.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/CompositionDoubleCoset.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/CompositionEigenPower.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/CompositionIdeal.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/CompositionIntertwine.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/ConditionalClasses.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/ContentProductRows.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/CoxeterCarrierEquiv.lean": {
+   "field-class": 3,
+   "field-tactic": 3
+  },
+  "BraidKnotOctonion/CoxeterTower.lean": {
+   "field-class": 4
+  },
+  "BraidKnotOctonion/CrossingAdditiveWrithe.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/CrossingEnergyBarParity.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/CuspShapeBarParity.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/DeltaLambdaL1Ceiling.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/DeterminantChern.lean": {
+   "field-class": 2,
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/EulerCharacteristicSix.lean": {
+   "field-class": 4
+  },
+  "BraidKnotOctonion/ExplicitCentralIdempotentGeneral.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/GluingBridge.lean": {
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/HardWallProjection.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HconvConventionBridge.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/HeckeAdditiveJucysMurphy.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeBoundedAdditiveJM.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeBoundedFullTwist.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/HeckeBoundedGenerators.lean": {
+   "field-class": 4,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/HeckeBoundedJMComm.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/HeckeBoundedJucysMurphy.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeBoundedSeminormalWeight.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/HeckeBoundedTheta.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/HeckeBoundedTransposition.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeCarrierSemisimple.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/HeckeColimitFaithful.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeColimitTensorTrace.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeFullTwistProduct.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeInclInjective.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeIwahoriConventionBridge.lean": {
+   "field-class": 2,
+   "field-tactic": 3
+  },
+  "BraidKnotOctonion/HeckeJucysMurphyAdjacentNormalForm.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeJucysMurphyCommutation.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeJucysMurphyElements.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/HeckeJucysMurphyReduction.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeMurphyYoung.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeProductInjective.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/HeckeProductSurjective.lean": {
+   "field-class": 6
+  },
+  "BraidKnotOctonion/HeckeSchurElements.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/HeckeSchurOrthogonality.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/HeckeSeminormalWeight.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeSemisimpleGeneral.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/HeckeStableScalarCascade.lean": {
+   "field-class": 3,
+   "field-tactic": 5
+  },
+  "BraidKnotOctonion/HeckeStandardBasisIndep.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeTowerStrict.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeTowerWitnessStrict.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeTranspositionExpansion.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeTypeAInstance.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/HeckeWedderburnAnyChar.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/HeckeWedderburnGeneral.lean": {
+   "field-class": 6
+  },
+  "BraidKnotOctonion/HomflySkeinReference.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "BraidKnotOctonion/HookDivisibility.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/HydrogenCaptureWeightSpace.lean": {
+   "field-class": 1,
+   "field-tactic": 6
+  },
+  "BraidKnotOctonion/IdentityBWedderburn.lean": {
+   "field-class": 3
+  },
+  "BraidKnotOctonion/InterfaceKernel.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/JMProjector.lean": {
+   "field-class": 6,
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/JMProjectorContinuity.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/JimboActionKernel.lean": {
+   "field-class": 4,
+   "field-tactic": 3
+  },
+  "BraidKnotOctonion/JimboGL.lean": {
+   "field-class": 4,
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/JimboGl3Singlet.lean": {
+   "field-class": 1,
+   "field-tactic": 14
+  },
+  "BraidKnotOctonion/JimboKernelGeneric.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/JucysMurphyOV.lean": {
+   "field-class": 10
+  },
+  "BraidKnotOctonion/KeystoneC8SuperExpBound.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/KeystoneHeckeRootsForceTwist.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/KeystoneJucysMurphyTwist.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/KeystoneLRModulusFold.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "BraidKnotOctonion/KeystoneMcKayValueMap.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/KeystonePFTwoBlockWitness.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/KeystonePerronFrobeniusGroundState.lean": {
+   "field-class": 3
+  },
+  "BraidKnotOctonion/KeystoneQBesselRadialTarget.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/KeystoneRTSurgeryConstruction.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/KeystoneRibbonMTCInput.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/KeystoneSelfDualSpectralNarrowing.lean": {
+   "field-class": 3
+  },
+  "BraidKnotOctonion/KeystoneStandardRepQDim.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/KeystoneValueMapSynthesis.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/KnotFactorAmphicheiral.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/KnotFactorSpectralDerivation.lean": {
+   "field-class": 4
+  },
+  "BraidKnotOctonion/M1EdgeCalculus.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/MajFormula.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/MarkovAssembly.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/MarkovBondLetterColimit.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/MarkovConventionD.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/MarkovGramDegenerate.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/MarkovNormalisation.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/MarkovTraceInstance.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/Model/GLnCrossCheck.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/MolienBalancedForm.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "BraidKnotOctonion/MolienFakeDegree.lean": {
+   "field-tactic": 3
+  },
+  "BraidKnotOctonion/MolienSymmetrisingTrace.lean": {
+   "field-class": 2,
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/MurphyGarnirFactor.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/MurphyLagrangeCentralIdempotents.lean": {
+   "field-class": 8,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/MurphyRefTab.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/OVTopAssembly.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/OcneanuMarkovTraceEveryZ.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/OcneanuTraceFaithful.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/OctonionicSu3RankObstruction.lean": {
+   "field-class": 3
+  },
+  "BraidKnotOctonion/PLBall.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/PLBarycentric.lean": {
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/PLDeltaPoly.lean": {
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/PLParamSample.lean": {
+   "field-tactic": 5
+  },
+  "BraidKnotOctonion/PLSampleGeom.lean": {
+   "field-tactic": 6
+  },
+  "BraidKnotOctonion/PLSlice.lean": {
+   "field-tactic": 4
+  },
+  "BraidKnotOctonion/PLTies.lean": {
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/PieceASpechtCharacter.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/PinRobustnessOfRatios.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/PlancherelRestrictionIncoherent.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "BraidKnotOctonion/QHookProduct.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QPlancherelPartitionInstance.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QRatioBetaFactors.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QSchurUpperBound.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumGLCartanProj.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/QuantumGLCommutant.lean": {
+   "field-class": 4
+  },
+  "BraidKnotOctonion/QuantumGLDominance.lean": {
+   "field-class": 1,
+   "field-tactic": 6
+  },
+  "BraidKnotOctonion/QuantumGLHWBound.lean": {
+   "field-class": 3
+  },
+  "BraidKnotOctonion/QuantumGLHWBranching.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumGLHWDensity.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumGLHWDim.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumGLHWRestrict.lean": {
+   "field-class": 3
+  },
+  "BraidKnotOctonion/QuantumGLHWSpecht.lean": {
+   "field-class": 3
+  },
+  "BraidKnotOctonion/QuantumGLHWSpechtId.lean": {
+   "field-class": 8,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/QuantumGLIntertwine.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumGLSl2Pair.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "BraidKnotOctonion/QuantumGLWeights.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumSl2Belt.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumSl2BeltBraid.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/QuantumSl2BeltTensor.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/QuantumSl2BraidAction.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumSl2Clasp.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "BraidKnotOctonion/QuantumSl2ClaspDeltaF.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumSl2ClaspFlip.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/QuantumSl2ClaspModuleMap.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/QuantumSl2CrossingSymmetry.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumSl2CupCap.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "BraidKnotOctonion/QuantumSl2Decomposition.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumSl2Flype.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/QuantumSl2Fundamental.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "BraidKnotOctonion/QuantumSl2HalfTurn.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/QuantumSl2Hexagon.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumSl2HighestWeight.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "BraidKnotOctonion/QuantumSl2Irrep.lean": {
+   "field-class": 1,
+   "field-tactic": 7
+  },
+  "BraidKnotOctonion/QuantumSl2Loop.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/QuantumSl2LoopLemma.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumSl2Markov.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumSl2MarkovTrace.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumSl2MirrorClasp.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/QuantumSl2MirrorConj.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "BraidKnotOctonion/QuantumSl2PlanarMoves.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/QuantumSl2RMatrix.lean": {
+   "field-class": 1,
+   "field-tactic": 6
+  },
+  "BraidKnotOctonion/QuantumSl2TwistClaspTrace.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/QuantumSl2YangBaxter.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "BraidKnotOctonion/QuantumSl2ZhengFormula.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/RamifiedShiftCalculus.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/RamifiedShiftCalculusSum.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/RegularRepBlockTrace.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/RevBoundedExcessAssembly.lean": {
+   "field-class": 4
+  },
+  "BraidKnotOctonion/RibbonHeckeDimension.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/RossoJonesGeneral.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/RossoJonesMiddle.lean": {
+   "field-class": 1,
+   "field-tactic": 7
+  },
+  "BraidKnotOctonion/RossoJonesTorusLink.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/RoundedWaterfillExchange.lean": {
+   "field-class": 3
+  },
+  "BraidKnotOctonion/SYTHookGNW.lean": {
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/SYTHookGNWRatio.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/SchurPrincipalBetaForm.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/SchurPrincipalBranching.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/SchurWeylTrace.lean": {
+   "field-class": 2,
+   "field-tactic": 14
+  },
+  "BraidKnotOctonion/SecondMomentKernelVanishes.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/SeminormalBaseExists.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/SeminormalContentCasimir.lean": {
+   "field-class": 4
+  },
+  "BraidKnotOctonion/SeminormalNodeForm.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/SeminormalRange.lean": {
+   "field-class": 3
+  },
+  "BraidKnotOctonion/SeminormalRangeTop.lean": {
+   "field-class": 3
+  },
+  "BraidKnotOctonion/SeminormalSimpleSpectrum.lean": {
+   "field-class": 4
+  },
+  "BraidKnotOctonion/SlNFramingColourFactor.lean": {
+   "field-class": 2,
+   "field-tactic": 5
+  },
+  "BraidKnotOctonion/SnIsotypicSpechtSplitInstance.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/SnWedderburnPartitionBridge.lean": {
+   "field-class": 5
+  },
+  "BraidKnotOctonion/SpechtCentralC2Scalar.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/SpechtWedderburnGeneral.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/SpechtWedderburnLe12.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/SpinSectorMeasure.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "BraidKnotOctonion/StructuralRank.lean": {
+   "field-class": 7
+  },
+  "BraidKnotOctonion/TLCarrierBridge.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/TLKernelConvention.lean": {
+   "field-class": 4
+  },
+  "BraidKnotOctonion/TLKernelEquality.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "BraidKnotOctonion/TLKernelRootOfUnity.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "BraidKnotOctonion/TLKernelThresholdThree.lean": {
+   "field-class": 1,
+   "field-tactic": 10
+  },
+  "BraidKnotOctonion/TemperleyLiebDimCatalan.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/TensorMarkovModel.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/TensorSchurWeyl.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "BraidKnotOctonion/TensorTemperleyLieb.lean": {
+   "field-class": 1,
+   "field-tactic": 6
+  },
+  "BraidKnotOctonion/TorusKnotTracePolynomial.lean": {
+   "field-class": 2,
+   "field-tactic": 4
+  },
+  "BraidKnotOctonion/TraceQuotGeneric.lean": {
+   "field-class": 7,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/TracedVolumeVsHalfTwist.lean": {
+   "field-class": 8,
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/TransposeSymmetricWeightsForceHalfH.lean": {
+   "field-class": 3,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/TwGramDetNonzero.lean": {
+   "field-class": 3
+  },
+  "BraidKnotOctonion/TwGramDetSquareClass.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/TwInverseBruhat.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/TwInverseLength.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/TwistedChannelSplitting.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/UnitModulusEigenvalue.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "BraidKnotOctonion/VassilievMagnitudeA3.lean": {
+   "field-tactic": 2
+  },
+  "BraidKnotOctonion/WLambdaDefectClosedForm.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/WLambdaMTCLocalizationObligation.lean": {
+   "field-class": 2
+  },
+  "BraidKnotOctonion/WLambdaNormalizationInvariance.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "BraidKnotOctonion/WenzlCandidateNormalisation.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/WenzlMarkovCorner.lean": {
+   "field-class": 3,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/WenzlMarkovLevelR.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/WenzlMarkovTraceInstance.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/WenzlNormalisation.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/WhiteheadMarkovClosure.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/WtraceTwistedPositivity.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/YLambdaRecipeNormaliser.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/YoungDiagramTailFirstInstance.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/YoungDiagramTailSecondInstance.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/jet_filtered_knot_factor.lean": {
+   "field-class": 1
+  },
+  "BraidKnotOctonion/jet_prefix_gb_filtration.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/knot_factor_spectral_derivation.lean": {
+   "field-tactic": 1
+  },
+  "BraidKnotOctonion/sorting_color_energy.lean": {
+   "field-class": 14
+  },
+  "BraidKnotOctonion/symbolic_character_table.lean": {
+   "field-class": 1
+  },
+  "CompactQuantumMetrics/AlgebraicGnsEmbedding.lean": {
+   "field-tactic": 1
+  },
+  "CompactQuantumMetrics/Bicommutant.lean": {
+   "field-class": 1
+  },
+  "CompactQuantumMetrics/DerivationRankNullity.lean": {
+   "field-class": 1
+  },
+  "CompactQuantumMetrics/FiniteRieffelQuantumMetric.lean": {
+   "field-class": 3
+  },
+  "CompactQuantumMetrics/OqSU2HaarModularEntanglement.lean": {
+   "field-class": 17,
+   "field-tactic": 20
+  },
+  "CompactQuantumMetrics/OqSU2WoronowiczCartan.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "CompactQuantumMetrics/SDPEmptyConstraints.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/A3BranchingModulusReflection.lean": {
+   "field-class": 7
+  },
+  "HeckeTemperleyLieb/AddableBoxHookOneRow.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/BWVacuumRowIsHecke.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/BarWeightFamily.lean": {
+   "field-tactic": 7
+  },
+  "HeckeTemperleyLieb/CasimirBlockScalar.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/CasimirBlockValue.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/CasimirShared.lean": {
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/CasimirTransport.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/CoCasimirSurvivingBlocks.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "HeckeTemperleyLieb/ColorCurveQIntegerForm.lean": {
+   "field-class": 2
+  },
+  "HeckeTemperleyLieb/CompositionMurphy.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/CrossingConvexity.lean": {
+   "field-class": 3,
+   "field-tactic": 4
+  },
+  "HeckeTemperleyLieb/DiagonalSeparation.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/ExplicitCentralIdempotentHecke.lean": {
+   "field-class": 1,
+   "field-tactic": 14
+  },
+  "HeckeTemperleyLieb/FullRank.lean": {
+   "field-class": 8
+  },
+  "HeckeTemperleyLieb/FullRankFromWedderburn.lean": {
+   "field-class": 4
+  },
+  "HeckeTemperleyLieb/GenericParameter.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/GeometricTailBound.lean": {
+   "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/GlNJimboHecke.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/H2AlgebraDimension.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/H2CompanionRep.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/H2GramArithmetic.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/H2KaehlerDegrees.lean": {
+   "field-class": 2,
+   "field-tactic": 4
+  },
+  "HeckeTemperleyLieb/H2TraceForm.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/H3GramArithmetic.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/H3HeckeIdempotents.lean": {
+   "field-class": 2
+  },
+  "HeckeTemperleyLieb/H4YoungChannelCert.lean": {
+   "field-class": 1,
+   "field-tactic": 11
+  },
+  "HeckeTemperleyLieb/HAdicTwoStrandHecke.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HabiroMagnitudeA3.lean": {
+   "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/HeckeBraidedCategoryScaffold.lean": {
+   "field-class": 3
+  },
+  "HeckeTemperleyLieb/HeckeBraidedCategoryScaffoldInstances.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeBraidedPresentationRank.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeBraidingEndomorphism.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeBraidingNonSymmetric.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/HeckeCarrierEquiv.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "HeckeTemperleyLieb/HeckeDescentQuadratic.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeDim3Indep.lean": {
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/HeckeEigenSplit.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/HeckeGeneralRankQuadratic.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeGenericSemisimple.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeGramFactorial.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeH2Wedderburn.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeH3BlockCharacter.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "HeckeTemperleyLieb/HeckeH3BlockRep.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "HeckeTemperleyLieb/HeckeH3GramNondegeneracy.lean": {
+   "field-class": 2,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/HeckeH3Semisimple.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeH3Wedderburn.lean": {
+   "field-class": 1,
+   "field-tactic": 13
+  },
+  "HeckeTemperleyLieb/HeckeH4BlockMap211.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeH4BlockMap22.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeH4BlockMap31.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeH4BlockRep.lean": {
+   "field-class": 1,
+   "field-tactic": 15
+  },
+  "HeckeTemperleyLieb/HeckeH4Characters.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/HeckeH4RepDecomp.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeH4Semisimple.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeH4Wedderburn.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeH4WedderburnCoord.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeH4WedderburnInv.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeH4WedderburnMulA.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeH4WedderburnMulB.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeH4WedderburnMulC.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeLinearReduction.lean": {
+   "field-class": 2,
+   "field-tactic": 7
+  },
+  "HeckeTemperleyLieb/HeckeMarkov3.lean": {
+   "field-tactic": 6
+  },
+  "HeckeTemperleyLieb/HeckeMurphy.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeQuadraticClassicalShadow.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HeckeRealVsRootOfUnityModularity.lean": {
+   "field-class": 17
+  },
+  "HeckeTemperleyLieb/HeckeStokesEigenvalues.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/HeckeTowerBasicConstruction.lean": {
+   "field-class": 8
+  },
+  "HeckeTemperleyLieb/HeckeTowerBasicConstructionInstances.lean": {
+   "field-class": 2
+  },
+  "HeckeTemperleyLieb/HeckeTypeAPresentationEquiv.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/HoefsmitBBarParity.lean": {
+   "field-tactic": 3
+  },
+  "HeckeTemperleyLieb/HoefsmitRep.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "HeckeTemperleyLieb/HookContentMarkovParam.lean": {
+   "field-tactic": 7
+  },
+  "HeckeTemperleyLieb/InstanceH2.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/InstanceOnH3A.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/InstanceOnH4A.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/IwahoriHecke/Hoefsmit.lean": {
+   "field-class": 5
+  },
+  "HeckeTemperleyLieb/JonesNormalisation.lean": {
+   "field-class": 4,
+   "field-tactic": 11
+  },
+  "HeckeTemperleyLieb/JucysMurphy.lean": {
+   "field-class": 3,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/KZLevelFromHeckeNormalisation.lean": {
+   "field-class": 1,
+   "field-tactic": 6
+  },
+  "HeckeTemperleyLieb/KnotFactor.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/KnotFactorFrobeniusPairing.lean": {
+   "field-class": 3
+  },
+  "HeckeTemperleyLieb/LinkingWeightWedderburn.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "HeckeTemperleyLieb/MacdonaldTelescope.lean": {
+   "field-tactic": 4
+  },
+  "HeckeTemperleyLieb/MarkovCrossingReversal.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "HeckeTemperleyLieb/MarkovNormalisation.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "HeckeTemperleyLieb/MarkovOrientationForced.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/MarkovParameterFibreRank.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/MarkovParameterRecursion.lean": {
+   "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/MarkovStabFactorExtensive.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/MarkovTowerBridge.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/MarkovTraceClassicalLimit.lean": {
+   "field-class": 3,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/MarkovTraceInterleavedCrossTerm.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/MarkovTraceQuotient.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/MarkovWeightValueTransport.lean": {
+   "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/MarkovZFullBarCondition.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/MaschkeSnSemisimple.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/Mathlib/HeckeAlgebra.lean": {
+   "field-class": 24,
+   "field-tactic": 8
+  },
+  "HeckeTemperleyLieb/MatrixSchurCommutant.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/MolienFakeDegreeGeneralN.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/MonotoneWordTraceFactorizes.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/NormalizedSumTelescopeBridge.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/OVBaseSeminormalVector.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/OcneanuRankFamily.lean": {
+   "field-tactic": 4
+  },
+  "HeckeTemperleyLieb/OcneanuTwoThreeNotProportional.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "HeckeTemperleyLieb/OcneanuWeight.lean": {
+   "field-class": 22,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/OcneanuWeightAddCell.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/OcneanuWeightBranching.lean": {
+   "field-class": 5,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/OcneanuWeightMarkov3.lean": {
+   "field-tactic": 8
+  },
+  "HeckeTemperleyLieb/OcneanuWeightMarkovCorner.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "HeckeTemperleyLieb/OcneanuWeightPositiveWindow.lean": {
+   "field-tactic": 3
+  },
+  "HeckeTemperleyLieb/OcneanuWeightTwoRowNonzero.lean": {
+   "field-class": 3,
+   "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/OcneanuWeightTwoRowPositive.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/OcneanuWeightWenzl.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "HeckeTemperleyLieb/OcneanuWeightWindowInvolution.lean": {
+   "field-class": 1,
+   "field-tactic": 9
+  },
+  "HeckeTemperleyLieb/OffDiagNonvanishing.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/Orbit3Braid.lean": {
+   "field-tactic": 8
+  },
+  "HeckeTemperleyLieb/Orbit6Braid.lean": {
+   "field-tactic": 3
+  },
+  "HeckeTemperleyLieb/PiBlockSeparation.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/QBorelResummation.lean": {
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/QCasimirPairGenericQ.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "HeckeTemperleyLieb/QGaussianBinomialPascal.lean": {
+   "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/QHookDimension.lean": {
+   "field-class": 6,
+   "field-tactic": 8
+  },
+  "HeckeTemperleyLieb/QHookDimensionBalanced.lean": {
+   "field-class": 10
+  },
+  "HeckeTemperleyLieb/QHookDimensionDiagram.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/QIntegerBarParity.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/QIntegerCanonical.lean": {
+   "field-class": 8,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/QIntegerFactorial.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/QIntegerHomogeneous.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/QJucysMurphy.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/QJucysMurphyEigen.lean": {
+   "field-class": 19,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/QPartitionCombinatorics.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/QPlancherel.lean": {
+   "field-class": 7
+  },
+  "HeckeTemperleyLieb/QPlancherelSubNormalization.lean": {
+   "field-tactic": 5
+  },
+  "HeckeTemperleyLieb/QSchurWeyl.lean": {
+   "field-class": 2
+  },
+  "HeckeTemperleyLieb/QSchurYLambdaClosedForm.lean": {
+   "field-tactic": 3
+  },
+  "HeckeTemperleyLieb/QuaternionFromHecke.lean": {
+   "field-class": 3,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/R2TwistTower.lean": {
+   "field-tactic": 6
+  },
+  "HeckeTemperleyLieb/SchurInvariantFormProportional.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SecondMarkovTrace.lean": {
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/SeminormalBlockEquality.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SeminormalBlockTrace.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SeminormalCharBranching.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SeminormalCharacterConnector.lean": {
+   "field-class": 5
+  },
+  "HeckeTemperleyLieb/SeminormalCornerTrace.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SeminormalDiagonalPoleOrder.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "HeckeTemperleyLieb/SeminormalInequivalence.lean": {
+   "field-class": 13
+  },
+  "HeckeTemperleyLieb/SeminormalParam.lean": {
+   "field-class": 1,
+   "field-tactic": 6
+  },
+  "HeckeTemperleyLieb/SeminormalParamAnchorReal.lean": {
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/SeminormalRep.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/SeminormalWeight.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/SpechtAbsolutelyIrreducible.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SpechtActionInjective.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SpechtBaseChange.lean": {
+   "field-class": 2
+  },
+  "HeckeTemperleyLieb/SpechtBlockDimension.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SpechtCharFreeStandardBasis.lean": {
+   "field-class": 2
+  },
+  "HeckeTemperleyLieb/SpechtClassification.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SpechtCrossKappa.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SpechtDominanceCore.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SpechtFinrankWired.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SpechtIrreducible.lean": {
+   "field-class": 9
+  },
+  "HeckeTemperleyLieb/SpechtRegularMultiplicity.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SpechtSchurDiagonal.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SpechtStandardBasis.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SpechtStandardBasisCore.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SpechtTriangularCore.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SpechtWedderburnCriterion.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/SpectralProjector.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "HeckeTemperleyLieb/TableauContent.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/TauBondLetter.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/TauDualBasis.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/TauSchurElement.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/TauStructureConstants.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/TauSymmetrizing.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/TemperleyLiebSpinHalf.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "HeckeTemperleyLieb/TemperleyLiebTower.lean": {
+   "field-class": 9,
+   "field-tactic": 7
+  },
+  "HeckeTemperleyLieb/TraceRadicalNondegenerate.lean": {
+   "field-class": 2
+  },
+  "HeckeTemperleyLieb/TraceSignFlipRegime.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "HeckeTemperleyLieb/TwBasisField.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/TwFullRank.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/TwGram.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/TwGramRankOne.lean": {
+   "field-class": 2
+  },
+  "HeckeTemperleyLieb/TwMul.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/TwTrace.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/TwistUnconditional.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/TwoRowCatalan.lean": {
+   "field-class": 3
+  },
+  "HeckeTemperleyLieb/TypeA.lean": {
+   "field-class": 4,
+   "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/WedderburnSn.lean": {
+   "field-class": 4
+  },
+  "HeckeTemperleyLieb/WedderburnWeightDegeneracy.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "HeckeTemperleyLieb/WenzlLevelStratum.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/WenzlWeightLevelR.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "HeckeTemperleyLieb/WenzlWeightVanishing.lean": {
+   "field-class": 3,
+   "field-tactic": 3
+  },
+  "HeckeTemperleyLieb/chirality_frobenius_self_pairing.lean": {
+   "field-class": 1
+  },
+  "HeckeTemperleyLieb/hecke_satisfies_blitvic_hypothesis.lean": {
+   "field-class": 3
+  },
+  "HeckeTemperleyLieb/wedderburn_trace_identity.lean": {
+   "field-class": 2
+  },
+  "MathlibExt/AntiInvolutionPalindrome.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/BBorWeightTrace.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/BalancedQuantumTwist.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/BarParityZeta4Swap.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/BindingQHermiteOscillator.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/BorelCaratheodory.lean": {
+   "field-tactic": 2
+  },
+  "MathlibExt/BorelSingularity.lean": {
+   "field-tactic": 1
+  },
+  "MathlibExt/BoundedOrderWronskian.lean": {
+   "field-class": 3,
+   "field-tactic": 1
+  },
+  "MathlibExt/CarrierCrossingQuantisation.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/CauchyBinet.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/ColourCubicDiscriminant.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "MathlibExt/ColourCubicHomogeneous.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/Core.lean": {
+   "field-tactic": 1
+  },
+  "MathlibExt/CuspShapeBarParity.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/CyclicQuantumDilog.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/CyclotomicDilogCollapse.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/DirectionalWronskian.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/EndSemisimple.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/EulerCharacteristic.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/ExtensionClass.lean": {
+   "field-class": 2
+  },
+  "MathlibExt/FinitelyGeneratedConeClosed.lean": {
+   "field-tactic": 1
+  },
+  "MathlibExt/FiveTwoFiveTermArguments.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/FiveTwoRogersExtend.lean": {
+   "field-tactic": 1
+  },
+  "MathlibExt/FormalResidue.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/GenWronskian.lean": {
+   "field-class": 7,
+   "field-tactic": 1
+  },
+  "MathlibExt/GramNondegenerate.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/GroupAlgebraCenter.lean": {
+   "field-class": 2
+  },
+  "MathlibExt/HomogeneousCoordinates.lean": {
+   "field-class": 2
+  },
+  "MathlibExt/InvMonomialDet.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/KZHolonomy/GaudinCommute.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "MathlibExt/LagrangeCoeffSum.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "MathlibExt/LagrangeCornerNodeSum.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "MathlibExt/LineRestriction.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/LinkDiagramSl2.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "MathlibExt/LorentzBoostPhase.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "MathlibExt/MatrixSemisimple.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/MvGenWronskian.lean": {
+   "field-class": 2
+  },
+  "MathlibExt/OfModuleAsModule.lean": {
+   "field-class": 2
+  },
+  "MathlibExt/PeriodLatticeBasis.lean": {
+   "field-tactic": 1
+  },
+  "MathlibExt/PosSemidefDiagZero.lean": {
+   "field-tactic": 1
+  },
+  "MathlibExt/QBesselContiguityRecurrence.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/QCharacter.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/QOper.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/QPochhammer.lean": {
+   "field-class": 2
+  },
+  "MathlibExt/QuantumTorus.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/RankMinor.lean": {
+   "field-class": 3
+  },
+  "MathlibExt/RegTraceGram.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/RegTraceGramBasisChange.lean": {
+   "field-class": 3
+  },
+  "MathlibExt/RegTraceGramNondegenerate.lean": {
+   "field-class": 2
+  },
+  "MathlibExt/RegTraceGramProduct.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/RegTraceMatrix.lean": {
+   "field-class": 5
+  },
+  "MathlibExt/RegularHom.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/RepresentationCharacter.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/RothAlgebraicInteger.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/RothAssembly.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/RothAuxiliary.lean": {
+   "field-class": 2
+  },
+  "MathlibExt/RothAuxiliaryInt.lean": {
+   "field-class": 2
+  },
+  "MathlibExt/RothAuxiliaryPolynomial.lean": {
+   "field-tactic": 3
+  },
+  "MathlibExt/RothHouseBound.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/RothLemmaStatement.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "MathlibExt/RothOperatorFamily.lean": {
+   "field-class": 9,
+   "field-tactic": 1
+  },
+  "MathlibExt/RothRationalIndex.lean": {
+   "field-tactic": 2
+  },
+  "MathlibExt/RothRealLadder.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/RothRecursionArith.lean": {
+   "field-tactic": 1
+  },
+  "MathlibExt/RothSiegelBound.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/RothVariableSplit.lean": {
+   "field-class": 2
+  },
+  "MathlibExt/SeparatedGauss.lean": {
+   "field-tactic": 1
+  },
+  "MathlibExt/SeparatedRepresentation.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/TiltDerivativeCovariance.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/TraceFormSemisimple.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/TraceIsWeighted.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/TraceLeDim.lean": {
+   "field-class": 2
+  },
+  "MathlibExt/TraceNilpotent.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/TraceWeightsOfAlgEquiv.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/VandermondeUpdateRatio.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "MathlibExt/WeightedTraceGram.lean": {
+   "field-class": 1
+  },
+  "MathlibExt/ZBarParity.lean": {
+   "field-class": 3,
+   "field-tactic": 2
+  },
+  "QCalculus/FaddeevPhiEllipticFreedom.lean": {
+   "field-tactic": 1
+  },
+  "QCalculus/FaddeevPhiFibreBranch.lean": {
+   "field-class": 1
+  },
+  "QCalculus/GaussianBinomial.lean": {
+   "field-class": 1
+  },
+  "QCalculus/HabiroBracket.lean": {
+   "field-class": 2,
+   "field-tactic": 2
+  },
+  "QCalculus/HabiroCyclotomicOddLocus.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QCalculus/HabiroEvaluationTrichotomy.lean": {
+   "field-class": 2
+  },
+  "QCalculus/HabiroNewtonLadder.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QCalculus/HabiroTailCorollaries.lean": {
+   "field-class": 1
+  },
+  "QCalculus/HabiroTailFactor.lean": {
+   "field-class": 1
+  },
+  "QCalculus/HabiroTailStar.lean": {
+   "field-class": 1
+  },
+  "QCalculus/QDifferenceConfluentObstruction.lean": {
+   "field-class": 3,
+   "field-tactic": 1
+  },
+  "QCalculus/QDifferenceGaugeMatrix.lean": {
+   "field-class": 1
+  },
+  "QCalculus/QHeatKernelHabiroExpansion.lean": {
+   "field-class": 1
+  },
+  "QCalculus/QIntegerConventions.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QCalculus/QStandardRogersSzego.lean": {
+   "field-tactic": 1
+  },
+  "QCalculus/ThomaeJacksonCalculus.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/AJMinimality.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/AJTorusAnnihilation.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/BlockMultiplicativityVFree.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/BraidsAndKnots/BlockResidues.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/BondCutSymmetry.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/BraidsAndKnots/BondCutSymmetryFibreTower.lean": {
+   "field-class": 3
+  },
+  "QOU/BraidsAndKnots/BondCutSymmetryNoSignDefinite.lean": {
+   "field-class": 2
+  },
+  "QOU/BraidsAndKnots/BondLetterIdentification.lean": {
+   "field-tactic": 5
+  },
+  "QOU/BraidsAndKnots/BorromeanRingColouredTrace.lean": {
+   "field-class": 1,
+   "field-tactic": 16
+  },
+  "QOU/BraidsAndKnots/CapturePlacement.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/BraidsAndKnots/ChiralityWritheRibbon.lean": {
+   "field-tactic": 2
+  },
+  "QOU/BraidsAndKnots/ClosedFormInterfaceFactors.lean": {
+   "field-class": 1,
+   "field-tactic": 12
+  },
+  "QOU/BraidsAndKnots/ColourFlavourMirror.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/CrossingCovariantQED.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QOU/BraidsAndKnots/CrossingReversalParity.lean": {
+   "field-tactic": 1
+  },
+  "QOU/BraidsAndKnots/DerivedCharacterCatalogue.lean": {
+   "field-class": 11,
+   "field-tactic": 1
+  },
+  "QOU/BraidsAndKnots/FlavourSplitBarParity.lean": {
+   "field-class": 1,
+   "field-tactic": 8
+  },
+  "QOU/BraidsAndKnots/FlavourSplitThreeChannelWeight.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QOU/BraidsAndKnots/FuchsianConvergence.lean": {
+   "field-tactic": 1
+  },
+  "QOU/BraidsAndKnots/FuchsianFormal.lean": {
+   "field-class": 4
+  },
+  "QOU/BraidsAndKnots/GLnKZ.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/GLnResidues.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/BraidsAndKnots/HeckePresentationBridge.lean": {
+   "field-class": 4
+  },
+  "QOU/BraidsAndKnots/HeckeReebHolonomyLaplacian.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/HeckeWeightSpaceSymmetry.lean": {
+   "field-class": 4
+  },
+  "QOU/BraidsAndKnots/HydrogenCaptureFactorisation.lean": {
+   "field-class": 2,
+   "field-tactic": 6
+  },
+  "QOU/BraidsAndKnots/IsospinMurphyOctet.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/IsospinMurphyOctetThreeStrand.lean": {
+   "field-class": 4,
+   "field-tactic": 3
+  },
+  "QOU/BraidsAndKnots/IsospinTwistFromBalancing.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/JimboGLWeyl.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/BraidsAndKnots/JonesNuclearQuotient.lean": {
+   "field-tactic": 1
+  },
+  "QOU/BraidsAndKnots/KZPentagon.lean": {
+   "field-tactic": 5
+  },
+  "QOU/BraidsAndKnots/LongestWordNotTwoPhoton.lean": {
+   "field-class": 2
+  },
+  "QOU/BraidsAndKnots/LongestWordNotTwoPhotonHecke.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/BraidsAndKnots/MagicShellCouplingKappa.lean": {
+   "field-class": 6,
+   "field-tactic": 4
+  },
+  "QOU/BraidsAndKnots/MarkovTraceClassNotUnique.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/MarkovTraceH2.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/MarkovTraceIsMarkov.lean": {
+   "field-class": 3
+  },
+  "QOU/BraidsAndKnots/MarkovTraceOnH3A.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/MarkovTraceOnH4A.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/MassGapKeystone.lean": {
+   "field-tactic": 5
+  },
+  "QOU/BraidsAndKnots/MmuR9V9Closure.lean": {
+   "field-tactic": 1
+  },
+  "QOU/BraidsAndKnots/MuPCarrierBarParity.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/BraidsAndKnots/MuPCarrierOrderWindow.lean": {
+   "field-tactic": 1
+  },
+  "QOU/BraidsAndKnots/MuPFullHeckeWeights.lean": {
+   "field-class": 1,
+   "field-tactic": 15
+  },
+  "QOU/BraidsAndKnots/MuPOpenWorldlineWOrder.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QOU/BraidsAndKnots/MuPProjectorInsertionWOrder.lean": {
+   "field-class": 1,
+   "field-tactic": 10
+  },
+  "QOU/BraidsAndKnots/MuonFigureEightFBorPoincareIdentities.lean": {
+   "field-class": 1,
+   "field-tactic": 14
+  },
+  "QOU/BraidsAndKnots/NonResonantInt.lean": {
+   "field-tactic": 1
+  },
+  "QOU/BraidsAndKnots/NucleonIdempotentModifiedTrace.lean": {
+   "field-class": 5,
+   "field-tactic": 17
+  },
+  "QOU/BraidsAndKnots/NucleonIsospinExclusions.lean": {
+   "field-class": 1,
+   "field-tactic": 7
+  },
+  "QOU/BraidsAndKnots/NucleonQEDCovariance.lean": {
+   "field-class": 1,
+   "field-tactic": 20
+  },
+  "QOU/BraidsAndKnots/NucleonWeightSpaceQTrace.lean": {
+   "field-class": 1,
+   "field-tactic": 8
+  },
+  "QOU/BraidsAndKnots/NucleonWeightSpaceSecondOrder.lean": {
+   "field-class": 1,
+   "field-tactic": 8
+  },
+  "QOU/BraidsAndKnots/NucleonWeightSpaceTraces.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean": {
+   "field-class": 1,
+   "field-tactic": 52
+  },
+  "QOU/BraidsAndKnots/OneGeneratorHeckeCollapse.lean": {
+   "field-class": 7,
+   "field-tactic": 7
+  },
+  "QOU/BraidsAndKnots/PhotonWeightsForcedProton.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/BraidsAndKnots/PlancherelViaRecipe.lean": {
+   "field-class": 2
+  },
+  "QOU/BraidsAndKnots/QBetaCanonicalMarkovWeightsDerived.lean": {
+   "field-tactic": 4
+  },
+  "QOU/BraidsAndKnots/QBetaCanonicalMarkovWeightsInstance.lean": {
+   "field-tactic": 2
+  },
+  "QOU/BraidsAndKnots/QEDHigherOrderCovariance.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "QOU/BraidsAndKnots/QHeckeSeminormalCharacterClosure.lean": {
+   "field-class": 2
+  },
+  "QOU/BraidsAndKnots/QSubstrate.lean": {
+   "field-tactic": 1
+  },
+  "QOU/BraidsAndKnots/QuantumIntBarSymmetric.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/QuantumTorusAJ.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/QuarkStrandConsequences.lean": {
+   "field-class": 2
+  },
+  "QOU/BraidsAndKnots/RationalAssociator/Descent.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/SkeinNormalisation.lean": {
+   "field-class": 1,
+   "field-tactic": 7
+  },
+  "QOU/BraidsAndKnots/StrangeStrandOctet.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/BraidsAndKnots/TwistSplitSignDictionary.lean": {
+   "field-class": 1
+  },
+  "QOU/BraidsAndKnots/TypedCrossingsEncoding.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/BraidsAndKnots/WeakVertexCouplingNormalisation.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/BraidsAndKnots/WeakVertexJonesMarkov.lean": {
+   "field-class": 1,
+   "field-tactic": 7
+  },
+  "QOU/BraidsAndKnots/WeakVertexSubstitutionScale.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/BraidsAndKnots/WeakVertexT35TraceClosedForm.lean": {
+   "field-class": 1,
+   "field-tactic": 13
+  },
+  "QOU/BraidsAndKnots/YLambdaQSchur.lean": {
+   "field-class": 33,
+   "field-tactic": 3
+  },
+  "QOU/BraidsAndKnots/algebraic_quantum_volume_specialization.lean": {
+   "field-class": 3,
+   "field-tactic": 2
+  },
+  "QOU/BringsSurface/BringConeGauge.lean": {
+   "field-class": 1
+  },
+  "QOU/BringsSurface/BringLatticeSpanFiniteQuotient.lean": {
+   "field-class": 1
+  },
+  "QOU/BringsSurface/DescentComptonOrthogonalSplit.lean": {
+   "field-class": 1
+  },
+  "QOU/BringsSurface/DominationTowers.lean": {
+   "field-class": 1
+  },
+  "QOU/BringsSurface/DualFrameGaussianExponents.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/BringsSurface/OhtsukiKappaFormal.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/BringsSurface/PlanckStepAtomicity.lean": {
+   "field-class": 1
+  },
+  "QOU/BringsSurface/SubstrateClockUniqueness.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/BringsSurface/SurrealRateCalculus.lean": {
+   "field-class": 6
+  },
+  "QOU/BringsSurface/SurrealSqueeze.lean": {
+   "field-class": 2
+  },
+  "QOU/BringsSurface/TraceCochainObstructions.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/BringsSurface/WignerAxiom.lean": {
+   "field-class": 1
+  },
+  "QOU/Confinement/AtomicityFromSelfDuality.lean": {
+   "field-class": 1
+  },
+  "QOU/Confinement/AtomicityGroupRank.lean": {
+   "field-class": 2
+  },
+  "QOU/Confinement/AtomicityLieRank.lean": {
+   "field-class": 10,
+   "field-tactic": 7
+  },
+  "QOU/Confinement/BalancedIndexCharacter.lean": {
+   "field-class": 1
+  },
+  "QOU/Confinement/BetaEntangledSectorTrace.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QOU/Confinement/CartanEnergyTransport.lean": {
+   "field-class": 1,
+   "field-tactic": 7
+  },
+  "QOU/Confinement/ChargedCurrentW.lean": {
+   "field-class": 2,
+   "field-tactic": 10
+  },
+  "QOU/Confinement/ChiralityPairBit.lean": {
+   "field-class": 1
+  },
+  "QOU/Confinement/ChiralityParityOfCrossing.lean": {
+   "field-class": 1
+  },
+  "QOU/Confinement/ConePointChiralityBit.lean": {
+   "field-class": 4
+  },
+  "QOU/Confinement/ConventionDLineWeights.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/Confinement/DecayGammaGammaFourStrand.lean": {
+   "field-class": 4,
+   "field-tactic": 9
+  },
+  "QOU/Confinement/DeltaSIsWeakVertexSum.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/Confinement/EmCouplingBarParity.lean": {
+   "field-class": 1
+  },
+  "QOU/Confinement/FlavourDoubletFourStrands.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Confinement/FlavourDoubletOnLeftLine.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/Confinement/FlavourRoundTrip.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QOU/Confinement/GammaGammaFourStrandFlavour.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Confinement/GammaGammaFourStrandMixedTrace.lean": {
+   "field-class": 1,
+   "field-tactic": 7
+  },
+  "QOU/Confinement/GammaGammaFourStrandPureBound.lean": {
+   "field-tactic": 5
+  },
+  "QOU/Confinement/GamowTellerSpin.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Confinement/GramMatrixH3Symbolic.lean": {
+   "field-tactic": 6
+  },
+  "QOU/Confinement/GramQuotientDetD.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Confinement/HelicityCommonSource.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/Confinement/HopfElectronTwoTermMass.lean": {
+   "field-class": 1
+  },
+  "QOU/Confinement/HyperchargeGradingNoGo.lean": {
+   "field-class": 2,
+   "field-tactic": 4
+  },
+  "QOU/Confinement/IsospinRaisingRoundTrip.lean": {
+   "field-class": 1,
+   "field-tactic": 35
+  },
+  "QOU/Confinement/LeftLineDefinition.lean": {
+   "field-class": 1
+  },
+  "QOU/Confinement/LeptonStrandPremise.lean": {
+   "field-class": 2,
+   "field-tactic": 6
+  },
+  "QOU/Confinement/NuclearRegimeShellRule.lean": {
+   "field-class": 1
+  },
+  "QOU/Confinement/NucleonPhotonColourWeights.lean": {
+   "field-class": 2,
+   "field-tactic": 4
+  },
+  "QOU/Confinement/NucleonStateWeightedSelection.lean": {
+   "field-class": 2,
+   "field-tactic": 8
+  },
+  "QOU/Confinement/OneSidedWeakVertex.lean": {
+   "field-class": 1
+  },
+  "QOU/Confinement/OverStrandWeight.lean": {
+   "field-class": 1,
+   "field-tactic": 6
+  },
+  "QOU/Confinement/PairwiseChargeEnergyBeta.lean": {
+   "field-class": 2,
+   "field-tactic": 19
+  },
+  "QOU/Confinement/PhotonPairNormalForm.lean": {
+   "field-class": 1,
+   "field-tactic": 6
+  },
+  "QOU/Confinement/QBetaChiralityReduction.lean": {
+   "field-class": 2,
+   "field-tactic": 11
+  },
+  "QOU/Confinement/QIntegerMassFormula.lean": {
+   "field-tactic": 2
+  },
+  "QOU/Confinement/RightHandedSingletChannel.lean": {
+   "field-class": 1,
+   "field-tactic": 14
+  },
+  "QOU/Confinement/RightLineTraceObstruction.lean": {
+   "field-class": 2,
+   "field-tactic": 28
+  },
+  "QOU/Confinement/T35WeakVertexTrace.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/Confinement/TLIsXXZChain.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/Confinement/TPlusChargedCurrentElement.lean": {
+   "field-class": 1,
+   "field-tactic": 9
+  },
+  "QOU/Confinement/TrefoilCanonicalMassUnit.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Confinement/WeakScaleFactorisation.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QOU/Confinement/WeakVertexInverseLetter.lean": {
+   "field-class": 1
+  },
+  "QOU/Confinement/WeakVertexLeftProjector.lean": {
+   "field-class": 1
+  },
+  "QOU/Confinement/WeakVertexMidpoint.lean": {
+   "field-class": 2,
+   "field-tactic": 4
+  },
+  "QOU/Confinement/WritheIndexCharacterH2.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "QOU/Confinement/YukawaStrandOrder.lean": {
+   "field-class": 1,
+   "field-tactic": 16
+  },
+  "QOU/Confinement/YukawaTypeStrength.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QOU/Confinement/YukawaVacuumPairing.lean": {
+   "field-class": 2
+  },
+  "QOU/Confinement/atomic_nf_witness.lean": {
+   "field-class": 1
+  },
+  "QOU/Confinement/deuterium_derived_binding.lean": {
+   "field-tactic": 2
+  },
+  "QOU/Confinement/neutron_qvalue_symbolic.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Confinement/parity_regime_selection.lean": {
+   "field-class": 1
+  },
+  "QOU/Confinement/qbeta_channel_split.lean": {
+   "field-class": 1
+  },
+  "QOU/Confinement/qbeta_counit_vs_trace.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/Confinement/qbeta_tower_bound.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Confinement/transfer_matrix_identities.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/Confinement/tritium_qvalue_symbolic.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Core/AffineCausalityCone.lean": {
+   "field-class": 2,
+   "field-tactic": 3
+  },
+  "QOU/Core/BoostCovarianceRigidity.lean": {
+   "field-class": 2
+  },
+  "QOU/Core/CategoricalLagrangianTwoTermBridge.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QOU/Core/ChargeCartanCommutant.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/Core/CutLimit.lean": {
+   "field-class": 2
+  },
+  "QOU/Core/FeffermanLorentzianHorizonEntropy.lean": {
+   "field-class": 18,
+   "field-tactic": 13
+  },
+  "QOU/Core/HeckeGoldmanIwahori.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Core/HiggsVacuumResidual.lean": {
+   "field-class": 3
+  },
+  "QOU/Core/JonesIndexConventionD.lean": {
+   "field-class": 2,
+   "field-tactic": 2
+  },
+  "QOU/Core/KashaevHermitianCertificate.lean": {
+   "field-class": 1
+  },
+  "QOU/Core/KashaevReflection.lean": {
+   "field-class": 2,
+   "field-tactic": 2
+  },
+  "QOU/Core/LawvereCut.lean": {
+   "field-class": 1
+  },
+  "QOU/Core/MarkovBondRule.lean": {
+   "field-class": 2,
+   "field-tactic": 6
+  },
+  "QOU/Core/MarkovUnusedGenerator.lean": {
+   "field-class": 1
+  },
+  "QOU/Core/MassInRing.lean": {
+   "field-class": 3,
+   "field-tactic": 1
+  },
+  "QOU/Core/MathConstants.lean": {
+   "field-tactic": 2
+  },
+  "QOU/Core/NSymHostStructure.lean": {
+   "field-class": 2,
+   "field-tactic": 2
+  },
+  "QOU/Core/NSymSlotDerivation.lean": {
+   "field-class": 1,
+   "field-tactic": 13
+  },
+  "QOU/Core/NSymTraceAlgebra.lean": {
+   "field-class": 3
+  },
+  "QOU/Core/OctonionSU3BracketClosure.lean": {
+   "field-class": 1
+  },
+  "QOU/Core/QExteriorCR.lean": {
+   "field-class": 1
+  },
+  "QOU/Core/QuantaleCut.lean": {
+   "field-class": 1
+  },
+  "QOU/Core/QuantumLanglandsDual.lean": {
+   "field-class": 2
+  },
+  "QOU/Core/ReebHamiltonianChartBridge.lean": {
+   "field-class": 1
+  },
+  "QOU/Core/ReebLengthTimeAndLightConeEntropy.lean": {
+   "field-class": 8,
+   "field-tactic": 13
+  },
+  "QOU/Core/ReebWorldlineSignature.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/Core/TarskiSign.lean": {
+   "field-class": 3,
+   "field-tactic": 1
+  },
+  "QOU/Core/TarskiSignKashaev.lean": {
+   "field-class": 3
+  },
+  "QOU/Core/TarskiSignKashaevGen.lean": {
+   "field-class": 148
+  },
+  "QOU/Core/TowerDerivations.lean": {
+   "field-class": 1
+  },
+  "QOU/Core/WeakSpectralCompleteness.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Core/WedderburnBlockDecomposition.lean": {
+   "field-class": 1
+  },
+  "QOU/Core/WenzlBridgeConcrete.lean": {
+   "field-tactic": 9
+  },
+  "QOU/Core/fai_projector_coadjoint_orbit.lean": {
+   "field-class": 2
+  },
+  "QOU/EightfoldWay/BaryonOctetDiquarkGmoDerivation.lean": {
+   "field-class": 12,
+   "field-tactic": 13
+  },
+  "QOU/EightfoldWay/FureyIdealTowerTest.lean": {
+   "field-class": 2,
+   "field-tactic": 7
+  },
+  "QOU/EightfoldWay/GellMannOkuboSecondOrder.lean": {
+   "field-class": 5
+  },
+  "QOU/EightfoldWay/HyperbolicMesonClaspAndDiquarkSplit.lean": {
+   "field-class": 13,
+   "field-tactic": 25
+  },
+  "QOU/EightfoldWay/MesonLabelEmbeddings.lean": {
+   "field-class": 1
+  },
+  "QOU/EightfoldWay/MesonOctetTracelessSplit.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/EightfoldWay/MesonRatioSelectionStatus.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/EightfoldWay/MesonThreeByFourCharacterization.lean": {
+   "field-class": 8,
+   "field-tactic": 9
+  },
+  "QOU/EightfoldWay/MesonTwelveDimChannels.lean": {
+   "field-class": 3,
+   "field-tactic": 5
+  },
+  "QOU/EightfoldWay/PivotSplitOrder.lean": {
+   "field-class": 7,
+   "field-tactic": 5
+  },
+  "QOU/EightfoldWay/TraceSplitting.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/EightfoldWay/USpinColemanGlashowLambdaSigma.lean": {
+   "field-class": 4,
+   "field-tactic": 13
+  },
+  "QOU/FluidDynamics/DECNavierStokes.lean": {
+   "field-class": 8,
+   "field-tactic": 3
+  },
+  "QOU/FluidDynamics/LambCalculusArchimedean.lean": {
+   "field-tactic": 2
+  },
+  "QOU/FluidDynamics/QArithmetic.lean": {
+   "field-class": 20
+  },
+  "QOU/FluidDynamics/TwistedHarmonicBound.lean": {
+   "field-class": 1
+  },
+  "QOU/FluidDynamics/ViscosityRegularityRoutes.lean": {
+   "field-class": 1
+  },
+  "QOU/FluidDynamics/acoustic_horizon_conditions.lean": {
+   "field-tactic": 1
+  },
+  "QOU/FluidDynamics/levi_growth_trichotomy.lean": {
+   "field-tactic": 1
+  },
+  "QOU/FluidDynamics/levi_pair_channel_branch_b.lean": {
+   "field-tactic": 1
+  },
+  "QOU/FluidDynamics/low_mode_block_global.lean": {
+   "field-class": 2
+  },
+  "QOU/FluidDynamics/low_mode_block_uniformity.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/FluidDynamics/pair_phase1_riccati.lean": {
+   "field-class": 1,
+   "field-tactic": 7
+  },
+  "QOU/FluidDynamics/pair_viscous_core_race.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/FluidDynamics/physical_layer_leray.lean": {
+   "field-class": 1,
+   "field-tactic": 9
+  },
+  "QOU/FluidDynamics/q_ns_classical_bridge.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/FluidDynamics/q_ns_triad_core.lean": {
+   "field-class": 2
+  },
+  "QOU/FluidDynamics/q_ns_triad_derivation.lean": {
+   "field-class": 1
+  },
+  "QOU/FluidDynamics/q_ns_triad_noncomm.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/FluidDynamics/q_ns_twisted_transport.lean": {
+   "field-class": 1
+  },
+  "QOU/FluidDynamics/surreal_enstrophy_finite_modes.lean": {
+   "field-class": 1
+  },
+  "QOU/InformationTheory/DimqRegularisationIdentities.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/InformationTheory/PhysicalIntractability.lean": {
+   "field-tactic": 1
+  },
+  "QOU/InformationTheory/UnifiedClockScaleLayers.lean": {
+   "field-class": 3,
+   "field-tactic": 1
+  },
+  "QOU/LiftingDescent/MassGap.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/A3PrecisionOrderSeparation.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/A3UnitsConsistency.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/AdditiveConnectionMixedResidueZero.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/AdditiveCorrectionConfinement.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/AffineCountIsNotASurfaceTerm.lean": {
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/AffineCountMultiplicityWindow.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/AltCharShiftMultiset.lean": {
+   "field-class": 2,
+   "field-tactic": 9
+  },
+  "QOU/MassTheory/ArchimedeanMassFormula.lean": {
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/AveragedLetterSpectrum.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/AveragedLetterSpectrumOrdered.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/AwZeroLocalization.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/B3AggSecantCharacterisation.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/B3ExtensiveCellSumCarrier.lean": {
+   "field-class": 1,
+   "field-tactic": 9
+  },
+  "QOU/MassTheory/B3SignOneRoot.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/B4CumulantBarEven.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/BalancedCarrierJacobi.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/BarParityExclusion.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/BarParitySplitGap.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/BindingClassicalKernel.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/BindingEigenfunctionTwoTier.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/BindingHyperbolicRecurrence.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/BindingQBesselKernel.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/BindingResidualAmplification.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/BindingScalarKernelParityExclusion.lean": {
+   "field-class": 7,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/BindingTauAnchorClosure.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/BindingWeightMarkovPinning.lean": {
+   "field-class": 2
+  },
+  "QOU/MassTheory/BlochRigidity/Algebra.lean": {
+   "field-class": 1,
+   "field-tactic": 20
+  },
+  "QOU/MassTheory/BlochRigidity/ComplexAlgebra.lean": {
+   "field-tactic": 5
+  },
+  "QOU/MassTheory/BlochRigidity/LinearSections.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/BlochRigidity/Rigidity.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/BodyOrderRecurrenceDepth.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/BondArcTheorems.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/BondChannelTzParity.lean": {
+   "field-tactic": 6
+  },
+  "QOU/MassTheory/BondFactorClassicalFloor.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/BondWeightIsospinSplit.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/BorelProperTimeMoment.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/BorromeanA4TightSlice.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/BorromeanMagnitudeLift.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/BorromeanSL2ZFibre.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/BorromeanThreeBodyCluster.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/BorromeanWordForcing.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/BraidedStrands.lean": {
+   "field-class": 2
+  },
+  "QOU/MassTheory/BranchLocusFiniteOrder.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/BranchLocusStabiliser.lean": {
+   "field-class": 2
+  },
+  "QOU/MassTheory/BranchLocusStabiliserFull.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/BridgeAStokesAlgebraic.lean": {
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/BrunnianDeficitRecursion.lean": {
+   "field-tactic": 4
+  },
+  "QOU/MassTheory/BrunnianWordN3TwoRow.lean": {
+   "field-class": 1,
+   "field-tactic": 9
+  },
+  "QOU/MassTheory/C1FormalSolutionGrowth.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/C1KernelAsShiftSum.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/C1KernelDictionaryParity.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/C1KernelLevelReading.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/CableWidthBraneTowerLift.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/CanonicalTitsIso.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/ChainBindingNoSaturationPeak.lean": {
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/ClassicalTraceFloorParity.lean": {
+   "field-class": 7
+  },
+  "QOU/MassTheory/ColorCubicDiscriminantPositive.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/ColorCubicIrreducible.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/ColorCubicNoBranch.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/ColorSpectralCubicGeometry.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/ColourCubicElliptic.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/ColourCubicProjectiveIso.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/CompositionFeasibilityProgram.lean": {
+   "field-class": 2
+  },
+  "QOU/MassTheory/ComptonHarmonicOscillatorSlaterRatios.lean": {
+   "field-class": 1,
+   "field-tactic": 15
+  },
+  "QOU/MassTheory/ConcaveDeficitNonExclusion.lean": {
+   "field-class": 2,
+   "field-tactic": 4
+  },
+  "QOU/MassTheory/ConvolutionFlowParity.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/CoordinationSaturation.lean": {
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/CounitFrobeniusForm.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/CountChannelCarrierLocus.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/CyclotomicBoundaryKeystone.lean": {
+   "field-tactic": 5
+  },
+  "QOU/MassTheory/DeficitRecursionReduction.lean": {
+   "field-class": 3,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/DeltaLambdaMirrorTransport.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/DeltaLambdaRStarOrderBounds.lean": {
+   "field-class": 2
+  },
+  "QOU/MassTheory/DeltaNPMatrixIdentity.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/DeuteronBindingDressing.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/DilationBranchLocusRigidity.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/DoorVParityNoIdentity.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/EHartreeTraceRatio.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/ElectronNotTwoPhoton.lean": {
+   "field-class": 1,
+   "field-tactic": 13
+  },
+  "QOU/MassTheory/ElectronTwoPhotonTL.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/EmFermionLoopFourTopology.lean": {
+   "field-class": 5,
+   "field-tactic": 5
+  },
+  "QOU/MassTheory/EmGermMomentVanishing.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/ExtremalPrincipleDoesNotDetermine.lean": {
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/FibreMonodromyOrderTwo.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/FigureEightGluingFromMonodromy.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/FiveTwoAPolynomialFromFareyWord.lean": {
+   "field-class": 2,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/FlavourSplitNormalisation.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QOU/MassTheory/FourOneAPolynomialFromGluing.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/FrameAmbiguitySecondOrder.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/FramingSpinOrbitDiracScale.lean": {
+   "field-class": 3,
+   "field-tactic": 8
+  },
+  "QOU/MassTheory/GGMAlternationOnset.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/GPMTThreeRowCumulantBridge.lean": {
+   "field-class": 2,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/GammaGammaFrobeniusSelection.lean": {
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/GammaGammaSelectionTen.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/GammaGammaSelectorH3.lean": {
+   "field-class": 2,
+   "field-tactic": 5
+  },
+  "QOU/MassTheory/GammaGammaTraceFloor.lean": {
+   "field-tactic": 4
+  },
+  "QOU/MassTheory/GammaGammaVertexOrder.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/GammaGammaWordSelection.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/GaugeGroupThreeScale.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/GeodesicFaceH3.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/GermRootVectorGaugeFixing.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QOU/MassTheory/GradedBindingFunctionalPairTerm.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/GramChiralAntiShare.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/GramDetRatioCongruence.lean": {
+   "field-class": 2
+  },
+  "QOU/MassTheory/H4GPMTCumulantRatio.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/H4GPMTModifiedDimensionCumulants.lean": {
+   "field-class": 5,
+   "field-tactic": 21
+  },
+  "QOU/MassTheory/HadronicMass.lean": {
+   "field-class": 8,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/HeckeSectorRep.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/HeliumFourBodyCluster.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/HolonomyConnectionSplit.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/HopfLinkComplexVolume.lean": {
+   "field-class": 2
+  },
+  "QOU/MassTheory/IdempotentTraceRigidity.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/InfinitesimalPureBraid.lean": {
+   "field-class": 5,
+   "field-tactic": 4
+  },
+  "QOU/MassTheory/InterfaceMonotoneBlocksSignMixed.lean": {
+   "field-class": 4,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/InvariantFormTransport.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/IrreducibleCubicNoQuadraticRoot.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/IsospinBondCompositionOrientation.lean": {
+   "field-class": 2,
+   "field-tactic": 6
+  },
+  "QOU/MassTheory/KeystoneBridgeC1Binding.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/KindRatioFromBondLetters.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "QOU/MassTheory/KohnoComparison.lean": {
+   "field-class": 2
+  },
+  "QOU/MassTheory/LPActiveSetDimension.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/LagrangianKZIdentification.lean": {
+   "field-class": 7,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/LagrangianKZInputs.lean": {
+   "field-class": 3,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/LevelSelectionLogarithmic.lean": {
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/Lever1TauClosedForm.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/LightNucleiGGChainSign.lean": {
+   "field-class": 3,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/LinkingWeightWedderburn.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QOU/MassTheory/MarkovPivotalNucleonWeights.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QOU/MassTheory/MatterTraceWeightVector.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/MaxContactHasBulk.lean": {
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/MayerThreeBodySign.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/MilnorOrderLawGeneral.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/MilnorParitySignLaw.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/MirrorAsymmetrySign.lean": {
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/MirrorBarCancellationAndTwoRowCapRatio.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/MirrorPairBondScaling.lean": {
+   "field-class": 5,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/MixedMultibondMuBarIntegrality.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/MixedSpectrumCharacterNotLetterMultiplicative.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/MoebiusThreePointRigidity.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/Mu3BaselineFragility.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/NaStokesKeystone.lean": {
+   "field-tactic": 4
+  },
+  "QOU/MassTheory/NahmBlochBridge.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/NeutronCartanConstant.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/NeutronFourStrand.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/NeutronOwnIdentity.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QOU/MassTheory/NeutronSectorQTraceConstant.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/NormalisedStateScaleFree.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/NucleonDiracVanishesAtOne.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/NucleonScaleEnergyAndRatioInvariance.lean": {
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/NucleonSectorBurnsideCount.lean": {
+   "field-class": 3,
+   "field-tactic": 6
+  },
+  "QOU/MassTheory/NucleonSplittingLegendreCoulomb.lean": {
+   "field-class": 20,
+   "field-tactic": 20
+  },
+  "QOU/MassTheory/NucleonWordTraceClosedForm.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/OwnSectorFromWeightGrading.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/PairwiseChainLeadingOrder.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/PalindromicInvolutionLift.lean": {
+   "field-class": 2,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/PerBlockWeightFeasibility.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/PhiQConvergence.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/PhotonBarClosure.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/PhotonChargeConservation.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/PhotonClaspChargeForm.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/PhotonCrossingMonomials.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/PhotonPairIdleFactor.lean": {
+   "field-class": 1,
+   "field-tactic": 7
+  },
+  "QOU/MassTheory/PhotonPairNoFactor.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/PhotonPairNoFactorSector.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/PhotonTraceLemmas.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/PlancherelNormalisationAndScaleBounds.lean": {
+   "field-class": 1,
+   "field-tactic": 21
+  },
+  "QOU/MassTheory/PnBalancePointSpectralGap.lean": {
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/PnBetweennessBlocksSignMixed.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/PnInterfaceBarStructure.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/PnOffsetBarOddClass.lean": {
+   "field-class": 1,
+   "field-tactic": 10
+  },
+  "QOU/MassTheory/PoincareCenteringOfQ3.lean": {
+   "field-class": 1,
+   "field-tactic": 6
+  },
+  "QOU/MassTheory/PreArchimedeanBloch.lean": {
+   "field-class": 5,
+   "field-tactic": 6
+  },
+  "QOU/MassTheory/ProtonReebKZWeight.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/ProtonTwelveOrigin.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/QBetaProxyHReduction.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/QDiffProlongationBaseOperator.lean": {
+   "field-class": 2
+  },
+  "QOU/MassTheory/QGaugeSpectralRigidity.lean": {
+   "field-class": 2,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/QOneFlipSymmetry.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/QWeberInterpolation.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/QuantumSl2LinkDiagram.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/QuantumSl2LinkDiagramInvariant.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/QuantumSl2Trefoil.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/QuantumTraceTower.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/QuarkChargeReduction.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/RadialVolRhoMirrorTest.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/RossoJonesH4.lean": {
+   "field-class": 3,
+   "field-tactic": 31
+  },
+  "QOU/MassTheory/RossoJonesLinks.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/RouteCPivotalVsCount.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/S5So3GeometricWLambda.lean": {
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/S5So3WLambdaLift.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/SL2QuantumTraceIsZD.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QOU/MassTheory/SWCoreJacobi.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/SWJacksonMomentFactorization.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/SWPeriodSuperExponential.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/SaddleQShiftOffset.lean": {
+   "field-class": 4,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/SaturationPeakStructure.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/SelectionRuleQuantumIntegerForm.lean": {
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/SelfConjugateStratumVanishes.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/SelfMutualPartition.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/SkewHoweProtonSchurNorm.lean": {
+   "field-class": 1,
+   "field-tactic": 9
+  },
+  "QOU/MassTheory/StackedCrossingWritheFramingFlip.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/StaticChargeTermNP.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/SubsetCumulantRecursion.lean": {
+   "field-class": 2,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/SurfaceExponentIsDimension.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/TauFunctorReduction.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/TauQuantumIntegerForm.lean": {
+   "field-class": 2,
+   "field-tactic": 4
+  },
+  "QOU/MassTheory/TauS5EquivarianceReduction.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/TensorPictureGenerator.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/TjonSimplexForm.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/TraceConventionGate.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/TraceReadingsDiffer.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/TransferMatrixOperator.lean": {
+   "field-class": 3
+  },
+  "QOU/MassTheory/TrefoilColoringBarEven.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/TrivialBlockWrithe.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/TwelveNotHolonomyMultiple.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/TwistKnotNahm.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/TwoRowCapDerived.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/TwoTermMatterOwnSector.lean": {
+   "field-class": 2,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/TypeWeightedChainRatio.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/UICFunctionalSelection.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/UntwistedMonodromyPrune.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/UrsellChainMismatch.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/UrsellPartitionFunctionB3.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/VolTHe3RadialHandle.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/WedderburnMassFormulaCoefficients.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/WeightedCountConvolution.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/WeightedDirichletPoincare.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/WeightedTwoTermBridge.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/YLambdaSignThreshold.lean": {
+   "field-tactic": 1
+  },
+  "QOU/MassTheory/YangMillsVacuumFlat.lean": {
+   "field-class": 4
+  },
+  "QOU/MassTheory/brings_euler_characteristic.lean": {
+   "field-class": 4
+  },
+  "QOU/MassTheory/confinement_categorical.lean": {
+   "field-class": 2
+  },
+  "QOU/MassTheory/lepton_continuant_binet.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/MassTheory/lepton_continuant_positivity.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/lepton_tower_bend_invariant.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/lepton_tower_log_convexity.lean": {
+   "field-class": 1
+  },
+  "QOU/MassTheory/rj_canonical_inner_product.lean": {
+   "field-class": 1,
+   "field-tactic": 17
+  },
+  "QOU/MassTheory/shell_structure_eigenvalues.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/A3AntiSelfAdjointLift.lean": {
+   "field-class": 8,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/A3OffBlockDerivation.lean": {
+   "field-class": 11,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/AdmissibleAgreementDeterminesClass.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/Nuclear/BarInvolutionDomainObstruction.lean": {
+   "field-class": 4,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/BarOddAntisymOffDiagonal.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/BarOddLadderEdgeSuppression.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/BetaRoutesTwoTerm.lean": {
+   "field-class": 1,
+   "field-tactic": 14
+  },
+  "QOU/Nuclear/BirkhoffAmplitudeE.lean": {
+   "field-class": 11,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/BirkhoffAmplitudeWellPosed.lean": {
+   "field-class": 8,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/BirkhoffBarOddPythagorasBridge.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/BlochFiveTerm.lean": {
+   "field-class": 3,
+   "field-tactic": 3
+  },
+  "QOU/Nuclear/BlockChargeSectorTrace.lean": {
+   "field-class": 1,
+   "field-tactic": 6
+  },
+  "QOU/Nuclear/BlockSectorRestriction.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/BorromeanFlavourPivotalUnification.lean": {
+   "field-class": 2,
+   "field-tactic": 15
+  },
+  "QOU/Nuclear/BringLatticeRanks.lean": {
+   "field-class": 2
+  },
+  "QOU/Nuclear/C1DeterminantRelation.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/CAL3AnchorStructure.lean": {
+   "field-class": 4,
+   "field-tactic": 2
+  },
+  "QOU/Nuclear/ChargePhaseYangBaxterObstruction.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/Nuclear/ChargedCurrentChiralitySelection.lean": {
+   "field-class": 5,
+   "field-tactic": 17
+  },
+  "QOU/Nuclear/CoefficientPurity.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/ColourFactorDeligne.lean": {
+   "field-class": 1,
+   "field-tactic": 18
+  },
+  "QOU/Nuclear/ColourReconnectionStokesAssembly.lean": {
+   "field-class": 4,
+   "field-tactic": 4
+  },
+  "QOU/Nuclear/ContinuumECatIntraNucleonEM.lean": {
+   "field-class": 30,
+   "field-tactic": 17
+  },
+  "QOU/Nuclear/ConventionDAdmissibleRoots.lean": {
+   "field-class": 6,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/CoulombNeedsZRemoval.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/Nuclear/CrossingTraceWeights.lean": {
+   "field-class": 1,
+   "field-tactic": 12
+  },
+  "QOU/Nuclear/CrossingWeightAffine.lean": {
+   "field-class": 1,
+   "field-tactic": 7
+  },
+  "QOU/Nuclear/DFrameBarAction.lean": {
+   "field-class": 1,
+   "field-tactic": 10
+  },
+  "QOU/Nuclear/DFrameClosedFormExponents.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/DFrameEigenphaseBarOdd.lean": {
+   "field-class": 2,
+   "field-tactic": 4
+  },
+  "QOU/Nuclear/DFrameRungOnePhase.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/DLadderAccelerationComposition.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/DTIndexAmplitudeE.lean": {
+   "field-class": 5
+  },
+  "QOU/Nuclear/DecayBlockCarrier.lean": {
+   "field-class": 1,
+   "field-tactic": 8
+  },
+  "QOU/Nuclear/DecayConjectures.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/DecayFibreBarParity.lean": {
+   "field-class": 1,
+   "field-tactic": 6
+  },
+  "QOU/Nuclear/DecayFunctionalUnification.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/Nuclear/DeltaSTwoRowCharacterVanishes.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "QOU/Nuclear/DilogTheory.lean": {
+   "field-class": 4,
+   "field-tactic": 5
+  },
+  "QOU/Nuclear/E0MuonUnit.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "QOU/Nuclear/E0ReductionWordCount.lean": {
+   "field-class": 1,
+   "field-tactic": 8
+  },
+  "QOU/Nuclear/E0TowerWordWeights.lean": {
+   "field-class": 1,
+   "field-tactic": 7
+  },
+  "QOU/Nuclear/E0WeightOneSided.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/ECatLPDualRadical.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/ECatProbeAssertions.lean": {
+   "field-class": 3,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/ECatRadicalShadowPriceEvaluation.lean": {
+   "field-class": 2,
+   "field-tactic": 10
+  },
+  "QOU/Nuclear/EigenphaseBarMixedD.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/ElectronHalfTwistBlock.lean": {
+   "field-class": 2,
+   "field-tactic": 4
+  },
+  "QOU/Nuclear/EntangledLeptonPairTrace.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/Nuclear/EvenFaceMassShadow.lean": {
+   "field-class": 4
+  },
+  "QOU/Nuclear/Fig8CyclotomicBarInvariance.lean": {
+   "field-class": 7,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/FiveTwoCuspShapeBarParity.lean": {
+   "field-class": 2
+  },
+  "QOU/Nuclear/FiveTwoCutAvoidance.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/FiveTwoDeformedSaddle.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/FlavourSplitWordShare.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/Nuclear/FlavourWeightSplit.lean": {
+   "field-class": 1,
+   "field-tactic": 10
+  },
+  "QOU/Nuclear/FlavourWeightSplitPivotalSkewHowe.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/G3RealnessConjugationBrick.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/GammaGammaSdpQBetaBase.lean": {
+   "field-class": 2
+  },
+  "QOU/Nuclear/GammaGammaSelectedDeltaVanishes.lean": {
+   "field-class": 3
+  },
+  "QOU/Nuclear/GluonVertexPsdParity.lean": {
+   "field-class": 2
+  },
+  "QOU/Nuclear/GluonVertexPurePower.lean": {
+   "field-class": 3,
+   "field-tactic": 6
+  },
+  "QOU/Nuclear/GramSignature.lean": {
+   "field-class": 9,
+   "field-tactic": 3
+  },
+  "QOU/Nuclear/GreedyLadderTermination.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/HeckeSeriesCollapse.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/HydrogenCaptureFactor.lean": {
+   "field-class": 2,
+   "field-tactic": 3
+  },
+  "QOU/Nuclear/HydrogenFlavourSplit.lean": {
+   "field-class": 1,
+   "field-tactic": 10
+  },
+  "QOU/Nuclear/ImQCannotSupplyEllipticGenerator.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/K2TensorSquareGGMGauge.lean": {
+   "field-class": 8,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/LadderFrameChange.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/Nuclear/LadderPhaseFromWeights.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "QOU/Nuclear/LadderPhaseMirrorCovariance.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/Nuclear/LadderRungAmplification.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/Nuclear/LeptonStrandNormalisation.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/LeptonTwoTermStokesCovariance.lean": {
+   "field-class": 1,
+   "field-tactic": 9
+  },
+  "QOU/Nuclear/LevelMapValuation.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/MeridianHolonomyAnchorCarrier.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/ModularDoubleReciprocity.lean": {
+   "field-class": 4,
+   "field-tactic": 3
+  },
+  "QOU/Nuclear/NFCounitGapOrder.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/NeutralExchangeSplit.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/Nuclear/NeutronHeavierSign.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/NormalFormLengthInvariants.lean": {
+   "field-class": 4,
+   "field-tactic": 2
+  },
+  "QOU/Nuclear/NucleonChargeDressedWords.lean": {
+   "field-class": 1,
+   "field-tactic": 5
+  },
+  "QOU/Nuclear/NucleonFlavourIsDetermined.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/NucleonSplitFourStrand.lean": {
+   "field-class": 1,
+   "field-tactic": 23
+  },
+  "QOU/Nuclear/NucleonSplitGibbsEnergy.lean": {
+   "field-tactic": 10
+  },
+  "QOU/Nuclear/NucleonSplitV3Diagonal.lean": {
+   "field-class": 1,
+   "field-tactic": 10
+  },
+  "QOU/Nuclear/OddDecayWeightParity.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/OhtsukiKappaSign.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/OneSidedLeptonFactor.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/Nuclear/OneSidedNonlinearMaps.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/OneSidedReading.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/PairCreationExclusions.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/PairCreationWordGammaGamma.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/PairMonodromySymmetry.lean": {
+   "field-class": 1,
+   "field-tactic": 6
+  },
+  "QOU/Nuclear/PairReadoutTensorReduction.lean": {
+   "field-class": 3
+  },
+  "QOU/Nuclear/PairTermSectorSymmetry.lean": {
+   "field-class": 3,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/ParityMapCandidates.lean": {
+   "field-class": 4,
+   "field-tactic": 2
+  },
+  "QOU/Nuclear/ParityModulatedRatio.lean": {
+   "field-class": 1,
+   "field-tactic": 7
+  },
+  "QOU/Nuclear/PauliLockSpinIsospinDiagnostic.lean": {
+   "field-class": 15,
+   "field-tactic": 8
+  },
+  "QOU/Nuclear/PhaseFailsLogFunctionalEquation.lean": {
+   "field-class": 2
+  },
+  "QOU/Nuclear/PhibSaddleA1Formal.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/QBesselBarCovariance.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/QBetaErrorBudget.lean": {
+   "field-class": 2,
+   "field-tactic": 5
+  },
+  "QOU/Nuclear/QBetaZeta4ResidueRefutation.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/QCasoratianBarParity.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/QDimNormalisation.lean": {
+   "field-class": 3,
+   "field-tactic": 2
+  },
+  "QOU/Nuclear/QLommelOrderRecurrence.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/QPochhammerPoles.lean": {
+   "field-class": 6
+  },
+  "QOU/Nuclear/QuantumTraceFamilyCoth.lean": {
+   "field-class": 1,
+   "field-tactic": 7
+  },
+  "QOU/Nuclear/QuantumTwoIdentity.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/QuarkWeightTrace.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/Nuclear/RadicalPairingIsSignRep.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/RationalCoeffRecurrence.lean": {
+   "field-class": 3,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/SLeakMagnitudeTaylorRatio.lean": {
+   "field-tactic": 3
+  },
+  "QOU/Nuclear/SU4FourRowHankelNormalization.lean": {
+   "field-class": 2,
+   "field-tactic": 3
+  },
+  "QOU/Nuclear/SeparableInterfaceHypothesesHaveContent.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/SeparableInterfaceHypothesesHaveContentReal.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/SilverAnchorGrounding.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/StateIntegralRecursionLattice.lean": {
+   "field-class": 2
+  },
+  "QOU/Nuclear/StokesAmplitudeE.lean": {
+   "field-class": 3
+  },
+  "QOU/Nuclear/StokesSymmetryConstant.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/SubstratePeriodsIndependent.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/SuperBerezinianA3Magnitude.lean": {
+   "field-class": 8,
+   "field-tactic": 3
+  },
+  "QOU/Nuclear/SweedlerChargedCurrentBridge.lean": {
+   "field-class": 2,
+   "field-tactic": 7
+  },
+  "QOU/Nuclear/SweedlerWeakDegreeCount.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/TLTowerRadicalDescent.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/TetrahedralFluxRingAndMajoranaCluster.lean": {
+   "field-class": 6,
+   "field-tactic": 2
+  },
+  "QOU/Nuclear/ToddDilogExpansion.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/Nuclear/TowerFibreLaplacian.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/TwelveQuarkWignerPauliBinding.lean": {
+   "field-class": 7,
+   "field-tactic": 17
+  },
+  "QOU/Nuclear/TwoRowNormalisation.lean": {
+   "field-class": 1
+  },
+  "QOU/Nuclear/UniversalScaleMinimax.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/Nuclear/WeakVertexTwoTerm.lean": {
+   "field-class": 1,
+   "field-tactic": 11
+  },
+  "QOU/Nuclear/WeightSpaceMarkov.lean": {
+   "field-class": 1,
+   "field-tactic": 15
+  },
+  "QOU/Nuclear/WeightedTraceSide.lean": {
+   "field-class": 1,
+   "field-tactic": 6
+  },
+  "QOU/Nuclear/WeylSymmetricPairNotCoulomb.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/WritheNormalisation.lean": {
+   "field-class": 1
+  },
+  "QOU/Observations/BarParityRankOne.lean": {
+   "field-class": 1
+  },
+  "QOU/Observations/Basic.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Observations/BlowupCalculus.lean": {
+   "field-class": 4
+  },
+  "QOU/Observations/CrossingEnergyBarSplit.lean": {
+   "field-class": 1
+  },
+  "QOU/Observations/DyadicBirthdayHyperreal.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Observations/ElectronUnitSplit.lean": {
+   "field-class": 1,
+   "field-tactic": 6
+  },
+  "QOU/Observations/FigureEightCasimirWeight.lean": {
+   "field-tactic": 4
+  },
+  "QOU/Observations/FiniteJetNormPoleOrder.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/Observations/GonshorConvergence.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Observations/H2RuledElectronBond.lean": {
+   "field-class": 1,
+   "field-tactic": 4
+  },
+  "QOU/Observations/InhomogeneousLeptonLoopResolvent.lean": {
+   "field-class": 8,
+   "field-tactic": 21
+  },
+  "QOU/Observations/QBirchSwinnertonDyer.lean": {
+   "field-tactic": 1
+  },
+  "QOU/Observations/QCltCut.lean": {
+   "field-class": 3
+  },
+  "QOU/Observations/QPlancherelAsymptoticSkeleton.lean": {
+   "field-class": 2
+  },
+  "QOU/Observations/SubstrateParameterLocality.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/Observations/benzene_threading_emergence.lean": {
+   "field-class": 2
+  },
+  "QOU/Observations/centered_hecke_variance_positive.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/StandardModel/BringGenerationSplitAndCKMTexture.lean": {
+   "field-class": 24,
+   "field-tactic": 28
+  },
+  "QOU/StandardModel/BringPrymRiemannRochGenerations.lean": {
+   "field-class": 10,
+   "field-tactic": 5
+  },
+  "QOU/StandardModel/BringThreeGenerationsAndTauSatellite.lean": {
+   "field-class": 7,
+   "field-tactic": 1
+  },
+  "QOU/StandardModel/BringZeroModeClassicalCriterion.lean": {
+   "field-class": 1
+  },
+  "QOU/StandardModel/ChargeConjugationTrace.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "QOU/StandardModel/ColourBridge.lean": {
+   "field-class": 4
+  },
+  "QOU/StandardModel/ColourBridgeObstructions.lean": {
+   "field-class": 1
+  },
+  "QOU/StandardModel/CompositeT29ThresholdInstability.lean": {
+   "field-class": 4,
+   "field-tactic": 29
+  },
+  "QOU/StandardModel/ElectronWordTrace.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/StandardModel/ElectroweakSweedlerScaleAndRGThresholds.lean": {
+   "field-class": 15,
+   "field-tactic": 6
+  },
+  "QOU/StandardModel/FeynmanPathIntegrals.lean": {
+   "field-tactic": 1
+  },
+  "QOU/StandardModel/GaugeHeckeCanonicalFaithfulness.lean": {
+   "field-class": 1
+  },
+  "QOU/StandardModel/HopfFramingAndHirzebruchDefect.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
+  "QOU/StandardModel/IotaEvenMass.lean": {
+   "field-class": 1
+  },
+  "QOU/StandardModel/IotaOddTrace.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/StandardModel/LowCrossingThreeBraidTauSelection.lean": {
+   "field-class": 3,
+   "field-tactic": 2
+  },
+  "QOU/StandardModel/NeutrinoUnknotSweedlerLift.lean": {
+   "field-class": 5,
+   "field-tactic": 7
+  },
+  "QOU/StandardModel/NeutrinoUnknotSweedlerMassLift.lean": {
+   "field-class": 6,
+   "field-tactic": 3
+  },
+  "QOU/StandardModel/OneLoopEdgeLattice.lean": {
+   "field-tactic": 1
+  },
+  "QOU/StandardModel/PhotonAssertions.lean": {
+   "field-class": 2,
+   "field-tactic": 12
+  },
+  "QOU/StandardModel/PhotonAudibility.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/StandardModel/PhotonBlockCharacters.lean": {
+   "field-class": 1
+  },
+  "QOU/StandardModel/PhotonElectronTrace.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/StandardModel/PhotonJet.lean": {
+   "field-class": 2,
+   "field-tactic": 3
+  },
+  "QOU/StandardModel/PhotonThreading.lean": {
+   "field-tactic": 1
+  },
+  "QOU/StandardModel/PhotonWeightsForced.lean": {
+   "field-class": 1
+  },
+  "QOU/StandardModel/PolarizationActionHecke.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/StandardModel/S3CirculantKoideTraceIdentity.lean": {
+   "field-class": 17,
+   "field-tactic": 20
+  },
+  "QOU/StandardModel/SixStrandClusterChargeGellMannNishijima.lean": {
+   "field-class": 2
+  },
+  "QOU/StandardModel/StokesConstantQDimCategoricity.lean": {
+   "field-class": 2
+  },
+  "QOU/StandardModel/Su3StructureConstants.lean": {
+   "field-class": 1
+  },
+  "QOU/StandardModel/T35TenLinchpinFromH3.lean": {
+   "field-class": 1,
+   "field-tactic": 8
+  },
+  "QOU/StandardModel/TLRegime.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/StandardModel/TauExponentSum.lean": {
+   "field-class": 1
+  },
+  "QOU/StandardModel/ThetaQcdFramingCp.lean": {
+   "field-class": 5
+  },
+  "QOU/StandardModel/TorusFamilyTrace.lean": {
+   "field-class": 1
+  },
+  "QOU/StandardModel/TorusLinkElectroweakSchurRatio.lean": {
+   "field-class": 1,
+   "field-tactic": 22
+  },
+  "QOU/StandardModel/YoungTraceNoSuperDimension.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
+  "ToricConicOpt/ConfinementLayerTower.lean": {
+   "field-class": 3,
+   "field-tactic": 1
+  },
+  "ToricConicOpt/NuclearChamberGS.lean": {
+   "field-class": 6,
+   "field-tactic": 10
+  },
+  "ToricConicOpt/QIntGrowth.lean": {
+   "field-tactic": 1
+  },
+  "ToricConicOpt/RelaxedVertexRounding.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "ToricConicOpt/SymmetryReducedDualCertificate.lean": {
+   "field-class": 5
+  },
+  "TwistedFrobeniusHopf/BlockMeasureFromFrobeniusPairing.lean": {
+   "field-class": 2,
+   "field-tactic": 1
+  },
+  "TwistedFrobeniusHopf/DepthStratifiedFrobeniusReciprocity.lean": {
+   "field-class": 9,
+   "field-tactic": 4
+  },
+  "TwistedFrobeniusHopf/FrobeniusFormScaleFree.lean": {
+   "field-class": 1
+  },
+  "TwistedFrobeniusHopf/FrobeniusSchurExpectationCancellation.lean": {
+   "field-class": 4
+  },
+  "TwistedFrobeniusHopf/JetNoBialgebra.lean": {
+   "field-class": 3
+  },
+  "TwistedFrobeniusHopf/frobenius_antipode_unifies.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
+  "scratch_lean.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  }
+ },
+ "schema": "base-ring-audit/v1"
+}

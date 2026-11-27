@@ -9,6 +9,9 @@
 #
 #   0. qa-gate          scripts/generate-accuracy-scorecard.py --check --qa-report
 #                       (fail-fast if ACCURACY.md drifted or an upstream witness failed)
+#   0a. lean ratchets   scripts/transcendental-boundary-audit.py --check and
+#                       scripts/base-ring-audit.py --check (post-merge QA, warn-only:
+#                       a red result becomes a bean, it does not stop the publish)
 #   0b. qa-publish      scripts/qa-publish-local.sh: the QA writers qou.json
 #                       declares, published to qa-reports as main/<sha> for the
 #                       integrated QA page (with --deploy; without, writers only)
@@ -54,6 +57,11 @@ fi
 
 echo "== publish-main-local: accuracy scorecard pre-publish QA gate"
 python3 scripts/generate-accuracy-scorecard.py --check --qa-report
+
+echo "== publish-main-local: Lean ratchets (post-merge QA, warn-only)"
+for a in transcendental-boundary-audit base-ring-audit; do
+  python3 "scripts/$a.py" --check | tail -n 25 || echo "WARN $a: red on $SHA; open a bean and a follow-up PR"
+done
 
 if [ "$DEPLOY" = 1 ]; then bash scripts/qa-publish-local.sh; else bash scripts/qa-publish-local.sh --no-publish; fi
 
