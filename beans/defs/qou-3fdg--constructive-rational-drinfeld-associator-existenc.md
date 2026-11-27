@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T19:27:23Z
+updated_at: 2026-11-27T19:36:47Z
 parent: qou-dk7p
 ---
 
@@ -73,3 +73,6 @@ KEY for research leg (p.854, Remark 2 after 5.8): without 5.3, obstruction to li
 
 
 2026-11-27: #9580,#9585 merged. #9600 (stacked on #9595): GRTComposite.lean, compPoly (law 5.16 as polynomial), GRT1U4 structure, grt1U4_comp (closure). Audit §10: induction-on-lowest-defect plan for Exp(y) in GRT1: lemmas (G) grading, (A) top-defect additivity, (P) doubling Exp(2xy)=Exp(xy)∘Exp(xy) give c(2^m-2)=0; (P) checked exactly through degree 9 (check, not proof). Open: G/A/P + induction in Lean; grt predicate; Phi∘g ≡ Phi+y.
+
+
+2026-11-27 stage 4 (conditional): PR #9609, GRTFlow.lean. Exp for law (5.16), exact x-scaling, GrtU4 predicate, induction on Fil via coeff_mem_of_doubling (grading (G) not needed). grt1U4_expPoly_of_doubling: GrtU4 y + K>=2 + hdouble => GRT1U4 (Exp(xy)) for all x. Verified lean-direct exit 0, axioms propext/choice/Quot.sound. OPEN: hdouble = (P) doubling law + (A) top-defect additivity (compPoly bakes in (5.12), needs unit form); Phi∘g ≡ Phi+y; (5.14)-lin vs Drinfeld (5.19) matched on paper only. Bean stays open.
