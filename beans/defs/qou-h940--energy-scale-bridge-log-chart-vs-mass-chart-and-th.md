@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T22:03:24Z
-updated_at: 2026-11-27T22:23:49Z
+updated_at: 2026-11-27T22:25:42Z
 parent: qou-myts
 ---
 
@@ -21,3 +21,5 @@ Open: the orientation (which convention carries the sign). Nothing wired. Relate
 2026-11-27 orientation (Carl chose A): tau_e = q^3*y3, y3 bar-invariant, omega bar-odd (EnergyScaleOrientation.lean, sorry-free; orientation_probe 19/19). Log-chart unit sign comes from the framing-free part l_e=-0.682; the mass-chart unit sign comes from the writhe 3. The split already holds at q=1 (l=-ln2, omega=0). The log unit flips only at tau_e=1, q*=1.2414. The n-p q^-2 is not framing (nucleon writhe 0 under the ruled word). Open fork: does the energy sign come from the framing or from the framing-free part?
 
 2026-11-27 relay from isospin thread (#9747 335b6c7e2): the C(3A,n_d) weight count read through B += alpha*ln(count) gives (N-Z)^2/A with coefficient alpha/6, which is 0.62 MeV at alpha=8G m_e, about 37x below the classical 23 MeV. It is a test term for any derived log-count scale. With the CAL-1 log-chart unit |m_e/L_e| = 2.707 m_e = 1.383 MeV/nat, alpha/6 = 0.23 MeV, which is about 100x below. Noted, not wired.
+
+2026-11-27 no-go (Lean log_chart_np_delta_opposite / mass_chart_np_delta_opposite): in either chart, for ANY electron unit, n-p (pure power) and Delta-N (bar-even) get opposite signs. The #9789 reading [4]/q^3 turns n-p positive (+0.805 m_e mass chart) but Delta-N negative (-0.166). Getting both right needs pure powers and bar-even cells read with different sign, which is a second structural input.
