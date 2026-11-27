@@ -456,6 +456,7 @@ import QOU.MassTheory.BondArcTheorems
 import QOU.MassTheory.PairIsospinAssignment
 import QOU.MassTheory.ReebPnMagnitude
 import QOU.MassTheory.ReebLinkingCWF
+import QOU.Transcendental.MassTheory.ReebLinkingCWFReal
 import QOU.MassTheory.SaturationRhoCap
 import QOU.MassTheory.IsospinMirrorInvariance
 import QOU.MassTheory.B4CumulantBarEven
@@ -1061,6 +1062,7 @@ import QOU.Transcendental.Nuclear.OhtsukiNZBridgeScale
 import QOU.Nuclear.WindingGFTransform
 import QOU.Nuclear.ThetaRealityBound
 import QOU.Nuclear.AfreeThetaConstraint
+import QOU.Transcendental.Nuclear.AfreeThetaConstraintReal
 import QOU.Nuclear.AlphaQInheritance
 import QOU.Nuclear.AlphaPreformationBound
 import QOU.Nuclear.ChannelMeridianIdentification
@@ -1295,7 +1297,7 @@ import QOU.BringsSurface.PlanckStepAtomicity
 import QOU.BringsSurface.AtomicityJetIndependence
 import QOU.BringsSurface.BarReflectionGridSelection
 import QOU.BringsSurface.DualFrameGaussianExponents
-import QOU.MassTheory.BarReflectionGridSelectionReal
+import QOU.Transcendental.MassTheory.BarReflectionGridSelectionReal
 import MathlibExt.LoopWeightRealSymmReduction
 import HeckeTemperleyLieb.MarkovGramRealSymm
 import HeckeTemperleyLieb.MatrixSchurCommutant
@@ -1504,6 +1506,7 @@ import QOU.MassTheory.NucleonOrderingSymmetry
 -- explicit strictly-better arrangement at A=5 (sorted pnnnn beats the prescribed
 -- npnnn on BOTH readouts), proved for an interval of q containing the anchor.
 import QOU.MassTheory.GroundStateOrderingRefutation
+import QOU.Transcendental.MassTheory.GroundStateOrderingRefutationReal
 -- qou-prjo (PR: germ gauge covariance): the germ q-curvature F_q = [dq_i, dq_j]
 -- is NOT gauge-covariant (connection law, concrete nonzero defect witness), so
 -- the transverse NA-Stokes Omega_2 has no basis-independent value; the covariant
