@@ -10,7 +10,7 @@ tags:
     - lean
     - mathlib-gap
 created_at: 2026-11-21T07:30:00Z
-updated_at: 2026-11-27T22:04:48Z
+updated_at: 2026-11-27T22:05:08Z
 parent: qou-6qbv
 ---
 
@@ -42,3 +42,7 @@ Unchanged. PR #9726's new theorem starts from the same combinatorial map, so Rad
 
 
 2026-11-27 (branch claude/equivariant-triangulation-2026-11-27): the combinatorial half is proved. MathlibExt/VoltageLift.lean: a dart-free action has cyclic cell stabilisers (cycle_stabilizer_isCyclic); the voltage lift liftPerm is equivariant, free on darts and edges, and its quotient is the base map. BraidKnotOctonion/A5VoltageMapChi.lean: chi_le_neg_six_of_A5_voltage_map needs only face freeness, connectedness and hyperbolicity. What remains is split into  (monodromy as voltages) and  (Radó plus combinatorial chi = analytic chi). Stays open.
+
+
+
+Correction to the entry above: the two split-out beans are  (monodromy as voltages) and  (Radó plus combinatorial chi = analytic chi).

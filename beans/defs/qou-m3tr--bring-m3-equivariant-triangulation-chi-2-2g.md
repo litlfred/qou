@@ -9,7 +9,7 @@ tags:
     - bring-foundations
     - lean
 created_at: 2026-11-18T19:26:09Z
-updated_at: 2026-11-27T22:04:48Z
+updated_at: 2026-11-27T22:05:08Z
 parent: qou-6qbv
 ---
 
@@ -148,3 +148,5 @@ PR #9726 adds `chi_le_neg_six_of_A5_map`, which uses the same map interface (`ex
 
 
 2026-11-27: step 3 narrowed. See qou-yslf,  and ; the lift step is proved in MathlibExt/VoltageLift.lean.
+
+ Split-out beans: , .
