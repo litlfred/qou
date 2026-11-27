@@ -426,9 +426,9 @@ included) and the actual Hoefsmit data, no vertex power `V^k` with `1 ≤ k ≤ 
 is symmetric — so none is `Matrix.PosSemidef`, and the literal `SDPSelected`
 admits no γγ word of `2 ≤ 2k ≤ 10` crossings. The corresponding claim for all
 `k` is exactly `vtx_pow_isHermitian_iff_scalar`. -/
-theorem hoefsmit_vtx_pow_not_isHermitian {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
-    (k : ℕ) (hk1 : 1 ≤ k) (hk5 : k ≤ 5) :
-    ¬ (vtx q (hoefsmitA q) (hoefsmitB q) (hoefsmitA' q) (hOf q) ^ k).IsHermitian := by
+theorem hoefsmit_vtx_pow_not_isHermitian {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b) (k : ℕ) (hk1 : 1 ≤ k) (hk5 : k ≤ 5) :
+    ¬ (vtx q (hoefsmitA q) b (hoefsmitA' q) (hOf q) ^ k).IsHermitian := by
   have hq : 0 < q := by linarith
   have hqne : q ≠ 1 := hq1.ne'
   have hq0 : q ≠ 0 := hq.ne'
@@ -443,8 +443,8 @@ theorem hoefsmit_vtx_pow_not_isHermitian {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23
     rw [div_div_eq_mul_div]
     field_simp
     ring
-  have hbb := hoefsmitB_sq hq hqne
-  have hb : hoefsmitB q ≠ 0 := (hoefsmitB_pos hq hqne).ne'
+  have hbb : b ^ 2 = hoefsmitA q * hoefsmitA' q + 1 := hbr
+  have hb : b ≠ 0 := hbr.ne_zero hq hqne
   have hq21 : q ^ 2 ≠ 1 := by
     intro h
     have : q = 1 := by nlinarith

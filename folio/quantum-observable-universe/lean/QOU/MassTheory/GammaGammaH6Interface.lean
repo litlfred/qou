@@ -35,7 +35,7 @@ table decides it.
 
 * `branchOf_six … branchOf_threeThree`, `dim_eq_branch`, `fDim_sq_sum` — the path counts.
 * `interfaceBond_gammaGamma` — `(σ₂σ₃⁻¹)^m` is γγ-produced.
-* `InterfaceBranching q B` — the hypothesis that the block data `B` takes the branched
+* `InterfaceBranching q b B` — the hypothesis that the block data `B` takes the branched
   values on the interface bonds (the branching rule, **stated, not derived** here;
   verified at the proton pin by `gamma_gamma_h6_interface_branching_probe.py`, 24 values
   to `1e−59` against the step-3 witness).
@@ -242,18 +242,18 @@ section Interface
 /-- **Interface branching**: the `H₆` block data `B` takes, on every interface bond,
 the branched value of the step-4/5 vertex character. This is the branching rule for
 the Hoefsmit representations restricted to `⟨σ₂, σ₃⟩`, stated as a hypothesis. -/
-structure InterfaceBranching (q : ℝ) (B : WedderburnBlocks ℝ Word H6Block H6Block.dim) :
+structure InterfaceBranching (q b : ℝ) (B : WedderburnBlocks ℝ Word H6Block H6Block.dim) :
     Prop where
   /-- `χ_λ(G^m) = a_λ + b_λ · tr V^m + c_λ`. -/
   branched : ∀ (l : H6Block) (m : ℕ),
-    (B.proj (interfaceBond m) l).trace = branchedChar (branchOf l.part) (hoefsmitVtx q ^ m).trace
+    (B.proj (interfaceBond m) l).trace = branchedChar (branchOf l.part) (hoefsmitVtx q b ^ m).trace
 
 /-- Under the branching hypothesis, reading-3 feasibility of `G^m` is the sign condition
 on the branched characters of the positive-weight blocks. -/
-theorem interface_frobeniusFeasible_iff {q : ℝ} (B : WedderburnBlocks ℝ Word H6Block H6Block.dim)
-    (hB : InterfaceBranching q B) (y : H6Block → ℝ) (m : ℕ) :
+theorem interface_frobeniusFeasible_iff {q b : ℝ} (B : WedderburnBlocks ℝ Word H6Block H6Block.dim)
+    (hB : InterfaceBranching q b B) (y : H6Block → ℝ) (m : ℕ) :
     FrobeniusFeasible B y (interfaceBond m) ↔
-      ∀ l : H6Block, 0 < y l → 0 ≤ branchedChar (branchOf l.part) (hoefsmitVtx q ^ m).trace := by
+      ∀ l : H6Block, 0 < y l → 0 ≤ branchedChar (branchOf l.part) (hoefsmitVtx q b ^ m).trace := by
   constructor
   · intro h l hl
     rw [← hB.branched]
@@ -292,8 +292,9 @@ theorem h_sq_le_twelfth_of_q_le {q : ℝ} (hq1 : 1 ≤ q) (hq2 : q ≤ 23 / 20) 
 /-- **The `H₆` bond table under reading 3**, for every `1 < q ≤ 23/20`, every block data
 satisfying the branching hypothesis, and every Markov weight supported on the two-row
 blocks with `y_(3,3) > 0`: `G¹, G², G⁴, G⁵` are infeasible and `G³` is feasible. -/
-theorem interface_frobenius_table {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
-    (B : WedderburnBlocks ℝ Word H6Block H6Block.dim) (hB : InterfaceBranching q B)
+theorem interface_frobenius_table {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
+    (B : WedderburnBlocks ℝ Word H6Block H6Block.dim) (hB : InterfaceBranching q b B)
     (y : H6Block → ℝ) (hy : ∀ l, 0 < y l → l.twoRow) (h33 : 0 < y .threeThree) :
     ¬ FrobeniusFeasible B y (interfaceBond 1) ∧
       ¬ FrobeniusFeasible B y (interfaceBond 2) ∧
@@ -302,7 +303,7 @@ theorem interface_frobenius_table {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
       ¬ FrobeniusFeasible B y (interfaceBond 5) := by
   obtain ⟨hx, _⟩ := hOf_sq_bounds hq1 hq2
   have hx12 : hOf q ^ 2 ≤ 1 / 12 := h_sq_le_twelfth_of_q_le hq1.le hq2
-  obtain ⟨t1, t2, t3, t4, t5⟩ := hoefsmitVtx_traces hq1
+  obtain ⟨t1, t2, t3, t4, t5⟩ := hoefsmitVtx_traces hq1 hbr
   obtain ⟨s1, s2, s4, s5⟩ := h6_signs_of_small hx hx12
   have s3 := (chi_signs_of_small hx (by linarith)).2.2.1
   simp only [interface_frobeniusFeasible_iff B hB y]
@@ -324,11 +325,12 @@ def interfaceCands (n : ℕ) : Set Word := {w | ∃ m, 1 ≤ m ∧ m ≤ n ∧ w
 /-- **Reading 3 selects the pp bond `G³ = (σ₂σ₃⁻¹)³`** on the `H₆` interface: the
 minimal-crossing feasible non-zero bond with `m ≤ 5`, for every `1 < q ≤ 23/20`, under
 the branching hypothesis and any two-row-supported weight with `y_(3,3) > 0`. -/
-theorem interfaceSelected_three {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
-    (B : WedderburnBlocks ℝ Word H6Block H6Block.dim) (hB : InterfaceBranching q B)
+theorem interfaceSelected_three {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
+    (B : WedderburnBlocks ℝ Word H6Block H6Block.dim) (hB : InterfaceBranching q b B)
     (y : H6Block → ℝ) (hy : ∀ l, 0 < y l → l.twoRow) (h33 : 0 < y .threeThree) :
     FrobeniusSelected B y (interfaceCands 5) (fun w => (w.length : ℝ)) (interfaceBond 3) := by
-  obtain ⟨n1, n2, f3, n4, n5⟩ := interface_frobenius_table hq1 hq2 B hB y hy h33
+  obtain ⟨n1, n2, f3, n4, n5⟩ := interface_frobenius_table hq1 hq2 hbr B hB y hy h33
   refine ⟨⟨3, by norm_num, by norm_num, rfl⟩, f3, ?_⟩
   rintro w' ⟨m, hm1, hm5, rfl⟩ hf
   interval_cases m
@@ -339,12 +341,12 @@ theorem interfaceSelected_three {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
   · exact absurd hf n5
 
 /-- Any reading-3-selected bond on these candidates has six crossings. -/
-theorem interfaceSelected_length_eq_six {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
-    (B : WedderburnBlocks ℝ Word H6Block H6Block.dim) (hB : InterfaceBranching q B)
+theorem interfaceSelected_length_eq_six {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b) (B : WedderburnBlocks ℝ Word H6Block H6Block.dim) (hB : InterfaceBranching q b B)
     (y : H6Block → ℝ) (hy : ∀ l, 0 < y l → l.twoRow) (h33 : 0 < y .threeThree) {w : Word}
     (hw : FrobeniusSelected B y (interfaceCands 5) (fun w => (w.length : ℝ)) w) :
     w.length = 6 := by
-  have h := hw.cost_eq (interfaceSelected_three hq1 hq2 B hB y hy h33)
+  have h := hw.cost_eq (interfaceSelected_three hq1 hq2 hbr B hB y hy h33)
   have : (w.length : ℝ) = ((interfaceBond 3).length : ℝ) := by simpa using h
   rw [interfaceBond_length] at this
   exact_mod_cast this

@@ -188,16 +188,18 @@ theorem writhe_zero_cands_eq : writheZeroCands = gammaGammaH3Cands := by
     · exact writhe_eq_zero (vertexPow_gammaGamma k)
 
 /-- **Reading 3 selects `β_Bor` in the full photon-term grammar, for every crossing count.** -/
-theorem frobeniusSelected_neutral_full_grammar {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+theorem frobeniusSelected_neutral_full_grammar {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
     (y : H3Block → ℝ) (hy : 0 < y .std) :
-    FrobeniusSelected (hoefsmitH3 q) y writheZeroCands (fun w => (w.length : ℝ)) borromean := by
-  rw [writhe_zero_cands_eq]; exact frobeniusSelected_borromean_all hq1 hq2 y hy
+    FrobeniusSelected (hoefsmitH3 q b) y writheZeroCands (fun w => (w.length : ℝ)) borromean := by
+  rw [writhe_zero_cands_eq]; exact frobeniusSelected_borromean_all hq1 hq2 hbr y hy
 
-theorem frobeniusSelected_neutral_full_grammar_eq_borromean {q : ℝ} (hq1 : 1 < q)
-    (hq2 : q ≤ 23 / 20) (y : H3Block → ℝ) (hy : 0 < y .std) {w : Word}
-    (hw : FrobeniusSelected (hoefsmitH3 q) y writheZeroCands (fun w => (w.length : ℝ)) w) :
+theorem frobeniusSelected_neutral_full_grammar_eq_borromean {q b : ℝ} (hq1 : 1 < q)
+    (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b) (y : H3Block → ℝ) (hy : 0 < y .std) {w : Word}
+    (hw : FrobeniusSelected (hoefsmitH3 q b) y writheZeroCands (fun w => (w.length : ℝ)) w) :
     w = borromean := by
-  rw [writhe_zero_cands_eq] at hw; exact frobeniusSelected_all_eq_borromean hq1 hq2 y hy hw
+  rw [writhe_zero_cands_eq] at hw; exact frobeniusSelected_all_eq_borromean hq1 hq2 hbr y hy hw
 
 /-! ## Linking neutrality itself, not only writhe `0` -/
 
@@ -228,21 +230,23 @@ theorem borromean_mem_neutralCands : borromean ∈ neutralCands := by
   · decide
 
 /-- **Reading 3 selects `β_Bor` among the linking-neutral words, for every crossing count.** -/
-theorem frobeniusSelected_linkingNeutral {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+theorem frobeniusSelected_linkingNeutral {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
     (y : H3Block → ℝ) (hy : 0 < y .std) :
-    FrobeniusSelected (hoefsmitH3 q) y neutralCands (fun w => (w.length : ℝ)) borromean := by
-  have h := frobeniusSelected_neutral_full_grammar hq1 hq2 y hy
+    FrobeniusSelected (hoefsmitH3 q b) y neutralCands (fun w => (w.length : ℝ)) borromean := by
+  have h := frobeniusSelected_neutral_full_grammar hq1 hq2 hbr y hy
   exact ⟨borromean_mem_neutralCands, h.feasible,
     fun w' hw' hf => h.minimal w' (neutralCands_subset hw') hf⟩
 
-theorem frobeniusSelected_linkingNeutral_eq_borromean {q : ℝ} (hq1 : 1 < q)
-    (hq2 : q ≤ 23 / 20) (y : H3Block → ℝ) (hy : 0 < y .std) {w : Word}
-    (hw : FrobeniusSelected (hoefsmitH3 q) y neutralCands (fun w => (w.length : ℝ)) w) :
+theorem frobeniusSelected_linkingNeutral_eq_borromean {q b : ℝ} (hq1 : 1 < q)
+    (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b) (y : H3Block → ℝ) (hy : 0 < y .std) {w : Word}
+    (hw : FrobeniusSelected (hoefsmitH3 q b) y neutralCands (fun w => (w.length : ℝ)) w) :
     w = borromean := by
-  have hb := frobeniusSelected_neutral_full_grammar hq1 hq2 y hy
+  have hb := frobeniusSelected_neutral_full_grammar hq1 hq2 hbr y hy
   have hle : (w.length : ℝ) ≤ (borromean.length : ℝ) :=
     hw.minimal _ borromean_mem_neutralCands hb.feasible
-  refine frobeniusSelected_neutral_full_grammar_eq_borromean hq1 hq2 y hy
+  refine frobeniusSelected_neutral_full_grammar_eq_borromean hq1 hq2 hbr y hy
     ⟨neutralCands_subset hw.mem, hw.feasible, fun w' hw' hf => ?_⟩
   exact le_trans hle (hb.minimal w' hw' hf)
 

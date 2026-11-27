@@ -198,29 +198,29 @@ end H3
 section Hoefsmit
 
 /-- The `H₃` block data at the concrete Hoefsmit `(2,1)` matrices of step 3. -/
-noncomputable def hoefsmitH3 (q : ℝ) : WedderburnBlocks ℝ Word H3Block H3Block.dim :=
-  h3Blocks q (hOf q) (hoefsmitGen q (hoefsmitA q) (hoefsmitB q) (hoefsmitA' q))
+noncomputable def hoefsmitH3 (q b : ℝ) : WedderburnBlocks ℝ Word H3Block H3Block.dim :=
+  h3Blocks q (hOf q) (hoefsmitGen q (hoefsmitA q) b (hoefsmitA' q))
 
 /-- The vertex image at the concrete Hoefsmit data. -/
-noncomputable def hoefsmitVtx (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
-  vtx q (hoefsmitA q) (hoefsmitB q) (hoefsmitA' q) (hOf q)
+noncomputable def hoefsmitVtx (q b : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  vtx q (hoefsmitA q) b (hoefsmitA' q) (hOf q)
 
-theorem hoefsmitH3_vertexPow_iff {q : ℝ} (hq : 0 < q) (y : H3Block → ℝ) (k : ℕ) :
-    FrobeniusFeasible (hoefsmitH3 q) y (vertexPow k) ↔
-      (0 < y .std → 0 ≤ (hoefsmitVtx q ^ k).trace) :=
+theorem hoefsmitH3_vertexPow_iff {q b : ℝ} (hq : 0 < q) (y : H3Block → ℝ) (k : ℕ) :
+    FrobeniusFeasible (hoefsmitH3 q b) y (vertexPow k) ↔
+      (0 < y .std → 0 ≤ (hoefsmitVtx q b ^ k).trace) :=
   vertexPow_frobeniusFeasible_iff hq y k
 
 /-- The six Hoefsmit relations step 4's generic lemmas take as hypotheses, all
 discharged from `1 < q` (as in `hoefsmit_vtx_pow_not_isHermitian`). -/
-theorem hoefsmit_relations {q : ℝ} (hq1 : 1 < q) :
+theorem hoefsmit_relations {q b : ℝ} (hq1 : 1 < q) (hbr : HoefsmitRoot q b) :
     q * q⁻¹ = 1 ∧ hOf q = q - q⁻¹ ∧ hoefsmitA q * (1 - q ^ 4) = hOf q ∧
       hoefsmitA' q = -q ^ 4 * hoefsmitA q ∧
-      hoefsmitB q ^ 2 = hoefsmitA q * hoefsmitA' q + 1 ∧ q ^ 2 ≠ 1 := by
+      b ^ 2 = hoefsmitA q * hoefsmitA' q + 1 ∧ q ^ 2 ≠ 1 := by
   have hq : 0 < q := by linarith
   have hqne : q ≠ 1 := hq1.ne'
   have hq0 : q ≠ 0 := hq.ne'
   have h4 := one_sub_pow_four_ne_zero hq hqne
-  refine ⟨mul_inv_cancel₀ hq0, rfl, ?_, ?_, hoefsmitB_sq hq hqne, ?_⟩
+  refine ⟨mul_inv_cancel₀ hq0, rfl, ?_, ?_, hbr, ?_⟩
   · unfold hoefsmitA; field_simp
   · have h4m : q ^ 4 - 1 ≠ 0 := by intro h; apply h4; linarith
     unfold hoefsmitA' hoefsmitA
@@ -243,16 +243,16 @@ theorem hOf_sq_bounds {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20) :
   positivity
 
 /-- The step-4 Chebyshev closed forms at the concrete data, `x = h²`. -/
-theorem hoefsmitVtx_traces {q : ℝ} (hq1 : 1 < q) :
-    (hoefsmitVtx q ^ 1).trace = -1 - hOf q ^ 2 ∧
-      (hoefsmitVtx q ^ 2).trace = (hOf q ^ 2) ^ 2 + 2 * hOf q ^ 2 - 1 ∧
-      (hoefsmitVtx q ^ 3).trace = 2 - 3 * (hOf q ^ 2) ^ 2 - (hOf q ^ 2) ^ 3 ∧
-      (hoefsmitVtx q ^ 4).trace =
+theorem hoefsmitVtx_traces {q b : ℝ} (hq1 : 1 < q) (hbr : HoefsmitRoot q b) :
+    (hoefsmitVtx q b ^ 1).trace = -1 - hOf q ^ 2 ∧
+      (hoefsmitVtx q b ^ 2).trace = (hOf q ^ 2) ^ 2 + 2 * hOf q ^ 2 - 1 ∧
+      (hoefsmitVtx q b ^ 3).trace = 2 - 3 * (hOf q ^ 2) ^ 2 - (hOf q ^ 2) ^ 3 ∧
+      (hoefsmitVtx q b ^ 4).trace =
         (hOf q ^ 2) ^ 4 + 4 * (hOf q ^ 2) ^ 3 + 2 * (hOf q ^ 2) ^ 2 - 4 * hOf q ^ 2 - 1 ∧
-      (hoefsmitVtx q ^ 5).trace =
+      (hoefsmitVtx q b ^ 5).trace =
         -(hOf q ^ 2) ^ 5 - 5 * (hOf q ^ 2) ^ 4 - 5 * (hOf q ^ 2) ^ 3 + 5 * (hOf q ^ 2) ^ 2
           + 5 * hOf q ^ 2 - 1 := by
-  obtain ⟨hqinv, hh, ha, ha', hb, hq21⟩ := hoefsmit_relations hq1
+  obtain ⟨hqinv, hh, ha, ha', hb, hq21⟩ := hoefsmit_relations hq1 hbr
   unfold hoefsmitVtx
   refine ⟨?_, ?_, ?_, ?_, ?_⟩
   · rw [trace_vtx_pow_one hqinv hh ha ha' hb hq21]
@@ -264,17 +264,18 @@ theorem hoefsmitVtx_traces {q : ℝ} (hq1 : 1 < q) :
 /-- **The step-4 sign table as reading-3 feasibility**, for every `1 < q ≤ 23/20`
 and every weight with `y_(2,1) > 0`: `k = 1, 2, 4, 5` infeasible, `k = 3`
 feasible. -/
-theorem hoefsmit_vertexPow_frobenius_table {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+theorem hoefsmit_vertexPow_frobenius_table {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
     (y : H3Block → ℝ) (hy : 0 < y .std) :
-    ¬ FrobeniusFeasible (hoefsmitH3 q) y (vertexPow 1) ∧
-      ¬ FrobeniusFeasible (hoefsmitH3 q) y (vertexPow 2) ∧
-      FrobeniusFeasible (hoefsmitH3 q) y (vertexPow 3) ∧
-      ¬ FrobeniusFeasible (hoefsmitH3 q) y (vertexPow 4) ∧
-      ¬ FrobeniusFeasible (hoefsmitH3 q) y (vertexPow 5) := by
+    ¬ FrobeniusFeasible (hoefsmitH3 q b) y (vertexPow 1) ∧
+      ¬ FrobeniusFeasible (hoefsmitH3 q b) y (vertexPow 2) ∧
+      FrobeniusFeasible (hoefsmitH3 q b) y (vertexPow 3) ∧
+      ¬ FrobeniusFeasible (hoefsmitH3 q b) y (vertexPow 4) ∧
+      ¬ FrobeniusFeasible (hoefsmitH3 q b) y (vertexPow 5) := by
   have hq : 0 < q := by linarith
   obtain ⟨hx, hx1⟩ := hOf_sq_bounds hq1 hq2
   obtain ⟨s1, s2, s3, s4, s5⟩ := chi_signs_of_small hx hx1
-  obtain ⟨t1, t2, t3, t4, t5⟩ := hoefsmitVtx_traces hq1
+  obtain ⟨t1, t2, t3, t4, t5⟩ := hoefsmitVtx_traces hq1 hbr
   simp only [hoefsmitH3_vertexPow_iff hq y]
   refine ⟨?_, ?_, ?_, ?_, ?_⟩
   · intro hf; have := hf hy; rw [t1] at this; linarith
@@ -294,11 +295,12 @@ theorem borromean_mem_vertexPowCands : borromean ∈ vertexPowCands 5 :=
 inside) and every Markov weight with `y_(2,1) > 0`, the minimal-crossing
 Frobenius-feasible non-zero vertex power with `k ≤ 5` is `k = 3`, the
 Borromean word. -/
-theorem frobeniusSelected_borromean {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+theorem frobeniusSelected_borromean {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
     (y : H3Block → ℝ) (hy : 0 < y .std) :
-    FrobeniusSelected (hoefsmitH3 q) y (vertexPowCands 5) (fun w => (w.length : ℝ))
+    FrobeniusSelected (hoefsmitH3 q b) y (vertexPowCands 5) (fun w => (w.length : ℝ))
       borromean := by
-  obtain ⟨n1, n2, f3, n4, n5⟩ := hoefsmit_vertexPow_frobenius_table hq1 hq2 y hy
+  obtain ⟨n1, n2, f3, n4, n5⟩ := hoefsmit_vertexPow_frobenius_table hq1 hq2 hbr y hy
   refine ⟨borromean_mem_vertexPowCands, ?_, ?_⟩
   · rw [← vertexPow_three]; exact f3
   · rintro w' ⟨k, hk1, hk5, rfl⟩ hf
@@ -311,11 +313,12 @@ theorem frobeniusSelected_borromean {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20
     · exact absurd hf n5
 
 /-- Any reading-3-selected word on these candidates has six crossings. -/
-theorem frobeniusSelected_length_eq_six {q : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+theorem frobeniusSelected_length_eq_six {q b : ℝ} (hq1 : 1 < q) (hq2 : q ≤ 23 / 20)
+    (hbr : HoefsmitRoot q b)
     (y : H3Block → ℝ) (hy : 0 < y .std) {w : Word}
-    (hw : FrobeniusSelected (hoefsmitH3 q) y (vertexPowCands 5) (fun w => (w.length : ℝ)) w) :
+    (hw : FrobeniusSelected (hoefsmitH3 q b) y (vertexPowCands 5) (fun w => (w.length : ℝ)) w) :
     w.length = 6 := by
-  have h := hw.cost_eq (frobeniusSelected_borromean hq1 hq2 y hy)
+  have h := hw.cost_eq (frobeniusSelected_borromean hq1 hq2 hbr y hy)
   have : (w.length : ℝ) = ((vertexPow 3).length : ℝ) := by
     simpa [vertexPow_three] using h
   rw [vertexPow_length] at this
