@@ -21,7 +21,7 @@ The construction proceeds in three steps:
 2. A **pentagon relation generator** — for each pair `(x, y)`
    satisfying the pentagon-domain constraints, the formal sum
 
-      [x] - [y] + [y/x] - [(1-1/y)/(1-1/x)] + [(1-y)/(1-x)]
+      [x] - [y] + [y/x] - [(1-1/x)/(1-1/y)] + [(1-x)/(1-y)]
 
    is an element of `PreBlochGroup F`. The set of all such
    generators (over all valid `(x, y)`) generates the pentagon
@@ -46,7 +46,7 @@ variable {F : Type*} [Field F] [DecidableEq F]
 
 /-- A **pentagon shape** is intended to be a quintuple of pre-Bloch
     elements derived from a pair `(x, y) ∈ (F \ {0,1})²` via the
-    5-term Rogers-form maps `x, y, y/x, (1-y⁻¹)/(1-x⁻¹), (1-y)/(1-x)`.
+    5-term Suslin-form maps `x, y, y/x, (1-x⁻¹)/(1-y⁻¹), (1-x)/(1-y)`.
 
     **Caveat (over-permissive).** As declared, this structure
     allows ARBITRARY 5-tuples of pre-Bloch elements, not the
@@ -65,8 +65,8 @@ structure PentagonShape (F : Type*) [Zero F] [One F] [DecidableEq F] where
   e₁ : PreBlochElement F  -- represents x  (Rogers form)
   e₂ : PreBlochElement F  -- represents y
   e₃ : PreBlochElement F  -- represents y/x
-  e₄ : PreBlochElement F  -- represents (1-y⁻¹)/(1-x⁻¹)
-  e₅ : PreBlochElement F  -- represents (1-y)/(1-x)
+  e₄ : PreBlochElement F  -- represents (1-x⁻¹)/(1-y⁻¹)
+  e₅ : PreBlochElement F  -- represents (1-x)/(1-y)
 
 /-- The **pentagon-relation generator** at a given shape is the
     formal alternating sum of its five pre-Bloch elements:
@@ -88,7 +88,7 @@ def pentagonGenerator (s : PentagonShape F) : PreBlochGroup F :=
     pentagon-domain constraints needed for all five derived shape
     parameters to lie in `F \ {0, 1}`. The basic conditions
     `x, y ∈ F \ {0, 1}` and `x ≠ y` together imply that the
-    derived parameters `y/x, (1-y⁻¹)/(1-x⁻¹), (1-y)/(1-x)` are
+    derived parameters `y/x, (1-x⁻¹)/(1-y⁻¹), (1-x)/(1-y)` are
     all in `F \ {0, 1}` for any `Field F`. -/
 -- Ref: [bloch2000] AMS CRM 11
 structure RogersPair (F : Type*) [Field F] [DecidableEq F] where
@@ -145,59 +145,54 @@ private theorem one_sub_ne_zero_of_ne_one
   rw [sub_ne_zero]
   exact fun h => hy1 h.symm
 
-/-- The fourth derived shape parameter `(1 - y⁻¹)/(1 - x⁻¹)`:
+/-- The fourth derived shape parameter `(1 - x⁻¹)/(1 - y⁻¹)` (Suslin's
+    orientation; until 2026-11-27 this was the inverse `(1 - y⁻¹)/(1 - x⁻¹)`,
+    which is not a relation of the pre-Bloch group — see
+    `QOU.Archimedean.PreArchimedeanBloch.appendixRel_not_mem_pentagonSubgroup`):
     well-defined and `≠ 0, ≠ 1` from the Rogers conditions. -/
 -- Ref: [bloch2000]
 noncomputable def RogersPair.shape₄
     {F : Type*} [Field F] [DecidableEq F]
     (r : RogersPair F) : PreBlochElement F where
-  val := (1 - r.y⁻¹) / (1 - r.x⁻¹)
+  val := (1 - r.x⁻¹) / (1 - r.y⁻¹)
   ne_zero :=
     div_ne_zero
-      (one_sub_inv_ne_zero r.hy_ne_one)
       (one_sub_inv_ne_zero r.hx_ne_one)
+      (one_sub_inv_ne_zero r.hy_ne_one)
   ne_one := by
     intro h
-    -- h : (1 - r.y⁻¹) / (1 - r.x⁻¹) = 1
+    -- h : (1 - r.x⁻¹) / (1 - r.y⁻¹) = 1
     -- We derive r.x = r.y, contradicting r.hxy_ne.
     apply r.hxy_ne
-    have hd : (1 - r.x⁻¹) ≠ 0 :=
-      one_sub_inv_ne_zero r.hx_ne_one
+    have hd : (1 - r.y⁻¹) ≠ 0 :=
+      one_sub_inv_ne_zero r.hy_ne_one
     -- div = 1 ⇒ numerator = denominator
-    have hnd : (1 - r.y⁻¹) = (1 - r.x⁻¹) := by
-      field_simp [hd] at h
-      linear_combination h
-    -- 1 - y⁻¹ = 1 - x⁻¹ ⇒ y⁻¹ = x⁻¹ ⇒ y = x ⇒ x = y
-    have hinv : r.y⁻¹ = r.x⁻¹ := by linear_combination -hnd
-    have hyx : r.y = r.x := by
-      have hyy : (r.y⁻¹)⁻¹ = r.y := inv_inv r.y
-      have hxx : (r.x⁻¹)⁻¹ = r.x := inv_inv r.x
-      rw [hinv] at hyy
-      exact hyy.symm.trans hxx
-    exact hyx.symm
+    have hnd : (1 - r.x⁻¹) = (1 - r.y⁻¹) := (div_eq_one_iff_eq hd).1 h
+    -- 1 - x⁻¹ = 1 - y⁻¹ ⇒ x⁻¹ = y⁻¹ ⇒ x = y
+    have hinv : r.x⁻¹ = r.y⁻¹ := by linear_combination -hnd
+    exact inv_injective hinv
 
-/-- The fifth derived shape parameter `(1 - y)/(1 - x)`:
+/-- The fifth derived shape parameter `(1 - x)/(1 - y)` (Suslin's orientation;
+    the inverse until 2026-11-27):
     well-defined and `≠ 0, ≠ 1` from the Rogers conditions. -/
 -- Ref: [bloch2000]
 noncomputable def RogersPair.shape₅
     {F : Type*} [Field F] [DecidableEq F]
     (r : RogersPair F) : PreBlochElement F where
-  val := (1 - r.y) / (1 - r.x)
+  val := (1 - r.x) / (1 - r.y)
   ne_zero :=
     div_ne_zero
-      (one_sub_ne_zero_of_ne_one r.hy_ne_one)
       (one_sub_ne_zero_of_ne_one r.hx_ne_one)
+      (one_sub_ne_zero_of_ne_one r.hy_ne_one)
   ne_one := by
     intro h
-    -- h : (1 - r.y) / (1 - r.x) = 1
+    -- h : (1 - r.x) / (1 - r.y) = 1
     apply r.hxy_ne
-    have hd : (1 - r.x) ≠ 0 :=
-      one_sub_ne_zero_of_ne_one r.hx_ne_one
-    have hnd : (1 - r.y) = (1 - r.x) := by
-      field_simp [hd] at h
-      linear_combination h
-    -- 1 - y = 1 - x ⇒ y = x ⇒ x = y
-    linear_combination hnd
+    have hd : (1 - r.y) ≠ 0 :=
+      one_sub_ne_zero_of_ne_one r.hy_ne_one
+    have hnd : (1 - r.x) = (1 - r.y) := (div_eq_one_iff_eq hd).1 h
+    -- 1 - x = 1 - y ⇒ x = y
+    linear_combination -hnd
 
 /-- The pentagon-relation generator at a Rogers pair, using only
     its `e₁ = x`, `e₂ = y`, `e₃ = y/x` shape parameters and
@@ -215,7 +210,7 @@ noncomputable def rogersGeneratorPartial
 
 /-- The **full 5-element Rogers pentagon-relation generator** at a
     valid Rogers pair, using all five shape parameters
-    `(x, y, y/x, (1-y⁻¹)/(1-x⁻¹), (1-y)/(1-x))` with explicit
+    `(x, y, y/x, (1-x⁻¹)/(1-y⁻¹), (1-x)/(1-y))` with explicit
     `PreBlochElement` constructors. The standard 5-term Rogers
     identity asserts this combination vanishes in the Bloch
     group. -/
