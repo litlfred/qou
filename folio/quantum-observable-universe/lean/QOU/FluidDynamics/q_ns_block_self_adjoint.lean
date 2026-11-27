@@ -2,9 +2,10 @@ import QOU.FluidDynamics.q_ns_block_pairing_nondegenerate
 import QOU.FluidDynamics.q_ns_block_weight_lap
 import QOU.FluidDynamics.q_ns_block_ladder_negative
 import QOU.FluidDynamics.q_ns_haar_field_invariance_full
+import CompactQuantumMetrics.OqSU2LittleQJacobiBasis
 
 /-!
-# QOU.FluidDynamics.q_ns_block_self_adjoint — `L` is self-adjoint on every weight block
+# QOU.FluidDynamics.q_ns_block_self_adjoint — `L` on every weight block: self-adjoint, with an orthogonal eigenbasis
 
 Thread "Audit the q-Bessel special-function dictionary" (2026-11-27); bean `qou-qd8k`
 (q-NS Part A). `q_ns_block_pairing_nondegenerate` showed that the weight-block pairing
@@ -25,17 +26,26 @@ that `L = X₊X₋` is self-adjoint for it. This file proves that, for every `s 
 * `lap_block_self_adjoint`: `⟨Lb P, Q⟩_{r+1} = ⟨P, Lb Q⟩_{r+1}`. The two scalars cancel.
 * `lap_block_eigen_orthogonal`: eigenvectors of `Lb r` with distinct eigenvalues are
   orthogonal for the block pairing.
+* `bdiag_mul_eq`: `Lb r` is upper triangular in the monomial basis, and with `x = q²` its
+  diagonal is `bdiag r n = (x^{n+1} − 1)(x^{n+2r+2} − 1) / ((x − 1)² x^{n+2r+1})`, that is
+  `q^{2-2n-4s}(q^{2(n+1)} − 1)(q^{2(n+2s)} − 1)/(q² − 1)²` with `s = r + 1`.
+* `bdiag_injective`: for `q²` not a root of unity the diagonal entries are pairwise distinct.
+* `blockPoly r n`, `Lb_blockPoly`, `blockPoly_span`: a degree-`n` eigenpolynomial for every
+  `n`, and together they span `K[X]`. This is the per-block basis (the little q-Jacobi family
+  with parameter `α = s`).
+* `blockPoly_orthogonal`, `blockPoly_norm_ne_zero`: orthogonal for the block pairing, with
+  nonzero norms.
+
+So every weight block now has the same complete description as the Cartan block.
 
 All identities were checked first in exact rational arithmetic (sympy, words in
 `αγ, ζ, βδ`).
 
 ## Not established
 
-* That `Lb r` has `n + 1` distinct diagonal entries on `K[X]_{≤n}`, so that it is
-  diagonalisable with a polynomial eigenbasis (the little q-Jacobi family with `α = s`).
-  `Lb r` is lower bidiagonal in the monomial basis, so this reduces to injectivity of its
-  diagonal in `k`; that step is not stated here.
-* The `s = 0` block is the Cartan block, done in `OqSU2LittleQJacobiBasis`.
+* Identification of `blockPoly r n` with a classical little q-Jacobi family and its
+  parameters. Here the polynomials are fixed only up to scale, by the eigen-equation.
+* (The `s = 0` block is the Cartan block, done in `OqSU2LittleQJacobiBasis`.)
 * Whether this budget is the q-NS transport budget (bean `qou-pa7n`).
 
 Everything is algebraic. No empirical value enters any proof. Sorry-free.
@@ -305,5 +315,296 @@ theorem lap_block_eigen_orthogonal (r : ℕ) (P Q : K[X]) (lam mu : K)
   exact (mul_eq_zero.mp h2).resolve_left (sub_ne_zero.mpr hne)
 
 end Haar
+
+section Basis
+
+open Finset
+
+variable {K : Type*} [Field K] (q : Kˣ)
+
+local notation "qi" => (((q⁻¹ : Kˣ) : K))
+
+/-- Diagonal entry of `Lb r`: the coefficient of `X^n` in `Lb r (X^n)`. -/
+noncomputable def bdiag (r : ℕ) : ℕ → K
+  | 0 => qi * (((q : K) + qi) * jk ((qi * qi) * (qi * qi)) (r + 1))
+  | k + 1 => (((q : K) + qi) * jk ((qi * qi) * (qi * qi)) (r + 1) +
+          jk (qi * qi) (k + 1) * (((q : K) * q) ^ k * ((q : K) * q * q))) *
+        (qi * jk (qi * qi) (k + 2))
+
+/-- Off-diagonal entry of `Lb r`: the coefficient of `X^k` in `Lb r (X^{k+1})`. -/
+noncomputable def bsub (r k : ℕ) : K :=
+  (jk (qi * qi) (r + 1) + jk (qi * qi) (k + 1) * (((q : K) * q) ^ k * ((q : K) * q))) *
+    (qi * jk (qi * qi) (k + 1))
+
+theorem blapX_zero (r : ℕ) : blapX q r 0 = C (bdiag q r 0) := rfl
+
+theorem blapX_succ (r k : ℕ) :
+    blapX q r (k + 1) = C (bsub q r k) * X ^ k + C (bdiag q r (k + 1)) * X ^ (k + 1) := rfl
+
+theorem jk_eq_div {y : K} (hy : y ≠ 1) (n : ℕ) : jk y n = (y ^ n - 1) / (y - 1) :=
+  eq_div_of_mul_eq (sub_ne_zero.mpr hy) (jk_mul_sub_one y n)
+
+/-- **Closed form of the diagonal.** With `x = q²`,
+`bdiag r n · (x − 1)² · x^{n+2r+1} = (x^{n+1} − 1)(x^{n+2r+2} − 1)`. -/
+theorem bdiag_mul_eq (hp : ∀ m : ℕ, ((q : K) * q) ^ (m + 1) ≠ 1) (r n : ℕ) :
+    bdiag q r n * ((q : K) * q - 1) ^ 2 * ((q : K) * q) ^ (n + 2 * r + 1) =
+      (((q : K) * q) ^ (n + 1) - 1) * (((q : K) * q) ^ (n + 2 * r + 2) - 1) := by
+  have hq0 : (q : K) ≠ 0 := q.ne_zero
+  have h1 : (q : K) * q ≠ 1 := by simpa using hp 0
+  have h2 : (q : K) * q * ((q : K) * q) ≠ 1 := by simpa [pow_two] using hp 1
+  have hi1 : (q : K)⁻¹ * (q : K)⁻¹ ≠ 1 := by
+    intro h; apply h1
+    rw [← inv_inv ((q : K) * q), mul_inv, h, inv_one]
+  have hi2 : (q : K)⁻¹ * (q : K)⁻¹ * ((q : K)⁻¹ * (q : K)⁻¹) ≠ 1 := by
+    intro h; apply h2
+    simpa [mul_inv] using congrArg Inv.inv h
+  have hs1 : ((q : K) * q - 1) ≠ 0 := sub_ne_zero.mpr h1
+  have hs2 : ((q : K) ^ 2 - 1) ≠ 0 := by rwa [pow_two]
+  have ht2 : (1 : K) - (q : K) ^ 2 ≠ 0 := by
+    intro h; apply h1; rw [← pow_two]; linear_combination -h
+  have ht4 : (1 : K) - (q : K) ^ 4 ≠ 0 := by
+    intro h; apply h2; linear_combination -h
+  cases n with
+  | zero =>
+    simp only [bdiag, qi_eq_inv]
+    simp only [jk_eq_div hi2]
+    simp only [← mul_inv, inv_pow]
+    field_simp
+    ring
+  | succ k =>
+    simp only [bdiag, qi_eq_inv]
+    simp only [jk_eq_div hi1, jk_eq_div hi2]
+    simp only [← mul_inv, inv_pow]
+    field_simp
+    ring
+
+/-! ### Triangularity of `Lb r` -/
+
+theorem Lb_X_pow (r n : ℕ) : Lb q r (X ^ n) = blapX q r n := by
+  rw [← monomial_one_right_eq_X_pow, Lb_monomial, one_smul]
+
+theorem blapX_mem (r k : ℕ) : blapX q r k ∈ degreeLT K (k + 1) := by
+  cases k with
+  | zero => rw [blapX_zero, ← mul_one (C _), ← pow_zero X]; exact CX_mem _ (by omega)
+  | succ k => exact Submodule.add_mem _ (CX_mem _ (by omega)) (CX_mem _ (by omega))
+
+/-- `(Lb r − bdiag r m)` maps degree `≤ m` into degree `< m`. -/
+theorem Lb_sub_mem (r m : ℕ) {P : K[X]} (hP : P ∈ degreeLT K (m + 1)) :
+    Lb q r P - bdiag q r m • P ∈ degreeLT K m := by
+  classical
+  let M : K[X] →ₗ[K] K[X] := Lb q r - bdiag q r m • LinearMap.id
+  have hM : ∀ R, M R = Lb q r R - bdiag q r m • R := fun R => rfl
+  suffices h : degreeLT K (m + 1) ≤ (degreeLT K m).comap M by
+    have := h hP; rwa [Submodule.mem_comap, hM] at this
+  rw [degreeLT_eq_span_X_pow, Submodule.span_le]
+  intro x hx
+  simp only [coe_image, coe_range, Set.mem_image, Set.mem_Iio] at hx
+  obtain ⟨k, hk, rfl⟩ := hx
+  rw [SetLike.mem_coe, Submodule.mem_comap, hM, Lb_X_pow]
+  rcases Nat.lt_or_ge k m with hkm | hkm
+  · exact Submodule.sub_mem _ ((degreeLT_mono hkm) (blapX_mem q r k))
+      (Submodule.smul_mem _ _ (X_pow_mem hkm))
+  · have hk' : k = m := by omega
+    subst hk'
+    cases k with
+    | zero =>
+      rw [blapX_zero, smul_eq_C_mul, pow_zero, mul_one, sub_self]; exact Submodule.zero_mem _
+    | succ j =>
+      have : blapX q r (j + 1) - bdiag q r (j + 1) • X ^ (j + 1) = C (bsub q r j) * X ^ j := by
+        rw [blapX_succ, smul_eq_C_mul]; ring
+      rw [this]; exact CX_mem _ (by omega)
+
+theorem aeval_Lb_X_sub_C_apply (r : ℕ) (a : K) (P : K[X]) :
+    aeval (Lb q r) (X - C a) P = Lb q r P - a • P := by
+  simp [Algebra.algebraMap_eq_smul_one]
+
+/-- `(Lb r − a)` keeps degree `≤ m` and scales the `X^m` coefficient by `bdiag r m − a`. -/
+theorem Lb_sub_coeff (r m : ℕ) (a : K) {P : K[X]} (hP : P ∈ degreeLT K (m + 1)) :
+    Lb q r P - a • P ∈ degreeLT K (m + 1) ∧
+      (Lb q r P - a • P).coeff m = (bdiag q r m - a) * P.coeff m := by
+  have h1 := Lb_sub_mem q r m hP
+  have hsplit : Lb q r P - a • P = (Lb q r P - bdiag q r m • P) + (bdiag q r m - a) • P := by
+    rw [sub_smul]; abel
+  refine ⟨?_, ?_⟩
+  · rw [hsplit]
+    exact Submodule.add_mem _ (degreeLT_mono (Nat.le_succ m) h1) (Submodule.smul_mem _ _ hP)
+  · rw [hsplit, coeff_add, coeff_smul, smul_eq_mul]
+    have : (Lb q r P - bdiag q r m • P).coeff m = 0 :=
+      coeff_eq_zero_of_degree_lt ((mem_degreeLT.mp h1).trans_le le_rfl)
+    rw [this, zero_add]
+
+/-- **Triangular Cayley–Hamilton on `B_{r+1}`.** -/
+theorem Lb_charPoly_annihilates (r m : ℕ) {P : K[X]} (hP : P ∈ degreeLT K (m + 1)) :
+    aeval (Lb q r) (∏ k ∈ range (m + 1), (X - C (bdiag q r k))) P = 0 := by
+  induction m generalizing P with
+  | zero =>
+    have := Lb_sub_mem q r 0 hP
+    rw [prod_range_one, aeval_Lb_X_sub_C_apply]
+    exact eq_zero_of_mem_degreeLT_zero this
+  | succ m ih =>
+    rw [prod_range_succ, map_mul, Module.End.mul_apply, aeval_Lb_X_sub_C_apply]
+    exact ih (Lb_sub_mem q r (m + 1) hP)
+
+/-! ### The block eigenpolynomials -/
+
+/-- `p^{(r)}_n = Π_{k<n} (Lb r − bdiag r k) X^n`: the degree-`n` eigenpolynomial of `L` on
+`B_{r+1}`. -/
+noncomputable def blockPoly (r n : ℕ) : K[X] :=
+  aeval (Lb q r) (∏ k ∈ range n, (X - C (bdiag q r k))) (X ^ n)
+
+theorem blockPoly_aux (r n j : ℕ) :
+    aeval (Lb q r) (∏ k ∈ range j, (X - C (bdiag q r k))) (X ^ n) ∈ degreeLT K (n + 1) ∧
+      (aeval (Lb q r) (∏ k ∈ range j, (X - C (bdiag q r k))) (X ^ n)).coeff n =
+        ∏ k ∈ range j, (bdiag q r n - bdiag q r k) := by
+  induction j with
+  | zero => simp [X_pow_mem (Nat.lt_succ_self n)]
+  | succ j ih =>
+    rw [prod_range_succ, mul_comm, map_mul, Module.End.mul_apply, aeval_Lb_X_sub_C_apply,
+      prod_range_succ]
+    obtain ⟨h1, h2⟩ := Lb_sub_coeff q r n (bdiag q r j) ih.1
+    exact ⟨h1, by rw [h2, ih.2, mul_comm]⟩
+
+theorem blockPoly_mem (r n : ℕ) : blockPoly q r n ∈ degreeLT K (n + 1) :=
+  (blockPoly_aux q r n n).1
+
+/-- **Eigen-equation.** `Lb r p^{(r)}_n = bdiag r n · p^{(r)}_n`. -/
+theorem Lb_blockPoly (r n : ℕ) : Lb q r (blockPoly q r n) = bdiag q r n • blockPoly q r n := by
+  have h := Lb_charPoly_annihilates q r n (X_pow_mem (K := K) (Nat.lt_succ_self n))
+  rw [prod_range_succ, mul_comm, map_mul, Module.End.mul_apply,
+    aeval_Lb_X_sub_C_apply] at h
+  exact sub_eq_zero.mp h
+
+/-- **Distinct diagonal.** For `q²` not a root of unity, `bdiag r` is injective. -/
+theorem bdiag_injective (hp : ∀ m : ℕ, ((q : K) * q) ^ (m + 1) ≠ 1) (r : ℕ)
+    {k n : ℕ} (hkn : k < n) : bdiag q r n ≠ bdiag q r k := by
+  intro heq
+  set p : K := (q : K) * q
+  have hq0 : (q : K) ≠ 0 := q.ne_zero
+  have hp0 : p ≠ 0 := mul_ne_zero hq0 hq0
+  have hp1 : p - 1 ≠ 0 := fun h0 => hp 0 (by rw [zero_add, pow_one]; exact sub_eq_zero.mp h0)
+  obtain ⟨d, rfl⟩ := Nat.exists_eq_add_of_lt hkn
+  have en := bdiag_mul_eq q hp r (k + d + 1)
+  have ek := bdiag_mul_eq q hp r k
+  set u := p ^ k
+  set v := p ^ (d + 1)
+  set w := p ^ (2 * r)
+  have e1 : p ^ (k + d + 1 + 2 * r + 1) = p * u * v * w := by
+    simp only [u, v, w, ← pow_add, ← pow_succ']; ring_nf
+  have e2 : p ^ (k + d + 1 + 1) = p * u * v := by
+    simp only [u, v, ← pow_add, ← pow_succ']; ring_nf
+  have e3 : p ^ (k + d + 1 + 2 * r + 2) = p * p * u * v * w := by
+    simp only [u, v, w]; ring_nf
+  have e4 : p ^ (k + 2 * r + 1) = p * u * w := by
+    simp only [u, w, ← pow_add, ← pow_succ']; ring_nf
+  have e5 : p ^ (k + 1) = p * u := by simp only [u, ← pow_succ']
+  have e6 : p ^ (k + 2 * r + 2) = p * p * u * w := by
+    simp only [u, w]; ring_nf
+  rw [e1, e2, e3] at en
+  rw [e4, e5, e6] at ek
+  rw [heq] at en
+  have key : (v - 1) * (p * p * p * u * u * v * w - 1) = 0 := by
+    clear_value u v w p
+    linear_combination v * ek - en
+  have hu0 : u ≠ 0 := pow_ne_zero _ hp0
+  have hw0 : w ≠ 0 := pow_ne_zero _ hp0
+  have hv : v - 1 ≠ 0 := fun h0 => hp d (sub_eq_zero.mp h0)
+  have hz : p * p * p * u * u * v * w - 1 ≠ 0 := by
+    intro h0
+    apply hp (2 * k + d + 2 * r + 3)
+    have e : p ^ (2 * k + d + 2 * r + 3 + 1) = p * p * p * u * u * v * w := by
+      simp only [u, v, w]; ring_nf
+    rw [e]; exact sub_eq_zero.mp h0
+  exact mul_ne_zero hv hz key
+
+theorem coeff_blockPoly_ne_zero (hp : ∀ m : ℕ, ((q : K) * q) ^ (m + 1) ≠ 1) (r n : ℕ) :
+    (blockPoly q r n).coeff n ≠ 0 := by
+  rw [show (blockPoly q r n).coeff n = _ from (blockPoly_aux q r n n).2, prod_ne_zero_iff]
+  intro k hk
+  exact sub_ne_zero.mpr (bdiag_injective q hp r (mem_range.mp hk))
+
+/-- **The block eigenpolynomials span `K[X]`.** -/
+theorem blockPoly_span (hp : ∀ m : ℕ, ((q : K) * q) ^ (m + 1) ≠ 1) (r : ℕ) :
+    Submodule.span K (Set.range (blockPoly q r)) = ⊤ := by
+  classical
+  set S := Submodule.span K (Set.range (blockPoly q r))
+  have hlt : ∀ n, degreeLT K n ≤ S := by
+    intro n
+    induction n with
+    | zero => intro P hP; rw [eq_zero_of_mem_degreeLT_zero hP]; exact S.zero_mem
+    | succ n ih =>
+      rw [degreeLT_eq_span_X_pow, Submodule.span_le]
+      intro x hx
+      simp only [coe_image, coe_range, Set.mem_image, Set.mem_Iio] at hx
+      obtain ⟨k, hk, rfl⟩ := hx
+      rcases Nat.lt_or_ge k n with hkn | hkn
+      · exact ih (X_pow_mem hkn)
+      · have hk' : k = n := by omega
+        subst hk'
+        set c := (blockPoly q r k).coeff k
+        have hc : c ≠ 0 := coeff_blockPoly_ne_zero q hp r k
+        have hrest : blockPoly q r k - c • X ^ k ∈ degreeLT K k := by
+          rw [mem_degreeLT, degree_lt_iff_coeff_zero]
+          intro m hm
+          have hmem := mem_degreeLT.mp (blockPoly_mem q r k)
+          rcases Nat.lt_or_ge k m with h | h
+          · rw [coeff_sub, coeff_smul, coeff_X_pow, if_neg (by omega), smul_zero, sub_zero]
+            exact coeff_eq_zero_of_degree_lt (hmem.trans_le (by exact_mod_cast h))
+          · have : m = k := by omega
+            subst this
+            rw [coeff_sub, coeff_smul, coeff_X_pow, if_pos rfl, smul_eq_mul, mul_one, sub_self]
+        have hx : (X ^ k : K[X]) = c⁻¹ • (blockPoly q r k - (blockPoly q r k - c • X ^ k)) := by
+          rw [sub_sub_cancel, smul_smul, inv_mul_cancel₀ hc, one_smul]
+        rw [SetLike.mem_coe, hx]
+        exact S.smul_mem _ (S.sub_mem (Submodule.subset_span ⟨k, rfl⟩) (ih hrest))
+  rw [eq_top_iff]
+  intro P _
+  exact hlt (P.natDegree + 1)
+    (mem_degreeLT.mpr (degree_le_natDegree.trans_lt (by exact_mod_cast Nat.lt_succ_self _)))
+
+/-! ### Orthogonality with nonzero norms -/
+
+variable (hq : ∀ n : ℕ, 0 < n → (q : K) ^ n ≠ 1)
+
+include hq in
+theorem hp_of_hq : ∀ m : ℕ, ((q : K) * q) ^ (m + 1) ≠ 1 := by
+  intro m
+  rw [← pow_two, ← pow_mul]
+  exact hq _ (by omega)
+
+include hq in
+/-- **Orthogonality on every weight block.** -/
+theorem blockPoly_orthogonal (r : ℕ) {m n : ℕ} (hmn : m ≠ n) :
+    haarState q (ev q (blockPoly q r m) * (β q * δ q) ^ (r + 1) *
+      ((α q * γ q) ^ (r + 1) * ev q (blockPoly q r n))) = 0 := by
+  refine lap_block_eigen_orthogonal q hq r _ _ _ _ (Lb_blockPoly q r m) (Lb_blockPoly q r n) ?_
+  rcases Nat.lt_or_gt_of_ne hmn with h | h
+  · exact (bdiag_injective q (hp_of_hq q hq) r h).symm
+  · exact bdiag_injective q (hp_of_hq q hq) r h
+
+include hq in
+/-- **Nonzero norms on every weight block.** -/
+theorem blockPoly_norm_ne_zero (r n : ℕ) :
+    haarState q (ev q (blockPoly q r n) * (β q * δ q) ^ (r + 1) *
+      ((α q * γ q) ^ (r + 1) * ev q (blockPoly q r n))) ≠ 0 := by
+  have hp := hp_of_hq q hq
+  intro h0
+  have hall : ∀ Q : K[X], haarState q (ev q (blockPoly q r n) * (β q * δ q) ^ (r + 1) *
+      ((α q * γ q) ^ (r + 1) * ev q Q)) = 0 := by
+    intro Q
+    have hQ : Q ∈ Submodule.span K (Set.range (blockPoly q r)) := by
+      rw [blockPoly_span q hp r]; trivial
+    induction hQ using Submodule.span_induction with
+    | mem x hx =>
+      obtain ⟨m, rfl⟩ := hx
+      by_cases hmn : n = m
+      · subst hmn; exact h0
+      · exact blockPoly_orthogonal q hq r hmn
+    | zero => simp
+    | add x y _ _ hx hy => rw [map_add, mul_add, mul_add, map_add, hx, hy, add_zero]
+    | smul a x _ hx => rw [map_smul, mul_smul_comm, mul_smul_comm, map_smul, hx, smul_zero]
+  have h0' := block_pairing_nondegenerate_left q hp (r + 1) (blockPoly q r n) hall
+  exact coeff_blockPoly_ne_zero q hp r n (by rw [h0', coeff_zero])
+
+end Basis
 
 end QOU.FluidDynamics.BlockLadder
