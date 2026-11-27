@@ -47,11 +47,15 @@ theorem gramDistSq_nonneg (v : ι → E) (i j : ι) : 0 ≤ gramDistSq v i j := 
   rw [gramDistSq_eq]; positivity
 
 /-- The distance itself. -/
-noncomputable def gramDist (v : ι → E) (i j : ι) : ℝ := Real.sqrt (gramDistSq v i j)
+noncomputable def gramDist (v : ι → E) (i j : ι) : ℝ := ‖v i - v j‖
 
 theorem gramDist_eq_norm (v : ι → E) (i j : ι) : gramDist v i j = ‖v i - v j‖ := by
-  unfold gramDist
-  rw [gramDistSq_eq, Real.sqrt_sq (norm_nonneg _)]
+  rfl
+
+/-- The distance squares to the Gram distance-square, so `gramDist` is the
+non-negative symbol `s` with `s² = gramDistSq` (no `Real.sqrt` needed). -/
+theorem gramDist_sq (v : ι → E) (i j : ι) : gramDist v i j ^ 2 = gramDistSq v i j :=
+  (gramDistSq_eq v i j).symm
 
 theorem gramDist_self (v : ι → E) (i : ι) : gramDist v i i = 0 := by
   rw [gramDist_eq_norm, sub_self, norm_zero]

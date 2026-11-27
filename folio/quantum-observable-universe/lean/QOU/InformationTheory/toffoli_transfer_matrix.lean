@@ -1,4 +1,3 @@
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import QOU.Core.ArchimedeanEval
 
 /-!
@@ -14,13 +13,13 @@ This module states the manuscript claim over a context class so the `lean.ref` U
 `ToffoliTransferMatrixContext` inherits a generic coefficient ring `R` from
 `QOU.Shared.MarkovTraceContext`, but this block's amplitudes stay at
 `ℝ`: sub-claim (vi) is the closed form
-`P_{7,7} = (q + Real.sqrt q − 1) / (q + 1)`, and a square root is an
-archimedean construct with no counterpart over a generic `CommRing`.  The whole
+`P_{7,7} = (q + √q − 1) / (q + 1)`. The square root is carried as a symbol `t`
+with `t ≥ 0`, `t² = q` (bean `qou-dk7p`), and the block stays at `ℝ`.  The whole
 family of amplitudes is stated at the same specialisation for coherence, so the
 block sits after the substrate→archimedean wall.  Reviewed under bean
 `qou-mtcx`; do not "port" it to `R` to reduce an `ℝ` count.
 
-`q_real` is genuinely used (it is the argument of `Real.sqrt`) and is now
+`q_real` is genuinely used (it is `t²`) and is now
 **tied** to the inherited `q : R` (bean `qou-mt7r`): the class extends
 `QOU.Shared.ArchimedeanEval`, which carries an assumed evaluation
 `eval : R →+* ℝ` and derives `q_real := eval q`.  It used to be an independent
@@ -106,10 +105,15 @@ class ToffoliTransferMatrixContext extends QOU.Shared.ArchimedeanEval where
   /-- The Toffoli-diagonal amplitude `P_{7,7}(q) = (q + q^{1/2} − 1) /
       (q + 1)`. -/
   P_7_7 : ℝ
+  /-- The square root of `q` carried as a symbol: `t ≥ 0`, `t² = q`
+      (convention C, bean `qou-dk7p`; no `Real.sqrt` needed). -/
+  t : ℝ
+  t_nonneg : 0 ≤ t
+  t_sq : t ^ 2 = toArchimedeanEval.q_real
   /-- Manuscript sub-claim (vi) — Toffoli diagonal closed form:
-      `P_{7,7}(q) = (q + √q − 1) / (q + 1)`. -/
+      `P_{7,7}(q) = (q + √q − 1) / (q + 1)`, with `√q = t`. -/
   claim_vi_diagonal_formula :
-    P_7_7 = (toArchimedeanEval.q_real + Real.sqrt toArchimedeanEval.q_real - 1) / (toArchimedeanEval.q_real + 1)
+    P_7_7 = (toArchimedeanEval.q_real + t - 1) / (toArchimedeanEval.q_real + 1)
 /-- **Proposition statement** (from manuscript):
 
 Let $P_{\mathrm{flip}}(q; k_1, k_2)$ be the target-flip
@@ -126,7 +130,7 @@ Then:*
 noncomputable def toffoli_transfer_matrix [ctx : ToffoliTransferMatrixContext] :
     (∀ k : ℕ × ℕ, ctx.V_hat_1 k = ctx.z_real * ctx.c k + ctx.d k) ∧
     (∀ k : ℕ × ℕ, ctx.q_real = 1 → ctx.P_flip k = 0) ∧
-    ctx.P_7_7 = (ctx.q_real + Real.sqrt ctx.q_real - 1) / (ctx.q_real + 1) :=
+    ctx.P_7_7 = (ctx.q_real + ctx.t - 1) / (ctx.q_real + 1) :=
   ⟨ctx.claim_ii_generator_crossing_traced,
    ctx.claim_v_classical_limit, ctx.claim_vi_diagonal_formula⟩
 

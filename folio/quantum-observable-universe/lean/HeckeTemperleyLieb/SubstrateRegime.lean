@@ -1,5 +1,5 @@
 import HeckeTemperleyLieb.QIntegerFactorial
-import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Tactic
 
 /-!
 # QOU.MathlibExt.SubstrateRegime — the golden-ratio substrate window `1 < q < φ`
@@ -21,42 +21,29 @@ substrate window.
 
 namespace QOU.MathlibExt
 
-open Real
 
-/-- The **golden ratio** `φ = (1 + √5)/2`, root of `q² - q - 1`. -/
-noncomputable def goldenRatio : ℝ := (1 + Real.sqrt 5) / 2
+/-- The golden ratio as a ring symbol: any `φ > 0` with `φ² = φ + 1` exceeds `1`.
+The `Real.sqrt 5` form `(1 + √5)/2` is in
+`QOU.Transcendental.HeckeTemperleyLieb.SubstrateRegimeReal` (bean `qou-dk7p`). -/
+theorem one_lt_of_sq_eq_add_one {φ : ℝ} (hφ : 0 < φ) (h : φ ^ 2 = φ + 1) : 1 < φ := by
+  nlinarith
 
-/-- `φ² = φ + 1` (sorry-free). -/
-theorem goldenRatio_sq : goldenRatio ^ 2 = goldenRatio + 1 := by
-  have h5 : Real.sqrt 5 ^ 2 = 5 := Real.sq_sqrt (by norm_num)
-  unfold goldenRatio
-  field_simp
-  nlinarith [h5]
+/-- The substrate window `1 < q < φ`, for `φ` the golden-ratio symbol. -/
+def SubstrateRegime (φ q : ℝ) : Prop := 1 < q ∧ q < φ
 
-/-- `1 < φ` (sorry-free). -/
-theorem one_lt_goldenRatio : 1 < goldenRatio := by
-  have h5 : (1 : ℝ) < Real.sqrt 5 := by
-    have : Real.sqrt 1 < Real.sqrt 5 := Real.sqrt_lt_sqrt (by norm_num) (by norm_num)
-    simpa using this
-  unfold goldenRatio; linarith
-
-/-- **The substrate regime**: `1 < q < φ`.  Above the classical point,
-    below the golden-ratio `S₅`/Bring resonance. -/
-def SubstrateRegime (q : ℝ) : Prop := 1 < q ∧ q < goldenRatio
-
-theorem substrateRegime_one_lt {q : ℝ} (h : SubstrateRegime q) : 1 < q := h.1
+theorem substrateRegime_one_lt {φ q : ℝ} (h : SubstrateRegime φ q) : 1 < q := h.1
 
 /-- **The substrate window lies inside Wenzl genericity (sorry-free).**
     Any `q` with `1 < q < φ` — in particular the physical `q₀ ≈ 1.10998`
     — is Wenzl-generic at every rank, so `H_n(q)` semisimplicity applies
     throughout the regime. -/
-theorem qGeneric_of_substrateRegime {q : ℝ} (h : SubstrateRegime q) (n : ℕ) :
+theorem qGeneric_of_substrateRegime {φ q : ℝ} (h : SubstrateRegime φ q) (n : ℕ) :
     QGeneric q n :=
   qGeneric_of_one_lt h.1 n
 
 /-- **The quantum factorial is nonzero throughout the substrate window
     (sorry-free).** -/
-theorem qFactorial_ne_zero_of_substrateRegime {q : ℝ} (h : SubstrateRegime q)
+theorem qFactorial_ne_zero_of_substrateRegime {φ q : ℝ} (h : SubstrateRegime φ q)
     (n : ℕ) : qFactorial q n ≠ 0 :=
   qFactorial_ne_zero_of_one_lt h.1 n
 
