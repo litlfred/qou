@@ -73,3 +73,11 @@ crossings σᵢ = A + A⁻¹eᵢ are invertible and braid; the JW projector abso
 on n+1 strands acts by A^{n(n+1)}. Open: curl factor (−A³)^{strands}; matching θ_j = (−1)^j
 A^{j(j+2)} with T = diag(ω^{(j+1)²}) — sign (−1)^j convention; MarkovTower instance at a root of
 unity; off-vacuum S rows (Hopf link of two JW projectors). Bean stays open.
+
+## 2026-11-27 — twist sign resolved (https://github.com/litlfred/qou/pull/9798)
+
+`TLPositiveLoopCrossingTwist.lean`, sorry-free: in the positive-loop convention δ = A²+A⁻² (= ζ+ζ⁻¹
+at A = ω, matching the S-matrix and vacuum-row files) the crossing A − A⁻¹eᵢ braids, JW absorbs it
+as A, the Markov curl on the last strand is +A³, and (A³)^{n+1}A^{n(n+1)} = ω⁻¹·T_{n+1,n+1}. The
+(−1)ʲ was the Kauffman loop sign. Still open: ribbon twist on p_n = curl^{strands}·full twist
+(interior-strand curls cited); MarkovTower instance at a root of unity; off-vacuum S rows.
