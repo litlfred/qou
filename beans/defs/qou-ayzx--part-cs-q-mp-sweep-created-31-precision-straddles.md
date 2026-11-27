@@ -1,13 +1,13 @@
 ---
 # qou-ayzx
 title: 'Part C''s Q_MP sweep created 31 PRECISION STRADDLES: mpmath side moved to 70 digits, sympy side left at 50'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - compute-accuracy
 created_at: 2026-11-21T04:30:36Z
-updated_at: 2026-11-27T15:20:00Z
+updated_at: 2026-11-27T17:30:00Z
 parent: qou-9nnz
 ---
 
@@ -183,3 +183,7 @@ and gate every touched witness on both the value gate and the provenance gate (#
 The note above went stale within the hour. #8560 was revived (main merged in at `dd6ec5ccea`) and merged as `22b1f41263`. Main now carries the 70-digit sweep, and with it the straddles. Checked on main: `delta_lambda_binding_reading_probe` (line 66 `sp.Rational(Q_50_DIGIT_STR)` against line 120 `q = Q_MP`), `diproton_response_closed_form_probe` (lines 102 and 106), `two_nucleon_bond_response_arity_probe` (lines 140 and 142), `colour_weighting_markov_universality_probe` (lines 137 and 138), `deuteron_interface_colour_weighting_probe` (lines 108 and 109), `long_braid_limit_dominant_line_probe` (lines 90 to 92), and `qbeta_option_e_required_level_probe` (lines 133 and 141). `two_nucleon_binding_law_comparison_probe` is already fixed.
 
 The task is again: **close the 7 straddles at the producers** (owner ruling D, 2026-11-21), using the verified pattern, starting with `delta_lambda` (1.19× margin). The "redo the sweep from main" re-scope above is withdrawn.
+
+## 2026-11-27 17:30 UTC — all 7 fixed at the producers: PR #9498
+
+Carl chose "fix all 7 in one PR". Branch `claude/close-q-straddles-2026-11-27` was cut from main `58be958dd`. Each of the seven producers now builds its sympy q from `Q_MP` using the verified pattern. All pass: 11/11, 11/11, 15/15, 11/11, 5/5, 8 PASS with no witness, and 23/23. Value gate: no `allPassed` flip, worst move 7.12e-49. The colour-weighting `k_minus_zD` residual went from 2.26e-48 to -1.16e-50. Provenance gate: 0 of 6 witnesses regress. Close this bean when #9498 merges.
