@@ -76,6 +76,17 @@ def delta_TT1_beta(d: int) -> mp.mpf:
     return mp.mpf(casimir4(abs(d)) - casimir4(abs(d - 2))) / 4
 
 
+def content_sum_twoRow(n: int, t: int) -> mp.mpf:
+    """c(lambda) for the two-row block with n strands and t = 2T (Lean: four_contentSum_twoRow)."""
+    return mp.mpf(t * (t + 2) + n * (n - 4)) / 4
+
+
+def bar_even_log(q, n: int, t: int) -> mp.mpf:
+    """ln(q^{2c} + q^{-2c}): log of the orientation-free twist scalar (Lean: seminormalRep_barSymTwist)."""
+    c = content_sum_twoRow(n, t)
+    return mp.log(q ** (2 * c) + q ** (-2 * c))
+
+
 def witness_rows():
     d = json.loads((COMP / "mass-table-comprehensive.witness.json").read_text())
     return {(r["Z"], r["N"]): r for r in d["data"]["rows"]}
@@ -118,8 +129,24 @@ def main() -> int:
         "R2_free_baseline_plus_Tz_even_bond": dm_np - M_E,
     }
 
-    d_hist = collections.Counter(n - z for (z, n), _ in composite)
     report = {}
+    # Orientation-free twist Phi + Phi^{-1}: its block scalar rises with T for n >= 4
+    # (Lean: twoRow_barSymTwist_strictMono), and the ruled log law falls with the trace,
+    # so the mass shift is +alpha * ln(scalar): sign derived, not chosen.
+    def dQ_bar_even(z, n):
+        A = z + n
+        nst = 3 * A
+        return alpha * (bar_even_log(q, nst, abs(n - z)) - bar_even_log(q, nst, abs(n - z - 2)))
+
+    bar_shifts = {(z, n): dQ_bar_even(z, n) for (z, n), _ in composite}
+    for name, base in baselines.items():
+        report[f"{name}|bar_even_twist"] = sum(
+            1 for (z, n), v in composite
+            if (v if base is None else base) + bar_shifts[(z, n)] > 0)
+    lin_vs_bar = max(abs(bar_shifts[(z, n)] - kappa * delta_TT1_beta(n - z))
+                     for (z, n), _ in composite)
+
+    d_hist = collections.Counter(n - z for (z, n), _ in composite)
     for name, base in baselines.items():
         for s in (+1, -1):
             exo = 0
@@ -142,6 +169,7 @@ def main() -> int:
         "n_composite_rows": (len(composite), 1009),
         "lean_parabola_and_beta_step_identities": (lean_checks, True),
         "kappa_positive": (kappa > 0, True),
+        "bar_even_shift_positive_on_every_row": (all(v > 0 for v in bar_shifts.values()), True),
         "R0_no_twist_none_exothermic": (report["R0_as_is|no_twist"], 0),
     }
     ok = all(a == b for a, b in checks.values())
@@ -153,6 +181,7 @@ def main() -> int:
     print("exothermic counts (comparison with AME sign, which is + on every row):")
     for k, v in report.items():
         print(f"  {k:48s} {v:5d} / {len(composite)}")
+    print(f"max |bar-even shift - linear kappa*dT(T+1)| over rows = {mp.nstr(lin_vs_bar, 6)} MeV")
     for k, (a, b) in checks.items():
         print(f"  [{'PASS' if a == b else 'FAIL'}] {k}: {a}")
 
@@ -169,6 +198,7 @@ def main() -> int:
         wb.add_data("alpha_MeV", mp.nstr(alpha, 15))
         wb.add_data("kappa_MeV_per_unit_TT1", mp.nstr(kappa, 15))
         wb.add_data("exothermic_counts", report)
+        wb.add_data("max_bar_even_minus_linear_MeV", mp.nstr(lin_vs_bar, 10))
         wb.add_data("parent_d_histogram", {str(k): v for k, v in sorted(d_hist.items())})
         wb.save()
     return 0 if ok else 1

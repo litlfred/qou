@@ -301,4 +301,143 @@ theorem casimir4_beta_step_nonpos (d : ℤ) (hd : d ≤ 0) :
 
 end Isobar
 
+/-! ## 4. The orientation-free twist `Φ + Φ⁻¹`, and the direction of its `T` dependence
+
+`Φ_n` and `Φ_n⁻¹` (the full twist and its inverse) are exchanged by the bar involution, and
+nothing in the corpus fixes which orientation a nucleus carries
+(`TwistSplitSignDictionary`, item 1).  The bar-symmetric sum `Φ_n + Φ_n⁻¹` needs no orientation.
+It acts on a block by `q^{2c} + q^{−2c}`.  For `n ≥ 4` strands every two-row content sum is
+`≥ 0`, so for `q > 1` that scalar is **strictly increasing in `T`** at fixed `n`
+(`twoRow_barSymTwist_strictMono`).  The direction of the block dependence is therefore derived
+without choosing an orientation.  The cost is that the log of the scalar is linear in `T(T+1)`
+only up to `log(1 + q^{−4c})`. -/
+
+section BarSym
+
+variable (K : Type*) [CommRing K] (q qi : K) (n : ℕ)
+
+/-- `Φ⁻¹ = L_k⁻¹ ⋯ L_0⁻¹` (right to left, so that it is the inverse of `murphyProd`). -/
+noncomputable def murphyProdInv : ℕ → Hecke K q qi n
+  | 0 => qJMInv K q qi n 0
+  | k + 1 => qJMInv K q qi n (k + 1) * murphyProdInv k
+
+theorem murphyProdInv_zero : murphyProdInv K q qi n 0 = qJMInv K q qi n 0 := rfl
+
+theorem murphyProdInv_succ (k : ℕ) :
+    murphyProdInv K q qi n (k + 1) = qJMInv K q qi n (k + 1) * murphyProdInv K q qi n k := rfl
+
+/-- The orientation-free twist `Φ_n + Φ_n⁻¹`. -/
+noncomputable def barSymTwist : Hecke K q qi n :=
+  murphyProd K q qi n n + murphyProdInv K q qi n n
+
+end BarSym
+
+section BarSymBlock
+
+variable {μ : YoungDiagram}
+
+theorem seminormalRep_murphyProdInv {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0)
+    (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ) (hN : μ.cells.card = n + 1) :
+    ∀ k : ℕ, k ≤ n →
+      seminormalRep q hq0 hq2 n hN (murphyProdInv K q q⁻¹ n k)
+        = Matrix.diagonal (fun T : StandardYoungTableau μ =>
+            q ^ (-(2 * ∑ j ∈ Finset.range (k + 1), cellContent (cellOf T (j + 1)))))
+  | 0, _ => by
+      rw [murphyProdInv_zero, seminormalRep_qJMInv q hq0 hq2 n hN 0 (Nat.zero_le _), jmDiagValInv]
+      simp
+  | k + 1, hk => by
+      rw [murphyProdInv_succ, map_mul, seminormalRep_murphyProdInv q hq0 hq2 n hN k (by omega),
+        seminormalRep_qJMInv q hq0 hq2 n hN (k + 1) hk, jmDiagValInv, Matrix.diagonal_mul_diagonal]
+      congr 1
+      funext T
+      rw [← zpow_add₀ hq0, Finset.sum_range_succ (n := k + 1)]
+      congr 1
+      ring
+
+/-- **`Φ + Φ⁻¹` acts on every seminormal block by `q^{2c(μ)} + q^{−2c(μ)}`.** -/
+theorem seminormalRep_barSymTwist {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0)
+    (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ) (hN : μ.cells.card = n + 1) :
+    seminormalRep q hq0 hq2 n hN (barSymTwist K q q⁻¹ n)
+      = (q ^ (2 * ∑ c ∈ μ.cells, cellContent c) + q ^ (-(2 * ∑ c ∈ μ.cells, cellContent c)))
+          • (1 : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) K) := by
+  classical
+  rw [barSymTwist, map_add, seminormalRep_murphyProd_scalar q hq0 hq2 n hN,
+    seminormalRep_murphyProdInv q hq0 hq2 n hN n le_rfl, add_smul]
+  congr 1
+  ext T U
+  by_cases h : T = U
+  · subst h
+    simp only [Matrix.diagonal_apply_eq, Matrix.smul_apply, Matrix.one_apply_eq, smul_eq_mul,
+      mul_one]
+    rw [sum_cellOf_range T hN (fun c => cellContent c)]
+  · simp [Matrix.diagonal_apply_ne _ h, Matrix.one_apply_ne h]
+
+end BarSymBlock
+
+section Monotone
+
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+/-- For `q > 1`, `c ↦ q^{2c} + q^{−2c}` is strictly increasing on `c ≥ 0`. -/
+theorem barEven_strictMono (q : R) (hq : 1 < q) {c c' : ℤ} (h0 : 0 ≤ c) (hc : c < c') :
+    q ^ (2 * c) + q ^ (-(2 * c)) < q ^ (2 * c') + q ^ (-(2 * c')) := by
+  have hq0 : (0 : R) < q := lt_trans zero_lt_one hq
+  set a := q ^ (2 * c) with ha_def
+  set b := q ^ (2 * c') with hb_def
+  have ha : 1 ≤ a := one_le_zpow₀ hq.le (by omega)
+  have hab : a < b := zpow_lt_zpow_right₀ hq (by omega)
+  have hapos : 0 < a := lt_of_lt_of_le zero_lt_one ha
+  have hbpos : 0 < b := lt_trans hapos hab
+  rw [zpow_neg, zpow_neg, ← ha_def, ← hb_def]
+  have hprod : 1 < a * b := by nlinarith
+  have key : a⁻¹ - b⁻¹ = (b - a) * (a * b)⁻¹ := by
+    field_simp
+  have hinv : (a * b)⁻¹ < 1 := inv_lt_one_of_one_lt₀ hprod
+  have hba : 0 < b - a := sub_pos.mpr hab
+  have : (b - a) * (a * b)⁻¹ < (b - a) * 1 := mul_lt_mul_of_pos_left hinv hba
+  linarith
+
+variable {m k m' k' : ℕ}
+
+/-- At `n = m + k ≥ 4` strands every two-row content sum is `≥ 0`. -/
+theorem contentSum_twoRow_nonneg (h : k ≤ m) (hn : 4 ≤ m + k) :
+    0 ≤ ∑ c ∈ (twoRow m k h).cells, cellContent c := by
+  have h4 := four_contentSum_twoRow h
+  have hmk : (k : ℤ) ≤ m := by exact_mod_cast h
+  have hn' : (4 : ℤ) ≤ (m : ℤ) + k := by exact_mod_cast hn
+  nlinarith
+
+/-- At fixed `n`, the content sum is strictly increasing in `t = 2T`. -/
+theorem contentSum_twoRow_lt (h : k ≤ m) (h' : k' ≤ m') (hn : m + k = m' + k')
+    (ht : (m : ℤ) - k < (m' : ℤ) - k') :
+    ∑ c ∈ (twoRow m k h).cells, cellContent c < ∑ c ∈ (twoRow m' k' h').cells, cellContent c := by
+  have h4 := four_contentSum_twoRow h
+  have h4' := four_contentSum_twoRow h'
+  have hn' : ((m : ℤ) + k) = ((m' : ℤ) + k') := by exact_mod_cast hn
+  have hmk : (k : ℤ) ≤ m := by exact_mod_cast h
+  rw [hn'] at h4
+  nlinarith
+
+/-- **The direction of the isospin dependence, without an orientation.**  For `q > 1` and
+`n = m + k ≥ 4` strands, the scalar of `Φ + Φ⁻¹` on the two-row block of larger `T` is strictly
+larger.  Under any binding functional that falls as the trace grows (the ruled log law), the
+block of larger `T` therefore binds less. -/
+theorem twoRow_barSymTwist_strictMono (q : R) (hq : 1 < q) (h : k ≤ m) (h' : k' ≤ m')
+    (hn : m + k = m' + k') (h4 : 4 ≤ m + k) (ht : (m : ℤ) - k < (m' : ℤ) - k') :
+    q ^ (2 * ∑ c ∈ (twoRow m k h).cells, cellContent c)
+        + q ^ (-(2 * ∑ c ∈ (twoRow m k h).cells, cellContent c))
+      < q ^ (2 * ∑ c ∈ (twoRow m' k' h').cells, cellContent c)
+        + q ^ (-(2 * ∑ c ∈ (twoRow m' k' h').cells, cellContent c)) :=
+  barEven_strictMono q hq (contentSum_twoRow_nonneg h h4) (contentSum_twoRow_lt h h' hn ht)
+
+/-- The threshold `n ≥ 4` is needed: at `n = 3` the `(2,1)` block (`T = 1/2`) has content sum
+`0` and `(3)` (`T = 3/2`) has `3`, both `≥ 0`, but at `n = 2` the `(1,1)` block has `−1`. -/
+theorem contentSum_level_two_neg :
+    ∑ c ∈ (twoRow 1 1 le_rfl).cells, cellContent c = -1 := by
+  have := four_contentSum_twoRow (m := 1) (k := 1) le_rfl
+  norm_num at this
+  linarith
+
+end Monotone
+
 end QOU.Nuclear.IsospinCasimirTwist

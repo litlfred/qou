@@ -68,4 +68,51 @@ wherever it is used.
 4. The convention-D trace of `Φ_n` itself follows by summing the block scalars against the
    two-row weights `[n−2k+1]_q/[2]_q^n · d_λ`. It is not formalised here.
 
+## 4. The sign, derived without choosing an orientation (added the same day)
+
+Carl asked why the producer wiring was diagnostic only. The reason was the sign. `Φ_n` and
+`Φ_n⁻¹` are exchanged by the bar involution, and the corpus records the orientation as a free
+framing label (`TwistSplitSignDictionary`, item 1). The second sign in that dictionary, the
+trace-to-energy map, is fixed by the 2026-11-25 ruling (the log law, which falls as the trace
+grows).
+
+The orientation-free element `Φ_n + Φ_n⁻¹` removes the first choice:
+
+| statement | Lean |
+|---|---|
+| `Φ + Φ⁻¹` acts on every seminormal block by `q^{2c} + q^{−2c}` | `seminormalRep_barSymTwist` |
+| for `n ≥ 4` every two-row content sum is `≥ 0` | `contentSum_twoRow_nonneg` |
+| at fixed `n`, `c` is strictly increasing in `T` | `contentSum_twoRow_lt` |
+| for `q > 1`, `c ↦ q^{2c} + q^{−2c}` is strictly increasing on `c ≥ 0` | `barEven_strictMono` |
+| so the block of larger `T` has the larger scalar (`n ≥ 4`) | `twoRow_barSymTwist_strictMono` |
+| `n ≥ 4` is needed: `(1,1)` at `n = 2` has `c = −1` | `contentSum_level_two_neg` |
+
+Under the log law, a larger `T` therefore binds less, which is the `+` sign in the probe. At the
+levels in use (`n = 3A ≥ 6`) the `q^{−2c}` part is negligible. The probe measures the bar-even
+shift against the linear `κ·Δ[T(T+1)]` over all 1,009 composite rows and finds a maximum
+difference of `8.1e-12` MeV.
+
+Probe `computations/probes/isospin_twist_term_probe.py` (witness `isospin-twist-term`).
+`κ = 2α ln q = 0.78140` MeV per unit `T(T+1)`. On the composite β⁻ rows of scorecard Table 3.4b
+it gives:
+
+| baseline (sibling probe `composite_beta_sign_decomposition`) | no twist | `+` / bar-even | `−` |
+|---|---|---|---|
+| R0, as is | 0 / 1009 | 997 / 1009 | 0 |
+| R1, free baseline | 0 / 1009 | 1009 / 1009 | 0 |
+| R2, R1 + `T_z`-even bond | 1009 / 1009 | 1009 / 1009 | 0 |
+
+These counts are a comparison with AME signs. The sign was derived before the counts were read
+as evidence for it (§4 above). The counts were *seen* first, though, and that is recorded here.
+
+**EM share (from the G3 thread, PR #9691).** The Coulomb channel also has a multiplet-average
+`T(T+1)` piece, `ε·T(T+1)/6`. The braid-channel `κ·T(T+1)` here is a separate entry with its own
+coefficient, as the ledger requires. The two should not be merged into one fitted symmetry
+coefficient.
+
+**Still open.** Whether the nucleus operator contains the twist at all (G5), and whether the
+proxy scale `α` is the right energy map for this channel. The scale is the producer's own
+convention for every `ln|V|`, and it is not derived for this term separately. There is also no
+`1/A`: on the lowest block the term grows as `T²`.
+
 No value in this note enters a proof.
