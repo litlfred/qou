@@ -63,7 +63,10 @@ from gamma_gamma_isospin_channel_probe import nucleon  # noqa: E402
 
 DPS = 60
 set_compute_dps(DPS)
-QV = sp.Rational(Q_50_DIGIT_STR)
+# BOTH LAYERS CARRY THE SAME q (bean qou-ayzx, owner ruling D 2026-11-21): the sympy
+# value is read from the 70-digit Q_MP, not the 50-digit string, so no straddle.
+with mp.workdps(DPS + 15):
+    QV = sp.Rational(mp.nstr(Q_MP, DPS + 10, strip_zeros=False))
 NGEN = 5          # H_6, generators 0..4; interface letter is generator 2
 S2 = [(2, "sigma")]
 PAIRS = ("pp", "pn", "np", "nn")

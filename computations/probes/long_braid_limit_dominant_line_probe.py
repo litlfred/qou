@@ -22,7 +22,7 @@ import mpmath as mp
 import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools/qou-substrate/python"))
-from qou_substrate.constants import Q_50_DIGIT_STR, Q_MP  # proton pin (owner directive 2026-08-07)
+from qou_substrate.constants import Q_MP  # proton pin (owner directive 2026-08-07)
 
 mp.mp.dps = 70
 q = sp.symbols("q", positive=True)
@@ -88,8 +88,12 @@ check("T(3,5) trace matches corpus W(q) = q^2(q^12+q^8-1)/(q^2+1)^2",
 
 # --- numbers at q0 -------------------------------------------------------------------
 q0 = Q_MP
-y3n = mp.mpf(sp.N(Y3.subs(q, sp.Rational(Q_50_DIGIT_STR)), 70))
-y21n = mp.mpf(sp.N(Y21.subs(q, sp.Rational(Q_50_DIGIT_STR)), 70))
+# BOTH LAYERS CARRY THE SAME q (bean qou-ayzx, owner ruling D 2026-11-21): the sympy
+# value is read from the 70-digit Q_MP, not the 50-digit string, so no straddle.
+with mp.workdps(mp.mp.dps + 15):
+    QV = sp.Rational(mp.nstr(Q_MP, mp.mp.dps + 10, strip_zeros=False))
+y3n = mp.mpf(sp.N(Y3.subs(q, QV), 70))
+y21n = mp.mpf(sp.N(Y21.subs(q, QV), 70))
 print("q0 =", mp.nstr(q0, 20), " y3 =", mp.nstr(y3n, 15), " y21 =", mp.nstr(y21n, 15))
 print("per-crossing decay of the non-dominant part: q0^-1 =", mp.nstr(1 / q0, 15))
 print("e-fold length in crossings: 1/ln q0 =", mp.nstr(1 / mp.log(q0), 15))
@@ -112,11 +116,11 @@ print("smallest N with residual < 1e-3 for three consecutive N:", Nmin, f"({2*Nm
 # --- mirror: (s1 s2)^{-N} ------------------------------------------------------------
 for N in (5, 10, 50):
     t = tr(-N)
-    tn = mp.mpf(sp.N(t.subs(q, sp.Rational(Q_50_DIGIT_STR)), 70))
+    tn = mp.mpf(sp.N(t.subs(q, QV), 70))
     print(f"  mirror T(3,{N}): tr = {mp.nstr(tn, 12)}  (y3 q0^-2N + y21 chi21)")
 print("Mirror: the dominant block of (s1 s2)^-N is the sign block (q^{2N}), which convention D")
 print("weights by 0, so the trace stays O(1) and oscillates with N mod 3: no normalised limit.")
-check("mirror trace bounded (|tr| < 1) at N = 50", abs(mp.mpf(sp.N(tr(-50).subs(q, sp.Rational(Q_50_DIGIT_STR)), 70))) < 1)
+check("mirror trace bounded (|tr| < 1) at N = 50", abs(mp.mpf(sp.N(tr(-50).subs(q, QV), 70))) < 1)
 
 # --- the convention-D asymmetry under the root relabel -------------------------------
 zr = sp.simplify(z.subs(q, -1 / q))
