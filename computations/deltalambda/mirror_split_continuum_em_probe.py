@@ -174,7 +174,10 @@ def main() -> int:
     for nm, Z1, Z2, A in PAIRS:
         s = split_ame(Z1, Z2, A)
         p = pred_continuum(A, Z1, Z2, a_der, m_pi)
-        c = mp.mpf(str(mirror_displacement_mev(Z2, Z1, A)))  # canonical r₀=1.2 path
+        # shape="uniform_ball": this probe's pred is the (3/5) uniform-sphere form,
+        # so the algebraic-rescale cross-check must compare like with like. The
+        # canonical default is the derived q-Hankel f at A <= 4 (bean qou-usft).
+        c = mp.mpf(str(mirror_displacement_mev(Z2, Z1, A, shape="uniform_ball")))
         r = s / p
         rows.append((nm, A, float(s), float(p), float(r), float(s / c)))
         ratios.append(r)
