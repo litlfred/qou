@@ -1,5 +1,5 @@
 import QOU.Transcendental.QCalculus.ComplexDilogarithmOnCut
-import QCalculus.LiTwoNegOne
+import QOU.Transcendental.QCalculus.LiTwoNegOne
 import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.Analysis.Complex.Convex
 

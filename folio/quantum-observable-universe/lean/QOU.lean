@@ -1020,7 +1020,7 @@ import QOU.MassTheory.IdealTetVolumeRigidity
 -- The Li₂-continuation / scalar-IFT chain this lane rests on is wired at the
 -- top of this file (with the other MathlibExt imports), not here — it is
 -- general analytic infrastructure, not 5₂ content.
-import QCalculus.LiTwoNegOne
+import QOU.Transcendental.QCalculus.LiTwoNegOne
 import QOU.Nuclear.FiveTwoDiscriminant
 import QOU.Nuclear.FiveTwoCutAvoidance
 import QOU.Nuclear.FiveTwoDeformedSaddle
