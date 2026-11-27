@@ -27,7 +27,7 @@ namespace QOU.AppendixSurreals
 
 universe u
 
-variable (K : Type u) [SurrealField K]
+variable (K : Type u) [SurrealBase K]
 
 /-- Alias for the `SurrealField.omegaSurreal` member, for
     convenience in downstream files. -/

@@ -32,9 +32,10 @@ degenerate one — `HahnSeries ℤ ℝ` has elements of every integer order.
 
 It does **not** give a surreal model, and in particular it does not make
 `SpectralNormalForm` witnessed. That class needs `IsInfinitesimal` and
-`IsFinite`, hence `[SurrealField K]`, and `SurrealField` requires an element
-exceeding every natural — so its model has to be a specific non-archimedean
-*ordered field* with a birthday function, which is a separate construction. See
+`IsFinite`, hence `[SurrealBase K]`, which requires an element exceeding every
+natural — so its model has to be a non-archimedean *ordered field* (no birthday
+needed since 2026-11-27; `ℝ*` is one) carrying a valuation, which is a separate
+construction. See
 `Asymptotics.lean`'s history note for what remains.
 
 ## Base ring (§7c)

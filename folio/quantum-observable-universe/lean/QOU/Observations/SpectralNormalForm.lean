@@ -71,11 +71,11 @@ from Mathlib's Hahn series (`HahnOmegaOrder.lean`), so the valuation axioms are
 demonstrably consistent.
 
 What remains is the **other** hypothesis. This class also needs
-`IsInfinitesimal` and `IsFinite`, hence `[SurrealField K]` — and `SurrealField`
-requires `omegaSurreal` exceeding every natural, so no archimedean carrier can
-serve and the Hahn model does not qualify either.
-`HyperrealLimitTransfer.lean` has a `SurrealField ℝ*` model, but as a `def`
-rather than an instance, and with no `Ow` for it.
+`IsInfinitesimal` and `IsFinite`, hence `[SurrealBase K]`, which requires
+`omegaSurreal` exceeding every natural, so no archimedean carrier can serve and
+the Hahn model does not qualify either.  Since 2026-11-27 `ℝ*` is a global
+`SurrealBase` instance (`HyperrealTransfer.surrealBaseHyperreal`), but it has no
+`Ow`.
 
 So satisfiability is still untested in either direction, but the gap is now one
 construction — a non-archimedean ordered field carrying both a birthday function
@@ -84,7 +84,7 @@ over with a degenerate instance.
 
 ## Base ring (§7c)
 
-`K` is a generic `[SurrealField K]`. `ℝ` enters only through
+`K` is a generic `[SurrealBase K]`. `ℝ` enters only through
 `SurrealField.ofReal`, the embedding that is part of the structure itself, and
 through `IsInfinitesimal`'s comparison against embedded reals — both inherited
 from the corpus's own definitions rather than introduced here. No numerical
@@ -109,7 +109,7 @@ read directly off leading exponents, with no analytic limit.
 **is** the conjecture, for that carrier. None is provided — and see the header:
 no `OmegaOrder` instance exists anywhere in this tree, so the class has not been
 exhibited satisfiable either. -/
-class SpectralNormalForm (K : Type u) [SurrealField K]
+class SpectralNormalForm (K : Type u) [SurrealBase K]
     (Γ : Type w) [AddCommMonoid Γ] [LinearOrder Γ] [OmegaOrder K ℝ Γ] : Prop where
   /-- **Part 1 — gap closure.** A non-zero value is infinitesimal exactly when
       its leading exponent is negative. Applied to `Δ = λ₂ − λ₁`, this is
@@ -144,7 +144,7 @@ class SpectralNormalForm (K : Type u) [SurrealField K]
 
 namespace SpectralNormalForm
 
-variable {K : Type u} [SurrealField K]
+variable {K : Type u} [SurrealBase K]
   {Γ : Type w} [AddCommMonoid Γ] [LinearOrder Γ] [OmegaOrder K ℝ Γ]
 
 /-- **The class pins `Ow` on the embedded reals** — anti-vacuity.

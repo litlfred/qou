@@ -4,10 +4,10 @@ import QOU.Transcendental.HyperrealLimitTransfer
 /-!
 # A faithful but non-simple birthday on `ℝ*` (beans `hypr`, `qou-dx7g`)
 
-`HyperrealLimitTransfer.surrealFieldHyperreal` puts a `SurrealField` structure on `ℝ*`
+`HyperrealLimitTransfer.surrealFieldHyperreal` puts a `BirthdayField` structure on `ℝ*`
 whose birthday is the two-valued `flatBirthday`. `BirthdayFaithful.lean` adds two
 opt-in mixins, `BirthdayFaithful` (`birthday n = n`) and `ConwaySimplicity`, and proves
-each independent of the six `SurrealField` axioms by that flat model.
+each independent of the six `BirthdayField` axioms by that flat model.
 
 This module gives a second structure on `ℝ*`, `surrealFieldHyperrealDyadic`, whose
 birthday is
@@ -18,7 +18,7 @@ birthday is
 
 Proved here, sorry-free:
 
-* it satisfies all six `SurrealField` birthday axioms;
+* it satisfies all six `BirthdayField` birthday axioms;
 * it **is** `BirthdayFaithful` (`birthday n = n` for every natural `n`);
 * it supports `SurrealLimitTransfer ℝ*` (`surrealLimitTransferHyperrealDyadic`), rebasing
   `HyperrealTransfer.surrealLimitTransferHyperreal` off the degenerate two-valued
@@ -38,7 +38,7 @@ construction too. The two differ only on elements Conway gives a birthday above 
 such as `ω + 1`, and that is exactly where simplicity fails below.
 
 ⚠ `def`, not `instance`, for the same reason as `surrealFieldHyperreal`: a global
-instance would make every `SurrealField`-generic theorem apply to `ℝ*` silently.
+instance would make every `BirthdayField`-generic theorem apply to `ℝ*` silently.
 -/
 
 namespace QOU.AppendixSurreals.DyadicBirthday
@@ -233,12 +233,8 @@ theorem dyBirthday_ofReal_le_omega (r : ℝ) :
 
 /-- **The dyadic structure.** `ℝ*` with the same field, order, `ofReal` and `ω` as
 `surrealFieldHyperreal`, and the dyadic birthday. A `def`, not an `instance`. -/
-noncomputable def surrealFieldHyperrealDyadic : SurrealField.{0, 0} ℝ* where
-  __ := (inferInstance : Field ℝ*)
-  __ := (inferInstance : LinearOrder ℝ*)
-  __ := (inferInstance : IsStrictOrderedRing ℝ*)
-  ofReal := HyperrealTransfer.hyperrealOfReal
-  ofReal_strictMono := HyperrealTransfer.hyperrealOfReal_strictMono
+noncomputable def surrealFieldHyperrealDyadic : BirthdayField.{0, 0} ℝ* where
+  toSurrealBase := HyperrealTransfer.surrealBaseHyperreal
   birthday := dyBirthday
   birthday_zero := dyBirthday_zero
   birthday_one := dyBirthday_one
@@ -246,8 +242,6 @@ noncomputable def surrealFieldHyperrealDyadic : SurrealField.{0, 0} ℝ* where
   birthday_add_le := dyBirthday_add_le
   birthday_avg_le := dyBirthday_avg_le
   birthday_ofReal_le_omega := dyBirthday_ofReal_le_omega
-  omegaSurreal := Hyperreal.omega
-  omegaSurreal_gt_natCast := HyperrealTransfer.omega_gt_natCast
 
 /-! ## §4 — faithful, and not simple -/
 
@@ -304,10 +298,10 @@ theorem dyBirthday_not_simple :
     dyBirthday_of_not not_stdDyadic_omega_add_one] at key
   exact lt_irrefl _ key
 
-/-- **`BirthdayFaithful` does not imply `ConwaySimplicity`.** One `SurrealField`
+/-- **`BirthdayFaithful` does not imply `ConwaySimplicity`.** One `BirthdayField`
 structure on `ℝ*` whose own birthday satisfies the first mixin and fails the second. -/
 theorem birthdayFaithful_not_imp_conwaySimplicity :
-    ∃ S : SurrealField.{0, 0} ℝ*,
+    ∃ S : BirthdayField.{0, 0} ℝ*,
       (∀ n : ℕ, S.birthday ((n : ℕ) : ℝ*) = (n : Ordinal)) ∧ ¬ @ConwaySimplicity ℝ* S :=
   ⟨surrealFieldHyperrealDyadic, dyBirthday_natCast,
     fun h => dyBirthday_not_simple h.simplicity⟩
@@ -342,13 +336,13 @@ noncomputable def surrealLimitTransferHyperrealDyadic : SurrealLimitTransfer ℝ
 
 end DyadicLimitTransfer
 
-/-- **Combined witness on `ℝ*` (`hypr`, `qou-dx7g`).** One `SurrealField` structure on `ℝ*`
+/-- **Combined witness on `ℝ*` (`hypr`, `qou-dx7g`).** One `BirthdayField` structure on `ℝ*`
 (`surrealFieldHyperrealDyadic`) simultaneously satisfies `BirthdayFaithful` and
 `SurrealLimitTransfer` while failing `ConwaySimplicity`. -/
 theorem faithful_limitTransfer_not_simple_witnessed :
-    ∃ S : SurrealField.{0, 0} ℝ*,
+    ∃ S : BirthdayField.{0, 0} ℝ*,
       Nonempty (@BirthdayFaithful ℝ* S) ∧
-        Nonempty (@SurrealLimitTransfer ℝ* S) ∧
+        Nonempty (@SurrealLimitTransfer ℝ* S.toSurrealBase) ∧
         ¬ @ConwaySimplicity ℝ* S :=
   ⟨surrealFieldHyperrealDyadic, ⟨birthdayFaithfulDyadic⟩,
     ⟨surrealLimitTransferHyperrealDyadic⟩, fun h => dyBirthday_not_simple h.simplicity⟩
