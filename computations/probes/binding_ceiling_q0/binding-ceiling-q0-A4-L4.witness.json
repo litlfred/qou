@@ -1,0 +1,172 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T22:15:45.268801+00:00",
+  "commitSha": "7a7b664102a628f4920f9134aea76eb8911cf8f6",
+  "assertions": [
+    {
+      "name": "every_word_evaluated",
+      "computed": 1392,
+      "expected": 1392,
+      "passed": true,
+      "tolerance": 0,
+      "source": "checkpoint covers the whole population"
+    },
+    {
+      "name": "min_merges_at_least_4",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "tolerance": 0,
+      "source": "classical permutation of every population word"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "binding-ceiling-q0-A4-L4",
+  "scriptFile": "binding_ceiling_q0_a4_probe.py",
+  "scriptHash": "b965f3253846",
+  "scriptCommitSha": "7a7b664102a628f4920f9134aea76eb8911cf8f6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_ceiling_q0/binding_ceiling_q0_a4_probe.py",
+      "1",
+      "4"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_ceiling_q0/binding_ceiling_q0_a4_probe.py 1 4"
+  },
+  "description": "PROBE (bean qou-brng, brief C2): reading 3 at the proton-pin q0 on every gamma-gamma bond word of 3..4 vertices bonding all three junctions of the 12-strand A = 4 word with V^3 nucleons. Every such word merges >= 4 components (exact). Ratio reported for passing words only, never used to select. AME not read. Nothing fitted or wired.",
+  "auditOnly": "docs/audits/2026-11-27-binding-ceiling-at-q0.md",
+  "parameters": {
+    "L": 4,
+    "A": 4,
+    "n_strands": 12
+  },
+  "data": {
+    "summary_by_merges_and_classical_reading3": {
+      "merges=6,classical=pass": {
+        "n": 72,
+        "pass_q0": 0
+      },
+      "merges=4,classical=pass": {
+        "n": 24,
+        "pass_q0": 12
+      },
+      "merges=6,classical=fail": {
+        "n": 984,
+        "pass_q0": 0
+      },
+      "merges=8,classical=fail": {
+        "n": 288,
+        "pass_q0": 0
+      },
+      "merges=4,classical=fail": {
+        "n": 24,
+        "pass_q0": 0
+      }
+    },
+    "passing": [
+      {
+        "word": "V2V3V4V8",
+        "pass_q0": true,
+        "trace": "0.0598552426554832631326309351458",
+        "merges": 4,
+        "classical_pass": true
+      },
+      {
+        "word": "V2V3V8V4",
+        "pass_q0": true,
+        "trace": "0.0598552426554832631326309351458",
+        "merges": 4,
+        "classical_pass": true
+      },
+      {
+        "word": "V2V8V3V4",
+        "pass_q0": true,
+        "trace": "0.0598552426554832631326309351458",
+        "merges": 4,
+        "classical_pass": true
+      },
+      {
+        "word": "V3V4V2V8",
+        "pass_q0": true,
+        "trace": "0.0598552426554832631326309351458",
+        "merges": 4,
+        "classical_pass": true
+      },
+      {
+        "word": "V3V4V8V2",
+        "pass_q0": true,
+        "trace": "0.0598552426554832631326309351458",
+        "merges": 4,
+        "classical_pass": true
+      },
+      {
+        "word": "V3V8V4V2",
+        "pass_q0": true,
+        "trace": "0.0598552426554832631326309351458",
+        "merges": 4,
+        "classical_pass": true
+      },
+      {
+        "word": "V4V2V3V8",
+        "pass_q0": true,
+        "trace": "0.0598552426554832631326309351458",
+        "merges": 4,
+        "classical_pass": true
+      },
+      {
+        "word": "V4V2V8V3",
+        "pass_q0": true,
+        "trace": "0.0598552426554832631326309351458",
+        "merges": 4,
+        "classical_pass": true
+      },
+      {
+        "word": "V4V8V2V3",
+        "pass_q0": true,
+        "trace": "0.0598552426554832631326309351458",
+        "merges": 4,
+        "classical_pass": true
+      },
+      {
+        "word": "V8V2V3V4",
+        "pass_q0": true,
+        "trace": "0.0598552426554832631326309351458",
+        "merges": 4,
+        "classical_pass": true
+      },
+      {
+        "word": "V8V3V4V2",
+        "pass_q0": true,
+        "trace": "0.0598552426554832631326309351458",
+        "merges": 4,
+        "classical_pass": true
+      },
+      {
+        "word": "V8V4V2V3",
+        "pass_q0": true,
+        "trace": "0.0598552426554832631326309351458",
+        "merges": 4,
+        "classical_pass": true
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 enters through cf.Q (committed y-lambda-at-q0 witness, proton pin)"
+}
