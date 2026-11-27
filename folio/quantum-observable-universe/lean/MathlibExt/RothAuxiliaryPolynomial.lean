@@ -77,6 +77,7 @@ supplies, and why the threshold moves from `m > 1/(4ε²)` to `m > deg α/(4ε²
 ⚠ Not Mathlib-only: imports `QOU/Mathlib/RothGammaProducer.lean`.
 -/
 import MathlibExt.RothGammaProducer
+import Mathlib.Data.Real.Basic
 
 namespace MvPolynomial
 

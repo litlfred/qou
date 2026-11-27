@@ -256,12 +256,12 @@ in `t`, and `t = ½` is nowhere near the regime the theorem is for. What this wi
 is that the machine runs end to end on data it produced itself, not that the number it emits is
 useful at these parameters. Both are worth having; only the first was missing. -/
 /-- **Roth's Lemma at `m = 3`, `t = 1/2`, on a produced `Γ_3`.** -/
-theorem roth_three :
+theorem roth_three (hE : SqrtOrderedField) :
     ∃ Θ : ℚ, 0 ≤ Θ ∧
       Θ ^ (2 ^ (3 - 1)) ≤ (rothConstant 3 : ℚ) ^ (2 ^ (3 - 1)) * ((1 : ℚ) / (2 : ℚ)) ∧
       index (rothDegrees Hw Nw) (fun h => (Hw h : ℚ))
           (map (algebraMap ℤ ℚ) (1 : MvPolynomial (Fin 3) ℤ)) ≤ ((Θ : ℚ) : WithTop ℚ) :=
-  index_le_rothBound (m := 3) (by norm_num) (p := 1) (q := 2) (F := 84) one_pos (by norm_num)
+  index_le_rothBound hE (m := 3) (by norm_num) (p := 1) (q := 2) (F := 84) one_pos (by norm_num)
     (Equiv.refl (Fin 3)) gamma_three
     (A := 1) (κ := fun h => (Hw h : ℚ))
     ⟨one_ne_zero, fun h => by rw [← C_1, degreeOf_C]; norm_num, fun n => by
