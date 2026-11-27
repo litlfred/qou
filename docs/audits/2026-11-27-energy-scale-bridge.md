@@ -122,7 +122,7 @@ right. The probe checks this for both readings on record:
 
 | electron reading | log chart n−p / Δ−N | mass chart n−p / Δ−N |
 |---|---|---|
-| `τ_e = q³ y₃` (#9733) | +0.306 / −1.935 m_e | −0.624 / +0.128 m_e |
+| `τ_e = q³ y₃` (#9733) | +0.565 / −1.935 m_e | −0.624 / +0.128 m_e |
 | `m_e = [4]/q³` (#9789) | −0.190 / +0.650 m_e | +0.805 / −0.166 m_e |
 
 #9789's reading turns n−p positive, and that turns Δ−N negative. Any single CAL-1 chart
