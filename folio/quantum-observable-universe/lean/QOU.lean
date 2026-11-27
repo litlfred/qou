@@ -1039,6 +1039,7 @@ import QOU.Transcendental.Nuclear.OhtsukiNZBridgeScale
 import QOU.Nuclear.WindingGFTransform
 import QOU.Nuclear.ThetaRealityBound
 import QOU.Nuclear.AfreeThetaConstraint
+import QOU.Nuclear.AlphaQInheritance
 import QOU.Nuclear.ChannelMeridianIdentification
 import QOU.Nuclear.CompleteStructureExclusion
 import QOU.Nuclear.ThetaLipschitzObstruction
