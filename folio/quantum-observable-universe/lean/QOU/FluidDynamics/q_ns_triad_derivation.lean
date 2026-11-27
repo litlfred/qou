@@ -1,4 +1,4 @@
-import QOU.FluidDynamics.q_ns_modal_triad
+import QOU.FluidDynamics.q_ns_triad_core
 import Mathlib.RingTheory.Derivation.Basic
 
 /-!
