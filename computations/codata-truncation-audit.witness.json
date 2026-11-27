@@ -1,20 +1,20 @@
 {
   "engine": "python-stdlib",
-  "computedAt": "2026-11-21T19:46:10.491403+00:00",
+  "computedAt": "2026-11-27T14:39:26.758563+00:00",
   "computation": "codata-truncation-audit",
   "scriptFile": "codata_truncation_audit.py",
   "description": "Hand-typed CODATA/substrate constants that are a short prefix of the canonical value, and so compute a different number. Separates that class from exact duplication, which is qou-46ke's original and much larger scope. Canonical values are read from codata_constants / q_parameter at run time, never typed here.",
   "min_shared_digits": 6,
-  "truncated_total": 102,
-  "truncated_files": 91,
-  "divergent_total": 78,
-  "divergent_files": 65,
+  "truncated_total": 97,
+  "truncated_files": 86,
+  "divergent_total": 77,
+  "divergent_files": 64,
   "rounded_total": 11,
   "rounded_files": 10,
-  "blocking_total": 191,
+  "blocking_total": 185,
   "by_constant": {
-    "m_e": 13,
-    "q0": 69,
+    "m_e": 12,
+    "q0": 64,
     "q0_muon": 49,
     "q0_muon_live": 10,
     "B_2H": 18,
@@ -25,7 +25,7 @@
     "m_mu": 1,
     "m_n": 1
   },
-  "exact_duplicates": 299,
+  "exact_duplicates": 316,
   "declared_intentional": 1,
   "findings": [
     {
@@ -677,15 +677,6 @@
       "use_instead": "q_parameter.Q_MP"
     },
     {
-      "file": "computations/probes/beta_routes_two_term/weak_vertex_two_term_probe.py",
-      "line": 20,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "computations/probes/binding_additive_linked_cluster_probe.py",
       "line": 56,
       "constant": "q0",
@@ -891,15 +882,6 @@
       "canonical": "1.109978595642739046681795129380001752700065561029011556974045769999095",
       "verdict": "ROUNDED",
       "use_instead": "q_parameter.q_muon_at()"
-    },
-    {
-      "file": "computations/probes/round74_devacuify_6qbv_b9cj_probe.py",
-      "line": 68,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
     },
     {
       "file": "computations/probes/the_em_coupling_projection_block_cites_a_producer_that_leaves_no_witness_probe.py",
@@ -1560,7 +1542,7 @@
     },
     {
       "file": "computations/substrate/witness_constant_staleness.py",
-      "line": 355,
+      "line": 365,
       "constant": "q0_muon_live",
       "literal": "1.10997",
       "canonical": "1.109978595642739046681795129380001752700065561029011556974045769999095",
@@ -1685,42 +1667,6 @@
       "use_instead": "codata_constants.M_P_MEV_VALIDATION"
     },
     {
-      "file": "qou-mass/src/qou_mass/daha_macdonald.py",
-      "line": 44,
-      "constant": "q0",
-      "literal": "1.10997858",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "qou-mass/src/qou_mass/demazure.py",
-      "line": 92,
-      "constant": "q0",
-      "literal": "1.10997858",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "qou-mass/src/qou_mass/toroidal_harmonic.py",
-      "line": 21,
-      "constant": "q0",
-      "literal": "1.10997858",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "qou-mass/src/qou_mass/wenzl_qpoch.py",
-      "line": 39,
-      "constant": "q0",
-      "literal": "1.10997858",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "scripts/convention-c-value-audit.py",
       "line": 96,
       "constant": "q0",
@@ -1749,8 +1695,8 @@
     }
   ],
   "scriptHash": "a68397977099",
-  "scriptCommitSha": "82236be144e3afe6c18c41fdb9b26ac9e405e0d0",
-  "commitSha": "d498864a7f516542a13ea66b24fee64e03a89c09",
+  "scriptCommitSha": "826bf7c63a96a2d962e368c896c37e4463bf3904",
+  "commitSha": "32a1be44e6b24195515c32ad52026c5a9e592c57",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

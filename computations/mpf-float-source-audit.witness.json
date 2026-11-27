@@ -4,9 +4,9 @@
   "description": "Source-level mpf(<float>) detection. DEFECT = the literal is not exactly a binary64, so precision is lost before mpmath sees it. Complements the witness-level float64-padding audit by catching the defect at authoring time.",
   "data": {
     "counts": {
-      "advisory-cast": 20,
+      "advisory-cast": 19,
       "marked-cast": 1,
-      "benign": 16
+      "benign": 15
     },
     "defects": [],
     "rows": [
@@ -65,14 +65,6 @@
         "arg": "1000000000.0",
         "source": "f\"(~{mp.nstr(Q_BETA_N_REL * mpf(1e9), 3)} ppb). 1 ppb is \"",
         "fix": "mpf(\"1000000000.0\")"
-      },
-      {
-        "file": "computations/chi_numpy_dtype_fix_benchmark.py",
-        "line": 84,
-        "class": "advisory-cast",
-        "arg": "float(...)",
-        "source": "return mp.mpf(float(np.trace(M)))",
-        "fix": null
       },
       {
         "file": "computations/deltalambda/he4_binding_k_presentation_correction_probe.py",
@@ -203,14 +195,6 @@
         "fix": "mpf(\"1.5\")"
       },
       {
-        "file": "computations/probes/strong_unified_binding_probe.py",
-        "line": 20,
-        "class": "benign",
-        "arg": "2.5",
-        "source": "na_stokes_residual = mp.mpf(2.5)",
-        "fix": "mpf(\"2.5\")"
-      },
-      {
         "file": "computations/probes/the_binding_arc_was_measured_in_float64_probe.py",
         "line": 424,
         "class": "advisory-cast",
@@ -310,10 +294,10 @@
   },
   "scriptFile": "mpf_float_source_audit.py",
   "scriptHash": "b2ced3d887e7",
-  "scriptCommitSha": "82236be144e3afe6c18c41fdb9b26ac9e405e0d0",
-  "commitSha": "d498864a7f516542a13ea66b24fee64e03a89c09",
+  "scriptCommitSha": "826bf7c63a96a2d962e368c896c37e4463bf3904",
+  "commitSha": "32a1be44e6b24195515c32ad52026c5a9e592c57",
   "engine": "python",
-  "computedAt": "2026-11-21T19:44:42.914983+00:00",
+  "computedAt": "2026-11-27T14:37:55.732366+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

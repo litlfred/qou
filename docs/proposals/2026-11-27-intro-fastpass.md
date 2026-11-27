@@ -53,6 +53,14 @@ and $\sigma_i^{-1} = \sigma_i - h$; the Markov weight is $z = q^3/(q^2+1)$.
 > The figure-eight word $V^2$ gives $(h^4 + 3h^2 + 1)/(h^2+4) = 0.280196\ldots$
 > by the same four steps.
 
+Independent cross-check from a sibling PR: #9445 states
+$\mathrm{tr}_M(4_1) = (q^{10}+1)/(q^2(q^2+1)^3)$; since
+$q^{10}+1 = (q^2+1)(q^8-q^6+q^4-q^2+1)$ this equals this script's $V^2$ trace
+$(q^8-q^6+q^4-q^2+1)/(q^2(q^2+1)^2)$ exactly. #9447 proves (Lean, any field)
+that the figure-eight class $2[\zeta_6]$ lies in the Bloch group, which is the
+algebraic side of $\mathrm{Vol}(4_1) = 2D(e^{i\pi/3})$; if the owner picks
+$V^2$ for the box, a footnote can point there.
+
 Open choices for the owner: Borromean $V^3$ (ties to the q₀ pin) versus the
 figure-eight $V^2$ (ties to $\mathrm{Vol}(4_1)$) versus the electron word
 $\sigma_0\sigma_1\sigma_0$ (trace $q(h^2+2)/(h^2+4)$, $0.691166\ldots$).
