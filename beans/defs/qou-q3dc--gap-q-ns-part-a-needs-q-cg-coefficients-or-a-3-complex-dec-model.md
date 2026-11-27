@@ -63,3 +63,7 @@ intertwine with `u ↦ u⁻¹`; for the Cartan field, `(Xa)* = −T_{u⁻¹,u}(X
 `Xa·Xa = −(T(Xa))*·Xa`. So the budget integrand is minus a twisted square. Positivity of `φ`
 alone does not sign it; the Haar modular property is needed. Still open: that step, χ₀/χ₂,
 Haar invariance, Part A (`qou-pa7n`).
+
+**2026-11-27 — note from the off-diagonal thread (PR #9593).** The 3D calculus has twist characters
+diag(q⁻¹, q⁻², q⁻¹): χ₀ ↔ X₊ and χ₂ ↔ −q·X₋, both twisted by q⁻¹. χ₁ is the Cartan field, twisted by q⁻².
+Use these when the budget is extended to all three directions.
