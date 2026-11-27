@@ -87,3 +87,6 @@ positivity, is still open (Haar thread).
 
 ## 2026-11-27T20:40Z — point 1 (identification), Cartan direction
 PR #9662 `q_ns_cartan_transport_budget.lean`: for the Cartan field X, `h(Xu·u)+h(u·Xu) = c·h(Xu·Xu)`, so the Cartan budget integrand IS the Haar energy rate along u̇ = Xu (up to step c), and that rate is ≤ 0 for self-adjoint u, q>0, q≠1, c⁻¹>0. Sorry-free. Still open: (i) that u̇ = Xu is the q-NS transport (corpus has no ∇_q on O_q(SU(2))); (ii) the X₊X₋ pair is not a single-field energy rate (twisted_energy_budget gives a mixed X₊/Cartan term h(X₊u·(u−θu))); (iii) q → 1 (q-Bessel thread). Part A qou-pa7n open.
+
+## 2026-11-27T20:26Z — from q-Bessel thread, PR #9666 (OqSU2BudgetLittleQJacobi.lean)
+On the torus-invariant block K[ζ], ζ=βγ: Cartan field kills K[ζ] (cartanField_ev), so h(Xu·Xu)=0 there and the X₊/X₋ pair carries the whole budget. L=X₊X₋ lower bidiagonal, diagonal λ_n = q[n]_q[n+1]_q, Haar-symmetric; h(X₊a·X₋b) = −q⁻² h(a·Lb). Per-mode factor q⁻¹[n]_q[n+1]_q → n(n+1) as q→1 (finite per mode). Consequence for point 1: on K[ζ] the Cartan identification of #9662 is vacuous; the pair term still needs its own transport identification. Open: other weight blocks, existence of eigenpolynomials p_n, relation to the mixed term h(X₊u·(u−θu)). Part A qou-pa7n open.
