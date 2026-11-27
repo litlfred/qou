@@ -559,6 +559,7 @@ export default chapter({
         "dilog-pentagon-is-associator",
         // Generating-functions-as-Reeb-flow-solutions synthesis (Commit 3).
         "generating-functions-solve-reeb-flow",
+        "pre-archimedean-figure-eight-bloch-class",
         "archimedean-realisation-volume-compatibility",
       ],
     }),
