@@ -141,7 +141,7 @@ Comparison joins `computations/mass-table-comprehensive.witness.json` (`m_symbol
 | Rydberg constant $R_\infty h c$ (Schwinger Form B) | `13.605693133 eV` | `13.605693123 ± 1.5e-11 eV` | `+0.725 ppb` | `724872.2` | `+2.31σ` ($z_{\mathrm{comb}}$) | **Conditional**: $\tfrac{1}{2}m_e c^2 \alpha_{\mathrm{EM}}^2$ with Form B $\alpha$ ($\sigma_{\mathrm{pred}} = 0.313\;\mathrm{ppb}$ from $m_e$) |
 | Rydberg constant $R_\infty h c$ (2-loop Bloch-$B_3$ Form C) | `13.605693124 eV` | `13.605693123 ± 1.5e-11 eV` | `+0.043 ppb` | `42644.9` | **`+0.14σ`** ($z_{\mathrm{comb}}$) | **Conditional**: two-loop Bloch-$B_3$ Rydberg (within $1\sigma_{\mathrm{comb}}$!) |
 | Bare topological ${}^3\mathrm{H}\text{--}{}^3\mathrm{He}$ Coulomb | `0.0452 MeV` | `0.7638 MeV` | `-94.09%` (`5.9%` covered) | `9.41e+14` | `16.91x` short | **Unclassified**: zero-fit $\tanh(\ln q_0) B_{pp}$ on the ruled nucleon word; scope-limited negative, nuclear-geometry factor open |
-| Mirror-nuclei Coulomb systematics ($N=8$, $A=3\text{--}39$) | Ratio `0.9868` | `1.0000` (AME2020 splits) | `-1.32%` mean | `1.32e+13` | `±6.94%` RMS | **Unclassified**: canonical nuclear-radius Coulomb scaling across mirror doublets |
+| Mirror-nuclei Coulomb systematics ($N=8$, $A=3\text{--}39$) | Ratio `0.9868` | `1.0000` (AME2020 splits) | `-1.32%` mean | `1.32e+13` | `±6.94%` RMS | **Unclassified**: uniform-sphere Coulomb with $R=(\hbar c/m_\pi)A^{1/3}$ (coefficient 1 on $\hbar c/m_\pi$ selected, $A^{1/3}$ assumed; not $r_0=1.2$ fm); ratio rises with $A$, `0.901` at $A=3$, so quote per $A$ |
 
 #### Table 3.3b: $q$-Weighted VSEPR Molecular Geometry & Condensed-Matter Benchmarks
 
@@ -284,7 +284,7 @@ python3 scripts/compute-qa.py --gate accuracy-scorecard
 | [`computations/probes/gap3b_t29_composite_decay_threshold/gap3b-t29-composite-decay-threshold.witness.json`](computations/probes/gap3b_t29_composite_decay_threshold/gap3b-t29-composite-decay-threshold.witness.json) | `9b70d2c86ec5` | `allPassed: true` | §2, §3.5a |
 | [`computations/u1-hypercharge-assignment.witness.json`](computations/u1-hypercharge-assignment.witness.json) | `a2b8923c9cc0` | `allPassed: true` | §2, §3.3a |
 | [`computations/charge-coulomb-tn3he-derived.witness.json`](computations/charge-coulomb-tn3he-derived.witness.json) | `37b4cc873f59` | `allPassed: true` | §2, §3.3a |
-| [`computations/mirror-nuclei-coulomb-systematics.witness.json`](computations/mirror-nuclei-coulomb-systematics.witness.json) | `620295b2d26b` | `allPassed: true` | §2, §3.3a |
+| [`computations/mirror-nuclei-coulomb-systematics.witness.json`](computations/mirror-nuclei-coulomb-systematics.witness.json) | `b36335badcaf` | `allPassed: true` | §2, §3.3a |
 | [`computations/beta-decay-from-q.witness.json`](computations/beta-decay-from-q.witness.json) | `4a7c38a8f780` | Audit witness (`verified`) | §2, §3.4a, §5.1 |
 | [`computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json`](computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json) | `7b152b846217` | `allPassed: true` | §2, §3.5a–b |
 | [`computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json`](computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json) | `21d99eb9cffd` | `allPassed: true` | §3.2a (ruled trace-pipeline row) |

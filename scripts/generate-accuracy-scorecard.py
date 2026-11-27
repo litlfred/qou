@@ -725,7 +725,7 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
             f"| Mirror-nuclei Coulomb systematics ($N={len(mn['mirror_pairs'])}$, $A=3\\text{{--}}39$) | "
             f"Ratio `{_fmt_fixed(mirror_mean, 4)}` | `1.0000` (AME2020 splits) | "
             f"`{_fmt_fixed(mirror_rel * HUNDRED, 2, signed=True)}%` mean | `{_fmt_ppq(mirror_rel)}` | "
-            f"`±{_fmt_fixed(mirror_rms * HUNDRED, 2)}%` RMS | {_st('mirror_coulomb')}: canonical nuclear-radius Coulomb scaling across mirror doublets |"
+            f"`±{_fmt_fixed(mirror_rms * HUNDRED, 2)}%` RMS | {_st('mirror_coulomb')}: uniform-sphere Coulomb with $R=(\\hbar c/m_\\pi)A^{{1/3}}$ (coefficient 1 on $\\hbar c/m_\\pi$ selected, $A^{{1/3}}$ assumed; not $r_0=1.2$ fm); ratio rises with $A$, `{_fmt_fixed(_m(mn['ratio_trend_in_A']['ratio_at_A3']), 3)}` at $A=3$, so quote per $A$ |"
         ),
     ]
 
