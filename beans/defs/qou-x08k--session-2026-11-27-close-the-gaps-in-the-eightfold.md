@@ -7,7 +7,7 @@ priority: high
 tags:
     - 8f-index
 created_at: 2026-11-27T14:25:39Z
-updated_at: 2026-11-27T14:42:13Z
+updated_at: 2026-11-27T14:52:01Z
 parent: qou-0uga
 ---
 
@@ -63,3 +63,9 @@ Verbatim: *"A B C"*. B reopens `qou-j3w6` as option A (second fundamental $W$, $
 - A3 → PR #9446: canonical reading `FaithfulVia` (the class `GaugeHeckeRealization` is the weaker existence reading); n = 2 proved (iff q not a root of unity); n = 3, 4 faithful at generic q via Burau (Magnus–Peluso; Bharathram–Birman–Brendle arXiv:2607.05283); n ≥ 5 open problem. Lawrence–Krammer withdrawn as support (BMW, not Hecke).
 - B → PR #9450 (stacked on #9444): `FlavouredQuantumObservableUniverse` axiom datum + block `def:flavoured-quantum-observable-universe`.
 - Next: A4 (row cap, actual isotypic dimensions of V^{⊗3}), then C.
+
+
+
+## 2026-11-27 ~15:00Z — merged and open
+
+Merged by merge manager: #9444 (A1), #9446 (A3), #9450 (B), #9451 (A4). Open: #9442 (docs, beans tracker rule), #9458 (C2: commutant of S3 × sl2 on (Q^2)^{⊗3} is 2-dim, so no injective colour action; the ColourStabilizerAction class alone is a dimension count). C1 (hypercharge crossing invariant) and C3 (selection rule) not started; options put to owner.
