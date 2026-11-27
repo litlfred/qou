@@ -926,3 +926,42 @@ reusable, and it keeps `grtU4_of_lie` unchanged.
 
 Default if nothing is chosen: B1 stays at step (1); the induction step stays conditional on
 steps (2)–(4) and on the Lie-ness input.
+
+## 17a. The Friedrichs criterion: primitive ⇒ Lie (proved)
+
+`Friedrichs.lean`, sorry-free. `#print axioms` shows only `propext`, `Classical.choice` and
+`Quot.sound`.
+
+**Statement** (`isLieElt_of_primitive`). Let `Δ` be the shuffle coproduct on `ℚ⟨X, Y⟩`, the
+algebra map with `Δ(ι i) = ι i ⊗ 1 + 1 ⊗ ι i`. If `Δ h = h ⊗ 1 + 1 ⊗ h`, then `IsLieElt h`.
+
+The theorem assumes neither homogeneity nor a zero constant term. A primitive element has zero
+constant term anyway (`algebraMapInv_eq_zero_of_primitive`). So `Homogeneity.exists_homog_part`
+is not needed here.
+
+**Proof** (Dynkin–Specht–Wever, with no coordinates on words):
+
+1. **Antipode identity** (`idS_cop`). Let `S` be the anti-automorphism with `S(ι i) = −ι i`.
+   Then `m ∘ (id ⊗ S) ∘ Δ = η ∘ ε`.
+2. **The Dynkin map is Lie-valued** (`dS_cop_mem`). Let `D` be the Euler derivation,
+   `D(ι i) = ι i`. Then `D ⋆ S = m ∘ (D ⊗ S) ∘ Δ` satisfies
+   `(D ⋆ S)(ι i · w) = ε(w) ι i + [ι i, (D ⋆ S)(w)]`, so it maps every element into the Lie span.
+   On a primitive `p`, `(D ⋆ S)(p) = D p`. Hence `D p` is Lie (`eulerD_mem_of_primitive`).
+3. **D is a coderivation** (`cop_eulerD`): `Δ ∘ D = (D ⊗ id + id ⊗ D) ∘ Δ`. So `D` preserves
+   primitives.
+4. **Induction on word length.** Let `G N` be the span of the words of length `≤ N`. Then
+   `D − (N + 1)` maps `G (N + 1)` into `G N`, and a primitive element of `G 0` is `0`. If `p`
+   is primitive and lies in `G (N + 1)`, then `(N + 1) p = D p − (D − (N + 1)) p` is a
+   difference of Lie elements.
+
+The three tensor identities behind steps 1–3 are checked on pure tensors. Every statement about
+`ℚ⟨X, Y⟩` is proved by induction on left multiplication by a generator (`induction_left`).
+
+**Use for B1.** If the degree-`d` parts `hᵢ` of a difference of group-like associators are
+shown primitive, this theorem gives the `IsLieElt` hypothesis of `grtU4_of_lie`. That
+primitivity is **not** proved here. `IsPrimitive` is stated for the `cop` defined in this file.
+Any group-likeness hypothesis has to use the same coproduct, or be shown equal to it.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` exits 0 with no warnings.
+`Prop57Link.olean` was not in the restored cache, so it was compiled into a scratch shadow tree
+first. No `lake build` was run.
