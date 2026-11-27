@@ -1,13 +1,13 @@
 ---
 # qou-pa7n
 title: 'GAP: q-NS Part A needs a modal model of the actual nonlinearity (triads + Parseval) to be stated non-vacuously'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - needs-owner
 created_at: 2026-11-27T18:05:00Z
-updated_at: 2026-11-27T18:05:00Z
+updated_at: 2026-11-27T18:40:00Z
 parent: qou-innq
 ---
 
@@ -25,3 +25,11 @@ After the owner weakened property 3 of `thm:q-ns-wellposedness` (2026-11-27, car
 **Next honest step.** Formalise a modal q-NS model with those three properties (or the DEC model with a mode-count parameter `N` and a limit `N → ∞`), then state Part A over it as a content-bearing class with no instance.
 
 Stays open (rule 13a): its subject is an open conjecture.
+
+## 2026-11-27 progress (owner picks: "Modal triad model + Parseval" and "the DEC to infinity"; PR #9537)
+
+- `q_ns_modal_triad.lean` (sorry-free). The modes are SU_q(2) Peter–Weyl labels and the triads follow the generic-q fusion rule. `TriadCoeff` couplings are supported on fusion triads and conserve the Parseval energy triad by triad. Proved: Galerkin energy conservation, support growth (modes `≤ m` feed only modes `≤ 2m`), and `dE/dt = −2νΩ`. `partA_fails_on_truncation` (scope (b)) gives `sup_t Ω ≤ [N]_{q0}²·E(0)` on every truncation to modes `≤ N`, for every coefficient system and every `ν ≥ 0`. Non-vacuity: `kraichnan` and `singleMode`.
+- `q_ns_dec_refinement.lean` (sorry-free). Given an enstrophy-skew advection (hypothesis `hens`, the 2D property), the enstrophy of the 2-complex DEC model is nonincreasing at every resolution and every `ν ≥ 0`. So mesh refinement of a 2D model cannot carry Part A.
+- Audit: `docs/audits/2026-11-27-qns-part-a-triad-model-and-dec-refinement.md`.
+
+**Still open.** Part A needs infinitely many modes, and in the DEC picture it needs three dimensions. The missing pieces are the q-Clebsch–Gordan coefficients of `μ∘(v⊗∇_q v)` and a 3-complex DEC model (gap bean `qou-q3dc`). Do not close: Part A is an open conjecture.
