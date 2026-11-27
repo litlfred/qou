@@ -35,9 +35,9 @@ module closes that gap and extends the converse.
    `hooksOf`, gives `q^{m_n} · D(n) = P_n(q)` for an explicit integer polynomial `P_n` with
    `P_n(0) ≠ 0`.  In particular `D(2) = D(3) = 0`.
 2. **The forward direction** (`P4_cyclo`, `P5_cyclo`): `P_4 = Φ₁²Φ₃`, `P_5 = 2Φ₁²Φ₂²Φ₃Φ₆`.
-3. **The converse through `n = 14`** (`Pn_not_cyclo`, `6 ≤ n ≤ 14`): `P_n` is not
+3. **The converse through `n = 20`** (`Pn_not_cyclo`, `6 ≤ n ≤ 20`): `P_n` is not
    `c · X^j · ∏ Φ_k` for any `c`, `j`, multiset of `k`.
-4. **The boundary** (`cyclotomic_boundary`): for `2 ≤ n ≤ 14`,
+4. **The boundary** (`cyclotomic_boundary`): for `2 ≤ n ≤ 20`,
    `IsCycloProduct (tailPoly n) ↔ n ≤ 5`.
 
 ## The non-cyclotomicity certificate (finite, checkable, no analysis)
@@ -73,6 +73,7 @@ LaTeX label: `thm:cyclotomic-boundary-certified`
 
 set_option linter.unusedSimpArgs false
 set_option maxRecDepth 100000
+set_option exponentiation.threshold 1000
 
 namespace QOU.Mass.CyclotomicBoundaryCertified
 
@@ -1463,6 +1464,36 @@ set_option maxHeartbeats 4000000 in
 noncomputable def P14 : ℤ[X] :=
   5 + 24 * X + 18 * X ^ 2 + 68 * X ^ 3 + 48 * X ^ 4 + 166 * X ^ 5 + 93 * X ^ 6 + 294 * X ^ 7 + 172 * X ^ 8 + 516 * X ^ 9 + 273 * X ^ 10 + 782 * X ^ 11 + 408 * X ^ 12 + 1155 * X ^ 13 + 576 * X ^ 14 + 1550 * X ^ 15 + 772 * X ^ 16 + 2051 * X ^ 17 + 988 * X ^ 18 + 2532 * X ^ 19 + 1208 * X ^ 20 + 3067 * X ^ 21 + 1440 * X ^ 22 + 3470 * X ^ 23 + 1631 * X ^ 24 + 3860 * X ^ 25 + 1785 * X ^ 26 + 4012 * X ^ 27 + 1866 * X ^ 28 + 4030 * X ^ 29 + 1860 * X ^ 30 + 3698 * X ^ 31 + 1754 * X ^ 32 + 3219 * X ^ 33 + 1545 * X ^ 34 + 2336 * X ^ 35 + 1224 * X ^ 36 + 1304 * X ^ 37 + 812 * X ^ 38 - 102 * X ^ 39 + 311 * X ^ 40 - 1502 * X ^ 41 - 234 * X ^ 42 - 3164 * X ^ 43 - 810 * X ^ 44 - 4650 * X ^ 45 - 1363 * X ^ 46 - 6218 * X ^ 47 - 1872 * X ^ 48 - 7387 * X ^ 49 - 2283 * X ^ 50 - 8438 * X ^ 51 - 2572 * X ^ 52 - 8965 * X ^ 53 - 2727 * X ^ 54 - 9272 * X ^ 55 - 2727 * X ^ 56 - 8965 * X ^ 57 - 2572 * X ^ 58 - 8438 * X ^ 59 - 2283 * X ^ 60 - 7387 * X ^ 61 - 1872 * X ^ 62 - 6218 * X ^ 63 - 1363 * X ^ 64 - 4650 * X ^ 65 - 810 * X ^ 66 - 3164 * X ^ 67 - 234 * X ^ 68 - 1502 * X ^ 69 + 311 * X ^ 70 - 102 * X ^ 71 + 812 * X ^ 72 + 1304 * X ^ 73 + 1224 * X ^ 74 + 2336 * X ^ 75 + 1545 * X ^ 76 + 3219 * X ^ 77 + 1754 * X ^ 78 + 3698 * X ^ 79 + 1860 * X ^ 80 + 4030 * X ^ 81 + 1866 * X ^ 82 + 4012 * X ^ 83 + 1785 * X ^ 84 + 3860 * X ^ 85 + 1631 * X ^ 86 + 3470 * X ^ 87 + 1440 * X ^ 88 + 3067 * X ^ 89 + 1208 * X ^ 90 + 2532 * X ^ 91 + 988 * X ^ 92 + 2051 * X ^ 93 + 772 * X ^ 94 + 1550 * X ^ 95 + 576 * X ^ 96 + 1155 * X ^ 97 + 408 * X ^ 98 + 782 * X ^ 99 + 273 * X ^ 100 + 516 * X ^ 101 + 172 * X ^ 102 + 294 * X ^ 103 + 93 * X ^ 104 + 166 * X ^ 105 + 48 * X ^ 106 + 68 * X ^ 107 + 18 * X ^ 108 + 24 * X ^ 109 + 5 * X ^ 110
 
+set_option maxHeartbeats 4000000 in
+/-- The cleared tail `P_15 = q^65·D(15)` as an integer polynomial (degree 130). -/
+noncomputable def P15 : ℤ[X] :=
+  1 + 20 * X + 22 * X ^ 2 + 60 * X ^ 3 + 58 * X ^ 4 + 168 * X ^ 5 + 137 * X ^ 6 + 332 * X ^ 7 + 254 * X ^ 8 + 630 * X ^ 9 + 431 * X ^ 10 + 1052 * X ^ 11 + 679 * X ^ 12 + 1680 * X ^ 13 + 989 * X ^ 14 + 2490 * X ^ 15 + 1355 * X ^ 16 + 3590 * X ^ 17 + 1761 * X ^ 18 + 4910 * X ^ 19 + 2185 * X ^ 20 + 6562 * X ^ 21 + 2554 * X ^ 22 + 8430 * X ^ 23 + 2823 * X ^ 24 + 10638 * X ^ 25 + 2893 * X ^ 26 + 12964 * X ^ 27 + 2683 * X ^ 28 + 15542 * X ^ 29 + 2073 * X ^ 30 + 18084 * X ^ 31 + 970 * X ^ 32 + 20738 * X ^ 33 - 747 * X ^ 34 + 23132 * X ^ 35 - 3119 * X ^ 36 + 25470 * X ^ 37 - 6236 * X ^ 38 + 27364 * X ^ 39 - 10126 * X ^ 40 + 29072 * X ^ 41 - 14748 * X ^ 42 + 30150 * X ^ 43 - 20023 * X ^ 44 + 31008 * X ^ 45 - 25901 * X ^ 46 + 31190 * X ^ 47 - 32165 * X ^ 48 + 31236 * X ^ 49 - 38639 * X ^ 50 + 30658 * X ^ 51 - 45094 * X ^ 52 + 30100 * X ^ 53 - 51269 * X ^ 54 + 29112 * X ^ 55 - 56900 * X ^ 56 + 28376 * X ^ 57 - 61771 * X ^ 58 + 27392 * X ^ 59 - 65625 * X ^ 60 + 26878 * X ^ 61 - 68299 * X ^ 62 + 26296 * X ^ 63 - 69686 * X ^ 64 + 26312 * X ^ 65 - 69686 * X ^ 66 + 26296 * X ^ 67 - 68299 * X ^ 68 + 26878 * X ^ 69 - 65625 * X ^ 70 + 27392 * X ^ 71 - 61771 * X ^ 72 + 28376 * X ^ 73 - 56900 * X ^ 74 + 29112 * X ^ 75 - 51269 * X ^ 76 + 30100 * X ^ 77 - 45094 * X ^ 78 + 30658 * X ^ 79 - 38639 * X ^ 80 + 31236 * X ^ 81 - 32165 * X ^ 82 + 31190 * X ^ 83 - 25901 * X ^ 84 + 31008 * X ^ 85 - 20023 * X ^ 86 + 30150 * X ^ 87 - 14748 * X ^ 88 + 29072 * X ^ 89 - 10126 * X ^ 90 + 27364 * X ^ 91 - 6236 * X ^ 92 + 25470 * X ^ 93 - 3119 * X ^ 94 + 23132 * X ^ 95 - 747 * X ^ 96 + 20738 * X ^ 97 + 970 * X ^ 98 + 18084 * X ^ 99 + 2073 * X ^ 100 + 15542 * X ^ 101 + 2683 * X ^ 102 + 12964 * X ^ 103 + 2893 * X ^ 104 + 10638 * X ^ 105 + 2823 * X ^ 106 + 8430 * X ^ 107 + 2554 * X ^ 108 + 6562 * X ^ 109 + 2185 * X ^ 110 + 4910 * X ^ 111 + 1761 * X ^ 112 + 3590 * X ^ 113 + 1355 * X ^ 114 + 2490 * X ^ 115 + 989 * X ^ 116 + 1680 * X ^ 117 + 679 * X ^ 118 + 1052 * X ^ 119 + 431 * X ^ 120 + 630 * X ^ 121 + 254 * X ^ 122 + 332 * X ^ 123 + 137 * X ^ 124 + 168 * X ^ 125 + 58 * X ^ 126 + 60 * X ^ 127 + 22 * X ^ 128 + 20 * X ^ 129 + X ^ 130
+
+set_option maxHeartbeats 4000000 in
+/-- The cleared tail `P_16 = q^75·D(16)` as an integer polynomial (degree 150). -/
+noncomputable def P16 : ℤ[X] :=
+  6 + 30 * X + 32 * X ^ 2 + 93 * X ^ 3 + 84 * X ^ 4 + 258 * X ^ 5 + 193 * X ^ 6 + 525 * X ^ 7 + 377 * X ^ 8 + 1028 * X ^ 9 + 674 * X ^ 10 + 1726 * X ^ 11 + 1112 * X ^ 12 + 2852 * X ^ 13 + 1746 * X ^ 14 + 4292 * X ^ 15 + 2594 * X ^ 16 + 6326 * X ^ 17 + 3713 * X ^ 18 + 8782 * X ^ 19 + 5113 * X ^ 20 + 11975 * X ^ 21 + 6825 * X ^ 22 + 15564 * X ^ 23 + 8842 * X ^ 24 + 19922 * X ^ 25 + 11165 * X ^ 26 + 24481 * X ^ 27 + 13720 * X ^ 28 + 29644 * X ^ 29 + 16455 * X ^ 30 + 34575 * X ^ 31 + 19279 * X ^ 32 + 39688 * X ^ 33 + 22059 * X ^ 34 + 43913 * X ^ 35 + 24659 * X ^ 36 + 47748 * X ^ 37 + 26928 * X ^ 38 + 49887 * X ^ 39 + 28694 * X ^ 40 + 50968 * X ^ 41 + 29810 * X ^ 42 + 49567 * X ^ 43 + 30139 * X ^ 44 + 46640 * X ^ 45 + 29549 * X ^ 46 + 40622 * X ^ 47 + 27964 * X ^ 48 + 32853 * X ^ 49 + 25379 * X ^ 50 + 21857 * X ^ 51 + 21784 * X ^ 52 + 9405 * X ^ 53 + 17258 * X ^ 54 - 5901 * X ^ 55 + 11962 * X ^ 56 - 21842 * X ^ 57 + 6058 * X ^ 58 - 39762 * X ^ 59 - 215 * X ^ 60 - 57004 * X ^ 61 - 6572 * X ^ 62 - 74910 * X ^ 63 - 12753 * X ^ 64 - 90698 * X ^ 65 - 18462 * X ^ 66 - 105759 * X ^ 67 - 23397 * X ^ 68 - 117237 * X ^ 69 - 27354 * X ^ 70 - 126846 * X ^ 71 - 30109 * X ^ 72 - 131884 * X ^ 73 - 31511 * X ^ 74 - 134356 * X ^ 75 - 31511 * X ^ 76 - 131884 * X ^ 77 - 30109 * X ^ 78 - 126846 * X ^ 79 - 27354 * X ^ 80 - 117237 * X ^ 81 - 23397 * X ^ 82 - 105759 * X ^ 83 - 18462 * X ^ 84 - 90698 * X ^ 85 - 12753 * X ^ 86 - 74910 * X ^ 87 - 6572 * X ^ 88 - 57004 * X ^ 89 - 215 * X ^ 90 - 39762 * X ^ 91 + 6058 * X ^ 92 - 21842 * X ^ 93 + 11962 * X ^ 94 - 5901 * X ^ 95 + 17258 * X ^ 96 + 9405 * X ^ 97 + 21784 * X ^ 98 + 21857 * X ^ 99 + 25379 * X ^ 100 + 32853 * X ^ 101 + 27964 * X ^ 102 + 40622 * X ^ 103 + 29549 * X ^ 104 + 46640 * X ^ 105 + 30139 * X ^ 106 + 49567 * X ^ 107 + 29810 * X ^ 108 + 50968 * X ^ 109 + 28694 * X ^ 110 + 49887 * X ^ 111 + 26928 * X ^ 112 + 47748 * X ^ 113 + 24659 * X ^ 114 + 43913 * X ^ 115 + 22059 * X ^ 116 + 39688 * X ^ 117 + 19279 * X ^ 118 + 34575 * X ^ 119 + 16455 * X ^ 120 + 29644 * X ^ 121 + 13720 * X ^ 122 + 24481 * X ^ 123 + 11165 * X ^ 124 + 19922 * X ^ 125 + 8842 * X ^ 126 + 15564 * X ^ 127 + 6825 * X ^ 128 + 11975 * X ^ 129 + 5113 * X ^ 130 + 8782 * X ^ 131 + 3713 * X ^ 132 + 6326 * X ^ 133 + 2594 * X ^ 134 + 4292 * X ^ 135 + 1746 * X ^ 136 + 2852 * X ^ 137 + 1112 * X ^ 138 + 1726 * X ^ 139 + 674 * X ^ 140 + 1028 * X ^ 141 + 377 * X ^ 142 + 525 * X ^ 143 + 193 * X ^ 144 + 258 * X ^ 145 + 84 * X ^ 146 + 93 * X ^ 147 + 32 * X ^ 148 + 30 * X ^ 149 + 6 * X ^ 150
+
+set_option maxHeartbeats 4000000 in
+/-- The cleared tail `P_17 = q^86·D(17)` as an integer polynomial (degree 172). -/
+noncomputable def P17 : ℤ[X] :=
+  15 + 22 * X + 81 * X ^ 2 + 68 * X ^ 3 + 213 * X ^ 4 + 188 * X ^ 5 + 518 * X ^ 6 + 398 * X ^ 7 + 1054 * X ^ 8 + 774 * X ^ 9 + 1996 * X ^ 10 + 1324 * X ^ 11 + 3442 * X ^ 12 + 2182 * X ^ 13 + 5704 * X ^ 14 + 3334 * X ^ 15 + 8905 * X ^ 16 + 4878 * X ^ 17 + 13478 * X ^ 18 + 6790 * X ^ 19 + 19576 * X ^ 20 + 9122 * X ^ 21 + 27731 * X ^ 22 + 11730 * X ^ 23 + 38077 * X ^ 24 + 14582 * X ^ 25 + 51270 * X ^ 26 + 17362 * X ^ 27 + 67259 * X ^ 28 + 19850 * X ^ 29 + 86739 * X ^ 30 + 21538 * X ^ 31 + 109536 * X ^ 32 + 21962 * X ^ 33 + 136220 * X ^ 34 + 20326 * X ^ 35 + 166286 * X ^ 36 + 16010 * X ^ 37 + 200300 * X ^ 38 + 7966 * X ^ 39 + 237287 * X ^ 40 - 4620 * X ^ 41 + 277743 * X ^ 42 - 22840 * X ^ 43 + 320317 * X ^ 44 - 47574 * X ^ 45 + 365358 * X ^ 46 - 79890 * X ^ 47 + 411165 * X ^ 48 - 120378 * X ^ 49 + 458154 * X ^ 50 - 169868 * X ^ 51 + 504231 * X ^ 52 - 228584 * X ^ 53 + 550006 * X ^ 54 - 296732 * X ^ 55 + 593273 * X ^ 56 - 373948 * X ^ 57 + 634855 * X ^ 58 - 459784 * X ^ 59 + 672533 * X ^ 60 - 553008 * X ^ 61 + 707627 * X ^ 62 - 652428 * X ^ 63 + 737882 * X ^ 64 - 756128 * X ^ 65 + 765165 * X ^ 66 - 862100 * X ^ 67 + 787394 * X ^ 68 - 967906 * X ^ 69 + 806806 * X ^ 70 - 1071120 * X ^ 71 + 821462 * X ^ 72 - 1168912 * X ^ 73 + 834039 * X ^ 74 - 1258804 * X ^ 75 + 842504 * X ^ 76 - 1338182 * X ^ 77 + 849778 * X ^ 78 - 1404750 * X ^ 79 + 853834 * X ^ 80 - 1456542 * X ^ 81 + 857487 * X ^ 82 - 1492020 * X ^ 83 + 858539 * X ^ 84 - 1510000 * X ^ 85 + 859746 * X ^ 86 - 1510000 * X ^ 87 + 858539 * X ^ 88 - 1492020 * X ^ 89 + 857487 * X ^ 90 - 1456542 * X ^ 91 + 853834 * X ^ 92 - 1404750 * X ^ 93 + 849778 * X ^ 94 - 1338182 * X ^ 95 + 842504 * X ^ 96 - 1258804 * X ^ 97 + 834039 * X ^ 98 - 1168912 * X ^ 99 + 821462 * X ^ 100 - 1071120 * X ^ 101 + 806806 * X ^ 102 - 967906 * X ^ 103 + 787394 * X ^ 104 - 862100 * X ^ 105 + 765165 * X ^ 106 - 756128 * X ^ 107 + 737882 * X ^ 108 - 652428 * X ^ 109 + 707627 * X ^ 110 - 553008 * X ^ 111 + 672533 * X ^ 112 - 459784 * X ^ 113 + 634855 * X ^ 114 - 373948 * X ^ 115 + 593273 * X ^ 116 - 296732 * X ^ 117 + 550006 * X ^ 118 - 228584 * X ^ 119 + 504231 * X ^ 120 - 169868 * X ^ 121 + 458154 * X ^ 122 - 120378 * X ^ 123 + 411165 * X ^ 124 - 79890 * X ^ 125 + 365358 * X ^ 126 - 47574 * X ^ 127 + 320317 * X ^ 128 - 22840 * X ^ 129 + 277743 * X ^ 130 - 4620 * X ^ 131 + 237287 * X ^ 132 + 7966 * X ^ 133 + 200300 * X ^ 134 + 16010 * X ^ 135 + 166286 * X ^ 136 + 20326 * X ^ 137 + 136220 * X ^ 138 + 21962 * X ^ 139 + 109536 * X ^ 140 + 21538 * X ^ 141 + 86739 * X ^ 142 + 19850 * X ^ 143 + 67259 * X ^ 144 + 17362 * X ^ 145 + 51270 * X ^ 146 + 14582 * X ^ 147 + 38077 * X ^ 148 + 11730 * X ^ 149 + 27731 * X ^ 150 + 9122 * X ^ 151 + 19576 * X ^ 152 + 6790 * X ^ 153 + 13478 * X ^ 154 + 4878 * X ^ 155 + 8905 * X ^ 156 + 3334 * X ^ 157 + 5704 * X ^ 158 + 2182 * X ^ 159 + 3442 * X ^ 160 + 1324 * X ^ 161 + 1996 * X ^ 162 + 774 * X ^ 163 + 1054 * X ^ 164 + 398 * X ^ 165 + 518 * X ^ 166 + 188 * X ^ 167 + 213 * X ^ 168 + 68 * X ^ 169 + 81 * X ^ 170 + 22 * X ^ 171 + 15 * X ^ 172
+
+set_option maxHeartbeats 4000000 in
+/-- The cleared tail `P_18 = q^98·D(18)` as an integer polynomial (degree 196). -/
+noncomputable def P18 : ℤ[X] :=
+  20 + 20 * X + 108 * X ^ 2 + 72 * X ^ 3 + 296 * X ^ 4 + 192 * X ^ 5 + 724 * X ^ 6 + 453 * X ^ 7 + 1524 * X ^ 8 + 909 * X ^ 9 + 2919 * X ^ 10 + 1691 * X ^ 11 + 5168 * X ^ 12 + 2924 * X ^ 13 + 8705 * X ^ 14 + 4801 * X ^ 15 + 13869 * X ^ 16 + 7495 * X ^ 17 + 21321 * X ^ 18 + 11307 * X ^ 19 + 31531 * X ^ 20 + 16429 * X ^ 21 + 45253 * X ^ 22 + 23189 * X ^ 23 + 63118 * X ^ 24 + 31836 * X ^ 25 + 85977 * X ^ 26 + 42667 * X ^ 27 + 114230 * X ^ 28 + 55839 * X ^ 29 + 148776 * X ^ 30 + 71607 * X ^ 31 + 189780 * X ^ 32 + 89926 * X ^ 33 + 237726 * X ^ 34 + 110811 * X ^ 35 + 292277 * X ^ 36 + 134038 * X ^ 37 + 353484 * X ^ 38 + 159225 * X ^ 39 + 420115 * X ^ 40 + 185744 * X ^ 41 + 491630 * X ^ 42 + 212953 * X ^ 43 + 565864 * X ^ 44 + 239752 * X ^ 45 + 641366 * X ^ 46 + 265068 * X ^ 47 + 715224 * X ^ 48 + 287542 * X ^ 49 + 785417 * X ^ 50 + 305736 * X ^ 51 + 847958 * X ^ 52 + 318026 * X ^ 53 + 900750 * X ^ 54 + 323021 * X ^ 55 + 939587 * X ^ 56 + 319034 * X ^ 57 + 962235 * X ^ 58 + 304732 * X ^ 59 + 964835 * X ^ 60 + 278923 * X ^ 61 + 946154 * X ^ 62 + 240674 * X ^ 63 + 902873 * X ^ 64 + 189349 * X ^ 65 + 835409 * X ^ 66 + 124970 * X ^ 67 + 741896 * X ^ 68 + 47654 * X ^ 69 + 624321 * X ^ 70 - 41708 * X ^ 71 + 482924 * X ^ 72 - 141748 * X ^ 73 + 321918 * X ^ 74 - 250716 * X ^ 75 + 142870 * X ^ 76 - 366393 * X ^ 77 - 47766 * X ^ 78 - 485945 * X ^ 79 - 246710 * X ^ 80 - 606560 * X ^ 81 - 446602 * X ^ 82 - 724992 * X ^ 83 - 643152 * X ^ 84 - 837851 * X ^ 85 - 828152 * X ^ 86 - 941965 * X ^ 87 - 997887 * X ^ 88 - 1034270 * X ^ 89 - 1144393 * X ^ 90 - 1111776 * X ^ 91 - 1264908 * X ^ 92 - 1172204 * X ^ 93 - 1353303 * X ^ 94 - 1213637 * X ^ 95 - 1408422 * X ^ 96 - 1234620 * X ^ 97 - 1426162 * X ^ 98 - 1234620 * X ^ 99 - 1408422 * X ^ 100 - 1213637 * X ^ 101 - 1353303 * X ^ 102 - 1172204 * X ^ 103 - 1264908 * X ^ 104 - 1111776 * X ^ 105 - 1144393 * X ^ 106 - 1034270 * X ^ 107 - 997887 * X ^ 108 - 941965 * X ^ 109 - 828152 * X ^ 110 - 837851 * X ^ 111 - 643152 * X ^ 112 - 724992 * X ^ 113 - 446602 * X ^ 114 - 606560 * X ^ 115 - 246710 * X ^ 116 - 485945 * X ^ 117 - 47766 * X ^ 118 - 366393 * X ^ 119 + 142870 * X ^ 120 - 250716 * X ^ 121 + 321918 * X ^ 122 - 141748 * X ^ 123 + 482924 * X ^ 124 - 41708 * X ^ 125 + 624321 * X ^ 126 + 47654 * X ^ 127 + 741896 * X ^ 128 + 124970 * X ^ 129 + 835409 * X ^ 130 + 189349 * X ^ 131 + 902873 * X ^ 132 + 240674 * X ^ 133 + 946154 * X ^ 134 + 278923 * X ^ 135 + 964835 * X ^ 136 + 304732 * X ^ 137 + 962235 * X ^ 138 + 319034 * X ^ 139 + 939587 * X ^ 140 + 323021 * X ^ 141 + 900750 * X ^ 142 + 318026 * X ^ 143 + 847958 * X ^ 144 + 305736 * X ^ 145 + 785417 * X ^ 146 + 287542 * X ^ 147 + 715224 * X ^ 148 + 265068 * X ^ 149 + 641366 * X ^ 150 + 239752 * X ^ 151 + 565864 * X ^ 152 + 212953 * X ^ 153 + 491630 * X ^ 154 + 185744 * X ^ 155 + 420115 * X ^ 156 + 159225 * X ^ 157 + 353484 * X ^ 158 + 134038 * X ^ 159 + 292277 * X ^ 160 + 110811 * X ^ 161 + 237726 * X ^ 162 + 89926 * X ^ 163 + 189780 * X ^ 164 + 71607 * X ^ 165 + 148776 * X ^ 166 + 55839 * X ^ 167 + 114230 * X ^ 168 + 42667 * X ^ 169 + 85977 * X ^ 170 + 31836 * X ^ 171 + 63118 * X ^ 172 + 23189 * X ^ 173 + 45253 * X ^ 174 + 16429 * X ^ 175 + 31531 * X ^ 176 + 11307 * X ^ 177 + 21321 * X ^ 178 + 7495 * X ^ 179 + 13869 * X ^ 180 + 4801 * X ^ 181 + 8705 * X ^ 182 + 2924 * X ^ 183 + 5168 * X ^ 184 + 1691 * X ^ 185 + 2919 * X ^ 186 + 909 * X ^ 187 + 1524 * X ^ 188 + 453 * X ^ 189 + 724 * X ^ 190 + 192 * X ^ 191 + 296 * X ^ 192 + 72 * X ^ 193 + 108 * X ^ 194 + 20 * X ^ 195 + 20 * X ^ 196
+
+set_option maxHeartbeats 4000000 in
+/-- The cleared tail `P_19 = q^111·D(19)` as an integer polynomial (degree 222). -/
+noncomputable def P19 : ℤ[X] :=
+  15 + 40 * X + 73 * X ^ 2 + 154 * X ^ 3 + 219 * X ^ 4 + 438 * X ^ 5 + 528 * X ^ 6 + 1040 * X ^ 7 + 1153 * X ^ 8 + 2216 * X ^ 9 + 2229 * X ^ 10 + 4290 * X ^ 11 + 4054 * X ^ 12 + 7786 * X ^ 13 + 6874 * X ^ 14 + 13336 * X ^ 15 + 11152 * X ^ 16 + 21884 * X ^ 17 + 17263 * X ^ 18 + 34534 * X ^ 19 + 25818 * X ^ 20 + 52710 * X ^ 21 + 37248 * X ^ 22 + 78094 * X ^ 23 + 52258 * X ^ 24 + 112830 * X ^ 25 + 71186 * X ^ 26 + 159180 * X ^ 27 + 94604 * X ^ 28 + 219966 * X ^ 29 + 122555 * X ^ 30 + 298096 * X ^ 31 + 155158 * X ^ 32 + 396984 * X ^ 33 + 191703 * X ^ 34 + 519970 * X ^ 35 + 231518 * X ^ 36 + 670840 * X ^ 37 + 272674 * X ^ 38 + 852972 * X ^ 39 + 313112 * X ^ 40 + 1070250 * X ^ 41 + 349289 * X ^ 42 + 1325652 * X ^ 43 + 377324 * X ^ 44 + 1622442 * X ^ 45 + 391578 * X ^ 46 + 1962730 * X ^ 47 + 386188 * X ^ 48 + 2348798 * X ^ 49 + 353228 * X ^ 50 + 2781106 * X ^ 51 + 284783 * X ^ 52 + 3260444 * X ^ 53 + 171052 * X ^ 54 + 3785302 * X ^ 55 + 2431 * X ^ 56 + 4354552 * X ^ 57 - 232175 * X ^ 58 + 4964518 * X ^ 59 - 542892 * X ^ 60 + 5612002 * X ^ 61 - 940982 * X ^ 62 + 6291080 * X ^ 63 - 1435827 * X ^ 64 + 6996974 * X ^ 65 - 2037025 * X ^ 66 + 7721864 * X ^ 67 - 2751581 * X ^ 68 + 8459618 * X ^ 69 - 3585668 * X ^ 70 + 9201420 * X ^ 71 - 4541783 * X ^ 72 + 9940758 * X ^ 73 - 5621132 * X ^ 74 + 10668310 * X ^ 75 - 6820173 * X ^ 76 + 11378216 * X ^ 77 - 8133365 * X ^ 78 + 12061726 * X ^ 79 - 9550390 * X ^ 80 + 12714240 * X ^ 81 - 11058366 * X ^ 82 + 13328620 * X ^ 83 - 12639601 * X ^ 84 + 13902098 * X ^ 85 - 14274480 * X ^ 86 + 14429312 * X ^ 87 - 15938920 * X ^ 88 + 14910168 * X ^ 89 - 17607504 * X ^ 90 + 15341152 * X ^ 91 - 19251980 * X ^ 92 + 15724186 * X ^ 93 - 20843590 * X ^ 94 + 16057848 * X ^ 95 - 22352289 * X ^ 96 + 16345720 * X ^ 97 - 23749467 * X ^ 98 + 16587314 * X ^ 99 - 25006647 * X ^ 100 + 16787426 * X ^ 101 - 26098267 * X ^ 102 + 16945848 * X ^ 103 - 27001266 * X ^ 104 + 17067396 * X ^ 105 - 27696370 * X ^ 106 + 17151640 * X ^ 107 - 28168314 * X ^ 108 + 17202506 * X ^ 109 - 28407021 * X ^ 110 + 17218424 * X ^ 111 - 28407021 * X ^ 112 + 17202506 * X ^ 113 - 28168314 * X ^ 114 + 17151640 * X ^ 115 - 27696370 * X ^ 116 + 17067396 * X ^ 117 - 27001266 * X ^ 118 + 16945848 * X ^ 119 - 26098267 * X ^ 120 + 16787426 * X ^ 121 - 25006647 * X ^ 122 + 16587314 * X ^ 123 - 23749467 * X ^ 124 + 16345720 * X ^ 125 - 22352289 * X ^ 126 + 16057848 * X ^ 127 - 20843590 * X ^ 128 + 15724186 * X ^ 129 - 19251980 * X ^ 130 + 15341152 * X ^ 131 - 17607504 * X ^ 132 + 14910168 * X ^ 133 - 15938920 * X ^ 134 + 14429312 * X ^ 135 - 14274480 * X ^ 136 + 13902098 * X ^ 137 - 12639601 * X ^ 138 + 13328620 * X ^ 139 - 11058366 * X ^ 140 + 12714240 * X ^ 141 - 9550390 * X ^ 142 + 12061726 * X ^ 143 - 8133365 * X ^ 144 + 11378216 * X ^ 145 - 6820173 * X ^ 146 + 10668310 * X ^ 147 - 5621132 * X ^ 148 + 9940758 * X ^ 149 - 4541783 * X ^ 150 + 9201420 * X ^ 151 - 3585668 * X ^ 152 + 8459618 * X ^ 153 - 2751581 * X ^ 154 + 7721864 * X ^ 155 - 2037025 * X ^ 156 + 6996974 * X ^ 157 - 1435827 * X ^ 158 + 6291080 * X ^ 159 - 940982 * X ^ 160 + 5612002 * X ^ 161 - 542892 * X ^ 162 + 4964518 * X ^ 163 - 232175 * X ^ 164 + 4354552 * X ^ 165 + 2431 * X ^ 166 + 3785302 * X ^ 167 + 171052 * X ^ 168 + 3260444 * X ^ 169 + 284783 * X ^ 170 + 2781106 * X ^ 171 + 353228 * X ^ 172 + 2348798 * X ^ 173 + 386188 * X ^ 174 + 1962730 * X ^ 175 + 391578 * X ^ 176 + 1622442 * X ^ 177 + 377324 * X ^ 178 + 1325652 * X ^ 179 + 349289 * X ^ 180 + 1070250 * X ^ 181 + 313112 * X ^ 182 + 852972 * X ^ 183 + 272674 * X ^ 184 + 670840 * X ^ 185 + 231518 * X ^ 186 + 519970 * X ^ 187 + 191703 * X ^ 188 + 396984 * X ^ 189 + 155158 * X ^ 190 + 298096 * X ^ 191 + 122555 * X ^ 192 + 219966 * X ^ 193 + 94604 * X ^ 194 + 159180 * X ^ 195 + 71186 * X ^ 196 + 112830 * X ^ 197 + 52258 * X ^ 198 + 78094 * X ^ 199 + 37248 * X ^ 200 + 52710 * X ^ 201 + 25818 * X ^ 202 + 34534 * X ^ 203 + 17263 * X ^ 204 + 21884 * X ^ 205 + 11152 * X ^ 206 + 13336 * X ^ 207 + 6874 * X ^ 208 + 7786 * X ^ 209 + 4054 * X ^ 210 + 4290 * X ^ 211 + 2229 * X ^ 212 + 2216 * X ^ 213 + 1153 * X ^ 214 + 1040 * X ^ 215 + 528 * X ^ 216 + 438 * X ^ 217 + 219 * X ^ 218 + 154 * X ^ 219 + 73 * X ^ 220 + 40 * X ^ 221 + 15 * X ^ 222
+
+set_option maxHeartbeats 4000000 in
+/-- The cleared tail `P_20 = q^125·D(20)` as an integer polynomial (degree 250). -/
+noncomputable def P20 : ℤ[X] :=
+  6 + 50 * X + 48 * X ^ 2 + 190 * X ^ 3 + 158 * X ^ 4 + 588 * X ^ 5 + 422 * X ^ 6 + 1384 * X ^ 7 + 980 * X ^ 8 + 3052 * X ^ 9 + 2034 * X ^ 10 + 6001 * X ^ 11 + 3914 * X ^ 12 + 11181 * X ^ 13 + 7059 * X ^ 14 + 19451 * X ^ 15 + 12082 * X ^ 16 + 32586 * X ^ 17 + 19793 * X ^ 18 + 52188 * X ^ 19 + 31261 * X ^ 20 + 81149 * X ^ 21 + 47769 * X ^ 22 + 121937 * X ^ 23 + 70945 * X ^ 24 + 178954 * X ^ 25 + 102670 * X ^ 26 + 255768 * X ^ 27 + 145204 * X ^ 28 + 358344 * X ^ 29 + 201004 * X ^ 30 + 491272 * X ^ 31 + 272975 * X ^ 32 + 662109 * X ^ 33 + 363989 * X ^ 34 + 876127 * X ^ 35 + 477327 * X ^ 36 + 1141939 * X ^ 37 + 616059 * X ^ 38 + 1464650 * X ^ 39 + 783360 * X ^ 40 + 1853247 * X ^ 41 + 981930 * X ^ 42 + 2311456 * X ^ 43 + 1214290 * X ^ 44 + 2847221 * X ^ 45 + 1481912 * X ^ 46 + 3461109 * X ^ 47 + 1785849 * X ^ 48 + 4158644 * X ^ 49 + 2125668 * X ^ 50 + 4935509 * X ^ 51 + 2499948 * X ^ 52 + 5792845 * X ^ 53 + 2905375 * X ^ 54 + 6719586 * X ^ 55 + 3337439 * X ^ 56 + 7711218 * X ^ 57 + 3789229 * X ^ 58 + 8748555 * X ^ 59 + 4252550 * X ^ 60 + 9820585 * X ^ 61 + 4716759 * X ^ 62 + 10899157 * X ^ 63 + 5169779 * X ^ 64 + 11966983 * X ^ 65 + 5597403 * X ^ 66 + 12987883 * X ^ 67 + 5984536 * X ^ 68 + 13939490 * X ^ 69 + 6314132 * X ^ 70 + 14779128 * X ^ 71 + 6569297 * X ^ 72 + 15482553 * X ^ 73 + 6732061 * X ^ 74 + 16004188 * X ^ 75 + 6785341 * X ^ 76 + 16321346 * X ^ 77 + 6712428 * X ^ 78 + 16390016 * X ^ 79 + 6498805 * X ^ 80 + 16194363 * X ^ 81 + 6131297 * X ^ 82 + 15696631 * X ^ 83 + 5600424 * X ^ 84 + 14892850 * X ^ 85 + 4899319 * X ^ 86 + 13756207 * X ^ 87 + 4025658 * X ^ 88 + 12298982 * X ^ 89 + 2980933 * X ^ 90 + 10509735 * X ^ 91 + 1772033 * X ^ 92 + 8419538 * X ^ 93 + 409661 * X ^ 94 + 6033755 * X ^ 95 - 1089605 * X ^ 96 + 3403752 * X ^ 97 - 2705252 * X ^ 98 + 551714 * X ^ 99 - 4411943 * X ^ 100 - 2453062 * X ^ 101 - 6180770 * X ^ 102 - 5574461 * X ^ 103 - 7979191 * X ^ 104 - 8729301 * X ^ 105 - 9772881 * X ^ 106 - 11872989 * X ^ 107 - 11525222 * X ^ 108 - 14914828 * X ^ 109 - 13199664 * X ^ 110 - 17809030 * X ^ 111 - 14759848 * X ^ 112 - 20465664 * X ^ 113 - 16171172 * X ^ 114 - 22844803 * X ^ 115 - 17401420 * X ^ 116 - 24865915 * X ^ 117 - 18422485 * X ^ 118 - 26503418 * X ^ 119 - 19210198 * X ^ 120 - 27692568 * X ^ 121 - 19745955 * X ^ 122 - 28427984 * X ^ 123 - 20017141 * X ^ 124 - 28667022 * X ^ 125 - 20017141 * X ^ 126 - 28427984 * X ^ 127 - 19745955 * X ^ 128 - 27692568 * X ^ 129 - 19210198 * X ^ 130 - 26503418 * X ^ 131 - 18422485 * X ^ 132 - 24865915 * X ^ 133 - 17401420 * X ^ 134 - 22844803 * X ^ 135 - 16171172 * X ^ 136 - 20465664 * X ^ 137 - 14759848 * X ^ 138 - 17809030 * X ^ 139 - 13199664 * X ^ 140 - 14914828 * X ^ 141 - 11525222 * X ^ 142 - 11872989 * X ^ 143 - 9772881 * X ^ 144 - 8729301 * X ^ 145 - 7979191 * X ^ 146 - 5574461 * X ^ 147 - 6180770 * X ^ 148 - 2453062 * X ^ 149 - 4411943 * X ^ 150 + 551714 * X ^ 151 - 2705252 * X ^ 152 + 3403752 * X ^ 153 - 1089605 * X ^ 154 + 6033755 * X ^ 155 + 409661 * X ^ 156 + 8419538 * X ^ 157 + 1772033 * X ^ 158 + 10509735 * X ^ 159 + 2980933 * X ^ 160 + 12298982 * X ^ 161 + 4025658 * X ^ 162 + 13756207 * X ^ 163 + 4899319 * X ^ 164 + 14892850 * X ^ 165 + 5600424 * X ^ 166 + 15696631 * X ^ 167 + 6131297 * X ^ 168 + 16194363 * X ^ 169 + 6498805 * X ^ 170 + 16390016 * X ^ 171 + 6712428 * X ^ 172 + 16321346 * X ^ 173 + 6785341 * X ^ 174 + 16004188 * X ^ 175 + 6732061 * X ^ 176 + 15482553 * X ^ 177 + 6569297 * X ^ 178 + 14779128 * X ^ 179 + 6314132 * X ^ 180 + 13939490 * X ^ 181 + 5984536 * X ^ 182 + 12987883 * X ^ 183 + 5597403 * X ^ 184 + 11966983 * X ^ 185 + 5169779 * X ^ 186 + 10899157 * X ^ 187 + 4716759 * X ^ 188 + 9820585 * X ^ 189 + 4252550 * X ^ 190 + 8748555 * X ^ 191 + 3789229 * X ^ 192 + 7711218 * X ^ 193 + 3337439 * X ^ 194 + 6719586 * X ^ 195 + 2905375 * X ^ 196 + 5792845 * X ^ 197 + 2499948 * X ^ 198 + 4935509 * X ^ 199 + 2125668 * X ^ 200 + 4158644 * X ^ 201 + 1785849 * X ^ 202 + 3461109 * X ^ 203 + 1481912 * X ^ 204 + 2847221 * X ^ 205 + 1214290 * X ^ 206 + 2311456 * X ^ 207 + 981930 * X ^ 208 + 1853247 * X ^ 209 + 783360 * X ^ 210 + 1464650 * X ^ 211 + 616059 * X ^ 212 + 1141939 * X ^ 213 + 477327 * X ^ 214 + 876127 * X ^ 215 + 363989 * X ^ 216 + 662109 * X ^ 217 + 272975 * X ^ 218 + 491272 * X ^ 219 + 201004 * X ^ 220 + 358344 * X ^ 221 + 145204 * X ^ 222 + 255768 * X ^ 223 + 102670 * X ^ 224 + 178954 * X ^ 225 + 70945 * X ^ 226 + 121937 * X ^ 227 + 47769 * X ^ 228 + 81149 * X ^ 229 + 31261 * X ^ 230 + 52188 * X ^ 231 + 19793 * X ^ 232 + 32586 * X ^ 233 + 12082 * X ^ 234 + 19451 * X ^ 235 + 7059 * X ^ 236 + 11181 * X ^ 237 + 3914 * X ^ 238 + 6001 * X ^ 239 + 2034 * X ^ 240 + 3052 * X ^ 241 + 980 * X ^ 242 + 1384 * X ^ 243 + 422 * X ^ 244 + 588 * X ^ 245 + 158 * X ^ 246 + 190 * X ^ 247 + 48 * X ^ 248 + 50 * X ^ 249 + 6 * X ^ 250
+
 set_option maxHeartbeats 8000000 in
 /-- `P_6` is **not** a product of cyclotomic polynomials: witness `p = 47`, `a = 28`
     (order `23` mod `47`, `φ(23) = 22 > 14 = deg P_6`), `b = 2`. -/
@@ -1634,6 +1665,120 @@ theorem P14_not_cyclo : ¬ IsCycloProduct P14 := by
     rcases hmem with rfl | rfl <;> rw [intCast_pow_eq_one_iff] <;> norm_num
   · decide
 
+set_option maxHeartbeats 8000000 in
+/-- `P_15` is **not** a product of cyclotomic polynomials: witness `p = 293`, `a = 66`
+    (order `292` mod `293`, `φ(292) = 144 > 130 = deg P_15`), `b = 2`. -/
+theorem P15_not_cyclo : ¬ IsCycloProduct P15 := by
+  haveI : Fact (Nat.Prime 293) := ⟨by norm_num⟩
+  refine not_isCycloProduct_of_witness P15 130 (p := 293) 66 2 292 (by norm_num) ?_ ?_ ?_ ?_ ?_ ?_ ?_
+  · simp only [P15]; compute_degree
+  · simp only [P15, eval_add, eval_sub, eval_mul, eval_pow, eval_X, eval_ofNat, eval_one, eval_neg]; norm_num
+  · simp only [P15, eval_add, eval_sub, eval_mul, eval_pow, eval_X, eval_ofNat, eval_one, eval_neg]; norm_num
+  · norm_num
+  · rw [intCast_pow_eq_one_iff]; norm_num
+  · intro r hr hdvd
+    have hmem := mem_of_prime_dvd_prod [2, 2, 73]
+      (by intro r hr; simp only [List.mem_cons, List.not_mem_nil, or_false] at hr
+          rcases hr with rfl | rfl | rfl <;> norm_num) hr hdvd (by norm_num)
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hmem
+    rcases hmem with rfl | rfl | rfl <;> rw [intCast_pow_eq_one_iff] <;> norm_num
+  · decide
+
+set_option maxHeartbeats 8000000 in
+/-- `P_16` is **not** a product of cyclotomic polynomials: witness `p = 317`, `a = 75`
+    (order `316` mod `317`, `φ(316) = 156 > 150 = deg P_16`), `b = 2`. -/
+theorem P16_not_cyclo : ¬ IsCycloProduct P16 := by
+  haveI : Fact (Nat.Prime 317) := ⟨by norm_num⟩
+  refine not_isCycloProduct_of_witness P16 150 (p := 317) 75 2 316 (by norm_num) ?_ ?_ ?_ ?_ ?_ ?_ ?_
+  · simp only [P16]; compute_degree
+  · simp only [P16, eval_add, eval_sub, eval_mul, eval_pow, eval_X, eval_ofNat, eval_one, eval_neg]; norm_num
+  · simp only [P16, eval_add, eval_sub, eval_mul, eval_pow, eval_X, eval_ofNat, eval_one, eval_neg]; norm_num
+  · norm_num
+  · rw [intCast_pow_eq_one_iff]; norm_num
+  · intro r hr hdvd
+    have hmem := mem_of_prime_dvd_prod [2, 2, 79]
+      (by intro r hr; simp only [List.mem_cons, List.not_mem_nil, or_false] at hr
+          rcases hr with rfl | rfl | rfl <;> norm_num) hr hdvd (by norm_num)
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hmem
+    rcases hmem with rfl | rfl | rfl <;> rw [intCast_pow_eq_one_iff] <;> norm_num
+  · decide
+
+set_option maxHeartbeats 8000000 in
+/-- `P_17` is **not** a product of cyclotomic polynomials: witness `p = 359`, `a = 16`
+    (order `179` mod `359`, `φ(179) = 178 > 172 = deg P_17`), `b = 2`. -/
+theorem P17_not_cyclo : ¬ IsCycloProduct P17 := by
+  haveI : Fact (Nat.Prime 359) := ⟨by norm_num⟩
+  refine not_isCycloProduct_of_witness P17 172 (p := 359) 16 2 179 (by norm_num) ?_ ?_ ?_ ?_ ?_ ?_ ?_
+  · simp only [P17]; compute_degree
+  · simp only [P17, eval_add, eval_sub, eval_mul, eval_pow, eval_X, eval_ofNat, eval_one, eval_neg]; norm_num
+  · simp only [P17, eval_add, eval_sub, eval_mul, eval_pow, eval_X, eval_ofNat, eval_one, eval_neg]; norm_num
+  · norm_num
+  · rw [intCast_pow_eq_one_iff]; norm_num
+  · intro r hr hdvd
+    have hmem := mem_of_prime_dvd_prod [179]
+      (by intro r hr; simp only [List.mem_cons, List.not_mem_nil, or_false] at hr
+          rcases hr with rfl <;> norm_num) hr hdvd (by norm_num)
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hmem
+    rcases hmem with rfl <;> rw [intCast_pow_eq_one_iff] <;> norm_num
+  · decide
+
+set_option maxHeartbeats 8000000 in
+/-- `P_18` is **not** a product of cyclotomic polynomials: witness `p = 557`, `a = 242`
+    (order `556` mod `557`, `φ(556) = 276 > 196 = deg P_18`), `b = 2`. -/
+theorem P18_not_cyclo : ¬ IsCycloProduct P18 := by
+  haveI : Fact (Nat.Prime 557) := ⟨by norm_num⟩
+  refine not_isCycloProduct_of_witness P18 196 (p := 557) 242 2 556 (by norm_num) ?_ ?_ ?_ ?_ ?_ ?_ ?_
+  · simp only [P18]; compute_degree
+  · simp only [P18, eval_add, eval_sub, eval_mul, eval_pow, eval_X, eval_ofNat, eval_one, eval_neg]; norm_num
+  · simp only [P18, eval_add, eval_sub, eval_mul, eval_pow, eval_X, eval_ofNat, eval_one, eval_neg]; norm_num
+  · norm_num
+  · rw [intCast_pow_eq_one_iff]; norm_num
+  · intro r hr hdvd
+    have hmem := mem_of_prime_dvd_prod [2, 2, 139]
+      (by intro r hr; simp only [List.mem_cons, List.not_mem_nil, or_false] at hr
+          rcases hr with rfl | rfl | rfl <;> norm_num) hr hdvd (by norm_num)
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hmem
+    rcases hmem with rfl | rfl | rfl <;> rw [intCast_pow_eq_one_iff] <;> norm_num
+  · decide
+
+set_option maxHeartbeats 8000000 in
+/-- `P_19` is **not** a product of cyclotomic polynomials: witness `p = 479`, `a = 33`
+    (order `239` mod `479`, `φ(239) = 238 > 222 = deg P_19`), `b = 2`. -/
+theorem P19_not_cyclo : ¬ IsCycloProduct P19 := by
+  haveI : Fact (Nat.Prime 479) := ⟨by norm_num⟩
+  refine not_isCycloProduct_of_witness P19 222 (p := 479) 33 2 239 (by norm_num) ?_ ?_ ?_ ?_ ?_ ?_ ?_
+  · simp only [P19]; compute_degree
+  · simp only [P19, eval_add, eval_sub, eval_mul, eval_pow, eval_X, eval_ofNat, eval_one, eval_neg]; norm_num
+  · simp only [P19, eval_add, eval_sub, eval_mul, eval_pow, eval_X, eval_ofNat, eval_one, eval_neg]; norm_num
+  · norm_num
+  · rw [intCast_pow_eq_one_iff]; norm_num
+  · intro r hr hdvd
+    have hmem := mem_of_prime_dvd_prod [239]
+      (by intro r hr; simp only [List.mem_cons, List.not_mem_nil, or_false] at hr
+          rcases hr with rfl <;> norm_num) hr hdvd (by norm_num)
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hmem
+    rcases hmem with rfl <;> rw [intCast_pow_eq_one_iff] <;> norm_num
+  · decide
+
+set_option maxHeartbeats 8000000 in
+/-- `P_20` is **not** a product of cyclotomic polynomials: witness `p = 557`, `a = 200`
+    (order `556` mod `557`, `φ(556) = 276 > 250 = deg P_20`), `b = 2`. -/
+theorem P20_not_cyclo : ¬ IsCycloProduct P20 := by
+  haveI : Fact (Nat.Prime 557) := ⟨by norm_num⟩
+  refine not_isCycloProduct_of_witness P20 250 (p := 557) 200 2 556 (by norm_num) ?_ ?_ ?_ ?_ ?_ ?_ ?_
+  · simp only [P20]; compute_degree
+  · simp only [P20, eval_add, eval_sub, eval_mul, eval_pow, eval_X, eval_ofNat, eval_one, eval_neg]; norm_num
+  · simp only [P20, eval_add, eval_sub, eval_mul, eval_pow, eval_X, eval_ofNat, eval_one, eval_neg]; norm_num
+  · norm_num
+  · rw [intCast_pow_eq_one_iff]; norm_num
+  · intro r hr hdvd
+    have hmem := mem_of_prime_dvd_prod [2, 2, 139]
+      (by intro r hr; simp only [List.mem_cons, List.not_mem_nil, or_false] at hr
+          rcases hr with rfl | rfl | rfl <;> norm_num) hr hdvd (by norm_num)
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hmem
+    rcases hmem with rfl | rfl | rfl <;> rw [intCast_pow_eq_one_iff] <;> norm_num
+  · decide
+
 /-! ## Part 4 — the forward direction and the boundary -/
 
 theorem P4_cyclo : IsCycloProduct P4 := by
@@ -1657,7 +1802,7 @@ theorem P5_cyclo : IsCycloProduct P5 := by
 
 theorem zero_cyclo : IsCycloProduct 0 := ⟨0, 0, 0, by simp⟩
 
-/-- The cleared tail `P_n` for `2 ≤ n ≤ 14` (`0` for `n = 2, 3`); outside that range this table
+/-- The cleared tail `P_n` for `2 ≤ n ≤ 20` (`0` for `n = 2, 3`); outside that range this table
 carries no meaning and is set to `0`. -/
 noncomputable def tailPoly : ℕ → ℤ[X]
   | 4 => P4
@@ -1671,11 +1816,17 @@ noncomputable def tailPoly : ℕ → ℤ[X]
   | 12 => P12
   | 13 => P13
   | 14 => P14
+  | 15 => P15
+  | 16 => P16
+  | 17 => P17
+  | 18 => P18
+  | 19 => P19
+  | 20 => P20
   | _ => 0
 
-/-- **The cyclotomic boundary, `2 ≤ n ≤ 14`.**  The cleared Habiro tail is a product of
+/-- **The cyclotomic boundary, `2 ≤ n ≤ 20`.**  The cleared Habiro tail is a product of
 cyclotomic polynomials exactly when `n ≤ 5`. -/
-theorem cyclotomic_boundary (n : ℕ) (h2 : 2 ≤ n) (hN : n ≤ 14) :
+theorem cyclotomic_boundary (n : ℕ) (h2 : 2 ≤ n) (hN : n ≤ 20) :
     IsCycloProduct (tailPoly n) ↔ n ≤ 5 := by
   interval_cases n
   all_goals first
@@ -1691,6 +1842,12 @@ theorem cyclotomic_boundary (n : ℕ) (h2 : 2 ≤ n) (hN : n ≤ 14) :
     | (simp only [tailPoly]; exact iff_of_false P12_not_cyclo (by norm_num))
     | (simp only [tailPoly]; exact iff_of_false P13_not_cyclo (by norm_num))
     | (simp only [tailPoly]; exact iff_of_false P14_not_cyclo (by norm_num))
+    | (simp only [tailPoly]; exact iff_of_false P15_not_cyclo (by norm_num))
+    | (simp only [tailPoly]; exact iff_of_false P16_not_cyclo (by norm_num))
+    | (simp only [tailPoly]; exact iff_of_false P17_not_cyclo (by norm_num))
+    | (simp only [tailPoly]; exact iff_of_false P18_not_cyclo (by norm_num))
+    | (simp only [tailPoly]; exact iff_of_false P19_not_cyclo (by norm_num))
+    | (simp only [tailPoly]; exact iff_of_false P20_not_cyclo (by norm_num))
 
 /-- `tailPoly n` really is the cleared tail of the definition, for `2 ≤ n ≤ 9`. -/
 theorem tailPoly_spec {K : Type*} [Field K] {q : K} (hq : q ≠ 0) (n : ℕ) (h2 : 2 ≤ n)
