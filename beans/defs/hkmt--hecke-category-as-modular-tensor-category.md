@@ -81,3 +81,7 @@ at A = ω, matching the S-matrix and vacuum-row files) the crossing A − A⁻¹
 as A, the Markov curl on the last strand is +A³, and (A³)^{n+1}A^{n(n+1)} = ω⁻¹·T_{n+1,n+1}. The
 (−1)ʲ was the Kauffman loop sign. Still open: ribbon twist on p_n = curl^{strands}·full twist
 (interior-strand curls cited); MarkovTower instance at a root of unity; off-vacuum S rows.
+
+## 2026-11-27 — Markov trace built (PR #9817)
+
+`HeckeTemperleyLieb/TLSpinChainMarkovTrace.lean` gives `spinMarkovTower : MarkovTower δ δ⁻¹` at every `δ = q + q⁻¹` with `q ≠ 0` and `δ ≠ 0`, over any field. It is the U_q(sl₂) spin-chain quantum trace with weight ∏ g(τₜ). `vacuum_row_spin` makes the vacuum row of S at a root of unity unconditional. The file is sorry-free and uses only the standard axioms. Still open: the off-vacuum S rows (Hopf link of two JW projectors), which are next, and full modularity of the Hecke category.
