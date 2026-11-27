@@ -7,7 +7,8 @@ import HeckeTemperleyLieb.MarkovTraceSymmetries
 `QOU.BraidsAndKnots.TFromTraceCyclicity` carries `conj:t-from-trace-cyclicity` as a class
 whose one field says: for every matrix representation `ρ : HeckeRep n d` and every signed
 braid word `w`, the character of `w` and of its reversal agree. This file provides the
-instance for `n = 3` and every `d`, so the class is discharged there.
+instance for `n = 3` and every `d` by an elementary argument. The general case (every `n`)
+is `QOU.BraidsAndKnots.TFromTraceCyclicityAll`.
 
 ## The argument
 
@@ -22,9 +23,9 @@ spanned by the six Jones normal-form words `1, s₀, s₁, s₁s₀, s₀s₁, s
 `s₀s₁ ↔ s₁s₀` is a cyclic rotation, so the two pull-backs agree on every spanning word,
 hence everywhere (`cyclic_reverse_two`).
 
-For `n ≥ 4` the same span argument needs `T_w ≡ T_{w⁻¹} mod [H, H]` for every `w ∈ S_n`
-(Geck–Pfeiffer, §8.2), which is not formalised, so no instance is given there. The
-statement is true over `ℚ(t)` by semisimplicity; it stays a class for `n ≥ 4`.
+For `n ≥ 4` the normal-form words are no longer palindromes or rotations of each other; the
+general argument is the induction along the parabolic chain in
+`QOU.IwahoriHecke.HeckeTraceReversal`.
 
 -- Ref: [leitner2026] conj:t-from-trace-cyclicity
 -- Ref: [jones1987] Jones, Hecke algebra representations of braid groups (1987), §4.
@@ -132,8 +133,9 @@ theorem markovTrace_timeReversal_three (ρ : HeckeRep 3 d) (w : Archimedean.Brai
   exact cyclic_reverse_two (genFamily3_hecke ρ) (Matrix.traceLinearMap (Fin d) R_t R_t)
     (fun x y => Matrix.trace_mul_comm x y) _ _ w
 
-/-- The instance: `TFromTraceCyclicity 3 d` holds for every `d`. -/
-instance tFromTraceCyclicity_three : TFromTraceCyclicity 3 d where
+/-- `TFromTraceCyclicity 3 d` from the elementary three-strand argument. Not an instance: the
+general instance for every `n` is `TFromTraceCyclicityAll.tFromTraceCyclicity`. -/
+def tFromTraceCyclicity_three : TFromTraceCyclicity 3 d where
   trace_reversal_invariant := markovTrace_timeReversal_three
 
 end ThreeStrands

@@ -53,15 +53,12 @@ A signed letter `(i, e)` is evaluated as `α e • 1 + β e • s i` for arbitra
   the Markov trace, with the same witness `σ₀` (a one-letter word is its own reverse).
   Since `T` *is* trace-preserving (above), the failure is entirely `P`'s.
 
-## What this does not settle
+## Characters that are not Markov traces
 
 The class `QOU.BraidsAndKnots.TFromTraceCyclicity` quantifies over every matrix
 representation `HeckeRep n d` and its *character*, which is cyclic but is not a Markov
-trace. Reversal invariance of every such character is true over `ℚ(t)` (the Hecke algebra
-is split semisimple there, and every irreducible character is invariant under the
-anti-involution `T_w ↦ T_{w⁻¹}`), but that argument needs semisimplicity or the
-Geck–Pfeiffer theorem `T_w ≡ T_{w⁻¹} mod [H, H]`, neither of which is formalised. The
-`n ≤ 3` case is in `QOU.BraidsAndKnots.TFromTraceCyclicityH3`.
+trace, so uniqueness does not apply. That stronger statement is proved separately, for every
+cyclic functional and every `n`, in `QOU.IwahoriHecke.HeckeTraceReversal`.
 
 -- Ref: [jones1987] Jones, *Hecke algebra representations of braid groups and link
 --      polynomials*, Ann. Math. 126 (1987), §4–5.

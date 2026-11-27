@@ -35,16 +35,15 @@ plausible for Hecke characters by a *different* route (the anti-automorphism
 fixing each generator, under which characters are invariant). Hence the class
 field rather than a proof.
 
-**Status (2026-11-27).** That route is now formalised in two places:
-* `QOU.IwahoriHecke.MarkovTraceSymmetries.markov_reverse` proves reversal
-  invariance for every normalised cyclic Markov trace (property (M3)), every
-  number of strands, through the opposite algebra and Markov uniqueness.
-* `QOU.BraidsAndKnots.TFromTraceCyclicityH3` provides the instance
-  `TFromTraceCyclicity 3 d` for every `d`: every 3-strand character is
-  reversal invariant, unconditionally.
-For `n ≥ 4` the class field (all representation characters, not only Markov
-traces) stays open here; it needs `T_w ≡ T_{w⁻¹} mod [H, H]` (Geck–Pfeiffer
-§8.2) or semisimplicity over `ℚ(t)`.
+**Status (2026-11-27): proved.** The class has an instance for every `n`
+and `d`, `QOU.BraidsAndKnots.TFromTraceCyclicityAll.tFromTraceCyclicity`.
+The proof (`QOU.IwahoriHecke.HeckeTraceReversal`) shows every cyclic
+functional on a type-`A` Hecke algebra is invariant under the anti-involution
+fixing the generators, by induction along `H₁ ⊂ H₂ ⊂ ⋯` using only the
+double-coset decomposition `H_{k+1} = H_k + H_k s_k H_k`. For Markov traces a
+second proof goes through uniqueness
+(`QOU.IwahoriHecke.MarkovTraceSymmetries.markov_reverse`), and
+`TFromTraceCyclicityH3` has an elementary `n = 3` argument.
 
 -- Ref: [leitner2026] conj:t-from-trace-cyclicity
 -- Ref: [jones1987] Hecke Algebra Representations of Braid Groups
