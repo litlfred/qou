@@ -175,6 +175,17 @@ had matured; the file had not been re-checked.
 changed is that it is now assumed *under the hypotheses the literature
 states*, so an instance cannot be obtained for free. -/
 
+-- PROVED CASE (2026-11-27). The one-object, finite-free case of this axiom is now a
+-- theorem, not an assumption, over a generic commutative ring:
+--   * MathlibExt/TannakaCoendOneObject.lean: the coend of any intertwiner family is a
+--     bialgebra. Its coproduct descends (coendComul, instBialgebraCoend), and its points
+--     are the intertwining matrices (pointEquiv).
+--   * MathlibExt/TannakaFibreFunctor.lean: for τ : C ⥤ ModuleCat R on the tensor powers of
+--     V, the coaction is natural (coaction_natural) and monoidal (coaction_monoidal_μ).
+--   * QOU/LiftingDescent/OqSU2FRTCoend.lean: for the fundamental representation the coend
+--     is O_q(SU(2)) (coendEquiv), and its Δ is OqSU2.coprod (coendEquiv_comul).
+-- The axiom below is kept for the general rigid braided case, which those files do not
+-- cover. Nothing in the corpus depends on it.
 -- Ref: [woronowicz1988] https://doi.org/10.1007/BF01219077  Theorem 1.1
 -- Ref: [deligne1990] https://doi.org/10.1007/978-0-8176-4575-5_3  Théorème 7.1
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2  Theorem XI.4.1
