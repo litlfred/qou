@@ -43,3 +43,7 @@ Parts (a) and (b) are on main in `QOU/StandardModel/Su3Su2U1Z6GroupAndCommutant.
 ## 2026-11-27 (round 2) — part (c) carrier is satisfied by α = 1/6 (PR #9754)
 
 `QOU/StandardModel/BringKummerCarrierVacuity.lean`: `bringKummerCarrier_satisfied` builds `BringKummerSU5EmbeddingHypothesis K` from the constant 1/6. The fields never mention Bring's curve. Real content of (c): Bring's degree-3 Kummer pushforward realises the flavour fundamental W of `FlavouredQuantumObservableUniverse` (bean qou-j3w6, flavour W thread). Given V, W the embedding, commutant and α = ±1/6 are proved. χ = −6 thread caution: H¹(M₀) = 2W₄ has no A₅-equivariant 3 ⊕ 2. Owner card on whether to retire the carrier and re-point (c) at qou-j3w6.
+
+
+## 2026-11-27T22:15Z — part (c) carrier retired (PR #9754, commit 2564f59c7)
+Carl card 21:53Z "Retire carrier, link to flavour W". BringKummerSU5EmbeddingHypothesis and BringKummerCarrierVacuity.lean removed (satisfied by alpha=1/6). Part (c) = substrate supplies W (qou-j3w6); alpha^2=1/36 then follows from neutral_lepton_iff_three_eighths. Note chi=-6 thread: Bring H^1 = 2W_4 has no A5-equivariant 3+2.
