@@ -5,6 +5,7 @@ Released under Apache 2.0 license.
 import MathlibExt.TannakaCoendOneObject
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.Algebra.Category.ModuleCat.Basic
+import Mathlib.Algebra.Category.ModuleCat.Monoidal.Basic
 import Mathlib.LinearAlgebra.Matrix.ToLin
 
 /-!
@@ -21,10 +22,10 @@ bialgebra by `MathlibExt/TannakaCoendOneObject.lean`.
 `b_w ↦ ∑ v, b_v ⊗ u^{⊗m}_{v w}` on each `τ (V^{⊗m})` commutes with `τ f` for every `f`.
 It is proved from the intertwining relations; nothing is assumed.
 
-**Scope.** The bialgebra theorem and naturality hold for every choice of bases. The
-monoidal reading, i.e. that the coaction on `τ (V ⊗ W)` is the tensor product of the
-coactions, needs the bases of `τ (V^{⊗m})` to be the product bases through a monoidal
-structure on `τ`. That compatibility is not stated here.
+**Monoidal compatibility** (`coaction_monoidal`, `coaction_monoidal_μ`). Suppose the word
+bases are the product bases through maps `τ V ⊗ τ (V^{⊗m}) → τ (V^{⊗(m+1)})`, for example
+the tensorator `μ` of a lax monoidal structure on `τ`. Then the coaction on `τ (V^{⊗(m+1)})`
+is the tensor product of the coactions on `τ V` and `τ (V^{⊗m})`.
 -/
 
 set_option linter.unusedSectionVars false
@@ -93,6 +94,86 @@ theorem coaction_natural {a b : ℕ} (f : tensorPow V a ⟶ tensorPow V b) :
     _ = ∑ v, ∑ w, F v w' • bas b w ⊗ₜ[R] tpow (coendMat D) b w v := by
         rw [Finset.sum_comm]
         simp only [tmul_sum, tmul_smul]
+
+/-! ## Monoidal compatibility
+
+Suppose `τ (V^{⊗(m+1)}) = τ (V ⊗ V^{⊗m})` receives a map `e m` from `τ V ⊗ τ (V^{⊗m})`, for
+instance the tensorator `μ` of a monoidal structure on `τ`. Suppose also that the word
+bases are the **product bases**: `bas (m+1) (i :: v) = e m (b i ⊗ bas m v)` for a basis `b`
+of `τ V`. Then the coaction on `τ (V^{⊗(m+1)})` is the tensor product of the coaction on
+`τ V` and the coaction on `τ (V^{⊗m})`, pushed through `e m` (`coaction_monoidal`). That is
+what makes the coend's comodules a monoidal category, compatibly with `τ`. -/
+
+section Monoidal
+
+variable {A : Type*} [Ring A] [Algebra R A]
+
+/-- The tensor product of two coactions:
+`m ⊗ n ↦ ∑ (m₀ ⊗ n₀) ⊗ m₁ n₁`. -/
+def tensorCoaction {M N : Type*} [AddCommGroup M] [Module R M] [AddCommGroup N] [Module R N]
+    (ρ : M →ₗ[R] M ⊗[R] A) (ρ' : N →ₗ[R] N ⊗[R] A) : M ⊗[R] N →ₗ[R] (M ⊗[R] N) ⊗[R] A :=
+  (LinearMap.lTensor (M ⊗[R] N) (LinearMap.mul' R A)) ∘ₗ
+    (TensorProduct.tensorTensorTensorComm R M A N A).toLinearMap ∘ₗ TensorProduct.map ρ ρ'
+
+theorem tensorCoaction_tmul {M N : Type*} [AddCommGroup M] [Module R M]
+    [AddCommGroup N] [Module R N] (ρ : M →ₗ[R] M ⊗[R] A) (ρ' : N →ₗ[R] N ⊗[R] A)
+    (x : M) (y : N) (m₀ : M) (a : A) (n₀ : N) (a' : A)
+    (hx : ρ x = m₀ ⊗ₜ a) (hy : ρ' y = n₀ ⊗ₜ a') :
+    tensorCoaction ρ ρ' (x ⊗ₜ y) = (m₀ ⊗ₜ n₀) ⊗ₜ (a * a') := by
+  simp [tensorCoaction, hx, hy]
+
+variable (b : Basis n R (τ.obj V))
+
+/-- The coaction on `τ V`: `b_j ↦ ∑ i, b_i ⊗ u i j`. -/
+def coactionV : τ.obj V →ₗ[R] τ.obj V ⊗[R] Coend (fibreData V τ bas) :=
+  b.constr R fun j => ∑ i, b i ⊗ₜ[R] coendMat (fibreData V τ bas) i j
+
+@[simp] theorem coactionV_basis (j : n) :
+    coactionV V τ bas b (b j) = ∑ i, b i ⊗ₜ[R] coendMat (fibreData V τ bas) i j := by
+  simp [coactionV, Basis.constr_basis]
+
+/-- **Monoidal compatibility.** With product bases, the coaction on `τ (V^{⊗(m+1)})` is the
+tensor product of the coactions on `τ V` and `τ (V^{⊗m})`. -/
+theorem coaction_monoidal (m : ℕ)
+    (e : τ.obj V ⊗[R] τ.obj (tensorPow V m) →ₗ[R] τ.obj (tensorPow V (m + 1)))
+    (hb : ∀ (i : n) (v : Fin m → n), bas (m + 1) (Fin.cons i v) = e (b i ⊗ₜ bas m v)) :
+    coaction V τ bas (m + 1) ∘ₗ e =
+      (e.rTensor (Coend (fibreData V τ bas))) ∘ₗ
+        tensorCoaction (coactionV V τ bas b) (coaction V τ bas m) := by
+  apply TensorProduct.ext
+  apply b.ext
+  intro i
+  apply (bas m).ext
+  intro w
+  simp only [LinearMap.compr₂_apply, TensorProduct.mk_apply, LinearMap.coe_comp,
+    Function.comp_apply]
+  rw [← hb, coaction_basis, ← (Fin.consEquiv fun _ => n).sum_comp, Fintype.sum_prod_type]
+  simp only [Fin.consEquiv, Equiv.coe_fn_mk, tpow_succ, Fin.cons_zero, Fin.tail_cons, hb]
+  simp only [tensorCoaction, LinearMap.coe_comp, Function.comp_apply, TensorProduct.map_tmul,
+    coactionV_basis, coaction_basis, sum_tmul, tmul_sum, map_sum,
+    LinearEquiv.coe_coe, TensorProduct.tensorTensorTensorComm_tmul, LinearMap.lTensor_tmul,
+    LinearMap.mul'_apply, LinearMap.rTensor_tmul]
+  rw [Finset.sum_comm]
+
+end Monoidal
+
+section MonoidalFunctor
+
+variable {R : Type v} [CommRing R] (V : C) (τ : C ⥤ ModuleCat.{v} R) [τ.LaxMonoidal]
+  (bas : FibreBases V τ n) (b : Basis n R (τ.obj V))
+
+/-- `coaction_monoidal` for the tensorator `μ` of a (lax) monoidal structure on `τ`:
+when the word bases are the `μ`-product bases, the coend's coaction is monoidal. -/
+theorem coaction_monoidal_μ (m : ℕ)
+    (hb : ∀ (i : n) (v : Fin m → n), bas (m + 1) (Fin.cons i v) =
+      (Functor.LaxMonoidal.μ τ V (tensorPow V m)).hom (b i ⊗ₜ bas m v)) :
+    coaction V τ bas (m + 1) ∘ₗ (Functor.LaxMonoidal.μ τ V (tensorPow V m)).hom =
+      ((Functor.LaxMonoidal.μ τ V (tensorPow V m)).hom.rTensor
+          (Coend (fibreData V τ bas))) ∘ₗ
+        tensorCoaction (coactionV V τ bas b) (coaction V τ bas m) :=
+  coaction_monoidal V τ bas b m _ hb
+
+end MonoidalFunctor
 
 end
 
