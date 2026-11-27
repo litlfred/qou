@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-20T08:13:33Z
-updated_at: 2026-11-27T15:10:57Z
+updated_at: 2026-11-27T18:00:00Z
 tags:
     - compute-accuracy
 parent: qou-3l2l
@@ -41,3 +41,14 @@ premise this bean asks to derive. Audit docs/audits/2026-11-27-mk-mpi-selection-
 ## 2026-11-27 — option 2 (channel choice), PR #9477
 
 Channel choice does NOT select `[3][4]`. The `sl₂ × sl₃` isotypes of classical dim 12 are exactly five. The four coloured ones (`V₂⊗6̄`, `V₂⊗6`, `V₄⊗3̄`, `V₄⊗3`) all have `dim_q = [3][4]`. The colourless `V₁₂` has `[12]`. Lean: `MesonTwelveDimChannels` (sorry-free). Remaining premise: classical multiplicity 12 and a coloured channel. Still Selected. Open: derive 12 (or `[3][4]`) from a definition of K and π. The quark labels (3,3)/(3,5) supply no map to 12 in the corpus.
+
+## 2026-11-27: Hecke-object route (PR #9502)
+
+Carl took the recommended route. The result is a negative of scope (a), and the row stays Selected.
+
+- **Clasp-word traces.** On the clasp words, every block trace and every Markov trace gives a kaon/pion ratio of 1 at q=1.
+- **Label embeddings.** `MesonLabelEmbeddings.lean` tries four ways for the quark labels to enter. Their ratios are 1 (clasp exponents), 5/3 (colour dimensions), 4/3 (strand count) and 56 (Hecke dimension). None is 12.
+- **General exclusion.** `classical_ratio_ne_p34` rules out any reading whose classical ratio is not 12.
+- **Where 12 does appear.** Only as the product of the half-sums, 3·4. That is the post-hoc V₃⊗V₄ reading.
+
+Still open: a definition of K and π in which the labels enter additively, are halved, and are then multiplied. A card for the alternatives is posted in the thread.
