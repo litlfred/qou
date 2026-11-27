@@ -403,6 +403,7 @@ import QOU.BraidsAndKnots.KnotTheory
 import QOU.BraidsAndKnots.Brunnian
 import QOU.BraidsAndKnots.KnotRegistry
 import QOU.MassTheory.MassDerivation
+import QOU.MassTheory.LinkingWeightWedderburn
 -- Also brings QOU.Mass.ChainTraceFactor under the umbrella; nothing had
 -- imported it, so it was invisible to blueprint/doc-gen import walks.
 import QOU.MassTheory.IntraOrderingInvariance
