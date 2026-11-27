@@ -312,7 +312,7 @@
 
 \title{On the Mechanics of Quantum Observable Universes}
 \author{Frederick Carl Leitner}
-\date{2026-11-25}
+\date{2026-11-27}
 
 \hypersetup{
   pdftitle  = {On the Mechanics of Quantum Observable Universes},
@@ -326,33 +326,28 @@
 \begin{document}
 
 \begin{titlepage}
-\centering
-\vspace*{3cm}
-{\LARGE\bfseries On the Mechanics of Quantum Observable Universes}\\[2em]
-{\large Frederick Carl Leitner}\\[1em]
-{\large 2026-11-25}
-\vfill
-\end{titlepage}
+\begin{center}
+\vspace*{0.2cm}
+{\LARGE\bfseries On the Mechanics of Quantum Observable Universes}\\[0.8em]
+{\large Frederick Carl Leitner}\\[0.4em]
+{\large 2026-11-27}
+\end{center}
 
-\thispagestyle{empty}
-\null\vfill
-\begin{center}{\small
-  \ccby\\[0.5em]
-  This work is licensed under a
-  \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International License}.\\[0.3em]
-  You are free to share and adapt this material for any purpose,\\
-  provided appropriate credit is given, a link to the license is provided,\\
-  and any changes made are indicated.
-}\end{center}
-\vfill\null
-\clearpage
-
-\begin{abstract}
+\vspace{0.8em}
+\begin{center}
+{\bfseries Abstract}\par\smallskip
+\begin{minipage}{0.90\textwidth}
+\footnotesize\noindent\ignorespaces
 This is a work in progress.  Meaningful contributions are welcome: see the Authors' Note for the contribution policy, the open problems, and a summary of how the model's mass, charge, $\beta$-decay and binding values compare with experiment.  This monograph develops the mathematical framework of the Quantum Observable Universe (QOU): a rigid braided monoidal category equipped with a Frobenius--Hopf object $A$ and a fibre functor $\tau$ whose differential geometry is governed by a substrate parameter $q$.  Every observable passes through a five-step categorical trace pipeline: from the categorical action $\mathfrak{S}_q = \mathrm{tr}(\Phi)$, to the Iwahori--Hecke quotient $H_n(q)$ and its Jones--Markov trace, to hyperbolic knot complements embedded in the genus-four Bring surface $\Sigma_4$ ($\chi = -6$), to Archimedean period evaluations at the substrate parameter $q_0$, and finally to dimensionless mass ratios, binding energies, and couplings.  Part~I establishes the categorical axioms, the five-step framing arc across Archimedean and non-Archimedean models, and the Yekutieli lifting and descent tower.  Part~II develops the structural mechanics: braid and Hecke representations, the geometry of Bring's surface, the knot--particle and confinement hierarchy, the Eightfold Way flavour and octonionic colour structure, the categorical mass endomorphism and $q$-hyperbolic kinematics, the elementary-particle and nuclear mass pipeline, many-body Gröbner--Shirshov binding, and the emergence of contact-geometric gravity.  Part~III compares the resulting spectra against experimental data and extends the braid formalism to molecular and organic chemistry.  Part~IV treats brane fluid dynamics, Markov-trace stochastic mechanics, information-theoretic complexity, internalised measurement, and the $q$-geometric Langlands correspondence.
-\end{abstract}
-
-\proofstatuslegend
-\clearpage
+\end{minipage}
+\end{center}
+\vfill
+\noindent\begin{minipage}{\textwidth}
+\footnotesize\proofstatuslegend
+\par\smallskip\noindent{\footnotesize\ccby\enspace
+This work is licensed under a \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International License} (CC-BY 4.0): free to share and adapt with attribution and indication of changes.}
+\end{minipage}
+\end{titlepage}
 
 \clearpage
 \chapter*{Introduction}
@@ -11711,7 +11706,7 @@ Three consequences of the definition fix how the word is used elsewhere:
 \begin{conjecture}[{Open question: is Bring's surface spectrally rigid?}]
   \label{conj:bring-isospectrality-question}
   \blockannot[drafted]{conj:bring-isospectrality-question}{}{quantum-observable-universe/brings-surface/bring-isospectrality-question.md}
-  \uses{prop:photon-response-determines-q, def:photon, def:categorical-dirac-operator}
+  \uses{prop:photon-response-determines-q, def:photon, def:categorical-dirac-operator, prop:photon-filtration-depth-bounds}
 \emph{Open question. Is Bring's surface $\mathcal{B}$, with its hyperbolic metric, Laplace-isospectral to a hyperbolic surface that is not isometric to it? The same question can be asked of the quantum observable universe built on $\mathcal{B}$, with the spectrum of the \hyperref[def:categorical-dirac-operator]{categorical Dirac operator} in place of the Laplacian. No answer is conjectured here.}
 
 Kac asked whether the spectrum of a domain determines its shape \cite{kac1966}, and Sunada gave a general construction of isospectral non-isometric manifolds \cite{sunada1985}: a finite group $G$ acting on a manifold $X$, with two subgroups $H_1, H_2 \le G$ that meet every conjugacy class of $G$ in the same number of elements but are not conjugate, gives isospectral quotients $X/H_1$ and $X/H_2$. Three facts bear on the question for $\mathcal{B}$.
@@ -11719,7 +11714,7 @@ Kac asked whether the spectrum of a domain determines its shape \cite{kac1966}, 
 \begin{enumerate}
   \item \emph{Sunada pairs inside the automorphism group.} Neither $\mathrm{Aut}^+\allowbreak{}(\mathcal{B}) \cong\allowbreak{} S_5$ nor the full group $S_5 \times C_2$ contains such a pair of subgroups. A Sunada partner of $\mathcal{B}$ would therefore need a group acting on a proper cover $X$ of $\mathcal{B}$, with $\mathcal{B} = X/H_1$.
   \item \emph{The trace parameter is determined.} Under the Markov trace of convention D, the one-photon response determines $q$ (\hyperref[prop:photon-response-determines-q]{one-photon response}).
-  \item \emph{Braid states are not determined.} Every photon response is a cyclic trace, so it factors through the cocenter $H_n(q)/[H_n(q), H_n(q)]$. Distinct braids with the same image there give the same responses.
+  \item \emph{States are determined up to the radical of the trace form.} The zero-photon response $\mathrm{tr}_M(x)$ factors through the cocenter $H_n(q)/[H_n(q), H_n(q)]$. The $k$-photon responses $\mathrm{tr}_M(\gamma(\varphi^1)\cdots\gamma(\varphi^k)\,x)$ determine much more. Products of photons span $H_n(q)$ (\hyperref[prop:photon-filtration-depth-bounds]{stopping depth}), so these responses determine $x$ modulo the radical $\{u : \mathrm{tr}_M(yu) =\allowbreak{} 0 \text{ for all } y\}$ of the trace form. Under convention D on $H_3(q)$, that radical is the line spanned by the sign idempotent: a state is heard except for its alternating component.
 \end{enumerate}
 
 The question would be settled by a group $G$ acting on a cover of $\mathcal{B}$ with a pair $H_1, H_2$ as above and $X/H_1 \cong \mathcal{B}$, $X/H_2 \not\cong \mathcal{B}$, or by a proof that the spectrum of $\mathcal{B}$ determines it. The eigenvalues of surfaces with large symmetry groups are studied in \cite{cook2021}.
@@ -11763,7 +11758,7 @@ The upper bound is attained for $n = 3, 4, 5, 6$, where $L(n) = 2, 4, 6, 9$. The
 
 \textbf{Proof.} Write the six coordinate equations of $\gamma(\varphi)\gamma(\psi) = V^3$ in the basis $T_e, T_0, T_1, T_{01}, T_{10}, T_{010}$. If $\psi_{01} = 0$, a combination of these equations with the four conditions gives $h^3(h^2 + 2) = 0$, which is excluded. Otherwise the last two conditions give $\varphi_0 = \varphi_1 = 0$, and then $\psi_1 = 0$ and $\psi_0 = 0$. Both photons then lie on the line $1 + R\,V$. Because $1, V, V^2$ are linearly independent and $V^3 = 1 + h^2V - h^2V^2$, the vertex weights satisfy $\varphi_{01} + \psi_{01} = h^2$ and $\varphi_{01}\psi_{01} = -h^2$. $\square$
 
-The four braid elements above are not linking-neutral, while $1$, $V$ and $V^2$ are. Imposing linking neutrality on each term of the expansion therefore gives exactly these four conditions.
+The four braid elements above are not linking-neutral, while $1$, $V$ and $V^2$ are. The expansion contains five further non-neutral elements, $\sigma_0^2$, $\sigma_0\sigma_1$, $\sigma_1\sigma_0$, $\sigma_1^2$ and $V\sigma_0$. Imposing linking neutrality on each term of the expansion sets all nine coefficients to zero, and the four used above already force the conclusion. Under that reading of neutrality the vertex weights $qh$ and $-q^{-1}h$ are derived rather than chosen.
 \end{proposition}
 
 \begin{proposition}[{Cohomological embedding: torus knot representations exhaust $H^1(\Sigma_g)$}]
@@ -36144,9 +36139,9 @@ map on the Jones--Wenzl filtration.
 \label{sec:mutant-jones-bloch-group}
 \sectionannot{sec:mutant-jones-bloch-group}
 \phantomsection\label{prose:intro-mutant-jones-bloch-group}
-A classic limitation of the uncolored Jones polynomial—and hence of the bare closure Markov trace—is its inability to distinguish mutant knots such as the $11$-crossing Conway and Kinoshita–Terasaka pair, which differ by a $180^\circ$ Conway-sphere involution yet have distinct hyperbolic volumes ($\mathrm{Vol}(\mathrm{KT}) \neq\allowbreak{} \mathrm{Vol}(\mathrm{Conway})$).
+A classic limitation of the uncolored Jones polynomial—and hence of the bare closure Markov trace—is its inability to distinguish mutant knots such as the $11$-crossing Conway and Kinoshita–Terasaka pair, which differ by a $180^\circ$ Conway-sphere involution. Mutation preserves the coloured Jones polynomials and the hyperbolic volume, so $\mathrm{Vol}(\mathrm{KT}) =\allowbreak{} \mathrm{Vol}(\mathrm{Conway})$ (Ruberman's theorem; see \href{conway-kt-vol-injectivity-test.md}{the Conway–Kinoshita–Terasaka volume test}). The blindness of the trace is a theorem, not only an observation: invariants whose weight systems factor through intersection graphs, which include the Jones and HOMFLY polynomials, take equal values on mutant knots (Chmutov–Lando, arXiv.1313, Thm. 3).
 
-This section shows how the bi-filtered Hecke framework resolves mutant ambiguity. Whereas the level-zero closure trace collapses the four-strand Conway tangle to a symmetric scalar, the knot-indexed convolution grid and the non-commutative Wedderburn Fourier transform retain the off-diagonal representation matrix elements before closure. Pushing these representation invariants into the Bloch group $B(\mathbb{C})$ separates the Conway and Kinoshita–Terasaka complements, links the Pieri photon shift and JSJ tower bridge to the WKB Green's function of the quantum dilogarithm, and identifies the Borromean complement's class in the Bloch group via Poincaré–Lefschetz duality.
+This section shows how the bi-filtered Hecke framework resolves mutant ambiguity. Whereas the level-zero closure trace collapses the four-strand Conway tangle to a symmetric scalar, the knot-indexed convolution grid and the non-commutative Wedderburn Fourier transform retain the off-diagonal representation matrix elements before closure. Pushing these representation invariants into the Bloch group $B(\mathbb{C})$ is proposed to separate the Conway and Kinoshita–Terasaka complements (not established; it cannot rest on volume, which the two share), links the Pieri photon shift and JSJ tower bridge to the WKB Green's function of the quantum dilogarithm, and identifies the Borromean complement's class in the Bloch group via Poincaré–Lefschetz duality.
 
 \begin{proposition}[{Placement of paper's existing knot-indexed convolutions in the bi-filtration grid}]
   \label{prop:knot-indexed-convolution-grid}
@@ -45096,7 +45091,7 @@ Step & Implementation & Status \\
 4 ($M(\mathfrak{H}) =\allowbreak{} \nu_{\mathrm{SDP}} \cdot m(\mathfrak{H}) \in \mathbb{Q}(q)$) & algebraically trivial once 2 + 3 are in & partial \\
 5 (Archimedean realization at $q_0$ + $m_e$) & MPFR via SymPy/exact algebraic structures & ✓ \\
 6 (AME comparison) & mass-table-ppb witness + the canonical formalism & ✓ \\
-7 (methodology tag) & \href{../../../computations/methodology-deprecation.witness.json}{methodology-deprecation record} & ✓ \\
+7 (methodology tag) & \href{https://github.com/litlfred/qou/blob/cat/cat-harness/fsh-guts/fsh-guts/deprecated/computations/methodology-deprecation.witness.json}{methodology-deprecation record} & ✓ \\
 8 (post-Archimedean naming via volume conjecture) & borrowed; not in QOU derivation & ✓ as theorem \\
 \bottomrule
 \end{tabular}
@@ -53147,7 +53142,7 @@ Higgs / mass mechanism & $4_1$ figure-8 & $\approx 2.030$ & $\mathbb{Q}(\zeta_3)
 
 The $^4$He formula contributes via $8G$ algebraically. Trace fields beyond degree 2 enlarge the compositum. The field for $6_2$ is quartic. The field for $8_{11}$ is sextic. Including all hyperbolic knots in the spectrum forces a natural compositum of at least $\mathbb{Q}(\zeta_{60})$. The $S_5$-equivariance constraint identifies knots that embed in Bring's surface. The figure-8 and Borromean knots admit such embeddings. Higher isotope knots inherit $S_5$-equivariance via the binding-operator $\oplus$ structure.
 
-\textbf{Observation 4.} The electroweak knot operators $W \leftrightarrow \sigma_1^4 \to\allowbreak{} T(2,4)$, $Z \leftrightarrow \sigma_3^6 \to\allowbreak{} T(2,6)$, and $H \leftrightarrow \sigma_5^8 \to\allowbreak{} T(2,8)$ (\href{../braids-and-knots/ew-interface-knot.md}{\texttt{ew-\allowbreak{}interface-\allowbreak{}knot}}, \href{../mass-theory/categorical-higgs-mechanism.md}{\texttt{categorical-\allowbreak{}higgs-\allowbreak{}mechanism}}) and the strong-force pair $T(2,9)$ and $T(3,5)$ (\hyperref[prop:force-carrier-bring-uniqueness]{$(T_{2,9}, T_{3,5})$ is the unique pair of genus-$4$ torus knots}) are torus links. These links are Seifert-fibered and non-hyperbolic. They lack ideal-tetrahedron triangulations. They contribute zero to the Bloch-Wigner image $D \colon B(F)\otimes\mathbb{Q} \to\allowbreak{} \mathbb{R}^{r_2(F)}$. Only mass-bearing knots carry Bloch-Wigner content.
+\textbf{Observation 4.} The electroweak knot operators $W \leftrightarrow \sigma_1^4 \to\allowbreak{} T(2,4)$, $Z \leftrightarrow \sigma_3^6 \to\allowbreak{} T(2,6)$, and $H \leftrightarrow \sigma_5^8 \to\allowbreak{} T(2,8)$ (\href{https://github.com/litlfred/qou/blob/bd1bdfe0583/_deprecated/internal-negatives-batch2/ew-interface-knot.md}{\texttt{ew-\allowbreak{}interface-\allowbreak{}knot}}, \href{../mass-theory/categorical-higgs-mechanism.md}{\texttt{categorical-\allowbreak{}higgs-\allowbreak{}mechanism}}) and the strong-force pair $T(2,9)$ and $T(3,5)$ (\hyperref[prop:force-carrier-bring-uniqueness]{$(T_{2,9}, T_{3,5})$ is the unique pair of genus-$4$ torus knots}) are torus links. These links are Seifert-fibered and non-hyperbolic. They lack ideal-tetrahedron triangulations. They contribute zero to the Bloch-Wigner image $D \colon B(F)\otimes\mathbb{Q} \to\allowbreak{} \mathbb{R}^{r_2(F)}$. Only mass-bearing knots carry Bloch-Wigner content.
 
 \textbf{Observation 5.} The five atlas entries $\{4_1, \mathcal{B}_3, 6_2, 8_{11}, L_{6a4}\}$ represent established particles. The Bloch-Wigner image is generated by the closures of all normal-form basis triple products $b_i \cdot \beta(T_{m,n}) \cdot b_j$ across the relevant Hecke algebras $H_n(q)$ (\hyperref[prop:knot-operator-lp-selection]{Knot operators are selected per confinement by the Frobenius Gram-inverse LP/SDP dual basis}). The normal-form basis for $H_3(q)$ is six-dimensional. Products with the torus operators $T_{1,0}, T_{2,1}, T_{2,2}, T_{2,3}$, and $T_{2,5}$ generate demand-channel identifiers. The normal-form basis grows polynomially at higher $n$. The closure space includes many hyperbolic knots beyond the five atlas entries. The dimension of the accessible sub-space inside $B(\mathbb{Q}(\zeta_{60}))\otimes\mathbb{Q}$ is not bounded by 5. The rank-8 ambient image is reachable through normal-form basis closures.
 
@@ -77623,7 +77618,7 @@ occurrences and concludes the topic is covered.
 \toprule
 Term & Standard QCD meaning & What it means in this corpus \\
 \midrule
-\textbf{saturation} & small-$x$ gluon recombination; the saturation scale $Q_s(x)$ & three unrelated things: the \emph{genus} saturation of $T_{2,9}$; \textbf{nuclear saturation}, meaning the $B/A$ plateau (\href{../lean/QOU/Mass/CoordinationSaturation.lean}{\texttt{QOU.\allowbreak{}Mass.\allowbreak{}Coordination\allowbreak{}Saturation}}); and "scales saturate" in the cosmological limits \\
+\textbf{saturation} & small-$x$ gluon recombination; the saturation scale $Q_s(x)$ & three unrelated things: the \emph{genus} saturation of $T_{2,9}$; \textbf{nuclear saturation}, meaning the $B/A$ plateau (\href{../lean/QOU/MassTheory/CoordinationSaturation.lean}{\texttt{QOU.\allowbreak{}Mass.\allowbreak{}Coordination\allowbreak{}Saturation}}); and "scales saturate" in the cosmological limits \\
 \textbf{shadowing} & nuclear shadowing; Gribov inelastic screening & \textbf{LP-dual shadow prices} $y_0^{\star}, y^{\star}$ — the binding-energy duals of \href{../mass-theory/operator-selection-lp.md}{Knot operator selection as linear program with LP duality}. Also "archimedean shadow" and the $a_1$ "parity shadow" \\
 \textbf{diffraction} & Pomeron exchange; diffractive dissociation & \textbf{optical} diffraction — Fraunhofer, Airy, the double-slit chapter \\
 \textbf{S-matrix} & the scattering matrix & the \textbf{modular} $S$-matrix of a modular tensor category — the Reshetikhin–Turaev / Chern–Simons vacuum row and total quantum dimension $D = \sum_i d_i^2$ \\
