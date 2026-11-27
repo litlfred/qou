@@ -44,12 +44,15 @@ corpus transport.
   For an automorphism `θ` with `φ ∘ θ = φ`, the operator `(θ − θ⁻¹)/c` (the
   one behind balanced `q`-integers) gives `φ(Xu·u) + φ(u·Xu) = 0` exactly,
   for every `u` and every `c`.
-* **Realised on `O_q(SU(2))` (`theta3D`, `theta3D_energy`).** The twist of
-  Woronowicz's 3D calculus, `(a, b, c, d) ↦ (q⁻²a, q⁴b, q⁻⁴c, q²d)`
-  (Hadfield–Krähmer), is the corpus torus automorphism
-  `torusScaleAlgEquiv q (q⁻²) (q⁴)`. For any functional invariant under it,
-  the one-sided budget is `−c·φ(Du·Du)` and the balanced budget is `0`.
-  Invariance of the Haar state is a hypothesis here, not proved.
+* **Instantiated on `O_q(SU(2))` (`theta3D`, `theta3D_energy`).** The
+  automorphism that Hadfield–Krähmer attach to Woronowicz's 3D calculus,
+  `(a, b, c, d) ↦ (q⁻²a, q⁴b, q⁻⁴c, q²d)` (the twist of its cyclic cocycle), is
+  the corpus torus automorphism `torusScaleAlgEquiv q (q⁻²) (q⁴)`. For any
+  functional invariant under it, the one-sided budget is `−c·φ(Du·Du)` and the
+  balanced budget is `0`. Invariance of the Haar state is a hypothesis here.
+  This `σ` is **not** the Leibniz twist of a left-invariant field: that twist is
+  a right translation `(u, u⁻¹)`, while `σ` is a two-sided translation
+  (`OqSU2Coproduct.lean`, `hk_sigma_eq_two_sided`, `cartanField`).
 * **Non-vacuity (`qDiff_energy_budget_ne_zero`).** On `ℚ × ℚ` with the swap
   automorphism and the invariant functional `(a, b) ↦ a + b`, the budget for
   `u = (1, 0)`, `c = 1` is `−2`, not `0`.
@@ -192,13 +195,14 @@ theorem qCen_energy_conserving (θ : A ≃ₐ[K] A) (c : K) (φ : A →ₗ[K] K)
     sub_mul, mul_sub, map_sub, h1, h2]
   ring
 
-/-! ### The twist of Woronowicz's 3D calculus on `O_q(SU(2))` -/
+/-! ### The Hadfield–Krähmer automorphism of the 3D calculus on `O_q(SU(2))` -/
 
 section OqSU2
 
 open QOU.AlgebraicSubstrate QOU.AlgebraicSubstrate.OqSU2
 
-/-- The automorphism of Woronowicz's three-dimensional left-covariant calculus,
+/-- The automorphism Hadfield–Krähmer attach to Woronowicz's three-dimensional
+    left-covariant calculus (the twist of its cyclic 3-cocycle),
     `(α, β, γ, δ) ↦ (q⁻² α, q⁴ β, q⁻⁴ γ, q² δ)` (Hadfield–Krähmer, eq.
     `3dcalc_aut`), as the corpus torus automorphism. -/
 noncomputable def theta3D (q : Kˣ) : OqSU2 K q ≃ₐ[K] OqSU2 K q :=
