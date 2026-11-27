@@ -51,3 +51,8 @@ Owner chose R4, tail matching + degree. Part B is a nonzero zero of g(c) = Ac + 
 ## 2026-11-27: item (3) restated
 
 Owner took the recommended options (2026-11-27). Item (3) now reads "branch (B) of conj:levi-degeneracy on ξ·curl ξ (see qou-fm7s)" in the corrected wall list above, replacing the withdrawn β computation. Status unchanged.
+docs/audits/2026-11-27-qns-part-a-enstrophy-order-parameter.md
+
+## 2026-11-27 follow-up (sibling thread "Prove q-NS Part A blowup"), branch claude/qns-part-a-paths-2026-11-27
+
+Owner ruling: weaken property 3, keep Part A open. Done in Lean on the branch: `modal_inequality` → `modal_balance` with a transfer term `T_k`; spectral decay is a theorem for transfer-free flows only. The weakened class cannot carry Part A by itself (`partA_trivial_over_weakened_class`); gap bean `qou-pa7n`. V2 (`substrate_envelope`: `α ≤ 2` on the energy-small class), V3 (Hecke threshold `≥ 1 + c_q`, diverges; no link to enstrophy claimed), V4 (Beltrami eigen-data excluded; helicity gives a floor `H² ≤ E·Ω`, not a ceiling) are sorry-free in `q_ns_part_a_paths.lean`. PR not yet opened (owner card first). Status unchanged.
