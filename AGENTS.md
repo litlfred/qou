@@ -65,6 +65,22 @@ chat-app / project memory. Current headline rulings: the photon form above;
 backup)**; the up quark is an unknot strand; Q_β from γγ pair production;
 two-term Lagrangian trace on the scoreboard and all β-decay routes.
 
+## 🟥 AGENT PROCESS RULES LIVE IN THE KG (owner directive 2026-11-27) — STRICT
+
+Verbatim: *"make it not a project instruction but a KG process instruction.
+NO PROJECT MEMORY.... put in KG"*. The canonical statements are KG requirement
+nodes in cat-harness. Where this file repeats one of them, the KG node wins.
+
+- **Questions:** [`req:agent-workflow`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/agent-workflow.json) `#question-on-a-card`, `#no-close-with-open-question`,
+  `#research-paths-on-a-card` (procedure: cat-harness skill `ask-the-person`).
+- **Merging:** [`req:agent-workflow`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/agent-workflow.json) `#never-self-merge`.
+- **Tracking:** [`req:agent-workflow`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/agent-workflow.json) `#beans-primary-tracker`.
+- **Context:** [`req:agent-workflow`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/agent-workflow.json) `#context-stays-small`.
+- **Proofs:** [`req:content-lifecycle`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/content-lifecycle.json) `#no-measured-values-in-proofs`, `#one-nonconstructive-axiom`.
+- **Owner's commands:** cat-harness `memory/interaction.json`,
+  `users.litlfred.commands` (one paste-ready line from `~/space_cats`, branch
+  switch first).
+
 ## 🟥 FAST MERGES: ONE PRE-MERGE GATE, QA AFTER (owner ruling 2026-11-27) — STRICT
 
 Verbatim: *"i dont want to have slow merge times, no red gates (excpet
@@ -88,6 +104,7 @@ workflow WAY TOO SLOW"*). Recorded in
 - **This supersedes** the Phase 1b / Phase 4 "verification gate" in §Branch +
   PR workflow rule 10 and in `prepare-merge-auto`, wherever they make the
   listed checks pre-merge. Those checks still run; they run after.
+- **KG node:** [`req:agent-workflow`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/agent-workflow.json) `#never-self-merge`.
 
 ## 🟥 REBUILD THE SITE AFTER EVERY MERGE TO MAIN (owner directive 2026-11-23) — STRICT
 
@@ -136,7 +153,7 @@ Adapt ALL responses accordingly:
 - **Short answers.** One-liners when possible — but read this together
   with **Terse ≠ compressed** below: "short" cuts ceremony, never
   evidence, implications, or options.
-- **Offer choices as numbered lists** so the user can reply "1" or "2".
+- **Every question is a card with numbered options and a recommendation**: [`req:agent-workflow`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/agent-workflow.json) `#question-on-a-card` (see §AGENT PROCESS RULES above).
 - **🟥 ASK WITH A CARD. NEVER WITH PROSE THE USER HAS TO ANSWER BY TYPING
   (STRICT, owner instruction 2026-11-20).** Verbatim: *"If you have questions
   use cards"* / *"Please tell every sibling that you can access to only use
@@ -753,7 +770,8 @@ skill wins and the memory entry is wrong — fix it.
 > an issue. GitHub issues are the **submission channel** for the owner and for reviewers:
 > when one arrives, mirror it into a bean that cites the issue number (check before you
 > create), work the bean, and close the issue from the bean's result. Ledger row:
-> [`owner-rulings.md`](docs/coordination/owner-rulings.md), 2026-11-27.
+> [`owner-rulings.md`](docs/coordination/owner-rulings.md), 2026-11-27. KG node:
+> [`req:agent-workflow`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/agent-workflow.json) `#beans-primary-tracker`.
 
 Every session must run from a **prioritized work-plan** maintained
 as **beans** — the [`beans`](https://github.com/hmans/beans) CLI
