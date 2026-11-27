@@ -34,7 +34,7 @@ the list cannot silently break the pointers.
 | Flavour vs. colour ($\mathrm{SU}(3)_{\mathrm{f}}$ vs. $\mathrm{SU}(3)_{\mathrm{c}}$) | **open**: whether same, different, or groupoid-dual | item *Flavour versus colour separation* |
 | Gell-Mann–Okubo has no discriminating power | **proved**: $4m_K^2 - 3m_\eta^2 - m_\pi^2 = 0$ identically for *any* first-order octet breaking | [meson mass splitting](#rem:meson-mass-splitting) |
 | Meson mass splitting; the GMO **deviation** | **partially resolved** (sign), **open** (magnitude): rational quantum Casimir gives $(4M_K - 3M_\eta - M_\pi)/(M_\pi - M_\eta) = -((q-1)/(q+1))^2$ (**proved**, matching both meson $+$ and baryon $-$ signs at $q_0$), but accounts for only $1.21\%$ of the $6.43\%$ meson deviation; $\eta$--$\eta'$ mixing remains open | [meson mass splitting](#rem:meson-mass-splitting), item *The Gell-Mann--Okubo deviation* |
-| Spin–flavour–colour selection of the Young symmetriser | **open**: decuplet identification currently matches dimensions and weights only | item *Spin--flavour--colour selection rule* |
+| Spin–flavour–colour selection of the Young symmetriser | **reduced to two labelled inputs**: given Fermi statistics and a colour singlet, the spin $\otimes$ flavour factor is forced symmetric, and at $N_c = 3$ the colour singlet is unique up to scale (**proved**, `ColourSingletSelectionRule.lean`). **Open**: deriving either input from the braid structure; the Cauchy pairing of spin $3/2$ with the decuplet stays cited | item *Spin--flavour--colour selection rule* |
 | Truncation ("freeze-out") mechanism | **open**: heuristic, no derivation | item *Truncation mechanism* |
 | Three generations | **open**: not addressed here | item *Three generations* |
 
@@ -309,6 +309,17 @@ Gell-Mann--Nishijima relation.
    constraint from the braid structure, and show that together they
    determine the Young symmetriser.  Compatibility with it is what the
    chapter currently establishes.
+
+   **The step between the inputs and the conclusion is now proved.**  If the
+   three-quark wavefunction $\chi(c)\,\varphi(r)$ is alternating under
+   simultaneous permutation (Fermi statistics) and the colour factor $\chi$ is
+   a nonzero colour singlet, then $\varphi$ is symmetric
+   (`symmetric_of_alternating_product`); at $N_c = 3$ the colour-singlet
+   channel is one-dimensional, spanned by the determinant
+   (`colourSinglet_eq_smul_det`).  What remains open is exactly the two
+   inputs --- Fermi statistics and colour antisymmetry are not derived from the
+   braid structure --- together with the cited Cauchy decomposition that pairs
+   spin $3/2$ with the decuplet ($4 \cdot 10 + 2 \cdot 8 + 0 \cdot 1 = 56$).
 
    **This item is where item 4's discriminator lives.**  Item 4 asks
    what separates flavour from colour and shows that no invariant of
