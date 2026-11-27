@@ -44,6 +44,7 @@ import QOU.EightfoldWay.Sym2AdjointSpinTwo
 -- import Fred2005
 
 import QOU.Core.Basic
+import QOU.Core.LawvereCut
 import MathlibExt.Core
 import MathlibExt.QuadraticIrrationalBadlyApproximable
 import QOU.Core.MarkovTrace
