@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - 8f-open
 created_at: 2026-08-10T18:34:14Z
-updated_at: 2026-11-27T20:32:48Z
+updated_at: 2026-11-27T23:16:02Z
 parent: qou-8lxd
 ---
 
@@ -420,3 +420,5 @@ Still open (rule 13a — do not close): deriving the matter content, and the bra
 
 
 2026-11-27 (PR #9674): StrandSlotSeparatesGen1.lean, sorry-free. The strand slot (colour strand in 5̄; colour∧3, colour∧4, colour∧colour pair in Λ²5) plus a dual flag separates the 8 gen-1 quark states and reproduces their charges at α=1/6; the dual flag is the helicity (chirality xor particle). This supplies V9's open label, conditional on the Georgi-Glashow slot assignment (a definition, not derived). Why the slot assignment holds stays open.
+
+2026-11-27 (Carl): consolidated in PR #9811. Fermi exchange = Hecke -q^{-1} channel (HeckeSignChannelIsFermi); convention D keeps both channels (scope a); ribbon twist sees only c^2, so the channel sign is not fixed by twist data. With five odd strands the even exterior part is 1+10+5bar (OddExteriorAnomalyFreedom even section): one Z/2 sign now replaces Fermi exchange, the 5bar:10 ratio, anomaly cancellation and the vector-like exclusion. OPEN (owner: try to derive from upstream): (i) why strands are odd, (ii) the sign choosing even vs odd part (chirality). Note hypercharge thread (qou-qvpl) writes matter as the odd part of V+W*, the conjugate convention; pick one before prose merges.
