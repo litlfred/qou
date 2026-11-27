@@ -466,6 +466,32 @@ def binding_ruled_tz_even(Z: int, N: int, q) -> dict | None:
     return {"B_pred_MeV": -alpha * s,
             "method": "ruled free-baseline log law, T_z-even bond (PR #9675)"}
 
+def isospin_twist_binding(Z: int, N: int, q) -> mp.mpf:
+    """Braid-channel isospin term from the orientation-free twist (ledger gap G2).
+
+    Derived in Lean, QOU/Nuclear/IsospinCasimirTwist.lean (PR #9685):
+    the twist Phi + Phi^{-1} acts on the two-row block of isospin T at level
+    n = 3A by q^{2c} + q^{-2c}, with c = T(T+1) + n(n-4)/4
+    (seminormalRep_barSymTwist, four_contentSum_twoRow); for n >= 4 it is
+    strictly increasing in T (twoRow_barSymTwist_strictMono). Under the ruled
+    log law (B falls as the trace grows) a larger T binds less, so the sign is
+    derived, not chosen. At n = 3A >= 6 the q^{-2c} part is negligible
+    (probe isospin_twist_term_probe: 8e-12 MeV over the 1009 composite rows),
+    so the block-dependent part is -kappa*T(T+1), kappa = 2*alpha*ln q.
+
+    Taken on the lowest block T = |T_z| = |N - Z|/2 (casimir4_lowest_le: the
+    least T(T+1) among blocks containing the weight). The level factor
+    q^{n(n-4)/2} is the same for every block at fixed A; it belongs to the
+    extensive/level term, not to G2, and is NOT included. Scale alpha is the
+    proxy's own convention (not derived separately for this channel). The EM
+    channel's own T(T+1)/6 piece (G3, PR #9691) is separate.
+    """
+    from codata_constants import M_E_MEV
+    alpha = M_E_MEV * 8 * mp.catalan
+    kappa = 2 * alpha * mp.log(q)
+    t = abs(N - Z)
+    return -kappa * mp.mpf(t * (t + 2)) / 4
+
 def try_binding_q_clt_proxy(Z: int, N: int) -> dict | None:
     """Compute binding energy via the rigorous Q-CLT per-crossing ln|V_i| proxy."""
     if Z + N < 2:
@@ -601,7 +627,15 @@ def main() -> int:
 
         rb = binding_ruled_tz_even(Z, N, q)
         B_ruled = rb["B_pred_MeV"] if rb else mp.mpf(0)
-        m_ruled = (m_unbound_approx - B_ruled) if (m_unbound_approx is not None and (B_ruled > 0 or A == 1)) else None
+        # Braid-channel T(T+1) term (G2, PR #9685), added on top of the ruled law.
+        B_twist = isospin_twist_binding(Z, N, q) if A >= 2 else mp.mpf(0)
+        if rb:
+            B_ruled = B_ruled + B_twist
+        # Under the ruled law a non-positive B means "unbound in the model", a valid
+        # result, so m_ruled is set whenever the ruled binding exists (agreed with the
+        # "Fix the Q_beta ladder sign" thread; the old "> 0" guard was copied from
+        # m_symbolic and silently dropped rows).
+        m_ruled = (m_unbound_approx - B_ruled) if (m_unbound_approx is not None and (rb is not None or A == 1)) else None
         m_symbolic = (m_unbound_approx - B_pred) if (m_unbound_approx is not None and (B_pred > 0 or A == 1)) else None
         m_approx = (m_unbound_approx - B_qCLT) if (m_unbound_approx is not None and (B_qCLT > 0 or A == 1)) else None
         B_AME = AME_BINDING.get(name, mp.mpf(0))
@@ -662,6 +696,8 @@ def main() -> int:
             # Consumed by scorecard Table 3.4b only; every other consumer
             # still reads B_pred / m_symbolic until the owner rules on them.
             "B_ruled_MeV": _dp(B_ruled) if B_ruled else None,
+            # of which: braid-channel isospin twist -kappa*T(T+1) (G2, PR #9685)
+            "B_twist_MeV": _dp(B_twist) if A >= 2 else None,
             "m_ruled_MeV": _dp(m_ruled) if m_ruled else None,
             "B_AME_MeV": _dp(B_AME),
             "B_err_pct": _dp(B_err_pct, 4) if B_err_pct is not None else None,
