@@ -31,6 +31,13 @@ prove the implication only; nothing here asserts that any geometric
 model satisfies `cartan`. The weakest typeclasses suffice — no
 subtraction is used, so `AddCommMonoid` is enough.
 
+**Discharged in the Chevalley–Eilenberg model.** `QOU/Core/LieDerivative.lean`
+proves Cartan's formula outright for alternating cochains on a Lie ring `L`
+acting on a module `M` (`QOU.LieDerivative.cartan_formula`), and states the
+contraction step with no `cartan` hypothesis
+(`QOU.LieDerivative.ceD_curryLeft_eq_zero_of_closed_of_invariant`). Vector
+fields acting on functions, and `Derivation R A A` acting on `A`, are instances.
+
 LaTeX context: `docs/scope/2026-08-01` scope doc (this branch).
 
 ## References
