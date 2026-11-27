@@ -89,7 +89,8 @@ none of which is the isomorphism:
 - $\dim \lambda = \dim \lambda'$ **for this family**,
   which the next section had been asserting without backing.
 
-**The isomorphism and the ideal equality are now proved.** Over any field of
+**The isomorphism and the ideal equality are now proved**
+([the theorem](#thm:hecke-radical-is-tl-kernel)). Over any field of
 characteristic zero and for $q \neq 0$ not a root of unity,
 $H_n(q)/\mathrm{rad} \cong TL_n(q + q^{-1})$ as algebras, with $e_i \mapsto q - \sigma_i$;
 the proof compares the Catalan dimension count above with a Jones normal-form spanning
