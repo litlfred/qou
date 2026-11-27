@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import Mathlib.Analysis.Complex.Polynomial.Basic
 
 /-!
 # The `sl₃` structure-constant tensor is the commutator of two Casimir legs
@@ -493,12 +494,12 @@ theorem fGM_eq_fOp (i r : K) (hi : i ^ 2 = -1) (hr : r ^ 2 = (3 : K)⁻¹) : fGM
 
 end Bridge
 
-/-- The hypotheses of the Gell-Mann section are satisfiable: `ℂ` with `i = I`, `r = 1/√3`. -/
+/-- The hypotheses of the Gell-Mann section are satisfiable: `ℂ` with `i = I` and `r` a square
+root of `1/3`, which exists because `ℂ` is algebraically closed (no `Real.sqrt`, transcendental
+boundary, owner ruling 2026-11-27). -/
 theorem gellMann_hyps_satisfiable :
     ∃ i r : ℂ, i ^ 2 = -1 ∧ r ^ 2 = (3 : ℂ)⁻¹ := by
-  refine ⟨Complex.I, ((Real.sqrt 3 : ℝ) : ℂ)⁻¹, Complex.I_sq, ?_⟩
-  rw [inv_pow, ← Complex.ofReal_pow, Real.sq_sqrt (by norm_num)]
-  norm_num
-
+  obtain ⟨r, hr⟩ := IsAlgClosed.exists_pow_nat_eq (3 : ℂ)⁻¹ two_pos
+  exact ⟨Complex.I, r, Complex.I_sq, hr⟩
 
 end QOU.Braiding.ColourStructureConstantCommutator

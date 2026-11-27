@@ -52,7 +52,7 @@ root gives `|w| < 2`, and for **any** real `w` with `|w| ≤ 2` the two `z` with
 `z + 1/z = w` have `|z| = 1` exactly.
 -/
 import Mathlib.Data.Complex.Basic
-import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Analysis.Complex.Norm
 import Mathlib.Tactic
 
 namespace QOU.Brings
@@ -125,25 +125,26 @@ theorem colourSextic_eq_trinomial_chain {R : Type*} [Field R] [CharZero R] (z u 
 /-- **Why a conjugate pair sits exactly on the unit circle.**
 
 For a real `w` with `|w| ≤ 2`, the two solutions of `z + 1/z = w` are
-`(w ± i√(4−w²))/2`, and each has modulus exactly `1`. The unit-circle pair of
-the colour sextic is therefore *forced* — it is not a numerical coincidence —
-because the trinomial's real root gives `w = (5/4)u − 1/2` with `|w| < 2`.
+`(w ± i·s)/2` with `s² = 4 − w²`, and each has modulus exactly `1`. The
+unit-circle pair of the colour sextic is therefore *forced* — it is not a
+numerical coincidence — because the trinomial's real root gives
+`w = (5/4)u − 1/2` with `|w| < 2`.
 
-Proved via `Complex.normSq`, so the conclusion is an exact equality of reals. -/
-theorem normSq_eq_one_of_abs_le_two (w : ℝ) (hw : |w| ≤ 2) :
-    Complex.normSq (⟨w / 2, Real.sqrt (4 - w ^ 2) / 2⟩ : ℂ) = 1 := by
-  have h4 : (0 : ℝ) ≤ 4 - w ^ 2 := by
-    nlinarith [abs_le.mp hw |>.1, abs_le.mp hw |>.2]
-  have hsq : Real.sqrt (4 - w ^ 2) ^ 2 = 4 - w ^ 2 := Real.sq_sqrt h4
+The imaginary part is carried as a root `s` of `s² = 4 − w²` rather than as
+`Real.sqrt (4 − w²)` (transcendental boundary, owner ruling 2026-11-27): the
+identity is algebraic and holds for either sign of `s`. Proved via
+`Complex.normSq`, so the conclusion is an exact equality of reals. -/
+theorem normSq_eq_one_of_sq_eq (w s : ℝ) (hs : s ^ 2 = 4 - w ^ 2) :
+    Complex.normSq (⟨w / 2, s / 2⟩ : ℂ) = 1 := by
   simp only [Complex.normSq_mk]
-  nlinarith [hsq]
+  nlinarith [hs]
 
 /-- The same fact as a norm: the root lies on the unit circle. -/
-theorem norm_eq_one_of_abs_le_two (w : ℝ) (hw : |w| ≤ 2) :
-    ‖(⟨w / 2, Real.sqrt (4 - w ^ 2) / 2⟩ : ℂ)‖ = 1 := by
-  have h := normSq_eq_one_of_abs_le_two w hw
-  have : ‖(⟨w / 2, Real.sqrt (4 - w ^ 2) / 2⟩ : ℂ)‖ ^ 2 = 1 := by
+theorem norm_eq_one_of_sq_eq (w s : ℝ) (hs : s ^ 2 = 4 - w ^ 2) :
+    ‖(⟨w / 2, s / 2⟩ : ℂ)‖ = 1 := by
+  have h := normSq_eq_one_of_sq_eq w s hs
+  have : ‖(⟨w / 2, s / 2⟩ : ℂ)‖ ^ 2 = 1 := by
     rw [← Complex.normSq_eq_norm_sq] at *; exact h
-  nlinarith [norm_nonneg (⟨w / 2, Real.sqrt (4 - w ^ 2) / 2⟩ : ℂ), this]
+  nlinarith [norm_nonneg (⟨w / 2, s / 2⟩ : ℂ), this]
 
 end QOU.Brings
