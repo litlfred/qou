@@ -5,7 +5,7 @@ status: in-progress
 type: feature
 priority: normal
 created_at: 2026-11-27T17:52:55Z
-updated_at: 2026-11-27T18:32:53Z
+updated_at: 2026-11-27T18:42:25Z
 parent: qou-dk7p
 ---
 
@@ -49,3 +49,6 @@ KEY for research leg (p.854, Remark 2 after 5.8): without 5.3, obstruction to li
 
 
 3b design (2026-11-27): categorical source is Drinfeld 1991 p.852 Remark 3: new associativity = old composed with g(ln tau (x) id, id (x) ln tau). In t_4 language: let s_ij be ln tau_{i,j} written in ((12)3)4 coordinates via conjugation by cofaces of phi. Plan: (i) show s is a DK4 family; (ii) since g satisfies the pentagon in the universal algebra U4 N (#9559), lift gives g's pentagon at s; (iii) multiply with phi's pentagon. Candidate formula phi' = phi * g(t12, phi^-1 t23 phi) = g(phi t12 phi^-1, t23) * phi; must be reconciled with Drinfeld's right action phi(g A g^-1, B) g before formalizing.
+
+
+2026-11-27: #9559 merged. Stage 3b partial as #9564 (GRTAction.lean): pentagon_act proves phi~ = phi(gAg^-1,B)g satisfies the pentagon at a DK4 family t, GIVEN g's pentagon at t and phi's pentagon at the transported family s (((12)3)4 coordinates). transported_d4/d0 proved. Open: s is DK4. Degree-2 rank check: coface triples give 10 of 11 relations; the missing one is the far relation [s13,s24]=0, and it is unknown whether g's pentagon alone forces it or (5.13)/(5.14) is needed. Write-up: docs/audits/2026-11-27-grt-action-pentagon-derivation.md.
