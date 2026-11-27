@@ -1195,3 +1195,63 @@ output, against the restored cache plus `/home/claude/gltbuild` (this branch's m
 `GroupLikeK`). `#print axioms` on `rational_associator_of_groupLikeK`,
 `rational_associator_of_tower`, `chain_invariant` and `sub_evK_zero_mem_FFK` shows only `propext`,
 `Classical.choice` and `Quot.sound`. No `lake build` was run.
+
+## §17e. A compatible tower of rational associators, from a compatible `K`-tower (2026-11-27)
+
+New file `RationalAssociator/AssociatorTower.lean` (sorry-free). It answers the second limit of
+§17d: the `Φ_N` there were chosen independently for each `N`. Here one sequence is built whose
+truncations agree.
+
+```lean
+structure CompatibleGroupLikeKAssociatorTower (E : F2) : Prop where
+  exists_tower : ∃ Ψ : ℕ → K ⊗[ℚ] F2, ∀ N : ℕ, 2 ≤ N →
+    AssocK K N E (Ψ N) ∧ GLK K N (Ψ N) ∧ Ψ (N + 1) - Ψ N ∈ FFK K N
+
+theorem rational_associator_compatible_of_tower {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
+    (hT : CompatibleGroupLikeKAssociatorTower K E) :
+    ∃ Φ : ℕ → F2, (∀ N, 2 ≤ N → AssocU4 N E (Φ N) ∧ GL N (Φ N)) ∧
+      ∀ N, 1 ≤ N → Φ (N + 1) - Φ N ∈ FF N
+```
+
+**The hypothesis is strengthened, and this is route (b).** `GroupLikeKAssociatorTower` (§17d)
+asks for a `K`-associator at each level separately; `CompatibleGroupLikeKAssociatorTower` also
+asks that consecutive ones agree modulo `FFK K N`. The truncations of one group-like associator
+in the completed algebra (for `K = ℂ`, Drinfeld's KZ associator) satisfy this, so the
+strengthening is the natural form of the analytic input, but it is a strengthening.
+`CompatibleGroupLikeKAssociatorTower.toTower` gives the old hypothesis from the new one. Route
+(a), which would remove the strengthening, needs the transitivity of the `GRT₁` action on
+group-like associators modulo `d` (Drinfeld Prop. 5.5) together with a lift of the connecting
+element; that is not done.
+
+How the induction is made uniform in the level:
+
+- **Congruence of the shift.** `compKK_sub_mem`: `Ψ ≡ Ψ'` and `G ≡ G'` modulo `FFK m` give
+  `compKK Ψ G ≡ compKK Ψ' G'` modulo `FFK m`. `GK_sub_GK_mem`: for `H ∈ FF 1`, the truncated
+  exponentials `GK H n c` at two orders `n, n' ≥ m` agree modulo `FFK m`.
+- **Lists of shifts.** `shiftL n L Ψ` applies the shifts `(c, H) ∈ L` at truncation order `n`.
+  `shiftL_pred` (predicates kept), `shiftL_sub_mem` (congruence kept, at any two orders `≥ m`),
+  `shiftL_sum` (`shiftL n L Ψ ≡ Ψ + Σ c ⊗ H` modulo `FFK (d + 1)` for `H ∈ FF d`).
+- **The step's data at one level** (`stepData`). The proof of `inductionStep_core` re-run so that
+  it returns the rational `x` and the list of shifts instead of applying them. It uses only the
+  `K`-associator at level `d + 1`. The shift directions are primitive, in `FF d`, and in `grt` in
+  **every** `U4 M` (`grtU4_of_lin_primitive` has no level hypothesis), so the same list preserves
+  `AssocK K M` and `GLK K M` at every level `M`.
+- **The tower step** (`towerStep`). Invariant `TowerInv K E d Φ Ψ`: `ε(Φ) = 1`, and from level
+  `d + 1` on every `Ψ N` is a group-like `K`-associator in `U4 N`, `Ψ N ≡ 1 ⊗ Φ` modulo
+  `FFK d`, and `Ψ (N + 1) ≡ Ψ N` modulo `FFK N`. The new tower is
+  `Ψ' N = shiftL (N + 2) L (Ψ N)`; compatibility of `Ψ'` is `shiftL_sub_mem`, and
+  `Ψ' N ≡ 1 ⊗ (Φ + x)` modulo `FFK (d + 1)` uses `Ψ N ≡ Ψ (d + 1)` modulo `FFK (d + 1)`
+  (`sub_mem_FFK_of_consecutive`).
+- **The sequence** (`exists_seq_of_step`): dependent choice along `ℕ`, by `Nat.rec` over a
+  subtype; `Φ N` is the rational part after `N − 1` steps.
+
+**Scope.** `AssocU4 N` and `GL N` are claimed for `N ≥ 2`; compatibility for `N ≥ 1`. The result
+is still a sequence of polynomials with compatible truncations, not an element of a completed
+algebra; no completion is defined in `RationalAssociator/`.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `AssociatorTower.lean` exits 0 with no
+output, against the restored cache plus `/home/claude/chainbuild` (this branch's modules up to
+`AssociatorChain`). `#print axioms` on `rational_associator_compatible_of_tower`, `towerStep`,
+`stepData`, `shiftL_sub_mem`, `shiftL_sum`, `compKK_sub_mem` and
+`CompatibleGroupLikeKAssociatorTower.toTower` shows only `propext`, `Classical.choice` and
+`Quot.sound` (`exists_seq_of_step`: `Classical.choice` only). No `lake build` was run.
