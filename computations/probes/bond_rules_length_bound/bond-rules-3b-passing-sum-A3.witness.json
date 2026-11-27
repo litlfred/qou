@@ -1,0 +1,124 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-27T20:56:33.917997+00:00",
+  "commitSha": "f0c8067060af951459f079476ba06ad7a34405f0",
+  "assertions": [
+    {
+      "name": "bound_geometric_for_some_weight",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "tolerance": 0,
+      "source": "recorded, not required: A >= 3 has none"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "bond-rules-3b-passing-sum-A3",
+  "scriptFile": "rule3b_passing_sum.py",
+  "scriptHash": "0618d8e21a0d",
+  "scriptCommitSha": "57454055e02508af1ef00fe7fe1a4d53c99b451e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bond_rules_length_bound/rule3b_passing_sum.py",
+      "4",
+      "3"
+    ],
+    "reproduce": "python3 -u computations/probes/bond_rules_length_bound/rule3b_passing_sum.py 4 3"
+  },
+  "description": "PROBE (bean qou-brng, brief C2 front E): rule (3b), weighted average of per-word trace ratios over the bond words that pass reading 3 individually, truncated at the measured length, with a proved norm/count bound on the unmeasured longer words where it is geometric. Per-word ratios from the committed ceiling witness. Weights are corpus quantities, none derived. Scorecard only.",
+  "auditOnly": "docs/audits/2026-11-27-bond-rules-and-length-cutoff.md",
+  "parameters": {
+    "A": 3,
+    "L_measured": 4,
+    "KMAX": 1
+  },
+  "data": {
+    "mu": {
+      "0": "1.0",
+      "1": "1.1988582111448163577"
+    },
+    "beta_per_vertex_norm_growth": "1.1988582111448163577",
+    "x_norm": "1.0500796062662369374",
+    "rule3b": {
+      "h": {
+        "t": "0.20906029879563931543",
+        "ratio_truncated": "0.25703410089660750005",
+        "minus_ln_r": "1.35854651457559",
+        "B_MeV_tower": "5.74323277822",
+        "geometric_factor": "1.75443559084879",
+        "bound_available": false,
+        "truncated_by_L": {
+          "3": {
+            "n_words": 3,
+            "ratio": "0.247297886748035",
+            "B_MeV_tower": "5.90647762"
+          },
+          "4": {
+            "n_words": 28,
+            "ratio": "0.257034100896608",
+            "B_MeV_tower": "5.743232778"
+          }
+        }
+      },
+      "q*h": {
+        "t": "0.23205245416676393127",
+        "ratio_truncated": "0.25739908345102540737",
+        "minus_ln_r": "1.35712754462278",
+        "B_MeV_tower": "5.73723410636",
+        "geometric_factor": "1.94738593065892",
+        "bound_available": false,
+        "truncated_by_L": {
+          "3": {
+            "n_words": 3,
+            "ratio": "0.247297886748035",
+            "B_MeV_tower": "5.90647762"
+          },
+          "4": {
+            "n_words": 28,
+            "ratio": "0.257399083451025",
+            "B_MeV_tower": "5.737234106"
+          }
+        }
+      },
+      "h/q": {
+        "t": "0.18834624563424194187",
+        "ratio_truncated": "0.25665867327810127455",
+        "minus_ln_r": "1.36000819635981",
+        "B_MeV_tower": "5.74941201363",
+        "geometric_factor": "1.58060310181837",
+        "bound_available": false,
+        "truncated_by_L": {
+          "3": {
+            "n_words": 3,
+            "ratio": "0.247297886748035",
+            "B_MeV_tower": "5.90647762"
+          },
+          "4": {
+            "n_words": 28,
+            "ratio": "0.256658673278101",
+            "B_MeV_tower": "5.749412014"
+          }
+        }
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 enters through cf.Q (committed y-lambda-at-q0 witness, proton pin)"
+}
