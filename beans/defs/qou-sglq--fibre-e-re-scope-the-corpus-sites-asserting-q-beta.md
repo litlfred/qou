@@ -6,8 +6,9 @@ type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-19T14:21:19Z
-updated_at: 2026-11-15T17:33:14Z
+updated_at: 2026-11-27T14:18:45Z
 parent: qou-avtq
 blocked_by:
     - qou-cds1

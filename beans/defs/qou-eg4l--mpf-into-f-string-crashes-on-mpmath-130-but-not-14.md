@@ -2,13 +2,13 @@
 # qou-eg4l
 title: mpf-into-f-string crashes on mpmath 1.3.0 but NOT 1.4.1 — one latent site, and my first detector returned 0 against a true 5646
 status: in-progress
-pr: 8226
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-24T19:29:11Z
-updated_at: 2026-10-10T07:55:52Z
+updated_at: 2026-11-27T14:18:29Z
 parent: qou-9nnz
 ---
 

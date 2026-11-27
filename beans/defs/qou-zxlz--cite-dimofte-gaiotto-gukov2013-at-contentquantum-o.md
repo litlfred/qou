@@ -2,13 +2,13 @@
 # qou-zxlz
 title: Cite [dimofte-gaiotto-gukov2013] at folio/quantum-observable-universe/lean/QOU/QBeta/WindingGFT…
 status: todo
-pr: 8305
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-08T23:34:14Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:52Z
 parent: qou-mub3
 ---
 

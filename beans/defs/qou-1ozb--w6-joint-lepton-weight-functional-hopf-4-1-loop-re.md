@@ -4,8 +4,10 @@ title: W6 Joint Lepton Weight Functional (Hopf + 4_1 Loop Resolvent & mu-p 211 p
 status: in-progress
 type: task
 priority: high
+tags:
+    - compute-accuracy
 created_at: 2026-11-23T20:54:27Z
-updated_at: 2026-11-23T21:14:59Z
+updated_at: 2026-11-27T14:18:14Z
 parent: qou-qzvs
 blocked_by:
     - qou-91w7

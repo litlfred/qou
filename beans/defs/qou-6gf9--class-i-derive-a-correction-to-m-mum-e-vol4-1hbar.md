@@ -6,8 +6,9 @@ type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-11-23T21:14:59Z
+updated_at: 2026-11-27T14:18:20Z
 parent: qou-2002
 ---
 

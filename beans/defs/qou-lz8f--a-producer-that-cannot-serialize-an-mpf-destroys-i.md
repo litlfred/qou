@@ -4,8 +4,10 @@ title: Wire mpf_json_encoder_audit.py (--self-test + _ser recognizer) into preci
 status: in-progress
 type: task
 priority: high
+tags:
+    - compute-accuracy
 created_at: 2026-09-13T17:29:26Z
-updated_at: 2026-11-24T00:32:16Z
+updated_at: 2026-11-27T14:18:37Z
 parent: qou-9nnz
 ---
 

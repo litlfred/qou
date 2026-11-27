@@ -4,8 +4,10 @@ title: atom_braid_active_partitions deuteron prediction fails at exact h
 status: todo
 type: bug
 priority: normal
+tags:
+    - compute-accuracy
 created_at: 2026-10-13T00:00:00Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-27T14:18:25Z
 parent: qou-v2om
 ---
 

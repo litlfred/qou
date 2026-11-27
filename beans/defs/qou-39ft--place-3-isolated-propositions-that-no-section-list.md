@@ -3,12 +3,14 @@
 title: 'Place 3 isolated propositions that no section lists: atomic-q-reeb-universal-rho, qbeta-toroidal-harmonics-basis, delta-max-numerical-scale'
 status: todo
 type: task
+priority: normal
 tags:
     - reorg-2026-10-04
     - orphan-census
     - needs-owner
+    - compute-accuracy
 created_at: 2026-10-04T15:31:24Z
-updated_at: 2026-10-04T15:31:24Z
+updated_at: 2026-11-27T14:18:16Z
 parent: qou-mub3
 ---
 

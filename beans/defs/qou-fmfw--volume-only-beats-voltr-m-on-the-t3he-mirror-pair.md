@@ -2,13 +2,13 @@
 # qou-fmfw
 title: Volume-only beats Vol*tr_M on the T/3He mirror pair (2.90%, zero free params) — extend to all four L2 targets
 status: todo
-pr: 8306
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-07T09:02:18Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:31Z
 parent: qou-v2om
 ---
 

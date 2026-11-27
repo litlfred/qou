@@ -4,8 +4,10 @@ title: 'GAP: derive alpha_EM from the electron word sigma0 sigma1 sigma0 (Hopf c
 status: todo
 type: task
 priority: normal
+tags:
+    - compute-accuracy
 created_at: 2026-11-22T10:47:45Z
-updated_at: 2026-11-22T10:53:52Z
+updated_at: 2026-11-27T14:18:32Z
 parent: qou-wxhi
 ---
 

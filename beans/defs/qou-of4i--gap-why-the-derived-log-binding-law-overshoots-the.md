@@ -4,8 +4,10 @@ title: 'GAP: why the derived log binding law overshoots the deuteron by +27.4% u
 status: in-progress
 type: task
 priority: normal
+tags:
+    - compute-accuracy
 created_at: 2026-11-25T11:23:57Z
-updated_at: 2026-11-25T16:29:38Z
+updated_at: 2026-11-27T14:18:39Z
 parent: qou-s028
 ---
 

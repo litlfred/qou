@@ -2,14 +2,14 @@
 # qou-ghwy
 title: 'GAP: close_321_weinberg_gap.py is float64 end to end (sympy → np.complex128 → eigvals) under a witness declaring compute_dps 70; no precision gate covers the sympy→numpy route'
 status: todo
-pr: 8211
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-ew
+    - compute-accuracy
 created_at: 2026-09-03T05:01:07Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:32Z
 parent: qou-20sx
 ---
 

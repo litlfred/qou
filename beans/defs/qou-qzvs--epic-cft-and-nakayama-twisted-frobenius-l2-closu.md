@@ -4,8 +4,10 @@ title: 'Epic: CFT and Nakayama-Twisted Frobenius L2 Closure Wave (Charge, Bindin
 status: in-progress
 type: epic
 priority: high
+tags:
+    - compute-accuracy
 created_at: 2026-11-23T17:28:58Z
-updated_at: 2026-11-23T20:55:41Z
+updated_at: 2026-11-27T14:18:43Z
 parent: qou-hksc
 ---
 

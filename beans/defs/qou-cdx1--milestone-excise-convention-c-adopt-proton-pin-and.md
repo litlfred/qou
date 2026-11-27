@@ -4,8 +4,10 @@ title: 'MILESTONE: excise convention C, adopt proton pin + colour weighting (own
 status: in-progress
 type: epic
 priority: high
+tags:
+    - compute-accuracy
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-11-18T08:23:55Z
+updated_at: 2026-11-27T14:18:27Z
 parent: qou-10v9
 ---
 

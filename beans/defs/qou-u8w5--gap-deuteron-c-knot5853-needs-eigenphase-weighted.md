@@ -2,13 +2,13 @@
 # qou-u8w5
 title: 'GAP: deuteron C_knot=5.853 needs eigenphase-weighted handle-commutator charge on the NON-abelian H_6 interface braid (trefoil H_2 scalar channel proved null)'
 status: todo
-pr: 8344
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-02T20:08:58Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:48Z
 parent: qou-v2om
 ---
 

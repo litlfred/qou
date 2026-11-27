@@ -4,8 +4,10 @@ title: 'Session: 2026-11-23 PR Consolidation, L2 1-ppQ, SM/Eightfold, Lean KG & 
 status: in-progress
 type: milestone
 priority: critical
+tags:
+    - compute-accuracy
 created_at: 2026-11-23T20:54:25Z
-updated_at: 2026-11-23T20:55:40Z
+updated_at: 2026-11-27T14:18:33Z
 ---
 
 Top-level coordination milestone for the 2026-11-23 multi-agent campaign across `litlfred/qou`.

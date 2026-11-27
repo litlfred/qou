@@ -2,14 +2,14 @@
 # qou-vr3q
 title: 'Deep-dive 1: G3 monodromy/Stokes-constant keystone — derive A_ω (odd-face Q_β/Φ_b) as GGM 3d-index integer count'
 status: todo
-pr: 8277
 type: task
 priority: high
 tags:
     - alien-habiro
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-07-18T17:08:37Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:49Z
 parent: qou-avtq
 ---
 

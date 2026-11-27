@@ -2,13 +2,13 @@
 # qou-esx7
 title: A_ω monodromy datum — derive the odd-channel Stokes constant (Qβ/m_n/Δpn trio, 2/7→5/7)
 status: todo
-pr: 8277
 type: feature
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-07-17T20:20:36Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:30Z
 parent: qou-avtq
 ---
 

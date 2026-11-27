@@ -5,10 +5,11 @@ status: todo
 type: task
 priority: normal
 tags:
+    - compute-accuracy
     - voice-audit
     - fourth-wall-lean
 created_at: 2026-11-20T17:30:00Z
-updated_at: 2026-11-20T17:30:00Z
+updated_at: 2026-11-27T14:18:47Z
 parent: qou-d4kh
 ---
 

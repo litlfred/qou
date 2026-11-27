@@ -4,8 +4,10 @@ title: Closed-Form Two-Loop O(alpha_EM^2) Bloch-B_3(C) / zeta(3) Schwinger Coeff
 status: todo
 type: task
 priority: high
+tags:
+    - compute-accuracy
 created_at: 2026-11-19T06:43:03Z
-updated_at: 2026-11-22T22:50:00Z
+updated_at: 2026-11-27T14:18:37Z
 parent: qou-3l2l
 ---
 

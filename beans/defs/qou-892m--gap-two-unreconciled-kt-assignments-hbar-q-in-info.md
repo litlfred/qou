@@ -2,13 +2,13 @@
 # qou-892m
 title: 'GAP: two unreconciled kT assignments -- hbar_q in information-theory vs E_0 in the binding law'
 status: todo
-pr: 8219
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-19T17:31:15Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:22Z
 parent: qou-v2om
 ---
 

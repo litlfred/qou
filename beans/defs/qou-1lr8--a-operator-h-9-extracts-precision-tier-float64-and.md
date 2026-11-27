@@ -2,13 +2,13 @@
 # qou-1lr8
 title: 'A-operator H_9 extracts: precision_tier float64 — and the two wrong reachability answers I gave first'
 status: in-progress
-pr: 8190
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-29T07:32:44Z
-updated_at: 2026-11-16T20:28:40Z
+updated_at: 2026-11-27T14:18:14Z
 parent: qou-9nnz
 ---
 
@@ -118,4 +118,3 @@ re-derive the idea and act on it.
 - [x] Formalized in `folio/quantum-observable-universe/lean/QOU/MassTheory/Float64EngineReachabilityAndGramInverse.lean` (wired into `QOU.lean`, `0` `sorry`, `0` vacuity advisories across all 7 static audits).
 - [x] Paired with 50-dps `mpmath` + `sympy` verification probe `computations/probes/float64_engine_reachability_and_gram_inverse_probe.py` and stamped witness `computations/probes/float64-engine-reachability-and-gram-inverse.witness.json` (`allPassed: true`, `0` raw `float64` fields, `scriptCommitSha: 2ed61761fb447e7b912df4f3ef73e8603236969a`).
 - [ ] Awaiting merge of PR [`litlfred/qou#8190`](https://github.com/litlfred/qou/pull/8190) (`345a3f9ff4ba913bb465b8884e861bfccde997ca`).
-

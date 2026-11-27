@@ -4,8 +4,10 @@ title: 'Binding error budget: where the nuclear binding errors come from (2H-4He
 status: in-progress
 type: task
 priority: normal
+tags:
+    - compute-accuracy
 created_at: 2026-11-25T16:29:06Z
-updated_at: 2026-11-25T16:41:19Z
+updated_at: 2026-11-27T14:18:44Z
 parent: qou-s028
 ---
 

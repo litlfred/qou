@@ -4,8 +4,10 @@ title: 'EPIC [Q-Drain-5]: Q_beta c_k Ladder, n-p Splitting & Two-Loop 1-ppQ Radi
 status: todo
 type: epic
 priority: high
+tags:
+    - compute-accuracy
 created_at: 2026-11-23T20:55:47Z
-updated_at: 2026-11-23T20:55:48Z
+updated_at: 2026-11-27T14:18:36Z
 parent: qou-hksc
 blocking:
     - qou-xip2

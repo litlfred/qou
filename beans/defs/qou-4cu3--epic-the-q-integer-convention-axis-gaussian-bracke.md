@@ -4,8 +4,10 @@ title: 'EPIC: the q-integer convention axis — Gaussian bracket vs classical (q
 status: todo
 type: epic
 priority: normal
+tags:
+    - compute-accuracy
 created_at: 2026-10-10T07:55:43Z
-updated_at: 2026-11-22T21:54:27Z
+updated_at: 2026-11-27T14:18:17Z
 parent: qou-10v9
 ---
 

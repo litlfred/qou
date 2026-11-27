@@ -6,8 +6,9 @@ type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-04T22:16:19Z
-updated_at: 2026-11-16T21:54:00Z
+updated_at: 2026-11-27T14:18:39Z
 parent: qou-rtxm
 ---
 

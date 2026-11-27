@@ -4,8 +4,10 @@ title: 'PR-Drain-1: Salvage/Rebase Late-Nov Targeted Hygiene, Precision Gates, L
 status: in-progress
 type: task
 priority: high
+tags:
+    - compute-accuracy
 created_at: 2026-11-23T20:55:51Z
-updated_at: 2026-11-24T00:50:03Z
+updated_at: 2026-11-27T14:18:37Z
 parent: qou-xip2
 ---
 

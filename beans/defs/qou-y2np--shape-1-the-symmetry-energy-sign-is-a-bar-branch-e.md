@@ -2,14 +2,13 @@
 # qou-y2np
 title: 'SHAPE-1: the symmetry-energy sign is a BAR BRANCH (exactly +/- 2 ln q), the corpus took the branch that fits nuclear binding worse, and beta-decay does NOT pin it (Q_beta uses |Delta net|)'
 status: todo
-pr: 8321
-branch: feat/qou-ai7v-cgyn-k12x-u8ji-y2np
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-09-05T06:49:20Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:51Z
 parent: qou-v2om
 ---
 

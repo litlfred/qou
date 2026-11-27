@@ -2,13 +2,13 @@
 # qou-hytc
 title: 64 COMPUTED assertion tolerances are still raw float64 — a producer fix, not a serialization one
 status: in-progress
-pr: 8290
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-28T19:42:44Z
-updated_at: 2026-11-17T08:47:00Z
+updated_at: 2026-11-27T14:18:34Z
 parent: qou-9nnz
 ---
 

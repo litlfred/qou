@@ -2,13 +2,13 @@
 # qou-fi1p
 title: DeuteronKernel.bondL's writhe sign is opposite to InterfaceScalar's — latent, 3.57x on the mirror split
 status: todo
-pr: 8219
 type: task
 priority: normal
 tags:
+    - compute-accuracy
     - reorg-2026-10-04
 created_at: 2026-09-13T10:54:22Z
-updated_at: 2026-11-21T12:40:00Z
+updated_at: 2026-11-27T14:18:31Z
 parent: qou-v2om
 ---
 

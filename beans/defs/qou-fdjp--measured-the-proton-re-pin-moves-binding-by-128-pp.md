@@ -2,13 +2,13 @@
 # qou-fdjp
 title: 'MEASURED: the proton re-pin moves binding by 128 ppb; the binding error is 21-226% — R2 cannot be the cause'
 status: todo
-pr: 8219
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-25T16:38:29Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:31Z
 parent: qou-v2om
 ---
 

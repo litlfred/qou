@@ -5,10 +5,11 @@ status: in-progress
 type: task
 priority: normal
 tags:
+    - compute-accuracy
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-02T19:09:10Z
-updated_at: 2026-10-04T15:12:51Z
+updated_at: 2026-11-27T14:18:41Z
 parent: qou-v2om
 ---
 

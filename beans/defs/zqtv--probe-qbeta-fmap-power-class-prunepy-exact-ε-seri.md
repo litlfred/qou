@@ -5,9 +5,10 @@ status: todo
 type: task
 priority: normal
 tags:
+    - compute-accuracy
     - reorg-2026-10-04
 created_at: 2026-07-06T11:48:04Z
-updated_at: 2026-11-15T17:33:15Z
+updated_at: 2026-11-27T14:18:53Z
 parent: qou-avtq
 blocked_by:
     - qou-cds1

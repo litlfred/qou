@@ -4,8 +4,10 @@ title: 'EPIC: close the low-isotope binding defect — five fronts, formalize-fi
 status: in-progress
 type: epic
 priority: normal
+tags:
+    - compute-accuracy
 created_at: 2026-08-26T03:37:39Z
-updated_at: 2026-11-23T22:17:28Z
+updated_at: 2026-11-27T14:18:48Z
 parent: qou-10v9
 ---
 

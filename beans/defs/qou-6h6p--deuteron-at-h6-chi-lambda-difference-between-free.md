@@ -3,8 +3,11 @@
 title: 'Deuteron at H6: chi_lambda difference between free and bound (from #2485)'
 status: in-progress
 type: task
+priority: normal
+tags:
+    - compute-accuracy
 created_at: 2026-11-17T23:08:24Z
-updated_at: 2026-11-18T07:26:28Z
+updated_at: 2026-11-27T14:18:21Z
 parent: qou-v2om
 ---
 

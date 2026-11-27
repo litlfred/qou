@@ -5,9 +5,10 @@ status: in-progress
 type: task
 priority: normal
 tags:
+    - compute-accuracy
     - reorg-2026-10-04
 created_at: 2026-08-19T13:15:18Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-27T14:18:29Z
 parent: qou-5vkl
 ---
 

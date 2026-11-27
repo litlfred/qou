@@ -4,8 +4,10 @@ title: 'EPIC: Q_beta c_k ladder under convention D (anchor qou-cds1)'
 status: in-progress
 type: epic
 priority: high
+tags:
+    - compute-accuracy
 created_at: 2026-11-15T17:33:01Z
-updated_at: 2026-11-15T17:42:33Z
+updated_at: 2026-11-27T14:18:50Z
 parent: qou-10v9
 ---
 

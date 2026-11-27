@@ -5,14 +5,15 @@ status: in-progress
 type: task
 priority: normal
 tags:
-    - lean
-    - cited-sorry
     - paper-qou
     - infra-blocked
     - cite-faddeev1994
     - reorg-2026-10-04
+    - compute-accuracy
+    - lean
+    - cited-sorry
 created_at: 2026-08-01T23:31:09Z
-updated_at: 2026-11-18T07:45:11Z
+updated_at: 2026-11-27T14:18:35Z
 parent: qou-qqyb
 ---
 

@@ -4,8 +4,10 @@ title: 'PPQ-1 (L1): 80-dps Newton Anchor Round-Trip Polish (2.85 ppt -> < 1e-80 
 status: todo
 type: task
 priority: high
+tags:
+    - compute-accuracy
 created_at: 2026-11-19T16:48:46Z
-updated_at: 2026-11-24T00:32:15Z
+updated_at: 2026-11-27T14:18:51Z
 parent: qou-10v9
 ---
 

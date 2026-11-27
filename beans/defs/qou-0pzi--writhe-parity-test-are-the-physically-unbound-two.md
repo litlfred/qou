@@ -2,13 +2,13 @@
 # qou-0pzi
 title: 'writhe-parity test: are the physically-unbound two-nucleon channels at even-negative stacked powers while the deuteron is not?'
 status: todo
-pr: 8205
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-16T00:11:01Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:14Z
 parent: qou-v2om
 ---
 

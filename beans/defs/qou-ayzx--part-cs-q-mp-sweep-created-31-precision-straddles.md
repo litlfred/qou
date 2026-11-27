@@ -3,8 +3,11 @@
 title: 'Part C''s Q_MP sweep created 31 PRECISION STRADDLES: mpmath side moved to 70 digits, sympy side left at 50'
 status: todo
 type: task
+priority: normal
+tags:
+    - compute-accuracy
 created_at: 2026-11-21T04:30:36Z
-updated_at: 2026-11-21T06:50:00Z
+updated_at: 2026-11-27T14:18:26Z
 parent: qou-9nnz
 ---
 

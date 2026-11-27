@@ -4,8 +4,10 @@ title: 'EPIC: Consolidate All 14 Monograph Appendices/Annexes & Build Dense Witn
 status: in-progress
 type: epic
 priority: high
+tags:
+    - compute-accuracy
 created_at: 2026-11-23T20:30:00Z
-updated_at: 2026-11-24T01:19:56Z
+updated_at: 2026-11-27T14:18:26Z
 parent: qou-hksc
 blocked_by:
     - qou-qzvs

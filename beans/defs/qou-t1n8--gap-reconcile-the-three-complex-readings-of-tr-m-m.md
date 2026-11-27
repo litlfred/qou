@@ -4,8 +4,10 @@ title: 'GAP: reconcile the three complex readings of tr_M (modulus/phase, Re/Im 
 status: todo
 type: task
 priority: normal
+tags:
+    - compute-accuracy
 created_at: 2026-11-22T10:47:44Z
-updated_at: 2026-11-22T10:53:52Z
+updated_at: 2026-11-27T14:18:46Z
 parent: qou-wxhi
 ---
 

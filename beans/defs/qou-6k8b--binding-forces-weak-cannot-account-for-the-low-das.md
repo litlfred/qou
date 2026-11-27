@@ -2,13 +2,13 @@
 # qou-6k8b
 title: 'binding forces: weak cannot account for the low-dashboard error; charge-symmetry breaking is 2.97x too large'
 status: todo
-pr: 8205
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-08T21:46:35Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:21Z
 parent: qou-v2om
 ---
 

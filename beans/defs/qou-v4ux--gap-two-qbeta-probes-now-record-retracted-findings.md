@@ -2,13 +2,13 @@
 # qou-v4ux
 title: 'GAP: two qbeta probes now record retracted findings — nucleon-crossing-count-contradiction and nl84-provenance are stale on their own terms'
 status: todo
-pr: 8277
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-30T14:34:40Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:49Z
 parent: qou-avtq
 ---
 

@@ -4,8 +4,10 @@ title: 'EPIC: Multi-Crossing H_4(q) Full-Twist + Groebner-Shirshov Nuclear Compu
 status: in-progress
 type: epic
 priority: high
+tags:
+    - compute-accuracy
 created_at: 2026-11-19T09:36:33Z
-updated_at: 2026-11-19T09:36:33Z
+updated_at: 2026-11-27T14:18:23Z
 parent: qou-10v9
 ---
 

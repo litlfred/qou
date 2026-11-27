@@ -6,8 +6,9 @@ type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-07-19T17:54:14Z
-updated_at: 2026-10-04T15:11:58Z
+updated_at: 2026-11-27T14:18:16Z
 parent: qou-wp3h
 ---
 

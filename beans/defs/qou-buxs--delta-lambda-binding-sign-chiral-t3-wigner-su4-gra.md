@@ -5,10 +5,11 @@ status: todo
 type: task
 priority: normal
 tags:
-    - reorg-2026-10-04
     - 8f-ew
+    - compute-accuracy
+    - reorg-2026-10-04
 created_at: 2026-08-02T19:31:44Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:27Z
 parent: qou-20sx
 ---
 

@@ -4,8 +4,10 @@ title: 'EPIC [Q-Drain-1]: Precision Gates, Float64/mpf Serialization & Witness P
 status: in-progress
 type: epic
 priority: high
+tags:
+    - compute-accuracy
 created_at: 2026-11-23T20:55:45Z
-updated_at: 2026-11-24T00:32:18Z
+updated_at: 2026-11-27T14:18:14Z
 parent: qou-hksc
 blocking:
     - qou-xip2

@@ -4,8 +4,10 @@ title: 'MILESTONE: attack-vector queue (Q_beta / c3^odd / f-map)'
 status: in-progress
 type: epic
 priority: high
+tags:
+    - compute-accuracy
 created_at: 2026-08-26T04:22:51Z
-updated_at: 2026-11-15T23:50:00Z
+updated_at: 2026-11-27T14:18:26Z
 parent: qou-10v9
 ---
 

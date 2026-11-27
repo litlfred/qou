@@ -2,13 +2,13 @@
 # qou-2t9y
 title: 'GAP: the cross-anchor Stage B probe panics in the Rust engine — its committed PASS is 70 days old and records the mu-p separation 0.719% wrong'
 status: in-progress
-pr: 8182
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-09-13T07:02:45Z
-updated_at: 2026-10-04T15:20:25Z
+updated_at: 2026-11-27T14:18:15Z
 parent: qou-2002
 ---
 

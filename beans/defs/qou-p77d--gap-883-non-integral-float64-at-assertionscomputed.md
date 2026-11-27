@@ -2,13 +2,13 @@
 # qou-p77d
 title: 'GAP: 883 non-integral float64 at .assertions[].computed/.expected across 300 witnesses — the class #5910 deferred'
 status: in-progress
-pr: 8290
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-29T02:28:37Z
-updated_at: 2026-11-17T08:47:00Z
+updated_at: 2026-11-27T14:18:40Z
 parent: qou-9nnz
 ---
 

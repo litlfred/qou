@@ -2,13 +2,13 @@
 # qou-k8fc
 title: 'GAP: sigma_1^3 is a three-role symbol (electron / deuteron / nucleon binding factor in H_3) and the deuteron role is unsupported'
 status: todo
-pr: 8302
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
+    - compute-accuracy
 created_at: 2026-08-21T21:21:18Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:35Z
 parent: qou-v2om
 ---
 

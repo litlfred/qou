@@ -8,8 +8,9 @@ tags:
     - qbeta
     - bar-involution
     - calibration
+    - compute-accuracy
 created_at: 2026-11-15T09:50:00Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:33Z
 parent: qou-qs0e
 ---
 

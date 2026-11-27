@@ -2,13 +2,13 @@
 # qou-onte
 title: 'Research doc: groupoid + derived-category attack routes on the binding gap, with lit requests'
 status: todo
-pr: 8359
 type: task
 priority: normal
 tags:
+    - compute-accuracy
     - reorg-2026-10-04
 created_at: 2026-09-05T17:47:03Z
-updated_at: 2026-11-20T16:06:50Z
+updated_at: 2026-11-27T14:18:40Z
 parent: qou-v2om
 ---
 
