@@ -1096,6 +1096,7 @@ import QOU.Nuclear.StokesQZeroDTCount
 import QOU.Nuclear.StokesIndexCount41
 import QOU.Nuclear.StokesIndexCount52
 import QOU.Nuclear.TetIndexDegree
+import QOU.Nuclear.TetIndexTriality
 import QOU.Nuclear.StokesSymmetryConstantQZero
 -- M2 (conditional BPS characterization) was an umbrella orphan (qou-orph
 -- pattern: nothing imported it, so `lake build` never checked it). Importing
