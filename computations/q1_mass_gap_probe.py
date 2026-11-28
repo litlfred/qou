@@ -167,25 +167,33 @@ def epsilon_stratification() -> dict:
 
 
 def main() -> int:
-    # q₀ from q-pinning-50-digit.witness.json, which is the MUON
+    # The pin file is q-pinning-50-digit.witness.json, which is the MUON
     # anchor-defining witness (`q0Anchor: muon`, holding
     # 1.10997859555733471989…). This comment said "proton anchor" until
     # 2026-08-23 and was simply wrong about the file it reads -- the kind
     # of mislabel that makes a reader classify the producer's layer
     # backwards. AGENTS.md: never re-pin this witness; it is what
     # `qou_substrate.witness._q0_value_for_anchor("muon")` reads.
+    #
+    # 2026-11-28 (owner: "swap everything back to the proton pin unless we can
+    # prove that relation"): the pin witness is now used ONLY to validate the
+    # [2]_q and Plancherel conventions, at the pin's own q. The q₀ the probe
+    # computes at comes from `q_parameter`, i.e. the running script's anchor:
+    # proton by default, muon under QOU_Q0_ANCHOR=muon.
     with (_pb.witness_path("q-pinning-50-digit.witness.json", HERE)).open() as fh:
         pin = json.load(fh)
-    q0 = mp.mpf(pin["derived_50_digit"]["q"])
+    q_pin = mp.mpf(pin["derived_50_digit"]["q"])
+    from q_parameter import Q_MP  # anchor-aware
+    q0 = mp.mpf(Q_MP)
 
-    # ── convention validation against canonical sources ──
-    assert abs(q_int(2, q0) - mp.mpf(pin["derived_50_digit"]["two_q"])) < mp.mpf("1e-45"), \
+    # ── convention validation against canonical sources (at the pin's q) ──
+    assert abs(q_int(2, q_pin) - mp.mpf(pin["derived_50_digit"]["two_q"])) < mp.mpf("1e-45"), \
         "balanced [2]_q convention does not match the pinning witness"
     w3_pin = mp.mpf(pin["plancherel_weights_n3"]["w_(3)"])
     w21_pin = mp.mpf(pin["plancherel_weights_n3"]["w_(2,1)"])
-    assert abs(plancherel_weight((3,), q0) - w3_pin) < mp.mpf("1e-45"), \
+    assert abs(plancherel_weight((3,), q_pin) - w3_pin) < mp.mpf("1e-45"), \
         "w_λ = [n]_q!/H_q(λ)² convention does not match plancherel_weights_n3"
-    assert abs(plancherel_weight((2, 1), q0) - w21_pin) < mp.mpf("1e-45")
+    assert abs(plancherel_weight((2, 1), q_pin) - w21_pin) < mp.mpf("1e-45")
     # classical limit: weights at q = 1 are d_λ²/n! and sum to exactly 1
     one = mp.mpf(1)
     s1 = sum(plancherel_weight(lam, one) for lam in partitions_of(5))

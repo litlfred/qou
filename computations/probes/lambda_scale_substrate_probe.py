@@ -63,9 +63,9 @@ Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 # QOU_Q0_ANCHOR inert here.
 #
 # This does NOT disturb bean `qou-324i`, which on 2026-08-28 corrected this
-# producer's disposition from `independent` to `muon`. The stem stays listed
-# `ideal_muon`, q_parameter resolves that to the same value byte-for-byte, and
-# the corrected disposition remains true. Only the `q0AnchorReason` prose in the
+# producer's disposition from `independent` to `muon`. Since 2026-11-28 the stem
+# is listed `physical_proton` (owner ruling "Move produced to proton pin"), and
+# the stamp reads the anchor off the resolved value. Only the `q0AnchorReason` prose in the
 # witness needed updating, because it described the mechanism, not the layer.
 record_upstream(Q_PIN, _UPSTREAM_RECORDS)
 from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402 -- anchor-aware
@@ -289,25 +289,18 @@ def main() -> int:
         "Findings inform the open R&D on λ_scale substrate derivation."
     )
 
-    out = w.save({"q0Anchor": "muon",
+    from q0_stamp import anchor_of_value  # noqa: E402
+    _anchor = anchor_of_value(Q_50_DIGIT_STR)
+    out = w.save({"q0Anchor": _anchor,
          "q0AnchorReason": (
-            'Reads `q-pinning-50-digit.witness.json` DIRECTLY (Q_PIN, module '
-            'scope) -- the muon anchor-DEFINING witness -- so it computes at '
-            'the ideal/CAL-2 layer. The stem is listed `ideal_muon` in '
-            'q0_anchor_manifest.json, which agrees. '
-            'CORRECTED 2026-08-28 (bean qou-324i). The previous disposition was '
-            '`independent`, justified by: "PROVED by running this producer under '
-            'QOU_Q0_ANCHOR=muon and =proton ... every substantive field is '
-            'byte-identical". That experiment is BLIND here, and the blindness '
-            'is structural rather than incidental: QOU_Q0_ANCHOR is read by '
-            '`q_parameter`, and a direct read of the pinning witness never '
-            'consults `q_parameter`. So byte-identity under the flip was '
-            'guaranteed a priori and was evidence of nothing. Re-run 2026-08-28 '
-            'and it does indeed report `clean` -- while the producer is '
-            'hard-pinned to muon. `independent` hid this file from the qou-1c4y '
-            'muon->proton migration; `muon` makes it visible to it. Whether it '
-            'should MOVE to the experimental pin is that migration\'s question, '
-            'not this correction\'s.'
+            f"Computes at the pin q_parameter resolves ({_anchor}). Since the "
+            "owner ruling of 2026-11-28 ('Move produced to proton pin') the stem "
+            "is listed `physical_proton`; QOU_Q0_ANCHOR=muon still selects muon. "
+            "Measured 2026-11-28: under QOU_Q0_ANCHOR=muon the witness reproduces "
+            "the previous muon-stamped values byte-for-byte; under proton the "
+            "5/2 - h^2 G residual moves 5.6166 -> 5.8314 ppm, entirely from the "
+            "pin shift (lambda_p target moves by 0.21 ppm). Bean qou-324i records "
+            "why the earlier `independent` disposition was wrong."
          )})
     print(f"Witness emitted: {out.name}")
     print()

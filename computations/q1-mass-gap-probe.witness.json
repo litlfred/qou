@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-24T18:06:56.582723+00:00",
-  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-28T02:39:40.211558+00:00",
+  "commitSha": "b0bfb4f942eabf7ac8d9870270456dda240ffcb0",
   "assertions": [
     {
       "name": "plancherel_sum_at_q1_is_one",
@@ -14,7 +14,7 @@
     },
     {
       "name": "gap_bound_normalisation_identity",
-      "computed": "1.9809298e-72",
+      "computed": "2.2639198e-72",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-40",
@@ -25,8 +25,8 @@
   "durationMs": 0,
   "computation": "q1-mass-gap-probe",
   "scriptFile": "q1_mass_gap_probe.py",
-  "scriptHash": "6688d14f8f37",
-  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
+  "scriptHash": "39924a0d3f4d",
+  "scriptCommitSha": "c4888b0e524235b23cdb51520a0887669e8a7554",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,10 +38,11 @@
     "numpy": "2.5.3",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+    "pyhecke_native_build": "a22b08f9db48ed97"
   },
   "invocation": {
     "argv": [
@@ -52,12 +53,12 @@
   "description": "EXPLORATORY q → 1 probe of the categorical mass-gap quantities and Plancherel weight towers (n = 3..6).  Answers: what survives in the mass tower End(A_n) at q = 1?  Result: semisimple weight structure survives; crossing energy, categorical gap bound (~h³), and physical-units gap (= ½q(q−1)(q+1), ~h) all vanish.  Conventions validated against q-pinning-50-digit.witness.json and the classical q = 1 Plancherel measure.",
   "exploratory": true,
   "data": {
-    "q0_50dps": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+    "q0_50dps": "1.109978582751380807591669095610768879874499121873578736072814240181799",
     "gap_quantities_by_q": {
       "q0 (substrate)": {
-        "E_cross": "0.1045301610751583733154001307509599429900685846129395568518696378530738",
-        "gap_bound_categorical": "0.001264322768698861286849872786087630598821389654896982018230952722711935",
-        "gap_bound_physical_units": "0.1287866444785676813595599637386656392430076551835248844796081253087474"
+        "E_cross": "0.104530149397819657715423106564837471929878747631512277690848027229488",
+        "gap_bound_categorical": "0.00126432233105791663314606017849734749849652416410704647410771802321921",
+        "gap_bound_physical_units": "0.1287866271000021901875274671492960604182991994495945702665466169610153"
       },
       "1.5": {
         "E_cross": "0.4166666666666666666666666666666666666666666666666666666666666666666667",
@@ -95,9 +96,9 @@
         "q0 (substrate)": {
           "n_partitions": 3,
           "n_distinct_levels": 2,
-          "min_weight": "0.1633832273348021026174788306111032716684595931136926437629485454551126",
-          "sum_weights": "0.9874402270088729393133426935672009028734797090093098089918024964531426",
-          "min_level_separation": "0.4972905450044666314609062017338910878681009296682318777029568600878049",
+          "min_weight": "0.1633832280562573910406786623368916238837524469753550235309791452784494",
+          "sum_weights": "0.9874402297736877291178752186755445034994480712545790469414649909129561",
+          "min_level_separation": "0.4972905456049155559958392316648696318481907303285139763485275550776078",
           "all_positive": true
         },
         "1.5": {
@@ -153,9 +154,9 @@
         "q0 (substrate)": {
           "n_partitions": 5,
           "n_distinct_levels": 3,
-          "min_weight": "0.03975568182866944071676890276845249910374308879293865838814962399656654",
-          "sum_weights": "0.9821653199331085271693746023772756597225579590062172635285778871055296",
-          "min_level_separation": "0.1262932701562576037290774391475252183210306234669846092294978831942078",
+          "min_weight": "0.03975568224217960094061774980406140648099716033837991879320221171143652",
+          "sum_weights": "0.9821653238356107838720760927376147140046750765371395567279858948363397",
+          "min_level_separation": "0.1262932698830664125746597501936249541176140089783814743475081118886706",
           "all_positive": true
         },
         "1.5": {
@@ -211,9 +212,9 @@
         "q0 (substrate)": {
           "n_partitions": 7,
           "n_distinct_levels": 4,
-          "min_weight": "0.007615387158599068349612421624900305378855136919959519421767789454245229",
-          "sum_weights": "0.9822241444060079545083199935853028170639204939908720922537271797737912",
-          "min_level_separation": "0.07892220116898909466269611475417241383843239775408643141958046974339607",
+          "min_weight": "0.007615387310278697502289916906063884359597017540542267820080337596970367",
+          "sum_weights": "0.9822241482832540534526155762378274179308819150330450649820424669844501",
+          "min_level_separation": "0.07892220033060811413175208348349966327701983109945928773422556258026374",
           "all_positive": true
         },
         "1.5": {
@@ -269,9 +270,9 @@
         "q0 (substrate)": {
           "n_partitions": 11,
           "n_distinct_levels": 6,
-          "min_weight": "0.001192123328924303877397672690164122245449645008086314460697750511146203",
-          "sum_weights": "0.9910795216835727444730020750030259272545590745360487837029118051604141",
-          "min_level_separation": "0.002901999421643461768509856804134119275363090079315643458353794280411699",
+          "min_weight": "0.001192123369086218074197565933263132549056098894216216620997698332464072",
+          "sum_weights": "0.9910795236373501407113337190643740921285161670762348645546253054216363",
+          "min_level_separation": "0.002901998801931827535615802688967675062131239096844536776618566590963309",
           "all_positive": true
         },
         "1.5": {
@@ -326,9 +327,9 @@
     },
     "h3_wedderburn_family": {
       "q0": {
-        "W_SYM": "0.1654613847662639065156762402456466045904440115313124071068773937526464",
-        "W_STD": "0.6690772304674721869686475195087067908191119769373751857862452124947072",
-        "W_ALT": "0.1654613847662639065156762402456466045904440115313124071068773937526464"
+        "W_SYM": "0.165461385033606877482534663549193179234128677295896611548464094034574",
+        "W_STD": "0.669077229932786245034930672901613641531742645408206776903071811930852",
+        "W_ALT": "0.165461385033606877482534663549193179234128677295896611548464094034574"
       },
       "q_1": {
         "W_SYM": "0.1666666666666666666666666666666666666666666666666666666666666666666667",
@@ -386,6 +387,6 @@
       "conclusion": "Direct evaluation: at q = 1 the mass tower End(A_n) is structurally intact (semisimple, distinct levels) but massless — the gap is deformation-induced and does NOT survive the q → 1 limit in either normalization.  This is the computational shadow of the conj:yang-mills-mass-gap μ₂-vanishing statement and supports the obstruction branch (classical-limit obstruction) over any q → 1 gap-transfer strategy."
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
