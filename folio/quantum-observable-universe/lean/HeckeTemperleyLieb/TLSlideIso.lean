@@ -195,4 +195,52 @@ theorem slideU_mul_slideV_step (hδ : δ ≠ 0) {a a' m n : ℕ} (ha : a ≤ n) 
   erw [zig_capEmb_zag hδ x ψ]
   rw [smul_smul, show δ⁻¹ * δ⁻¹ * δ ^ 2 = 1 by field_simp, one_smul]
 
+/-! ## Closed forms on the corners -/
+
+theorem pl_zero_P {L L' : ℕ} (hL : L = L') (h : 0 + L ≤ L') (c : ℕ) :
+    pl δ 0 L h (TLRectHom.P δ c L) = TLRectHom.P δ c L' := by
+  subst hL; exact pl_zero_self _ _
+
+theorem recast_P {L L' : ℕ} (hL : L = L') (c : ℕ) :
+    recast δ hL (TLRectHom.P δ c L) = TLRectHom.P δ c L' := by
+  subst hL; rfl
+
+/-- `1_a ⊗ P_b^{b+2j}` is the standard corner `P_{a+b+1}`: the second factor's cups are already
+at the end. -/
+theorem tens_one_P (a b j : ℕ) :
+    tens δ (1 : TLFin K δ a) (TLRectHom.P δ b (b + 2 * j)) =
+      TLRectHom.P δ (a + b + 1) (a + (b + 2 * j) + 1) := by
+  rw [TLTensorCorner.P_cupIter, TLTensorCorner.tens_cupIter_right, tens_one,
+    ← TLTensorCorner.P_cupIter, recast_P]
+
+/-- **`U · V` is the tensor corner.** For an idempotent second corner `y`, at every level
+`a + 2k` the slide words compose to `P_a ⊗ y`. -/
+theorem slideU_mul_slideV (hδ : δ ≠ 0) (a m : ℕ) {y : TLFin K δ m} (hy : y * y = y) :
+    ∀ k, slideU δ a m y (a + 2 * k) * slideV δ a m y (a + 2 * k) =
+      tens δ (TLRectHom.P δ a (a + 2 * k)) y
+  | 0 => by
+    show slideU δ a m y a * slideV δ a m y a = tens δ (TLRectHom.P δ a a) y
+    rw [slideU_self, slideV_self, pl_zero_self, tens_mul, one_mul, hy, TLRectHom.P_self]
+  | k + 1 => by
+    show slideU δ a m y (a + 2 * k + 2) * slideV δ a m y (a + 2 * k + 2) =
+      tens δ (TLRectHom.P δ a (a + 2 * k + 1 + 1)) y
+    rw [TLRectHom.P_succ_succ δ (n := a + 2 * k) (by omega)]
+    exact slideU_mul_slideV_step hδ (by omega) (by omega) y y _ y (slideU_mul_slideV hδ a m hy k)
+
+/-- **`V · U` is the standard corner.** If `1_a ⊗ y` is the standard corner `P_c` of its level
+(as for `y = P_b`, `c = a + b + 1`), then at every level `a + 2k` the slide words compose the
+other way to `P_c`. -/
+theorem slideV_mul_slideU (hδ : δ ≠ 0) (a m c : ℕ) {y : TLFin K δ m} (hy : y * y = y)
+    (hc : tens δ (1 : TLFin K δ a) y = TLRectHom.P δ c (a + m + 1)) (hca : c ≤ a + m + 1) :
+    ∀ k, slideV δ a m y (a + 2 * k) * slideU δ a m y (a + 2 * k) =
+      TLRectHom.P δ c (a + 2 * k + m + 1)
+  | 0 => by
+    show slideV δ a m y a * slideU δ a m y a = TLRectHom.P δ c (a + m + 1)
+    rw [slideU_self, slideV_self, pl_zero_self, tens_mul, one_mul, hy, hc]
+  | k + 1 => by
+    show slideV δ a m y (a + 2 * k + 2) * slideU δ a m y (a + 2 * k + 2) =
+      TLRectHom.P δ c (a + 2 * k + 2 + m + 1)
+    rw [slideV_mul_slideU_step hδ (by omega) (by omega) y y, slideV_mul_slideU hδ a m c hy hc hca k,
+      ← TLRectHom.P_succ_succ δ (by omega), pl_zero_P (by omega)]
+
 end QOU.HeckeTemperleyLieb.TLSlideIso
