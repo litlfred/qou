@@ -7,7 +7,7 @@ priority: high
 tags:
     - stability
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-28T11:26:00Z
+updated_at: 2026-11-28T11:33:00Z
 parent: qou-5vkl
 blocked_by:
     - qou-10v9
@@ -202,3 +202,5 @@ Verbatim (`2026-11-28`): *"make sure you are working proton pin... no longer muo
 2026-11-28 (merge-steward): Landed PR #9996 (`qou-ii2k` speculative-open-problems split -> `fc10afc52fad532b0ae16a321185369fe4dcc8f6`, closed `qou-ii2k`, commented on #9984/#9979) and PR #9997 (`qou-5lct` Mulliken stoichiometry -> `2ef4ef0744ad28ff38a558f3e4288c728e00e19d`, closed `qou-5lct`, `qou-d9iv` kept `in-progress` for `qou-v2om`).
 
 2026-11-28 (merge-steward): Landed PR #9998 (Owner Card A1 hadron-level knot table retirement -> `4e47aed7aee7743b607f62773d7c5f3d7e1fc172`) and PR #9999 (`qou-v2om` / `qou-d9iv` Tranche B -> `8fcfa9e031cb68e47bfbd05cb31fbaa2fbf60c3d`; closed `qou-v2om` and `qou-d9iv`).
+
+2026-11-28 (merge-steward): Landed rebased Category (c) PR #9778 (`claude/pretzel-237-level2-blocks`) and post-merge QA PR #10001 (`qou-0jo7` -> `d6f663156699b2137363b7e6ea9607deea4d7530`; closed `qou-0jo7`; `ACCURACY.md` scorecard & `transcendental-boundary-audit` now GREEN on `main`).
