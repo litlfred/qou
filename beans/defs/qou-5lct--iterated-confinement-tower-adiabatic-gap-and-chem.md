@@ -5,7 +5,7 @@ status: completed
 type: feature
 priority: critical
 created_at: 2026-11-23T19:58:00Z
-updated_at: 2026-11-24T02:28:17Z
+updated_at: 2026-11-28T11:18:00Z
 parent: qou-hksc
 ---
 
@@ -33,3 +33,5 @@ Claimed by claude/iterated-confinement-tower-chem-gb-20261123 (2026-11-23)
 PR #9212 opened on claude/iterated-confinement-tower-chem-gb-20261123 (4d6fd5439e37)
 
 Verified 100% merged on origin/main in PR #9212 (86ea08a2ed7): ConfinementLayerTower.lean (856 lines, 0 sorry) + 80-dps probe/witness + 6 molecular-construction blocks.
+
+Closed post-merge: landed on `origin/main` in PR #9997 (`2ef4ef0744ad28ff38a558f3e4288c728e00e19d`); division-free `CommRing` Lean + 80-dps proton-pinned witness (`14/14` green).
