@@ -2040,6 +2040,7 @@ import QOU.StandardModel.OddExteriorAnomalyFreedom
 import QOU.StandardModel.OddStrandsForceChirality
 import QOU.StandardModel.StrandCountFromBring
 import QOU.StandardModel.StrandChargesAreHolomorphicDifferentials
+import QOU.StandardModel.BringTwistFlipsHypercharge
 import QOU.Confinement.HopfElectronTwoTermMass
 import QOU.Nuclear.LeptonTwoTermStokesCovariance
 import QOU.BraidsAndKnots.HeckeWeightSpaceSymmetry

@@ -46,6 +46,7 @@ export default chapter({
         "odd-strands-force-chirality",
         "strand-count-from-bring",
         "strand-charges-are-holomorphic-differentials",
+        "bring-twist-flips-hypercharge",
         "chirality-sign-is-hypercharge-sign",
         "linking-does-not-fix-charge",
         "strand-slot-separates-gen1",
