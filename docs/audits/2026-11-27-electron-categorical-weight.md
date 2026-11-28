@@ -315,3 +315,27 @@ Under the least-trace ruling (23:35Z) `e = σ₁σ₂σ₁` and `μ = σ₁²σ�
 | 4 | 1.148855 | 1.428926 | 0.710123 | 1.24378 | 0.61811 |
 
 The framing factor `f^{−6}` is common to all three words, so the ratios do not depend on how the axis is framed. Which reading of `β ∪ A` is the mass (trace at fixed `N`, growth in `N`, or growth at `ζ_N` on the mapping-torus volumes 0, 5.33349, 6.35459) is not fixed here.
+
+## 17. Volume reading of closure ∪ axis at the root of unity (card "Volume reading at roots of unity")
+
+**Lean.** `QOU/Observations/AxisKashaevReading.lean`. No `sorry`, no new axiom. Probe `computations/probes/coloured_ladder/axis_volume_reading_probe.py` (23/23).
+
+Colour every component `N`, set `q = e^{iπ/N}` (Kashaev's root, which is Murakami's `e^{2πi/N}` in `q²`), and cut the axis open. What is left is a scalar `c_N(β)` on `V_N`.
+
+| statement | Lean / probe |
+|---|---|
+| cut axis on the block of dimension `a`: `[aN]/[N]`; `[N]·cut = [a]·closed = [aN]` | `cut_closed` |
+| at `q^N = −1` the cut axis is `a·(−1)^{a−1}` | `charSum_at_root`, `cutAxisOp` |
+| `c_N(β) = f^{−6} Σ_a μ_a(β)·a·(−1)^{a−1}`, with `μ_a` the multiplicity traces | `cutAxis_at_root` |
+| `μ_a = T_a − T_{a+2}` from the framed traces on weight spaces (exact at the root) | probe; matches the 4-strand brute force, N = 2..6 |
+| convention: the 3-strand cut of `(σ₁σ₂⁻¹)²` is the Kashaev sum of 4₁ | probe, N = 2..6 |
+
+**Growth `(2π/N) log|c_N|` (numerical, double precision to N = 24; an arb-ball run agrees to N = 20).** The complement of `closure(β) ∪ A` is the mapping torus of `β`. Its volumes (cited geometric constants, not measurements) are 0, 5.33349 (the magic manifold) and 6.35459.
+
+| word | behaviour of `c_N` | growth estimate |
+|---|---|---|
+| e = σ₁σ₂σ₁ | polynomial, `|c_N| ≤ N²`, exact zeros at N ≡ 0 mod 8 | 0 |
+| μ = σ₁²σ₂⁻¹ | `log|c_N| = V N/2π + a log N + b + c/N`, solved on 4 consecutive N | V = 5.3336, a = 1.499 (N = 21..24) |
+| τ = σ₁⁴σ₂⁻¹ | oscillates (competing phases) | 6.32 to 6.34 (8-step windows, N = 20..24, with the 3/2 log N term) |
+
+**Reading.** The ζ_N growth of the closure ∪ axis operator recovers the mapping-torus volumes. It is the volume conjecture for these three links, checked numerically, not proved. So on the volume chart the axis operator gives the ordering 0 < 5.333 < 6.355 for e, μ, τ. Per the owner's ruling "Derive the reading first" (PR #9853), this is not scored against any measured mass. Which reading of the operator is the mass, and with which colour, has to come from the axioms first.
