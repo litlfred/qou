@@ -2019,6 +2019,7 @@ import QOU.StandardModel.AnomalyFreeHyperchargeUniqueness
 import QOU.StandardModel.HopfFramingAndHirzebruchDefect
 import QOU.StandardModel.DrinfeldKohnoAlgebra
 import QOU.StandardModel.OddExteriorAnomalyFreedom
+import QOU.StandardModel.OddStrandsForceChirality
 import QOU.Confinement.HopfElectronTwoTermMass
 import QOU.Nuclear.LeptonTwoTermStokesCovariance
 import QOU.BraidsAndKnots.HeckeWeightSpaceSymmetry

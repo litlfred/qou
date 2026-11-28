@@ -43,6 +43,7 @@ export default chapter({
         "hecke-sign-channel-is-fermi",
         "markov-trace-keeps-both-channels",
         "even-strand-generation",
+        "odd-strands-force-chirality",
         "strand-slot-separates-gen1",
         "slot-from-even-shape",
         "cal2-higgs-knot-coupling",

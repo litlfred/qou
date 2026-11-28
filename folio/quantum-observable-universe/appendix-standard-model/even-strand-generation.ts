@@ -21,8 +21,9 @@ export default proposition({
       date: "2026-11-27",
       body:
         "Sorry-free (`OddExteriorAnomalyFreedom.lean`, even-part section). Input " +
-        "left: the Z/2 sign choosing the even part as matter (chirality), and that " +
-        "strands are odd. Owner: try to derive the sign from upstream. Bean qou-h0zz.",
+        "left: the Z/2 sign choosing the even part as matter (chirality). That " +
+        "strands are odd follows from chirality (prop:odd-strands-force-chirality). " +
+        "Owner: try to derive the sign from upstream. Bean qou-h0zz.",
     },
   ],
 });
