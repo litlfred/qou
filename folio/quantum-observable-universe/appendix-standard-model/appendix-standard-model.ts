@@ -44,6 +44,8 @@ export default chapter({
         "markov-trace-keeps-both-channels",
         "even-strand-generation",
         "odd-strands-force-chirality",
+        "strand-count-from-bring",
+        "chirality-sign-is-hypercharge-sign",
         "strand-slot-separates-gen1",
         "slot-from-even-shape",
         "cal2-higgs-knot-coupling",

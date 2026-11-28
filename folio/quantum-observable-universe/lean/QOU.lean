@@ -1976,6 +1976,7 @@ import QOU.EightfoldWay.HeckeSignChannelIsFermi
 import QOU.EightfoldWay.MarkovTraceKeepsBothChannels
 import QOU.EightfoldWay.StrandSlotSeparatesGen1
 import QOU.EightfoldWay.SlotFromEvenShape
+import QOU.EightfoldWay.ChiralitySignIsHyperchargeSign
 import QOU.EightfoldWay.ColourSingletSelectionRule
 import QOU.StandardModel.OctonionColourTripletSplitting
 import QOU.StandardModel.ColourOnSingleFibreThreeStrands
@@ -2020,6 +2021,7 @@ import QOU.StandardModel.HopfFramingAndHirzebruchDefect
 import QOU.StandardModel.DrinfeldKohnoAlgebra
 import QOU.StandardModel.OddExteriorAnomalyFreedom
 import QOU.StandardModel.OddStrandsForceChirality
+import QOU.StandardModel.StrandCountFromBring
 import QOU.Confinement.HopfElectronTwoTermMass
 import QOU.Nuclear.LeptonTwoTermStokesCovariance
 import QOU.BraidsAndKnots.HeckeWeightSpaceSymmetry

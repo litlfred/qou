@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-strand-count-from-bring",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:strand-count-from-bring",
+  "kind": "proposition",
+  "title": "Five strands if strand relabellings are Bring's symmetries",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-odd-strands-force-chirality",
+    "papers/quantum-observable-universe/blocks/def-color-tube-coordinates"
+  ],
+  "tags": [
+    "appendix",
+    "standard-model",
+    "brings-surface"
+  ],
+  "leanRef": "qou:QOU.StandardModel.StrandCount.strandCount_eq_five",
+  "text": "strand-count-from-bring.md",
+  "provenance": "authored"
+}
