@@ -24,3 +24,6 @@ Open: the eigenvalues only.
 
 ## 2026-11-28 — PR #9874 merged; PR #9877: typed spectral sunset
 The triple selection table N for S5 types: 143/343 allowed, and the holomorphic cubic is forbidden. With parity, 572/2744 are allowed. The sunset on an energy-bounded cut over opaque labels equals the sum of partial sunsets over allowed typed triples (Transcendental/). The selection rule itself (invariance + Schur) is cited.
+
+## 2026-11-28 — PR #9877 merged; PR #9885: S5 character table derived in Lean
+The 7 characters are built from fix1, fix2, Λ² and sign. They are proved orthonormal over all 120 perms, with sum dim^2 = 120 and the class sizes counted. derived_eq_table_everywhere: the cited table equals the derived one. The exhaustiveness now cites only standard theorems.
