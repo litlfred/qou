@@ -5,21 +5,13 @@
   "field-tactic": "\\bfield_simp\\b"
  },
  "excluded_analytic": [
-  "BraidKnotOctonion/BWVacuumRowConcrete.lean",
-  "BraidKnotOctonion/BlochWignerPositive.lean",
   "BraidKnotOctonion/BorromeanMomentScalingExclusion.lean",
-  "BraidKnotOctonion/BorromeanVolume.lean",
   "BraidKnotOctonion/BringResidueEnergy.lean",
-  "BraidKnotOctonion/BringTrilogImaginaryTateRational.lean",
-  "BraidKnotOctonion/CSMarginCorrelationConstant.lean",
-  "BraidKnotOctonion/CatalanValueBounds.lean",
   "BraidKnotOctonion/CechEdgeSubdiv.lean",
   "BraidKnotOctonion/CechGenus4Good.lean",
   "BraidKnotOctonion/CechNerveTetrahedron.lean",
   "BraidKnotOctonion/CechSphereComparison.lean",
   "BraidKnotOctonion/CechSubdivMesh.lean",
-  "BraidKnotOctonion/Clausen.lean",
-  "BraidKnotOctonion/ClausenValueBounds.lean",
   "BraidKnotOctonion/ContentVarianceLeadingConstant.lean",
   "BraidKnotOctonion/CyclotomicCl3OrbitSum.lean",
   "BraidKnotOctonion/CyclotomicLValueDecomposition.lean",
@@ -27,49 +19,18 @@
   "BraidKnotOctonion/CyclotomicTrilogImaginary.lean",
   "BraidKnotOctonion/DepthStratifiedWeightRequirements.lean",
   "BraidKnotOctonion/EulerMaclaurinFirst.lean",
-  "BraidKnotOctonion/F3_eps6_leading_eq_neg_2b_cubed.lean",
-  "BraidKnotOctonion/FigureEightComplexVolume.lean",
   "BraidKnotOctonion/FigureEightDeformedMeridianWinding.lean",
-  "BraidKnotOctonion/FigureEightQuarticCoefficient.lean",
-  "BraidKnotOctonion/FigureEightTriangulation.lean",
-  "BraidKnotOctonion/FigureEightVolume.lean",
-  "BraidKnotOctonion/FigureEightVolumeLiterature.lean",
-  "BraidKnotOctonion/FigureEightVolumeSqueeze.lean",
-  "BraidKnotOctonion/FiveTwoAngleSum.lean",
-  "BraidKnotOctonion/FiveTwoNinthPower.lean",
-  "BraidKnotOctonion/FiveTwoShapeBounds.lean",
-  "BraidKnotOctonion/FiveTwoVolumeChord.lean",
-  "BraidKnotOctonion/FiveTwoVolumeConstant.lean",
-  "BraidKnotOctonion/FlatTetrahedra.lean",
-  "BraidKnotOctonion/HeckeCarrierSemisimpleReal.lean",
   "BraidKnotOctonion/IcosahedralCharacterGoldenRatio.lean",
-  "BraidKnotOctonion/IdealTetLawOfSines.lean",
-  "BraidKnotOctonion/IdealTetrahedronVolumeConcave.lean",
-  "BraidKnotOctonion/IdealTetrahedronVolumeConcavity.lean",
-  "BraidKnotOctonion/IdealTriangulation.lean",
   "BraidKnotOctonion/JonquiereCyclotomicTateRationality.lean",
-  "BraidKnotOctonion/KeystoneHeckeMTC.lean",
   "BraidKnotOctonion/KeystoneLRAmplitudeReal.lean",
   "BraidKnotOctonion/KeystonePFGroundStateIsingInstance.lean",
   "BraidKnotOctonion/KeystoneVerlindeSMatrixBridge.lean",
-  "BraidKnotOctonion/KummerRadial.lean",
-  "BraidKnotOctonion/KummerUnitCircle.lean",
-  "BraidKnotOctonion/L6a4VolumeMaximum.lean",
   "BraidKnotOctonion/LNaturalConcaveForm.lean",
   "BraidKnotOctonion/Li2qUniqueness.lean",
-  "BraidKnotOctonion/LobMonotonicity.lean",
-  "BraidKnotOctonion/LobNearZero.lean",
   "BraidKnotOctonion/LogFactorialStirling.lean",
-  "BraidKnotOctonion/LogSincNearZero.lean",
-  "BraidKnotOctonion/LogSineCellDefect.lean",
-  "BraidKnotOctonion/LogSineRiemannForm.lean",
-  "BraidKnotOctonion/LogSineSharpConstant.lean",
   "BraidKnotOctonion/LogSineSingularPart.lean",
-  "BraidKnotOctonion/LogSineSmoothPart.lean",
-  "BraidKnotOctonion/M004VolumeMaximum.lean",
   "BraidKnotOctonion/M1DescentDPPConvergence.lean",
   "BraidKnotOctonion/MilnorVassilievGrading.lean",
-  "BraidKnotOctonion/MultiTetVolumeConcave.lean",
   "BraidKnotOctonion/PLAlexander.lean",
   "BraidKnotOctonion/PLAmbientIsotopy.lean",
   "BraidKnotOctonion/PLC1Bridge.lean",
@@ -93,47 +54,23 @@
   "BraidKnotOctonion/PLStability.lean",
   "BraidKnotOctonion/PolynomialShadowRigidity.lean",
   "BraidKnotOctonion/QRogersPentagonArchimedean.lean",
-  "BraidKnotOctonion/RivinConcavity.lean",
-  "BraidKnotOctonion/RivinConcavitySimplex.lean",
   "BraidKnotOctonion/SincDeriv.lean",
-  "BraidKnotOctonion/ThreeCalibrationInputs.lean",
-  "BraidKnotOctonion/TrMHopfSigma1SqClosedForm.lean",
-  "BraidKnotOctonion/WhiteheadBraidVolumeConjecture.lean",
-  "BraidKnotOctonion/WhiteheadChainVolume.lean",
-  "BraidKnotOctonion/WhiteheadInnerGaussianProof.lean",
-  "BraidKnotOctonion/WhiteheadJonesLaurent.lean",
-  "BraidKnotOctonion/WhiteheadLemma1Derived.lean",
-  "BraidKnotOctonion/WhiteheadLemma1RootOfUnity.lean",
-  "BraidKnotOctonion/WhiteheadLemma4Reduction.lean",
-  "BraidKnotOctonion/WhiteheadLinkScaffold.lean",
-  "BraidKnotOctonion/WhiteheadLowerRate.lean",
-  "BraidKnotOctonion/WhiteheadMajorantRate.lean",
-  "BraidKnotOctonion/WhiteheadMasterErrRate.lean",
-  "BraidKnotOctonion/WhiteheadOuterGaussianWindow.lean",
-  "BraidKnotOctonion/WhiteheadPhaseAlgebra.lean",
-  "BraidKnotOctonion/WhiteheadTailDecay.lean",
-  "BraidKnotOctonion/WhiteheadVolumeConjecture.lean",
-  "BraidKnotOctonion/WhiteheadVolumeConjectureUnconditional.lean",
-  "BraidKnotOctonion/WhiteheadWindowTaylor.lean",
   "BraidKnotOctonion/YoungDiagramKernelPincer.lean",
   "BraidKnotOctonion/jet_convergence_classical_limit.lean",
   "BraidKnotOctonion/lagrange_resolvent_transform.lean",
   "BraidKnotOctonion/nonabelian_stokes_surface_boundary_stokes.lean",
   "BraidKnotOctonion/terms_2_6_higher_operations.lean",
+  "CompactQuantumMetrics/AlgebraicGnsEmbedding.lean",
   "CompactQuantumMetrics/SDPStrongDuality.lean",
   "HeckeTemperleyLieb/ChannelRangeGrowthClass.lean",
   "HeckeTemperleyLieb/CoxeterDihedralOrder.lean",
   "HeckeTemperleyLieb/CoxeterGeometricRepresentation.lean",
   "HeckeTemperleyLieb/CoxeterGeometricRepresentationFull.lean",
   "HeckeTemperleyLieb/ForcedLinkNormalisation.lean",
-  "HeckeTemperleyLieb/HeckeH2WedderburnReal.lean",
   "HeckeTemperleyLieb/HoefsmitV21CosSymmetrization.lean",
+  "HeckeTemperleyLieb/KZHolonomy/BraidRep.lean",
   "HeckeTemperleyLieb/KZTwoStrandHecke.lean",
-  "HeckeTemperleyLieb/MarkovAxiomsPrimitive.lean",
-  "HeckeTemperleyLieb/MarkovConventionSeparation.lean",
-  "HeckeTemperleyLieb/QHookBound.lean",
   "HeckeTemperleyLieb/SeminormalV21Trace.lean",
-  "HeckeTemperleyLieb/SubstrateRegime.lean",
   "HeckeTemperleyLieb/SymmetrySignAmGm.lean",
   "HeckeTemperleyLieb/YoungChannelVertex.lean",
   "MathlibExt/AlternatingZetaTwo.lean",
@@ -182,6 +119,7 @@
   "MathlibExt/KZHolonomy/BraidGeometry.lean",
   "MathlibExt/KZHolonomy/FlatTransport.lean",
   "MathlibExt/KZHolonomy/KZForm.lean",
+  "MathlibExt/KZHolonomy/LinearODE.lean",
   "MathlibExt/LiouvilleThird.lean",
   "MathlibExt/LocalCocycleTransport.lean",
   "MathlibExt/MahlerJensen.lean",
@@ -217,7 +155,6 @@
   "QCalculus/HadamardAssembly.lean",
   "QCalculus/HadamardMinimumModulus.lean",
   "QCalculus/HadamardQuotient.lean",
-  "QCalculus/LiTwoNegOne.lean",
   "QCalculus/PhiBFibreExtension.lean",
   "QCalculus/PhiBProd.lean",
   "QCalculus/PhiBProdDivisor.lean",
@@ -227,7 +164,6 @@
   "QCalculus/PhiBProdUniquenessComplete.lean",
   "QCalculus/PhiBProdUniquenessFinal.lean",
   "QCalculus/PhiBProdZeroIsolation.lean",
-  "QOU/BraidsAndKnots/AssociatorKZ.lean",
   "QOU/BraidsAndKnots/BarSymmetricBarAntiSymmetricIdentities.lean",
   "QOU/BraidsAndKnots/BindingScaleCandidates.lean",
   "QOU/BraidsAndKnots/BondCutSymmetryFibreTowerBound.lean",
@@ -236,43 +172,23 @@
   "QOU/BraidsAndKnots/BringFiberActionInstance.lean",
   "QOU/BraidsAndKnots/Cl3Zeta5PslqIndependence.lean",
   "QOU/BraidsAndKnots/DeltaLambdaSignRule.lean",
-  "QOU/BraidsAndKnots/Drinfeld/Braiding.lean",
-  "QOU/BraidsAndKnots/Drinfeld/BraidingVV.lean",
-  "QOU/BraidsAndKnots/Drinfeld/Hexagon.lean",
-  "QOU/BraidsAndKnots/Drinfeld/RibbonDH.lean",
-  "QOU/BraidsAndKnots/DrinfeldAssociator.lean",
   "QOU/BraidsAndKnots/Flat2D.lean",
   "QOU/BraidsAndKnots/FuchsianAnalytic.lean",
-  "QOU/BraidsAndKnots/FuchsianParam.lean",
-  "QOU/BraidsAndKnots/HiggsCategoricalMassFormula.lean",
   "QOU/BraidsAndKnots/InterNucleonChannelColorTube.lean",
-  "QOU/BraidsAndKnots/JHopfQOneProvenance.lean",
-  "QOU/BraidsAndKnots/KZ4.lean",
-  "QOU/BraidsAndKnots/KZComplex.lean",
-  "QOU/BraidsAndKnots/KZCorner.lean",
-  "QOU/BraidsAndKnots/KZEdge.lean",
-  "QOU/BraidsAndKnots/KZFunctorial.lean",
-  "QOU/BraidsAndKnots/KZHalfMonodromy.lean",
-  "QOU/BraidsAndKnots/KZHexagon.lean",
-  "QOU/BraidsAndKnots/KZIntertwine.lean",
   "QOU/BraidsAndKnots/KeystoneN5LevelSixSuffices.lean",
   "QOU/BraidsAndKnots/LadderConventionLocalisation.lean",
   "QOU/BraidsAndKnots/MuonKashaevReading.lean",
-  "QOU/BraidsAndKnots/QBetaCKRecursionKernelConstraints.lean",
   "QOU/BraidsAndKnots/QBetaCategoricalPrecisionLadder.lean",
   "QOU/BraidsAndKnots/QBetaPerBlockChiClosedForms.lean",
   "QOU/BraidsAndKnots/QBetaQStarClosedFormExclusion.lean",
   "QOU/BraidsAndKnots/QBetaReebSinhParity.lean",
-  "QOU/BraidsAndKnots/SmallHbar.lean",
   "QOU/BraidsAndKnots/SubstrateEWHypotheses.lean",
   "QOU/BraidsAndKnots/TwoRoutesProtonMass.lean",
   "QOU/BraidsAndKnots/WeakVertexCouplingNormalisationArchimedean.lean",
   "QOU/BraidsAndKnots/WignerSU4FromSpinIsospin.lean",
   "QOU/BraidsAndKnots/YoungDiagramKernelA2MomentSkeleton.lean",
-  "QOU/BraidsAndKnots/ZigZag.lean",
   "QOU/BraidsAndKnots/mobius_frobenius_kernel.lean",
   "QOU/BraidsAndKnots/nsi_q_deformed_kernel.lean",
-  "QOU/BraidsAndKnots/volume_perturbation.lean",
   "QOU/BringsSurface/BringHeckeCommensurability.lean",
   "QOU/BringsSurface/BringHeckeNoOrderThree.lean",
   "QOU/BringsSurface/BringLatticeSpan.lean",
@@ -292,53 +208,36 @@
   "QOU/Confinement/WedderburnMassFormula.lean",
   "QOU/Confinement/silver_ratio_beta_decay_null.lean",
   "QOU/Core/CategoricalHamiltonianLegendre.lean",
-  "QOU/Core/CategoricalHiggsIdempotent.lean",
   "QOU/Core/Infra.lean",
   "QOU/Core/KnotFactorFrobeniusPairing.lean",
   "QOU/Core/ProtonMassEMSignBlock.lean",
   "QOU/Core/QAnalysisUniquenessCounterexamples.lean",
   "QOU/Core/QBetaEnergyDictionary.lean",
   "QOU/Core/QExpEntire.lean",
-  "QOU/Core/ReebHamiltonianChartBridgeReal.lean",
   "QOU/Core/observation_energy.lean",
-  "QOU/Core/u1EquivariantReduction.lean",
-  "QOU/EightfoldWay/DressedMassFromSubstrateSplit.lean",
-  "QOU/EightfoldWay/FlavorMassSplittingBound.lean",
   "QOU/EightfoldWay/MesonKaonPionSchwingerBridge.lean",
   "QOU/InformationTheory/ComputationalHorizon.lean",
   "QOU/InformationTheory/HeckeLogDecomposition.lean",
   "QOU/InformationTheory/QCollatz.lean",
-  "QOU/InformationTheory/toffoli_transfer_matrix.lean",
   "QOU/LiftingDescent/ChenMultiplicativeIntegralBridge.lean",
   "QOU/LiftingDescent/MultiplicativeIntegralCurvature.lean",
   "QOU/LiftingDescent/tm_dilogarithm_evaluation.lean",
   "QOU/MassTheory/A4InterfaceMagnitude.lean",
-  "QOU/MassTheory/AlphaEmFormCConditionalContent.lean",
-  "QOU/MassTheory/ArchimedeanLimitDomain.lean",
-  "QOU/MassTheory/ArchimedeanLimitEndpoints.lean",
-  "QOU/MassTheory/ArchimedeanLimitNegative.lean",
   "QOU/MassTheory/ArchimedeanTraceBridge.lean",
   "QOU/MassTheory/B4NonSaturatingBracket.lean",
   "QOU/MassTheory/BalancedKernelConfluence.lean",
   "QOU/MassTheory/BalancedKernelTightness.lean",
   "QOU/MassTheory/BalancedMomentConfluence.lean",
   "QOU/MassTheory/BalancedThetaLimit.lean",
-  "QOU/MassTheory/BarReflectionGridSelectionReal.lean",
   "QOU/MassTheory/BindingLawClassInvariants.lean",
   "QOU/MassTheory/BindingMassRung.lean",
   "QOU/MassTheory/BlockMeasureBindingFormArchimedean.lean",
-  "QOU/MassTheory/BorromeanVolumeCatalan.lean",
   "QOU/MassTheory/BranchIntegerPinning.lean",
-  "QOU/MassTheory/BranchingConvergence.lean",
-  "QOU/MassTheory/BridgeAColourSplit.lean",
-  "QOU/MassTheory/BridgeADeligneKZ.lean",
-  "QOU/MassTheory/BringSchwingerNormalizationDerivation.lean",
   "QOU/MassTheory/ChainTraceFactor.lean",
   "QOU/MassTheory/ClassicalLogBindingCycleCount.lean",
   "QOU/MassTheory/ClosureNormalisationDefect.lean",
   "QOU/MassTheory/ComplexVolumeFibreDescent.lean",
   "QOU/MassTheory/ComplexVolumeZeta4Partner.lean",
-  "QOU/MassTheory/ConeAngleIdentity.lean",
   "QOU/MassTheory/ConvolutionFlowFibre.lean",
   "QOU/MassTheory/CoordinationBulkCriterion.lean",
   "QOU/MassTheory/CoordinationSurfaceDeficit.lean",
@@ -346,99 +245,51 @@
   "QOU/MassTheory/DiprotonResponseClosedForm.lean",
   "QOU/MassTheory/DiprotonSecondOrder.lean",
   "QOU/MassTheory/EmCouplingBringZeroMode.lean",
-  "QOU/MassTheory/EmMeasureGaussBonnet.lean",
   "QOU/MassTheory/FHWExponentWindow.lean",
   "QOU/MassTheory/FreeEnergyReadingIsSigned.lean",
   "QOU/MassTheory/GammaGammaEscapesSingleCrossing.lean",
   "QOU/MassTheory/GammaGammaIsospinChannel.lean",
   "QOU/MassTheory/GammaGammaVertexEigenvalues.lean",
-  "QOU/MassTheory/GroundStateOrderingRefutation.lean",
-  "QOU/MassTheory/GrowingWidthCutShapeExclusion.lean",
-  "QOU/MassTheory/HyperbolicConformalAngle.lean",
-  "QOU/MassTheory/HyperbolicDihedralAngle.lean",
-  "QOU/MassTheory/HyperbolicGeodesic.lean",
-  "QOU/MassTheory/HyperbolicGeodesicZAxis.lean",
-  "QOU/MassTheory/HyperbolicGeodesicZAxisUniqueness.lean",
-  "QOU/MassTheory/HyperbolicMetric.lean",
-  "QOU/MassTheory/HyperbolicMetricSeparation.lean",
-  "QOU/MassTheory/HyperbolicNormalization.lean",
-  "QOU/MassTheory/HyperbolicQuotient.lean",
-  "QOU/MassTheory/HyperbolicSurfaceLaw.lean",
-  "QOU/MassTheory/HyperbolicVolumeFubini.lean",
-  "QOU/MassTheory/HyperbolicVolumeInversion.lean",
-  "QOU/MassTheory/HyperbolicVolumeMeasure.lean",
-  "QOU/MassTheory/HyperbolicVolumeTranscendence.lean",
-  "QOU/MassTheory/IdealTetEqChimney.lean",
-  "QOU/MassTheory/IdealTetFacesFromInscribedTriangle.lean",
-  "QOU/MassTheory/IdealTetFromVertices.lean",
-  "QOU/MassTheory/IdealTetObtuseReduction.lean",
-  "QOU/MassTheory/IdealTetVolumeChimneyBridge.lean",
-  "QOU/MassTheory/IdealTetrahedronRegion.lean",
-  "QOU/MassTheory/IdealTetrahedronShapeBridge.lean",
   "QOU/MassTheory/InterfaceVertexArity.lean",
   "QOU/MassTheory/IntraOrderingInvariance.lean",
   "QOU/MassTheory/KZHolonomy/ArtinGeneration.lean",
+  "QOU/MassTheory/KZHolonomy/BraidGauge.lean",
   "QOU/MassTheory/KZHolonomy/ConfConnected.lean",
   "QOU/MassTheory/KZHolonomy/ConfGeneric.lean",
   "QOU/MassTheory/KZHolonomy/ConfRegions.lean",
   "QOU/MassTheory/KZHolonomy/Continuity.lean",
-  "QOU/MassTheory/KZHolonomy/LocalMonodromy.lean",
+  "QOU/MassTheory/KZHolonomy/FlatCocycle.lean",
+  "QOU/MassTheory/KZHolonomy/FlatGauge.lean",
+  "QOU/MassTheory/KZHolonomy/ODETransport.lean",
+  "QOU/MassTheory/KZHolonomy/SmoothGauge.lean",
   "QOU/MassTheory/KZUnitModulusPrune.lean",
   "QOU/MassTheory/KappaWritheAsymptote.lean",
-  "QOU/MassTheory/KohnoAssembly.lean",
-  "QOU/MassTheory/KohnoAssemblyGL.lean",
   "QOU/MassTheory/KohnoTwoPoint.lean",
-  "QOU/MassTheory/KohnoWeighted.lean",
   "QOU/MassTheory/LinearChainBondFactorization.lean",
-  "QOU/MassTheory/MagnusSumAbsEigBound.lean",
   "QOU/MassTheory/MarginalRatioExtensivity.lean",
-  "QOU/MassTheory/MassDerivation.lean",
-  "QOU/MassTheory/MassTowerOpenProblemsClasses.lean",
   "QOU/MassTheory/MassVolDensity.lean",
-  "QOU/MassTheory/MobiusEnergy.lean",
   "QOU/MassTheory/MobiusMutualChannel.lean",
   "QOU/MassTheory/MobiusRegulator.lean",
-  "QOU/MassTheory/MostowIdealTetVolume.lean",
   "QOU/MassTheory/MultiplicityNotExtensive.lean",
   "QOU/MassTheory/NZBarEvenVolumeFace.lean",
-  "QOU/MassTheory/ObtuseTiling.lean",
-  "QOU/MassTheory/ObtuseWedgeDegenerate.lean",
-  "QOU/MassTheory/OrthoschemeBaseIntegral.lean",
-  "QOU/MassTheory/OrthoschemeLambdaSum.lean",
-  "QOU/MassTheory/OrthoschemePolarReduction.lean",
-  "QOU/MassTheory/OrthoschemeRotation.lean",
-  "QOU/MassTheory/OrthoschemeTiling.lean",
-  "QOU/MassTheory/OrthoschemeWedgePair.lean",
-  "QOU/MassTheory/PhotonIRZeroMode.lean",
   "QOU/MassTheory/ProtonQ3OcneanuSlopes.lean",
   "QOU/MassTheory/ProtonQ3SchurElement.lean",
   "QOU/MassTheory/PsdDetOneTrace.lean",
   "QOU/MassTheory/QReebEigenphaseCompact.lean",
   "QOU/MassTheory/QbetaFmapPowerClassPrune.lean",
-  "QOU/MassTheory/ReebLinkingCWF.lean",
   "QOU/MassTheory/RelativeReebDatum.lean",
   "QOU/MassTheory/SWGaussianLogNormalMoments.lean",
   "QOU/MassTheory/SchwingerMeasureShape.lean",
   "QOU/MassTheory/SegmentCollisionDatum.lean",
   "QOU/MassTheory/SpuriousClosureBinding.lean",
-  "QOU/MassTheory/TetVolAnalytic.lean",
   "QOU/MassTheory/ThreeDividesKBreaks.lean",
-  "QOU/MassTheory/ThreeSubstantiveMathlibFillers.lean",
   "QOU/MassTheory/TorusInflection.lean",
-  "QOU/MassTheory/TotallyGeodesicFaces.lean",
-  "QOU/MassTheory/TowerHeightAttack.lean",
   "QOU/MassTheory/TropicalClassTransport.lean",
   "QOU/MassTheory/TwistedPeriodEigenvalueRatio.lean",
   "QOU/MassTheory/TwoBodyInterfaceBond.lean",
   "QOU/MassTheory/UICLogSummandEven.lean",
   "QOU/MassTheory/UICPerBlockLogSymmetryCurvature.lean",
-  "QOU/MassTheory/WStdSuperExponential.lean",
-  "QOU/MassTheory/WhiteheadVolumeCatalan.lean",
-  "QOU/MassTheory/Zeta4ComplexVolumeModerator.lean",
-  "QOU/MassTheory/eos_borromean_cfl.lean",
-  "QOU/MassTheory/pair_skein_mass_formula.lean",
   "QOU/MassTheory/tau_leptonic_universality.lean",
-  "QOU/Nuclear/AfreeThetaConstraint.lean",
   "QOU/Nuclear/ArgUPhaseBranchSelection.lean",
   "QOU/Nuclear/BarEvenForcesStationarity.lean",
   "QOU/Nuclear/BarEvenJetArchimedean.lean",
@@ -451,21 +302,17 @@
   "QOU/Nuclear/BraidImageEigenphaseExclusion.lean",
   "QOU/Nuclear/C1ConnectionAlgebraicIdentities.lean",
   "QOU/Nuclear/C1ConnectionPoles.lean",
-  "QOU/Nuclear/C1RamifiedLeadingBlocks.lean",
   "QOU/Nuclear/C1SeriesConvergence.lean",
   "QOU/Nuclear/C1ThetaZeroLocus.lean",
-  "QOU/Nuclear/ChannelMeridianIdentification.lean",
   "QOU/Nuclear/CharacterDoubling.lean",
   "QOU/Nuclear/CoshHolonomyAndGPMTBaseBridge.lean",
   "QOU/Nuclear/CosineParametrisationUnfalsifiable.lean",
   "QOU/Nuclear/CrossNucleonPairWedderburnZRemoval.lean",
   "QOU/Nuclear/DEigenphaseRealOrImaginary.lean",
   "QOU/Nuclear/DLadderRadiusAlgebraicity.lean",
-  "QOU/Nuclear/DecayLadderConventionDPositivity.lean",
   "QOU/Nuclear/DeltaCouplingSubstrateForm.lean",
   "QOU/Nuclear/DeltaLambdaBindingAssembly.lean",
   "QOU/Nuclear/DeltaLambdaT5Assembly.lean",
-  "QOU/Nuclear/DiscriminantCurveInQ.lean",
   "QOU/Nuclear/E0WeightAllWords.lean",
   "QOU/Nuclear/E0WeightCandidates.lean",
   "QOU/Nuclear/ECatBlockDecomposition.lean",
@@ -473,25 +320,8 @@
   "QOU/Nuclear/EigenphaseCarrierVacuity.lean",
   "QOU/Nuclear/EigenphaseQuantization.lean",
   "QOU/Nuclear/EllipticRTheta.lean",
-  "QOU/Nuclear/FiveTwoArgSector.lean",
-  "QOU/Nuclear/FiveTwoBranchByArgument.lean",
-  "QOU/Nuclear/FiveTwoBranchPinned.lean",
-  "QOU/Nuclear/FiveTwoBranchPinnedB.lean",
   "QOU/Nuclear/FiveTwoCurveDeriv.lean",
   "QOU/Nuclear/FiveTwoDiscriminant.lean",
-  "QOU/Nuclear/FiveTwoEnvelopeAssembly.lean",
-  "QOU/Nuclear/FiveTwoEnvelopeInstance.lean",
-  "QOU/Nuclear/FiveTwoEnvelopeSum.lean",
-  "QOU/Nuclear/FiveTwoEnvelopeWiring.lean",
-  "QOU/Nuclear/FiveTwoExtendIdentification.lean",
-  "QOU/Nuclear/FiveTwoFlattenedPentagon.lean",
-  "QOU/Nuclear/FiveTwoLevelSevenAssembly.lean",
-  "QOU/Nuclear/FiveTwoLevelSevenBridge.lean",
-  "QOU/Nuclear/FiveTwoReflectionDischarged.lean",
-  "QOU/Nuclear/FiveTwoRootLabelling.lean",
-  "QOU/Nuclear/FiveTwoRootStructure.lean",
-  "QOU/Nuclear/FiveTwoStepALogAlgebra.lean",
-  "QOU/Nuclear/FiveTwoTransport.lean",
   "QOU/Nuclear/FloorRemainderFromDerivedShapeFields.lean",
   "QOU/Nuclear/HadronChargeLineCoulomb.lean",
   "QOU/Nuclear/HolonomySpectrumSignObstruction.lean",
@@ -505,9 +335,7 @@
   "QOU/Nuclear/LogFormUniqueness.lean",
   "QOU/Nuclear/LogTraceAdditiveEnergy.lean",
   "QOU/Nuclear/MBetaV21Spectrum.lean",
-  "QOU/Nuclear/MeridianLinearBarOdd.lean",
   "QOU/Nuclear/MeromorphicSameOrder.lean",
-  "QOU/Nuclear/MonodromyDatumRigidity.lean",
   "QOU/Nuclear/N1FactorUniqueness.lean",
   "QOU/Nuclear/NewtonRealityInvariance.lean",
   "QOU/Nuclear/NucleonSplitGibbsCoulomb.lean",
@@ -522,23 +350,17 @@
   "QOU/Nuclear/PhotonVertexEigenphase.lean",
   "QOU/Nuclear/PretzelRemainderFromPtolemy.lean",
   "QOU/Nuclear/ReebTowerJacobiAnger.lean",
-  "QOU/Nuclear/SilverRatioCounitExclusion.lean",
   "QOU/Nuclear/SingleCrossingAlwaysBinds.lean",
   "QOU/Nuclear/SpectatorEnergyMap.lean",
   "QOU/Nuclear/StrandWeightSplit.lean",
-  "QOU/Nuclear/TensorCouplingCannotUnbindSinglet.lean",
-  "QOU/Nuclear/ThomaeJacksonCoulombAndAlphaTunneling.lean",
   "QOU/Nuclear/ToroidalHarmonicsBasis.lean",
   "QOU/Nuclear/TwoChannelTotalBindingFloor.lean",
   "QOU/Nuclear/UnitaryLineNoEnergy.lean",
   "QOU/Nuclear/WeightSpaceNucleon.lean",
   "QOU/Nuclear/WindingGFTransform.lean",
-  "QOU/Observations/CODATAChain.lean",
   "QOU/Observations/Calculations.lean",
   "QOU/Observations/CasimirEpsilonVacuum.lean",
   "QOU/Observations/CasimirModeCountFunctor.lean",
-  "QOU/Observations/CasimirNStability.lean",
-  "QOU/Observations/CasimirZetaPrefactor.lean",
   "QOU/Observations/Conjectures.lean",
   "QOU/Observations/CrossingDiscriminantThetaFree.lean",
   "QOU/Observations/DeBroglieBoostedReebPhase.lean",
@@ -552,7 +374,6 @@
   "QOU/StandardModel/ElectroweakBosonThresholdsAndWeinberg.lean",
   "QOU/StandardModel/ElectroweakBringSchwingerBridge.lean",
   "QOU/StandardModel/ElectroweakVevFixedPointDecomposition.lean",
-  "QOU/StandardModel/ElectroweakVevGaps.lean",
   "QOU/StandardModel/FormBVersusCSTowerClassicalLimit.lean",
   "QOU/StandardModel/QuaternionicElectroweak.lean",
   "QOU/StandardModel/QuaternionicSpectralResolvents.lean",
@@ -561,7 +382,6 @@
   "QOU/StandardModel/StrongCPWritheCancellationAndStringTension.lean",
   "QOU/StandardModel/Su3Su2U1Z6GroupAndCommutant.lean",
   "ToricConicOpt/EDMultiplier.lean",
-  "ToricConicOpt/GramNearness.lean",
   "ToricConicOpt/LagrangianCollisionFlow.lean"
  ],
  "files": {
@@ -665,6 +485,10 @@
   },
   "BraidKnotOctonion/BrunnianIsotypeExclusion.lean": {
    "field-class": 1
+  },
+  "BraidKnotOctonion/CSMarginCorrelationConstant.lean": {
+   "field-class": 1,
+   "field-tactic": 1
   },
   "BraidKnotOctonion/CechGenus4Space.lean": {
    "field-tactic": 1
@@ -804,6 +628,9 @@
   "BraidKnotOctonion/ExplicitCentralIdempotentGeneral.lean": {
    "field-class": 2,
    "field-tactic": 1
+  },
+  "BraidKnotOctonion/F3_eps6_leading_eq_neg_2b_cubed.lean": {
+   "field-class": 1
   },
   "BraidKnotOctonion/GluingBridge.lean": {
    "field-tactic": 2
@@ -966,6 +793,9 @@
   },
   "BraidKnotOctonion/KeystoneC8SuperExpBound.lean": {
    "field-class": 1
+  },
+  "BraidKnotOctonion/KeystoneHeckeMTC.lean": {
+   "field-class": 2
   },
   "BraidKnotOctonion/KeystoneHeckeRootsForceTwist.lean": {
    "field-class": 1
@@ -1391,6 +1221,10 @@
    "field-class": 2,
    "field-tactic": 4
   },
+  "BraidKnotOctonion/TrMHopfSigma1SqClosedForm.lean": {
+   "field-class": 3,
+   "field-tactic": 1
+  },
   "BraidKnotOctonion/TraceQuotGeneric.lean": {
    "field-class": 7,
    "field-tactic": 1
@@ -1453,6 +1287,9 @@
    "field-class": 1,
    "field-tactic": 1
   },
+  "BraidKnotOctonion/WhiteheadLemma1Derived.lean": {
+   "field-tactic": 2
+  },
   "BraidKnotOctonion/WhiteheadMarkovClosure.lean": {
    "field-class": 1
   },
@@ -1483,9 +1320,6 @@
   },
   "BraidKnotOctonion/symbolic_character_table.lean": {
    "field-class": 1
-  },
-  "CompactQuantumMetrics/AlgebraicGnsEmbedding.lean": {
-   "field-tactic": 1
   },
   "CompactQuantumMetrics/Bicommutant.lean": {
    "field-class": 1
@@ -1781,6 +1615,9 @@
   "HeckeTemperleyLieb/MacdonaldTelescope.lean": {
    "field-tactic": 4
   },
+  "HeckeTemperleyLieb/MarkovAxiomsPrimitive.lean": {
+   "field-class": 1
+  },
   "HeckeTemperleyLieb/MarkovCrossingReversal.lean": {
    "field-class": 1,
    "field-tactic": 4
@@ -1911,6 +1748,9 @@
   },
   "HeckeTemperleyLieb/QGaussianBinomialPascal.lean": {
    "field-tactic": 1
+  },
+  "HeckeTemperleyLieb/QHookBound.lean": {
+   "field-tactic": 14
   },
   "HeckeTemperleyLieb/QHookDimension.lean": {
    "field-class": 6,
@@ -2443,10 +2283,6 @@
   "QOU/BraidsAndKnots/AJTorusAnnihilation.lean": {
    "field-class": 1
   },
-  "QOU/BraidsAndKnots/BlockMultiplicativityVFree.lean": {
-   "field-class": 1,
-   "field-tactic": 1
-  },
   "QOU/BraidsAndKnots/BondCutSymmetry.lean": {
    "field-class": 2,
    "field-tactic": 1
@@ -2515,6 +2351,10 @@
   },
   "QOU/BraidsAndKnots/HeckeWeightSpaceSymmetry.lean": {
    "field-class": 4
+  },
+  "QOU/BraidsAndKnots/HiggsCategoricalMassFormula.lean": {
+   "field-class": 2,
+   "field-tactic": 3
   },
   "QOU/BraidsAndKnots/HydrogenCaptureFactorisation.lean": {
    "field-class": 2,
@@ -2967,6 +2807,9 @@
   "QOU/Core/BoostCovarianceRigidity.lean": {
    "field-class": 2
   },
+  "QOU/Core/CategoricalHiggsIdempotent.lean": {
+   "field-tactic": 1
+  },
   "QOU/Core/CategoricalLagrangianTwoTermBridge.lean": {
    "field-class": 1,
    "field-tactic": 5
@@ -3080,6 +2923,10 @@
   "QOU/EightfoldWay/BaryonOctetDiquarkGmoDerivation.lean": {
    "field-class": 12,
    "field-tactic": 13
+  },
+  "QOU/EightfoldWay/FlavorMassSplittingBound.lean": {
+   "field-class": 1,
+   "field-tactic": 4
   },
   "QOU/EightfoldWay/FureyIdealTowerTest.lean": {
    "field-class": 2,
@@ -3356,6 +3203,10 @@
   "QOU/MassTheory/BranchLocusStabiliserFull.lean": {
    "field-class": 1
   },
+  "QOU/MassTheory/BringSchwingerNormalizationDerivation.lean": {
+   "field-class": 3,
+   "field-tactic": 8
+  },
   "QOU/MassTheory/BrunnianDeficitRecursion.lean": {
    "field-tactic": 4
   },
@@ -3481,6 +3332,10 @@
    "field-class": 1,
    "field-tactic": 3
   },
+  "QOU/MassTheory/EmMeasureGaussBonnet.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
   "QOU/MassTheory/ExtremalPrincipleDoesNotDetermine.lean": {
    "field-tactic": 2
   },
@@ -3540,9 +3395,6 @@
   "QOU/MassTheory/GaugeGroupThreeScale.lean": {
    "field-class": 1
   },
-  "QOU/MassTheory/GeodesicFaceH3.lean": {
-   "field-tactic": 1
-  },
   "QOU/MassTheory/GermRootVectorGaugeFixing.lean": {
    "field-class": 1,
    "field-tactic": 5
@@ -3556,6 +3408,13 @@
   },
   "QOU/MassTheory/GramDetRatioCongruence.lean": {
    "field-class": 2
+  },
+  "QOU/MassTheory/GroundStateOrderingRefutation.lean": {
+   "field-class": 1,
+   "field-tactic": 10
+  },
+  "QOU/MassTheory/GrowingWidthCutShapeExclusion.lean": {
+   "field-tactic": 1
   },
   "QOU/MassTheory/H4GPMTCumulantRatio.lean": {
    "field-class": 2,
@@ -3639,9 +3498,15 @@
    "field-class": 1,
    "field-tactic": 5
   },
+  "QOU/MassTheory/MagnusSumAbsEigBound.lean": {
+   "field-class": 1
+  },
   "QOU/MassTheory/MarkovPivotalNucleonWeights.lean": {
    "field-class": 1,
    "field-tactic": 5
+  },
+  "QOU/MassTheory/MassDerivation.lean": {
+   "field-tactic": 1
   },
   "QOU/MassTheory/MatterTraceWeightVector.lean": {
    "field-class": 1
@@ -3673,6 +3538,9 @@
   },
   "QOU/MassTheory/MixedSpectrumCharacterNotLetterMultiplicative.lean": {
    "field-class": 1,
+   "field-tactic": 3
+  },
+  "QOU/MassTheory/MobiusEnergy.lean": {
    "field-tactic": 3
   },
   "QOU/MassTheory/MoebiusThreePointRigidity.lean": {
@@ -3759,6 +3627,10 @@
    "field-class": 1,
    "field-tactic": 1
   },
+  "QOU/MassTheory/PhotonIRZeroMode.lean": {
+   "field-class": 1,
+   "field-tactic": 3
+  },
   "QOU/MassTheory/PhotonPairIdleFactor.lean": {
    "field-class": 1,
    "field-tactic": 7
@@ -3842,6 +3714,10 @@
   "QOU/MassTheory/RadialVolRhoMirrorTest.lean": {
    "field-class": 1,
    "field-tactic": 1
+  },
+  "QOU/MassTheory/ReebLinkingCWF.lean": {
+   "field-class": 1,
+   "field-tactic": 3
   },
   "QOU/MassTheory/RossoJonesH4.lean": {
    "field-class": 3,
@@ -3973,6 +3849,9 @@
    "field-class": 1,
    "field-tactic": 1
   },
+  "QOU/MassTheory/WStdSuperExponential.lean": {
+   "field-tactic": 2
+  },
   "QOU/MassTheory/WedderburnMassFormulaCoefficients.lean": {
    "field-class": 1
   },
@@ -3991,6 +3870,9 @@
   },
   "QOU/MassTheory/YangMillsVacuumFlat.lean": {
    "field-class": 4
+  },
+  "QOU/MassTheory/Zeta4ComplexVolumeModerator.lean": {
+   "field-class": 1
   },
   "QOU/MassTheory/brings_euler_characteristic.lean": {
    "field-class": 4
@@ -4012,6 +3894,10 @@
   "QOU/MassTheory/lepton_tower_log_convexity.lean": {
    "field-class": 1
   },
+  "QOU/MassTheory/pair_skein_mass_formula.lean": {
+   "field-class": 4,
+   "field-tactic": 1
+  },
   "QOU/MassTheory/rj_canonical_inner_product.lean": {
    "field-class": 1,
    "field-tactic": 17
@@ -4030,6 +3916,9 @@
   "QOU/Nuclear/AdmissibleAgreementDeterminesClass.lean": {
    "field-class": 1,
    "field-tactic": 2
+  },
+  "QOU/Nuclear/AfreeThetaConstraint.lean": {
+   "field-tactic": 4
   },
   "QOU/Nuclear/BarInvolutionDomainObstruction.lean": {
    "field-class": 4,
@@ -4077,6 +3966,10 @@
   },
   "QOU/Nuclear/C1DeterminantRelation.lean": {
    "field-class": 1,
+   "field-tactic": 1
+  },
+  "QOU/Nuclear/C1RamifiedLeadingBlocks.lean": {
+   "field-class": 3,
    "field-tactic": 1
   },
   "QOU/Nuclear/CAL3AnchorStructure.lean": {
@@ -4160,6 +4053,10 @@
    "field-class": 1,
    "field-tactic": 2
   },
+  "QOU/Nuclear/DecayLadderConventionDPositivity.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
   "QOU/Nuclear/DeltaSTwoRowCharacterVanishes.lean": {
    "field-class": 1,
    "field-tactic": 4
@@ -4167,6 +4064,9 @@
   "QOU/Nuclear/DilogTheory.lean": {
    "field-class": 4,
    "field-tactic": 5
+  },
+  "QOU/Nuclear/DiscriminantCurveInQ.lean": {
+   "field-tactic": 4
   },
   "QOU/Nuclear/E0MuonUnit.lean": {
    "field-class": 1,
@@ -4310,6 +4210,10 @@
    "field-class": 1,
    "field-tactic": 1
   },
+  "QOU/Nuclear/MeridianLinearBarOdd.lean": {
+   "field-class": 1,
+   "field-tactic": 2
+  },
   "QOU/Nuclear/ModularDoubleReciprocity.lean": {
    "field-class": 4,
    "field-tactic": 3
@@ -4342,7 +4246,7 @@
    "field-tactic": 23
   },
   "QOU/Nuclear/NucleonSplitGibbsEnergy.lean": {
-   "field-tactic": 10
+   "field-tactic": 3
   },
   "QOU/Nuclear/NucleonSplitV3Diagonal.lean": {
    "field-class": 1,
@@ -4463,6 +4367,10 @@
   "QOU/Nuclear/SilverAnchorGrounding.lean": {
    "field-class": 1
   },
+  "QOU/Nuclear/SilverRatioCounitExclusion.lean": {
+   "field-class": 1,
+   "field-tactic": 1
+  },
   "QOU/Nuclear/StateIntegralRecursionLattice.lean": {
    "field-class": 2
   },
@@ -4493,6 +4401,10 @@
   "QOU/Nuclear/TetrahedralFluxRingAndMajoranaCluster.lean": {
    "field-class": 6,
    "field-tactic": 2
+  },
+  "QOU/Nuclear/ThomaeJacksonCoulombAndAlphaTunneling.lean": {
+   "field-class": 5,
+   "field-tactic": 1
   },
   "QOU/Nuclear/ToddDilogExpansion.lean": {
    "field-class": 1,
@@ -4540,6 +4452,9 @@
   },
   "QOU/Observations/BlowupCalculus.lean": {
    "field-class": 4
+  },
+  "QOU/Observations/CasimirZetaPrefactor.lean": {
+   "field-class": 2
   },
   "QOU/Observations/CrossingEnergyBarSplit.lean": {
    "field-class": 1
@@ -4625,6 +4540,10 @@
   "QOU/StandardModel/ElectroweakSweedlerScaleAndRGThresholds.lean": {
    "field-class": 15,
    "field-tactic": 6
+  },
+  "QOU/StandardModel/ElectroweakVevGaps.lean": {
+   "field-class": 3,
+   "field-tactic": 3
   },
   "QOU/StandardModel/FeynmanPathIntegrals.lean": {
    "field-tactic": 1
