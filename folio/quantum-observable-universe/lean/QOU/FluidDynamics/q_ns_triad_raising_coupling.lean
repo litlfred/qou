@@ -34,17 +34,22 @@ is a triad where the transfer is exactly skew.
 
 So the size of every spin-raising coupling is fixed by the norms `h(p_n²)` alone.
 
-## Not established (GAP)
+## The norms (closed in `q_ns_qlegendre_norm`)
 
-* **The closed form of `h(p_n²)`.** For monic `P_n` the expected value is the little
+* **The closed form of `h(p_n²)`** is proved in `QOU/FluidDynamics/q_ns_qlegendre_norm.lean`
+  (`H_eq_prod`, `haarState_jacobiPoly_sq_eq`, sorry-free, bean `qou-9obv`). For monic `P_n` it is the little
   q-Legendre norm
   `‖P_n‖² = q^{−2n} p^{n²} (p;p)_n⁴ (1 − p) / ((p;p)_{2n} (p;p)_{2n+1})`, with `p = q⁻²`
-  ([gasper-rahman-2004] §7.3; the ζ-moments are the Jackson integral on `[0, 1]` in base `p`
-  after `ζ = −q⁻¹ t`). It was checked in exact rational arithmetic for `n ≤ 7` at `q ∈ {2, 3/2, 5/4, 7/3}`
-  (`computations/qns_little_qlegendre_norm_probe.py`), which is evidence and not a proof. Granting it, the normalised raising coupling
-  satisfies `C̃(r)² = q^{−6} p^{2r+1} ((1 − p^r)/(1 − p))² (1 − p^{r+1})⁴ /
+  ([gasper-rahman-2004] §7.3), stated there as a product of its ratios. Substituting it, the
+  normalised raising coupling is
+  `C̃(r)² = q^{−6} p^{2r+1} ((1 − p^r)/(1 − p))² (1 − p^{r+1})⁴ /
   ((1 − p^{2r+1})(1 − p^{2r+2})²(1 − p^{2r+3}) ‖βδ‖²)`. At fixed `q > 1` this decays like
-  `q^{−2r}`; as `q → 1` it grows like `r`. The decay is not uniform in `q`.
+  `q^{−2r}`; as `q → 1` it grows like `r`. The decay is not uniform in `q`. That substitution is
+  checked in exact arithmetic (`computations/qns_little_qlegendre_norm_probe.py`) and not yet
+  written out as a Lean statement.
+
+## Not established
+
 * Positivity of the norms over an ordered field, other velocity modes, other fields, any rate,
   and Part A.
 
