@@ -242,8 +242,11 @@ every $n$ with $j \le 400000$, that is every $n \le 80{,}000{,}600{,}000$
 (`computations/cyclotomic_boundary_s1_scan.c` for the scan,
 `computations/cyclotomic_boundary_power_sum.py` for $c \nmid 2a_2$). This is a finite check, not a
 proof. A heuristic count suggests finitely many solutions. When $A$, $B$, $C$ are pairwise
-coprime, each fraction must be an integer on its own: $B \mid (C-1)(C-3)$, $C \mid (B-1)^2$ and
-$A \mid 2(C-1)(C-2)$. But no proof of finiteness is known.
+coprime there are none. Modulo $A$ the numerator of the three fractions over $ABC$ is
+$2C(C-1)(C-2)^2$, and $C - 2 \equiv -B$, so $A \mid 2(C-1)$. Since $0 < 2(C-1) < 2A$, this forces
+$A = 2(C-1)$, that is $B = C$, which contradicts $\gcd(B, C) = 1$
+(`QOU.Mass.StaircaseMinimisers.not_dvd_a1Num_of_coprime`, sorry-free). All eight solutions above
+have a common factor between two of $A, B, C$. No proof of finiteness is known in general.
 
 *Open:* non-cyclotomicity for **every** $n \ge 6$. What remains is the non-triangular $n$
 outside the two families with $j > 400000$.
