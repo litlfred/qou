@@ -142,8 +142,9 @@ def tr_M_atomic_rust(Z: int, N: int, *,
     except ImportError as e:
         raise ImportError(
             "pyhecke_native not installed. Build via "
-            "`cd tools/pyhecke-native && maturin build --release` "
-            "and `pip install` the resulting wheel. See "
+            "`bash scripts/build-pyhecke-native.sh` (or "
+            "`cd crates/pyhecke-native && maturin build --release --out target/wheels` "
+            "and `pip install` the resulting wheel). See "
             "docs/audits/2026-05-20-rust-port-scoping-markov-peel.md "
             "for the full build workflow."
         ) from e
@@ -355,8 +356,9 @@ def tr_M_atomic_rust_full(Z: int, N: int, *,
     except ImportError as e:
         raise ImportError(
             "pyhecke_native (>= 0.9.0) not installed.  Build via "
-            "`cd tools/pyhecke-native && maturin build --release` "
-            "and `pip install` the resulting wheel."
+            "`bash scripts/build-pyhecke-native.sh` (or "
+            "`cd crates/pyhecke-native && maturin build --release --out target/wheels` "
+            "and `pip install` the resulting wheel)."
         ) from e
 
     import time

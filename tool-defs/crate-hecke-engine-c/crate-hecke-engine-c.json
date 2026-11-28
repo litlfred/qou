@@ -1,0 +1,44 @@
+{
+  "$schema": "tool-definition/v1",
+  "tool": {
+    "id": "crate-hecke-engine-c",
+    "title": "Rust crate hecke-engine-c (crates/hecke-engine-c)",
+    "description": "C-ABI bindings for hecke-engine — exposed via cbindgen for FFI from any C-callable language (Octave MEX, native iOS/Android, embedded Lua, R via .Call, etc.) (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Generated from `crates/hecke-engine-c/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+    "install": {
+      "none": true
+    },
+    "invoke": {
+      "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p hecke-engine-c"
+    },
+    "io": {
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "hecke_engine_c",
+          "schema": {
+            "$type": "RepoPath"
+          },
+          "description": "Rust crate `hecke-engine-c` at `crates/hecke-engine-c` (`crates/hecke-engine-c/Cargo.toml`)."
+        }
+      ]
+    },
+    "satisfies": [
+      "rust-crates-and-values",
+      "compute-author"
+    ],
+    "subprocesses": [
+      "rust-crates-and-values"
+    ],
+    "selection": {
+      "when": "Building, type-checking, or consuming `hecke-engine-c` (`crates/hecke-engine-c`).",
+      "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+      "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+    },
+    "requires": {
+      "runtime": [
+        "cargo"
+      ],
+      "network": false
+    }
+  }
+}

@@ -60,13 +60,21 @@
       }
     },
     {
+      "id": "crates",
+      "path": "crates/",
+      "graphTypologies": [
+        "code"
+      ],
+      "description": "Rust crates workspace: standalone scientific algebra (gs-basis) and QOU gamma-gamma / Hecke / Clarabel / witnessed-value libraries."
+    },
+    {
       "id": "tools",
       "path": "tool-defs/",
       "graphTypologies": [
         "tools"
       ],
-      "description": "qou's Tool nodes: one per computation script a content block wires to a witness, generated from the block manifests by scripts/gen-producer-tools.ts (story TOOLS T5, bean qou-a3l1).",
-      "_comment": "At tool-defs/, not tools/: qou's tools/ holds its Rust and Python packages, and renaming it would touch 601 files including paper content and every producer's script hash. Owner ruling 2026-10-05, option A on bean qou-kbqy: declare the Tool graph at a new path instead. Overrides match on id, so this is the instance's `tools` graph."
+      "description": "qou's Tool nodes: one per computation script a content block wires to a witness (scripts/gen-producer-tools.ts, story TOOLS T5, bean qou-a3l1), plus one per top-level Rust crate under crates/ (scripts/gen-crate-tools.ts, owner ruling A2 2026-11-28, bean qou-crwk).",
+      "_comment": "At tool-defs/, not tools/: qou's tools/ holds its Python and multi-language wrapper packages, and renaming it would touch 601 files including paper content and every producer's script hash. Owner ruling 2026-10-05, option A on bean qou-kbqy (reaffirmed 2026-11-28, ruling A2): declare the Tool graph at tool-defs/ while Rust crates live at top-level crates/. Overrides match on id, so this is the instance's `tools` graph."
     },
     {
       "id": "processes",
@@ -131,7 +139,7 @@
         "keyedBy": "family",
         "keyFrom": "<package>-<version>-<cpython-tag>-<platform>-<source-key>, e.g. pyhecke-native-0.9.0-cp313-linux_x86_64-<12 hex>"
       },
-      "description": "Built wheels of qou's native Python extensions, today only `pyhecke-native` (not on PyPI; a maturin build takes about 2.5 min per container). One orphan branch per package, version, CPython tag, platform and source key, where the source key hashes the git trees of `tools/pyhecke-native` and `tools/hecke-engine`. Read and written by scripts/wheel-cache.sh, which keeps its git objects in a private bare repository rather than the checkout; scripts/build-pyhecke-native.sh restores before it builds by default, but seeds origin only when PYHECKE_NATIVE_PUSH=1 (and never when PYHECKE_NATIVE_NO_SEED=1), after a clean build passes its convention gate. `wheel-cache/` is where a member is mounted; nothing is tracked there. Bean qou-dgkf."
+      "description": "Built wheels of qou's native Python extensions, today only `pyhecke-native` (not on PyPI; a maturin build takes about 2.5 min per container). One orphan branch per package, version, CPython tag, platform and source key, where the source key hashes the git trees of `crates/pyhecke-native` and `crates/hecke-engine`. Read and written by scripts/wheel-cache.sh, which keeps its git objects in a private bare repository rather than the checkout; scripts/build-pyhecke-native.sh restores before it builds by default, but seeds origin only when PYHECKE_NATIVE_PUSH=1 (and never when PYHECKE_NATIVE_NO_SEED=1), after a clean build passes its convention gate. `wheel-cache/` is where a member is mounted; nothing is tracked there. Bean qou-dgkf."
     },
     {
       "id": "qou-typologies",
@@ -164,7 +172,7 @@
       "storage": {
         "branchPrefix": "cat/qou/trace-cache/",
         "keyedBy": "family",
-        "keyFrom": "<function>-<engine-key>-q<q-key>-dps<dps>, e.g. tr-m-atomic-mpfr-suffixes-<12 hex>-q<12 hex>-dps40; function is tr-m-atomic-mpfr or tr-m-atomic-mpfr-suffixes, one member per route because two routes to one exact value may round its last digits differently; engine-key hashes the git trees of tools/hecke-engine and tools/pyhecke-native (the wheel-cache source key), q-key hashes the q0 decimal string"
+        "keyFrom": "<function>-<engine-key>-q<q-key>-dps<dps>, e.g. tr-m-atomic-mpfr-suffixes-<12 hex>-q<12 hex>-dps40; function is tr-m-atomic-mpfr or tr-m-atomic-mpfr-suffixes, one member per route because two routes to one exact value may round its last digits differently; engine-key hashes the git trees of crates/hecke-engine and crates/pyhecke-native (the wheel-cache source key), q-key hashes the q0 decimal string"
       },
       "description": "Exact results of qou's native trace producers (`pyhecke_native.tr_m_atomic_mpfr` and `tr_m_atomic_mpfr_suffixes`), stored so a long probe run resumes and a re-run recomputes nothing. One orphan branch per producer function, engine source key, q0 string and dps; inside it, content-addressed JSONL shards of (n, signed word, suffix) -> the producer's exact decimal string, never a float. A dirty engine tree has no key, so a stale value is never served, and `computations/trace_cache.py` re-evaluates a sample of loaded entries against the live binary before using any. Read and written by scripts/trace-cache.sh, whose git objects live in a private bare repository; computations/trace_cache.py restores by default but seeds origin only when QOU_TRACE_CACHE_PUSH=1; a seed adds a shard on top of the tip and never forces. `trace-cache/` is where a member is mounted; nothing is tracked there. The kind is `typologies/trace-cache.json`."
     },
@@ -177,7 +185,7 @@
       "storage": {
         "branchPrefix": "cat/qou/mn-chi-cache/",
         "keyedBy": "family",
-        "keyFrom": "mn-chi-q-<engine-key>, where engine-key is the wheel-cache / trace-cache source key (git trees of tools/pyhecke-native and tools/hecke-engine)"
+        "keyFrom": "mn-chi-q-<engine-key>, where engine-key is the wheel-cache / trace-cache source key (git trees of crates/pyhecke-native and crates/hecke-engine)"
       },
       "description": "Exact values of `pyhecke_native.mn_chi_q(lambda, mu)`, the q-Murnaghan-Nakayama Hecke character table, stored so a sweep that needs a heavy table (n = 24, 27) computes each entry once. One orphan branch per engine source key; inside it, content-addressed JSONL shards of (lambda, mu) -> the producer's exact [q-degree, coefficient-string] pairs, never a float. Before 2026-11-22 this was the in-tree file computations/.derived-chi-mn-cache.json, keyed by (lambda, mu) alone, so an entry from one engine build was served to every later one. Read and written by computations/derived_chi_catalogue_mn_disk_cache.py through the shared layer (scripts/lib/branch-cache.sh, computations/_branch_cache.py); it restores by default but seeds origin only when QOU_MN_CHI_CACHE_PUSH=1. A dirty engine tree has no key and nothing is served from the store; loaded entries are re-checked against the live binary first. `mn-chi-cache/` is where a member is mounted; nothing is tracked there. The kind is `typologies/mn-chi-cache.json`."
     },
@@ -305,6 +313,50 @@
         ],
         "_visualiser_comment": "Built at publish by `scripts/site-step.sh` (never committed): folio-assistant-sci lean-kg-publish --from-kg cuts this package's sub-KG out of the mounted Lean store (lean-docs, cat/folio-assistant-sci/lean-docs) with --modules the roots of its lakefile and --sibling the other packages' roots, at route lean/fred2005/, so no Lean is built for the site. It is staged before the document pages (site:document passes it as --lean-docs-index, so each block's ∀ links into its own paper's sub-KG) and moved into the site by site:lean. Ruling \"2 verso\" later adds the Verso render at verso/fred2005/."
       }
+    }
+  ],
+  "moves": [
+    {
+      "from": "tools/hecke-engine",
+      "to": "crates/hecke-engine",
+      "until": "2027-06-30",
+      "because": "2026-11-28 crates/ workspace migration (ruling A2, bean qou-crwk)"
+    },
+    {
+      "from": "tools/pyhecke-native",
+      "to": "crates/pyhecke-native",
+      "until": "2027-06-30",
+      "because": "2026-11-28 crates/ workspace migration (ruling A2, bean qou-crwk)"
+    },
+    {
+      "from": "tools/borromean-recurrence-crt",
+      "to": "crates/borromean-recurrence-crt",
+      "until": "2027-06-30",
+      "because": "2026-11-28 crates/ workspace migration (ruling A2, bean qou-crwk)"
+    },
+    {
+      "from": "tools/hecke-engine-c",
+      "to": "crates/hecke-engine-c",
+      "until": "2027-06-30",
+      "because": "2026-11-28 crates/ workspace migration (ruling A2, bean qou-crwk)"
+    },
+    {
+      "from": "tools/hecke-engine-node",
+      "to": "crates/hecke-engine-node",
+      "until": "2027-06-30",
+      "because": "2026-11-28 crates/ workspace migration (ruling A2, bean qou-crwk)"
+    },
+    {
+      "from": "tools/hecke-engine-wasm",
+      "to": "crates/hecke-engine-wasm",
+      "until": "2027-06-30",
+      "because": "2026-11-28 crates/ workspace migration (ruling A2, bean qou-crwk)"
+    },
+    {
+      "from": "tools/hecke-engine-jvm",
+      "to": "crates/hecke-engine-jvm",
+      "until": "2027-06-30",
+      "because": "2026-11-28 crates/ workspace migration (ruling A2, bean qou-crwk)"
     }
   ],
   "qa": {

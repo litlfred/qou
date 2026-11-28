@@ -72,6 +72,16 @@
       "scriptExists": true
     },
     {
+      "script": "computations/alpha/alpha_em_seifert_kappa_pairing_probe.py",
+      "witnesses": [
+        "computations/alpha/alpha-em-seifert-kappa-pairing.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.ts"
+      ],
+      "scriptExists": true
+    },
+    {
       "script": "computations/alpha/alpha_em_shift_chain.py",
       "witnesses": [
         "computations/alpha/alpha-em-shift-multiplicative-chain.witness.json",
@@ -124,14 +134,6 @@
       "scriptExists": true
     },
     {
-      "script": "computations/audit_frobenius_pairing.py",
-      "witnesses": [],
-      "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step06-frobenius-pairing.ts"
-      ],
-      "scriptExists": true
-    },
-    {
       "script": "computations/audits/brundan_kleshchev_audit.py",
       "witnesses": [
         "computations/audits/brundan-kleshchev-audit.witness.json"
@@ -175,7 +177,7 @@
         "computations/basis-knot-tables.witness.json"
       ],
       "blocks": [
-        "folio/quantum-observable-universe/appendix-knot-operations/hecke-operations.ts"
+        "folio/quantum-observable-universe/appendix-knot-periodic-table/hecke-operations.ts"
       ],
       "scriptExists": true
     },
@@ -230,16 +232,6 @@
       "scriptExists": true
     },
     {
-      "script": "computations/bring_chiral_fibre_figure.py",
-      "witnesses": [
-        "computations/bring-chiral-fibre-figure.witness.json"
-      ],
-      "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step04-bring-brane.ts"
-      ],
-      "scriptExists": true
-    },
-    {
       "script": "computations/bring_trefoil_cinquefoil_channel.py",
       "witnesses": [
         "computations/bring-trefoil-cinquefoil-channel.witness.json"
@@ -287,16 +279,6 @@
       "blocks": [
         "folio/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.ts",
         "folio/quantum-observable-universe/mass-theory/hecke-mass-trace.ts"
-      ],
-      "scriptExists": true
-    },
-    {
-      "script": "computations/canonical_mass.py",
-      "witnesses": [
-        "computations/m-p-substrate-identity-50dps.witness.json"
-      ],
-      "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09a-mass-identity.ts"
       ],
       "scriptExists": true
     },
@@ -453,7 +435,6 @@
         "computations/confinement-operator-selection.witness.json"
       ],
       "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step10-confinement-sdp.ts",
         "folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection-table1-data.ts",
         "folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection.ts",
         "folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability.ts"
@@ -467,6 +448,16 @@
       ],
       "blocks": [
         "folio/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.ts"
+      ],
+      "scriptExists": true
+    },
+    {
+      "script": "computations/cyclotomic_boundary_q1_proof_checks.py",
+      "witnesses": [
+        "computations/cyclotomic-boundary-q1-expansion.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/mass-theory/habiro-tail-cyclotomic-iff-n-le-5.ts"
       ],
       "scriptExists": true
     },
@@ -529,7 +520,7 @@
         "computations/delta-lambda-witness.json"
       ],
       "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure.ts"
+        "folio/quantum-observable-universe/mass-theory/delta-lambda-value-vs-magnitude.ts"
       ],
       "scriptExists": true
     },
@@ -539,7 +530,7 @@
         "computations/delta-lambda-z-coefficient-and-slope.witness.json"
       ],
       "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-mirror-cancellation.ts"
+        "folio/quantum-observable-universe/nuclear-interactions/mirror-baseline-cancellation.ts"
       ],
       "scriptExists": true
     },
@@ -597,32 +588,22 @@
       "scriptExists": true
     },
     {
+      "script": "computations/four_term_pair_nucleon_table.py",
+      "witnesses": [
+        "computations/four-term-pair-nucleon-table.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/knots-particles-confinement/four-term-pair-nucleon-table1-data.ts"
+      ],
+      "scriptExists": true
+    },
+    {
       "script": "computations/gb_depth_period_bring_fig8.py",
       "witnesses": [
         "computations/gb-depth-period-bring-fig8.witness.json"
       ],
       "blocks": [
         "folio/quantum-observable-universe/mass-theory/bring-figure-eight-depth-2-witness.ts"
-      ],
-      "scriptExists": true
-    },
-    {
-      "script": "computations/gb_filtration_jet_order_reader.py",
-      "witnesses": [
-        "computations/gb-filtration-jet-order-reader.witness.json"
-      ],
-      "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step08-jet-prefix.ts"
-      ],
-      "scriptExists": true
-    },
-    {
-      "script": "computations/gb_filtration_jet_tracker.py",
-      "witnesses": [
-        "computations/gb-filtration-jet-order.witness.json"
-      ],
-      "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step07-gb-filtration.ts"
       ],
       "scriptExists": true
     },
@@ -670,16 +651,6 @@
       ],
       "blocks": [
         "folio/quantum-observable-universe/mass-theory/mass-endomorphism-tower.ts"
-      ],
-      "scriptExists": true
-    },
-    {
-      "script": "computations/hadron_knot_table.py",
-      "witnesses": [
-        "computations/hadron-knot-table.witness.json"
-      ],
-      "blocks": [
-        "folio/quantum-observable-universe/appendix-knot-operations/hadron-level-knot-table.ts"
       ],
       "scriptExists": true
     },
@@ -864,14 +835,6 @@
       "scriptExists": true
     },
     {
-      "script": "computations/lp_dual_witness_validator.py",
-      "witnesses": [],
-      "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-lp-sdp-dual-emission.ts"
-      ],
-      "scriptExists": true
-    },
-    {
       "script": "computations/lr_fusion_self_conj_test.py",
       "witnesses": [
         "computations/lr-fusion-self-conj-test.witness.json"
@@ -882,14 +845,14 @@
       "scriptExists": true
     },
     {
-      "script": "computations/m_p_substrate_identity_50dps.py",
+      "script": "computations/markov_free_energy_qvalues.py",
       "witnesses": [
-        "computations/m-p-substrate-identity-50dps.witness.json"
+        "computations/markov-free-energy-qvalues.witness.json"
       ],
       "blocks": [
-        "folio/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts"
+        "folio/quantum-observable-universe/mass-theory/neutron-proton-splitting.ts"
       ],
-      "scriptExists": true
+      "scriptExists": false
     },
     {
       "script": "computations/markov/markov_peel_atomic_witness.py",
@@ -1004,6 +967,28 @@
       "scriptExists": true
     },
     {
+      "script": "computations/master_atlas_jacobian_80dps.py",
+      "witnesses": [
+        "computations/codata-masses.witness.json",
+        "computations/master-atlas-80dps.witness.json",
+        "computations/per-observable-100x-status.witness.json",
+        "computations/q-pinning-50-digit.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/appendix-knot-periodic-table/master-atlas-calibration-jacobian.ts",
+        "folio/quantum-observable-universe/appendix-knot-periodic-table/master-atlas-decays.ts",
+        "folio/quantum-observable-universe/appendix-knot-periodic-table/master-atlas-hadrons.ts",
+        "folio/quantum-observable-universe/appendix-knot-periodic-table/master-atlas-molecules.ts",
+        "folio/quantum-observable-universe/appendix-knot-periodic-table/master-atlas-nuclides-summary.ts",
+        "folio/quantum-observable-universe/appendix-knot-periodic-table/master-atlas-particles.ts",
+        "folio/quantum-observable-universe/observations/mass-comparison-table-table1-data.ts",
+        "folio/quantum-observable-universe/observations/mass-comparison-table-table2-data.ts",
+        "folio/quantum-observable-universe/observations/mass-comparison-table-table3-data.ts",
+        "folio/quantum-observable-universe/observations/mass-comparison-table.ts"
+      ],
+      "scriptExists": true
+    },
+    {
       "script": "computations/meson_em_sinh_closed_form.py",
       "witnesses": [
         "computations/meson-em-sinh-closed-form.witness.json"
@@ -1086,6 +1071,16 @@
       ],
       "blocks": [
         "folio/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts"
+      ],
+      "scriptExists": true
+    },
+    {
+      "script": "computations/observations/bach2013_double_slit_profile_crosscheck.py",
+      "witnesses": [
+        "computations/observations/bach2013_double_slit_profile_crosscheck.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/observations/double-slit-massive-pattern.ts"
       ],
       "scriptExists": true
     },
@@ -1183,7 +1178,7 @@
         "computations/per-observable-100x-status.witness.json"
       ],
       "blocks": [
-        "folio/quantum-observable-universe/appendix-qvalues/per-observable-100x-status-dashboard.ts"
+        "folio/quantum-observable-universe/appendix-knot-periodic-table/per-observable-100x-status-dashboard.ts"
       ],
       "scriptExists": true
     },
@@ -1203,7 +1198,7 @@
         "computations/photon-operator-table.witness.json"
       ],
       "blocks": [
-        "folio/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table.ts"
+        "folio/quantum-observable-universe/appendix-knot-periodic-table/knot-operator-basis-table.ts"
       ],
       "scriptExists": true
     },
@@ -1250,55 +1245,24 @@
       "scriptExists": true
     },
     {
-      "script": "computations/probe_per_wedderburn_block_ck.py",
-      "witnesses": [],
-      "blocks": [
-        "folio/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.ts",
-        "folio/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.ts",
-        "folio/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.ts"
-      ],
-      "scriptExists": false
-    },
-    {
-      "script": "computations/probe_q_beta_c5_c6_multilink.py",
-      "witnesses": [],
-      "blocks": [
-        "folio/quantum-observable-universe/mass-theory/multi-link-jones-q1-extension.ts"
-      ],
-      "scriptExists": false
-    },
-    {
-      "script": "computations/probe_q_beta_cat_per_factor_decomposition.py",
-      "witnesses": [],
-      "blocks": [
-        "folio/quantum-observable-universe/stochastic-mechanics/F3-eps6-leading-eq-neg-2b-cubed.ts"
-      ],
-      "scriptExists": false
-    },
-    {
-      "script": "computations/probe_q_beta_high_precision_ck.py",
-      "witnesses": [],
-      "blocks": [
-        "folio/quantum-observable-universe/stochastic-mechanics/q-beta-gamma-gamma-canonical-derivation.ts"
-      ],
-      "scriptExists": false
-    },
-    {
-      "script": "computations/probe_q_beta_operator_valued_N2.py",
-      "witnesses": [],
-      "blocks": [
-        "folio/quantum-observable-universe/mass-theory/tau-M-asymptotic-rep-theory.ts"
-      ],
-      "scriptExists": false
-    },
-    {
       "script": "computations/probe_q_beta_operator_valued_N3.py",
       "witnesses": [
         "computations/q-beta-operator-valued-N3.witness.json"
       ],
       "blocks": [
         "folio/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.ts",
+        "folio/quantum-observable-universe/mass-theory/tau-M-asymptotic-rep-theory.ts",
         "folio/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.ts"
+      ],
+      "scriptExists": true
+    },
+    {
+      "script": "computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.py",
+      "witnesses": [
+        "computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/observations/alpha-decay-gamow-tunneling.ts"
       ],
       "scriptExists": true
     },
@@ -1347,6 +1311,16 @@
       "scriptExists": true
     },
     {
+      "script": "computations/probes/categorical_hamiltonian_legendre_recoil_probe.py",
+      "witnesses": [
+        "computations/probes/categorical-hamiltonian-legendre-recoil.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/quantum-observable-universes/categorical-hamiltonian.ts"
+      ],
+      "scriptExists": true
+    },
+    {
       "script": "computations/probes/colour_cubic_branch_monodromy_probe.py",
       "witnesses": [
         "computations/probes/colour-cubic-branch-monodromy.witness.json"
@@ -1373,6 +1347,43 @@
       ],
       "blocks": [
         "folio/quantum-observable-universe/mass-theory/commutative-chirality-vanishes.ts"
+      ],
+      "scriptExists": true
+    },
+    {
+      "script": "computations/probes/confinement_layer_tower_chem/confinement_layer_tower_chem_probe.py",
+      "witnesses": [
+        "computations/probes/confinement_layer_tower_chem/confinement-layer-tower-chem.witness.json",
+        "computations/probes/lp_bootstrap_dual_gaps/chamber-gs-model-a-b.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/confinement-tower-chamber-gs.ts",
+        "folio/quantum-observable-universe/molecular-construction/adiabatic-confinement-gap-stability.ts",
+        "folio/quantum-observable-universe/molecular-construction/five-layer-confinement-tower-rg.ts",
+        "folio/quantum-observable-universe/molecular-construction/shell-filling-electronegativity-ilp.ts",
+        "folio/quantum-observable-universe/molecular-construction/toric-chemical-groebner-geometry.ts",
+        "folio/quantum-observable-universe/molecular-construction/toric-diophantine-stoichiometry.ts"
+      ],
+      "scriptExists": true
+    },
+    {
+      "script": "computations/probes/double_slit_wall_grazing_q_local/double_slit_wall_grazing_q_local_probe.py",
+      "witnesses": [
+        "computations/probes/double_slit_wall_grazing_q_local/double_slit_wall_grazing_q_local_probe.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/observations/double-slit-analytical.ts"
+      ],
+      "scriptExists": true
+    },
+    {
+      "script": "computations/probes/ecat_lp_dual_radical_geom/ecat_lp_dual_radical_geom_probe.py",
+      "witnesses": [
+        "computations/a-K-via-lp-dual.witness.json",
+        "computations/probes/ecat_lp_dual_radical_geom/ecat_lp_dual_radical_geom_probe.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/ecat-radical-shadow-price.ts"
       ],
       "scriptExists": true
     },
@@ -1560,6 +1571,37 @@
       "scriptExists": true
     },
     {
+      "script": "computations/probes/light_nuclei_a2_a3/bond_generic_z_probe.py",
+      "witnesses": [
+        "computations/probes/light_nuclei_a2_a3/bond-generic-z.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/mass-endomorphism/light-nuclei-a2-bond-tail.ts"
+      ],
+      "scriptExists": true
+    },
+    {
+      "script": "computations/probes/lp_bootstrap_dual_gaps/chamber_gs_model_a_b_probe.py",
+      "witnesses": [
+        "computations/probes/lp_bootstrap_dual_gaps/chamber-gs-model-a-b.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/nuclear-interactions/nuclear-chamber-groebner-basis.ts"
+      ],
+      "scriptExists": true
+    },
+    {
+      "script": "computations/probes/lp_bootstrap_dual_gaps/lp_bootstrap_dual_gaps_probe.py",
+      "witnesses": [
+        "computations/probes/lp_bootstrap_dual_gaps/lp-bootstrap-dual-gaps.witness.json",
+        "computations/rho-k-h3a-lp-dual.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/rationalized-dual-slack-certificate.ts"
+      ],
+      "scriptExists": true
+    },
+    {
       "script": "computations/probes/pauli_factor_wedderburn_probe.py",
       "witnesses": [
         "computations/probes/pauli-factor-wedderburn-probe.witness.json"
@@ -1610,6 +1652,17 @@
       "scriptExists": true
     },
     {
+      "script": "computations/probes/qbeta_chirality_and_compton_polarizability/qbeta_chirality_and_compton_probe.py",
+      "witnesses": [
+        "computations/probes/qbeta_chirality_and_compton_polarizability/qbeta-chirality-and-compton.witness.json",
+        "computations/q-beta-predicted.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/q-beta-chirality-jet-evaluation.ts"
+      ],
+      "scriptExists": true
+    },
+    {
       "script": "computations/probes/qbeta_route75_multiknot_gluing_symbolic_probe.py",
       "witnesses": [
         "computations/qbeta-route75-multiknot-gluing-symbolic.witness.json"
@@ -1652,6 +1705,41 @@
       "scriptExists": true
     },
     {
+      "script": "computations/probes/retired_q0_refresh_to_live_muon_pin_probe.py",
+      "witnesses": [
+        "computations/alpha-em-form-ladder.witness.json",
+        "computations/alpha-em-no-pi-correction-probe.witness.json",
+        "computations/probes/retired_q0_refresh_to_live_muon_pin_probe.witness.json",
+        "computations/q-pinning-50-digit.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.ts"
+      ],
+      "scriptExists": true
+    },
+    {
+      "script": "computations/probes/sm8w_eightfold_clasp_diquark_gmo/sm8w_eightfold_clasp_diquark_gmo_probe.py",
+      "witnesses": [
+        "computations/probes/sm8w_eightfold_clasp_diquark_gmo/sm8w-eightfold-clasp-diquark-gmo.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/eightfold-way/baryon-octet-decomposition.ts",
+        "folio/quantum-observable-universe/eightfold-way/eightfold-open-problems.ts",
+        "folio/quantum-observable-universe/eightfold-way/meson-mass-splitting.ts"
+      ],
+      "scriptExists": true
+    },
+    {
+      "script": "computations/probes/sm8w_ewsb_vew_mh_mz_rg/sm8w_ewsb_vew_mh_mz_rg_probe.py",
+      "witnesses": [
+        "computations/probes/sm8w_ewsb_vew_mh_mz_rg/sm8w_ewsb_vew_mh_mz_rg_probe.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/appendix-standard-model/sm-params-higgs.ts"
+      ],
+      "scriptExists": true
+    },
+    {
       "script": "computations/probes/spectrahedral_phase_collapse_frame_probe.py",
       "witnesses": [
         "computations/probes/spectrahedral-phase-collapse-frame-probe.witness.json"
@@ -1678,6 +1766,18 @@
       ],
       "blocks": [
         "folio/quantum-observable-universe/mass-theory/three-parameters-wedderburn.ts"
+      ],
+      "scriptExists": true
+    },
+    {
+      "script": "computations/probes/w6_inhomogeneous_lepton_resolvent/w6_inhomogeneous_lepton_resolvent_probe.py",
+      "witnesses": [
+        "computations/per-observable-100x-status.witness.json",
+        "computations/probes/w10_continuum_ecat_intranuc_em/w10-continuum-ecat-intranuc-em.witness.json",
+        "computations/probes/w6_inhomogeneous_lepton_resolvent/w6-inhomogeneous-lepton-resolvent.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/substrate-period-mass-resolvent.ts"
       ],
       "scriptExists": true
     },
@@ -1711,16 +1811,6 @@
       "blocks": [
         "folio/quantum-observable-universe/mass-theory/alpha-k-categorical-closure.ts",
         "folio/quantum-observable-universe/nuclear-interactions/beta-decay-energy-scale.ts"
-      ],
-      "scriptExists": true
-    },
-    {
-      "script": "computations/q_beta_predicted.py",
-      "witnesses": [
-        "computations/cal-3-q-beta.witness.json"
-      ],
-      "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step11-q-beta-truncation.ts"
       ],
       "scriptExists": true
     },
@@ -1862,12 +1952,10 @@
         "folio/quantum-observable-universe/mass-theory/thurston-volume-additivity.ts",
         "folio/quantum-observable-universe/mass-theory/topological-mass-trefoil.ts",
         "folio/quantum-observable-universe/observations/local-substrate-q.ts",
-        "folio/quantum-observable-universe/observations/mass-comparison-table.ts",
         "folio/quantum-observable-universe/observations/skein-mass-relation-proof.ts",
         "folio/quantum-observable-universe/observations/skein-mass-relation.ts",
         "folio/quantum-observable-universe/observations/tritium-qvalue-audit.ts",
-        "folio/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.ts",
-        "folio/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.ts"
+        "folio/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.ts"
       ],
       "scriptExists": true
     },
@@ -1943,16 +2031,6 @@
       "scriptExists": true
     },
     {
-      "script": "computations/qbeta/qbeta_ck_cache.py",
-      "witnesses": [
-        "computations/qbeta/qbeta-ck-cache.witness.json"
-      ],
-      "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-ck-truncation-ladder.ts"
-      ],
-      "scriptExists": true
-    },
-    {
       "script": "computations/qbeta/qbeta_ck_sseries_operator_match_probe.py",
       "witnesses": [
         "computations/qbeta/qbeta-ck-sseries-operator-match.witness.json"
@@ -1969,16 +2047,6 @@
       ],
       "blocks": [
         "folio/quantum-observable-universe/mass-theory/q-beta-c-k-leading-bias-correction-identity.ts"
-      ],
-      "scriptExists": true
-    },
-    {
-      "script": "computations/qbeta/qbeta_ck_truncation_order_analysis.py",
-      "witnesses": [
-        "computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json"
-      ],
-      "blocks": [
-        "folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.ts"
       ],
       "scriptExists": true
     },
@@ -2021,6 +2089,16 @@
       "scriptExists": true
     },
     {
+      "script": "computations/qbeta/qbeta_frobenius_gram_h3_probe.py",
+      "witnesses": [
+        "computations/qbeta/qbeta-frobenius-gram-h3.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/twisted-star-gram-radical-quotient.ts"
+      ],
+      "scriptExists": true
+    },
+    {
       "script": "computations/qbeta/qbeta_habiro_f_from_shape_collapse.py",
       "witnesses": [
         "computations/qbeta/qbeta-habiro-f-from-shape-collapse.witness.json"
@@ -2056,6 +2134,9 @@
         "computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json"
       ],
       "blocks": [
+        "folio/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.ts",
+        "folio/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.ts",
+        "folio/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.ts",
         "folio/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.ts"
       ],
       "scriptExists": true
@@ -2371,11 +2452,22 @@
       "scriptExists": true
     },
     {
+      "script": "computations/tr_m_atom_via_transfer.py",
+      "witnesses": [
+        "computations/tr-m-atom-via-transfer.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/hecke-gs-monotone-transfer.ts"
+      ],
+      "scriptExists": true
+    },
+    {
       "script": "computations/tr_m_q_hecke_seminormal.py",
       "witnesses": [
         "computations/atomic-tr-m-mpfr-50dps-proton.witness.json",
         "computations/atomic-tr-m-mpfr-50dps.witness.json",
         "computations/binding-k-solver.witness.json",
+        "computations/low-isotope-mass-table.witness.json",
         "computations/proton-mass-codata-50dps.witness.json",
         "computations/rho-k-h3a-gg-trajectory.witness.json",
         "computations/rho-k-h3a-lp-dual.witness.json",
@@ -2395,16 +2487,6 @@
       ],
       "blocks": [
         "folio/quantum-observable-universe/stochastic-mechanics/two-filtration-bridge-small-cases.ts"
-      ],
-      "scriptExists": true
-    },
-    {
-      "script": "computations/universal-ilp.py",
-      "witnesses": [
-        "computations/universal-ilp.witness.json"
-      ],
-      "blocks": [
-        "folio/quantum-observable-universe/knots-particles-confinement/universal-ilp-algorithm.ts"
       ],
       "scriptExists": true
     },
@@ -2446,54 +2528,6 @@
       ],
       "blocks": [
         "folio/quantum-observable-universe/mass-theory/macdonald-hook-telescope.ts"
-      ],
-      "scriptExists": true
-    },
-    {
-      "script": "qou-mass/src/qou_mass/api.py",
-      "witnesses": [
-        "computations/canonical-mass-table-242ppb.witness.json",
-        "computations/markov-free-energy-qvalues.witness.json"
-      ],
-      "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step03-markov-trace.ts",
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.ts"
-      ],
-      "scriptExists": true
-    },
-    {
-      "script": "tools/hecke-engine/src/gb_nf_reducer.rs",
-      "witnesses": [
-        "computations/hecke-core-symbolic-migration.witness.json"
-      ],
-      "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step02-gs-reduction.ts"
-      ],
-      "scriptExists": true
-    },
-    {
-      "script": "tools/hecke-engine/src/lib.rs",
-      "witnesses": [],
-      "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step01-categorical-action.ts"
-      ],
-      "scriptExists": true
-    },
-    {
-      "script": "tools/pyhecke/python/pyhecke/wedderburn.py",
-      "witnesses": [
-        "computations/wedderburn-lp-ew-wiring.witness.json"
-      ],
-      "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step05-wedderburn.ts"
-      ],
-      "scriptExists": true
-    },
-    {
-      "script": "tools/qou-substrate/python/qou_substrate/witness.py",
-      "witnesses": [],
-      "blocks": [
-        "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-witness-json-pipeline.ts"
       ],
       "scriptExists": true
     }

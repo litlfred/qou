@@ -1039,7 +1039,7 @@ _NATIVE_STALE_MSG = (
     "before the qou-m7py convention-D port (2026-08-15): its trace_weights "
     "still ends z^3 and/or Q_0 is the muon pin. REBUILD it — "
     "`bash scripts/build-pyhecke-native.sh` (or `maturin develop` in "
-    "tools/pyhecke-native) — then retry. Refusing rather than silently "
+    "crates/pyhecke-native) — then retry. Refusing rather than silently "
     "returning divergent numbers. Set QOU_DISABLE_NATIVE=1 to force the "
     "pure-Python path without rebuilding."
 )

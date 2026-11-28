@@ -4,7 +4,7 @@ roles: [collaborator, owner]
 description: >
   Pre-work briefing + durable patterns for anyone writing or modifying
   compute scripts under `computations/` or the Rust
-  crates under `tools/`. Read this BEFORE you write or change compute
+  crates under `crates/` (see also `local/rust-crates-and-values`). Read this BEFORE you write or change compute
   code — it covers precision discipline, Rust↔Python boundary cost,
   exact-arithmetic choices (BigInt vs BigRational vs sympy.Rational),
   algebraic-preflight requirements before optimization shortcuts, and
@@ -18,8 +18,9 @@ allowed-tools: Read Bash Grep Glob Edit Write Skill
 ## Role
 
 When a user (or you) is about to **author new compute** under
-`computations/` (Python) or `tools/hecke-engine/`,
-`tools/pyhecke-native/` (Rust), or modify existing compute scripts in
+`computations/` (Python) or `crates/` (`crates/hecke-engine/`,
+`crates/pyhecke-native/`, `crates/gs-basis/`, `crates/qou-gg-*`,
+`crates/qou-values/`, etc. — also read [`rust-crates-and-values.md`](rust-crates-and-values.md)), or modify existing compute scripts in
 a way that touches precision, performance, or canonical-derivation
 discipline — run this skill **before** any code change.
 
@@ -73,7 +74,7 @@ Use this skill whenever a request mentions any of:
 - "Markov trace" / "Hoefsmit" / "Wenzl" / "LR bridge" / "chi^λ"
 - "atomic braid" / "Hecke" / "H_n(q)" / "q-deformation"
 - Anything in `hecke_*.py`, `markov_*.py`, `laurent_*`,
-  `tools/hecke-engine/`, `tools/pyhecke-native/`
+  `crates/*` (`crates/hecke-engine/`, `crates/pyhecke-native/`, `crates/gs-basis/`, `crates/qou-values/`)
 
 **Pre-work questions:**
 - "Should I use X here?" — the type / precision / boundary choices
@@ -115,9 +116,10 @@ For the algorithmic side:
 | `computations/lp_dual_solver.py` | canonical LP/SDP entry point — always route LP/SDP through this |
 | `computations/markov_trace_canonical.py` | reference `tr_M_word` implementation (the sympy baseline) |
 | `computations/laurent_q_trace.py` | reference Python LaurentQ implementation (PR #859) — match bit-for-bit when porting |
-| `tools/hecke-engine/src/laurent_poly_q.rs` | existing Rust LaurentPoly (BigInt) — template for new types |
-| `tools/hecke-engine/src/tr_m_word_lq.rs` | Phase-2 Rust port style + PyO3 pattern (PR #859) |
-| `tools/pyhecke-native/src/lib.rs` | 20+ PyO3 bindings as reference patterns |
+| `crates/hecke-engine/src/laurent_poly_q.rs` | existing Rust LaurentPoly (BigInt) — template for new types |
+| `crates/hecke-engine/src/tr_m_word_lq.rs` | Phase-2 Rust port style + PyO3 pattern (PR #859) |
+| `crates/pyhecke-native/src/lib.rs` | 20+ PyO3 bindings as reference patterns |
+| [`.claude/skills/local/rust-crates-and-values.md`](rust-crates-and-values.md) | **Top-level Cargo workspace (`Cargo.toml` + `crates/*`)**, `CARGO_TARGET_DIR` disk/CPU caps, `tool-defs/` crate registration, `folio-assistant-sci` library boundary, and 80-dps `qou-values` witnessed-value workflow |
 
 ### §0.1 Sandbox / fresh-container bootstrap (deps + native wheel)
 
@@ -143,10 +145,9 @@ python3 -m pip install -e tools/qou-substrate -e tools/pyhecke -e schemas/witnes
 
 # 3. pyhecke_native — NOT on PyPI yet (alpha), and the prebuilt wheel
 #    is usually NOT shipped. BUT the container ships the Rust toolchain
-#    (`cargo`, `rustc`) and the crate source (tools/pyhecke-native +
-#    tools/hecke-engine), so build it from source via maturin (~1 min):
-python3 -m pip install maturin
-python3 -m pip install ./tools/pyhecke-native    # compiles + installs pyhecke_native
+#    (`cargo`, `rustc`) and the crate source (crates/pyhecke-native +
+#    crates/hecke-engine), so restore or build it via build-pyhecke-native.sh:
+CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 bash scripts/build-pyhecke-native.sh
 python3 -c "import pyhecke_native; print('native OK')"
 ```
 
@@ -573,13 +574,14 @@ beside
 | `mpmath.mpf` | `rug::Float` (MPFR) | for boundary numerical evaluations only |
 | `LaurentHeckeElement.terms: dict[tuple, LaurentQ]` | `BTreeMap<Vec<u32>, LaurentRationalQ>` | the "sparse Hecke element" |
 
-### §4.2 Cargo features — what to enable
+### §4.2 Cargo features & `CARGO_TARGET_DIR` discipline
 
-Default `cargo build` in `tools/hecke-engine/` does NOT enable:
+Always share `/tmp/qou-shared-cargo-target` and cap build jobs (`CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15`). Default `cargo build -p hecke-engine` does NOT enable:
 
 - `clarabel-sdp` — pulls in OpenBLAS / netlib / gfortran (system deps)
 - `clarabel-bigrational` — pulls in clarabel + rationals
 - `clarabel-mpfr` — pulls in clarabel + rug MPFR
+- `clarabel-mpfr-sdp` — native MPFR PSD cones (`Clarabel.rs` fork `rev = "37f06c3"`)
 
 **Don't enable these features unless you specifically need them.**
 The default build covers LaurentPolyQ, Wenzl, seminormal, and the
@@ -588,12 +590,9 @@ new Markov-axiom recursion — all without Clarabel.
 ### §4.3 Maturin build workflow
 
 ```bash
-# Build (no virtualenv required if you use `build` not `develop`)
-cd tools/pyhecke-native
-maturin build --release
-# Install the wheel
-pip install --break-system-packages --force-reinstall \
-    target/wheels/pyhecke_native-*-cp311-*-x86_64.whl
+# Restore from wheel-cache or build in-place (--out ensures workspace-safe wheel output)
+CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 \
+    bash scripts/build-pyhecke-native.sh
 # Smoke test
 python3 -c "import pyhecke_native; print(pyhecke_native.__version__)"
 ```

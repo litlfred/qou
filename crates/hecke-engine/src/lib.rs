@@ -1,27 +1,16 @@
 // Compile-time guards on incompatible Clarabel-feature combinations.
 //
-// The upstream Clarabel-rs SDP path defines `MaybeBlasFloatT: Copy`
-// under `cfg(feature = "sdp")` (src/algebra/floats.rs:111).  Neither
-// `RationalReal` (bigrational backend) nor `MpfrFloat` (mpfr backend)
-// is `Copy` — they wrap heap-allocated arbitrary-precision values.
-// Enabling `sdp + bigrational` or `sdp + mpfr` together would
-// fail to compile inside Clarabel itself with a generic-bound error.
-// Surface the conflict here with a clear message instead of letting
-// downstream consumers hit the inscrutable Copy-bound failure.
+// As of the litlfred Clarabel.rs fork rev 37f06c3 (PR #7), `MpfrFloat`
+// implements native MPFR Cholesky / Jacobi-eigen / Jacobi-SVD PSD cones,
+// so `clarabel-mpfr` and `clarabel-sdp` (`clarabel-mpfr-sdp`) compose
+// cleanly for 50–80+ dps SDPs. `RationalReal` (`clarabel-bigrational`)
+// remains LP/QP-only (exact rational eigendecomposition does not exist)
+// and cannot share Clarabel's scalar parameter `T` with `clarabel-mpfr`.
 #[cfg(all(feature = "clarabel-sdp", feature = "clarabel-bigrational"))]
 compile_error!(
     "clarabel-sdp and clarabel-bigrational are mutually exclusive: \
-     upstream Clarabel-rs requires MaybeBlasFloatT: Copy under cfg(sdp), \
-     and BigRational is not Copy.  Pick one feature or the other."
-);
-#[cfg(all(feature = "clarabel-sdp", feature = "clarabel-mpfr"))]
-compile_error!(
-    "clarabel-sdp and clarabel-mpfr are mutually exclusive: \
-     upstream Clarabel-rs requires MaybeBlasFloatT: Copy under cfg(sdp), \
-     and MpfrFloat is not Copy.  Use clarabel-sdp + the f64 path \
-     plus per-block MPFR-precision constraint preparation \
-     (CLARABEL_PRECISION_PLAN.md §S4-MPFR), or clarabel-mpfr alone \
-     for LP/QP/SOCP-only problems."
+     Clarabel-rs rational arithmetic supports LP/QP cones only (no rational \
+     PSD eigendecomposition).  Pick one feature or the other."
 );
 #[cfg(all(feature = "clarabel-bigrational", feature = "clarabel-mpfr"))]
 compile_error!(

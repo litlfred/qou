@@ -1,0 +1,44 @@
+{
+  "$schema": "tool-definition/v1",
+  "tool": {
+    "id": "crate-pyhecke-native",
+    "title": "Rust crate pyhecke-native (crates/pyhecke-native)",
+    "description": "PyO3 bindings for hecke-engine Gram/trace primitives (Workspace member in root `Cargo.toml`. Version 0.9.0, edition 2021, license MIT. Optional features: `clarabel-lp`. Generated from `crates/pyhecke-native/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+    "install": {
+      "none": true
+    },
+    "invoke": {
+      "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p pyhecke-native"
+    },
+    "io": {
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "pyhecke_native",
+          "schema": {
+            "$type": "RepoPath"
+          },
+          "description": "Rust crate `pyhecke-native` at `crates/pyhecke-native` (`crates/pyhecke-native/Cargo.toml`)."
+        }
+      ]
+    },
+    "satisfies": [
+      "rust-crates-and-values",
+      "compute-author"
+    ],
+    "subprocesses": [
+      "rust-crates-and-values"
+    ],
+    "selection": {
+      "when": "Building, type-checking, or consuming `pyhecke-native` (`crates/pyhecke-native`).",
+      "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+      "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+    },
+    "requires": {
+      "runtime": [
+        "cargo"
+      ],
+      "network": false
+    }
+  }
+}

@@ -89,8 +89,8 @@ Workplan: `docs/audits/2026-05-17-1ppb-workplan-v4.md` §3 Item 1
 
 ## Dependencies
 
-- Rust binary: `tools/hecke-engine/target/{release,debug}/hecke-tr-m-wenzl-lr`
-  (build: `cd tools/hecke-engine && cargo build --release --bin hecke-tr-m-wenzl-lr`)
+- Rust binary: `target/{release,debug}/hecke-tr-m-wenzl-lr`
+  (build: `cargo build --release -p hecke-engine --bin hecke-tr-m-wenzl-lr`)
 - Python:
   - `markov_trace_via_wenzl_lr.canonical_factor_spec` (binary wrapper)
   - `wedderburn_jones_markov.y_lambda_at` (Markov weights at q_0)
@@ -211,7 +211,7 @@ def compute_tr_m_for_atom(Z: int, N: int, label: str,
             "Z": Z, "N": N, "n_strands": n_strands,
             "tr_M_q0_unavail_reason": (
                 "hecke-tr-m-wenzl-lr binary not built; build via "
-                "`cd tools/hecke-engine && cargo build --release "
+                "`cargo build --release -p hecke-engine "
                 "--bin hecke-tr-m-wenzl-lr` to enable this consumer"
             ),
         }

@@ -1,4 +1,4 @@
-"""Subprocess dispatch to the Rust tools/hecke-engine/ binaries.
+"""Subprocess dispatch to the Rust crates/hecke-engine/ binaries.
 
 Keeps backward-compatible with the existing hecke_rust_bridge.py helper
 in computations/.
@@ -15,7 +15,7 @@ from typing import Optional
 
 
 def engine_dir(override: Optional[str | Path] = None) -> Path:
-    """Return the tools/hecke-engine/ directory."""
+    """Return the crates/hecke-engine/ directory (falling back to legacy tools/hecke-engine/)."""
     if override:
         return Path(override)
     env = os.environ.get("HECKE_ENGINE_DIR")
@@ -23,13 +23,13 @@ def engine_dir(override: Optional[str | Path] = None) -> Path:
         return Path(env)
 
     d = Path(__file__).resolve()
-    # walk up until a folder containing "tools/hecke-engine" is found
     for anc in d.parents:
-        cand = anc / "tools" / "hecke-engine"
-        if cand.is_dir():
-            return cand
+        for rel in (("crates", "hecke-engine"), ("tools", "hecke-engine")):
+            cand = anc.joinpath(*rel)
+            if cand.is_dir():
+                return cand
     raise FileNotFoundError(
-        "Could not locate tools/hecke-engine/. Set $HECKE_ENGINE_DIR."
+        "Could not locate crates/hecke-engine/. Set $HECKE_ENGINE_DIR."
     )
 
 
@@ -37,13 +37,26 @@ def binary_path(name: str) -> Optional[Path]:
     """Locate a compiled hecke-engine binary by name.
 
     Search order:
-      1. $HECKE_ENGINE_DIR/target/release/<name>
-      2. tools/hecke-engine/target/release/<name>
-      3. $PATH lookup (shutil.which)
+      1. $HECKE_ENGINE_DIR/target/release/<name> (when $HECKE_ENGINE_DIR is set)
+      2. $CARGO_TARGET_DIR/release/<name>
+      3. <repo-root>/target/release/<name> (Cargo workspace target)
+      4. crates/hecke-engine/target/release/<name>
+      5. $PATH lookup (shutil.which)
     """
-    release = engine_dir() / "target" / "release" / name
-    if release.is_file() and os.access(release, os.X_OK):
-        return release
+    eng = engine_dir()
+    candidates: list[Path] = []
+    if os.environ.get("HECKE_ENGINE_DIR"):
+        candidates.append(eng / "target" / "release" / name)
+    cargo_target = os.environ.get("CARGO_TARGET_DIR")
+    if cargo_target:
+        candidates.append(Path(cargo_target) / "release" / name)
+    repo_root = eng.parent.parent
+    candidates.append(repo_root / "target" / "release" / name)
+    candidates.append(eng / "target" / "release" / name)
+
+    for release in candidates:
+        if release.is_file() and os.access(release, os.X_OK):
+            return release
     which = shutil.which(name)
     if which:
         return Path(which)
@@ -60,7 +73,7 @@ def run(
     if bin_path is None:
         raise FileNotFoundError(
             f"hecke-engine binary {name!r} not found. "
-            f"Build with `cd tools/hecke-engine && cargo build --release`."
+            f"Build with `cargo build --release -p hecke-engine --bin {name}`."
         )
     cmd = [str(bin_path), *args]
     return subprocess.run(

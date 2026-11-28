@@ -1,0 +1,54 @@
+# Root Cargo workspace for Quantum Observable Universe Rust crates.
+#
+# Owner decision A2 (2026-11-28): top-level `Cargo.toml` + `crates/*` holds all
+# Rust crates (`hecke-engine`, `pyhecke-native`, `borromean-recurrence-crt`,
+# `gs-basis`, `qou-gg-core`, `qou-gg-eval`, `qou-clarabel`, `qou-values`, and
+# FFI bindings), while QOU's `tools` Knowledge Graph lives at `tool-defs/` and
+# registers every crate under `crates/*` via `scripts/gen-crate-tools.ts`.
+#
+# Disk & CPU discipline (AGENTS.md / local/rust-crates-and-values):
+#   CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo ...
+
+[workspace]
+resolver = "2"
+members = [
+  "crates/borromean-recurrence-crt",
+  "crates/hecke-engine",
+  "crates/hecke-engine-c",
+  "crates/pyhecke-native",
+  # Parallel A1/A3 crates plug in here on landing:
+  # "crates/gs-basis",
+  # "crates/qou-clarabel",
+  # "crates/qou-gg-core",
+  # "crates/qou-gg-eval",
+  # "crates/qou-values",
+]
+default-members = [
+  "crates/borromean-recurrence-crt",
+  "crates/hecke-engine",
+]
+# Target-specific FFI bindings (wasm-pack --no-default-features / panic=abort,
+# napi-rs Node addon, UniFFI Kotlin/Swift bindgen, R extendr subcrate) are built
+# with their own target flags and profiles so workspace feature unification never
+# pulls `mpfr`/`rug` into WASM or link-time host runtimes into CLI checks.
+exclude = [
+  "crates/hecke-engine-jvm",
+  "crates/hecke-engine-node",
+  "crates/hecke-engine-wasm",
+  "tools/hecke-engine-r/src/rust",
+]
+
+[profile.dev]
+# Omit DWARF debuginfo in dev/check builds so shared /tmp/qou-shared-cargo-target
+# stays compact across parallel sibling worktrees.
+debug = 0
+
+[profile.release]
+opt-level = 3
+lto = true
+
+[patch.crates-io]
+# Pin Clarabel-rs to the litlfred fork (rev 37f06c3: PRs #1-#7, including
+# arbitrary-precision MpfrFloat + native MPFR Cholesky / Jacobi-eigen / Jacobi-SVD
+# PSD cones for 50-80+ dps LP/SDP certificates).
+clarabel = { git = "https://github.com/litlfred/Clarabel.rs", rev = "37f06c3" }

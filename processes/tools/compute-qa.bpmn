@@ -93,7 +93,7 @@ VERDICTS ARE NOT COMMITTED. Each gate writes `test/results/compute-qa/&lt;gate&g
     </bpmn:serviceTask>
 
     <bpmn:serviceTask id="Task_LpDual" name="LP/SDP dual gates">
-      <bpmn:documentation>Gates lp-dual-backend (the MPFR LP binary must be built first), pyhecke-tests and lp-dual-wired (strict), and lp-dual-survey (advisory). From lp-dual-gate.yml.</bpmn:documentation>
+      <bpmn:documentation>Gates lp-dual-backend (the MPFR LP binary `clarabel-operator-selection-lp` in `crates/hecke-engine` must be built first via top-level `Cargo.toml`), pyhecke-tests and lp-dual-wired (strict), and lp-dual-survey (advisory). From lp-dual-gate.yml.</bpmn:documentation>
       <bpmn:extensionElements>
         <bootstrap.processes:skill ref="compute-audit" />
         <cat-harness.processes:bean op="note" />

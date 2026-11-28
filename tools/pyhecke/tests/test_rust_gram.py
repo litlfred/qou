@@ -17,7 +17,12 @@ import pytest
 
 from pyhecke import bridge
 
-_HECKE_ENGINE_DIR = Path(__file__).resolve().parents[2] / "hecke-engine"
+_REPO_ROOT = Path(__file__).resolve().parents[3]
+_HECKE_ENGINE_DIR = (
+    _REPO_ROOT / "crates" / "hecke-engine"
+    if (_REPO_ROOT / "crates" / "hecke-engine").is_dir()
+    else _REPO_ROOT / "tools" / "hecke-engine"
+)
 _SCHEMA_PATH = _HECKE_ENGINE_DIR / "schemas" / "gram.schema.json"
 _GRAM_RS_PATH = _HECKE_ENGINE_DIR / "src" / "gram.rs"
 
@@ -28,7 +33,7 @@ def _rust_gram_available() -> bool:
 
 _requires_rust_gram = pytest.mark.skipif(
     not _rust_gram_available(),
-    reason="hecke-gram binary not built (run `cargo build --release` in tools/hecke-engine/)",
+    reason="hecke-gram binary not built (run `cargo build --release -p hecke-engine --bin hecke-gram`)",
 )
 
 
@@ -61,7 +66,7 @@ def test_rust_gram_struct_fields_match_schema_contract():
     schema = _load_gram_schema()
     src = _GRAM_RS_PATH.read_text(encoding="utf-8")
     m = re.search(r"pub\s+struct\s+GramCertificate\s*\{([^}]*)\}", src, re.DOTALL)
-    assert m is not None, "pub struct GramCertificate not found in tools/hecke-engine/src/gram.rs"
+    assert m is not None, "pub struct GramCertificate not found in crates/hecke-engine/src/gram.rs"
     struct_fields = set(re.findall(r"pub\s+([a-zA-Z0-9_]+)\s*:", m.group(1)))
     assert struct_fields == set(schema["required"]), (
         f"GramCertificate fields {sorted(struct_fields)} != "

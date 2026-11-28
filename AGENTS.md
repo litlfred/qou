@@ -153,6 +153,13 @@ Adapt ALL responses accordingly:
 - **Short answers.** One-liners when possible — but read this together
   with **Terse ≠ compressed** below: "short" cuts ceremony, never
   evidence, implications, or options.
+- **Keep foreground chat open — dispatch a subagent whenever thinking or investigation takes more than a brief moment (STRICT, owner directive 2026-11-28).** Verbatim: *"modify foreground discussion rules: if you need to think more than a brief period of time, you still dispatch agent so foreground stays open. let user know you are waiting for a report back (how long expected to take, potential outcomes). if needed ask for clarifications. once done update user"*. Operational rules (also in [`.claude/skills/local/dispatch-agent.md` §0c](.claude/skills/local/dispatch-agent.md)):
+  1. **Never block foreground chat on multi-step research or deep thinking (>1 quick lookup / ~15–20 s), even in foreground discussion mode.** Dispatch a background research/analysis subagent immediately so the foreground stays open for user input.
+  2. **Tell the user immediately upon dispatch** that you are waiting on the subagent's report, stating: (a) **expected duration (ETA)**, and (b) **potential outcomes** and what each outcome implies.
+  3. **Ask for clarifications** (via a structured `AskUserQuestion` card with `🟡` + full chat mirror below) if needed up front while the subagent runs.
+  4. **Update the user promptly** once the subagent reports back.
+- **Persistent niche-specialist research agents + selective cross-fertilization (STRICT, owner directive 2026-11-28).** Verbatim: *"updates skills: if you have queue of research agents, generally keep them researching deep into niche topic areas. so related questions go to same agent. occasionally, if hints of cross-fertilization, ask questions of multiple agents to see if connections can be made"*. Keep research agents specialized deep in coherent niche areas and route related follow-up questions to the same specialist (`send_message`) rather than spawning fresh cold agents; when a hint of cross-domain connection appears, query multiple specialists in parallel to test whether a synthesis holds (see [`.claude/skills/local/dispatch-agent.md` §0d](.claude/skills/local/dispatch-agent.md)).
+- **Evidence gathering, multi-database KG ingestion & authoring provenance (STRICT, owner directive 2026-11-28).** Verbatim: *"research agents need to also use evidence gathering skills and process (may need to add this / update this in KG) when researching a topic... write up topic areas of research, for each, develop a short list of papers, data etc needed, retrieve and ingest into KG, assess for relevancy. also make use of other databases that agent or user may have access to google scholar, DOI, arxiv, pubmed, etc... this should be a part of document authoring. provenance of paper recorded as part of notes in authoring process and linked in paper as relevant"*. Follow [`.claude/skills/local/evidence-gathering-and-provenance.md`](.claude/skills/local/evidence-gathering-and-provenance.md) and [`processes/content/evidence-gathering-and-provenance.bpmn`](processes/content/evidence-gathering-and-provenance.bpmn): (1) write up topic areas and shortlist needed papers/datasets; (2) query Crossref/DOI, arXiv, INSPIRE-HEP, PubMed, Semantic Scholar/OpenAlex/Google Scholar, and CODATA/PDG/AME2020; (3) ingest into QOU's KG (`folio/references/<key>.json` + `library/<doc-id>/` + `test/attestations/bib-verification/<key>.json` + `folio/schema/references.ts` / `references.bib`); (4) assess relevancy and in-paper theorem/measurement scope; (5) record provenance in block `authorNotes` (`kind: "note"`) during authoring and link via `cites: [...]` / `\cite{key}` in paper prose as relevant.
 - **Every question is a card with numbered options and a recommendation**: [`req:agent-workflow`](https://github.com/litlfred/cat-harness/blob/main/skills/requirements/agent-workflow.json) `#question-on-a-card` (see §AGENT PROCESS RULES above).
 - **🟥 ASK WITH A CARD. NEVER WITH PROSE THE USER HAS TO ANSWER BY TYPING
   (STRICT, owner instruction 2026-11-20).** Verbatim: *"If you have questions
@@ -6377,9 +6384,10 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `simulators/` | Interactive HTML simulators |
 | `computations/` | Computation scripts and witness data (Layer 3 in-repo path; see `docs/ARCHITECTURE.md`) |
 | `qou-mass/` | `qou-mass` package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). **v1.0.0; NOT on PyPI** (`pypi.org/pypi/qou-mass/json` → 404). 5 in-repo importers. Its `_internal/` is **generated** — see the note below. |
+| `Cargo.toml`, `crates/` | **Top-level Rust Cargo workspace** (owner rulings A1/A2/A3, 2026-11-28; skill [`.claude/skills/local/rust-crates-and-values.md`](.claude/skills/local/rust-crates-and-values.md), process [`processes/tools/rust-crates-and-values.bpmn`](processes/tools/rust-crates-and-values.bpmn)): general domain-neutral math (`crates/gs-basis`, reusable by `folio-assistant-sci`), QOU $\gamma\gamma$ / atomic-chart / Clarabel / 80-dps proton-pinned witnessed-value crates (`crates/qou-gg-core`, `crates/qou-gg-eval`, `crates/qou-clarabel`, `crates/qou-values`), `crates/hecke-engine`, `crates/pyhecke-native`, `crates/borromean-recurrence-crt`, and `crates/hecke-engine-{c,wasm,node,jvm}`. Always build with `CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15`. Every crate under `crates/*` is registered in `tool-defs/` via `bun run scripts/gen-crate-tools.ts` (`bun run cat check:tools`). |
 | `tools/qou-substrate/` | `qou-substrate` package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). **Not on PyPI** (404). 309 in-repo importers. |
 | `tools/pyhecke/` | `pyhecke` — Layer 2b (Hecke / Gram / Markov trace). **Not on PyPI** (404). 70 in-repo importers. |
-| `tools/pyhecke-native/` | `pyhecke-native` — PyO3 bindings into `hecke-engine`. **Not on PyPI** (404); [`pyhecke-native-wheel.yml`](.github/workflows/pyhecke-native-wheel.yml) builds a wheel but is `workflow_dispatch`-only and has no publish step. Build locally with `maturin build --release`. 89 in-repo importers. |
+| `crates/pyhecke-native/` | `pyhecke-native` — PyO3 bindings into `hecke-engine` (moved from `tools/pyhecke-native/` on 2026-11-28, ruling A2). **Not on PyPI** (404); [`pyhecke-native-wheel.yml`](.github/workflows/pyhecke-native-wheel.yml) builds a wheel (`--out target/wheels`) and `scripts/build-pyhecke-native.sh` restores/builds from `wheel-cache`. 89 in-repo importers. |
 | `schemas/witness-schema/` | `witness-schema` PyPI + `@litlfred/witness-schema` npm — cross-language `*.witness.json` interchange schemas. **Under `schemas/`, not `tools/`** — moved back from folio-assistant by `e2ded2c607`. Install the package root (`pip install -e schemas/witness-schema`); `python/` under it holds the module but no `pyproject.toml`. |
 
 > **Importer counts are measured, not maintained.** The five above were
@@ -6402,9 +6410,9 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 > uploads nothing — building an artifact is not publishing it.)
 >
 > **Consequence for agents.** `pyhecke_native` cannot be `pip install`ed, so a
-> container without it is the *default*, not an anomaly. Build it from
-> `tools/pyhecke-native/` with `maturin build --release` (works: produces
-> `pyhecke_native-0.9.0-cp311-...whl`) when a witness's `environment` block
+> container without it is the *default*, not an anomaly. Restore or build it via
+> `CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 bash scripts/build-pyhecke-native.sh`
+> (from `crates/pyhecke-native/` with `maturin build --release --out target/wheels`) when a witness's `environment` block
 > records it. **Do not cite `binding_canonical` as evidence that its absence
 > changes results** — I did, and it was wrong: with the native extension
 > installed the producer reproduces the same `tr_M_atom` byte-identically. That
@@ -6419,8 +6427,8 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 > and was green only because the mirror was stale. Run `--check` after any
 > change to a module in the cone; it is the gate.
 | ~~`tools/block-qa-schema/`~~ | **No longer in this repo.** The QA-sidecar interchange schemas (`<block>.qa.json` block-qa/v1 + `<criterion-id>.script.json` qa-script/v1) left with the platform code in `39fc90f6d6` (miga) and live in `litlfred/folio-assistant`; producing types are `folio-assistant/schemas/block-qa.ts`, reachable here via [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh). Do not look for it under `tools/` — this row described an in-repo path for weeks after the directory was deleted. |
-| `tools/hecke-engine/` | `hecke-engine` Rust crate — Layer 1 canonical compute core (Gröbner-Shirshov reducer, Hoefsmit, Markov trace, Clarabel SDP backend). |
-| `tools/hecke-engine-{wasm,node,r,jvm,c}/` | Multi-language bindings of `hecke-engine` (WASM, Node napi-rs, R/JVM/C — last three Tier-3). |
+| `crates/hecke-engine/` | `hecke-engine` Rust crate — Layer 1 canonical compute core (Gröbner-Shirshov reducer, Hoefsmit, Markov trace, Clarabel LP/SDP MPFR backend; moved from `tools/hecke-engine/` on 2026-11-28, ruling A2). |
+| `crates/hecke-engine-{c,wasm,node,jvm}/`, `tools/hecke-engine-{r,octave,julia,gap}/` | Multi-language bindings of `hecke-engine` (Rust crates under `crates/`; R/Octave/Julia/GAP host wrappers under `tools/`). |
 | `folio.config.json` | Adapter config (content type, adapter module, feedback dir) |
 | `main.tex` | LaTeX preamble and document structure (rendering target) |
 | `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |

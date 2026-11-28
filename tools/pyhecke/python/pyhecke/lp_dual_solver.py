@@ -310,8 +310,10 @@ def solve_frobenius_dual_lp(
 def _find_clarabel_lp_bin(explicit: Optional[str] = None) -> str:
     """Locate the ``clarabel-operator-selection-lp`` binary.
 
-    Search order: explicit arg, ``$QOU_CLARABEL_LP_BIN``, then the known
-    ``tools/hecke-engine/target/release/`` path walking up from this file.
+    Search order: explicit arg, ``$QOU_CLARABEL_LP_BIN``,
+    ``$CARGO_TARGET_DIR/release/``, workspace ``target/release/``,
+    ``crates/hecke-engine/target/release/``, then legacy
+    ``tools/hecke-engine/target/release/``.
     """
     import os
 
@@ -320,14 +322,24 @@ def _find_clarabel_lp_bin(explicit: Optional[str] = None) -> str:
     env = os.environ.get("QOU_CLARABEL_LP_BIN")
     if env:
         return env
-    rel = Path("tools") / "hecke-engine" / "target" / "release" / "clarabel-operator-selection-lp"
-    for parent in Path(__file__).resolve().parents:
-        cand = parent / rel
+    cargo_target = os.environ.get("CARGO_TARGET_DIR")
+    if cargo_target:
+        cand = Path(cargo_target) / "release" / "clarabel-operator-selection-lp"
         if cand.exists():
             return str(cand)
+    rels = (
+        Path("target") / "release" / "clarabel-operator-selection-lp",
+        Path("crates") / "hecke-engine" / "target" / "release" / "clarabel-operator-selection-lp",
+        Path("tools") / "hecke-engine" / "target" / "release" / "clarabel-operator-selection-lp",
+    )
+    for parent in Path(__file__).resolve().parents:
+        for rel in rels:
+            cand = parent / rel
+            if cand.exists():
+                return str(cand)
     raise FileNotFoundError(
         "clarabel-operator-selection-lp not found. Build it via\n"
-        "  cargo build --release --manifest-path tools/hecke-engine/Cargo.toml "
+        "  cargo build --release -p hecke-engine "
         "--features clarabel-mpfr --bin clarabel-operator-selection-lp\n"
         "or set $QOU_CLARABEL_LP_BIN."
     )
