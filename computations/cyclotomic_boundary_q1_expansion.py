@@ -10,8 +10,7 @@ Derivation (each step re-checked below in exact arithmetic):
   1. log [k] = log k + (k^2-1) t^2/6 - (k^4-1) t^4/180 + O(t^6).
   2. Hook power sums in contents c(u) = col - row:
        sum h^2 = sum c^2 + n^2                       (classical),
-       sum h^4 = sum c^4 + 12 n sum c^2 + n^2 - 12 (sum c)^2   (checked for every |lam| <= 16;
-                                                       no written proof here).
+       sum h^4 = sum c^4 + 12 n sum c^2 + n^2 - 12 (sum c)^2   (all lam; see the proof checks).
   3. A content power sum is the central character of a Jucys-Murphy power sum, and
      sum_lam f^lam omega_lam(z) = sum_g z_g r(g), r(g) = #{x : x^2 = g}.  The class expansions of
      sum J_i^2, sum J_i^4, (sum J_i)^2, (sum J_i^2)^2 used are in CLASS_SUMS (checked by direct
@@ -33,8 +32,9 @@ Derivation (each step re-checked below in exact arithmetic):
      odd(d2) grows like I_{n-8} / 2^{n/4} and exceeds |Delta| for large n, and the test excludes
      every n >= 9.
 
-Status: steps 1 (classical), 5 and 6 are proved; the quartic hook identity (2) and the class
-expansions (3) for all n are checked, not proved.
+Status: steps 2 and 3 hold for all n as polynomial identities
+(cyclotomic_boundary_q1_proof_checks.py); 1 is classical; 5 and 6 are proved.  The ranges
+checked here are a cross-check.
 
 Exact integer / Fraction arithmetic; no floats, no fitting.
 Usage: python3 computations/cyclotomic_boundary_q1_expansion.py [N]   (default N = 3000)

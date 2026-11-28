@@ -276,13 +276,25 @@ $$\Delta(n) = -2(n-8)(n-7)(n-6)(n-5)(n-4)\,c^2\,(5n^3 - 21n^2 - 101n + 201).$$
 No odd prime divides both $I_m$ and $I_{m-1}$ (since $I_{m+p} \equiv I_m \pmod p$ and
 $I_0 = I_1 = 1$), so the odd part of $d_2$ divides $\Delta(n)$. It does not for any
 $9 \le n \le 3000$, so the test excludes all of these
-(`computations/cyclotomic_boundary_q1_expansion.py`). The valuation $v_2(I_m) = \lfloor m/4\rfloor + (0,0,1,2)_{m \bmod 4}$ is proved
-(`QOU.Mass.InvolutionTwoAdic`, sorry-free: $I_{4k} = 2^k\alpha$, $I_{4k+1} = 2^k\beta$ with
-$\alpha,\beta$ odd and $\alpha \equiv \beta \pmod 8$, by four steps of the recurrence). For all $n$
-the argument still needs two facts that are checked but not proved here: the quartic hook
-identity above and the Jucys–Murphy class expansions for all $n$. By the valuation, the two terms of $6d_2$ never have equal 2-adic valuation, so
-$v_2(d_2) \le v_2(c) + (n+1)/4$. Then the odd part of $d_2$ grows like $I_{n-8}/2^{n/4}$, which
-is larger than $|\Delta(n)|$ for large $n$.
+(`computations/cyclotomic_boundary_q1_expansion.py`).
 
-*Open:* non-cyclotomicity for **every** $n \ge 6$. What remains is the non-triangular $n$
-outside the two families with $j > 400000$.
+*All $n \ge 9$ (computer-assisted).* The steps above hold for every $n$:
+- The two hook identities are polynomial identities in $\ell$ and the power sums of a beta-set
+  $\{b_1 > \dots > b_\ell\}$, since hooks are the pairs $b > g$ with $b$ in the set and $g$ not.
+- The sums $\sum_\lambda f^\lambda F(\lambda)$, with $F$ a content power sum or product of two,
+  follow from expanding products of Jucys–Murphy transpositions over the orderings of their
+  symbols. Each is a polynomial in $n$ times $I_{n-s}$ for each support $s$.
+- $d_2$, $d_4$ and $\Delta$ then come out symbolically in $n$
+  (`computations/cyclotomic_boundary_q1_proof_checks.py` checks all three as identities).
+- $v_2(I_m) = \lfloor m/4\rfloor + (0,0,1,2)_{m \bmod 4}$ (`QOU.Mass.InvolutionTwoAdic`,
+  sorry-free: $I_{4k} = 2^k\alpha$, $I_{4k+1} = 2^k\beta$ with $\alpha, \beta$ odd and
+  $\alpha \equiv \beta \pmod 8$). A case split on $n \bmod 4$ then shows the two terms of
+  $6d_2$ never have equal 2-adic valuation, so $v_2(d_2) \le v_2(c) + (n+1)/4$.
+- So the odd part of $d_2$ is at least $(n-6)(n^2-13)I_{n-8}/(6 \cdot 2^{(n+1)/4})$, while
+  $0 < |\Delta(n)| < 10n^{14}$. The first beats the second for $46 \le n \le 400$, and the ratio
+  grows from there, so for all $n \ge 46$; $9 \le n \le 3000$ is checked directly.
+
+Hence $12\kappa_2 \notin \mathbb Z$ and $D(n)$ is not cyclotomic for every $n \ge 9$. With the
+certificates for $6 \le n \le 8$, $D(n)$ is cyclotomic exactly for $n \le 5$. This argument is
+checked by computer algebra and one Lean file. It has not been reviewed, and the full chain is
+not yet in Lean.
