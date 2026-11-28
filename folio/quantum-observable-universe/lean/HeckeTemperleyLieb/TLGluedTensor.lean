@@ -159,4 +159,83 @@ theorem tensLvl_capQ_left {a b a' b' n m : ℕ} (ha : a ≤ n) (ha' : a' ≤ n) 
 
 end Level
 
+/-! ## The level tensor bifunctor -/
+
+section LevelFunctor
+
+variable {K : Type*} [Field K] {δ ε : K} {T : MarkovTower δ ε} {hε : δ * ε = 1}
+
+/-- The tensor of two level objects. -/
+def lobjT {n m : ℕ} (A : LObj T hε n) (A' : LObj T hε m) : LObj T hε (n + m + 1) :=
+  ⟨A.a + A'.a + 1, by have := A.le; have := A'.le; omega,
+    by have := A.par; have := A'.par; omega⟩
+
+/-- **The level tensor of morphisms.** -/
+noncomputable def ltens {n m : ℕ} {A B : LObj T hε n} {A' B' : LObj T hε m} (f : A ⟶ B)
+    (g : A' ⟶ B') : lobjT A A' ⟶ lobjT B B' :=
+  lmk (tensLvl T A.a A'.a B.a B'.a (lval f) (lval g))
+    (tensLvl_mem T hε A.le A.par.symm A'.le A'.par.symm B.le B.par.symm B'.le B'.par.symm
+      (lval_mem f) (lval_mem g))
+
+theorem lval_ltens {n m : ℕ} {A B : LObj T hε n} {A' B' : LObj T hε m} (f : A ⟶ B)
+    (g : A' ⟶ B') : lval (ltens f g) = tensLvl T A.a A'.a B.a B'.a (lval f) (lval g) := rfl
+
+theorem lval_comp {N : ℕ} {X Y Z : LObj T hε N} (f : X ⟶ Y) (g : Y ⟶ Z) :
+    lval (f ≫ g) = lval g * lval f := rfl
+
+theorem lval_id {N : ℕ} (X : LObj T hε N) : lval (𝟙 X) = PQ T X.a N := rfl
+
+theorem ltens_comp {n m : ℕ} {A B C : LObj T hε n} {A' B' C' : LObj T hε m} (f : A ⟶ B)
+    (h : B ⟶ C) (g : A' ⟶ B') (k : B' ⟶ C') :
+    ltens (f ≫ h) (g ≫ k) = ltens f g ≫ ltens h k := by
+  apply lhom_ext
+  rw [lval_comp, lval_ltens, lval_ltens, lval_ltens, lval_comp, lval_comp,
+    tensLvl_mul T hε B.le B.par.symm (lval_mem h) (lval_mem k)]
+
+theorem ltens_id {n m : ℕ} (A : LObj T hε n) (A' : LObj T hε m) :
+    ltens (𝟙 A) (𝟙 A') = 𝟙 (lobjT A A') := by
+  apply lhom_ext
+  rw [lval_ltens, lval_id, lval_id, lval_id, tensLvl_id T hε A.le A.par.symm A'.le A'.par.symm]
+  rfl
+
+theorem leg_recast {L L' : ℕ} (h : L = L') {c d : ℕ} {hc : c ≤ L} {pc : c % 2 = L % 2}
+    {hd : d ≤ L} {pd : d % 2 = L % 2} {hc' : c ≤ L'} {pc' : c % 2 = L' % 2} {hd' : d ≤ L'}
+    {pd' : d % 2 = L' % 2} (z : (⟨c, hc, pc⟩ : LObj T hε L) ⟶ ⟨d, hd, pd⟩)
+    (hz : recastQ T h (lval z) ∈ HomSp T L' c d) :
+    (leg T hε L').map (X := ⟨c, hc', pc'⟩) (Y := ⟨d, hd', pd'⟩) (lmk (recastQ T h (lval z)) hz) =
+      (leg T hε L).map z := by
+  subst h
+  rfl
+
+theorem leg_stabL (N : ℕ) {X Y : LObj T hε N} (f : X ⟶ Y) :
+    (leg T hε (N + 1 + 1)).map ((stabL T hε N).map f) = (leg T hε N).map f := by
+  have := Functor.congr_hom (stabL_comp_leg (T := T) (hε := hε) N) f
+  simpa using this
+
+/-- **Two more strands on the first factor**, seen in the glued category. -/
+theorem leg_ltens_stabL_left {n m : ℕ} {A B : LObj T hε n} {A' B' : LObj T hε m} (f : A ⟶ B)
+    (g : A' ⟶ B') :
+    (leg T hε (n + 1 + 1 + m + 1)).map (ltens ((stabL T hε n).map f) g) =
+      (leg T hε (n + m + 1)).map (ltens f g) := by
+  rw [← leg_stabL (n + m + 1) (ltens f g)]
+  have h : lval (ltens ((stabL T hε n).map f) g) =
+      recastQ T (by omega) (lval ((stabL T hε (n + m + 1)).map (ltens f g))) :=
+    tensLvl_capQ_left T hε A.le B.le (lval f) (lval g)
+  have : ltens ((stabL T hε n).map f) g = lmk _ (h ▸ lval_mem _) := lhom_ext h
+  rw [this]
+  exact leg_recast _ _ _
+
+/-- **Two more strands on the second factor**, seen in the glued category. -/
+theorem leg_ltens_stabL_right {n m : ℕ} {A B : LObj T hε n} {A' B' : LObj T hε m} (f : A ⟶ B)
+    (g : A' ⟶ B') :
+    (leg T hε (n + (m + 1 + 1) + 1)).map (ltens f ((stabL T hε m).map g)) =
+      (leg T hε (n + m + 1)).map (ltens f g) := by
+  rw [← leg_stabL (n + m + 1) (ltens f g)]
+  have h : lval (ltens f ((stabL T hε m).map g)) =
+      lval ((stabL T hε (n + m + 1)).map (ltens f g)) :=
+    tensLvl_capQ_right T hε A'.le B'.le (lval f) (lval g)
+  exact congrArg _ (lhom_ext h)
+
+end LevelFunctor
+
 end QOU.HeckeTemperleyLieb.TLGluedTensor
