@@ -1114,6 +1114,7 @@ import QOU.Nuclear.StokesIndexCount41
 import QOU.Nuclear.StokesIndexCount52
 import QOU.Nuclear.TetIndexDegree
 import QOU.Nuclear.TetIndexTriality
+import QOU.Nuclear.TetBlockFactorisation
 import QOU.Nuclear.FiveTwoIndexBase
 import QOU.Nuclear.FiveTwoDegree0
 import QOU.Nuclear.FiveTwoDegree1
