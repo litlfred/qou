@@ -1,6 +1,7 @@
 import Mathlib.GroupTheory.Perm.Fin
 import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.Tactic
+import QOU.BringsSurface.BringMapChain
 
 /-!
 # QOU.StandardModel.StrandCountFromBring — five strands if strand relabellings are Bring's symmetries
@@ -18,10 +19,17 @@ hyperplane `p₁ = 0`.
 * `isospin_count` — a split `5 = colour + isospin` with three colour strands has
   two isospin strands.
 * `five_odd` — `5` is odd, as chirality requires; the two constraints agree.
+* `bring_genus_eq_four` — the genus read off Bring's map (`bring_chi`, `χ = -6`) is `4`.
+* `strandCount_of_genus` — **if** the traceless charge directions are Bring's holomorphic
+  differentials, so that `n - 1 = g`, then `n = 5`. This is a second, independent route to
+  the same count: the first uses the order of `S₅`, this one uses `χ = -6`.
 
 ## Input
 
-That the strand relabellings are Bring's symmetries is a hypothesis, not proved. The
+That the strand relabellings are Bring's symmetries is a hypothesis, not proved; so is
+`n - 1 = g` in the genus route. The two hypotheses are compatible: the holomorphic
+differentials of Bring carry `std ⊗ sgn` of `S₅` (bean `qou-efxy`, not formalised), the
+four-dimensional traceless part of the permutation representation twisted by the sign. The
 three colour strands are the colour tube coordinates (`def:color-tube-coordinates`),
 also not derived here. Base ring: none (counting only).
 -/
@@ -43,5 +51,20 @@ theorem isospin_count (colour isospin : ℕ) (h : colour + isospin = 5) (hc : co
     isospin = 2 := by omega
 
 theorem five_odd : Odd 5 := ⟨2, rfl⟩
+
+open QOU.BringsSurface.BringMapChain QOU.RiemannSurface.CombinatorialMapEuler in
+/-- Bring's genus, read off its combinatorial map, is `4`. -/
+theorem bring_genus_eq_four (g : ℕ)
+    (hg : (numCycles σ : ℤ) - numCycles α + numCycles (σ * α) = 2 - 2 * g) : g = 4 := by
+  have h := hg.symm.trans bring_chi
+  omega
+
+open QOU.BringsSurface.BringMapChain QOU.RiemannSurface.CombinatorialMapEuler in
+/-- **Five strands from `χ = -6`.** If the `n - 1` traceless charge directions are Bring's
+`g` holomorphic differentials, then `n = 5`. -/
+theorem strandCount_of_genus (n g : ℕ)
+    (hg : (numCycles σ : ℤ) - numCycles α + numCycles (σ * α) = 2 - 2 * g)
+    (hn : n = g + 1) : n = 5 := by
+  rw [hn, bring_genus_eq_four g hg]
 
 end QOU.StandardModel.StrandCount

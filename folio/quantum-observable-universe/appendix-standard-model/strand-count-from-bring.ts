@@ -7,7 +7,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:strand-count-from-bring",
   title: "Five strands if strand relabellings are Bring's symmetries",
-  uses: ["prop:odd-strands-force-chirality", "def:color-tube-coordinates"],
+  uses: ["prop:odd-strands-force-chirality", "def:color-tube-coordinates", "lem:bring-map-euler-characteristic"],
   lean: {
     ref: "qou:QOU.StandardModel.StrandCount.strandCount_eq_five",
   },

@@ -46,6 +46,7 @@ export default chapter({
         "odd-strands-force-chirality",
         "strand-count-from-bring",
         "chirality-sign-is-hypercharge-sign",
+        "linking-does-not-fix-charge",
         "strand-slot-separates-gen1",
         "slot-from-even-shape",
         "cal2-higgs-knot-coupling",

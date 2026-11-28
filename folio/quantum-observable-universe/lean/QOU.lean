@@ -1977,6 +1977,7 @@ import QOU.EightfoldWay.MarkovTraceKeepsBothChannels
 import QOU.EightfoldWay.StrandSlotSeparatesGen1
 import QOU.EightfoldWay.SlotFromEvenShape
 import QOU.EightfoldWay.ChiralitySignIsHyperchargeSign
+import QOU.EightfoldWay.LinkingDoesNotFixCharge
 import QOU.EightfoldWay.ColourSingletSelectionRule
 import QOU.StandardModel.OctonionColourTripletSplitting
 import QOU.StandardModel.ColourOnSingleFibreThreeStrands
