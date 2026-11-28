@@ -1,0 +1,346 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-28T11:25:22.497436+00:00",
+  "commitSha": "ea2bfe461c6eed7192e5ea70578307dff676c908",
+  "assertions": [
+    {
+      "name": "sympy_all_commring_koide_schur_weyl_burau_skein_identities",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "KoideSingletDoubletEquipartition.lean (§1-§5 exact [CommRing R] theorems)"
+    },
+    {
+      "name": "n2_q12_skein_differences_match_closed_form_80dps",
+      "computed": "1.26506375318766e-80",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "KoideSingletDoubletEquipartition.q12_ring_mass_skein_differences_and_singlet_collapse"
+    },
+    {
+      "name": "axis_convolution_matches_4strand_trace_n2_n3_n4_80dps",
+      "computed": "4.87490458460386e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-65",
+      "source": "AxisConvolutionOperator.lean weight-space vs 4-strand R-matrix trace"
+    },
+    {
+      "name": "kashaev_cut_axis_matches_4strand_partial_trace_n2_n3_n4_80dps",
+      "computed": "1.12129356700403e-78",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-65",
+      "source": "AxisKashaevReading.lean root-of-unity formula vs 4-strand partial trace"
+    },
+    {
+      "name": "kashaev_cut_axis_electron_poly_and_monotone_hierarchy_n4_to_n14",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": "0",
+      "source": "Mapping-torus volume ordering Vol(e U A) = 0 < Vol(mu U A) = 6.3546 < Vol(tau U A) = 9.5034"
+    },
+    {
+      "name": "radical_free_quartic_koide_and_v_eliminated_saddle_exact_80dps",
+      "computed": "2.08308154841897e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-65",
+      "source": "KoideSingletDoubletEquipartition.koideMassQuarticPoly_galois_factorization & koide_saddle_quartic_eliminating_v"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 30,
+  "computation": "koide-lepton-ladder-proton-pin-probe",
+  "scriptFile": "koide_lepton_ladder_proton_pin_probe.py",
+  "scriptHash": "2b933d4e82e0",
+  "scriptCommitSha": "ea2bfe461c6eed7192e5ea70578307dff676c908",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/koide_lepton_ladder_proton_pin/koide_lepton_ladder_proton_pin_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/koide_lepton_ladder_proton_pin/koide_lepton_ladder_proton_pin_probe.py"
+  },
+  "description": "Pre-registered 80-dps proton-pin evaluation for bean qou-cw8i (epics qou-s028, qou-myts): (1) verifies all division-free [CommRing R] identities of KoideSingletDoubletEquipartition.lean (scaled S_3 projectors, Fourier moments, 3-strand Schur-Weyl 4=4 singlet-doublet equipartition, radical-free quartic Koide mass polynomial K_4, universal 3-braid det(I_2 - B_w(-1)) = 2 - tr(imgZ w), Morton-Birman Burau factorizations, and N=2 q^12 skein differences); (2) measures exact N = 2, 3, 4 bare closure and closure union axis U_q(sl_2) ring traces and root-of-unity zeta_N Kashaev cut-axis invariants (N = 2..14) on the 2026-11-28 ruled least-crossing 2-component lepton link ladder (e = s0 s1 s0, mu = s0^4 s1^-1, tau = s0^2 s1^-1 s0 s1^-1); (3) verifies the narrowed KoideSingletDoubletEquipartitionBridge & radical-free quartic polynomial at the proton pin (muon pin on hold until rederivation per 2026-11-28 owner directive).",
+  "parameters": {
+    "work_dps": 80,
+    "out_dps": 50,
+    "q0_proton": "1.1099785827513808075916690956107688798744991218736",
+    "hbar_q0_proton": "0.099081716044258507839177117518906063985258373389446",
+    "vol_4_1": "2.0298832128193072500424051085490405718833786150606",
+    "muon_pin_status": "on_hold_until_rederivation_2026_11_28",
+    "preregistration": "computations/probes/koide_lepton_ladder_proton_pin/PREREGISTRATION.md",
+    "lean_module": "folio/quantum-observable-universe/lean/QOU/StandardModel/KoideSingletDoubletEquipartition.lean"
+  },
+  "data": {
+    "symbolic_commring_verification": {
+      "all_symbolic_identities_verified": true,
+      "s3_projector_pythagorean_and_koide_exact": true,
+      "circulant_fourier_moments_discharged": true,
+      "schur_weyl_v3_four_eq_four_equipartition": true,
+      "koide_quartic_mass_poly_four_branch_factorization": true,
+      "morton_birman_burau_ladder_factorizations": true,
+      "q12_ring_mass_skein_differences_exact": true
+    },
+    "part_a_least_crossing_ring_and_axis_traces": {
+      "N_2": {
+        "colour_N": 2,
+        "bare_closure_ring_mass": {
+          "e_hopf": "3.0051383063982790698851720496824395076624131220256",
+          "mu_t24": "2.2910453212751707517797822604211384730682198200822",
+          "tau_whitehead": "4.0890980738383850997385586852454646398485390412538"
+        },
+        "bare_closure_ratios_over_e": {
+          "mu_over_e": "0.76237599993227478017578398650640891339085473803883",
+          "tau_over_e": "1.3607021231376383525905250751450858641864483666023"
+        },
+        "bare_closure_U_at_q1": {
+          "e_hopf": "3.000000000000000000000000",
+          "mu_t24": "6.000000000000000000000000",
+          "tau_whitehead": "1.054219794323052322434857e-49"
+        },
+        "bare_closure_U_at_q0": {
+          "e_hopf": "2.48462813544296359182771427464",
+          "mu_t24": "4.75657782249014297791852181771",
+          "tau_whitehead": "-0.507962791260461173478996956644"
+        },
+        "bare_closure_koide_Q": "0.338018597741703293761250222234",
+        "closure_union_axis_mass": {
+          "e_hopf": "2.5576354718402128977947099278626559870217974290736",
+          "mu_t24": "1.9870222383965219569382504079212943649180399389817",
+          "tau_whitehead": "3.4600711493801510178038317385167892334474728534449"
+        },
+        "closure_union_axis_ratios_over_e": {
+          "mu_over_e": "0.77689813903263704003044810717693863612202273442716",
+          "tau_over_e": "1.3528398348692895258552617727936894178182357504905"
+        },
+        "closure_union_axis_U_at_q0": {
+          "e_hopf": "9.90580222144214569881515890803",
+          "mu_t24": "11.6637837915036585008886744021",
+          "tau_whitehead": "7.07268844658326488714055480363"
+        },
+        "closure_union_axis_koide_Q": "0.337649512180494550366689953321"
+      },
+      "N_3": {
+        "colour_N": 3,
+        "bare_closure_ring_mass": {
+          "e_hopf": "4.4976990877671059511370977652007353521191040030463",
+          "mu_t24": "2.5499144724979725594503783981134997785918590660728",
+          "tau_whitehead": "10.043877329160996068014168871930557637233690101203"
+        },
+        "bare_closure_ratios_over_e": {
+          "mu_over_e": "0.56693754356160897072063739672498524708992958577557",
+          "tau_over_e": "2.2331145621721226095446476266090391852907458711508"
+        },
+        "bare_closure_U_at_q1": {
+          "e_hopf": "8.000000000000000000000000",
+          "mu_t24": "16.00000000000000000000000",
+          "tau_whitehead": "-2.108439588646104644869715e-49"
+        },
+        "bare_closure_U_at_q0": {
+          "e_hopf": "5.37039443032854574071514951843",
+          "mu_t24": "9.14008122031264476489122826940",
+          "tau_whitehead": "-2.73825421352790516953400522939"
+        },
+        "bare_closure_koide_Q": "0.360363771217455345251034267681",
+        "closure_union_axis_mass": {
+          "e_hopf": "1.9683915219117384662490491887647609142955601422782",
+          "mu_t24": "1.2755247677839826110038725805128502232051758717819",
+          "tau_whitehead": "4.0372086735601625292801743811457755271853265677486"
+        },
+        "closure_union_axis_ratios_over_e": {
+          "mu_over_e": "0.64800358749013977998218118701459533170566143111557",
+          "tau_over_e": "2.0510191334491983367478386680893571672592856757315"
+        },
+        "closure_union_axis_U_at_q0": {
+          "e_hopf": "19.1936264357207820258526992708",
+          "mu_t24": "20.2320544673283743204030902218",
+          "tau_whitehead": "13.1045572071690624344530667991"
+        },
+        "closure_union_axis_koide_Q": "0.352994672397519325241740157936"
+      },
+      "N_4": {
+        "colour_N": 4,
+        "bare_closure_ring_mass": {
+          "e_hopf": "5.1210160581603469042578594108345378717082760424269",
+          "mu_t24": "2.3174534183640475587826048423194005287084200315879",
+          "tau_whitehead": "22.602002996893901779151274805468610262569751564350"
+        },
+        "bare_closure_ratios_over_e": {
+          "mu_over_e": "0.45253781516095463121508734998031258910684051340179",
+          "tau_over_e": "4.4135778408422632280039475249763361355599618309405"
+        },
+        "bare_closure_U_at_q1": {
+          "e_hopf": "15.00000000000000000000000",
+          "mu_t24": "30.00000000000000000000000",
+          "tau_whitehead": "0.0"
+        },
+        "bare_closure_U_at_q0": {
+          "e_hopf": "7.44175931721149634295393411115",
+          "mu_t24": "11.9733215407770004510485728793",
+          "tau_whitehead": "-8.94615203650054949082636132493"
+        },
+        "bare_closure_koide_Q": "0.411953190562930482163624676343",
+        "closure_union_axis_mass": {
+          "e_hopf": "1.1488547775512752451480675243492300505611566714035",
+          "mu_t24": "0.71012284471711864603175650243520246689539845549735",
+          "tau_whitehead": "3.5831575139480783117062245212339763820769005044220"
+        },
+        "closure_union_axis_ratios_over_e": {
+          "mu_over_e": "0.61811367162585065368696601926255253046670453527339",
+          "tau_over_e": "3.1188950805300160766933365899403371578316201956074"
+        },
+        "closure_union_axis_U_at_q0": {
+          "e_hopf": "24.6789323721499669703068496952",
+          "mu_t24": "24.8900434762029656618493078080",
+          "tau_whitehead": "15.0748443403670770337253073598"
+        },
+        "closure_union_axis_koide_Q": "0.375404294328579740335242766537"
+      }
+    },
+    "part_b_kashaev_cut_axis_zeta_n_growth": {
+      "N_2": {
+        "abs_cN_e": "4.00000000000000000000000000000",
+        "abs_cN_mu": "16.0000000000000000000000000000",
+        "abs_cN_tau": "24.0000000000000000000000000000",
+        "growth_2pi_over_N_ln_cN_mu": "8.710344361214408522002756",
+        "growth_2pi_over_N_ln_cN_tau": "9.984150566134009052935887"
+      },
+      "N_3": {
+        "abs_cN_e": "5.19615242270663188058233902452",
+        "abs_cN_mu": "36.3730669589464231640763731716",
+        "abs_cN_tau": "136.194713553794003344726758444",
+        "growth_2pi_over_N_ln_cN_mu": "7.526896981101863873767675",
+        "growth_2pi_over_N_ln_cN_tau": "10.29203676963600743655385"
+      },
+      "N_4": {
+        "abs_cN_e": "16.0000000000000000000000000000",
+        "abs_cN_mu": "71.5541752799932702850935573994",
+        "abs_cN_tau": "590.050845266744787840145554033",
+        "growth_2pi_over_N_ln_cN_mu": "6.708014806286970996749062",
+        "growth_2pi_over_N_ln_cN_tau": "10.02200840837366699453413"
+      },
+      "N_5": {
+        "abs_cN_e": "11.1803398874989484820458683437",
+        "abs_cN_mu": "524.557109970659625019356372746",
+        "abs_cN_tau": "2961.03941555299109943676773215",
+        "growth_2pi_over_N_ln_cN_mu": "7.869757840809247341782515",
+        "growth_2pi_over_N_ln_cN_tau": "10.04467154371165103694742"
+      },
+      "N_6": {
+        "abs_cN_e": "20.7846096908265275223293560981",
+        "abs_cN_mu": "1498.79951961561556940325434903",
+        "abs_cN_tau": "16431.3086514738685313974584597",
+        "growth_2pi_over_N_ln_cN_mu": "7.657548051758862453398473",
+        "growth_2pi_over_N_ln_cN_tau": "10.16508783767903927115368"
+      },
+      "N_7": {
+        "abs_cN_e": "18.5202591774521341335113102755",
+        "abs_cN_mu": "3501.48901805134509282358276713",
+        "abs_cN_tau": "90736.8649484596120626547613996",
+        "growth_2pi_over_N_ln_cN_mu": "7.325245837432680947936430",
+        "growth_2pi_over_N_ln_cN_tau": "10.24672541560430786261698"
+      },
+      "N_8": {
+        "abs_cN_e": "1.32788277545817254663153485957e-77",
+        "abs_cN_mu": "12872.4481503585704700998451471",
+        "abs_cN_tau": "488317.809685206600454918532934",
+        "growth_2pi_over_N_ln_cN_mu": "7.432100693936380941821479",
+        "growth_2pi_over_N_ln_cN_tau": "10.28771198348536231840870"
+      },
+      "N_9": {
+        "abs_cN_e": "27.0000000000000000000000000000",
+        "abs_cN_mu": "47566.7554157450804410117949208",
+        "abs_cN_tau": "2575500.95667287231257092167695",
+        "growth_2pi_over_N_ln_cN_mu": "7.518801190666409400030632",
+        "growth_2pi_over_N_ln_cN_tau": "10.30550923288758300328881"
+      },
+      "N_10": {
+        "abs_cN_e": "44.7213595499957939281834733746",
+        "abs_cN_mu": "144580.175340797042633145590858",
+        "abs_cN_tau": "13396406.9002026846972392216099",
+        "growth_2pi_over_N_ln_cN_mu": "7.465422844236056619350479",
+        "growth_2pi_over_N_ln_cN_tau": "10.31101941817379876563438"
+      },
+      "N_11": {
+        "abs_cN_e": "36.4828726939093983402642601034",
+        "abs_cN_mu": "431024.665488135075469676237267",
+        "abs_cN_tau": "68928497.3976944199717213783193",
+        "growth_2pi_over_N_ln_cN_mu": "7.410686115004105236452432",
+        "growth_2pi_over_N_ln_cN_tau": "10.30932493434925056726866"
+      },
+      "N_12": {
+        "abs_cN_e": "83.1384387633061100893174243923",
+        "abs_cN_mu": "1378835.97956743452732143532102",
+        "abs_cN_tau": "351350182.716594708062663256820",
+        "growth_2pi_over_N_ln_cN_mu": "7.401985099913699304984418",
+        "growth_2pi_over_N_ln_cN_tau": "10.30300702226294508445796"
+      },
+      "N_13": {
+        "abs_cN_e": "46.8721665810318608105498764771",
+        "abs_cN_mu": "4330294.32312351716097309584754",
+        "abs_cN_tau": "1776288897.20877764230980527487",
+        "growth_2pi_over_N_ln_cN_mu": "7.385713266779902481795776",
+        "growth_2pi_over_N_ln_cN_tau": "10.29369035553733616246482"
+      },
+      "N_14": {
+        "abs_cN_e": "74.0810367098085365340452411019",
+        "abs_cN_mu": "13059813.3407275000190666677171",
+        "abs_cN_tau": "8916044602.00352383890477042588",
+        "growth_2pi_over_N_ln_cN_mu": "7.353593418804152838419065",
+        "growth_2pi_over_N_ln_cN_tau": "10.28248582788580159225904"
+      }
+    },
+    "part_c_proton_pin_koide_quartic_and_narrowed_bridge": {
+      "m_mu_over_m_e_vol41_proton_pin": "206.76832637067389028960958640990267593845820455103",
+      "m_tau_over_m_e_protected_koide_proton_pin": "3477.4423064158730225498913589145330526823157603419",
+      "norm_3P_singlet_sq": "16583.447847539461107777754253959960778793482842018",
+      "norm_3P_doublet_sq": "16583.447847539461107777754253959960778793482842018",
+      "projector_equipartition_rel_residual": "2.08308154841897e-81",
+      "koide_quartic_K4_abs_residual": "3.24555538185149e-68",
+      "saddle_quartic_v_eliminated_rel_residual": "0.0",
+      "sigma_pull_vs_codata_2022": "0.923071373361",
+      "sigma_pull_vs_pdg_2024": "0.437440705820",
+      "discharged_algebraic_theorems": [
+        "threeProj_idempotent_orthog_and_trace",
+        "singlet_doublet_equipartition_iff_koide_ring",
+        "matrix_trace_equipartition_iff_koide_ring",
+        "circulant3FourierSpec_moments",
+        "q3SchurWeyl_partition_and_classical_equipartition",
+        "koide_discriminant_pos_and_upper_root_dominance",
+        "koide_saddle_quartic_eliminating_v",
+        "koideMassQuarticPoly_galois_factorization",
+        "det_one_sub_burau_neg_one_eq_two_sub_trace",
+        "morton_birman_burau_ladder_invariants",
+        "q12_ring_mass_skein_differences_and_singlet_collapse"
+      ],
+      "irreducible_remaining_hypothesis": "QOU.StandardModel.KoideSingletDoubletEquipartition.KoideSingletDoubletEquipartitionBridge"
+    }
+  },
+  "caveats": [
+    "1. All 80-dps substrate evaluations run strictly on the proton pin (q_at(80)); the CAL-2 muon pin is on hold until first-principles rederivation per the 2026-11-28 owner directive. 2. On the 2026-11-28 ruled least-crossing 2-component link ladder (e = s0 s1 s0, mu = s0^4 s1^-1, tau = s0^2 s1^-1 s0 s1^-1), bare N=2 ring masses satisfy m_e - m_mu = 1 - q^-12 and m_tau - m_e = q^4(1 - q^-12), collapsing to pure S_3 singlet (4,4,4) at q=1 (Q -> 1/3), while root-of-unity Kashaev cut-axis invariants |c_N(beta)| grow strictly monotonically |c_N(e)| < |c_N(mu)| < |c_N(tau)| for all N >= 4 along the mapping-torus volumes (0 < 6.3546 < 9.5034); per owner-rulings.md row 18, neither reading is scored until derived from the axioms. 3. 100% of the algebraic S_3/Z_3 projector, Fourier-moment, V^{otimes 3} = (4x1)+(2x2) classical 4=4 equipartition, quadratic resolvent, and radical-free quartic mass polynomial identities are discharged unconditionally over [CommRing R] in KoideSingletDoubletEquipartition.lean, narrowing Table 3.1a's m_tau/m_e Conditional status strictly to the 1-equation physical bridge KoideSingletDoubletEquipartitionBridge."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
