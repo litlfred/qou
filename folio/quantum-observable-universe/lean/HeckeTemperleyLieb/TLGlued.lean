@@ -1,5 +1,7 @@
 import HeckeTemperleyLieb.TLQuotientModularData
 import Mathlib.CategoryTheory.Linear.Basic
+import Mathlib.CategoryTheory.Linear.LinearFunctor
+import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
 
 /-!
 # The semisimplified Temperley–Lieb category on all strand counts at once
@@ -49,9 +51,15 @@ between the two parities.)
 * `cH_eq_trG` and `modular_data_glued`: the Hopf-link entries are glued traces, and the braid
   `S`-matrix on the complete list of simples is `[(i+1)(j+1)]` and invertible.
 
-Not here: the monoidal structure (the thread proving the Hecke category modular owns it), the
-unit object (labels start at one strand), and the universal property of the colimit against an
-arbitrary linear cocone.
+## The universal property
+
+`LinCocone T hε D`: objects `O a` and, for each level, `K`-linear maps on `Q N` that are
+functorial on the corners and unchanged by adding two strands. `desc C : GObj T hε ⥤ D` is
+additive and `K`-linear and restricts to the cocone on every level (`desc_leg`), and any additive
+functor with these properties is `desc C` (`desc_unique`). Together: `isColimit_linear`.
+
+Not here: the monoidal structure (the thread proving the Hecke category modular owns it) and the
+unit object (labels start at one strand).
 
 No empirical input; everything is over an arbitrary field.
 
@@ -640,6 +648,183 @@ theorem trG_level (a : ℕ) (φ : Q T a) (k : ℕ) :
     δ ^ (a + 2 * k + 1) * tauQ T (a + 2 * k) (ext T hε a φ (a + 2 * k)) =
       δ ^ (a + 1) * trG T hε a (endEquiv T hε a φ) := by
   rw [trG_endEquiv, tauQ_ext]
+
+/-! ## The universal property -/
+
+section Universal
+
+universe v u
+
+variable (T hε) in
+/-- **A linear cocone on the levels**: an object `O a` of `D` for every label, and for every level
+`N` a `K`-linear map from `Q N` to `Hom(O a, O b)` that is functorial on the corners of the
+right parity and is unchanged by adding two strands. A strict cocone of functors
+`F N : LObj N ⥤ D` that are linear on hom spaces gives one, with `O a = (F a).obj [a]`. -/
+structure LinCocone (D : Type u) [Category.{v} D] [Preadditive D] [Linear K D] where
+  /-- The image of `[a]`. -/
+  O : ℕ → D
+  /-- The image of a level-`N` element as a morphism `O a → O b`. -/
+  Φ : ∀ (N a b : ℕ), Q T N →ₗ[K] (O a ⟶ O b)
+  Φ_id : ∀ N a, a ≤ N → a % 2 = N % 2 → Φ N a a (PQ T a N) = 𝟙 (O a)
+  Φ_comp : ∀ N a b c (φ ψ : Q T N), a ≤ N → b ≤ N → c ≤ N → a % 2 = N % 2 →
+    φ ∈ HomSp T N a b → ψ ∈ HomSp T N b c → Φ N a c (ψ * φ) = Φ N a b φ ≫ Φ N b c ψ
+  Φ_stab : ∀ N a b (φ : Q T N), a ≤ N → b ≤ N → φ ∈ HomSp T N a b →
+    Φ (N + 1 + 1) a b (capQ T hε N φ) = Φ N a b φ
+
+variable {D : Type u} [Category.{v} D] [Preadditive D] [Linear K D] (C : LinCocone T hε D)
+
+theorem Φ_seq_stable {a b : ℕ} (s : Seq T hε a b) {N0 : ℕ} (hs : Compat T hε a b s.1 N0) {M : ℕ}
+    (hM : N0 ≤ M) (ha : a ≤ M) (hb : b ≤ M) :
+    ∀ k, C.Φ (M + 2 * k) a b (s.1 (M + 2 * k)) = C.Φ M a b (s.1 M)
+  | 0 => by rw [show M + 2 * 0 = M by omega]
+  | k + 1 => by
+    rw [show M + 2 * (k + 1) = M + 2 * k + 1 + 1 by omega, ← (hs _ (by omega)).2,
+      C.Φ_stab _ _ _ _ (by omega) (by omega) (hs _ (by omega)).1, Φ_seq_stable s hs hM ha hb k]
+
+theorem Φ_seq_eq {a b : ℕ} (s : Seq T hε a b) {N0 N0' M1 M2 : ℕ} (hs : Compat T hε a b s.1 N0)
+    (hs' : Compat T hε a b s.1 N0') (h1 : N0 ≤ M1) (ha1 : a ≤ M1) (hb1 : b ≤ M1)
+    (h2 : N0' ≤ M2) (ha2 : a ≤ M2) (hb2 : b ≤ M2) (hpar : M1 % 2 = M2 % 2) :
+    C.Φ M1 a b (s.1 M1) = C.Φ M2 a b (s.1 M2) := by
+  have e1 := Φ_seq_stable C s hs h1 ha1 hb1 M2
+  have e2 := Φ_seq_stable C s hs' h2 ha2 hb2 ((M1 + M2) / 2)
+  rw [show M1 + 2 * M2 = M2 + 2 * ((M1 + M2) / 2) by omega] at e1
+  rw [← e1, e2]
+
+/-- The value of a sequence at a canonical valid level. -/
+noncomputable def gval {a b : ℕ} (s : Seq T hε a b) : C.O a ⟶ C.O b :=
+  C.Φ (a + 2 * (Classical.choose (compat_of_mem s) + b)) a b
+    (s.1 (a + 2 * (Classical.choose (compat_of_mem s) + b)))
+
+/-- `gval` is the value at any valid level. -/
+theorem gval_eq {a b : ℕ} (s : Seq T hε a b) {N0 : ℕ} (hs : Compat T hε a b s.1 N0) {M : ℕ}
+    (hM : N0 ≤ M) (ha : a ≤ M) (hb : b ≤ M) (hpar : M % 2 = a % 2) :
+    gval C s = C.Φ M a b (s.1 M) :=
+  Φ_seq_eq C s (Classical.choose_spec (compat_of_mem s)) hs (by omega) (by omega) (by omega)
+    hM ha hb (by omega)
+
+theorem gval_zero_of_parity {a b : ℕ} (s : Seq T hε a b) {N0 : ℕ} (hs : Compat T hε a b s.1 N0)
+    (h : a % 2 ≠ b % 2) : gval C s = 0 := by
+  rw [gval_eq C s hs (M := a + 2 * (N0 + b)) (by omega) (by omega) (by omega) (by omega),
+    eq_zero_of_mem_parity T (hs _ (by omega)).1 (Or.inr (by omega)), map_zero]
+
+/-- The induced map on glued hom spaces. -/
+noncomputable def descMap {a b : ℕ} (f : GHom T hε a b) : C.O a ⟶ C.O b :=
+  Quotient.liftOn' f (gval C) (by
+    intro s t h
+    have h' : (⟪s⟫ : GHom T hε a b) = ⟪t⟫ := Quotient.sound h
+    rw [mk_eq_iff] at h'
+    obtain ⟨N1, hst⟩ := h'
+    obtain ⟨N2, hs⟩ := compat_of_mem s
+    obtain ⟨N3, ht⟩ := compat_of_mem t
+    rw [gval_eq C s hs (M := a + 2 * (N1 + N2 + N3 + b)) (by omega) (by omega) (by omega)
+      (by omega), gval_eq C t ht (M := a + 2 * (N1 + N2 + N3 + b)) (by omega) (by omega)
+      (by omega) (by omega), hst _ (by omega)])
+
+theorem descMap_mk {a b : ℕ} (s : Seq T hε a b) : descMap C (⟪s⟫ : GHom T hε a b) = gval C s :=
+  rfl
+
+/-- **The functor induced by a linear cocone.** -/
+noncomputable def desc : GObj T hε ⥤ D where
+  obj X := C.O X.a
+  map {X Y} f := descMap C (show GHom T hε X.a Y.a from f)
+  map_id X := by
+    show gval C (idSeq T hε X.a) = 𝟙 _
+    obtain ⟨N0, hs⟩ := compat_of_mem (idSeq T hε X.a)
+    rw [gval_eq C _ hs (M := X.a + 2 * N0) (by omega) (by omega) (by omega) (by omega)]
+    exact C.Φ_id _ _ (by omega) (by omega)
+  map_comp {X Y Z} f g := by
+    obtain ⟨s, rfl⟩ := Submodule.Quotient.mk_surjective _ (show GHom T hε X.a Y.a from f)
+    obtain ⟨t, rfl⟩ := Submodule.Quotient.mk_surjective _ (show GHom T hε Y.a Z.a from g)
+    show gval C (mulSeq t s) = gval C s ≫ gval C t
+    obtain ⟨N1, hs⟩ := compat_of_mem s
+    obtain ⟨N2, ht⟩ := compat_of_mem t
+    obtain ⟨N3, hts⟩ := compat_of_mem (mulSeq t s)
+    have key := gval_eq C (mulSeq t s) hts (M := X.a + 2 * (N1 + N2 + N3 + Y.a + Z.a))
+      (by omega) (by omega) (by omega) (by omega)
+    by_cases hab : X.a % 2 = Y.a % 2
+    · by_cases hbc : Y.a % 2 = Z.a % 2
+      · rw [key, gval_eq C s hs (M := X.a + 2 * (N1 + N2 + N3 + Y.a + Z.a)) (by omega)
+          (by omega) (by omega) (by omega), gval_eq C t ht
+          (M := X.a + 2 * (N1 + N2 + N3 + Y.a + Z.a)) (by omega) (by omega) (by omega)
+          (by omega)]
+        exact C.Φ_comp _ _ _ _ _ _ (by omega) (by omega) (by omega) (by omega)
+          (hs _ (by omega)).1 (ht _ (by omega)).1
+      · rw [gval_zero_of_parity C t ht hbc, Limits.comp_zero, key]
+        show C.Φ _ X.a Z.a (t.1 _ * s.1 _) = 0
+        rw [eq_zero_of_mem_parity T (ht _ (by omega)).1 (Or.inr (by omega)), zero_mul,
+          map_zero]
+    · rw [gval_zero_of_parity C s hs hab, Limits.zero_comp, key]
+      show C.Φ _ X.a Z.a (t.1 _ * s.1 _) = 0
+      rw [eq_zero_of_mem_parity T (hs _ (by omega)).1 (Or.inr (by omega)), mul_zero, map_zero]
+
+theorem desc_obj (X : GObj T hε) : (desc C).obj X = C.O X.a := rfl
+
+/-- **The induced functor restricts to the cocone on every level.** -/
+theorem desc_leg {N : ℕ} {X Y : LObj T hε N} (f : X ⟶ Y) :
+    (desc C).map ((leg T hε N).map f) = C.Φ N X.a Y.a (lval f) := by
+  show gval C (extSeq T hε (lval f) (lval_mem f) X.le Y.le) = _
+  rw [gval_eq C _ (N0 := N) (fun M hM => ⟨ext_mem T hε (lval_mem f) X.le Y.le M hM,
+    ext_compat T hε _ M hM⟩) (M := N) le_rfl X.le Y.le X.par.symm]
+  show C.Φ N X.a Y.a (ext T hε N (lval f) N) = _
+  rw [ext_self]
+
+instance desc_additive : (desc C).Additive where
+  map_add {X Y} {f g} := by
+    obtain ⟨s, rfl⟩ := Submodule.Quotient.mk_surjective _ (show GHom T hε X.a Y.a from f)
+    obtain ⟨t, rfl⟩ := Submodule.Quotient.mk_surjective _ (show GHom T hε X.a Y.a from g)
+    show descMap C (⟪s⟫ + ⟪t⟫ : GHom T hε X.a Y.a) = gval C s + gval C t
+    rw [← Submodule.Quotient.mk_add, descMap_mk]
+    obtain ⟨N1, hs⟩ := compat_of_mem s
+    obtain ⟨N2, ht⟩ := compat_of_mem t
+    obtain ⟨N3, hst⟩ := compat_of_mem (s + t)
+    rw [gval_eq C _ hst (M := X.a + 2 * (N1 + N2 + N3 + Y.a)) (by omega) (by omega) (by omega)
+      (by omega), gval_eq C _ hs (M := X.a + 2 * (N1 + N2 + N3 + Y.a)) (by omega) (by omega)
+      (by omega) (by omega), gval_eq C _ ht (M := X.a + 2 * (N1 + N2 + N3 + Y.a)) (by omega)
+      (by omega) (by omega) (by omega)]
+    exact map_add _ _ _
+
+instance desc_linear : (desc C).Linear K where
+  map_smul {X Y} f r := by
+    obtain ⟨s, rfl⟩ := Submodule.Quotient.mk_surjective _ (show GHom T hε X.a Y.a from f)
+    show descMap C (r • ⟪s⟫ : GHom T hε X.a Y.a) = r • gval C s
+    rw [← Submodule.Quotient.mk_smul, descMap_mk]
+    obtain ⟨N1, hs⟩ := compat_of_mem s
+    obtain ⟨N2, hrs⟩ := compat_of_mem (r • s)
+    rw [gval_eq C _ hrs (M := X.a + 2 * (N1 + N2 + Y.a)) (by omega) (by omega) (by omega)
+      (by omega), gval_eq C _ hs (M := X.a + 2 * (N1 + N2 + Y.a)) (by omega) (by omega)
+      (by omega) (by omega)]
+    exact (C.Φ _ X.a Y.a).map_smul r _
+
+/-- **Uniqueness.** An additive functor out of the glued category that sends `[a]` to `O a` and
+restricts to the cocone on every level is the induced functor. -/
+theorem desc_unique (G : GObj T hε ⥤ D) [G.Additive] (hobj : ∀ X, G.obj X = C.O X.a)
+    (hmap : ∀ N (X Y : LObj T hε N) (f : X ⟶ Y), G.map ((leg T hε N).map f) =
+      eqToHom (hobj _) ≫ C.Φ N X.a Y.a (lval f) ≫ eqToHom (hobj _).symm) :
+    G = desc C := by
+  refine CategoryTheory.Functor.ext hobj (fun X Y φ => ?_)
+  by_cases h : X.a % 2 = Y.a % 2
+  · let X' : LObj T hε (X.a + 2 * Y.a) := ⟨X.a, by omega, by omega⟩
+    let Y' : LObj T hε (X.a + 2 * Y.a) := ⟨Y.a, by omega, by omega⟩
+    obtain ⟨f, hf⟩ := (leg T hε (X.a + 2 * Y.a)).map_surjective (X := X') (Y := Y')
+      (show GHom T hε X.a Y.a from φ)
+    have e : G.map φ = G.map ((leg T hε (X.a + 2 * Y.a)).map f) := by rw [hf]
+    have e' : (desc C).map φ = (desc C).map ((leg T hε (X.a + 2 * Y.a)).map f) := by rw [hf]
+    rw [e, e', hmap, desc_leg]
+  · rw [hom_eq_zero_of_parity h φ, G.map_zero, (desc C).map_zero, Limits.zero_comp,
+      Limits.comp_zero]
+
+/-- **The glued category is the colimit of the levels in linear categories**: every linear
+cocone factors through it, by an additive and `K`-linear functor that restricts to the cocone on
+every level, and uniquely so. -/
+theorem isColimit_linear :
+    (∀ N (X Y : LObj T hε N) (f : X ⟶ Y), (desc C).map ((leg T hε N).map f) =
+      C.Φ N X.a Y.a (lval f)) ∧
+    ∀ (G : GObj T hε ⥤ D) [G.Additive] (hobj : ∀ X, G.obj X = C.O X.a),
+      (∀ N (X Y : LObj T hε N) (f : X ⟶ Y), G.map ((leg T hε N).map f) =
+        eqToHom (hobj _) ≫ C.Φ N X.a Y.a (lval f) ≫ eqToHom (hobj _).symm) → G = desc C :=
+  ⟨fun _ _ _ f => desc_leg C f, fun G _ hobj hmap => desc_unique C G hobj hmap⟩
+
+end Universal
 
 /-! ## The braiding -/
 
