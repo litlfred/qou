@@ -277,6 +277,7 @@ import QOU.BraidsAndKnots.HAdicDrinfeld.FourStrand
 import QOU.BraidsAndKnots.HAdicDrinfeld.Hexagon
 import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleCategory
 import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleAssociator
+import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleUnit
 import QOU.BraidsAndKnots.HAdicDrinfeld.Pentagon
 import QOU.BraidsAndKnots.HAdicDrinfeld.QuasiBialgebra
 import QOU.BraidsAndKnots.HAdicDrinfeld.SecondHexagon
