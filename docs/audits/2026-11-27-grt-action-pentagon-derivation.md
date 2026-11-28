@@ -2006,3 +2006,82 @@ X³` passes, the false variant with `24⁻¹` fails with an unsolved goal, and t
 deleted. There is no `sorry`, `axiom`, `native_decide` or `: True`, and no `lake build` was run.
 `scripts/transcendental-boundary-audit.py --check` reports `outside boundary: 378 (baseline 378),
 new 0, gone 0`.
+
+## 17q. Explicit rational associators modulo 4 and 5 on the per-level tower (bean `qou-3fdg`)
+
+§17p left open "any level ≥ 4 unconditionally". This section closes levels 4 and 5 by explicit
+construction, with `E N = expHalfTrunc N` (the per-level exponential of §17p). Write `X, Y` for the
+two free generators of `F2`, and `L = [X, Y]`.
+
+**Results (sorry-free, lean-direct).**
+
+- Level 4, in `ExplicitLevelFour.lean`:
+  `exists_assoc_GL_four : ∃ Φ : F2, AssocU4 4 (expHalfTrunc 4) Φ ∧ GL 4 Φ`, witnessed by
+  `assocU4_four : AssocU4 4 (expHalfTrunc 4) (phiPoly (1 / 24))` and
+  `GL_four (c : ℚ) : GL 4 (phiPoly c)`. So
+
+      Φ ≡ 1 + L/24            (mod words of length 4)
+
+  with **no degree-3 term**. The degree-3 hexagon defect of the level-3 associator is cancelled by
+  the new `X³/48` term of `expHalfTrunc 4`.
+- Level 5, in `ExplicitLevelFiveAlg.lean` and `ExplicitLevelFive.lean`:
+  `exists_assoc_GL_five : ∃ Φ : F2, AssocU4 5 (expHalfTrunc 5) Φ ∧ GL 5 Φ`, witnessed by
+  `assocU4_five : AssocU4 5 (expHalfTrunc 5) phi5Poly` and `GL_five : GL 5 phi5Poly`, where
+
+      Φ₅ ≡ 1 + L/24 + L²/1152 − [X,[X,L]]/1440 − [Y,[X,L]]/5760 − [Y,[Y,L]]/1440
+                                                                 (mod words of length 5).
+
+The coefficients are solutions of the hexagon, pentagon and inversion equations. They were not
+fitted, and no measured value enters. As a remark only, not used anywhere: `1/1440 = ζ(4)/(2π)⁴`
+and `1/24 = ζ(2)/(2π)²`. Whether these match the KZ associator's coefficients in this
+normalisation was not checked.
+
+**The solution space (probe only).** `computations/audits/rational_associator_level4_probe.py`
+solves the degree-3 and degree-4 equations by hand in exact `Fraction` arithmetic. It uses the
+eleven Drinfeld–Kohno rewriting rules, whose normal words are the PBW basis
+`U(f₃) ⊗ U(f₂) ⊗ U(f₁)`. Output: `ALL CHECKS PASS`.
+
+- Degree 3 has a one-parameter family `1 + L/24 + α([X,L] + [Y,L])`, with `α ∈ ℚ` free. This is
+  the GRT direction of §17j–§17n. The Lean proves the case `α = 0`.
+- Degree 4, for `α = 0`, is **unique** (kernel rank 0) and equals the Lie form above.
+- Control: with `expHalfTrunc 3`, `1 + L/24` fails the degree-3 hexagon.
+
+**Method.** In the abstract layer, `R` is any `ℚ`-algebra. The truncation hypotheses `Trunc4` and
+`Trunc5` say that 4-fold and 5-fold right-associated products vanish. The three-strand and
+four-strand relations enter as rewriting rules, obtained from the `DK4` commutation fields by
+`rule_of_commute`.
+
+- Hexagon and inversion are proved by expanding, truncating, rewriting to normal form and then
+  `module`.
+- The level-5 pentagon first removes every cross term of degree at least 5, using `Fil`
+  multiplicativity in `U4 5` (`mul_two_of`, `mul_three_of`). This leaves the linear identity
+  `pentagon5_lin`, which takes the 22 rule instances as hypotheses and needs no truncation.
+- The concrete theorems instantiate the abstract ones at `t 4 i` and `t 5 i`, discharging the
+  truncation by `trunc4_fil` and `trunc5_fil`.
+
+**Verification.**
+
+- Every new module compiles lean-direct (`lean -DautoImplicit=false -s 65536`) against a private
+  overlay, exit 0. `ExplicitLevelFiveAlg` takes about 4 min; the other two take seconds.
+- `#print axioms` on `exists_assoc_GL_four`, `assocU4_four`, `GL_four`, `hexagon4_central`,
+  `exists_assoc_GL_five`, `assocU4_five`, `GL_five`, `hexagon5` and `pentagon5_lin` gives
+  `[propext, Classical.choice, Quot.sound]`.
+- The check is live. In scratch files outside the repo:
+  - level 4: the same hexagon proof with `phi (1/12)` fails (`ring failed`);
+  - level 5: changing the `[X,[X,L]]` coefficient from `1/1440` to `1/1400` makes
+    `inversion5`, `hexagon5` and `pentagon5_lin` all fail (`ring failed`).
+- There is no `sorry`, `axiom`, `native_decide` or `: True`, no analysis import, and no
+  `lake build` was run.
+
+**What remains open.**
+
+- **Level ≥ 6.** It is not proved. The method extends, but the `module` normalisation grows quickly:
+  the level-5 pentagon needed the cross-term elimination to finish at all.
+- **The general degree-`d` step** (§17n one-degree existence), and so the full tower. Inhabiting
+  the tower `∀ N, ∃ Φ, AssocU4 N (expHalfTrunc N) Φ ∧ GL N Φ` is still open. Levels 4 and 5 are
+  separate witnesses, not a coherent tower. `Φ₅` does reduce to `Φ₄` modulo 4, but that
+  compatibility is not stated in Lean.
+- **The α-family.** That `α` is free is a probe result. Only `α = 0` is in Lean.
+- **Confluence.** That the eleven rewriting rules are confluent, so that the PBW normal form is
+  unique, is checked by the probe only. The Lean proofs do not depend on it: each identity is
+  closed by `module` after rewriting, so the Lean stands alone.
