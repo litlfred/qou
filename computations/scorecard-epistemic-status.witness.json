@@ -1,8 +1,8 @@
 {
   "engine": "python (no arithmetic)",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-27T17:18:54.290529+00:00",
-  "commitSha": "10b43a45bba66d67534e6a7c3daa78e0c06150dd",
+  "computedAt": "2026-11-28T01:25:36.236428+00:00",
+  "commitSha": "151957d3b03354a5b1d44baadca57bb361359acd",
   "assertions": [
     {
       "name": "every_basis_present_and_quoting",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 110,
+  "durationMs": 3,
   "computation": "scorecard-epistemic-status",
   "scriptFile": "scorecard_epistemic_status.py",
-  "scriptHash": "aec9b486bdda",
-  "scriptCommitSha": "069cca3a07471c3651976e4dba9b8e9530134d85",
+  "scriptHash": "cad1da3ab8bf",
+  "scriptCommitSha": "405c56708499c1521378491d2f0d7ac992f8b8ee",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -129,9 +129,9 @@
       },
       "alpha_form_b": {
         "status": "Conditional",
-        "basis": "computations/alpha-em-schwinger-ladder.witness.json",
-        "basis_excerpt": "conditional on ArchimedeanLimit, BlochSuslinUniqueness, BringZeroModeBlochClass",
-        "gloss": "1-loop (1 - h_A^2 alpha) factor proved (EmFermionLoopFourTopology); the value is conditional on ArchimedeanLimit, BlochSuslinUniqueness, BringZeroModeBlochClass"
+        "basis": "folio/quantum-observable-universe/lean/QOU/MassTheory/EmCouplingBringZeroMode.lean",
+        "basis_excerpt": "theorem bringZeroMode_fully_tiling_derived",
+        "gloss": "conditional on the additive form 1/alpha = q[9][10] + 2/(3pi) + alpha*H*(1 - h^2 alpha) (prop:em-coupling-bring-zero-mode; Delta_2 dropped). Its pieces are proved: 2/(3pi) from the tiling and Gauss-Bonnet, the 1-loop factor by EmFermionLoopFourTopology"
       },
       "alpha_form_c": {
         "status": "Conditional",
@@ -153,9 +153,9 @@
       },
       "rydberg_form_b": {
         "status": "Conditional",
-        "basis": "computations/alpha-em-schwinger-ladder.witness.json",
-        "basis_excerpt": "BringZeroModeBlochClass",
-        "gloss": "(1/2) m_e alpha^2 with Form B alpha; inherits its three hypotheses"
+        "basis": "folio/quantum-observable-universe/lean/QOU/MassTheory/EmCouplingBringZeroMode.lean",
+        "basis_excerpt": "theorem bringZeroMode_fully_tiling_derived",
+        "gloss": "(1/2) m_e alpha^2 with Form B alpha; inherits its conditional additive form"
       },
       "rydberg_form_c": {
         "status": "Conditional",
