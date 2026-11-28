@@ -1,0 +1,44 @@
+{
+  "$schema": "tool-definition/v1",
+  "tool": {
+    "id": "crate-qou-gg-core",
+    "title": "Rust crate qou-gg-core (crates/qou-gg-core)",
+    "description": "Lightweight, zero-FFI core algebra for ruled 4-term photons, k-photon collisions through 4-photon, linking-neutral cuts, hadron dressings, and Z=0..118 T3/Hopf atomic-chart generation. (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Generated from `crates/qou-gg-core/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+    "install": {
+      "none": true
+    },
+    "invoke": {
+      "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p qou-gg-core"
+    },
+    "io": {
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "qou_gg_core",
+          "schema": {
+            "$type": "RepoPath"
+          },
+          "description": "Rust crate `qou-gg-core` at `crates/qou-gg-core` (`crates/qou-gg-core/Cargo.toml`)."
+        }
+      ]
+    },
+    "satisfies": [
+      "rust-crates-and-values",
+      "compute-author"
+    ],
+    "subprocesses": [
+      "rust-crates-and-values"
+    ],
+    "selection": {
+      "when": "Building, type-checking, or consuming `qou-gg-core` (`crates/qou-gg-core`).",
+      "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+      "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+    },
+    "requires": {
+      "runtime": [
+        "cargo"
+      ],
+      "network": false
+    }
+  }
+}

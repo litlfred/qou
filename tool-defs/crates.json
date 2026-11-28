@@ -23,6 +23,21 @@
       "features": []
     },
     {
+      "id": "crate-gs-basis",
+      "name": "gs-basis",
+      "version": "0.1.0",
+      "edition": "2021",
+      "license": "MIT",
+      "path": "crates/gs-basis",
+      "manifestPath": "crates/gs-basis/Cargo.toml",
+      "description": "General-purpose non-commutative Gröbner–Shirshov bases, free associative algebras, and specialized Iwahori–Hecke and Temperley–Lieb normal-form engines.",
+      "workspaceMember": true,
+      "libCrateTypes": [],
+      "bins": [],
+      "defaultFeatures": [],
+      "features": []
+    },
+    {
       "id": "crate-hecke-engine",
       "name": "hecke-engine",
       "version": "0.8.0",
@@ -368,6 +383,21 @@
       "features": [
         "clarabel-lp"
       ]
+    },
+    {
+      "id": "crate-qou-gg-core",
+      "name": "qou-gg-core",
+      "version": "0.1.0",
+      "edition": "2021",
+      "license": "MIT",
+      "path": "crates/qou-gg-core",
+      "manifestPath": "crates/qou-gg-core/Cargo.toml",
+      "description": "Lightweight, zero-FFI core algebra for ruled 4-term photons, k-photon collisions through 4-photon, linking-neutral cuts, hadron dressings, and Z=0..118 T3/Hopf atomic-chart generation.",
+      "workspaceMember": true,
+      "libCrateTypes": [],
+      "bins": [],
+      "defaultFeatures": [],
+      "features": []
     }
   ]
 }

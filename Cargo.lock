@@ -443,6 +443,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "gs-basis"
+version = "0.1.0"
+dependencies = [
+ "num-bigint",
+ "num-integer",
+ "num-rational",
+ "num-traits",
+ "rustc-hash",
+ "serde",
+]
+
+[[package]]
 name = "hashbrown"
 version = "0.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -827,6 +839,19 @@ dependencies = [
  "pyo3-build-config",
  "quote",
  "syn 2.0.117",
+]
+
+[[package]]
+name = "qou-gg-core"
+version = "0.1.0"
+dependencies = [
+ "gs-basis",
+ "num-bigint",
+ "num-integer",
+ "num-rational",
+ "num-traits",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
