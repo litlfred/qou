@@ -253,5 +253,14 @@ $\gcd(A,B) > 1$ or $\gcd(A,C) > 1$. If $\gcd(A,B) = 1$, write $h = \gcd(B-1, C-1
 $g = \gcd(A, C)$. Then $A \mid 2C(C-1)$ gives $A \in \{hg, 2hg\}$; the solutions $(11,10)$, $(14,6)$
 and $(98,55)$ are of this kind. No proof of finiteness is known in general.
 
+*A cumulant test.* Cumulants add under products, and
+$\kappa_{2d}(\Phi_m) = \tfrac{B_{2d}}{2d}J_{2d}(m)$ with $J$ the Jordan totient
+\cite{billeyswanson2023}. So a cyclotomic $P$, after removing its factors $(q-1)$, has
+$12\kappa_2 = \sum_i J_2(k_i) \in \mathbb Z$. For $4 \le n \le 24$ every $D(n)$ has exactly the
+factor $(q-1)^2$, and $12\kappa_2$ is an integer only for $n = 4, 5, 7$
+(`computations/cyclotomic_boundary_cumulant_integrality.py`). This settles nothing beyond the
+tests above, but it is independent of them. A proof for all $n$ would need the second-order
+expansion of $S(n)$ at $q = 1$, which is not known in closed form.
+
 *Open:* non-cyclotomicity for **every** $n \ge 6$. What remains is the non-triangular $n$
 outside the two families with $j > 400000$.
