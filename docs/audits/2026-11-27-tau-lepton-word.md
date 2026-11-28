@@ -123,3 +123,21 @@ A selector that is itself a link invariant is the crossing number. SnapPy enumer
 | τ | σ₀²σ₁⁻¹σ₀σ₁⁻¹ | Whitehead link | 5 | 0 | 3.66386 |
 
 At 5 crossings the only other two-component link, Hopf # trefoil (σ₀³σ₁²), is composite. The crossing counts after simplification are upper bounds; they agree with the knot-table values for these links. Owner ruling: *"Keep definition, new words"*. N = 2 ring masses and U(1) = 3·lk = 3, 6, 0 are in PR #9881, unscored. U is not monotone along the ladder because the Whitehead link has lk 0. That is recorded as a consequence, not adjusted.
+
+## Growth bound (2026-11-28)
+
+Owner card choices *"Derive the source of the hierarchy"* and *"Prove the q³ growth bound in Lean"*.
+
+`QOU/Observations/LeptonMassGrowthBound.lean` (sorry-free; axioms propext, Classical.choice, Quot.sound) writes the three-strand mass of `def:mass-identity` over `ℤ[q, q⁻¹]`, with the framing absorbed letter by letter:
+
+    m(β) = (q + q⁻¹) · ((q² + q⁻²) q^{−w} + tr ∏ q^{∓2} ρ₂₁(σ^{±1})).
+
+* `massL_degree_le`: top q-degree of m(β) ≤ 1 + max(3n₋ − n₊, 2 + n₋ − n₊). Each negative letter raises the bound by at most 3; each positive letter lowers it.
+* `massL_electron`: m(σ₀σ₁σ₀) = 1 + q⁻² + q⁻⁴ + q⁻⁶ = [4]/q³ (matches `massWord_e`); the bound 0 is attained.
+* `famMass_recurrence`: on σ₀σ₁⁻ᵏ, m_{k+2} = −q(q² − 1) m_{k+1} + q⁴ m_k, characteristic roots −q³ and q, so the factor 3 per crossing is reached.
+
+This is the algebraic half. A bound on |m| at real q > 1 also needs a coefficient bound and is not proved.
+
+Probe `computations/probes/tau_word/ring_mass_range_probe.py` (exact sympy; values at q₀ display only): over odd 3-braid words up to length 7, |m(q₀)| lies in [0.516, 12.23], at most 4.07 × m_e (up to length 9, measured once: [0.190, 19.25]).
+
+**Comparison boundary (not used in any proof).** The measured ratios m_μ/m_e ≈ 207 and m_τ/m_e ≈ 3477 would need, at the leading rate q₀³ per negative crossing, about 17 and 26 more negative crossings than the electron (8.5 and 13 full twists Δ²). Selecting links of that size to match would be a fit. So under the definition the hierarchy needs a derived reason for large links, or a source outside the bare link invariant.

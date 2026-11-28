@@ -127,6 +127,7 @@ import QOU.Observations.AxisConvolutionOperator
 import QOU.Observations.AxisKashaevReading
 import QOU.Observations.MassReadingForced
 import QOU.Observations.LeptonLinkLadderReadings
+import QOU.Observations.LeptonMassGrowthBound
 import QOU.MassTheory.BranchIntegerPinning
 import QOU.MassTheory.NucleusBondValence
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
