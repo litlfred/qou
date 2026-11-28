@@ -1,13 +1,13 @@
 ---
 # qou-x08k
 title: 'Session 2026-11-27: close the gaps in the eightfold-way and Standard Model derivation'
-status: in-progress
+status: completed
 type: epic
 priority: high
 tags:
     - 8f-index
 created_at: 2026-11-27T14:25:39Z
-updated_at: 2026-11-27T19:52:14Z
+updated_at: 2026-11-28T12:03:00Z
 parent: qou-0uga
 ---
 
@@ -81,3 +81,5 @@ Merged by merge manager: #9444 (A1), #9446 (A3), #9450 (B), #9451 (A4). Open: #9
 
 ## 2026-11-27 — overlap found in my own C1 work
 `QOU/EightfoldWay/HyperchargeUniqueness.lean` (PR #9461) re-proves Section 2 of the pre-existing `QOU/StandardModel/Su3Su2U1Z6GroupAndCommutant.lean` (1-dim traceless commutant of sl3⊕sl2 on the 5, spanned by diag(-2,-2,-2,3,3); same statement up to index order and sign). Missed because that module is not imported in QOU.lean (orphan). Both stay; cite the earlier one. Next tranche: per-fermion charges (qou-h0zz), sibling threads for generations and constructing W.
+
+Closed post-merge: owner-approved `\Lambda^2 V` and `\Lambda^3 W` antisymmetric-quotient axiom fields (`ExteriorQuotientNormalisation.lean`, `CategoricalFoundations.lean`, `FlavouredQuantumObservableUniverse.lean`, 0 sorry, 0 base-ring/transcendental hits, JSON-LD PASS) landed on `origin/main` in PR #9723 (`63aa63af7d56cf1f14b8c3951c622c90f29524fe`).

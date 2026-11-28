@@ -7,7 +7,7 @@ priority: high
 tags:
     - stability
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-28T11:57:00Z
+updated_at: 2026-11-28T12:03:00Z
 parent: qou-5vkl
 blocked_by:
     - qou-10v9
@@ -218,3 +218,9 @@ Verbatim (`2026-11-28`): *"make sure you are working proton pin... no longer muo
   - **`qou-gsgg`**: crates/gs-basis + crates/qou-gg-core: standalone non-commutative Groebner-Shirshov library + pure-Rust 4-photon & Z=0..118 T3/Hopf chart generator
   - **`qou-qval`**: crates/qou-values: fast >=80-dps MPFR proton-pinned witnessed-value evaluator & witness emitter with Frechet-Jacobian uncertainties
   - **`qou-ggtb`**: crates/qou-gg-eval + crates/qou-clarabel + Annex A gamma-gamma hadron/light-nuclei datum table (A=1..4)
+
+## 2026-11-28 Merge Steward — PR #9723 Landed (`63aa63af7d56`) & 2 New Child Beans Registered
+- Landed PR **#9723** (`qou-x08k` exterior-quotient axiom fields -> `63aa63af7d56cf1f14b8c3951c622c90f29524fe`, `MISSING: 0`; closed `qou-x08k`).
+- Registered 2 active `in-progress` child beans under `qou-s028`:
+  - **`qou-intr`**: Introduction redo & Paper PDF TeX fix: 3 summary tables (gamma-gamma hadrons, Eightfold status, 26 SM parameters) + proton-pin / E=mc_q^2 currency + fix Paper PDF TeX errors
+  - **`qou-cbot`**: Compute bottlenecks audit & Rust crates/* acceleration map: profile slow Python producers/sweeps across computations/ and map exact crates/* targets
