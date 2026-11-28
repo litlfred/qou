@@ -28,8 +28,12 @@ Algebraically, this corresponds to the Castelnuovo--Severi argument. The Frobeni
 **Step 3: Unitarity locks the zeros to the critical line.**
 The eigenvalues $\alpha_i$ of the Frobenius endomorphism are the reciprocal roots of the local zeta function $Z_q(t)$. Under $t = q^{-s}$, the condition $|\alpha_i| = q^{1/2}$ forces all zeros of $Z_q(s)$ to satisfy $\mathrm{Re}(s) = 1/2$. If $\alpha_i = q^{1/2} e^{i\phi}$, then $q^{-s} = \alpha_i^{-1}$ gives $s = 1/2 - i\phi/\ln q$. This establishes the Riemann hypothesis for Bring's curve over $\mathbb{F}_q$.
 
-**The physical picture.** The non-trivial zeros of the zeta function
-are eigenvalues of the Reeb flow, each corresponding to a fundamental
+**The physical picture.** What follows is an interpretation, not a
+result. The proof of the critical line at each prime is Weil's, through
+Castelnuovo--Severi as in Step 2; the gauge-theoretic steps above are a
+picture of why it holds, and the $\mathrm{SU}(2)$ example writes
+$|\alpha| = q^{1/2}$ in by hand. In the picture, the zeros of the local
+zeta function would be eigenvalues of the Reeb flow, each corresponding to a fundamental
 oscillation mode of the aether; the unitary constraint means no
 mode grows or decays, so the aether sits in a *critical phase* of
 exact balance between order and disorder
@@ -37,7 +41,9 @@ exact balance between order and disorder
 implications --- vanishing Chern classes $\to$ flatness of the
 connection $\to$ unitarity of the holonomy $\to$ confinement of zeros
 to $\mathrm{Re}(s) = 1/2$ --- is thus what forbids wild, unconstrained
-error terms in the prime distribution. Whether this local rigidity
-survives the classical limit $q \to 1$ is precisely the content of the
-classical Riemann hypothesis
-([Conjecture](#conj:classical-riemann-hypothesis)).
+error terms in the prime distribution. This local rigidity says nothing by
+itself about the classical Riemann hypothesis
+([Conjecture](#conj:classical-riemann-hypothesis)): the local
+eigenvalues of Bring's curve build $L(E,s)$ for the elliptic curve
+50a1, not $\zeta(s)$, and $q$ here is the size of a finite field, so
+there is no limit $q \to 1$ to take.

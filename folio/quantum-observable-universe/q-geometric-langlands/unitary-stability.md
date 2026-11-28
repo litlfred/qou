@@ -1,4 +1,4 @@
-The confinement of all Reeb eigenvalues to the critical line $\mathrm{Re}(\rho) = 1/2$ implies that the observer drift is unitarily stable. No eigenmode grows or decays exponentially.
+Read the spectral exponents $\rho_i$ of the [spectral half-line](#cor:spectral-half-line) as modes of the observer drift. This is an interpretation: the Reeb operator whose spectrum they would be is not constructed. Under it, confinement to $\mathrm{Re}(\rho) = 1/2$ means the drift is unitarily stable, and no eigenmode grows or decays exponentially.
 
 The oscillatory terms in the explicit formula satisfy:
 

@@ -6,6 +6,6 @@ This dynamic shift forces three consequences:
 
 1. **Counting becomes spectral.** Instead of summing $1/\ln p$ over primes $p \le x$ (the classical logarithmic integral), the framework traces the eigenvalues of $\xi_q$. The discrete Reeb spectrum replaces the continuous logarithm.
 2. **Holonomy encodes weight.** The contribution of each prime orbit is not a scalar weight but a holonomy matrix—the parallel transport of the adjoint representation around the closed orbit. This promotes the abelian counting of classical number theory to a nonabelian, matrix-valued integral.
-3. **Stability becomes geometric.** The Riemann hypothesis (the boundary on prime fluctuations) reduces to the condition that these holonomy matrices remain unitary. The bound becomes a geometric constraint on the Reeb flow rather than an analytic property of a complex function.
+3. **Stability becomes geometric.** At each prime, the finite-field Riemann hypothesis is the statement that these holonomy matrices act unitarily, so there the bound is a geometric constraint rather than an analytic property of a complex function. This is Weil's theorem in geometric dress. It does not reduce the classical Riemann hypothesis to unitarity, which stays open.
 
 The machinery of lifting and descent provides the algebraic infrastructure required to execute this mechanism.

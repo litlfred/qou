@@ -31,3 +31,6 @@ A consequence worth recording: any construction that establishes this
 implication, together with the local alignment already available, yields the
 Riemann hypothesis. That is the precise sense in which the framework offers a
 reduction --- and the reduction is only as strong as the conjecture above.
+
+**Two further cautions.** First, the global object is the wrong one. The local spectra this conjecture starts from are the Frobenius exponents of Bring's curve, and their product over the primes is $\zeta(s)\,\zeta(s-1)/L(E,s)^4$ up to finitely many factors, with $E$ the elliptic curve 50a1. The exponents build $L(E,s)$; $\zeta(s)$ enters only through $H^0$, which has no exponents. A local-to-global statement that follows the data would conclude the Riemann hypothesis for $L(E,s)$, which is also open. Second, the Lean form takes the local spectra as an arbitrary family that is not tied to `riemannZeta`. Its hypothesis and its conclusion share no data, so wherever the hypothesis holds, as it does at Bring's curve, an instance is exactly a proof of the Riemann hypothesis. The conjecture is therefore a restatement of the Riemann hypothesis, not a reduction of it.
+

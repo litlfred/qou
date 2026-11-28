@@ -82,7 +82,7 @@ The electron mass fixes the unit, so the formula is evaluated through dimensionl
 
 [*Measurement and Observation*](#chap:measurement-observation) internalizes the observer. Observation acts as an open braid map, depositing energy equivalents into the colour fibre upon measurement.
 
-[*$q$-Geometric Langlands*](#chap:q-geometric-langlands) connects the framework to the geometric Langlands programme. The Hasse–Weil bound gives the Riemann hypothesis for the $q$-zeta function of Bring's curve.
+[*$q$-Geometric Langlands*](#chap:q-geometric-langlands) connects the framework to the geometric Langlands programme. Weil's theorem, carried as two named hypotheses, gives the finite-field Riemann hypothesis for Bring's curve at each prime; the chapter also says plainly why this does not bear on the classical Riemann hypothesis, which stays open.
 
 The [Master Reference Atlas](#app:knot-periodic-table) and the [Notation, Glossary, and Index of Definitions](#chap:notation) supply the formal reference data. This paper's hardest results meet at the obstruction class $\kappa_n \in H^2(S, B)$. The programme is to translate each $q$-deformed millennium problem—Navier–Stokes, Yang–Mills, P vs NP, Riemann, BSD—into the vanishing of a drift read off that class; the translations, not the vanishing calculation, carry the open content, and each is open separately. Sharing a class does not by itself make the verdicts agree: the evaluation maps land in different groups, and at $\chi_{\mathrm{eu}}(M_0) = -6$ two of them already disagree.
 
