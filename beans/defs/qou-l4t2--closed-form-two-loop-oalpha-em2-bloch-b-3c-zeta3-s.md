@@ -94,3 +94,10 @@ Mixed histories M = 2, same-chirality S = 2 + h² at one generator; weights (a,b
 (1,0), value 2: neither Form B (1,−1) nor θ-graph (1,1). Scope (a): the photon form
 does not decide the pair weights; that needs a propagator rule (a definition, owner
 call). Both readings stay as fallbacks. `EmPhotonPairWeights.lean`, sorry-free.
+
+## 2026-11-28 — joining rules compared (PR #9909, Carl chose "Compare candidate rules")
+
+Four rules for joining two photon vertices: plain v w, bar-Hermitian v̄ w, bar-even
+(v+v̄)(w+w̄), signed bar-odd −(v−v̄)(w−w̄). Only bar-odd (Form B) is the scalar −h² at
+any two positions. Bar-even gives [2]² at one position (θ-graph after the singlet) and
+the non-scalar 4στ − 2h(σ+τ) + h² at two. None adopted; adopting one is Carl's call.
