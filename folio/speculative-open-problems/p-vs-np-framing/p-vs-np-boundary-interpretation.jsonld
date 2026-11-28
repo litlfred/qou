@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/speculative-open-problems/blocks/rem-p-vs-np-boundary-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:p-vs-np-boundary-interpretation",
+  "kind": "remark",
+  "title": "Geometric dictionary reading of the skein computational boundary",
+  "uses": [
+    "papers/speculative-open-problems/blocks/conj-p-vs-np-boundary",
+    "papers/speculative-open-problems/blocks/tbl-p-vs-np-boundary-table1-data",
+    "papers/speculative-open-problems/blocks/tbl-p-vs-np-boundary-table2-data",
+    "papers/quantum-observable-universe/blocks/prop-p-bandwidth-bound"
+  ],
+  "interprets": "papers/speculative-open-problems/blocks/conj-p-vs-np-boundary",
+  "tags": [
+    "P-vs-NP",
+    "interpretation",
+    "computational-horizon"
+  ],
+  "text": "p-vs-np-boundary-interpretation.md",
+  "provenance": "authored"
+}

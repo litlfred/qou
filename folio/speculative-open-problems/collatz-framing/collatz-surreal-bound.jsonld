@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/speculative-open-problems/blocks/rem-collatz-surreal-bound",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:collatz-surreal-bound",
+  "kind": "remark",
+  "title": "Surreal $\\omega$-order analogy for Collatz, with its orbit-termination conclusion withdrawn",
+  "uses": [
+    "papers/speculative-open-problems/blocks/sec-collatz-intro",
+    "papers/speculative-open-problems/blocks/conj-q-collatz",
+    "papers/quantum-observable-universe/blocks/prop-balanced-holonomy-exclusion",
+    "papers/quantum-observable-universe/blocks/def-reeb-epsilon",
+    "papers/quantum-observable-universe/blocks/def-q-from-epsilon",
+    "papers/quantum-observable-universe/blocks/lem-surreal-squeeze",
+    "papers/quantum-observable-universe/blocks/rem-conway-normal-form",
+    "papers/quantum-observable-universe/blocks/rem-calculus-up-to-epsilon"
+  ],
+  "interprets": "papers/speculative-open-problems/blocks/conj-q-collatz",
+  "cites": [
+    "references/conway1976",
+    "references/lagarias2010"
+  ],
+  "tags": [
+    "collatz",
+    "surreal",
+    "heuristic",
+    "withdrawn"
+  ],
+  "text": "collatz-surreal-bound.md",
+  "provenance": "authored"
+}

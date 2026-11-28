@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/speculative-open-problems/blocks/conj-adelic-critical-line-persistence",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:adelic-critical-line-persistence",
+  "kind": "conjecture",
+  "title": "Adelic persistence of critical-line alignment for $L(E, s)$",
+  "uses": [
+    "papers/speculative-open-problems/blocks/conj-classical-riemann-hypothesis",
+    "papers/quantum-observable-universe/blocks/def-classical-riemann-zeta",
+    "papers/quantum-observable-universe/blocks/thm-hasse-weil-bound",
+    "papers/quantum-observable-universe/blocks/cor-spectral-half-line"
+  ],
+  "cites": [
+    "references/weil1948"
+  ],
+  "tags": [
+    "riemann-hypothesis",
+    "l-function",
+    "local-to-global",
+    "brings-surface"
+  ],
+  "leanRef": "qou:QOU.Transcendental.BringsSurface.AdelicPersistenceL",
+  "text": "adelic-critical-line-persistence.md",
+  "provenance": "authored"
+}

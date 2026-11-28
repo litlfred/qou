@@ -122,6 +122,32 @@ export const CHAPTER_EXPECTED_REGIMES: Record<string, ReadonlySet<QRegime>> = {
     "na", "symbolic", "generic-R", "real-positive", "real-gt-1",
     "unit-circle", "root-of-unity", "fixed-q0",
   ]),
+
+  // ── Companion paper: folio/speculative-open-problems ──────────
+  "yang-mills-framing": new Set<QRegime>([
+    "na", "symbolic", "generic-R", "real-positive", "real-gt-1",
+    "unit-circle", "root-of-unity", "fixed-q0",
+  ]),
+  "riemann-hypothesis-framing": new Set<QRegime>([
+    "na", "symbolic", "generic-R", "real-positive", "real-gt-1",
+    "unit-circle", "root-of-unity", "fixed-q0",
+  ]),
+  "birch-swinnerton-dyer-framing": new Set<QRegime>([
+    "na", "symbolic", "generic-R", "real-positive", "real-gt-1",
+    "unit-circle", "root-of-unity", "fixed-q0",
+  ]),
+  "p-vs-np-framing": new Set<QRegime>([
+    "na", "symbolic", "generic-R", "real-positive", "real-gt-1",
+    "unit-circle", "root-of-unity", "fixed-q0",
+  ]),
+  "collatz-framing": new Set<QRegime>([
+    "na", "symbolic", "generic-R", "real-positive", "real-gt-1",
+    "unit-circle", "root-of-unity", "fixed-q0",
+  ]),
+  "cross-problem-unification": new Set<QRegime>([
+    "na", "symbolic", "generic-R", "real-positive", "real-gt-1",
+    "unit-circle", "root-of-unity", "fixed-q0",
+  ]),
 };
 
 /** Chapters whose narrative-expected profile is "categorical only". */

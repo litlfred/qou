@@ -25,6 +25,18 @@ export default folio({
       url: "/viewer/#/view/quantum-observable-universe",
     }),
     paperRef({
+      dir: "speculative-open-problems",
+      title:
+        "Speculative Formulations of Classical Open Problems in the Quantum Observable Universe",
+      description:
+        "Speculative categorical, skein-theoretic, and surreal-number " +
+        "formulations of the Yang--Mills, Riemann, Birch--Swinnerton-Dyer, " +
+        "P versus NP, and Collatz problems, separated from the proved algebra " +
+        "of the Quantum Observable Universe.",
+      tags: ["conjectures", "open-problems", "speculative", "category-theory"],
+      url: "/viewer/#/view/speculative-open-problems",
+    }),
+    paperRef({
       dir: "bach2013-double-slit",
       title: "Controlled Double-Slit Electron Diffraction",
       description:
