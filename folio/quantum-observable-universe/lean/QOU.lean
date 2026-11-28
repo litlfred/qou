@@ -274,7 +274,10 @@ import QOU.Observations.collatz_vtwo_cycle_descent
 import QOU.BraidsAndKnots.HAdicDrinfeld.CasimirData
 import QOU.BraidsAndKnots.HAdicDrinfeld.FourStrand
 import QOU.BraidsAndKnots.HAdicDrinfeld.Hexagon
+import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleCategory
 import QOU.BraidsAndKnots.HAdicDrinfeld.Pentagon
+import QOU.BraidsAndKnots.HAdicDrinfeld.QuasiBialgebra
+import QOU.BraidsAndKnots.HAdicDrinfeld.SecondHexagon
 import QOU.BraidsAndKnots.HeckeAlgebra
 -- `WedderburnConstruction` builds the block-diagonal embedding that
 -- `QOU/HeckeAlgebra/Wedderburn.lean` had left `opaque`.  On the natural index
@@ -1096,6 +1099,7 @@ import QOU.Nuclear.StokesQZeroDTCount
 import QOU.Nuclear.StokesIndexCount41
 import QOU.Nuclear.StokesIndexCount52
 import QOU.Nuclear.TetIndexDegree
+import QOU.Nuclear.TetIndexTriality
 import QOU.Nuclear.StokesSymmetryConstantQZero
 -- M2 (conditional BPS characterization) was an umbrella orphan (qou-orph
 -- pattern: nothing imported it, so `lake build` never checked it). Importing
