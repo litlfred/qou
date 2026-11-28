@@ -2161,5 +2161,10 @@ import QOU.Nuclear.IsobaricBetaWritheCoulombStep
 import QOU.StandardModel.ElectroweakConditionalDischarge
 import QOU.StandardModel.AlphaEmConditionalReduction
 import QOU.BraidsAndKnots.AdjointTorsionSaddlePrefactors
+import QOU.FluidDynamics.DECYekutieliStokes
+import QOU.FluidDynamics.BringTessellationNonAbelianStokes
+import QOU.BraidsAndKnots.LayeredFlipPtolemyStokes
+import QOU.StandardModel.OqSU2HaarYukawaAndPodlesHiggs
+import QOU.BraidsAndKnots.FigureEightPachnerAndJetTranscendence
 import BraidKnotOctonion.HeckeJucysMurphySymmetricCenter
 import QOU.StandardModel.LeptonFramedGNSAndStrainOrder

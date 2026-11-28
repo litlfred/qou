@@ -30,10 +30,16 @@
       "license": "MIT",
       "path": "crates/gs-basis",
       "manifestPath": "crates/gs-basis/Cargo.toml",
-      "description": "General-purpose non-commutative Gröbner–Shirshov bases, free associative algebras, and specialized Iwahori–Hecke and Temperley–Lieb normal-form engines.",
+      "description": "General-purpose non-commutative Gröbner–Shirshov bases, dyadic Laurent rings, free associative algebras, and specialized Iwahori–Hecke and Temperley–Lieb normal-form and layer-peeling engines.",
       "workspaceMember": true,
       "libCrateTypes": [],
-      "bins": [],
+      "bins": [
+        {
+          "name": "gs-peel",
+          "path": "src/bin/gs-peel.rs",
+          "requiredFeatures": []
+        }
+      ],
       "defaultFeatures": [],
       "features": []
     },

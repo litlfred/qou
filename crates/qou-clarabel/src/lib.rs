@@ -12,11 +12,13 @@
 //! 3. **Two-row Quotient Wedderburn LP on `H_3(q)/rad`** (`lambda in {(3), (2,1)}`), yielding the
 //!    row-dependent nonzero quotient shadow price `y0_quot_star` and dual pair `(u_(3), u_(2,1))`.
 
+pub mod batch;
+
 use clarabel::algebra::{set_mpfr_default_precision, CscMatrix, MpfrFloat};
 use clarabel::solver::*;
 use num_traits::{FromPrimitive, Signed, Zero};
 use qou_gg_eval::h3::{gram_matrix_h3, trace_weights_h3, H3Elem, H3EvaluatedRow};
-use qou_gg_eval::scalars::{fmt_dps, parse_dec, Q0Params, MIN_PREC_BITS};
+use qou_gg_eval::scalars::{fmt_dps, parse_dec, Q0Params};
 use rug::Float;
 use serde::{Deserialize, Serialize};
 use serde_json::json;
@@ -66,8 +68,8 @@ pub fn solve_lp_mpfr(
     prec_bits: u32,
 ) -> RawClarabelLpSolve {
     assert!(
-        prec_bits >= MIN_PREC_BITS,
-        "prec_bits ({prec_bits}) < {MIN_PREC_BITS}"
+        prec_bits >= 113,
+        "prec_bits ({prec_bits}) < 113"
     );
     set_mpfr_default_precision(prec_bits);
     let d = t.len();
@@ -119,15 +121,27 @@ pub fn solve_lp_mpfr(
         usable_dps = f64::from(k);
     }
     let dps = (f64::from(prec_bits) * std::f64::consts::LOG10_2).min(usable_dps);
-    let e_tight = ((0.8 * dps).floor() as i32).clamp(12, 300);
+    let e_tight = ((0.85 * dps).floor() as i32).clamp(12, 300);
     let max_iter = 200u32 + 12 * ((dps - 16.0).max(0.0) as u32);
 
     let mut e_used = e_tight;
     let mut solver;
     let mut ladder: Vec<String> = Vec::new();
     loop {
+        let e_red = ((e_used as f64 * 0.625).floor() as i32).max(8);
         let eps_i = T::from_f64(10f64.powi(-e_used)).unwrap();
-        let eps_red_i = T::from_f64(10f64.powi(-((e_used as f64 * 0.625).floor() as i32))).unwrap();
+        let eps_red_i = T::from_f64(10f64.powi(-e_red)).unwrap();
+
+        // Scale Clarabel's KKT LDL regularization & iterative-refinement tolerances with `dps`
+        // (Clarabel defaults hardcode `1e-8` static reg and `1e-12` refinement abstol, which
+        // prematurely halts iterative refinement on singular MPFR Gram matrices at ~1e-47).
+        let e_half = (e_used / 2).clamp(8, 140);
+        let static_reg = T::from_f64(10f64.powi(-e_half)).unwrap();
+        let dyn_eps = T::from_f64(10f64.powi(-(e_used + 2).clamp(13, 290))).unwrap();
+        let dyn_delta = T::from_f64(2.0 * 10f64.powi(-(e_half - 1).clamp(7, 139))).unwrap();
+        let ir_reltol = T::from_f64(10f64.powi(-(e_used + 4).clamp(13, 295))).unwrap();
+        let ir_abstol = T::from_f64(10f64.powi(-(e_used + 3).clamp(12, 295))).unwrap();
+
         let settings = DefaultSettingsBuilder::default()
             .verbose(false)
             .max_iter(max_iter)
@@ -137,6 +151,12 @@ pub fn solve_lp_mpfr(
             .reduced_tol_gap_abs(eps_red_i.clone())
             .reduced_tol_gap_rel(eps_red_i.clone())
             .reduced_tol_feas(eps_red_i)
+            .static_regularization_constant(static_reg)
+            .dynamic_regularization_eps(dyn_eps)
+            .dynamic_regularization_delta(dyn_delta)
+            .iterative_refinement_reltol(ir_reltol)
+            .iterative_refinement_abstol(ir_abstol)
+            .iterative_refinement_max_iter(20)
             .build()
             .unwrap();
         solver = DefaultSolver::new(&p_zero, &q_vec, &a_csc, &b_vec, &cones, settings).unwrap();
@@ -375,86 +395,89 @@ fn build_wedderburn_cert(
     }
 }
 
-/// Certify all `H_3(q)` rows via Clarabel `MpfrFloat` at `prec_bits`.
+/// Certify all `H_3(q)` rows via Clarabel `MpfrFloat` at `prec_bits` in bounded-memory 2-row chunks.
 pub fn certify_all_h3_rows(
     params: &Q0Params,
     rows: &[(H3Elem, H3EvaluatedRow)],
     dps: usize,
 ) -> Vec<HadronRowLpCertificate> {
     let p = params.prec_bits;
-    set_mpfr_default_precision(p);
-
     let tw_rug = trace_weights_h3(params);
     let g_rug = gram_matrix_h3(params);
-
-    let t_nf: Vec<T> = tw_rug
-        .iter()
-        .map(|x| parse_mpfr_str(&fmt_dps(x, dps + 10)))
-        .collect();
-    let g_nf: Vec<Vec<T>> = g_rug
-        .iter()
-        .map(|r| {
-            r.iter()
-                .map(|x| parse_mpfr_str(&fmt_dps(x, dps + 10)))
-                .collect()
-        })
-        .collect();
-    let m_bound = parse_mpfr_str("1000000");
     let active_guard = parse_dec(p, "1e-20");
 
     let mut certs = Vec::with_capacity(rows.len());
     for (elem, eval_row) in rows {
-        let net_rug = elem.net();
-        let n_target_nf = parse_mpfr_str(&fmt_dps(&net_rug, dps + 10));
-        let raw_nf = solve_lp_mpfr(&t_nf, &g_nf, &n_target_nf, &m_bound, p);
+        let nf_gram_lp = crate::batch::run_isolated_fork(|| {
+            set_mpfr_default_precision(p);
+            let t_nf: Vec<T> = tw_rug
+                .iter()
+                .map(|x| parse_mpfr_str(&fmt_dps(x, dps + 10)))
+                .collect();
+            let g_nf: Vec<Vec<T>> = g_rug
+                .iter()
+                .map(|r| {
+                    r.iter()
+                        .map(|x| parse_mpfr_str(&fmt_dps(x, dps + 10)))
+                        .collect()
+                })
+                .collect();
+            let m_bound = parse_mpfr_str("1000000");
+            let net_rug = elem.net();
+            let n_target_nf = parse_mpfr_str(&fmt_dps(&net_rug, dps + 10));
+            let raw_nf = solve_lp_mpfr(&t_nf, &g_nf, &n_target_nf, &m_bound, p);
 
-        let y_star_strs: [String; 6] =
-            std::array::from_fn(|i| fmt_mpfr_dps(&raw_nf.y_star[i], p, dps));
-        let mut active_names = Vec::new();
-        for (i, name) in qou_gg_eval::h3::H3_BASIS_NAMES.iter().enumerate() {
-            let yi = parse_dec(p, &format!("{}", raw_nf.y_star[i]));
-            if yi > active_guard {
-                active_names.push((*name).to_string());
+            let y_star_strs: [String; 6] =
+                std::array::from_fn(|i| fmt_mpfr_dps(&raw_nf.y_star[i], p, dps));
+            let mut active_names = Vec::new();
+            for (i, name) in qou_gg_eval::h3::H3_BASIS_NAMES.iter().enumerate() {
+                let yi = parse_dec(p, &format!("{}", raw_nf.y_star[i]));
+                if yi > active_guard {
+                    active_names.push((*name).to_string());
+                }
             }
-        }
 
-        let nf_gram_lp = NfGramLpCertificate {
-            status: raw_nf.status,
-            feasible: raw_nf.feasible,
-            tol_exponent_used: raw_nf.tol_exponent_used,
-            n_target_net: eval_row.net.clone(),
-            y0_star: fmt_mpfr_dps(&raw_nf.y0_star, p, dps),
-            y_star: y_star_strs,
-            active_basis_names: active_names,
-            primal_obj: fmt_mpfr_dps(&raw_nf.primal_obj, p, dps),
-            dual_obj: fmt_mpfr_dps(&raw_nf.dual_obj_full, p, dps),
-            duality_gap: fmt_mpfr_dps(&raw_nf.duality_gap, p, dps),
-            kkt_primal_residual: fmt_mpfr_dps(&raw_nf.kkt_primal_res, p, dps),
-            kkt_dual_residual: fmt_mpfr_dps(&raw_nf.kkt_dual_res, p, dps),
-            min_row_gram_slack: eval_row.min_gram_slack.clone(),
-        };
+            NfGramLpCertificate {
+                status: raw_nf.status,
+                feasible: raw_nf.feasible,
+                tol_exponent_used: raw_nf.tol_exponent_used,
+                n_target_net: eval_row.net.clone(),
+                y0_star: fmt_mpfr_dps(&raw_nf.y0_star, p, dps),
+                y_star: y_star_strs,
+                active_basis_names: active_names,
+                primal_obj: fmt_mpfr_dps(&raw_nf.primal_obj, p, dps),
+                dual_obj: fmt_mpfr_dps(&raw_nf.dual_obj_full, p, dps),
+                duality_gap: fmt_mpfr_dps(&raw_nf.duality_gap, p, dps),
+                kkt_primal_residual: fmt_mpfr_dps(&raw_nf.kkt_primal_res, p, dps),
+                kkt_dual_residual: fmt_mpfr_dps(&raw_nf.kkt_dual_res, p, dps),
+                min_row_gram_slack: eval_row.min_gram_slack.clone(),
+            }
+        });
 
-        let abs_c3 = parse_dec(p, &eval_row.contrib_3).abs();
-        let abs_c21 = parse_dec(p, &eval_row.contrib_21).abs();
-        let abs_c111 = Float::with_val(p, 0);
-        let abs_tr = parse_dec(p, &eval_row.abs_tr_m);
+        let (wedderburn_full_lp, wedderburn_quotient_lp) = crate::batch::run_isolated_fork(|| {
+            let abs_c3 = parse_dec(p, &eval_row.contrib_3).abs();
+            let abs_c21 = parse_dec(p, &eval_row.contrib_21).abs();
+            let abs_c111 = Float::with_val(p, 0);
+            let abs_tr = parse_dec(p, &eval_row.abs_tr_m);
 
-        let wedderburn_full_lp = build_wedderburn_cert(
-            "full_H3_partitions_[(3),(2,1),(1,1,1)]",
-            &["(3)", "(2,1)", "(1,1,1)"],
-            &[abs_c3.clone(), abs_c21.clone(), abs_c111],
-            &abs_tr,
-            p,
-            dps,
-        );
-        let wedderburn_quotient_lp = build_wedderburn_cert(
-            "two_row_quotient_H3_mod_rad_[(3),(2,1)]",
-            &["(3)", "(2,1)"],
-            &[abs_c3, abs_c21],
-            &abs_tr,
-            p,
-            dps,
-        );
+            let wf = build_wedderburn_cert(
+                "full_H3_partitions_[(3),(2,1),(1,1,1)]",
+                &["(3)", "(2,1)", "(1,1,1)"],
+                &[abs_c3.clone(), abs_c21.clone(), abs_c111],
+                &abs_tr,
+                p,
+                dps,
+            );
+            let wq = build_wedderburn_cert(
+                "two_row_quotient_H3_mod_rad_[(3),(2,1)]",
+                &["(3)", "(2,1)"],
+                &[abs_c3, abs_c21],
+                &abs_tr,
+                p,
+                dps,
+            );
+            (wf, wq)
+        });
 
         certs.push(HadronRowLpCertificate {
             row_id: eval_row.id.clone(),

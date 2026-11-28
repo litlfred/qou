@@ -1,0 +1,53 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "rivoal2000",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 481,
+      "entry": {
+        "id": "rivoal2000",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1016/S0764-4442(00)01624-4"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T13:27:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1016/S0764-4442(00)01624-4).",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Extends Beukers-Nesterenko hypergeometric linear-form bounds to prove infinitely many odd zeta values are irrational, illustrating the frontier of linear-independence vs single-value transcendence.",
+          "keyResults": [
+            {
+              "locator": "Th\u00e9or\u00e8me 1 (pp. 267-270)",
+              "statement": "The Q-span of 1, zeta(3), zeta(5), ..., zeta(2s+1) has dimension growing at least logarithmically in s.",
+              "useForFolio": "Marks the hypergeometric linear-independence boundary alongside Beukers (1979) and Nesterenko (1996).",
+              "targets": [
+                "QOU.BraidsAndKnots.FigureEightPachnerAndJetTranscendence"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Audited in 2026-11-28-four-one-volume-transcendence-and-error-bounds.md."
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T13:27:00Z"
+        }
+      }
+    }
+  ]
+}

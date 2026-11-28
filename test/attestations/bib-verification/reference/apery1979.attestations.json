@@ -1,0 +1,53 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "apery1979",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 479,
+      "entry": {
+        "id": "apery1979",
+        "source": {
+          "kind": "external",
+          "url": "http://www.numdam.org/item/AST_1979__61__11_0/"
+        },
+        "status": "partial",
+        "verified_at": "2026-11-28T13:27:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified against NUMDAM / SMF Ast\u00e9risque 61 (1979), pp. 11-13.",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Landmark irrationality proof for zeta(2) and zeta(3) exhibiting rational approximants whose exponential decay overcomes lcm(1..n)^2 and lcm(1..n)^3 denominator growth.",
+          "keyResults": [
+            {
+              "locator": "pp. 11-13 (3-term holonomic recurrences for zeta(2) and zeta(3))",
+              "statement": "Constructs explicit integer-recurrence rational approximants p_n / q_n with q_n = O(lcm(1..n)^3) beating Liouville's d = 1 bound for zeta(3).",
+              "useForFolio": "Benchmark for the weight-2 denominator-growth wall measured in four_one_volume_transcendence_error_bounds_probe.py.",
+              "targets": [
+                "QOU.BraidsAndKnots.FigureEightPachnerAndJetTranscendence"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Audited in 2026-11-28-four-one-volume-transcendence-and-error-bounds.md."
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T13:27:00Z"
+        }
+      }
+    }
+  ]
+}

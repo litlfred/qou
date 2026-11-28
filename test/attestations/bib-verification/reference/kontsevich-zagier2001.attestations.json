@@ -1,0 +1,53 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kontsevich-zagier2001",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 476,
+      "entry": {
+        "id": "kontsevich-zagier2001",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1007/978-3-642-56478-9_39"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T13:27:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1007/978-3-642-56478-9_39).",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Defines the ring of effective periods and states the Kontsevich-Zagier Period Conjecture governing why transcendence of weight-2 hyperbolic 3-manifold volumes (including Vol(4_1)) remains open after Archimedean evaluation.",
+          "keyResults": [
+            {
+              "locator": "\u00a71.1-1.2 (Definition of periods and Conjecture 1); \u00a72-3 (dilogarithm and L-value periods)",
+              "statement": "Conjectures all algebraic relations among periods arise from additivity, change of variables, and Stokes's formula, under which non-zero hyperbolic knot volumes are transcendental.",
+              "useForFolio": "Frames the exact claim boundary between proved formal-jet transcendence of Li_2(z) over Q[z] and open specialized-number transcendence of Vol(4_1).",
+              "targets": [
+                "QOU.BraidsAndKnots.FigureEightPachnerAndJetTranscendence"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Cited in FigureEightPachnerAndJetTranscendence.lean and 2026-11-28 audit."
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T13:27:00Z"
+        }
+      }
+    }
+  ]
+}

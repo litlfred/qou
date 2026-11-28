@@ -1,0 +1,26 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "nesterenko1996",
+  "type": "article-journal",
+  "title": "Modular functions and transcendence questions",
+  "author": [
+    {
+      "family": "Nesterenko",
+      "given": "Yuri V."
+    }
+  ],
+  "container-title": "Sbornik: Mathematics",
+  "volume": "187",
+  "issue": "9",
+  "page": "1319-1348",
+  "issued": {
+    "date-parts": [
+      [
+        1996
+      ]
+    ]
+  },
+  "DOI": "10.1070/SM1996v187n09ABEH000158",
+  "URL": "https://doi.org/10.1070/SM1996v187n09ABEH000158",
+  "note": "Sb. Math. 187(9) (1996), 1319-1348 (Russian original Mat. Sb. 187(9) (1996), 65-96). Verified via Crossref REST API (DOI 10.1070/SM1996v187n09ABEH000158) (2026-11-28). Proves algebraic independence of at least three of pi, exp(pi*sqrt(d)), and Ramanujan Eisenstein values using differential Ramanujan systems + height/multiplicity estimates; cited in SurrealGradingPrune.lean."
+}

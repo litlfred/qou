@@ -1,0 +1,25 @@
+{
+  "$schema": "folio-reference/v1",
+  "id": "nahm2007",
+  "type": "chapter",
+  "title": "Conformal Field Theory and Torsion Elements of the Bloch Group",
+  "author": [
+    {
+      "family": "Nahm",
+      "given": "Werner"
+    }
+  ],
+  "container-title": "Frontiers in Number Theory, Physics, and Geometry II",
+  "page": "67-132",
+  "publisher": "Springer",
+  "issued": {
+    "date-parts": [
+      [
+        2007
+      ]
+    ]
+  },
+  "DOI": "10.1007/978-3-540-30308-4_2",
+  "URL": "https://doi.org/10.1007/978-3-540-30308-4_2",
+  "note": "In Frontiers in Number Theory, Physics, and Geometry II, Springer, Berlin, Heidelberg (2007), 67-132; arXiv:hep-th/0404120. Verified via Crossref REST API (DOI 10.1007/978-3-540-30308-4_2) (2026-11-28). Formulates Nahm's conjecture relating modularity of q-hypergeometric characters to torsion in the Bloch group B(C); resolves lean-ref [nahm2007] in NahmBlochBridge.lean and TwistKnotNahm.lean."
+}
