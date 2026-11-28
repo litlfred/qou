@@ -1,11 +1,11 @@
 ---
 # qou-mk34
 title: 'GAP: derive the pair (3,4) in m_K^2/m_pi^2 = [3]_q[4]_q from a definition of K and pi (currently scan-selected)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-20T08:13:33Z
-updated_at: 2026-11-27T17:35:00Z
+updated_at: 2026-11-28T10:56:30Z
 tags:
     - compute-accuracy
 parent: qou-3l2l
@@ -54,3 +54,5 @@ Carl took the recommended route. The result is a negative of scope (a), and the 
 Still open: a definition of K and π in which the labels enter additively, are halved, and are then multiplied. A card for the alternatives is posted in the thread.
 
 - 2026-11-27 (PR #9502, second commit): `no_meson_total_ratio_twelve`: for labels in {3,5,7}, no ratio of label sums (max 14/6) and no ratio of label products (max 49/9) between two mesons is 12. Still open: the additive/halved/multiplied reading.
+
+Closed post-merge: landed on `origin/main` in PR #9502 (`32c51829a9dc6887adc237c6d5c4eb243331cda5`).

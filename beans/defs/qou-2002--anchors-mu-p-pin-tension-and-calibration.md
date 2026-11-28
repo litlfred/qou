@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - compute-accuracy
 created_at: 2026-10-04T15:09:58Z
-updated_at: 2026-11-27T14:18:15Z
+updated_at: 2026-11-28T10:56:30Z
 parent: qou-10v9
 ---
 
@@ -23,3 +23,8 @@ Sub-epic P1.ANCHOR of PROGRAM: L2 at 1 ppQ (mass and binding accuracy) (work-pla
 
 ## Claim reset 2026-11-22
 In-progress only through an untouched batch PR / no live branch (applicability review, thread "Coordinate the L2 1-ppQ derivation plan"; plan doc /mnt/project-files/l2-1ppq-coordination/). Reset to todo under the stalled-claim policy; nothing in the work was judged. Re-claim if you pick it up.
+
+## 2026-11-28 Owner Directive — Proton Pin ONLY; Muon Pin ON HOLD (STRICT)
+Verbatim (`2026-11-28`): *"make sure you are working proton pin... no longer muon (on hold, until rederivation)"*.
+- All active compute producers, probes, and witnesses MUST run on the **proton pin** (`physical_proton`).
+- The **muon pin** is **ON HOLD** until `m_μ/m_e = Vol(4₁)/ℏ_q²` (or its replacement under the new lepton ladder) is genuinely derived; zero newly-added active muon-pin witnesses may merge onto `main`.

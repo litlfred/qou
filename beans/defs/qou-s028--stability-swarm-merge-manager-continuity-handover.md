@@ -7,7 +7,7 @@ priority: high
 tags:
     - stability
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-28T10:15:33Z
+updated_at: 2026-11-28T10:56:30Z
 parent: qou-5vkl
 blocked_by:
     - qou-10v9
@@ -187,3 +187,14 @@ Named in the request and covered through these roots: qou-jmgu, qou-swk4, qou-kd
   3. **`qou-0jo7` (`ws5-nov19-rebase` -> `claude/postmerge-qa-scorecard-boundary-20261128`):** Clear post-merge QA reds on `main` (`JonesTractableOrders.lean` transcendental boundary, `base-ring-audit --shrink`, refresh import-cone-stale scorecard witnesses at proton pin + regenerate `ACCURACY.md`).
   4. **`qou-d9iv` (`ws15-p3-p5-p6` & `ws12-pr9180`):** Rebase, applicability-audit against Nov 27-28 rulings (aether terminology, proton pin, base-ring units, T3 valence scope), verify, and open PRs for `ConfinementLayerMullikenStoichiometry` (`qou-5lct`) and exploratory `AlphaQuartetPauliWignerSaturation` (`qou-v2om`).
   5. **`merge-steward` (`merge-runner`):** Active single-writer Merge Steward under 24h grant (`to 2026-11-28T14:20Z`), enforcing FAST MERGES (`gen-block-jsonld.sh --check` pre-merge, post-merge QA + `close-merged-pr-beans.py` + `publish-main-local.sh` post-merge, never `--delete-branch`).
+
+## 2026-11-28 Owner Directive — Proton Pin ONLY; Muon Pin ON HOLD (STRICT)
+Verbatim (`2026-11-28`): *"make sure you are working proton pin... no longer muon (on hold, until rederivation)"*.
+- All active compute producers, probes, and witnesses MUST run on the **proton pin** (`physical_proton`).
+- The **muon pin** is **ON HOLD** until `m_μ/m_e = Vol(4₁)/ℏ_q²` (or its replacement under the new lepton ladder) is genuinely derived; zero newly-added active muon-pin witnesses may merge onto `main`.
+
+## 2026-11-28 Merge Steward Train Landing (`4594f0db1376`)
+- Landed orphan-beans PR **#9557** onto `cat/cat-harness/beans` (`6b6ae8e8784`).
+- Confirmed ghost stacked PRs **#9569** (`146be50840a`) and **#9579** (`bf6edf4d68a`) are already ancestors of `origin/main` (`0` commits ahead).
+- Landed 10 Category (a) `main` PRs + Priority Sibling-2 PR **#9994** (`qou-yzp7`) onto `origin/main` (`2cc11f7f1c62` -> `4594f0db137603dc057e2fd47a070648bdc536c7`), `MISSING: 0` across all:
+  `#9502` (`32c51829a9d`, closed `qou-mk34`), `#9629` (`f22289709b8`), `#9687` (`00a77cbee51`), `#9722` (`6f89037b0c0`), `#9737` (`5c2b8ef8a22`), `#9747` (`e04d18bbd9d`), `#9777` (`3571e500084`), `#9811` (`aa875534101`), `#9995` (`b9b18345023`, lossless `--merge` recovery after GitHub rebase-merge dropped `#9934`'s 2 commits over merge-from-main `e23577eb3ab`), `#9983` (`3fbba15854a`), and `#9994` (`4594f0db137`, closed `qou-yzp7`).

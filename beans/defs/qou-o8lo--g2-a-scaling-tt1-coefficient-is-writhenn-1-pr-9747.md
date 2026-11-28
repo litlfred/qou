@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T21:52:11Z
-updated_at: 2026-11-27T22:52:47Z
+updated_at: 2026-11-28T10:56:30Z
 parent: qou-myts
 ---
 
@@ -26,3 +26,5 @@ Open: bond-letter signs (G5); quark-level T3 writhe (#4618) would add an odd-in-
 2026-11-27 (335b6c7e2, PR #9747): multiplicity term. Lean IsospinWeightMultiplicity: d(N,k)=C(N,k)-C(N,k-1), Σ_{j≤k} d = C(N,k) (weight count = sum of blocks T≥|Tz|), log-free Gaussian bound C(2M,M-s)(M+s+s²) ≤ C(2M,M)(M+s). Weight count has no ln(2T+1); shape (N-Z)²/A from counting. Open: the energy map (count→energy); probe with ASSUMED B += α ln(count): share tracks -α·2Tz²/N to 1%, ~37x below classical; Table 3.4b median 92.7→84.3% (comparison only). Nothing wired; #9706 closed by Carl.
 
 2026-11-27 (21058a2b1): Carl 'use qCLT'. q-CLT m2=1 at every q (qGaussMoment_two) so -2Tz^2/N coefficient unchanged; q enters at m4=2+q. Markov (conv D quantum trace) sector weight C(N,k)q^{N-k}qi^k: sum=(q+qi)^N (markov_sector_sum), mirror product = C(N,k)^2 no q (markov_sector_mirror). q-weighting adds only odd q^{2Tz}; even part classical. 37x stays in scale/energy map.
+
+2026-11-28 (merge-steward): PR #9747 landed on `origin/main` (`e04d18bbd9dfd54f3104d451997ce6d86b992d9a`, 9/9 commits replayed); bean stays open on the count->energy map and scale items above.
