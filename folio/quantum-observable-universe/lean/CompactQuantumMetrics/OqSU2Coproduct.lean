@@ -37,7 +37,10 @@ commutative ring `R` (§7c).
 
 * That Woronowicz's Cartan functional for the 3D calculus is `(ε − χ_u)/c`, or
   which `u` it uses. Woronowicz (1987) is not in `library/`, so the parameter
-  is left free here.
+  is left free here. Narrowed in `OqSU2TwistedDerivations.lean`: when `q² − 1`
+  is a unit every twist is some `χ_u` (`char_eq_diagChar`), and a twisted
+  derivation non-zero on `β` or `γ` forces `u = q⁻¹`
+  (`twistedDerivation_offDiag_forces`). For a diagonal field `u` stays free.
 * The off-diagonal vector fields of the 3D calculus: now in `OqSU2OffDiagonal.lean`.
 * The left counit law. Coassociativity is in `OqSU2Coassoc.lean`; the Haar state is in
   `OqSU2HaarState.lean`, and its coproduct invariance is in

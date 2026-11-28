@@ -9,7 +9,7 @@ category — an affine chart.
 isomorphism $\eta \colon \tau' \xrightarrow{\sim} \tau''$
 is determined by an element $g \in G = \mathrm{Aut}^{\otimes}(\tau)$
 acting on the fibre. The set of all such isomorphisms is a
-principal homogeneous space for $G$ — a $G$-torsor.
+principal homogeneous space for $G$ — a $G$-torsor. For $q^2 \neq 1$ the group of points of $\mathrm{Aut}^{\otimes}(\tau)$ is the maximal torus $T$ (Lean: `QOU.AlgebraicSubstrate.OqSU2.charEquivUnits`), so the transition functions take values in $T$ and the atlas is a $T$-torsor, matching the $\mathrm{U}(1)$ [chart swap](#prop:reeb-u1-chart-swap). The full $G$ acts only at the symmetric point $q = 1$.
 
 (3) If $\eta_{01} \colon \tau' \to \tau''$ and
 $\eta_{12} \colon \tau'' \to \tau'''$ are monoidal natural
