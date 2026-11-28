@@ -1,13 +1,13 @@
 ---
 # qou-u9o1
 title: 'GAP: general JM commutativity and general prod L_i = Delta^2 (adjacent case is the blocker)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-11-17T06:22:00Z
+updated_at: 2026-11-28T14:11:39Z
 parent: qou-rtxm
 ---
 
@@ -937,3 +937,5 @@ Was in-progress with no bean update since 2026-09-08 and no main commit naming i
 - Formalized `jm_normalized_product_scaling` and `jm_inductive_full_twist_step` in `folio/quantum-observable-universe/lean/QOU/Foundations/CalibrationJMGibbsBarPoincare.lean` (pure Lean 4 core, generic `CommRingOps R` per §7c, `0` `sorry`, `0` warnings, `0` vacuity audit hits; wired into `QOU.lean`).
 - Commit: `71263060fde5e0d5c09fecd66cf05ada5b6cd208` | PR: `https://github.com/litlfred/qou/pull/8223`
 - Kept at `status: in-progress` per merge-manager protocol.
+
+- **2026-11-28 (merge-steward)**: Landed PR `#10026` (`claude/untapped-jm-center-gns-lepton-order-20261128` @ `0f8975e63e59`) onto `origin/main` at `c55bbe317f335627f861a89662343ed905d57d78` (`MISSING: 0`, `bib_ledger --parity` & `check-references-bib` PASS). Marked `completed`.

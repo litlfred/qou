@@ -7,7 +7,7 @@ priority: high
 tags:
     - stability
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-28T13:01:37Z
+updated_at: 2026-11-28T14:11:39Z
 parent: qou-5vkl
 blocked_by:
     - qou-10v9
@@ -234,3 +234,4 @@ Verbatim (`2026-11-28`): *"make sure you are working proton pin... no longer muo
 - **2026-11-28 (`#10016` landed)**: Merged PR `#10016` (`claude/kg-evidence-ingest-torsion-reeb-stokes-20261128` @ `e8ee6071a9f6` -> `1037b5606b9ec8a19641ea6a69f45d72afb40c29`, `MISSING: 0`; `34` PRs landed in session).
 - **2026-11-28 (`#10017` landed)**: Merged PR `#10017` (`claude/fix-pyhecke-native-conv-d-and-lp-cast-20261128` @ `8be79b3446a0` -> `53dd99bc15e1832d9d7175c4811b787a21398085`, `MISSING: 0`; `35` PRs landed in session).
 - **2026-11-28 (`#10019` landed)**: Merged PR `#10019` (`qou-ggtb` `crates/qou-gg-eval` + `crates/qou-clarabel` + Annex A $gammagamma$ table, `c0866c367c71` -> `b745052dfe52bd67c1fd897e24fbb04c95b913b3`, `MISSING: 0`, `qou-ggtb` completed — ALL 6 `qou-s028` child beans `qou-crwk`, `qou-gsgg`, `qou-qval`, `qou-ggtb`, `qou-intr`, `qou-cbot` now `completed`; `36` PRs landed in session).
+- **2026-11-28 (6-PR batch + Card 4A + Platform KG landed)**: Merged `#10021` -> `90884432225e`, `#10028` -> `c603005b2db5`, `#10020` -> `cef0ae925b57`, `#10022` -> `020645ca38ac`, `#10024` -> `4d2a1bdac972`, `#10026` -> `c55bbe317f335627f861a89662343ed905d57d78` (`qou-u9o1` completed; all `MISSING: 0`); closed `#9579`/`#9984`/`#9979` per Card `4A` (branches intact); merged `cat-harness#1410` (`f5e80125752a`) & `folio-assistant-sci#223` (`dd1ce67a4aa1`); `42` QOU PRs + `2` platform KG PRs landed in session.
