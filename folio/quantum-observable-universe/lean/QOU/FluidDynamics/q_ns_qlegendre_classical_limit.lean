@@ -21,13 +21,15 @@ The value at `q = 1` is therefore an evaluation, not a limit. No ε–δ argumen
   coupling is unbounded in `s` (the amplitude grows linearly). At fixed `q > 1` it decays
   like `q^{−4s}` (closed form in `q_ns_qlegendre_norm`). So the triad transfer from mode `s+1`
   to `s+2` is not uniform in `q` as `q → 1⁺`.
+* `Rc_ge`: for every `q ≥ 1`, `Rc q s · q^{4(5s+7)} ≥ (s+1)²/16`. So every mode with
+  `q^{20s+28} ≤ 2` keeps a normalised squared coupling `≥ (s+1)²/32`. That window holds
+  `s ≈ ln 2/(20 ln q)` modes, and it grows without bound as `q → 1⁺`.
 
 All algebraic. No empirical value enters. Sorry-free.
 
 ## Not established
 
-* A uniform-in-`q` statement on a neighbourhood of `q = 1` (continuity of `Rc` is evident from
-  the formula, but not stated as a limit here).
+* An upper bound matching `Rc_ge`, and the sharp location of the peak in `s` for fixed `q`.
 * The factor `1/‖βδ‖²` of `C̃(r)²`, other velocity modes, and Part A itself.
 -/
 
@@ -114,6 +116,111 @@ theorem Rc_one_ge (s : ℕ) : ((s : K) + 1) ^ 2 / 16 ≤ Rc (1 : Kˣ) s := by
   have hA : 0 ≤ ((s : K) + 1) ^ 2 * (2 * (s : K) + 4) ^ 2 := by positivity
   have : (2 * (s : K) + 4) ^ 2 = 4 * ((s : K) + 2) ^ 2 := by ring
   nlinarith [mul_le_mul_of_nonneg_left key hA]
+
+/-! ## A lower bound uniform in `q ≥ 1`
+
+For `P ≥ 1`, `n ≤ [n]_P` and `[n+1]_P ≤ (n+1)P^n`. Bounding each q-integer of `Rc` this way
+gives `Rc q s · q^{4(5s+7)} ≥ Rc 1 s ≥ (s+1)²/16`. Read the other way: modes with
+`q^{20s+28} ≤ 2` keep a normalised squared coupling of at least `(s+1)²/32`, and that window
+grows without bound as `q → 1⁺`. -/
+
+theorem jk_ge_of_one_le {P : K} (hP : 1 ≤ P) (n : ℕ) : (n : K) ≤ jk P n := by
+  induction n with
+  | zero => simp
+  | succ n ih => rw [jk_succ]; push_cast; linarith [one_le_pow₀ (n := n) hP]
+
+theorem jk_le_of_one_le {P : K} (hP : 1 ≤ P) (n : ℕ) :
+    jk P (n + 1) ≤ ((n : K) + 1) * P ^ n := by
+  induction n with
+  | zero => simp
+  | succ n ih =>
+    rw [jk_succ]; push_cast
+    have h1 : P ^ n ≤ P ^ (n + 1) := pow_le_pow_right₀ hP (Nat.le_succ n)
+    have h0 : (0 : K) ≤ (n : K) + 1 := by positivity
+    nlinarith [mul_le_mul_of_nonneg_left h1 h0]
+
+theorem nfc_ge {P : K} (hP : 1 ≤ P) (k : ℕ) :
+    ((k : K) + 1) ^ 4 / ((2 * (k : K) + 1) * (2 * (k : K) + 2) ^ 2 * (2 * (k : K) + 3)) ≤
+      nfc P k * P ^ (8 * k + 4) := by
+  have hP0 : 0 < P := lt_of_lt_of_le one_pos hP
+  have hk : (0 : K) ≤ k := Nat.cast_nonneg k
+  have c1 : jk P (2 * k + 1) ≤ (2 * (k : K) + 1) * P ^ (2 * k) := by
+    have := jk_le_of_one_le hP (2 * k); push_cast at this; exact this
+  have c2 : jk P (2 * k + 2) ≤ (2 * (k : K) + 2) * P ^ (2 * k + 1) := by
+    have := jk_le_of_one_le hP (2 * k + 1); push_cast at this
+    rw [show 2 * k + 1 + 1 = 2 * k + 2 by ring] at this; linarith
+  have c3 : jk P (2 * k + 3) ≤ (2 * (k : K) + 3) * P ^ (2 * k + 2) := by
+    have := jk_le_of_one_le hP (2 * k + 2); push_cast at this
+    rw [show 2 * k + 2 + 1 = 2 * k + 3 by ring] at this; linarith
+  have l1 : (2 * (k : K) + 1) ≤ jk P (2 * k + 1) := by
+    have := jk_ge_of_one_le hP (2 * k + 1); push_cast at this; exact this
+  have l2 : (2 * (k : K) + 2) ≤ jk P (2 * k + 2) := by
+    have := jk_ge_of_one_le hP (2 * k + 2); push_cast at this; exact this
+  have l3 : (2 * (k : K) + 3) ≤ jk P (2 * k + 3) := by
+    have := jk_ge_of_one_le hP (2 * k + 3); push_cast at this; exact this
+  have b : (k : K) + 1 ≤ jk P (k + 1) := by
+    have := jk_ge_of_one_le hP (k + 1); push_cast at this; exact this
+  have e : 1 ≤ P ^ (2 * k + 2) := one_le_pow₀ hP
+  set C1 := jk P (2 * k + 1); set C2 := jk P (2 * k + 2); set C3 := jk P (2 * k + 3)
+  set B := jk P (k + 1)
+  have hC1 : 0 < C1 := by linarith
+  have hC2 : 0 < C2 := by linarith
+  have hC3 : 0 < C3 := by linarith
+  have hd : 0 < (2 * (k : K) + 1) * (2 * (k : K) + 2) ^ 2 * (2 * (k : K) + 3) := by positivity
+  unfold nfc
+  rw [div_mul_eq_mul_div, div_le_div_iff₀ hd (by positivity)]
+  have hC : C1 * C2 ^ 2 * C3 ≤
+      (2 * (k : K) + 1) * (2 * (k : K) + 2) ^ 2 * (2 * (k : K) + 3) * P ^ (8 * k + 4) := by
+    calc C1 * C2 ^ 2 * C3
+        ≤ ((2 * (k : K) + 1) * P ^ (2 * k)) * ((2 * (k : K) + 2) * P ^ (2 * k + 1)) ^ 2 *
+            ((2 * (k : K) + 3) * P ^ (2 * k + 2)) := by gcongr
+      _ = _ := by ring
+  calc ((k : K) + 1) ^ 4 * (C1 * C2 ^ 2 * C3)
+      ≤ ((k : K) + 1) ^ 4 *
+          ((2 * (k : K) + 1) * (2 * (k : K) + 2) ^ 2 * (2 * (k : K) + 3) * P ^ (8 * k + 4)) := by
+        gcongr
+    _ ≤ B ^ 4 *
+          ((2 * (k : K) + 1) * (2 * (k : K) + 2) ^ 2 * (2 * (k : K) + 3) * P ^ (8 * k + 4)) := by
+        gcongr
+    _ ≤ P ^ (2 * k + 2) * B ^ 4 * P ^ (8 * k + 4) *
+          ((2 * (k : K) + 1) * (2 * (k : K) + 2) ^ 2 * (2 * (k : K) + 3)) := by
+        have h0 : 0 ≤ B ^ 4 *
+            ((2 * (k : K) + 1) * (2 * (k : K) + 2) ^ 2 * (2 * (k : K) + 3) * P ^ (8 * k + 4)) := by
+          positivity
+        nlinarith [mul_le_mul_of_nonneg_right e h0]
+
+/-- **Uniform lower bound for `q ≥ 1`:** `Rc q s · q^{4(5s+7)} ≥ (s+1)²/16`. -/
+theorem Rc_ge (hq : 1 ≤ (q : K)) (s : ℕ) :
+    ((s : K) + 1) ^ 2 / 16 ≤ Rc q s * ((q : K) * q) ^ (10 * s + 14) := by
+  have hP : 1 ≤ (q : K) * q := one_le_mul_of_one_le_of_one_le hq hq
+  have hqq : qi * (q : K) = 1 := by simp
+  have hA : (kap q s * qi) ^ 2 * ((q : K) * q) ^ (2 * s + 2) = jk ((q : K) * q) (s + 1) ^ 2 := by
+    unfold kap
+    rw [show (qi * jk ((q : K) * q) (s + 1) * (qi * qi) ^ s * qi) ^ 2 * ((q : K) * q) ^ (2 * s + 2)
+        = jk ((q : K) * q) (s + 1) ^ 2 * (qi * q) ^ (4 * s + 4) by ring, hqq, one_pow, mul_one]
+  have hsplit : Rc q s * ((q : K) * q) ^ (10 * s + 14) =
+      jk ((q : K) * q) (s + 1) ^ 2 * (nfc PP (s + 1) * PP ^ (8 * (s + 1) + 4)) := by
+    rw [← hA, Rc, show 10 * s + 14 = (2 * s + 2) + (8 * (s + 1) + 4) by ring, pow_add]; ring
+  rw [hsplit]
+  have hb := jk_ge_of_one_le hP (s + 1); push_cast at hb
+  have hn := nfc_ge hP (s + 1); push_cast at hn
+  have hs : (0 : K) ≤ s := Nat.cast_nonneg s
+  have h1 := Rc_one_ge (K := K) s
+  rw [Rc_one] at h1
+  have hcls : 0 ≤ ((s : K) + 1 + 1) ^ 4 /
+      ((2 * ((s : K) + 1) + 1) * (2 * ((s : K) + 1) + 2) ^ 2 * (2 * ((s : K) + 1) + 3)) := by
+    apply div_nonneg (pow_nonneg (by linarith) 4)
+    apply mul_nonneg (mul_nonneg (by linarith) (sq_nonneg _)) (by linarith)
+  have heq : ((s : K) + 1) ^ 2 * (((s : K) + 1 + 1) ^ 4 /
+      ((2 * ((s : K) + 1) + 1) * (2 * ((s : K) + 1) + 2) ^ 2 * (2 * ((s : K) + 1) + 3))) =
+      ((s : K) + 1) ^ 2 * ((s : K) + 2) ^ 4 /
+        ((2 * (s : K) + 3) * (2 * (s : K) + 4) ^ 2 * (2 * (s : K) + 5)) := by
+    rw [mul_div_assoc']; congr 1 <;> ring
+  calc ((s : K) + 1) ^ 2 / 16 ≤ ((s : K) + 1) ^ 2 * (((s : K) + 1 + 1) ^ 4 /
+        ((2 * ((s : K) + 1) + 1) * (2 * ((s : K) + 1) + 2) ^ 2 * (2 * ((s : K) + 1) + 3))) := by
+        rw [heq]; exact h1
+    _ ≤ jk ((q : K) * q) (s + 1) ^ 2 * (nfc PP (s + 1) * PP ^ (8 * (s + 1) + 4)) := by
+        gcongr
 
 end Ordered
 
