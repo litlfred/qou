@@ -30,6 +30,11 @@ The missing ingredient was the transitivity of the `GRT₁` action on group-like
 What this does not prove: Prop. 5.5 in its full form (for two group-like associators modulo `N`
 there is a single `g ∈ GRT₁` modulo `N` with `Φ' = Φ ∘ g`). The degree-by-degree statement is
 all the tower needs.
+
+**Per-level exponential (2026-11-28).** The tower now takes a family `E : ℕ → F2` with
+`ExpFamily E` (constant term `1`, and `E (N + 1) − E N ∈ FF N`); `LevelInv K E d Φ` uses
+`AssocK K N (E N)` at level `N`, and `levelStep` lands in `AssocU4 (d + 1) (E (d + 1))`.
+A constant family `fun _ => E` recovers the previous statements (`expFamily_const`). Audit §17p.
 -/
 
 namespace QOU.BraidsAndKnots.RationalAssociator
@@ -123,37 +128,41 @@ theorem realign {d N : ℕ} (hd : 1 ≤ d) (hdN : d + 1 ≤ N) {E Φ x : F2}
 
 variable (K) in
 /-- **The invariant at degree `d`.** `ε(Φ) = 1`, and for every level `N ≥ d + 1` there is
-**some** group-like `K`-associator in `U4 N` agreeing with `1 ⊗ Φ` modulo `FFK d`. Nothing ties
-the `K`-associators at different levels together. -/
-def LevelInv (E : F2) (d : ℕ) (Φ : F2) : Prop :=
+**some** group-like `K`-associator in `U4 N` for the level-`N` exponential `E N` agreeing with
+`1 ⊗ Φ` modulo `FFK d`. Nothing ties the `K`-associators at different levels together. -/
+def LevelInv (E : ℕ → F2) (d : ℕ) (Φ : F2) : Prop :=
   FreeAlgebra.algebraMapInv Φ = 1 ∧ ∀ N, d + 1 ≤ N →
-    ∃ Ψ : K ⊗[ℚ] F2, AssocK K N E Ψ ∧ GLK K N Ψ ∧ Ψ - (1 : K) ⊗ₜ Φ ∈ FFK K d
+    ∃ Ψ : K ⊗[ℚ] F2, AssocK K N (E N) Ψ ∧ GLK K N Ψ ∧ Ψ - (1 : K) ⊗ₜ Φ ∈ FFK K d
 
-/-- **The induction step.** The correction `x` is chosen at level `d + 1`; `realign` then moves
-the `K`-associator of every higher level onto `Φ + x`. -/
-theorem levelStep {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1) {d : ℕ} (hd : 1 ≤ d)
+/-- **The induction step.** The correction `x` is chosen at level `d + 1`, for the exponential
+`E (d + 1)`; `realign` then moves the `K`-associator of every higher level `N` onto `Φ + x`,
+which is also an associator in `U4 (d + 1)` for `E N` because `E N ≡ E (d + 1)` modulo
+`FF (d + 1)` (`ExpFamily.assocU4_iff`). -/
+theorem levelStep {E : ℕ → F2} (hE : ExpFamily E) {d : ℕ} (hd : 1 ≤ d)
     {Φ : F2} (h : LevelInv K E d Φ) :
-    ∃ x ∈ FF d, AssocU4 (d + 1) E (Φ + x) ∧ GL (d + 1) (Φ + x) ∧
+    ∃ x ∈ FF d, AssocU4 (d + 1) (E (d + 1)) (Φ + x) ∧ GL (d + 1) (Φ + x) ∧
       LevelInv K E (d + 1) (Φ + x) := by
   obtain ⟨hΦ, hT⟩ := h
   obtain ⟨Ψ, hK, hGL, hm⟩ := hT (d + 1) le_rfl
   obtain ⟨z, rfl⟩ := exists_lTensor_of_mem_FFK hm
-  obtain ⟨x, hx, ha, hg, -⟩ :=
-    inductionStep_of_groupLike hd le_rfl (by omega : 2 ≤ d + 1) le_rfl hE hΦ z hK hGL
+  obtain ⟨x, hx, ha, hg, -⟩ := inductionStep_of_groupLike hd le_rfl (by omega : 2 ≤ d + 1)
+    le_rfl (hE.const (d + 1) (by omega)) hΦ z hK hGL
   refine ⟨x, hx, ha, hg, algebraMapInv_add_of_mem_FF hd hΦ hx, fun N hN => ?_⟩
   obtain ⟨Ψ', hK', hGL', hm'⟩ := hT N (by omega)
-  exact realign hd (by omega) hE hΦ hx ha hg hK' hGL' hm'
+  exact realign hd (by omega) (hE.const N (by omega)) hΦ hx
+    ((hE.assocU4_iff (by omega)).2 ha) hg hK' hGL' hm'
 
 /-- **A compatible sequence of rational associators from unrelated `K`-associators.** If for
-some field extension `K/ℚ` there is, for every `N ≥ 2`, a group-like `K`-associator for `E`
-modulo `N` (`GroupLikeKAssociatorTower`, no compatibility between levels), and `ε(E) = 1`, then
-there is one sequence `Φ : ℕ → ℚ⟨X, Y⟩` with `Φ N` an associator in `U4 N` for `E` and
-group-like modulo `FF2 N` for every `N ≥ 2`, and `Φ (N + 1) − Φ N ∈ FF N` for every `N ≥ 1`.
-This is the conclusion of `rational_associator_compatible_of_tower` under the weaker
-hypothesis. -/
-theorem rational_associator_compatible_of_groupLikeTower {E : F2}
-    (hE : FreeAlgebra.algebraMapInv E = 1) (hT : GroupLikeKAssociatorTower K E) :
-    ∃ Φ : ℕ → F2, (∀ N, 2 ≤ N → AssocU4 N E (Φ N) ∧ GL N (Φ N)) ∧
+some field extension `K/ℚ` there is, for every `N ≥ 2`, a group-like `K`-associator for `E N`
+modulo `N` (`GroupLikeKAssociatorTower`, no compatibility between the `K`-associators), and `E`
+is a compatible family of exponentials, then there is one sequence `Φ : ℕ → ℚ⟨X, Y⟩` with
+`Φ N` an associator in `U4 N` for `E N` and group-like modulo `FF2 N` for every `N ≥ 2`, and
+`Φ (N + 1) − Φ N ∈ FF N` for every `N ≥ 1`. This is the conclusion of
+`rational_associator_compatible_of_tower` under the weaker hypothesis, and with a per-level
+exponential. -/
+theorem rational_associator_compatible_of_groupLikeTower {E : ℕ → F2}
+    (hE : ExpFamily E) (hT : GroupLikeKAssociatorTower K E) :
+    ∃ Φ : ℕ → F2, (∀ N, 2 ≤ N → AssocU4 N (E N) (Φ N) ∧ GL N (Φ N)) ∧
       ∀ N, 1 ≤ N → Φ (N + 1) - Φ N ∈ FF N := by
   have h₀ : LevelInv K E 1 1 := by
     refine ⟨map_one _, fun N hN => ?_⟩
@@ -163,7 +172,7 @@ theorem rational_associator_compatible_of_groupLikeTower {E : F2}
     exact hK.sub_one_mem_FFK
   obtain ⟨f, -, hf⟩ := exists_seq_of_step (α := F2)
     (fun k a => LevelInv K E (k + 1) a)
-    (fun k a b => b - a ∈ FF (k + 1) ∧ AssocU4 (k + 2) E b ∧ GL (k + 2) b)
+    (fun k a b => b - a ∈ FF (k + 1) ∧ AssocU4 (k + 2) (E (k + 2)) b ∧ GL (k + 2) b)
     (a₀ := 1) h₀ (fun k a ha => by
       obtain ⟨x, hx, hA, hG, h'⟩ := levelStep hE (by omega) ha
       exact ⟨a + x, h', by simpa using hx, hA, hG⟩)
@@ -175,11 +184,11 @@ theorem rational_associator_compatible_of_groupLikeTower {E : F2}
     simpa using (hf k).2.1
 
 /-- The compatibility hypothesis of `CompatibleGroupLikeKAssociatorTower` is not needed: the
-two towers give the same conclusion. -/
+two towers give the same conclusion (here for the constant family `fun _ => E`). -/
 theorem rational_associator_compatible_of_tower_via_groupLike {E : F2}
     (hE : FreeAlgebra.algebraMapInv E = 1) (hT : CompatibleGroupLikeKAssociatorTower K E) :
     ∃ Φ : ℕ → F2, (∀ N, 2 ≤ N → AssocU4 N E (Φ N) ∧ GL N (Φ N)) ∧
       ∀ N, 1 ≤ N → Φ (N + 1) - Φ N ∈ FF N :=
-  rational_associator_compatible_of_groupLikeTower hE hT.toTower
+  rational_associator_compatible_of_groupLikeTower (expFamily_const hE) hT.toTower
 
 end QOU.BraidsAndKnots.RationalAssociator

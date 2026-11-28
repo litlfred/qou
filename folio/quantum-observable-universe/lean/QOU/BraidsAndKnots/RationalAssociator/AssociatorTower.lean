@@ -321,14 +321,21 @@ variable (K) in
 `Ψ N`, group-like, for every `N ≥ 2`, whose consecutive members agree modulo `FFK K N`. The
 truncations of one group-like associator in the completed algebra (for `K = ℂ`, `E = exp`:
 Drinfeld's KZ associator) form such a sequence; nothing in this repository constructs it, and it
-is not asserted here. -/
+is not asserted here.
+
+This structure keeps **one** polynomial `E` for all levels. For an exponential of positive
+degree that is the vacuous case of audit §17o (a polynomial `E` other than `1` is not exact in
+every `U4 N`); it is kept for `E = 1` and for the record. The per-level form is
+`GroupLikeKAssociatorTower` with `E : ℕ → ℚ⟨X, Y⟩`, which needs no compatibility of the
+`K`-associators (`rational_associator_compatible_of_groupLikeTower`). Audit §17p. -/
 structure CompatibleGroupLikeKAssociatorTower (E : F2) : Prop where
   exists_tower : ∃ Ψ : ℕ → K ⊗[ℚ] F2, ∀ N : ℕ, 2 ≤ N →
     AssocK K N E (Ψ N) ∧ GLK K N (Ψ N) ∧ Ψ (N + 1) - Ψ N ∈ FFK K N
 
-/-- A compatible tower is in particular a tower. -/
+/-- A compatible tower is in particular a tower, for the constant family `fun _ => E`. -/
 theorem CompatibleGroupLikeKAssociatorTower.toTower {E : F2}
-    (hT : CompatibleGroupLikeKAssociatorTower K E) : GroupLikeKAssociatorTower K E := by
+    (hT : CompatibleGroupLikeKAssociatorTower K E) :
+    GroupLikeKAssociatorTower K (fun _ => E) := by
   obtain ⟨Ψ, hΨ⟩ := hT.exists_tower
   exact ⟨fun N hN => ⟨Ψ N, (hΨ N hN).1, (hΨ N hN).2.1⟩⟩
 

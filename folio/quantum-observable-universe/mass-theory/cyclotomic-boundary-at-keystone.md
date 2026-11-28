@@ -259,8 +259,30 @@ $\kappa_{2d}(\Phi_m) = \tfrac{B_{2d}}{2d}J_{2d}(m)$ with $J$ the Jordan totient
 $12\kappa_2 = \sum_i J_2(k_i) \in \mathbb Z$. For $4 \le n \le 24$ every $D(n)$ has exactly the
 factor $(q-1)^2$, and $12\kappa_2$ is an integer only for $n = 4, 5, 7$
 (`computations/cyclotomic_boundary_cumulant_integrality.py`). This settles nothing beyond the
-tests above, but it is independent of them. A proof for all $n$ would need the second-order
-expansion of $S(n)$ at $q = 1$, which is not known in closed form.
+tests above, but it is independent of them.
+
+*The expansion at $q = 1$.* Put $q = e^t$. Then $D(n) = d_2t^2 + d_4t^4 + O(t^6)$, the cleared
+tail has $P(1) = d_2$, and $12\kappa_2 = 24d_4/d_2 - 2$. Expanding $\log[k]$ in $t$, writing the
+hook power sums through contents ($\sum h^2 = \sum c^2 + n^2$ and
+$\sum h^4 = \sum c^4 + 12n\sum c^2 + n^2 - 12(\sum c)^2$), and summing content power sums over
+$\lambda$ with weight $f^\lambda$ through Jucys–Murphy elements and square-root counts gives,
+with $x = I_{n-8}$, $y = I_{n-9}$ (involution numbers) and $c = (n-1)(n-2)(n-3)$,
+$$6d_2 = c\,(n-6)(n^2-13)\,x + 2c\,(n-8)(n-5)(2n-5)\,y,$$
+$$1080\,d_4 = c\,(n-6)\,Q_5(n)\,x + 2c\,(n-8)(n-5)\,Q_4(n)\,y,$$
+with $Q_5 = 10n^5 - 51n^4 - 86n^3 + 774n^2 - 536n - 1695$ and
+$Q_4 = 20n^4 - 157n^3 + 419n^2 - 333n - 219$. These agree with the exact $D(n)$ for
+$9 \le n \le 24$. If $d_2 \mid 24d_4$, then $d_2$ divides $\Delta(n)\,x$ and $\Delta(n)\,y$, where
+$$\Delta(n) = -2(n-8)(n-7)(n-6)(n-5)(n-4)\,c^2\,(5n^3 - 21n^2 - 101n + 201).$$
+No odd prime divides both $I_m$ and $I_{m-1}$ (since $I_{m+p} \equiv I_m \pmod p$ and
+$I_0 = I_1 = 1$), so the odd part of $d_2$ divides $\Delta(n)$. It does not for any
+$9 \le n \le 3000$, so the test excludes all of these
+(`computations/cyclotomic_boundary_q1_expansion.py`). The valuation $v_2(I_m) = \lfloor m/4\rfloor + (0,0,1,2)_{m \bmod 4}$ is proved
+(`QOU.Mass.InvolutionTwoAdic`, sorry-free: $I_{4k} = 2^k\alpha$, $I_{4k+1} = 2^k\beta$ with
+$\alpha,\beta$ odd and $\alpha \equiv \beta \pmod 8$, by four steps of the recurrence). For all $n$
+the argument still needs two facts that are checked but not proved here: the quartic hook
+identity above and the Jucys–Murphy class expansions for all $n$. By the valuation, the two terms of $6d_2$ never have equal 2-adic valuation, so
+$v_2(d_2) \le v_2(c) + (n+1)/4$. Then the odd part of $d_2$ grows like $I_{n-8}/2^{n/4}$, which
+is larger than $|\Delta(n)|$ for large $n$.
 
 *Open:* non-cyclotomicity for **every** $n \ge 6$. What remains is the non-triangular $n$
 outside the two families with $j > 400000$.

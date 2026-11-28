@@ -1,0 +1,12 @@
+{
+ "producer": "cyclotomic_boundary_q1_expansion.py",
+ "block": "conj:cyclotomic-boundary-at-keystone",
+ "range": [
+  9,
+  3000
+ ],
+ "cumulant_test_passes": [],
+ "odd_d2_divides_delta": [],
+ "odd_d2_exceeds_delta_from": 38,
+ "status": "closed forms checked for n <= 24; full proof needs the quartic hook identity and the class expansions for all n"
+}

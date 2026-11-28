@@ -45,6 +45,10 @@ existing tower and the Lie statement, the hexagon is redundant for rational grou
 solutions normalised in degree 2 (`assocU4_iff_pentagon`).
 
 No analysis and no numerical value is used.
+
+**Per-level exponential (2026-11-28).** Every statement here now takes `E : ℕ → F2` with
+`ExpFamily E`, and level `N` uses `E N` (`AssocU4 3 (E 3) Φ`, conclusion `AssocU4 N (E N) Φ`).
+The `ε(E) = 1` hypothesis above is the `const` field of `ExpFamily`. Audit §17p.
 -/
 
 namespace QOU.BraidsAndKnots.RationalAssociator
@@ -176,15 +180,17 @@ theorem assocDefect_pent_eq_zero {N : ℕ} {E Φ : F2}
 
 variable {K : Type*} [Field K] [Algebra ℚ K]
 
-/-- **The reduction step.** Let `d ≥ 1`, `ε(E) = 1`, and `PentagonHexagonLie d`. If `Φ`
-satisfies the level invariant at degree `d` (some group-like `K`-associator at every level
-`N ≥ d + 1` agrees with `1 ⊗ Φ` modulo `FFK d`), and `Φ` satisfies the pentagon in `U4 (d + 1)`
-and is group-like modulo `FF2 (d + 1)`, then `Φ` is an associator in `U4 (d + 1)`. -/
-theorem assocU4_succ_of_pentagon {d : ℕ} (hd : 1 ≤ d) (hFL : PentagonHexagonLie d) {E Φ : F2}
-    (hE : FreeAlgebra.algebraMapInv E = 1) (h : LevelInv K E d Φ)
+/-- **The reduction step.** Let `d ≥ 1`, `E` a compatible family of exponentials, and
+`PentagonHexagonLie d`. If `Φ` satisfies the level invariant at degree `d` (some group-like
+`K`-associator for `E N` at every level `N ≥ d + 1` agrees with `1 ⊗ Φ` modulo `FFK d`), and
+`Φ` satisfies the pentagon in `U4 (d + 1)` and is group-like modulo `FF2 (d + 1)`, then `Φ` is
+an associator in `U4 (d + 1)` for `E (d + 1)`. -/
+theorem assocU4_succ_of_pentagon {d : ℕ} (hd : 1 ≤ d) (hFL : PentagonHexagonLie d)
+    {E : ℕ → F2} {Φ : F2} (hE : ExpFamily E) (h : LevelInv K E d Φ)
     (hp : Pentagon Φ (t (d + 1) 0) (t (d + 1) 1) (t (d + 1) 3) (t (d + 1) 4) (t (d + 1) 5))
-    (hg : GL (d + 1) Φ) : AssocU4 (d + 1) E Φ := by
+    (hg : GL (d + 1) Φ) : AssocU4 (d + 1) (E (d + 1)) Φ := by
   have hΦ := h.1
+  have hE1 := hE.const (d + 1) (by omega)
   obtain ⟨x, hx, ha, hgx, -⟩ := levelStep hE hd h
   have hA1 : Φ + x - 1 ∈ FF 1 := by
     have e : Φ + x - 1 = (Φ - algebraMap ℚ F2 (FreeAlgebra.algebraMapInv Φ)) + x := by
@@ -195,9 +201,9 @@ theorem assocU4_succ_of_pentagon {d : ℕ} (hd : 1 ≤ d) (hFL : PentagonHexagon
     primDef_mem_of_GL_add hd hA1 (neg_mem hx) hgx (by rwa [add_neg_cancel_right])
   obtain ⟨k, hk, hxk, hkp⟩ := exists_primitive_layer (neg_mem hx) hδ
   -- the defects of `Φ` are minus the linear terms of `x`
-  have hdef : assocDefect (d + 1) E Φ = -assocLin (d + 1) x := by
+  have hdef : assocDefect (d + 1) (E (d + 1)) Φ = -assocLin (d + 1) x := by
     have h0 := (assocU4_iff.1 ha).2
-    rw [assocDefect_add hd hE hΦ hx] at h0
+    rw [assocDefect_add hd hE1 hΦ hx] at h0
     exact eq_neg_of_add_eq_zero_left h0
   have hlk : assocLin (d + 1) k = -assocLin (d + 1) x := by
     have e : k = -x - (-x - k) := by abel
@@ -210,7 +216,7 @@ theorem assocU4_succ_of_pentagon {d : ℕ} (hd : 1 ≤ d) (hFL : PentagonHexagon
   rw [hdef, hx0, neg_zero]
 
 /-- A level invariant at degree `d` for `Φ'` transfers to `Φ ≡ Φ' (mod FF d)`. -/
-theorem LevelInv.congr {E Φ Φ' : F2} {d : ℕ} (h : LevelInv K E d Φ')
+theorem LevelInv.congr {E : ℕ → F2} {Φ Φ' : F2} {d : ℕ} (h : LevelInv K E d Φ')
     (hΦ : FreeAlgebra.algebraMapInv Φ = 1) (hmod : Φ - Φ' ∈ FF d) : LevelInv K E d Φ := by
   refine ⟨hΦ, fun N hN => ?_⟩
   obtain ⟨Ψ, hK, hGL, hm⟩ := h.2 N hN
@@ -220,21 +226,21 @@ theorem LevelInv.congr {E Φ Φ' : F2} {d : ℕ} (h : LevelInv K E d Φ')
   rw [e]
   exact sub_mem hm (tmul_mem_FFK _ hmod)
 
-/-- If `Φ` is already an associator one degree up, the level invariant moves up with it
-(`realign` with the prescribed correction `0`). -/
-theorem LevelInv.succ_of_assoc {E Φ : F2} {d : ℕ} (hd : 1 ≤ d)
-    (hE : FreeAlgebra.algebraMapInv E = 1) (h : LevelInv K E d Φ) (ha : AssocU4 (d + 1) E Φ)
+/-- If `Φ` is already an associator one degree up (for `E (d + 1)`), the level invariant moves
+up with it (`realign` with the prescribed correction `0`). -/
+theorem LevelInv.succ_of_assoc {E : ℕ → F2} {Φ : F2} {d : ℕ} (hd : 1 ≤ d)
+    (hE : ExpFamily E) (h : LevelInv K E d Φ) (ha : AssocU4 (d + 1) (E (d + 1)) Φ)
     (hg : GL (d + 1) Φ) : LevelInv K E (d + 1) Φ := by
   refine ⟨h.1, fun N hN => ?_⟩
   obtain ⟨Ψ, hK, hGL, hm⟩ := h.2 N (by omega)
-  obtain ⟨Ψ', hK', hGL', hm'⟩ := realign (x := 0) hd (by omega) hE h.1 (zero_mem _)
-    (by rwa [add_zero]) (by rwa [add_zero]) hK hGL hm
+  obtain ⟨Ψ', hK', hGL', hm'⟩ := realign (x := 0) hd (by omega) (hE.const N (by omega)) h.1
+    (zero_mem _) (by rwa [add_zero, hE.assocU4_iff (by omega)]) (by rwa [add_zero]) hK hGL hm
   exact ⟨Ψ', hK', hGL', by rwa [add_zero] at hm'⟩
 
-/-- The level invariant at degree 3 for any `Φ` that is an associator modulo degree 3 and
-group-like modulo `FF2 3`, given the `K`-tower. -/
-theorem levelInv_three {E Φ : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
-    (hT : GroupLikeKAssociatorTower K E) (h3 : AssocU4 3 E Φ) (hg : GL 3 Φ) :
+/-- The level invariant at degree 3 for any `Φ` that is an associator modulo degree 3 (for
+`E 3`) and group-like modulo `FF2 3`, given the `K`-tower. -/
+theorem levelInv_three {E : ℕ → F2} {Φ : F2} (hE : ExpFamily E)
+    (hT : GroupLikeKAssociatorTower K E) (h3 : AssocU4 3 (E 3) Φ) (hg : GL 3 Φ) :
     LevelInv K E 3 Φ := by
   have h₀ : LevelInv K E 1 1 := by
     refine ⟨map_one _, fun N hN => ?_⟩
@@ -247,19 +253,21 @@ theorem levelInv_three {E Φ : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
     have := sub_algebraMapInv_mem_FF Φ
     rwa [h3.const, map_one] at this
   have h2 : LevelInv K E 2 Φ :=
-    h1.succ_of_assoc le_rfl hE (h3.trunc (by omega)) (FF2_anti (by omega) hg)
+    h1.succ_of_assoc le_rfl hE ((hE.assocU4_iff (by omega)).1 (h3.trunc (by omega)))
+      (FF2_anti (by omega) hg)
   exact h2.succ_of_assoc (by omega) hE h3 hg
 
-/-- **Pentagon implies hexagon, modulo the Lie statement.** Let `ε(E) = 1`, `N ≥ 3`, and assume
-`GroupLikeKAssociatorTower K E` and `PentagonHexagonLie d` for all `d ≥ 3`. A rational `Φ`,
-group-like modulo `FF2 N`, satisfying the pentagon in `U4 N`, and an associator modulo degree 3,
-is an associator in `U4 N`: (5.12) and the hexagon hold. -/
-theorem assocU4_of_pentagon {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
+/-- **Pentagon implies hexagon, modulo the Lie statement.** Let `E` be a compatible family of
+exponentials, `N ≥ 3`, and assume `GroupLikeKAssociatorTower K E` and `PentagonHexagonLie d` for
+all `d ≥ 3`. A rational `Φ`, group-like modulo `FF2 N`, satisfying the pentagon in `U4 N`, and
+an associator modulo degree 3 for `E 3`, is an associator in `U4 N` for `E N`: (5.12) and the
+hexagon hold. -/
+theorem assocU4_of_pentagon {E : ℕ → F2} (hE : ExpFamily E)
     (hT : GroupLikeKAssociatorTower K E) (hFL : ∀ d, 3 ≤ d → PentagonHexagonLie d)
-    {N : ℕ} (hN : 3 ≤ N) {Φ : F2} (h3 : AssocU4 3 E Φ)
+    {N : ℕ} (hN : 3 ≤ N) {Φ : F2} (h3 : AssocU4 3 (E 3) Φ)
     (hp : Pentagon Φ (t N 0) (t N 1) (t N 3) (t N 4) (t N 5)) (hg : GL N Φ) :
-    AssocU4 N E Φ := by
-  have key : ∀ d, 3 ≤ d → d ≤ N → AssocU4 d E Φ ∧ LevelInv K E d Φ := by
+    AssocU4 N (E N) Φ := by
+  have key : ∀ d, 3 ≤ d → d ≤ N → AssocU4 d (E d) Φ ∧ LevelInv K E d Φ := by
     intro d hd
     induction d, hd using Nat.le_induction with
     | base => exact fun _ => ⟨h3, levelInv_three hE hT h3 (FF2_anti hN hg)⟩
@@ -273,13 +281,14 @@ theorem assocU4_of_pentagon {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
   exact (key N hN le_rfl).1
 
 /-- **The hexagon is redundant for group-like solutions normalised in degree 2**, under the same
-hypotheses: for `N ≥ 3` and `Φ` group-like modulo `FF2 N`, `Φ` is an associator in `U4 N` iff it
-satisfies the pentagon in `U4 N` and is an associator modulo degree 3. -/
-theorem assocU4_iff_pentagon {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
+hypotheses: for `N ≥ 3` and `Φ` group-like modulo `FF2 N`, `Φ` is an associator in `U4 N` for
+`E N` iff it satisfies the pentagon in `U4 N` and is an associator modulo degree 3 for `E 3`. -/
+theorem assocU4_iff_pentagon {E : ℕ → F2} (hE : ExpFamily E)
     (hT : GroupLikeKAssociatorTower K E) (hFL : ∀ d, 3 ≤ d → PentagonHexagonLie d)
     {N : ℕ} (hN : 3 ≤ N) {Φ : F2} (hg : GL N Φ) :
-    AssocU4 N E Φ ↔
-      AssocU4 3 E Φ ∧ Pentagon Φ (t N 0) (t N 1) (t N 3) (t N 4) (t N 5) :=
-  ⟨fun h => ⟨h.trunc hN, h.pent⟩, fun h => assocU4_of_pentagon hE hT hFL hN h.1 h.2 hg⟩
+    AssocU4 N (E N) Φ ↔
+      AssocU4 3 (E 3) Φ ∧ Pentagon Φ (t N 0) (t N 1) (t N 3) (t N 4) (t N 5) :=
+  ⟨fun h => ⟨(hE.assocU4_iff hN).1 (h.trunc hN), h.pent⟩,
+    fun h => assocU4_of_pentagon hE hT hFL hN h.1 h.2 hg⟩
 
 end QOU.BraidsAndKnots.RationalAssociator
