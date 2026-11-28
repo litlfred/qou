@@ -70,6 +70,24 @@ the trace; track the imaginary part").
    where the pre-trace group action fixes the mass ratios exactly. It is a value at `q = i`, not at
    `q₀`, and does not give 206.77.
 
+## 5. One `G_m` per component: interactions across components (Lean, sorry-free)
+
+`QOU/Observations/LeptonColouredBurau.lean`, following the owner's 02:14Z direction. Each lepton is a
+2-component link, so `G_m × G_m` acts, with one colour `tᵢ` per component, through the coloured
+Burau matrices before any trace. The `(0,0)` minor of `I − B` is `(1 − t₂)·Δ_L(t₁,t₂)` up to a unit:
+
+| lepton | `Δ_L(t₁, t₂)` | lk | how the components interact |
+|---|---|---|---|
+| e (Hopf) | 1 | 1 | trivially |
+| μ (T(2,4)) | 1 + t₁t₂ | 2 | only through the diagonal `G_m` (`mu_diagonal`): fully coupled |
+| τ (Whitehead) | (t₁ − 1)(t₂ − 1) | 0 | factorises per component (`tau_split`): decoupled at this level |
+
+The `torres` theorem proves `Δ(t,1)(t − 1) = t^lk − 1` per component, which is `U(1) = 3·lk` (#9805)
+seen per component. On the diagonal at `t = −1` (`q = i`), `(t − 1)Δ` gives −2, 4 and −8, the same
+determinants as §4. The log cross-derivative `∂₁∂₂ log Δ` at `t = 1` (sympy, not in Lean) is 0 for
+e, 1/4 for μ and 0 for τ. Reading: the muon is the only lepton whose two components interact at
+the Alexander level.
+
 ## Open
 
 * The muon pin (bean): derive `m_μ/m_e` from the axioms. Level one is excluded (§1).
