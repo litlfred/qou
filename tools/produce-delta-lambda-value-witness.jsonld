@@ -367,7 +367,7 @@
       "@type": "https://litlfred.github.io/cat-harness/v0/ns/Tool",
       "name": "produce-delta-lambda-value-witness",
       "title": "Produce delta-lambda-witness.json",
-      "description": "Run the computation `computations/delta_lambda_value_witness.py`, which writes `computations/delta-lambda-witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+      "description": "Run the computation `computations/delta_lambda_value_witness.py`, which writes `computations/delta-lambda-witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/mass-theory/delta-lambda-value-vs-magnitude.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
       "install": {
         "none": true
       },

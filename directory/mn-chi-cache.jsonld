@@ -11,7 +11,7 @@
       "contentSource": {
         "kind": "family",
         "branch": "cat/qou/mn-chi-cache/",
-        "keyFrom": "mn-chi-q-<engine-key>, where engine-key is the wheel-cache / trace-cache source key (git trees of tools/pyhecke-native and tools/hecke-engine)",
+        "keyFrom": "mn-chi-q-<engine-key>, where engine-key is the wheel-cache / trace-cache source key (git trees of crates/pyhecke-native and crates/hecke-engine)",
         "declaredIn": "storage"
       },
       "holdsGraph": [

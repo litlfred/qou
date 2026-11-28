@@ -367,7 +367,7 @@
       "@type": "https://litlfred.github.io/cat-harness/v0/ns/Tool",
       "name": "produce-probe-q-beta-operator-valued-n3",
       "title": "Produce q-beta-operator-valued-N3.witness.json",
-      "description": "Run the computation `computations/probe_q_beta_operator_valued_N3.py`, which writes `computations/q-beta-operator-valued-N3.witness.json`. Wired from 2 content block(s): `folio/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.ts`, `folio/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+      "description": "Run the computation `computations/probe_q_beta_operator_valued_N3.py`, which writes `computations/q-beta-operator-valued-N3.witness.json`. Wired from 3 content block(s): `folio/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.ts`, `folio/quantum-observable-universe/mass-theory/tau-M-asymptotic-rep-theory.ts`, `folio/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
       "install": {
         "none": true
       },

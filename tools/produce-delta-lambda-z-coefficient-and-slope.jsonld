@@ -367,7 +367,7 @@
       "@type": "https://litlfred.github.io/cat-harness/v0/ns/Tool",
       "name": "produce-delta-lambda-z-coefficient-and-slope",
       "title": "Produce delta-lambda-z-coefficient-and-slope.witness.json",
-      "description": "Run the computation `computations/delta_lambda_z_coefficient_and_slope.py`, which writes `computations/delta-lambda-z-coefficient-and-slope.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-mirror-cancellation.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+      "description": "Run the computation `computations/delta_lambda_z_coefficient_and_slope.py`, which writes `computations/delta-lambda-z-coefficient-and-slope.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/nuclear-interactions/mirror-baseline-cancellation.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
       "install": {
         "none": true
       },

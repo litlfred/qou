@@ -2,7 +2,7 @@
   "$schema": "folio-bean-index/v1",
   "tile": {
     "beans": {
-      "count": 1790,
+      "count": 1785,
       "unit": "open beans"
     }
   },
@@ -32542,15 +32542,15 @@
     {
       "id": "qou-cbot",
       "title": "Compute bottlenecks audit & Rust crates/* acceleration map: profile slow Python producers/sweeps across computations/ and map exact crates/* targets",
-      "status": "in-progress",
+      "status": "completed",
       "type": "task",
       "priority": "high",
       "parent": "qou-s028",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-28T12:03:00Z",
-      "updatedAt": "2026-11-28T12:03:00Z",
-      "preview": "2026-11-28 (Antigravity coordinator `92bff8c9-777d-458a-a380-8dd5bf5cc0f3`, worktree `main-base` -> branch `claude/compute-bottlenecks-audit-and-rust-map-20261128`): Measure top slow Python producers and sweeps across `computations/` and map each bottleneck to exact `crates/*` (`gs-basis`, `qou-gg-core`, `qou-gg-eval`, `qou-values`, `qou-clarabel`, `hecke-engine`) Rust acceleration paths.",
+      "updatedAt": "2026-11-28T12:44:37Z",
+      "preview": "2026-11-28 (Antigravity coordinator `92bff8c9-777d-458a-a380-8dd5bf5cc0f3`, worktree `main-base` -> branch `claude/compute-bottlenecks-audit-and-rust-map-20261128`): Measure top slow Python producers and sweeps across `computations/` and map each bottleneck to exact `crates/*` (`gs-basis`, `qou-gg-core`, `qou-gg-eval`, `qou-values`, `qou-clarabel`, `hecke-engine`) Rust acceleration paths.\n\n- **202",
       "file": "beans/defs/qou-cbot--compute-bottlenecks-audit-rust-crates-acceleration.md"
     },
     {
@@ -33902,14 +33902,14 @@
     {
       "id": "qou-crwk",
       "title": "crates/ workspace & tools KG migration: move Rust engines to top-level crates/* + Cargo workspace + defineTool KG nodes + local skill",
-      "status": "in-progress",
+      "status": "completed",
       "type": "task",
       "priority": "high",
       "parent": "qou-s028",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-28T11:57:00Z",
-      "updatedAt": "2026-11-28T11:57:00Z",
+      "updatedAt": "2026-11-28T12:37:11Z",
       "preview": "2026-11-28 (Antigravity coordinator `92bff8c9-777d-458a-a380-8dd5bf5cc0f3`, worktree `ws1-precision` -> branch `claude/crates-workspace-and-tools-kg-20261128`): Move `tools/hecke-engine*`, `tools/pyhecke-native`, and `tools/borromean-recurrence-crt` into top-level `crates/*` with a root `Cargo.toml` workspace, add `scripts/gen-crate-tools.ts` / `tool-defs/crates.json` (`tools` KG `defineTool` node",
       "file": "beans/defs/qou-crwk--crates-workspace-tools-kg-migration-move-rust-engi.md"
     },
@@ -41875,14 +41875,14 @@
     {
       "id": "qou-gsgg",
       "title": "crates/gs-basis + crates/qou-gg-core: standalone non-commutative Groebner-Shirshov library + pure-Rust 4-photon & Z=0..118 T3/Hopf chart generator",
-      "status": "in-progress",
+      "status": "completed",
       "type": "task",
       "priority": "high",
       "parent": "qou-s028",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-28T11:57:00Z",
-      "updatedAt": "2026-11-28T11:57:00Z",
+      "updatedAt": "2026-11-28T12:42:55Z",
       "preview": "2026-11-28 (Antigravity coordinator `92bff8c9-777d-458a-a380-8dd5bf5cc0f3`, worktree `ws12-pr9180` -> branch `claude/crates-gs-basis-and-qou-gg-core-20261128`): Build standalone QOU-agnostic non-commutative Groebner-Shirshov crate `crates/gs-basis` (`1A+1B` combined: dynamic Buchberger-Shirshov + Bokut-Shiao Coxeter + `TL_n` diagram reducers, `0` C-FFI) and `crates/qou-gg-core` (pure-Rust 4-term/4",
       "file": "beans/defs/qou-gsgg--crates-gs-basis-crates-qou-gg-core-standalone-non.md"
     },
@@ -45755,14 +45755,14 @@
     {
       "id": "qou-intr",
       "title": "Introduction redo & Paper PDF TeX fix: 3 summary tables (gamma-gamma hadrons, Eightfold status, 26 SM parameters) + proton-pin / E=mc_q^2 currency + fix Paper PDF TeX errors",
-      "status": "in-progress",
+      "status": "completed",
       "type": "task",
       "priority": "high",
       "parent": "qou-s028",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-28T12:03:00Z",
-      "updatedAt": "2026-11-28T12:03:00Z",
+      "updatedAt": "2026-11-28T12:37:11Z",
       "preview": "2026-11-28 (Antigravity coordinator `92bff8c9-777d-458a-a380-8dd5bf5cc0f3`, worktree `ws5-nov19-rebase` -> branch `claude/intro-summary-tables-sm26-pdf-fix-20261128`): Author 3 summary tables in `folio/quantum-observable-universe/introduction/` (`gamma-gamma` hadron highlights, Eightfold Way proved-vs-assumed status, 26 Standard Model parameters grouped), update introduction prose for proton-pin a",
       "file": "beans/defs/qou-intr--introduction-redo-paper-pdf-tex-fix-3-summary-tabl.md"
     },
@@ -63354,14 +63354,14 @@
     {
       "id": "qou-qval",
       "title": "crates/qou-values: fast >=80-dps MPFR proton-pinned witnessed-value evaluator & witness emitter with Frechet-Jacobian uncertainties",
-      "status": "in-progress",
+      "status": "completed",
       "type": "task",
       "priority": "high",
       "parent": "qou-s028",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-28T11:57:00Z",
-      "updatedAt": "2026-11-28T11:57:00Z",
+      "updatedAt": "2026-11-28T12:40:00Z",
       "preview": "2026-11-28 (Antigravity coordinator `92bff8c9-777d-458a-a380-8dd5bf5cc0f3`, worktree `ws2-bridge-hecke` -> branch `claude/crates-qou-values-fast-witness-eval-20261128`): Build general fast MPFR (`>= 80` dps, strictly on the proton pin per 2026-11-28 owner ruling; muon pin on hold) Rust witnessed-value evaluator and `.witness.json` emitter for `ACCURACY.md` and paper `:val[...]` observables with Fr",
       "file": "beans/defs/qou-qval--crates-qou-values-fast-80-dps-mpfr-proton-pinned-w.md"
     },
@@ -65798,7 +65798,7 @@
         "qou-ziag"
       ],
       "createdAt": "2026-11-24T08:06:16Z",
-      "updatedAt": "2026-11-28T12:23:24Z",
+      "updatedAt": "2026-11-28T12:55:47Z",
       "preview": "## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)\n\nA **Swarm** is a first-class work item (`type: epic` in `beans`) with explicit **Acceptance Criteria / End State**, **Structured Work-Item Queues**, **On-Demand + Optional Periodic Human-Consumable Status Reporting**, and **Live Cold-Start Handover Notes**.\n\n### Defined End-State / Exit Criteria for the `'Stability'` Swarm\n- [",
       "file": "beans/defs/qou-s028--stability-swarm-merge-manager-continuity-handover.md"
     },
@@ -88280,13 +88280,13 @@
         "status": "in-progress",
         "epics": 9,
         "total": 433,
-        "closed": 180,
-        "open": 253,
-        "inProgress": 138,
+        "closed": 185,
+        "open": 248,
+        "inProgress": 133,
         "todo": 115,
         "draft": 0,
         "unclassified": 0,
-        "share": 0.41570438799076215
+        "share": 0.42725173210161665
       },
       {
         "id": "suwr",
@@ -88545,8 +88545,8 @@
       }
     ],
     "orphanOpen": 138,
-    "openTotal": 1790,
-    "coveredOpen": 1644,
+    "openTotal": 1785,
+    "coveredOpen": 1639,
     "duplicateIds": 0
   }
 }

@@ -1,0 +1,97 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Process",
+      "name": "Research evidence gathering, multi-DB KG ingestion & authoring provenance",
+      "summary": "Ensure every research investigation and document-authoring pass systematically scopes its topic areas, shortlists needed literature and empirical datasets, retrieves them from scholarly and reference databases (Crossref/DOI, arXiv, INSPIRE-HEP, PubMed, Semant…",
+      "description": "Ensure every research investigation and document-authoring pass systematically scopes its topic areas, shortlists needed literature and empirical datasets, retrieves them from scholarly and reference databases (Crossref/DOI, arXiv, INSPIRE-HEP, PubMed, Semantic Scholar/OpenAlex/Google Scholar, CODATA/PDG/AME2020), ingests them into QOU's Knowledge Graph (`folio/references/`, `library/`, `test/attestations/bib-verification/`), assesses exact relevancy and claim scope, and records provenance in block `authorNotes` and `cites[]` links.\n\nNO EPHEMERAL LITERATURE NOTES (Owner directive 2026-11-28). Papers and datasets consulted during research are ingested into the Knowledge Graph and assessed for relevancy rather than left in ephemeral chat transcripts.\n\nMATH VS COMPARISON BOUNDARY. Triage separates deductive mathematical theorems (`claim_domain: \"math\"`, proved in-paper) from empirical reference measurements (`claim_domain: \"science\"`, entering only at QOU's comparison boundary).\n\nPROVENANCE IN AUTHORING. Block `authorNotes` record exact source theorem/equation/page provenance and convention mappings during authoring, while `cites[]` and prose citations link relevant sources in the published paper.",
+      "enforcement": "strict",
+      "sourcePath": "processes/content/evidence-gathering-and-provenance.bpmn",
+      "sourceUrl": "https://github.com/litlfred/qou/blob/main/processes/content/evidence-gathering-and-provenance.bpmn",
+      "startNode": [
+        "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/StartEvent_ResearchTopic"
+      ],
+      "nodeCount": 9,
+      "flowCount": 9,
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance#flow/Flow_1",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance",
+      "from": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/StartEvent_ResearchTopic",
+      "to": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_ScopeShortlist",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance#flow/Flow_2",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance",
+      "from": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_ScopeShortlist",
+      "to": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_QueryDatabases",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance#flow/Flow_3",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance",
+      "from": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_QueryDatabases",
+      "to": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Gateway_AccessGated",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance#flow/Flow_DirectIngest",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "name": "no",
+      "partOf": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance",
+      "from": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Gateway_AccessGated",
+      "to": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_IngestKG",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance#flow/Flow_AskOwnerUpload",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "name": "yes",
+      "partOf": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance",
+      "from": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Gateway_AccessGated",
+      "to": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_SupplyGatedSource",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance#flow/Flow_Uploaded",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance",
+      "from": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_SupplyGatedSource",
+      "to": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_IngestKG",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance#flow/Flow_4",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance",
+      "from": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_IngestKG",
+      "to": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_AssessRelevancy",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance#flow/Flow_5",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance",
+      "from": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_AssessRelevancy",
+      "to": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_RecordProvenance",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance#flow/Flow_6",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance",
+      "from": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_RecordProvenance",
+      "to": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/EndEvent_ProvenanceLinked",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

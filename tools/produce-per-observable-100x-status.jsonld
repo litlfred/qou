@@ -367,7 +367,7 @@
       "@type": "https://litlfred.github.io/cat-harness/v0/ns/Tool",
       "name": "produce-per-observable-100x-status",
       "title": "Produce per-observable-100x-status.witness.json",
-      "description": "Run the computation `computations/per_observable_100x_status.py`, which writes `computations/per-observable-100x-status.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-qvalues/per-observable-100x-status-dashboard.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+      "description": "Run the computation `computations/per_observable_100x_status.py`, which writes `computations/per-observable-100x-status.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-knot-periodic-table/per-observable-100x-status-dashboard.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
       "install": {
         "none": true
       },

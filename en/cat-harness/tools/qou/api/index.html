@@ -124,7 +124,7 @@
 
 <link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-2dtsu7qepqi.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../../assets/page-layout.js" defer data-fa-page-layout></script><script src="../../../../../assets/draft-banner.js" defer data-fa-page-layout></script><noscript data-fa-draft-noscript><link rel="stylesheet" href="../../../../../assets/draft-banner-noscript.css"></noscript><meta name="fa-pinned-data" content="../../../../.."></head>
 
-<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../..">{"data":"rail-2dtsu7qepqi","here":"/en/cat-harness/tools/qou/api/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#operations-245","label":"Operations (245)"},{"href":"#mcp-tools-0","label":"MCP tools (0)"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">Quantum Observable Universe</a></nav>
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../..">{"data":"rail-2dtsu7qepqi","here":"/en/cat-harness/tools/qou/api/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#operations-263","label":"Operations (263)"},{"href":"#mcp-tools-0","label":"MCP tools (0)"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">Quantum Observable Universe</a></nav>
   <a class="skip-to-main" href="#main-content">Skip to main content</a>
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="svg-link" viewBox="0 0 24 24">
@@ -226,10 +226,10 @@
   <li><a href="../openapi.json"><code class="language-plaintext highlighter-rouge">openapi.json</code></a> — OpenAPI 3.1.0, one operation per Tool. Open it in Swagger UI or Redoc, or generate a client from it. The paths are the Tools’ call contracts, not HTTP endpoints: each operation’s <code class="language-plaintext highlighter-rouge">x-invoke</code> says how the Tool is really reached.</li>
   <li><a href="../mcp-tools.json"><code class="language-plaintext highlighter-rouge">mcp-tools.json</code></a> — the answer an MCP server gives to <code class="language-plaintext highlighter-rouge">tools/list</code>: each tool’s name, description and input schema, read from the registrar that serves it.</li>
 </ul>
-<h2 id="operations-245">
+<h2 id="operations-263">
   
   
-    <a href="#operations-245" class="anchor-heading" aria-labelledby="operations-245"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Operations (245)
+    <a href="#operations-263" class="anchor-heading" aria-labelledby="operations-263"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Operations (263)
   
   
 </h2>
@@ -408,6 +408,83 @@
       <td>shell</td>
     </tr>
     <tr>
+      <td><a id="crate-borromean-recurrence-crt"></a><a href="../crate-borromean-recurrence-crt/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/crate-borromean-recurrence-crt</code></a></td>
+      <td>Rust crate borromean-recurrence-crt (crates/borromean-recurrence-crt)</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">borromean_recurrence_crt</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="crate-gs-basis"></a><a href="../crate-gs-basis/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/crate-gs-basis</code></a></td>
+      <td>Rust crate gs-basis (crates/gs-basis)</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">gs_basis</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="crate-hecke-engine"></a><a href="../crate-hecke-engine/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/crate-hecke-engine</code></a></td>
+      <td>Rust crate hecke-engine (crates/hecke-engine)</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hecke_engine</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="crate-hecke-engine-c"></a><a href="../crate-hecke-engine-c/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/crate-hecke-engine-c</code></a></td>
+      <td>Rust crate hecke-engine-c (crates/hecke-engine-c)</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hecke_engine_c</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="crate-hecke-engine-jvm"></a><a href="../crate-hecke-engine-jvm/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/crate-hecke-engine-jvm</code></a></td>
+      <td>Rust crate hecke-engine-jvm (crates/hecke-engine-jvm)</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hecke_engine_jvm</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="crate-hecke-engine-node"></a><a href="../crate-hecke-engine-node/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/crate-hecke-engine-node</code></a></td>
+      <td>Rust crate hecke-engine-node (crates/hecke-engine-node)</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hecke_engine_node</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="crate-hecke-engine-wasm"></a><a href="../crate-hecke-engine-wasm/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/crate-hecke-engine-wasm</code></a></td>
+      <td>Rust crate hecke-engine-wasm (crates/hecke-engine-wasm)</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hecke_engine_wasm</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="crate-pyhecke-native"></a><a href="../crate-pyhecke-native/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/crate-pyhecke-native</code></a></td>
+      <td>Rust crate pyhecke-native (crates/pyhecke-native)</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">pyhecke_native</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="crate-qou-gg-core"></a><a href="../crate-qou-gg-core/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/crate-qou-gg-core</code></a></td>
+      <td>Rust crate qou-gg-core (crates/qou-gg-core)</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qou_gg_core</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="crate-qou-values"></a><a href="../crate-qou-values/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/crate-qou-values</code></a></td>
+      <td>Rust crate qou-values (crates/qou-values)</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qou_values</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="crate-tools-sync-check"></a><a href="../crate-tools-sync-check/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/crate-tools-sync-check</code></a></td>
+      <td>Check tool-defs crate nodes match crates/*/Cargo.toml</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
       <td><a id="lean-regenerate-check"></a><a href="../lean-regenerate-check/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/lean-regenerate-check</code></a></td>
       <td>Check the generated Lean is in sync</td>
       <td>—</td>
@@ -440,6 +517,13 @@
       <td>Produce alpha-em-q-difference-fourier.witness.json</td>
       <td>—</td>
       <td><code class="language-plaintext highlighter-rouge">alpha-em-q-difference-fourier</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-alpha-alpha-em-seifert-kappa-pairing-probe"></a><a href="../produce-alpha-alpha-em-seifert-kappa-pairing-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-alpha-alpha-em-seifert-kappa-pairing-probe</code></a></td>
+      <td>Produce alpha-em-seifert-kappa-pairing.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">alpha-em-seifert-kappa-pairing</code>?: RepoPath</td>
       <td>shell</td>
     </tr>
     <tr>
@@ -555,13 +639,6 @@
       <td>shell</td>
     </tr>
     <tr>
-      <td><a id="produce-bring-chiral-fibre-figure"></a><a href="../produce-bring-chiral-fibre-figure/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-bring-chiral-fibre-figure</code></a></td>
-      <td>Produce bring-chiral-fibre-figure.witness.json</td>
-      <td>—</td>
-      <td><code class="language-plaintext highlighter-rouge">bring-chiral-fibre-figure</code>?: RepoPath</td>
-      <td>shell</td>
-    </tr>
-    <tr>
       <td><a id="produce-bring-trefoil-cinquefoil-channel"></a><a href="../produce-bring-trefoil-cinquefoil-channel/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-bring-trefoil-cinquefoil-channel</code></a></td>
       <td>Produce bring-trefoil-cinquefoil-channel.witness.json</td>
       <td>—</td>
@@ -587,13 +664,6 @@
       <td>Produce canonical-isospin-pyhecke.witness.json</td>
       <td>—</td>
       <td><code class="language-plaintext highlighter-rouge">canonical-isospin-pyhecke</code>?: RepoPath</td>
-      <td>shell</td>
-    </tr>
-    <tr>
-      <td><a id="produce-canonical-mass"></a><a href="../produce-canonical-mass/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-canonical-mass</code></a></td>
-      <td>Produce m-p-substrate-identity-50dps.witness.json</td>
-      <td>—</td>
-      <td><code class="language-plaintext highlighter-rouge">m-p-substrate-identity-50dps</code>?: RepoPath</td>
       <td>shell</td>
     </tr>
     <tr>
@@ -709,6 +779,13 @@
       <td>shell</td>
     </tr>
     <tr>
+      <td><a id="produce-cyclotomic-boundary-q1-proof-checks"></a><a href="../produce-cyclotomic-boundary-q1-proof-checks/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-cyclotomic-boundary-q1-proof-checks</code></a></td>
+      <td>Produce cyclotomic-boundary-q1-expansion.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">cyclotomic-boundary-q1-expansion</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
       <td><a id="produce-cyclotomic-depth3-dimension-pslq"></a><a href="../produce-cyclotomic-depth3-dimension-pslq/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-cyclotomic-depth3-dimension-pslq</code></a></td>
       <td>Produce cyclotomic-depth3-dimension-pslq.witness.json</td>
       <td>—</td>
@@ -793,24 +870,17 @@
       <td>shell</td>
     </tr>
     <tr>
+      <td><a id="produce-four-term-pair-nucleon-table"></a><a href="../produce-four-term-pair-nucleon-table/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-four-term-pair-nucleon-table</code></a></td>
+      <td>Produce four-term-pair-nucleon-table.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">four-term-pair-nucleon-table</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
       <td><a id="produce-gb-depth-period-bring-fig8"></a><a href="../produce-gb-depth-period-bring-fig8/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-gb-depth-period-bring-fig8</code></a></td>
       <td>Produce gb-depth-period-bring-fig8.witness.json</td>
       <td>—</td>
       <td><code class="language-plaintext highlighter-rouge">gb-depth-period-bring-fig8</code>?: RepoPath</td>
-      <td>shell</td>
-    </tr>
-    <tr>
-      <td><a id="produce-gb-filtration-jet-order-reader"></a><a href="../produce-gb-filtration-jet-order-reader/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-gb-filtration-jet-order-reader</code></a></td>
-      <td>Produce gb-filtration-jet-order-reader.witness.json</td>
-      <td>—</td>
-      <td><code class="language-plaintext highlighter-rouge">gb-filtration-jet-order-reader</code>?: RepoPath</td>
-      <td>shell</td>
-    </tr>
-    <tr>
-      <td><a id="produce-gb-filtration-jet-tracker"></a><a href="../produce-gb-filtration-jet-tracker/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-gb-filtration-jet-tracker</code></a></td>
-      <td>Produce gb-filtration-jet-order.witness.json</td>
-      <td>—</td>
-      <td><code class="language-plaintext highlighter-rouge">gb-filtration-jet-order</code>?: RepoPath</td>
       <td>shell</td>
     </tr>
     <tr>
@@ -839,13 +909,6 @@
       <td>Produce habiro-exact-mass-endomorphism.witness.json</td>
       <td>—</td>
       <td><code class="language-plaintext highlighter-rouge">habiro-exact-mass-endomorphism</code>?: RepoPath</td>
-      <td>shell</td>
-    </tr>
-    <tr>
-      <td><a id="produce-hadron-knot-table"></a><a href="../produce-hadron-knot-table/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-hadron-knot-table</code></a></td>
-      <td>Produce hadron-knot-table.witness.json</td>
-      <td>—</td>
-      <td><code class="language-plaintext highlighter-rouge">hadron-knot-table</code>?: RepoPath</td>
       <td>shell</td>
     </tr>
     <tr>
@@ -982,13 +1045,6 @@
       <td>shell</td>
     </tr>
     <tr>
-      <td><a id="produce-m-p-substrate-identity-50dps"></a><a href="../produce-m-p-substrate-identity-50dps/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-m-p-substrate-identity-50dps</code></a></td>
-      <td>Produce m-p-substrate-identity-50dps.witness.json</td>
-      <td>—</td>
-      <td><code class="language-plaintext highlighter-rouge">m-p-substrate-identity-50dps</code>?: RepoPath</td>
-      <td>shell</td>
-    </tr>
-    <tr>
       <td><a id="produce-markov-markov-peel"></a><a href="../produce-markov-markov-peel/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-markov-markov-peel</code></a></td>
       <td>Produce markov-peel-atomic-tr-m.witness.json</td>
       <td>—</td>
@@ -1059,6 +1115,13 @@
       <td>shell</td>
     </tr>
     <tr>
+      <td><a id="produce-master-atlas-jacobian-80dps"></a><a href="../produce-master-atlas-jacobian-80dps/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-master-atlas-jacobian-80dps</code></a></td>
+      <td>Produce 4 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">codata-masses</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">master-atlas-80dps</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">per-observable-100x-status</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">q-pinning-50-digit</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
       <td><a id="produce-meson-em-sinh-closed-form"></a><a href="../produce-meson-em-sinh-closed-form/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-meson-em-sinh-closed-form</code></a></td>
       <td>Produce meson-em-sinh-closed-form.witness.json</td>
       <td>—</td>
@@ -1105,6 +1168,13 @@
       <td>Produce nf-transition-lifting.witness.json</td>
       <td>—</td>
       <td><code class="language-plaintext highlighter-rouge">nf-transition-lifting</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-observations-bach2013-double-slit-profile-crosscheck"></a><a href="../produce-observations-bach2013-double-slit-profile-crosscheck/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-observations-bach2013-double-slit-profile-crosscheck</code></a></td>
+      <td>Produce bach2013_double_slit_profile_crosscheck.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">bach2013_double_slit_profile_crosscheck</code>?: RepoPath</td>
       <td>shell</td>
     </tr>
     <tr>
@@ -1220,6 +1290,13 @@
       <td>shell</td>
     </tr>
     <tr>
+      <td><a id="produce-probes-alpha-decay-n126-and-derived-qalpha-alpha-decay-n126-qalpha-probe"></a><a href="../produce-probes-alpha-decay-n126-and-derived-qalpha-alpha-decay-n126-qalpha-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-alpha-decay-n126-and-derived-qalpha-alpha-decay-n126-qalpha-probe</code></a></td>
+      <td>Produce alpha_decay_n126_qalpha_probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">alpha_decay_n126_qalpha_probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
       <td><a id="produce-probes-aomega-bps-sector-nondegeneracy"></a><a href="../produce-probes-aomega-bps-sector-nondegeneracy/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-aomega-bps-sector-nondegeneracy</code></a></td>
       <td>Produce aomega-bps-sector-nondegeneracy.witness.json</td>
       <td>—</td>
@@ -1248,6 +1325,13 @@
       <td>shell</td>
     </tr>
     <tr>
+      <td><a id="produce-probes-categorical-hamiltonian-legendre-recoil-probe"></a><a href="../produce-probes-categorical-hamiltonian-legendre-recoil-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-categorical-hamiltonian-legendre-recoil-probe</code></a></td>
+      <td>Produce categorical-hamiltonian-legendre-recoil.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">categorical-hamiltonian-legendre-recoil</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
       <td><a id="produce-probes-colour-cubic-branch-monodromy-probe"></a><a href="../produce-probes-colour-cubic-branch-monodromy-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-colour-cubic-branch-monodromy-probe</code></a></td>
       <td>Produce colour-cubic-branch-monodromy.witness.json</td>
       <td>—</td>
@@ -1266,6 +1350,27 @@
       <td>Produce commutative-chirality-vanishes-probe.witness.json</td>
       <td>—</td>
       <td><code class="language-plaintext highlighter-rouge">commutative-chirality-vanishes-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-confinement-layer-tower-chem-confinement-layer-tower-chem-probe"></a><a href="../produce-probes-confinement-layer-tower-chem-confinement-layer-tower-chem-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-confinement-layer-tower-chem-confinement-layer-tower-chem-probe</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">confinement-layer-tower-chem</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">chamber-gs-model-a-b</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-double-slit-wall-grazing-q-local-double-slit-wall-grazing-q-local-probe"></a><a href="../produce-probes-double-slit-wall-grazing-q-local-double-slit-wall-grazing-q-local-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-double-slit-wall-grazing-q-local-double-slit-wall-grazing-q-local-probe</code></a></td>
+      <td>Produce double_slit_wall_grazing_q_local_probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">double_slit_wall_grazing_q_local_probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-ecat-lp-dual-radical-geom-ecat-lp-dual-radical-geom-probe"></a><a href="../produce-probes-ecat-lp-dual-radical-geom-ecat-lp-dual-radical-geom-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-ecat-lp-dual-radical-geom-ecat-lp-dual-radical-geom-probe</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">a-K-via-lp-dual</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">ecat_lp_dual_radical_geom_probe</code>?: RepoPath</td>
       <td>shell</td>
     </tr>
     <tr>
@@ -1395,6 +1500,27 @@
       <td>shell</td>
     </tr>
     <tr>
+      <td><a id="produce-probes-light-nuclei-a2-a3-bond-generic-z-probe"></a><a href="../produce-probes-light-nuclei-a2-a3-bond-generic-z-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-light-nuclei-a2-a3-bond-generic-z-probe</code></a></td>
+      <td>Produce bond-generic-z.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">bond-generic-z</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-lp-bootstrap-dual-gaps-chamber-gs-model-a-b-probe"></a><a href="../produce-probes-lp-bootstrap-dual-gaps-chamber-gs-model-a-b-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-lp-bootstrap-dual-gaps-chamber-gs-model-a-b-probe</code></a></td>
+      <td>Produce chamber-gs-model-a-b.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">chamber-gs-model-a-b</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-lp-bootstrap-dual-gaps-lp-bootstrap-dual-gaps-probe"></a><a href="../produce-probes-lp-bootstrap-dual-gaps-lp-bootstrap-dual-gaps-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-lp-bootstrap-dual-gaps-lp-bootstrap-dual-gaps-probe</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">lp-bootstrap-dual-gaps</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">rho-k-h3a-lp-dual</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
       <td><a id="produce-probes-pauli-factor-wedderburn-probe"></a><a href="../produce-probes-pauli-factor-wedderburn-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-pauli-factor-wedderburn-probe</code></a></td>
       <td>Produce pauli-factor-wedderburn-probe.witness.json</td>
       <td>—</td>
@@ -1430,6 +1556,13 @@
       <td>shell</td>
     </tr>
     <tr>
+      <td><a id="produce-probes-qbeta-chirality-and-compton-polarizability-qbeta-chirality-and-compton-probe"></a><a href="../produce-probes-qbeta-chirality-and-compton-polarizability-qbeta-chirality-and-compton-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-qbeta-chirality-and-compton-polarizability-qbeta-chirality-and-compton-probe</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-chirality-and-compton</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">q-beta-predicted</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
       <td><a id="produce-probes-qbeta-route75-multiknot-gluing-symbolic-probe"></a><a href="../produce-probes-qbeta-route75-multiknot-gluing-symbolic-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-qbeta-route75-multiknot-gluing-symbolic-probe</code></a></td>
       <td>Produce qbeta-route75-multiknot-gluing-symbolic.witness.json</td>
       <td>—</td>
@@ -1458,6 +1591,27 @@
       <td>shell</td>
     </tr>
     <tr>
+      <td><a id="produce-probes-retired-q0-refresh-to-live-muon-pin-probe"></a><a href="../produce-probes-retired-q0-refresh-to-live-muon-pin-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-retired-q0-refresh-to-live-muon-pin-probe</code></a></td>
+      <td>Produce 4 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">alpha-em-form-ladder</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">alpha-em-no-pi-correction-probe</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">retired_q0_refresh_to_live_muon_pin_probe</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">q-pinning-50-digit</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-sm8w-eightfold-clasp-diquark-gmo-sm8w-eightfold-clasp-diquark-gmo-probe"></a><a href="../produce-probes-sm8w-eightfold-clasp-diquark-gmo-sm8w-eightfold-clasp-diquark-gmo-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-sm8w-eightfold-clasp-diquark-gmo-sm8w-eightfold-clasp-diquark-gmo-probe</code></a></td>
+      <td>Produce sm8w-eightfold-clasp-diquark-gmo.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">sm8w-eightfold-clasp-diquark-gmo</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-sm8w-ewsb-vew-mh-mz-rg-sm8w-ewsb-vew-mh-mz-rg-probe"></a><a href="../produce-probes-sm8w-ewsb-vew-mh-mz-rg-sm8w-ewsb-vew-mh-mz-rg-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-sm8w-ewsb-vew-mh-mz-rg-sm8w-ewsb-vew-mh-mz-rg-probe</code></a></td>
+      <td>Produce sm8w_ewsb_vew_mh_mz_rg_probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">sm8w_ewsb_vew_mh_mz_rg_probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
       <td><a id="produce-probes-spectrahedral-phase-collapse-frame-probe"></a><a href="../produce-probes-spectrahedral-phase-collapse-frame-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-spectrahedral-phase-collapse-frame-probe</code></a></td>
       <td>Produce spectrahedral-phase-collapse-frame-probe.witness.json</td>
       <td>—</td>
@@ -1479,6 +1633,13 @@
       <td>shell</td>
     </tr>
     <tr>
+      <td><a id="produce-probes-w6-inhomogeneous-lepton-resolvent-w6-inhomogeneous-lepton-resolvent-probe"></a><a href="../produce-probes-w6-inhomogeneous-lepton-resolvent-w6-inhomogeneous-lepton-resolvent-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-w6-inhomogeneous-lepton-resolvent-w6-inhomogeneous-lepton-resolvent-probe</code></a></td>
+      <td>Produce 3 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">per-observable-100x-status</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">w10-continuum-ecat-intranuc-em</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">w6-inhomogeneous-lepton-resolvent</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
       <td><a id="produce-probes-y-lambda-cyclotomic-factorization-probe"></a><a href="../produce-probes-y-lambda-cyclotomic-factorization-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-y-lambda-cyclotomic-factorization-probe</code></a></td>
       <td>Produce y-lambda-cyclotomic-factorization-probe.witness.json</td>
       <td>—</td>
@@ -1497,13 +1658,6 @@
       <td>Produce 2 witnesses</td>
       <td>—</td>
       <td><code class="language-plaintext highlighter-rouge">confinement-operator-selection</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">q-beta-form-a-n1-extension</code>?: RepoPath</td>
-      <td>shell</td>
-    </tr>
-    <tr>
-      <td><a id="produce-q-beta-predicted"></a><a href="../produce-q-beta-predicted/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-q-beta-predicted</code></a></td>
-      <td>Produce cal-3-q-beta.witness.json</td>
-      <td>—</td>
-      <td><code class="language-plaintext highlighter-rouge">cal-3-q-beta</code>?: RepoPath</td>
       <td>shell</td>
     </tr>
     <tr>
@@ -1563,13 +1717,6 @@
       <td>shell</td>
     </tr>
     <tr>
-      <td><a id="produce-qbeta-qbeta-ck-cache"></a><a href="../produce-qbeta-qbeta-ck-cache/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-ck-cache</code></a></td>
-      <td>Produce qbeta-ck-cache.witness.json</td>
-      <td>—</td>
-      <td><code class="language-plaintext highlighter-rouge">qbeta-ck-cache</code>?: RepoPath</td>
-      <td>shell</td>
-    </tr>
-    <tr>
       <td><a id="produce-qbeta-qbeta-ck-sseries-operator-match-probe"></a><a href="../produce-qbeta-qbeta-ck-sseries-operator-match-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-ck-sseries-operator-match-probe</code></a></td>
       <td>Produce qbeta-ck-sseries-operator-match.witness.json</td>
       <td>—</td>
@@ -1581,13 +1728,6 @@
       <td>Produce qbeta-ck-truncation-bias-correction-probe.witness.json</td>
       <td>—</td>
       <td><code class="language-plaintext highlighter-rouge">qbeta-ck-truncation-bias-correction-probe</code>?: RepoPath</td>
-      <td>shell</td>
-    </tr>
-    <tr>
-      <td><a id="produce-qbeta-qbeta-ck-truncation-order-analysis"></a><a href="../produce-qbeta-qbeta-ck-truncation-order-analysis/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-ck-truncation-order-analysis</code></a></td>
-      <td>Produce qbeta-ck-truncation-order-analysis.witness.json</td>
-      <td>—</td>
-      <td><code class="language-plaintext highlighter-rouge">qbeta-ck-truncation-order-analysis</code>?: RepoPath</td>
       <td>shell</td>
     </tr>
     <tr>
@@ -1609,6 +1749,13 @@
       <td>Produce qbeta-direction-sanity-gate-probe.witness.json</td>
       <td>—</td>
       <td><code class="language-plaintext highlighter-rouge">qbeta-direction-sanity-gate-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-frobenius-gram-h3-probe"></a><a href="../produce-qbeta-qbeta-frobenius-gram-h3-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-frobenius-gram-h3-probe</code></a></td>
+      <td>Produce qbeta-frobenius-gram-h3.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-frobenius-gram-h3</code>?: RepoPath</td>
       <td>shell</td>
     </tr>
     <tr>
@@ -1686,13 +1833,6 @@
       <td>Produce qbeta-symbolic-chain-alpha-b.witness.json</td>
       <td>—</td>
       <td><code class="language-plaintext highlighter-rouge">qbeta-symbolic-chain-alpha-b</code>?: RepoPath</td>
-      <td>shell</td>
-    </tr>
-    <tr>
-      <td><a id="produce-qou-mass-src-qou-mass-api"></a><a href="../produce-qou-mass-src-qou-mass-api/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qou-mass-src-qou-mass-api</code></a></td>
-      <td>Produce 2 witnesses</td>
-      <td>—</td>
-      <td><code class="language-plaintext highlighter-rouge">canonical-mass-table-242ppb</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">markov-free-energy-qvalues</code>?: RepoPath</td>
       <td>shell</td>
     </tr>
     <tr>
@@ -1850,24 +1990,17 @@
       <td>shell</td>
     </tr>
     <tr>
-      <td><a id="produce-tools-hecke-engine-src-gb-nf-reducer-rs"></a><a href="../produce-tools-hecke-engine-src-gb-nf-reducer-rs/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-tools-hecke-engine-src-gb-nf-reducer-rs</code></a></td>
-      <td>Produce hecke-core-symbolic-migration.witness.json</td>
+      <td><a id="produce-tr-m-atom-via-transfer"></a><a href="../produce-tr-m-atom-via-transfer/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-tr-m-atom-via-transfer</code></a></td>
+      <td>Produce tr-m-atom-via-transfer.witness.json</td>
       <td>—</td>
-      <td><code class="language-plaintext highlighter-rouge">hecke-core-symbolic-migration</code>?: RepoPath</td>
-      <td>shell</td>
-    </tr>
-    <tr>
-      <td><a id="produce-tools-pyhecke-python-pyhecke-wedderburn"></a><a href="../produce-tools-pyhecke-python-pyhecke-wedderburn/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-tools-pyhecke-python-pyhecke-wedderburn</code></a></td>
-      <td>Produce wedderburn-lp-ew-wiring.witness.json</td>
-      <td>—</td>
-      <td><code class="language-plaintext highlighter-rouge">wedderburn-lp-ew-wiring</code>?: RepoPath</td>
+      <td><code class="language-plaintext highlighter-rouge">tr-m-atom-via-transfer</code>?: RepoPath</td>
       <td>shell</td>
     </tr>
     <tr>
       <td><a id="produce-tr-m-q-hecke-seminormal"></a><a href="../produce-tr-m-q-hecke-seminormal/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-tr-m-q-hecke-seminormal</code></a></td>
-      <td>Produce 7 witnesses</td>
+      <td>Produce 8 witnesses</td>
       <td>—</td>
-      <td><code class="language-plaintext highlighter-rouge">atomic-tr-m-mpfr-50dps-proton</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">atomic-tr-m-mpfr-50dps</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">binding-k-solver</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">proton-mass-codata-50dps</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">rho-k-h3a-gg-trajectory</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">rho-k-h3a-lp-dual</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">tr-m-q-hecke-seminormal</code>?: RepoPath</td>
+      <td><code class="language-plaintext highlighter-rouge">atomic-tr-m-mpfr-50dps-proton</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">atomic-tr-m-mpfr-50dps</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">binding-k-solver</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">low-isotope-mass-table</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">proton-mass-codata-50dps</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">rho-k-h3a-gg-trajectory</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">rho-k-h3a-lp-dual</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">tr-m-q-hecke-seminormal</code>?: RepoPath</td>
       <td>shell</td>
     </tr>
     <tr>
@@ -1875,13 +2008,6 @@
       <td>Produce two-filtration-bridge-small-cases.witness.json</td>
       <td>—</td>
       <td><code class="language-plaintext highlighter-rouge">two-filtration-bridge-small-cases</code>?: RepoPath</td>
-      <td>shell</td>
-    </tr>
-    <tr>
-      <td><a id="produce-universal-ilp"></a><a href="../produce-universal-ilp/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-universal-ilp</code></a></td>
-      <td>Produce universal-ilp.witness.json</td>
-      <td>—</td>
-      <td><code class="language-plaintext highlighter-rouge">universal-ilp</code>?: RepoPath</td>
       <td>shell</td>
     </tr>
     <tr>

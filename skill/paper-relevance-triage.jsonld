@@ -10,7 +10,7 @@
       "title": "Paper relevance triage",
       "description": "Review one uploaded source document at a time: identify it, judge whether it bears on this folio, extract the results the folio could actually use, check whether it is already cited, and propose concrete linkage actions (add a reference, cite at a block, aid a proof, write a remark, import a block, cross-check a computation). Records the verdict in the source ledger and queues each accepted action as a bean. Use for \"triage the uploads\", \"is this paper relevant\", \"what can we use from X\", \"which uploads aren't cited\".",
       "instructionsPath": "skills/local/paper-relevance-triage.md",
-      "instructionLines": 253,
+      "instructionLines": 257,
       "hasInstructions": true,
       "hasIOContract": false,
       "ambiguous": true

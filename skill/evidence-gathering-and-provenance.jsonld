@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/evidence-gathering-and-provenance.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/evidence-gathering-and-provenance",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "evidence-gathering-and-provenance",
+      "title": "Evidence Gathering, Multi-Database KG Ingestion & Authoring Provenance",
+      "description": "Mandatory evidence-gathering, multi-database literature/data retrieval, Knowledge Graph ingestion, relevancy assessment, and authoring provenance workflow for QOU research and authoring agents (owner directive 2026-11-28). Use whenever researching an open mathematical or physical topic, surveying prior art, or authoring/updating content blocks grounded in external papers or reference datasets.",
+      "instructionsPath": "skills/local/evidence-gathering-and-provenance.md",
+      "instructionLines": 73,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

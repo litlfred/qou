@@ -367,7 +367,7 @@
       "@type": "https://litlfred.github.io/cat-harness/v0/ns/Tool",
       "name": "produce-basis-knot-tables",
       "title": "Produce basis-knot-tables.witness.json",
-      "description": "Run the computation `computations/basis_knot_tables.py`, which writes `computations/basis-knot-tables.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-knot-operations/hecke-operations.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+      "description": "Run the computation `computations/basis_knot_tables.py`, which writes `computations/basis-knot-tables.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-knot-periodic-table/hecke-operations.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
       "install": {
         "none": true
       },

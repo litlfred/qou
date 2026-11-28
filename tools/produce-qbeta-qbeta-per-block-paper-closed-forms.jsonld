@@ -367,7 +367,7 @@
       "@type": "https://litlfred.github.io/cat-harness/v0/ns/Tool",
       "name": "produce-qbeta-qbeta-per-block-paper-closed-forms",
       "title": "Produce qbeta-per-block-paper-closed-forms.witness.json",
-      "description": "Run the computation `computations/qbeta/qbeta_per_block_paper_closed_forms.py`, which writes `computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+      "description": "Run the computation `computations/qbeta/qbeta_per_block_paper_closed_forms.py`, which writes `computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json`. Wired from 4 content block(s): `folio/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.ts`, `folio/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.ts`, `folio/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.ts`, `folio/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
       "install": {
         "none": true
       },

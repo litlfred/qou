@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Task_ApproveWitnesses.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Task_ApproveWitnesses",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/ProcessNode",
+      "name": "Approve witness refresh card",
+      "nodeKind": "activity",
+      "bpmnType": "bpmn:UserTask",
+      "partOf": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues",
+      "inLane": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/lane/Lane_Owner",
+      "requires": [],
+      "touchesWorkPlan": false,
+      "relaxable": true,
+      "incoming": [
+        "https://litlfred.github.io/qou/process/Process_RustCratesAndValues#flow/Flow_NeedsApproval"
+      ],
+      "outgoing": [
+        "https://litlfred.github.io/qou/process/Process_RustCratesAndValues#flow/Flow_Approved"
+      ],
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

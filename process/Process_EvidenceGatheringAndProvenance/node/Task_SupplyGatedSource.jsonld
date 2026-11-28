@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_SupplyGatedSource.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_SupplyGatedSource",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/ProcessNode",
+      "name": "Drop gated source in uploads/ (optional)",
+      "nodeKind": "activity",
+      "bpmnType": "bpmn:UserTask",
+      "partOf": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance",
+      "inLane": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/lane/Lane_Owner",
+      "requires": [],
+      "touchesWorkPlan": false,
+      "relaxable": true,
+      "incoming": [
+        "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance#flow/Flow_AskOwnerUpload"
+      ],
+      "outgoing": [
+        "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance#flow/Flow_Uploaded"
+      ],
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

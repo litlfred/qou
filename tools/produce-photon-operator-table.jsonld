@@ -367,7 +367,7 @@
       "@type": "https://litlfred.github.io/cat-harness/v0/ns/Tool",
       "name": "produce-photon-operator-table",
       "title": "Produce photon-operator-table.witness.json",
-      "description": "Run the computation `computations/photon_operator_table.py`, which writes `computations/photon-operator-table.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+      "description": "Run the computation `computations/photon_operator_table.py`, which writes `computations/photon-operator-table.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-knot-periodic-table/knot-operator-basis-table.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
       "install": {
         "none": true
       },

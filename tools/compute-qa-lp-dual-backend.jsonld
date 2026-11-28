@@ -367,7 +367,7 @@
       "@type": "https://litlfred.github.io/cat-harness/v0/ns/Tool",
       "name": "compute-qa-lp-dual-backend",
       "title": "compute-QA: Confirm CI solves at 50 dps, not float64",
-      "description": "Run the compute-QA gate `lp-dual-backend` (strict), activity `Task_LpDual` of processes/tools/compute-qa.bpmn: `python3 scripts/lp-dual-backend-check.py`. Writes its verdict to test/results/compute-qa/ (gitignored; published with qa:publish). Needs setup first: cargo build --release --features clarabel-mpfr --bin clarabel-operator-selection-lp (in tools/hecke-engine).",
+      "description": "Run the compute-QA gate `lp-dual-backend` (strict), activity `Task_LpDual` of processes/tools/compute-qa.bpmn: `python3 scripts/lp-dual-backend-check.py`. Writes its verdict to test/results/compute-qa/ (gitignored; published with qa:publish). Needs setup first: CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo build --release -p hecke-engine --features clarabel-mpfr --bin clarabel-operator-selection-lp.",
       "install": {
         "none": true
       },

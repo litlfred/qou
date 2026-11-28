@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Task_VerifyGates.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Task_VerifyGates",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/ProcessNode",
+      "name": "Verify KG, scorecard & JSON-LD gates",
+      "nodeKind": "activity",
+      "bpmnType": "bpmn:ServiceTask",
+      "partOf": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues",
+      "inLane": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/lane/Lane_Agent",
+      "requires": [],
+      "touchesWorkPlan": false,
+      "relaxable": true,
+      "incoming": [
+        "https://litlfred.github.io/qou/process/Process_RustCratesAndValues#flow/Flow_NoWrite",
+        "https://litlfred.github.io/qou/process/Process_RustCratesAndValues#flow/Flow_4"
+      ],
+      "outgoing": [
+        "https://litlfred.github.io/qou/process/Process_RustCratesAndValues#flow/Flow_5"
+      ],
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

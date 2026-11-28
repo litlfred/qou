@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_ScopeShortlist.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/node/Task_ScopeShortlist",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/ProcessNode",
+      "name": "Write topic areas & shortlist papers/data",
+      "nodeKind": "activity",
+      "bpmnType": "bpmn:ServiceTask",
+      "partOf": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance",
+      "inLane": "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance/lane/Lane_Agent",
+      "requires": [],
+      "touchesWorkPlan": false,
+      "relaxable": true,
+      "incoming": [
+        "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance#flow/Flow_1"
+      ],
+      "outgoing": [
+        "https://litlfred.github.io/qou/process/Process_EvidenceGatheringAndProvenance#flow/Flow_2"
+      ],
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

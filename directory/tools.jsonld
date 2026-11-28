@@ -15,8 +15,8 @@
       "holdsGraph": [
         "https://litlfred.github.io/cat-harness/v0/ns/graphTypology/tools"
       ],
-      "description": "qou's Tool nodes: one per computation script a content block wires to a witness, generated from the block manifests by scripts/gen-producer-tools.ts (story TOOLS T5, bean qou-a3l1).",
-      "fileCount": 3,
+      "description": "qou's Tool nodes: one per computation script a content block wires to a witness (scripts/gen-producer-tools.ts, story TOOLS T5, bean qou-a3l1), plus one per top-level Rust crate under crates/ (scripts/gen-crate-tools.ts, owner ruling A2 2026-11-28, bean qou-crwk).",
+      "fileCount": 15,
       "inSubgraph": "https://litlfred.github.io/qou/directory/tools"
     }
   ]

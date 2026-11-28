@@ -1,0 +1,89 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Process",
+      "name": "Rust crates workspace, tool-defs KG registration & proton-pinned witnessed values",
+      "summary": "Author, verify, and register Rust crates in QOU's top-level Cargo workspace (`Cargo.toml` + `crates/*`), and evaluate 80-dps proton-pinned witnessed values via `crates/qou-values` and `Clarabel.rs` MPFR (`rev = \"37f06c3\"`).",
+      "description": "Author, verify, and register Rust crates in QOU's top-level Cargo workspace (`Cargo.toml` + `crates/*`), and evaluate 80-dps proton-pinned witnessed values via `crates/qou-values` and `Clarabel.rs` MPFR (`rev = \"37f06c3\"`).\n\nDOMAIN-NEUTRAL LIBRARY BOUNDARY (Ruling A1, 2026-11-28). General mathematical crates (`crates/gs-basis`: non-commutative Buchberger–Shirshov, Coxeter/Hecke/TL normal forms, Markov tower peeling, binomial/toric Gröbner reduction) stay 100% free of QOU domain specifics with strict semver metadata (`package-release`) so `folio-assistant-sci` and external scientific consumers reuse them directly. QOU-specific physics/model crates (`crates/qou-gg-core`, `crates/qou-gg-eval`, `crates/qou-clarabel`, `crates/qou-values`) sit on top.\n\nEVERY CRATE IS A TOOL NODE (Ruling A2, 2026-11-28). `scripts/gen-crate-tools.ts` projects every `crates/*/Cargo.toml` into `tool-defs/crate-<id>/crate-<id>.json` (`tool-definition/v1`) and `tool-defs/crates.json`, checked by `bun run cat check:tools`.\n\nPROTON PIN & 80-DPS CERTIFICATES (Ruling A3, 2026-11-28). All active Rust and Python evaluations use the proton pin (`q0Anchor = \"proton\"`; muon pin on hold until rederivation) at >= 80 decimal digits (`prec_bits >= 280` in MPFR). Rewriting any committed `*.witness.json` waits on owner approval (`processes/content/witness-refresh.bpmn`).",
+      "enforcement": "strict",
+      "sourcePath": "processes/tools/rust-crates-and-values.bpmn",
+      "sourceUrl": "https://github.com/litlfred/qou/blob/main/processes/tools/rust-crates-and-values.bpmn",
+      "startNode": [
+        "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/StartEvent_CrateChange"
+      ],
+      "nodeCount": 8,
+      "flowCount": 8,
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues#flow/Flow_1",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues",
+      "from": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/StartEvent_CrateChange",
+      "to": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Task_AuthorCrate",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues#flow/Flow_2",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues",
+      "from": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Task_AuthorCrate",
+      "to": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Task_SyncCrateTools",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues#flow/Flow_3",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues",
+      "from": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Task_SyncCrateTools",
+      "to": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Gateway_NeedsWitnessWrite",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues#flow/Flow_NoWrite",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "name": "no",
+      "partOf": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues",
+      "from": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Gateway_NeedsWitnessWrite",
+      "to": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Task_VerifyGates",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues#flow/Flow_NeedsApproval",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "name": "yes",
+      "partOf": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues",
+      "from": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Gateway_NeedsWitnessWrite",
+      "to": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Task_ApproveWitnesses",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues#flow/Flow_Approved",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues",
+      "from": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Task_ApproveWitnesses",
+      "to": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Task_EvalValues",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues#flow/Flow_4",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues",
+      "from": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Task_EvalValues",
+      "to": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Task_VerifyGates",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    },
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues#flow/Flow_5",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/SequenceFlow",
+      "partOf": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues",
+      "from": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/Task_VerifyGates",
+      "to": "https://litlfred.github.io/qou/process/Process_RustCratesAndValues/node/EndEvent_Ready",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-intro-gg-hadron-highlights",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:intro-gg-hadron-highlights",
+  "kind": "table",
+  "title": "Highlights of the two-photon hadron and nuclear junction datum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-gamma-gamma-generates-particles",
+    "papers/quantum-observable-universe/blocks/def-borromean-baryon",
+    "papers/quantum-observable-universe/blocks/rem-meson-to-proton-via-borromean",
+    "papers/quantum-observable-universe/blocks/prose-master-atlas-calibration-jacobian",
+    "papers/quantum-observable-universe/blocks/tbl-master-atlas-hadrons",
+    "papers/quantum-observable-universe/blocks/app-knot-periodic-table"
+  ],
+  "cites": [
+    "references/codata2022",
+    "references/pdg2024",
+    "references/ame2020tables"
+  ],
+  "tags": [
+    "introduction",
+    "hadrons",
+    "gamma-gamma",
+    "summary-table"
+  ],
+  "text": "intro-gg-hadron-highlights.md",
+  "provenance": "authored"
+}

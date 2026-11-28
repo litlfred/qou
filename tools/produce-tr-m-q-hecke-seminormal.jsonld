@@ -366,8 +366,8 @@
       "@id": "https://litlfred.github.io/qou/tools/produce-tr-m-q-hecke-seminormal.jsonld",
       "@type": "https://litlfred.github.io/cat-harness/v0/ns/Tool",
       "name": "produce-tr-m-q-hecke-seminormal",
-      "title": "Produce 7 witnesses",
-      "description": "Run the computation `computations/tr_m_q_hecke_seminormal.py`, which writes `computations/atomic-tr-m-mpfr-50dps-proton.witness.json`, `computations/atomic-tr-m-mpfr-50dps.witness.json`, `computations/binding-k-solver.witness.json`, `computations/proton-mass-codata-50dps.witness.json`, `computations/rho-k-h3a-gg-trajectory.witness.json`, `computations/rho-k-h3a-lp-dual.witness.json`, `computations/tr-m-q-hecke-seminormal.witness.json`. Wired from 3 content block(s): `folio/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure.ts`, `folio/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table-table1-data.ts`, `folio/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+      "title": "Produce 8 witnesses",
+      "description": "Run the computation `computations/tr_m_q_hecke_seminormal.py`, which writes `computations/atomic-tr-m-mpfr-50dps-proton.witness.json`, `computations/atomic-tr-m-mpfr-50dps.witness.json`, `computations/binding-k-solver.witness.json`, `computations/low-isotope-mass-table.witness.json`, `computations/proton-mass-codata-50dps.witness.json`, `computations/rho-k-h3a-gg-trajectory.witness.json`, `computations/rho-k-h3a-lp-dual.witness.json`, `computations/tr-m-q-hecke-seminormal.witness.json`. Wired from 3 content block(s): `folio/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure.ts`, `folio/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table-table1-data.ts`, `folio/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
       "install": {
         "none": true
       },
@@ -391,6 +391,11 @@
             "name": "binding-k-solver",
             "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
             "description": "`computations/binding-k-solver.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "low-isotope-mass-table",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/low-isotope-mass-table.witness.json`, a computation-witness node."
           },
           {
             "name": "proton-mass-codata-50dps",

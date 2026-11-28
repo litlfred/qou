@@ -595,6 +595,24 @@
       "dcterms:identifier": "https://arxiv.org/abs/1701.03146"
     },
     {
+      "@id": "references/agol2011",
+      "@type": [
+        "fabio:Work",
+        "bibo:Chapter"
+      ],
+      "dcterms:title": "Ideal triangulations of pseudo-Anosov mapping tori",
+      "dcterms:creator": [
+        "Agol, Ian"
+      ],
+      "dcterms:issued": "2011",
+      "dcterms:publisher": "American Mathematical Society",
+      "dcterms:isPartOf": "Topology and Geometry in Dimension Three",
+      "bibo:volume": "560",
+      "bibo:pages": "1-17",
+      "bibo:doi": "10.1090/conm/560/11087",
+      "dcterms:identifier": "https://arxiv.org/abs/1008.1606"
+    },
+    {
       "@id": "references/aharonov2003",
       "@type": [
         "fabio:Work",
@@ -4054,6 +4072,26 @@
       "dcterms:hasVersion": "library/pjm-v161-n1-p02-p"
     },
     {
+      "@id": "references/birman-ko-lee1998",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "A New Approach to the Word and Conjugacy Problems in the Braid Groups",
+      "dcterms:creator": [
+        "Birman, Joan",
+        "Ko, Ki Hyoung",
+        "Lee, Sang Jin"
+      ],
+      "dcterms:issued": "1998",
+      "dcterms:isPartOf": "Advances in Mathematics",
+      "bibo:volume": "139",
+      "bibo:issue": "2",
+      "bibo:pages": "322-353",
+      "bibo:doi": "10.1006/aima.1998.1761",
+      "dcterms:identifier": "https://arxiv.org/abs/math/9712211"
+    },
+    {
       "@id": "references/0310279v5",
       "@type": [
         "fabio:Work",
@@ -4126,6 +4164,25 @@
       "dcterms:issued": "1974",
       "dcterms:publisher": "Princeton University Press",
       "bibo:doi": "10.1515/9781400881420"
+    },
+    {
+      "@id": "references/birman-williams1983",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Knotted periodic orbits in dynamical systems—I: Lorenz's equations",
+      "dcterms:creator": [
+        "Birman, Joan S.",
+        "Williams, R. F."
+      ],
+      "dcterms:issued": "1983",
+      "dcterms:isPartOf": "Topology",
+      "bibo:volume": "22",
+      "bibo:issue": "1",
+      "bibo:pages": "47-82",
+      "bibo:doi": "10.1016/0040-9383(83)90045-9",
+      "dcterms:identifier": "https://doi.org/10.1016/0040-9383(83)90045-9"
     },
     {
       "@id": "references/birmanlin1993",
@@ -5124,6 +5181,24 @@
       "dcterms:abstract": "— A braid deﬁnes a link which has a signature. This deﬁnes a map from the braid group to the integers which is not a homomorphism. We relate the homomorphism defect of this map to Meyer cocycle and Maslov class. We give some information about the global geometry of the gordian metric space. R´esum´e (Tresses et signatures). — Une tresse d´eﬁnit un entrelacs qui poss`ede une signature. Ceci d´eﬁnit une application du groupe des tresses vers les entiers qui n’est pas un homomorphisme. Nous relions le d´efaut d’homomorphisme de cette application au cocycle de Meyer et `a la classe de Maslov. Nous donnons quelques informations sur la g´eom´etrie globale de l’espace m´etrique gordien.",
       "dcterms:source": "library/gambaudo-ghys-braids-signatures-2005/manifest.jsonld",
       "dcterms:hasVersion": "library/gambaudo-ghys-braids-signatures-2005"
+    },
+    {
+      "@id": "references/bralic1980",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Exact computation of loop averages in two-dimensional Yang-Mills theory",
+      "dcterms:creator": [
+        "Bralić, Ninoslav E."
+      ],
+      "dcterms:issued": "1980",
+      "dcterms:isPartOf": "Physical Review D",
+      "bibo:volume": "22",
+      "bibo:issue": "12",
+      "bibo:pages": "3090-3103",
+      "bibo:doi": "10.1103/PhysRevD.22.3090",
+      "dcterms:identifier": "https://doi.org/10.1103/PhysRevD.22.3090"
     },
     {
       "@id": "references/bredberg2011",
@@ -7960,6 +8035,26 @@
       "dcterms:hasVersion": "library/arxiv-1206.3156v2"
     },
     {
+      "@id": "references/dehornoy2015",
+      "@type": [
+        "fabio:Work",
+        "bibo:Book"
+      ],
+      "dcterms:title": "Foundations of Garside Theory",
+      "dcterms:creator": [
+        "Dehornoy, Patrick",
+        "Digne, François",
+        "Godelle, Eddy",
+        "Krammer, Daan",
+        "Michel, Jean"
+      ],
+      "dcterms:issued": "2015",
+      "dcterms:publisher": "European Mathematical Society",
+      "bibo:volume": "22",
+      "bibo:doi": "10.4171/139",
+      "dcterms:identifier": "https://arxiv.org/abs/1309.0796"
+    },
+    {
       "@id": "references/arxiv-1207.4990v3",
       "@type": [
         "fabio:Work",
@@ -9286,20 +9381,6 @@
       "dcterms:identifier": "https://arxiv.org/abs/1808.08110"
     },
     {
-      "@id": "references/dubois2007",
-      "@type": [
-        "fabio:Work",
-        "bibo:Article"
-      ],
-      "dcterms:title": "NON–ABELIAN REIDEMEISTER TORSION FOR TWIST KNOTS",
-      "dcterms:creator": [
-        "DUBOIS, J ÉR ÔME",
-        "HUYNH, VU",
-        "YAMAGUCHI, YOSHIKAZU"
-      ],
-      "dcterms:identifier": "https://arxiv.org/abs/0706.2213"
-    },
-    {
       "@id": "references/arxiv-0906.1500v4",
       "@type": [
         "fabio:Work",
@@ -9331,6 +9412,62 @@
       "dcterms:identifier": "https://doi.org/10.2140/agt.2012.12.791",
       "dcterms:source": "library/agt-v12-n2-p04-s/manifest.jsonld",
       "dcterms:hasVersion": "library/agt-v12-n2-p04-s"
+    },
+    {
+      "@id": "references/dubois2005",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Non abelian Reidemeister torsion and volume form on the SU(2)-representation space of knot groups",
+      "dcterms:creator": [
+        "Dubois, Jérôme"
+      ],
+      "dcterms:issued": "2005",
+      "dcterms:isPartOf": "Annales de l'Institut Fourier",
+      "bibo:volume": "55",
+      "bibo:issue": "5",
+      "bibo:pages": "1685-1734",
+      "bibo:doi": "10.5802/aif.2136",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0403470"
+    },
+    {
+      "@id": "references/dubois2006",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Non Abelian Twisted Reidemeister Torsion for Fibered Knots",
+      "dcterms:creator": [
+        "Dubois, Jérôme"
+      ],
+      "dcterms:issued": "2006",
+      "dcterms:isPartOf": "Canadian Mathematical Bulletin",
+      "bibo:volume": "49",
+      "bibo:issue": "1",
+      "bibo:pages": "55-71",
+      "bibo:doi": "10.4153/cmb-2006-006-0",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0403304"
+    },
+    {
+      "@id": "references/dubois2007",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Non-abelian Reidemeister torsion for twist knots",
+      "dcterms:creator": [
+        "Dubois, Jérôme",
+        "Huynh, Vu",
+        "Yamaguchi, Yoshikazu"
+      ],
+      "dcterms:issued": "2009",
+      "dcterms:isPartOf": "Journal of Knot Theory and Its Ramifications",
+      "bibo:volume": "18",
+      "bibo:issue": "3",
+      "bibo:pages": "303-341",
+      "bibo:doi": "10.1142/S0218216509006951",
+      "dcterms:identifier": "https://arxiv.org/abs/0706.2213"
     },
     {
       "@id": "references/kitano-twisted-alexander",
@@ -9927,6 +10064,25 @@
       "dcterms:identifier": "https://arxiv.org/abs/math/0203003",
       "dcterms:source": "library/arxiv-math-0203003v2/manifest.jsonld",
       "dcterms:hasVersion": "library/arxiv-math-0203003v2"
+    },
+    {
+      "@id": "references/etnyre-ghrist2000",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Contact topology and hydrodynamics: I. Beltrami fields and the Seifert conjecture",
+      "dcterms:creator": [
+        "Etnyre, John",
+        "Ghrist, Robert"
+      ],
+      "dcterms:issued": "2000",
+      "dcterms:isPartOf": "Nonlinearity",
+      "bibo:volume": "13",
+      "bibo:issue": "2",
+      "bibo:pages": "441-458",
+      "bibo:doi": "10.1088/0951-7715/13/2/306",
+      "dcterms:identifier": "https://arxiv.org/abs/dg-ga/9708011"
     },
     {
       "@id": "references/arxiv-1304.3481v1",
@@ -11763,7 +11919,7 @@
       "@id": "references/arxiv-1204.4824v2",
       "@type": [
         "fabio:Work",
-        "bibo:Article"
+        "bibo:AcademicArticle"
       ],
       "dcterms:title": "Spectral networks",
       "dcterms:creator": [
@@ -11771,7 +11927,32 @@
         "Moore, Gregory W.",
         "Neitzke, Andrew"
       ],
+      "dcterms:issued": "2013",
+      "dcterms:isPartOf": "Annales Henri Poincaré",
+      "bibo:volume": "14",
+      "bibo:issue": "7",
+      "bibo:pages": "1643-1731",
+      "bibo:doi": "10.1007/s00023-013-0239-7",
       "dcterms:identifier": "https://arxiv.org/abs/1204.4824"
+    },
+    {
+      "@id": "references/gaiotto-moore-neitzke2013",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Wall-crossing, Hitchin systems, and the WKB approximation",
+      "dcterms:creator": [
+        "Gaiotto, Davide",
+        "Moore, Gregory W.",
+        "Neitzke, Andrew"
+      ],
+      "dcterms:issued": "2013",
+      "dcterms:isPartOf": "Advances in Mathematics",
+      "bibo:volume": "234",
+      "bibo:pages": "239-403",
+      "bibo:doi": "10.1016/j.aim.2012.09.027",
+      "dcterms:identifier": "https://arxiv.org/abs/0907.3987"
     },
     {
       "@id": "references/gambaudo-ghys2005",
@@ -12563,6 +12744,24 @@
       "bibo:volume": "406"
     },
     {
+      "@id": "references/garside1969",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The braid group and other groups",
+      "dcterms:creator": [
+        "Garside, F. A."
+      ],
+      "dcterms:issued": "1969",
+      "dcterms:isPartOf": "The Quarterly Journal of Mathematics",
+      "bibo:volume": "20",
+      "bibo:issue": "1",
+      "bibo:pages": "235-254",
+      "bibo:doi": "10.1093/qmath/20.1.235",
+      "dcterms:identifier": "https://doi.org/10.1093/qmath/20.1.235"
+    },
+    {
       "@id": "references/gasper-rahman-2004",
       "@type": [
         "fabio:Work",
@@ -13043,8 +13242,11 @@
         "Ghys, Étienne"
       ],
       "dcterms:issued": "2007",
+      "dcterms:publisher": "European Mathematical Society",
       "dcterms:isPartOf": "Proceedings of the International Congress of Mathematicians (Madrid, 2006), Vol. I",
-      "bibo:pages": "247-277"
+      "bibo:pages": "247-277",
+      "bibo:doi": "10.4171/022-1/11",
+      "dcterms:identifier": "https://doi.org/10.4171/022-1/11"
     },
     {
       "@id": "references/arxiv-1406.7337v4",
@@ -13934,6 +14136,24 @@
       "dcterms:identifier": "https://doi.org/10.2140/gt.2006.10.1239",
       "dcterms:source": "library/0406242v4/manifest.jsonld",
       "dcterms:hasVersion": "library/0406242v4"
+    },
+    {
+      "@id": "references/gueritaud2006",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On canonical triangulations of once-punctured torus bundles and two-bridge link complements",
+      "dcterms:creator": [
+        "Guéritaud, François"
+      ],
+      "dcterms:issued": "2006",
+      "dcterms:isPartOf": "Geometry & Topology",
+      "bibo:volume": "10",
+      "bibo:issue": "3",
+      "bibo:pages": "1239-1284",
+      "bibo:doi": "10.2140/gt.2006.10.1239",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0406242"
     },
     {
       "@id": "references/arxiv-hep-lat-9806003v2",
@@ -17722,6 +17942,24 @@
       "bibo:pages": "2-111",
       "bibo:doi": "10.1016/j.aop.2005.10.005",
       "dcterms:identifier": "https://arxiv.org/abs/cond-mat/0506438"
+    },
+    {
+      "@id": "references/kitano1996",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Twisted Alexander polynomial and Reidemeister torsion",
+      "dcterms:creator": [
+        "Kitano, Teruaki"
+      ],
+      "dcterms:issued": "1996",
+      "dcterms:isPartOf": "Pacific Journal of Mathematics",
+      "bibo:volume": "174",
+      "bibo:issue": "2",
+      "bibo:pages": "431-442",
+      "bibo:doi": "10.2140/pjm.1996.174.431",
+      "dcterms:identifier": "https://doi.org/10.2140/pjm.1996.174.431"
     },
     {
       "@id": "references/1172-2",
@@ -22254,6 +22492,24 @@
       "dcterms:hasVersion": "library/arxiv-math-0111205v1"
     },
     {
+      "@id": "references/muller1993",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Analytic torsion and R-torsion for unimodular representations",
+      "dcterms:creator": [
+        "Müller, Werner"
+      ],
+      "dcterms:issued": "1993",
+      "dcterms:isPartOf": "Journal of the American Mathematical Society",
+      "bibo:volume": "6",
+      "bibo:issue": "3",
+      "bibo:pages": "721-753",
+      "bibo:doi": "10.1090/S0894-0347-1993-1189689-4",
+      "dcterms:identifier": "https://doi.org/10.1090/S0894-0347-1993-1189689-4"
+    },
+    {
       "@id": "references/mulliken1934",
       "@type": [
         "fabio:Work",
@@ -24512,6 +24768,25 @@
       "dcterms:issued": "2014",
       "dcterms:isPartOf": "Algebras and Representation Theory",
       "dcterms:identifier": "https://arxiv.org/abs/1010.4386"
+    },
+    {
+      "@id": "references/porti1997",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Torsion de Reidemeister pour les variétés hyperboliques",
+      "dcterms:creator": [
+        "Porti, Joan"
+      ],
+      "dcterms:issued": "1997",
+      "dcterms:publisher": "American Mathematical Society",
+      "dcterms:isPartOf": "Memoirs of the American Mathematical Society",
+      "bibo:volume": "128",
+      "bibo:issue": "612",
+      "bibo:pages": "x+139",
+      "bibo:doi": "10.1090/memo/0612",
+      "dcterms:identifier": "https://doi.org/10.1090/memo/0612"
     },
     {
       "@id": "references/porti2015",
@@ -30342,6 +30617,24 @@
       "dcterms:publisher": "Springer",
       "bibo:doi": "10.1007/978-1-4612-1934-7",
       "bibo:isbn": "978-0-387-94762-4"
+    },
+    {
+      "@id": "references/weber2005",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Kepler's small stellated dodecahedron as a Riemann surface",
+      "dcterms:creator": [
+        "Weber, Matthias"
+      ],
+      "dcterms:issued": "2005",
+      "dcterms:isPartOf": "Pacific Journal of Mathematics",
+      "bibo:volume": "220",
+      "bibo:issue": "1",
+      "bibo:pages": "167-182",
+      "bibo:doi": "10.2140/pjm.2005.220.167",
+      "dcterms:identifier": "https://doi.org/10.2140/pjm.2005.220.167"
     },
     {
       "@id": "references/arxiv-0707.2003v2",

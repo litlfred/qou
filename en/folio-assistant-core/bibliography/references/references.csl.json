@@ -246,6 +246,32 @@
     "URL": "https://arxiv.org/abs/1701.03146"
   },
   {
+    "id": "agol2011",
+    "type": "chapter",
+    "title": "Ideal triangulations of pseudo-Anosov mapping tori",
+    "author": [
+      {
+        "family": "Agol",
+        "given": "Ian"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "container-title": "Topology and Geometry in Dimension Three",
+    "publisher": "American Mathematical Society",
+    "volume": "560",
+    "page": "1-17",
+    "DOI": "10.1090/conm/560/11087",
+    "URL": "https://arxiv.org/abs/1008.1606",
+    "collection-title": "Contemporary Mathematics",
+    "note": "Contemp. Math. 560, Amer. Math. Soc., Providence, RI (2011), 1-17; arXiv:1008.1606v2. Verified via Crossref REST API (DOI 10.1090/conm/560/11087) and arXiv e-print source (2026-11-28). Proves every punctured pseudo-Anosov mapping torus admits a canonical veering taut ideal triangulation arising from a periodic train-track splitting / Whitehead-move sequence (Theorem 3.5, Proposition 4.2)."
+  },
+  {
     "id": "aharonov2003",
     "type": "article",
     "title": "A Simple Proof that Toffoli and Hadamard are Quantum Universal",
@@ -3447,6 +3473,39 @@
     "note": "PDF library/birkhoff-generalizedriemannproblem-1913/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record."
   },
   {
+    "id": "birman-ko-lee1998",
+    "type": "article-journal",
+    "title": "A New Approach to the Word and Conjugacy Problems in the Braid Groups",
+    "author": [
+      {
+        "family": "Birman",
+        "given": "Joan"
+      },
+      {
+        "family": "Ko",
+        "given": "Ki Hyoung"
+      },
+      {
+        "family": "Lee",
+        "given": "Sang Jin"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1998
+        ]
+      ]
+    },
+    "container-title": "Advances in Mathematics",
+    "volume": "139",
+    "issue": "2",
+    "page": "322-353",
+    "DOI": "10.1006/aima.1998.1761",
+    "URL": "https://arxiv.org/abs/math/9712211",
+    "note": "Adv. Math. 139(2) (1998), 322-353; arXiv:math/9712211v2. Verified via Crossref REST API (DOI 10.1006/aima.1998.1761) and arXiv e-print source (2026-11-28). Introduces the dual (band-generator) Garside monoid on B_n with fundamental cycle delta = a_{n,n-1}...a_{2,1} of word length n-1, left-canonical normal form (Theorem 3.4), and O(|W|^2 n) stepping algorithm (Theorem 3.8)."
+  },
+  {
     "id": "birman-menasco2002",
     "type": "article",
     "title": "On Markov's Theorem",
@@ -3483,6 +3542,35 @@
     "DOI": "10.1515/9781400881420",
     "collection-title": "Annals of Mathematics Studies",
     "collection-number": 82
+  },
+  {
+    "id": "birman-williams1983",
+    "type": "article-journal",
+    "title": "Knotted periodic orbits in dynamical systems—I: Lorenz's equations",
+    "author": [
+      {
+        "family": "Birman",
+        "given": "Joan S."
+      },
+      {
+        "family": "Williams",
+        "given": "R. F."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1983
+        ]
+      ]
+    },
+    "container-title": "Topology",
+    "volume": "22",
+    "issue": "1",
+    "page": "47-82",
+    "DOI": "10.1016/0040-9383(83)90045-9",
+    "URL": "https://doi.org/10.1016/0040-9383(83)90045-9",
+    "note": "Topology 22(1) (1983), 47-82. Verified via Crossref REST API (DOI 10.1016/0040-9383(83)90045-9) (2026-11-28). Introduces branched 2-manifold templates (knot-holders) by quotienting stable foliations of 3-dimensional hyperbolic/semiflow sets, proving periodic orbits project isotopically to positive-braid template knots (Sections 2-4)."
   },
   {
     "id": "birmanlin1993",
@@ -4522,6 +4610,31 @@
     },
     "URL": "https://arxiv.org/abs/1802.00038",
     "note": "arXiv:1802.00038. Added 2026-11-21 for the regularity-breakdown restatement (issue #8864)."
+  },
+  {
+    "id": "bralic1980",
+    "type": "article-journal",
+    "title": "Exact computation of loop averages in two-dimensional Yang-Mills theory",
+    "author": [
+      {
+        "family": "Bralić",
+        "given": "Ninoslav E."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1980
+        ]
+      ]
+    },
+    "container-title": "Physical Review D",
+    "volume": "22",
+    "issue": "12",
+    "page": "3090-3103",
+    "DOI": "10.1103/PhysRevD.22.3090",
+    "URL": "https://doi.org/10.1103/PhysRevD.22.3090",
+    "note": "Phys. Rev. D 22(12) (1980), 3090-3103. Verified via Crossref REST API (DOI 10.1103/PhysRevD.22.3090) and OpenAlex abstract (2026-11-28). Formulates and applies the non-abelian surface Stokes theorem expressing path-ordered Wilson loop holonomies around partial S as surface-ordered exponentials of parallel-transported curvature (Section II), yielding exact entangled loop expectations in 2d Yang-Mills gauge theory (Sections III-IV); physics precursor to Yekutieli (2015)."
   },
   {
     "id": "bredberg2011",
@@ -7173,6 +7286,46 @@
     "collection-title": "MOS-SIAM Series on Optimization"
   },
   {
+    "id": "dehornoy2015",
+    "type": "book",
+    "title": "Foundations of Garside Theory",
+    "author": [
+      {
+        "family": "Dehornoy",
+        "given": "Patrick"
+      },
+      {
+        "family": "Digne",
+        "given": "François"
+      },
+      {
+        "family": "Godelle",
+        "given": "Eddy"
+      },
+      {
+        "family": "Krammer",
+        "given": "Daan"
+      },
+      {
+        "family": "Michel",
+        "given": "Jean"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "publisher": "European Mathematical Society",
+    "volume": "22",
+    "DOI": "10.4171/139",
+    "URL": "https://arxiv.org/abs/1309.0796",
+    "collection-title": "EMS Tracts in Mathematics",
+    "note": "EMS Tracts in Mathematics, Vol. 22, European Mathematical Society, Zürich (2015); arXiv:1309.0796v1. Verified via Crossref REST API (DOI 10.4171/139) and arXiv API (2026-11-28). Comprehensive treatment of Garside categories, Garside families, greedy left/right normal-form geodesic paths, and cycling/sliding conjugacy invariants."
+  },
+  {
     "id": "deift-its-krasovsky2012",
     "type": "article",
     "title": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results",
@@ -8521,25 +8674,87 @@
     "note": "arXiv:1808.08110 (2018); published in Nucl. Phys. B 938 (2019), 751-761 (DOI verified via Crossref 2026-11-23). Uploaded library/arxiv-1808.08110v1/1808.08110v1.pdf."
   },
   {
-    "id": "dubois2007",
-    "type": "article",
-    "title": "NON–ABELIAN REIDEMEISTER TORSION FOR TWIST KNOTS",
+    "id": "dubois2005",
+    "type": "article-journal",
+    "title": "Non abelian Reidemeister torsion and volume form on the SU(2)-representation space of knot groups",
     "author": [
       {
-        "family": "DUBOIS",
-        "given": "J ÉR ÔME"
-      },
-      {
-        "family": "HUYNH",
-        "given": "VU"
-      },
-      {
-        "family": "YAMAGUCHI",
-        "given": "YOSHIKAZU"
+        "family": "Dubois",
+        "given": "Jérôme"
       }
     ],
+    "issued": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    },
+    "container-title": "Annales de l'Institut Fourier",
+    "volume": "55",
+    "issue": "5",
+    "page": "1685-1734",
+    "DOI": "10.5802/aif.2136",
+    "URL": "https://arxiv.org/abs/math/0403470",
+    "note": "Ann. Inst. Fourier (Grenoble) 55(5) (2005), 1685-1734; arXiv:math/0403470v4. Verified via Crossref REST API (DOI 10.5802/aif.2136) and arXiv API (2026-11-28). Defines sign-determined non-abelian adjoint Reidemeister torsion for knot exteriors at mu-regular representations and proves equality with the Casson-Lin-Heusener symplectic volume form on the SU(2)-character variety (Theorem 7.1, label T:Volume=Torsion)."
+  },
+  {
+    "id": "dubois2006",
+    "type": "article-journal",
+    "title": "Non Abelian Twisted Reidemeister Torsion for Fibered Knots",
+    "author": [
+      {
+        "family": "Dubois",
+        "given": "Jérôme"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "container-title": "Canadian Mathematical Bulletin",
+    "volume": "49",
+    "issue": "1",
+    "page": "55-71",
+    "DOI": "10.4153/cmb-2006-006-0",
+    "URL": "https://arxiv.org/abs/math/0403304",
+    "note": "Canad. Math. Bull. 49(1) (2006), 55-71; arXiv:math/0403304v2. Verified via Crossref REST API (DOI 10.4153/cmb-2006-006-0) and arXiv API (2026-11-28). Computes non-abelian Ad-twisted Reidemeister torsion of fibered knots in S^3 from the monodromy action on the fiber group (Section 3, Main Theorem), with explicit evaluations on torus knots and the figure-eight knot 4_1 (Section 5)."
+  },
+  {
+    "id": "dubois2007",
+    "type": "article-journal",
+    "title": "Non-abelian Reidemeister torsion for twist knots",
+    "author": [
+      {
+        "family": "Dubois",
+        "given": "Jérôme"
+      },
+      {
+        "family": "Huynh",
+        "given": "Vu"
+      },
+      {
+        "family": "Yamaguchi",
+        "given": "Yoshikazu"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2009
+        ]
+      ]
+    },
+    "container-title": "Journal of Knot Theory and Its Ramifications",
+    "volume": "18",
+    "issue": "3",
+    "page": "303-341",
+    "DOI": "10.1142/S0218216509006951",
     "URL": "https://arxiv.org/abs/0706.2213",
-    "note": "PDF library/arxiv-0706.2213v3/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record."
+    "note": "J. Knot Theory Ramifications 18(3) (2009), 303-341; arXiv:0706.2213v3. Held in library/arxiv-0706.2213v3/. Publisher metadata verified via Crossref REST API (DOI 10.1142/S0218216509006951) and arXiv API (2026-11-28)."
   },
   {
     "id": "kitano-twisted-alexander",
@@ -9169,6 +9384,35 @@
     "DOI": "10.4310/MRL.2004.v11.n1.a10",
     "URL": "https://arxiv.org/abs/math/0302130",
     "note": "Classifies indecomposable semisimple module categories over $\\mathrm{Rep}(\\mathrm{SL}_q(2))$ at generic $q$ by graphs; the rank-one module categories are the fibre functors, matching Bichon's $B(E)$ classification. Cited alongside bichon2003 for the same eightfold front-2 result. Added 2026-09-03. Verified 2026-11-24 against the Project Euclid / International Press publisher record and zbMATH 1053.17010 (qou-zx95): Mathematical Research Letters 11(1) (2004), pp. 103-114, DOI 10.4310/MRL.2004.v11.n1.a10; arXiv preprint math/0302130 (v1, 2003-02-11)."
+  },
+  {
+    "id": "etnyre-ghrist2000",
+    "type": "article-journal",
+    "title": "Contact topology and hydrodynamics: I. Beltrami fields and the Seifert conjecture",
+    "author": [
+      {
+        "family": "Etnyre",
+        "given": "John"
+      },
+      {
+        "family": "Ghrist",
+        "given": "Robert"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2000
+        ]
+      ]
+    },
+    "container-title": "Nonlinearity",
+    "volume": "13",
+    "issue": "2",
+    "page": "441-458",
+    "DOI": "10.1088/0951-7715/13/2/306",
+    "URL": "https://arxiv.org/abs/dg-ga/9708011",
+    "note": "Nonlinearity 13(2) (2000), 441-458; arXiv:dg-ga/9708011v1. Verified via Crossref REST API (DOI 10.1088/0951-7715/13/2/306) and arXiv e-print source (2026-11-28). Proves exact correspondence (up to smooth rescaling and metric choice) between non-singular rotational Beltrami steady Euler flows (curl u = lambda u) and contact Reeb vector fields on 3-manifolds (Theorem 2.1, Corollary 2.2)."
   },
   {
     "id": "evans-berger1992",
@@ -10821,7 +11065,7 @@
   },
   {
     "id": "arxiv-1204.4824v2",
-    "type": "article",
+    "type": "article-journal",
     "title": "Spectral networks",
     "author": [
       {
@@ -10837,8 +11081,52 @@
         "given": "Andrew"
       }
     ],
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "container-title": "Annales Henri Poincaré",
+    "volume": "14",
+    "issue": "7",
+    "page": "1643-1731",
+    "DOI": "10.1007/s00023-013-0239-7",
     "URL": "https://arxiv.org/abs/1204.4824",
-    "note": "PDF library/arxiv-1204.4824v2/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record."
+    "note": "Ann. Henri Poincaré 14(7) (2013), 1643-1731; arXiv:1204.4824v2. Held in library/arxiv-1204.4824v2/. Publisher metadata verified via Crossref REST API (DOI 10.1007/s00023-013-0239-7) and arXiv API (2026-11-28)."
+  },
+  {
+    "id": "gaiotto-moore-neitzke2013",
+    "type": "article-journal",
+    "title": "Wall-crossing, Hitchin systems, and the WKB approximation",
+    "author": [
+      {
+        "family": "Gaiotto",
+        "given": "Davide"
+      },
+      {
+        "family": "Moore",
+        "given": "Gregory W."
+      },
+      {
+        "family": "Neitzke",
+        "given": "Andrew"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "container-title": "Advances in Mathematics",
+    "volume": "234",
+    "page": "239-403",
+    "DOI": "10.1016/j.aim.2012.09.027",
+    "URL": "https://arxiv.org/abs/0907.3987",
+    "note": "Adv. Math. 234 (2013), 239-403; arXiv:0907.3987v2. Verified via Crossref REST API (DOI 10.1016/j.aim.2012.09.027) and arXiv e-print source (2026-11-28). Constructs WKB ideal triangulations of punctured Riemann surfaces from quadratic differentials, identifies Fock-Goncharov cluster coordinates with WKB periods, and proves flips/jugglings across BPS walls induce Kontsevich-Soibelman / dilogarithm Stokes symplectomorphisms (Sections 5-7, 11)."
   },
   {
     "id": "gambaudo-ghys2005",
@@ -11556,6 +11844,31 @@
     "note": "Cited in QOU/QBeta/HabiroClassicalLimit.lean (eq 161). Identity CONFIRMED from the held PDF library/arxiv-2111.04763v2 -- authors Garoufalidis, Gu, Marino, Wheeler (GGMW), title exact. The citing key 'ggmw2020' and its inline expansion 'Gukov-Garoufalidis-Marino-Wheeler (2020)' were BOTH wrong: it is Garoufalidis-Gu-Marino-Wheeler, arXiv:2111.04763 (2021), CMP 406 (2025). Entry carries the true authors/year; the 'eq (161)' anchor is the citing author's and was not re-verified against the PDF this session."
   },
   {
+    "id": "garside1969",
+    "type": "article-journal",
+    "title": "The braid group and other groups",
+    "author": [
+      {
+        "family": "Garside",
+        "given": "F. A."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1969
+        ]
+      ]
+    },
+    "container-title": "The Quarterly Journal of Mathematics",
+    "volume": "20",
+    "issue": "1",
+    "page": "235-254",
+    "DOI": "10.1093/qmath/20.1.235",
+    "URL": "https://doi.org/10.1093/qmath/20.1.235",
+    "note": "Quart. J. Math. Oxford Ser. (2) 20(1) (1969), 235-254. Verified via Crossref REST API (DOI 10.1093/qmath/20.1.235) (2026-11-28). Introduces the positive braid monoid B_n^+, the fundamental half-twist element Delta, the lattice of simple divisors, and the canonical normal form solving the word and conjugacy problems in B_n."
+  },
+  {
     "id": "gasper-rahman-2004",
     "type": "book",
     "title": "Basic Hypergeometric Series",
@@ -12087,8 +12400,11 @@
       ]
     },
     "container-title": "Proceedings of the International Congress of Mathematicians (Madrid, 2006), Vol. I",
+    "publisher": "European Mathematical Society",
     "page": "247-277",
-    "note": "Bibliographic details recorded from the standard citation; NOT independently verified against the published volume - doi.org and arxiv.org are egress-blocked from the agent sandbox. Confirm page range before relying on it."
+    "DOI": "10.4171/022-1/11",
+    "URL": "https://doi.org/10.4171/022-1/11",
+    "note": "Proc. ICM (Madrid, 2006), Vol. I, EMS Press, Zürich (2007), 247-277. Verified via Crossref REST API (DOI 10.4171/022-1/11) and author open-access text (2026-11-28). Proves modular geodesics in UT(PSL_2(Z)\\H) are isotopic to Lorenz template knots with linking number given by the Rademacher Dedekind-sum cocycle (Section 3.1-3.5)."
   },
   {
     "id": "giambrone2014",
@@ -12897,6 +13213,31 @@
     "publisher": "Springer Nature",
     "DOI": "10.1038/s41563-026-02538-1",
     "URL": "https://www.nature.com/articles/s41563-026-02538-1"
+  },
+  {
+    "id": "gueritaud2006",
+    "type": "article-journal",
+    "title": "On canonical triangulations of once-punctured torus bundles and two-bridge link complements",
+    "author": [
+      {
+        "family": "Guéritaud",
+        "given": "François"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "container-title": "Geometry & Topology",
+    "volume": "10",
+    "issue": "3",
+    "page": "1239-1284",
+    "DOI": "10.2140/gt.2006.10.1239",
+    "URL": "https://arxiv.org/abs/math/0406242",
+    "note": "Geom. Topol. 10(3) (2006), 1239-1284 (with an appendix by David Futer); arXiv:math/0406242v4. Verified via Crossref REST API (DOI 10.2140/gt.2006.10.1239) and arXiv e-print source (2026-11-28). Establishes geometricity and canonical status of the layered ideal triangulations of hyperbolic once-punctured torus bundles from RL monodromy words (Theorem 1.1) and, in David Futer's Appendix B (Sections 9-10), of two-bridge link complements via pillowcase folding."
   },
   {
     "id": "guiraud-malbos2012",
@@ -16592,6 +16933,31 @@
     "page": "2-111",
     "DOI": "10.1016/j.aop.2005.10.005",
     "URL": "https://arxiv.org/abs/cond-mat/0506438"
+  },
+  {
+    "id": "kitano1996",
+    "type": "article-journal",
+    "title": "Twisted Alexander polynomial and Reidemeister torsion",
+    "author": [
+      {
+        "family": "Kitano",
+        "given": "Teruaki"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1996
+        ]
+      ]
+    },
+    "container-title": "Pacific Journal of Mathematics",
+    "volume": "174",
+    "issue": "2",
+    "page": "431-442",
+    "DOI": "10.2140/pjm.1996.174.431",
+    "URL": "https://doi.org/10.2140/pjm.1996.174.431",
+    "note": "Pacific J. Math. 174(2) (1996), 431-442. Verified via Crossref REST API (DOI 10.2140/pjm.1996.174.431) and MSP open-access text (2026-11-28). Proves Wada's twisted Alexander polynomial of a knot exterior for an acyclic SL_n-representation equals its Reidemeister torsion (Theorem A) and is reciprocal/symmetric for SO(n)-representations (Theorem B)."
   },
   {
     "id": "1172-2",
@@ -20796,6 +21162,31 @@
     "URL": "https://www.numdam.org/item/PMIHES_1968__34__53_0/"
   },
   {
+    "id": "muller1993",
+    "type": "article-journal",
+    "title": "Analytic torsion and R-torsion for unimodular representations",
+    "author": [
+      {
+        "family": "Müller",
+        "given": "Werner"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1993
+        ]
+      ]
+    },
+    "container-title": "Journal of the American Mathematical Society",
+    "volume": "6",
+    "issue": "3",
+    "page": "721-753",
+    "DOI": "10.1090/S0894-0347-1993-1189689-4",
+    "URL": "https://doi.org/10.1090/S0894-0347-1993-1189689-4",
+    "note": "J. Amer. Math. Soc. 6(3) (1993), 721-753. Verified via Crossref REST API (DOI 10.1090/S0894-0347-1993-1189689-4) and AMS open-access text (2026-11-28). Extends the Cheeger-Müller theorem from orthogonal/unitary representations to unimodular (SL_n(C), including non-unitary Ad SL_2(C) hyperbolic holonomy) acyclic representations on closed odd-dimensional manifolds (Theorem 1)."
+  },
+  {
     "id": "mulliken1934",
     "type": "article-journal",
     "title": "A New Electroaffinity Scale; Together with Data on Valence States and on Valence Ionization Potentials and Electron Affinities",
@@ -22833,6 +23224,32 @@
     "container-title": "Algebras and Representation Theory",
     "URL": "https://arxiv.org/abs/1010.4386",
     "note": "arXiv:1010.4386. PDF library/arxiv-1010.4386v5/1010.4386v5.pdf (ingested 2026-09-05, owner upload a7d6a3b5). MGM equivalence for weakly proregular ideals: derived complete and derived torsion complexes."
+  },
+  {
+    "id": "porti1997",
+    "type": "article-journal",
+    "title": "Torsion de Reidemeister pour les variétés hyperboliques",
+    "author": [
+      {
+        "family": "Porti",
+        "given": "Joan"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1997
+        ]
+      ]
+    },
+    "container-title": "Memoirs of the American Mathematical Society",
+    "publisher": "American Mathematical Society",
+    "volume": "128",
+    "issue": "612",
+    "page": "x+139",
+    "DOI": "10.1090/memo/0612",
+    "URL": "https://doi.org/10.1090/memo/0612",
+    "note": "Mem. Amer. Math. Soc. 128 (1997), no. 612, x+139 pp. Verified via Crossref REST API (DOI 10.1090/memo/0612) and Porti (2015, arXiv:1511.00400v2) bibliography (2026-11-28). Foundational construction of adjoint SL_2(C) Reidemeister torsion as a rational function on character varieties of cusped hyperbolic 3-manifolds, cusp peripheral change-of-curve formula (Prop. 4.10 / Cor. 4.18), and Dehn-filling asymptotics."
   },
   {
     "id": "porti2015",
@@ -27458,6 +27875,31 @@
     "edition": "2",
     "collection-title": "Graduate Texts in Mathematics",
     "collection-number": "83"
+  },
+  {
+    "id": "weber2005",
+    "type": "article-journal",
+    "title": "Kepler's small stellated dodecahedron as a Riemann surface",
+    "author": [
+      {
+        "family": "Weber",
+        "given": "Matthias"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    },
+    "container-title": "Pacific Journal of Mathematics",
+    "volume": "220",
+    "issue": "1",
+    "page": "167-182",
+    "DOI": "10.2140/pjm.2005.220.167",
+    "URL": "https://doi.org/10.2140/pjm.2005.220.167",
+    "note": "Pacific J. Math. 220(1) (2005), 167-182. Verified via Crossref REST API (DOI 10.2140/pjm.2005.220.167) and MSP open-access text (2026-11-28). Constructs the hyperbolic {5,4} / (2,4,5) triangle-group Riemann surface of Kepler's small stellated dodecahedron (= Bring's genus-4 curve with Aut = S_5, Prop. 2.2 & Sec. 4) and proves geometrically that its Jacobian is isogenous to T^4 for an explicit rhombic elliptic curve T (Theorem 1.1, Corollary 5.5)."
   },
   {
     "id": "webster-williamson2008-hh-soergel",

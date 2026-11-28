@@ -364,7 +364,7 @@
       <td><a id="step-Task_Run"></a><strong>Re-run the approved producers</strong><br /><code class="language-plaintext highlighter-rouge">Task_Run</code></td>
       <td>Compute agent</td>
       <td>—</td>
-      <td>Re-run exactly the approved producers, in dependency order. A producer that writes sibling witnesses outside the approved set is reported, and those files are restored to their committed state rather than committed.</td>
+      <td>Re-run exactly the approved Python (<code class="language-plaintext highlighter-rouge">computations/</code>) or Rust (<code class="language-plaintext highlighter-rouge">crates/qou-values</code>, <code class="language-plaintext highlighter-rouge">crates/hecke-engine</code>) producers at the active proton pin (<code class="language-plaintext highlighter-rouge">q0Anchor = "proton"</code>; muon pin on hold until rederivation per 2026-11-28 owner ruling), in dependency order. A producer that writes sibling witnesses outside the approved set is reported, and those files are restored to their committed state rather than committed.</td>
     </tr>
     <tr>
       <td><a id="step-Task_Gates"></a><strong>Precision gates; keep audit output out</strong><br /><code class="language-plaintext highlighter-rouge">Task_Gates</code></td>

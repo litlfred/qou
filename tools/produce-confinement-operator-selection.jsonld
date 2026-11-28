@@ -367,7 +367,7 @@
       "@type": "https://litlfred.github.io/cat-harness/v0/ns/Tool",
       "name": "produce-confinement-operator-selection",
       "title": "Produce confinement-operator-selection.witness.json",
-      "description": "Run the computation `computations/confinement-operator-selection.py`, which writes `computations/confinement-operator-selection.witness.json`. Wired from 4 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step10-confinement-sdp.ts`, `folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection-table1-data.ts`, `folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection.ts`, `folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+      "description": "Run the computation `computations/confinement-operator-selection.py`, which writes `computations/confinement-operator-selection.witness.json`. Wired from 3 content block(s): `folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection-table1-data.ts`, `folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection.ts`, `folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
       "install": {
         "none": true
       },

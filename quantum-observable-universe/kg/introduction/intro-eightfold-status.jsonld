@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-intro-eightfold-status",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:intro-eightfold-status",
+  "kind": "table",
+  "title": "Derivation status of the Eightfold Way and first-generation multiplet structure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/chap-eightfold-way",
+    "papers/quantum-observable-universe/blocks/app-standard-model",
+    "papers/quantum-observable-universe/blocks/prop-neutral-lepton-fixes-charges",
+    "papers/quantum-observable-universe/blocks/prop-fermi-pair-wedge",
+    "papers/quantum-observable-universe/blocks/prop-even-strand-generation",
+    "papers/quantum-observable-universe/blocks/prop-strand-slot-separates-gen1"
+  ],
+  "tags": [
+    "introduction",
+    "eightfold-way",
+    "standard-model",
+    "summary-table"
+  ],
+  "text": "intro-eightfold-status.md",
+  "provenance": "authored"
+}

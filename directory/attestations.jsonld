@@ -16,7 +16,7 @@
         "https://litlfred.github.io/cat-harness/v0/ns/graphTypology/attestations"
       ],
       "description": "The JUDGEMENT half of QA, kept on main where a git rm of derived results cannot reach it (platform kind `attestations`, schema qa-attestations/v1). Holds the two bibliography judgement ledgers since 2026-10-05 (C9 stories B3/B4): `bib-verification/` (the source ledger, formerly folio/bib-qa-verifications.json, 456 rows in one file per reference) and `bib-human-review/` (formerly folio/schema/references.review.json). Read and written only through the platform's cat-harness/schemas/bib-attestations.ts; Python readers use scripts/lib/bib_ledger.py.",
-      "fileCount": 988,
+      "fileCount": 1008,
       "inSubgraph": "https://litlfred.github.io/qou/directory/attestations"
     }
   ]

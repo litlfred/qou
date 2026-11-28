@@ -14,10 +14,16 @@
       "name": "compute-audit"
     },
     {
+      "name": "compute-author"
+    },
+    {
       "name": "compute-integration-watcher"
     },
     {
       "name": "lean-generation"
+    },
+    {
+      "name": "rust-crates-and-values"
     }
   ],
   "paths": {
@@ -166,7 +172,7 @@
       "post": {
         "operationId": "compute-qa-lp-dual-backend",
         "summary": "compute-QA: Confirm CI solves at 50 dps, not float64",
-        "description": "Run the compute-QA gate `lp-dual-backend` (strict), activity `Task_LpDual` of processes/tools/compute-qa.bpmn: `python3 scripts/lp-dual-backend-check.py`. Writes its verdict to test/results/compute-qa/ (gitignored; published with qa:publish). Needs setup first: cargo build --release --features clarabel-mpfr --bin clarabel-operator-selection-lp (in tools/hecke-engine).",
+        "description": "Run the compute-QA gate `lp-dual-backend` (strict), activity `Task_LpDual` of processes/tools/compute-qa.bpmn: `python3 scripts/lp-dual-backend-check.py`. Writes its verdict to test/results/compute-qa/ (gitignored; published with qa:publish). Needs setup first: CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo build --release -p hecke-engine --features clarabel-mpfr --bin clarabel-operator-selection-lp.",
         "tags": [
           "compute-audit"
         ],
@@ -827,6 +833,591 @@
         ]
       }
     },
+    "/tools/crate-borromean-recurrence-crt": {
+      "post": {
+        "operationId": "crate-borromean-recurrence-crt",
+        "summary": "Rust crate borromean-recurrence-crt (crates/borromean-recurrence-crt)",
+        "description": "Phase-2 modular sampler for the Borromean diagonal colored-Jones recurrence: per-prime RREF nullspace sampling + per-column rational-function fits (canonical monic-Q normalization) for the multi-prime CRT lift (bean n920, PR #3443 follow-up). (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Binaries (1): `borromean-recurrence-crt`. Generated from `crates/borromean-recurrence-crt/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+        "tags": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "crate-borromean-recurrence-crt/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "borromean_recurrence_crt": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "Rust crate `borromean-recurrence-crt` at `crates/borromean-recurrence-crt` (`crates/borromean-recurrence-crt/Cargo.toml`)."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/crate-borromean-recurrence-crt.jsonld",
+        "x-invoke": {
+          "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p borromean-recurrence-crt"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "cargo"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "x-selection": {
+          "when": "Building, type-checking, or consuming `borromean-recurrence-crt` (`crates/borromean-recurrence-crt`).",
+          "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+          "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+        }
+      }
+    },
+    "/tools/crate-gs-basis": {
+      "post": {
+        "operationId": "crate-gs-basis",
+        "summary": "Rust crate gs-basis (crates/gs-basis)",
+        "description": "General-purpose non-commutative Gröbner–Shirshov bases, free associative algebras, and specialized Iwahori–Hecke and Temperley–Lieb normal-form engines. (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Generated from `crates/gs-basis/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+        "tags": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "crate-gs-basis/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "gs_basis": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "Rust crate `gs-basis` at `crates/gs-basis` (`crates/gs-basis/Cargo.toml`)."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/crate-gs-basis.jsonld",
+        "x-invoke": {
+          "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p gs-basis"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "cargo"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "x-selection": {
+          "when": "Building, type-checking, or consuming `gs-basis` (`crates/gs-basis`).",
+          "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+          "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+        }
+      }
+    },
+    "/tools/crate-hecke-engine": {
+      "post": {
+        "operationId": "crate-hecke-engine",
+        "summary": "Rust crate hecke-engine (crates/hecke-engine)",
+        "description": "Gröbner reduction engine for H_n(q) — nuclear normal forms (Workspace member in root `Cargo.toml`. Version 0.8.0, edition 2021, license MIT. Binaries (37): `clarabel-certify`, `clarabel-confinement-moment-sdp`, `clarabel-h3-exact-lp`, `clarabel-operator-selection-lp`, `clarabel-phase8b-mpfr-smoke`, `clarabel-round4-rational-smoke`, `clarabel-round4-sdp-smoke`, `dump-block-matrices`, `faddeev_fk`, `gp-cross-validate`, `hecke`, `hecke-allparts`, `hecke-atomic`, `hecke-bigint`, `hecke-canonical-chi`, `hecke-crt`, `hecke-engine`, `hecke-float`, `hecke-gram`, `hecke-hapower`, `hecke-irrep`, `hecke-mass`, `hecke-modular`, `hecke-molecular`, `hecke-pergen`, `hecke-qvalues`, `hecke-stream`, `hecke-tensor`, `hecke-tower-trace`, `hecke-tr-m-wenzl-lr`, `joint-tower-sdp`, `r5-5-diagnose-h5`, `r5-5-minimal-h5`, `r5-5-scale-test`, `r5-6-smoke`, `tl-cable-mpfr`, `tl-cable-qstar`. Optional features: `clarabel-bigrational`, `clarabel-mpfr`, `clarabel-mpfr-sdp`, `clarabel-sdp`, `mpfr`, `wasm-core`. Generated from `crates/hecke-engine/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+        "tags": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "crate-hecke-engine/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "hecke_engine": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "Rust crate `hecke-engine` at `crates/hecke-engine` (`crates/hecke-engine/Cargo.toml`)."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/crate-hecke-engine.jsonld",
+        "x-invoke": {
+          "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p hecke-engine"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "cargo"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "x-selection": {
+          "when": "Building, type-checking, or consuming `hecke-engine` (`crates/hecke-engine`).",
+          "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+          "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+        }
+      }
+    },
+    "/tools/crate-hecke-engine-c": {
+      "post": {
+        "operationId": "crate-hecke-engine-c",
+        "summary": "Rust crate hecke-engine-c (crates/hecke-engine-c)",
+        "description": "C-ABI bindings for hecke-engine — exposed via cbindgen for FFI from any C-callable language (Octave MEX, native iOS/Android, embedded Lua, R via .Call, etc.) (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Generated from `crates/hecke-engine-c/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+        "tags": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "crate-hecke-engine-c/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "hecke_engine_c": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "Rust crate `hecke-engine-c` at `crates/hecke-engine-c` (`crates/hecke-engine-c/Cargo.toml`)."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/crate-hecke-engine-c.jsonld",
+        "x-invoke": {
+          "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p hecke-engine-c"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "cargo"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "x-selection": {
+          "when": "Building, type-checking, or consuming `hecke-engine-c` (`crates/hecke-engine-c`).",
+          "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+          "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+        }
+      }
+    },
+    "/tools/crate-hecke-engine-jvm": {
+      "post": {
+        "operationId": "crate-hecke-engine-jvm",
+        "summary": "Rust crate hecke-engine-jvm (crates/hecke-engine-jvm)",
+        "description": "UniFFI bindings for hecke-engine — Kotlin / Java / Swift consumers (Target-specific FFI crate listed in root `Cargo.toml` `[workspace].exclude`. Version 0.1.0, edition 2021, license MIT. Binaries (1): `uniffi-bindgen`. Generated from `crates/hecke-engine-jvm/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+        "tags": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "crate-hecke-engine-jvm/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "hecke_engine_jvm": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "Rust crate `hecke-engine-jvm` at `crates/hecke-engine-jvm` (`crates/hecke-engine-jvm/Cargo.toml`)."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/crate-hecke-engine-jvm.jsonld",
+        "x-invoke": {
+          "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check --manifest-path crates/hecke-engine-jvm/Cargo.toml"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "cargo"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "x-selection": {
+          "when": "Building, type-checking, or consuming `hecke-engine-jvm` (`crates/hecke-engine-jvm`).",
+          "limits": "Target-specific FFI crate (`[workspace].exclude`); invoke with its target toolchain flags for release artefacts.",
+          "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+        }
+      }
+    },
+    "/tools/crate-hecke-engine-node": {
+      "post": {
+        "operationId": "crate-hecke-engine-node",
+        "summary": "Rust crate hecke-engine-node (crates/hecke-engine-node)",
+        "description": "napi-rs Node.js native bindings for hecke-engine Gram/trace primitives (Target-specific FFI crate listed in root `Cargo.toml` `[workspace].exclude`. Version 0.1.0, edition 2021, license MIT. Generated from `crates/hecke-engine-node/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+        "tags": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "crate-hecke-engine-node/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "hecke_engine_node": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "Rust crate `hecke-engine-node` at `crates/hecke-engine-node` (`crates/hecke-engine-node/Cargo.toml`)."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/crate-hecke-engine-node.jsonld",
+        "x-invoke": {
+          "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check --manifest-path crates/hecke-engine-node/Cargo.toml"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "cargo"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "x-selection": {
+          "when": "Building, type-checking, or consuming `hecke-engine-node` (`crates/hecke-engine-node`).",
+          "limits": "Target-specific FFI crate (`[workspace].exclude`); invoke with its target toolchain flags for release artefacts.",
+          "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+        }
+      }
+    },
+    "/tools/crate-hecke-engine-wasm": {
+      "post": {
+        "operationId": "crate-hecke-engine-wasm",
+        "summary": "Rust crate hecke-engine-wasm (crates/hecke-engine-wasm)",
+        "description": "WASM-bindgen exports of the pure-Rust canonical surface of hecke-engine (Target-specific FFI crate listed in root `Cargo.toml` `[workspace].exclude`. Version 0.1.0, edition 2021, license MIT. Generated from `crates/hecke-engine-wasm/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+        "tags": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "crate-hecke-engine-wasm/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "hecke_engine_wasm": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "Rust crate `hecke-engine-wasm` at `crates/hecke-engine-wasm` (`crates/hecke-engine-wasm/Cargo.toml`)."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/crate-hecke-engine-wasm.jsonld",
+        "x-invoke": {
+          "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check --manifest-path crates/hecke-engine-wasm/Cargo.toml"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "cargo"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "x-selection": {
+          "when": "Building, type-checking, or consuming `hecke-engine-wasm` (`crates/hecke-engine-wasm`).",
+          "limits": "Target-specific FFI crate (`[workspace].exclude`); invoke with its target toolchain flags for release artefacts.",
+          "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+        }
+      }
+    },
+    "/tools/crate-pyhecke-native": {
+      "post": {
+        "operationId": "crate-pyhecke-native",
+        "summary": "Rust crate pyhecke-native (crates/pyhecke-native)",
+        "description": "PyO3 bindings for hecke-engine Gram/trace primitives (Workspace member in root `Cargo.toml`. Version 0.9.0, edition 2021, license MIT. Optional features: `clarabel-lp`. Generated from `crates/pyhecke-native/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+        "tags": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "crate-pyhecke-native/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "pyhecke_native": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "Rust crate `pyhecke-native` at `crates/pyhecke-native` (`crates/pyhecke-native/Cargo.toml`)."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/crate-pyhecke-native.jsonld",
+        "x-invoke": {
+          "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p pyhecke-native"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "cargo"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "x-selection": {
+          "when": "Building, type-checking, or consuming `pyhecke-native` (`crates/pyhecke-native`).",
+          "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+          "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+        }
+      }
+    },
+    "/tools/crate-qou-gg-core": {
+      "post": {
+        "operationId": "crate-qou-gg-core",
+        "summary": "Rust crate qou-gg-core (crates/qou-gg-core)",
+        "description": "Lightweight, zero-FFI core algebra for ruled 4-term photons, k-photon collisions through 4-photon, linking-neutral cuts, hadron dressings, and Z=0..118 T3/Hopf atomic-chart generation. (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Generated from `crates/qou-gg-core/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+        "tags": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "crate-qou-gg-core/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "qou_gg_core": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "Rust crate `qou-gg-core` at `crates/qou-gg-core` (`crates/qou-gg-core/Cargo.toml`)."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/crate-qou-gg-core.jsonld",
+        "x-invoke": {
+          "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p qou-gg-core"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "cargo"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "x-selection": {
+          "when": "Building, type-checking, or consuming `qou-gg-core` (`crates/qou-gg-core`).",
+          "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+          "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+        }
+      }
+    },
+    "/tools/crate-qou-values": {
+      "post": {
+        "operationId": "crate-qou-values",
+        "summary": "Rust crate qou-values (crates/qou-values)",
+        "description": "General fast >=80-dps MPFR proton-pinned witnessed-value evaluator, Frechet-Jacobian uncertainty propagator, and CLI for ACCURACY.md and paper :val[...] directives. (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Binaries (1): `qou-values`. Generated from `crates/qou-values/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+        "tags": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "crate-qou-values/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "qou_values": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "Rust crate `qou-values` at `crates/qou-values` (`crates/qou-values/Cargo.toml`)."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/crate-qou-values.jsonld",
+        "x-invoke": {
+          "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p qou-values"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "cargo"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "x-selection": {
+          "when": "Building, type-checking, or consuming `qou-values` (`crates/qou-values`).",
+          "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+          "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+        }
+      }
+    },
+    "/tools/crate-tools-sync-check": {
+      "post": {
+        "operationId": "crate-tools-sync-check",
+        "summary": "Check tool-defs crate nodes match crates/*/Cargo.toml",
+        "description": "Verify that `tool-defs/crates.json` and every `tool-defs/crate-*/crate-*.json` node match the live `crates/*/Cargo.toml` and root `Cargo.toml` manifests (`scripts/gen-crate-tools.ts --check`). Writes nothing.",
+        "tags": [
+          "rust-crates-and-values"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "crate-tools-sync-check/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool declares no typed output."
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/crate-tools-sync-check.jsonld",
+        "x-invoke": {
+          "shell": "bun run scripts/gen-crate-tools.ts --check"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "bun"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "rust-crates-and-values"
+        ]
+      }
+    },
     "/tools/lean-regenerate-check": {
       "post": {
         "operationId": "lean-regenerate-check",
@@ -1039,6 +1630,54 @@
         "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-alpha-alpha-em-q-difference-fourier.jsonld",
         "x-invoke": {
           "shell": "python3 -u computations/alpha/alpha_em_q_difference_fourier.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
+    "/tools/produce-alpha-alpha-em-seifert-kappa-pairing-probe": {
+      "post": {
+        "operationId": "produce-alpha-alpha-em-seifert-kappa-pairing-probe",
+        "summary": "Produce alpha-em-seifert-kappa-pairing.witness.json",
+        "description": "Run the computation `computations/alpha/alpha_em_seifert_kappa_pairing_probe.py`, which writes `computations/alpha/alpha-em-seifert-kappa-pairing.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-alpha-alpha-em-seifert-kappa-pairing-probe/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "alpha-em-seifert-kappa-pairing": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/alpha/alpha-em-seifert-kappa-pairing.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-alpha-alpha-em-seifert-kappa-pairing-probe.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/alpha/alpha_em_seifert_kappa_pairing_probe.py"
         },
         "x-install": {
           "none": true
@@ -1542,7 +2181,7 @@
       "post": {
         "operationId": "produce-basis-knot-tables",
         "summary": "Produce basis-knot-tables.witness.json",
-        "description": "Run the computation `computations/basis_knot_tables.py`, which writes `computations/basis-knot-tables.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-knot-operations/hecke-operations.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "description": "Run the computation `computations/basis_knot_tables.py`, which writes `computations/basis-knot-tables.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-knot-periodic-table/hecke-operations.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
         "tags": [
           "compute-integration-watcher"
         ],
@@ -1826,54 +2465,6 @@
         ]
       }
     },
-    "/tools/produce-bring-chiral-fibre-figure": {
-      "post": {
-        "operationId": "produce-bring-chiral-fibre-figure",
-        "summary": "Produce bring-chiral-fibre-figure.witness.json",
-        "description": "Run the computation `computations/bring_chiral_fibre_figure.py`, which writes `computations/bring-chiral-fibre-figure.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step04-bring-brane.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
-        "tags": [
-          "compute-integration-watcher"
-        ],
-        "externalDocs": {
-          "description": "The Tool's page",
-          "url": "produce-bring-chiral-fibre-figure/"
-        },
-        "responses": {
-          "200": {
-            "description": "The Tool's declared outputs.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "bring-chiral-fibre-figure": {
-                      "$ref": "#/components/schemas/RepoPath",
-                      "description": "`computations/bring-chiral-fibre-figure.witness.json`, a computation-witness node."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-bring-chiral-fibre-figure.jsonld",
-        "x-invoke": {
-          "shell": "python3 -u computations/bring_chiral_fibre_figure.py"
-        },
-        "x-install": {
-          "none": true
-        },
-        "x-requires": {
-          "runtime": [
-            "python3"
-          ],
-          "network": false
-        },
-        "x-satisfies": [
-          "compute-integration-watcher"
-        ]
-      }
-    },
     "/tools/produce-bring-trefoil-cinquefoil-channel": {
       "post": {
         "operationId": "produce-bring-trefoil-cinquefoil-channel",
@@ -2066,54 +2657,6 @@
         ]
       }
     },
-    "/tools/produce-canonical-mass": {
-      "post": {
-        "operationId": "produce-canonical-mass",
-        "summary": "Produce m-p-substrate-identity-50dps.witness.json",
-        "description": "Run the computation `computations/canonical_mass.py`, which writes `computations/m-p-substrate-identity-50dps.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09a-mass-identity.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
-        "tags": [
-          "compute-integration-watcher"
-        ],
-        "externalDocs": {
-          "description": "The Tool's page",
-          "url": "produce-canonical-mass/"
-        },
-        "responses": {
-          "200": {
-            "description": "The Tool's declared outputs.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "m-p-substrate-identity-50dps": {
-                      "$ref": "#/components/schemas/RepoPath",
-                      "description": "`computations/m-p-substrate-identity-50dps.witness.json`, a computation-witness node."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-canonical-mass.jsonld",
-        "x-invoke": {
-          "shell": "python3 -u computations/canonical_mass.py"
-        },
-        "x-install": {
-          "none": true
-        },
-        "x-requires": {
-          "runtime": [
-            "python3"
-          ],
-          "network": false
-        },
-        "x-satisfies": [
-          "compute-integration-watcher"
-        ]
-      }
-    },
     "/tools/produce-canonical-mass-table-extended": {
       "post": {
         "operationId": "produce-canonical-mass-table-extended",
@@ -2159,7 +2702,12 @@
         },
         "x-satisfies": [
           "compute-integration-watcher"
-        ]
+        ],
+        "x-selection": {
+          "when": "Refreshing or parity-checking `computations/canonical-mass-table-extended.witness.json` via `computations/canonical_mass_table_extended.py` (wired from `folio/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.ts`, `folio/quantum-observable-universe/mass-theory/hecke-mass-trace.ts`).",
+          "limits": "Writes to a shared witness path also referenced by a companion script; run only the approved producer for the target block.",
+          "cost": "Single Python producer run (`python3 -u`)."
+        }
       }
     },
     "/tools/produce-canonical-tr-m-via-branching": {
@@ -2207,7 +2755,12 @@
         },
         "x-satisfies": [
           "compute-integration-watcher"
-        ]
+        ],
+        "x-selection": {
+          "when": "Refreshing or parity-checking `computations/canonical-mass-table-extended.witness.json` via `computations/canonical_tr_m_via_branching.py` (wired from `folio/quantum-observable-universe/mass-theory/operator-valued-combiner-convergence.ts`).",
+          "limits": "Writes to a shared witness path also referenced by a companion script; run only the approved producer for the target block.",
+          "cost": "Single Python producer run (`python3 -u`)."
+        }
       }
     },
     "/tools/produce-casimir-d6-qcorrection-structure": {
@@ -2810,7 +3363,7 @@
       "post": {
         "operationId": "produce-confinement-operator-selection",
         "summary": "Produce confinement-operator-selection.witness.json",
-        "description": "Run the computation `computations/confinement-operator-selection.py`, which writes `computations/confinement-operator-selection.witness.json`. Wired from 4 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step10-confinement-sdp.ts`, `folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection-table1-data.ts`, `folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection.ts`, `folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "description": "Run the computation `computations/confinement-operator-selection.py`, which writes `computations/confinement-operator-selection.witness.json`. Wired from 3 content block(s): `folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection-table1-data.ts`, `folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection.ts`, `folio/quantum-observable-universe/nuclear-interactions/lp-dual-stability.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
         "tags": [
           "compute-integration-watcher"
         ],
@@ -2887,6 +3440,54 @@
         "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-crystal-pole-order.jsonld",
         "x-invoke": {
           "shell": "python3 -u computations/crystal_pole_order.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
+    "/tools/produce-cyclotomic-boundary-q1-proof-checks": {
+      "post": {
+        "operationId": "produce-cyclotomic-boundary-q1-proof-checks",
+        "summary": "Produce cyclotomic-boundary-q1-expansion.witness.json",
+        "description": "Run the computation `computations/cyclotomic_boundary_q1_proof_checks.py`, which writes `computations/cyclotomic-boundary-q1-expansion.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/mass-theory/habiro-tail-cyclotomic-iff-n-le-5.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-cyclotomic-boundary-q1-proof-checks/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "cyclotomic-boundary-q1-expansion": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/cyclotomic-boundary-q1-expansion.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-cyclotomic-boundary-q1-proof-checks.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/cyclotomic_boundary_q1_proof_checks.py"
         },
         "x-install": {
           "none": true
@@ -3150,7 +3751,7 @@
       "post": {
         "operationId": "produce-delta-lambda-value-witness",
         "summary": "Produce delta-lambda-witness.json",
-        "description": "Run the computation `computations/delta_lambda_value_witness.py`, which writes `computations/delta-lambda-witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "description": "Run the computation `computations/delta_lambda_value_witness.py`, which writes `computations/delta-lambda-witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/mass-theory/delta-lambda-value-vs-magnitude.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
         "tags": [
           "compute-integration-watcher"
         ],
@@ -3198,7 +3799,7 @@
       "post": {
         "operationId": "produce-delta-lambda-z-coefficient-and-slope",
         "summary": "Produce delta-lambda-z-coefficient-and-slope.witness.json",
-        "description": "Run the computation `computations/delta_lambda_z_coefficient_and_slope.py`, which writes `computations/delta-lambda-z-coefficient-and-slope.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-mirror-cancellation.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "description": "Run the computation `computations/delta_lambda_z_coefficient_and_slope.py`, which writes `computations/delta-lambda-z-coefficient-and-slope.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/nuclear-interactions/mirror-baseline-cancellation.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
         "tags": [
           "compute-integration-watcher"
         ],
@@ -3486,6 +4087,54 @@
         ]
       }
     },
+    "/tools/produce-four-term-pair-nucleon-table": {
+      "post": {
+        "operationId": "produce-four-term-pair-nucleon-table",
+        "summary": "Produce four-term-pair-nucleon-table.witness.json",
+        "description": "Run the computation `computations/four_term_pair_nucleon_table.py`, which writes `computations/four-term-pair-nucleon-table.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/knots-particles-confinement/four-term-pair-nucleon-table1-data.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-four-term-pair-nucleon-table/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "four-term-pair-nucleon-table": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/four-term-pair-nucleon-table.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-four-term-pair-nucleon-table.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/four_term_pair_nucleon_table.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
     "/tools/produce-gb-depth-period-bring-fig8": {
       "post": {
         "operationId": "produce-gb-depth-period-bring-fig8",
@@ -3519,102 +4168,6 @@
         "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-gb-depth-period-bring-fig8.jsonld",
         "x-invoke": {
           "shell": "python3 -u computations/gb_depth_period_bring_fig8.py"
-        },
-        "x-install": {
-          "none": true
-        },
-        "x-requires": {
-          "runtime": [
-            "python3"
-          ],
-          "network": false
-        },
-        "x-satisfies": [
-          "compute-integration-watcher"
-        ]
-      }
-    },
-    "/tools/produce-gb-filtration-jet-order-reader": {
-      "post": {
-        "operationId": "produce-gb-filtration-jet-order-reader",
-        "summary": "Produce gb-filtration-jet-order-reader.witness.json",
-        "description": "Run the computation `computations/gb_filtration_jet_order_reader.py`, which writes `computations/gb-filtration-jet-order-reader.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step08-jet-prefix.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
-        "tags": [
-          "compute-integration-watcher"
-        ],
-        "externalDocs": {
-          "description": "The Tool's page",
-          "url": "produce-gb-filtration-jet-order-reader/"
-        },
-        "responses": {
-          "200": {
-            "description": "The Tool's declared outputs.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "gb-filtration-jet-order-reader": {
-                      "$ref": "#/components/schemas/RepoPath",
-                      "description": "`computations/gb-filtration-jet-order-reader.witness.json`, a computation-witness node."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-gb-filtration-jet-order-reader.jsonld",
-        "x-invoke": {
-          "shell": "python3 -u computations/gb_filtration_jet_order_reader.py"
-        },
-        "x-install": {
-          "none": true
-        },
-        "x-requires": {
-          "runtime": [
-            "python3"
-          ],
-          "network": false
-        },
-        "x-satisfies": [
-          "compute-integration-watcher"
-        ]
-      }
-    },
-    "/tools/produce-gb-filtration-jet-tracker": {
-      "post": {
-        "operationId": "produce-gb-filtration-jet-tracker",
-        "summary": "Produce gb-filtration-jet-order.witness.json",
-        "description": "Run the computation `computations/gb_filtration_jet_tracker.py`, which writes `computations/gb-filtration-jet-order.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step07-gb-filtration.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
-        "tags": [
-          "compute-integration-watcher"
-        ],
-        "externalDocs": {
-          "description": "The Tool's page",
-          "url": "produce-gb-filtration-jet-tracker/"
-        },
-        "responses": {
-          "200": {
-            "description": "The Tool's declared outputs.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "gb-filtration-jet-order": {
-                      "$ref": "#/components/schemas/RepoPath",
-                      "description": "`computations/gb-filtration-jet-order.witness.json`, a computation-witness node."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-gb-filtration-jet-tracker.jsonld",
-        "x-invoke": {
-          "shell": "python3 -u computations/gb_filtration_jet_tracker.py"
         },
         "x-install": {
           "none": true
@@ -3827,54 +4380,6 @@
         "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-habiro-habiro-exact-mass-endomorphism.jsonld",
         "x-invoke": {
           "shell": "python3 -u computations/habiro/habiro_exact_mass_endomorphism.py"
-        },
-        "x-install": {
-          "none": true
-        },
-        "x-requires": {
-          "runtime": [
-            "python3"
-          ],
-          "network": false
-        },
-        "x-satisfies": [
-          "compute-integration-watcher"
-        ]
-      }
-    },
-    "/tools/produce-hadron-knot-table": {
-      "post": {
-        "operationId": "produce-hadron-knot-table",
-        "summary": "Produce hadron-knot-table.witness.json",
-        "description": "Run the computation `computations/hadron_knot_table.py`, which writes `computations/hadron-knot-table.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-knot-operations/hadron-level-knot-table.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
-        "tags": [
-          "compute-integration-watcher"
-        ],
-        "externalDocs": {
-          "description": "The Tool's page",
-          "url": "produce-hadron-knot-table/"
-        },
-        "responses": {
-          "200": {
-            "description": "The Tool's declared outputs.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "hadron-knot-table": {
-                      "$ref": "#/components/schemas/RepoPath",
-                      "description": "`computations/hadron-knot-table.witness.json`, a computation-witness node."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-hadron-knot-table.jsonld",
-        "x-invoke": {
-          "shell": "python3 -u computations/hadron_knot_table.py"
         },
         "x-install": {
           "none": true
@@ -4826,54 +5331,6 @@
         ]
       }
     },
-    "/tools/produce-m-p-substrate-identity-50dps": {
-      "post": {
-        "operationId": "produce-m-p-substrate-identity-50dps",
-        "summary": "Produce m-p-substrate-identity-50dps.witness.json",
-        "description": "Run the computation `computations/m_p_substrate_identity_50dps.py`, which writes `computations/m-p-substrate-identity-50dps.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
-        "tags": [
-          "compute-integration-watcher"
-        ],
-        "externalDocs": {
-          "description": "The Tool's page",
-          "url": "produce-m-p-substrate-identity-50dps/"
-        },
-        "responses": {
-          "200": {
-            "description": "The Tool's declared outputs.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "m-p-substrate-identity-50dps": {
-                      "$ref": "#/components/schemas/RepoPath",
-                      "description": "`computations/m-p-substrate-identity-50dps.witness.json`, a computation-witness node."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-m-p-substrate-identity-50dps.jsonld",
-        "x-invoke": {
-          "shell": "python3 -u computations/m_p_substrate_identity_50dps.py"
-        },
-        "x-install": {
-          "none": true
-        },
-        "x-requires": {
-          "runtime": [
-            "python3"
-          ],
-          "network": false
-        },
-        "x-satisfies": [
-          "compute-integration-watcher"
-        ]
-      }
-    },
     "/tools/produce-markov-markov-peel": {
       "post": {
         "operationId": "produce-markov-markov-peel",
@@ -4919,7 +5376,12 @@
         },
         "x-satisfies": [
           "compute-integration-watcher"
-        ]
+        ],
+        "x-selection": {
+          "when": "Refreshing or parity-checking `computations/markov/markov-peel-atomic-tr-m.witness.json` via `computations/markov/markov_peel.py` (wired from `folio/quantum-observable-universe/mass-theory/markov-axiom-recursive-ascent.ts`).",
+          "limits": "Writes to a shared witness path also referenced by a companion script; run only the approved producer for the target block.",
+          "cost": "Single Python producer run (`python3 -u`)."
+        }
       }
     },
     "/tools/produce-markov-markov-peel-atomic-witness": {
@@ -4967,7 +5429,12 @@
         },
         "x-satisfies": [
           "compute-integration-watcher"
-        ]
+        ],
+        "x-selection": {
+          "when": "Refreshing or parity-checking `computations/markov/markov-peel-atomic-tr-m.witness.json` via `computations/markov/markov_peel_atomic_witness.py` (wired from `folio/quantum-observable-universe/mass-theory/markov-pair-z2.ts`).",
+          "limits": "Writes to a shared witness path also referenced by a companion script; run only the approved producer for the target block.",
+          "cost": "Single Python producer run (`python3 -u`)."
+        }
       }
     },
     "/tools/produce-markov-markov-pipeline-cross-validator": {
@@ -5370,6 +5837,66 @@
         ]
       }
     },
+    "/tools/produce-master-atlas-jacobian-80dps": {
+      "post": {
+        "operationId": "produce-master-atlas-jacobian-80dps",
+        "summary": "Produce 4 witnesses",
+        "description": "Run the computation `computations/master_atlas_jacobian_80dps.py`, which writes `computations/codata-masses.witness.json`, `computations/master-atlas-80dps.witness.json`, `computations/per-observable-100x-status.witness.json`, `computations/q-pinning-50-digit.witness.json`. Wired from 10 content block(s): `folio/quantum-observable-universe/appendix-knot-periodic-table/master-atlas-calibration-jacobian.ts`, `folio/quantum-observable-universe/appendix-knot-periodic-table/master-atlas-decays.ts`, `folio/quantum-observable-universe/appendix-knot-periodic-table/master-atlas-hadrons.ts`, `folio/quantum-observable-universe/appendix-knot-periodic-table/master-atlas-molecules.ts`, `folio/quantum-observable-universe/appendix-knot-periodic-table/master-atlas-nuclides-summary.ts`, `folio/quantum-observable-universe/appendix-knot-periodic-table/master-atlas-particles.ts`, `folio/quantum-observable-universe/observations/mass-comparison-table-table1-data.ts`, `folio/quantum-observable-universe/observations/mass-comparison-table-table2-data.ts`, `folio/quantum-observable-universe/observations/mass-comparison-table-table3-data.ts`, `folio/quantum-observable-universe/observations/mass-comparison-table.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-master-atlas-jacobian-80dps/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "codata-masses": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/codata-masses.witness.json`, a computation-witness node."
+                    },
+                    "master-atlas-80dps": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/master-atlas-80dps.witness.json`, a computation-witness node."
+                    },
+                    "per-observable-100x-status": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/per-observable-100x-status.witness.json`, a computation-witness node."
+                    },
+                    "q-pinning-50-digit": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/q-pinning-50-digit.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-master-atlas-jacobian-80dps.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/master_atlas_jacobian_80dps.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
     "/tools/produce-meson-em-sinh-closed-form": {
       "post": {
         "operationId": "produce-meson-em-sinh-closed-form",
@@ -5746,6 +6273,54 @@
         ]
       }
     },
+    "/tools/produce-observations-bach2013-double-slit-profile-crosscheck": {
+      "post": {
+        "operationId": "produce-observations-bach2013-double-slit-profile-crosscheck",
+        "summary": "Produce bach2013_double_slit_profile_crosscheck.witness.json",
+        "description": "Run the computation `computations/observations/bach2013_double_slit_profile_crosscheck.py`, which writes `computations/observations/bach2013_double_slit_profile_crosscheck.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/observations/double-slit-massive-pattern.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-observations-bach2013-double-slit-profile-crosscheck/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "bach2013_double_slit_profile_crosscheck": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/observations/bach2013_double_slit_profile_crosscheck.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-observations-bach2013-double-slit-profile-crosscheck.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/observations/bach2013_double_slit_profile_crosscheck.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
     "/tools/produce-observations-neutron-prediction-comparison-probe": {
       "post": {
         "operationId": "produce-observations-neutron-prediction-comparison-probe",
@@ -5791,7 +6366,12 @@
         },
         "x-satisfies": [
           "compute-integration-watcher"
-        ]
+        ],
+        "x-selection": {
+          "when": "Refreshing or parity-checking `computations/observations/neutron_prediction_comparison_probe.witness.json` via `computations/observations/neutron_prediction_comparison_probe.py` (wired from `folio/quantum-observable-universe/observations/neutron-prediction-comparison.ts`).",
+          "limits": "Writes to a shared witness path also referenced by a companion script; run only the approved producer for the target block.",
+          "cost": "Single Python producer run (`python3 -u`)."
+        }
       }
     },
     "/tools/produce-observations-stability-cubic-table-from-probe": {
@@ -5839,7 +6419,12 @@
         },
         "x-satisfies": [
           "compute-integration-watcher"
-        ]
+        ],
+        "x-selection": {
+          "when": "Refreshing or parity-checking `computations/observations/neutron_prediction_comparison_probe.witness.json` via `computations/observations/stability_cubic_table_from_probe.py` (wired from `folio/quantum-observable-universe/observations/stability-cubic-plot.ts`).",
+          "limits": "Writes to a shared witness path also referenced by a companion script; run only the approved producer for the target block.",
+          "cost": "Single Python producer run (`python3 -u`)."
+        }
       }
     },
     "/tools/produce-operator-selection-lp-symbolic-qq": {
@@ -6134,7 +6719,7 @@
       "post": {
         "operationId": "produce-per-observable-100x-status",
         "summary": "Produce per-observable-100x-status.witness.json",
-        "description": "Run the computation `computations/per_observable_100x_status.py`, which writes `computations/per-observable-100x-status.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-qvalues/per-observable-100x-status-dashboard.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "description": "Run the computation `computations/per_observable_100x_status.py`, which writes `computations/per-observable-100x-status.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-knot-periodic-table/per-observable-100x-status-dashboard.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
         "tags": [
           "compute-integration-watcher"
         ],
@@ -6230,7 +6815,7 @@
       "post": {
         "operationId": "produce-photon-operator-table",
         "summary": "Produce photon-operator-table.witness.json",
-        "description": "Run the computation `computations/photon_operator_table.py`, which writes `computations/photon-operator-table.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "description": "Run the computation `computations/photon_operator_table.py`, which writes `computations/photon-operator-table.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-knot-periodic-table/knot-operator-basis-table.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
         "tags": [
           "compute-integration-watcher"
         ],
@@ -6474,7 +7059,7 @@
       "post": {
         "operationId": "produce-probe-q-beta-operator-valued-n3",
         "summary": "Produce q-beta-operator-valued-N3.witness.json",
-        "description": "Run the computation `computations/probe_q_beta_operator_valued_N3.py`, which writes `computations/q-beta-operator-valued-N3.witness.json`. Wired from 2 content block(s): `folio/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.ts`, `folio/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "description": "Run the computation `computations/probe_q_beta_operator_valued_N3.py`, which writes `computations/q-beta-operator-valued-N3.witness.json`. Wired from 3 content block(s): `folio/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.ts`, `folio/quantum-observable-universe/mass-theory/tau-M-asymptotic-rep-theory.ts`, `folio/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
         "tags": [
           "compute-integration-watcher"
         ],
@@ -6503,6 +7088,54 @@
         "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probe-q-beta-operator-valued-n3.jsonld",
         "x-invoke": {
           "shell": "python3 -u computations/probe_q_beta_operator_valued_N3.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
+    "/tools/produce-probes-alpha-decay-n126-and-derived-qalpha-alpha-decay-n126-qalpha-probe": {
+      "post": {
+        "operationId": "produce-probes-alpha-decay-n126-and-derived-qalpha-alpha-decay-n126-qalpha-probe",
+        "summary": "Produce alpha_decay_n126_qalpha_probe.witness.json",
+        "description": "Run the computation `computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.py`, which writes `computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/observations/alpha-decay-gamow-tunneling.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-probes-alpha-decay-n126-and-derived-qalpha-alpha-decay-n126-qalpha-probe/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "alpha_decay_n126_qalpha_probe": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probes-alpha-decay-n126-and-derived-qalpha-alpha-decay-n126-qalpha-probe.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.py"
         },
         "x-install": {
           "none": true
@@ -6718,6 +7351,54 @@
         ]
       }
     },
+    "/tools/produce-probes-categorical-hamiltonian-legendre-recoil-probe": {
+      "post": {
+        "operationId": "produce-probes-categorical-hamiltonian-legendre-recoil-probe",
+        "summary": "Produce categorical-hamiltonian-legendre-recoil.witness.json",
+        "description": "Run the computation `computations/probes/categorical_hamiltonian_legendre_recoil_probe.py`, which writes `computations/probes/categorical-hamiltonian-legendre-recoil.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/quantum-observable-universes/categorical-hamiltonian.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-probes-categorical-hamiltonian-legendre-recoil-probe/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "categorical-hamiltonian-legendre-recoil": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/probes/categorical-hamiltonian-legendre-recoil.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probes-categorical-hamiltonian-legendre-recoil-probe.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/probes/categorical_hamiltonian_legendre_recoil_probe.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
     "/tools/produce-probes-colour-cubic-branch-monodromy-probe": {
       "post": {
         "operationId": "produce-probes-colour-cubic-branch-monodromy-probe",
@@ -6847,6 +7528,158 @@
         "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probes-commutative-chirality-vanishes-probe.jsonld",
         "x-invoke": {
           "shell": "python3 -u computations/probes/commutative_chirality_vanishes_probe.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
+    "/tools/produce-probes-confinement-layer-tower-chem-confinement-layer-tower-chem-probe": {
+      "post": {
+        "operationId": "produce-probes-confinement-layer-tower-chem-confinement-layer-tower-chem-probe",
+        "summary": "Produce 2 witnesses",
+        "description": "Run the computation `computations/probes/confinement_layer_tower_chem/confinement_layer_tower_chem_probe.py`, which writes `computations/probes/confinement_layer_tower_chem/confinement-layer-tower-chem.witness.json`, `computations/probes/lp_bootstrap_dual_gaps/chamber-gs-model-a-b.witness.json`. Wired from 6 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/confinement-tower-chamber-gs.ts`, `folio/quantum-observable-universe/molecular-construction/adiabatic-confinement-gap-stability.ts`, `folio/quantum-observable-universe/molecular-construction/five-layer-confinement-tower-rg.ts`, `folio/quantum-observable-universe/molecular-construction/shell-filling-electronegativity-ilp.ts`, `folio/quantum-observable-universe/molecular-construction/toric-chemical-groebner-geometry.ts`, `folio/quantum-observable-universe/molecular-construction/toric-diophantine-stoichiometry.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-probes-confinement-layer-tower-chem-confinement-layer-tower-chem-probe/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "confinement-layer-tower-chem": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/probes/confinement_layer_tower_chem/confinement-layer-tower-chem.witness.json`, a computation-witness node."
+                    },
+                    "chamber-gs-model-a-b": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/probes/lp_bootstrap_dual_gaps/chamber-gs-model-a-b.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probes-confinement-layer-tower-chem-confinement-layer-tower-chem-probe.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/probes/confinement_layer_tower_chem/confinement_layer_tower_chem_probe.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
+    "/tools/produce-probes-double-slit-wall-grazing-q-local-double-slit-wall-grazing-q-local-probe": {
+      "post": {
+        "operationId": "produce-probes-double-slit-wall-grazing-q-local-double-slit-wall-grazing-q-local-probe",
+        "summary": "Produce double_slit_wall_grazing_q_local_probe.witness.json",
+        "description": "Run the computation `computations/probes/double_slit_wall_grazing_q_local/double_slit_wall_grazing_q_local_probe.py`, which writes `computations/probes/double_slit_wall_grazing_q_local/double_slit_wall_grazing_q_local_probe.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/observations/double-slit-analytical.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-probes-double-slit-wall-grazing-q-local-double-slit-wall-grazing-q-local-probe/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "double_slit_wall_grazing_q_local_probe": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/probes/double_slit_wall_grazing_q_local/double_slit_wall_grazing_q_local_probe.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probes-double-slit-wall-grazing-q-local-double-slit-wall-grazing-q-local-probe.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/probes/double_slit_wall_grazing_q_local/double_slit_wall_grazing_q_local_probe.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
+    "/tools/produce-probes-ecat-lp-dual-radical-geom-ecat-lp-dual-radical-geom-probe": {
+      "post": {
+        "operationId": "produce-probes-ecat-lp-dual-radical-geom-ecat-lp-dual-radical-geom-probe",
+        "summary": "Produce 2 witnesses",
+        "description": "Run the computation `computations/probes/ecat_lp_dual_radical_geom/ecat_lp_dual_radical_geom_probe.py`, which writes `computations/a-K-via-lp-dual.witness.json`, `computations/probes/ecat_lp_dual_radical_geom/ecat_lp_dual_radical_geom_probe.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/ecat-radical-shadow-price.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-probes-ecat-lp-dual-radical-geom-ecat-lp-dual-radical-geom-probe/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "a-K-via-lp-dual": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/a-K-via-lp-dual.witness.json`, a computation-witness node."
+                    },
+                    "ecat_lp_dual_radical_geom_probe": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/probes/ecat_lp_dual_radical_geom/ecat_lp_dual_radical_geom_probe.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probes-ecat-lp-dual-radical-geom-ecat-lp-dual-radical-geom-probe.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/probes/ecat_lp_dual_radical_geom/ecat_lp_dual_radical_geom_probe.py"
         },
         "x-install": {
           "none": true
@@ -7734,6 +8567,154 @@
         ]
       }
     },
+    "/tools/produce-probes-light-nuclei-a2-a3-bond-generic-z-probe": {
+      "post": {
+        "operationId": "produce-probes-light-nuclei-a2-a3-bond-generic-z-probe",
+        "summary": "Produce bond-generic-z.witness.json",
+        "description": "Run the computation `computations/probes/light_nuclei_a2_a3/bond_generic_z_probe.py`, which writes `computations/probes/light_nuclei_a2_a3/bond-generic-z.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/mass-endomorphism/light-nuclei-a2-bond-tail.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-probes-light-nuclei-a2-a3-bond-generic-z-probe/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "bond-generic-z": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/probes/light_nuclei_a2_a3/bond-generic-z.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probes-light-nuclei-a2-a3-bond-generic-z-probe.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/probes/light_nuclei_a2_a3/bond_generic_z_probe.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
+    "/tools/produce-probes-lp-bootstrap-dual-gaps-chamber-gs-model-a-b-probe": {
+      "post": {
+        "operationId": "produce-probes-lp-bootstrap-dual-gaps-chamber-gs-model-a-b-probe",
+        "summary": "Produce chamber-gs-model-a-b.witness.json",
+        "description": "Run the computation `computations/probes/lp_bootstrap_dual_gaps/chamber_gs_model_a_b_probe.py`, which writes `computations/probes/lp_bootstrap_dual_gaps/chamber-gs-model-a-b.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/nuclear-interactions/nuclear-chamber-groebner-basis.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-probes-lp-bootstrap-dual-gaps-chamber-gs-model-a-b-probe/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "chamber-gs-model-a-b": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/probes/lp_bootstrap_dual_gaps/chamber-gs-model-a-b.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probes-lp-bootstrap-dual-gaps-chamber-gs-model-a-b-probe.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/probes/lp_bootstrap_dual_gaps/chamber_gs_model_a_b_probe.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
+    "/tools/produce-probes-lp-bootstrap-dual-gaps-lp-bootstrap-dual-gaps-probe": {
+      "post": {
+        "operationId": "produce-probes-lp-bootstrap-dual-gaps-lp-bootstrap-dual-gaps-probe",
+        "summary": "Produce 2 witnesses",
+        "description": "Run the computation `computations/probes/lp_bootstrap_dual_gaps/lp_bootstrap_dual_gaps_probe.py`, which writes `computations/probes/lp_bootstrap_dual_gaps/lp-bootstrap-dual-gaps.witness.json`, `computations/rho-k-h3a-lp-dual.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/rationalized-dual-slack-certificate.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-probes-lp-bootstrap-dual-gaps-lp-bootstrap-dual-gaps-probe/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "lp-bootstrap-dual-gaps": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/probes/lp_bootstrap_dual_gaps/lp-bootstrap-dual-gaps.witness.json`, a computation-witness node."
+                    },
+                    "rho-k-h3a-lp-dual": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/rho-k-h3a-lp-dual.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probes-lp-bootstrap-dual-gaps-lp-bootstrap-dual-gaps-probe.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/probes/lp_bootstrap_dual_gaps/lp_bootstrap_dual_gaps_probe.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
     "/tools/produce-probes-pauli-factor-wedderburn-probe": {
       "post": {
         "operationId": "produce-probes-pauli-factor-wedderburn-probe",
@@ -7974,6 +8955,58 @@
         ]
       }
     },
+    "/tools/produce-probes-qbeta-chirality-and-compton-polarizability-qbeta-chirality-and-compton-probe": {
+      "post": {
+        "operationId": "produce-probes-qbeta-chirality-and-compton-polarizability-qbeta-chirality-and-compton-probe",
+        "summary": "Produce 2 witnesses",
+        "description": "Run the computation `computations/probes/qbeta_chirality_and_compton_polarizability/qbeta_chirality_and_compton_probe.py`, which writes `computations/probes/qbeta_chirality_and_compton_polarizability/qbeta-chirality-and-compton.witness.json`, `computations/q-beta-predicted.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/q-beta-chirality-jet-evaluation.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-probes-qbeta-chirality-and-compton-polarizability-qbeta-chirality-and-compton-probe/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "qbeta-chirality-and-compton": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/probes/qbeta_chirality_and_compton_polarizability/qbeta-chirality-and-compton.witness.json`, a computation-witness node."
+                    },
+                    "q-beta-predicted": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/q-beta-predicted.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probes-qbeta-chirality-and-compton-polarizability-qbeta-chirality-and-compton-probe.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/probes/qbeta_chirality_and_compton_polarizability/qbeta_chirality_and_compton_probe.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
     "/tools/produce-probes-qbeta-route75-multiknot-gluing-symbolic-probe": {
       "post": {
         "operationId": "produce-probes-qbeta-route75-multiknot-gluing-symbolic-probe",
@@ -8166,6 +9199,162 @@
         ]
       }
     },
+    "/tools/produce-probes-retired-q0-refresh-to-live-muon-pin-probe": {
+      "post": {
+        "operationId": "produce-probes-retired-q0-refresh-to-live-muon-pin-probe",
+        "summary": "Produce 4 witnesses",
+        "description": "Run the computation `computations/probes/retired_q0_refresh_to_live_muon_pin_probe.py`, which writes `computations/alpha-em-form-ladder.witness.json`, `computations/alpha-em-no-pi-correction-probe.witness.json`, `computations/probes/retired_q0_refresh_to_live_muon_pin_probe.witness.json`, `computations/q-pinning-50-digit.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-probes-retired-q0-refresh-to-live-muon-pin-probe/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "alpha-em-form-ladder": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/alpha-em-form-ladder.witness.json`, a computation-witness node."
+                    },
+                    "alpha-em-no-pi-correction-probe": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/alpha-em-no-pi-correction-probe.witness.json`, a computation-witness node."
+                    },
+                    "retired_q0_refresh_to_live_muon_pin_probe": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/probes/retired_q0_refresh_to_live_muon_pin_probe.witness.json`, a computation-witness node."
+                    },
+                    "q-pinning-50-digit": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/q-pinning-50-digit.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probes-retired-q0-refresh-to-live-muon-pin-probe.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/probes/retired_q0_refresh_to_live_muon_pin_probe.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
+    "/tools/produce-probes-sm8w-eightfold-clasp-diquark-gmo-sm8w-eightfold-clasp-diquark-gmo-probe": {
+      "post": {
+        "operationId": "produce-probes-sm8w-eightfold-clasp-diquark-gmo-sm8w-eightfold-clasp-diquark-gmo-probe",
+        "summary": "Produce sm8w-eightfold-clasp-diquark-gmo.witness.json",
+        "description": "Run the computation `computations/probes/sm8w_eightfold_clasp_diquark_gmo/sm8w_eightfold_clasp_diquark_gmo_probe.py`, which writes `computations/probes/sm8w_eightfold_clasp_diquark_gmo/sm8w-eightfold-clasp-diquark-gmo.witness.json`. Wired from 3 content block(s): `folio/quantum-observable-universe/eightfold-way/baryon-octet-decomposition.ts`, `folio/quantum-observable-universe/eightfold-way/eightfold-open-problems.ts`, `folio/quantum-observable-universe/eightfold-way/meson-mass-splitting.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-probes-sm8w-eightfold-clasp-diquark-gmo-sm8w-eightfold-clasp-diquark-gmo-probe/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "sm8w-eightfold-clasp-diquark-gmo": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/probes/sm8w_eightfold_clasp_diquark_gmo/sm8w-eightfold-clasp-diquark-gmo.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probes-sm8w-eightfold-clasp-diquark-gmo-sm8w-eightfold-clasp-diquark-gmo-probe.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/probes/sm8w_eightfold_clasp_diquark_gmo/sm8w_eightfold_clasp_diquark_gmo_probe.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
+    "/tools/produce-probes-sm8w-ewsb-vew-mh-mz-rg-sm8w-ewsb-vew-mh-mz-rg-probe": {
+      "post": {
+        "operationId": "produce-probes-sm8w-ewsb-vew-mh-mz-rg-sm8w-ewsb-vew-mh-mz-rg-probe",
+        "summary": "Produce sm8w_ewsb_vew_mh_mz_rg_probe.witness.json",
+        "description": "Run the computation `computations/probes/sm8w_ewsb_vew_mh_mz_rg/sm8w_ewsb_vew_mh_mz_rg_probe.py`, which writes `computations/probes/sm8w_ewsb_vew_mh_mz_rg/sm8w_ewsb_vew_mh_mz_rg_probe.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-standard-model/sm-params-higgs.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-probes-sm8w-ewsb-vew-mh-mz-rg-sm8w-ewsb-vew-mh-mz-rg-probe/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "sm8w_ewsb_vew_mh_mz_rg_probe": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/probes/sm8w_ewsb_vew_mh_mz_rg/sm8w_ewsb_vew_mh_mz_rg_probe.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probes-sm8w-ewsb-vew-mh-mz-rg-sm8w-ewsb-vew-mh-mz-rg-probe.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/probes/sm8w_ewsb_vew_mh_mz_rg/sm8w_ewsb_vew_mh_mz_rg_probe.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
     "/tools/produce-probes-spectrahedral-phase-collapse-frame-probe": {
       "post": {
         "operationId": "produce-probes-spectrahedral-phase-collapse-frame-probe",
@@ -8295,6 +9484,62 @@
         "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probes-three-parameters-wedderburn-probe.jsonld",
         "x-invoke": {
           "shell": "python3 -u computations/probes/three_parameters_wedderburn_probe.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
+    "/tools/produce-probes-w6-inhomogeneous-lepton-resolvent-w6-inhomogeneous-lepton-resolvent-probe": {
+      "post": {
+        "operationId": "produce-probes-w6-inhomogeneous-lepton-resolvent-w6-inhomogeneous-lepton-resolvent-probe",
+        "summary": "Produce 3 witnesses",
+        "description": "Run the computation `computations/probes/w6_inhomogeneous_lepton_resolvent/w6_inhomogeneous_lepton_resolvent_probe.py`, which writes `computations/per-observable-100x-status.witness.json`, `computations/probes/w10_continuum_ecat_intranuc_em/w10-continuum-ecat-intranuc-em.witness.json`, `computations/probes/w6_inhomogeneous_lepton_resolvent/w6-inhomogeneous-lepton-resolvent.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/substrate-period-mass-resolvent.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-probes-w6-inhomogeneous-lepton-resolvent-w6-inhomogeneous-lepton-resolvent-probe/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "per-observable-100x-status": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/per-observable-100x-status.witness.json`, a computation-witness node."
+                    },
+                    "w10-continuum-ecat-intranuc-em": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/probes/w10_continuum_ecat_intranuc_em/w10-continuum-ecat-intranuc-em.witness.json`, a computation-witness node."
+                    },
+                    "w6-inhomogeneous-lepton-resolvent": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/probes/w6_inhomogeneous_lepton_resolvent/w6-inhomogeneous-lepton-resolvent.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-probes-w6-inhomogeneous-lepton-resolvent-w6-inhomogeneous-lepton-resolvent-probe.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/probes/w6_inhomogeneous_lepton_resolvent/w6_inhomogeneous_lepton_resolvent_probe.py"
         },
         "x-install": {
           "none": true
@@ -8462,59 +9707,11 @@
         ]
       }
     },
-    "/tools/produce-q-beta-predicted": {
-      "post": {
-        "operationId": "produce-q-beta-predicted",
-        "summary": "Produce cal-3-q-beta.witness.json",
-        "description": "Run the computation `computations/q_beta_predicted.py`, which writes `computations/cal-3-q-beta.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step11-q-beta-truncation.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
-        "tags": [
-          "compute-integration-watcher"
-        ],
-        "externalDocs": {
-          "description": "The Tool's page",
-          "url": "produce-q-beta-predicted/"
-        },
-        "responses": {
-          "200": {
-            "description": "The Tool's declared outputs.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "cal-3-q-beta": {
-                      "$ref": "#/components/schemas/RepoPath",
-                      "description": "`computations/cal-3-q-beta.witness.json`, a computation-witness node."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-q-beta-predicted.jsonld",
-        "x-invoke": {
-          "shell": "python3 -u computations/q_beta_predicted.py"
-        },
-        "x-install": {
-          "none": true
-        },
-        "x-requires": {
-          "runtime": [
-            "python3"
-          ],
-          "network": false
-        },
-        "x-satisfies": [
-          "compute-integration-watcher"
-        ]
-      }
-    },
     "/tools/produce-q-pinning-50-digit": {
       "post": {
         "operationId": "produce-q-pinning-50-digit",
         "summary": "Produce 122 witnesses",
-        "description": "Run the computation `computations/q_pinning_50_digit.py`, which writes `## Per-element coverage`, `computations/canonical-isotope-witness-Z00.witness.json`, `computations/canonical-isotope-witness-Z01.witness.json`, `computations/canonical-isotope-witness-Z02.witness.json`, `computations/canonical-isotope-witness-Z03.witness.json`, `computations/canonical-isotope-witness-Z04.witness.json`, `computations/canonical-isotope-witness-Z05.witness.json`, `computations/canonical-isotope-witness-Z06.witness.json`, `computations/canonical-isotope-witness-Z07.witness.json`, `computations/canonical-isotope-witness-Z08.witness.json`, `computations/canonical-isotope-witness-Z09.witness.json`, `computations/canonical-isotope-witness-Z10.witness.json`, `computations/canonical-isotope-witness-Z100.witness.json`, `computations/canonical-isotope-witness-Z101.witness.json`, `computations/canonical-isotope-witness-Z102.witness.json`, `computations/canonical-isotope-witness-Z103.witness.json`, `computations/canonical-isotope-witness-Z104.witness.json`, `computations/canonical-isotope-witness-Z105.witness.json`, `computations/canonical-isotope-witness-Z106.witness.json`, `computations/canonical-isotope-witness-Z107.witness.json`, `computations/canonical-isotope-witness-Z108.witness.json`, `computations/canonical-isotope-witness-Z109.witness.json`, `computations/canonical-isotope-witness-Z11.witness.json`, `computations/canonical-isotope-witness-Z110.witness.json`, `computations/canonical-isotope-witness-Z111.witness.json`, `computations/canonical-isotope-witness-Z112.witness.json`, `computations/canonical-isotope-witness-Z113.witness.json`, `computations/canonical-isotope-witness-Z114.witness.json`, `computations/canonical-isotope-witness-Z115.witness.json`, `computations/canonical-isotope-witness-Z116.witness.json`, `computations/canonical-isotope-witness-Z117.witness.json`, `computations/canonical-isotope-witness-Z118.witness.json`, `computations/canonical-isotope-witness-Z12.witness.json`, `computations/canonical-isotope-witness-Z13.witness.json`, `computations/canonical-isotope-witness-Z14.witness.json`, `computations/canonical-isotope-witness-Z15.witness.json`, `computations/canonical-isotope-witness-Z16.witness.json`, `computations/canonical-isotope-witness-Z17.witness.json`, `computations/canonical-isotope-witness-Z18.witness.json`, `computations/canonical-isotope-witness-Z19.witness.json`, `computations/canonical-isotope-witness-Z20.witness.json`, `computations/canonical-isotope-witness-Z21.witness.json`, `computations/canonical-isotope-witness-Z22.witness.json`, `computations/canonical-isotope-witness-Z23.witness.json`, `computations/canonical-isotope-witness-Z24.witness.json`, `computations/canonical-isotope-witness-Z25.witness.json`, `computations/canonical-isotope-witness-Z26.witness.json`, `computations/canonical-isotope-witness-Z27.witness.json`, `computations/canonical-isotope-witness-Z28.witness.json`, `computations/canonical-isotope-witness-Z29.witness.json`, `computations/canonical-isotope-witness-Z30.witness.json`, `computations/canonical-isotope-witness-Z31.witness.json`, `computations/canonical-isotope-witness-Z32.witness.json`, `computations/canonical-isotope-witness-Z33.witness.json`, `computations/canonical-isotope-witness-Z34.witness.json`, `computations/canonical-isotope-witness-Z35.witness.json`, `computations/canonical-isotope-witness-Z36.witness.json`, `computations/canonical-isotope-witness-Z37.witness.json`, `computations/canonical-isotope-witness-Z38.witness.json`, `computations/canonical-isotope-witness-Z39.witness.json`, `computations/canonical-isotope-witness-Z40.witness.json`, `computations/canonical-isotope-witness-Z41.witness.json`, `computations/canonical-isotope-witness-Z42.witness.json`, `computations/canonical-isotope-witness-Z43.witness.json`, `computations/canonical-isotope-witness-Z44.witness.json`, `computations/canonical-isotope-witness-Z45.witness.json`, `computations/canonical-isotope-witness-Z46.witness.json`, `computations/canonical-isotope-witness-Z47.witness.json`, `computations/canonical-isotope-witness-Z48.witness.json`, `computations/canonical-isotope-witness-Z49.witness.json`, `computations/canonical-isotope-witness-Z50.witness.json`, `computations/canonical-isotope-witness-Z51.witness.json`, `computations/canonical-isotope-witness-Z52.witness.json`, `computations/canonical-isotope-witness-Z53.witness.json`, `computations/canonical-isotope-witness-Z54.witness.json`, `computations/canonical-isotope-witness-Z55.witness.json`, `computations/canonical-isotope-witness-Z56.witness.json`, `computations/canonical-isotope-witness-Z57.witness.json`, `computations/canonical-isotope-witness-Z58.witness.json`, `computations/canonical-isotope-witness-Z59.witness.json`, `computations/canonical-isotope-witness-Z60.witness.json`, `computations/canonical-isotope-witness-Z61.witness.json`, `computations/canonical-isotope-witness-Z62.witness.json`, `computations/canonical-isotope-witness-Z63.witness.json`, `computations/canonical-isotope-witness-Z64.witness.json`, `computations/canonical-isotope-witness-Z65.witness.json`, `computations/canonical-isotope-witness-Z66.witness.json`, `computations/canonical-isotope-witness-Z67.witness.json`, `computations/canonical-isotope-witness-Z68.witness.json`, `computations/canonical-isotope-witness-Z69.witness.json`, `computations/canonical-isotope-witness-Z70.witness.json`, `computations/canonical-isotope-witness-Z71.witness.json`, `computations/canonical-isotope-witness-Z72.witness.json`, `computations/canonical-isotope-witness-Z73.witness.json`, `computations/canonical-isotope-witness-Z74.witness.json`, `computations/canonical-isotope-witness-Z75.witness.json`, `computations/canonical-isotope-witness-Z76.witness.json`, `computations/canonical-isotope-witness-Z77.witness.json`, `computations/canonical-isotope-witness-Z78.witness.json`, `computations/canonical-isotope-witness-Z79.witness.json`, `computations/canonical-isotope-witness-Z80.witness.json`, `computations/canonical-isotope-witness-Z81.witness.json`, `computations/canonical-isotope-witness-Z82.witness.json`, `computations/canonical-isotope-witness-Z83.witness.json`, `computations/canonical-isotope-witness-Z84.witness.json`, `computations/canonical-isotope-witness-Z85.witness.json`, `computations/canonical-isotope-witness-Z86.witness.json`, `computations/canonical-isotope-witness-Z87.witness.json`, `computations/canonical-isotope-witness-Z88.witness.json`, `computations/canonical-isotope-witness-Z89.witness.json`, `computations/canonical-isotope-witness-Z90.witness.json`, `computations/canonical-isotope-witness-Z91.witness.json`, `computations/canonical-isotope-witness-Z92.witness.json`, `computations/canonical-isotope-witness-Z93.witness.json`, `computations/canonical-isotope-witness-Z94.witness.json`, `computations/canonical-isotope-witness-Z95.witness.json`, `computations/canonical-isotope-witness-Z96.witness.json`, `computations/canonical-isotope-witness-Z97.witness.json`, `computations/canonical-isotope-witness-Z98.witness.json`, `computations/canonical-isotope-witness-Z99.witness.json`, `computations/codata-masses.witness.json`, `computations/q-pinning-50-digit.witness.json`. Wired from 17 content block(s): `folio/quantum-observable-universe/appendix-formalisation-notes/clausen-function-mathlib-filler.ts`, `folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.ts`, `folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.ts`, `folio/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.ts`, `folio/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness-context.ts`, `folio/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.ts`, `folio/quantum-observable-universe/mass-theory/figure-8-archimedean-illustration.ts`, `folio/quantum-observable-universe/mass-theory/mass-from-generators.ts`, `folio/quantum-observable-universe/mass-theory/thurston-volume-additivity.ts`, `folio/quantum-observable-universe/mass-theory/topological-mass-trefoil.ts`, `folio/quantum-observable-universe/observations/local-substrate-q.ts`, `folio/quantum-observable-universe/observations/mass-comparison-table.ts`, `folio/quantum-observable-universe/observations/skein-mass-relation-proof.ts`, `folio/quantum-observable-universe/observations/skein-mass-relation.ts`, `folio/quantum-observable-universe/observations/tritium-qvalue-audit.ts`, `folio/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.ts`, `folio/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "description": "Run the computation `computations/q_pinning_50_digit.py`, which writes `## Per-element coverage`, `computations/canonical-isotope-witness-Z00.witness.json`, `computations/canonical-isotope-witness-Z01.witness.json`, `computations/canonical-isotope-witness-Z02.witness.json`, `computations/canonical-isotope-witness-Z03.witness.json`, `computations/canonical-isotope-witness-Z04.witness.json`, `computations/canonical-isotope-witness-Z05.witness.json`, `computations/canonical-isotope-witness-Z06.witness.json`, `computations/canonical-isotope-witness-Z07.witness.json`, `computations/canonical-isotope-witness-Z08.witness.json`, `computations/canonical-isotope-witness-Z09.witness.json`, `computations/canonical-isotope-witness-Z10.witness.json`, `computations/canonical-isotope-witness-Z100.witness.json`, `computations/canonical-isotope-witness-Z101.witness.json`, `computations/canonical-isotope-witness-Z102.witness.json`, `computations/canonical-isotope-witness-Z103.witness.json`, `computations/canonical-isotope-witness-Z104.witness.json`, `computations/canonical-isotope-witness-Z105.witness.json`, `computations/canonical-isotope-witness-Z106.witness.json`, `computations/canonical-isotope-witness-Z107.witness.json`, `computations/canonical-isotope-witness-Z108.witness.json`, `computations/canonical-isotope-witness-Z109.witness.json`, `computations/canonical-isotope-witness-Z11.witness.json`, `computations/canonical-isotope-witness-Z110.witness.json`, `computations/canonical-isotope-witness-Z111.witness.json`, `computations/canonical-isotope-witness-Z112.witness.json`, `computations/canonical-isotope-witness-Z113.witness.json`, `computations/canonical-isotope-witness-Z114.witness.json`, `computations/canonical-isotope-witness-Z115.witness.json`, `computations/canonical-isotope-witness-Z116.witness.json`, `computations/canonical-isotope-witness-Z117.witness.json`, `computations/canonical-isotope-witness-Z118.witness.json`, `computations/canonical-isotope-witness-Z12.witness.json`, `computations/canonical-isotope-witness-Z13.witness.json`, `computations/canonical-isotope-witness-Z14.witness.json`, `computations/canonical-isotope-witness-Z15.witness.json`, `computations/canonical-isotope-witness-Z16.witness.json`, `computations/canonical-isotope-witness-Z17.witness.json`, `computations/canonical-isotope-witness-Z18.witness.json`, `computations/canonical-isotope-witness-Z19.witness.json`, `computations/canonical-isotope-witness-Z20.witness.json`, `computations/canonical-isotope-witness-Z21.witness.json`, `computations/canonical-isotope-witness-Z22.witness.json`, `computations/canonical-isotope-witness-Z23.witness.json`, `computations/canonical-isotope-witness-Z24.witness.json`, `computations/canonical-isotope-witness-Z25.witness.json`, `computations/canonical-isotope-witness-Z26.witness.json`, `computations/canonical-isotope-witness-Z27.witness.json`, `computations/canonical-isotope-witness-Z28.witness.json`, `computations/canonical-isotope-witness-Z29.witness.json`, `computations/canonical-isotope-witness-Z30.witness.json`, `computations/canonical-isotope-witness-Z31.witness.json`, `computations/canonical-isotope-witness-Z32.witness.json`, `computations/canonical-isotope-witness-Z33.witness.json`, `computations/canonical-isotope-witness-Z34.witness.json`, `computations/canonical-isotope-witness-Z35.witness.json`, `computations/canonical-isotope-witness-Z36.witness.json`, `computations/canonical-isotope-witness-Z37.witness.json`, `computations/canonical-isotope-witness-Z38.witness.json`, `computations/canonical-isotope-witness-Z39.witness.json`, `computations/canonical-isotope-witness-Z40.witness.json`, `computations/canonical-isotope-witness-Z41.witness.json`, `computations/canonical-isotope-witness-Z42.witness.json`, `computations/canonical-isotope-witness-Z43.witness.json`, `computations/canonical-isotope-witness-Z44.witness.json`, `computations/canonical-isotope-witness-Z45.witness.json`, `computations/canonical-isotope-witness-Z46.witness.json`, `computations/canonical-isotope-witness-Z47.witness.json`, `computations/canonical-isotope-witness-Z48.witness.json`, `computations/canonical-isotope-witness-Z49.witness.json`, `computations/canonical-isotope-witness-Z50.witness.json`, `computations/canonical-isotope-witness-Z51.witness.json`, `computations/canonical-isotope-witness-Z52.witness.json`, `computations/canonical-isotope-witness-Z53.witness.json`, `computations/canonical-isotope-witness-Z54.witness.json`, `computations/canonical-isotope-witness-Z55.witness.json`, `computations/canonical-isotope-witness-Z56.witness.json`, `computations/canonical-isotope-witness-Z57.witness.json`, `computations/canonical-isotope-witness-Z58.witness.json`, `computations/canonical-isotope-witness-Z59.witness.json`, `computations/canonical-isotope-witness-Z60.witness.json`, `computations/canonical-isotope-witness-Z61.witness.json`, `computations/canonical-isotope-witness-Z62.witness.json`, `computations/canonical-isotope-witness-Z63.witness.json`, `computations/canonical-isotope-witness-Z64.witness.json`, `computations/canonical-isotope-witness-Z65.witness.json`, `computations/canonical-isotope-witness-Z66.witness.json`, `computations/canonical-isotope-witness-Z67.witness.json`, `computations/canonical-isotope-witness-Z68.witness.json`, `computations/canonical-isotope-witness-Z69.witness.json`, `computations/canonical-isotope-witness-Z70.witness.json`, `computations/canonical-isotope-witness-Z71.witness.json`, `computations/canonical-isotope-witness-Z72.witness.json`, `computations/canonical-isotope-witness-Z73.witness.json`, `computations/canonical-isotope-witness-Z74.witness.json`, `computations/canonical-isotope-witness-Z75.witness.json`, `computations/canonical-isotope-witness-Z76.witness.json`, `computations/canonical-isotope-witness-Z77.witness.json`, `computations/canonical-isotope-witness-Z78.witness.json`, `computations/canonical-isotope-witness-Z79.witness.json`, `computations/canonical-isotope-witness-Z80.witness.json`, `computations/canonical-isotope-witness-Z81.witness.json`, `computations/canonical-isotope-witness-Z82.witness.json`, `computations/canonical-isotope-witness-Z83.witness.json`, `computations/canonical-isotope-witness-Z84.witness.json`, `computations/canonical-isotope-witness-Z85.witness.json`, `computations/canonical-isotope-witness-Z86.witness.json`, `computations/canonical-isotope-witness-Z87.witness.json`, `computations/canonical-isotope-witness-Z88.witness.json`, `computations/canonical-isotope-witness-Z89.witness.json`, `computations/canonical-isotope-witness-Z90.witness.json`, `computations/canonical-isotope-witness-Z91.witness.json`, `computations/canonical-isotope-witness-Z92.witness.json`, `computations/canonical-isotope-witness-Z93.witness.json`, `computations/canonical-isotope-witness-Z94.witness.json`, `computations/canonical-isotope-witness-Z95.witness.json`, `computations/canonical-isotope-witness-Z96.witness.json`, `computations/canonical-isotope-witness-Z97.witness.json`, `computations/canonical-isotope-witness-Z98.witness.json`, `computations/canonical-isotope-witness-Z99.witness.json`, `computations/codata-masses.witness.json`, `computations/q-pinning-50-digit.witness.json`. Wired from 15 content block(s): `folio/quantum-observable-universe/appendix-formalisation-notes/clausen-function-mathlib-filler.ts`, `folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.ts`, `folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.ts`, `folio/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.ts`, `folio/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness-context.ts`, `folio/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.ts`, `folio/quantum-observable-universe/mass-theory/figure-8-archimedean-illustration.ts`, `folio/quantum-observable-universe/mass-theory/mass-from-generators.ts`, `folio/quantum-observable-universe/mass-theory/thurston-volume-additivity.ts`, `folio/quantum-observable-universe/mass-theory/topological-mass-trefoil.ts`, `folio/quantum-observable-universe/observations/local-substrate-q.ts`, `folio/quantum-observable-universe/observations/skein-mass-relation-proof.ts`, `folio/quantum-observable-universe/observations/skein-mass-relation.ts`, `folio/quantum-observable-universe/observations/tritium-qvalue-audit.ts`, `folio/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
         "tags": [
           "compute-integration-watcher"
         ],
@@ -9382,54 +10579,6 @@
         ]
       }
     },
-    "/tools/produce-qbeta-qbeta-ck-cache": {
-      "post": {
-        "operationId": "produce-qbeta-qbeta-ck-cache",
-        "summary": "Produce qbeta-ck-cache.witness.json",
-        "description": "Run the computation `computations/qbeta/qbeta_ck_cache.py`, which writes `computations/qbeta/qbeta-ck-cache.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-ck-truncation-ladder.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
-        "tags": [
-          "compute-integration-watcher"
-        ],
-        "externalDocs": {
-          "description": "The Tool's page",
-          "url": "produce-qbeta-qbeta-ck-cache/"
-        },
-        "responses": {
-          "200": {
-            "description": "The Tool's declared outputs.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "qbeta-ck-cache": {
-                      "$ref": "#/components/schemas/RepoPath",
-                      "description": "`computations/qbeta/qbeta-ck-cache.witness.json`, a computation-witness node."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-qbeta-qbeta-ck-cache.jsonld",
-        "x-invoke": {
-          "shell": "python3 -u computations/qbeta/qbeta_ck_cache.py"
-        },
-        "x-install": {
-          "none": true
-        },
-        "x-requires": {
-          "runtime": [
-            "python3"
-          ],
-          "network": false
-        },
-        "x-satisfies": [
-          "compute-integration-watcher"
-        ]
-      }
-    },
     "/tools/produce-qbeta-qbeta-ck-sseries-operator-match-probe": {
       "post": {
         "operationId": "produce-qbeta-qbeta-ck-sseries-operator-match-probe",
@@ -9511,54 +10660,6 @@
         "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-qbeta-qbeta-ck-truncation-bias-correction-probe.jsonld",
         "x-invoke": {
           "shell": "python3 -u computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py"
-        },
-        "x-install": {
-          "none": true
-        },
-        "x-requires": {
-          "runtime": [
-            "python3"
-          ],
-          "network": false
-        },
-        "x-satisfies": [
-          "compute-integration-watcher"
-        ]
-      }
-    },
-    "/tools/produce-qbeta-qbeta-ck-truncation-order-analysis": {
-      "post": {
-        "operationId": "produce-qbeta-qbeta-ck-truncation-order-analysis",
-        "summary": "Produce qbeta-ck-truncation-order-analysis.witness.json",
-        "description": "Run the computation `computations/qbeta/qbeta_ck_truncation_order_analysis.py`, which writes `computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
-        "tags": [
-          "compute-integration-watcher"
-        ],
-        "externalDocs": {
-          "description": "The Tool's page",
-          "url": "produce-qbeta-qbeta-ck-truncation-order-analysis/"
-        },
-        "responses": {
-          "200": {
-            "description": "The Tool's declared outputs.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "qbeta-ck-truncation-order-analysis": {
-                      "$ref": "#/components/schemas/RepoPath",
-                      "description": "`computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json`, a computation-witness node."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-qbeta-qbeta-ck-truncation-order-analysis.jsonld",
-        "x-invoke": {
-          "shell": "python3 -u computations/qbeta/qbeta_ck_truncation_order_analysis.py"
         },
         "x-install": {
           "none": true
@@ -9703,6 +10804,54 @@
         "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-qbeta-qbeta-direction-sanity-gate-probe.jsonld",
         "x-invoke": {
           "shell": "python3 -u computations/qbeta/qbeta_direction_sanity_gate_probe.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
+    "/tools/produce-qbeta-qbeta-frobenius-gram-h3-probe": {
+      "post": {
+        "operationId": "produce-qbeta-qbeta-frobenius-gram-h3-probe",
+        "summary": "Produce qbeta-frobenius-gram-h3.witness.json",
+        "description": "Run the computation `computations/qbeta/qbeta_frobenius_gram_h3_probe.py`, which writes `computations/qbeta/qbeta-frobenius-gram-h3.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/twisted-star-gram-radical-quotient.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-qbeta-qbeta-frobenius-gram-h3-probe/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "qbeta-frobenius-gram-h3": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/qbeta/qbeta-frobenius-gram-h3.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-qbeta-qbeta-frobenius-gram-h3-probe.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/qbeta/qbeta_frobenius_gram_h3_probe.py"
         },
         "x-install": {
           "none": true
@@ -9866,7 +11015,7 @@
       "post": {
         "operationId": "produce-qbeta-qbeta-per-block-paper-closed-forms",
         "summary": "Produce qbeta-per-block-paper-closed-forms.witness.json",
-        "description": "Run the computation `computations/qbeta/qbeta_per_block_paper_closed_forms.py`, which writes `computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "description": "Run the computation `computations/qbeta/qbeta_per_block_paper_closed_forms.py`, which writes `computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json`. Wired from 4 content block(s): `folio/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.ts`, `folio/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.ts`, `folio/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.ts`, `folio/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
         "tags": [
           "compute-integration-watcher"
         ],
@@ -10239,58 +11388,6 @@
         "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-qbeta-qbeta-symbolic-chain-alpha-b.jsonld",
         "x-invoke": {
           "shell": "python3 -u computations/qbeta/qbeta_symbolic_chain_alpha_b.py"
-        },
-        "x-install": {
-          "none": true
-        },
-        "x-requires": {
-          "runtime": [
-            "python3"
-          ],
-          "network": false
-        },
-        "x-satisfies": [
-          "compute-integration-watcher"
-        ]
-      }
-    },
-    "/tools/produce-qou-mass-src-qou-mass-api": {
-      "post": {
-        "operationId": "produce-qou-mass-src-qou-mass-api",
-        "summary": "Produce 2 witnesses",
-        "description": "Run the computation `qou-mass/src/qou_mass/api.py`, which writes `computations/canonical-mass-table-242ppb.witness.json`, `computations/markov-free-energy-qvalues.witness.json`. Wired from 2 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step03-markov-trace.ts`, `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
-        "tags": [
-          "compute-integration-watcher"
-        ],
-        "externalDocs": {
-          "description": "The Tool's page",
-          "url": "produce-qou-mass-src-qou-mass-api/"
-        },
-        "responses": {
-          "200": {
-            "description": "The Tool's declared outputs.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "canonical-mass-table-242ppb": {
-                      "$ref": "#/components/schemas/RepoPath",
-                      "description": "`computations/canonical-mass-table-242ppb.witness.json`, a computation-witness node."
-                    },
-                    "markov-free-energy-qvalues": {
-                      "$ref": "#/components/schemas/RepoPath",
-                      "description": "`computations/markov-free-energy-qvalues.witness.json`, a computation-witness node."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-qou-mass-src-qou-mass-api.jsonld",
-        "x-invoke": {
-          "shell": "python3 -u qou-mass/src/qou_mass/api.py"
         },
         "x-install": {
           "none": true
@@ -11378,17 +12475,17 @@
         ]
       }
     },
-    "/tools/produce-tools-hecke-engine-src-gb-nf-reducer-rs": {
+    "/tools/produce-tr-m-atom-via-transfer": {
       "post": {
-        "operationId": "produce-tools-hecke-engine-src-gb-nf-reducer-rs",
-        "summary": "Produce hecke-core-symbolic-migration.witness.json",
-        "description": "Run the computation `tools/hecke-engine/src/gb_nf_reducer.rs`, which writes `computations/hecke-core-symbolic-migration.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step02-gs-reduction.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "operationId": "produce-tr-m-atom-via-transfer",
+        "summary": "Produce tr-m-atom-via-transfer.witness.json",
+        "description": "Run the computation `computations/tr_m_atom_via_transfer.py`, which writes `computations/tr-m-atom-via-transfer.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/hecke-gs-monotone-transfer.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
         "tags": [
           "compute-integration-watcher"
         ],
         "externalDocs": {
           "description": "The Tool's page",
-          "url": "produce-tools-hecke-engine-src-gb-nf-reducer-rs/"
+          "url": "produce-tr-m-atom-via-transfer/"
         },
         "responses": {
           "200": {
@@ -11398,9 +12495,9 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "hecke-core-symbolic-migration": {
+                    "tr-m-atom-via-transfer": {
                       "$ref": "#/components/schemas/RepoPath",
-                      "description": "`computations/hecke-core-symbolic-migration.witness.json`, a computation-witness node."
+                      "description": "`computations/tr-m-atom-via-transfer.witness.json`, a computation-witness node."
                     }
                   }
                 }
@@ -11408,57 +12505,9 @@
             }
           }
         },
-        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-tools-hecke-engine-src-gb-nf-reducer-rs.jsonld",
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-tr-m-atom-via-transfer.jsonld",
         "x-invoke": {
-          "shell": "python3 -u tools/hecke-engine/src/gb_nf_reducer.rs"
-        },
-        "x-install": {
-          "none": true
-        },
-        "x-requires": {
-          "runtime": [
-            "python3"
-          ],
-          "network": false
-        },
-        "x-satisfies": [
-          "compute-integration-watcher"
-        ]
-      }
-    },
-    "/tools/produce-tools-pyhecke-python-pyhecke-wedderburn": {
-      "post": {
-        "operationId": "produce-tools-pyhecke-python-pyhecke-wedderburn",
-        "summary": "Produce wedderburn-lp-ew-wiring.witness.json",
-        "description": "Run the computation `tools/pyhecke/python/pyhecke/wedderburn.py`, which writes `computations/wedderburn-lp-ew-wiring.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step05-wedderburn.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
-        "tags": [
-          "compute-integration-watcher"
-        ],
-        "externalDocs": {
-          "description": "The Tool's page",
-          "url": "produce-tools-pyhecke-python-pyhecke-wedderburn/"
-        },
-        "responses": {
-          "200": {
-            "description": "The Tool's declared outputs.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "wedderburn-lp-ew-wiring": {
-                      "$ref": "#/components/schemas/RepoPath",
-                      "description": "`computations/wedderburn-lp-ew-wiring.witness.json`, a computation-witness node."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-tools-pyhecke-python-pyhecke-wedderburn.jsonld",
-        "x-invoke": {
-          "shell": "python3 -u tools/pyhecke/python/pyhecke/wedderburn.py"
+          "shell": "python3 -u computations/tr_m_atom_via_transfer.py"
         },
         "x-install": {
           "none": true
@@ -11477,8 +12526,8 @@
     "/tools/produce-tr-m-q-hecke-seminormal": {
       "post": {
         "operationId": "produce-tr-m-q-hecke-seminormal",
-        "summary": "Produce 7 witnesses",
-        "description": "Run the computation `computations/tr_m_q_hecke_seminormal.py`, which writes `computations/atomic-tr-m-mpfr-50dps-proton.witness.json`, `computations/atomic-tr-m-mpfr-50dps.witness.json`, `computations/binding-k-solver.witness.json`, `computations/proton-mass-codata-50dps.witness.json`, `computations/rho-k-h3a-gg-trajectory.witness.json`, `computations/rho-k-h3a-lp-dual.witness.json`, `computations/tr-m-q-hecke-seminormal.witness.json`. Wired from 3 content block(s): `folio/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure.ts`, `folio/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table-table1-data.ts`, `folio/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "summary": "Produce 8 witnesses",
+        "description": "Run the computation `computations/tr_m_q_hecke_seminormal.py`, which writes `computations/atomic-tr-m-mpfr-50dps-proton.witness.json`, `computations/atomic-tr-m-mpfr-50dps.witness.json`, `computations/binding-k-solver.witness.json`, `computations/low-isotope-mass-table.witness.json`, `computations/proton-mass-codata-50dps.witness.json`, `computations/rho-k-h3a-gg-trajectory.witness.json`, `computations/rho-k-h3a-lp-dual.witness.json`, `computations/tr-m-q-hecke-seminormal.witness.json`. Wired from 3 content block(s): `folio/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure.ts`, `folio/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table-table1-data.ts`, `folio/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
         "tags": [
           "compute-integration-watcher"
         ],
@@ -11505,6 +12554,10 @@
                     "binding-k-solver": {
                       "$ref": "#/components/schemas/RepoPath",
                       "description": "`computations/binding-k-solver.witness.json`, a computation-witness node."
+                    },
+                    "low-isotope-mass-table": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/low-isotope-mass-table.witness.json`, a computation-witness node."
                     },
                     "proton-mass-codata-50dps": {
                       "$ref": "#/components/schemas/RepoPath",
@@ -11579,54 +12632,6 @@
         "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-two-filtration-bridge-small-cases.jsonld",
         "x-invoke": {
           "shell": "python3 -u computations/two_filtration_bridge_small_cases.py"
-        },
-        "x-install": {
-          "none": true
-        },
-        "x-requires": {
-          "runtime": [
-            "python3"
-          ],
-          "network": false
-        },
-        "x-satisfies": [
-          "compute-integration-watcher"
-        ]
-      }
-    },
-    "/tools/produce-universal-ilp": {
-      "post": {
-        "operationId": "produce-universal-ilp",
-        "summary": "Produce universal-ilp.witness.json",
-        "description": "Run the computation `computations/universal-ilp.py`, which writes `computations/universal-ilp.witness.json`. Wired from 1 content block(s): `folio/quantum-observable-universe/knots-particles-confinement/universal-ilp-algorithm.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
-        "tags": [
-          "compute-integration-watcher"
-        ],
-        "externalDocs": {
-          "description": "The Tool's page",
-          "url": "produce-universal-ilp/"
-        },
-        "responses": {
-          "200": {
-            "description": "The Tool's declared outputs.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "universal-ilp": {
-                      "$ref": "#/components/schemas/RepoPath",
-                      "description": "`computations/universal-ilp.witness.json`, a computation-witness node."
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-universal-ilp.jsonld",
-        "x-invoke": {
-          "shell": "python3 -u computations/universal-ilp.py"
         },
         "x-install": {
           "none": true
