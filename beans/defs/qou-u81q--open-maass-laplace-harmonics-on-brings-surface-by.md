@@ -27,3 +27,7 @@ The triple selection table N for S5 types: 143/343 allowed, and the holomorphic 
 
 ## 2026-11-28 — PR #9877 merged; PR #9885: S5 character table derived in Lean
 The 7 characters are built from fix1, fix2, Λ² and sign. They are proved orthonormal over all 120 perms, with sum dim^2 = 120 and the class sizes counted. derived_eq_table_everywhere: the cited table equals the derived one. The exhaustiveness now cites only standard theorems.
+
+
+## 2026-11-28 PR #9924
+Discrete sunset on the Bring vertex graph: spec {0,2^11,4^5,5^4,6^5,7^4}; selection rule exact; std+ std+ [3,2]+ allowed but zero; sum G^3 = 18364201/22680000. Orbifold signatures of the 38 quotients B/H, B/(H x c). Open: hyperbolic eigenvalues only.
