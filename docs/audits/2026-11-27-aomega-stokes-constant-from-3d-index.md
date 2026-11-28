@@ -69,7 +69,9 @@ plus one BPS state at magnetic flux 1 and electric charge −2. The Lean theorem
 - **GGM misprint.** The display GGM eq (S11v) gives the q-coefficient of
   `S⁺₁₁(x;q)` as `−(2x⁻²+x⁻¹+2+x+2x²)`. The index gives
   `−(x⁻²+2x⁻¹+2+2x+x²)`, as in GGM's other display (after eq S0x41), because
-  `I₄₁(0,±1) = −2q` and `I₄₁(0,±2) = −q`.
+  `I₄₁(0,±1) = −2q` and `I₄₁(0,±2) = −q`. *(Correction 2026-11-28: this is not
+  new. [`2026-08-11-m1-adjudicated-erratum-and-the-three.md`](2026-08-11-m1-adjudicated-erratum-and-the-three.md)
+  line 33 recorded the same erratum; the index route confirms it independently.)*
 
 ## Still open (named, not hidden)
 
@@ -82,6 +84,7 @@ plus one BPS state at magnetic flux 1 and electric charge −2. The Lean theorem
 3. 5₂: GGM eq (WW52) has the same shape with a 3×3 index matrix. Repeating this
    for 5₂ is the cross-knot test (the `{3,4}` chirality split) that the
    anti-numerology rule asks for.
+   *(Done 2026-11-28: [`2026-11-28-fivetwo-stokes-from-3d-index.md`](2026-11-28-fivetwo-stokes-from-3d-index.md).)*
 4. The internal QOU derivation (Hecke / Markov-trace data → index) is unchanged:
    this result moves the 3 onto the triangulation index, not onto the QOU drivers.
 
