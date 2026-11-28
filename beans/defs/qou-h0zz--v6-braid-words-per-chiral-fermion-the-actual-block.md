@@ -445,3 +445,6 @@ Matter = EVEN exterior part Λ⁰⊕Λ²⊕Λ⁴ = 1⊕10⊕5̄ (Spin(10) 16); o
 
 ## 2026-11-28 — H0(K) = std ⊗ sgn tied to the strand charges
 `QOU/StandardModel/StrandChargesAreHolomorphicDifferentials.lean` (sorry-free): χ_{H⁰(K)}(g) = sgn(g)·(fix(g)−1) on all 7 classes, so Bring's holomorphic differentials are the traceless strand charges twisted by sign; only [4,1] and [2,1,1,1] are 4-dim; strand count n = 5 now follows from n − 1 = dim H⁰(K). Reuses #9855. Still open: that strand relabellings ARE Bring's automorphisms; whether the sgn twist is the hypercharge sign; three colour strands.
+
+## 2026-11-28 — Bring's sign twist does NOT fix the hypercharge sign
+`QOU/StandardModel/BringTwistFlipsHypercharge.lean` (sorry-free): under g·y = sgn(g)(y∘g⁻¹), (01)·Y = (34)·Y = −Y, (01)(34)·Y = Y; no nonzero vector is twisted-fixed by (01),(12). So S3×S2 acts on ℚY by its sign: the twisted action is excluded as the source of the sign (scope b for that ingredient only). Sign still open; other upstream sources not excluded.
