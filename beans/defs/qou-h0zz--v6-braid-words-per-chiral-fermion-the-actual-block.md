@@ -476,3 +476,6 @@ Still open: the sign's value (a source seeing the base orientation directly, e.g
 (orbit-stabiliser rules out 5; 2,3 leave only 12 set-preserving permutations; 1,4 give a fixed
 point). Block prop:index-five-subgroups-are-point-stabilisers. The strands block now cites it
 instead of the textbook. Remaining cited steps: Chevalley–Weil, Hodge, Hopf trace (step 3).
+
+## 2026-11-28 — Hopf trace formula proved (PR #9811)
+`QOU/Core/HopfTraceFormula.lean`: `trace_eq_restrict_add_mapQ`, `trace_eq_of_intertwine`, `trace_funLeft_perm`, `ChainEnd.hopf_trace`. Sorry-free. Still cited in hopf_trace_h1: cellular homology = surface homology with H0 trivial, H2 orientation; Hodge. Carl idea (02:02Z): complex volume Vol+i·CS to fix/place the sign upstream — CS on UT(Σ4) is blind (lifts preserve orientation, lift_orientation_sign); a chiral knot complement (CS≠0) would move the bit to the mirror choice of the knot.
