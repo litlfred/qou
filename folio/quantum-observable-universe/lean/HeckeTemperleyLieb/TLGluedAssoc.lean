@@ -498,6 +498,180 @@ theorem good2_zero {Y Y' : GObj T hε} : Good2 (0 : Y ⟶ Y') := by
   rw [tensHom_zero_right, tensHom_zero_left, tensHom_zero_left, tensHom_zero_right,
     Limits.zero_comp, Limits.comp_zero]
 
+/-! ### The middle slot and generator induction -/
+
+theorem good2_cup (M : ℕ) :
+    Good2 (gl T hε (M + 1 + 1) (a := M) (b := M + 1 + 1) (by omega) (by omega) le_rfl rfl
+      (PQ T M (M + 1 + 1)) (PQ_mem_up (hε := hε) M _)) := by
+  intro X Z
+  obtain ⟨a⟩ := X
+  obtain ⟨c⟩ := Z
+  rw [← gl_id a, ← gl_id c]
+  refine assocNat_gl _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ?_
+  rw [tensLvl_base T (1 : Q T a) (PQ_mem_up (hε := hε) M _),
+    tensLvl_base T (1 : Q T a) (tensLvl_mem T hε (by omega) (by omega) le_rfl rfl
+      le_rfl rfl le_rfl rfl (PQ_mem_up (hε := hε) M _) (one_mem_HomSp T c))]
+  exact assoc_cup_second T hε a M c
+
+theorem good2_cap (M : ℕ) :
+    Good2 (gl T hε (M + 1 + 1) (a := M + 1 + 1) (b := M) le_rfl rfl (by omega) (by omega)
+      (PQ T M (M + 1 + 1)) (PQ_mem_down (hε := hε) M _)) := by
+  intro X Z
+  obtain ⟨a⟩ := X
+  obtain ⟨c⟩ := Z
+  rw [← gl_id a, ← gl_id c]
+  refine assocNat_gl _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ?_
+  rw [tensLvl_base T (1 : Q T a) (PQ_mem_down (hε := hε) M _),
+    tensLvl_base T (1 : Q T a) (tensLvl_mem T hε le_rfl rfl le_rfl rfl
+      (by omega) (by omega) le_rfl rfl (PQ_mem_down (hε := hε) M _) (one_mem_HomSp T c))]
+  exact assoc_cap_second T hε a M c
+
+theorem good2_base (N : ℕ) (ψ : Q T N) :
+    Good2 (gl T hε N le_rfl rfl le_rfl rfl ψ (mem_top N ψ)) := by
+  intro X Z
+  obtain ⟨a⟩ := X
+  obtain ⟨c⟩ := Z
+  rw [← gl_id a, ← gl_id c]
+  refine assocNat_gl _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ?_
+  rw [tensLvl_base T (1 : Q T a) (mem_top N ψ),
+    tensLvl_base T (1 : Q T a) (tensLvl_mem T hε le_rfl rfl le_rfl rfl
+      le_rfl rfl le_rfl rfl (mem_top N ψ) (one_mem_HomSp T c))]
+  exact assoc_base_second T a ψ c
+
+/-- **Generator induction on glued morphisms.** Any property of morphisms in `GObj T hε` that holds
+on identities, zeros, single cups `[M] → [M+2]`, single caps `[M+2] → [M]` and top-level
+endomorphisms `[N] → [N]`, and is closed under composition, holds on every morphism. -/
+theorem glued_induction (P : ∀ {X Y : GObj T hε}, (X ⟶ Y) → Prop)
+    (hid : ∀ X, P (𝟙 X))
+    (hzero : ∀ {X Y}, P (0 : X ⟶ Y))
+    (hcomp : ∀ {X Y Z} {f : X ⟶ Y} {g : Y ⟶ Z}, P f → P g → P (f ≫ g))
+    (hcup : ∀ M, P (gl T hε (M + 1 + 1) (a := M) (b := M + 1 + 1) (by omega) (by omega)
+      le_rfl rfl (PQ T M (M + 1 + 1)) (PQ_mem_up (hε := hε) M _)))
+    (hcap : ∀ M, P (gl T hε (M + 1 + 1) (a := M + 1 + 1) (b := M) le_rfl rfl
+      (by omega) (by omega) (PQ T M (M + 1 + 1)) (PQ_mem_down (hε := hε) M _)))
+    (hbase : ∀ N (φ : Q T N), P (gl T hε N le_rfl rfl le_rfl rfl φ (mem_top N φ))) :
+    ∀ {X Y : GObj T hε} (f : X ⟶ Y), P f := by
+  have hup : ∀ (a k : ℕ), P (gl T hε (a + 2 * k) (a := a) (b := a + 2 * k)
+      (by omega) (by omega) le_rfl rfl (PQ T a (a + 2 * k)) (PQ_mem_up (hε := hε) a _)) := by
+    intro a k
+    induction k with
+    | zero =>
+      have e : gl T hε (a + 2 * 0) (a := a) (b := a + 2 * 0) (by omega) (by omega) le_rfl rfl
+          (PQ T a (a + 2 * 0)) (PQ_mem_up (hε := hε) a _) = 𝟙 (GObj.mk a) := by
+        show gl T hε a (a := a) (b := a) _ _ _ _ (PQ T a a) _ = 𝟙 (GObj.mk a)
+        rw [gl_congr a _ _ _ _ _ (mem_top a 1) (PQ_self T a)]
+        exact gl_id a
+      rw [e]
+      exact hid _
+    | succ k ih =>
+      set M := a + 2 * k
+      have h1 : gl T hε M (a := a) (b := M) (by omega) (by omega) le_rfl rfl
+          (PQ T a M) (PQ_mem_up (hε := hε) a M) ≫
+        gl T hε (M + 1 + 1) (a := M) (b := M + 1 + 1) (by omega) (by omega) le_rfl rfl
+          (PQ T M (M + 1 + 1)) (PQ_mem_up (hε := hε) M _) =
+        gl T hε (M + 1 + 1) (a := a) (b := M + 1 + 1) (by omega) (by omega) le_rfl rfl
+          (PQ T a (M + 1 + 1)) (PQ_mem_up (hε := hε) a _) := by
+        rw [gl_lift M (a := a) (b := M) (by omega) (by omega) le_rfl rfl (PQ T a M) _,
+          gl_comp (M + 1 + 1)]
+        refine gl_congr (M + 1 + 1) _ _ _ _ _ _ ?_
+        rw [capQ_PQ T hε (by omega), PQ_cup_mul (hε := hε) a M (by omega)]
+      change P (gl T hε (M + 1 + 1) (a := a) (b := M + 1 + 1) _ _ _ _ (PQ T a (M + 1 + 1)) _)
+      rw [← h1]
+      exact hcomp ih (hcup M)
+  have hdown : ∀ (b k : ℕ), P (gl T hε (b + 2 * k) (a := b + 2 * k) (b := b)
+      le_rfl rfl (by omega) (by omega) (PQ T b (b + 2 * k)) (PQ_mem_down (hε := hε) b _)) := by
+    intro b k
+    induction k with
+    | zero =>
+      have e : gl T hε (b + 2 * 0) (a := b + 2 * 0) (b := b) le_rfl rfl (by omega) (by omega)
+          (PQ T b (b + 2 * 0)) (PQ_mem_down (hε := hε) b _) = 𝟙 (GObj.mk b) := by
+        show gl T hε b (a := b) (b := b) _ _ _ _ (PQ T b b) _ = 𝟙 (GObj.mk b)
+        rw [gl_congr b _ _ _ _ _ (mem_top b 1) (PQ_self T b)]
+        exact gl_id b
+      rw [e]
+      exact hid _
+    | succ k ih =>
+      set M := b + 2 * k
+      have h1 : gl T hε (M + 1 + 1) (a := M + 1 + 1) (b := M) le_rfl rfl (by omega) (by omega)
+          (PQ T M (M + 1 + 1)) (PQ_mem_down (hε := hε) M _) ≫
+        gl T hε M (a := M) (b := b) le_rfl rfl (by omega) (by omega)
+          (PQ T b M) (PQ_mem_down (hε := hε) b M) =
+        gl T hε (M + 1 + 1) (a := M + 1 + 1) (b := b) le_rfl rfl (by omega) (by omega)
+          (PQ T b (M + 1 + 1)) (PQ_mem_down (hε := hε) b _) := by
+        rw [gl_lift M (a := M) (b := b) le_rfl rfl (by omega) (by omega) (PQ T b M) _,
+          gl_comp (M + 1 + 1)]
+        refine gl_congr (M + 1 + 1) _ _ _ _ _ _ ?_
+        rw [capQ_PQ T hε (by omega), PQ_mul_cap (hε := hε) b M (by omega)]
+      change P (gl T hε (M + 1 + 1) (a := M + 1 + 1) (b := b) _ _ _ _ (PQ T b (M + 1 + 1)) _)
+      rw [← h1]
+      exact hcomp (hcap M) ih
+  have hup' : ∀ {a N : ℕ} (ha : a ≤ N) (pa : a % 2 = N % 2),
+      P (gl T hε N ha pa le_rfl rfl (PQ T a N) (PQ_mem_up (hε := hε) a N)) := by
+    intro a N ha pa
+    obtain ⟨k, rfl⟩ : ∃ k, N = a + 2 * k := ⟨(N - a) / 2, by omega⟩
+    exact hup a k
+  have hdown' : ∀ {b N : ℕ} (hb : b ≤ N) (pb : b % 2 = N % 2),
+      P (gl T hε N le_rfl rfl hb pb (PQ T b N) (PQ_mem_down (hε := hε) b N)) := by
+    intro b N hb pb
+    obtain ⟨k, rfl⟩ : ∃ k, N = b + 2 * k := ⟨(N - b) / 2, by omega⟩
+    exact hdown b k
+  intro ⟨a⟩ ⟨b⟩ f
+  by_cases hp : a % 2 = b % 2
+  swap
+  · rw [hom_eq_zero_of_parity hp f]
+    exact hzero
+  set N := a + 2 * b
+  have ha : a ≤ N := by omega
+  have pa : a % 2 = N % 2 := by omega
+  have hb : b ≤ N := by omega
+  have pb : b % 2 = N % 2 := by omega
+  set φ := lval (pre (X := GObj.mk a) (Y := GObj.mk b) N ha pa hb pb f)
+  have hφ : φ ∈ HomSp T N a b := lval_mem _
+  have hf : f = gl T hε N ha pa le_rfl rfl (PQ T a N) (PQ_mem_up (hε := hε) a N) ≫
+      gl T hε N le_rfl rfl le_rfl rfl φ (mem_top N φ) ≫
+      gl T hε N le_rfl rfl hb pb (PQ T b N) (PQ_mem_down (hε := hε) b N) := by
+    rw [gl_comp N, gl_comp N, ← gl_pre (X := GObj.mk a) (Y := GObj.mk b) N ha pa hb pb f]
+    exact gl_congr N ha pa hb pb hφ _ ((mem_Hom T).mp hφ).symm
+  rw [hf]
+  exact hcomp (hup' ha pa) (hcomp (hbase N φ) (hdown' hb pb))
+
+theorem good1_all {X X' : GObj T hε} (f : X ⟶ X') : Good1 f :=
+  glued_induction (@Good1 _ _ _ _ T hε) good1_id (@good1_zero _ _ _ _ T hε)
+    (@Good1.comp _ _ _ _ T hε) good1_cup good1_cap good1_base f
+
+theorem good2_all {Y Y' : GObj T hε} (g : Y ⟶ Y') : Good2 g :=
+  glued_induction (@Good2 _ _ _ _ T hε) good2_id (@good2_zero _ _ _ _ T hε)
+    (@Good2.comp _ _ _ _ T hε) good2_cup good2_cap good2_base g
+
+/-- **Naturality of the associator on the glued category**, for arbitrary morphisms in all three
+slots. -/
+theorem assoc_nat {X Y Z X' Y' Z' : GObj T hε} (f : X ⟶ X') (g : Y ⟶ Y') (h : Z ⟶ Z') :
+    AssocNat f g h := by
+  have h12 := (good1_all f Y Z).comp (good2_all g X' Z)
+  simp only [Category.comp_id, Category.id_comp] at h12
+  have h123 := h12.comp (assocNat_third X' Y' h)
+  simpa only [Category.comp_id, Category.id_comp] using h123
+
+theorem tensHom_eqToHom_left {X X' : GObj T hε} (h : X = X') (Y : GObj T hε) :
+    tensHom (eqToHom h) (𝟙 Y) = eqToHom (congrArg (fun U => tensObj U Y) h) := by
+  subst h
+  simp [tensHom_id]
+
+theorem tensHom_eqToHom_right (X : GObj T hε) {Y Y' : GObj T hε} (h : Y = Y') :
+    tensHom (𝟙 X) (eqToHom h) = eqToHom (congrArg (tensObj X) h) := by
+  subst h
+  simp [tensHom_id]
+
+/-- **The Mac Lane pentagon** for `tensHom` and `eqToHom (tensObj_assoc · · ·)` on `GObj`. -/
+theorem tensHom_pentagon (W X Y Z : GObj T hε) :
+    tensHom (eqToHom (tensObj_assoc W X Y)) (𝟙 Z) ≫
+      eqToHom (tensObj_assoc W (tensObj X Y) Z) ≫
+      tensHom (𝟙 W) (eqToHom (tensObj_assoc X Y Z)) =
+    eqToHom (tensObj_assoc (tensObj W X) Y Z) ≫
+      eqToHom (tensObj_assoc W X (tensObj Y Z)) := by
+  rw [tensHom_eqToHom_left, tensHom_eqToHom_right]
+  simp
+
 end Glued
 
 end QOU.HeckeTemperleyLieb.TLGluedAssoc
