@@ -234,6 +234,65 @@ theorem regulator_pos_of_isVolMax [Nonempty ι] {A B : Matrix ι ι ℤ} (hS : (
   obtain ⟨s, hs⟩ := exists_nzSolution_of_isVolMax hS h
   exact ⟨s, regulator_nzClass_pos s fun j => (hs j).2⟩
 
+/-! ## A maximum exists on the closed polytope -/
+
+/-- The closed angle polytope: angles `≥ 0` and `α + β ≤ π`, with the gluing rows. -/
+def closedPolytope (A B : Matrix ι ι ℤ) : Set ((ι → ℝ) × (ι → ℝ)) :=
+  {p | (∀ j, 0 ≤ p.1 j ∧ 0 ≤ p.2 j ∧ p.1 j + p.2 j ≤ π) ∧ Glue A B p.1 p.2}
+
+theorem isClosed_closedPolytope (A B : Matrix ι ι ℤ) : IsClosed (closedPolytope A B) := by
+  have h1 : IsClosed {p : (ι → ℝ) × (ι → ℝ) |
+      ∀ j, 0 ≤ p.1 j ∧ 0 ≤ p.2 j ∧ p.1 j + p.2 j ≤ π} := by
+    simp only [Set.setOf_forall, Set.setOf_and]
+    refine isClosed_iInter fun j => ?_
+    refine (isClosed_le continuous_const (by fun_prop)).inter
+      ((isClosed_le continuous_const (by fun_prop)).inter
+        (isClosed_le (by fun_prop) continuous_const))
+  have h2 : IsClosed {p : (ι → ℝ) × (ι → ℝ) | Glue A B p.1 p.2} := by
+    simp only [Glue, Set.setOf_forall]
+    exact isClosed_iInter fun k => isClosed_eq (by fun_prop) continuous_const
+  exact h1.inter h2
+
+theorem isCompact_closedPolytope (A B : Matrix ι ι ℤ) : IsCompact (closedPolytope A B) := by
+  refine Metric.isCompact_of_isClosed_isBounded (isClosed_closedPolytope A B) ?_
+  refine (Metric.isBounded_iff_subset_closedBall 0).2 ⟨π, fun p hp => ?_⟩
+  rw [Metric.mem_closedBall, dist_zero_right, Prod.norm_def, max_le_iff]
+  have hb : ∀ j, |p.1 j| ≤ π ∧ |p.2 j| ≤ π := fun j => by
+    obtain ⟨a, b, c⟩ := hp.1 j
+    exact ⟨by rw [abs_of_nonneg a]; linarith, by rw [abs_of_nonneg b]; linarith⟩
+  exact ⟨(pi_norm_le_iff_of_nonneg pi_pos.le).2 fun j => by
+      rw [Real.norm_eq_abs]; exact (hb j).1,
+    (pi_norm_le_iff_of_nonneg pi_pos.le).2 fun j => by rw [Real.norm_eq_abs]; exact (hb j).2⟩
+
+theorem continuous_totV : Continuous fun p : (ι → ℝ) × (ι → ℝ) => totV p.1 p.2 := by
+  unfold totV tetV
+  refine continuous_finset_sum _ fun j _ => ?_
+  exact ((continuous_Lob.comp (by fun_prop)).add (continuous_Lob.comp (by fun_prop))).sub
+    (continuous_Lob.comp (by fun_prop))
+
+/-- **The volume attains a maximum on the closed polytope**, whenever it is nonempty. -/
+theorem exists_isMaxOn_closedPolytope {A B : Matrix ι ι ℤ}
+    (hne : (closedPolytope A B).Nonempty) :
+    ∃ p ∈ closedPolytope A B, IsMaxOn (fun q => totV q.1 q.2) (closedPolytope A B) p :=
+  (isCompact_closedPolytope A B).exists_isMaxOn hne continuous_totV.continuousOn
+
+/-- **Reduction to the boundary question.** If a maximum of the volume on the closed
+polytope has every angle strictly inside `(0, π)`, it is a volume maximum over the angle
+structures, so it gives an upper-half-plane solution of the gluing rows. -/
+theorem exists_nzSolution_of_interior_max {A B : Matrix ι ι ℤ} (hS : (A * Bᵀ).IsSymm)
+    {p : (ι → ℝ) × (ι → ℝ)} (hp : p ∈ closedPolytope A B)
+    (hmax : IsMaxOn (fun q => totV q.1 q.2) (closedPolytope A B) p) (hint : Pos p.1 p.2) :
+    ∃ s : NeumannZagierBloch.NZSolution ℂ ι A B, ∀ j,
+      (s.w j : ℂ) = Complex.exp (shapeExp (p.1 j) (p.2 j)) ∧ 0 < (s.w j : ℂ).im := by
+  have hv : IsVolMax A B p.1 p.2 := by
+    refine ⟨hint, hp.2, fun α' β' h1 h2 => ?_⟩
+    have hmem : (α', β') ∈ closedPolytope A B := by
+      refine ⟨fun j => ?_, h2⟩
+      exact ⟨(h1 j).1.le, (h1 j).2.1.le, (h1 j).2.2.le⟩
+    have h3 := (isMaxOn_iff.1 hmax) (α', β') hmem
+    exact h3
+  exact exists_nzSolution_of_isVolMax hS hv
+
 end
 
 end QOU.Archimedean.NZVolumeCritical
