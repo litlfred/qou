@@ -82,7 +82,54 @@ def reduce_mod(expr, gen, m):
     return sp.rem(sp.expand(num * inv), m, gen)
 
 
+def ind(p, j):
+    return 1 if j == p else 0
+
+
+def ra_rows(a):
+    """The closed-form RᵃL rows of NeumannZagierBloch.lean (row 0 = cusp)."""
+    n = a + 1
+    A, B = [], []
+    for k in range(n):
+        if k == 0:
+            A.append([-2 * ind(0, j) + 2 * ind(a - 1, j) - 2 * ind(a, j) for j in range(n)])
+            B.append([2 * ind(0, j) - 2 * ind(a - 1, j) - 2 * ind(a, j) for j in range(n)])
+        elif k == 1:
+            A.append([-ind(0, j) - ind(a - 2, j) for j in range(n)])
+            B.append([ind(0, j) + ind(a - 2, j) - 2 * ind(a - 1, j) - 2 * ind(a, j) for j in range(n)])
+        elif k == 2:
+            A.append([-ind(1, j) - ind(a, j) for j in range(n)])
+            B.append([-2 * ind(0, j) + ind(1, j) + ind(a, j) for j in range(n)])
+        else:
+            A.append([-ind(k - 3, j) - ind(k - 1, j) for j in range(n)])
+            B.append([ind(k - 3, j) - 2 * ind(k - 2, j) + ind(k - 1, j) for j in range(n)])
+    return A, B
+
+
+def check_family() -> None:
+    print("\n== closed-form RᵃL rows vs the layering, 2 ≤ a ≤ 12")
+    for a in range(2, 13):
+        n, er, _c, _M = rows("R" * a + "L")
+        tets, maps = nz.layer("R" * a + "L")
+        M = next(Mm for Mm in maps if Mm.trace() > 0)
+        with contextlib.redirect_stdout(io.StringIO()):
+            t, g, _n, _cl, _er, _cv, cy = nz.run_word("R" * a + "L", M, "")
+        hr = nz.holonomy_rows(t, g, None, cy)
+        cusps = [hr[k][0] for k in nz.nontrivial_cycles(er, hr)]
+        A, B = ra_rows(a)
+        layer_rows = [(list(r[0]), list(r[1])) for r in er[1:]]
+        same_edges = all((A[k], B[k]) == layer_rows[k - 1] for k in range(1, n))
+        same_cusp = any((A[0], B[0]) == (list(c[0]), list(c[1])) for c in cusps)
+        S = sp.Matrix(A) * sp.Matrix(B).T
+        print(f"  a={a}: edges match {same_edges}, cusp matches {same_cusp}, "
+              f"A·Bᵀ symmetric {S == S.T}, det B = {sp.Matrix(B).det()}")
+        check(f"R^{a}L_closed_form_rows", same_edges and same_cusp and S == S.T)
+        if a >= 3:
+            check(f"R^{a}L_detB_is_pm_2(a-2)", abs(sp.Matrix(B).det()) == 2 * (a - 2))
+
+
 def main() -> int:
+    check_family()
     for word, (gen, m, Z) in EXACT.items():
         n, er, cusp, M = rows(word)
         print(f"\n== {word}  (monodromy {M.tolist()}, trace {M.trace()}, {n} tetrahedra)")
