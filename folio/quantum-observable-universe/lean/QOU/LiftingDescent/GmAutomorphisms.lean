@@ -156,8 +156,8 @@ theorem algHom_T (φ : R[T;T⁻¹] →ₐ[R] R[T;T⁻¹]) {k : ℤ} (hk : φ (T 
     rw [e, map_pow, hinv, T_pow]
     congr 1; ring
 
-/-- The coefficients of `φ f` live on `kℤ`. -/
 omit [IsDomain R] in
+/-- The coefficients of `φ f` live on `kℤ`. -/
 theorem coeff_algHom_eq_zero (φ : R[T;T⁻¹] →ₐ[R] R[T;T⁻¹]) {k : ℤ} (hk : φ (T 1) = T k)
     (f : R[T;T⁻¹]) (a : ℤ) (ha : ¬ k ∣ a) : φ f a = 0 := by
   induction f using LaurentPolynomial.induction_on' with
