@@ -28,3 +28,7 @@ Conjecture-tracking bean: do not close until the mathematics closes (AGENTS.md r
 - Integral N in the #9852 polarization exists only for RᵃL with a ≤ 4; the integral polarization varies with a, so a uniform integral datum would be a selection.
 - Polarization-free replacement: NeumannZagierBloch.det_smul_nzClass_mem_blochGroup (A·Bᵀ symmetric ⇒ det(B)·Σ[z] ∈ B(F)). RᵃL rows in closed form; A·Bᵀ symmetric proved for 3 ≤ a ≤ 8 (decide), probe to a ≤ 12, |det B| = 2(a−2).
 - Open: symmetry for all a in Lean; regulator in QOU/Transcendental/.
+
+## 2026-11-28 (PR #9883)
+
+- RaLSymplectic.ra_isSymm_all: A·Bᵀ symmetric for every a ≥ 3 (symbolic). raClass_mem_blochGroup_all: det(B)·Σ[z] ∈ B(F) for every σ₀ᵃσ₁⁻¹, a ≥ 3. Open: |det B| = 2(a−2) in Lean; regulator.
