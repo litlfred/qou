@@ -11,25 +11,61 @@ bar-invariant (y3(1/q) = y3(q)). So with beta = ln q,
 l_e = log y3 bar-even, omega_e = q d_q log y3 bar-odd. The log-chart unit sign is set by
 l_e (bar-even part dominates), the mass-chart unit sign by the writhe 3 (framing dominates).
 At q = 1: l_e = -ln 2 < 0 and w_e = 3 > 0, so the split is present in the classical
-limit and is not a q0 accident. Exact arithmetic (mpmath, 50 dps). No measured value.
+limit and is not a q0 accident. Exact arithmetic (mpmath, 80+ dps, physical proton pin;
+muon pin on hold per 2026-11-28 owner ruling until rederivation). No measured value.
 """
+from __future__ import annotations
+
+import os
+import sys
+from pathlib import Path
+
+os.environ.setdefault("QOU_OUTPUT_DPS", "80")
+os.environ.setdefault("QOU_COMPUTE_DPS", "95")
+os.environ["QOU_Q0_ANCHOR"] = "proton"
+
 import mpmath as mp
 
-mp.mp.dps = 50
-Q0 = mp.mpf("1.1099785827513808")  # proton pin (constants.Q); model evaluation point only
+ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(ROOT / "computations"))
 
-def y3(q): return (q**4 + 1) / (q**2 + 1) ** 2
-def tau_e(q): return q**3 * y3(q)
-def delta(F, q): return q * mp.diff(F, q)
-def omega(q): return 4 * q**2 * (q**2 - 1) / ((q**4 + 1) * (q**2 + 1))
+import _path_bridge  # noqa: F401, E402
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps(95)
+mp.mp.dps = max(mp.mp.dps, 95)
+
+from qou_substrate.constants import q_at  # noqa: E402
+
+Q0 = q_at(80)  # physical proton pin (q0Anchor == "proton"); model evaluation point only
+
+
+def y3(q):
+    return (q**4 + 1) / (q**2 + 1) ** 2
+
+
+def tau_e(q):
+    return q**3 * y3(q)
+
+
+def delta(F, q):
+    return q * mp.diff(F, q)
+
+
+def omega(q):
+    return 4 * q**2 * (q**2 - 1) / ((q**4 + 1) * (q**2 + 1))
+
 
 ok = True
+
+
 def check(name, cond):
     global ok
     ok &= bool(cond)
     print(("PASS " if cond else "FAIL ") + name)
 
-tol = mp.mpf(10) ** -30
+
+tol = mp.mpf(10) ** -50
 for q in (Q0, mp.mpf(2), mp.mpf("0.7")):
     check(f"y3 bar-invariant at q={mp.nstr(q,6)}", abs(y3(1 / q) - y3(q)) < tol)
     check(f"omega = q d_q log y3 at q={mp.nstr(q,6)}", abs(delta(lambda t: mp.log(y3(t)), q) - omega(q)) < tol)
@@ -46,14 +82,23 @@ check("log chart: bar-even part dominates (l_e < -3 beta)", le < -3 * b)
 check("mass chart: framing dominates (omega_e > -3)", om > -3)
 check("q=1: l_e = -ln 2, omega_e = 0", abs(mp.log(y3(mp.mpf(1))) + mp.log(2)) < tol and omega(mp.mpf(1)) == 0)
 # threshold: the log-chart unit changes sign where l_e + 3 beta = 0
-qs = mp.findroot(lambda t: mp.log(tau_e(t)), mp.mpf(1.3))
+qs = mp.findroot(lambda t: mp.log(tau_e(t)), mp.mpf("1.3"))
 print("log-chart unit sign change at q* =", mp.nstr(qs, 15), "(tau_e = 1)")
 check("q0 lies below the log-chart sign change", Q0 < qs)
 
+
 # ---- electron-independent no-go: n-p (pure power) vs Delta-N (bar-even) ----------------
-def delta_cell(q): return q**2 + q**-2
+def delta_cell(q):
+    return q**2 + q**-2
+
+
 ld, od = mp.log(delta_cell(Q0)), delta(lambda t: mp.log(delta_cell(t)), Q0)
-def me_ring(q): return (q**3 + q + 1 / q + q**-3) / q**3   # #9789 reading m_e = [4]/q^3
+
+
+def me_ring(q):
+    return (q**3 + q + 1 / q + q**-3) / q**3   # #9789 reading m_e = [4]/q^3
+
+
 for name, F in (("tau_e = q^3 y3", tau_e), ("[4]/q^3 (#9789)", me_ring)):
     Lu, wu = mp.log(F(Q0)), delta(lambda t: mp.log(F(t)), Q0)
     n0, d0, n1, d1 = -2 * b / Lu, ld / Lu, -2 / wu, od / wu

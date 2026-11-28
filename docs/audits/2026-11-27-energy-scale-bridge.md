@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-27 · **Branch:** `claude/energy-scale-bridge-2026-11-27`
 **Builds on:** #9718 (log chart, k = 0), #9725 (its wiring), #9733 (mass chart, k = 1, open), #9717 / #9727 (n − p), #9675 (ruled bond letters).
-**Lean:** `QOU/Observations/EnergyScaleBridge.lean` (generic ordered field, no `log`),
+**Lean:** `QOU/Observations/EnergyScaleBridge.lean` (generic commutative ring / strict ordered ring with `Rˣ` units, no `log`),
 `QOU/Transcendental/MassTheory/EnergyScaleBridge.lean` (`Real.log`, `HasDerivAt`). Sorry-free; axioms `propext`, `Classical.choice`, `Quot.sound` only.
-**Probe:** `computations/probes/energy_scale_bridge/scale_bridge_probe.py` (mpmath 50 dps, 11/11).
+**Probe:** `computations/probes/energy_scale_bridge/scale_bridge_probe.py` (mpmath 80+ dps, physical proton pin, 11/11).
 
 ## 1. Question
 
