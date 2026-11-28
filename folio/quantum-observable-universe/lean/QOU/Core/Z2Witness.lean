@@ -590,6 +590,25 @@ lemma detA_epi : Epi (detA (R := R)) := by
   apply (Action.forget (FreeFinModuleCat R) G ⋙ (isFreeFin R).ι).epi_of_epi_map
   exact (ModuleCat.epi_iff_surjective (R := R) _).mpr (detL_surjective (R := R))
 
+lemma detL_comm :
+    (detL : F2 R ⊗[R] F2 R →ₗ[R] R) ∘ₗ (TensorProduct.comm R (F2 R) (F2 R)).toLinearMap =
+      -detL := by
+  apply TensorProduct.ext'
+  intro x y
+  simp [detL]
+  ring
+
+lemma detA_antisym :
+    (β_ (Vf (R := R)) Vf).hom ≫ detA = (-1 : R) • detA := by
+  apply Action.Hom.ext
+  rw [neg_one_smul]
+  simp only [Action.comp_hom, Action.β_hom_hom, Action.neg_hom, homMk_hom, detA,
+    braiding_hom_eq, fh_comp]
+  change fh (X := (Vf (R := R) ⊗ Vf).V) (Y := (𝟙_ (Cat R)).V)
+      (detL (R := R) ∘ₗ (TensorProduct.comm R (F2 R) (F2 R)).toLinearMap) =
+    fh (X := (Vf (R := R) ⊗ Vf).V) (Y := (𝟙_ (Cat R)).V) (-detL (R := R))
+  exact fh_inj detL_comm
+
 lemma frobenius_symmetric_A (f : A (R := R) ⟶ A) :
     frobHopfA.leftTrace f = frobHopfA.rightTrace f := by
   simp only [QOU.FrobeniusHopfData.leftTrace, QOU.FrobeniusHopfData.rightTrace,
@@ -626,10 +645,10 @@ noncomputable def unitEndEquivZ2 : R ≃+* CategoryTheory.End (𝟙_ (Cat R)) wh
 `R`-modules, `A = Fun(ℤ/2, R)` with the Haar sum as Frobenius form,
 `Ad(A) = ` the sign line, `V = 𝟙 ⊕ 𝟙`, `Λ²V = 𝟙` via the determinant. -/
 noncomputable def z2QOU [Nontrivial R] (h2 : IsUnit (2 : R)) :
-    QOU.QuantumObservableUniverse.{w + 1, w, w, w} R where
+    QOU.QuantumObservableUniverse.{w + 1, w, w} R where
   C := Cat R
   frobHopf := frobHopfA
-  fibreFunctor := Action.forget (FreeFinModuleCat R) G ⋙ (isFreeFin R).ι ⋙ forget (ModuleCat R)
+  fibreFunctor := Action.forget (FreeFinModuleCat R) G ⋙ (isFreeFin R).ι
   frobenius_symmetric := frobenius_symmetric_A
   unitEndEquiv := unitEndEquivZ2
   blocks := PUnit
@@ -654,8 +673,15 @@ noncomputable def z2QOU [Nontrivial R] (h2 : IsUnit (2 : R)) :
   exteriorSquareProj := detA
   exteriorSquare_epi := detA_epi
   volumeIso := Iso.refl _
+  twistScalar := 1
+  twistScalarInv := 1
+  twistScalar_mul_inv := one_mul 1
+  twist_fundamental := by
+    show 𝟙 Vf = (1 : R) • 𝟙 Vf
+    rw [one_smul]
+  exteriorSquare_antisym := detA_antisym
 
 theorem nonempty_qou_z2 [Nontrivial R] (h2 : IsUnit (2 : R)) :
-    Nonempty (QOU.QuantumObservableUniverse.{w + 1, w, w, w} R) := ⟨z2QOU h2⟩
+    Nonempty (QOU.QuantumObservableUniverse.{w + 1, w, w} R) := ⟨z2QOU h2⟩
 
 end QOU.Z2Witness
