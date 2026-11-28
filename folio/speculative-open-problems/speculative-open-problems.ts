@@ -6,7 +6,7 @@ import { paper, chapterRef } from "../schema/builders";
  * Companion document recording speculative problem framings, dictionary
  * analogies, and surreal-number heuristics for the Yang--Mills, Riemann,
  * Birch--Swinnerton-Dyer, P versus NP, and Collatz problems, separated from
- * the proved algebra of On the Mechanics of Quantum Observable Universes.
+ * the proved algebra of On the Mechanics of Quantum Observables.
  */
 export default paper({
   title:
