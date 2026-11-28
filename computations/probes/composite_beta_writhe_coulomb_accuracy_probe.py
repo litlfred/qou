@@ -46,7 +46,6 @@ ANTI-FIT & PIN DISCIPLINE
 from __future__ import annotations
 
 import json
-import math
 import os
 import sys
 from pathlib import Path
@@ -94,6 +93,17 @@ def tt_step_int(d: int) -> int:
 def strand_pair_denom(A: int) -> int:
     """Murphy-product letter count 3A(3A - 1) on 3A strands (Lean: strandPairDenom)."""
     return (3 * A) * (3 * A - 1)
+
+
+def _comb_int(n: int, k: int) -> int:
+    """Exact arbitrary-precision integer binomial C(n, k) using pure int arithmetic."""
+    if k < 0 or k > n:
+        return 0
+    k = min(k, n - k)
+    acc = 1
+    for i in range(1, k + 1):
+        acc = (acc * (n - k + i)) // i
+    return acc
 
 
 def _mean(xs: list[mp.mpf]) -> mp.mpf:
@@ -242,18 +252,18 @@ def main() -> int:
         for t in composite
     )
     binomial_step_ok = all(
-        math.comb(3 * t["A"], t["Z"] + 2 * t["N"] - 1) * (2 * t["Z"] + t["N"] + 1)
-        == math.comb(3 * t["A"], t["Z"] + 2 * t["N"]) * (t["Z"] + 2 * t["N"])
+        _comb_int(3 * t["A"], t["Z"] + 2 * t["N"] - 1) * (2 * t["Z"] + t["N"] + 1)
+        == _comb_int(3 * t["A"], t["Z"] + 2 * t["N"]) * (t["Z"] + 2 * t["N"])
         for t in composite
     )
     max_markov_step_residual = max(
         abs(
             (
-                mp.log(mp.mpf(math.comb(3 * t["A"], t["Z"] + 2 * t["N"] - 1)))
+                mp.log(mp.mpf(_comb_int(3 * t["A"], t["Z"] + 2 * t["N"] - 1)))
                 + mp.mpf((2 * t["Z"] + t["N"] + 1) - (t["Z"] + 2 * t["N"] - 1)) * mp.log(q0)
             )
             - (
-                mp.log(mp.mpf(math.comb(3 * t["A"], t["Z"] + 2 * t["N"])))
+                mp.log(mp.mpf(_comb_int(3 * t["A"], t["Z"] + 2 * t["N"])))
                 + mp.mpf((2 * t["Z"] + t["N"]) - (t["Z"] + 2 * t["N"])) * mp.log(q0)
             )
             - (
@@ -314,11 +324,11 @@ def main() -> int:
             n_str = 3 * A
             k_par = min(2 * z + n, z + 2 * n)
             k_dau = min(2 * (z + 1) + (n - 1), (z + 1) + 2 * (n - 1))
-            d_par = math.comb(n_str, k_par) - (
-                math.comb(n_str, k_par - 1) if k_par > 0 else 0
+            d_par = _comb_int(n_str, k_par) - (
+                _comb_int(n_str, k_par - 1) if k_par > 0 else 0
             )
-            d_dau = math.comb(n_str, k_dau) - (
-                math.comb(n_str, k_dau - 1) if k_dau > 0 else 0
+            d_dau = _comb_int(n_str, k_dau) - (
+                _comb_int(n_str, k_dau - 1) if k_dau > 0 else 0
             )
             return alpha_cat * mp.log(mp.mpf(d_dau) / mp.mpf(d_par))
         if g2_arm == "G2_markov_sector_raw":
