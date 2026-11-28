@@ -64,3 +64,12 @@ This bean was set to completed by local commits on `cat/cat-harness/beans` (e223
 ## 2026-11-27 — skein part derived (PR #9841)
 
 Answers the surviving pure-math core for the Form B arm. Lean `QOU/MassTheory/EmVertexPairScalarChain.lean` (no sorry): in convention D the skein `σ − σ⁻¹ = h` is scalar in any algebra, so every chirality-summed vertex pair, at any positions, is `−h²`, and `k` pairs give `(−h²)^k` under every moment. Two-loop coefficient of the skein chain = `−N₁h²H`; `N₁ = 1` is Form B's own term. Nothing from the vertex algebra lies outside `ℤ[q,q⁻¹]·[2]_q/(8π)`: no ζ(3)/Li₃. A Bloch-B₃ term would need a two-loop measure (undefined in the corpus). C1 stays a labelled arm. Open: N₁ (placement count), §3b-cond normalization, two-loop measure. Audit `docs/audits/2026-11-27-alpha-em-two-loop-skein-scalar.md`.
+
+## 2026-11-28 — placement count N₁ = 1 (PR #9856)
+
+`[3]_q = 3 + h² = 3 − V` (`EmThetaGraphSkeinSplit.lean`, sorry-free). The corpus
+θ-graph two-loop term is a classical 3 plus exactly one vertex pair, so N₁ = 1, and
+Form B agrees. No integer multiple of h² equals [3]_q. What remains open: the
+classical constant 3 (absent from Form B) and the per-loop measure ((α/8π)² vs
+[2]_q α²/(8π)). Measure is in a separate thread. Audit:
+docs/audits/2026-11-28-alpha-em-two-loop-placement-count.md.
