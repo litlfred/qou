@@ -17,8 +17,8 @@ export default proposition({
       kind: "status",
       date: "2026-11-28",
       body:
-        "Sorry-free (`HyperchargeSignIsBringOrientation.lean`), checked on generators of " +
-        "S3 x S2. Identifies the open sign with the orientation of Bring's surface; does " +
+        "Sorry-free (`HyperchargeSignIsBringOrientation.lean`), checked on all twelve " +
+        "elements of S3 x S2. Identifies the open sign with the orientation of Bring's surface; does " +
         "not fix its value, since both orientations are isometric. Uses H1 = [2,1,1,1]+ " +
         "plus [2,1,1,1]- from PR #9874. Bean qou-h0zz.",
     },

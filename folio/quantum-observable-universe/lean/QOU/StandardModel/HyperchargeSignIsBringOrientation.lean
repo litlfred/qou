@@ -35,8 +35,9 @@ Bring's surface, i.e. the choice of complex structure `H⁰(K)` against `conj H�
 This converts the open sign into a choice upstream. It does not fix the value, because both
 orientations are isometric.
 
-Checked on generators only, not on all twelve elements of `S₃ × S₂`. Integer and rational
-arithmetic only. No empirical value enters.
+`stabiliser_of_Y`, `minus_copy_diagonal_fixes` and `plus_copy_odd_flips_all` extend the
+generator checks to all twelve elements of `S₃ × S₂`, and show `S₃ × S₂` is exactly the
+stabiliser of `Y` among the 120 permutations. Integer and rational arithmetic only. No empirical value enters.
 -/
 
 namespace QOU.StandardModel.BringOrientation
@@ -67,5 +68,51 @@ theorem minus_copy_c_flips : act (-1) 1 true Y = -Y := by
 theorem minus_copy_odd_flips :
     act (-1) (swap 0 1) false Y = -Y ∧ act (-1) (swap 3 4) false Y = -Y := by
   simp [act_eq, twist_flips_Y_colour, twist_flips_Y_isospin]
+
+/-! ## All twelve elements of `S₃ × S₂` -/
+
+/-- The permutations preserving the colour strands `{0,1,2}` (hence also `{3,4}`). -/
+def colourIsospin : Finset (Perm (Fin 5)) :=
+  Finset.univ.filter (fun g => ∀ x : Fin 5, (g x < 3 ↔ x < 3))
+
+theorem colourIsospin_card : colourIsospin.card = 12 := by decide
+
+/-- Integer twin of `twist`, for kernel evaluation. -/
+def twistZ (g : Perm (Fin 5)) (y : Fin 5 → ℤ) : Fin 5 → ℤ :=
+  fun i => ((Perm.sign g : ℤˣ) : ℤ) * y (g⁻¹ i)
+
+/-- Integer hypercharge. -/
+def YZ : Fin 5 → ℤ := ![-2, -2, -2, 3, 3]
+
+theorem twist_Y_cast (g : Perm (Fin 5)) : twist g Y = fun i => ((twistZ g YZ i : ℤ) : ℚ) := by
+  funext i; simp only [twist, twistZ, Int.cast_mul]; congr 1
+  generalize g⁻¹ i = j; fin_cases j <;> simp [Y, YZ]
+
+/-- **`S₃ × S₂` is exactly the stabiliser of hypercharge under plain relabelling**, over all
+120 permutations. -/
+theorem stabiliser_of_Y : ∀ g : Perm (Fin 5), (fun i => YZ (g⁻¹ i)) = YZ ↔ g ∈ colourIsospin := by
+  decide +kernel
+
+theorem twistZ_colourIsospin :
+    ∀ g ∈ colourIsospin, twistZ g YZ = ((Perm.sign g : ℤˣ) : ℤ) • YZ := by
+  decide +kernel
+
+/-- Under the sign twist, every element of `S₃ × S₂` acts on `Y` by its sign. -/
+theorem twist_colourIsospin (g : Perm (Fin 5)) (hg : g ∈ colourIsospin) :
+    twist g Y = (((Perm.sign g : ℤˣ) : ℤ) : ℚ) • Y := by
+  rw [twist_Y_cast, twistZ_colourIsospin g hg]
+  funext i; fin_cases i <;> simp [YZ, Y]
+
+/-- **The twisted diagonal fixes `Y` in the `⁻` copy.** Pairing each odd element of
+`S₃ × S₂` with `c` fixes hypercharge, for all twelve elements. -/
+theorem minus_copy_diagonal_fixes (g : Perm (Fin 5)) (hg : g ∈ colourIsospin) :
+    act (-1) g (decide (Perm.sign g = -1)) Y = Y := by
+  rw [act_eq, twist_colourIsospin g hg]
+  rcases Int.units_eq_one_or (Perm.sign g) with h | h <;> simp [h]
+
+/-- **In the `⁺` copy every odd element of `S₃ × S₂` sends `Y` to `−Y`**, with or without `c`. -/
+theorem plus_copy_odd_flips_all (g : Perm (Fin 5)) (hg : g ∈ colourIsospin)
+    (hodd : Perm.sign g = -1) (rev : Bool) : act 1 g rev Y = -Y := by
+  rw [act_eq, twist_colourIsospin g hg, hodd]; cases rev <;> simp
 
 end QOU.StandardModel.BringOrientation
