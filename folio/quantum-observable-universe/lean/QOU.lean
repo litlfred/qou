@@ -274,6 +274,7 @@ import QOU.Observations.collatz_vtwo_cycle_descent
 import QOU.BraidsAndKnots.HAdicDrinfeld.CasimirData
 import QOU.BraidsAndKnots.HAdicDrinfeld.FourStrand
 import QOU.BraidsAndKnots.HAdicDrinfeld.Hexagon
+import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleCategory
 import QOU.BraidsAndKnots.HAdicDrinfeld.Pentagon
 import QOU.BraidsAndKnots.HAdicDrinfeld.QuasiBialgebra
 import QOU.BraidsAndKnots.HAdicDrinfeld.SecondHexagon

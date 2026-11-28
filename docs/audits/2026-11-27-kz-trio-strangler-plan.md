@@ -122,3 +122,10 @@ and `CasimirData.pentagon`, the quasi-Hopf pentagon
 `(id⊗id⊗Δ)Φ · (Δ⊗id⊗id)Φ = (1⊗Φ) · (id⊗Δ⊗id)Φ · (Φ⊗1)` for `Φ = φ(c t₁₂, c t₂₃)`. Its only
 hypothesis is the pentagon in `U4 N`, so it does not depend on the choice of exponential `E`.
 Sorry-free; axioms propext, Classical.choice, Quot.sound.
+
+`HAdicDrinfeld/ModuleCategory.lean` starts the category packaging. `Rep D` is a `k`-module with
+an algebra map `ρ : A →ₐ[k] End k V`; morphisms are the `k`-linear maps that commute with `ρ`.
+`Rep.tensorObj` puts `a ↦ (ρ_V ⊗ ρ_W)(Δ a)` on `V ⊗[k] W` through Mathlib's
+`Module.endTensorEndAlgHom`, and `Rep.tensorHom` is functorial (`tensorHom_id`,
+`tensorHom_comp`). The unit, the associator `Φ` and the braiding `σ ∘ R` come next.
+Sorry-free; axioms propext, Quot.sound.
