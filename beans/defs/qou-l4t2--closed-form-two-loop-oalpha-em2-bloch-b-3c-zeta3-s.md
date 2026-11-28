@@ -7,7 +7,7 @@ priority: high
 tags:
     - compute-accuracy
 created_at: 2026-11-19T06:43:03Z
-updated_at: 2026-11-27T23:59:00Z
+updated_at: 2026-11-28T00:09:00Z
 parent: qou-3l2l
 ---
 
@@ -73,3 +73,7 @@ Form B agrees. No integer multiple of h² equals [3]_q. What remains open: the
 classical constant 3 (absent from Form B) and the per-loop measure ((α/8π)² vs
 [2]_q α²/(8π)). Measure is in a separate thread. Audit:
 docs/audits/2026-11-28-alpha-em-two-loop-placement-count.md.
+
+
+## 2026-11-28T00:09Z
+Two-loop measure on Bring: PR #9860 (EmTwoLoopMeasureConnected, FlatSunsetConnectedPeriod).
