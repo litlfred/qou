@@ -10309,8 +10309,8 @@
         },
         {
           "path": "quantum-observable-universe/brings-surface/bring-harmonic-types.ts",
-          "bytes": 1317,
-          "size": "1.3 KB"
+          "bytes": 1957,
+          "size": "1.9 KB"
         },
         {
           "path": "quantum-observable-universe/brings-surface/bring-isospectrality-question.jsonld",
@@ -32568,6 +32568,16 @@
           "size": "8.5 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/HeckeTemperleyLieb/TLBraidedModular.lean",
+          "bytes": 5966,
+          "size": "5.8 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/HeckeTemperleyLieb/TLCableLoop.lean",
+          "bytes": 42851,
+          "size": "41.8 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/HeckeTemperleyLieb/TLContentStratification.lean",
           "bytes": 8358,
           "size": "8.2 KB"
@@ -32594,8 +32604,13 @@
         },
         {
           "path": "quantum-observable-universe/lean/HeckeTemperleyLieb/TLRootOfUnitySMatrixNondegenerate.lean",
-          "bytes": 41610,
-          "size": "40.6 KB"
+          "bytes": 41905,
+          "size": "40.9 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/HeckeTemperleyLieb/TLSemisimpleQuotient.lean",
+          "bytes": 8995,
+          "size": "8.8 KB"
         },
         {
           "path": "quantum-observable-universe/lean/HeckeTemperleyLieb/TLSpinChainMarkovTrace.lean",
@@ -36188,6 +36203,11 @@
           "size": "16.3 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/FurushoGroupStep.lean",
+          "bytes": 6969,
+          "size": "6.8 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/FurushoHexagon.lean",
           "bytes": 24522,
           "size": "23.9 KB"
@@ -36201,6 +36221,11 @@
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/FurushoReduction.lean",
           "bytes": 14688,
           "size": "14.3 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/FurushoSingleLevel.lean",
+          "bytes": 7816,
+          "size": "7.6 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/FurushoTwoCycle.lean",
@@ -36281,6 +36306,11 @@
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/PentagonObstruction.lean",
           "bytes": 12822,
           "size": "12.5 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/PentagonObstructionClass.lean",
+          "bytes": 11702,
+          "size": "11.4 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/RationalAssociator/Prop57.lean",
@@ -36709,8 +36739,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/BringsSurface/BringHarmonicTypes.lean",
-          "bytes": 18703,
-          "size": "18.3 KB"
+          "bytes": 18940,
+          "size": "18.5 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/BringsSurface/BringHeckeCommensurability.lean",
@@ -36936,6 +36966,11 @@
           "path": "quantum-observable-universe/lean/QOU/BringsSurface/ReebSpectrum.lean",
           "bytes": 4279,
           "size": "4.2 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/BringsSurface/S5CharacterDerivation.lean",
+          "bytes": 6261,
+          "size": "6.1 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/BringsSurface/ScratchZeta5.lean",
@@ -40553,6 +40588,11 @@
           "size": "6.0 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/MassTheory/CyclotomicA1Coprime.lean",
+          "bytes": 4742,
+          "size": "4.6 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/CyclotomicBoundaryCertified.lean",
           "bytes": 147468,
           "size": "144.0 KB"
@@ -40716,6 +40756,11 @@
           "path": "quantum-observable-universe/lean/QOU/MassTheory/EmSpectralCompleteness.lean",
           "bytes": 6731,
           "size": "6.6 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/MassTheory/EmThetaClassicalThree.lean",
+          "bytes": 4117,
+          "size": "4.0 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/EmThetaGraphSkeinSplit.lean",
@@ -42053,6 +42098,11 @@
           "size": "13.3 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/MassTheory/QHookDvd.lean",
+          "bytes": 23989,
+          "size": "23.4 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/QHookTop.lean",
           "bytes": 12999,
           "size": "12.7 KB"
@@ -42131,6 +42181,16 @@
           "path": "quantum-observable-universe/lean/QOU/MassTheory/RSK.lean",
           "bytes": 9974,
           "size": "9.7 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/MassTheory/RaLDeterminant.lean",
+          "bytes": 8012,
+          "size": "7.8 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/MassTheory/RaLSymplectic.lean",
+          "bytes": 4953,
+          "size": "4.8 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/RadialVolRhoMirrorTest.lean",
@@ -42321,6 +42381,11 @@
           "path": "quantum-observable-universe/lean/QOU/MassTheory/StaircaseNearMin.lean",
           "bytes": 28198,
           "size": "27.5 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/MassTheory/StaircaseNearMin2.lean",
+          "bytes": 48308,
+          "size": "47.2 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/StaircaseTopCoeff.lean",
@@ -47011,6 +47076,11 @@
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/KohnoWeightedClass.lean",
           "bytes": 2743,
           "size": "2.7 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/LeptonBundleRegulator.lean",
+          "bytes": 3943,
+          "size": "3.9 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Transcendental/MassTheory/LobAnalytic.lean",
@@ -57474,8 +57544,8 @@
         },
         {
           "path": "quantum-observable-universe/mass-theory/cyclotomic-boundary-at-keystone.md",
-          "bytes": 15255,
-          "size": "14.9 KB"
+          "bytes": 17212,
+          "size": "16.8 KB"
         },
         {
           "path": "quantum-observable-universe/mass-theory/cyclotomic-boundary-at-keystone.qa.json",
