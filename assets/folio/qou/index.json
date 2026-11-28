@@ -1279,8 +1279,8 @@
         },
         {
           "path": "quantum-observable-universe/appendix-knot-periodic-table/appendix-knot-periodic-table.ts",
-          "bytes": 2828,
-          "size": "2.8 KB"
+          "bytes": 2753,
+          "size": "2.7 KB"
         },
         {
           "path": "quantum-observable-universe/appendix-knot-periodic-table/borromean-gluon-content.jsonld",
@@ -1321,46 +1321,6 @@
           "path": "quantum-observable-universe/appendix-knot-periodic-table/gluon-model-comparison.ts",
           "bytes": 336,
           "size": "336 B"
-        },
-        {
-          "path": "quantum-observable-universe/appendix-knot-periodic-table/hadron-level-knot-table-data.jsonld",
-          "bytes": 786,
-          "size": "786 B"
-        },
-        {
-          "path": "quantum-observable-universe/appendix-knot-periodic-table/hadron-level-knot-table-data.md",
-          "bytes": 1450,
-          "size": "1.4 KB"
-        },
-        {
-          "path": "quantum-observable-universe/appendix-knot-periodic-table/hadron-level-knot-table-data.qa.json",
-          "bytes": 39542,
-          "size": "38.6 KB"
-        },
-        {
-          "path": "quantum-observable-universe/appendix-knot-periodic-table/hadron-level-knot-table-data.ts",
-          "bytes": 605,
-          "size": "605 B"
-        },
-        {
-          "path": "quantum-observable-universe/appendix-knot-periodic-table/hadron-level-knot-table.jsonld",
-          "bytes": 875,
-          "size": "875 B"
-        },
-        {
-          "path": "quantum-observable-universe/appendix-knot-periodic-table/hadron-level-knot-table.md",
-          "bytes": 777,
-          "size": "777 B"
-        },
-        {
-          "path": "quantum-observable-universe/appendix-knot-periodic-table/hadron-level-knot-table.qa.json",
-          "bytes": 59024,
-          "size": "57.6 KB"
-        },
-        {
-          "path": "quantum-observable-universe/appendix-knot-periodic-table/hadron-level-knot-table.ts",
-          "bytes": 1468,
-          "size": "1.4 KB"
         },
         {
           "path": "quantum-observable-universe/appendix-knot-periodic-table/hecke-operations-table1-data.jsonld",
@@ -18264,8 +18224,8 @@
         },
         {
           "path": "quantum-observable-universe/foreshadows.json",
-          "bytes": 63781,
-          "size": "62.3 KB"
+          "bytes": 65969,
+          "size": "64.4 KB"
         },
         {
           "path": "quantum-observable-universe/glossary.json",
@@ -34854,8 +34814,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU.lean",
-          "bytes": 120716,
-          "size": "117.9 KB"
+          "bytes": 121083,
+          "size": "118.2 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/BraidsAndKnots/AJMinimality.lean",
@@ -39379,8 +39339,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/InformationTheory/JonesTractableOrders.lean",
-          "bytes": 2687,
-          "size": "2.6 KB"
+          "bytes": 4791,
+          "size": "4.7 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/InformationTheory/MagnitudeAxisBoundary.lean",
@@ -42683,6 +42643,11 @@
           "size": "2.0 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/MassTheory/StrandEndMergeCeiling.lean",
+          "bytes": 4347,
+          "size": "4.2 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/MassTheory/StrandLayoutForcesChain.lean",
           "bytes": 4517,
           "size": "4.4 KB"
@@ -43336,6 +43301,16 @@
           "path": "quantum-observable-universe/lean/QOU/Nuclear/AlphaQInheritance.lean",
           "bytes": 2581,
           "size": "2.5 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Nuclear/AlphaQuartetPauliWignerSaturation.lean",
+          "bytes": 25341,
+          "size": "24.7 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Nuclear/AlphaSeniorityPreformation.lean",
+          "bytes": 27386,
+          "size": "26.7 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/AomegaM2BPSCohomology.lean",
@@ -44178,6 +44153,11 @@
           "size": "10.6 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/Nuclear/IsobaricBetaWritheCoulombStep.lean",
+          "bytes": 24828,
+          "size": "24.2 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/IsospinCasimirTwist.lean",
           "bytes": 21585,
           "size": "21.1 KB"
@@ -44611,6 +44591,11 @@
           "path": "quantum-observable-universe/lean/QOU/Nuclear/PhotonVertexEigenphase.lean",
           "bytes": 8233,
           "size": "8.0 KB"
+        },
+        {
+          "path": "quantum-observable-universe/lean/QOU/Nuclear/PretzelLevelTwoBlockFactorization.lean",
+          "bytes": 5057,
+          "size": "4.9 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/Nuclear/PretzelRemainderFromPtolemy.lean",
@@ -45198,6 +45183,11 @@
           "size": "4.3 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/Observations/ConfinementLayerMullikenStoichiometry.lean",
+          "bytes": 28860,
+          "size": "28.2 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/Observations/Conjectures.lean",
           "bytes": 62293,
           "size": "60.8 KB"
@@ -45694,8 +45684,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/StandardModel/BringThreeGenerationsAndTauSatellite.lean",
-          "bytes": 18816,
-          "size": "18.4 KB"
+          "bytes": 20253,
+          "size": "19.8 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/StandardModel/BringTwistFlipsHypercharge.lean",
@@ -45913,6 +45903,11 @@
           "size": "5.5 KB"
         },
         {
+          "path": "quantum-observable-universe/lean/QOU/StandardModel/KoideSingletDoubletEquipartition.lean",
+          "bytes": 50861,
+          "size": "49.7 KB"
+        },
+        {
           "path": "quantum-observable-universe/lean/QOU/StandardModel/LeptonNumberCarrierChirality.lean",
           "bytes": 6861,
           "size": "6.7 KB"
@@ -46104,8 +46099,8 @@
         },
         {
           "path": "quantum-observable-universe/lean/QOU/StandardModel/S3CirculantKoideTraceIdentity.lean",
-          "bytes": 43754,
-          "size": "42.7 KB"
+          "bytes": 46639,
+          "size": "45.5 KB"
         },
         {
           "path": "quantum-observable-universe/lean/QOU/StandardModel/SaturationNotBringFibre.lean",

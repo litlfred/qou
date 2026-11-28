@@ -2,7 +2,7 @@
   "$schema": "folio-bean-index/v1",
   "tile": {
     "beans": {
-      "count": 1793,
+      "count": 1786,
       "unit": "open beans"
     }
   },
@@ -8860,14 +8860,14 @@
     {
       "id": "qou-0jo7",
       "title": "Post-merge stability QA: refresh stale ACCURACY.md scorecard + witnesses, fix JonesTractableOrders transcendental boundary, and shrink base-ring-audit",
-      "status": "in-progress",
+      "status": "completed",
       "type": "task",
       "priority": "high",
       "parent": "qou-s028",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-28T10:15:32Z",
-      "updatedAt": "2026-11-28T10:15:32Z",
+      "updatedAt": "2026-11-28T11:33:00Z",
       "preview": "2026-11-28 (Antigravity coordinator 92bff8c9-777d-458a-a380-8dd5bf5cc0f3, sibling ws5-nov19-rebase -> branch claude/postmerge-qa-scorecard-boundary-20261128): Clear live post-merge QA reds on `origin/main` (2cc11f7f1c6): (1) fix `NEW QOU/InformationTheory/JonesTractableOrders.lean ['transcendental-function']` in `scripts/transcendental-boundary-audit.py --check` (and verify `qou-68a4` status) + `s",
       "file": "beans/defs/qou-0jo7--post-merge-stability-qa-refresh-stale-accuracymd-s.md"
     },
@@ -30590,15 +30590,15 @@
     {
       "id": "qou-bbr4",
       "title": "Regenerate canonical-isotope shards and index cleanly after Coulomb shape factor (#9699)",
-      "status": "todo",
+      "status": "completed",
       "type": "task",
       "priority": "",
       "parent": "qou-myts",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T21:20:51Z",
-      "updatedAt": "2026-11-27T21:20:51Z",
-      "preview": "Left out of #9715: a regeneration run in a resource-limited container truncated the index (z_max 118 -> 20) and moved rows at A >= 5. Regenerate on a container that can complete the full run, then verify z_max = 118 before committing.",
+      "updatedAt": "2026-11-28T11:36:00Z",
+      "preview": "Left out of #9715: a regeneration run in a resource-limited container truncated the index (z_max 118 -> 20) and moved rows at A >= 5. Regenerate on a container that can complete the full run, then verify z_max = 118 before committing.\n\nClosed post-merge: all 119 `Z00..Z118` canonical-isotope shards + index regenerated on proton pin and synced to `qou-mass` vendor in PR #10000.",
       "file": "beans/defs/qou-bbr4--regenerate-canonical-isotope-shards-and-index-clea.md"
     },
     {
@@ -34168,14 +34168,14 @@
     {
       "id": "qou-cw8i",
       "title": "Accuracy conditional->proved (Lepton/Koide): discharge provable S3/Z3 generation-circulant invariants in KoideTopologicalProtectionHypothesis & evaluate 2026-11-28 least-crossing lepton axis/colour readings",
-      "status": "in-progress",
+      "status": "completed",
       "type": "task",
       "priority": "high",
       "parent": "qou-s028",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-28T10:29:07Z",
-      "updatedAt": "2026-11-28T10:29:07Z",
+      "updatedAt": "2026-11-28T11:40:00Z",
       "preview": "2026-11-28 (Antigravity 92bff8c9, Sibling 6 in main-base -> claude/accuracy-koide-lepton-conditional-drain-20261128): Attack `KoideTopologicalProtectionHypothesis` on `m_tau/m_e` (+0.92 sigma CODATA / +0.44 sigma PDG-24, currently Conditional on `ACCURACY.md` Table 3.1a) using Bring Z3/S3 circulant & classical-limit invariance, narrow/prove all algebraic parts in Lean (`0 sorry`, division-free / c",
       "file": "beans/defs/qou-cw8i--accuracy-conditional-proved-leptonkoide-discharge.md"
     },
@@ -34856,14 +34856,14 @@
     {
       "id": "qou-d9iv",
       "title": "Salvage & re-scope Nov-24 uncommitted stability worktrees (5-layer Mulliken stoichiometry qou-5lct & exploratory SU(4)/FCC nuclear saturation probe) onto current main",
-      "status": "in-progress",
+      "status": "completed",
       "type": "task",
       "priority": "high",
       "parent": "qou-s028",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-28T10:15:33Z",
-      "updatedAt": "2026-11-28T11:18:00Z",
+      "updatedAt": "2026-11-28T11:26:00Z",
       "preview": "2026-11-28 (Antigravity coordinator 92bff8c9-777d-458a-a380-8dd5bf5cc0f3, sibling ws15-p3-p5-p6 & ws12-pr9180): Review applicability against 2026-11-27/28 owner rulings (`owner-rulings.md` T3 valence cap, proton pin, base-ring units, aether terminology), rebase onto `origin/main`, verify Lean (`0 sorry`, `base-ring-audit`, `transcendental-boundary-audit`), two-step stamp 80-dps witnesses at proton",
       "file": "beans/defs/qou-d9iv--salvage-re-scope-nov-24-uncommitted-stability-work.md"
     },
@@ -38388,14 +38388,14 @@
     {
       "id": "qou-f3hr",
       "title": "Accuracy compute & derivation (qou-j5b6, qou-bbr4, qou-tcl2/3): fix gg_scalar_per_step precision red, regenerate z_max=118 canonical-isotope shards, and wire derived T(T+1)+Coulomb composite beta/mass terms",
-      "status": "in-progress",
+      "status": "completed",
       "type": "task",
       "priority": "high",
       "parent": "qou-s028",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-28T10:29:08Z",
-      "updatedAt": "2026-11-28T10:29:08Z",
+      "updatedAt": "2026-11-28T11:36:00Z",
       "preview": "2026-11-28 (Antigravity 92bff8c9, Sibling 8 in ws2-bridge-hecke -> claude/accuracy-compute-bbr4-j5b6-isospin-20261128): (1) Fix `qou-j5b6` witness-literal copy red gate in `gg_scalar_per_step_probe.py:96`; (2) complete `qou-bbr4` full `z_max = 118` canonical-isotope shard & index regeneration after #9699 Coulomb shape factor; (3) formalize & evaluate derived `T(T+1)` writhe + Coulomb isobaric slop",
       "file": "beans/defs/qou-f3hr--accuracy-compute-derivation-qou-j5b6-qou-bbr4-qou.md"
     },
@@ -42714,14 +42714,14 @@
     {
       "id": "qou-h940",
       "title": "Energy-scale bridge: log chart vs mass chart, and the sign conflict",
-      "status": "in-progress",
+      "status": "completed",
       "type": "task",
       "priority": "normal",
       "parent": "qou-myts",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T22:03:24Z",
-      "updatedAt": "2026-11-27T22:41:40Z",
+      "updatedAt": "2026-11-28T11:52:00Z",
       "preview": "Thread 'Unify the log and mass-formula energy scales', branch claude/energy-scale-bridge-2026-11-27.\nProved (Lean, sorry-free): the mass chart (w = q d/dq log tau, #9733) is the Euler derivative of the log chart (L = log tau, #9718); E1 - E0 = m_e (L_e/w_e) delta(L_X/L_e). With L_e < 0 < w_e the charts agree in sign on X iff L_X w_X < 0 (sign_agree_iff).\nConsequences at q0 (probe scale_bridge_prob",
       "file": "beans/defs/qou-h940--energy-scale-bridge-log-chart-vs-mass-chart-and-th.md"
     },
@@ -46561,14 +46561,14 @@
     {
       "id": "qou-j5b6",
       "title": "precision: gg_scalar_per_step_probe.py:96 hard-codes 1.75923699418 copied from a witness",
-      "status": "todo",
+      "status": "completed",
       "type": "bug",
       "priority": "",
       "parent": "qou-myts",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T20:29:09Z",
-      "updatedAt": "2026-11-27T20:29:09Z",
+      "updatedAt": "2026-11-28T11:36:00Z",
       "preview": "The witness-value-copy ratchet in scripts/precision-gates.sh is RED on main at computations/probes/gg_ntower/gg_scalar_per_step_probe.py:96, which hard-codes 1.75923699418 (F_required on the z_D order-zero base, per AGENTS.md) taken from the protium witness. Fix at the producer: read the value from its witness or derive it in mpmath, instead of copying the literal. Reported by several threads on 2",
       "file": "beans/defs/qou-j5b6--precision-gg-scalar-per-step-probepy96-hard-codes.md"
     },
@@ -52537,7 +52537,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T20:31:47Z",
-      "updatedAt": "2026-11-27T23:00:00Z",
+      "updatedAt": "2026-11-28T11:40:00Z",
       "preview": "## Finding (2026-11-27, PR #9670)\n\n`computations/mass_at_3A_proper.py::per_generator_V_hat_3A` buckets each word's\nfactors by generator (`word_by_gen[g].append((c, d))`) and then multiplies each\nbucket into a single `α_i σ_i + β_i`. So `V̂_i` is computed on the **grouped** word.\n`binding_block_multiplicative.py` then uses `v_p = V^p_0 · V^p_1` and\n`v_n = V^n_0 · V^n_1`.\n\nUnder convention D, `V̂_i ",
       "file": "beans/defs/qou-m45w--per-generator-v-hat-3a-re-buckets-the-interleaved.md"
     },
@@ -60822,7 +60822,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T19:46:04Z",
-      "updatedAt": "2026-11-27T20:47:00Z",
+      "updatedAt": "2026-11-28T11:40:00Z",
       "preview": "Accuracy-scorecard vector 5 (α-decay): derived Q_α is 585 % off (median 320 %) on 1,051 emitters; WKB half-lives at Q_exp are 0.35 dex. Goal: derive, no fitting; separate what Q_α inherits from the binding term (qou-brng / C2) from what is α-specific.\n\n## Finding 1 (2026-11-27, probe computations/probes/alpha_qalpha_inheritance/)\nQ_α = B_α − ΔB, ΔB = B(Z,N) − B(Z−2,N−2) (Lean QOU.Nuclear.AlphaQInh",
       "file": "beans/defs/qou-q0gw--α-decay-q-α-split-inherited-binding-slope-error.md"
     },
@@ -65714,7 +65714,7 @@
         "qou-ziag"
       ],
       "createdAt": "2026-11-24T08:06:16Z",
-      "updatedAt": "2026-11-28T11:18:00Z",
+      "updatedAt": "2026-11-28T11:52:00Z",
       "preview": "## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)\n\nA **Swarm** is a first-class work item (`type: epic` in `beans`) with explicit **Acceptance Criteria / End State**, **Structured Work-Item Queues**, **On-Demand + Optional Periodic Human-Consumable Status Reporting**, and **Live Cold-Start Handover Notes**.\n\n### Defined End-State / Exit Criteria for the `'Stability'` Swarm\n- [",
       "file": "beans/defs/qou-s028--stability-swarm-merge-manager-continuity-handover.md"
     },
@@ -68714,7 +68714,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T20:25:00Z",
-      "updatedAt": "2026-11-27T21:52:18Z",
+      "updatedAt": "2026-11-28T11:36:00Z",
       "preview": "Closed form tr_M = τ_p^Z τ_n^N ∏ f_i and the Q-CLT proxy are log-linear in Z, N, interface counts: no dependence on the level-3A isospin block, so no T(T+1) term, no isobaric parabola (Q_β 0/1009 exothermic). Under convention D level 3A has 3A/2+1 nonzero blocks (19 at A=12), correcting the p(36) caveat in mass_table_comprehensive.py; evaluate block by block (character dims are ballot numbers).\n\n2",
       "file": "beans/defs/qou-tcl2--g2-block-dependent-braid-coefficient-level-3a.md"
     },
@@ -68728,7 +68728,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T20:25:00Z",
-      "updatedAt": "2026-11-27T21:14:14Z",
+      "updatedAt": "2026-11-28T11:36:00Z",
       "preview": "No binding formula on record has em entries: no Z²-type term. Rank cap 2 for a two-body operator gives a + b T_z + c T_z² inside a multiplet (derived from the cap, not imported). Feeds B, Q_β, Q_α (ΔB constant 9.5366 MeV along the alpha line, #9653), mirror nuclei.\n\nRESULT: PR #9691, EM channel a=A(A-2)/8, b=(A-1)/2, c=1/2 derived; r_rms open\n\n## 2026-11-27T23:59Z — ring-valued ledger (PR #9839)\nE",
       "file": "beans/defs/qou-tcl3--g3-em-entries-nucleus-block-imme.md"
     },
@@ -72562,7 +72562,7 @@
       ],
       "blockedBy": [],
       "createdAt": "2026-08-26T03:37:39Z",
-      "updatedAt": "2026-11-27T14:18:48Z",
+      "updatedAt": "2026-11-28T11:26:00Z",
       "preview": "Owner picked \"try all 5, prioritize what is formalized and provable first\"\n(2026-08-26). Five fronts dispatched in parallel, ordered by formalizability.\n\n## The reframing that produced the fronts\n\n**The low-isotope defect is NOT one defect.** Against the complete-graph\npairwise MAXIMUM `B_allpairs` (`K_A`):\n\n    3H 0.945    4He 1.647    6Li 0.743    7Li 0.639     (B_AME / B_allpairs)\n\nToo strong a",
       "file": "beans/defs/qou-v2om--epic-close-the-low-isotope-binding-defect-five-fro.md"
     },
@@ -88196,13 +88196,13 @@
         "status": "in-progress",
         "epics": 9,
         "total": 427,
-        "closed": 175,
-        "open": 252,
-        "inProgress": 137,
+        "closed": 179,
+        "open": 248,
+        "inProgress": 133,
         "todo": 115,
         "draft": 0,
         "unclassified": 0,
-        "share": 0.4098360655737705
+        "share": 0.41920374707259955
       },
       {
         "id": "suwr",
@@ -88226,13 +88226,13 @@
         "status": "in-progress",
         "epics": 12,
         "total": 790,
-        "closed": 249,
-        "open": 541,
-        "inProgress": 276,
-        "todo": 265,
+        "closed": 252,
+        "open": 538,
+        "inProgress": 275,
+        "todo": 263,
         "draft": 0,
         "unclassified": 0,
-        "share": 0.31518987341772153
+        "share": 0.3189873417721519
       },
       {
         "id": "szkf",
@@ -88461,8 +88461,8 @@
       }
     ],
     "orphanOpen": 138,
-    "openTotal": 1793,
-    "coveredOpen": 1647,
+    "openTotal": 1786,
+    "coveredOpen": 1640,
     "duplicateIds": 0
   }
 }
