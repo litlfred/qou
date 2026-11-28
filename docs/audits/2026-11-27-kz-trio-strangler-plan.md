@@ -161,3 +161,13 @@ term 1, pentagon in `U4 N`). `Rep.monoidal P` is a `def`, not an instance, since
 `rMatrix_quasiCocomm` and cocommutativity of `Δ`; `braiding` is the isomorphism with inverse
 `ρ(R⁻¹) ∘ σ⁻¹`; `braidingHom_naturality`. The two module hexagons come next.
 Sorry-free; axioms propext, Classical.choice, Quot.sound.
+
+`HAdicDrinfeld/ModuleHexagon.lean`: the two **hexagons** and the **braided monoidal category**.
+The algebra identities `hexagon_forward_alg` (from `hexagon2`) and `hexagon_reverse_alg` (from
+`CasimirData.hexagon`) are carried to representations along the leg permutations of
+`(X ⊗ Y) ⊗ Z`, giving `Rep.hexagon_forward` and `Rep.hexagon_reverse` in Mathlib's form.
+`Rep.braided P : BraidedCategory (Rep.{u, w, u} D)` sits over `Rep.monoidal P.toAssocData`;
+`P : BraidData D` bundles `c ^ N = 0`, the counit, `E` with constant term 1, and
+`AssocU4 N E Φ`. So for every rational associator in `U4 N` the category of `A`-modules mod
+`h^N` is braided monoidal, with no analysis. Sorry-free; axioms propext, Classical.choice,
+Quot.sound.
