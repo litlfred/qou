@@ -8,7 +8,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T09:20:00Z
-updated_at: 2026-11-27T21:52:00Z
+updated_at: 2026-11-28T00:00:00Z
 parent: qou-rtxm
 ---
 
@@ -97,3 +97,6 @@ expectation; `jw_cap_hopf` (one closed loop around p_n = q^{n+2}+q^{-(n+2)} · p
 `trace_loop` (Markov meridian removal for a loop passing c strands). Still open for all rows:
 cup slide `e·ι(loop_c)·loop_{c+1} = e`, naturality of the cabled loop with the cable projector,
 Chebyshev recursion, root-of-unity identification. Bean stays open.
+
+## 2026-11-28 — every row S_{b,j} from braiding (PR #9863)
+`TLCableLoop.lean` (sorry-free): `cable_trace` gives δ^{n+m+2}·τ((p_n ⊗ p_m)·C_{m+1}) = [(n+2)(m+2)] for any Markov trace with δε = 1; `cable_row_eq_sMatrix` identifies it with sMatrix entry S_{n+1,m+1} at a primitive 2(k+2)-th root of unity, for all n+1, m+1 ≤ k. Route: cup slide, cable naturality, Chebyshev recursion rec_H / rec_R, closed form via lam_mul_qint. Still open for modularity in this bean: nondegeneracy of the braided category (S invertible is on main as sMatrix_mul_self), ribbon/twist identification, and the categorical (not trace-level) statement.
