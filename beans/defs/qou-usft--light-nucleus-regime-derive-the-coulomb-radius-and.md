@@ -449,3 +449,6 @@ The shared derived-length candidate is r = D·ħc/M, with D² = q/(2ε) and ε =
 - A=1: the Casimir gap gives r = 1.345 fm in the mass-formula unit or 11.28 fm in the trace unit. The electron weight w_e chooses between them, and that choice is not settled.
 - A=3: there is no case yet. It needs a derived three-nucleon 0s gap E₁(A=3), and none is on record.
 So the ³He−³H radius stays CONDITIONAL. Next step for this bean: a derived E₁(A=3), which feeds that formula together with the q-Hankel f from #9699.
+
+## 2026-11-28 — derived p-shell shape (PR #9870)
+ν = 3/2 q-Hankel, f 0.514→0.509 for Z 3..8 (index alternates ≤0.5%); A=5 jump gone. Comparison (c=1): misses one-signed +7..+28%; lever is c (owner card). Not wired (17 witnesses).
