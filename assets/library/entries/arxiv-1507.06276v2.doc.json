@@ -2102,12 +2102,12 @@
           "heading": false
         },
         {
-          "term": "quasi",
-          "heading": true
-        },
-        {
           "term": "relation holds",
           "heading": false
+        },
+        {
+          "term": "quasi",
+          "heading": true
         }
       ],
       "extract": "quasi-R-matrix corresponding to the semisimple Lie subalgebra gX of g. Recall that w0 and wX denote the longest elements of W and WX , respectively. Choose a reduced expression w0 =si1...s it such that wX =si1...s is for some s <t. As in Remark 3.6 the quasi-R-matrices R and RX can then be written as R =R[t] ·R[t−1] · · ·R[1], R X =R[s] ·R[s−1] · · ·R[1]. In view of relation (3.6) one obtains that RRX =RR−1 X =R[t]",

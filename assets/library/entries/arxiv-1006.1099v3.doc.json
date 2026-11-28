@@ -1373,12 +1373,12 @@
           "heading": false
         },
         {
-          "term": "deformations",
-          "heading": true
-        },
-        {
           "term": "floer",
           "heading": false
+        },
+        {
+          "term": "deformations",
+          "heading": true
         }
       ],
       "extract": "category Aq over K[[q]], with µd Aq = µd A + O(q), i.e. µd Aq = µd A + qµd Aq,1 + q2µd Aq,2 + · · · (3.9) with each µd Aq,j comprising K-linear maps homA(Xd1, Xd) ⊗· · · ⊗homA(X1, X2) →homA(X1, Xd)[2 −d] for any (X1, . . . , Xd) ∈(Ob A)d. The operations µd Aq should be q-adically convergent (for us they will always vanish for q ≫0). In applications, such deformations of Fukaya categories will arise from (partial)",

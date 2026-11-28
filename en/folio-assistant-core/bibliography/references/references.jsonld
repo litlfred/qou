@@ -6805,6 +6805,24 @@
       "dcterms:identifier": "https://arxiv.org/abs/1611.09182"
     },
     {
+      "@id": "references/furusho2010",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Pentagon and hexagon equations",
+      "dcterms:creator": [
+        "Furusho, Hidekazu"
+      ],
+      "dcterms:issued": "2010",
+      "dcterms:isPartOf": "Annals of Mathematics",
+      "bibo:volume": "171",
+      "bibo:issue": "1",
+      "bibo:pages": "545-556",
+      "bibo:doi": "10.4007/annals.2010.171.545",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0702128"
+    },
+    {
       "@id": "references/futer-gueritaud-angled",
       "@type": [
         "fabio:Work",

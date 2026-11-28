@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0702128v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "PENTAGON AND HEXAGON EQUATIONS",
+      "dcterms:creator": [
+        "FURUSHO, HIDEKAZU"
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0702128",
+      "dcterms:abstract": "The author will prove that Drinfel’d’s pentagon equation im plies his two hexagon equations in the Lie algebra, pro-unipotent , pro- l and pro- nilpotent contexts.",
+      "dcterms:source": "library/arxiv-math-0702128v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0702128v3"
+    }
+  ]
+}

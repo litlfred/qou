@@ -1,0 +1,504 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0702128v3",
+  "title": "arxiv-math-0702128v3",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Lie algebra case",
+      "number": "1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-lie-algebra-case"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 1",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-proof-of-theorem-1"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 2",
+      "number": "3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-proof-of-theorem-2"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 41,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hexagon",
+          "heading": false
+        },
+        {
+          "term": "pent",
+          "heading": false
+        },
+        {
+          "term": "hidekazu",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0702128v3 [math.QA] 6 Oct 2007 PENT AGON AND HEXAGON EQUA TIONS HIDEKAZU FURUSHO Abstract. The author will prove that Drinfel’d’s pentagon equation im plies his two hexagon equations in the Lie algebra, pro-unipotent , pro- l and pro- nilpotent contexts. Contents",
+      "extractCut": false
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1063,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "drinfel pentagon",
+          "heading": false
+        },
+        {
+          "term": "pentagon axiom",
+          "heading": false
+        },
+        {
+          "term": "satisﬁes drinfel",
+          "heading": false
+        },
+        {
+          "term": "pentagon equation",
+          "heading": false
+        },
+        {
+          "term": "pro-algebraic variety",
+          "heading": false
+        },
+        {
+          "term": "hexagon equations",
+          "heading": false
+        },
+        {
+          "term": "hexa gon",
+          "heading": false
+        },
+        {
+          "term": "deﬁning equations",
+          "heading": false
+        }
+      ],
+      "extract": "1. Lie algebra case 3 2. Proof of Theorem 1 5 3. Proof of Theorem 2 8 References 9 0. Introduction In his celebrated papers on quantum groups [Dr86, Dr90, Dr91 ] Drinfel’d came to the notion of quasitriangular quasi-Hopf quantized univ ersal enveloping algebra. It is a topological algebra which diﬀers from a topological H opf algebra in the sense that the coassociativity axiom and the cocommutativity axi om is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-lie-algebra-case",
+      "number": "1",
+      "title": "Lie algebra case",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie algebra",
+          "heading": true
+        },
+        {
+          "term": "commutator lie-like",
+          "heading": false
+        },
+        {
+          "term": "cycle relation",
+          "heading": false
+        },
+        {
+          "term": "xij",
+          "heading": false
+        },
+        {
+          "term": "hexagon equations",
+          "heading": false
+        },
+        {
+          "term": "pentagon equation",
+          "heading": false
+        },
+        {
+          "term": "four cycles",
+          "heading": false
+        },
+        {
+          "term": "projection sending",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we prove the Lie algebra version of Theorem 1 i n a rather combi- natorial argument. Let F2 be the set of Lie-like elements ϕ in U F2 (i.e. ∆( ϕ ) = ϕ ⊗ 1 + 1⊗ϕ ). Theorem 3. Let ϕ be a commutator Lie-like element 1 with c2(ϕ ) = 0 . Suppose that ϕ satisﬁes the pentagon equation (5-cycle relation): (7) ϕ (X12,X 23) +ϕ (X34,X 45) +ϕ (X51,X 12) +ϕ (X23,X 34) +ϕ (X45,X 51) = 0 in ˆP5. Then it also",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-proof-of-theorem-1",
+      "number": "2",
+      "title": "Proof of Theorem 1",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1713,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "commutator group-like",
+          "heading": false
+        },
+        {
+          "term": "algebra grt",
+          "heading": false
+        },
+        {
+          "term": "lim grt",
+          "heading": false
+        },
+        {
+          "term": "group-like element",
+          "heading": false
+        },
+        {
+          "term": "mod deg",
+          "heading": false
+        },
+        {
+          "term": "hidekazu furusho",
+          "heading": false
+        },
+        {
+          "term": "cycle relation",
+          "heading": false
+        },
+        {
+          "term": "grw",
+          "heading": false
+        }
+      ],
+      "extract": "This section is devoted to a proof of Theorem 1. Between the Lie algebra a4 in theorem 1 and ˆP5 in theorem 3 there is a natural surjection τ : a4→ ˆP5 sending tij to Xij (1 ⩽ i,j ⩽ 4). Its kernel is generated by Ω = ∑ 1⩽ i<j⩽ 4tij. We also denote its induced morphism U a4→ U ˆP5 by τ . On the pentagon equation we have Lemma 5. Letϕ be a group-like element. Giving the pentagon equation (1) for ϕ is equivalent to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-proof-of-theorem-2",
+      "number": "3",
+      "title": "Proof of Theorem 2",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 964,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pro-ﬁnite completion",
+          "heading": false
+        },
+        {
+          "term": "pentagon axiom",
+          "heading": false
+        },
+        {
+          "term": "commutator group-like",
+          "heading": false
+        },
+        {
+          "term": "hexagon axioms",
+          "heading": false
+        },
+        {
+          "term": "pro-nilpotent group",
+          "heading": false
+        },
+        {
+          "term": "pentagon equation",
+          "heading": false
+        },
+        {
+          "term": "pro-l",
+          "heading": false
+        },
+        {
+          "term": "com ments",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we deduce theorem 2 from the previous theorem and also show its pro-l group analogue (corollary 12) and its pro-nilpotent group a nalogue (corollary 13). Proof of theorem 2. Let f be an element of F2(k) satisfying (4). Let λ be a solution of x2−1 24 = c2(f ). Let µ ∈ k× and ϕ ∈ k⟨⟨A,B⟩⟩be a pair such that ϕ is commutator group-like and ( µ,ϕ ) satisﬁes (10), (12) and (13). Put ϕ ′ = f (ϕe µX ϕ −1,e",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 428,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leningrad math",
+          "heading": false
+        },
+        {
+          "term": "galois groups",
+          "heading": false
+        },
+        {
+          "term": "furusho",
+          "heading": false
+        },
+        {
+          "term": "galois actions",
+          "heading": false
+        },
+        {
+          "term": "graduate texts",
+          "heading": false
+        },
+        {
+          "term": "multiple zeta",
+          "heading": false
+        },
+        {
+          "term": "schneps",
+          "heading": false
+        },
+        {
+          "term": "quasi-hopf algebras",
+          "heading": false
+        }
+      ],
+      "extract": "[A] Andr´ e, Y., Une introduction aux motifs (motifs purs, mo tifs mixtes, p´ eriodes), Panoramas et Synth` eses, 17, Soci´ et´ e Math´ ematique de France, Paris, 2004. [B] Bar-Natan, D., On associators and the Grothendieck-Tei chmuller group. I, Selecta Math. (N.S.) 4 (1998), no. 2, 183–212. [De] Deligne, P., Le groupe fondamental de la droite project ive moins trois points, Galois groups over Q (Berkeley, CA,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hidekazu furusho",
+      "heading": false
+    },
+    {
+      "term": "drinfel pentagon",
+      "heading": false
+    },
+    {
+      "term": "commutator group-like",
+      "heading": false
+    },
+    {
+      "term": "pentagon equation",
+      "heading": false
+    },
+    {
+      "term": "hexagon equations",
+      "heading": false
+    },
+    {
+      "term": "satisﬁes drinfel",
+      "heading": false
+    },
+    {
+      "term": "pentagon axiom",
+      "heading": false
+    },
+    {
+      "term": "group-like element",
+      "heading": false
+    },
+    {
+      "term": "group-like series",
+      "heading": false
+    },
+    {
+      "term": "pro-ﬁnite completion",
+      "heading": false
+    },
+    {
+      "term": "algebra grt",
+      "heading": false
+    },
+    {
+      "term": "commutator lie-like",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p9); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0702128v3"
+  }
+}

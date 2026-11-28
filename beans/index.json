@@ -2,7 +2,7 @@
   "$schema": "folio-bean-index/v1",
   "tile": {
     "beans": {
-      "count": 1791,
+      "count": 1788,
       "unit": "open beans"
     }
   },
@@ -13670,7 +13670,7 @@
     {
       "id": "qou-35a8",
       "title": "Which Nahm datum A does the tetraplectic sum give beyond 4_1?",
-      "status": "todo",
+      "status": "in-progress",
       "type": "task",
       "priority": "",
       "parent": "",
@@ -13679,7 +13679,7 @@
       ],
       "blockedBy": [],
       "createdAt": "2026-11-27T17:26:40Z",
-      "updatedAt": "2026-11-27T17:26:40Z",
+      "updatedAt": "2026-11-28T01:00:00Z",
       "preview": "Research path, opened 2026-11-27 (thread 'Reeb flow and tetraplectic structure', PR #9496 merged).\n\nPR #9496 (QOU/MassTheory/NahmBlochBridge.lean, sorry-free) proves: for a symmetric integer matrix A, any solution of 1 - z_i = prod_j z_j^{A_ij} gives sum [z_i] in the Bloch group B(F). For the figure-eight knot 4_1 the datum is A = (-1) (Habiro q->1 ratio, habiro41_nahm_iff), and fig8Class is the N",
       "file": "beans/defs/qou-35a8--which-nahm-datum-a-does-the-tetraplectic-sum-give.md"
     },
@@ -18686,15 +18686,15 @@
     {
       "id": "qou-5o1v",
       "title": "Constructive 2: mass valued in Q(q); norm and log only at comparison",
-      "status": "todo",
+      "status": "completed",
       "type": "task",
       "priority": "high",
       "parent": "qou-dk7p",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T14:50:12Z",
-      "updatedAt": "2026-11-27T14:50:12Z",
-      "preview": "Doc item 2. def:mass-identity uses a norm; binding uses B = alpha ln tr_M (qou-2pnv). Options 2.1 value in Q(q) (recommended); 2.2 algebraic order on Q(q); 2.3 keep. Awaiting owner pick.",
+      "updatedAt": "2026-11-27T23:53:44Z",
+      "preview": "Doc item 2. def:mass-identity uses a norm; binding uses B = alpha ln tr_M (qou-2pnv). Options 2.1 value in Q(q) (recommended); 2.2 algebraic order on Q(q); 2.3 keep. Awaiting owner pick.\n\n## 2026-11-27T23:59Z — owner picked 2.1 (15:18Z); implemented in PR #9840\n- def:mass-identity, rem:mass-identity-exists, prop:mass-identity-unique (+proof) restated in R; no norm.\n- Lean: BraidKnotOctonion/MassCl",
       "file": "beans/defs/qou-5o1v--constructive-2-mass-valued-in-qq-norm-and-log-only.md"
     },
     {
@@ -31763,7 +31763,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-10-12T20:38:54Z",
-      "updatedAt": "2026-11-27T22:10:00Z",
+      "updatedAt": "2026-11-28T00:15:00Z",
       "preview": "Owner: try all T3 designs. Front D1+Chern (owner also asked: add needed infra like Chern classes).\n\n1. Instantiate the T2b PresheafCentralExtension on presheaves of continuous functions: Z -> R -> U(1) and mu_n -> U(1) -> U(1).\n2. Define the Čech first Chern class of a U(1)-cocycle as its lifting obstruction along Z -> R -> U(1).\n3. Prove: additivity, naturality, and that the mu_n obstruction is c",
       "file": "beans/defs/qou-bvxd--t3d1-instantiate-t2b-on-continuous-function-sheave.md"
     },
@@ -47519,7 +47519,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T22:17:45Z",
-      "updatedAt": "2026-11-27T23:47:53Z",
+      "updatedAt": "2026-11-28T00:12:20Z",
       "preview": "Conjecture (SC). Let rho_n(s) = E_PG[1{i_n+j_n=s}/(r_{n-1} r_{n-2})] over Plancherel growth, with r_k = c(k+1)-c(k) and (i_n,j_n) the 1-indexed position of box n. It is a mass-zero signed measure, and M1(n) = (n(n-1)(n-2)/3) sum_s s rho_n(s) (Jucys-Murphy + Young orthogonal form; verified exactly against the hook formula n=3..7).\nClaim: rho_n is <=0 then >=0 in s (one sign change). Checked exactly",
       "file": "beans/defs/qou-jmgu--gap-single-crossing-of-rho-n-last-box-signed-measu.md"
     },
@@ -50471,14 +50471,14 @@
     {
       "id": "qou-l4t2",
       "title": "Closed-Form Two-Loop O(alpha_EM^2) Bloch-B_3(C) / zeta(3) Schwinger Coefficient c_2 in 1/alpha_EM",
-      "status": "todo",
+      "status": "in-progress",
       "type": "task",
       "priority": "high",
       "parent": "qou-3l2l",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-19T06:43:03Z",
-      "updatedAt": "2026-11-27T14:18:37Z",
+      "updatedAt": "2026-11-28T00:09:00Z",
       "preview": "## Problem & 80-dps Truncation Level vs Experimental Accuracy Evidence\n\nIn `computations/probes/truncation_level_vs_accuracy_sweep_probe.py` (`truncation-level-vs-accuracy-sweep.witness.json`), the gauge fixed-point loop tower (`T2a` vs `T2b`) demonstrates that while the electroweak VEV $v$ and Fermi constant $G_F$ cross strictly inside $1\\sigma_{\\mathrm{exp}}$ at $L = 3$ and settle at $-0.1142\\,\\",
       "file": "beans/defs/qou-l4t2--closed-form-two-loop-oalpha-em2-bloch-b-3c-zeta3-s.md"
     },
@@ -67497,14 +67497,14 @@
     {
       "id": "qou-swk4",
       "title": "Formalize depth-2 tail: nuV (n-2) n = closed form (carrier classification + collapse)",
-      "status": "todo",
+      "status": "completed",
       "type": "task",
       "priority": "normal",
       "parent": "qou-x631",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T22:37:13Z",
-      "updatedAt": "2026-11-27T23:51:20Z",
+      "updatedAt": "2026-11-27T23:59:50Z",
       "preview": "Closed form ν_{n−2}(n) = (n−2)(n−5)Q(n)C(2n−8,n−4)/(6(n−3)n!) derived and verified exactly n=4..26 (docs/audits/2026-11-27-covariance-kernel-depth-two-tail.md). Sign of the closed form proved in BraidKnotOctonion/YoungDiagramTailThirdInstance.lean (onset n₂=10). Open: prove nuV (n−2) n = nuDepthTwoClosedForm n in Lean, following DepthOneHookClassification + YoungDiagramTailSecondInstance (carriers",
       "file": "beans/defs/qou-swk4--formalize-depth-2-tail-nuv-n-2-n-closed-form-carri.md"
     },
@@ -70598,7 +70598,7 @@
     {
       "id": "qou-u81q",
       "title": "OPEN: Maass (Laplace) harmonics on Bring's surface by S5 type (Transcendental)",
-      "status": "todo",
+      "status": "in-progress",
       "type": "task",
       "priority": "",
       "parent": "",
@@ -70607,7 +70607,7 @@
       ],
       "blockedBy": [],
       "createdAt": "2026-11-27T21:59:36Z",
-      "updatedAt": "2026-11-27T21:59:36Z",
+      "updatedAt": "2026-11-28T00:30:00Z",
       "preview": "Owner picked 'Also Maass harmonics' (card, 2026-11-27). Done: exact discrete model (computations/probes/bring_discrete_harmonics_probe.py): vertex Laplacian 0,2,4,5,6,7 with S5 types; harmonic 1-cochains = 2 x std(x)sgn. Open: the true Maass spectrum by S5 type; reduces by Frobenius reciprocity to Maass forms on the triangle orbifolds B/H. Belongs in QOU/Transcendental/. No numerical eigenvalue ma",
       "file": "beans/defs/qou-u81q--open-maass-laplace-harmonics-on-brings-surface-by.md"
     },
@@ -73693,14 +73693,14 @@
     {
       "id": "qou-vr3q",
       "title": "Deep-dive 1: G3 monodromy/Stokes-constant keystone — derive A_ω (odd-face Q_β/Φ_b) as GGM 3d-index integer count",
-      "status": "todo",
+      "status": "in-progress",
       "type": "task",
       "priority": "high",
       "parent": "qou-avtq",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-07-18T17:08:37Z",
-      "updatedAt": "2026-11-27T14:18:49Z",
+      "updatedAt": "2026-11-28T00:20:00Z",
       "preview": "CORRECTED FRAMING (2026-07-18): A_ω≈3.8884 (=4√2·e^{-3/8}) is the EVEN-face, q=1 BINDING-period Stokes constant (co-equational, bar-even, binding a_D only) — NOT the odd-face keystone. Do not conflate.\n\nG3 keystone = the bar-ODD (Q_β/Φ_b) monodromy datum z(q0)→S whose archimedean eval must reproduce S(muon)=+0.00968298, S(proton)=-0.03945936. UN-MEASURED. It is a categorical Stokes/monodromy datum",
       "file": "beans/defs/qou-vr3q--deep-dive-1-g3-monodromystokes-constant-keystone-d.md"
     },
@@ -78896,14 +78896,14 @@
     {
       "id": "qou-y7ek",
       "title": "PPQ-1 (L1): 80-dps Newton Anchor Round-Trip Polish (2.85 ppt -> < 1e-80 on m_p/m_e -> q_0, q_2t)",
-      "status": "todo",
+      "status": "completed",
       "type": "task",
       "priority": "high",
       "parent": "qou-10v9",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-19T16:48:46Z",
-      "updatedAt": "2026-11-27T14:18:51Z",
+      "updatedAt": "2026-11-28T00:13:00Z",
       "preview": "Eliminate the `0.002852 ppb` (`2,852 ppQ`) anchor round-trip residual on `m_p` in `per-observable-100x-status.witness.json` by solving `q_0` and `q_2t` to full 80-dps Newton convergence against exact `M_P_OVER_M_E`.\n\n## Resolution (2026-11-19)\n- Root-caused the `0.002852 ppb` (`2,852 ppQ`) residual on `m_p` in `per_observable_100x_status.py` to comparing `M_E_MEV * MASS_RATIO_P_E = 938.27208942732",
       "file": "beans/defs/qou-y7ek--ppq-1-l1-80-dps-newton-anchor-round-trip-polish-28.md"
     },
@@ -87995,13 +87995,13 @@
         "status": "in-progress",
         "epics": 11,
         "total": 371,
-        "closed": 122,
-        "open": 249,
+        "closed": 123,
+        "open": 248,
         "inProgress": 177,
-        "todo": 72,
+        "todo": 71,
         "draft": 0,
         "unclassified": 0,
-        "share": 0.3288409703504043
+        "share": 0.33153638814016173
       },
       {
         "id": "qou-vkmt",
@@ -88100,13 +88100,13 @@
         "status": "in-progress",
         "epics": 12,
         "total": 790,
-        "closed": 247,
-        "open": 543,
-        "inProgress": 274,
-        "todo": 269,
+        "closed": 248,
+        "open": 542,
+        "inProgress": 276,
+        "todo": 266,
         "draft": 0,
         "unclassified": 0,
-        "share": 0.31265822784810127
+        "share": 0.3139240506329114
       },
       {
         "id": "szkf",
@@ -88280,13 +88280,13 @@
         "status": "in-progress",
         "epics": 17,
         "total": 393,
-        "closed": 89,
-        "open": 304,
+        "closed": 90,
+        "open": 303,
         "inProgress": 181,
-        "todo": 122,
+        "todo": 121,
         "draft": 1,
         "unclassified": 0,
-        "share": 0.22646310432569974
+        "share": 0.22900763358778625
       },
       {
         "id": "qou-u8fj",
@@ -88335,8 +88335,8 @@
       }
     ],
     "orphanOpen": 137,
-    "openTotal": 1791,
-    "coveredOpen": 1646,
+    "openTotal": 1788,
+    "coveredOpen": 1643,
     "duplicateIds": 0
   }
 }
