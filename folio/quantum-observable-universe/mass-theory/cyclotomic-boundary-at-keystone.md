@@ -281,6 +281,8 @@ $9 \le n \le 3000$, so the test excludes all of these
 *All $n \ge 9$ (computer-assisted).* The steps above hold for every $n$:
 - The two hook identities are polynomial identities in $\ell$ and the power sums of a beta-set
   $\{b_1 > \dots > b_\ell\}$, since hooks are the pairs $b > g$ with $b$ in the set and $g$ not.
+  Both are proved in Lean for every finite beta-set (`QOU.Mass.HookContentBeta`, `hook_two`,
+  `hook_four`, sorry-free).
 - The sums $\sum_\lambda f^\lambda F(\lambda)$, with $F$ a content power sum or product of two,
   follow from expanding products of Jucys–Murphy transpositions over the orderings of their
   symbols. Each is a polynomial in $n$ times $I_{n-s}$ for each support $s$.
