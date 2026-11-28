@@ -41,6 +41,13 @@ For `μ ≠ 0` Furusho's Theorem 10 (p. 7-8) passes to the weight-graded ring an
 file does not reproduce it. So for `E ≠ 1` the step is proved here only from the tower.
 
 No `axiom`, no `sorry`, no analysis.
+
+**Per-level exponential (2026-11-28).** The tower is now `GroupLikeKAssociatorTower K E` for a
+family `E : ℕ → F2` with `ExpFamily E`. The one-degree `Prop`s keep a single exponential and are
+instantiated at `E (d + 1)`: `furushoGroupStep_of_tower` gives `FurushoGroupStep (E (d + 1)) d`,
+and `exists_lift_of_tower` lifts an associator for `E d` modulo `d` to one for `E (d + 1)` modulo
+`d + 1`. The `E = 1` results are the constant family `fun _ => 1` (`expFamily_one`), with
+unchanged statements. Audit §17p.
 -/
 
 namespace QOU.BraidsAndKnots.RationalAssociator
@@ -53,43 +60,72 @@ variable {K : Type*} [Field K] [Algebra ℚ K]
 
 /-! ### 1. The level invariant for an arbitrary associator modulo `d` -/
 
-/-- **The level invariant holds for every rational associator modulo `d ≥ 3`**, given the
-`K`-tower. -/
-theorem levelInv_of_assocU4 {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
+/-- **The level invariant holds for every rational associator modulo `d ≥ 3`** (for `E d`),
+given the `K`-tower. -/
+theorem levelInv_of_assocU4 {E : ℕ → F2} (hE : ExpFamily E)
     (hT : GroupLikeKAssociatorTower K E) {d : ℕ} (hd : 3 ≤ d) {Φ : F2}
-    (hA : AssocU4 d E Φ) (hG : GL d Φ) : LevelInv K E d Φ := by
+    (hA : AssocU4 d (E d) Φ) (hG : GL d Φ) : LevelInv K E d Φ := by
   have key : ∀ j, 3 ≤ j → j ≤ d → LevelInv K E j Φ := by
     intro j hj
     induction j, hj using Nat.le_induction with
-    | base => exact fun hjd => levelInv_three hE hT (hA.trunc hjd) (FF2_anti hjd hG)
+    | base => exact fun hjd =>
+        levelInv_three hE hT ((hE.assocU4_iff hjd).1 (hA.trunc hjd)) (FF2_anti hjd hG)
     | succ j hj ih =>
       intro hjd
-      exact (ih (by omega)).succ_of_assoc (by omega) hE (hA.trunc hjd) (FF2_anti hjd hG)
+      exact (ih (by omega)).succ_of_assoc (by omega) hE
+        ((hE.assocU4_iff hjd).1 (hA.trunc hjd)) (FF2_anti hjd hG)
   exact key d hd le_rfl
 
-/-! ### 2. The three statements from the tower -/
+/-! ### 2. The one-degree lift from the tower, with the exponential of each level -/
 
-/-- **Furusho's group-level step, from any `K`-associator tower**, for every `d ≥ 3`. -/
-theorem furushoGroupStep_of_tower {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
-    (hT : GroupLikeKAssociatorTower K E) {d : ℕ} (hd : 3 ≤ d) : FurushoGroupStep E d := by
+/-- **The one-degree lift, per level.** For `d ≥ 3`, every rational associator `Φ` modulo `d`
+for the level-`d` exponential `E d`, group-like modulo `FF2 d`, has a correction `x ∈ FF d`
+with `Φ + x` an associator modulo `d + 1` for the level-`(d + 1)` exponential `E (d + 1)`,
+group-like modulo `FF2 (d + 1)`. Conditional on the tower. For `E = expHalfTrunc` (both levels
+use `exp(X/2)` exactly) this is the statement Drinfeld's descent needs at degree `d`. -/
+theorem exists_lift_of_tower {E : ℕ → F2} (hE : ExpFamily E)
+    (hT : GroupLikeKAssociatorTower K E) {d : ℕ} (hd : 3 ≤ d) {Φ : F2}
+    (hA : AssocU4 d (E d) Φ) (hG : GL d Φ) :
+    ∃ x ∈ FF d, AssocU4 (d + 1) (E (d + 1)) (Φ + x) ∧ GL (d + 1) (Φ + x) := by
+  obtain ⟨x, hx, ha, hg, -⟩ := levelStep hE (by omega) (levelInv_of_assocU4 hE hT hd hA hG)
+  exact ⟨x, hx, ha, hg⟩
+
+/-! ### 3. The three statements from the tower
+
+`ObstructionVanishesAt E' d`, `PentagonLiftVanishes E' d` and `FurushoGroupStep E' d` involve
+the levels `d` and `d + 1` only, with one polynomial `E'`. For a family `E` the right choice is
+`E' = E (d + 1)`: it agrees with `E d` in `U4 d` (`ExpFamily.assocU4_iff`), so the hypotheses of
+the three statements are those for `E d`. -/
+
+/-- **Furusho's group-level step, from any `K`-associator tower**, for every `d ≥ 3`, with the
+exponential `E (d + 1)`. -/
+theorem furushoGroupStep_of_tower {E : ℕ → F2} (hE : ExpFamily E)
+    (hT : GroupLikeKAssociatorTower K E) {d : ℕ} (hd : 3 ≤ d) :
+    FurushoGroupStep (E (d + 1)) d := by
   intro Φ hA hG hp
   exact assocU4_succ_of_pentagon (by omega) (pentagonHexagonLie_of_three_le d hd) hE
-    (levelInv_of_assocU4 hE hT hd hA (FF2_anti (by omega) hG)) hp hG
+    (levelInv_of_assocU4 hE hT hd ((hE.assocU4_iff (by omega)).1 hA)
+      (FF2_anti (by omega) hG)) hp hG
 
 /-- **The one-degree lifting obstruction vanishes, from any `K`-associator tower**, for every
-`d ≥ 3` and every rational associator `Φ` modulo `d` (not only the ones built from the tower). -/
-theorem obstructionVanishesAt_of_tower {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
-    (hT : GroupLikeKAssociatorTower K E) {d : ℕ} (hd : 3 ≤ d) : ObstructionVanishesAt E d := by
+`d ≥ 3` and every rational associator `Φ` modulo `d` (not only the ones built from the tower),
+with the exponential `E (d + 1)`. -/
+theorem obstructionVanishesAt_of_tower {E : ℕ → F2} (hE : ExpFamily E)
+    (hT : GroupLikeKAssociatorTower K E) {d : ℕ} (hd : 3 ≤ d) :
+    ObstructionVanishesAt (E (d + 1)) d := by
   intro Φ hA hG
-  obtain ⟨x, hx, ha, hg, -⟩ := levelStep hE (by omega) (levelInv_of_assocU4 hE hT hd hA hG)
-  exact (lift_iff_obsLin (by omega) hE hA.const).1 ⟨x, hx, ha, hg⟩
+  obtain ⟨x, hx, ha, hg⟩ :=
+    exists_lift_of_tower hE hT hd ((hE.assocU4_iff (by omega)).1 hA) hG
+  exact (lift_iff_obsLin (by omega) (hE.const (d + 1) (by omega)) hA.const).1 ⟨x, hx, ha, hg⟩
 
 /-- The pentagon part, from any `K`-associator tower, for every `d ≥ 3`. -/
-theorem pentagonLiftVanishes_of_tower {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
-    (hT : GroupLikeKAssociatorTower K E) {d : ℕ} (hd : 3 ≤ d) : PentagonLiftVanishes E d :=
-  ((obstructionVanishesAt_iff hE hd).1 (obstructionVanishesAt_of_tower hE hT hd)).1
+theorem pentagonLiftVanishes_of_tower {E : ℕ → F2} (hE : ExpFamily E)
+    (hT : GroupLikeKAssociatorTower K E) {d : ℕ} (hd : 3 ≤ d) :
+    PentagonLiftVanishes (E (d + 1)) d :=
+  ((obstructionVanishesAt_iff (hE.const (d + 1) (by omega)) hd).1
+    (obstructionVanishesAt_of_tower hE hT hd)).1
 
-/-! ### 3. The case `E = 1`: no tower needed -/
+/-! ### 4. The case `E = 1`: no tower needed -/
 
 /-- `1` is a group-like `K`-associator for `E = 1` at every level. -/
 theorem assocK_one (N : ℕ) : AssocK K N 1 (1 : K ⊗[ℚ] F2) where
@@ -104,24 +140,27 @@ theorem GLK_one (m : ℕ) : GLK K m (1 : K ⊗[ℚ] F2) := by
   exact zero_mem _
 
 /-- **For `E = 1` the `K`-associator tower is inhabited**, by the constant `1`, over any field
-`K ⊇ ℚ`. -/
-theorem groupLikeKAssociatorTower_one : GroupLikeKAssociatorTower K (1 : F2) :=
+`K ⊇ ℚ` (the constant family `fun _ => 1`). -/
+theorem groupLikeKAssociatorTower_one : GroupLikeKAssociatorTower K (fun _ => (1 : F2)) :=
   ⟨fun N _ => ⟨1, assocK_one N, GLK_one N⟩⟩
 
 theorem algebraMapInv_one_F2 : FreeAlgebra.algebraMapInv (1 : F2) = 1 := map_one _
+
+/-- The constant family `1`. -/
+theorem expFamily_one : ExpFamily (fun _ => (1 : F2)) := expFamily_const algebraMapInv_one_F2
 
 /-- **Furusho's group-level step for `E = 1`, unconditionally** (`d ≥ 3`): a rational element
 of `GRT₁` modulo degree `d` (associator for `E = 1`), group-like modulo `FF2 (d + 1)` and
 satisfying the pentagon modulo degree `d + 1`, is in `GRT₁` modulo degree `d + 1`. -/
 theorem furushoGroupStep_one {d : ℕ} (hd : 3 ≤ d) : FurushoGroupStep (1 : F2) d :=
-  furushoGroupStep_of_tower (K := ℚ) algebraMapInv_one_F2 groupLikeKAssociatorTower_one hd
+  furushoGroupStep_of_tower (K := ℚ) expFamily_one groupLikeKAssociatorTower_one hd
 
 /-- **Every rational element of `GRT₁` modulo `d ≥ 3` lifts one degree**, unconditionally. -/
 theorem obstructionVanishesAt_one {d : ℕ} (hd : 3 ≤ d) : ObstructionVanishesAt (1 : F2) d :=
-  obstructionVanishesAt_of_tower (K := ℚ) algebraMapInv_one_F2 groupLikeKAssociatorTower_one hd
+  obstructionVanishesAt_of_tower (K := ℚ) expFamily_one groupLikeKAssociatorTower_one hd
 
 /-- The pentagon part for `E = 1`, unconditionally. -/
 theorem pentagonLiftVanishes_one {d : ℕ} (hd : 3 ≤ d) : PentagonLiftVanishes (1 : F2) d :=
-  pentagonLiftVanishes_of_tower (K := ℚ) algebraMapInv_one_F2 groupLikeKAssociatorTower_one hd
+  pentagonLiftVanishes_of_tower (K := ℚ) expFamily_one groupLikeKAssociatorTower_one hd
 
 end QOU.BraidsAndKnots.RationalAssociator

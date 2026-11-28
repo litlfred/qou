@@ -33,6 +33,10 @@ algebraic proof of it is in the repository, and this file does not supply one. S
 `μ ≠ 0` step is not proved here; it is reduced to the smallest existence statement it can be.
 
 No `axiom`, no `sorry`, no analysis.
+
+**Per-level exponential (2026-11-28).** The single-level statements here keep one fixed
+`E`; the tower they are compared with is now per-level (`GroupLikeKAssociatorTower K E` with
+`E : ℕ → F2`), and its level-`(d + 1)` instance is the case `E := E (d + 1)`. Audit §17p.
 -/
 
 namespace QOU.BraidsAndKnots.RationalAssociator

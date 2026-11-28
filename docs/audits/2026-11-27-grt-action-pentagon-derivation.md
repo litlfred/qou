@@ -1890,3 +1890,119 @@ No `sorry`, no `axiom`, no `native_decide`, no `: True`. No `lake build` was run
 `scripts/transcendental-boundary-audit.py --check` reports `new 0`. It exits 1 only because of
 353 `GONE` entries: files absent from this sparse worktree, not changed by it. `QOU.lean`
 imports the new module.
+
+## 17p. The hexagon exponential is per level (owner ruling 2026-11-28, bean `qou-3fdg`)
+
+**Ruling.** Owner card tap, 2026-11-28 01:04Z. The card asked *"Change the tower so E is exp(X/2)
+truncated at each level?"* and the owner chose *"Yes, per-level E"*. Recorded in
+`docs/coordination/owner-rulings.md`. It answers the escalation at the end of §17o.
+
+**What changed (one definition, reformulated; no parallel copy).**
+
+| | before | after |
+|---|---|---|
+| `GroupLikeKAssociatorTower K E` | `E : F2`; `∀ N ≥ 2, ∃ Ψ, AssocK K N E Ψ ∧ GLK K N Ψ` | `E : ℕ → F2`; `∀ N ≥ 2, ∃ Ψ, AssocK K N (E N) Ψ ∧ GLK K N Ψ` |
+| `LevelInv K E d Φ` | uses `AssocK K N E` | `E : ℕ → F2`, uses `AssocK K N (E N)` |
+| `rational_associator_of_tower` | `(hE : ε(E) = 1)`, gives `AssocU4 N E Φ` | `(hE : ExpFamily E)`, gives `AssocU4 N (E N) Φ` |
+| `expHalfTrunc` and the level-3 results | `Transcendental/…/KZTowerTarget.lean` | `RationalAssociator/ExpHalfTrunc.lean` (algebraic, no analysis imported) |
+
+New in `AssociatorChain.lean`: `structure ExpFamily (E : ℕ → F2)`, with fields `const` (`ε(E N) = 1`
+for `N ≥ 1`) and `compat` (`E (N + 1) − E N ∈ FF N`). Also `ExpFamily.sub_mem`,
+`ExpFamily.assocU4_iff` (for `N ≤ M`, `AssocU4 N (E M) Φ ↔ AssocU4 N (E N) Φ`), `ExpFamily.assocK`
+and `expFamily_const`. These rest on `eval_congr_of_sub_mem_FF` and `AssocU4.congr_exp`: two
+exponentials that agree modulo `FF N` give the same hexagon in `U4 N`.
+
+The theorems below now take a family `E : ℕ → F2` with `ExpFamily E`, and level `N` uses `E N`:
+
+- `levelStep` and `rational_associator_compatible_of_groupLikeTower` (`AssociatorRealign`);
+- `assocU4_succ_of_pentagon`, `LevelInv.congr`, `LevelInv.succ_of_assoc`, `levelInv_three`,
+  `assocU4_of_pentagon` and `assocU4_iff_pentagon` (`FurushoReduction`);
+- `assocU4_of_pentagon'` and `assocU4_iff_pentagon'` (`FurushoHexagon`);
+- `quasiYBE_compatible_of_groupLikeTower` (`QuasiYBE`);
+- `levelInv_of_assocU4`, `furushoGroupStep_of_tower`, `obstructionVanishesAt_of_tower` and
+  `pentagonLiftVanishes_of_tower` (`FurushoGroupStep`).
+
+`FurushoGroupStep` also gains `exists_lift_of_tower`. It lifts an associator for `E d` modulo `d`
+to one for `E (d + 1)` modulo `d + 1`, with correction in `FF d`.
+
+The one-degree `Prop`s (`ObstructionVanishesAt`, `FurushoGroupStep`, `PentagonLiftVanishes`) keep
+a single exponential, and the tower results instantiate them at `E (d + 1)`. `LevelInvAt`
+(`FurushoSingleLevel`) is single-level and keeps a fixed `E`.
+
+**Kept as the `E = 1` special case.** `expFamily_one : ExpFamily (fun _ => 1)` and
+`groupLikeKAssociatorTower_one : GroupLikeKAssociatorTower K (fun _ => 1)`. `furushoGroupStep_one`,
+`obstructionVanishesAt_one` and `pentagonLiftVanishes_one` (`GRT₁`, §17l) keep their statements
+unchanged and are re-proved through the constant family.
+
+`CompatibleGroupLikeKAssociatorTower` (`AssociatorTower`) is still fixed-`E`. Its `toTower` now
+lands in the constant family `fun _ => E`, and its docstring says that it is vacuous for an
+exponential of positive degree. It is kept for `E = 1`. It was not converted to per-level form;
+that is a follow-up if anything needs it.
+
+**The top-degree difference** (`ExpHalfTrunc.lean`):
+
+- `expHalfTrunc_succ_sub`: `expHalfTrunc (N+1) − expHalfTrunc N = X^N / (2^N N!)`. Hence
+  `expFamily_expHalfTrunc`.
+- `assocDefect_add_exp`: take `d ≥ 1`, `ε(E) = ε(Φ) = 1` and `D ∈ FF d`. Then in `U4 (d + 1)`,
+  `assocDefect (d+1) (E + D) Φ` equals `assocDefect (d+1) E Φ` plus
+  `(0, D(t₁₃ + t₂₃) − D(t₁₃) − D(t₂₃), 0)`. The inversion and pentagon components do not move.
+  The hexagon component moves by an explicit degree-`d` term, since all cross terms with `δ` vanish
+  modulo `d + 1`.
+- `assocDefect_expHalfTrunc_succ`: the case `E = expHalfTrunc d`, where the added term is
+  `((t₁₃ + t₂₃)^d − t₁₃^d − t₂₃^d) / (2^d d!)`. This is the right-hand-side shift that a
+  degree-by-degree solver for `μ ≠ 0` has to absorb when moving from level `d` to level `d + 1`.
+
+**Non-vacuity at the first step.** `assocU4_three_expHalfTrunc_four`: `1 + [X, Y]/24` is an
+associator modulo `3` for the level-`4` exponential. Together with `GL_three`, this means the
+hypotheses of `exists_lift_expHalfTrunc_of_tower`, `obstructionVanishesAt_expHalfTrunc_of_tower`,
+`furushoGroupStep_expHalfTrunc_of_tower` and `pentagonLiftVanishes_expHalfTrunc_of_tower` are met
+at `d = 3`, apart from the tower itself. Under the old definition the analogous tower
+(`fun _ => expHalfPoly`) is **false** (`not_groupLikeKAssociatorTower_expHalfPoly`). The new one,
+`GroupLikeKAssociatorTower K expHalfTrunc`, is not refuted by `hexagon_sq_eq`:
+`tower_forces_square_law` is now stated per level, and `expHalfTrunc M` is the exponential modulo
+degree `M`.
+
+**KZ.** `kzAssociatorExists_iff_tower`: `KZAssociatorExists K ↔ GroupLikeKAssociatorTower K
+expHalfTrunc`. `rational_associator_of_kz` now goes through `rational_associator_of_tower
+expFamily_expHalfTrunc`.
+
+**What remains open.**
+
+- **Inhabiting `GroupLikeKAssociatorTower K expHalfTrunc`** (equivalently `KZAssociatorExists K`)
+  over any field. This is Drinfeld's theorem and needs (i)–(iv) of §17o. Not proved.
+- **Any level `≥ 4` unconditionally.** No associator for `expHalfTrunc 4` modulo `4` is
+  constructed. The candidate `1 + [X, Y]/24` plus a degree-3 correction would need an explicit
+  computation in `U4 4`, which was not attempted.
+- **The `μ ≠ 0` degree-`d` step now has a non-vacuous statement** whose hypotheses are met at
+  `d = 3`. That step is `∃ x ∈ FF d` lifting an associator for `E d` modulo `d` to one for `E (d+1)`
+  modulo `d + 1`. It is proved only **from the tower**. An unconditional algebraic proof would
+  solve the linear system of `assocU4_add_iff`, shifted by `assocDefect_expHalfTrunc_succ`, using
+  §17j–§17n. Not done.
+
+**Verification.** Every changed module and its downstream consumers were recompiled lean-direct
+(`lean -DautoImplicit=false -s 65536`), in dependency order, against a private overlay
+(`/home/claude/furov-pl`), and all exit 0:
+
+- `AssociatorChain`, `AssociatorTower`, `AssociatorRealign`, `Obstruction`, `FurushoReduction`,
+  `QuasiYBE`, `FurushoTwoCycle`, `FurushoP5`, `FurushoHexagon`, `PentagonObstruction`,
+  `FurushoGroupStep`, `FurushoSingleLevel`, `PentagonObstructionClass`, `ExpHalfTrunc`;
+- `Transcendental/BraidsAndKnots/KZTowerTarget`;
+- `HAdicDrinfeld/Hexagon`, after building `HAdicDrinfeld/CasimirData` and `FourStrand`.
+
+`#print axioms` on the key theorems gives `[propext, Classical.choice, Quot.sound]`. The theorems
+checked are:
+
+- `rational_associator_of_tower`, `levelStep`, `exists_lift_of_tower`,
+  `obstructionVanishesAt_of_tower`;
+- the three `_one` results, `assocU4_iff_pentagon`, `assocU4_iff_pentagon'`,
+  `quasiYBE_compatible_of_groupLikeTower`;
+- `expFamily_expHalfTrunc`, `assocDefect_add_exp`, `assocDefect_expHalfTrunc_succ`,
+  `assocU4_three_expHalfTrunc_four`;
+- `not_groupLikeKAssociatorTower_expHalfPoly`, `tower_forces_square_law`,
+  `KZAssociatorExists.tower` and `rational_associator_of_kz`.
+
+The check is live. In a scratch file, the true identity `expHalfTrunc 4 − expHalfTrunc 3 = 48⁻¹ •
+X³` passes, the false variant with `24⁻¹` fails with an unsolved goal, and the scratch file was
+deleted. There is no `sorry`, `axiom`, `native_decide` or `: True`, and no `lake build` was run.
+`scripts/transcendental-boundary-audit.py --check` reports `outside boundary: 378 (baseline 378),
+new 0, gone 0`.
