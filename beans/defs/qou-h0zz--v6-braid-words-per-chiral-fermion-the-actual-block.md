@@ -448,3 +448,6 @@ Matter = EVEN exterior part Λ⁰⊕Λ²⊕Λ⁴ = 1⊕10⊕5̄ (Spin(10) 16); o
 
 ## 2026-11-28 — Bring's sign twist does NOT fix the hypercharge sign
 `QOU/StandardModel/BringTwistFlipsHypercharge.lean` (sorry-free): under g·y = sgn(g)(y∘g⁻¹), (01)·Y = (34)·Y = −Y, (01)(34)·Y = Y; no nonzero vector is twisted-fixed by (01),(12). So S3×S2 acts on ℚY by its sign: the twisted action is excluded as the source of the sign (scope b for that ingredient only). Sign still open; other upstream sources not excluded.
+
+## 2026-11-28 — hypercharge sign = Bring orientation
+`QOU/StandardModel/HyperchargeSignIsBringOrientation.lean` (sorry-free, generators only): with H¹ = [2,1,1,1]⁺ ⊕ [2,1,1,1]⁻ (#9874), colour/isospin symmetry of Y survives only in the reflection-odd copy (odd g paired with c), and there c flips Y. So the open sign = orientation of Bring (H⁰(K) vs conj). Value still not fixed (orientations isometric). Next: is the orientation fixed upstream (q > 1 / braid chirality / photon σ₀σ₁⁻¹)?
