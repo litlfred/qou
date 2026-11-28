@@ -13,16 +13,15 @@
   ],
   "label": "prop:p-bandwidth-bound",
   "kind": "proposition",
-  "title": "Polynomial computation as sub-horizon bandwidth",
+  "title": "Sub-horizon bandwidth characterization of polynomial skein extraction",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-computational-horizon"
   ],
   "tags": [
-    "P-class",
+    "skein-bandwidth",
     "bandwidth",
     "information-flow",
     "planck-step",
-    "complexity",
     "polynomial-time"
   ],
   "leanRef": "qou:QOU.InformationTheory.p_bandwidth_bound",

@@ -1,1 +1,0 @@
-**BSD reduction.** The leading-coefficient form of BSD requires identifying the standard-real prefactor $c$ in $L(\mathcal{E}_q, s) \asymp c \cdot (s - 1)^r$. The adelic Fourier transform of [adelic Tate squeeze](#rem:adelic-tate-squeeze) gives the explicit formula for $c$ in terms of local $\varepsilon_p$-adic integrals.

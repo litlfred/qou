@@ -26,7 +26,7 @@ export default remark({
     "ex:categorical-reeb-brings",
     "def:frobenius-hopf-aether",
     "def:adelic-base-ring",
-    "rem:yang-mills-surreal-bound",
+    "speculative-open-problems:rem:yang-mills-surreal-bound",
     "conj:os-reflection-positivity-from-reeb",
   ],
   cites: [

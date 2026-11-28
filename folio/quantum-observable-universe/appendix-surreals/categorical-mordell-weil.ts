@@ -7,18 +7,17 @@ export default definition({
     validation: "not_checked",
   },
   title:
-    "Categorical Mordell--Weil group, $q$-Tate--Shafarevich group, and $q$-deformed $L$-function",
+    "Invariant Hom-group, finite-place Euler product, and monoidal localisation kernel",
   uses: [
     "conj:tannaka-krein-isomorphism",
     "prop:descartes-elliptic-curve",
     "def:local-q-zeta-function",
   ],
   tags: [
-    "birch-swinnerton-dyer",
     "elliptic-curve",
     "l-function",
-    "mordell-weil",
-    "tate-shafarevich",
+    "hom-group",
+    "localisation-kernel",
     "categorical",
     "fibre-functor",
   ],

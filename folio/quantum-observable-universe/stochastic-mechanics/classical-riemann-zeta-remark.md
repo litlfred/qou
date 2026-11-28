@@ -1,3 +1,1 @@
-Each maximal ideal $\mathfrak{m}$ of norm $N(\mathfrak{m}) = p^f$ contributes a local factor to the Euler product. The adelic completion yields the global zeta function.
-
-The non-trivial zeros of $\zeta(s)$ are the classical shadows of the Reeb eigenvalues. Under the spectral coordinate mapping, $\alpha_i = q^{\rho_i} \to e^{-\rho_i \log p}$ at each prime $p$. The global zeros arise from the coherent alignment of the local spectra.
+Each prime ideal $(p) \subset \mathbb{Z}$ of norm $p$ contributes the degree-zero Euler factor $(1 - p^{-s})^{-1}$ on the half-plane $\mathrm{Re}(s) > 1$. Unlike the local curve zeta functions of positive-genus fibres—whose $H^1$ numerators carry $2g$ nontrivial Frobenius eigenvalues—the Euler product for $\zeta(s)$ reflects point counts $|\mathrm{Spec}\,\mathbb{F}_{p^n}| = 1$ with no $H^1$ factor.

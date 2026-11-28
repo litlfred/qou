@@ -2,11 +2,10 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:categorical-sha-local-global",
-  title: "The $q$-Tate--Shafarevich group as the local-global obstruction",
+  title: "The monoidal localisation kernel as a local--global invariant",
   interprets: "def:categorical-mordell-weil",
   tags: [
-    "birch-swinnerton-dyer",
-    "tate-shafarevich",
+    "localisation-kernel",
     "local-global",
     "categorical",
   ],

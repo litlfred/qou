@@ -1,4 +1,4 @@
-**1321** indexed entries across 7 categories.
+**1310** indexed entries across 7 categories.
 
 ## Definitions
 
@@ -31,7 +31,7 @@
 | [def:q-oper](#def:q-oper) | $q$-Oper | Ch 22 |
 | [def:q-pochhammer-partial-product](#def:q-pochhammer-partial-product) | $q$-Pochhammer partial product $\Phi_n(x; q)$ | Ch 11 |
 | [def:q-resolvent](#def:q-resolvent) | $q$-Resolvent (categorical) | Ch 2 |
-| [def:q-yang-mills-levi](#def:q-yang-mills-levi) | $q$-Weighted Yang--Mills--Levi functional | Ch 3 |
+| [def:q-yang-mills-levi](#def:q-yang-mills-levi) | $q$-weighted curvature--Levi functional | Ch 3 |
 | [def:z-habiro-ring](#def:z-habiro-ring) | $z$-Habiro ring $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z$ | Ch 11 |
 | [def:adelic-base-ring](#def:adelic-base-ring) | Adelic base ring $\mathbb{A}$ | Ch 11 |
 | [def:aeon](#def:aeon) | Aeon | Ch 20 |
@@ -75,7 +75,7 @@
 | [def:categorical-lagrangian](#def:categorical-lagrangian) | Categorical Lagrangian | Ch 2 |
 | [def:categorical-laplace](#def:categorical-laplace) | Categorical Laplace transform | Ch 2 |
 | [def:lepton-number-categorical](#def:lepton-number-categorical) | Categorical Lepton Number | Ch 14 |
-| [def:categorical-mordell-weil](#def:categorical-mordell-weil) | Categorical Mordell--Weil group, $q$-Tate--Shafarevich group, and $q$-deformed $L$-function | Ch 25 |
+| [def:categorical-mordell-weil](#def:categorical-mordell-weil) | Categorical Hom-group invariants, localisation kernel, and $q$-deformed $L$-series | Ch 25 |
 | [def:categorical-point](#def:categorical-point) | Categorical point | Ch 2 |
 | [def:categorical-q-reeb-flow](#def:categorical-q-reeb-flow) | Categorical q-Reeb flow | Ch 4 |
 | [def:categorical-reeb](#def:categorical-reeb) | Categorical Reeb derivation | Ch 2 |
@@ -84,10 +84,9 @@
 | [def:cemetery-group](#def:cemetery-group) | Cemetery group (subcategory annihilated by $\tau$) | Ch 7 |
 | [def:chebyshev-torus-coefficients](#def:chebyshev-torus-coefficients) | Chebyshev crossing coefficients of $T_{2,n}$ | Ch 14 |
 | [def:cs-gram-determinant-ratio](#def:cs-gram-determinant-ratio) | Chern--Simons Gram-determinant ratio $\kappa$ | Ch 11 |
-| [def:classical-riemann-zeta](#def:classical-riemann-zeta) | Classical Riemann zeta function as adelic limit | Ch 19 |
+| [def:classical-riemann-zeta](#def:classical-riemann-zeta) | Dirichlet series $\zeta(s)$ on $\operatorname{Re}(s) > 1$ as $q \to 1$ Euler-product limit | Ch 19 |
 | [def:cmb-boundary-datum](#def:cmb-boundary-datum) | CMB as boundary datum of a big bang state | Ch 20 |
 | [def:cmb-functor](#def:cmb-functor) | CMB functor | Ch 20 |
-| [def:collatz-contact-boundary](#def:collatz-contact-boundary) | Collatz contact boundary and orbit contact average | Ch 25 |
 | [def:color-sector-coords](#def:color-sector-coords) | Color sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$ | Ch 6 |
 | [def:color-tube-coordinates](#def:color-tube-coordinates) | Color tube coordinates | Ch 6 |
 | [def:color-tube-fibers](#def:color-tube-fibers) | Color tube fibers | Ch 6 |
@@ -396,7 +395,7 @@
 | [prop:q-plancherel-asymptotic-skeleton](#prop:q-plancherel-asymptotic-skeleton) | Asymptotic skeleton of the q-Plancherel measure $\mathbb{M}_{n,q}$ — convergence on a continuous Young-diagram space | Ch 15 |
 | [prop:atomic-nf-witness](#prop:atomic-nf-witness) | Atomic braid normal form witness | Ch 12 |
 | [prop:atomic-mass-gb-nf](#prop:atomic-mass-gb-nf) | Atomic mass as Markov trace of the Gröbner–Shirshov normal form | Ch 9 |
-| [prop:collatz-no-cycles](#prop:collatz-no-cycles) | Balanced-holonomy cycle exclusion: coprimality of $[2]_q$ and $[3]_q$ | Ch 25 |
+| [prop:balanced-holonomy-exclusion](#prop:balanced-holonomy-exclusion) | Balanced-holonomy exclusion and affine cycle classification in $\mathbb{Z}[q^{\pm 1}]$ | Ch 25 |
 | [prop:pn-averaging-uniqueness](#prop:pn-averaging-uniqueness) | Bar-invariant p-n interface averagings | Ch 11 |
 | [prop:bar-involution-invariance](#prop:bar-involution-invariance) | Bar-involution invariance of Plancherel weights and Type-B-folded normal forms | Ch 12 |
 | [prop:phi-b-bar-parity-decomposition](#prop:phi-b-bar-parity-decomposition) | Bar-parity (sinh/cosh) decomposition under the bar involution | Ch 11 |
@@ -414,6 +413,7 @@
 | [prop:borromean-h4-categorical-derivation](#prop:borromean-h4-categorical-derivation) | Borromean $h^4 = -3/4$ derived as $(-3) \cdot (1/4)$ via R-matrix + Markov normalisation | Ch 11 |
 | [prop:lambda-scale-aether-form](#prop:lambda-scale-aether-form) | Borromean baryon $\lambda_{\text{scale}}$ empirical form $5/2 - h^2 \cdot G$ | Ch 11 |
 | [prop:borromean-markov-trace-closed-form](#prop:borromean-markov-trace-closed-form) | Borromean Markov trace $\mathrm{tr}_M(\beta_{\mathrm{Bor}}) = (4 + h^2 - 3h^4 - h^6)/(h^2 + 4)$ | Ch 11 |
+| [prop:laurent-bounded-window](#prop:laurent-bounded-window) | Bounded degree-window finiteness over finite coefficient alphabets | Ch 25 |
 | [prop:content-scaling-correspondence](#prop:content-scaling-correspondence) | Box content is the $q$-Jucys--Murphy eigenvalue exponent | Ch 11 |
 | [prop:q-gaussian-obstruction-at-q0](#prop:q-gaussian-obstruction-at-q0) | Bożejko–Speicher $q$-Gaussian obstruction at the aether $q_0 > 1$ | Ch 11 |
 | [prop:bn-mtc-action](#prop:bn-mtc-action) | Braid group action on $\mathbf{V}^{\otimes n}$ does not factor through $S_n$ | Ch 18 |
@@ -424,6 +424,7 @@
 | [prop:qbeta-z-recursion-to-ck-recursion-bridge](#prop:qbeta-z-recursion-to-ck-recursion-bridge) | Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion — structural correspondence | Ch 11 |
 | [prop:bring-residue-resolvent](#prop:bring-residue-resolvent) | Bring residue → canonical resolvent form 1/(1 − h_q · q^{α_shift}) | Ch 11 |
 | [prop:brings-is-qou](#prop:brings-is-qou) | Bring's surface is a quantum observable universe | Ch 6 |
+| [prop:bring-frobenius-traces](#prop:bring-frobenius-traces) | Bring's curve mod-$p$ point counts and Frobenius trace bounds at small primes | Ch 22 |
 | [prop:qbeta-c4-from-c3-c8-product-identity](#prop:qbeta-c4-from-c3-c8-product-identity) | c_4 = c_8 / c_3 via the structural product identity c_3 · c_4 = c_8 | Ch 11 |
 | [prop:electron-period-base](#prop:electron-period-base) | Electron mass $m_e$ is the $n=0$ base period of the prolongation tower | Ch 11 |
 | [prop:qou-canonical-action](#prop:qou-canonical-action) | Canonical action of a quantum observable universe | Ch 2 |
@@ -445,6 +446,7 @@
 | [prop:centered-hecke-variance-positive](#prop:centered-hecke-variance-positive) | Centred Hecke transfer matrix has strictly positive variance for every $q > 0$ | Ch 15 |
 | [prop:two-vortex-channel-algebra](#prop:two-vortex-channel-algebra) | Channel algebra of the two-vortex interaction | Ch 18 |
 | [prop:symmetric-point-channel-collapse](#prop:symmetric-point-channel-collapse) | Channel collapse at the symmetric point | Ch 3 |
+| [prop:crossing-energy-gap](#prop:crossing-energy-gap) | Crossing-energy positivity and $\mathbb{G}_m$-torsion dichotomy | Ch 3 |
 | [prop:c-equals-bar-iff-all-1dim](#prop:c-equals-bar-iff-all-1dim) | Charge conjugation equals bar involution iff all irreps are one-dimensional | Ch 7 |
 | [prop:reeb-u1-chart-swap](#prop:reeb-u1-chart-swap) | Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\mathrm{Aut}(\mathbb{P}(V))$ | Ch 2 |
 | [prop:chirality-residue-mass-term](#prop:chirality-residue-mass-term) | Chirality / non-chirality split: $\mathfrak{m} = \mathfrak{m}^{\mathrm{chir}} + \mathfrak{m}^{\neg\mathrm{chir}}$ refining the unified mass formula | Ch 11 |
@@ -731,7 +733,7 @@
 | [prop:knot-indexed-convolution-grid](#prop:knot-indexed-convolution-grid) | Placement of paper's existing knot-indexed convolutions in the bi-filtration grid | Ch 11 |
 | [prop:plancherel-weight-boundedness](#prop:plancherel-weight-boundedness) | Plancherel weights define a probability distribution: $\sum_\lambda w_\lambda = 1$, $0 \leq w_\lambda \leq 1$ | Ch 11 |
 | [prop:alpha-shift-torus-knot](#prop:alpha-shift-torus-knot) | Pole order at $q=0$ of the torus-knot character: $\alpha_{\mathrm{shift}}(T_{p,k}) = k(p-1)$ on $V_{(1^p)}$ | Ch 11 |
-| [prop:p-bandwidth-bound](#prop:p-bandwidth-bound) | Polynomial computation as sub-horizon bandwidth | Ch 20 |
+| [prop:p-bandwidth-bound](#prop:p-bandwidth-bound) | Bounded-width braid trace evaluation and sub-horizon bandwidth | Ch 20 |
 | [prop:q-rogers-pentagon-archimedean](#prop:q-rogers-pentagon-archimedean) | Post-τ pentagon = pre-τ pentagon + q-log² Rogers correction | Ch 11 |
 | [prop:habiro-precision-ladder-equivalence](#prop:habiro-precision-ladder-equivalence) | Precision-ladder coefficients are Habiro integer evaluations | Ch 11 |
 | [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower) | Proton--electron mass endomorphism tower ($\mathrm{Li}_2^q$): the mass formula is positive under a genuine norm and bounded dilogarithm | Ch 11 |
@@ -777,6 +779,7 @@
 | [prop:spin-labels](#prop:spin-labels) | Spin labels and the fundamental object | Ch 2 |
 | [prop:stable-atom-decidable](#prop:stable-atom-decidable) | Stability is decidable for any (Z, N) at fixed q | Ch 7 |
 | [prop:euler-char-stability](#prop:euler-char-stability) | Stability of the categorical trace and of the base Euler characteristic | Ch 4 |
+| [prop:q-syracuse-lift](#prop:q-syracuse-lift) | Exact $q$-Syracuse identity and $q = 1$ integer trajectory specialization | Ch 25 |
 | [prop:strangelet-double-beta](#prop:strangelet-double-beta) | Strangelet interactions descend from the degree-2 fiber via double beta decay | Ch 15 |
 | [prop:coxeter-strong-exchange](#prop:coxeter-strong-exchange) | Strong exchange for Coxeter systems, via the reflection cocycle | Ch 5 |
 | [prop:brane-boundary](#prop:brane-boundary) | Structure of the defining boundary | Ch 4 |
@@ -794,7 +797,6 @@
 | [prop:tannaka-krein-reconstruction](#prop:tannaka-krein-reconstruction) | Tannaka--Krein reconstruction of the quantum gauge group | Ch 2 |
 | [prop:q-exponential-taylor](#prop:q-exponential-taylor) | Taylor series of $\exp_q$ (archimedean) | Ch 20 |
 | [prop:terminal-resolution](#prop:terminal-resolution) | Nucleon masses under the pair Skein formula | Ch 11 |
-| [conj:collatz-contact-boundary](#conj:collatz-contact-boundary) | The $[2]_q$-contact boundary on the Reeb bundle | Ch 25 |
 | [prop:alpha-em-habiro-bar-involution](#prop:alpha-em-habiro-bar-involution) | The $\alpha_{EM}$ Habiro element $[2]_q(1-h^2\alpha)$ is a bar-involution fixed point, with $H(1)=2$, $H(-1)=-2$ | Ch 5 |
 | [prop:alpha-cluster-activation-gate](#prop:alpha-cluster-activation-gate) | The $\alpha$-cluster activation gate: Milnor indeterminacy, sign-rep obstruction, and $\mathrm{Vol}=0$ annihilation | Ch 11 |
 | [prop:beta-eq-ln-q-dictionary](#prop:beta-eq-ln-q-dictionary) | The $\beta = \ln q$ partition-function dictionary | Ch 2 |
@@ -1030,12 +1032,9 @@
 | [conj:cp-violation-spectral-form](#conj:cp-violation-spectral-form) | $\delta_{\mathrm{CP}}$ as imaginary part of the alternating-block character | Ch 15 |
 | [conj:flavor-split-aether-mass](#conj:flavor-split-aether-mass) | The nucleon mass split equals the aether flavor-split formula | Ch 15 |
 | [conj:q-beta-radius-of-convergence-gate](#conj:q-beta-radius-of-convergence-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(a)$ gate — the log-correction generating function $g(u) = \sum_{k \ge 2} c_k u^k$ has a unique dominant simple pole at $u_{\text{aether}}$ | Ch 11 |
-| [conj:p-vs-np-boundary](#conj:p-vs-np-boundary) | $\mathrm{P} \neq \mathrm{NP}$ as jet horizon opacity | Ch 20 |
-| [conj:qou-p-neq-np](#conj:qou-p-neq-np) | $\mathrm{P} \neq \mathrm{NP}$ at non-torsion $q \in \mathbb{G}_m$ | Ch 20 |
 | [conj:q-geometric-langlands](#conj:q-geometric-langlands) | $q$-Geometric Langlands correspondence | Ch 22 |
 | [conj:q-oper-hecke](#conj:q-oper-hecke) | $q$-Opers are $q$-Hecke eigensheaves | Ch 22 |
 | [conj:mirror-3d-3d-correspondence](#conj:mirror-3d-3d-correspondence) | 3d–3d correspondence — Hecke partition functions on hyperbolic 3-manifolds ↔ 3d $\mathcal{N}{=}2$ gauge theories | Ch 22 |
-| [conj:adelic-critical-line-persistence](#conj:adelic-critical-line-persistence) | Adelic persistence of the critical line | Ch 19 |
 | [conj:hyperbolic-volume-transcendence](#conj:hyperbolic-volume-transcendence) | Algebraic independence of QOU hyperbolic volumes | Ch 14 |
 | [conj:diophantine-birthday](#conj:diophantine-birthday) | Algebraic vs transcendental numbers are separated by birthday trajectory | Ch 26 |
 | [conj:algebraic-geometric-dilog-equivalence](#conj:algebraic-geometric-dilog-equivalence) | Algebraic-geometric dilogarithm equivalence: $\Phi_n(x; q)$ poles map to ideal-tetrahedron cusps | Ch 11 |
@@ -1150,7 +1149,6 @@
 | [conj:tetraplectic-askey-localisation](#conj:tetraplectic-askey-localisation) | Local Askey-scheme approximation of the $S_5$-isotypic states on the Bring cone | Ch 6 |
 | [conj:lifted-crossing-locality](#conj:lifted-crossing-locality) | Locality of lifted-crossing contributions in the mass expansion | Ch 11 |
 | [conj:lusztig-canonical-basis-q-eq-1](#conj:lusztig-canonical-basis-q-eq-1) | Lusztig canonical basis at $q = 1$ — decategorification of Kashiwara crystal via Kazhdan–Lusztig polynomials | Ch 19 |
-| [conj:macroscopic-stability-equivalence](#conj:macroscopic-stability-equivalence) | Macroscopic stability is equivalent to the Riemann hypothesis | Ch 19 |
 | [conj:magic-numbers-bring](#conj:magic-numbers-bring) | Magic numbers $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ as ranks of $S_5$-stable Bring period sub-lattices | Ch 15 |
 | [conj:mass-endomorphism](#conj:mass-endomorphism) | Mass endomorphism conjecture | Ch 9 |
 | [conj:mass-formula-regime-switching](#conj:mass-formula-regime-switching) | Mass formula regime switch: an $A$-uniform evaluation whose dominant term changes at the pair-graph regime boundaries $A = 2 \mid 3$ and $4 \mid 5$ | Ch 11 |
@@ -1162,7 +1160,6 @@
 | [conj:nuclear-knot-classification](#conj:nuclear-knot-classification) | Nuclear knot classification: braid closure type determines binding scale | Ch 11 |
 | [conj:tau-all-orders-bridge](#conj:tau-all-orders-bridge) | Order-mixing map versus distinct invariants for the fibre functor $\tau$ across the $h$-expansion | Ch 11 |
 | [conj:os-reflection-positivity-from-reeb](#conj:os-reflection-positivity-from-reeb) | Osterwalder--Schrader reflection positivity from the Reeb $\mathbb{Z}_2$ | Ch 25 |
-| [conj:p-vs-np-qou](#conj:p-vs-np-qou) | P vs NP in the QOU: classical-limit separation of BQP-width classes | Ch 25 |
 | [conj:pachner-pentagon-borromean](#conj:pachner-pentagon-borromean) | Pachner $2$–$3$ move = Pentagon identity at Borromean ideal-tetrahedron decomposition | Ch 11 |
 | [conj:palindromicity-orbital-type](#conj:palindromicity-orbital-type) | Palindromicity and orbital type | Ch 16 |
 | [conj:p-from-braid-mirror](#conj:p-from-braid-mirror) | Parity $P$ as mirror reflection of the braid diagram (writhe sign flip) | Ch 11 |
@@ -1208,8 +1205,6 @@
 | [conj:surreal-limit-transfer](#conj:surreal-limit-transfer) | Surreal limit transfer: limits as standard-part equalities via an $\omega$-evaluation | Ch 26 |
 | [conj:tannaka-krein-isomorphism](#conj:tannaka-krein-isomorphism) | Tannaka--Krein duality for the aether | Ch 22 |
 | [conj:terms-2-6-higher-operations](#conj:terms-2-6-higher-operations) | Terms 2 and 6: infinite Wedderburn / Habiro-cyclotomic sum and GB root-of-unity residue sum | Ch 11 |
-| [conj:q-collatz](#conj:q-collatz) | The $q$-Collatz conjecture: Skein-module crossing resolution | Ch 25 |
-| [conj:q-birch-swinnerton-dyer](#conj:q-birch-swinnerton-dyer) | The $q$-deformed Birch and Swinnerton-Dyer conjecture | Ch 25 |
 | [conj:baryon-product-from-alt](#conj:baryon-product-from-alt) | The baryon integrand is the $\mathrm{Alt}^3$ Vandermonde of the color-sheet velocities | Ch 14 |
 | [conj:c1-ggm-bar-parity-faces](#conj:c1-ggm-bar-parity-faces) | The binding q-lift module and the resurgent Stokes carrier are bar-parity conjugate faces | Ch 11 |
 | [conj:bar-parity-split](#conj:bar-parity-split) | The binding trace and the $\mathfrak{Q}_\beta$ residue are the bar-even and bar-odd parts of one fibre element | Ch 11 |
@@ -1220,7 +1215,6 @@
 | [conj:sm-hypercharge-invariant](#conj:sm-hypercharge-invariant) | The hypercharge invariant | Toward the Standard Model |
 | [conj:orbital-space-normal-bundle](#conj:orbital-space-normal-bundle) | The orbital space at shell $n$ is the space of framing-$k$ sections of the normal bundle | Ch 6 |
 | [conj:qdifference-kernel-prolongation-symbol](#conj:qdifference-kernel-prolongation-symbol) | The q-difference kernel R is the jet-prolongation symbol, carried by the binding q-lift module | Ch 11 |
-| [conj:classical-riemann-hypothesis](#conj:classical-riemann-hypothesis) | The Riemann hypothesis | Ch 19 |
 | [conj:shell-space-is-self-square](#conj:shell-space-is-self-square) | The shell state space is the self-square of the angular object | Ch 16 |
 | [conj:q-harmonic-flow](#conj:q-harmonic-flow) | The aether field $q(p)$ evolves by the $q$-harmonic-map heat flow $\partial_t q = -\Delta_q q$ | Ch 2 |
 | [conj:calibration-cohomology-alignment](#conj:calibration-cohomology-alignment) | The three calibrations are the three cohomological data of H¹(Bring) | Ch 11 |
@@ -1243,7 +1237,6 @@
 | [conj:wenzl-positivity-implies-aether-positivity](#conj:wenzl-positivity-implies-aether-positivity) | Wenzl positivity at $q_0$ implies aether $C^*$-Frobenius positivity | Ch 26 |
 | [conj:whipple-rotation-intertwining](#conj:whipple-rotation-intertwining) | Whipple–rotation intertwining: the channel rotation acts on the toroidal family as the degree–order (winding) exchange | Ch 9 |
 | [conj:wigner-su4-from-spin-isospin](#conj:wigner-su4-from-spin-isospin) | Wigner $\mathrm{SU}(4) = \mathrm{SU}(2)_S \times \mathrm{SU}(2)_I$ as the categorical source for nuclear-shell binding | Ch 12 |
-| [conj:yang-mills-mass-gap](#conj:yang-mills-mass-gap) | Yang--Mills Existence and Mass Gap | Ch 3 |
 | [conj:z-eq-n-rho-correction](#conj:z-eq-n-rho-correction) | Z=N aether-q correction to the Kashaev law | Ch 11 |
 
 ## Examples

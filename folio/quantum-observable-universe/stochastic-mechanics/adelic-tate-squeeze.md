@@ -12,4 +12,4 @@ They are dual reductions: $\tau_{\mathrm{arch}}$ projects across the adelic plac
 
 **Tate's local functional equation in surreal form.** Tate's thesis proves each local zeta integral satisfies a local functional equation. In the surreal register, this lifts to an $\ordw_v$-preserving reflection.
 
-**Conclusion.** The Tate thesis Fourier factorisation of the global $L$-function is compatible with the surreal-order decomposition. This provides the local--global structure: it is not only the global $\varepsilon$-squeeze that forbids rogue zeros, but a separate squeeze at each prime.
+**Conclusion.** Tate's Fourier factorisation of a global Euler product is compatible with finite-support summation of local $\ordw_v$-valuations in a shared ordered abelian group $\Gamma$.

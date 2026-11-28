@@ -49,7 +49,7 @@ The argument is linear:
 2. It can therefore encode self-referential statements (programs analysing their own Skein polynomials).
 3. By Gödel--Turing, degree-$0$ sections exist that no finite braid produces.
 4. These sections populate the computational horizon $\mathcal{H}_c$.
-5. The computational horizon is structurally identical to the jet horizon $\mathcal{H}$ ([dictionary](#rem:p-vs-np-event-horizon)).
+5. The computational horizon mirrors the vanishing structure of the [jet horizon](#def:jet-horizon).
 6. Therefore, a Turing-complete universe necessarily manifests horizons.
 
 The black hole is not an accident of general relativity: it follows from any universe expressive enough to encode arithmetic. Any universe with $q \neq 1$ — where Toffoli gates carry non-zero amplitude — must host regions where degree-$0$ truth remains inaccessible.

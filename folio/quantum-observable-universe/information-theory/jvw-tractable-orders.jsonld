@@ -14,17 +14,13 @@
   "label": "prop:jvw-tractable-orders",
   "kind": "proposition",
   "title": "Orders of the Jones-tractable points",
-  "uses": [
-    "papers/quantum-observable-universe/blocks/conj-qou-p-neq-np"
-  ],
   "cites": [
     "references/jaeger1990"
   ],
   "tags": [
-    "P-vs-NP",
     "Jones-polynomial",
     "roots-of-unity",
-    "complexity"
+    "cyclotomic"
   ],
   "leanRef": "qou:QOU.Information.JonesTractable.jvw_orders",
   "text": "jvw-tractable-orders.md",

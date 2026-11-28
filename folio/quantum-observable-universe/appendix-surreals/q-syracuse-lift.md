@@ -1,0 +1,5 @@
+Let $(P_j)_{j \ge 0}$ be a domain-stable sequence in $\mathbb{Z}[q^{\pm 1}]$ under $\mathcal{C}_q$, and let $\mathrm{ev}_1 \colon \mathbb{Z}[q^{\pm 1}] \to \mathbb{Z}$ denote evaluation at $q = 1$, alongside the integer Syracuse map $T(n) = n/2$ ($n$ even) and $T(n) = (3n + 1)/2$ ($n$ odd) \cite{lagarias2010}.
+
+1. **Projection to $T$.** For every $j \ge 0$, $\mathrm{ev}_1(P_j)$ is even on an even step ($[2]_q P_{j+1} = P_j$), odd on an odd step ($[2]_q P_{j+1} = [3]_q P_j + 1$), and satisfies $\mathrm{ev}_1(P_{j+1}) = T(\mathrm{ev}_1(P_j))$.
+2. **Parity periodicity implies Laurent periodicity.** If the step-type sequence repeats with period $K \ge 1$ from index $N$ onward, then $P_{N+K} = P_N$.
+3. **Lifting eventual periodicity.** If the integer trajectory $\bigl(T^j(P_0(1))\bigr)_{j \ge 0}$ is eventually periodic, then $(P_j)$ enters one of the three cycles $\{0\}$, $\{-q^{-2}\}$, or $\{q^{-1}, 1 + q^{-1}\}$ classified in [periodic-orbit classification](#prop:balanced-holonomy-exclusion).
