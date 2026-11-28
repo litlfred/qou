@@ -15,7 +15,9 @@
   "kind": "remark",
   "title": "Dressed-quark numerology at $q_0$",
   "uses": [
-    "papers/quantum-observable-universe/blocks/thm-flavor-mass-splitting-bound"
+    "papers/quantum-observable-universe/blocks/thm-flavor-mass-splitting-bound",
+    "papers/quantum-observable-universe/blocks/lem-pair-skein-mass-formula",
+    "papers/quantum-observable-universe/blocks/conj-flavor-split-aether-mass"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/prop-flavor-dressed-mass-from-aether-split",
   "tags": [

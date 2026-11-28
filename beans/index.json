@@ -5157,7 +5157,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-08-02T09:20:00Z",
-      "updatedAt": "2026-11-27T21:52:00Z",
+      "updatedAt": "2026-11-28T00:00:00Z",
       "preview": "Parent: rtep. TIER: ACHIEVABLE INCREMENTALLY. Formalize the Hecke/Temperley-Lieb side AS a modular\ncategory: simple objects = Hecke blocks λ, qDim = the corpus d_q (Markov-trace/Hoefsmit, already in\nQOU.HeckeAlgebra.MarkovTrace / Hoefsmit), twist θ_λ=q^{2c(λ)} (KeystoneModularTwist.theta, proved),\nS-matrix from the double-braiding trace. Prove the modular-data relations we can (S_{0λ}=d_λ/D done;\n",
       "file": "beans/defs/hkmt--hecke-category-as-modular-tensor-category.md"
     },
@@ -47519,7 +47519,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T22:17:45Z",
-      "updatedAt": "2026-11-28T00:12:20Z",
+      "updatedAt": "2026-11-28T00:19:43Z",
       "preview": "Conjecture (SC). Let rho_n(s) = E_PG[1{i_n+j_n=s}/(r_{n-1} r_{n-2})] over Plancherel growth, with r_k = c(k+1)-c(k) and (i_n,j_n) the 1-indexed position of box n. It is a mass-zero signed measure, and M1(n) = (n(n-1)(n-2)/3) sum_s s rho_n(s) (Jucys-Murphy + Young orthogonal form; verified exactly against the hook formula n=3..7).\nClaim: rho_n is <=0 then >=0 in s (one sign change). Checked exactly",
       "file": "beans/defs/qou-jmgu--gap-single-crossing-of-rho-n-last-box-signed-measu.md"
     },

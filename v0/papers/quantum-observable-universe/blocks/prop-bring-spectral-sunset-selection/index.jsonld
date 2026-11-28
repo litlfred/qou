@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-bring-spectral-sunset-selection",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:bring-spectral-sunset-selection",
+  "kind": "proposition",
+  "title": "Selection rule for the typed spectral sunset on Bring's surface",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-bring-harmonic-types",
+    "papers/quantum-observable-universe/blocks/prop-bring-reflection-parity"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-bring-spectral-sunset-selection"
+  ],
+  "tags": [
+    "brings-surface",
+    "harmonics",
+    "representation-theory",
+    "maass",
+    "two-loop",
+    "selection-rule"
+  ],
+  "leanRef": "qou:QOU.Transcendental.Brings.SpectralSunset.sunset_by_type",
+  "text": "bring-spectral-sunset-selection.md",
+  "provenance": "authored"
+}

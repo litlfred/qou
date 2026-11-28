@@ -367,10 +367,10 @@
     "registry",
     "packages"
   ],
-  "sourceCommit": "https://github.com/litlfred/qou/commit/21d260672306104e7ff4cf5fdb26cfa10716fce0",
-  "sourceCommitSha": "21d260672306104e7ff4cf5fdb26cfa10716fce0",
-  "sourceTree": "c7d70132725aa294cce6789f7ffd5414488055ac",
-  "sourceCommitAt": "2026-11-28T00:07:44Z",
+  "sourceCommit": "https://github.com/litlfred/qou/commit/91681690a00ab876131faae66eac19f92d394277",
+  "sourceCommitSha": "91681690a00ab876131faae66eac19f92d394277",
+  "sourceTree": "0ca9c1c4beac6bc35caf97064c37c15a4256bcb1",
+  "sourceCommitAt": "2026-11-28T00:25:50Z",
   "sourceTreeDirty": false,
   "dependsOnUnavailable": "1 dependency edge(s), none expressible as a record — see gaps",
   "counts": {
@@ -11464,7 +11464,7 @@
         "https://litlfred.github.io/cat-harness/v0/ns/graphTypology/folio"
       ],
       "description": "The authored folios: quantum-observable-universe and its siblings, each a directory holding a same-named manifest. NOT `folio/` — see `_comment`.",
-      "fileCount": 22250,
+      "fileCount": 22276,
       "inSubgraph": "https://litlfred.github.io/qou/directory/folio"
     },
     {
@@ -11514,7 +11514,7 @@
       ],
       "description": "Python computations and the witnesses they write (<name>.witness.json). A witness value is addressable in prose as {{ qou.computations.<witness>.<json path> }}, resolved once for the PDF, the blueprint and the site.",
       "readmePath": "computations/README.md",
-      "fileCount": 11205,
+      "fileCount": 11213,
       "inSubgraph": "https://litlfred.github.io/qou/directory/computations"
     },
     {
@@ -11736,7 +11736,7 @@
         "https://litlfred.github.io/cat-harness/v0/ns/graphTypology/lean"
       ],
       "description": "Lean sub-KG of the qou Lake package (libraries QOU, QOUBlocks and the chapter libraries in its lakefile). Owner ruling 2026-11-24, \"separate qou, UGB and Fred2005 into own lean sub-KGs\": one graph per Lake package, each with its own visualiser route lean/qou/ (folio-assistant-sci typology `lean`: one graph per declared package path).",
-      "fileCount": 4290,
+      "fileCount": 4304,
       "inSubgraph": "https://litlfred.github.io/qou/directory/lean"
     },
     {
