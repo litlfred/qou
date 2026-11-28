@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-27T20:43:03.564986+00:00",
-  "commitSha": "1e1a4da29e47527e80ba477824849bfed8799940",
+  "computedAt": "2026-11-28T00:26:09.005975+00:00",
+  "commitSha": "f4d12154e85e4b9c1a4644f3c92da793583d9b52",
   "assertions": [
     {
       "name": "qhankel_norm_at_q0",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 2,
   "computation": "coulomb-shape-factor-qbessel-probe",
   "scriptFile": "coulomb_shape_factor_qbessel_probe.py",
-  "scriptHash": "c71e7c82b108",
-  "scriptCommitSha": "1e1a4da29e47527e80ba477824849bfed8799940",
+  "scriptHash": "e868800d3769",
+  "scriptCommitSha": "98608fc2f9af5cbf81f33bb237fe24d9a6e6fc99",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,6 +52,8 @@
   "environment": {
     "python": "3.13.18",
     "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "cvxpy": "absent"
   },
@@ -102,9 +104,9 @@
       }
     },
     "classical_comparison": {
-      "uniform_ball": "0.4647580015448899981578279039240442216396331787109375",
-      "gaussian": "0.48860251190291992262615394793101586401462554931640625",
-      "exponential": "0.5412658773652740951121131729451008141040802001953125",
+      "uniform_ball": "0.464758001544890026221511847973887953299950604634990899190509",
+      "gaussian": "0.488602511902919921586384622838347004575885608194227702138243",
+      "exponential": "0.54126587736527415422732698172058511466962664181574394626744",
       "box_s_wave_sin2": "0.474800552889098289996937040221493311633139801346194453339093"
     },
     "required_f_3He_comparison_only": "0.5214134",

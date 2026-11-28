@@ -70,12 +70,21 @@ except Exception:  # pragma: no cover
     WitnessBuilder = None
 
 # Comparison values only (bean qou-usft RESULT 3 / STEP 3). Never inputs.
+# The closed forms are evaluated in main() AFTER mp.dps is raised: evaluating
+# them here, at import-time dps 15, and serialising at dps 60 recorded fake
+# precision (the binary tail of a 15-digit value).
+def _classical_closed_forms():
+    return {
+        "uniform_ball": mp.mpf(3) / 5 * mp.sqrt(mp.mpf(3) / 5),
+        "gaussian": mp.sqrt(3) / (2 * mp.sqrt(mp.pi)),
+        # ρ ∝ e^{-r/a}: E = 5/(32a), r_rms = √12·a  ⇒  f = 5√3/16 = 0.541266.  The bean's
+        # RESULT 3 row "exponential 0.454663" does NOT reproduce under this definition.
+        "exponential": mp.sqrt(3) * mp.mpf(5) / 16,
+    }
+
+
 CLASSICAL = {
-    "uniform_ball": mp.mpf(3) / 5 * mp.sqrt(mp.mpf(3) / 5),
-    "gaussian": mp.sqrt(3) / (2 * mp.sqrt(mp.pi)),
-    # ρ ∝ e^{-r/a}: E = 5/(32a), r_rms = √12·a  ⇒  f = 5√3/16 = 0.541266.  The bean's
-    # RESULT 3 row "exponential 0.454663" does NOT reproduce under this definition.
-    "exponential": mp.sqrt(3) * mp.mpf(5) / 16,
+    **_classical_closed_forms(),
     "box_s_wave_sin2": None,  # filled numerically in main(): ρ ∝ sin²(πr)/r² on r < 1
 }
 REQUIRED_3HE_STR = "0.5214134"
@@ -173,6 +182,7 @@ def f_quniform_ball(p, tail=mp.mpf(10) ** -30):
 
 def main() -> int:
     mp.mp.dps = 60
+    CLASSICAL.update(_classical_closed_forms())
     with mp.workdps(30):
         P = lambda r: mp.sin(mp.pi * r) ** 2
         C = lambda r: mp.quad(P, [0, r])
