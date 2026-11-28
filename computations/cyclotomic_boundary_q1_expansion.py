@@ -13,8 +13,9 @@ Derivation (each step re-checked below in exact arithmetic):
        sum h^4 = sum c^4 + 12 n sum c^2 + n^2 - 12 (sum c)^2   (all lam; see the proof checks).
   3. A content power sum is the central character of a Jucys-Murphy power sum, and
      sum_lam f^lam omega_lam(z) = sum_g z_g r(g), r(g) = #{x : x^2 = g}.  The class expansions of
-     sum J_i^2, sum J_i^4, (sum J_i)^2, (sum J_i^2)^2 used are in CLASS_SUMS (checked by direct
-     group-algebra multiplication for 5 <= n <= 12 and by partition sums for n <= 13).
+     sum J_i^2, sum J_i^4, (sum J_i)^2, (sum J_i^2)^2 used are in CLASS_SUMS (checked against
+     partition sums for n <= 13 here; derived for all n from Jucys-Murphy products in
+     cyclotomic_boundary_q1_proof_checks.py).
   4. This gives d2 and d4 as polynomial combinations of x = I_{n-8}, y = I_{n-9} (involution
      numbers):
        6 d2    = c (n-6)(n^2-13) x + 2 c (n-8)(n-5)(2n-5) y,          c = (n-1)(n-2)(n-3),
@@ -208,7 +209,7 @@ def main() -> int:
         "cumulant_test_passes": passes,
         "odd_d2_divides_delta": odd_divides,
         "odd_d2_exceeds_delta_from": last_small + 1,
-        "status": "closed forms checked for n <= 24; full proof needs the quartic hook identity and the class expansions for all n"},
+        "status": "closed forms checked against exact D(n) for n <= 24; proved for all n in cyclotomic_boundary_q1_proof_checks.py"},
         indent=1) + "\n")
     return 0
 

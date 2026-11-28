@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-habiro-tail-cyclotomic-iff-n-le-5",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:habiro-tail-cyclotomic-iff-n-le-5",
+  "kind": "proposition",
+  "title": "The Habiro tail $D(n)$ is a cyclotomic product exactly for $n \\leq 5$",
+  "cites": [
+    "references/billeyswanson2023"
+  ],
+  "tags": [
+    "habiro-tail",
+    "cyclotomic",
+    "computer-assisted"
+  ],
+  "text": "habiro-tail-cyclotomic-iff-n-le-5.md",
+  "provenance": "authored"
+}

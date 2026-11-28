@@ -46,6 +46,7 @@ export default conjecture({
     "conj:binding-manybody-eq-jet-filtration",
     "prop:sw-period-residue-sum",
     "conj:calibration-cohomology-alignment",
+    "prop:habiro-tail-cyclotomic-iff-n-le-5",
   ],
   computation: {
     engine: "python",
