@@ -68,7 +68,9 @@ cells of the map, and integer matrices. **No eigenvalue appears.** The analytic 
 * The character table `S5Char.chi*` (Fulton–Harris §2.3), as in
   `BraidKnotOctonion/S5CharactersOnBringDeformations.lean`. `charTable_orthonormal` and
   `column_orthogonality` check it; `std_is_fixed_points_minus_one` checks `[4,1]` against
-  the permutations.
+  the permutations. **Since 2026-11-28 the whole table is derived** from the permutations in
+  `QOU/BringsSurface/S5CharacterDerivation.lean` (`derived_eq_table_everywhere`,
+  `derived_orthonormal`, `class_sizes_derived`), so it is no longer a cited input.
 * Every finite-dimensional complex representation of a finite group is a sum of irreducibles
   and is determined by its character (Maschke; Mathlib has the orthogonality relations,
   `FDRep.char_orthonormal`). Number of irreducibles = number of classes = `7`.
