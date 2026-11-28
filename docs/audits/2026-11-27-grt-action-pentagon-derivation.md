@@ -1701,3 +1701,51 @@ output, against the `/home/claude/furov` overlay; `RationalAssociator/` is byte-
 the overlay's source (PR #9880 head `74e97b66c`) and `origin/main` after #9880 merged. `#print
 axioms` on all eight theorems above gives `[propext, Classical.choice, Quot.sound]`. No `sorry`,
 no `axiom`, no `native_decide`, no analytic constructs. No `lake build` was run.
+
+## 17m. The `μ ≠ 0` group step is exactly one-degree existence (bean `qou-3fdg`)
+
+**Target.** Prove `FurushoGroupStep E d` for `E ≠ 1` (`μ ≠ 0`), `d ≥ 3`, with no tower hypothesis.
+
+**Result: not proved. A sharper reduction is proved, and it is an equivalence.** New file
+`RationalAssociator/FurushoSingleLevel.lean`:
+
+- `LevelInvAt K E d N Φ`: the level invariant of `AssociatorRealign.lean` at one level `N`.
+- `levelInvAt_of_assoc`: one group-like `K`-associator modulo `N` aligns onto every rational
+  associator `Φ` modulo `d ≤ N` (`realign`, one degree at a time along the truncations of `Φ`).
+- `assocU4_succ_of_pentagon_at`: the reduction step of `FurushoReduction.lean` from the invariant
+  at the single level `N = d + 1`. The step never used the levels above `d + 1`.
+- `furushoGroupStep_of_exists_assocK`: `FurushoGroupStep E d` (`d ≥ 3`) from **one** group-like
+  `K`-associator for `E` modulo `d + 1`. This replaces `GroupLikeKAssociatorTower K E` (every level)
+  in `furushoGroupStep_of_tower` by one level.
+- `assocK_of_assocU4`: base change of a rational associator.
+- `furushoGroupStep_iff_exists`: for `d ≥ 3` and any one `Φ₀` satisfying the step's hypotheses,
+  `FurushoGroupStep E d ↔ ∃ Ψ : ℚ⟨X,Y⟩, AssocU4 (d + 1) E Ψ ∧ GL (d + 1) Ψ`.
+
+**What this means for `μ ≠ 0`.** When the step's hypothesis set is non-empty (which it is,
+for example, whenever a rational associator modulo `d` exists and `PentagonLiftVanishes E d`
+holds), the group-level Furusho step at degree `d` **is** the existence of one rational group-like
+associator for `E` modulo `d + 1`. So any proof of the `μ ≠ 0` step, by a weight-filtration
+argument or otherwise, is a proof of that existence statement, and conversely. Classically that
+existence is Drinfeld's theorem (the KZ associator over `ℂ`, then descent, as in
+`rational_associator_of_tower`); no algebraic proof of it is in the repository.
+
+**Why the suggested route does not close, as attempted (scope (a)).** The weight-filtration
+transfer from `E = 1` asks that the `μ`-dependent part of the degree-`d` hexagon defect be
+determined by lower-degree data. By `pentagonHexagonLie_of_three_le` the defect of a
+pentagon-solution is indeed a function of `Φ mod FF d` only (two degree-`d` corrections differ by a
+primitive layer with zero linearised pentagon, hence zero linearised hexagon). But showing that
+function vanishes at a `μ ≠ 0` point needs a comparison object at that `μ`: for `E = 1` it is
+`Ψ = 1`; for `E ≠ 1` the `E = 1` objects cannot serve, because the `GRT₁` action preserves `μ`,
+and rescaling `Φ(sA, sB)` moves `μ` to `sμ` and never to or from `0`. By
+`furushoGroupStep_iff_exists` a comparison object at `μ` modulo `d + 1` is exactly what the step is
+equivalent to. Furusho's Theorem 10 supplies it globally through `Gr^W O(M₁) ≅ O(GRT₁)` [F06,
+6.2.2], which presupposes that `M₁` is a non-empty torsor. This is a negative about the route as
+attempted, not a proof that no algebraic argument exists.
+
+**What is open.** `FurushoGroupStep E d` for `E ≠ 1`, equivalently (given the hypotheses are
+inhabited) `∃ Ψ, AssocU4 (d + 1) E Ψ ∧ GL (d + 1) Ψ` over `ℚ`, by an algebraic argument.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `FurushoSingleLevel.lean` exits 0 with
+no output against the `/home/claude/furov` overlay (which carries `FurushoGroupStep.olean` from
+#9887). `#print axioms` on all six theorems gives `[propext, Classical.choice, Quot.sound]`. No
+`sorry`, no `axiom`, no `native_decide`, no analytic constructs. No `lake build` was run.
