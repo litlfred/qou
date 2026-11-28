@@ -1,0 +1,524 @@
+{
+  "engine": "sympy + mpmath 80-dps",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-28T10:50:58.406484+00:00",
+  "commitSha": "2ac9d3877cdd19f4862a813837089718c8dc2e01",
+  "assertions": [
+    {
+      "name": "five_layer_telescoping_product_identity_75dps",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "QOU.Observations.ConfinementLayerMullikenStoichiometry.five_layer_adiabatic_telescoping_product"
+    },
+    {
+      "name": "five_layer_strict_scale_hierarchy_and_adiabatic_regimes",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Strict 5-layer hierarchy 0 < Delta_4 < Delta_3 < Delta_2 < Delta_1 < Delta_0 and adiabatic eta_k in (0, 1) at the physical proton pin"
+    },
+    {
+      "name": "derived_form_b_rydberg_matches_codata_within_1ppb",
+      "computed": "0.724872210511181",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0",
+      "source": "CODATA-2022 Rydberg constant times hc in eV"
+    },
+    {
+      "name": "protium_dirac_reduced_mass_ionization_within_3ppm_of_nist",
+      "computed": "2.47903990846654",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "3.0",
+      "source": "QOU.Observations.ConfinementLayerMullikenStoichiometry"
+    },
+    {
+      "name": "exact_slater_condon_integrals_match_rational_fractions_75dps",
+      "computed": "4.6816763546921983272e-97",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "QOU.Observations.ConfinementLayerMullikenStoichiometry"
+    },
+    {
+      "name": "fenchel_subgradient_midpoint_and_pplb_convexity_all_H_to_Ne",
+      "computed": "7.4906821675075173234e-96",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-74",
+      "source": "QOU.Observations.ConfinementLayerMullikenStoichiometry.fenchel_subgradient_interval_iff_mulliken_hardness"
+    },
+    {
+      "name": "periodic_kinks_noble_hardness_peaks_Be_gt_B_and_Hund_N_gt_O",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "NIST Atomic Spectra Database periodic ionization/hardness kinks across H..Ne"
+    },
+    {
+      "name": "zero_fit_roothaan_H_to_Ne_ionization_mape_below_9pct",
+      "computed": "6.45901745545",
+      "expected": "6.5",
+      "passed": true,
+      "tolerance": "2.5",
+      "source": "NIST Atomic Spectra Database Z=1..10 first ionization potentials"
+    },
+    {
+      "name": "two_shell_piecewise_hardness_kink_exact_75dps",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "QOU.Observations.ConfinementLayerMullikenStoichiometry"
+    },
+    {
+      "name": "parr_pearson_charge_transfer_completing_square_75dps",
+      "computed": "1.1704190886730495818e-96",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "QOU.Observations.ConfinementLayerMullikenStoichiometry"
+    },
+    {
+      "name": "promoteLayer_two_step_nucleon_charge_and_kernel_lifting_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Observations.ConfinementLayerMullikenStoichiometry"
+    },
+    {
+      "name": "cho_smith_normal_form_unimodular_certificate_diag_1_1_2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Observations.ConfinementLayerMullikenStoichiometry"
+    },
+    {
+      "name": "four_canonical_1d_primitive_stoichiometry_kernels_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Observations.ConfinementLayerMullikenStoichiometry"
+    },
+    {
+      "name": "birch_hessian_sum_of_squares_and_fiber_equilibrium_75dps",
+      "computed": "9.7378868177597725205e-95",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-74",
+      "source": "QOU.Observations.ConfinementLayerMullikenStoichiometry.birch_hessian_quad_form_sum_sq_and_pos"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 463637,
+  "computation": "confinement-layer-mulliken-stoichiometry",
+  "scriptFile": "confinement_layer_mulliken_stoichiometry_probe.py",
+  "scriptHash": "6303815a20fa",
+  "scriptCommitSha": "2ac9d3877cdd19f4862a813837089718c8dc2e01",
+  "precisionMetadata": {
+    "compute_dps": 95,
+    "output_dps": 80,
+    "guard_digits": 15,
+    "truncation_bound": "1e-80"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/confinement_layer_mulliken_stoichiometry_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/confinement_layer_mulliken_stoichiometry_probe.py"
+  },
+  "description": "80-dps zero-fit verification of QOU's 5-layer confinement tower & adiabatic ratios eta_k, zero-parameter Roothaan-Slater-Condon H..Ne ionization / Mulliken electronegativity / Parr-Pearson hardness benchmarks, and unimodular SNF(A_CHO) + Birch Hessian toric stoichiometry (Bean qou-5lct, companion to QOU.Observations.ConfinementLayerMullikenStoichiometry).",
+  "parameters": {
+    "dps": 80,
+    "lean_module": "QOU.Observations.ConfinementLayerMullikenStoichiometry",
+    "upstream_lean_module": "ToricConicOpt.ConfinementLayerTower"
+  },
+  "data": {
+    "five_layer_tower_proton_pin": {
+      "q0": "1.10997858275138080759166909561076887987449912187357873607281424018179896357",
+      "h_q": "0.209060298795639315430846213129674943859757495",
+      "h_q_sq": "0.0437062085325219894020193356773883097682139607",
+      "alpha_inv_form_a": "137.0359993131690075022036578649181983715",
+      "alpha_inv_form_b_derived": "137.0359991269509124201727004964200067400",
+      "alpha_inv_form_c_bloch_b3": "137.0359991736957606848708288816549009370",
+      "mp_model_MeV": "938.2720894273242473639400000000000000000",
+      "delta_nuc_2E0_ord0_MeV": "8.371962726588951793890124317518016820287",
+      "ry_form_b_eV": "13.60569313285238884959853003744661761810",
+      "ry_form_c_eV": "13.60569312357021387721598777771354201456",
+      "ry_form_b_rel_err_ppb": "0.724872210511181",
+      "ry_form_c_rel_err_ppb": "0.0426449334092051",
+      "e_hbond_2h2o_pure_bohr_eV": "0.3964355075292992764382540924001614789970",
+      "e_hbond_2h2o_OH_ref_eV": "0.4167442964131738012888246410747110740259",
+      "eta_0_form_b": "0.007297352566996606733739295319743013923484",
+      "eta_1_model_2E0_over_mp": "0.008922745140696651845328071616320773532348",
+      "eta_1_12C_AME_over_mp": "0.008185413044405474723053872838705470410788",
+      "eta_2_model_Ry_over_2E0": "0.000001625149750086841701610413667698807661256",
+      "eta_2_Ry_over_12C_AME": "0.000001771541271872978648032034453810494351643",
+      "eta_3_pure_bohr_2h2_over_3": "0.02913747235501465960134622378492553984548",
+      "eta_3_H2O_hbond_over_Ry": "0.03063014080531483581932820383449242675436",
+      "log_q0_eta_0": "-47.1555462104700914323313554378",
+      "log_q0_eta_1_model": "-45.2282830143917987802520994793",
+      "log_q0_eta_2_model": "-127.753676145891037172797931200",
+      "log_q0_eta_3_H2O": "-33.4075780816885917189290095896",
+      "telescoping_product_pure": "0.00000000000308325239673625864568087535861045444641245660",
+      "ns_crust_qou_scored": {
+        "E_Fe_star_MeV": "0.836432879424691707290965643900",
+        "T_Fe_star_MeV": "0.325433928734691707290965643900",
+        "p_Fe_star_MeV_c": "0.662193351051186412120331276091",
+        "n_e_star_cm3": "1.27636250128955371916094501669e+30"
+      },
+      "ns_crust_codata_validation": {
+        "E_Fe_star_MeV": "1.29333251000000000000000000000",
+        "T_Fe_star_MeV": "0.782333559310000000000000000000",
+        "p_Fe_star_MeV_c": "1.18810313265163098320124496639",
+        "n_e_star_cm3": "7.37194373741006735899281672638e+30"
+      },
+      "anchor_note": "Evaluated strictly at physical_proton per 2026-11-28 owner ruling (muon pin on hold until rederivation)."
+    },
+    "layer3_zero_fit_atomic_benchmarks": {
+      "protium_dirac_reduced_mass_I1_eV": "13.598468310764065333528655518264887",
+      "protium_dirac_rel_err_ppm": "2.47903990846654",
+      "helium_kellner_217_128_Ry_eV": "23.065901639288815471585007954108719",
+      "roothaan_H_to_Ne_I1_MAPE_pct": "6.45901745544667",
+      "elements_Z1_to_10": [
+        {
+          "element": "H",
+          "Z": 1,
+          "E_neutral_Ha": "-0.50000000000000000000000000000000000",
+          "I1_QOU_FormB_eV": "13.605693132852388849598530037446618",
+          "I1_NIST_eV": "13.598434599702",
+          "I1_rel_err_pct": "0.05337771121",
+          "A_ea_variational_eV": "-0.3313142450022557597445958",
+          "A_ea_HVZ_detachment_eV": "0.0",
+          "A_ea_NIST_eV": "0.754195",
+          "chi_Mulliken_QOU_HVZ_eV": "6.80284656642619442479926501872",
+          "chi_Mulliken_QOU_var_eV": "6.63718944392506654492696712995",
+          "chi_Mulliken_NIST_HVZ_eV": "7.17631479985100",
+          "eta_ParrPearson_QOU_HVZ_eV": "13.6056931328523888495985300374",
+          "eta_ParrPearson_QOU_var_eV": "13.9370073778546446093431258150",
+          "eta_ParrPearson_NIST_raw_eV": "12.8442395997020",
+          "noble_closure": false
+        },
+        {
+          "element": "He",
+          "Z": 2,
+          "E_neutral_Ha": "-2.8616726261795157540747387365071555",
+          "I1_QOU_FormB_eV": "23.447306665555042065720350984393695",
+          "I1_NIST_eV": "24.587389011",
+          "I1_rel_err_pct": "-4.636858126",
+          "A_ea_variational_eV": "-0.0000001875036828560478705242454",
+          "A_ea_HVZ_detachment_eV": "0.0",
+          "A_ea_NIST_eV": "-0.50",
+          "chi_Mulliken_QOU_HVZ_eV": "11.7236533327775210328601754922",
+          "chi_Mulliken_QOU_var_eV": "11.7236532390256796048362402301",
+          "chi_Mulliken_NIST_HVZ_eV": "12.2936945055000",
+          "eta_ParrPearson_QOU_HVZ_eV": "23.4473066655550420657203509844",
+          "eta_ParrPearson_QOU_var_eV": "23.4473068530587249217682215086",
+          "eta_ParrPearson_NIST_raw_eV": "25.0873890110000",
+          "noble_closure": true
+        },
+        {
+          "element": "Li",
+          "Z": 3,
+          "E_neutral_Ha": "-7.4322338725736095158519473469936218",
+          "I1_QOU_FormB_eV": "5.3285723832802890954042787614221627",
+          "I1_NIST_eV": "5.39171495",
+          "I1_rel_err_pct": "-1.171103578",
+          "A_ea_variational_eV": "-0.1283811553994712556040446",
+          "A_ea_HVZ_detachment_eV": "0.0",
+          "A_ea_NIST_eV": "0.618049",
+          "chi_Mulliken_QOU_HVZ_eV": "2.66428619164014454770213938071",
+          "chi_Mulliken_QOU_var_eV": "2.60009561394040891990011705816",
+          "chi_Mulliken_NIST_HVZ_eV": "3.00488197500000",
+          "eta_ParrPearson_QOU_HVZ_eV": "5.32857238328028909540427876142",
+          "eta_ParrPearson_QOU_var_eV": "5.45695353867976035100832340653",
+          "eta_ParrPearson_NIST_raw_eV": "4.77366595000000",
+          "noble_closure": false
+        },
+        {
+          "element": "Be",
+          "Z": 4,
+          "E_neutral_Ha": "-14.572390033378078955561716469424128",
+          "I1_QOU_FormB_eV": "8.0513556209655017975790220039382431",
+          "I1_NIST_eV": "9.322699",
+          "I1_rel_err_pct": "-13.63707419",
+          "A_ea_variational_eV": "-0.09693597776171290456808287",
+          "A_ea_HVZ_detachment_eV": "0.0",
+          "A_ea_NIST_eV": "-0.50",
+          "chi_Mulliken_QOU_HVZ_eV": "4.02567781048275089878951100197",
+          "chi_Mulliken_QOU_var_eV": "3.97720982160189444650546956451",
+          "chi_Mulliken_NIST_HVZ_eV": "4.66134950000000",
+          "eta_ParrPearson_QOU_HVZ_eV": "8.05135562096550179757902200394",
+          "eta_ParrPearson_QOU_var_eV": "8.14829159872721470214710487885",
+          "eta_ParrPearson_NIST_raw_eV": "9.82269900000000",
+          "noble_closure": false
+        },
+        {
+          "element": "B",
+          "Z": 5,
+          "E_neutral_Ha": "-24.526991557466012436017208027838901",
+          "I1_QOU_FormB_eV": "7.8794248797913780526135651268258660",
+          "I1_NIST_eV": "8.298019",
+          "I1_rel_err_pct": "-5.044506649",
+          "A_ea_variational_eV": "-0.4568440202186703082394434",
+          "A_ea_HVZ_detachment_eV": "0.0",
+          "A_ea_NIST_eV": "0.279723",
+          "chi_Mulliken_QOU_HVZ_eV": "3.93971243989568902630678256341",
+          "chi_Mulliken_QOU_var_eV": "3.71129042978635387218706088444",
+          "chi_Mulliken_NIST_HVZ_eV": "4.28887100000000",
+          "eta_ParrPearson_QOU_HVZ_eV": "7.87942487979137805261356512683",
+          "eta_ParrPearson_QOU_var_eV": "8.33626890001004836085300848477",
+          "eta_ParrPearson_NIST_raw_eV": "8.01829600000000",
+          "noble_closure": false
+        },
+        {
+          "element": "C",
+          "Z": 6,
+          "E_neutral_Ha": "-37.663015434824080830875521537292235",
+          "I1_QOU_FormB_eV": "10.853073807810549749297161929181641",
+          "I1_NIST_eV": "11.260296",
+          "I1_rel_err_pct": "-3.616443051",
+          "A_ea_variational_eV": "0.3650210800198579788892605",
+          "A_ea_HVZ_detachment_eV": "0.3650210800198579788892605",
+          "A_ea_NIST_eV": "1.262118",
+          "chi_Mulliken_QOU_HVZ_eV": "5.60904744391520386409321119000",
+          "chi_Mulliken_QOU_var_eV": "5.60904744391520386409321119000",
+          "chi_Mulliken_NIST_HVZ_eV": "6.26120700000000",
+          "eta_ParrPearson_QOU_HVZ_eV": "10.4880527277906917704079014784",
+          "eta_ParrPearson_QOU_var_eV": "10.4880527277906917704079014784",
+          "eta_ParrPearson_NIST_raw_eV": "9.99817800000000",
+          "noble_closure": false
+        },
+        {
+          "element": "N",
+          "Z": 7,
+          "E_neutral_Ha": "-54.368130265659762077204405940040778",
+          "I1_QOU_FormB_eV": "13.976714285501010136256443773295319",
+          "I1_NIST_eV": "14.53413",
+          "I1_rel_err_pct": "-3.835218995",
+          "A_ea_variational_eV": "-2.446702905680620106632085",
+          "A_ea_HVZ_detachment_eV": "0.0",
+          "A_ea_NIST_eV": "-0.07",
+          "chi_Mulliken_QOU_HVZ_eV": "6.98835714275050506812822188665",
+          "chi_Mulliken_QOU_var_eV": "5.76500568991019501481217942047",
+          "chi_Mulliken_NIST_HVZ_eV": "7.26706500000000",
+          "eta_ParrPearson_QOU_HVZ_eV": "13.9767142855010101362564437733",
+          "eta_ParrPearson_QOU_var_eV": "16.4234171911816302428885287056",
+          "eta_ParrPearson_NIST_raw_eV": "14.6041300000000",
+          "noble_closure": false
+        },
+        {
+          "element": "O",
+          "Z": 8,
+          "E_neutral_Ha": "-74.766942194180670121612906343604419",
+          "I1_QOU_FormB_eV": "11.831544921735858114867599043545437",
+          "I1_NIST_eV": "13.618055",
+          "I1_rel_err_pct": "-13.11868749",
+          "A_ea_variational_eV": "-0.9479131852213183403054995",
+          "A_ea_HVZ_detachment_eV": "0.0",
+          "A_ea_NIST_eV": "1.461112",
+          "chi_Mulliken_QOU_HVZ_eV": "5.91577246086792905743379952177",
+          "chi_Mulliken_QOU_var_eV": "5.44181586825726988728104978562",
+          "chi_Mulliken_NIST_HVZ_eV": "7.53958350000000",
+          "eta_ParrPearson_QOU_HVZ_eV": "11.8315449217358581148675990435",
+          "eta_ParrPearson_QOU_var_eV": "12.7794581069571764551730985158",
+          "eta_ParrPearson_NIST_raw_eV": "12.1569430000000",
+          "noble_closure": false
+        },
+        {
+          "element": "F",
+          "Z": 9,
+          "E_neutral_Ha": "-99.355128169415308967782105087701112",
+          "I1_QOU_FormB_eV": "15.590335007959237981379518159733282",
+          "I1_NIST_eV": "17.42282",
+          "I1_rel_err_pct": "-10.51772900",
+          "A_ea_variational_eV": "0.8250994462611560688935815",
+          "A_ea_HVZ_detachment_eV": "0.8250994462611560688935815",
+          "A_ea_NIST_eV": "3.401190",
+          "chi_Mulliken_QOU_HVZ_eV": "8.20771722711019702513654981840",
+          "chi_Mulliken_QOU_var_eV": "8.20771722711019702513654981840",
+          "chi_Mulliken_NIST_HVZ_eV": "10.4120050000000",
+          "eta_ParrPearson_QOU_HVZ_eV": "14.7652355616980819124859366827",
+          "eta_ParrPearson_QOU_var_eV": "14.7652355616980819124859366827",
+          "eta_ParrPearson_NIST_raw_eV": "14.0216300000000",
+          "noble_closure": false
+        },
+        {
+          "element": "Ne",
+          "Z": 10,
+          "E_neutral_Ha": "-128.47891162175269837201978521495943",
+          "I1_QOU_FormB_eV": "19.632534959873543704219970369740182",
+          "I1_NIST_eV": "21.564540",
+          "I1_rel_err_pct": "-8.959175759",
+          "A_ea_variational_eV": "-0.0000001126534444090804073053336",
+          "A_ea_HVZ_detachment_eV": "0.0",
+          "A_ea_NIST_eV": "-1.20",
+          "chi_Mulliken_QOU_HVZ_eV": "9.81626747993677185210998518487",
+          "chi_Mulliken_QOU_var_eV": "9.81626742361004964756978153220",
+          "chi_Mulliken_NIST_HVZ_eV": "10.7822700000000",
+          "eta_ParrPearson_QOU_HVZ_eV": "19.6325349598735437042199703697",
+          "eta_ParrPearson_QOU_var_eV": "19.6325350725269881133003776751",
+          "eta_ParrPearson_NIST_raw_eV": "22.7645400000000",
+          "noble_closure": true
+        }
+      ],
+      "sanderson_parr_charge_transfer_pairs": [
+        {
+          "pair": "Li-F",
+          "delta_N_star_electrons_A_to_B": "0.275877576348359958974242878465",
+          "stabilization_energy_eV": "-0.764654159359878753080146025202"
+        },
+        {
+          "pair": "H-F",
+          "delta_N_star_electrons_A_to_B": "0.0495179652315665013697204515312",
+          "stabilization_energy_eV": "-0.0347831682652991502974864103757"
+        },
+        {
+          "pair": "C-O",
+          "delta_N_star_electrons_A_to_B": "0.0137424079846363869367289112770",
+          "stabilization_energy_eV": "-0.00210757016102943092073915644410"
+        }
+      ]
+    },
+    "layer4_smith_and_birch_stoichiometry": {
+      "composite_nucleon_stoichiometry_matrix_rows": [
+        [
+          6,
+          2,
+          16,
+          14,
+          22,
+          10,
+          10
+        ],
+        [
+          6,
+          0,
+          16,
+          14,
+          22,
+          8,
+          6
+        ]
+      ],
+      "cho_smith_invariant_factors": [
+        1,
+        1,
+        2
+      ],
+      "cho_smith_U": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          2
+        ]
+      ],
+      "cho_smith_V": [
+        [
+          1,
+          -1,
+          0,
+          2,
+          1,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          -1,
+          0,
+          0,
+          -1,
+          -2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          -2,
+          -2,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "birch_equilibrium_x_star": {
+        "C": "0.340343154836415572962507763257793497506961123",
+        "H2": "2.05578056924697692949672649804217131337424420",
+        "O2": "4.94543004361446096897650313737286761460725914e-21",
+        "CO": "0.714828657732821403194144527878678666750922591",
+        "CO2": "0.807652071593920393494846631950829849042400294",
+        "H2O": "1.66986719907933780980627134813243271322632382",
+        "CH4": "0.137176115836842630348501076912697986699715993"
+      },
+      "birch_hessian_sos_max_err": "2.996272867003006929379744e-95"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
