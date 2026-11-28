@@ -50,6 +50,26 @@ Readings:
 * Ordering on closure ∪ axis: e 0 < μ 6.35 < τ 9.50. No mass rule has been fixed, so this is not
   scored (owner: "Derive the reading first").
 
+## 4. Where `i` enters the pipeline (Lean, sorry-free)
+
+`QOU/Observations/LeptonMassAtI.lean`, following the owner's 02:09Z direction ("group action before
+the trace; track the imaginary part").
+
+1. **Before the trace.** The standard 2-dimensional Hecke block, with `T₀ = [[q,1],[0,−q⁻¹]]` and
+   `T₁ = [[−q⁻¹,0],[1,q]]` (quadratic and braid relations proved), becomes unipotent at `q = i`
+   after the framing normalisation `q⁻¹`. Conjugation by `diag(1, i)` turns it, word by word, into
+   the integer `B₃ → SL(2, ℤ)` image (`conj_word`). So the cat-map action *is* the pre-trace block
+   at `q = i`. The two choices `±i` give the same integers (`conj_gen_neg`). The `√−1` choice lives
+   only in the conjugator, which is the same one bit as the `G_m` orientation (#9944).
+2. **The trace.** Every N = 2 ring mass has the factor `q² + 1 = q·[2]_q`, which vanishes at
+   `q = i`, so all masses vanish there. For the reduced masses `J = m/(q²+1)` at `q = i`, Lean gives
+   `J_e = −2`, `J_μ = 4` and `J_τ = −8`. These equal `∓(2 − tr img β)`, with traces 0, 6 and 10, and
+   they are the link determinants (Hopf 2, T(2,4) 4, Whitehead 8, via the standard
+   `V(−1) = ±det`, which is not formalised here).
+3. **Ratios at `q = i`:** `J_μ/J_e = J_τ/J_μ = −2`, so the ladder doubles. This is the one point
+   where the pre-trace group action fixes the mass ratios exactly. It is a value at `q = i`, not at
+   `q₀`, and does not give 206.77.
+
 ## Open
 
 * The muon pin (bean): derive `m_μ/m_e` from the axioms. Level one is excluded (§1).
