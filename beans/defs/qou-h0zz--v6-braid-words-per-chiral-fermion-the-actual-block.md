@@ -438,3 +438,7 @@ Matter = EVEN exterior part Λ⁰⊕Λ²⊕Λ⁴ = 1⊕10⊕5̄ (Spin(10) 16); o
 ## 2026-11-28 — sign consolidated; n = 5 conditional (PR #9811, commit after e22a176a6c7)
 - `ChiralitySignIsHyperchargeSign.lean`: matter-part sign and the α = ±1/6 root are ONE sign (even at −α = odd at α). Colour + electric charge blind (toggle neutral strand 4 is a Q-preserving bijection even→odd); hypercharge Y0 sees it. Sign value still open.
 - `StrandCountFromBring.lean`: conditional — if strand relabellings ≅ Bring's S5 then n = 5; colour 3 ⇒ isospin 2. Open: why relabellings are Bring's symmetries; why 3 colour.
+
+## 2026-11-28 — genus route for n = 5; linking negative (PR #9811)
+- `strandCount_of_genus`: if n−1 traceless charges = Bring's g holomorphic differentials, χ = −6 ⇒ g = 4 ⇒ n = 5 (second route, independent of |S5|). Hypothesis open; compatible with H⁰(Ω) = std⊗sgn (qou-efxy).
+- `LinkingDoesNotFixCharge` scope (a): proton/4₁ both linkSum 0, charges +1/0 ⇒ Q not a function of lk; mirror negates lk (P-type) vs open C-type sign. Sign still open.
