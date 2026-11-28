@@ -34,3 +34,9 @@ This is a comparison, not a choice. Position-blindness is a structural property 
 bar-odd rule (cited invariant `skein_scalar`). It does not show that the bar-odd rule
 is the physical one. Adopting a rule is a definition and needs Carl's call. Both
 readings stay as labelled fallbacks.
+
+## Ruling (2026-11-28, 01:09Z)
+
+Carl tapped *"Bar-odd (Form B), θ as fallback"*. The signed bar-odd join is the
+rule; the bar-even (θ-graph) reading is the labelled fallback. Recorded in
+[`owner-rulings.md`](../coordination/owner-rulings.md). The measure is unaffected.
