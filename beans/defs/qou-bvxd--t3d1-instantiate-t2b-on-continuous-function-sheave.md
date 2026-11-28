@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-12T20:38:54Z
-updated_at: 2026-11-28T00:30:00Z
+updated_at: 2026-11-28T00:10:00Z
 parent: qou-533l
 ---
 
@@ -57,3 +57,8 @@ Still open: avoidance after refinement for an arbitrary cocycle (needs a fine-co
 - PR #9842, MathlibExt/CechChernClassH2.lean: c₁ as a class in H2 U C(-,ℤ) and in the colimit Ȟ² over open covers. Lift independence, gauge invariance (Chern cochains of hγh⁻¹ and γ are equal for h = exp(is)), [c₁] = 1 iff a real-cocycle logarithm exists, additivity, Kummer with closed quotient θ (C(T,ℤ) has no n-torsion), open covers directed by pairwise intersection, and c₁ = 0 in Ȟ² iff a real-cocycle log exists on an open refinement.
 - PR #9850, QOU/Transcendental/MathlibExt/ContSheafTorsor.lean: item 4(c) for sheaf torsors. C(-,G) is a sheaf on Opens X; C(-,G)-torsors trivialised on an open cover ↔ G-valued 1-cocycles (cocycleTorsor + descentIso); a trivialised U(1)-torsor with local real lifts reduces to a C(-,ℝ)-torsor iff its Chern cochain is an integer coboundary.
 Still open: (a') real lifts after refinement for an arbitrary cocycle (needs paracompactness or a Lebesgue-number argument); Ȟ²(X; C(-,ℤ)) ≅ H²(X; ℤ); FiberBundle comparison; (d) c₁ = e = χ, Poincaré–Hopf.
+
+## 2026-11-28 (same thread): item 4(a′) closed on paracompact spaces
+
+PR #9857 (merged), QOU/Transcendental/MathlibExt/CechRealLiftRefinement.lean: exists_refinement_isRealLift. On a paracompact Hausdorff space every U(1)-cocycle on an open cover has a local real lift on an open refinement x ↦ W_x ∋ x. The proof is the Godement/Serre argument: a locally finite closed shrinking, then factoring through a common closed piece. #9842 and #9850 merged too.
+Still open: (i) independence of [c₁] ∈ Ȟ² from the chosen refinement (needs real lifts of 0-cochains after refinement); (ii) Ȟ²(X; C(-,ℤ)) ≅ H²(X; ℤ); (iii) FiberBundle comparison; (iv) c₁ = e = χ (Poincaré–Hopf).
