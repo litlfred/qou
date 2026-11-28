@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:rh-surreal-bound",
   title:
-    "Surreal bound for the Riemann hypothesis: why $\\delta = 0$ on the critical line",
+    "A surreal heuristic for the Riemann hypothesis, and why it is not a proof",
   interprets: "thm:quantum-gap-collapse",
   uses: [
     "conj:classical-riemann-hypothesis",
