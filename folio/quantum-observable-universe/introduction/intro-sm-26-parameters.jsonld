@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-intro-sm-26-parameters",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:intro-sm-26-parameters",
+  "kind": "table",
+  "title": "Summary of the 26 Standard Model parameters (including massive neutrinos)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/app-standard-model",
+    "papers/quantum-observable-universe/blocks/prose-sm-params-intro",
+    "papers/quantum-observable-universe/blocks/def-three-calibration-discipline",
+    "papers/quantum-observable-universe/blocks/rem-epistemic-status-of-calibrations",
+    "papers/quantum-observable-universe/blocks/prop-em-coupling-fixed-point",
+    "papers/quantum-observable-universe/blocks/conj-weinberg-angle-categorical",
+    "papers/quantum-observable-universe/blocks/conj-electroweak-higgs-torus-link-triplet",
+    "papers/quantum-observable-universe/blocks/chap-observations"
+  ],
+  "cites": [
+    "references/codata2022",
+    "references/pdg2024"
+  ],
+  "tags": [
+    "introduction",
+    "standard-model",
+    "parameters",
+    "summary-table"
+  ],
+  "text": "intro-sm-26-parameters.md",
+  "provenance": "authored"
+}

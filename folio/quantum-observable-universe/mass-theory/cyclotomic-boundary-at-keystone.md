@@ -122,15 +122,22 @@ $r$ cells on antidiagonal $j$, whose $j+1$ positions are all addable corners of 
 top coefficient of $S(n)$ is $\binom{j+1}{r}$. Let $d_k$ be the antidiagonal of the $k$-th cell in
 this filling. The top degrees of $S(n-1)$ and $[n-1]_qS(n-2)$ lie below that of $S(n)$ by
 $n-1-d_n \ge 2$ and by $n-1-d_n-d_{n-1}$, which is $\ge 1$ for $n \ge 7$. Hence, for $n \ge 7$,
-$$\operatorname{lead}(P_n) = \binom{j+1}{r}.$$
 
-*The divisibility test.* If $P_n = c\,q^k\prod\Phi_{k_i}$, then $c = \operatorname{lead}(P_n)$
+$$
+\mathrm{lead}(P_n) = \binom{j+1}{r}.
+$$
+
+*The divisibility test.* If $P_n = c\,q^k\prod\Phi_{k_i}$, then $c = \mathrm{lead}(P_n)$
 divides every coefficient of $P_n$, because each $\Phi_k$ is monic in $\mathbb Z[q]$.
 
 *Second coefficient.* The shapes with $\sum(i+j)$ one above the minimum are of two kinds: one
 cell moved from antidiagonal $j$ to $j+1$, or one cell moved from $j-1$ to $j$. Counting them
 gives, whenever the gap $n-1-d_n-d_{n-1}$ is $\ge 2$ (true for $n \ge 9$),
-$$a_1(P_n) = N_1 = 2\binom{j}{r-2} + j\binom{j-1}{r-3} + j\binom{j-1}{r+1}.$$
+
+$$
+a_1(P_n) = N_1 = 2\binom{j}{r-2} + j\binom{j-1}{r-3} + j\binom{j-1}{r+1}.
+$$
+
 This agrees with the exact $P_n$ for $9 \le n \le 24$.
 
 * $n = T_{j+1} - 1$ ($r = j$), every $j \ge 3$: $N_1 = j^2(j-1)/2$, and
@@ -143,7 +150,11 @@ This agrees with the exact $P_n$ for $9 \le n \le 24$.
 *The power-sum test.* If $P = c\,q^k\prod\Phi_{k_i}$ has degree $d$, then over $\mathbb C$
 every root of $P$ is $0$ or a root of unity. Writing $a_1, a_2$ for the coefficients of
 $q^{d-1}, q^{d-2}$, Vieta gives $a_1^2 - 2c\,a_2 = c^2\sum_z z^2$, so
-$$\bigl|a_1^2 - 2c\,a_2\bigr| \le c^2 d .$$
+
+$$
+\bigl|a_1^2 - 2c\,a_2\bigr| \le c^2 d .
+$$
+
 This is sharper than divisibility when $c = 1$.
 
 *Third coefficient at triangular $n$.* Let $n = T_{j+1}$ with $j \ge 3$. The minimiser of
@@ -156,11 +167,19 @@ A shape that removes a cell from antidiagonal $j-1$ must also remove its two nei
 antidiagonal $j$, which costs at least $4$. So these shapes remove two corners from antidiagonal
 $j$ and add two cells on antidiagonal $j+1$ that do not rest on a removed corner. Two adjacent
 corners block $3$ of the $j+2$ positions, and two non-adjacent corners block $4$. Hence
-$$a_2 = j + j\binom{j-1}{2} + \Bigl(\binom{j+1}{2} - j\Bigr)\binom{j-2}{2}
-      = j + \frac{j(j-1)^2(j-2)}{4}.$$
+
+$$
+a_2 = j + j\binom{j-1}{2} + \Bigl(\binom{j+1}{2} - j\Bigr)\binom{j-2}{2}
+      = j + \frac{j(j-1)^2(j-2)}{4}.
+$$
+
 The degree is $d = 2\bigl(\binom n2 - \sum_{k \le j} k(k+1)\bigr) = j(j+1)(j+2)(3j+1)/12$.
 Therefore
-$$a_1^2 - 2a_2 - d = \frac{j(j-1)(3j^2 + 41j + 14)}{12} > 0 ,$$
+
+$$
+a_1^2 - 2a_2 - d = \frac{j(j-1)(3j^2 + 41j + 14)}{12} > 0 ,
+$$
+
 and the power-sum test fails. **For every triangular $n \ge 10$, $D(n)$ is not cyclotomic.**
 The formulas for $c, a_1, a_2, d$ agree with the exact $P_n$ for $n = 10, 15, 21, 28$, and with
 the near-staircase partition count for every triangular $n \le 91$.
@@ -217,8 +236,9 @@ every $n \in \{T_j + 1, T_{j+1} - 1\}$ with $j \ge 4$.
 
 *Third coefficient for general $r$.* For $n = T_j + r$ with $1 \le r \le j+1$ and $n \ge 10$, the
 same count gives $a_2$ as a sum of four kinds of term:
-```tex
-\[\begin{aligned}
+
+$$
+\begin{aligned}
 a_2 ={}& \binom{j+1}{r}(r-1) + j\binom{j-1}{r}
   && \text{(corners of the minimisers)}\\
 &+ 3\binom{j-1}{r-4} + 3(j-1)\binom{j-2}{r-5} + \Bigl(\binom j2 - j + 1\Bigr)\binom{j-3}{r-6}
@@ -227,12 +247,21 @@ a_2 ={}& \binom{j+1}{r}(r-1) + j\binom{j-1}{r}
   && \text{(one corner of } \delta_j \text{ moved up two)}\\
 &+ \Bigl(\binom j2 - j + 1\Bigr)\binom{j-3}{r+2} + (j-1)\binom{j-2}{r+2}
   && \text{(two corners of } \delta_j \text{ moved up one)}.
-\end{aligned}\]
-```
+\end{aligned}
+$$
+
 This agrees with the exact partition count for every $10 \le n \le 91$. With $c = \binom{j+1}{r}$,
-$$\frac{a_1}{c} = -4j - 2 + \frac{2r(j-r)}{j+1} + \frac{j(j+2)}{r+1} + \frac{(j+2)^2}{j-r+2}.$$
+
+$$
+\frac{a_1}{c} = -4j - 2 + \frac{2r(j-r)}{j+1} + \frac{j(j+2)}{r+1} + \frac{(j+2)^2}{j-r+2}.
+$$
+
 Writing $B = r+1$, $C = j-r+2$ and $A = j+1 = B + C - 2$, this is
-$$\frac{a_1}{c} = j - 2r + 1 + \frac{(C-1)(C-3)}{B} + \frac{(B-1)^2}{C} - \frac{2(C-1)(C-2)}{A},$$
+
+$$
+\frac{a_1}{c} = j - 2r + 1 + \frac{(C-1)(C-3)}{B} + \frac{(B-1)^2}{C} - \frac{2(C-1)(C-2)}{A},
+$$
+
 so $c \mid a_1$ exactly when the last three fractions sum to an integer.
 The power-sum test needs $c \mid a_1$ and then $c \mid 2a_2$. For non-triangular $n$ ($r \le j$)
 and $j \le 400000$, $c \mid a_1$ happens only at
@@ -267,12 +296,22 @@ hook power sums through contents ($\sum h^2 = \sum c^2 + n^2$ and
 $\sum h^4 = \sum c^4 + 12n\sum c^2 + n^2 - 12(\sum c)^2$), and summing content power sums over
 $\lambda$ with weight $f^\lambda$ through Jucys–Murphy elements and square-root counts gives,
 with $x = I_{n-8}$, $y = I_{n-9}$ (involution numbers) and $c = (n-1)(n-2)(n-3)$,
-$$6d_2 = c\,(n-6)(n^2-13)\,x + 2c\,(n-8)(n-5)(2n-5)\,y,$$
-$$1080\,d_4 = c\,(n-6)\,Q_5(n)\,x + 2c\,(n-8)(n-5)\,Q_4(n)\,y,$$
+
+$$
+\begin{aligned}
+6d_2 &= c\,(n-6)(n^2-13)\,x + 2c\,(n-8)(n-5)(2n-5)\,y,\\
+1080\,d_4 &= c\,(n-6)\,Q_5(n)\,x + 2c\,(n-8)(n-5)\,Q_4(n)\,y,
+\end{aligned}
+$$
+
 with $Q_5 = 10n^5 - 51n^4 - 86n^3 + 774n^2 - 536n - 1695$ and
 $Q_4 = 20n^4 - 157n^3 + 419n^2 - 333n - 219$. These agree with the exact $D(n)$ for
 $9 \le n \le 24$. If $d_2 \mid 24d_4$, then $d_2$ divides $\Delta(n)\,x$ and $\Delta(n)\,y$, where
-$$\Delta(n) = -2(n-8)(n-7)(n-6)(n-5)(n-4)\,c^2\,(5n^3 - 21n^2 - 101n + 201).$$
+
+$$
+\Delta(n) = -2(n-8)(n-7)(n-6)(n-5)(n-4)\,c^2\,(5n^3 - 21n^2 - 101n + 201).
+$$
+
 No odd prime divides both $I_m$ and $I_{m-1}$ (since $I_{m+p} \equiv I_m \pmod p$ and
 $I_0 = I_1 = 1$), so the odd part of $d_2$ divides $\Delta(n)$. It does not for any
 $9 \le n \le 3000$, so the test excludes all of these

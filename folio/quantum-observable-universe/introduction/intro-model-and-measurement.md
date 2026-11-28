@@ -15,16 +15,15 @@ of freedom of the first cohomology of the genus-four state space
 [three calibration inputs](#conj:three-calibration-inputs)):
 
 - the electron mass $m_e$ fixes the unit of mass, the *scale*;
-- the neutron $\beta$-decay channel fixes the aether parameter
-  $q_0$, the *modulus*. Its ideal proxy is the muon-to-electron mass
-  ratio, through the figure-eight relation
-  $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$. Because the modulus is
-  overdetermined, the computed values read its numerical value off the
-  most precisely measured mass ratio available, $m_{\mathfrak{p}}/m_e$,
-  and at that pin the muon ratio becomes a prediction
-  ([which pin the numbers use](#rem:epistemic-status-of-calibrations));
-- the pion channel fixes the one remaining *orthogonal* class, the
-  meson scale.
+- the proton-to-electron mass ratio $m_{\mathfrak{p}}/m_e$ fixes the
+  aether parameter $q_0 \approx 1.10997858$, the *modulus* (the
+  figure-eight muon-ratio relation
+  $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ is held on hold pending
+  rederivation on the two-component lepton link ladder, so $m_\mu/m_e$
+  is scored as a forward comparison at $q_0$;
+  [which pin the numbers use](#rem:epistemic-status-of-calibrations));
+- the charged-pion mass $m_{\pi^\pm}$ fixes the one remaining
+  *orthogonal* class, the meson scale.
 
 Nothing else is fitted. In particular no object — a knot, a partition,
 a truncation order — is chosen because it reproduces a measured value;
@@ -45,3 +44,7 @@ reports every residual against that standard, including the misses,
 which at present are the majority. A derived quantity that misses is
 reported as a miss rather than tuned away, because only an untuned
 model can be corrected by what its errors teach.
+[Table](#tbl:intro-sm-26-parameters) groups all twenty-six parameters of
+the Standard Model (including massive neutrinos) against these three
+calibration pins, recording which relations are proved algebraically,
+which are conditional on named hypotheses, and which are open.

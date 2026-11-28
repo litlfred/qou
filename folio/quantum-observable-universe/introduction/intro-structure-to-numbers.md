@@ -68,8 +68,8 @@ algorithm ([derivation chain](#prose:pre-archimedean-derivation-chain)).
 >
 > The first three steps of the miniature are identities in $\mathbb{Q}(q)$ and involve no measurement.
 > The figure-eight word $V^2$ gives $(h^4 + 3h^2 + 1)/(h^2+4)$ by the same
-> route. Every value above is computed exactly by
-> `computations/intro/intro_worked_miniature_h3.py`.
+> route. Every value above is obtained by exact rational arithmetic in
+> $\mathbb{Q}(q)$ specialised at $q_0$.
 
 The order matters. The categorical steps fix *shapes* — which knots,
 which blocks, which weights — without reference to any measurement;

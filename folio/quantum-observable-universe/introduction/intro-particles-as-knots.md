@@ -68,9 +68,10 @@ category with $\sigma_i^2 \neq 1$ and testing whether dimensionless
 invariants can be read off closed braids through a Markov trace. Four
 scope boundaries fix what is and is not claimed: every Frobenius object
 used in the construction has finite rank; the proton-to-electron ratio
-$m_{\mathfrak{p}}/m_e$ serves as the numerical pin that fixes the
-evaluation point $q_0$, not as a derived output (the ideal calibration
-proxy for the same modulus is $m_\mu/m_e$;
+$m_{\mathfrak{p}}/m_e$ serves as the active calibration pin that fixes
+the evaluation point $q_0$, not as a derived output (the figure-eight
+muon-ratio relation $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ is held on
+hold pending rederivation on the two-component lepton link ladder;
 [which pin the numbers use](#rem:epistemic-status-of-calibrations)); the overall magnitude
 of nuclear binding energies is open; and a derivation of the
 fermion generation count from Bring's curve is not established. How far
@@ -110,6 +111,11 @@ $H_3(q)$ ([pair production](#prop:gamma-gamma-generates-particles)).
 The embeddability bound on the genus-four surface keeps the operator
 content at exactly that six-dimensional algebra, so the list of
 elementary interactions is finite.
+[Table](#tbl:intro-gg-hadron-highlights) summarises the resulting
+two-photon hadron and nuclear-junction invariants evaluated at $q_0$,
+and [Table](#tbl:intro-eightfold-status) records which Eightfold Way and
+first-generation multiplet statements are proved over generic
+commutative rings and which rest on assumed or open inputs.
 
 One object recurs at the framework's hardest edges: an obstruction
 class, the precise measure of when local data fails to extend

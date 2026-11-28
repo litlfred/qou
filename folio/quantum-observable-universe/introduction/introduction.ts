@@ -52,6 +52,8 @@ export default chapter({
           label: "sec:introduction-state-space-knots",
           blocks: [
             "intro-particles-as-knots",
+            "intro-gg-hadron-highlights",
+            "intro-eightfold-status",
           ],
         }),
         section({
@@ -66,6 +68,7 @@ export default chapter({
           label: "sec:introduction-mathematics-measurement",
           blocks: [
             "intro-model-and-measurement",
+            "intro-sm-26-parameters",
           ],
         }),
       ],
