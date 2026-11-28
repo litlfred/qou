@@ -32,7 +32,9 @@ $$
 \frac{m_\mu}{m_e} \;\stackrel{\text{LO}}{=}\; \frac{\mathrm{Vol}(4_1)}{\hbar_q^2}
 $$
 
-where
+This relation is a **calibration**, not a derivation: it is the equation solved for $q_0$ under CAL-2. It comes from an earlier assignment of the muon to the knot $4_1$. Under the current lepton words the muon is $T(2,4)$ and $4_1$ is the neutral word, and no result in the corpus derives the relation (owner ruling 2026-11-28).
+
+Here
 $\mathrm{Vol}(4_1) \approx 2.0299$ is the topological constant
 (hyperbolic volume of the figure-eight knot) and
 $\hbar_q = (q-1)/q$.  No units are involved.  The precision
