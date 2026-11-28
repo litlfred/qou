@@ -5,9 +5,9 @@
   "note": "GENERATED — do not hand-edit. Rebuild with `bun run cat-harness-tools/pipeline/build-foreshadows.ts <paper>`. The QA checkers derive the same data from source on every run and never read this file, so it cannot go stale in a way that changes a verdict.",
   "totals": {
     "blocks": 210,
-    "derived": 357,
+    "derived": 362,
     "declared": 40,
-    "effective": 397
+    "effective": 402
   },
   "blocks": {
     "conj:algebraic-geometric-dilog-equivalence": {
@@ -1071,6 +1071,8 @@
         "conj:topological-mass-formula",
         "def:categorical-action",
         "def:categorical-lagrangian",
+        "def:information-speed-of-light",
+        "prop:mass-energy",
         "rem:epistemic-status-of-calibrations"
       ],
       "declared": [],
@@ -1078,6 +1080,8 @@
         "conj:topological-mass-formula",
         "def:categorical-action",
         "def:categorical-lagrangian",
+        "def:information-speed-of-light",
+        "prop:mass-energy",
         "rem:epistemic-status-of-calibrations"
       ]
     },
@@ -1102,7 +1106,8 @@
         "conj:three-calibration-inputs",
         "def:three-calibration-discipline",
         "rem:epistemic-status-of-calibrations",
-        "rem:spacetime-length-distance-layers"
+        "rem:spacetime-length-distance-layers",
+        "tbl:intro-sm-26-parameters"
       ],
       "declared": [],
       "effective": [
@@ -1110,7 +1115,8 @@
         "conj:three-calibration-inputs",
         "def:three-calibration-discipline",
         "rem:epistemic-status-of-calibrations",
-        "rem:spacetime-length-distance-layers"
+        "rem:spacetime-length-distance-layers",
+        "tbl:intro-sm-26-parameters"
       ]
     },
     "prose:intro-particles-as-knots": {
@@ -1119,6 +1125,8 @@
         "def:yekutieli-lifting-condition",
         "prop:gamma-gamma-generates-particles",
         "rem:epistemic-status-of-calibrations",
+        "tbl:intro-eightfold-status",
+        "tbl:intro-gg-hadron-highlights",
         "thm:descartes"
       ],
       "declared": [],
@@ -1127,6 +1135,8 @@
         "def:yekutieli-lifting-condition",
         "prop:gamma-gamma-generates-particles",
         "rem:epistemic-status-of-calibrations",
+        "tbl:intro-eightfold-status",
+        "tbl:intro-gg-hadron-highlights",
         "thm:descartes"
       ]
     },

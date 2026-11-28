@@ -17,12 +17,12 @@ which hypotheses it actually uses. Where a hypothesis on $R$ is needed,
 for example that $q^2 - 1$ be invertible, the ring makes it visible as
 an explicit unit condition rather than leaving it implicit in "$q \neq 1$".
 
-**The observational reason.** We learn about nature by building
+**The observational reason.** An observer learns about nature by building
 instruments with an intent and using them to make observations. The
 more energy goes into building and running an instrument, the finer the
 observation it returns. No observation so far has met a floor: the
-resolution of nature appears to be unbounded. Our ability to resolve
-it, however, is always finite, and it grows with the energy we invest
+resolution of nature appears to be unbounded. The capacity to resolve
+it, however, is always finite, and it grows with the energy invested
 in the measurement. An observation is therefore never a real number.
 It is a pair of bounds, "larger than this and smaller than that", and
 a more expensive instrument narrows the window. In mathematical terms
@@ -32,7 +32,7 @@ idealisation reached only in the limit of unlimited energy.
 
 Taking the real numbers as the stage is therefore a physical
 assumption, not a neutral convention: it asserts that every quantity
-has infinitely many correct digits. Nothing we can observe can justify
+has infinitely many correct digits. No finite observation can justify
 that assertion. Nature may be finite and bounded, with some very large
 $N$, or it may not. The paper does not decide this, and its models are
 built to work either way. A model is required to give the same answers
