@@ -123,4 +123,76 @@ theorem slide_conj_succ (hδ : δ ≠ 0) {a a' m n : ℕ} (ha : a ≤ n) (ha' : 
   rw [slideU_step y ha, slideV_step y' ha']
   exact slide_step hδ x ψ _ _
 
+/-! ## The slide words compose to the corners -/
+
+theorem pl_zero_self {L : ℕ} (h : 0 + L ≤ L) (z : TLFin K δ L) : pl δ 0 L h z = z := by
+  simpa using algHom_eq_of_gen (pl δ 0 L h) (AlgHom.id K _) (fun j => by
+    rw [pl_e, AlgHom.id_apply, E_of_lt (by omega)]; congr 1; ext; simp) z
+
+/-- The cup after `x ⊗ ψ`, conjugated back by the slide, is `δ²` times `capEmb x ⊗ ψ`. -/
+theorem zig_capEmb_zag (hδ : δ ≠ 0) {n m : ℕ} (x : TLFin K δ n) (ψ : TLFin K δ m) :
+    zig δ (n + 1 + 1 + m + 1) (n + 1) (m + 2) *
+        pl δ 0 (n + m + 1 + 1 + 1) (N := n + 1 + 1 + m + 1) (by omega)
+          (capEmb δ _ (tens δ x ψ)) * zag δ (n + 1 + 1 + m + 1) (n + 1) (m + 2) =
+      δ ^ 2 • tens δ (capEmb δ n x) ψ := by
+  have hb := cup_slide_block (δ := δ) hδ (N := n + 1 + 1 + m + 1) (n := n) (m := m) (by omega)
+    x ψ
+  have hg : pl δ 0 (n + m + 1 + 1 + 1) (N := n + 1 + 1 + m + 1) (by omega)
+      (e K δ adjFin (Fin.last (n + m + 1 + 1))) = gen δ _ ((n + 1) + (m + 1)) := by
+    rw [pl_e, gen_eq_E]; congr 1; simp; omega
+  have hY := commute_pl_zig (δ := δ) (N := n + 1 + 1 + m + 1) (t := n + 1 + 1 + 1) (M := m)
+    (p := n + 1) (k := 1) (by omega) (Or.inr (by omega)) ψ
+  rw [zig_one] at hY
+  have hcx : pl δ 0 (n + 1 + 1) (N := n + 1 + 1 + m + 1) (by omega) (capEmb δ n x) =
+      δ⁻¹ • (pl δ 0 n (by omega) x * gen δ _ (n + 1)) := by
+    rw [capEmb, map_smul, map_mul, pl_incl, pl_incl, pl_e, gen_eq_E]; congr 3; simp
+  have hT : tens δ (capEmb δ n x) ψ * gen δ _ (n + 1) = δ • tens δ (capEmb δ n x) ψ := by
+    rw [TLQuotientBraiding.tens_eq_pl, hcx]
+    simp only [smul_mul_assoc, mul_assoc]
+    rw [hY.eq, ← mul_assoc (gen δ _ _), gen_sq (by omega)]
+    simp only [smul_mul_assoc, mul_smul_comm, smul_smul]
+    rw [mul_comm]
+  rw [capEmb, map_smul, map_mul, pl_incl, pl_incl, TLQuotientBraiding.tens_eq_pl x ψ, map_mul,
+    pl_pl, pl_pl, hg]
+  simp only [Nat.zero_add]
+  rw [mul_smul_comm, smul_mul_assoc, ← mul_assoc, ← hb, mul_assoc _ (zig δ _ _ _),
+    show m + 2 = (m + 1) + 1 from rfl, zig_mul_gen (by omega), mul_smul_comm, smul_mul_assoc,
+    mul_assoc _ (zig δ _ _ _), zig_mul_zag_succ (by omega), mul_smul_comm]
+  have e1 : pl δ 0 (n + 1 + 1) (N := n + 1 + 1 + m + 1) (by omega) (capEmb δ n x) *
+      pl δ (n + 3) m (N := n + 1 + 1 + m + 1) (by omega) ψ = tens δ (capEmb δ n x) ψ :=
+    (TLQuotientBraiding.tens_eq_pl _ _).symm
+  rw [e1, hT, smul_smul, smul_smul, smul_smul]
+  congr 1
+  field_simp
+
+theorem capEmb_mul_last (n : ℕ) (V : TLFin K δ n) :
+    capEmb δ n V * e K δ adjFin (Fin.last (n + 1)) = δ • capEmb δ n V := by
+  rw [capEmb, smul_mul_assoc, mul_assoc, e_sq' δ, mul_smul_comm, smul_comm]
+
+/-- `V · U` one level up is `capEmb` of `V · U`: the slides cancel against each other. -/
+theorem slideV_mul_slideU_step (hδ : δ ≠ 0) {a a' m n : ℕ} (ha : a ≤ n) (ha' : a' ≤ n)
+    (y y' : TLFin K δ m) :
+    slideV δ a' m y' (n + 2) * slideU δ a m y (n + 2) =
+      pl δ 0 (n + m + 1 + 1 + 1) (by omega)
+        (capEmb δ _ (slideV δ a' m y' n * slideU δ a m y n)) := by
+  rw [slideU_step y ha, slideV_step y' ha', smul_mul_assoc, mul_smul_comm, smul_smul,
+    mul_assoc, ← mul_assoc (zag δ _ _ _), show m + 2 = (m + 1) + 1 from rfl,
+    zag_mul_zig (m + 1) (by omega), smul_mul_assoc, mul_smul_comm, ← mul_assoc]
+  have hg : gen δ (n + 2 + m + 1) (n + 1 + (m + 1)) =
+      pl δ 0 (n + m + 1 + 1 + 1) (N := n + 2 + m + 1) (by omega)
+        (e K δ adjFin (Fin.last (n + m + 1 + 1))) := by
+    rw [pl_e, gen_eq_E]; congr 1; simp; omega
+  rw [hg, ← map_mul, capEmb_mul_last, map_smul, smul_mul_assoc, smul_smul, ← map_mul,
+    ← capEmb_mul δ hδ, smul_smul, show δ⁻¹ * δ⁻¹ * δ * δ = 1 by field_simp, one_smul]
+
+/-- If `U · V = x ⊗ ψ` then one level up `U · V = capEmb x ⊗ ψ`. -/
+theorem slideU_mul_slideV_step (hδ : δ ≠ 0) {a a' m n : ℕ} (ha : a ≤ n) (ha' : a' ≤ n)
+    (y y' : TLFin K δ m) (x : TLFin K δ n) (ψ : TLFin K δ m)
+    (h : slideU δ a m y n * slideV δ a' m y' n = tens δ x ψ) :
+    slideU δ a m y (n + 2) * slideV δ a' m y' (n + 2) = tens δ (capEmb δ n x) ψ := by
+  rw [slideU_step y ha, slideV_step y' ha', smul_mul_assoc, mul_smul_comm, smul_smul,
+    mul_assoc, ← mul_assoc (pl δ 0 _ _ _), ← map_mul, ← capEmb_mul δ hδ, h, ← mul_assoc]
+  erw [zig_capEmb_zag hδ x ψ]
+  rw [smul_smul, show δ⁻¹ * δ⁻¹ * δ ^ 2 = 1 by field_simp, one_smul]
+
 end QOU.HeckeTemperleyLieb.TLSlideIso
