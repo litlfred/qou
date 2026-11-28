@@ -368,6 +368,29 @@
       "features": [
         "clarabel-lp"
       ]
+    },
+    {
+      "id": "crate-qou-values",
+      "name": "qou-values",
+      "version": "0.1.0",
+      "edition": "2021",
+      "license": "MIT",
+      "path": "crates/qou-values",
+      "manifestPath": "crates/qou-values/Cargo.toml",
+      "description": "General fast >=80-dps MPFR proton-pinned witnessed-value evaluator, Frechet-Jacobian uncertainty propagator, and CLI for ACCURACY.md and paper :val[...] directives.",
+      "workspaceMember": true,
+      "libCrateTypes": [
+        "rlib"
+      ],
+      "bins": [
+        {
+          "name": "qou-values",
+          "path": "src/main.rs",
+          "requiredFeatures": []
+        }
+      ],
+      "defaultFeatures": [],
+      "features": []
     }
   ]
 }
