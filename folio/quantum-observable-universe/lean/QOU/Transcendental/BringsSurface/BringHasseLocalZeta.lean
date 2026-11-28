@@ -1,4 +1,5 @@
 import QOU.BringsSurface.WeilZeta
+import QOU.BringsSurface.BringFrobeniusTraces
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 /-!
@@ -21,7 +22,10 @@ the reversed characteristic polynomial of Frobenius on `H¹(ℬ/𝔽_p)` is
 `(X² − a_p X + p)⁴`.
 
 **What Lean checks and what it does not.** Lean checks the algebra above and
-the integer inequalities `a_p² ≤ 4p` for the listed primes (`bring_hasse_table`).
+the integer inequalities for the listed primes (`bring_hasse_table`, in the
+algebraic module `QOU.BringsSurface.BringFrobeniusTraces`). This module is the
+transcendental translation of that core (strangler split, owner ruling
+2026-11-27): norms, `p^{1/2}` and `Re ρ = 1/2` need the real completion.
 Lean does **not** check that these data are the zeta function of Bring's curve:
 that step is Weil's rationality theorem plus the isogeny `J(ℬ) ~ E⁴` plus the
 point counts, none of which is in Mathlib. The instances below are therefore
@@ -169,21 +173,6 @@ This is `hasse_weil_bound` applied to the instance above. -/
 theorem hasseLocalZeta_norm (p a : ℤ) (hp : 0 < p) (h : a ^ 2 ≤ 4 * p) (i : Fin 8) :
     ‖(hasseLocalZeta p a hp h).eigenvalues i‖ = (p : ℝ) ^ (1 / 2 : ℝ) :=
   hasse_weil_bound (hasseLocalZeta p a hp h) i
-
-/-- `(p, a_p)` for the elliptic curve 50a1 at the primes `7 ≤ p ≤ 41`,
-from the exact counts in `computations/bring_local_zeta_point_counts.py`.
-These are the data `(p, a)` at which Bring's local zeta is
-`hasseLocalZeta p a` (see the module docstring for what is cited). -/
-def bringFrobeniusTraces : List (ℤ × ℤ) :=
-  [(7, 2), (11, -3), (13, -4), (17, -3), (19, 5), (23, 6), (29, 0), (31, 2),
-   (37, 2), (41, -3)]
-
-/-- Hasse's inequality `a_p² ≤ 4p` holds at every listed prime: the
-finite-field Riemann hypothesis for Bring's curve at `7 ≤ p ≤ 41`, given the
-cited identification of its local zeta. -/
-theorem bring_hasse_table :
-    ∀ x ∈ bringFrobeniusTraces, 0 < x.1 ∧ x.2 ^ 2 ≤ 4 * x.1 := by
-  decide
 
 /-- Bring's local zeta at `p = 7`: `(X² − 2X + 7)⁴`, eigenvalues `1 ± i√6`. -/
 noncomputable abbrev bringLocalZeta7 : LocalQZetaFunction :=
