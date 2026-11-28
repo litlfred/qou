@@ -174,3 +174,26 @@ arithmetic, and checks them against GGM's q⁰ matrix (`stokes52_matches_S0px52`
 Still named inputs, unchanged: GGM's region-matrix conjecture behind eq Sp-52,
 and the block-to-index identity (measured to 40 digits). `lean`-direct exit 0,
 no `sorry`; axioms `propext`, `Classical.choice`, `Quot.sound` only.
+
+## Addendum: the one-tetrahedron block identity (Lean)
+
+[`QOU/Nuclear/TetBlockFactorisation.lean`](../../folio/quantum-observable-universe/lean/QOU/Nuclear/TetBlockFactorisation.lean)
+proves the tetrahedron case of the block-to-index identity, GGM eq (IndB) with
+`B_Δ(x; q) = (q x^{-1}; q)_∞`. As formal series this reads
+`Σ_e F(m,e) ζ^e = (q^{1-m} ζ^{-1}; q)_∞ / (ζ; q)_∞`, where `I_Δ(m,e) = q^{-em/2} F(m,e)`.
+
+- `pN N n` and `hN N n` are the `x^n` coefficients of `∏_{i<N} (1 - q^i x)` and of
+  its inverse (`pN_isCoeff`, `hN_isCoeff`).
+- Euler's two identities, as convergence of the finite products:
+  `X^N ∣ pN N n − (−1)^n q^{n(n−1)/2}/(q)_n` (`pN_conv`) and
+  `X^N ∣ hN N n − 1/(q)_n` (`hN_conv`). `q^{n(n−1)/2} ∣ pN N n` for every `N`
+  (`pN_dvd`), which kills the tail of the `n`-sum.
+- `block_eq_Fc`: the `[ζ^e q^j]` coefficient of the `N`-factor block product
+  equals `[q^j] F(m,e)` once `N > |j| + cutF·(|m|+1)`. `tet_block` is the same for
+  `tetCoeff`.
+
+This closes the identity for one tetrahedron. It does **not** close input 2 above:
+the 5₂ blocks are the three state-integral blocks `B^α_{5₂}`, which are not
+products of tetrahedron blocks. Their sum over `α` (Beem–Dimofte–Pasquetti) is
+still a measured identity. `lean`-direct exit 0, no `sorry`; axioms `propext`,
+`Classical.choice`, `Quot.sound` only.
