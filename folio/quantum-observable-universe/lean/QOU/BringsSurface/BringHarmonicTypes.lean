@@ -76,7 +76,10 @@ cells of the map, and integer matrices. **No eigenvalue appears.** The analytic 
   `FDRep.char_orthonormal`). Number of irreducibles = number of classes = `7`.
 * The subgroup list `subgroupClasses` (from the enumeration probe
   `computations/probes/bring_symmetry_quotient_genus_probe.py`).
-* The Hopf trace formula for a finite cell complex, and Hodge `H¹ = H⁰(K) ⊕ conj`.
+* Hodge `H¹ = H⁰(K) ⊕ conj`, and that the cellular homology of the map is that of the surface
+  with `H₀`, `H₂` the trivial and orientation characters. The Hopf trace formula itself is
+  proved for any two-step complex in `QOU/Core/HopfTraceFormula.lean` (`hopf_trace`), and a
+  permuted cell basis has trace the fixed-cell count (`trace_funLeft_perm`).
 
 Everything is integer or rational arithmetic. No empirical value enters.
 

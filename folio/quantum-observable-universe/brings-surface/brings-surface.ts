@@ -222,6 +222,7 @@ export default chapter({
         "bring-isospectrality-question",
         "bring-harmonic-types",
         "bring-harmonic-types-proof",
+        "hopf-trace-formula",
         "bring-reflection-parity",
         "bring-reflection-parity-proof",
         "bring-spectral-sunset-selection",
