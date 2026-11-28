@@ -46,7 +46,7 @@ from codata_constants import (  # noqa: E402
     M_K_PM_MEV_VALIDATION,
     M_PI_PM_MEV_VALIDATION,
 )
-from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
+from codata_2022_source import M_MU_OVER_M_E, MASS_RATIO_P_E  # noqa: E402
 from qou_substrate import codata as _codata  # noqa: E402
 
 set_compute_dps()
@@ -1121,6 +1121,14 @@ def _inherited_qbeta_scope(conv: dict, adm: dict,
 #: a precision win"), which until 2026-08-09 was documented but not enforced.
 ANCHOR_ROUNDTRIP_OBSERVABLES = {"m_p"}
 
+#: The quantity an anchor round trip must reproduce: the input that pinned
+#: q_0, i.e. m_e x (m_p/m_e)_CODATA, NOT CODATA's separately rounded 11-digit
+#: MeV entry. Measuring the round trip against the latter reported CODATA's own
+#: rounding (0.002852 ppb) as if it were a residual of the pin. Bean qou-y7ek;
+#: the 80-dps polish is certified in
+#: probes/q0-80dps-anchor-roundtrip.witness.json.
+ANCHOR_ROUNDTRIP_TARGET_MEV = {"m_p": mpf(str(M_E_MEV)) * mpf(str(MASS_RATIO_P_E))}
+
 
 def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
     """Build one row of the per-observable status table."""
@@ -1143,8 +1151,13 @@ def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
     # None (rather than True like m_e, or False) keeps it out of the counts
     # without asserting either "met" or "failed" about a tautology.
     is_anchor_roundtrip = obs in ANCHOR_ROUNDTRIP_OBSERVABLES
+    roundtrip_ppb = None
+    codata_rounding_ppb = None
     if is_anchor_roundtrip:
         beats_1x = beats_100x = None
+        anchor = ANCHOR_ROUNDTRIP_TARGET_MEV[obs]
+        roundtrip_ppb = rel_error_ppb(pred, anchor)
+        codata_rounding_ppb = rel_error_ppb(anchor, codata)
 
     return {
         "obs": obs,
@@ -1157,13 +1170,20 @@ def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
         "target_100x_ppb": fmt(target_ppb, 4),
         "miss_factor": ("N/A (anchor round-trip)" if is_anchor_roundtrip
                         else fmt(miss_factor, 4)),
-        "roundtrip_residual_ppb": fmt(err_ppb, 4) if is_anchor_roundtrip else None,
+        "roundtrip_residual_ppb": fmt(roundtrip_ppb, 4) if is_anchor_roundtrip else None,
+        "roundtrip_anchor_MeV": (fmt(ANCHOR_ROUNDTRIP_TARGET_MEV[obs], 25)
+                                 if is_anchor_roundtrip else None),
+        "codata_rounding_ppb": (fmt(codata_rounding_ppb, 4)
+                                if is_anchor_roundtrip else None),
         "is_anchor_roundtrip": is_anchor_roundtrip,
         "note": (
             "NOT SCORED. q_0 is pinned from m_p/m_e, so this 'prediction' is "
             "m_e x (m_p/m_e) re-evaluated through the identity that pinned it "
             "— the framework content cancels and the residual is CODATA's own "
-            "rounding, not accuracy. Reported for round-trip auditing only."
+            "rounding, not accuracy. Reported for round-trip auditing only. "
+            "roundtrip_residual_ppb is measured against the anchor m_e x (m_p/m_e); "
+            "err_ppb against CODATA's separately rounded MeV entry, whose gap from "
+            "the anchor is codata_rounding_ppb."
         ) if is_anchor_roundtrip else None,
         "beats_1x_experimental": beats_1x,
         "beats_100x_experimental": beats_100x,
