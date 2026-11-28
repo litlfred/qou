@@ -220,6 +220,8 @@ export default chapter({
         "photon-augmentation-jet",
         "photon-response-determines-q",
         "bring-isospectrality-question",
+        "bring-harmonic-types",
+        "bring-harmonic-types-proof",
         "photon-filtration-depth-bounds",
         "photon-stopping-depth",
         "borromean-photon-factorisations",
