@@ -239,6 +239,32 @@ theorem assoc_cap_second (a b c : ℕ) :
   have hδ : δ ≠ 0 := left_ne_zero_of_mul_eq_one hε
   rw [show δ⁻¹ * δ⁻¹ * δ = δ⁻¹ by field_simp]
 
+theorem one_mem_HomSp (c : ℕ) : (1 : Q T c) ∈ HomSp T c c c := by
+  rw [mem_Hom, PQ_self, one_mul, one_mul]
+
+/-- **Associativity on a base-level morphism in the first slot.** -/
+theorem assoc_base_first {a : ℕ} (φ : Q T a) (b c : ℕ) :
+    recastQ T (by omega) (tensLvl T (a + b + 1) c (a + b + 1) c
+      (tensLvl T a b a b φ (1 : Q T b)) (1 : Q T c)) =
+      tensLvl T a (b + c + 1) a (b + c + 1) φ (1 : Q T (b + c + 1)) := by
+  rw [tensLvl_base T φ (one_mem_HomSp T b), tensLvl_base T _ (one_mem_HomSp T c),
+    tensLvl_base T φ (one_mem_HomSp T _), tensQ_assoc, tensQ_one]
+
+/-- **Associativity on a base-level morphism in the second slot.** -/
+theorem assoc_base_second (a : ℕ) {b : ℕ} (ψ : Q T b) (c : ℕ) :
+    recastQ T (by omega) (tensLvl T (a + b + 1) c (a + b + 1) c
+      (tensQ T (1 : Q T a) ψ) (1 : Q T c)) =
+      tensQ T (1 : Q T a) (tensLvl T b c b c ψ (1 : Q T c)) := by
+  rw [tensLvl_base T _ (one_mem_HomSp T c), tensLvl_base T ψ (one_mem_HomSp T c), tensQ_assoc]
+
+/-- **Associativity in the third slot**, for every morphism there: the first two factors are
+identities at base level, so no slide word appears. -/
+theorem assoc_third (a b : ℕ) {m c c' : ℕ} {χ : Q T m} (hχ : χ ∈ HomSp T m c c') :
+    recastQ T (by omega) (tensLvl T (a + b + 1) c (a + b + 1) c'
+      (tensQ T (1 : Q T a) (1 : Q T b)) χ) =
+      tensQ T (1 : Q T a) (tensLvl T b c b c' (1 : Q T b) χ) := by
+  rw [tensLvl_base T _ hχ, tensLvl_base T _ hχ, tensQ_assoc]
+
 end LevelGen
 
 end QOU.HeckeTemperleyLieb.TLGluedAssoc
