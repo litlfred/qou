@@ -502,17 +502,17 @@ variable {K : Type*} [Field K] [Algebra ℚ K]
 
 /-- **Pentagon implies hexagon**, with the Lie statement discharged: `assocU4_of_pentagon`
 without its `PentagonHexagonLie` hypothesis. -/
-theorem assocU4_of_pentagon' {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
-    (hT : GroupLikeKAssociatorTower K E) {N : ℕ} (hN : 3 ≤ N) {Φ : F2} (h3 : AssocU4 3 E Φ)
-    (hp : Pentagon Φ (t N 0) (t N 1) (t N 3) (t N 4) (t N 5)) (hg : GL N Φ) :
-    AssocU4 N E Φ :=
+theorem assocU4_of_pentagon' {E : ℕ → F2} (hE : ExpFamily E)
+    (hT : GroupLikeKAssociatorTower K E) {N : ℕ} (hN : 3 ≤ N) {Φ : F2}
+    (h3 : AssocU4 3 (E 3) Φ) (hp : Pentagon Φ (t N 0) (t N 1) (t N 3) (t N 4) (t N 5))
+    (hg : GL N Φ) : AssocU4 N (E N) Φ :=
   assocU4_of_pentagon hE hT pentagonHexagonLie_of_three_le hN h3 hp hg
 
 /-- `assocU4_iff_pentagon` without its `PentagonHexagonLie` hypothesis. -/
-theorem assocU4_iff_pentagon' {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
+theorem assocU4_iff_pentagon' {E : ℕ → F2} (hE : ExpFamily E)
     (hT : GroupLikeKAssociatorTower K E) {N : ℕ} (hN : 3 ≤ N) {Φ : F2} (hg : GL N Φ) :
-    AssocU4 N E Φ ↔
-      AssocU4 3 E Φ ∧ Pentagon Φ (t N 0) (t N 1) (t N 3) (t N 4) (t N 5) :=
+    AssocU4 N (E N) Φ ↔
+      AssocU4 3 (E 3) Φ ∧ Pentagon Φ (t N 0) (t N 1) (t N 3) (t N 4) (t N 5) :=
   assocU4_iff_pentagon hE hT pentagonHexagonLie_of_three_le hN hg
 
 end Hexagon
