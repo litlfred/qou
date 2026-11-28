@@ -112,4 +112,33 @@ coefficients. It was checked on the exact index for `|m|,|e| ≤ 5`, `k ≤ 24`
 `lean`-direct exit 0, no `sorry`, axioms `propext`, `Classical.choice`,
 `Quot.sound` only.
 
+### Triality, proved (`QOU/Nuclear/TetIndexTriality.lean`)
+
+The cited input above is now a theorem, `triality_holds : Triality`, so every
+4₁ statement holds with no hypothesis (`tet_degree_bound_proved`,
+`fourone_N11_support_proved`, `fourone_N12_support_proved`,
+`stokes41_inputs_unconditional`, `stokes41_three_unconditional`). The route is
+elementary and stays coefficientwise in `ℤ[[q]]`:
+
+- Write `I_Δ(m,e) = q^{−em/2} F(m,e)`, `F(m,e) = Σ_n (−1)ⁿ q^{n(n+1)/2 − nm}/((q)_n (q)_{n+e})`,
+  and let `Fc m e j = [q^j] F(m,e)`, with `1/(q)_n` the Mathlib power-series inverse.
+- `Fc_rec2`: `F(m,e) = q^e F(m−1,e) + F(m,e−1)` (1208.1663 eq rec2), term by term.
+- `Fc_rec1`: `F(m,e) = F(m+1,e) + q^{−m} F(m,e+1)` (eq rec1), by telescoping with
+  certificate `G(n) = (−1)^{n+1} q^{n(n+1)/2 − nm − n}/((q)_{n−1}(q)_{n+e})`.
+- `unique_of_rec`: a solution of both recursions that vanishes at `(0,0)` and
+  `(0,1)` vanishes everywhere. The `m = 0` column obeys
+  `h(0,e+1) = 2h(0,e) − q^e h(0,e) − h(0,e−1)` in both directions, and the other
+  columns follow from the recursions.
+- `S_R1`, `S_R2`: the transform `(SF)(m,e) = (−1)^e q^{e(e−1)/2 + em} F(e,−e−m)`
+  maps solutions to solutions.
+- `Fc_one_neg`: every solution has `F(1,−1) = −F(0,1)`, so `SF` and `F` agree at
+  `(0,0)` and `(0,1)`; hence `Fc_triality`: `SF = F`.
+- `pc_eq`, `conv_eq`, `tetCoeff_eq`: the partition-count coefficients of
+  `TetIndexDegree` are the power-series coefficients, and
+  `tetCoeff m e k = [k + em even]·Fc m e ((k+em)/2)`. Parity and the shift
+  `σ(m,e)` match, giving `triality_holds`.
+
+`lean`-direct exit 0, no `sorry`; `#print axioms triality_holds` and
+`stokes41_three_unconditional`: `propext`, `Classical.choice`, `Quot.sound` only.
+
 No measured value enters any step, and nothing is fitted.

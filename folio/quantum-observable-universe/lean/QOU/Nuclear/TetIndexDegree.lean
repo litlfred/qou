@@ -41,6 +41,10 @@ off at a point past which every summand starts above `t^k`
   `I_Δ(m,e) = (-t)^{-e} I_Δ(e, -e-m)`. It is stated as a hypothesis on the
   concrete `tetCoeff`, and every theorem that needs it takes it as an argument.
   (Checked numerically on `|m|,|e| ≤ 5`, `k ≤ 24`: 3025 coefficients, 0 failures.)
+  **Now proved:** `QOU.QBeta.TetIndexTriality.triality_holds : Triality`, from the
+  two recursions of 1208.1663 (eq rec1, eq rec2) and a uniqueness argument. The
+  unconditional forms of the theorems below are in that file
+  (`tet_degree_bound_proved`, `stokes41_three_unconditional`, …).
 
 No measured value enters. No fit.
 
@@ -144,7 +148,7 @@ theorem tet_cone_lead (m e : ℤ) (hm : m ≤ 0) (he : 0 ≤ e) :
     rw [if_neg]; omega
   · intro h; exact absurd (Finset.mem_range.mpr hpos) h
 
-/-! ### Triality (cited) and the degree in every cone -/
+/-! ### Triality (proved in `TetIndexTriality`) and the degree in every cone -/
 
 /-- **Cited** (1208.1663 Prop. prop.S3(b), Thm 3.2(c)):
 `I_Δ(m,e) = (-t)^{-e} I_Δ(e,-e-m)`, coefficientwise
