@@ -542,4 +542,159 @@ theorem sh_commute_cable (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (n : ℕ
 
 end Cable
 
+/-! ## The recursion for the cabled Hopf trace -/
+
+section Rec
+
+variable {K : Type*} [Field K] {δ A ε : K}
+
+/-- If `e_i p = 0` for every generator then `y p = aug(y) • p`. -/
+theorem mul_eq_aug_smul_left {m : ℕ} {p : TLFin K δ m} (hp : ∀ i, e K δ adjFin i * p = 0)
+    (y : TLFin K δ m) : y * p = augmentation K δ adjFin y • p := by
+  induction mem_adjoin_e y using Algebra.adjoin_induction with
+  | mem y hy => obtain ⟨j, rfl⟩ := hy; rw [hp, augmentation_e, zero_smul]
+  | algebraMap r =>
+    rw [AlgHom.commutes, Algebra.algebraMap_eq_smul_one, smul_mul_assoc, one_mul]; rfl
+  | add y z _ _ hy hz => rw [add_mul, hy, hz, map_add, add_smul]
+  | mul y z _ _ hy hz => rw [mul_assoc, hz, mul_smul_comm, hy, smul_smul, map_mul, mul_comm]
+
+theorem inclIter_e (r : ℕ) : ∀ (m : ℕ) (i : Fin r),
+    inclIter (δ := δ) r m (e K δ adjFin i) = e K δ adjFin (Fin.castLE (by omega) i)
+  | 0, i => by simp only [inclIter, AlgHom.id_apply]; rfl
+  | m + 1, i => by
+    show incl δ (r + m) (inclIter (δ := δ) r m (e K δ adjFin i)) = _
+    rw [inclIter_e r m i, incl_e]; rfl
+
+theorem omegaC_eq (n : ℕ) : ∀ c, omegaC δ A n c = inclIter (δ := δ) n c (omega δ A n)
+  | 0 => rfl
+  | c + 1 => by
+    show incl δ (n + c) (omegaC δ A n c) = _
+    rw [omegaC_eq n c]; rfl
+
+variable (δ) in
+/-- `p_n` on the first `n + 1` strands of `TL_{n+m+2}`. -/
+noncomputable def blk (n m : ℕ) : TLFin K δ (n + m + 1) := inclIter (δ := δ) n (m + 1) (jw δ n)
+
+variable (δ) in
+/-- `p_m` on the last `m + 1` strands of `TL_{n+m+2}`. -/
+noncomputable def pr (n m : ℕ) : TLFin K δ (n + m + 1) := sh δ n m (jw δ m)
+
+variable (δ) in
+/-- `p_n ⊗ p_m`. -/
+noncomputable def wB (n m : ℕ) : TLFin K δ (n + m + 1) := blk δ n m * pr δ n m
+
+theorem blk_succ (n m : ℕ) : blk δ n (m + 1) = incl δ (n + m + 1) (blk δ n m) := rfl
+
+theorem blk_commute_pr (n m : ℕ) : Commute (blk δ n m) (pr δ n m) := by
+  refine (commute_of_gens (sh δ n m) _ (fun j => ?_) _).symm
+  rw [sh_e]
+  refine (commute_of_gens (inclIter (δ := δ) n (m + 1)) _ (fun i => ?_) _).symm
+  rw [inclIter_e]
+  exact e_commute_fin (by simp; omega)
+
+theorem pr_idem (n m : ℕ) (hS : JWSpec δ m) : pr δ n m * pr δ n m = pr δ n m := by
+  rw [pr, ← map_mul, hS.2.2.1]
+
+theorem pr_mul_wB (n m : ℕ) (hS : JWSpec δ m) : pr δ n m * wB δ n m = wB δ n m := by
+  rw [wB, ← mul_assoc, ← (blk_commute_pr n m).eq, mul_assoc, pr_idem n m hS]
+
+theorem pr_succ (n m : ℕ) : pr δ n (m + 1) = incl δ (n + m + 1) (pr δ n m) -
+    (qint δ (m + 1) / qint δ (m + 2)) • (incl δ (n + m + 1) (pr δ n m) *
+      e K δ adjFin (Fin.last (n + m + 1)) * incl δ (n + m + 1) (pr δ n m)) := by
+  rw [pr, jw_succ, map_sub, map_smul, map_mul, map_mul, sh_incl, sh_last]; rfl
+
+theorem wB_succ (n m : ℕ) : wB δ n (m + 1) = incl δ (n + m + 1) (wB δ n m) -
+    (qint δ (m + 1) / qint δ (m + 2)) • (incl δ (n + m + 1) (wB δ n m) *
+      e K δ adjFin (Fin.last (n + m + 1)) * incl δ (n + m + 1) (pr δ n m)) := by
+  rw [wB, pr_succ, blk_succ, mul_sub, mul_smul_comm, wB, map_mul]
+  simp only [mul_assoc]
+
+/-- **Top absorption.** `e · C_{c+2} = ι(ι C_c) · e`. -/
+theorem top_absorb (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (n c : ℕ) (Z : TLFin K δ (n + c)) :
+    e K δ adjFin (Fin.last (n + c + 1)) *
+        (incl δ (n + c + 1) (incl δ (n + c) Z * loop δ A n c) * loop δ A n (c + 1))
+      = incl δ (n + c + 1) (incl δ (n + c) Z) * e K δ adjFin (Fin.last (n + c + 1)) := by
+  have hZ := (incl_incl_commute δ (n + c) Z).symm
+  rw [map_mul, ← mul_assoc, ← mul_assoc, hZ.eq, mul_assoc, mul_assoc, ← mul_assoc (e K δ adjFin _),
+    cup_loop_loop hA hδ n c]
+
+variable (T : MarkovTower δ ε)
+
+variable (A) in
+/-- The cabled Hopf trace `τ((p_n ⊗ p_m) · C_{m+1})`. -/
+noncomputable def cH (n m : ℕ) : K := T.τ (n + m + 1) (wB δ n m * cable δ A n (m + 1))
+
+variable (A) in
+/-- The auxiliary trace `τ((p_n ⊗ p_m) · ι(C_m))`. -/
+noncomputable def cR (n m : ℕ) : K :=
+  T.τ (n + m + 1) (wB δ n m * incl δ (n + m) (cable δ A n m))
+
+theorem cable_succ (n b : ℕ) :
+    cable δ A n (b + 1) = incl δ (n + b) (cable δ A n b) * loop δ A n b := rfl
+
+/-- First term: the meridian of the new loop closes off with the scalar `λ`. -/
+theorem term_one (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (hε : δ * ε = 1) (n m : ℕ)
+    (hSn : JWSpec δ n) :
+    T.τ (n + m + 1 + 1) (incl δ (n + m + 1) (wB δ n m) *
+        (incl δ (n + m + 1) (cable δ A n (m + 1)) * loop δ A n (m + 1)))
+      = ε * ((A ^ (2 * n + 4) + A⁻¹ ^ (2 * n + 4)) * cH A T n m) := by
+  rw [← mul_assoc, ← map_mul, trace_loop T hA hδ hε n m, T.tr_comm]
+  congr 1
+  have h1 : incl δ (n + m) (omegaC δ A n m) * blk δ n m
+      = augmentation K δ adjFin (omega δ A n) • blk δ n m := by
+    rw [show incl δ (n + m) (omegaC δ A n m) = inclIter (δ := δ) n (m + 1) (omega δ A n) by
+      rw [omegaC_eq]; rfl, blk, ← map_mul, mul_eq_aug_smul_left hSn.2.1, map_smul]
+  rw [cH, wB, ← mul_assoc, ← mul_assoc, h1, aug_omega hA hδ, smul_mul_assoc, smul_mul_assoc,
+    map_smul, smul_eq_mul]
+
+/-- Second term: the cap on the new strand closes the outer loop. -/
+theorem term_two (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (n m : ℕ) (hSm : JWSpec δ m) :
+    T.τ (n + m + 1 + 1) (incl δ (n + m + 1) (wB δ n m) * e K δ adjFin (Fin.last (n + m + 1)) *
+        incl δ (n + m + 1) (pr δ n m) *
+        (incl δ (n + m + 1) (cable δ A n (m + 1)) * loop δ A n (m + 1)))
+      = ε * cR A T n m := by
+  have hc : Commute (incl δ (n + m + 1) (pr δ n m))
+      (incl δ (n + m + 1) (cable δ A n (m + 1)) * loop δ A n (m + 1)) := by
+    have := sh_commute_cable hA hδ n (m + 1) (incl δ m (jw δ m))
+    rwa [sh_incl] at this
+  rw [mul_assoc _ (incl δ _ (pr δ n m)), hc.eq, ← mul_assoc, T.tr_comm]
+  simp only [← mul_assoc]
+  rw [← map_mul (incl δ (n + m + 1)) (pr δ n m), pr_mul_wB n m hSm, cable_succ]
+  simp only [mul_assoc]
+  rw [top_absorb hA hδ n m, ← mul_assoc, ← map_mul]
+  exact T.tr_markov _ _
+
+/-- **The recursion, first half.** `H_{m+1} = ε λ H_m − c_{m+1} ε R_m`. -/
+theorem rec_H (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (hε : δ * ε = 1) (n m : ℕ)
+    (hSn : JWSpec δ n) (hSm : JWSpec δ m) :
+    cH A T n (m + 1) = ε * ((A ^ (2 * n + 4) + A⁻¹ ^ (2 * n + 4)) * cH A T n m)
+      - qint δ (m + 1) / qint δ (m + 2) * (ε * cR A T n m) := by
+  show T.τ (n + m + 1 + 1) (wB δ n (m + 1) *
+      (incl δ (n + m + 1) (cable δ A n (m + 1)) * loop δ A n (m + 1))) = _
+  rw [wB_succ, sub_mul, map_sub, smul_mul_assoc, map_smul, smul_eq_mul, term_one T hA hδ hε n m hSn,
+    term_two T hA hδ n m hSm]
+
+theorem term_R (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (n m : ℕ) (hSm : JWSpec δ m) :
+    T.τ (n + m + 1 + 1) (incl δ (n + m + 1) (wB δ n m) * e K δ adjFin (Fin.last (n + m + 1)) *
+        incl δ (n + m + 1) (pr δ n m) * incl δ (n + m + 1) (cable δ A n (m + 1)))
+      = ε * cH A T n m := by
+  have hc : Commute (incl δ (n + m + 1) (pr δ n m)) (incl δ (n + m + 1) (cable δ A n (m + 1))) :=
+    (sh_commute_cable hA hδ n m (jw δ m)).map (incl δ (n + m + 1))
+  rw [mul_assoc _ (incl δ _ (pr δ n m)), hc.eq, ← mul_assoc, T.tr_comm]
+  simp only [← mul_assoc]
+  rw [← map_mul (incl δ (n + m + 1)) (pr δ n m), pr_mul_wB n m hSm, T.tr_comm, ← mul_assoc,
+    ← map_mul, T.tr_markov, T.tr_comm]
+  rfl
+
+/-- **The recursion, second half.** `R_{m+1} = (1 − c_{m+1} ε) H_m`. -/
+theorem rec_R (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (n m : ℕ) (hSm : JWSpec δ m) :
+    cR A T n (m + 1) = (1 - qint δ (m + 1) / qint δ (m + 2) * ε) * cH A T n m := by
+  show T.τ (n + m + 1 + 1) (wB δ n (m + 1) * incl δ (n + m + 1) (cable δ A n (m + 1))) = _
+  rw [wB_succ, sub_mul, map_sub, smul_mul_assoc, map_smul, smul_eq_mul, ← map_mul, T.tr_incl,
+    term_R T hA hδ n m hSm]
+  show cH A T n m - _ = _
+  ring
+
+end Rec
+
 end QOU.HeckeTemperleyLieb.TLCable
