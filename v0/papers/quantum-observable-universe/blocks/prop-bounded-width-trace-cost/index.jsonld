@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-bounded-width-trace-cost",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:bounded-width-trace-cost",
+  "kind": "proposition",
+  "title": "A fixed-width trace costs linear time, not $3^c$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-computational-horizon",
+    "papers/quantum-observable-universe/blocks/conj-p-vs-np-boundary",
+    "papers/quantum-observable-universe/blocks/prop-skein-polynomial-transfer-matrix"
+  ],
+  "tags": [
+    "P-vs-NP",
+    "transfer-matrix",
+    "computational-horizon",
+    "complexity"
+  ],
+  "leanRef": "qou:QOU.Information.WordEval.traceCost_fst",
+  "text": "bounded-width-trace-cost.md",
+  "provenance": "authored"
+}

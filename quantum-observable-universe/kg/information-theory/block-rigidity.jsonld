@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-block-rigidity",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:block-rigidity",
+  "kind": "proposition",
+  "title": "Derivations and automorphisms respect the blocks",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/sec-p-vs-np-boundary-intro"
+  ],
+  "tags": [
+    "P-vs-NP",
+    "inner-automorphism",
+    "outer-automorphism",
+    "derivation",
+    "Wedderburn"
+  ],
+  "leanRef": "qou:QOU.Information.derivation_centralIdempotent_eq_zero",
+  "text": "block-rigidity.md",
+  "provenance": "authored"
+}
