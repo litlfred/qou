@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-collatz-bounded-window",
+  "@type": [
+    "folio-assistant-sci:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:collatz-bounded-window",
+  "kind": "proof",
+  "title": "Proof that a $q$-Collatz orbit with bounded support converges",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-collatz-bounded-window",
+    "papers/quantum-observable-universe/blocks/prop-collatz-syracuse-lift",
+    "papers/quantum-observable-universe/blocks/prop-collatz-no-cycles"
+  ],
+  "text": "collatz-bounded-window-proof.md",
+  "provenance": "authored"
+}

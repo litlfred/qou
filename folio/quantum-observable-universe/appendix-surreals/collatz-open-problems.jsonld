@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-collatz-open-problems",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:collatz-open-problems",
+  "kind": "remark",
+  "title": "Open problems for the $q$-Collatz map",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-collatz-syracuse-lift",
+    "papers/quantum-observable-universe/blocks/prop-collatz-bounded-window",
+    "papers/quantum-observable-universe/blocks/prop-collatz-no-cycles"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-q-collatz",
+  "cites": [
+    "references/hicksmullenyucaszavislak2008",
+    "references/lagarias2010"
+  ],
+  "tags": [
+    "collatz",
+    "open-problem",
+    "mod-2-reduction",
+    "lifting"
+  ],
+  "text": "collatz-open-problems.md",
+  "provenance": "authored"
+}
