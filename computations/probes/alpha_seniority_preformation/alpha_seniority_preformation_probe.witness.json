@@ -1,0 +1,595 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-28T11:27:12.554015+00:00",
+  "commitSha": "a50371905364b4a58cc34d36e6bc2c35fa82ca8d",
+  "assertions": [
+    {
+      "name": "fock_space_exact_match_to_racah_formula",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "QOU.Nuclear.AlphaSeniorityPreformation.coherent_pair_overlap_sq_field"
+    },
+    {
+      "name": "open_shell_214Po_over_212Po_racah_ratio_within_0p02_dex",
+      "computed": "0.00660250995232042",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "2e-2",
+      "source": "W(2,5)/W(1,5) = 8/5 vs WKB S_req(214Po)/S_req(212Po)"
+    },
+    {
+      "name": "coherent_opnorm_M2_beats_literal_MJ_M0_on_open_shell_Po",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "212Po and 214Po |dex| under M2 vs M0"
+    },
+    {
+      "name": "honest_negative_M2_slightly_overshoots_bare_WKB_on_214Po",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "S_M2(214Po) = 40/81 -> +0.1676 dex vs bare WKB -0.1388 dex"
+    },
+    {
+      "name": "barrier_blocked_actinides_worsen_under_admissible_seniority_S",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "QOU.Nuclear.AlphaPreformationBound.preformation_cannot_close_of_lt"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "alpha_seniority_preformation_probe",
+  "scriptFile": "alpha_seniority_preformation_probe.py",
+  "scriptHash": "9385501e81f3",
+  "scriptCommitSha": "a50371905364b4a58cc34d36e6bc2c35fa82ca8d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/alpha_seniority_preformation/alpha_seniority_preformation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/alpha_seniority_preformation/alpha_seniority_preformation_probe.py"
+  },
+  "description": "80-dps zero-fit evaluation of Racah seniority-0 coherent-pair alpha-cluster preformation W(k, Omega) = k*(Omega - k + 1) (Lean QOU.Nuclear.AlphaSeniorityPreformation) contrasting literal uncorrelated single-pair counting with seniority-0 pair coherence across 210Po (N=126 closed), open-shell 212Po and 214Po, and barrier-blocked heavy emitters (222Rn, 226Ra, 238U) under five pre-registered normalizations (Bean qou-q0gw).",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0_pin": "proton (qou_substrate.constants.q_at)",
+    "work_dps": 80,
+    "output_dps": 50,
+    "preregistration_commit": "9a66767a695",
+    "source_witness": "computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json"
+  },
+  "data": {
+    "fock_space_verification": {
+      "max_residual_vs_closed_form": "0.0",
+      "grid": [
+        {
+          "Omega": 1,
+          "k": 1,
+          "W_coherent_fock": "1.0000000000000000000",
+          "W_single_orbital_fock": "1.0000000000000000000",
+          "W_over_W_cap": "1.0000000000000000000"
+        },
+        {
+          "Omega": 5,
+          "k": 1,
+          "W_coherent_fock": "5.0000000000000000000",
+          "W_single_orbital_fock": "0.20000000000000000000",
+          "W_over_W_cap": "0.55555555555555555556"
+        },
+        {
+          "Omega": 5,
+          "k": 2,
+          "W_coherent_fock": "8.0000000000000000000",
+          "W_single_orbital_fock": "0.32000000000000000000",
+          "W_over_W_cap": "0.88888888888888888889"
+        },
+        {
+          "Omega": 5,
+          "k": 3,
+          "W_coherent_fock": "9.0000000000000000000",
+          "W_single_orbital_fock": "0.36000000000000000000",
+          "W_over_W_cap": "1.0000000000000000000"
+        },
+        {
+          "Omega": 5,
+          "k": 4,
+          "W_coherent_fock": "8.0000000000000000000",
+          "W_single_orbital_fock": "0.32000000000000000000",
+          "W_over_W_cap": "0.88888888888888888889"
+        },
+        {
+          "Omega": 5,
+          "k": 5,
+          "W_coherent_fock": "5.0000000000000000000",
+          "W_single_orbital_fock": "0.20000000000000000000",
+          "W_over_W_cap": "0.55555555555555555556"
+        },
+        {
+          "Omega": 6,
+          "k": 1,
+          "W_coherent_fock": "6.0000000000000000000",
+          "W_single_orbital_fock": "0.16666666666666666667",
+          "W_over_W_cap": "0.48979591836734693878"
+        },
+        {
+          "Omega": 6,
+          "k": 2,
+          "W_coherent_fock": "10.000000000000000000",
+          "W_single_orbital_fock": "0.27777777777777777778",
+          "W_over_W_cap": "0.81632653061224489796"
+        },
+        {
+          "Omega": 6,
+          "k": 3,
+          "W_coherent_fock": "12.000000000000000000",
+          "W_single_orbital_fock": "0.33333333333333333333",
+          "W_over_W_cap": "0.97959183673469387755"
+        },
+        {
+          "Omega": 6,
+          "k": 4,
+          "W_coherent_fock": "12.000000000000000000",
+          "W_single_orbital_fock": "0.33333333333333333333",
+          "W_over_W_cap": "0.97959183673469387755"
+        },
+        {
+          "Omega": 6,
+          "k": 5,
+          "W_coherent_fock": "10.000000000000000000",
+          "W_single_orbital_fock": "0.27777777777777777778",
+          "W_over_W_cap": "0.81632653061224489796"
+        },
+        {
+          "Omega": 6,
+          "k": 6,
+          "W_coherent_fock": "6.0000000000000000000",
+          "W_single_orbital_fock": "0.16666666666666666667",
+          "W_over_W_cap": "0.48979591836734693878"
+        }
+      ]
+    },
+    "scale_free_polonium_ratios": {
+      "open_shell_pair_addition_214Po_over_212Po": {
+        "Racah_coherent_W_ratio": "1.6000000000000000000",
+        "literal_uncorrelated_ratio": "1.0000000000000000000",
+        "WKB_empirical_S_ratio": "1.6245103872669755699",
+        "dex_error_Racah_coherent": "-0.00660250995232042",
+        "dex_error_literal_uncorrelated": "-0.210722492608245"
+      },
+      "shell_closure_jump_212Po_over_210Po": {
+        "Racah_coherent_W_ratio": "5.0000000000000000000",
+        "literal_uncorrelated_ratio": "0.20000000000000000000",
+        "WKB_empirical_S_ratio": "8.0863391832626433030",
+        "dex_error_Racah_coherent": "-0.208781949620565",
+        "dex_error_literal_uncorrelated": "-1.60672195829260",
+        "note": "Pure angular/combinatorial Racah coherence gives 5x enhancement across N=126 vs 8.09x empirical (-0.209 dex remaining radial/shell-gap hindrance), whereas literal uncorrelated counting gives 0.20x (wrong direction by -1.607 dex)."
+      }
+    },
+    "nuclide_evaluations": {
+      "210Po": {
+        "Z": 84,
+        "N": 126,
+        "A": 210,
+        "proton_shell": "1h_9/2^2",
+        "neutron_shell": "3p_1/2^-2 (closed N=126 core)",
+        "Omega_p": 5,
+        "k_p": 1,
+        "Omega_n": 1,
+        "k_n": 1,
+        "W_p": "5.000000000",
+        "W_n": "1.000000000",
+        "W_joint": "5.000000000",
+        "T_half_WKB_s": "661114.567411730000",
+        "T_half_exp_s": "11955712.3200000000",
+        "S_alpha_required_WKB": "0.055296961796729648978",
+        "dex_bare_WKB": "-1.25729872965665",
+        "models": {
+          "M0_literal_uncorrelated_MJ": {
+            "S_pred": "0.05000000000000000000000000",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "13222291.3482346000",
+            "dex_half_life_residual": "0.0437312660073274",
+            "dex_S_pred_over_S_emp": "-0.0437312660073274",
+            "abs_dex_improved_vs_bare_WKB": true,
+            "worse_than_bare_WKB": false
+          },
+          "M1_single_orbital_seniority": {
+            "S_pred": "0.2000000000000000000000000",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "3305572.83705865000",
+            "dex_half_life_residual": "-0.558328725320635",
+            "dex_S_pred_over_S_emp": "0.558328725320635",
+            "abs_dex_improved_vs_bare_WKB": true,
+            "worse_than_bare_WKB": false
+          },
+          "M2_per_subshell_opnorm_coherent": {
+            "S_pred": "0.5555555555555555555555556",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "1190006.22134111400",
+            "dex_half_life_residual": "-1.00202622455335",
+            "dex_S_pred_over_S_emp": "1.00202622455335",
+            "abs_dex_improved_vs_bare_WKB": true,
+            "worse_than_bare_WKB": false
+          },
+          "M3_valence_shell_opnorm_coherent": {
+            "S_pred": "0.06172839506172839506172840",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "10710055.9920700260",
+            "dex_half_life_residual": "-0.0477837151140229",
+            "dex_S_pred_over_S_emp": "0.0477837151140229",
+            "abs_dex_improved_vs_bare_WKB": true,
+            "worse_than_bare_WKB": false
+          },
+          "M4_single_state_times_racah": {
+            "S_pred": "0.2500000000000000000000000",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "2644458.26964692000",
+            "dex_half_life_residual": "-0.655238738328691",
+            "dex_S_pred_over_S_emp": "0.655238738328691",
+            "abs_dex_improved_vs_bare_WKB": true,
+            "worse_than_bare_WKB": false
+          }
+        }
+      },
+      "212Po": {
+        "Z": 84,
+        "N": 128,
+        "A": 212,
+        "proton_shell": "1h_9/2^2",
+        "neutron_shell": "2g_9/2^2 (open N=128)",
+        "Omega_p": 5,
+        "k_p": 1,
+        "Omega_n": 5,
+        "k_n": 1,
+        "W_p": "5.000000000",
+        "W_n": "5.000000000",
+        "W_joint": "25.00000000",
+        "T_half_WKB_s": "1.31640956729885000e-7",
+        "T_half_exp_s": "2.94400000000000000e-7",
+        "S_alpha_required_WKB": "0.44714998889227241848",
+        "dex_bare_WKB": "-0.349546775700070",
+        "models": {
+          "M0_literal_uncorrelated_MJ": {
+            "S_pred": "0.01000000000000000000000000",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "0.0000131640956729885000",
+            "dex_half_life_residual": "1.65045322429993",
+            "dex_S_pred_over_S_emp": "-1.65045322429993",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M1_single_orbital_seniority": {
+            "S_pred": "0.04000000000000000000000000",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "3.29102391824712500e-6",
+            "dex_half_life_residual": "1.04839323297197",
+            "dex_S_pred_over_S_emp": "-1.04839323297197",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M2_per_subshell_opnorm_coherent": {
+            "S_pred": "0.3086419753086419753086420",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "4.26516699804827400e-7",
+            "dex_half_life_residual": "0.160998234506543",
+            "dex_S_pred_over_S_emp": "-0.160998234506543",
+            "abs_dex_improved_vs_bare_WKB": true,
+            "worse_than_bare_WKB": false
+          },
+          "M3_valence_shell_opnorm_coherent": {
+            "S_pred": "0.3086419753086419753086420",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "4.26516699804827400e-7",
+            "dex_half_life_residual": "0.160998234506543",
+            "dex_S_pred_over_S_emp": "-0.160998234506543",
+            "abs_dex_improved_vs_bare_WKB": true,
+            "worse_than_bare_WKB": false
+          },
+          "M4_single_state_times_racah": {
+            "S_pred": "0.2500000000000000000000000",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "5.26563826919540000e-7",
+            "dex_half_life_residual": "0.252513215627893",
+            "dex_S_pred_over_S_emp": "-0.252513215627893",
+            "abs_dex_improved_vs_bare_WKB": true,
+            "worse_than_bare_WKB": false
+          }
+        }
+      },
+      "214Po": {
+        "Z": 84,
+        "N": 130,
+        "A": 214,
+        "proton_shell": "1h_9/2^2",
+        "neutron_shell": "2g_9/2^4 (open N=130)",
+        "Omega_p": 5,
+        "k_p": 1,
+        "Omega_n": 5,
+        "k_n": 2,
+        "W_p": "5.000000000",
+        "W_n": "8.000000000",
+        "W_joint": "40.00000000",
+        "T_half_WKB_s": "0.000118839007545328000",
+        "T_half_exp_s": "0.000163600000000000000",
+        "S_alpha_required_WKB": "0.72639980162180929095",
+        "dex_bare_WKB": "-0.138824283091824",
+        "models": {
+          "M0_literal_uncorrelated_MJ": {
+            "S_pred": "0.01000000000000000000000000",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "0.0118839007545328000",
+            "dex_half_life_residual": "1.86117571690818",
+            "dex_S_pred_over_S_emp": "-1.86117571690818",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M1_single_orbital_seniority": {
+            "S_pred": "0.06400000000000000000000000",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "0.00185685949289575000",
+            "dex_half_life_residual": "1.05499574292429",
+            "dex_S_pred_over_S_emp": "-1.05499574292429",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M2_per_subshell_opnorm_coherent": {
+            "S_pred": "0.4938271604938271604938272",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "0.000240648990279289200",
+            "dex_half_life_residual": "0.167600744458863",
+            "dex_S_pred_over_S_emp": "-0.167600744458863",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M3_valence_shell_opnorm_coherent": {
+            "S_pred": "0.4938271604938271604938272",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "0.000240648990279289200",
+            "dex_half_life_residual": "0.167600744458863",
+            "dex_S_pred_over_S_emp": "-0.167600744458863",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M4_single_state_times_racah": {
+            "S_pred": "0.4000000000000000000000000",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "0.000297097518863320000",
+            "dex_half_life_residual": "0.259115725580213",
+            "dex_S_pred_over_S_emp": "-0.259115725580213",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          }
+        }
+      },
+      "222Rn": {
+        "Z": 86,
+        "N": 136,
+        "A": 222,
+        "proton_shell": "1h_9/2^4",
+        "neutron_shell": "2g_9/2^10 (filled subshell N=136)",
+        "Omega_p": 5,
+        "k_p": 2,
+        "Omega_n": 5,
+        "k_n": 5,
+        "W_p": "8.000000000",
+        "W_n": "5.000000000",
+        "W_joint": "40.00000000",
+        "T_half_WKB_s": "459989.108458983000",
+        "T_half_exp_s": "330177.600000000000",
+        "S_alpha_required_WKB": "1.3931566177081152689",
+        "dex_bare_WKB": "0.143999942255248",
+        "models": {
+          "M0_literal_uncorrelated_MJ": {
+            "S_pred": "0.01000000000000000000000000",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "45998910.8458983000",
+            "dex_half_life_residual": "2.14399994225525",
+            "dex_S_pred_over_S_emp": "-2.14399994225525",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M1_single_orbital_seniority": {
+            "S_pred": "0.06400000000000000000000000",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "7187329.81967160937",
+            "dex_half_life_residual": "1.33781996827136",
+            "dex_S_pred_over_S_emp": "-1.33781996827136",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M2_per_subshell_opnorm_coherent": {
+            "S_pred": "0.4938271604938271604938272",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "931477.944629440575",
+            "dex_half_life_residual": "0.450424969805936",
+            "dex_S_pred_over_S_emp": "-0.450424969805936",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M3_valence_shell_opnorm_coherent": {
+            "S_pred": "0.4938271604938271604938272",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "931477.944629440575",
+            "dex_half_life_residual": "0.450424969805936",
+            "dex_S_pred_over_S_emp": "-0.450424969805936",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M4_single_state_times_racah": {
+            "S_pred": "0.4000000000000000000000000",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "1149972.77114745750",
+            "dex_half_life_residual": "0.541939950927286",
+            "dex_S_pred_over_S_emp": "-0.541939950927286",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          }
+        }
+      },
+      "226Ra": {
+        "Z": 88,
+        "N": 138,
+        "A": 226,
+        "proton_shell": "1h_9/2^6",
+        "neutron_shell": "1i_11/2^2 (N=138)",
+        "Omega_p": 5,
+        "k_p": 3,
+        "Omega_n": 6,
+        "k_n": 1,
+        "W_p": "9.000000000",
+        "W_n": "6.000000000",
+        "W_joint": "54.00000000",
+        "T_half_WKB_s": "78091356912.7081000",
+        "T_half_exp_s": "50492160000.0000000",
+        "S_alpha_required_WKB": "1.5466036096041068554",
+        "dex_bare_WKB": "0.189379019439157",
+        "models": {
+          "M0_literal_uncorrelated_MJ": {
+            "S_pred": "0.008333333333333333333333333",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "9370962829524.97200",
+            "dex_half_life_residual": "2.26856026548678",
+            "dex_S_pred_over_S_emp": "-2.26856026548678",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M1_single_orbital_seniority": {
+            "S_pred": "0.06000000000000000000000000",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "1301522615211.80167",
+            "dex_half_life_residual": "1.41122776905551",
+            "dex_S_pred_over_S_emp": "-1.41122776905551",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M2_per_subshell_opnorm_coherent": {
+            "S_pred": "0.4897959183673469387755102",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "159436520363.445704",
+            "dex_half_life_residual": "0.499363857756065",
+            "dex_S_pred_over_S_emp": "-0.499363857756065",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M3_valence_shell_opnorm_coherent": {
+            "S_pred": "0.6666666666666666666666667",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "117137035369.062150",
+            "dex_half_life_residual": "0.365470278494838",
+            "dex_S_pred_over_S_emp": "-0.365470278494838",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M4_single_state_times_racah": {
+            "S_pred": "0.4500000000000000000000000",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "173536348694.906889",
+            "dex_half_life_residual": "0.536166505663813",
+            "dex_S_pred_over_S_emp": "-0.536166505663813",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          }
+        }
+      },
+      "238U": {
+        "Z": 92,
+        "N": 146,
+        "A": 238,
+        "proton_shell": "1h_9/2^10 (filled subshell Z=92)",
+        "neutron_shell": "1i_11/2^10 (N=146)",
+        "Omega_p": 5,
+        "k_p": 5,
+        "Omega_n": 6,
+        "k_n": 5,
+        "W_p": "5.000000000",
+        "W_n": "10.00000000",
+        "W_joint": "50.00000000",
+        "T_half_WKB_s": "358259050815747000.",
+        "T_half_exp_s": "140999356800000000.",
+        "S_alpha_required_WKB": "2.5408559226544429173",
+        "dex_bare_WKB": "0.404980039402924",
+        "models": {
+          "M0_literal_uncorrelated_MJ": {
+            "S_pred": "0.008333333333333333333333333",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "4.29910860978896400e+19",
+            "dex_half_life_residual": "2.48416128545055",
+            "dex_S_pred_over_S_emp": "-2.48416128545055",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M1_single_orbital_seniority": {
+            "S_pred": "0.05555555555555555555555556",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "6.44866291468344600e+18",
+            "dex_half_life_residual": "1.66025254450623",
+            "dex_S_pred_over_S_emp": "-1.66025254450623",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M2_per_subshell_opnorm_coherent": {
+            "S_pred": "0.4535147392290249433106576",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "789961207048722135.",
+            "dex_half_life_residual": "0.748388633206781",
+            "dex_S_pred_over_S_emp": "-0.748388633206781",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M3_valence_shell_opnorm_coherent": {
+            "S_pred": "0.6172839506172839506172840",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "580379662321510140.",
+            "dex_half_life_residual": "0.614495053945555",
+            "dex_S_pred_over_S_emp": "-0.614495053945555",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          },
+          "M4_single_state_times_racah": {
+            "S_pred": "0.4166666666666666666666667",
+            "admissible_0_lt_S_le_1": true,
+            "T_half_pred_s": "859821721957792800.",
+            "dex_half_life_residual": "0.785191281114530",
+            "dex_S_pred_over_S_emp": "-0.785191281114530",
+            "abs_dex_improved_vs_bare_WKB": false,
+            "worse_than_bare_WKB": true
+          }
+        }
+      }
+    },
+    "honest_summary": {
+      "what_racah_coherence_resolves": "Replaces the inverted 0.20x open-vs-closed ratio and flat 1.00x 214Po/212Po ratio of literal uncorrelated counting with W(214Po)/W(212Po) = 8/5 = 1.6000 (within -0.0066 dex of empirical 1.6245) and W(212Po)/W(210Po) = 5.0000 (77% of the log10 jump across N=126), reducing 212Po/214Po half-life errors from +1.65/+1.86 dex (M0) to +0.161/+0.168 dex (M2, S = 25/81 and 40/81).",
+      "what_still_misses": "1. Per-subshell normalization M2 fails on closed 210Po (S = 5/9, -1.002 dex) because a 2-state 3p_1/2 subshell has W_cap(1) = 1; normalizing against the Z>82, N>126 valence shell capacity W_cap(5)^2 = 81 (M3) gives S(210Po) = 5/81 = 0.0617 (-0.048 dex), leaving a -0.209 dex radial/shell-gap residual on the 212Po/210Po jump. 2. On 214Po, M2/M3 give +0.168 dex vs -0.139 dex bare WKB (slightly worse in |dex| by 0.029 dex because S = 40/81 = 0.494 < S_req = 0.726). 3. Deformed/heavy emitters 222Rn, 226Ra, 238U have S_req > 1 and worsen under every admissible 0 < S <= 1 preformation factor."
+    }
+  },
+  "caveats": [
+    "Diagnostic zero-fit evaluation (pre-registered in PREREGISTRATION.md). T_exp is used solely at the comparison boundary; no normalization or shell occupancy was adjusted against half-life data."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
