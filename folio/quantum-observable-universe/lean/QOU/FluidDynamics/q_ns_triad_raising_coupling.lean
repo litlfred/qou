@@ -43,10 +43,10 @@ So the size of every spin-raising coupling is fixed by the norms `h(p_n²)` alon
   ([gasper-rahman-2004] §7.3), stated there as a product of its ratios. Substituting it, the
   normalised raising coupling is
   `C̃(r)² = q^{−6} p^{2r+1} ((1 − p^r)/(1 − p))² (1 − p^{r+1})⁴ /
-  ((1 − p^{2r+1})(1 − p^{2r+2})²(1 − p^{2r+3}) ‖βδ‖²)`. At fixed `q > 1` this decays like
-  `q^{−2r}`; as `q → 1` it grows like `r`. The decay is not uniform in `q`. That substitution is
-  checked in exact arithmetic (`computations/qns_little_qlegendre_norm_probe.py`) and not yet
-  written out as a Lean statement.
+  ((1 − p^{2r+1})(1 − p^{2r+2})²(1 − p^{2r+3}) ‖βδ‖²)`. At fixed `q > 1` the square decays like
+  `q^{−4r}`, so the amplitude `C̃(r)` decays like `q^{−2r}`; as `q → 1` the amplitude grows like
+  `r`. The decay is not uniform in `q`. The norm-only part of this substitution is the Lean
+  statement `QLegendreNorm.coupling_raise_sq`: `C_s² = (q⁻¹κ_s)² · H_{s+2}/H_{s+1} · ‖p_{s+2}‖²‖p_{s+1}‖²`.
 
 ## Not established
 
