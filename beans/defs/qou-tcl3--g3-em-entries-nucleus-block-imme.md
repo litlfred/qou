@@ -25,3 +25,6 @@ Pre-registered μ₁ = 1 − αh² (one photon vertex pair, #9841). ε_log 1.349
 
 ## 2026-11-28 — size law (PR #9859)
 Under homogeneity + additive volume: ε³A = const (Lean CoulombBlockSize). Mirror max/min 2.10 → 1.24. One length κ³/v left, shared with qou-mbfv.
+
+## 2026-11-28 — Coulomb length reduces to cell radius c (PR #9866)
+Unit CAL-3 λ̄_π, A^(1/3) derived (#9859); only c selected. Arms c=1 and c³=3/2 recorded, none adopted (owner card). Next lever: derived p-shell shape (A≥5) replacing the imported ball.

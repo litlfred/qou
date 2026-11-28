@@ -38,3 +38,6 @@ The n−p EM term needs a derived energy-to-length map. All representations are 
 
 
 2026-11-27T22:25Z From the electron-weight thread: PR #9789 uses the framing-corrected mass (def:mass-identity), U_e = 3 − D[4]/[4] = 2.4846. The cell becomes +2/U_e m_e = +0.411 MeV with the neutron above the proton (right sign), 3.15× short of 1.293. This may resolve the #9767 orientation; the size gap stays at ~3×. Not wired.
+
+## 2026-11-28 — Coulomb length reduces to cell radius c (PR #9866)
+Unit CAL-3 λ̄_π, A^(1/3) derived (#9859); only c selected. Arms c=1 and c³=3/2 recorded, none adopted (owner card). Next lever: derived p-shell shape (A≥5) replacing the imported ball.
