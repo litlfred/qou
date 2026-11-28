@@ -13,11 +13,11 @@
   ],
   "label": "rem:adelic-tate-squeeze",
   "kind": "remark",
-  "title": "Adelic--Tate surreal squeeze: local Reeb-$\\varepsilon_p$ at each prime and the global Euler product",
+  "title": "Restricted-product surreal valuations: local $\\varepsilon_v$ orders across places",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-adelic-reeb-restricted-product"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/thm-hasse-weil-bound",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-adelic-reeb-restricted-product",
   "cites": [
     "references/conway1976",
     "references/tate1967"
@@ -27,8 +27,6 @@
     "tate-thesis",
     "fourier-transform",
     "euler-product",
-    "riemann-hypothesis",
-    "millennium-problem",
     "surreal",
     "squeeze",
     "local-global"

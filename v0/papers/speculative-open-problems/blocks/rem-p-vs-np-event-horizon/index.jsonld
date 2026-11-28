@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/speculative-open-problems/blocks/rem-p-vs-np-event-horizon",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:p-vs-np-event-horizon",
+  "kind": "remark",
+  "title": "Analogy between black-hole jet horizons and computational witness verification",
+  "uses": [
+    "papers/speculative-open-problems/blocks/conj-p-vs-np-boundary",
+    "papers/quantum-observable-universe/blocks/def-jet-horizon"
+  ],
+  "interprets": "papers/speculative-open-problems/blocks/conj-p-vs-np-boundary",
+  "cites": [
+    "references/arxiv-1301.4504v4"
+  ],
+  "tags": [
+    "P-vs-NP",
+    "event-horizon",
+    "jet-horizon",
+    "dictionary"
+  ],
+  "text": "p-vs-np-event-horizon.md",
+  "provenance": "authored"
+}

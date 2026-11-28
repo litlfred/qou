@@ -2,7 +2,7 @@
   "$schema": "folio-bean-index/v1",
   "tile": {
     "beans": {
-      "count": 1794,
+      "count": 1793,
       "unit": "open beans"
     }
   },
@@ -18385,7 +18385,7 @@
       ],
       "blockedBy": [],
       "createdAt": "2026-11-23T19:58:00Z",
-      "updatedAt": "2026-11-24T02:28:17Z",
+      "updatedAt": "2026-11-28T11:18:00Z",
       "preview": "## Goal\n\nFormalize and Lean-prove (`0 sorry`, `0 axiom`) QOU's 5-Layer Iterated Confinement Tower (`L_0 -> L_1 -> L_2 -> L_3 -> L_4`) as a discrete, zero-counterterm algebraic Renormalization Group / Dantzig-Wolfe multilevel column-generation functor, together with the Adiabatic Confinement Gap Stability Theorem (`eta_k = ||V_{k+1}|| / Delta_k < 1`) and Layer-4 Chemical Stoichiometry via Toric / D",
       "file": "beans/defs/qou-5lct--iterated-confinement-tower-adiabatic-gap-and-chem.md"
     },
@@ -34863,7 +34863,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-28T10:15:33Z",
-      "updatedAt": "2026-11-28T10:15:33Z",
+      "updatedAt": "2026-11-28T11:18:00Z",
       "preview": "2026-11-28 (Antigravity coordinator 92bff8c9-777d-458a-a380-8dd5bf5cc0f3, sibling ws15-p3-p5-p6 & ws12-pr9180): Review applicability against 2026-11-27/28 owner rulings (`owner-rulings.md` T3 valence cap, proton pin, base-ring units, aether terminology), rebase onto `origin/main`, verify Lean (`0 sorry`, `base-ring-audit`, `transcendental-boundary-audit`), two-step stamp 80-dps witnesses at proton",
       "file": "beans/defs/qou-d9iv--salvage-re-scope-nov-24-uncommitted-stability-work.md"
     },
@@ -45375,14 +45375,14 @@
     {
       "id": "qou-ii2k",
       "title": "Speculative document split: move RH, P vs NP, Yang-Mills, BSD, Collatz & Millennium unification to folio/speculative-open-problems and keep neutral algebra in main book",
-      "status": "in-progress",
+      "status": "completed",
       "type": "task",
       "priority": "high",
       "parent": "qou-s028",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-28T10:15:31Z",
-      "updatedAt": "2026-11-28T10:15:32Z",
+      "updatedAt": "2026-11-28T11:18:00Z",
       "preview": "2026-11-28 (Antigravity coordinator 92bff8c9-777d-458a-a380-8dd5bf5cc0f3, sibling ws1-precision -> branch claude/speculative-open-problems-split-20261128): Owner directive 'Move all except Navier-Stokes': move problem framing for RH, P vs NP, Yang-Mills, BSD, Collatz, and the Millennium unification / obstruction-specializations / skein-filtration tables into a separate speculative folio document (",
       "file": "beans/defs/qou-ii2k--speculative-document-split-move-rh-p-vs-np-yang-mi.md"
     },
@@ -65714,7 +65714,7 @@
         "qou-ziag"
       ],
       "createdAt": "2026-11-24T08:06:16Z",
-      "updatedAt": "2026-11-28T10:56:30Z",
+      "updatedAt": "2026-11-28T11:18:00Z",
       "preview": "## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)\n\nA **Swarm** is a first-class work item (`type: epic` in `beans`) with explicit **Acceptance Criteria / End State**, **Structured Work-Item Queues**, **On-Demand + Optional Periodic Human-Consumable Status Reporting**, and **Live Cold-Start Handover Notes**.\n\n### Defined End-State / Exit Criteria for the `'Stability'` Swarm\n- [",
       "file": "beans/defs/qou-s028--stability-swarm-merge-manager-continuity-handover.md"
     },
@@ -88196,13 +88196,13 @@
         "status": "in-progress",
         "epics": 9,
         "total": 427,
-        "closed": 174,
-        "open": 253,
-        "inProgress": 138,
+        "closed": 175,
+        "open": 252,
+        "inProgress": 137,
         "todo": 115,
         "draft": 0,
         "unclassified": 0,
-        "share": 0.40749414519906324
+        "share": 0.4098360655737705
       },
       {
         "id": "suwr",
@@ -88461,8 +88461,8 @@
       }
     ],
     "orphanOpen": 138,
-    "openTotal": 1794,
-    "coveredOpen": 1648,
+    "openTotal": 1793,
+    "coveredOpen": 1647,
     "duplicateIds": 0
   }
 }

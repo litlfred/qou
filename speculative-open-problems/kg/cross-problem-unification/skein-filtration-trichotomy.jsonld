@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/speculative-open-problems/blocks/rem-skein-filtration-trichotomy",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:skein-filtration-trichotomy",
+  "kind": "remark",
+  "title": "Length-filtration trichotomy on abstract observation systems, and why sharing a type does not couple problems",
+  "uses": [
+    "papers/speculative-open-problems/blocks/conj-q-collatz",
+    "papers/speculative-open-problems/blocks/conj-qou-p-neq-np",
+    "papers/speculative-open-problems/blocks/conj-p-vs-np-boundary",
+    "papers/quantum-observable-universe/blocks/def-computational-horizon"
+  ],
+  "interprets": "papers/speculative-open-problems/blocks/conj-qou-p-neq-np",
+  "tags": [
+    "skein",
+    "filtration",
+    "collatz",
+    "P-vs-NP",
+    "navier-stokes"
+  ],
+  "text": "skein-filtration-trichotomy.md",
+  "provenance": "authored"
+}

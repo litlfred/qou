@@ -16,14 +16,12 @@
   "title": "A fixed-width trace costs linear time, not $3^c$",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-computational-horizon",
-    "papers/quantum-observable-universe/blocks/conj-p-vs-np-boundary",
     "papers/quantum-observable-universe/blocks/prop-skein-polynomial-transfer-matrix"
   ],
   "tags": [
-    "P-vs-NP",
     "transfer-matrix",
     "computational-horizon",
-    "complexity"
+    "matrix-trace"
   ],
   "leanRef": "qou:QOU.Information.WordEval.traceCost_fst",
   "text": "bounded-width-trace-cost.md",

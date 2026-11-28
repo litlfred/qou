@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/speculative-open-problems/blocks/rem-surreal-bounds-graded-mikusinski",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:surreal-bounds-graded-mikusinski",
+  "kind": "remark",
+  "title": "Speculative graded-Mikusiński depth assignment across four surreal heuristics",
+  "uses": [
+    "papers/speculative-open-problems/blocks/rem-bsd-surreal-bound",
+    "papers/speculative-open-problems/blocks/rem-rh-surreal-bound",
+    "papers/speculative-open-problems/blocks/rem-p-vs-np-surreal-bound",
+    "papers/speculative-open-problems/blocks/rem-collatz-surreal-bound",
+    "papers/quantum-observable-universe/blocks/lem-surreal-squeeze",
+    "papers/quantum-observable-universe/blocks/conj-gb-depth-period-correspondence"
+  ],
+  "interprets": "papers/speculative-open-problems/blocks/conj-q-birch-swinnerton-dyer",
+  "cites": [
+    "references/conway1976"
+  ],
+  "tags": [
+    "surreal",
+    "mikusinski",
+    "analogy"
+  ],
+  "text": "surreal-bounds-graded-mikusinski.md",
+  "provenance": "authored"
+}

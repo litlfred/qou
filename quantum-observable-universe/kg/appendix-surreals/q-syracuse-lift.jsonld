@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-syracuse-lift",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-syracuse-lift",
+  "kind": "proposition",
+  "title": "Evaluation at $q = 1$ projects $\\mathcal{C}_q$-orbits to Syracuse trajectories and lifts periodicity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-balanced-holonomy-exclusion"
+  ],
+  "cites": [
+    "references/lagarias2010"
+  ],
+  "tags": [
+    "laurent-polynomial",
+    "syracuse",
+    "periodic-cycle",
+    "coprimality"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.CollatzSyracuseLift.syracuse_of_step",
+  "text": "q-syracuse-lift.md",
+  "provenance": "authored"
+}

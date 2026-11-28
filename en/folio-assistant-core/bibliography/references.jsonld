@@ -14987,6 +14987,26 @@
       "dcterms:publisher": "Springer"
     },
     {
+      "@id": "references/hicksmullenyucaszavislak2008",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "A Polynomial Analogue of the $3N+1$ Problem?",
+      "dcterms:creator": [
+        "Hicks, Kenneth",
+        "Mullen, Gary L.",
+        "Yucas, Joseph L.",
+        "Zavislak, Ryan"
+      ],
+      "dcterms:issued": "2008",
+      "dcterms:isPartOf": "The American Mathematical Monthly",
+      "bibo:volume": "115",
+      "bibo:issue": "7",
+      "bibo:pages": "615-622",
+      "bibo:doi": "10.1080/00029890.2008.11920572"
+    },
+    {
       "@id": "references/higman1955",
       "@type": [
         "fabio:Work",

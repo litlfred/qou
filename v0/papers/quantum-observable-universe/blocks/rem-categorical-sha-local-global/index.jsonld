@@ -13,14 +13,13 @@
   ],
   "label": "rem:categorical-sha-local-global",
   "kind": "remark",
-  "title": "The $q$-Tate--Shafarevich group as the local-global obstruction",
+  "title": "The monoidal localisation kernel as a local--global invariant",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-categorical-mordell-weil"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/def-categorical-mordell-weil",
   "tags": [
-    "birch-swinnerton-dyer",
-    "tate-shafarevich",
+    "localisation-kernel",
     "local-global",
     "categorical"
   ],

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-laurent-bounded-window",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:laurent-bounded-window",
+  "kind": "proposition",
+  "title": "Bounded-support $\\mathcal{C}_q$-orbits enter a finite cycle via $\\mathbb{F}_2[q]$ pigeonhole",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-balanced-holonomy-exclusion",
+    "papers/quantum-observable-universe/blocks/prop-q-syracuse-lift"
+  ],
+  "tags": [
+    "laurent-polynomial",
+    "pigeonhole",
+    "mod-2-reduction",
+    "periodic-cycle"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.CollatzBoundedWindow.reaches_cycle_of_bounded_window",
+  "text": "laurent-bounded-window.md",
+  "provenance": "authored"
+}

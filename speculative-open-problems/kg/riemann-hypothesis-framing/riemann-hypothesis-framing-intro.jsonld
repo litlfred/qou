@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/speculative-open-problems/blocks/sec-rh-framing-intro",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:rh-framing-intro",
+  "kind": "prose",
+  "cites": [
+    "references/weil1948",
+    "references/vonkoch1901",
+    "references/leitner2026"
+  ],
+  "text": "riemann-hypothesis-framing-intro.md",
+  "provenance": "authored"
+}

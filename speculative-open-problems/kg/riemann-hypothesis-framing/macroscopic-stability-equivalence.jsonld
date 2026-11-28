@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/speculative-open-problems/blocks/conj-macroscopic-stability-equivalence",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:macroscopic-stability-equivalence",
+  "kind": "conjecture",
+  "title": "Conjectural equivalence between Chebyshev error bounds, critical-line zeros, and Reeb spectral alignment",
+  "uses": [
+    "papers/speculative-open-problems/blocks/conj-classical-riemann-hypothesis",
+    "papers/quantum-observable-universe/blocks/thm-quantum-gap-collapse"
+  ],
+  "cites": [
+    "references/vonkoch1901"
+  ],
+  "tags": [
+    "stability",
+    "equivalence",
+    "riemann-hypothesis",
+    "continuum"
+  ],
+  "leanRef": "qou:QOU.Transcendental.StochasticMechanics.MacroscopicStabilityEquivalence",
+  "text": "macroscopic-stability-equivalence.md",
+  "provenance": "authored"
+}
