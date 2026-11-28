@@ -62,3 +62,12 @@ owner's call.
 3. **Define Φ by a modular parameter of `X₀(5)`** (the isogeny that `Jac(Bring)` carries),
    with the Hecke `q` entering through a Hauptmodul. Core-definition change, and the choice
    of Hauptmodul must be forced, not selected.
+
+## Germ route (owner ruling 2026-11-28 01:55Z: keep Φ open, try the germ route)
+
+| | step | where | status |
+|---|---|---|---|
+| **G1** | Up to the scalar `q`, the Hecke fundamental representation of `B₃` is reduced Burau at `t = q⁻²`. At `q² = −1` it equals `q·burauGen`, the integer Burau map `B₃ → SL(2, ℤ)` (onto, kernel `⟨Δ⁴⟩`, on `main`). That map is the Picard–Lefschetz monodromy of `H¹` of the Legendre family. So at `q² = −1` the Hecke representation *is* the elliptic Gauss–Manin local system, and the point where `[2]_q = 0` matches the unipotent monodromy. | `QOU/GaussManin/HeckeBurauCusp.lean` | **done** |
+| **G2** | Kohno (`library/kohno1987-aif`): reduced Burau at `t = e^{2πiα}` is the monodromy of the rank-2 hypergeometric local system with periods `∫ ∏(x − zᵢ)^{−α} dx`. At `α = ½` this is `∫ dx/y = ω`. State it as a hypothesis class under `QOU/Transcendental/`, and prove the `α = ½` specialisation against M1/M2. | `QOU/Transcendental/GaussManin/` | next |
+| **G3** | The candidate Φ is the Schwarz map (period ratio) of that family. `q` sets the exponent `α` (`q² = e^{2πiα}`), and `τ` is the period ratio over the configuration of branch points. So `q` is **not** the nome. This also explains the M4 mismatch (`q₀ ≈ 1.11` against `|nome| ≈ 0.31`): they are different coordinates. | analysis | research |
+| **G4** | `GermPeriodShare` from G3: `channelCount = 2` is the rank of the local system, and the share must come from the period normalisation of the hypergeometric pairing. The rational is still open. | — | research |
