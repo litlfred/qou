@@ -12,16 +12,28 @@ from codata_constants import M_C12_ATOMIC_MEV_VALIDATION, M_HE4_ATOMIC_MEV_VALID
 
 q = Q
 hbar_q = 1.0 - 1.0 / q
-q_half = math.sqrt(q)
 
-# Dressed quark masses (MeV) from terminal resolution
-mu_u, mu_d = 311.10, 312.39
+# Dressed quark masses (MeV) are INPUTS. The constants 311.10 / 312.39 that
+# stood here were chosen under the retired convention-C pair formula to
+# reproduce m_p and m_n (a fit) and are removed (owner rules 2026-11-27: no
+# fitting). Their derivation from the aether is open; record:
+# docs/audits/2026-11-28-dressed-mass-fit-removal.md.
+import argparse  # noqa: E402
+import mpmath as _mp  # noqa: E402
+from q_parameter import Q_MP as _Q_MP  # noqa: E402
+_ap = argparse.ArgumentParser(description=__doc__)
+_ap.add_argument("--mu-u", required=True, help="dressed up-quark mass, MeV")
+_ap.add_argument("--mu-d", required=True, help="dressed down-quark mass, MeV")
+_args = _ap.parse_args()
+mu_u, mu_d = _mp.mpf(_args.mu_u), _mp.mpf(_args.mu_d)
+
 
 def S(a, b):
-    return (q * a + (1/q) * b) / (q_half + 1/q_half)
+    """Pair Skein mass, convention D: (q^3 a + q^-1 b)/(q^2 + 1)."""
+    return (_Q_MP ** 3 * a + b / _Q_MP) / (_Q_MP ** 2 + 1)
 
-m_p = S(mu_u, mu_u) + 2 * S(mu_u, mu_d)   # proton
-m_n = 2 * S(mu_u, mu_d) + S(mu_d, mu_d)    # neutron
+m_p = float(S(mu_u, mu_u) + 2 * S(mu_u, mu_d))   # proton
+m_n = float(2 * S(mu_u, mu_d) + S(mu_d, mu_d))    # neutron
 m_e = M_E_MEV                             # electron (CODATA 2022)
 
 # (Z, N, symbol, name, B/A in MeV from AME2020, observed atomic mass MeV)
