@@ -315,7 +315,10 @@ class IndexTriangulation:
                     kvec[pos] = int(ki)
                 adm.append(kvec)
             empty_run = 0 if len(good) else empty_run + 1
-            if empty_run >= empty_shells_to_stop:
+            # Stop only past the charge window: inside it, empty shells can be
+            # followed by contributing ones (m015, b = 8μ+λ: shells 0-3 empty,
+            # the q² term sits at R = 4; bean qou-vr3q, 2026-11-28).
+            if empty_run >= empty_shells_to_stop and R > 2 * sum(abs(x) for x in b) + 4:
                 break
             R += 1
         else:
