@@ -1,0 +1,53 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dupont-sah1982",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 477,
+      "entry": {
+        "id": "dupont-sah1982",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1016/0022-4049(82)90035-4"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T13:27:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1016/0022-4049(82)90035-4).",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Establishes the pre-Bloch group modulo the 5-term relation, the Steinberg wedge z wedge (1 - z), and the Bloch-Wigner hyperbolic volume regulator.",
+          "keyResults": [
+            {
+              "locator": "\u00a72-4 (Pre-Bloch group P(C), 5-term relation, and Steinberg wedge kernel)",
+              "statement": "Identifies hyperbolic scissors congruence invariants with the pre-Bloch group modulo the 5-term relation and links the Bloch subgroup kernel to z wedge (1 - z) in Lambda^2 C^*.",
+              "useForFolio": "Primary reference for Part A (fourOne_steinberg_torsion) and Part B (pachner_pentagon_no_polynomial_jet) of FigureEightPachnerAndJetTranscendence.lean.",
+              "targets": [
+                "QOU.BraidsAndKnots.FigureEightPachnerAndJetTranscendence"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Cited in FigureEightPachnerAndJetTranscendence.lean."
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T13:27:00Z"
+        }
+      }
+    }
+  ]
+}

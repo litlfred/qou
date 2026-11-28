@@ -1,0 +1,53 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "beukers1979",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 480,
+      "entry": {
+        "id": "beukers1979",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1112/blms/11.3.268"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T13:27:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1112/blms/11.3.268).",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Re-proves Ap\u00e9ry's irrationality of zeta(2) and zeta(3) via Legendre-type multiple integrals, isolating the exact saddle-decay vs lcm(1..n)^s competition.",
+          "keyResults": [
+            {
+              "locator": " Lemmas 1-2 & Theorems 1-2 (pp. 268-272)",
+              "statement": "Evaluates double and triple Legendre-polynomial integrals on [0,1]^2 and [0,1]^3 whose denominators divide lcm(1..n)^2 and lcm(1..n)^3 while saddle modulus ((sqrt(5)-1)/2)^{5n} < e^{-2n} and (sqrt(2)-1)^{4n} < e^{-3n}.",
+              "useForFolio": "Explains quantitatively why untwisted zeta(2) succeeds (-0.406n < 0) while mod-3 L(2, chi_{-3}) hits lcm(1..3n)^2 ~ e^{6n} (+3.594n > 0).",
+              "targets": [
+                "QOU.BraidsAndKnots.FigureEightPachnerAndJetTranscendence"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Cited in FigureEightPachnerAndJetTranscendence.lean and 2026-11-28 audit."
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T13:27:00Z"
+        }
+      }
+    }
+  ]
+}

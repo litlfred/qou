@@ -1,0 +1,54 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "nesterenko1996",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 482,
+      "entry": {
+        "id": "nesterenko1996",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1070/SM1996v187n09ABEH000158"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T13:27:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1070/SM1996v187n09ABEH000158).",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Proves algebraic independence of modular/Eisenstein periods via differential Ramanujan systems combined with height and zero-multiplicity estimates; already cited in SurrealGradingPrune.lean.",
+          "keyResults": [
+            {
+              "locator": "Theorems 1-3 (Sb. Math. 187(9), pp. 1319-1348)",
+              "statement": "For any q in (0,1), at least three of q, P(q), Q(q), R(q) are algebraically independent over Q, yielding algebraic independence of pi, e^{pi}, and Gamma(1/4).",
+              "useForFolio": "Supplies the differential + height/multiplicity paradigm referenced by SurrealGradingPrune.lean and contrasted with formal-jet Wronskian descent in FigureEightPachnerAndJetTranscendence.lean.",
+              "targets": [
+                "QOU.Archimedean.SurrealPrune",
+                "QOU.BraidsAndKnots.FigureEightPachnerAndJetTranscendence"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Resolves prose reference in SurrealGradingPrune.lean and backs FigureEightPachnerAndJetTranscendence.lean."
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T13:27:00Z"
+        }
+      }
+    }
+  ]
+}
