@@ -755,6 +755,9 @@ import QOU.InformationTheory.CocenterTraceFactor
 import QOU.InformationTheory.OuterDerivationResidue
 import QOU.InformationTheory.WeylCentre
 import QOU.InformationTheory.HochschildH1
+import QOU.InformationTheory.BlockRigidity
+import QOU.InformationTheory.WordEvalCost
+import QOU.InformationTheory.JonesTractableOrders
 import QOU.InformationTheory.SkeinGradeConnective
 import QOU.InformationTheory.SkeinShadowConjInvariance
 import QOU.InformationTheory.PNeqNpWallUnification
