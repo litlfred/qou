@@ -1,8 +1,8 @@
 {
   "engine": "python+numpy+scipy+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-19T08:09:56.495590+00:00",
-  "commitSha": "37f363545087c0ff6bd4359090d620a162eeadbc",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-28T02:21:04.721361+00:00",
+  "commitSha": "1f0c01b3cefcaa3bb1e23201747048648c0da8dc",
   "assertions": [
     {
       "name": "hoefsmit_chi_finite_per_block_for_n3",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "qbeta-hoefsmit-tbeta-matrix-build-probe",
   "scriptFile": "qbeta_hoefsmit_tbeta_matrix_build_probe.py",
-  "scriptHash": "d19ab02fd176",
-  "scriptCommitSha": "eb491d0440b6a56bd393d9c7b3d268b428ff5f86",
+  "scriptHash": "dfdec750b0ae",
+  "scriptCommitSha": "c4888b0e524235b23cdb51520a0887669e8a7554",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -26,14 +26,15 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a22b08f9db48ed97"
   },
   "invocation": {
     "argv": [
@@ -69,20 +70,20 @@
         "lambda": [
           3
         ],
-        "dim_q": "0.9999999955842754475157023",
+        "dim_q": "0.9999999999999997357809734",
         "chi_identity": "1.0",
-        "chi_hopf": "1.2320524827850277",
-        "chi_electron_trefoil": "1.367551884599875"
+        "chi_hopf": "1.2320524541667646",
+        "chi_electron_trefoil": "1.3675518369513862"
       },
       {
         "lambda": [
           2,
           1
         ],
-        "dim_q": "2.010896860255594669178854",
+        "dim_q": "2.010896866707121768435279",
         "chi_identity": "2.0",
         "chi_hopf": "-1.0000000000000002",
-        "chi_electron_trefoil": "-1.6653345369377348e-16"
+        "chi_electron_trefoil": "1.1102230246251565e-16"
       },
       {
         "lambda": [
@@ -90,16 +91,16 @@
           1,
           1
         ],
-        "dim_q": "0.9999999955842754475157023",
+        "dim_q": "0.9999999999999997357809734",
         "chi_identity": "1.0",
-        "chi_hopf": "0.8116537355125671",
-        "chi_electron_trefoil": "-0.7312336820716572"
+        "chi_hopf": "0.8116537543657586",
+        "chi_electron_trefoil": "-0.7312337075494344"
       }
     ],
-    "q_0_numeric": "1.10997859564273904668179512938000175270006556102901155697404577",
+    "q_0_numeric": "1.1099785827513808075916690956107688798744991218735787360728142402",
     "stage_a_status": "computed only — per-block χ at q_0 (canonical Δ(net) absent/null in upstream witness; recombination check deferred to when canonical values are populated)",
     "stage_b_next": "build per-block operator T_β,λ via Hoefsmit + confinement SDP; read N=k correction levels off the matrix expansion in b(q)·ℏ_q² scaling; extract c_4..c_8 as the N=k operator-trace components."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
