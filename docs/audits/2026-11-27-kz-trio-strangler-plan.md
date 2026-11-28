@@ -148,3 +148,9 @@ coface map of `Pentagon.lean` with the action of `A^{⊗3}` on one of the five t
 the pentagon, through the linear associators; `linear_pentagon` is the linear identity; and
 `Rep.pentagon` follows from `CasimirData.pentagon` (hypothesis: the pentagon in `U4 N`).
 Sorry-free; axioms propext, Classical.choice, Quot.sound.
+
+`HAdicDrinfeld/ModuleMonoidal.lean`: the pieces above assembled into Mathlib's
+`MonoidalCategory (Rep.{u, w, u} D)` through `MonoidalCategory.ofTensorHom`. The hypotheses on
+`Φ` are bundled in `AssocData D` (nilpotent scale `c`, counit, `Inv512 (Fil N 1) Φ`, constant
+term 1, pentagon in `U4 N`). `Rep.monoidal P` is a `def`, not an instance, since it depends on
+`P`. The braiding `σ ∘ R` comes next. Sorry-free; axioms propext, Classical.choice, Quot.sound.
