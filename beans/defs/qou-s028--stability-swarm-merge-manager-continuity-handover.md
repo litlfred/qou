@@ -7,7 +7,7 @@ priority: high
 tags:
     - stability
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-28T11:33:00Z
+updated_at: 2026-11-28T11:36:00Z
 parent: qou-5vkl
 blocked_by:
     - qou-10v9
@@ -204,3 +204,5 @@ Verbatim (`2026-11-28`): *"make sure you are working proton pin... no longer muo
 2026-11-28 (merge-steward): Landed PR #9998 (Owner Card A1 hadron-level knot table retirement -> `4e47aed7aee7743b607f62773d7c5f3d7e1fc172`) and PR #9999 (`qou-v2om` / `qou-d9iv` Tranche B -> `8fcfa9e031cb68e47bfbd05cb31fbaa2fbf60c3d`; closed `qou-v2om` and `qou-d9iv`).
 
 2026-11-28 (merge-steward): Landed rebased Category (c) PR #9778 (`claude/pretzel-237-level2-blocks`) and post-merge QA PR #10001 (`qou-0jo7` -> `d6f663156699b2137363b7e6ea9607deea4d7530`; closed `qou-0jo7`; `ACCURACY.md` scorecard & `transcendental-boundary-audit` now GREEN on `main`).
+
+2026-11-28 (merge-steward): Landed PR #10000 (`qou-f3hr`, `qou-j5b6`, `qou-bbr4` closed) and rebased Category (c) PR #9721 (`claude/strand-end-merge-ceiling-2026-11-27`) onto `origin/main` -> `087485613e37d7688b2009dfa317a6abb23fd1bd`.
