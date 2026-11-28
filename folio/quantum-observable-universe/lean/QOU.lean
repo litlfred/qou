@@ -712,6 +712,7 @@ import BraidKnotOctonion.WignerTargetEquivariance
 import BraidKnotOctonion.BringConeLinkEulerNumber
 import QOU.BringsSurface.BringCone
 import QOU.BringsSurface.BringConeIcosahedral
+import QOU.BringsSurface.QuaternionConjugationOrientation
 import QOU.BringsSurface.BringConeGauge
 import QOU.BringsSurface.BringConeSplitChirality
 import QOU.BringsSurface.BringLatticeSpan

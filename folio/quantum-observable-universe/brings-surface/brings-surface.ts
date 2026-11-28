@@ -223,6 +223,7 @@ export default chapter({
         "bring-harmonic-types",
         "bring-harmonic-types-proof",
         "hopf-trace-formula",
+        "quaternion-conjugation-orientation",
         "bring-reflection-parity",
         "bring-reflection-parity-proof",
         "bring-spectral-sunset-selection",
