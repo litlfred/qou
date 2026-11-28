@@ -195,9 +195,14 @@ $b$. For $m \ge 1$ there are
 $2\binom{m}{r-2} + m\binom{m-1}{r-3} + m\binom{m-1}{r+1}$ such diagrams (`card_nearMin_eq`), which is
 $a_1$. Under the same divisibility hypothesis, this count is the coefficient one step below the top
 of $\sum_\lambda X^{N(\lambda)} g_\lambda(X^2)$, which is $q^{\binom n2} S(n)$ in the symmetric
-normalisation (`coeff_sum_sym_qHook_of_eq`). Not yet formalised: the divisibility
-$\prod_c [h(c)] \mid [n]!$ itself (Stanley, EC2, §7.21 \cite{stanley1999}), and the $\delta = 2$
-count behind $a_2$.
+normalisation (`coeff_sum_sym_qHook_of_eq`). `QOU.Mass.StaircaseNearMin2` (sorry-free) proves
+the $\delta = 2$ count and the formula for $a_2$ below: every diagram with $N = N_{\min} + 2$ adds
+a set $C$ of cells on antidiagonal $m+1$ and removes a set $B$ of cells of antidiagonal $m-1$ with
+$|C| + |B| = 2$ (`nearMin2_classify`), the three families are counted in closed form
+(`card_nearMin2_eq`), the minimisers have $r\binom{m+1}{r} + m\binom{m-1}{r}$ corners in total
+(`sum_corners_minimisers`), and for $n \ge 3$ the coefficient two steps below the top is the sum
+of the two (`coeff_sum_sym_qHook_two`). Not yet formalised: the divisibility
+$\prod_c [h(c)] \mid [n]!$ itself (Stanley, EC2, §7.21 \cite{stanley1999}).
 
 Together with the finite certificates this settles $6 \le n \le 20$, every triangular $n$, and
 every $n \in \{T_j + 1, T_{j+1} - 1\}$ with $j \ge 4$.
