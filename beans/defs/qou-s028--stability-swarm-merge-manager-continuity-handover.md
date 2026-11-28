@@ -7,7 +7,7 @@ priority: high
 tags:
     - stability
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-28T12:44:37Z
+updated_at: 2026-11-28T12:47:12Z
 parent: qou-5vkl
 blocked_by:
     - qou-10v9
@@ -231,3 +231,4 @@ Verbatim (`2026-11-28`): *"make sure you are working proton pin... no longer muo
 - **2026-11-28 (`#10011` landed)**: Merged PR `#10011` (`qou-qval` `crates/qou-values` fast MPFR witness evaluator, `43c583579931` -> `b5a545711ee23d64bf4923e2d9a629fbac23834a`, `1/1` replayed, `MISSING: 0`, `qou-qval` completed; `30` PRs landed in session).
 - **2026-11-28 (`#10012` landed)**: Merged PR `#10012` (`qou-gsgg` `crates/gs-basis` + `crates/qou-gg-core`, `280c1aa31f20` -> `fdc097cab80067021ed645f8af9894cc960f64da`, `MISSING: 0`, `qou-gsgg` completed; `31` PRs landed in session).
 - **2026-11-28 (`#10013` & `#10014` landed)**: Merged PR `#10013` (`f67030ed69bf` -> `514ded2c45f21e14c877c19864a7cef00c97645b`, adjoint Reidemeister torsion gap-closure) and PR `#10014` (`5268667e9a72` -> `470258c688fe7b732bd817bf27b14403243857d0`, `qou-cbot` completed; `33` PRs landed in session, all `MISSING: 0`; `Paper PDF` GHA `46145422422` `conclusion=success`!).
+- **2026-11-28 (`#10016` landed)**: Merged PR `#10016` (`claude/kg-evidence-ingest-torsion-reeb-stokes-20261128` @ `e8ee6071a9f6` -> `1037b5606b9ec8a19641ea6a69f45d72afb40c29`, `MISSING: 0`; `34` PRs landed in session).
