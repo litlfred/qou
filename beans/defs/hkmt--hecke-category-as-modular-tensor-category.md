@@ -2,7 +2,7 @@
 # hkmt
 title: 'BWH-1: the root-of-unity Hecke/TL quotient is a modular tensor category (S,T from Markov trace)'
 status: in-progress
-pr: 9776
+pr: 9941
 type: task
 priority: high
 tags:
@@ -134,3 +134,9 @@ thread, #9923), modularity.
 
 ## 2026-11-28 — slide words done (PR #9941)
 `TLSlideIso.lean`: slide words U, V with U·V = tensor corner, V·U = standard corner; compatible with two more strands on either factor (second factor exactly, first factor by slide_conj_succ). Sorry-free. Next: glued tensor of morphisms, unit object (needs zero-through-strand objects), MonoidalCategory.
+
+## 2026-11-28 — glued K-linear MonoidalCategory complete (PR #9941 Ready `6118b03bd24a`)
+- `TLZigzag.lean`, `TLSlideIso.lean`, `TLGluedTensor.lean`: level-independent functorial & bilinear tensor product `tensHom` on `GObj T hε` via zigzag slide partial isometries.
+- `TLGluedAssoc.lean`: `glued_induction` (decomposition of every glued morphism into cups, top-level endomorphisms, and caps), full 3-slot associator naturality `assoc_nat`, and Mac Lane pentagon `tensHom_pentagon` (`0` `sorry`).
+- `TLGluedMonoidal.lean`: zero-strand vacuum idempotent `vacIdem = δ⁻¹ e_0 ∈ End [1]`, natural right/left unitors (`uR_nat`, `uL_nat`), Mac Lane triangle (`triangle_gobj`), and full `MonoidalCategory`, `MonoidalPreadditive`, and `MonoidalLinear K` instances on the idempotent completion `TLMonObj T hε` with full & faithful `K`-linear embedding `inclG : GObj T hε ⥤ TLMonObj T hε` (`0` `sorry`, `0` `field_simp`, axioms `[propext, Classical.choice, Quot.sound]`).
+- **Still open on `hkmt`:** lift `TLQuotientBraiding` + `TLGluedTwist` (#9995) onto `TLMonObj T hε` for `BraidedCategory` / `BalancedCategory` / `RibbonCategory` instances.
