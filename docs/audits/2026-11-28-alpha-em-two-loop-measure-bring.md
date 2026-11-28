@@ -107,3 +107,10 @@ From it, with no further input:
 
 No comparison with CODATA is made here, and none should pick between these choices
 (`qou-aemx`: no form is chosen by its residual).
+
+## Ruling applied (2026-11-28)
+
+Recommended option taken under the standing pick: the **product measure stays the corpus
+default** (`κ₂ = 0`), and the flat-sunset `ζ(3)` period is a **labelled research arm**
+`R1_FlatSunset_zeta3`, registered (unscored, unwired) in
+`computations/alpha/alpha_em_two_loop_bloch_schwinger_preregistration.md`. Carl can override.
