@@ -2810,7 +2810,9 @@
       "type": "milestone",
       "priority": "normal",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-07-05T13:20:00Z",
       "updatedAt": "2026-11-16T21:22:30Z",
@@ -9382,7 +9384,9 @@
       "type": "milestone",
       "priority": "normal",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-10-04T15:09:56Z",
       "updatedAt": "2026-11-27T14:25:42Z",
@@ -9914,7 +9918,9 @@
       "type": "milestone",
       "priority": "critical",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-10-04T15:09:54Z",
       "updatedAt": "2026-11-22T21:54:03Z",
@@ -13668,7 +13674,9 @@
       "type": "task",
       "priority": "",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-11-27T17:26:40Z",
       "updatedAt": "2026-11-27T17:26:40Z",
@@ -13794,7 +13802,9 @@
       "type": "task",
       "priority": "normal",
       "parent": "qou-5vkl",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-08-26T15:43:52Z",
       "updatedAt": "2026-11-27T14:18:15Z",
@@ -16043,7 +16053,9 @@
       "type": "task",
       "priority": "high",
       "parent": "qou-cxh0",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-11-14T07:02:23Z",
       "updatedAt": "2026-11-27T15:10:00Z",
@@ -16859,7 +16871,9 @@
       "type": "bug",
       "priority": "normal",
       "parent": "qou-5vkl",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-08-28T14:08:26Z",
       "updatedAt": "2026-11-27T14:18:18Z",
@@ -17883,7 +17897,9 @@
       "type": "epic",
       "priority": "normal",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-11-23T21:14:50Z",
       "updatedAt": "2026-11-24T19:46:52Z",
@@ -22696,7 +22712,9 @@
       "type": "epic",
       "priority": "",
       "parent": "qou-5vkl",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-10-04T16:35:38Z",
       "updatedAt": "2026-10-04T16:35:38Z",
@@ -28192,7 +28210,9 @@
       "type": "task",
       "priority": "normal",
       "parent": "qou-5vkl",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-08-30T13:03:01Z",
       "updatedAt": "2026-11-27T14:18:25Z",
@@ -30728,7 +30748,9 @@
       "type": "task",
       "priority": "normal",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-11-25T16:25:07Z",
       "updatedAt": "2026-11-27T14:45:00Z",
@@ -32930,7 +32952,9 @@
       "type": "feature",
       "priority": "normal",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-11-27T14:19:06Z",
       "updatedAt": "2026-11-27T14:19:06Z",
@@ -35458,7 +35482,9 @@
       "type": "task",
       "priority": "normal",
       "parent": "qou-5vkl",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-09-04T08:14:33Z",
       "updatedAt": "2026-11-27T14:18:28Z",
@@ -36820,7 +36846,9 @@
       "type": "task",
       "priority": "normal",
       "parent": "qou-5vkl",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-08-19T13:15:18Z",
       "updatedAt": "2026-11-27T14:18:29Z",
@@ -37100,7 +37128,9 @@
       "type": "bug",
       "priority": "high",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-11-27T21:38:08Z",
       "updatedAt": "2026-11-27T21:55:13Z",
@@ -37142,7 +37172,9 @@
       "type": "task",
       "priority": "normal",
       "parent": "qou-5vkl",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-09-03T04:57:50Z",
       "updatedAt": "2026-11-27T15:30:00Z",
@@ -42092,7 +42124,7 @@
       ],
       "blockedBy": [],
       "createdAt": "2026-08-10T18:34:14Z",
-      "updatedAt": "2026-11-27T23:16:02Z",
+      "updatedAt": "2026-11-27T23:42:00Z",
       "preview": "sm-open-problems.md names this itself: hypercharge Y open, 'framework braid words\nper chiral fermion STILL MISSING'.\n\nThis is the real blocker, upstream of everything else on the T(t) front. Without a\nbraid word per chiral fermion there is nothing to read t off, so T(t) is a free\nlabel BY CONSTRUCTION -- which is exactly why the published battery returns a\ntautology (TwistBatteryVacuity.lean: the ",
       "file": "beans/defs/qou-h0zz--v6-braid-words-per-chiral-fermion-the-actual-block.md"
     },
@@ -43222,7 +43254,9 @@
       "type": "milestone",
       "priority": "critical",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-11-23T20:54:25Z",
       "updatedAt": "2026-11-27T14:18:33Z",
@@ -47485,7 +47519,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T22:17:45Z",
-      "updatedAt": "2026-11-27T23:24:09Z",
+      "updatedAt": "2026-11-27T23:47:53Z",
       "preview": "Conjecture (SC). Let rho_n(s) = E_PG[1{i_n+j_n=s}/(r_{n-1} r_{n-2})] over Plancherel growth, with r_k = c(k+1)-c(k) and (i_n,j_n) the 1-indexed position of box n. It is a mass-zero signed measure, and M1(n) = (n(n-1)(n-2)/3) sum_s s rho_n(s) (Jucys-Murphy + Young orthogonal form; verified exactly against the hook formula n=3..7).\nClaim: rho_n is <=0 then >=0 in s (one sign change). Checked exactly",
       "file": "beans/defs/qou-jmgu--gap-single-crossing-of-rho-n-last-box-signed-measu.md"
     },
@@ -49032,7 +49066,9 @@
       "type": "task",
       "priority": "normal",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-11-27T23:10:57Z",
       "updatedAt": "2026-11-27T23:24:28Z",
@@ -51463,7 +51499,9 @@
       "type": "milestone",
       "priority": "",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-10-04T15:09:56Z",
       "updatedAt": "2026-10-04T15:09:56Z",
@@ -53675,7 +53713,9 @@
       "type": "bug",
       "priority": "",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-11-27T21:59:36Z",
       "updatedAt": "2026-11-27T21:59:36Z",
@@ -54659,7 +54699,9 @@
       "type": "epic",
       "priority": "high",
       "parent": "qou-5vkl",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-09-26T11:18:14Z",
       "updatedAt": "2026-10-04T15:10:14Z",
@@ -60791,7 +60833,9 @@
       "type": "task",
       "priority": "normal",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-09-27T10:52:15Z",
       "updatedAt": "2026-11-27T15:30:00Z",
@@ -62870,7 +62914,9 @@
       "type": "epic",
       "priority": "normal",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-11-15T08:00:00Z",
       "updatedAt": "2026-11-15T08:00:00Z",
@@ -65179,7 +65225,9 @@
       "type": "milestone",
       "priority": "",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-10-04T15:09:55Z",
       "updatedAt": "2026-11-18T11:45:08Z",
@@ -65530,9 +65578,45 @@
       "priority": "high",
       "parent": "qou-5vkl",
       "blocking": [],
-      "blockedBy": [],
+      "blockedBy": [
+        "b9cj",
+        "qou-0uga",
+        "qou-10v9",
+        "qou-35a8",
+        "qou-37kk",
+        "qou-4f8t",
+        "qou-4un2",
+        "qou-5bkr",
+        "qou-7vh1",
+        "qou-agvb",
+        "qou-bes8",
+        "qou-cfwx",
+        "qou-dke6",
+        "qou-e9pp",
+        "qou-efxy",
+        "qou-eggf",
+        "qou-hksc",
+        "qou-kdh5",
+        "qou-lpep",
+        "qou-mm2j",
+        "qou-n4r9",
+        "qou-q1tk",
+        "qou-qs0e",
+        "qou-rtxm",
+        "qou-sogb",
+        "qou-t3nx",
+        "qou-trd0",
+        "qou-u81q",
+        "qou-v6so",
+        "qou-vo9t",
+        "qou-w3dm",
+        "qou-wsha",
+        "qou-yvgk",
+        "qou-za1a",
+        "qou-ziag"
+      ],
       "createdAt": "2026-11-24T08:06:16Z",
-      "updatedAt": "2026-11-27T14:28:28Z",
+      "updatedAt": "2026-11-27T23:36:14Z",
       "preview": "## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)\n\nA **Swarm** is a first-class work item (`type: epic` in `beans`) with explicit **Acceptance Criteria / End State**, **Structured Work-Item Queues**, **On-Demand + Optional Periodic Human-Consumable Status Reporting**, and **Live Cold-Start Handover Notes**.\n\n### Defined End-State / Exit Criteria for the `'Stability'` Swarm\n- [",
       "file": "beans/defs/qou-s028--stability-swarm-merge-manager-continuity-handover.md"
     },
@@ -67009,7 +67093,9 @@
       "type": "bug",
       "priority": "high",
       "parent": "qou-5vkl",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-09-13T12:41:19Z",
       "updatedAt": "2026-11-27T14:18:46Z",
@@ -67413,12 +67499,12 @@
       "title": "Formalize depth-2 tail: nuV (n-2) n = closed form (carrier classification + collapse)",
       "status": "todo",
       "type": "task",
-      "priority": "",
+      "priority": "normal",
       "parent": "qou-x631",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T22:37:13Z",
-      "updatedAt": "2026-11-27T22:37:13Z",
+      "updatedAt": "2026-11-27T23:51:20Z",
       "preview": "Closed form ν_{n−2}(n) = (n−2)(n−5)Q(n)C(2n−8,n−4)/(6(n−3)n!) derived and verified exactly n=4..26 (docs/audits/2026-11-27-covariance-kernel-depth-two-tail.md). Sign of the closed form proved in BraidKnotOctonion/YoungDiagramTailThirdInstance.lean (onset n₂=10). Open: prove nuV (n−2) n = nuDepthTwoClosedForm n in Lean, following DepthOneHookClassification + YoungDiagramTailSecondInstance (carriers",
       "file": "beans/defs/qou-swk4--formalize-depth-2-tail-nuv-n-2-n-closed-form-carri.md"
     },
@@ -67923,7 +68009,9 @@
       "type": "task",
       "priority": "normal",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-11-27T21:59:36Z",
       "updatedAt": "2026-11-27T22:30:56Z",
@@ -68543,7 +68631,7 @@
       "blockedBy": [],
       "createdAt": "2026-11-27T20:25:00Z",
       "updatedAt": "2026-11-27T21:14:14Z",
-      "preview": "No binding formula on record has em entries: no Z²-type term. Rank cap 2 for a two-body operator gives a + b T_z + c T_z² inside a multiplet (derived from the cap, not imported). Feeds B, Q_β, Q_α (ΔB constant 9.5366 MeV along the alpha line, #9653), mirror nuclei.\n\nRESULT: PR #9691, EM channel a=A(A-2)/8, b=(A-1)/2, c=1/2 derived; r_rms open",
+      "preview": "No binding formula on record has em entries: no Z²-type term. Rank cap 2 for a two-body operator gives a + b T_z + c T_z² inside a multiplet (derived from the cap, not imported). Feeds B, Q_β, Q_α (ΔB constant 9.5366 MeV along the alpha line, #9653), mirror nuclei.\n\nRESULT: PR #9691, EM channel a=A(A-2)/8, b=(A-1)/2, c=1/2 derived; r_rms open\n\n## 2026-11-27T23:59Z — ring-valued ledger (PR #9839)\nE",
       "file": "beans/defs/qou-tcl3--g3-em-entries-nucleus-block-imme.md"
     },
     {
@@ -69521,7 +69609,9 @@
       "type": "epic",
       "priority": "",
       "parent": "qou-5vkl",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-10-04T15:10:13Z",
       "updatedAt": "2026-10-04T15:10:13Z",
@@ -70512,7 +70602,9 @@
       "type": "task",
       "priority": "",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-11-27T21:59:36Z",
       "updatedAt": "2026-11-27T21:59:36Z",
@@ -72593,7 +72685,9 @@
       "type": "feature",
       "priority": "normal",
       "parent": "qou-5vkl",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-09-26T17:56:12Z",
       "updatedAt": "2026-10-04T15:15:33Z",
@@ -73545,7 +73639,9 @@
       "type": "epic",
       "priority": "",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-10-12T19:14:23Z",
       "updatedAt": "2026-11-22T21:45:00Z",
@@ -74361,7 +74457,9 @@
       "type": "task",
       "priority": "high",
       "parent": "qou-5vkl",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-08-08T07:40:00Z",
       "updatedAt": "2026-11-27T14:18:49Z",
@@ -75767,7 +75865,9 @@
       "type": "task",
       "priority": "low",
       "parent": "qou-5vkl",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-08-10T03:45:00Z",
       "updatedAt": "2026-11-27T14:18:50Z",
@@ -80267,7 +80367,9 @@
       "type": "epic",
       "priority": "",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-11-27T14:54:02Z",
       "updatedAt": "2026-11-27T14:54:02Z",
@@ -81099,7 +81201,9 @@
       "type": "task",
       "priority": "normal",
       "parent": "",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-11-27T21:30:49Z",
       "updatedAt": "2026-11-27T22:08:42Z",
@@ -81477,7 +81581,9 @@
       "type": "task",
       "priority": "normal",
       "parent": "qou-5vkl",
-      "blocking": [],
+      "blocking": [
+        "qou-s028"
+      ],
       "blockedBy": [],
       "createdAt": "2026-09-15T21:22:33Z",
       "updatedAt": "2026-11-27T14:18:52Z",
@@ -85962,6 +86068,13 @@
       ]
     },
     {
+      "blocker": "b9cj",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
       "blocker": "htw2",
       "blocked": "qou-kebu",
       "declaredOn": [
@@ -86011,6 +86124,20 @@
       ]
     },
     {
+      "blocker": "qou-0uga",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-10v9",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
       "blocker": "qou-143e",
       "blocked": "qou-xip2",
       "declaredOn": [
@@ -86046,6 +86173,20 @@
       ]
     },
     {
+      "blocker": "qou-35a8",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-37kk",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
       "blocker": "qou-37y0",
       "blocked": "qou-ha6c",
       "declaredOn": [
@@ -86067,8 +86208,29 @@
       ]
     },
     {
+      "blocker": "qou-4f8t",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
       "blocker": "qou-4rhu",
       "blocked": "qou-4dj1",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-4un2",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-5bkr",
+      "blocked": "qou-s028",
       "declaredOn": [
         "blocked_by"
       ]
@@ -86130,6 +86292,13 @@
       ]
     },
     {
+      "blocker": "qou-7vh1",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
       "blocker": "qou-7vm4",
       "blocked": "qou-d5eg",
       "declaredOn": [
@@ -86186,10 +86355,24 @@
       ]
     },
     {
+      "blocker": "qou-agvb",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
       "blocker": "qou-as81",
       "blocked": "qou-jz80",
       "declaredOn": [
         "blocking"
+      ]
+    },
+    {
+      "blocker": "qou-bes8",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
       ]
     },
     {
@@ -86382,10 +86565,45 @@
       ]
     },
     {
+      "blocker": "qou-cfwx",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
       "blocker": "qou-de7r",
       "blocked": "qou-jbfx",
       "declaredOn": [
         "blocking"
+      ]
+    },
+    {
+      "blocker": "qou-dke6",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-e9pp",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-efxy",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-eggf",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
       ]
     },
     {
@@ -86473,6 +86691,13 @@
       ]
     },
     {
+      "blocker": "qou-hksc",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
       "blocker": "qou-htk4",
       "blocked": "qou-pvu4",
       "declaredOn": [
@@ -86543,8 +86768,22 @@
       ]
     },
     {
+      "blocker": "qou-kdh5",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
       "blocker": "qou-kgdt",
       "blocked": "qou-mlib",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-lpep",
+      "blocked": "qou-s028",
       "declaredOn": [
         "blocked_by"
       ]
@@ -86599,10 +86838,24 @@
       ]
     },
     {
+      "blocker": "qou-mm2j",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
       "blocker": "qou-mr7s",
       "blocked": "qou-xip2",
       "declaredOn": [
         "blocking"
+      ]
+    },
+    {
+      "blocker": "qou-n4r9",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
       ]
     },
     {
@@ -86636,6 +86889,13 @@
     {
       "blocker": "qou-pzsi",
       "blocked": "qou-mjo7",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-q1tk",
+      "blocked": "qou-s028",
       "declaredOn": [
         "blocked_by"
       ]
@@ -86678,6 +86938,13 @@
     {
       "blocker": "qou-qpj9",
       "blocked": "qou-qneo",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-qs0e",
+      "blocked": "qou-s028",
       "declaredOn": [
         "blocked_by"
       ]
@@ -86746,6 +87013,13 @@
       ]
     },
     {
+      "blocker": "qou-rtxm",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
       "blocker": "qou-sdls",
       "blocked": "qou-ny58",
       "declaredOn": [
@@ -86755,6 +87029,27 @@
     {
       "blocker": "qou-se9w",
       "blocked": "qou-pvu4",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-sogb",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-t3nx",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-trd0",
+      "blocked": "qou-s028",
       "declaredOn": [
         "blocked_by"
       ]
@@ -86776,6 +87071,13 @@
     {
       "blocker": "qou-u7v6",
       "blocked": "qou-zt8v",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-u81q",
+      "blocked": "qou-s028",
       "declaredOn": [
         "blocked_by"
       ]
@@ -86837,6 +87139,20 @@
       ]
     },
     {
+      "blocker": "qou-v6so",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-vo9t",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
       "blocker": "qou-vudb",
       "blocked": "qou-xo43",
       "declaredOn": [
@@ -86848,6 +87164,13 @@
       "blocked": "qou-7p89",
       "declaredOn": [
         "blocking"
+      ]
+    },
+    {
+      "blocker": "qou-w3dm",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
       ]
     },
     {
@@ -86867,6 +87190,13 @@
     {
       "blocker": "qou-wp3h",
       "blocked": "qou-9sj3",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-wsha",
+      "blocked": "qou-s028",
       "declaredOn": [
         "blocked_by"
       ]
@@ -86942,8 +87272,29 @@
       ]
     },
     {
+      "blocker": "qou-yvgk",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
       "blocker": "qou-ywyq",
       "blocked": "qou-9sj3",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-za1a",
+      "blocked": "qou-s028",
+      "declaredOn": [
+        "blocked_by"
+      ]
+    },
+    {
+      "blocker": "qou-ziag",
+      "blocked": "qou-s028",
       "declaredOn": [
         "blocked_by"
       ]
@@ -86978,15 +87329,51 @@
     },
     {
       "kind": "blocked-without-expiry",
+      "bean": "b9cj",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
       "bean": "qou-0c19",
       "blocks": "qou-qqlr",
       "detail": "blocks `qou-qqlr` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
     },
     {
       "kind": "blocked-without-expiry",
+      "bean": "qou-0uga",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
+      "bean": "qou-10v9",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
       "bean": "qou-20sx",
       "blocks": "qou-xo43",
       "detail": "blocks `qou-xo43` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
+      "bean": "qou-35a8",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
+      "bean": "qou-4f8t",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
+      "bean": "qou-5bkr",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
     },
     {
       "kind": "blocked-without-expiry",
@@ -86999,6 +87386,12 @@
       "bean": "qou-91w7",
       "blocks": "qou-1ozb",
       "detail": "blocks `qou-1ozb` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
+      "bean": "qou-bes8",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
     },
     {
       "kind": "blocked-without-expiry",
@@ -87146,9 +87539,39 @@
     },
     {
       "kind": "blocked-without-expiry",
+      "bean": "qou-cfwx",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
+      "bean": "qou-efxy",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
       "bean": "qou-gpb5",
       "blocks": "qou-qqlr",
       "detail": "blocks `qou-qqlr` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
+      "bean": "qou-hksc",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
+      "bean": "qou-kdh5",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
+      "bean": "qou-lpep",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
     },
     {
       "kind": "blocked-without-expiry",
@@ -87158,9 +87581,27 @@
     },
     {
       "kind": "blocked-without-expiry",
+      "bean": "qou-mm2j",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
       "bean": "qou-o6ml",
       "blocks": "qou-ha6c",
       "detail": "blocks `qou-ha6c` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
+      "bean": "qou-q1tk",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
+      "bean": "qou-qs0e",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
     },
     {
       "kind": "blocked-without-expiry",
@@ -87176,6 +87617,24 @@
     },
     {
       "kind": "blocked-without-expiry",
+      "bean": "qou-rtxm",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
+      "bean": "qou-t3nx",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
+      "bean": "qou-u81q",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
       "bean": "qou-ud3o",
       "blocks": "qou-jsx5",
       "detail": "blocks `qou-jsx5` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
@@ -87188,6 +87647,12 @@
     },
     {
       "kind": "blocked-without-expiry",
+      "bean": "qou-vo9t",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
       "bean": "qou-x4qm",
       "blocks": "qou-pj82",
       "detail": "blocks `qou-pj82` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
@@ -87197,6 +87662,18 @@
       "bean": "qou-x4qm",
       "blocks": "qou-y0mq",
       "detail": "blocks `qou-y0mq` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
+      "bean": "qou-yvgk",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
+    },
+    {
+      "kind": "blocked-without-expiry",
+      "bean": "qou-za1a",
+      "blocks": "qou-s028",
+      "detail": "blocks `qou-s028` (declared by its blocked_by:), and neither states an expiry, so the block cannot be told from abandoned work"
     },
     {
       "kind": "blocker-closed",
