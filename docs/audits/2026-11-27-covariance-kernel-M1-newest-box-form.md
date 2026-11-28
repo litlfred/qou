@@ -159,8 +159,8 @@ here.
 
 ## Measurement
 
-`ρ_n` has exactly one sign change for every `n = 4…58`. The threshold is `t_n = 11` for `n = 41…46`,
-`t_n = 12` for `n = 47…56` and `t_n = 13` for `n = 57, 58`. The witness records `n ≤ 50` (an earlier version recorded `n ≤ 45`); `n = 46…58` came from the same integer sign computation in a separate run, not recorded in the witness. This extends the `n ≤ 40` check of the Jucys–Murphy audit. The
+`ρ_n` has exactly one sign change for every `n = 4…67`. The threshold is `t_n = 11` for `n = 41…46`,
+`t_n = 12` for `n = 47…56` and `t_n = 13` for `n = 57…67`. The witness records `n ≤ 50`; `n = 51…67` came from the same integer sign computation in a separate run, not recorded in the witness. This extends the `n ≤ 40` check of the Jucys–Murphy audit. The
 single-box formula is about 100× faster than the three-box one (`n = 42` takes 2.7 s).
 
 The exhaustive table already gives `M₁(n) > 0` for `n ≤ 78`, so this extension adds no new value of
