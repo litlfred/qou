@@ -123,6 +123,8 @@ import QOU.Transcendental.MassTheory.MassComparison
 import QOU.Observations.LeptonUniversalityLadder
 import QOU.Observations.LeptonChargeClassTrace
 import QOU.Observations.LeptonWordsCatMap
+import QOU.Observations.LeptonMassAtI
+import QOU.Observations.LeptonColouredBurau
 import QOU.Observations.ColouredLadderTwist
 import QOU.Observations.VolumeOrderRule
 import QOU.Transcendental.MassTheory.KnotConvolutionVolume
@@ -283,6 +285,7 @@ import QOU.BraidsAndKnots.HAdicDrinfeld.Hexagon
 import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleCategory
 import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleMonoidal
 import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleBraiding
+import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleHexagon
 import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleAssociator
 import QOU.BraidsAndKnots.HAdicDrinfeld.ModulePentagon
 import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleUnit
@@ -1111,6 +1114,11 @@ import QOU.Nuclear.StokesIndexCount41
 import QOU.Nuclear.StokesIndexCount52
 import QOU.Nuclear.TetIndexDegree
 import QOU.Nuclear.TetIndexTriality
+import QOU.Nuclear.FiveTwoIndexBase
+import QOU.Nuclear.FiveTwoDegree0
+import QOU.Nuclear.FiveTwoDegree1
+import QOU.Nuclear.FiveTwoDegree2
+import QOU.Nuclear.FiveTwoStokesIndex
 import QOU.Nuclear.StokesSymmetryConstantQZero
 -- M2 (conditional BPS characterization) was an umbrella orphan (qou-orph
 -- pattern: nothing imported it, so `lake build` never checked it). Importing

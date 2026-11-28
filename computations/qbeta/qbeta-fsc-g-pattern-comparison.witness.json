@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T02:52:35.996359+00:00",
-  "commitSha": "9c2058f0bdb7c7ce82beca83fb1fcf986728db07",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-28T02:21:04.337050+00:00",
+  "commitSha": "1f0c01b3cefcaa3bb1e23201747048648c0da8dc",
   "assertions": [
     {
       "name": "polynomial_factor_not_cyclotomic",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 4,
   "computation": "qbeta-fsc-g-pattern-comparison",
   "scriptFile": "qbeta_fsc_g_pattern_comparison.py",
-  "scriptHash": "4f1f4f31ad31",
-  "scriptCommitSha": "dadb5f09ccd183a221cfd07cbd42cac3f1bbc323",
+  "scriptHash": "2b7a0ba84f7e",
+  "scriptCommitSha": "c4888b0e524235b23cdb51520a0887669e8a7554",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a22b08f9db48ed97"
   },
   "invocation": {
     "argv": [
@@ -43,10 +44,10 @@
   },
   "description": "Compares Q_β's algebraic structure (Form A with silver-ratio factor q² - 2q - 1) against FSC's cyclotomic pattern (1/α_EM = q·[9]_q·[10]_q) and G's q-rational pattern (G(q) = q²/(q-1)⁴). Q_β lives outside the cyclotomic landscape — explains why no FSC-like closed-form derivation exists for c_4..c_7.",
   "data": {
-    "q_0": "1.10997859564273904668179512938",
-    "Q_beta_over_m_e": "1.53098829057010406676301036222",
-    "Form_A_over_m_e": "1.53355658105089021520115209453",
-    "Form_A_miss_pct": "0.167753763801144253596047698109",
+    "q_0": "1.10997858275138080759166909561",
+    "Q_beta_over_m_e": "1.53098858276248488943839400509",
+    "Form_A_over_m_e": "1.533556627301224670299410065",
+    "Form_A_miss_pct": "0.167737667521076685095188869126",
     "polynomial_factor": "q^2 - 2q - 1",
     "polynomial_roots": "1 ± √2 (silver ratio)",
     "root_plus_abs": "2.41421356237309504880168872421",
@@ -56,14 +57,14 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
-        "size_bytes": 6238,
-        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
-        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
-        "computedAt": "2026-08-28T20:47:21.480123+00:00"
+        "sha256": "2614db24633cfa8e1ffddb85b06245a7618947f3a79c5237a6cc02dba823d247",
+        "size_bytes": 6301,
+        "commitSha": "e8c751c5542f24bba3130e96c7d0a895719c6ae1",
+        "scriptCommitSha": "e8c751c5542f24bba3130e96c7d0a895719c6ae1",
+        "computedAt": "2026-11-24T09:08:52.109433+00:00"
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

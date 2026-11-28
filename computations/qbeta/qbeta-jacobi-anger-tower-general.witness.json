@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T08:31:30.098946+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-28T02:21:05.470475+00:00",
+  "commitSha": "1f0c01b3cefcaa3bb1e23201747048648c0da8dc",
   "assertions": [
     {
       "name": "bar_odd_coeffs_derived_equal_hardcoded",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 24,
+  "durationMs": 14,
   "computation": "qbeta-jacobi-anger-tower-general",
   "scriptFile": "qbeta_jacobi_anger_tower_general.py",
-  "scriptHash": "a78fb0cfd707",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "3d1943a4f867",
+  "scriptCommitSha": "c4888b0e524235b23cdb51520a0887669e8a7554",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a22b08f9db48ed97"
   },
   "invocation": {
     "argv": [
@@ -87,6 +88,6 @@
       }
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
