@@ -134,7 +134,14 @@ def _wing(m: int, e: int, D: int, step: int):
                     if d1 + d2 <= D:
                         out[d1 + d2] = out.get(d1 + d2, 0) + c1 * c2
                         contributed = True
-        empties = 0 if contributed else empties + 1
+        # Count empty shells only once e₂ is past the charge window: inside
+        # |e₂| ≤ |m|+|e|+2 the factor degrees can still fall as |e₂| grows, so
+        # an early run of empty shells is not a stopping signal (it silently
+        # dropped I_41(0,±10), I_41(1,±10) at D=30, one sign only — bean qou-vr3q).
+        if contributed or abs(e2) <= abs(m) + abs(e) + 2:
+            empties = 0
+        else:
+            empties += 1
         e2 += step
     return out
 

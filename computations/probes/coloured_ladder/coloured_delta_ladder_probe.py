@@ -80,32 +80,37 @@ def ring_mass(N, q, word):
     return np.trace(np.kron(np.kron(K, K), K) @ M) * f ** (-w)
 
 
-DELTA = [1, 2, 1]
-q = Q0
-check("N=2: m(Delta) = [4]/q^3", abs(ring_mass(2, q, DELTA) - qint(4, q) / q**3) < 1e-9)
-for N in range(2, 7):
-    j = (N - 1) / 2
-    Rc, K = rcheck(N, q)
-    f = np.trace(np.kron(K, K) @ Rc) / qint(N, q)
-    check(f"N={N}: framing f = q^(2j(j+1))", abs(np.log(f) / np.log(q) - 2 * j * (j + 1)) < 1e-6)
-    check(f"N={N}: stabilisation m(s1 s2) = [N]", abs(ring_mass(N, q, [1, 2]) - qint(N, q)) < 1e-6 * qint(N, q))
-    g1, g2 = np.kron(Rc, np.eye(N)), np.kron(np.eye(N), Rc)
-    D2 = g1 @ g2 @ g1 @ g1 @ g2 @ g1
-    ev = np.log(np.linalg.eigvals(D2).real) / np.log(q)
-    allowed = [2 * J * (J + 1) - 6 * j * (j + 1) for J in np.arange(j % 1, 3 * j + 0.5, 1.0)]
-    check(f"N={N}: Delta^2 eigenvalues are q^(2J(J+1)-6j(j+1))",
-          all(min(abs(e - a) for a in allowed) < 1e-5 for e in ev))
-    # r_J = (Delta^2 eigenvalue) * f^-6, f = q^(2j(j+1)); largest at J = 3j
-    check(f"N={N}: top ratio exponent = -6(N-1)",
-          abs(max(allowed) - 12 * j * (j + 1) + 6 * (N - 1)) < 1e-9)
+def main():
+    DELTA = [1, 2, 1]
+    q = Q0
+    check("N=2: m(Delta) = [4]/q^3", abs(ring_mass(2, q, DELTA) - qint(4, q) / q**3) < 1e-9)
+    for N in range(2, 7):
+        j = (N - 1) / 2
+        Rc, K = rcheck(N, q)
+        f = np.trace(np.kron(K, K) @ Rc) / qint(N, q)
+        check(f"N={N}: framing f = q^(2j(j+1))", abs(np.log(f) / np.log(q) - 2 * j * (j + 1)) < 1e-6)
+        check(f"N={N}: stabilisation m(s1 s2) = [N]", abs(ring_mass(N, q, [1, 2]) - qint(N, q)) < 1e-6 * qint(N, q))
+        g1, g2 = np.kron(Rc, np.eye(N)), np.kron(np.eye(N), Rc)
+        D2 = g1 @ g2 @ g1 @ g1 @ g2 @ g1
+        ev = np.log(np.linalg.eigvals(D2).real) / np.log(q)
+        allowed = [2 * J * (J + 1) - 6 * j * (j + 1) for J in np.arange(j % 1, 3 * j + 0.5, 1.0)]
+        check(f"N={N}: Delta^2 eigenvalues are q^(2J(J+1)-6j(j+1))",
+              all(min(abs(e - a) for a in allowed) < 1e-5 for e in ev))
+        # r_J = (Delta^2 eigenvalue) * f^-6, f = q^(2j(j+1)); largest at J = 3j
+        check(f"N={N}: top ratio exponent = -6(N-1)",
+              abs(max(allowed) - 12 * j * (j + 1) + 6 * (N - 1)) < 1e-9)
 
-print()
-print(f"{'N':>2s} {'m(Delta)':>10s} {'mu/e':>10s} {'tau/e':>10s}   {'mirror mu/e':>12s} {'mirror tau/e':>12s}")
-for N in range(2, 7):
-    m = [ring_mass(N, q, DELTA * (2 * k + 1)) for k in range(3)]
-    mi = [ring_mass(N, q, [-1, -2, -1] * (2 * k + 1)) for k in range(3)]
-    print(f"{N:>2d} {m[0]:>10.5g} {m[1]/m[0]:>10.5g} {m[2]/m[0]:>10.5g}   {mi[1]/mi[0]:>12.5g} {mi[2]/mi[0]:>12.5g}")
-    check(f"N={N}: ladder strictly lighter (q>1)", m[0] > m[1] > m[2] > 0)
-print()
-print(f"{sum(checks)}/{len(checks)} checks pass")
-sys.exit(0 if all(checks) else 1)
+    print()
+    print(f"{'N':>2s} {'m(Delta)':>10s} {'mu/e':>10s} {'tau/e':>10s}   {'mirror mu/e':>12s} {'mirror tau/e':>12s}")
+    for N in range(2, 7):
+        m = [ring_mass(N, q, DELTA * (2 * k + 1)) for k in range(3)]
+        mi = [ring_mass(N, q, [-1, -2, -1] * (2 * k + 1)) for k in range(3)]
+        print(f"{N:>2d} {m[0]:>10.5g} {m[1]/m[0]:>10.5g} {m[2]/m[0]:>10.5g}   {mi[1]/mi[0]:>12.5g} {mi[2]/mi[0]:>12.5g}")
+        check(f"N={N}: ladder strictly lighter (q>1)", m[0] > m[1] > m[2] > 0)
+    print()
+    print(f"{sum(checks)}/{len(checks)} checks pass")
+    sys.exit(0 if all(checks) else 1)
+
+
+if __name__ == "__main__":
+    main()

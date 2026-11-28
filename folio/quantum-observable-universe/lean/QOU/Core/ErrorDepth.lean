@@ -1,5 +1,6 @@
 import QOU.Core.ErrorFiltration
 import QOU.BringsSurface.DominationSqueeze
+import QOU.Core.MassInRing
 
 /-!
 # QOU.Core.ErrorDepth — error order, the squeeze and the jet valuation are one object
@@ -13,6 +14,9 @@ instances of a single construction:
   ultrametric bound; a strictly dominant term cannot be cancelled);
 * the **jet valuation** `jetVal` (order of vanishing of a coefficient sequence).
 
+The depth core (`AddFiltration`, `depth`, the jet tower) lives in
+`QOU.Core.FiltrationDepth`, below the squeeze. This file adds the bridges.
+
 The construction: an antitone tower of additive subgroups `F 0 = ⊤ ⊇ F 1 ⊇ …` has a
 **depth** `depth x = sup {n | x ∈ F n} ∈ ℕ ∪ {⊤}`, characterised by
 `n ≤ depth x ↔ x ∈ F n` (`coe_le_depth_iff`). The depth is a `Domination`
@@ -23,8 +27,10 @@ The construction: an antitone tower of additive subgroups `F 0 = ⊤ ⊇ F 1 ⊇
   (`le_depth_mul`).
 * The jet valuation is the depth of the "vanishing below `n`" tower
   (`jetFiltration_depth`), so `jetDomination` is this construction
-  (`jetDomination_val_eq`). `DominationSqueeze` listed "any `ℕ`-filtered ring, via
-  `val x = sup {n | x ∈ Fⁿ}`" as an instance in prose; this file proves it.
+  (`jetDomination_val_eq`); `jetDomination`'s axioms are now proved from the depth
+  axioms.
+* Ring maps respecting levels are near-system maps (`nearMap`, the specialisation of
+  `MassInRing.ringHomNearMap`) and do not decrease depth (`depth_le_depth_map`).
 * Squeeze for errors (`depth_add_of_lt`): a term of exact depth `d` plus an error of
   order `n > d` has depth `d` and is non-zero.
 
@@ -35,73 +41,9 @@ namespace QOU.Core.Error
 
 open QOU.AlgebraicSubstrate
 
-/-- The cast `ℕ → ℕ ∪ {⊤}` is the inclusion. -/
-theorem castTop (n : ℕ) : (n : WithTop ℕ) = WithTop.some n := rfl
-
-/-- Two elements of `ℕ ∪ {⊤}` compare as their lower sets of naturals do. -/
-theorem withTop_le_of_forall {a b : WithTop ℕ}
-    (h : ∀ n : ℕ, (n : WithTop ℕ) ≤ a → (n : WithTop ℕ) ≤ b) : a ≤ b := by
-  induction a using WithTop.recTopCoe with
-  | top =>
-    induction b using WithTop.recTopCoe with
-    | top => exact le_rfl
-    | coe m =>
-      have := h (m + 1) le_top
-      rw [castTop] at this
-      exact absurd (WithTop.coe_le_coe.mp this) (by omega)
-  | coe m => exact h m le_rfl
-
-theorem withTop_eq_of_forall {a b : WithTop ℕ}
-    (h : ∀ n : ℕ, (n : WithTop ℕ) ≤ a ↔ (n : WithTop ℕ) ≤ b) : a = b :=
-  le_antisymm (withTop_le_of_forall fun n => (h n).mp)
-    (withTop_le_of_forall fun n => (h n).mpr)
-
-/-- An antitone tower of additive subgroups starting at `⊤`. -/
-structure AddFiltration (A : Type*) [AddCommGroup A] where
-  F : ℕ → AddSubgroup A
-  anti : Antitone F
-  zero_top : F 0 = ⊤
-
 namespace AddFiltration
 
 variable {A : Type*} [AddCommGroup A] (E : AddFiltration A)
-
-open Classical in
-/-- Depth of `x`: the largest `n` with `x ∈ F n`, or `⊤` if `x` lies in every level. -/
-noncomputable def depth (x : A) : WithTop ℕ :=
-  if h : ∃ n, x ∉ E.F (n + 1) then ((Nat.find h : ℕ) : WithTop ℕ) else ⊤
-
-/-- **Characterisation of depth.** -/
-theorem coe_le_depth_iff {x : A} {n : ℕ} : (n : WithTop ℕ) ≤ E.depth x ↔ x ∈ E.F n := by
-  classical
-  unfold depth
-  split_ifs with h
-  · rw [castTop, castTop, WithTop.coe_le_coe]
-    constructor
-    · intro hn
-      rcases n with _ | m
-      · simp [E.zero_top]
-      · by_contra hx
-        exact Nat.find_min h (by omega) hx
-    · intro hx
-      by_contra hlt
-      exact Nat.find_spec h (E.anti (show Nat.find h + 1 ≤ n by omega) hx)
-  · push_neg at h
-    simp only [le_top, true_iff]
-    rcases n with _ | m
-    · simp [E.zero_top]
-    · exact h m
-
-theorem depth_zero : E.depth 0 = ⊤ :=
-  withTop_eq_of_forall fun n => by simp [coe_le_depth_iff, zero_mem]
-
-theorem depth_neg (x : A) : E.depth (-x) = E.depth x :=
-  withTop_eq_of_forall fun n => by rw [coe_le_depth_iff, coe_le_depth_iff, neg_mem_iff]
-
-theorem min_depth_le_depth_add (x y : A) : min (E.depth x) (E.depth y) ≤ E.depth (x + y) :=
-  withTop_le_of_forall fun _ hn => E.coe_le_depth_iff.mpr <|
-    add_mem (E.coe_le_depth_iff.mp (hn.trans (min_le_left _ _)))
-      (E.coe_le_depth_iff.mp (hn.trans (min_le_right _ _)))
 
 /-- **Every filtration is a domination structure.** The squeeze lemmas of
 `DominationSqueeze` (`val_add_eq_of_lt`, `add_ne_zero_of_val_lt`, …) apply to the
@@ -162,46 +104,30 @@ theorem le_depth_mul (x y : R) : E.depth x + E.depth y ≤ E.depth (x * y) := by
       refine withTop_le_of_forall fun _ _ => E.coe_le_depth_iff.mpr ?_
       exact Ideal.mul_mem_left _ x (E.coe_le_depth_iff.mp (hy ▸ le_top))
     | coe b =>
-      rw [← WithTop.coe_add, ← castTop, E.coe_le_depth_iff]
-      exact E.mul_mem (E.coe_le_depth_iff.mp (by rw [hx, castTop]))
-        (E.coe_le_depth_iff.mp (by rw [hy, castTop]))
+      exact (E.coe_le_depth_iff (n := a + b)).mpr <| E.mul_mem (E.coe_le_depth_iff.mp (by rw [hx]; exact le_rfl))
+        (E.coe_le_depth_iff.mp (by rw [hy]; exact le_rfl))
+
+/-- **Ring maps between error filtrations.** A ring hom `ψ` that sends each level
+into the corresponding level is a map of near systems (`MassInRing.ringHomNearMap`,
+specialised) and does not decrease depth. -/
+def nearMap {S : Type*} [CommRing S] (E' : ErrorFiltration S) (ψ : R →+* S)
+    (h : ∀ n, E.F n ≤ Ideal.comap ψ (E'.F n)) :
+    QOU.Core.MassInRing.NearMap E.near E'.near :=
+  QOU.Core.MassInRing.ringHomNearMap ψ E.F E.anti E'.F E'.anti h
+
+theorem depth_le_depth_map {S : Type*} [CommRing S] (E' : ErrorFiltration S) (ψ : R →+* S)
+    (h : ∀ n, E.F n ≤ Ideal.comap ψ (E'.F n)) (x : R) : E.depth x ≤ E'.depth (ψ x) :=
+  withTop_le_of_forall fun _ hn =>
+    E'.coe_le_depth_iff.mpr (h _ (E.coe_le_depth_iff.mp hn))
 
 end ErrorFiltration
 
 /-! ### The jet valuation is a depth -/
 
-/-- Coefficient sequences vanishing below index `n`. -/
-def vanishBelow (n : ℕ) : AddSubgroup (ℕ → ℝ) where
-  carrier := {f | ∀ m < n, f m = 0}
-  zero_mem' _ _ := rfl
-  add_mem' ha hb m hm := by simp [ha m hm, hb m hm]
-  neg_mem' ha m hm := by simp [ha m hm]
-
-/-- The jet tower: order of vanishing at `q = 1`. -/
-def jetFiltration : AddFiltration (ℕ → ℝ) where
-  F := vanishBelow
-  anti _ _ h _ hf m hm := hf m (lt_of_lt_of_le hm h)
-  zero_top := by ext f; simp [vanishBelow]
-
-/-- **The jet valuation is the depth of the jet tower.** -/
-theorem jetFiltration_depth (f : ℕ → ℝ) : jetFiltration.depth f = jetVal f := by
-  refine withTop_eq_of_forall fun n => ?_
-  rw [AddFiltration.coe_le_depth_iff]
-  show (∀ m < n, f m = 0) ↔ _
-  constructor
-  · intro hf
-    induction hj : jetVal f using WithTop.recTopCoe with
-    | top => exact le_top
-    | coe m =>
-      have hm := ne_zero_of_jetVal_eq hj
-      rw [castTop]
-      exact WithTop.coe_le_coe.mpr (not_lt.mp fun hlt => hm (hf m hlt))
-  · intro hn m hm
-    exact eq_zero_of_lt_jetVal (lt_of_lt_of_le (WithTop.coe_lt_coe.mpr hm) hn)
-
-/-- So the squeeze's jet instance `jetDomination` is the depth construction. -/
+/-- The squeeze's jet instance `jetDomination` is the depth construction on the jet
+tower (`QOU.AlgebraicSubstrate.jetFiltration_depth`). -/
 theorem jetDomination_val_eq (f : ℕ → ℝ) :
-    jetDomination.val f = jetFiltration.toDomination.val f :=
+    jetDomination.val f = (jetFiltration ℝ).toDomination.val f :=
   (jetFiltration_depth f).symm
 
 end QOU.Core.Error

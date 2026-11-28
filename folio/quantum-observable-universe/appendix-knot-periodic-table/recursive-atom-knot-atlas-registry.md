@@ -16,7 +16,7 @@ Every entry carries a **methodology tag** recording its derivation method.
 
 The principled pipeline computes $\mathrm{Vol}_{\mathrm{hyp}}$ from the $\sigma$-braid word at $\geq 50$ decimal digits via SnapPy's `Link(braid_closure=...).exterior.high_precision` and `mpmath.workdps(50)`. The Wenzl bridge supplies symbolic-in-$q$ Markov-trace coefficients $y_\lambda$.
 
-For atoms $A \geq 5$, the combinatorics of $\mathcal{H}_{3A}$ explode and SnapPea limits fail. This is sidestepped by computing the exact symbolic trace restricted to active block-partitions. This exact trace $B_{sym} = -\alpha \ln |\mathrm{tr}_M|$ is shown alongside the rigorous Q-CLT finite-sum approximation $B_{qCLT} = -\alpha \sum \ln |\hat{V}_i|$.
+For atoms $A \geq 5$, the combinatorics of $\mathcal{H}_{3A}$ explode and SnapPea limits fail. This is sidestepped by computing the exact symbolic trace restricted to active block-partitions. The model quantity is the trace $\mathrm{tr}_M \in \mathbb{Q}(q)$ itself, a ring element. Its comparison reading $B_{sym} = -\alpha \ln |\varphi(\mathrm{tr}_M)|$, with $\varphi$ evaluation at the aether parameter, is shown alongside the rigorous Q-CLT finite-sum approximation $B_{qCLT} = -\alpha \sum \ln |\hat{V}_i|$.
 
 ## Notation legend (auto-included)
 

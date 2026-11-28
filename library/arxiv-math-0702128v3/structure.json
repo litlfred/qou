@@ -1,0 +1,262 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0702128v3",
+ "source": {
+  "file": "arxiv-math-0702128v3.pdf",
+  "sha256": "f298954dfde0052556d46609a3818b883627aad465b94a944b76e722cea2ba07",
+  "bytes": 212679,
+  "pages": 10,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-27T23:35:27Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0702128",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "6 Oct 2007"
+  },
+  "doi": null,
+  "title": "PENTAGON AND HEXAGON EQUATIONS",
+  "authors_raw": "HIDEKAZU FURUSHO",
+  "title_lines": [
+   "PENTAGON AND HEXAGON EQUATIONS"
+  ],
+  "abstract": "The author will prove that Drinfel\u2019d\u2019s pentagon equation im plies his two hexagon equations in the Lie algebra, pro-unipotent , pro- l and pro- nilpotent contexts.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126172634-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_raw": "PENTAGON AND HEXAGON EQUATIONS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "outline": "Introduction",
+   "text": "PENTAGON AND HEXAGON EQUATIONS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Lie algebra case",
+   "page": 3,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1",
+   "page": 5,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 2",
+   "page": 8,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 9,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 276,
+   "n_words": 41,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5642,
+   "n_words": 1063,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-1-lie-algebra-case",
+   "number": "1",
+   "title": "Lie algebra case",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 5753,
+   "n_words": 1235,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-2-proof-of-theorem-1",
+   "number": "2",
+   "title": "Proof of Theorem 1",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 8108,
+   "n_words": 1713,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-3-proof-of-theorem-2",
+   "number": "3",
+   "title": "Proof of Theorem 2",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 4840,
+   "n_words": 964,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2770,
+   "n_words": 428,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 27389,
+  "furniture_lines_stripped": 0
+ }
+}

@@ -41,7 +41,8 @@ structure ArchimedeanMassData where
   /-- The multiplicative integral value ‖MI∫_Σ (∇_A q, L ∧ F⁺)‖. -/
   mult_integral_norm : ℝ
   /-- The categorical mass ‖tr((λ ⊗ id) ∘ Δ ∘ γ)‖, computed via
-      scalarMass from mass-identity.lean. -/
+      `QOU.Transcendental.MassTheory.MassComparison.comparedMass` (the ring-valued mass
+      of `def:mass-identity`, evaluated and then taken in absolute value). -/
   categorical_mass_norm : ℝ
   /-- Mass is non-negative. -/
   mass_nonneg : 0 ≤ holonomy_norm

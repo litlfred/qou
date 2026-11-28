@@ -174,8 +174,20 @@ formalised in `QOU.Mass.StaircaseMinimisers`, sorry-free: for any set $s$ of $T_
 $\mathbb N^2$ with $r \le m+1$, $N(s) \ge N(\delta_m) + rm$, with equality exactly when $s$ is
 $\delta_m$ plus $r$ cells on antidiagonal $m$ (`le_N_of_card`, `N_eq_iff`). Each of these is a
 Young diagram (`isLowerSet_stair_union`), and there are $\binom{m+1}{r}$ of them
-(`card_choices`). Not yet formalised: the Laurent expansion of $\dim_q\lambda$ that turns these
-counts into the coefficients of $P_n$, and the $\delta = 1, 2$ counts behind $a_1, a_2$.
+(`card_choices`). The second step is `QOU.Mass.StaircaseTopCoeff`, also sorry-free. Among the
+Young diagrams with $T_m + r$ cells ($1 \le r \le m+1$), exactly $\binom{m+1}{r}$ attain the
+minimum (`card_minimisers`), and $3N(\delta_{m+1}) = m(m+1)(m+2)$ (`three_mul_N_stair`).
+For any family of integer polynomials $f_\lambda$ of degree at most $M - N(\lambda)$ with
+coefficient $1$ there, the coefficient of $\sum_\lambda f_\lambda$ at degree $M - N_{\min}$ is
+$\binom{m+1}{r}$ (`coeff_sum_shapes_of_top`). This takes the top term of the $q$-hook formula as
+a hypothesis. `QOU.Mass.QHookTop` (sorry-free) discharges that hypothesis from the
+divisibility half of the $q$-hook formula. With $[k] = 1 + t + \dots + t^{k-1}$, if
+$[n]! = g_\lambda \prod_{c}[h(c)]$, then $g_\lambda$ is monic of degree $\binom n2 - N(\lambda)$
+(`qHook_top_of_eq`, via $\sum_c h(c) = n + N(\lambda)$, `sum_hook`), and its next coefficient is
+(corners of $\lambda$) $- 1$ (`qHook_nextCoeff_of_eq`). The same file proves the degree check
+(`top_exponent_gap`): when $2m < n-1$, $S(n-1)$ and $[n-1]S(n-2)$ stay strictly below the top
+exponent of $S(n)$. Not yet formalised: the divisibility $\prod_c [h(c)] \mid [n]!$ itself
+(Stanley, EC2, §7.21 \cite{stanley1999}), and the $\delta = 1, 2$ counts behind $a_1, a_2$.
 
 Together with the finite certificates this settles $6 \le n \le 20$, every triangular $n$, and
 every $n \in \{T_j + 1, T_{j+1} - 1\}$ with $j \ge 4$.
@@ -196,14 +208,19 @@ a_2 ={}& \binom{j+1}{r}(r-1) + j\binom{j-1}{r}
 ```
 This agrees with the exact partition count for every $10 \le n \le 91$. With $c = \binom{j+1}{r}$,
 $$\frac{a_1}{c} = -4j - 2 + \frac{2r(j-r)}{j+1} + \frac{j(j+2)}{r+1} + \frac{(j+2)^2}{j-r+2}.$$
+Writing $B = r+1$, $C = j-r+2$ and $A = j+1 = B + C - 2$, this is
+$$\frac{a_1}{c} = j - 2r + 1 + \frac{(C-1)(C-3)}{B} + \frac{(B-1)^2}{C} - \frac{2(C-1)(C-2)}{A},$$
+so $c \mid a_1$ exactly when the last three fractions sum to an integer.
 The power-sum test needs $c \mid a_1$ and then $c \mid 2a_2$. For non-triangular $n$ ($r \le j$)
-and $j \le 20000$, $c \mid a_1$ happens only at
-$(j,r) = (5,1), (5,3), (11,10), (14,6), (98,55), (143,109), (152,119), (440,153)$, and at each of
-these $c \nmid 2a_2$. So the two tests settle every $n$ with $j \le 20000$, that is every
-$n \le 200{,}030{,}000$ (`computations/cyclotomic_boundary_power_sum.py`). This is a finite check,
-not a proof. The condition $c \mid a_1$ is a divisibility condition linking $r+1$, $j+1$ and
-$j-r+2$. Its solutions are sparse but not obviously finite, and no uniform argument that excludes
-$c \mid 2a_2$ on them is known.
+and $j \le 400000$, $c \mid a_1$ happens only at
+$(j,r) = (5,1), (5,3), (11,10), (14,6), (98,55), (143,109), (152,119), (440,153)$; there is no
+solution with $440 < j \le 400000$. At each of the eight, $c \nmid 2a_2$. So the two tests settle
+every $n$ with $j \le 400000$, that is every $n \le 80{,}000{,}600{,}000$
+(`computations/cyclotomic_boundary_s1_scan.c` for the scan,
+`computations/cyclotomic_boundary_power_sum.py` for $c \nmid 2a_2$). This is a finite check, not a
+proof. A heuristic count suggests finitely many solutions. When $A$, $B$, $C$ are pairwise
+coprime, each fraction must be an integer on its own: $B \mid (C-1)(C-3)$, $C \mid (B-1)^2$ and
+$A \mid 2(C-1)(C-2)$. But no proof of finiteness is known.
 
 *Open:* non-cyclotomicity for **every** $n \ge 6$. What remains is the non-triangular $n$
-outside the two families with $j > 20000$.
+outside the two families with $j > 400000$.

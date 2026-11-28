@@ -115,11 +115,15 @@ import QOU.Transcendental.MassTheory.ElectronMassChartWeight
 import QOU.Transcendental.MassTheory.ElectronRingMassReading
 import QOU.Transcendental.MassTheory.RingMassLinkingNumber
 import QOU.Transcendental.MassTheory.RingMassLinkingThreeStrand
+import QOU.Transcendental.MassTheory.MassComparison
 import QOU.Observations.LeptonUniversalityLadder
+import QOU.Observations.LeptonChargeClassTrace
 import QOU.Observations.ColouredLadderTwist
 import QOU.Observations.VolumeOrderRule
 import QOU.Transcendental.MassTheory.KnotConvolutionVolume
 import QOU.Transcendental.MassTheory.UniversalityVolumeBlind
+import QOU.Observations.BraidNielsenThurston
+import QOU.Observations.AxisConvolutionOperator
 import QOU.MassTheory.BranchIntegerPinning
 import QOU.MassTheory.NucleusBondValence
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
@@ -1084,6 +1088,7 @@ import QOU.Nuclear.CompleteStructureExclusion
 import QOU.Nuclear.ThetaLipschitzObstruction
 import QOU.Nuclear.StokesSymmetryConstant
 import QOU.Nuclear.StokesQZeroDTCount
+import QOU.Nuclear.StokesIndexCount41
 import QOU.Nuclear.StokesSymmetryConstantQZero
 -- M2 (conditional BPS characterization) was an umbrella orphan (qou-orph
 -- pattern: nothing imported it, so `lake build` never checked it). Importing
@@ -1992,6 +1997,7 @@ import QOU.StandardModel.ElectroweakBringSchwingerBridge
 import QOU.StandardModel.ElectroweakSweedlerScaleAndRGThresholds
 import QOU.StandardModel.ElectroweakVevFixedPointDecomposition
 import QOU.StandardModel.ElectroweakVevGaps
+import QOU.Transcendental.StandardModel.ElectroweakVevGapsReal
 import QOU.StandardModel.NeutrinoUnknotSweedlerMassLift
 import QOU.MassTheory.BringSchwingerNormalizationDerivation
 import QOU.Transcendental.MassTheory.BringSchwingerNormalizationDerivationReal
@@ -2086,3 +2092,4 @@ import QOU.EightfoldWay.WeylInvarianceQDeformation
 import QOU.EightfoldWay.MesonOctetTracelessSplit
 import QOU.EightfoldWay.SymmetricChannelDimension
 import QOU.Nuclear.CoulombIsospinChannel
+import QOU.Nuclear.CoulombRingLedger

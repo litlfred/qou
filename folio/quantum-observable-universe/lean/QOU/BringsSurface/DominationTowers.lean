@@ -22,7 +22,8 @@ The Ohtsuki tower `𝔙_b = 𝔙₀ + Σ_{n≥1} κₙ (2πb²)ⁿ`
 ([`rem-ohtsuki-tower-bar-parity`](../../../quantum-observable-universe/mass-theory/rem-ohtsuki-tower-bar-parity.md))
 is a coefficient sequence in `ℏ = 2πb²` with the complex volume at grade `0`.
 That is exactly `jetDomination`'s home, so no new structure is needed —
-`ohtsukiVal := jetVal` on the coefficient sequence.
+`ohtsukiVal := jetVal` on the coefficient sequence, which is the depth of the
+jet tower (`jetFiltration_depth`, `QOU.Core.FiltrationDepth`).
 
 The payoff is `grade_pos_iff_leading_vanishes`: for a tower `κ`,
 
@@ -141,14 +142,8 @@ This is the separation the surreal prune shows is *unavailable* on `ℝ`, where
 every non-relation shares grade `0`. Lifting to the tower restores it. -/
 theorem grade_pos_iff_leading_vanishes (κ : ℕ → ℝ) :
     (0 : WithTop ℕ) < ohtsukiVal κ ↔ κ 0 = 0 := by
-  constructor
-  · intro h; exact eq_zero_of_lt_jetVal (by exact_mod_cast h)
-  · intro h0
-    by_contra hle
-    push_neg at hle
-    have hz : jetVal κ = ((0 : ℕ) : WithTop ℕ) :=
-      le_antisymm (by exact_mod_cast hle) (by simp)
-    exact ne_zero_of_jetVal_eq hz h0
+  rw [ohtsukiVal, ← jetFiltration_depth, QOU.Core.Error.AddFiltration.depth_pos_iff]
+  exact ⟨fun h => h 0 Nat.zero_lt_one, fun h m hm => by rwa [Nat.lt_one_iff.mp hm]⟩
 
 /-- **A relation among the leading parts lifts the grade** — the direction
 `qou-7jok` needs: if `P(Vol) = 0`, the tower combination `P(𝔙)` is a pure

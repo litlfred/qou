@@ -1,0 +1,8 @@
+{
+ "description": "Exact scan of c | a1 (non-triangular n = T_j + r, 1 <= r <= j) for conj:cyclotomic-boundary-at-keystone; producer computations/cyclotomic_boundary_s1_scan.c",
+ "command": "cc -O2 -o /tmp/s1scan computations/cyclotomic_boundary_s1_scan.c && /tmp/s1scan 400000",
+ "j_range": [4, 400000],
+ "c_divides_a1": [[5, 1], [5, 3], [11, 10], [14, 6], [98, 55], [143, 109], [152, 119], [440, 153]],
+ "c_divides_2a2_at_these": [],
+ "note": "c | 2 a2 is checked at the listed pairs by computations/cyclotomic_boundary_power_sum.py (closed_form). Every n <= T_400000 + 400000 = 80,000,600,000 is settled by the power-sum test or the triangular family."
+}

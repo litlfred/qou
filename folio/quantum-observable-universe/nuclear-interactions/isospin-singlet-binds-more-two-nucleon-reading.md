@@ -2,8 +2,11 @@ This remark records how the ordering $\mu_- < \mu_+$ of [the isospin interface s
 
 ### What it selects
 
-Binding is $B = -\alpha\log\mu$ with $\alpha > 0$, a decreasing function of $\mu$, so
-the smaller scalar is the more strongly bound channel. The singlet is thus predicted
+The interface scalars $\mu_\pm$ are elements of $\mathbb{Q}(q)$, and that is the model
+statement. Binding is their comparison reading $B = -\alpha\log\varphi(\mu)$, with
+$\varphi$ evaluation at a real $q > 0$ and $\alpha > 0$
+([mass identity](#def:mass-identity), comparison paragraph). It is a decreasing
+function of $\varphi(\mu)$, so the smaller scalar is the more strongly bound channel. The singlet is thus predicted
 to bind harder than the triplet at every $q$, and nature agrees: of the four
 two-nucleon channels --- $pp$, $nn$ and $pn({}^1S_0)$, all $T = 1$, against
 $pn({}^3S_1)$, the deuteron at $T = 0$ --- exactly the $T = 0$ channel binds.

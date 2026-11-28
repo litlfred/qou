@@ -11,6 +11,8 @@ $$
   \mathcal{Q}(q)
 $$
 
+The model output of the chain is the ring element $\hat{V}_i^{\mathrm{dau}}/\hat{V}_i^{\mathrm{par}} \in \mathbb{Q}(q)$ for each generator. The logarithm $\log_q$, the absolute value and the scale $\kappa_q$ in Steps 2 and 3 are the comparison with measured Q-values, applied after evaluation ([mass identity](#def:mass-identity), comparison paragraph).
+
 **Step 1.** The traced volume $\hat{V}_i(q)$ for each generator $\sigma_i$ is exact in $\mathbb{Q}(q)$:
 
 $$
