@@ -340,6 +340,7 @@ import QOU.Transcendental.BraidsAndKnots.KZIntertwine
 import QOU.Transcendental.BraidsAndKnots.KZPentagon
 import QOU.Transcendental.BraidsAndKnots.KZShift
 import QOU.Transcendental.BraidsAndKnots.KZShiftPhi
+import QOU.Transcendental.BraidsAndKnots.KZTowerTarget
 import QOU.BraidsAndKnots.NonResonantInt
 import QOU.Transcendental.BraidsAndKnots.SmallHbar
 import QOU.Transcendental.BraidsAndKnots.ZigZag
