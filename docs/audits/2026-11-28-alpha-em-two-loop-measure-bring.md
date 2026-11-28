@@ -114,3 +114,28 @@ Recommended option taken under the standing pick: the **product measure stays th
 default** (`κ₂ = 0`), and the flat-sunset `ζ(3)` period is a **labelled research arm**
 `R1_FlatSunset_zeta3`, registered (unscored, unwired) in
 `computations/alpha/alpha_em_two_loop_bloch_schwinger_preregistration.md`. Carl can override.
+
+## Owner ruling, 01:11Z: one-factor measure under Form B
+
+This supersedes the standing-pick default above. After the bar-odd join ruling
+(PR #9911), the owner tapped *"One factor, as Form B is written"*. The Form B measure is
+`μ₂ = μ₁`, and the product and θ-graph measures are labelled fallbacks.
+
+Derived in [`QOU/MassTheory/EmFormBLoopMeasure.lean`](../../folio/quantum-observable-universe/lean/QOU/MassTheory/EmFormBLoopMeasure.lean)
+(lean-direct exit 0; axioms `propext`, `Quot.sound`):
+
+- `formB_coeff_succ`: from one loop order to the next, the ladder steps by `−h²`.
+  That factor is in `ℤ[q, q⁻¹]` and carries no measure weight.
+- `formB_coeff_of_recursion`: the one-loop coefficient `[2]_q μ₁` and that step fix the
+  whole ladder, `c_L = [2]_q μ₁ (−h²)^(L−1)`.
+- `formB_measure_const`: with the Form B graph values cancellable, the measure is `μ₁` at
+  every order. From the second loop on, the per-loop measure is `1`.
+- `formB_coeff_mem`: every coefficient is linear in `μ₁` over `ℤ[q, q⁻¹]`.
+- `formB_eq_product_iff`: at two loops the one-factor and product measures agree iff
+  `[2]_q h² μ₁ (μ₁ − 1) = 0`.
+
+What is now derived: no measure enters past the first loop, and no new period enters
+anywhere (`κ₂ = μ₁ − μ₁²` is in the ring). What is not derived: the one remaining input
+`μ₁ = 1/(π b₁) = 1/(8π)`. It is still the phase-4 identification (Clauses A and B,
+`2026-07-18-alpha-em-perloop-conjecture-statement.md`). The flat-sunset `ζ(3)` arm R1
+has no slot under Form B with this measure. It stays registered as a research arm.
