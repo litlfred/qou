@@ -246,7 +246,12 @@ coprime there are none. Modulo $A$ the numerator of the three fractions over $AB
 $2C(C-1)(C-2)^2$, and $C - 2 \equiv -B$, so $A \mid 2(C-1)$. Since $0 < 2(C-1) < 2A$, this forces
 $A = 2(C-1)$, that is $B = C$, which contradicts $\gcd(B, C) = 1$
 (`QOU.Mass.StaircaseMinimisers.not_dvd_a1Num_of_coprime`, sorry-free). All eight solutions above
-have a common factor between two of $A, B, C$. No proof of finiteness is known in general.
+have a common factor between two of $A, B, C$. If only $A$ is coprime to $B$ and to $C$, the same
+step still gives $B = C$, and then the three fractions sum to $(B-2)^2/B$, so $B \mid 4$ and
+$(j, r) \in \{(1,1), (5,3)\}$ (`eq_and_dvd_four_of_coprime_A`). Every other solution has
+$\gcd(A,B) > 1$ or $\gcd(A,C) > 1$. If $\gcd(A,B) = 1$, write $h = \gcd(B-1, C-1)$ and
+$g = \gcd(A, C)$. Then $A \mid 2C(C-1)$ gives $A \in \{hg, 2hg\}$; the solutions $(11,10)$, $(14,6)$
+and $(98,55)$ are of this kind. No proof of finiteness is known in general.
 
 *Open:* non-cyclotomicity for **every** $n \ge 6$. What remains is the non-triangular $n$
 outside the two families with $j > 400000$.
