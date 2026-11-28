@@ -7,7 +7,7 @@ priority: high
 tags:
     - stability
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-28T11:40:00Z
+updated_at: 2026-11-28T11:52:00Z
 parent: qou-5vkl
 blocked_by:
     - qou-10v9
@@ -208,3 +208,5 @@ Verbatim (`2026-11-28`): *"make sure you are working proton pin... no longer muo
 2026-11-28 (merge-steward): Landed PR #10000 (`qou-f3hr`, `qou-j5b6`, `qou-bbr4` closed) and rebased Category (c) PR #9721 (`claude/strand-end-merge-ceiling-2026-11-27`) onto `origin/main` -> `087485613e37d7688b2009dfa317a6abb23fd1bd`.
 
 2026-11-28 (merge-steward): Landed #10004 (`ef0b7571363f`), #10002 (`83b456280276`) onto `origin/main`; updated `qou-q0gw`/`qou-m45w` and closed completed leaf beans (`qou-cw8i`).
+
+2026-11-28 (merge-steward): Landed rebased Category (c) PR #9767 (`claude/energy-scale-bridge-2026-11-27` -> `91076f6cc123768f656c7cc0cc0261dc792692c5`; closed `qou-h940`).

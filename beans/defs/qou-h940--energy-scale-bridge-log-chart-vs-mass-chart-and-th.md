@@ -1,11 +1,11 @@
 ---
 # qou-h940
 title: 'Energy-scale bridge: log chart vs mass chart, and the sign conflict'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-27T22:03:24Z
-updated_at: 2026-11-27T22:41:40Z
+updated_at: 2026-11-28T11:52:00Z
 parent: qou-myts
 ---
 
@@ -25,3 +25,5 @@ Open: the orientation (which convention carries the sign). Nothing wired. Relate
 2026-11-27 no-go (Lean log_chart_np_delta_opposite / mass_chart_np_delta_opposite): in either chart, for ANY electron unit, n-p (pure power) and Delta-N (bar-even) get opposite signs. The #9789 reading [4]/q^3 turns n-p positive (+0.805 m_e mass chart) but Delta-N negative (-0.166). Getting both right needs pure powers and bar-even cells read with different sign, which is a second structural input.
 
 2026-11-27 relay from the gg binding thread (#9803): on the ruled gg chain the mass chart gives 2H..4He positive binding (6, 12, 15, 21 keV) and the log chart gives negative binding. That is consistent with sign_agree_iff, since gg bond letters have L*w>0. So on the ruled gg letters the mass chart gets the binding sign right, and the old ruled-law letters (f<1 increasing) get it wrong in both charts.
+
+Closed post-merge: division-free `[CommRing R]` EnergyScaleBridge + 80-dps proton-pinned probes landed on `origin/main` in PR #9767 (`91076f6cc123768f656c7cc0cc0261dc792692c5`).
