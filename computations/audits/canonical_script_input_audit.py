@@ -135,7 +135,6 @@ OVER_COUNT_MN_NOT_INPUT = {
     'experimental_constants.py',
     'flavor_split_xq_refinement.py',
     'gap_a4_He3_residual_probe.py',
-    'hadron_knot_table.py',
     'hecke_characters.py',
     'hecke_core.py',
     'inverse-markov-qvalues.py',

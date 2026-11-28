@@ -4,10 +4,10 @@
   "generated_from": "block .md narratives (](#kind:label) links + `kind:label` mentions), filtered to labels later in reading order and absent from uses[], unioned with the manifest's declared foreshadows[]",
   "note": "GENERATED — do not hand-edit. Rebuild with `bun run cat-harness-tools/pipeline/build-foreshadows.ts <paper>`. The QA checkers derive the same data from source on every run and never read this file, so it cannot go stale in a way that changes a verdict.",
   "totals": {
-    "blocks": 204,
-    "derived": 340,
+    "blocks": 210,
+    "derived": 357,
     "declared": 40,
-    "effective": 380
+    "effective": 397
   },
   "blocks": {
     "conj:algebraic-geometric-dilog-equivalence": {
@@ -46,6 +46,15 @@
       "declared": [],
       "effective": [
         "tbl:borromean-quark-table-data"
+      ]
+    },
+    "conj:braid-boost-inertial-equivalence": {
+      "derived": [
+        "prop:mass-energy"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:mass-energy"
       ]
     },
     "conj:double-magic-delta-i-bound": {
@@ -187,15 +196,6 @@
         "rem:topological-mass-formula-context"
       ]
     },
-    "conj:yang-mills-mass-gap": {
-      "derived": [
-        "tbl:yang-mills-mass-gap-table-data"
-      ],
-      "declared": [],
-      "effective": [
-        "tbl:yang-mills-mass-gap-table-data"
-      ]
-    },
     "cor:spectral-decomposition-qvalue": {
       "derived": [
         "rem:spectral-decomposition-qvalue-interpretation"
@@ -203,33 +203,6 @@
       "declared": [],
       "effective": [
         "rem:spectral-decomposition-qvalue-interpretation"
-      ]
-    },
-    "def:adelic-base-ring": {
-      "derived": [
-        "rem:adelic-base-ring-integration"
-      ],
-      "declared": [],
-      "effective": [
-        "rem:adelic-base-ring-integration"
-      ]
-    },
-    "def:algebraic-quantum-volume": {
-      "derived": [
-        "rem:algebraic-quantum-volume-structure"
-      ],
-      "declared": [],
-      "effective": [
-        "rem:algebraic-quantum-volume-structure"
-      ]
-    },
-    "def:archimedean-realization-functor": {
-      "derived": [
-        "rem:archimedean-realization-functor-interpretation"
-      ],
-      "declared": [],
-      "effective": [
-        "rem:archimedean-realization-functor-interpretation"
       ]
     },
     "def:atomic-braid": {
@@ -252,24 +225,6 @@
         "tbl:canonical-braid-interface-composition-table2-data"
       ]
     },
-    "def:categorical-connection": {
-      "derived": [
-        "ex:categorical-connection-su2"
-      ],
-      "declared": [],
-      "effective": [
-        "ex:categorical-connection-su2"
-      ]
-    },
-    "def:categorical-neutron": {
-      "derived": [
-        "rem:categorical-neutron-properties"
-      ],
-      "declared": [],
-      "effective": [
-        "rem:categorical-neutron-properties"
-      ]
-    },
     "def:chern-character": {
       "derived": [],
       "declared": [
@@ -277,6 +232,15 @@
       ],
       "effective": [
         "ex:su2-characters-and-quantum-dimension"
+      ]
+    },
+    "def:delta-q-decoration": {
+      "derived": [
+        "def:q-dimension-layer"
+      ],
+      "declared": [],
+      "effective": [
+        "def:q-dimension-layer"
       ]
     },
     "def:frobenius-pairing": {
@@ -297,15 +261,6 @@
       "effective": [
         "def:chern-character",
         "ex:su2-characters-and-quantum-dimension"
-      ]
-    },
-    "def:h2-molecular-braid": {
-      "derived": [
-        "tbl:h2-molecular-braid-table-data"
-      ],
-      "declared": [],
-      "effective": [
-        "tbl:h2-molecular-braid-table-data"
       ]
     },
     "def:hochschild-homology": {
@@ -359,13 +314,13 @@
         "rem:quantum-bloch-group-framework-connection"
       ]
     },
-    "def:surreal-blowup-calculus": {
+    "def:quantum-pressure": {
       "derived": [
-        "tbl:surreal-blowup-calculus-table-data"
+        "def:quantum-volume"
       ],
       "declared": [],
       "effective": [
-        "tbl:surreal-blowup-calculus-table-data"
+        "def:quantum-volume"
       ]
     },
     "ex:hadron-half-life-verification": {
@@ -454,6 +409,24 @@
         "rem:three-euler-characteristics"
       ]
     },
+    "prf:fibre-functor-atlas": {
+      "derived": [
+        "prop:reeb-u1-chart-swap"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:reeb-u1-chart-swap"
+      ]
+    },
+    "prf:flavor-split-aether": {
+      "derived": [
+        "rem:flavor-split-aether-codata-comparison"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:flavor-split-aether-codata-comparison"
+      ]
+    },
     "prf:knot-volumes-verification": {
       "derived": [
         "tbl:knot-volumes-verification-table1-data",
@@ -463,6 +436,21 @@
       "effective": [
         "tbl:knot-volumes-verification-table1-data",
         "tbl:knot-volumes-verification-table2-data"
+      ]
+    },
+    "prop:aether-consistency-window": {
+      "derived": [
+        "tbl:substrate-consistency-window-table1-data",
+        "tbl:substrate-consistency-window-table2-data",
+        "tbl:substrate-consistency-window-table3-data",
+        "tbl:substrate-consistency-window-table4-data"
+      ],
+      "declared": [],
+      "effective": [
+        "tbl:substrate-consistency-window-table1-data",
+        "tbl:substrate-consistency-window-table2-data",
+        "tbl:substrate-consistency-window-table3-data",
+        "tbl:substrate-consistency-window-table4-data"
       ]
     },
     "prop:alpha-em-categorical-trace-ratio": {
@@ -579,15 +567,6 @@
         "tbl:cohomological-embedding-table2-data"
       ]
     },
-    "prop:collatz-no-cycles": {
-      "derived": [
-        "prf:collatz-no-cycles"
-      ],
-      "declared": [],
-      "effective": [
-        "prf:collatz-no-cycles"
-      ]
-    },
     "prop:crystal-basis-resolves-mass-tower-open-problems": {
       "derived": [
         "rem:crystal-basis-resolves-mass-tower-open-problems-context"
@@ -689,6 +668,15 @@
         "rem:habiro-precision-ladder-equivalence-context"
       ]
     },
+    "prop:habiro-tail-cyclotomic-iff-n-le-5": {
+      "derived": [
+        "conj:cyclotomic-boundary-at-keystone"
+      ],
+      "declared": [],
+      "effective": [
+        "conj:cyclotomic-boundary-at-keystone"
+      ]
+    },
     "prop:hoefsmit-is-surreal-construction": {
       "derived": [
         "rem:hoefsmit-is-surreal-construction-context"
@@ -714,6 +702,15 @@
       "declared": [],
       "effective": [
         "rem:hopf-link-symmetric-decomposition-van-der-waals-reading"
+      ]
+    },
+    "prop:hypercharge-sign-is-bring-orientation": {
+      "derived": [
+        "prop:chirality-sign-is-hypercharge-sign"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:chirality-sign-is-hypercharge-sign"
       ]
     },
     "prop:isospin-singlet-binds-more": {
@@ -824,6 +821,15 @@
         "rem:phi-q-aj-machinery-identification-details"
       ]
     },
+    "prop:pre-archimedean-figure-eight-bloch-class": {
+      "derived": [
+        "conj:archimedean-realisation-volume-compatibility"
+      ],
+      "declared": [],
+      "effective": [
+        "conj:archimedean-realisation-volume-compatibility"
+      ]
+    },
     "prop:q-beta-c-k-leading-bias-correction-identity": {
       "derived": [
         "rem:q-beta-c-k-leading-bias-correction-identity-extraction-check"
@@ -931,19 +937,22 @@
         "rem:skein-generation-hadron-reading"
       ]
     },
-    "prop:aether-consistency-window": {
+    "prop:strand-charges-are-holomorphic-differentials": {
       "derived": [
-        "tbl:substrate-consistency-window-table1-data",
-        "tbl:substrate-consistency-window-table2-data",
-        "tbl:substrate-consistency-window-table3-data",
-        "tbl:substrate-consistency-window-table4-data"
+        "prop:chirality-sign-is-hypercharge-sign"
       ],
       "declared": [],
       "effective": [
-        "tbl:substrate-consistency-window-table1-data",
-        "tbl:substrate-consistency-window-table2-data",
-        "tbl:substrate-consistency-window-table3-data",
-        "tbl:substrate-consistency-window-table4-data"
+        "prop:chirality-sign-is-hypercharge-sign"
+      ]
+    },
+    "prop:strands-are-bring-elliptic-quotients": {
+      "derived": [
+        "prop:index-five-subgroups-are-point-stabilisers"
+      ],
+      "declared": [],
+      "effective": [
+        "prop:index-five-subgroups-are-point-stabilisers"
       ]
     },
     "prop:three-parameters-wedderburn": {
@@ -984,6 +993,15 @@
       "declared": [],
       "effective": [
         "rem:transfer-matrix-identities-context"
+      ]
+    },
+    "prop:trm-hopf-sigma1-sq-closed-form": {
+      "derived": [
+        "tbl:trm-hopf-sigma1-sq-closed-form-table2-data"
+      ],
+      "declared": [],
+      "effective": [
+        "tbl:trm-hopf-sigma1-sq-closed-form-table2-data"
       ]
     },
     "prop:upstream-mathlib-additions": {
@@ -1050,11 +1068,32 @@
     },
     "prose:chapter-overview": {
       "derived": [
-        "conj:topological-mass-formula"
+        "conj:topological-mass-formula",
+        "def:categorical-action",
+        "def:categorical-lagrangian",
+        "rem:epistemic-status-of-calibrations"
       ],
       "declared": [],
       "effective": [
-        "conj:topological-mass-formula"
+        "conj:topological-mass-formula",
+        "def:categorical-action",
+        "def:categorical-lagrangian",
+        "rem:epistemic-status-of-calibrations"
+      ]
+    },
+    "prose:intro-aether-parameter": {
+      "derived": [
+        "def:aether-parameter",
+        "ex:reeb-su2",
+        "prop:heisenberg-commutator",
+        "prose:pre-archimedean-derivation-chain"
+      ],
+      "declared": [],
+      "effective": [
+        "def:aether-parameter",
+        "ex:reeb-su2",
+        "prop:heisenberg-commutator",
+        "prose:pre-archimedean-derivation-chain"
       ]
     },
     "prose:intro-model-and-measurement": {
@@ -1079,6 +1118,7 @@
         "def:brings-surface",
         "def:yekutieli-lifting-condition",
         "prop:gamma-gamma-generates-particles",
+        "rem:epistemic-status-of-calibrations",
         "thm:descartes"
       ],
       "declared": [],
@@ -1086,6 +1126,7 @@
         "def:brings-surface",
         "def:yekutieli-lifting-condition",
         "prop:gamma-gamma-generates-particles",
+        "rem:epistemic-status-of-calibrations",
         "thm:descartes"
       ]
     },
@@ -1093,43 +1134,36 @@
       "derived": [
         "def:archimedean-realization-functor",
         "prop:confinement-sdp",
+        "prop:gram-degeneracy-blocks-connes",
         "prop:wedderburn-as-noncomm-fourier",
         "prose:pre-archimedean-derivation-chain",
+        "rem:epistemic-status-of-calibrations",
         "thm:jones-markov-trace"
       ],
       "declared": [],
       "effective": [
         "def:archimedean-realization-functor",
         "prop:confinement-sdp",
+        "prop:gram-degeneracy-blocks-connes",
         "prop:wedderburn-as-noncomm-fourier",
         "prose:pre-archimedean-derivation-chain",
+        "rem:epistemic-status-of-calibrations",
         "thm:jones-markov-trace"
       ]
     },
-    "prose:intro-aether-parameter": {
+    "prose:intro-why-not-the-reals": {
       "derived": [
-        "def:aether-parameter",
-        "prop:heisenberg-commutator",
-        "prose:pre-archimedean-derivation-chain"
+        "conj:kashaev-volume-conjecture",
+        "def:habiro-ring",
+        "rem:base-field-independence",
+        "rem:q-generic-ground-ring"
       ],
       "declared": [],
       "effective": [
-        "def:aether-parameter",
-        "prop:heisenberg-commutator",
-        "prose:pre-archimedean-derivation-chain"
-      ]
-    },
-    "prose:master-atlas-calibration-jacobian": {
-      "derived": [
-        "rem:per-observable-100x-status-dashboard",
-        "tbl:master-atlas-molecules",
-        "tbl:master-atlas-particles"
-      ],
-      "declared": [],
-      "effective": [
-        "rem:per-observable-100x-status-dashboard",
-        "tbl:master-atlas-molecules",
-        "tbl:master-atlas-particles"
+        "conj:kashaev-volume-conjecture",
+        "def:habiro-ring",
+        "rem:base-field-independence",
+        "rem:q-generic-ground-ring"
       ]
     },
     "prose:notation-register": {
@@ -1344,15 +1378,6 @@
         "tbl:clausen-function-mathlib-filler-table2-data"
       ]
     },
-    "rem:collatz-hausdorff-comparison": {
-      "derived": [
-        "tbl:collatz-hausdorff-comparison-table-data"
-      ],
-      "declared": [],
-      "effective": [
-        "tbl:collatz-hausdorff-comparison-table-data"
-      ]
-    },
     "rem:color-confinement-observation": {
       "derived": [
         "tbl:color-confinement-observation-table-data"
@@ -1451,13 +1476,13 @@
         "tbl:groebner-nf-computation-table3-data"
       ]
     },
-    "rem:hadron-level-knot-table": {
+    "rem:hadron-interpretation": {
       "derived": [
-        "tbl:hadron-level-knot-table-data"
+        "def:localized-hadron"
       ],
       "declared": [],
       "effective": [
-        "tbl:hadron-level-knot-table-data"
+        "def:localized-hadron"
       ]
     },
     "rem:hausdorff-dimension-recurrence": {
@@ -1489,6 +1514,15 @@
       "effective": [
         "tbl:hecke-operations-table1-data",
         "tbl:hecke-operations-table2-data"
+      ]
+    },
+    "rem:hecke-radical-is-temperley-lieb": {
+      "derived": [
+        "thm:hecke-radical-is-tl-kernel"
+      ],
+      "declared": [],
+      "effective": [
+        "thm:hecke-radical-is-tl-kernel"
       ]
     },
     "rem:homological-shell-condensation-interpretation": {
@@ -1675,15 +1709,6 @@
         "tbl:mass-table-z1-20-table-data"
       ]
     },
-    "rem:millennium-unification": {
-      "derived": [
-        "tbl:millennium-unification-table1-data"
-      ],
-      "declared": [],
-      "effective": [
-        "tbl:millennium-unification-table1-data"
-      ]
-    },
     "rem:molecular-crossing-table": {
       "derived": [
         "tbl:molecular-crossing-table-table-data"
@@ -1702,6 +1727,15 @@
         "tbl:non-commutative-probability-dictionary-table-data"
       ]
     },
+    "rem:nuclear-knot-classification-argument": {
+      "derived": [
+        "rem:epistemic-status-of-calibrations"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:epistemic-status-of-calibrations"
+      ]
+    },
     "rem:observability-independent-motivation": {
       "derived": [
         "tbl:observability-independent-motivation-table-data"
@@ -1712,17 +1746,6 @@
       "effective": [
         "prop:core-levi-form",
         "tbl:observability-independent-motivation-table-data"
-      ]
-    },
-    "rem:p-vs-np-event-horizon": {
-      "derived": [
-        "tbl:p-vs-np-event-horizon-table1-data",
-        "tbl:p-vs-np-event-horizon-table2-data"
-      ],
-      "declared": [],
-      "effective": [
-        "tbl:p-vs-np-event-horizon-table1-data",
-        "tbl:p-vs-np-event-horizon-table2-data"
       ]
     },
     "rem:particle-nf-table": {
@@ -1798,6 +1821,15 @@
       "declared": [],
       "effective": [
         "tbl:quantum-ideal-gas-law-interpretation-table-data"
+      ]
+    },
+    "rem:quantum-universe-axiom-motivation": {
+      "derived": [
+        "def:quantum-gauge-group"
+      ],
+      "declared": [],
+      "effective": [
+        "def:quantum-gauge-group"
       ]
     },
     "rem:qvalue-observation": {
@@ -1909,6 +1941,24 @@
       "declared": [],
       "effective": [
         "tbl:surreal-notation-cheat-sheet-table-data"
+      ]
+    },
+    "rem:three-calibration-discipline-discussion": {
+      "derived": [
+        "rem:epistemic-status-of-calibrations"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:epistemic-status-of-calibrations"
+      ]
+    },
+    "rem:three-calibration-inputs-context": {
+      "derived": [
+        "rem:epistemic-status-of-calibrations"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:epistemic-status-of-calibrations"
       ]
     },
     "rem:three-euler-characteristics": {
@@ -2041,14 +2091,36 @@
         "rem:hkr-theorem"
       ]
     },
+    "sec:aether-cohomology-calibration-story": {
+      "derived": [
+        "rem:epistemic-status-of-calibrations"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:epistemic-status-of-calibrations"
+      ]
+    },
+    "sec:emergence-intro": {
+      "derived": [
+        "def:quantum-gauge-group"
+      ],
+      "declared": [],
+      "effective": [
+        "def:quantum-gauge-group"
+      ]
+    },
     "sec:introduction-overview": {
       "derived": [
         "def:categorical-action",
         "def:categorical-dirac-operator",
         "def:quantum-observable-universe",
         "ex:frobenius-pairing-su2",
+        "ex:rieffel-quotient-temperley-lieb",
+        "prop:gram-degeneracy-blocks-connes",
         "prop:tannaka-krein-reconstruction",
-        "rem:noether-theorem-callout"
+        "prose:cr-structure-lorentzian-lift",
+        "rem:noether-theorem-callout",
+        "rem:rieffel-metric-quotient-faithfulness"
       ],
       "declared": [],
       "effective": [
@@ -2056,8 +2128,12 @@
         "def:categorical-dirac-operator",
         "def:quantum-observable-universe",
         "ex:frobenius-pairing-su2",
+        "ex:rieffel-quotient-temperley-lieb",
+        "prop:gram-degeneracy-blocks-connes",
         "prop:tannaka-krein-reconstruction",
-        "rem:noether-theorem-callout"
+        "prose:cr-structure-lorentzian-lift",
+        "rem:noether-theorem-callout",
+        "rem:rieffel-metric-quotient-faithfulness"
       ]
     },
     "sec:knot-notation-convention": {
@@ -2071,6 +2147,15 @@
         "tbl:knot-notation-convention-table2-data"
       ]
     },
+    "sec:step-physical": {
+      "derived": [
+        "rem:epistemic-status-of-calibrations"
+      ],
+      "declared": [],
+      "effective": [
+        "rem:epistemic-status-of-calibrations"
+      ]
+    },
     "sim:beta-decay-halflife": {
       "derived": [
         "tbl:beta-decay-simulator-table-data"
@@ -2078,15 +2163,6 @@
       "declared": [],
       "effective": [
         "tbl:beta-decay-simulator-table-data"
-      ]
-    },
-    "tbl:master-atlas-nuclides-summary": {
-      "derived": [
-        "rem:recursive-atom-knot-atlas-registry"
-      ],
-      "declared": [],
-      "effective": [
-        "rem:recursive-atom-knot-atlas-registry"
       ]
     },
     "thm:hoefsmit-ew-cell-content": {

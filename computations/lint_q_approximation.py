@@ -30,14 +30,12 @@ REPO = HERE.parent
 # Files that legitimately host the q = 111/100 exact-rational path:
 #   - the exact-Fraction engine + its definitions
 #   - re-export shims
-#   - the documented appendix table (hadron-knot-table) — see its q0 note
 ALLOWLIST = {
     "tools/pyhecke/python/pyhecke/gram.py",        # _Q_FRAC/_Z_FRAC/_H_FRAC definitions
     "computations/hecke/hecke_engine.py",          # HeckeRational(111, 100)
     "tools/pyhecke/python/pyhecke/atom.py",        # build_atom_nf_exact (exact path)
     "computations/hecke_core_legacy.py",           # re-exports the _*_FRAC constants
     "computations/substrate/hecke_core.py",        # re-exports
-    "computations/hadron_knot_table.py",           # documented appendix table
 }
 
 PATTERN = re.compile(
