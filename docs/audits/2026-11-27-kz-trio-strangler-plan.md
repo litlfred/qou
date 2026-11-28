@@ -129,3 +129,9 @@ an algebra map `ρ : A →ₐ[k] End k V`; morphisms are the `k`-linear maps tha
 `Module.endTensorEndAlgHom`, and `Rep.tensorHom` is functorial (`tensorHom_id`,
 `tensorHom_comp`). The unit, the associator `Φ` and the braiding `σ ∘ R` come next.
 Sorry-free; axioms propext, Quot.sound.
+
+`HAdicDrinfeld/ModuleAssociator.lean`: the associator `α_{X,Y,Z} = a ∘ ρ(Φ)` on representations.
+`assoc_action3` shows the linear associator intertwines the actions of `(A⊗A)⊗A` and
+`A⊗(A⊗A)`; `associatorHom` is `A`-linear by `CasimirData.quasiCoassoc`; `associator` is an
+isomorphism with inverse `ρ(Φ⁻¹) ∘ a⁻¹` (hypothesis `Inv512 (Fil N 1) Φ`); and
+`associatorHom_naturality`. Sorry-free; axioms propext, Classical.choice, Quot.sound.
