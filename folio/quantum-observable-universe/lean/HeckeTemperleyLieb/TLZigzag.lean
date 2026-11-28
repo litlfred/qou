@@ -1,0 +1,192 @@
+import HeckeTemperleyLieb.TLCupCapCorner
+
+/-!
+# Zigzag words in the Temperley–Lieb algebra
+
+Bean `hkmt`. The word `zig p k = e_p e_{p+1} ⋯ e_{p+k-1}` is the planar isotopy that slides a
+cup across `k − 1` strands; `zag p k` is the same word read backwards. These are the explicit
+cup-moving maps used to put a tensor product of two standard corners into standard form
+(`TLTensorCorner`), chosen once and for all so that coherence can be checked by computation.
+
+* `zig_mul_zag`: `zig p (k+1) · zag p k = e_p`.
+* `zig_mul_zag_succ`: `zig p (k+1) · zag p (k+1) = δ e_p`.
+* `zag_mul_zig`: `zag p (k+1) · zig p (k+1) = δ e_{p+k}`.
+* `gen_mul_zig`, `zig_mul_gen`: the cup at either end is absorbed, `e_p · zig = δ zig`,
+  `zig · e_{p+k} = δ zig` (and the same for `zag`).
+* `commute_zig`, `commute_zag`: a zigzag commutes with every generator two or more steps away.
+* `mvn_slide`: **sliding a cup across `m` strands** is an isomorphism of corners, with the
+  explicit partial isometries `Y · zig p (m+1)` and `δ⁻² Y · zag p (m+1)`.
+
+Everything holds over any commutative ring; only the Temperley–Lieb relations are used.
+
+-- Ref: [kauffman1987] State models and the Jones polynomial, §3 (zigzag isotopy).
+-- Ref: [leitner2026] the Temperley–Lieb chapter (bean `hkmt`).
+-/
+
+namespace QOU.HeckeTemperleyLieb.TLZigzag
+
+open QOU.MathlibExt.TemperleyLieb QOU.MathlibExt.TemperleyLiebMarkov QOU.HeckeTemperleyLieb.TLCupCap
+
+variable {K : Type*} [Field K] {δ : K}
+
+variable (δ) in
+/-- The generator `e_i` indexed by a natural number (zero out of range). -/
+noncomputable def gen (n i : ℕ) : TLFin K δ n :=
+  if h : i < n then e K δ adjFin ⟨i, h⟩ else 0
+
+theorem gen_of_lt {n i : ℕ} (h : i < n) : gen δ n i = e K δ adjFin ⟨i, h⟩ := dif_pos h
+
+theorem gen_fin {n : ℕ} (i : Fin n) : e K δ adjFin i = gen δ n i := by
+  rw [gen_of_lt i.isLt]
+
+theorem gen_sq {n i : ℕ} (h : i < n) : gen δ n i * gen δ n i = δ • gen δ n i := by
+  rw [gen_of_lt h]; exact e_sq' δ _
+
+theorem gen_adj_up {n i : ℕ} (h : i + 1 < n) :
+    gen δ n i * gen δ n (i + 1) * gen δ n i = gen δ n i := by
+  rw [gen_of_lt (by omega : i < n), gen_of_lt h]
+  exact e_adjacent_fin (by simp)
+
+theorem gen_adj_down {n i : ℕ} (h : i + 1 < n) :
+    gen δ n (i + 1) * gen δ n i * gen δ n (i + 1) = gen δ n (i + 1) := by
+  rw [gen_of_lt (by omega : i < n), gen_of_lt h]
+  exact e_adjacent_fin (by simp)
+
+theorem commute_gen {n i j : ℕ} (h : i + 2 ≤ j ∨ j + 2 ≤ i) : Commute (gen δ n i) (gen δ n j) := by
+  unfold gen
+  split_ifs with hi hj
+  · exact e_commute_fin (by simpa using h)
+  all_goals simp
+
+variable (δ) in
+/-- `zig p k = e_p e_{p+1} ⋯ e_{p+k-1}`. -/
+noncomputable def zig (n p : ℕ) : ℕ → TLFin K δ n
+  | 0 => 1
+  | k + 1 => zig n p k * gen δ n (p + k)
+
+variable (δ) in
+/-- `zag p k = e_{p+k-1} ⋯ e_{p+1} e_p`, the reverse word. -/
+noncomputable def zag (n p : ℕ) : ℕ → TLFin K δ n
+  | 0 => 1
+  | k + 1 => gen δ n (p + k) * zag n p k
+
+theorem zig_succ (n p k : ℕ) : zig δ n p (k + 1) = zig δ n p k * gen δ n (p + k) := rfl
+theorem zag_succ (n p k : ℕ) : zag δ n p (k + 1) = gen δ n (p + k) * zag δ n p k := rfl
+
+theorem zig_one (n p : ℕ) : zig δ n p 1 = gen δ n p := by simp [zig]
+theorem zag_one (n p : ℕ) : zag δ n p 1 = gen δ n p := by simp [zag]
+
+/-- A zigzag commutes with every generator two or more steps away from its support. -/
+theorem commute_zig {n p i : ℕ} : ∀ k, (i + 2 ≤ p ∨ p + k + 1 ≤ i) → Commute (gen δ n i) (zig δ n p k)
+  | 0, _ => Commute.one_right _
+  | k + 1, h => (commute_zig k (by omega)).mul_right (commute_gen (by omega))
+
+theorem commute_zag {n p i : ℕ} : ∀ k, (i + 2 ≤ p ∨ p + k + 1 ≤ i) → Commute (gen δ n i) (zag δ n p k)
+  | 0, _ => Commute.one_right _
+  | k + 1, h => (commute_gen (by omega)).mul_right (commute_zag k (by omega))
+
+/-- `zig p (k+1) · zag p k = e_p`. -/
+theorem zig_mul_zag {n p : ℕ} : ∀ k, p + k < n → zig δ n p (k + 1) * zag δ n p k = gen δ n p
+  | 0, _ => by rw [zig_one, zag, mul_one]
+  | k + 1, h => by
+    have IH : zig δ n p (k + 1) * zag δ n p k = gen δ n p := zig_mul_zag k (by omega)
+    calc zig δ n p (k + 1 + 1) * zag δ n p (k + 1)
+        = zig δ n p k * (gen δ n (p + k) * gen δ n (p + k + 1) * gen δ n (p + k)) *
+            zag δ n p k := by
+          simp only [zig_succ, zag_succ, ← add_assoc, mul_assoc]
+      _ = gen δ n p := by
+          rw [gen_adj_up (by omega), ← zig_succ, IH]
+
+/-- `zig p (k+1) · zag p (k+1) = δ e_p`. -/
+theorem zig_mul_zag_succ {n p k : ℕ} (h : p + k < n) :
+    zig δ n p (k + 1) * zag δ n p (k + 1) = δ • gen δ n p := by
+  rw [zig_succ, zag_succ, mul_assoc, ← mul_assoc (gen δ n (p + k)), gen_sq h, smul_mul_assoc,
+    mul_smul_comm, ← mul_assoc, ← zig_succ, zig_mul_zag k h]
+
+/-- `zag p (k+1) · zig p (k+1) = δ e_{p+k}`. -/
+theorem zag_mul_zig {n p : ℕ} : ∀ k, p + k < n →
+    zag δ n p (k + 1) * zig δ n p (k + 1) = δ • gen δ n (p + k)
+  | 0, h => by rw [zag_one, zig_one, gen_sq (by omega), add_zero]
+  | k + 1, h => by
+    have IH : zag δ n p (k + 1) * zig δ n p (k + 1) = δ • gen δ n (p + k) :=
+      zag_mul_zig k (by omega)
+    calc zag δ n p (k + 1 + 1) * zig δ n p (k + 1 + 1)
+        = gen δ n (p + (k + 1)) * (zag δ n p (k + 1) * zig δ n p (k + 1)) *
+            gen δ n (p + (k + 1)) := by
+          simp only [zag_succ (k := k + 1), zig_succ (k := k + 1), mul_assoc]
+      _ = δ • gen δ n (p + (k + 1)) := by
+          rw [IH, mul_smul_comm, smul_mul_assoc, show p + (k + 1) = p + k + 1 by omega,
+            gen_adj_down (by omega)]
+
+/-- The cup at the left end is absorbed: `e_p · zig p (k+1) = δ zig p (k+1)`. -/
+theorem gen_mul_zig {n p : ℕ} (hp : p < n) : ∀ k, gen δ n p * zig δ n p (k + 1) = δ • zig δ n p (k + 1)
+  | 0 => by rw [zig_one, gen_sq hp]
+  | k + 1 => by
+    rw [zig_succ, ← mul_assoc, gen_mul_zig hp k, smul_mul_assoc]
+
+/-- The cup at the right end is absorbed: `zig p (k+1) · e_{p+k} = δ zig p (k+1)`. -/
+theorem zig_mul_gen {n p k : ℕ} (h : p + k < n) :
+    zig δ n p (k + 1) * gen δ n (p + k) = δ • zig δ n p (k + 1) := by
+  rw [zig_succ, mul_assoc, gen_sq h, mul_smul_comm]
+
+theorem gen_mul_zag {n p k : ℕ} (h : p + k < n) :
+    gen δ n (p + k) * zag δ n p (k + 1) = δ • zag δ n p (k + 1) := by
+  rw [zag_succ, ← mul_assoc, gen_sq h, smul_mul_assoc]
+
+theorem zag_mul_gen {n p : ℕ} (hp : p < n) : ∀ k, zag δ n p (k + 1) * gen δ n p = δ • zag δ n p (k + 1)
+  | 0 => by rw [zag_one, gen_sq hp]
+  | k + 1 => by
+    rw [zag_succ, mul_assoc, zag_mul_gen hp k, mul_smul_comm]
+
+/-! ## Sliding one cup -/
+
+theorem commute_zig_of {n p : ℕ} {Y : TLFin K δ n} :
+    ∀ k, (∀ i, p ≤ i → i < p + k → Commute Y (gen δ n i)) → Commute Y (zig δ n p k)
+  | 0, _ => Commute.one_right _
+  | k + 1, h => (commute_zig_of k (fun i h1 h2 => h i h1 (by omega))).mul_right
+      (h (p + k) (by omega) (by omega))
+
+theorem commute_zag_of {n p : ℕ} {Y : TLFin K δ n} :
+    ∀ k, (∀ i, p ≤ i → i < p + k → Commute Y (gen δ n i)) → Commute Y (zag δ n p k)
+  | 0, _ => Commute.one_right _
+  | k + 1, h => (h (p + k) (by omega) (by omega)).mul_right
+      (commute_zag_of k (fun i h1 h2 => h i h1 (by omega)))
+
+/-- **Sliding a cup across `m` strands.** If `Y` is an idempotent commuting with the generators
+`e_p, …, e_{p+m}`, the cup at `p` and the cup at `p + m` give isomorphic corners of `Y`, with the
+explicit partial isometries `Y · zig p (m+1)` and `δ⁻² Y · zag p (m+1)`. -/
+theorem mvn_slide (hδ : δ ≠ 0) {n p m : ℕ} (h : p + m < n) {Y : TLFin K δ n} (hY : Y * Y = Y)
+    (hc : ∀ i, p ≤ i → i ≤ p + m → Commute Y (gen δ n i)) :
+    MvN (δ⁻¹ • (Y * gen δ n p)) (δ⁻¹ • (Y * gen δ n (p + m))) := by
+  have cp : Commute Y (gen δ n p) := hc p le_rfl (by omega)
+  have cq : Commute Y (gen δ n (p + m)) := hc _ (by omega) le_rfl
+  have cz : Commute Y (zig δ n p (m + 1)) := commute_zig_of _ (fun i h1 h2 => hc i h1 (by omega))
+  have cw : Commute Y (zag δ n p (m + 1)) := commute_zag_of _ (fun i h1 h2 => hc i h1 (by omega))
+  have hm : ∀ u v : TLFin K δ n, Commute Y u → Y * u * (Y * v) = Y * (u * v) := by
+    intro u v hu
+    rw [mul_assoc, ← mul_assoc u, ← hu.eq, mul_assoc, ← mul_assoc Y, hY]
+  have hp : p < n := by omega
+  have one : ∀ (c : K) (x : TLFin K δ n), c = 1 → c • x = x := by rintro c x rfl; exact one_smul _ _
+  refine ⟨?_, ?_, Y * zig δ n p (m + 1), δ⁻¹ ^ 2 • (Y * zag δ n p (m + 1)), ?_, ?_, ?_, ?_⟩
+  · simp only [smul_mul_assoc, mul_smul_comm, smul_smul]
+    rw [hm _ _ cp, gen_sq hp, mul_smul_comm, smul_smul]
+    congr 1; field_simp
+  · simp only [smul_mul_assoc, mul_smul_comm, smul_smul]
+    rw [hm _ _ cq, gen_sq h, mul_smul_comm, smul_smul]
+    congr 1; field_simp
+  · simp only [smul_mul_assoc, mul_smul_comm, smul_smul]
+    rw [hm _ _ cp, hm _ _ (cp.mul_right cz), gen_mul_zig hp, smul_mul_assoc, zig_mul_gen h,
+      mul_smul_comm, mul_smul_comm, smul_smul, smul_smul]
+    exact one _ _ (by field_simp)
+  · simp only [smul_mul_assoc, mul_smul_comm, smul_smul]
+    rw [hm _ _ cq, hm _ _ (cq.mul_right cw), gen_mul_zag h, smul_mul_assoc, zag_mul_gen hp,
+      mul_smul_comm, mul_smul_comm, smul_smul, smul_smul]
+    congr 1; field_simp
+  · simp only [mul_smul_comm]
+    rw [hm _ _ cz, zig_mul_zag_succ h, mul_smul_comm, smul_smul]
+    congr 1; field_simp
+  · simp only [smul_mul_assoc]
+    rw [hm _ _ cw, zag_mul_zig _ h, mul_smul_comm, smul_smul]
+    congr 1; field_simp
+
+end QOU.HeckeTemperleyLieb.TLZigzag
