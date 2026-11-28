@@ -135,3 +135,9 @@ Sorry-free; axioms propext, Quot.sound.
 `A⊗(A⊗A)`; `associatorHom` is `A`-linear by `CasimirData.quasiCoassoc`; `associator` is an
 isomorphism with inverse `ρ(Φ⁻¹) ∘ a⁻¹` (hypothesis `Inv512 (Fil N 1) Φ`); and
 `associatorHom_naturality`. Sorry-free; axioms propext, Classical.choice, Quot.sound.
+
+`HAdicDrinfeld/ModuleUnit.lean`: the unit `k` with `a ↦ ε(a)`, the linear unitors as
+isomorphisms of representations (`A`-linear by the counit laws), their naturality, and the
+**triangle** `(id ⊗ λ) ∘ α_{X,k,Y} = ρ ⊗ id`, from `middleCounit_assoc3` (hypothesis: `Φ` has
+constant term 1). The objects live in `Rep.{u, w, u} D`, the universe of `k`, so that `k` itself is
+one. Sorry-free; axioms propext, Classical.choice, Quot.sound.
