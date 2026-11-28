@@ -42,8 +42,6 @@ export default chapter({
         "master-atlas-molecules",
         "particle-nf-table",
         "particle-nf-table-table-data",
-        "hadron-level-knot-table",
-        "hadron-level-knot-table-data",
         "gluon-model-comparison",
       ],
     }),

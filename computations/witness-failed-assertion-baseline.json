@@ -1,5 +1,5 @@
 {
-  "count": 108,
+  "count": 107,
   "note": "Witnesses committed with a recorded assertion failure. This baseline DRAINS, never grows: fix the producer, the tolerance, or the schema misuse (see the module docstring's three categories) and re-run. Adding a file here to silence it defeats the mechanism.",
   "witnesses": {
     "computations/all-nuclides-wedderburn-spectral-v2.witness.json": 1,
@@ -44,7 +44,6 @@
     "computations/habiro/habiro-interpolate-cross-validation.witness.json": 2,
     "computations/habiro/habiro-product-taylor-algebraic.witness.json": 1,
     "computations/habiro/habiro-to-precision-ladder-verification.witness.json": 1,
-    "computations/hadron-knot-table.witness.json": 6,
     "computations/he4-canonical-tr-m-block-fingerprint.witness.json": 9,
     "computations/lambda-scale-h2-concrete-test.witness.json": 1,
     "computations/lambda-scale-refinement-h4-correction-bring.witness.json": 1,

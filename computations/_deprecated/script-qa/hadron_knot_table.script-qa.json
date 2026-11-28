@@ -1,0 +1,170 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "computations/_deprecated/hadron_knot_table.py",
+  "language": "python",
+  "source_hash": "da4d5ebf1934",
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "ts": "da4d5ebf1934"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "02683e418f330a4fd85dc3db95f4a3f8bb81ec75"
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "ts": "da4d5ebf1934"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "02683e418f330a4fd85dc3db95f4a3f8bb81ec75"
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "ts": "da4d5ebf1934"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "02683e418f330a4fd85dc3db95f4a3f8bb81ec75"
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "ts": "da4d5ebf1934"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "02683e418f330a4fd85dc3db95f4a3f8bb81ec75"
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "ts": "da4d5ebf1934"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "02683e418f330a4fd85dc3db95f4a3f8bb81ec75"
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "ts": "da4d5ebf1934"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "02683e418f330a4fd85dc3db95f4a3f8bb81ec75"
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "ts": "da4d5ebf1934"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "02683e418f330a4fd85dc3db95f4a3f8bb81ec75"
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "ts": "da4d5ebf1934"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "02683e418f330a4fd85dc3db95f4a3f8bb81ec75",
+        "severity": "minor",
+        "evidence": "computations/_deprecated/hadron_knot_table.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "ts": "da4d5ebf1934"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "02683e418f330a4fd85dc3db95f4a3f8bb81ec75"
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "ts": "da4d5ebf1934"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "pipeline/qa-checkers-python.ts",
+          "version": "v1",
+          "script_hash": "bec5453f4361",
+          "script_commit_sha": "unknown"
+        },
+        "reviewed_tree": "02683e418f330a4fd85dc3db95f4a3f8bb81ec75"
+      }
+    ]
+  }
+}
