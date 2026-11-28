@@ -2,7 +2,7 @@
   "$schema": "folio-bean-index/v1",
   "tile": {
     "beans": {
-      "count": 1786,
+      "count": 1790,
       "unit": "open beans"
     }
   },
@@ -32540,6 +32540,20 @@
       "file": "beans/defs/qou-cblw--colour-blind-h-2-interface-factor-sweep.md"
     },
     {
+      "id": "qou-cbot",
+      "title": "Compute bottlenecks audit & Rust crates/* acceleration map: profile slow Python producers/sweeps across computations/ and map exact crates/* targets",
+      "status": "in-progress",
+      "type": "task",
+      "priority": "high",
+      "parent": "qou-s028",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-28T12:03:00Z",
+      "updatedAt": "2026-11-28T12:03:00Z",
+      "preview": "2026-11-28 (Antigravity coordinator `92bff8c9-777d-458a-a380-8dd5bf5cc0f3`, worktree `main-base` -> branch `claude/compute-bottlenecks-audit-and-rust-map-20261128`): Measure top slow Python producers and sweeps across `computations/` and map each bottleneck to exact `crates/*` (`gs-basis`, `qou-gg-core`, `qou-gg-eval`, `qou-values`, `qou-clarabel`, `hecke-engine`) Rust acceleration paths.",
+      "file": "beans/defs/qou-cbot--compute-bottlenecks-audit-rust-crates-acceleration.md"
+    },
+    {
       "id": "qou-cc4t",
       "title": "Remark interpreting 1203.6551v1.pdf at folio/quantum-observable-universe/information-theory/qua…",
       "status": "completed",
@@ -33884,6 +33898,20 @@
       "updatedAt": "2026-08-15T23:10:16Z",
       "preview": "",
       "file": "beans/defs/qou-cr92--infra-measured-negative-machine-checker-for-arity.md"
+    },
+    {
+      "id": "qou-crwk",
+      "title": "crates/ workspace & tools KG migration: move Rust engines to top-level crates/* + Cargo workspace + defineTool KG nodes + local skill",
+      "status": "in-progress",
+      "type": "task",
+      "priority": "high",
+      "parent": "qou-s028",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-28T11:57:00Z",
+      "updatedAt": "2026-11-28T11:57:00Z",
+      "preview": "2026-11-28 (Antigravity coordinator `92bff8c9-777d-458a-a380-8dd5bf5cc0f3`, worktree `ws1-precision` -> branch `claude/crates-workspace-and-tools-kg-20261128`): Move `tools/hecke-engine*`, `tools/pyhecke-native`, and `tools/borromean-recurrence-crt` into top-level `crates/*` with a root `Cargo.toml` workspace, add `scripts/gen-crate-tools.ts` / `tool-defs/crates.json` (`tools` KG `defineTool` node",
+      "file": "beans/defs/qou-crwk--crates-workspace-tools-kg-migration-move-rust-engi.md"
     },
     {
       "id": "qou-cs76",
@@ -41115,6 +41143,20 @@
       "file": "beans/defs/qou-ggls--gluon-segment-by-the-gamma-gamma-rule-unit-is-v-count-open.md"
     },
     {
+      "id": "qou-ggtb",
+      "title": "crates/qou-gg-eval + crates/qou-clarabel + Annex A gamma-gamma hadron/light-nuclei datum table (A=1..4)",
+      "status": "in-progress",
+      "type": "task",
+      "priority": "high",
+      "parent": "qou-s028",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-28T11:57:00Z",
+      "updatedAt": "2026-11-28T11:57:00Z",
+      "preview": "2026-11-28 (Antigravity coordinator `92bff8c9-777d-458a-a380-8dd5bf5cc0f3`, worktree `ws6-exposition-pdf` -> branch `claude/crates-qou-gg-eval-clarabel-annex-table-20261128`): Build MPFR `>= 80`-dps proton-pinned evaluator `crates/qou-gg-eval`, `litlfred/Clarabel.rs` (`37f06c3`) LP-dual/PSD certificate adapter `crates/qou-clarabel`, and Annex A `rem:gg-hadron-datum-table` & `tbl:gg-hadron-datum-ta",
+      "file": "beans/defs/qou-ggtb--crates-qou-gg-eval-crates-qou-clarabel-annex-a-gam.md"
+    },
+    {
       "id": "qou-gh6m",
       "title": "Door-ii: Gevrey-1/2 reframe — q-lift kernel IS the binding resurgent object (half-slope = proved Gevrey-1/2), NOT the colored-Jones module (Route C); is C1 itself the prolongation-symbol carrier?",
       "status": "in-progress",
@@ -41829,6 +41871,20 @@
       "updatedAt": "2026-08-26T16:38:07Z",
       "preview": "SCRAPPED as a dependency of the PivotalCategory instance -- that instance landed by\nanother route (qou-knsx), so nothing in this tranche needs these lemmas any more.\n\nThe GAP IS STILL REAL and is worth recording for whoever needs element-level\ncomputation in FGModuleCat. Its monoidal structure is induced on a full subcategory\n((ModuleCat.isFG R).IsMonoidal), so ModuleCat.MonoidalCategory.whiskerLe",
       "file": "beans/defs/qou-gsdb--front-2a-element-level-lemmas-for-fgmodulecats-ind.md"
+    },
+    {
+      "id": "qou-gsgg",
+      "title": "crates/gs-basis + crates/qou-gg-core: standalone non-commutative Groebner-Shirshov library + pure-Rust 4-photon & Z=0..118 T3/Hopf chart generator",
+      "status": "in-progress",
+      "type": "task",
+      "priority": "high",
+      "parent": "qou-s028",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-28T11:57:00Z",
+      "updatedAt": "2026-11-28T11:57:00Z",
+      "preview": "2026-11-28 (Antigravity coordinator `92bff8c9-777d-458a-a380-8dd5bf5cc0f3`, worktree `ws12-pr9180` -> branch `claude/crates-gs-basis-and-qou-gg-core-20261128`): Build standalone QOU-agnostic non-commutative Groebner-Shirshov crate `crates/gs-basis` (`1A+1B` combined: dynamic Buchberger-Shirshov + Bokut-Shiao Coxeter + `TL_n` diagram reducers, `0` C-FFI) and `crates/qou-gg-core` (pure-Rust 4-term/4",
+      "file": "beans/defs/qou-gsgg--crates-gs-basis-crates-qou-gg-core-standalone-non.md"
     },
     {
       "id": "qou-gsi0",
@@ -45695,6 +45751,20 @@
       "updatedAt": "2026-07-25T20:21:36Z",
       "preview": "",
       "file": "beans/defs/qou-inqp--b14-cyclotomic-level-correspondence-by-exact-cross.md"
+    },
+    {
+      "id": "qou-intr",
+      "title": "Introduction redo & Paper PDF TeX fix: 3 summary tables (gamma-gamma hadrons, Eightfold status, 26 SM parameters) + proton-pin / E=mc_q^2 currency + fix Paper PDF TeX errors",
+      "status": "in-progress",
+      "type": "task",
+      "priority": "high",
+      "parent": "qou-s028",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-28T12:03:00Z",
+      "updatedAt": "2026-11-28T12:03:00Z",
+      "preview": "2026-11-28 (Antigravity coordinator `92bff8c9-777d-458a-a380-8dd5bf5cc0f3`, worktree `ws5-nov19-rebase` -> branch `claude/intro-summary-tables-sm26-pdf-fix-20261128`): Author 3 summary tables in `folio/quantum-observable-universe/introduction/` (`gamma-gamma` hadron highlights, Eightfold Way proved-vs-assumed status, 26 Standard Model parameters grouped), update introduction prose for proton-pin a",
+      "file": "beans/defs/qou-intr--introduction-redo-paper-pdf-tex-fix-3-summary-tabl.md"
     },
     {
       "id": "qou-invr",
@@ -63282,6 +63352,20 @@
       "file": "beans/defs/qou-quv8--d-bar-parity-split-μqq-is-bar-odd-add-bar-even-2n.md"
     },
     {
+      "id": "qou-qval",
+      "title": "crates/qou-values: fast >=80-dps MPFR proton-pinned witnessed-value evaluator & witness emitter with Frechet-Jacobian uncertainties",
+      "status": "in-progress",
+      "type": "task",
+      "priority": "high",
+      "parent": "qou-s028",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-28T11:57:00Z",
+      "updatedAt": "2026-11-28T11:57:00Z",
+      "preview": "2026-11-28 (Antigravity coordinator `92bff8c9-777d-458a-a380-8dd5bf5cc0f3`, worktree `ws2-bridge-hecke` -> branch `claude/crates-qou-values-fast-witness-eval-20261128`): Build general fast MPFR (`>= 80` dps, strictly on the proton pin per 2026-11-28 owner ruling; muon pin on hold) Rust witnessed-value evaluator and `.witness.json` emitter for `ACCURACY.md` and paper `:val[...]` observables with Fr",
+      "file": "beans/defs/qou-qval--crates-qou-values-fast-80-dps-mpfr-proton-pinned-w.md"
+    },
+    {
       "id": "qou-qve5",
       "title": "Binding SHAPE residual: derive the symmetry-energy term of the additive log law from the bond graph — isospin coefficient has the wrong sign (κ=+2(q₀−1)=+0.22 vs data ≈ −0.15); formalize-first, no fit (gm4q / qou-brng / 1ppQ reanalysis §5 item 3)",
       "status": "in-progress",
@@ -65714,7 +65798,7 @@
         "qou-ziag"
       ],
       "createdAt": "2026-11-24T08:06:16Z",
-      "updatedAt": "2026-11-28T11:52:00Z",
+      "updatedAt": "2026-11-28T12:05:00Z",
       "preview": "## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)\n\nA **Swarm** is a first-class work item (`type: epic` in `beans`) with explicit **Acceptance Criteria / End State**, **Structured Work-Item Queues**, **On-Demand + Optional Periodic Human-Consumable Status Reporting**, and **Live Cold-Start Handover Notes**.\n\n### Defined End-State / Exit Criteria for the `'Stability'` Swarm\n- [",
       "file": "beans/defs/qou-s028--stability-swarm-merge-manager-continuity-handover.md"
     },
@@ -73383,14 +73467,14 @@
     {
       "id": "qou-vhm1",
       "title": "Accuracy conditional->proved (alpha_EM, Rydberg & v_weak): discharge provable BringMapChain/LiTwo/loop-measure sub-hypotheses in AlphaEm & ElectroweakBringSchwingerBridge classes",
-      "status": "in-progress",
+      "status": "completed",
       "type": "task",
       "priority": "high",
       "parent": "qou-s028",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-28T10:29:07Z",
-      "updatedAt": "2026-11-28T10:29:07Z",
+      "updatedAt": "2026-11-28T11:57:00Z",
       "preview": "2026-11-28 (Antigravity 92bff8c9, Sibling 7 in ws3-l2-physics -> claude/accuracy-alpha-ew-conditional-to-proved-20261128): Audit `ArchimedeanLimit`, `BlochSuslinUniqueness`, `BringZeroModeBlochClass` (Form B/C alpha_EM & Rydberg R_infty) and `ElectroweakBringSchwingerBridge` / `ElectroweakVevGaps` (v_weak -29.37 ppb, -0.11 sigma) against newly landed `BringMapChain` (#9769), `LiTwo_reflection` (qo",
       "file": "beans/defs/qou-vhm1--accuracy-conditional-proved-alpha-em-rydberg-v-wea.md"
     },
@@ -76401,14 +76485,14 @@
     {
       "id": "qou-x08k",
       "title": "Session 2026-11-27: close the gaps in the eightfold-way and Standard Model derivation",
-      "status": "in-progress",
+      "status": "completed",
       "type": "epic",
       "priority": "high",
       "parent": "qou-0uga",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T14:25:39Z",
-      "updatedAt": "2026-11-27T19:52:14Z",
+      "updatedAt": "2026-11-28T12:03:00Z",
       "preview": "Session epic for the project thread \"Close gaps in 8-fold and Standard Model derivation\" (owner Carl, 2026-11-27). Arc index and fronts: `qou-8lxd`. This epic holds the session's work items; each child also gets an `8f-*` tag and is cross-linked from `qou-8lxd`.\n\nRules for this session (owner): no empirical inputs inside formal proofs; prefer Lean; do not merge (merges go through the merge-manager",
       "file": "beans/defs/qou-x08k--session-2026-11-27-close-the-gaps-in-the-eightfold.md"
     },
@@ -88195,14 +88279,14 @@
         "file": "beans/defs/qou-5vkl--platform-tooling-and-hygiene.md",
         "status": "in-progress",
         "epics": 9,
-        "total": 427,
-        "closed": 179,
-        "open": 248,
-        "inProgress": 133,
+        "total": 433,
+        "closed": 180,
+        "open": 253,
+        "inProgress": 138,
         "todo": 115,
         "draft": 0,
         "unclassified": 0,
-        "share": 0.41920374707259955
+        "share": 0.41570438799076215
       },
       {
         "id": "suwr",
@@ -88316,13 +88400,13 @@
         "status": "in-progress",
         "epics": 4,
         "total": 200,
-        "closed": 62,
-        "open": 138,
-        "inProgress": 38,
+        "closed": 63,
+        "open": 137,
+        "inProgress": 37,
         "todo": 100,
         "draft": 0,
         "unclassified": 0,
-        "share": 0.31
+        "share": 0.315
       },
       {
         "id": "qou-b5qg",
@@ -88461,8 +88545,8 @@
       }
     ],
     "orphanOpen": 138,
-    "openTotal": 1786,
-    "coveredOpen": 1640,
+    "openTotal": 1790,
+    "coveredOpen": 1644,
     "duplicateIds": 0
   }
 }
