@@ -355,3 +355,15 @@ Colour every component `N`, set `q = e^{iπ/N}` (Kashaev's root, which is Muraka
 **Forced values (convention D, any field).** `m(σ₁σ₂σ₁) = m(σ₁²σ₂⁻¹) = (q²+1)(q⁴+1)/q⁶ = [4]/q³` (`massWord_e`, `massWord_mu`, `mass_mu_eq_e`): both close to the Hopf link. `m(σ₁⁴σ₂⁻¹) = (q²+1)(q⁸+q⁴−q²+1)/q¹²` (`massWord_tau`), the class of the (2,4) torus link.
 
 **Conclusion.** Under the definition as it stands, the least-trace ladder gives `e` and `μ` the same mass, exactly and for every `q`. This is a structural negative, not a numerical one. The volume ordering of §17 (0 < 5.333 < 6.355) is not reachable without changing one of the three rows above. Each such change (an axis in the cycle, a colour other than `V = R²`, or the `ζ_N` growth as the reading) is a change to `def:mass-identity` and needs the owner's own tap. The alternative is to keep the definition and choose words in distinct braid classes (tau thread). Nothing is compared with a measured value.
+
+## 19. Readings of the least-crossing link ladder (tau-thread candidate, unscored)
+
+**Lean.** `QOU/Observations/LeptonLinkLadderReadings.lean`. No `sorry`, no new axiom. This reads the set under `def:mass-identity` as it stands (§18).
+
+| word | closure | lk | ring mass (N = 2) | U(1) = 3·lk | m(q₀) (display) | U(q₀) (display) |
+|---|---|---|---|---|---|---|
+| e = σ₁σ₂σ₁ | Hopf | 1 | `(q²+1)(q⁴+1)/q⁶` | 3 | 3.00514 | 2.48463 |
+| μ = σ₁⁴σ₂⁻¹ | T(2,4) | 2 | `(q²+1)(q⁸+q⁴−q²+1)/q¹²` | 6 | 2.29105 | 4.75658 |
+| τ = σ₁²σ₂⁻¹σ₁σ₂⁻¹ | Whitehead | 0 | `(q²+1)(q¹⁰−q⁸+2q⁶−q⁴+2q²−1)/q⁸` | 0 | 4.08910 | −0.50796 |
+
+At `q = 1` all three masses are 4 (`mass_at_one`). The three closures are distinct, so the definition now separates the generations. `U(1)` follows the linking number (3, 6, 0), so it is not monotone along the ladder. Nothing is compared with a measured value (no-comparison-first rule).
