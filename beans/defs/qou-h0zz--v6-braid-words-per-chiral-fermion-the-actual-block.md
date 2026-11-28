@@ -451,3 +451,9 @@ Matter = EVEN exterior part Λ⁰⊕Λ²⊕Λ⁴ = 1⊕10⊕5̄ (Spin(10) 16); o
 
 ## 2026-11-28 — hypercharge sign = Bring orientation
 `QOU/StandardModel/HyperchargeSignIsBringOrientation.lean` (sorry-free, generators only): with H¹ = [2,1,1,1]⁺ ⊕ [2,1,1,1]⁻ (#9874), colour/isospin symmetry of Y survives only in the reflection-odd copy (odd g paired with c), and there c flips Y. So the open sign = orientation of Bring (H⁰(K) vs conj). Value still not fixed (orientations isometric). Next: is the orientation fixed upstream (q > 1 / braid chirality / photon σ₀σ₁⁻¹)?
+
+## 2026-11-28 — "All": three more results
+- S3×S2 = exact stabiliser of Y in S5; orientation result extended to all 12 elements (HyperchargeSignIsBringOrientation.lean).
+- Braid chirality on UT(Σ₄) is BLIND to the sign (BraidChiralityBlindToHyperchargeSign.lean): lifted isometries have orientation sign ε² = 1, so crossing signs (q₀>1, geodesic α) cannot see Bring's orientation, which flips Y. Structural exclusion of that route only.
+- Strands = elliptic quotients B/A4 (StrandsAreBringEllipticQuotients.lean): strands ↔ the five A4 stabilisers equivariantly; u_i spans Alt(i)-invariants of H⁰(K). Chevalley–Weil and uniqueness of transitive 5-point S5-set cited.
+Still open: the sign's value (a source seeing the base orientation directly, e.g. Bring's complex structure); three colour strands.
