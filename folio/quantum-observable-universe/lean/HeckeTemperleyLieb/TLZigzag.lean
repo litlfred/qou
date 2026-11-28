@@ -333,6 +333,50 @@ theorem cup_slide_block (hδ : δ ≠ 0) {N n m : ℕ} (hN : n + m + 3 = N) (x :
     hs, ← mul_assoc (gen δ N (n + 1)), gen_mul_zig (by omega), smul_mul_assoc, mul_smul_comm,
     smul_smul, inv_mul_cancel₀ hδ, one_smul, ← mul_assoc, hc.eq, mul_assoc]
 
+/-- The same slide from the other side: `zag` takes the cup-then-block word to the block
+moved two strands left. -/
+theorem zag_cup_slide_block (hδ : δ ≠ 0) {N n m : ℕ} (hN : n + m + 3 = N) (x : TLFin K δ n)
+    (y : TLFin K δ m) :
+    zag δ N (n + 1) (m + 2) *
+        (pl δ 0 (n + 1 + 1) (by omega) (capEmb δ n x) * pl δ (n + 3) m (by omega) y) =
+      (pl δ 0 n (by omega) x * pl δ (n + 1) m (by omega) y) * zag δ N (n + 1) (m + 2) := by
+  have hE : pl δ 0 (n + 1 + 1) (N := N) (by omega) (e K δ adjFin (Fin.last (n + 1))) =
+      gen δ N (n + 1) := by
+    rw [pl_e, gen_eq_E]; simp
+  have hx : pl δ 0 (n + 1 + 1) (N := N) (by omega) (incl δ (n + 1) (incl δ n x)) =
+      pl δ 0 n (N := N) (by omega) x := by
+    rw [pl_incl, pl_incl]
+  have hs := pl_shift_zag (δ := δ) (N := N) (t := n + 1) (M := m) (p := n + 1) (k := m + 1)
+    (by omega) (by omega) le_rfl (by omega) (by omega) y
+  have hc := commute_pl_zag (δ := δ) (N := N) (t := 0) (M := n) (p := n + 1) (k := m + 2)
+    (by omega) (Or.inl (by omega)) x
+  rw [capEmb, map_smul, map_mul, hx, hE, smul_mul_assoc, mul_smul_comm, ← mul_assoc,
+    ← mul_assoc, ← hc.eq, mul_assoc _ _ (gen δ N (n + 1)), zag_mul_gen (by omega),
+    mul_smul_comm, smul_mul_assoc, smul_smul, inv_mul_cancel₀ hδ, one_smul, mul_assoc]
+  rw [mul_assoc]
+  exact congrArg _ hs
+
+theorem pl_pl {N t M s L : ℕ} (h : t + M ≤ N) (h' : s + L ≤ M) (z : TLFin K δ L) :
+    pl δ t M h (pl δ s L h' z) = pl δ (t + s) L (by omega) z :=
+  algHom_eq_of_gen ((pl δ t M h).comp (pl δ s L h')) (pl δ (t + s) L (by omega)) (fun j => by
+    rw [AlgHom.comp_apply, pl_e, pl_e, pl_E t M h (by omega), add_assoc]) z
+
+/-- **Conjugating the cup-then-block word by the full slide.** `zag · (cup x ⊗ y) · zig` is
+`δ²` times the cup placed after `x ⊗ y`: adding two strands to the first factor and then
+sliding the new cup to the end is adding two strands to the tensor product. -/
+theorem slide_conj_capEmb (hδ : δ ≠ 0) {N n m : ℕ} (hN : n + m + 3 = N) (x : TLFin K δ n)
+    (y : TLFin K δ m) :
+    zag δ N (n + 1) (m + 2) *
+        (pl δ 0 (n + 1 + 1) (by omega) (capEmb δ n x) * pl δ (n + 3) m (by omega) y) *
+        zig δ N (n + 1) (m + 2) =
+      δ ^ 2 • pl δ 0 (n + m + 1 + 1 + 1) (by omega)
+        (capEmb δ (n + m + 1) (TLQuotientTensor.tens δ x y)) := by
+  rw [zag_cup_slide_block hδ hN, mul_assoc, show m + 2 = (m + 1) + 1 from rfl,
+    zag_mul_zig (m + 1) (by omega), capEmb, map_smul, map_mul, pl_incl, pl_incl,
+    TLQuotientBraiding.tens_eq_pl, map_mul, pl_pl, pl_pl, pl_e, mul_smul_comm, smul_smul]
+  have h2 : δ ^ 2 * δ⁻¹ = δ := by field_simp
+  rw [h2, show n + 1 + (m + 1) = n + m + 1 + 1 by omega]
+  congr 2 <;> simp [gen_eq_E]
 end Place
 
 end QOU.HeckeTemperleyLieb.TLZigzag
