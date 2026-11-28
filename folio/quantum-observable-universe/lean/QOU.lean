@@ -2119,6 +2119,9 @@ import QOU.StandardModel.TorusLinkElectroweakSchurRatio
 import QOU.StandardModel.BringPrymRiemannRochGenerations
 import QOU.MassTheory.ComptonHarmonicOscillatorSlaterRatios
 import QOU.StandardModel.BringGenerationSplitAndCKMTexture
+import QOU.StandardModel.S3CirculantKoideTraceIdentity
+import QOU.StandardModel.BringThreeGenerationsAndTauSatellite
+import QOU.StandardModel.KoideSingletDoubletEquipartition
 import QOU.EightfoldWay.AmphichiralHolonomyIsSelfDual
 import QOU.EightfoldWay.AnsatzContentDichotomy
 import QOU.EightfoldWay.CircleBundleBettiObstruction

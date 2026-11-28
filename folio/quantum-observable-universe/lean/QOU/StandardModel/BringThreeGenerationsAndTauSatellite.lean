@@ -1,6 +1,7 @@
 import QOU.StandardModel.BringGenerationSplitAndCKMTexture
 import QOU.StandardModel.CompositeT29ThresholdInstability
 import QOU.StandardModel.S3CirculantKoideTraceIdentity
+import QOU.StandardModel.KoideSingletDoubletEquipartition
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
@@ -367,6 +368,24 @@ theorem tau_sqrt_ratio_resolvent_from_vol41
     apply mul_right_cancel₀ hu2
     rw [zero_mul]
     linear_combination hpoly
+
+/-- **Algebraic Core Discharge Bridge (`qou-cw8i`):**
+    100% of the $S_3 / \mathbb{Z}_3$ projector algebra, Fourier moments, classical $V^{\otimes 3}$
+    $4 = 4$ equipartition, quadratic resolvent, and radical-free quartic mass polynomial are proved
+    unconditionally over `[CommRing R]` in `QOU.StandardModel.KoideSingletDoubletEquipartition`.
+    Consequently, `KoideTopologicalProtectionHypothesis` reduces to the single irreducible
+    1-equation physical bridge `KoideSingletDoubletEquipartitionBridge` welded to the figure-eight
+    muon relation `v² (1 - q⁻¹)² = vol41 u²` (provided as a `def`, never `instance`). -/
+def koideTopologicalProtection_of_singletDoubletBridge
+    {R : Type*} [CommRing R] (h3 : ∀ z : R, 3 * z = 0 → z = 0)
+    [B : KoideSingletDoubletEquipartition.KoideSingletDoubletEquipartitionBridge R] :
+    3 * (B.leptonRootMass 0 ^ 2 + B.leptonRootMass 1 ^ 2 + B.leptonRootMass 2 ^ 2) =
+        2 * (B.leptonRootMass 0 + B.leptonRootMass 1 + B.leptonRootMass 2) ^ 2 ∧
+      KoideSingletDoubletEquipartition.homogKoideResolvent
+          (B.leptonRootMass 0) (B.leptonRootMass 1) (B.leptonRootMass 2) = 0 ∧
+      KoideSingletDoubletEquipartition.koideMassQuarticPoly
+          (B.leptonRootMass 0 ^ 2) (B.leptonRootMass 1 ^ 2) (B.leptonRootMass 2 ^ 2) = 0 :=
+  KoideSingletDoubletEquipartition.bridge_implies_resolvent_and_quartic h3
 
 end QuantumDimensionAndKoideProtection
 
