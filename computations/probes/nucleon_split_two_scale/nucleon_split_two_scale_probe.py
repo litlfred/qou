@@ -15,7 +15,7 @@ Units (per nat): E0 = m_e/(q(q-1)) (mass-formula), E0/R (trace), and the DERIVED
   The derived unit is the settled one; E0 and E0/R are kept for comparison only.
   Gaps: Casimir C ([3]_q) and h^2 C read per nat (as #9708; that reading is not derived),
   and the beta-dictionary isospin block gap ln(q^2 + q^-2), a trace-derived energy.
-alpha_em^-1 = 137.0359350940, conditional on the Witten-kappa Gram sorry (as in #9654).
+alpha_em^-1 = 137.0359350940, conditional on the unproved CS Gram-ratio identification (bean qou-wkgp; the old Witten-kappa Gram sorry was refuted and removed 2026-11-20).
 Measured values are printed last, under the comparison boundary only. mpmath 50 dps.
 """
 import sys

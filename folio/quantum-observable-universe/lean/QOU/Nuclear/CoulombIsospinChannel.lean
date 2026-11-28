@@ -49,7 +49,7 @@ here as `imme` (same definition) so that this file depends on Mathlib only.
   proton pair. Pair-isospin-dependent weights (exchange, correlation) would give the three
   ranks separate weights. That residual is a named summand, not a free parameter here.
 * `ε = 2 f α ħc / r_rms`: `f` is the q-Hankel shape factor (PR #9665), `α` is derived
-  (conditional on the Witten-κ Gram `sorry`), and `r_rms` is **open**: the corpus has no
+  (conditional on the unproved CS Gram-ratio identification, bean `qou-wkgp`; the old Witten-κ Gram `sorry` was refuted and removed 2026-11-20), and `r_rms` is **open**: the corpus has no
   derived energy-to-length map (bean `qou-mbfv`, `qou-usft`). Nothing here fixes it.
 -/
 

@@ -13,7 +13,7 @@ polarisation chain carries one `α`.
 
 One Coulomb pair is one photon exchanged between two proton blocks, so one vertex pair. The
 pre-registered ring factor is therefore `μ₁ = 1 + α·(−h²) = 1 − α h²`. Here `α` is a constant of
-the coefficient ring (the corpus-derived `α_EM`, conditional on the Witten-κ Gram `sorry`); no
+the coefficient ring (the corpus-derived `α_EM`, conditional on the unproved CS Gram-ratio identification, bean `qou-wkgp`; the old Witten-κ Gram `sorry` was refuted and removed 2026-11-20); no
 value of it enters this file.
 
 ## What is proved (generic field, no measured value)

@@ -20,7 +20,7 @@ What each factor is, and its status:
             (PR #9665, bean qou-usft). DERIVED, not selected against any target. Until #9665
             merges the value is carried here as a 60-digit string with its provenance; the
             uniform ball f = (3/5)^{3/2} is kept for comparison only.
-* αħc     — α DERIVED from q₀ (conditional on the Witten-κ Gram `sorry`); ħc is a unit.
+* αħc     — α DERIVED from q₀ (conditional on the unproved CS Gram-ratio identification, bean qou-wkgp; the old Witten-κ Gram `sorry` was refuted and removed 2026-11-20); ħc is a unit.
 * r_rms   — OPEN. The corpus has no derived energy-to-length map (beans qou-mbfv, qou-usft).
             The only length available is the CAL-3 one used by `coulomb_energy.py`,
             R = λ̄_π·A^{1/3} with coefficient 1 SELECTED and A^{1/3} ASSUMED. It is passed in
