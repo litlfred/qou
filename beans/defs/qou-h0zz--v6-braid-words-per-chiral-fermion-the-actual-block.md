@@ -457,3 +457,8 @@ Matter = EVEN exterior part Λ⁰⊕Λ²⊕Λ⁴ = 1⊕10⊕5̄ (Spin(10) 16); o
 - Braid chirality on UT(Σ₄) is BLIND to the sign (BraidChiralityBlindToHyperchargeSign.lean): lifted isometries have orientation sign ε² = 1, so crossing signs (q₀>1, geodesic α) cannot see Bring's orientation, which flips Y. Structural exclusion of that route only.
 - Strands = elliptic quotients B/A4 (StrandsAreBringEllipticQuotients.lean): strands ↔ the five A4 stabilisers equivariantly; u_i spans Alt(i)-invariants of H⁰(K). Chevalley–Weil and uniqueness of transitive 5-point S5-set cited.
 Still open: the sign's value (a source seeing the base orientation directly, e.g. Bring's complex structure); three colour strands.
+
+## 2026-11-28 — Gm conjugation + 3 colour strands
+- BringConjugationOnGm.lean: conj = inversion on |q|=1 (μ_n), conj fixes real q>1. Orientation ⇔ Gm orientation on the circle only. Formal-groups thread formalising Aut(Ĝm)={±1}.
+- ColourStrandCount.lean: fundamental self-conjugate iff k=2; with (C) complex non-abelian colour and (W) weak doublet, k+m=5 forces 3+2. (C),(W) are inputs, not derived.
+- Lit for cited steps posted to Carl (Chevalley–Weil, Farkas–Kra, Hatcher 2C.3, Fulton–Harris, Edge, Hazewinkel). Next: prove index-5 uniqueness in S5 and Hopf trace on the Bring map in Lean.
