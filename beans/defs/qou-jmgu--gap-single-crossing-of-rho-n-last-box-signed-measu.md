@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-27T22:17:45Z
-updated_at: 2026-11-28T00:12:20Z
+updated_at: 2026-11-28T00:19:43Z
 parent: qou-h315
 ---
 
@@ -26,3 +26,5 @@ OPEN: no proof. Suggested attack: Kerov transition measures (rho_n is a three-st
 
 
 2026-11-28: E[c^2|s] non-decreasing for s>=4 holds exactly n<=62 (only failure is s=3->4). MR4 => SC for n>=5 (with proved lower half + upper tail). MR4 NOT proved; next: prove MR4 or stochastic monotonicity of |c| given s.
+
+2026-11-28: PR #9878. TP2-par (same-parity 2x2 minors of K_n(s,|c|) >= 0) exact n<=45 => E[c^2|s]<=E[c^2|s+2], one sign change per parity class (implication proved, TP2-par measured). SHIFT E[c^2|s+1]>=E[(|c|+1)^2|s] fails only inside lower half for n<=60 => SC re-derived there. Open: proof of TP2-par; cross-parity / interior negativity rho_n<=0 on (2+sqrt(n-1), t_n). Stays open.
