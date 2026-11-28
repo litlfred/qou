@@ -45,8 +45,11 @@ Hence `S⁺ = L · N · R` with `L = P·K(x⁻¹)⁻¹·T₀(x⁻¹;q⁻¹)⁻¹
 * The two index coefficients `i₀₀ = 1`, `i₁ = -1` and the absence of any other
   q⁰ contribution: computed exactly from the bare DGG eq (4.18) two-tetrahedron
   sum in `computations/probes/qbeta_g3_stokes_from_3d_index_41.py` (witness
-  `qbeta-g3-stokes-from-3d-index-41`), not yet proved in Lean. A Lean proof needs
-  the minimal-degree bound for the tetrahedron index `I_Δ(m,e)`.
+  `qbeta-g3-stokes-from-3d-index-41`). **Now proved** in
+  `QOU.QBeta.TetIndexDegree` (`stokes41_inputs_proved`,
+  `stokes41_three_from_tetrahedra`) from the tetrahedron-index minimal-degree
+  bound, with Garoufalidis's triality (1208.1663 Prop prop.S3) as the one cited
+  input.
 
 No measured value enters. No fit.
 
