@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - compute-accuracy
 created_at: 2026-07-18T17:08:37Z
-updated_at: 2026-11-28T01:31:36Z
+updated_at: 2026-11-28T02:14:03Z
 parent: qou-avtq
 ---
 
@@ -96,3 +96,13 @@ from 1208.1663 eq rec1 (telescoping) and eq rec2 (termwise), a uniqueness lemma
 for solutions vanishing at (0,0),(0,1), and the S-transform. The 4₁ Stokes
 constant 3 is now unconditional (`stokes41_three_unconditional`). No sorry;
 axioms propext/Classical.choice/Quot.sound. Head 7e453f6cdfd36d75c82de93dc3a298ab402d46a1.
+
+## 2026-11-28 — 5₂ Stokes 4 and 3 computed in Lean (PR #9968)
+
+`QOU/Nuclear/FiveTwoStokesIndex.lean` (+ `FiveTwoIndexBase`, `FiveTwoDegree0/1/2`):
+m015 index as I(m,e) = Σ_{a,b} (−1)^{b+m} t^{−b} I_Δ(b−m,e−a) I_Δ(b,2a−e−b) I_Δ(b+m,−a)
+(matches the probe on 45 charge pairs); quadratic degree bound 12·fdeg ≥ a²+b²+e² (−36 at
+flux ±2) gives honest finite sums; gauge entries at x=1 as num/den with q-expansions;
+`stokes52_12_from_index` = 4, `stokes52_31_from_index` = −3, matched to splus0. Still named:
+GGM region conjecture, block-to-index identity. No sorry, standard axioms.
+Head 558bafebb7b7dea340b202894ace097d958737f7.
