@@ -1,0 +1,54 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dubois2005",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 457,
+      "entry": {
+        "id": "dubois2005",
+        "source": {
+          "kind": "external",
+          "url": "https://arxiv.org/abs/math/0403470"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.5802/aif.2136) and arXiv e-print LaTeX source math/0403470v4.",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Defines sign-determined non-abelian Ad-twisted Reidemeister torsion for knot exteriors and proves equality with the symplectic volume form on the SU(2)-character variety.",
+          "keyResults": [
+            {
+              "locator": "Prop. 3.5 (propmureg); Thm. 7.1 (T:Volume=Torsion)",
+              "statement": "For any mu-regular SU(2) representation of a knot group in S^3, the sign-determined non-abelian Reidemeister torsion equals the Casson-Lin-Heusener volume form on the character variety.",
+              "useForFolio": "Supplies sign determination and symplectic character-variety measure interpretation for non-abelian knot torsion.",
+              "targets": [
+                "prop:fivetwo-stokes-unimodular"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Wired in prop:fivetwo-stokes-unimodular.",
+              "target": "prop:fivetwo-stokes-unimodular"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dehornoy2015",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 467,
+      "entry": {
+        "id": "dehornoy2015",
+        "source": {
+          "kind": "external",
+          "url": "https://arxiv.org/abs/1309.0796"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.4171/139) and arXiv e-print source 1309.0796v1.",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Authoritative monograph on Garside categories, Garside families, greedy normal-form geodesic paths, and cycling/sliding algorithms.",
+          "keyResults": [
+            {
+              "locator": "Ch. II-III (greedy normal-form decompositions and geodesic property)",
+              "statement": "Left-weighted Garside factorizations form canonical minimal-length normal paths in the simple-element Cayley graph of any Garside category or group.",
+              "useForFolio": "Provides categorical normal-form geodesic stepping backing rem:braid-fluid and Ito-Dehornoy floor criteria.",
+              "targets": [
+                "rem:braid-fluid"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Wired in rem:braid-fluid.",
+              "target": "rem:braid-fluid"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

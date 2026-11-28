@@ -1,0 +1,54 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "birman-williams1983",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 464,
+      "entry": {
+        "id": "birman-williams1983",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1016/0040-9383(83)90045-9"
+        },
+        "status": "partial",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1016/0040-9383(83)90045-9) and primary citations in Ghys (2007, \u00a73.5).",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Foundational template theorem projecting knotted periodic orbits of 3d hyperbolic dynamical flows onto branched 2-manifold knot-holders carrying positive braid words.",
+          "keyResults": [
+            {
+              "locator": "\u00a72-4 (Template Theorem and Lorenz knot-holder)",
+              "statement": "Quotienting a hyperbolic 3-flow chain-recurrent set along local stable manifolds produces a branched 2-manifold template preserving the isotopy link type of all periodic orbits.",
+              "useForFolio": "Supplies the template-projection bridge from 3d geodesic/Reeb-like flows to positive-braid words in rem:braid-fluid.",
+              "targets": [
+                "rem:braid-fluid"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Wired in rem:braid-fluid.",
+              "target": "rem:braid-fluid"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

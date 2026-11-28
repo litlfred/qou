@@ -1,0 +1,54 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "porti1997",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 456,
+      "entry": {
+        "id": "porti1997",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1090/memo/0612"
+        },
+        "status": "partial",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1090/memo/0612), OpenAlex table of contents, and primary citations in Porti (2015, arXiv:1511.00400v2) and Dubois (2005, arXiv:math/0403470v4).",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Foundational monograph defining adjoint SL_2(C) Reidemeister torsion as a rational function on character varieties of cusped hyperbolic 3-manifolds, including peripheral curve change-of-basis and Dehn-filling asymptotics consumed by QOU's 1-loop saddle-torsion program.",
+          "keyResults": [
+            {
+              "locator": "Ch. 3 (Paragraph 3.1.3, Cor. 3.23); Ch. 4 (Prop. 4.10, Cor. 4.18)",
+              "statement": "Constructs adjoint SL_2(C) Reidemeister torsion with respect to peripheral cusp curves and proves the change-of-curve Jacobian det(du_gamma1/du_gamma2) and hyperbolic Dehn-surgery limit.",
+              "useForFolio": "Pins peripheral-framing dependence (meridian vs longitude A-polynomial derivative factor) of adjoint torsion on 4_1, 5_2, and multi-cusp links.",
+              "targets": [
+                "prop:fivetwo-stokes-unimodular"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Wired in prop:fivetwo-stokes-unimodular and audited in docs/audits/2026-11-28-torsion-reeb-stokes-evidence-and-relevancy.md.",
+              "target": "prop:fivetwo-stokes-unimodular"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

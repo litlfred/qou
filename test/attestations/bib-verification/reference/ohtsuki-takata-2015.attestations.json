@@ -1,0 +1,54 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "ohtsuki-takata-2015",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 473,
+      "entry": {
+        "id": "ohtsuki-takata-2015",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.2140/gt.2015.19.853"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.2140/gt.2015.19.853) and prior full-text inspection recorded on folio/references/ohtsuki-takata-2015.json.",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Pins the exact 1-loop saddle-point prefactor omega(D)^2 = +- T(K)/(2 sqrt(-1)) relating Kashaev asymptotics to twisted Reidemeister torsion for two-bridge knots.",
+          "keyResults": [
+            {
+              "locator": "Eq. (2) & Theorem 1.1",
+              "statement": "For a hyperbolic two-bridge knot diagram D, the formal saddle prefactor satisfies omega(D)^2 = +- T(K)/(2i) where T(K) is the twisted Reidemeister torsion.",
+              "useForFolio": "Fixes the +1/2 power and 1/(2i) normalization of twisted Reidemeister torsion in 1-loop state-integral asymptotics (combined with garoufalidis-yoon-2024).",
+              "targets": [
+                "prop:fivetwo-stokes-unimodular"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Wired in prop:fivetwo-stokes-unimodular.",
+              "target": "prop:fivetwo-stokes-unimodular"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

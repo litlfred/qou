@@ -1,0 +1,55 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "moffatt1969",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 475,
+      "entry": {
+        "id": "moffatt1969",
+        "source": {
+          "kind": "upload",
+          "file": "library/moffatt1969-jfm-knottedness/moffatt1969-jfm-knottedness.pdf"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1017/S0022112069000991) and tracked extraction library/moffatt1969-jfm-knottedness.",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Foundational hydrodynamic theorem proving inviscid conservation of helicity H = int u . omega dV and identifying H for thin vortex filaments with circulation-weighted Gauss linking numbers.",
+          "keyResults": [
+            {
+              "locator": "\u00a72-3, eq. (3.6)",
+              "statement": "In inviscid barotropic flow, total helicity is conserved and evaluates on discrete closed vortex filaments to sum_{i,j} alpha_{ij} kappa_i kappa_j in terms of linking numbers.",
+              "useForFolio": "Classical hydrodynamic baseline refined by QOU's Markov-trace topological helicity in prop:helicity-conservation and rem:braid-fluid.",
+              "targets": [
+                "prop:helicity-conservation",
+                "rem:braid-fluid"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Already cited in prop:helicity-conservation; newly wired in rem:braid-fluid.",
+              "target": "rem:braid-fluid"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

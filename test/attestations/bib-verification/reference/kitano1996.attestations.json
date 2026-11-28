@@ -1,0 +1,53 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kitano1996",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 459,
+      "entry": {
+        "id": "kitano1996",
+        "source": {
+          "kind": "external",
+          "url": "https://msp.org/pjm/1996/174-2/pjm-v174-n2-p06-s.pdf"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.2140/pjm.1996.174.431) and MSP open-access full text.",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Original theorem identifying Wada's twisted Alexander polynomial of a knot exterior with Reidemeister torsion for acyclic SL_n-representations (complementing kitano-twisted-alexander, which holds Dubois-Yamaguchi 2012).",
+          "keyResults": [
+            {
+              "locator": "Theorem A (\u00a73); Theorem B (\u00a74)",
+              "statement": "Wada's twisted Alexander polynomial A_{K,rho}(t) equals the Reidemeister torsion tau(E_K; rho tensor alpha) and is symmetric up to t^{mn} when rho factors through SO(n).",
+              "useForFolio": "Bridges polynomial Fox-calculus twisted Alexander invariants to combinatorial Reidemeister torsion.",
+              "targets": [
+                "prop:fivetwo-stokes-unimodular"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Registered to complete the Kitano (1996) primary source alongside kitano-twisted-alexander."
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

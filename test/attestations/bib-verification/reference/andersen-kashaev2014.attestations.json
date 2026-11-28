@@ -1,0 +1,55 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "andersen-kashaev2014",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 471,
+      "entry": {
+        "id": "andersen-kashaev2014",
+        "source": {
+          "kind": "external",
+          "url": "https://arxiv.org/abs/1109.6295"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1007/s00220-014-2073-2) and arXiv e-print LaTeX source 1109.6295v2.",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Constructs the state-integral TQFT from Faddeev's quantum dilogarithm on shaped ideal triangulations with leveled 3-2 Pachner invariance and explicit evaluations on 4_1 and 5_2.",
+          "keyResults": [
+            {
+              "locator": "Prop. 3 (charged-pentagon, \u00a74); Thm. 4 (Main, \u00a76); Thm. 5 (th:4-1--5-2, \u00a710)",
+              "statement": "Defines a *-functor TQFT on shaped pseudo 3-manifolds invariant under leveled 3-2 Pachner moves via the charged quantum dilogarithm pentagon, with convergent state integrals computed explicitly for 4_1 and 5_2.",
+              "useForFolio": "Primary mathematical construction of quantum-dilogarithm state integrals on 4_1 and 5_2.",
+              "targets": [
+                "prop:fivetwo-stokes-unimodular",
+                "prop:fivetwo-saddle-sum-rule"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Wired in prop:fivetwo-stokes-unimodular.",
+              "target": "prop:fivetwo-stokes-unimodular"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

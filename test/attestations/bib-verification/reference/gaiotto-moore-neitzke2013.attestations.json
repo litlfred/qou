@@ -1,0 +1,54 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "gaiotto-moore-neitzke2013",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 468,
+      "entry": {
+        "id": "gaiotto-moore-neitzke2013",
+        "source": {
+          "kind": "external",
+          "url": "https://arxiv.org/abs/0907.3987"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1016/j.aim.2012.09.027) and arXiv e-print LaTeX source 0907.3987v2.",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Establishes WKB ideal triangulations of Riemann surfaces with quadratic differentials and proves flips across BPS Stokes walls induce Kontsevich-Soibelman / dilogarithm cluster symplectomorphisms.",
+          "keyResults": [
+            {
+              "locator": "\u00a75.6 (subsec:TransfmFlips); \u00a76.5 (subsec:Jumps-WKB-triang); \u00a77.7; \u00a711 (sec:UniversalStokesMatrix)",
+              "statement": "Across BPS walls in parameter space, WKB triangulations undergo flips and pops whose Fock-Goncharov Darboux coordinates transform by dilogarithm symplectomorphisms governed by the invariant spectrum generator.",
+              "useForFolio": "Connects Riemann-surface WKB foliations to ideal-triangulation flips and non-abelian Stokes / pentagon wall-crossing.",
+              "targets": [
+                "prop:mi-sw-abelianisation"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Wired in prop:mi-sw-abelianisation alongside arxiv-1204.4824v2.",
+              "target": "prop:mi-sw-abelianisation"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

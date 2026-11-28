@@ -1,0 +1,54 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dimofte-gaiotto-gukov2014",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 472,
+      "entry": {
+        "id": "dimofte-gaiotto-gukov2014",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1007/s00220-013-1863-2"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1007/s00220-013-1863-2) and tracked preprint extraction library/arxiv-1108.4389v1.",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Published version of the DGG 3d-3d class R gauge-theory construction mapping ideal tetrahedra to free chiral multiplets and Sp(2N,Z) Neumann-Zagier gluing to 3d N=2 abelian gauge/superpotential operations.",
+          "keyResults": [
+            {
+              "locator": "\u00a73-4 (Sp(2N,Z) action, tetrahedral building blocks, and 2-3 Pachner mirror symmetry)",
+              "statement": "Associates 3d N=2 SCFTs T_M to triangulated 3-manifolds M via Sp(2N,Z) polarization transformations, where 2-3 Pachner invariance is SQED <-> XYZ mirror symmetry (the quantum dilogarithm pentagon).",
+              "useForFolio": "Physical 3d-3d foundation for QOU's Neumann-Zagier symplectic gluing and state-integral / 3d-index partition functions.",
+              "targets": [
+                "prop:fivetwo-stokes-unimodular"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Wired in prop:fivetwo-stokes-unimodular.",
+              "target": "prop:fivetwo-stokes-unimodular"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

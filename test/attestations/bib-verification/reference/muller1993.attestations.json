@@ -1,0 +1,53 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "muller1993",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 460,
+      "entry": {
+        "id": "muller1993",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1090/S0894-0347-1993-1189689-4"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1090/S0894-0347-1993-1189689-4) and AMS open-access text.",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Extends Cheeger-M\u00fcller analytic = combinatorial torsion equality from unitary to unimodular SL_n(C) representations on closed odd-dimensional manifolds.",
+          "keyResults": [
+            {
+              "locator": "Theorem 1 (\u00a71-4)",
+              "statement": "For any acyclic unimodular representation of pi_1(M) on a closed odd-dimensional manifold M, Ray-Singer analytic torsion equals combinatorial Reidemeister torsion.",
+              "useForFolio": "Necessary bridge between combinatorial R-torsion and spectral Laplace determinants for non-unitary SL_2(C) representations, with strict boundary caveat that cusped manifolds require cusp-surgery control.",
+              "targets": [
+                "prop:fivetwo-stokes-unimodular"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Registered and scoped in docs/audits/2026-11-28-torsion-reeb-stokes-evidence-and-relevancy.md."
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

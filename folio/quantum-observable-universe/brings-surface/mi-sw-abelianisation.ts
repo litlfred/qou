@@ -7,6 +7,12 @@ export default proposition({
   },
   title: "Abelianisation of the MI integral on exceptional divisors",
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-28",
+      body:
+        "**Bring tessellation, WKB Stokes flips, and non-abelian surface Stokes provenance (`docs/audits/2026-11-28-torsion-reeb-stokes-evidence-and-relevancy.md`).** (1) Weber (2005, Theorem 1.1, Proposition 2.2, Corollary 5.5) and Riera and Rodr\u00edguez (1992, \u00a72, Lemma 1) construct Bring's genus-$4$ curve $\\Sigma_4$ from the hyperbolic $(2,4,5)$ / $\\{5,4\\}$ tessellation of Kepler's small stellated dodecahedron with $\\mathrm{Aut}(\\Sigma_4) = S_5$ and $\\mathrm{Jac}(\\Sigma_4) \\sim E^4$. (2) Gaiotto, Moore, and Neitzke (2013, Adv. Math. 234, \u00a75--7 and \u00a711; Ann. Henri Poincar\u00e9 14, \u00a75, \u00a710) construct WKB triangulations and spectral-network abelianisation whose flips across BPS walls act by Kontsevich--Soibelman / quantum-dilogarithm Stokes symplectomorphisms. (3) Brali\u0107 (1980, \u00a7II, eqs. (2.11)--(2.19)) gives the gauge-physics surface-ordered non-abelian Stokes theorem in $2$d Yang--Mills theory that Yekutieli (2015, Ch. 6--7) axiomatises via crossed modules and multiplicative surface integrals. **Claim boundary:** none of these external theorems discharges `MISWAbelianisation` automatically; transporting spectral-network or Seiberg--Witten abelianisation onto $\\mathcal{S}_c$ still requires exhibiting the spectral cover and fake-flatness hypotheses noted in the prose.",
+    },
     { kind: "note", date: "2026-11-24", body: "Relocated from the block prose by the reading-order drain (qou-d4kh): of the ([mass identity](#def:mass-identity))" },
     {
       kind: "status",
@@ -71,7 +77,17 @@ export default proposition({
         "`validation: \"stub\"` is unchanged and still accurate.",
     },
   ],
-  cites: ["seiberg-witten1994b", "donagi1997", "arxiv-1204.4824v2", "blanes-casas-oteo-ros2009"],
+  cites: [
+    "seiberg-witten1994b",
+    "donagi1997",
+    "arxiv-1204.4824v2",
+    "gaiotto-moore-neitzke2013",
+    "yekutieli2015",
+    "bralic1980",
+    "weber2005",
+    "riera-rodriguez-1992",
+    "blanes-casas-oteo-ros2009",
+  ],
   uses: [
     "rem:brings-smoothness",
     "def:mass-identity",

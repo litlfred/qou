@@ -1,0 +1,53 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "birman-ko-lee1998",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 466,
+      "entry": {
+        "id": "birman-ko-lee1998",
+        "source": {
+          "kind": "external",
+          "url": "https://arxiv.org/abs/math/9712211"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1006/aima.1998.1761) and arXiv e-print LaTeX source math/9712211v2.",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Introduces the dual band-generator Garside structure on B_n with fundamental cycle delta of length n-1 and quadratic-time canonical normal-form stepping.",
+          "keyResults": [
+            {
+              "locator": "Thm. 2.6 (thm:embedding); Thm. 3.4 (thm:l canonical form); Thm. 3.8 (thm:complexityword)",
+              "statement": "Every n-braid has a unique left-canonical band-generator decomposition W = delta^u A_1...A_k computable in O(|W|^2 n) operations.",
+              "useForFolio": "Supplies dual-Garside band-generator normal forms relevant to QOU's strand-transposition / band vocabulary.",
+              "targets": [
+                "rem:braid-fluid"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Registered and audited in docs/audits/2026-11-28-torsion-reeb-stokes-evidence-and-relevancy.md."
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}
