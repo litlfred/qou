@@ -48,7 +48,7 @@ namespace QOU.Observations.QCltCut
 open Polynomial QOU.Core.CutLimit QOU.Core.QGaussianMoments
 
 /-- The value of an integer polynomial at `q ∈ K`. -/
-noncomputable def evalAt {K : Type*} [Field K] (q : K) (p : ℤ[X]) : K :=
+noncomputable def evalAt {K : Type*} [CommRing K] (q : K) (p : ℤ[X]) : K :=
   p.eval₂ (Int.castRingHom K) q
 
 /-- The normalised `2k`-th moment `ω(S_n^{2k}) / n^k` of a sum sequence under a
@@ -57,11 +57,15 @@ noncomputable def evenMoment {K A : Type*} [Field K] [Ring A] [Algebra K A]
     (state : A →ₗ[K] K) (sum : ℕ → A) (k n : ℕ) : K :=
   state (sum n ^ (2 * k)) / (n : K) ^ k
 
+section OrderedClt
+
+variable (K : Type*) [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+  (A : Type*) [Ring A] [Algebra K A]
+
 /-- **Conditional q-CLT, cut form.** Under a tracial normalised state, the
 normalised even moments of the sum sequence converge, as located cuts in `K`,
 to `v ^ k` times the `2k`-th q-Gaussian moment at `q`. -/
-class QCltCut (K : Type*) [Field K] [LinearOrder K] [IsStrictOrderedRing K]
-    (A : Type*) [Ring A] [Algebra K A] (q : K) where
+class QCltCut (q : K) where
   /-- The state (intended: the Markov trace `tr_M`). -/
   state : A →ₗ[K] K
   /-- Normalised: `ω(1) = 1`. -/
@@ -79,11 +83,9 @@ class QCltCut (K : Type*) [Field K] [LinearOrder K] [IsStrictOrderedRing K]
 
 /-- **Classical CLT** for a state: the `q = 1` member of the class. Its limit
 moments are `v^k (2k-1)!!`. -/
-abbrev ClassicalClt (K : Type*) [Field K] [LinearOrder K] [IsStrictOrderedRing K]
-    (A : Type*) [Ring A] [Algebra K A] := QCltCut K A (1 : K)
+abbrev ClassicalClt := QCltCut K A (1 : K)
 
-variable {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
-  {A : Type*} [Ring A] [Algebra K A] {q : K}
+variable {K A} {q : K}
 
 /-- The limit of each even-moment sequence is unique. -/
 theorem QCltCut.limit_eq [h : QCltCut K A q] (k : ℕ) {L : K}
@@ -131,5 +133,7 @@ theorem ClassicalClt.fourth_moment_converges [h : ClassicalClt K A] :
   have := QCltCut.fourth_moment_converges (h := h)
   convert this using 1
   ring
+
+end OrderedClt
 
 end QOU.Observations.QCltCut

@@ -1,11 +1,11 @@
-import Mathlib.Algebra.BigOperators.Field
 import Mathlib.Algebra.BigOperators.Group.Finset.Sigma
-import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Algebra.BigOperators.Ring.Finset
+import Mathlib.Algebra.Order.Ring.Defs
 import Mathlib.Data.Finset.Powerset
 import Mathlib.Data.Fintype.Powerset
-import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
 /-!
@@ -464,31 +464,33 @@ theorem four_mul_racahCoherentWeight_eq (k Ω : R) :
 
 end CommRingFock
 
-/-! ## 3. Exact Normalized Overlaps Over Characteristic-Zero Fields & Ordered Bounds -/
+/-! ## 3. Exact Normalized Overlaps Over Commutative Rings (`Rˣ` Units), `ℚ`, & Ordered Bounds -/
 
 section FieldOverlaps
 
-variable {K : Type*} [Field K] [CharZero K]
+variable {K : Type*} [CommRing K]
+
+private lemma mul_unit_inv {x : K} (hx : IsUnit x) : x * (↑hx.unit⁻¹ : K) = 1 :=
+  calc
+    x * (↑hx.unit⁻¹ : K) = (hx.unit : K) * (↑hx.unit⁻¹ : K) :=
+      congrArg (· * (↑hx.unit⁻¹ : K)) hx.unit_spec.symm
+    _ = 1 := Units.mul_inv hx.unit
 
 /-- **Racah Seniority-0 Coherent-Pair Overlap Theorem:**
-On the normalized seniority-`0` states `|j^{2k}, v = 0⟩` (`1 ≤ k ≤ Ω`),
-`⟨j^{2k}, v = 0 | A† | j^{2k-2}, v = 0⟩² = k (Ω - k + 1)`. -/
-theorem coherent_pair_overlap_sq_field {Ω k : ℕ} (hk1 : 1 ≤ k) (hkΩ : k ≤ Ω) :
+On the seniority-`0` states `|j^{2k}, v = 0⟩` (`1 ≤ k ≤ Ω`) over any commutative ring `K` in
+which the squared-norm product `⟨u, u⟩ · ⟨w, w⟩` is a unit,
+`⟨u, A† w⟩² · (⟨u, u⟩ · ⟨w, w⟩)⁻¹ = k (Ω - k + 1)`. -/
+theorem coherent_pair_overlap_sq_field {Ω k : ℕ} (hk1 : 1 ≤ k) (hkΩ : k ≤ Ω)
+    (hNorm :
+      IsUnit
+        (fockInner (symPairVec Ω k (R := K)) (symPairVec Ω k) *
+          fockInner (symPairVec Ω (k - 1) (R := K)) (symPairVec Ω (k - 1)))) :
     let u := symPairVec Ω k (R := K)
     let w := symPairVec Ω (k - 1) (R := K)
-    fockInner u (pairCreate Ω w) ^ 2 / (fockInner u u * fockInner w w) =
+    fockInner u (pairCreate Ω w) ^ 2 * (↑hNorm.unit⁻¹ : K) =
       racahCoherentWeight (k : K) (Ω : K) := by
   intro u w
-  have huPos : 0 < Nat.choose Ω k := Nat.choose_pos hkΩ
-  have hwPos : 0 < Nat.choose Ω (k - 1) := Nat.choose_pos (by omega)
-  have huNe : fockInner u u ≠ 0 := by
-    rw [fockInner_symPairVec_self]
-    exact Nat.cast_ne_zero.mpr (ne_of_gt huPos)
-  have hwNe : fockInner w w ≠ 0 := by
-    rw [fockInner_symPairVec_self]
-    exact Nat.cast_ne_zero.mpr (ne_of_gt hwPos)
-  have hProdNe : fockInner u u * fockInner w w ≠ 0 := mul_ne_zero huNe hwNe
-  rw [coherent_pair_overlap_sq_commRing hk1 hkΩ, mul_div_cancel_right₀ _ hProdNe]
+  rw [coherent_pair_overlap_sq_commRing hk1 hkΩ, mul_assoc, mul_unit_inv hNorm, mul_one]
   unfold racahCoherentWeight
   have hCast : ((Ω + 1 - k : ℕ) : K) = (Ω : K) - (k : K) + 1 := by
     have hkLe : k ≤ Ω + 1 := by omega
@@ -497,37 +499,54 @@ theorem coherent_pair_overlap_sq_field {Ω k : ℕ} (hk1 : 1 ≤ k) (hkΩ : k �
   rw [hCast]
 
 /-- **Single-Orbital vs Coherent-Shell Pickup Theorem:**
-For any single Kramers orbital `α₀ : Fin Ω` (`1 ≤ k ≤ Ω`), the normalized squared
-pickup matrix element equals `k (Ω - k + 1) / Ω²`, smaller than the collective
-Racah coherent overlap `k (Ω - k + 1)` by exact factor `Ω²`. -/
+For any single Kramers orbital `α₀ : Fin Ω` (`1 ≤ k ≤ Ω`), when `⟨u, u⟩ · ⟨w, w⟩` and `Ω` are
+units in `K`, the normalized squared pickup matrix element equals `k (Ω - k + 1) · (Ω⁻¹)²`,
+smaller than the collective Racah coherent overlap `k (Ω - k + 1)` by exact factor `Ω²`. -/
 theorem single_orbital_overlap_sq_field {Ω k : ℕ} (hk1 : 1 ≤ k) (hkΩ : k ≤ Ω)
-    (α₀ : Fin Ω) :
+    (α₀ : Fin Ω)
+    (hNorm :
+      IsUnit
+        (fockInner (symPairVec Ω k (R := K)) (symPairVec Ω k) *
+          fockInner (symPairVec Ω (k - 1) (R := K)) (symPairVec Ω (k - 1))))
+    (hΩ : IsUnit (Ω : K)) :
     let u := symPairVec Ω k (R := K)
     let w := symPairVec Ω (k - 1) (R := K)
-    fockInner u (orbitalCreate α₀ w) ^ 2 / (fockInner u u * fockInner w w) =
-      racahCoherentWeight (k : K) (Ω : K) / (Ω : K) ^ 2 := by
+    fockInner u (orbitalCreate α₀ w) ^ 2 * (↑hNorm.unit⁻¹ : K) =
+      racahCoherentWeight (k : K) (Ω : K) * (↑hΩ.unit⁻¹ : K) ^ 2 := by
   intro u w
-  have hΩPos : 0 < Ω := lt_of_lt_of_le hk1 hkΩ
-  have hΩNe : (Ω : K) ≠ 0 := Nat.cast_ne_zero.mpr (ne_of_gt hΩPos)
   have hRel := omega_mul_orbitalCreate_eq_pairCreate (Ω := Ω) (R := K) hk1 α₀
+  have hMulSq : (Ω : K) ^ 2 * fockInner u (orbitalCreate α₀ w) ^ 2 =
+      fockInner u (pairCreate Ω w) ^ 2 := by
+    calc
+      (Ω : K) ^ 2 * fockInner u (orbitalCreate α₀ w) ^ 2
+        = ((Ω : K) * fockInner u (orbitalCreate α₀ w)) ^ 2 := by ring
+      _ = fockInner u (pairCreate Ω w) ^ 2 := by rw [hRel]
   have hSq : fockInner u (orbitalCreate α₀ w) ^ 2 =
-      fockInner u (pairCreate Ω w) ^ 2 / (Ω : K) ^ 2 := by
-    have hMulSq : (Ω : K) ^ 2 * fockInner u (orbitalCreate α₀ w) ^ 2 =
-        fockInner u (pairCreate Ω w) ^ 2 := by
-      calc
-        (Ω : K) ^ 2 * fockInner u (orbitalCreate α₀ w) ^ 2
-          = ((Ω : K) * fockInner u (orbitalCreate α₀ w)) ^ 2 := by ring
-        _ = fockInner u (pairCreate Ω w) ^ 2 := by rw [hRel]
-    rw [← hMulSq]
-    field_simp
-  rw [hSq, div_right_comm, coherent_pair_overlap_sq_field hk1 hkΩ]
+      fockInner u (pairCreate Ω w) ^ 2 * (↑hΩ.unit⁻¹ : K) ^ 2 := by
+    calc
+      fockInner u (orbitalCreate α₀ w) ^ 2
+        = fockInner u (orbitalCreate α₀ w) ^ 2 * (((Ω : K) * (↑hΩ.unit⁻¹ : K)) ^ 2) := by
+            rw [mul_unit_inv hΩ, one_pow, mul_one]
+      _ = ((Ω : K) ^ 2 * fockInner u (orbitalCreate α₀ w) ^ 2) * (↑hΩ.unit⁻¹ : K) ^ 2 := by
+            rw [mul_pow]; ring
+      _ = fockInner u (pairCreate Ω w) ^ 2 * (↑hΩ.unit⁻¹ : K) ^ 2 := by rw [hMulSq]
+  calc
+    fockInner u (orbitalCreate α₀ w) ^ 2 * (↑hNorm.unit⁻¹ : K)
+      = (fockInner u (pairCreate Ω w) ^ 2 * (↑hNorm.unit⁻¹ : K)) * (↑hΩ.unit⁻¹ : K) ^ 2 := by
+          rw [hSq]; ring
+    _ = racahCoherentWeight (k : K) (Ω : K) * (↑hΩ.unit⁻¹ : K) ^ 2 := by
+          rw [coherent_pair_overlap_sq_field hk1 hkΩ hNorm]
 
-/-- Half-filling rational capacity `W_cap(Ω) = ((Ω + 1) / 2)²` bounding `racahCoherentWeight`. -/
-def racahCapacity (Ω : K) : K :=
+/-- Rational half-filling capacity `W_cap(Ω) = ((Ω + 1) / 2)²` bounding `racahCoherentWeight`. -/
+def racahCapacity (Ω : ℚ) : ℚ :=
   ((Ω + 1) / 2) ^ 2
 
-/-- Uncorrelated single-state Mayer–Jensen denominator `1 / (2 Ω) = 1 / (2j + 1)`. -/
-def uncorrelatedSinglePair (Ω : K) : K :=
+/-- Cleared-denominator ring capacity `4 · W_cap(Ω) = (Ω + 1)²` over any commutative ring. -/
+def fourRacahCapacity (Ω : K) : K :=
+  (Ω + 1) ^ 2
+
+/-- Uncorrelated single-state Mayer–Jensen denominator `1 / (2 Ω) = 1 / (2j + 1)` over `ℚ`. -/
+def uncorrelatedSinglePair (Ω : ℚ) : ℚ :=
   1 / (2 * Ω)
 
 /-- **Polonium Chain (`Z = 84`, `N = 126, 128, 130`) Seniority-0 vs Uncorrelated Identities:**
@@ -540,14 +559,14 @@ def uncorrelatedSinglePair (Ω : K) : K :=
   and `N = 126` jump `W(²¹²Po) / W(²¹⁰Po) = 5` (vs `1 / 5` inverted under literal uncorrelated
   counting). -/
 theorem polonium_coherent_vs_literal_ratios :
-    let W210 := racahCoherentWeight (1 : K) 5 * racahCoherentWeight (1 : K) 1
-    let W212 := racahCoherentWeight (1 : K) 5 * racahCoherentWeight (1 : K) 5
-    let W214 := racahCoherentWeight (1 : K) 5 * racahCoherentWeight (2 : K) 5
-    let U210 := uncorrelatedSinglePair (5 : K) * uncorrelatedSinglePair (1 : K)
-    let U212 := uncorrelatedSinglePair (5 : K) * uncorrelatedSinglePair (5 : K)
-    let U214 := uncorrelatedSinglePair (5 : K) * uncorrelatedSinglePair (5 : K)
+    let W210 := racahCoherentWeight (1 : ℚ) 5 * racahCoherentWeight (1 : ℚ) 1
+    let W212 := racahCoherentWeight (1 : ℚ) 5 * racahCoherentWeight (1 : ℚ) 5
+    let W214 := racahCoherentWeight (1 : ℚ) 5 * racahCoherentWeight (2 : ℚ) 5
+    let U210 := uncorrelatedSinglePair 5 * uncorrelatedSinglePair 1
+    let U212 := uncorrelatedSinglePair 5 * uncorrelatedSinglePair 5
+    let U214 := uncorrelatedSinglePair 5 * uncorrelatedSinglePair 5
     W210 = 5 ∧ W212 = 25 ∧ W214 = 40 ∧
-      racahCoherentWeight (2 : K) 5 = 8 ∧
+      racahCoherentWeight (2 : ℚ) 5 = 8 ∧
       W214 / W212 = 8 / 5 ∧
       W212 / W210 = 5 ∧
       U210 = 1 / 20 ∧ U212 = 1 / 100 ∧ U214 = 1 / 100 ∧
@@ -559,37 +578,34 @@ end FieldOverlaps
 
 section OrderedBounds
 
-variable {F : Type*} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
+variable {F : Type*} [CommRing F] [LinearOrder F] [IsStrictOrderedRing F]
 
-/-- Over any linearly ordered field, normalizing `W(k, Ω) = k (Ω - k + 1)` by
-`racahCapacity Ω = ((Ω + 1) / 2)²` yields an admissible preformation probability
-`0 < S ≤ 1` whenever `0 < k` and `k ≤ Ω`, compatible with
+/-- Over any strict ordered commutative ring `F`, cleared of the factor `4`,
+`0 < 4 · W(k, Ω) ≤ (Ω + 1)²` whenever `0 < k` and `k ≤ Ω`, compatible with
 `QOU.Nuclear.AlphaPreformationBound`. -/
 theorem racah_normalized_preformation_admissible {k Ω : F} (hk : 0 < k) (hkΩ : k ≤ Ω) :
-    0 < racahCoherentWeight k Ω / racahCapacity Ω ∧
-      racahCoherentWeight k Ω / racahCapacity Ω ≤ 1 := by
-  have hΩPos : 0 < Ω := lt_of_lt_of_le hk hkΩ
-  have hΩ1Pos : 0 < Ω + 1 := by linarith
-  have hCapPos : 0 < racahCapacity Ω := by
-    unfold racahCapacity
-    positivity
+    0 < 4 * racahCoherentWeight k Ω ∧
+      4 * racahCoherentWeight k Ω ≤ fourRacahCapacity Ω := by
   have hWPos : 0 < racahCoherentWeight k Ω := by
     unfold racahCoherentWeight
     have hFactor : 0 < Ω - k + 1 := by linarith
     exact mul_pos hk hFactor
-  refine ⟨div_pos hWPos hCapPos, (div_le_one hCapPos).mpr ?_⟩
+  have h4 : (0 : F) < 4 := by norm_num
+  refine ⟨mul_pos h4 hWPos, ?_⟩
   have hFour := four_mul_racahCoherentWeight_eq k Ω
   have hSqNonneg : 0 ≤ (2 * k - (Ω + 1)) ^ 2 := sq_nonneg _
-  unfold racahCapacity
-  nlinarith
+  unfold fourRacahCapacity
+  linarith
 
 /-- Note on the naive `W(k, Ω) / (2 Ω)` scaling: at `Ω = 7` (`1i_{13/2}`) and `k = 4`
-pairs, `W(4, 7) / (2 · 7) = 16 / 14 > 1`, proving that `1 / (2 Ω)` is NOT a universal
+pairs, `W(4, 7) = 16 > 14 = 2 · 7` over any strict ordered commutative ring (and
+`W(4, 7) / (2 · 7) = 16 / 14 > 1` over `ℚ`), proving that `1 / (2 Ω)` is NOT a universal
 probability normalization once `Ω ≥ 7`. -/
 theorem single_state_racah_exceeds_one_at_omega_seven :
-    (1 : F) < racahCoherentWeight (4 : F) 7 / (2 * 7) := by
+    (2 * 7 : F) < racahCoherentWeight (4 : F) 7 ∧
+      (1 : ℚ) < racahCoherentWeight (4 : ℚ) 7 / (2 * 7) := by
   unfold racahCoherentWeight
-  norm_num
+  constructor <;> norm_num
 
 end OrderedBounds
 

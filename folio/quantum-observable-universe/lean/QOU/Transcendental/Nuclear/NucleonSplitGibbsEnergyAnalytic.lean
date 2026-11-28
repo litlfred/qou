@@ -42,6 +42,33 @@ theorem logZ_split_hasDerivAt (s : ℝ → ℝ) (q : ℝ) (hq : 0 < q)
   rw [this] at hd
   exact hd.congr_of_eventuallyEq heq
 
+/-- Internal-energy split `ΔU = −d(log Z_n − log Z_p)/dβ = −(−2/q)/b'(q)` on `ℝ`. -/
+noncomputable def uSplit (b' q : ℝ) : ℝ := -(-2 / q) / b'
+
+theorem uNat_eq (q : ℝ) (hq : 1 < q) :
+    uSplit (-1 / (q - 1) ^ 2) q = -2 * (q - 1) ^ 2 / q := by
+  have h1 : q - 1 ≠ 0 := by linarith
+  have h0 : q ≠ 0 := by linarith
+  unfold uSplit; field_simp
+
+theorem uNat_neg (q : ℝ) (hq : 1 < q) : uSplit (-1 / (q - 1) ^ 2) q < 0 := by
+  rw [uNat_eq q hq]
+  have h1 : 0 < q - 1 := by linarith
+  have h0 : 0 < q := by linarith
+  have : 0 < 2 * (q - 1) ^ 2 / q := div_pos (by positivity) h0
+  linarith [show -2 * (q - 1) ^ 2 / q = -(2 * (q - 1) ^ 2 / q) by ring]
+
+theorem uT_eq (q : ℝ) (hq : 1 < q) : uSplit (2 * q - 1) q = 2 / (q * (2 * q - 1)) := by
+  have h0 : q ≠ 0 := by linarith
+  have h2 : 2 * q - 1 ≠ 0 := by linarith
+  unfold uSplit; field_simp
+
+theorem uTower_eq (q : ℝ) (hq : 1 < q) :
+    uSplit ((2 * q ^ 2 - 1) / q ^ 2) q = 2 * q / (2 * q ^ 2 - 1) := by
+  have h0 : q ≠ 0 := by linarith
+  have h2 : 2 * q ^ 2 - 1 ≠ 0 := by nlinarith
+  unfold uSplit; field_simp
+
 /-- Free-energy split `ΔF = −(log Z_n − log Z_p)/β` with `β = b`. -/
 noncomputable def fSplit (b q : ℝ) : ℝ := -(-2 * Real.log q) / b
 
