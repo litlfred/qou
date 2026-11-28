@@ -1,4 +1,5 @@
 import QOU.BringsSurface.BringHarmonicTypes
+import QOU.BringsSurface.BringReflectionParity
 
 /-!
 # Maass (Laplace) harmonics of Bring's surface by `S₅` type — the analytic reading
@@ -35,8 +36,17 @@ the orbifold `B/H`, so `d_H(λ) := dim E_λ^H = Σ_ρ dim ρ^H · m_ρ(λ)`.
 * The values of `λ` and which types occur at the bottom of the spectrum. These are
   transcendental and are not computed anywhere in the corpus. No numerical eigenvalue may
   enter a proof (owner rule).
-* The orientation-reversing isometries (full isometry group `S₅ × C₂`, order `240`) split each
-  type further into reflection-even and reflection-odd parts. Not done here.
+
+## Reflection parity (`S₅ × C₂`, from `BringReflectionParity.lean`)
+
+The central orientation-reversing isometry `c` (complex conjugation) acts freely, and each type
+splits as `ρ⁺ ⊕ ρ⁻`. For `H ≤ S₅`, the `H × ⟨c⟩`-invariant part of `E_λ` is the `λ`-eigenspace
+of the non-orientable orbifold `B/(H × ⟨c⟩)` (possibly with mirror boundary), and `(ρ ⊗ ε)^{H × ⟨c⟩} = ρ^H` for `ε = +`, `0` for
+`ε = −`. So (`parity_types_from_quotient_spectra`) the fourteen multiplicities `m_ρ^±(λ)` are
+integer combinations of the multiplicities of `λ` on the seven orientable quotients `B/H` and
+the seven non-orientable quotients `B/(H × ⟨c⟩)`. The one-dimensional types at the bottom of the
+table are boundary problems on the `(2,4,5)` triangle: `triv⁺` Neumann on all sides, `triv⁻`
+Dirichlet on all sides, `sgn^±` mixed (`one_dim_boundary_conditions`).
 
 -- Ref: [buser1992] P. Buser, *Geometry and Spectra of Compact Riemann Surfaces* (1992).
 -/
@@ -88,5 +98,32 @@ theorem types_from_quotient_spectra (D : TypedSpectrum Λ) (l : Λ) :
 theorem typed_eq_of_quotient_eq (D D' : TypedSpectrum Λ) (l : Λ)
     (h : D.quotientMult l = D'.quotientMult l) : D.mult l = D'.mult l := by
   rw [← types_from_quotient_spectra D l, ← types_from_quotient_spectra D' l, h]
+
+/-! ## Reflection parity -/
+
+/-- The `S₅ × C₂`-type multiplicities: `m_ρ⁺(λ)` and `m_ρ⁻(λ)`. -/
+structure ParitySpectrum (Λ : Type*) where
+  /-- Reflection-even copies of `ρ` in the `λ`-eigenspace. -/
+  plus : Λ → Fin 7 → ℤ
+  /-- Reflection-odd copies of `ρ` in the `λ`-eigenspace. -/
+  minus : Λ → Fin 7 → ℤ
+
+/-- Multiplicity of `λ` on the orientable quotients `B/H` (the seven recovery subgroups). -/
+def ParitySpectrum.orientableMult (D : ParitySpectrum Λ) (l : Λ) : Fin 7 → ℤ :=
+  quotientMatrix.mulVec (D.plus l + D.minus l)
+
+/-- Multiplicity of `λ` on the non-orientable quotients `B/(H × ⟨c⟩)`: only even types descend. -/
+def ParitySpectrum.nonorientableMult (D : ParitySpectrum Λ) (l : Λ) : Fin 7 → ℤ :=
+  quotientMatrix.mulVec (D.plus l)
+
+/-- **The fourteen parity types are determined by fourteen untyped quotient spectra, over `ℤ`.**
+`m⁺ = R d^{B/(H×c)}` and `m⁻ = R (d^{B/H} − d^{B/(H×c)})`. -/
+theorem parity_types_from_quotient_spectra (D : ParitySpectrum Λ) (l : Λ) :
+    recoveryMatrix.mulVec (D.nonorientableMult l) = D.plus l ∧
+      recoveryMatrix.mulVec (D.orientableMult l - D.nonorientableMult l) = D.minus l := by
+  refine ⟨recover_types _, ?_⟩
+  simp only [ParitySpectrum.orientableMult, ParitySpectrum.nonorientableMult, ← Matrix.mulVec_sub,
+    add_sub_cancel_left]
+  exact recover_types _
 
 end QOU.Transcendental.Brings.MaassTypes
