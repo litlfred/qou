@@ -107,3 +107,12 @@ the non-scalar 4στ − 2h(σ+τ) + h² at two. None adopted; adopting one is C
 Carl tapped "Bar-odd (Form B), θ as fallback" (01:09Z). Two-loop vertex pair = −h², N₁ = 1;
 θ-graph [3]_q kept as fallback. Remaining open item for this bean: the per-loop measure
 (thread "Define the two-loop measure on Bring").
+
+## 2026-11-28 — two-loop coefficient in closed form, conditional on μ₁
+
+With the bar-odd join (ruling, #9911) and the one-factor measure (Carl's tap 01:11Z,
+PR #9915, EmFormBLoopMeasure.lean), the two-loop slot is −h²[2]_q α²·μ₁, i.e.
+−h²[2]_q α²/(8π) at μ₁ = 1/(8π). No ζ(3) / Bloch-B₃ term arises from the vertex
+algebra or this measure. Still open, so the bean stays open: μ₁ = 1/(8π) is
+underived (phase-4 per-loop measure). Fallbacks: θ-graph [3]_q, squared measure,
+R1 flat sunset ζ(3).
