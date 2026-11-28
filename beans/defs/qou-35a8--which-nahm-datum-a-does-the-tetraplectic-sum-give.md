@@ -4,7 +4,7 @@ title: Which Nahm datum A does the tetraplectic sum give beyond 4_1?
 status: in-progress
 type: task
 created_at: 2026-11-27T17:26:40Z
-updated_at: 2026-11-28T00:55:29Z
+updated_at: 2026-11-28T00:58:22Z
 ---
 
 Research path, opened 2026-11-27 (thread 'Reeb flow and tetraplectic structure', PR #9496 merged).
@@ -40,3 +40,12 @@ Conjecture-tracking bean: do not close until the mathematics closes (AGENTS.md r
 2026-11-28: PR #9898 — BlochWignerPositive.lean: D(z) > 0 for Im z > 0 (blochD_pos); μ and τ regulators positive, so both classes are nonzero in B(ℂ)⊗ℚ. RᵃL family positivity needs the shapes of the geometric solution in H for general a — not yet derived. Next open: located-cut comparison with volume.
 
 2026-11-28: #9900 (RᵃL class nonzero at any upper-half-plane solution) and #9901 (explicit positive angle structure on RᵃL for every a ≥ 3, integer angles, N = 128(a²+1)). Still open: volume maximization (Casson–Rivin / Futer–Guéritaud) from angle structure to shapes in H — the last step to unconditional nonvanishing of every RᵃL class.
+
+## 2026-11-28 — volume concavity: already on main, no new file
+Started TetVolumeConcave.lean, then found the result already proved on main, three times over:
+`QOU.Knot.Rivin.strictConcaveOn_tetVolLine` (RivinConcavity.lean), `tetVol_strictConcaveOn`
+(IdealTetrahedronVolumeConcave.lean) and the multi-tetrahedron `totalVol_strictConcaveOn` /
+`totalVol_maximizer_unique` (MultiTetVolumeConcave.lean). Draft dropped, no PR. #9901 (RᵃL positive
+angle structure) merged as 30a070c1bd. Remaining for RᵃL: (1) at an interior critical point of total
+volume on the RᵃL angle polytope the shapes satisfy the gluing (log-modulus) equations; (2) the maximum is
+interior (Futer–Guéritaud boundary argument). L6a4VolumeMaximum.lean is the worked template for (1).
