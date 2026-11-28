@@ -142,3 +142,35 @@ elementary and stays coefficientwise in `ℤ[[q]]`:
 `stokes41_three_unconditional`: `propext`, `Classical.choice`, `Quot.sound` only.
 
 No measured value enters any step, and nothing is fitted.
+
+## Addendum: the 4 and the 3 computed in Lean from tetrahedron indices
+
+[`QOU/Nuclear/FiveTwoStokesIndex.lean`](../../folio/quantum-observable-universe/lean/QOU/Nuclear/FiveTwoStokesIndex.lean)
+(with `FiveTwoIndexBase.lean` and `FiveTwoDegree0/1/2.lean`) computes
+`[q⁰] S⁺₁₂(1;q) = 4` (`stokes52_12_from_index`) and `[q⁰] S⁺₃₁(1;q) = −3`
+(`stokes52_31_from_index`) from tetrahedron-index coefficients by exact finite
+arithmetic, and checks them against GGM's q⁰ matrix (`stokes52_matches_S0px52`).
+
+- **The m015 index as a tetrahedron sum.** Substituting the two GHRS edge weights
+  `(2a, 2b+m)` in SnapPy's m015 gluing rows makes every half-integral triple
+  integral:
+  `I(m,e) = Σ_{a,b} (−1)^{b+m} t^{−b} I_Δ(b−m, e−a) I_Δ(b, 2a−e−b) I_Δ(b+m, −a)`,
+  `t = q^{1/2}`. The probe's engine agrees for `|m| ≤ 2`, `|e| ≤ 4` through `t⁸`
+  (45 charge pairs, 0 mismatches).
+- **Finiteness.** The `(a,b)` summand starts at t-degree
+  `fdeg = −b + Σ deg2` (tetrahedron degree, proved with triality in
+  `TetIndexTriality`). `fdeg_quad0/1/2`: `12·fdeg ≥ a² + b² + e²` at flux 0 and 1
+  and `≥ a² + b² + e² − 36` at flux 2, each from the 27 cone cases by `nlinarith`.
+  A flux reflection, `fdeg(−m,e,a,b) = fdeg(m,−e,a−e,b)`, covers flux −1 and −2.
+  So `idx m e p` (`[t^p] I(m,e)`) and `rot m s n` (`[t^n] Ind^rot(m, t^s)` at `x = 1`)
+  are honest finite sums (`idx_eq`, `rot_eq`, `rot_eq_idx`, `rot_low`).
+- **Which summands reach q⁰.** For each of the five rotated indices that enter,
+  the summands that can reach the needed degree are confined to a box and then
+  listed by `decide`: 1, 7, 4, 6 and 3 points `(e,a,b)`.
+- **Gauge at x = 1.** The six entries of `gaugeR`/`gaugeL` that enter are
+  `num/den` in `q` (`R12_at1` … `L33_at1`, over any field). `serC` is the
+  q-expansion, characterised by `serC_rec` (its Cauchy product with `den` is `num`).
+
+Still named inputs, unchanged: GGM's region-matrix conjecture behind eq Sp-52,
+and the block-to-index identity (measured to 40 digits). `lean`-direct exit 0,
+no `sorry`; axioms `propext`, `Classical.choice`, `Quot.sound` only.
