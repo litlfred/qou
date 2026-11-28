@@ -4,7 +4,7 @@ title: Which Nahm datum A does the tetraplectic sum give beyond 4_1?
 status: in-progress
 type: task
 created_at: 2026-11-27T17:26:40Z
-updated_at: 2026-11-28T00:40:30Z
+updated_at: 2026-11-28T00:45:27Z
 ---
 
 Research path, opened 2026-11-27 (thread 'Reeb flow and tetraplectic structure', PR #9496 merged).
@@ -34,3 +34,5 @@ Conjecture-tracking bean: do not close until the mathematics closes (AGENTS.md r
 - RaLSymplectic.ra_isSymm_all: A·Bᵀ symmetric for every a ≥ 3 (symbolic). raClass_mem_blochGroup_all: det(B)·Σ[z] ∈ B(F) for every σ₀ᵃσ₁⁻¹, a ≥ 3. Open: |det B| = 2(a−2) in Lean; regulator.
 
 2026-11-28: PR #9891 proves |det raB a| = 2(a − 2) and det raB a ≠ 0 for every a ≥ 3 (RaLDeterminant.lean, no sorry, standard axioms only). With #9883 (A·Bᵀ symmetric) the NZ data are nondegenerate and symplectic for the whole RᵃL family, so N = −B⁻¹A exists over ℚ and det B · Σ[z] ∈ B(F). Integrality of N holds only for a ≤ 4 in this polarization. Still open: the regulator in QOU/Transcendental/.
+
+2026-11-28: PR #9895 — LeptonBundleRegulator.lean (Transcendental). Regulator of any Nahm/NZ class over ℂ = Σ D(zᵢ); μ: D(1/2+y)+2D(y); τ: 2D(A(s))+D(B(s))+2D(s); RᵃL (a≥3): det B·Σ D(zᵢ), det B ≠ 0. Open next: D(z) > 0 for Im z > 0 (not in corpus) to show the classes are nonzero; located-cut volume comparison.
