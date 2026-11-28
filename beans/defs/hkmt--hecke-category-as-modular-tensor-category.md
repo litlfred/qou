@@ -100,3 +100,6 @@ Chebyshev recursion, root-of-unity identification. Bean stays open.
 
 ## 2026-11-28 — every row S_{b,j} from braiding (PR #9863)
 `TLCableLoop.lean` (sorry-free): `cable_trace` gives δ^{n+m+2}·τ((p_n ⊗ p_m)·C_{m+1}) = [(n+2)(m+2)] for any Markov trace with δε = 1; `cable_row_eq_sMatrix` identifies it with sMatrix entry S_{n+1,m+1} at a primitive 2(k+2)-th root of unity, for all n+1, m+1 ≤ k. Route: cup slide, cable naturality, Chebyshev recursion rec_H / rec_R, closed form via lam_mul_qint. Still open for modularity in this bean: nondegeneracy of the braided category (S invertible is on main as sMatrix_mul_self), ribbon/twist identification, and the categorical (not trace-level) statement.
+
+## 2026-11-28 — S and T from braiding are modular (PR #9886)
+`TLBraidedModular.lean` (sorry-free): `braidS_eq_sMatrix` (whole matrix of Hopf-link traces on the vacuum and p_0..p_{k−1} equals S), `braidS_det_ne_zero`, `braidS_mul_self`, `ribbon_jw` (twist from full twist + framing curls), `braid_modular_relation` ((ST)³ = p₊S²). PR #9863 merged (64ba31d7f4). Still open, so the bean stays open: that the vacuum and p_0..p_{k−1} are exactly the simples of the semisimplified quotient category (categorical, not trace-level, modularity).
