@@ -267,4 +267,237 @@ theorem assoc_third (a b : ℕ) {m c c' : ℕ} {χ : Q T m} (hχ : χ ∈ HomSp 
 
 end LevelGen
 
+
+
+/-! ## The glued associativity square -/
+
+section Glued
+
+variable {K : Type*} [Field K] {δ ε : K} {T : MarkovTower δ ε} {hε : δ * ε = 1}
+
+variable (T hε) in
+/-- **The glued morphism of a level element.** -/
+noncomputable def gl (N : ℕ) {a b : ℕ} (ha : a ≤ N) (pa : a % 2 = N % 2) (hb : b ≤ N)
+    (pb : b % 2 = N % 2) (φ : Q T N) (hφ : φ ∈ HomSp T N a b) :
+    (GObj.mk a : GObj T hε) ⟶ GObj.mk b :=
+  (leg T hε N).map (X := ⟨a, ha, pa⟩) (Y := ⟨b, hb, pb⟩) (lmk φ hφ)
+
+theorem pre_gl (N : ℕ) {a b : ℕ} (ha : a ≤ N) (pa : a % 2 = N % 2) (hb : b ≤ N)
+    (pb : b % 2 = N % 2) (φ : Q T N) (hφ : φ ∈ HomSp T N a b) :
+    pre (X := GObj.mk a) (Y := GObj.mk b) N ha pa hb pb (gl T hε N ha pa hb pb φ hφ) =
+      lmk φ hφ := by
+  apply (leg T hε N).map_injective
+  rw [leg_pre]
+  rfl
+
+theorem gl_pre (N : ℕ) {X Y : GObj T hε} (hX : X.a ≤ N) (pX : X.a % 2 = N % 2) (hY : Y.a ≤ N)
+    (pY : Y.a % 2 = N % 2) (f : X ⟶ Y) :
+    gl T hε N hX pX hY pY (lval (pre N hX pX hY pY f)) (lval_mem _) = f :=
+  leg_pre N hX pX hY pY f
+
+/-- **The tensor of two level morphisms is the level tensor.** -/
+theorem tensHom_gl (n m : ℕ) {a b a' b' : ℕ} (ha : a ≤ n) (pa : a % 2 = n % 2) (hb : b ≤ n)
+    (pb : b % 2 = n % 2) (ha' : a' ≤ m) (pa' : a' % 2 = m % 2) (hb' : b' ≤ m)
+    (pb' : b' % 2 = m % 2) (φ : Q T n) (hφ : φ ∈ HomSp T n a b) (ψ : Q T m)
+    (hψ : ψ ∈ HomSp T m a' b') :
+    tensHom (gl T hε n ha pa hb pb φ hφ) (gl T hε m ha' pa' hb' pb' ψ hψ) =
+      gl T hε (n + m + 1) (a := a + a' + 1) (b := b + b' + 1) (by omega) (by omega) (by omega)
+        (by omega) (tensLvl T a a' b b' φ ψ)
+        (tensLvl_mem T hε ha pa.symm ha' pa'.symm hb pb.symm hb' pb'.symm hφ hψ) := by
+  rw [tensHom_eq n m ha pa hb pb ha' pa' hb' pb']
+  unfold tensVia
+  rw [pre_gl, pre_gl]
+  rfl
+
+theorem gl_comp (N : ℕ) {a b c : ℕ} (ha : a ≤ N) (pa : a % 2 = N % 2) (hb : b ≤ N)
+    (pb : b % 2 = N % 2) (hc : c ≤ N) (pc : c % 2 = N % 2) (φ : Q T N)
+    (hφ : φ ∈ HomSp T N a b) (ψ : Q T N) (hψ : ψ ∈ HomSp T N b c) :
+    gl T hε N ha pa hb pb φ hφ ≫ gl T hε N hb pb hc pc ψ hψ =
+      gl T hε N ha pa hc pc (ψ * φ) (comp_mem T hε hφ hψ) := by
+  unfold gl
+  rw [← Functor.map_comp]
+  rfl
+
+/-- **Raising a level morphism two strands.** -/
+theorem gl_lift (N : ℕ) {a b : ℕ} (ha : a ≤ N) (pa : a % 2 = N % 2) (hb : b ≤ N)
+    (pb : b % 2 = N % 2) (φ : Q T N) (hφ : φ ∈ HomSp T N a b) :
+    gl T hε N ha pa hb pb φ hφ =
+      gl T hε (N + 1 + 1) (by omega) (by omega) (by omega) (by omega) (capQ T hε N φ)
+        (capQ_mem T hε ha hb hφ) := by
+  unfold gl
+  rw [← leg_stabL]
+  rfl
+
+theorem gl_id (a : ℕ) :
+    gl T hε a le_rfl rfl le_rfl rfl (1 : Q T a) (mem_top a 1) = 𝟙 (GObj.mk a) := by
+  unfold gl
+  rw [show lmk (X := (⟨a, le_rfl, rfl⟩ : LObj T hε a)) (Y := ⟨a, le_rfl, rfl⟩) (1 : Q T a)
+      (mem_top a 1) = 𝟙 _ from lhom_ext (by rw [lval_id, PQ_self]; rfl),
+    CategoryTheory.Functor.map_id]
+  rfl
+
+/-- **Transport of a level morphism along equal strand counts.** -/
+theorem gl_eqToHom {N N' A A' B B' : ℕ} (hN : N = N') (hA : A = A') (hB : B = B')
+    (h1 : A ≤ N) (p1 : A % 2 = N % 2) (h2 : B ≤ N) (p2 : B % 2 = N % 2)
+    (h1' : A' ≤ N') (p1' : A' % 2 = N' % 2) (h2' : B' ≤ N') (p2' : B' % 2 = N' % 2)
+    (φ : Q T N) (hφ : φ ∈ HomSp T N A B) (ψ : Q T N') (hψ : ψ ∈ HomSp T N' A' B')
+    (h : recastQ T hN φ = ψ) :
+    gl T hε N h1 p1 h2 p2 φ hφ ≫ eqToHom (congrArg GObj.mk hB) =
+      eqToHom (congrArg GObj.mk hA) ≫ gl T hε N' h1' p1' h2' p2' ψ hψ := by
+  subst hN hA hB h
+  simp only [eqToHom_refl, Category.comp_id, Category.id_comp]
+  rfl
+
+theorem tensObj_assoc (X Y Z : GObj T hε) :
+    tensObj (tensObj X Y) Z = tensObj X (tensObj Y Z) := by
+  show GObj.mk (X.a + Y.a + 1 + Z.a + 1) = GObj.mk (X.a + (Y.a + Z.a + 1) + 1)
+  congr 1
+  omega
+
+/-- **The associativity square** for three glued morphisms. -/
+def AssocNat {X Y Z X' Y' Z' : GObj T hε} (f : X ⟶ X') (g : Y ⟶ Y') (h : Z ⟶ Z') : Prop :=
+  tensHom (tensHom f g) h ≫ eqToHom (tensObj_assoc X' Y' Z') =
+    eqToHom (tensObj_assoc X Y Z) ≫ tensHom f (tensHom g h)
+
+theorem AssocNat.comp {X Y Z X' Y' Z' X'' Y'' Z'' : GObj T hε} {f : X ⟶ X'} {g : Y ⟶ Y'}
+    {h : Z ⟶ Z'} {f' : X' ⟶ X''} {g' : Y' ⟶ Y''} {h' : Z' ⟶ Z''} (H : AssocNat f g h)
+    (H' : AssocNat f' g' h') : AssocNat (f ≫ f') (g ≫ g') (h ≫ h') := by
+  unfold AssocNat at *
+  rw [tensHom_comp, tensHom_comp, Category.assoc, H', ← Category.assoc, H, Category.assoc,
+    tensHom_comp, tensHom_comp]
+
+theorem gl_congr (N : ℕ) {a b : ℕ} (ha : a ≤ N) (pa : a % 2 = N % 2) (hb : b ≤ N)
+    (pb : b % 2 = N % 2) {φ ψ : Q T N} (hφ : φ ∈ HomSp T N a b) (hψ : ψ ∈ HomSp T N a b)
+    (h : φ = ψ) : gl T hε N ha pa hb pb φ hφ = gl T hε N ha pa hb pb ψ hψ := by
+  subst h
+  rfl
+
+/-- **The square for three level morphisms is the level identity.** -/
+theorem assocNat_gl (n m p : ℕ) {a a' b b' c c' : ℕ} (ha : a ≤ n) (pa : a % 2 = n % 2)
+    (ha' : a' ≤ n) (pa' : a' % 2 = n % 2) (hb : b ≤ m) (pb : b % 2 = m % 2) (hb' : b' ≤ m)
+    (pb' : b' % 2 = m % 2) (hc : c ≤ p) (pc : c % 2 = p % 2) (hc' : c' ≤ p)
+    (pc' : c' % 2 = p % 2) (φ : Q T n) (hφ : φ ∈ HomSp T n a a') (ψ : Q T m)
+    (hψ : ψ ∈ HomSp T m b b') (χ : Q T p) (hχ : χ ∈ HomSp T p c c')
+    (H : recastQ T (by omega) (tensLvl T (a + b + 1) c (a' + b' + 1) c' (tensLvl T a b a' b' φ ψ) χ)
+      = tensLvl T a (b + c + 1) a' (b' + c' + 1) φ (tensLvl T b c b' c' ψ χ)) :
+    AssocNat (gl T hε n ha pa ha' pa' φ hφ) (gl T hε m hb pb hb' pb' ψ hψ)
+      (gl T hε p hc pc hc' pc' χ hχ) := by
+  unfold AssocNat
+  rw [tensHom_gl, tensHom_gl, tensHom_gl, tensHom_gl]
+  exact gl_eqToHom (by omega) (by simp only [tensObj]; omega) (by simp only [tensObj]; omega)
+    _ _ _ _ _ _ _ _ _ _ _ _ H
+
+/-- **The third slot**: identities in the first two slots. -/
+theorem assocNat_third (X Y : GObj T hε) {Z Z' : GObj T hε} (h : Z ⟶ Z') :
+    AssocNat (𝟙 X) (𝟙 Y) h := by
+  by_cases hp : Z.a % 2 = Z'.a % 2
+  swap
+  · unfold AssocNat
+    rw [hom_eq_zero_of_parity hp h, tensHom_zero_right, tensHom_zero_right, tensHom_zero_right,
+      Limits.zero_comp, Limits.comp_zero]
+  obtain ⟨a⟩ := X
+  obtain ⟨b⟩ := Y
+  rw [← gl_id a, ← gl_id b, ← gl_pre (Z.a + 2 * Z'.a) (by omega) (by omega) (by omega)
+    (by omega) h]
+  refine assocNat_gl _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ?_
+  have hχ : lval (pre (Z.a + 2 * Z'.a) (by omega) (by omega) (by omega) (by omega) h) ∈
+      HomSp T (Z.a + 2 * Z'.a) Z.a Z'.a := lval_mem _
+  rw [tensLvl_base T _ (one_mem_HomSp T b), tensLvl_base T _
+    (tensLvl_mem T hε le_rfl rfl (by omega) (by omega) le_rfl rfl (by omega) (by omega)
+      (mem_top b 1) hχ)]
+  exact assoc_third T a b hχ
+
+/-! ### Cups, caps and projectors at one level -/
+
+include hε in
+theorem PQ_mem_up (a N : ℕ) : PQ T a N ∈ HomSp T N a N := by
+  rw [mem_Hom, PQ_self, one_mul, PQ_idem T hε]
+
+include hε in
+theorem PQ_mem_down (a N : ℕ) : PQ T a N ∈ HomSp T N N a := by
+  rw [mem_Hom, PQ_self, mul_one, PQ_idem T hε]
+
+include hε in
+theorem PQ_cup_mul (a M : ℕ) (ha : a ≤ M) :
+    PQ T M (M + 1 + 1) * PQ T a (M + 1 + 1) = PQ T a (M + 1 + 1) := by
+  rw [← capQ_PQ T hε (a := M) (n := M) (by omega), ← capQ_PQ T hε (a := a) (n := M) (by omega),
+    ← capQ_mul, PQ_self, one_mul]
+
+include hε in
+theorem PQ_mul_cap (a M : ℕ) (ha : a ≤ M) :
+    PQ T a (M + 1 + 1) * PQ T M (M + 1 + 1) = PQ T a (M + 1 + 1) := by
+  rw [← capQ_PQ T hε (a := M) (n := M) (by omega), ← capQ_PQ T hε (a := a) (n := M) (by omega),
+    ← capQ_mul, PQ_self, mul_one]
+
+/-! ### The first slot -/
+
+/-- A morphism whose associativity square with two identities commutes. -/
+def Good1 {X X' : GObj T hε} (f : X ⟶ X') : Prop := ∀ Y Z : GObj T hε, AssocNat f (𝟙 Y) (𝟙 Z)
+
+/-- A morphism whose associativity square in the middle slot commutes. -/
+def Good2 {Y Y' : GObj T hε} (g : Y ⟶ Y') : Prop := ∀ X Z : GObj T hε, AssocNat (𝟙 X) g (𝟙 Z)
+
+theorem Good1.comp {X X' X'' : GObj T hε} {f : X ⟶ X'} {f' : X' ⟶ X''} (H : Good1 f)
+    (H' : Good1 f') : Good1 (f ≫ f') := by
+  intro Y Z
+  have := (H Y Z).comp (H' Y Z)
+  simp only [Category.comp_id] at this
+  exact this
+
+theorem Good2.comp {Y Y' Y'' : GObj T hε} {g : Y ⟶ Y'} {g' : Y' ⟶ Y''} (H : Good2 g)
+    (H' : Good2 g') : Good2 (g ≫ g') := by
+  intro X Z
+  have := (H X Z).comp (H' X Z)
+  simp only [Category.comp_id] at this
+  exact this
+
+theorem good1_id (X : GObj T hε) : Good1 (𝟙 X) := fun Y Z => assocNat_third X Y (𝟙 Z)
+
+theorem good2_id (Y : GObj T hε) : Good2 (𝟙 Y) := fun X Z => assocNat_third X Y (𝟙 Z)
+
+theorem good1_cup (M : ℕ) :
+    Good1 (gl T hε (M + 1 + 1) (a := M) (b := M + 1 + 1) (by omega) (by omega) le_rfl rfl
+      (PQ T M (M + 1 + 1)) (PQ_mem_up (hε := hε) M _)) := by
+  intro Y Z
+  obtain ⟨b⟩ := Y
+  obtain ⟨c⟩ := Z
+  rw [← gl_id b, ← gl_id c]
+  refine assocNat_gl _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ?_
+  rw [tensLvl_base T (1 : Q T b) (one_mem_HomSp T c), tensQ_one]
+  exact assoc_cup_first T hε M b c
+
+theorem good1_cap (M : ℕ) :
+    Good1 (gl T hε (M + 1 + 1) (a := M + 1 + 1) (b := M) le_rfl rfl (by omega) (by omega)
+      (PQ T M (M + 1 + 1)) (PQ_mem_down (hε := hε) M _)) := by
+  intro Y Z
+  obtain ⟨b⟩ := Y
+  obtain ⟨c⟩ := Z
+  rw [← gl_id b, ← gl_id c]
+  refine assocNat_gl _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ?_
+  rw [tensLvl_base T (1 : Q T b) (one_mem_HomSp T c), tensQ_one]
+  exact assoc_cap_first T hε M b c
+
+theorem good1_base (N : ℕ) (φ : Q T N) :
+    Good1 (gl T hε N le_rfl rfl le_rfl rfl φ (mem_top N φ)) := by
+  intro Y Z
+  obtain ⟨b⟩ := Y
+  obtain ⟨c⟩ := Z
+  rw [← gl_id b, ← gl_id c]
+  refine assocNat_gl _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ?_
+  rw [tensLvl_base T (1 : Q T b) (one_mem_HomSp T c), tensQ_one]
+  exact assoc_base_first T φ b c
+
+theorem good1_zero {X X' : GObj T hε} : Good1 (0 : X ⟶ X') := by
+  intro Y Z
+  unfold AssocNat
+  rw [tensHom_zero_left, tensHom_zero_left, tensHom_zero_left, Limits.zero_comp, Limits.comp_zero]
+
+theorem good2_zero {Y Y' : GObj T hε} : Good2 (0 : Y ⟶ Y') := by
+  intro X Z
+  unfold AssocNat
+  rw [tensHom_zero_right, tensHom_zero_left, tensHom_zero_left, tensHom_zero_right,
+    Limits.zero_comp, Limits.comp_zero]
+
+end Glued
+
 end QOU.HeckeTemperleyLieb.TLGluedAssoc
