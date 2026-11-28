@@ -7,7 +7,7 @@ priority: high
 tags:
     - compute-accuracy
 created_at: 2026-11-27T20:31:47Z
-updated_at: 2026-11-27T23:00:00Z
+updated_at: 2026-11-28T11:40:00Z
 parent: qou-myts
 ---
 
@@ -48,3 +48,5 @@ generator-wise. That is not expected.
 Before → after, B (T1+T2+T3, MeV): ²H 3.146 → 3.047, ³H 7.650 → 7.561, ⁴He 14.117 → 14.046, ¹²C 135.994 → 135.990, ⁵⁶Fe unchanged. T1 moves a lot (²H 0.425 → 0.299), but B is dominated by the T2/T3 dilogarithm terms.
 
 Still open: T2/T3 read per-generator V̂ under weight_scheme="normalized_plancherel", which is not a Markov trace, so T1 (convention D) and T2/T3 (Plancherel) now use different traces. Not changed here.
+
+2026-11-28 (merge-steward): PR #10004 (`AlphaSeniorityPreformation.lean` 0 sorry + 3 two-step SHA-stamped 80-dps proton-pinned witnesses, 19/19 passed) landed on `origin/main` (`ef0b7571363f020ecc4cb69a0c66b14e42c96c88`).

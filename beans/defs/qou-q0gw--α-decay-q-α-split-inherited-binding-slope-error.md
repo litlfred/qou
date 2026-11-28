@@ -8,7 +8,7 @@ tags:
     - compute-accuracy
     - alpha-decay
 created_at: 2026-11-27T19:46:04Z
-updated_at: 2026-11-27T20:47:00Z
+updated_at: 2026-11-28T11:40:00Z
 parent: qou-myts
 ---
 
@@ -40,3 +40,5 @@ Q_α = B_α − ΔB, ΔB = B(Z,N) − B(Z−2,N−2) (Lean QOU.Nuclear.AlphaQInh
 
 
 2026-11-27 note from the Coulomb (G3) thread, PR #9691: the 34.82 MeV α-line Coulomb slope used the uniform-ball f = (3/5)^{3/2} = 0.464758. With the derived q-Hankel f = 0.520011 (PR #9665) and the same CAL-3 length, every Coulomb energy scales by 1.118885, so the slope is about 38.96 MeV and the nuclear-part target shifts with it. The length is still conditional: its coefficient was selected and A^{1/3} was assumed. Re-derive the split once G3 lands.
+
+2026-11-28 (merge-steward): PR #10004 (`AlphaSeniorityPreformation.lean` 0 sorry + 3 two-step SHA-stamped 80-dps proton-pinned witnesses, 19/19 passed) landed on `origin/main` (`ef0b7571363f020ecc4cb69a0c66b14e42c96c88`).
