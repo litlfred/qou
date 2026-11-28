@@ -1,4 +1,5 @@
 import QOU.FluidDynamics.q_ns_triad_raising_coupling
+import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 
 /-!
 # QOU.FluidDynamics.q_ns_qlegendre_norm — the Haar norm of the little q-Legendre polynomials
@@ -8,6 +9,9 @@ Bean `qou-9obv` (GAP from `q_ns_triad_raising_coupling`). On the Cartan block `K
 (`OqSU2LittleQJacobiBasis`). This file computes their norms in closed form.
 
 ## Result (over a field `K`, `q : Kˣ`, `P = q²` not a root of unity)
+
+* `H_pos_of_one_lt`, `H_pos_of_lt_one`, `haarState_jacobiPoly_sq_pos_of_*`: over an ordered
+  field the norms are positive, both for `q² > 1` and for `0 < q² < 1`.
 
 * `H_eq_prod`: for the monic polynomial `P_n = c_n⁻¹ p_n`,
   `h(P_n²) = Π_{k<n} P² z_k² (P z_k − 1)⁴ / ((P z_k² − 1)(P² z_k² − 1)²(P³ z_k² − 1))`,
@@ -35,7 +39,6 @@ No empirical value enters any proof. Sorry-free.
 
 ## Not established
 
-* Positivity of the norms over an ordered field.
 * The factor `1/‖βδ‖²` of the normalised coupling `C̃(r)²`. Everything else is
   `coupling_raise_sq` below: `C_s² / (‖p_{s+2}‖²‖p_{s+1}‖²) = q⁻²κ_s² · H_{s+2}/H_{s+1}`. At fixed
   `q > 1` this decays like `q^{−4s}` (amplitude `q^{−2s}`), and the decay is not uniform in `q`.
@@ -441,5 +444,90 @@ theorem coupling_raise_sq (s : ℕ) :
   have h2 : H q (s + 2) = nf PP (PP ^ (s + 1)) * H q (s + 1) := step_factor q hp (s + 1)
   rw [coupling_raise q hp, hn (s + 2), hn (s + 1), h2]
   field_simp
+
+/-! ## Positivity over an ordered field
+
+Each factor `nf P z` is positive when `P > 1, z ≥ 1`, and also when `0 < P < 1, 0 < z ≤ 1`: in
+the second case two of the four denominator factors are negative and the squared one is
+positive. So the Haar norms are positive for `q² > 1` and for `0 < q² < 1`. -/
+
+section Positivity
+
+variable [LinearOrder K] [IsStrictOrderedRing K]
+omit hp
+
+theorem nf_pos_of_one_lt {P z : K} (hP : 1 < P) (hz : 1 ≤ z) : 0 < nf P z := by
+  have hP0 : 0 < P := lt_trans one_pos hP
+  have hz0 : 0 < z := lt_of_lt_of_le one_pos hz
+  have hz2 : 1 ≤ z ^ 2 := one_le_pow₀ hz
+  have hP2 : 1 < P ^ 2 := one_lt_pow₀ hP (by norm_num)
+  have hP3 : 1 < P ^ 3 := one_lt_pow₀ hP (by norm_num)
+  have a1 : 0 < P * z - 1 := by nlinarith
+  have a2 : 0 < P * z ^ 2 - 1 := by nlinarith
+  have a3 : 0 < P ^ 2 * z ^ 2 - 1 := by nlinarith
+  have a4 : 0 < P ^ 3 * z ^ 2 - 1 := by nlinarith
+  unfold nf
+  apply div_pos
+  · positivity
+  · positivity
+
+theorem nf_pos_of_lt_one {P z : K} (hP0 : 0 < P) (hP : P < 1) (hz0 : 0 < z) (hz : z ≤ 1) :
+    0 < nf P z := by
+  have hz2 : z ^ 2 ≤ 1 := pow_le_one₀ hz0.le hz
+  have hP2 : P ^ 2 < 1 := pow_lt_one₀ hP0.le hP (by norm_num)
+  have hP3 : P ^ 3 < 1 := pow_lt_one₀ hP0.le hP (by norm_num)
+  have hz20 : 0 < z ^ 2 := pow_pos hz0 2
+  have a1 : P * z - 1 < 0 := by nlinarith
+  have a2 : P * z ^ 2 - 1 < 0 := by nlinarith
+  have a3 : P ^ 2 * z ^ 2 - 1 < 0 := by nlinarith [pow_pos hP0 2]
+  have a4 : P ^ 3 * z ^ 2 - 1 < 0 := by nlinarith [pow_pos hP0 3]
+  have b1 : 0 < (P * z - 1) ^ 4 := Even.pow_pos (by decide) a1.ne
+  have b3 : 0 < (P ^ 2 * z ^ 2 - 1) ^ 2 := Even.pow_pos (by decide) a3.ne
+  have b24 : 0 < (P * z ^ 2 - 1) * (P ^ 3 * z ^ 2 - 1) := mul_pos_of_neg_of_neg a2 a4
+  unfold nf
+  apply div_pos
+  · positivity
+  · have : (P * z ^ 2 - 1) * (P ^ 2 * z ^ 2 - 1) ^ 2 * (P ^ 3 * z ^ 2 - 1) =
+        ((P * z ^ 2 - 1) * (P ^ 3 * z ^ 2 - 1)) * (P ^ 2 * z ^ 2 - 1) ^ 2 := by ring
+    rw [this]; exact mul_pos b24 b3
+
+/-- `q² > 1` rules out `q²` being a root of unity. -/
+theorem hp_of_one_lt (hq : 1 < (q : K) * q) (m : ℕ) : ((q : K) * q) ^ (m + 1) ≠ 1 :=
+  (one_lt_pow₀ hq (Nat.succ_ne_zero m)).ne'
+
+/-- `0 < q² < 1` rules out `q²` being a root of unity. -/
+theorem hp_of_lt_one (hq0 : 0 < (q : K) * q) (hq : (q : K) * q < 1) (m : ℕ) :
+    ((q : K) * q) ^ (m + 1) ≠ 1 :=
+  (pow_lt_one₀ hq0.le hq (Nat.succ_ne_zero m)).ne
+
+/-- **The monic Haar norms are positive for `q² > 1`.** -/
+theorem H_pos_of_one_lt (hq : 1 < (q : K) * q) (n : ℕ) : 0 < H q n := by
+  rw [H_eq_prod q (hp_of_one_lt q hq)]
+  exact Finset.prod_pos fun k _ => nf_pos_of_one_lt hq (one_le_pow₀ hq.le)
+
+/-- **The monic Haar norms are positive for `0 < q² < 1`.** -/
+theorem H_pos_of_lt_one (hq0 : 0 < (q : K) * q) (hq : (q : K) * q < 1) (n : ℕ) :
+    0 < H q n := by
+  rw [H_eq_prod q (hp_of_lt_one q hq0 hq)]
+  exact Finset.prod_pos fun k _ =>
+    nf_pos_of_lt_one hq0 hq (pow_pos hq0 k) (pow_le_one₀ hq0.le hq.le)
+
+/-- **The Haar norm `‖p_n‖² = h(p_n²)` of the eigenpolynomial is positive for `q² > 1`.** -/
+theorem haarState_jacobiPoly_sq_pos_of_one_lt (hq : 1 < (q : K) * q) (n : ℕ) :
+    0 < haarState q (ev q (jacobiPoly q n) * ev q (jacobiPoly q n)) := by
+  have hp' := hp_of_one_lt q hq
+  rw [haarState_jacobiPoly_sq_eq q hp', ← H_eq_prod q hp']
+  exact mul_pos (Even.pow_pos (by decide) (coeff_jacobiPoly_ne_zero q hp' n)) (H_pos_of_one_lt q hq n)
+
+/-- **The Haar norm of the eigenpolynomial is positive for `0 < q² < 1`.** -/
+theorem haarState_jacobiPoly_sq_pos_of_lt_one (hq0 : 0 < (q : K) * q)
+    (hq : (q : K) * q < 1) (n : ℕ) :
+    0 < haarState q (ev q (jacobiPoly q n) * ev q (jacobiPoly q n)) := by
+  have hp' := hp_of_lt_one q hq0 hq
+  rw [haarState_jacobiPoly_sq_eq q hp', ← H_eq_prod q hp']
+  exact mul_pos (Even.pow_pos (by decide) (coeff_jacobiPoly_ne_zero q hp' n))
+    (H_pos_of_lt_one q hq0 hq n)
+
+end Positivity
 
 end QOU.FluidDynamics.QLegendreNorm
