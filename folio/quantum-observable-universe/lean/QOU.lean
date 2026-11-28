@@ -2094,3 +2094,4 @@ import QOU.EightfoldWay.SymmetricChannelDimension
 import QOU.Nuclear.CoulombIsospinChannel
 import QOU.Nuclear.CoulombRingLedger
 import QOU.Nuclear.CoulombRingMu
+import QOU.Nuclear.CoulombBlockSize
