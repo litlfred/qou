@@ -26,14 +26,15 @@ Derivation (each step re-checked below in exact arithmetic):
      gcd(I_m, I_{m-1}) is a power of 2 (I_{m+p} = I_m mod p for odd p, and (I_0, I_1) = (1, 1)),
      so odd(d2) | Delta(n).
 
-  6. 2-adic step.  Write v(m) = v_2(I_m).  If v(m) = floor(m/4) + (0, 0, 1, 2)[m mod 4] for all m
-     (checked here for m <= N; no proof written), then in 6 d2 = c (A x + B y) the two terms never
+  6. 2-adic step.  v(m) = v_2(I_m) = floor(m/4) + (0, 0, 1, 2)[m mod 4] for all m
+     (Lean: QOU.Mass.InvolutionTwoAdic, sorry-free; re-checked here for m <= 3009),
+     so in 6 d2 = c (A x + B y) the two terms never
      have equal 2-adic valuation (case split on n mod 4), so v_2(d2) <= v_2(c) + (n+1)/4.  Then
      odd(d2) grows like I_{n-8} / 2^{n/4} and exceeds |Delta| for large n, and the test excludes
      every n >= 9.
 
-Status: steps 1 (classical), 3 and 5 are proved on paper; the quartic hook identity (2), the
-class expansions (3) for all n, and the valuation formula (6) are checked, not proved.
+Status: steps 1 (classical), 5 and 6 are proved; the quartic hook identity (2) and the class
+expansions (3) for all n are checked, not proved.
 
 Exact integer / Fraction arithmetic; no floats, no fitting.
 Usage: python3 computations/cyclotomic_boundary_q1_expansion.py [N]   (default N = 3000)
@@ -207,7 +208,7 @@ def main() -> int:
         "cumulant_test_passes": passes,
         "odd_d2_divides_delta": odd_divides,
         "odd_d2_exceeds_delta_from": last_small + 1,
-        "status": "closed forms checked for n <= 24; full proof needs the quartic hook identity, the class expansions and v2(I_m) for all n"},
+        "status": "closed forms checked for n <= 24; full proof needs the quartic hook identity and the class expansions for all n"},
         indent=1) + "\n")
     return 0
 
