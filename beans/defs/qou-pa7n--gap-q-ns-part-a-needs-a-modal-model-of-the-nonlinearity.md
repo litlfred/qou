@@ -7,7 +7,7 @@ priority: normal
 tags:
     - needs-owner
 created_at: 2026-11-27T18:05:00Z
-updated_at: 2026-11-28T02:44:08Z
+updated_at: 2026-11-28T02:51:05Z
 parent: qou-innq
 ---
 
@@ -42,3 +42,5 @@ Stays open (rule 13a): its subject is an open conjecture.
 - Still open: (i) that this pair product is the q-NS advection (no ∇_q on O_q(SU(2))); (ii) the coefficients in the little q-Jacobi basis; (iii) a transfer lower bound along a solution; (iv) Part A. This bean stays open.
 
 2026-11-28: surreal reading formalised (PR #9986, q_ns_qlegendre_surreal_band.lean): for q-1 infinitesimal, Rc q s >= (s+1)^2/32 for every s : N, so no standard mode decouples; the band cutoff sits at an infinite index ~log(1/delta)/delta, needing hypernatural indices (open). Chapter intro status account #9977, placeholder relabels #9980. Part A itself stays open.
+
+2026-11-28: band edge formalised (PR #9992, q_ns_qlegendre_band_edge.lean): in z = P^{s+1}, 1/(16384(dz)^2) <= Rcz <= 256/(dz)^2, so coupling infinitesimal iff delta*z infinite; edge at z~1/delta. #9977/#9980/#9986 merged. Open: energy reaching the edge; Part A itself.
