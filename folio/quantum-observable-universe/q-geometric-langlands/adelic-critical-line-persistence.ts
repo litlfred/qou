@@ -17,11 +17,16 @@ export default conjecture({
       date: "2026-11-28",
       body: "q-RH cleanup (owner thread 2026-11-28). (1) Bring's local spectra assemble into zeta(s)zeta(s-1)/L(E,s)^4 with E = 50a1, so they feed L(E,s), not zeta(s). (2) The class's hypothesis is an arbitrary family not tied to riemannZeta, so on any aligned family an instance IS RH. Whether to restate the conjecture for L(E,s) is the owner's call (decision card in the q-RH thread).",
     },
+    {
+      kind: "note",
+      date: "2026-11-28",
+      body: "Restated for L(E,s), E = 50a1, on the owner's card tap 02:44Z ('Restate for L(E,s), keep zeta as backup'). Lean carrier: QOU/Transcendental/BringsSurface/AdelicPersistenceL.lean (L50a1Datum, RiemannHypothesis50a1, AdelicCriticalLinePersistenceL; no instance). The zeta form QOU.BraidKnot.AdelicCriticalLinePersistence is kept as a labelled backup.",
+    },
   ],
   label: "conj:adelic-critical-line-persistence",
   title: "Adelic persistence of the critical line",
   lean: {
-    ref: "qou:BraidKnotOctonion.AdelicCriticalLinePersistence",
+    ref: "qou:QOU.AlgebraicSubstrate.AdelicCriticalLinePersistenceL",
     validation: "stub",
   },
   uses: [

@@ -1,36 +1,9 @@
-*Suppose the local spectral
-exponents are critical-line aligned at every place --- that is, for every place
-$v$ and every fundamental mode $i$, the exponent $\rho_i^{(v)}$ satisfies
-$\mathrm{Re}(\rho_i^{(v)}) = \tfrac{1}{2}$. Then the global zeta function
-inherits the alignment: every non-trivial zero $s$ of $\zeta(s)$ satisfies
-$\mathrm{Re}(s) = \tfrac{1}{2}$.*
+*Let $E$ be the elliptic curve $y^2 + xy + y = x^3 - x - 2$ (Cremona 50a1), whose fourth power is isogenous to the Jacobian of Bring's curve. Suppose the local spectral exponents of Bring's curve are critical-line aligned at every prime of good reduction, that is $a_p^2 \le 4p$ for every $p \nmid 10$, where $a_p = p + 1 - |E(\mathbb{F}_p)|$. Then every zero $s$ of $L(E, s)$ in the strip $\tfrac{1}{2} < \mathrm{Re}(s) < \tfrac{3}{2}$ satisfies $\mathrm{Re}(s) = 1$.*
 
-The antecedent is what the local half of the chain supplies. The
-[Hasse--Weil bound](#thm:hasse-weil-bound) constrains the Frobenius eigenvalues
-of Bring's curve to $|\alpha_i| = q^{1/2}$, and the
-[spectral half-line](#cor:spectral-half-line) converts that into
-$\mathrm{Re}(\rho_i) = \tfrac{1}{2}$ under the spectral coordinate
-$\alpha_i = q^{\rho_i}$. That real part is well defined: the coordinate itself
-is pinned only modulo $2\pi i / \log q$, but every exponent with the same
-$q$-power has the same real part.
+The antecedent is what the local half of the chain supplies. At a good prime the local zeta function of Bring's curve has numerator $(1 - a_pT + pT^2)^4$ ([geometric stability via the Weil bound](#sec:q-gl-weil-bound-stability)). The inequality $a_p^2 \le 4p$ makes its eight eigenvalues a conjugate pair repeated four times, each of absolute value $p^{1/2}$ ([Hasse--Weil bound](#thm:hasse-weil-bound)), and the [spectral half-line](#cor:spectral-half-line) turns that into $\mathrm{Re}(\rho_i) = \tfrac{1}{2}$.
 
-What the conjecture adds is the passage from *each place separately* to the
-global object. The local alignment is a statement about one geometry at a time;
-the global zeta function is assembled from all places at once, and nothing in
-the local statements constrains how the assembly behaves.
+The conclusion is about the global object those local data actually build. Multiplying the local zeta functions over all primes gives $\zeta(s)\,\zeta(s-1)/L(E,s)^4$ up to finitely many factors. The eigenvalues enter only through $L(E, s) = \sum_n a_n n^{-s}$, whose coefficients are the same $a_p$ as in the hypothesis. So the hypothesis and the conclusion are statements about one object.
 
-**The implication carries the whole distance.** The Hasse--Weil bound holds at
-every place unconditionally, and has done so since Weil proved it in 1948, while
-the Riemann hypothesis has remained open throughout. Local alignment therefore
-cannot by itself be close to the global statement, and this conjecture should
-not be read as a small remaining step. It is stated here so that the arc's
-actual claim is explicit and can be attacked, rather than resting in a
-subordinate clause of the surrounding exposition.
+**The implication carries the whole distance.** The antecedent is Hasse's theorem (1933), which holds at every prime, while the Riemann hypothesis for $L(E, s)$ is open. So the conjecture is, as mathematics, equivalent to that Riemann hypothesis. It is stated as an implication so that the local input is visible and the remaining step is named, not because the local input brings the global statement any closer. Its continuation to an entire function, which the statement needs, is the modularity of $E$ and is cited.
 
-A consequence worth recording: any construction that establishes this
-implication, together with the local alignment already available, yields the
-Riemann hypothesis. That is the precise sense in which the framework offers a
-reduction --- and the reduction is only as strong as the conjecture above.
-
-**Two further cautions.** First, the global object is the wrong one. The local spectra this conjecture starts from are the Frobenius exponents of Bring's curve, and their product over the primes is $\zeta(s)\,\zeta(s-1)/L(E,s)^4$ up to finitely many factors, with $E$ the elliptic curve 50a1. The exponents build $L(E,s)$; $\zeta(s)$ enters only through $H^0$, which has no exponents. A local-to-global statement that follows the data would conclude the Riemann hypothesis for $L(E,s)$, which is also open. Second, the Lean form takes the local spectra as an arbitrary family that is not tied to `riemannZeta`. Its hypothesis and its conclusion share no data, so wherever the hypothesis holds, as it does at Bring's curve, an instance is exactly a proof of the Riemann hypothesis. The conjecture is therefore a restatement of the Riemann hypothesis, not a reduction of it.
-
+**The earlier form, kept as a backup.** This conjecture was first stated with $\zeta(s)$ as its conclusion: local alignment at every place implies that every non-trivial zero of $\zeta(s)$ has real part $\tfrac{1}{2}$. That form names the wrong global object, since $\zeta(s)$ is the $H^0$ factor of the product above and carries none of the local eigenvalues, and its hypothesis shares no data with its conclusion. Wherever the hypothesis holds, it is simply the classical [Riemann hypothesis](#conj:classical-riemann-hypothesis). It is kept only as a documented fallback.
