@@ -11,6 +11,7 @@ export default remark({
     "rem:knot-particle-dictionary",
     "rem:particle-nf-table",
   ],
+  interprets: "prop:borromean-two-photon-factorisation",
   cites: ["codata2022", "ame2020"],
   computation: {
     engine: "mpmath",
