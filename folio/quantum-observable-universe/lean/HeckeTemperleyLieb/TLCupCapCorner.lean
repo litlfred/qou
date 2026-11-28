@@ -48,7 +48,7 @@ strands `E = δ⁻¹ e_0`, and `capEmb` of a standard object two strands down.
 Not proved here:
 
 * the same statement on `k + 1` or more strands, where the form is degenerate and the statement
-  must be made in the quotient by negligible morphisms;
+  must be made in the quotient by negligible morphisms (done in `TLNegligibleQuotient`);
 * the rectangular hom spaces themselves. The corner isomorphism stands in for "`capEmb s` on
   `N + 3` strands is isomorphic to `s` on `N + 1` strands"; stating that as an isomorphism needs
   `Hom(m, n)` for `m ≠ n`.
