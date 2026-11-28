@@ -6,7 +6,6 @@ type: task
 priority: high
 created_at: 2026-11-14T07:02:23Z
 updated_at: 2026-11-27T15:10:00Z
-parent: qou-cxh0
 ---
 
 Owner, 2026-10-11 verbatim: "let's go through gamma-gamma production step by step to get to one and two nucleons. each collision/interaction shifts things up the tower." NOT delivered: the gg_ntower probe has no quark letters and only one nucleon's worth of collisions, and says so.

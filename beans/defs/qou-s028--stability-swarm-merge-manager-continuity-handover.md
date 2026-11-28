@@ -7,7 +7,7 @@ priority: high
 tags:
     - stability
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-27T23:36:14Z
+updated_at: 2026-11-28T10:15:33Z
 parent: qou-5vkl
 blocked_by:
     - qou-10v9
@@ -175,3 +175,15 @@ qou-10v9 (140, L2 1 ppQ program, includes qou-myts), qou-rtxm (28, Lean foundati
 Single-bean roots: qou-dke6, qou-wsha, qou-n4r9, qou-kdh5, qou-trd0, qou-ziag, qou-q1tk, qou-cfwx, qou-eggf, qou-v6so, qou-4f8t, qou-4un2, qou-qs0e, qou-5bkr, qou-w3dm, qou-efxy, qou-35a8, qou-mm2j, qou-u81q, qou-e9pp, qou-sogb, qou-37kk, qou-t3nx, qou-7vh1, qou-za1a, qou-agvb, qou-bes8.
 
 Named in the request and covered through these roots: qou-jmgu, qou-swk4, qou-kdh5, qou-3fdg, qou-h0zz, qou-qvpl, qou-e1uf, qou-brng, qou-pvu4, qou-m45w, qou-ku91, qou-efxy, hkmt, qou-qexu, qou-0xk8, qou-h315, qou-sv7h, qou-za1a.
+
+
+## Active Antigravity Swarm Handover — 2026-11-28T10:15Z (Coordinator `92bff8c9-777d-458a-a380-8dd5bf5cc0f3`)
+
+- **`origin/main` Tip:** `2cc11f7f1c6` (`1,594` commits landed since Nov 24 `4517e0bceee`; `34` open PRs)
+- **Active Coordinator:** Antigravity foreground session `92bff8c9-777d-458a-a380-8dd5bf5cc0f3` (foreground kept open for owner; 10-minute status cron active; coordinating cleanly with Claude sessions via `cat/cat-harness/beans` + PR comments).
+- **Dispatched Child Siblings Under `qou-s028`:**
+  1. **`qou-ii2k` (`ws1-precision` -> `claude/speculative-open-problems-split-20261128`):** Create `folio/speculative-open-problems/` & move problem framing for RH, P vs NP, Yang-Mills, BSD, Collatz, and Millennium unification out of `folio/quantum-observable-universe/`, keeping neutral sound algebra in the main book + coordinating with open PRs `#9984` & `#9979` + recording owner ruling in `docs/coordination/owner-rulings.md`.
+  2. **`qou-yzp7` (`ws6-exposition-pdf` -> `claude/fluid-dynamics-qns-tonedown-20261128`):** Keep `fluid-dynamics/` NS framing in main book, toned down throughout to a `q`-deformed hydrodynamic model (`ns-classical-formulation.md`, `ns-surreal-bound.md`, `p4/p5`, Lean docstrings).
+  3. **`qou-0jo7` (`ws5-nov19-rebase` -> `claude/postmerge-qa-scorecard-boundary-20261128`):** Clear post-merge QA reds on `main` (`JonesTractableOrders.lean` transcendental boundary, `base-ring-audit --shrink`, refresh import-cone-stale scorecard witnesses at proton pin + regenerate `ACCURACY.md`).
+  4. **`qou-d9iv` (`ws15-p3-p5-p6` & `ws12-pr9180`):** Rebase, applicability-audit against Nov 27-28 rulings (aether terminology, proton pin, base-ring units, T3 valence scope), verify, and open PRs for `ConfinementLayerMullikenStoichiometry` (`qou-5lct`) and exploratory `AlphaQuartetPauliWignerSaturation` (`qou-v2om`).
+  5. **`merge-steward` (`merge-runner`):** Active single-writer Merge Steward under 24h grant (`to 2026-11-28T14:20Z`), enforcing FAST MERGES (`gen-block-jsonld.sh --check` pre-merge, post-merge QA + `close-merged-pr-beans.py` + `publish-main-local.sh` post-merge, never `--delete-branch`).
