@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-collatz-syracuse-lift",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:collatz-syracuse-lift",
+  "kind": "proposition",
+  "title": "The $q$-Collatz orbit lifts the Syracuse orbit",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-q-collatz",
+    "papers/quantum-observable-universe/blocks/prop-collatz-no-cycles"
+  ],
+  "cites": [
+    "references/lagarias2010"
+  ],
+  "tags": [
+    "collatz",
+    "syracuse",
+    "specialisation",
+    "classical-limit",
+    "periodic-cycle"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.CollatzSyracuseLift.qCollatzConvergence_of_syracuseNoDivergence",
+  "text": "collatz-syracuse-lift.md",
+  "provenance": "authored"
+}

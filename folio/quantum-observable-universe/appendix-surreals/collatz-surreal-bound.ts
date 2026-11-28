@@ -19,4 +19,7 @@ export default remark({
     "classical-limit",
   ],
   cites: ["conway1976", "lagarias2010"],
+  authorNotes: [
+    { kind: "status", date: "2026-11-28", body: "Conclusion 'all orbits terminate at 1' withdrawn (2026-11-28): the scalings are asserted, not derived from C_q, and the standard-part step assumes the conclusion. Kept as an analogy." },
+  ],
 });

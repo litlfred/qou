@@ -1,3 +1,5 @@
+**Status: heuristic comparison.** $\log_q |P|$ is not defined for a Laurent polynomial. The text below evaluates at a real $q$, and the target "$P = 1$" is outside the domain of $\mathcal{C}_q$, since the attractor is the cycle $\{q^{-1}, 1 + q^{-1}\}$. The $q_0$ figures use the muon pin, which is being retired. Nothing here bears on convergence. See the [section introduction](#sec:collatz-intro).
+
 **Archimedean specialisation.** The Hausdorff dimension recurrence ([Hausdorff recurrence](#rem:hausdorff-dimension-recurrence)) provides the only universal convergence proof in this paper. The map $q_{n+1} = (q_n^2 - q_n + 1)/q_n$ contracts for all $q > 3/4$, with $q = 1$ as a superattracting fixed point ($F'(1) = 0$). The $q$-Collatz conjecture shares a parallel structure, but with one critical difference.
 
 ### The Lyapunov function $\Phi = \log_q |P|$

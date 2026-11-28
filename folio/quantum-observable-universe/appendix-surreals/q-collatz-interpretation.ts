@@ -16,4 +16,7 @@ export default remark({
     "monomial",
   ],
   cites: ["collatz1937", "lagarias2010"],
+  authorNotes: [
+    { kind: "refined-framing", date: "2026-11-28", body: "Last paragraph replaced: the q-integer table is about polynomials, not convergence." },
+  ],
 });

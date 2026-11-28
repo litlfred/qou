@@ -180,11 +180,18 @@ export default chapter({
           ],
         },
         {
-          title: "P vs NP and the Collatz family",
+          title: "P vs NP",
           label: "sec:millennium-pnp-collatz",
           blocks: [
             "p-vs-np-conjecture",
             "p-vs-np-surreal-bound",
+          ],
+        },
+        {
+          title: "The $q$-Collatz problem",
+          label: "sec:millennium-collatz",
+          blocks: [
+            "collatz-section-intro",
             "q-collatz-conjecture",
             "two-q-adic-valuation",
             "collatz-contact-boundary-defn",
@@ -192,6 +199,8 @@ export default chapter({
             "collatz-parity-to-divisor",
             "collatz-no-cycles",
             "collatz-no-cycles-proof",
+            "collatz-syracuse-lift",
+            "collatz-syracuse-lift-proof",
             "collatz-three-forms",
             "q-collatz-interpretation",
             "collatz-surreal-bound",

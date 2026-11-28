@@ -43,7 +43,7 @@ $$
 
 For $q > 1$, both coefficients are positive and sum to $1$. The crossing resolution is non-expansive on the Jones polynomial.
 
-The algebraic identity $[2]_q^2 - [3]_q = q$ controls the contraction. Over one Collatz cycle (one odd step followed by enough even steps to exhaust $[2]_q$-divisibility):
+**Heuristic, not part of the statement.** The algebraic identity $[2]_q^2 - [3]_q = q$ suggests a contraction when $q$ is evaluated at a real number $q > 0$. It is not an argument: by the [Syracuse lift](#prop:collatz-syracuse-lift) the parity sequence of a domain-stable orbit is the classical parity sequence of $P(1)$, so the deformation does not change which steps occur. Over one Collatz cycle (one odd step followed by enough even steps to exhaust $[2]_q$-divisibility):
 
 - The odd step maps $P \mapsto [3]_q Q - q$. The ratio $|P|/|Q| \approx [2]_q$.
 - Subsequent even steps divide by $[2]_q$.
@@ -56,7 +56,7 @@ $$
 
 Two halvings beat one tripling by a factor $[2]_q^2 / [3]_q = 1 + q/[3]_q \approx 4/3$.
 
-Given the QOU above, for all $q > 1$ and all $P \in \mathbb{Z}[q^{\pm 1}]_{>0}$ the orbit $\{\mathcal{C}_q^k(P)\}_{k \geq 0}$ reaches the fundamental $2$-cycle $\{q^{-1},\, 1 + q^{-1}\}$.
+**Statement.** Every domain-stable $P \in \mathbb{Z}[q^{\pm 1}]$ has an orbit $\{\mathcal{C}_q^k(P)\}_{k \geq 0}$ that reaches one of the three cycles $\{0\}$, $\{-q^{-2}\}$, $\{q^{-1},\, 1 + q^{-1}\}$. When $P(1) > 0$, the cycle reached is the fundamental $2$-cycle $\{q^{-1},\, 1 + q^{-1}\}$. Here $q$ is the formal variable, not a real number. By the [Syracuse lift](#prop:collatz-syracuse-lift) this follows from the classical statement that no Syracuse orbit diverges, and it is equivalent to this: no domain-stable Laurent polynomial lifts a divergent Syracuse orbit.
 
 At the Skein level the attractor is this $2$-cycle, not the literal unknot polynomial $1$: since $1$ evaluates to $1 \notin \{0, -1\}$ modulo $[2]_q$ (i.e. at $q = -1$), it is neither $q$-even nor $q$-odd, so $\mathcal{C}_q(1)$ is undefined. The cycle $\{q^{-1}, 1 + q^{-1}\}$ is the $q$-lift of the classical $\{1, 2\}$; writing the classical target as "$1$" is the $q \to 1$ shorthand.
 

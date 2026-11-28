@@ -15,15 +15,14 @@ The Skein-Collatz map has two branches:
 - **Even branch** ($P/[2]_q$): Each application decreases $\log|P|$ by $\log [2]_q$. The orbit moves toward $1$.
 - **Odd branch** ($([3]_q P + 1)/[2]_q$): Multiplication by $[3]_q$ increases $\log|P|$ by $\log([3]_q/[2]_q)$, despite the single division by $[2]_q$.
 
-Tripling inflates the orbit. Halving deflates it. Convergence requires halvings to dominate on average.
+Tripling inflates the orbit. Halving deflates it. These growth statements are about $|P(q)|$ at a real $q > 0$, which is a heuristic: $\log|P|$ is not defined for a Laurent polynomial, and the parity sequence is the classical one ([Syracuse lift](#prop:collatz-syracuse-lift)).
 
-After each odd step, the result $\mathcal{C}_q(P)$ is $q$-even. The integer $v_{[2]}(\mathcal{C}_q(P))$ measures contact order with $D_{[2]}$. It dictates how many consecutive halvings follow before the next odd step.
+The result of an odd step need not be $q$-even. Writing $[2]_q R = [3]_q P + 1$ and differentiating at $q = -1$ gives $R(-1) = 1 + P'(-1)$. For example, the odd fixed point $-q^{-2}$ is sent to itself, and $-q^{-2}$ is $q$-odd. (Classically, too, $(3n+1)/2$ can be odd.) When the result is $q$-even, the integer $v_{[2]}(\mathcal{C}_q(P))$ measures its contact order with $D_{[2]}$. On a domain-stable orbit, this is the number of halvings before the next odd step.
 
 | Quantity | Formula | At $q = 1$ | At $q_0$ |
 |----------|---------|-----------|----------|
 | Two halvings beat one tripling? | $[2]_q^2 > [3]_q$ | $4 > 3$ | $4.45 > 3.34$ |
 | Margin | $[2]_q^2 - [3]_q = q$ | $1$ | $1.110$ |
 | Relative margin | $q / [3]_q$ | $1/3$ | $0.332$ |
-| Empirical $\langle v \rangle$ at $q=1$ | — | $2$ (exact) | — |
 
 Two halvings overpower one tripling by a factor $[2]_q^2 / [3]_q = 1 + q/[3]_q \approx 4/3$. The margin $q/[3]_q \approx 1/3$ isolates the aether parameter.

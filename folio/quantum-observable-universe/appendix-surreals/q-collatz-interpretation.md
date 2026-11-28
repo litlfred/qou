@@ -40,4 +40,4 @@ Proved results:
 - $(3, 4)$ gap positive for $q > 0$
 - $(3, 8)$ gap fails for $q > 2$
 
-The orbit structure provides the two halvings. The $[2]_q$-adic valuation of $\mathcal{C}_q(P)$ must average to at least $2$ ([contact boundary](#conj:collatz-contact-boundary)). At $q = 1$, this average is exactly $2$. The conjecture asserts this holds for all $q > 1$.
+These are statements about the polynomials $[p]_q$, and the table is a fact about them. They do not bear on convergence of the map. The contact-average criterion they were once paired with is false as stated ([contact boundary](#conj:collatz-contact-boundary)). The parity sequence of a domain-stable orbit is the classical one, whatever $q$ is ([Syracuse lift](#prop:collatz-syracuse-lift)).

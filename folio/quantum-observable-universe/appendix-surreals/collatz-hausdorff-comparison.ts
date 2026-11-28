@@ -19,4 +19,7 @@ export default remark({
     "phase-transition",
     "superattraction",
   ],
+  authorNotes: [
+    { kind: "refined-framing", date: "2026-11-28", body: "Status paragraph added: heuristic; log_q|P| undefined on Laurent polynomials; P=1 outside the domain; q0 figures use the retiring muon pin." },
+  ],
 });
