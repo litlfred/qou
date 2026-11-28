@@ -111,3 +111,7 @@ STILL OPEN: completeness, i.e. every simple of the quotient is one of these. Nee
 ## 2026-11-28: cup-cap corner and completeness below k+1 strands (PR #9897)
 TLCupCapCorner.lean, sorry-free. capEmb : TL_{n+1} ≅ E·TL_{n+3}·E (onto via Jones' lemma, injective on nondegenerate levels). Objects are idempotents and isomorphism is Murray–von Neumann equivalence. simple_mvn_std: every simple idempotent of TL_{N+1} is equivalent to p_N, the vacuum, or a cup of a standard object, whenever p_m exists and the form is nondegenerate for m ≤ N. At a root of unity this covers N+1 ≤ k.
 STILL OPEN: (1) k+1 or more strands, i.e. completeness in the quotient by negligibles; (2) rectangular Hom(m,n) as a category. Bean stays open.
+
+## 2026-11-28 — completeness on every number of strands (PR #9902)
+
+`TLNegligibleQuotient.lean`: in the quotient by negligibles, every simple idempotent on any number of strands is equivalent to the vacuum or some p_m (m < k) with cups, and none of these vanishes (`simple_mvn_stdLt_root`). Sorry-free. Still open: rectangular Hom(m,n) as a category; braiding/modular data on the quotient category itself (not just its objects).
