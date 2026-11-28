@@ -339,3 +339,19 @@ Colour every component `N`, set `q = e^{iπ/N}` (Kashaev's root, which is Muraka
 | τ = σ₁⁴σ₂⁻¹ | oscillates (competing phases) | 6.32 to 6.34 (8-step windows, N = 20..24, with the 3/2 log N term) |
 
 **Reading.** The ζ_N growth of the closure ∪ axis operator recovers the mapping-torus volumes. It is the volume conjecture for these three links, checked numerically, not proved. So on the volume chart the axis operator gives the ordering 0 < 5.333 < 6.355 for e, μ, τ. Per the owner's ruling "Derive the reading first" (PR #9853), this is not scored against any measured mass. Which reading of the operator is the mass, and with which colour, has to come from the axioms first.
+
+## 18. Which reading is the mass? What `def:mass-identity` forces (ruling "Derive the reading first")
+
+**Lean.** `QOU/Observations/MassReadingForced.lean`. No `sorry`, no new axiom, and no axiom or definition changed.
+
+`def:mass-identity` already settles the three choices that §16 and §17 left open.
+
+| choice | what the definition says | consequence |
+|---|---|---|
+| colour | the Hecke/TL model acts on `V^{⊗n}`, `V = R²` (Jimbo) | `N = 2` |
+| reading | the mass is the ring element `[2]ⁿ q^{−2w} ∫_A ρ(β)`; a comparison is `|φ(m)|` for one ring homomorphism `φ` | the trace at `N = 2`. The `ζ_N` growth over the family `N → ∞` is not of this form |
+| cycle | read on braid classes (conjugation and both stabilisations) | the axis is not in the class of `β`; `β ∪ A` is a different (4-strand) cycle |
+
+**Forced values (convention D, any field).** `m(σ₁σ₂σ₁) = m(σ₁²σ₂⁻¹) = (q²+1)(q⁴+1)/q⁶ = [4]/q³` (`massWord_e`, `massWord_mu`, `mass_mu_eq_e`): both close to the Hopf link. `m(σ₁⁴σ₂⁻¹) = (q²+1)(q⁸+q⁴−q²+1)/q¹²` (`massWord_tau`), the class of the (2,4) torus link.
+
+**Conclusion.** Under the definition as it stands, the least-trace ladder gives `e` and `μ` the same mass, exactly and for every `q`. This is a structural negative, not a numerical one. The volume ordering of §17 (0 < 5.333 < 6.355) is not reachable without changing one of the three rows above. Each such change (an axis in the cycle, a colour other than `V = R²`, or the `ζ_N` growth as the reading) is a change to `def:mass-identity` and needs the owner's own tap. The alternative is to keep the definition and choose words in distinct braid classes (tau thread). Nothing is compared with a measured value.
