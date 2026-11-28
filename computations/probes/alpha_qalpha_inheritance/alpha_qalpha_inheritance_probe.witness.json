@@ -1,0 +1,178 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-28T11:27:12.365601+00:00",
+  "commitSha": "a50371905364b4a58cc34d36e6bc2c35fa82ca8d",
+  "assertions": [
+    {
+      "name": "n_emitters_matches_scorecard",
+      "computed": 1051,
+      "expected": 1051,
+      "passed": true,
+      "tolerance": 0,
+      "source": "generate-accuracy-scorecard.py selection"
+    },
+    {
+      "name": "mass_table_alpha_line_slope_is_single_constant",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "mass-table-comprehensive.witness.json B_pred_MeV"
+    },
+    {
+      "name": "error_split_is_exact",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-9",
+      "source": "identity qalpha_error_split"
+    },
+    {
+      "name": "inherited_share_above_90pct",
+      "computed": "0.931487364674217",
+      "expected": "0.93",
+      "passed": true,
+      "tolerance": "0.07",
+      "source": "median over 1,051 emitters"
+    },
+    {
+      "name": "uniform_ball_r_rms_formula_matches_3_over_5_R",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-65",
+      "source": "f_ball / sqrt(3/5) = 3/5"
+    },
+    {
+      "name": "qhankel_shape_factor_matches_upstream_witness",
+      "computed": "9.03944199148739e-52",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-45",
+      "source": "coulomb-shape-factor-qbessel-probe.witness.json primary row"
+    },
+    {
+      "name": "qhankel_median_coulomb_slope_scales_by_f_ratio",
+      "computed": "2.02410200510026e-78",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-60",
+      "source": "positive homogeneity of median under f_qhankel / f_ball"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 40,
+  "computation": "alpha_qalpha_inheritance_probe",
+  "scriptFile": "alpha_qalpha_inheritance_probe.py",
+  "scriptHash": "a3256f72dbb4",
+  "scriptCommitSha": "a50371905364b4a58cc34d36e6bc2c35fa82ca8d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/alpha_qalpha_inheritance/alpha_qalpha_inheritance_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/alpha_qalpha_inheritance/alpha_qalpha_inheritance_probe.py"
+  },
+  "description": "Derived Q_alpha error split into alpha-specific (B_alpha) and inherited (alpha-line binding slope dB) parts over the 1,051 scorecard emitters; detects that the production mass table has one constant alpha-line slope; reports the alpha-line Coulomb slope and implied nuclear slope target side-by-side under the classical uniform-ball shape factor f = (3/5)^{3/2} and the derived Jackson-lattice s-shell q-Hankel shape factor f = 0.520011 (comparison target only, no fitting).",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0_pin": "proton (qou_substrate.constants.q_at)",
+    "work_dps": 80,
+    "output_dps": 50,
+    "alpha_q_inv_FormB": "137.03599912695091242017270049642000673995567550572",
+    "r0_FCC_fm": "1.1720601536921894095766601617671131844318515584697",
+    "f_uniform_ball": "0.46475800154489002622151184797388795329995060463499",
+    "f_qhankel_s_shell": "0.52001056299485086246584010722661692367767289983177"
+  },
+  "data": {
+    "sample": {
+      "n_emitters": 1051,
+      "selection": "scorecard selection: AME measured parent+daughter, A>=6, Q_AME>0.5 MeV"
+    },
+    "b_alpha_models_MeV": {
+      "M3a_plaquette_used_by_scorecard": "29.329056386925924959",
+      "magicA_64_me_G": "29.955677279532883121",
+      "mass_table_chain_extrapolation": "6.8392990000000000000",
+      "AME2020_comparison": "28.295662400000000000"
+    },
+    "alpha_line_slope": {
+      "distinct_mass_table_slopes_MeV": [
+        "9.5366"
+      ],
+      "per_nucleon_MeV": "2.3841457500000000000"
+    },
+    "error_split_at_medians_MeV": {
+      "Q_pred_scorecard": "19.792473386925924959",
+      "Q_AME": "4.7092120000000000000",
+      "total": "15.083261386925924959",
+      "alpha_specific_B_alpha": "1.0333939869259249594",
+      "inherited_alpha_line_slope": "14.049867400000000000",
+      "median_rowwise_inherited_share": "0.93148736467421665881",
+      "max_rowwise_split_residual": "0.0"
+    },
+    "model_mixing": {
+      "Q_chain_selfconsistent_MeV": "-2.6972840000000000000",
+      "note": "scorecard pairs the M3a 4He with the Q-CLT chain parent/daughter; the chain's own 4He gives Q_alpha < 0 for every nucleus"
+    },
+    "binding_term_target": {
+      "Coulomb_slope_FCC_median_MeV": "34.823268542281728977",
+      "nuclear_alpha_line_slope_required_median_MeV": "57.861566917342043217",
+      "per_nucleon_MeV": "14.465391729335510804",
+      "Coulomb_slope_FCC_qhankel_median_MeV": "38.963218319639283281",
+      "nuclear_alpha_line_slope_required_qhankel_median_MeV": "61.934653525957352244",
+      "per_nucleon_qhankel_MeV": "15.483663381489338061",
+      "coulomb_shape_factor_comparison": {
+        "f_uniform_ball_3_5_pow_3_2": "0.46475800154489002622151184797388795329995060463499",
+        "f_qhankel_nu_half_p_1_over_q0": "0.52001056299485086246584010722661692367767289983177",
+        "scale_ratio_qhankel_over_ball": "1.1188845835172223585114685375478401134422243704858",
+        "median_dE_C_shift_MeV": "4.1399497773575543045",
+        "median_nuclear_slope_shift_MeV": "4.0730866086153090270",
+        "scope_note": "f_qhankel is derived strictly for the l=0 (0s, A<=4) Jackson-lattice state (coulomb_energy.py); evaluating it across A>=6 heavy emitters is an explicit s-shell shape extrapolation reported alongside the classical uniform-ball baseline."
+      },
+      "bands": {
+        "A_6_150": {
+          "n": 178,
+          "dB_pred_median_MeV": "9.53658300000",
+          "dB_AME_median_MeV": "26.5643693500",
+          "Q_AME_median_MeV": "1.73129305000",
+          "dE_C_FCC_median_MeV": "28.6217907573",
+          "dE_C_FCC_qhankel_median_MeV": "32.0244804310",
+          "nuclear_slope_required_median_MeV": "55.4583902136",
+          "nuclear_slope_required_qhankel_median_MeV": "58.8533660079"
+        },
+        "A_151_plus": {
+          "n": 873,
+          "dB_pred_median_MeV": "9.53658300000",
+          "dB_AME_median_MeV": "22.8833411000",
+          "Q_AME_median_MeV": "5.41232130000",
+          "dE_C_FCC_median_MeV": "35.5516014119",
+          "dE_C_FCC_qhankel_median_MeV": "39.7781387391",
+          "nuclear_slope_required_median_MeV": "58.1579968414",
+          "nuclear_slope_required_qhankel_median_MeV": "62.4079255782"
+        }
+      }
+    }
+  },
+  "caveats": [
+    "Diagnostic. The required nuclear slope uses AME2020 dB as the comparison target; it is a target for the binding term (qou-brng), not an input to any prediction and not a fitted constant. Both r0_FCC (CAL-3 length with A^{1/3} saturation scaling) and the A>=6 extrapolation of the s-shell q-Hankel shape factor are explicitly conditional."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
