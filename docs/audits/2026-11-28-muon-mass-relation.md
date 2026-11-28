@@ -88,6 +88,36 @@ determinants as §4. The log cross-derivative `∂₁∂₂ log Δ` at `t = 1` (
 e, 1/4 for μ and 0 for τ. Reading: the muon is the only lepton whose two components interact at
 the Alexander level.
 
+## 6. Two-colour ring trace: one irrep per component (unscored probe)
+
+Probe `computations/probes/lepton_two_colour/two_colour_probe.py` (exact sympy, R-matrix of
+`U_q(sl2)`). Each closure component gets its own irrep `V_a` (dimension `a+1`). Take the quantum
+trace of the 3-braid word, correct the framing per component by the twist `θ_n = q^{n(n+2)/2}`,
+and divide by the unlink value `[a+1][b+1]`. The result `C_L(a,b)` is the cross-component
+interaction factor, and `C = 1` at `q = 1`. At `a = b = 1` the traces reproduce the N=2 ring
+masses up to a monomial. The Hopf case matches `[(a+1)(b+1)]` exactly.
+
+In `h = log q` (the `G_m` logarithm), with `C_a = a(a+2)` the Casimir:
+
+    log C_L(a,b) = C_a C_b · ( κ₂ h² + κ₃ h³ ) + O(h⁴)
+
+| lepton | κ₂ | κ₃ | `C(q₀)` at (1,1) / (1,2) / (2,2) |
+|---|---|---|---|
+| e (Hopf) | 1/6 = lk²/6 | 0 | 1.0163 / 1.0437 / 1.1187 |
+| μ (T(2,4)) | 2/3 = lk²/6 | −2/3 | 1.0596 / 1.1618 / 1.4613 |
+| τ (Whitehead) | 0 = lk²/6 | 4/3 | 1.0112 / 1.0305 / 1.0842 |
+
+Checked at three colour pairs each, not proved for all colours. The `h⁴` term no longer
+factorises as `C_a C_b`.
+
+* **h² is pure linking.** The quadratic term is `lk²·C_a C_b/6`. So the muon's components couple
+  four times as strongly as the electron's, and the tau's not at all at this order.
+* **The odd part carries chirality.** `h ↦ −h` is `q ↦ q⁻¹`, the mirror. The electron has no odd
+  terms. The tau's interaction starts at `h³`, so it is purely odd at leading order. Its sign is
+  therefore the `G_m` orientation bit of §4 again. It moves the bit to the first odd jet order
+  but does not fix it.
+* No `C` value is near 206.77. This gives a coupling hierarchy, not a mass ratio.
+
 ## Open
 
 * The muon pin (bean): derive `m_μ/m_e` from the axioms. Level one is excluded (§1).
