@@ -61,15 +61,43 @@ set_compute_dps()
 # bean qou-rbdi) rather than typed: the literal here was 137.035999084 — the
 # CODATA-2018 value, labelled 2022. Kept as the exact decimal string, so the
 # mpf carries every published digit.
+def _locate_codata_2022_file(repo: Path) -> Path | None:
+    import os
+    import subprocess
+
+    rel = Path("folio-assistant-sci/library/codata-2022/values.json")
+    candidates: list[Path] = []
+    fa_env = os.environ.get("FOLIO_ASSISTANT_ROOT")
+    if fa_env:
+        fa = Path(fa_env).expanduser()
+        candidates.extend([fa / rel, fa / "library/codata-2022/values.json"])
+    candidates.extend([
+        repo / rel,
+        repo / "folio-assistant" / rel,
+        repo.parent / "folio-assistant" / rel,
+        repo.parent.parent / "folio-assistant" / rel,
+    ])
+    try:
+        common = subprocess.run(
+            ["git", "-C", str(repo), "rev-parse", "--git-common-dir"],
+            capture_output=True, text=True, check=False,
+        )
+        if common.returncode == 0 and common.stdout.strip():
+            main_repo = (repo / common.stdout.strip()).resolve().parent
+            candidates.extend([
+                main_repo / rel,
+                main_repo / "folio-assistant" / rel,
+                main_repo.parent / "folio-assistant" / rel,
+            ])
+    except OSError:
+        pass
+    return next((p for p in candidates if p.is_file()), None)
+
+
 _REPO = Path(__file__).resolve().parents[2]
-_CODATA_2022_FILE = next(
-    (p for p in (_REPO / "folio-assistant-sci/library/codata-2022/values.json",
-                 _REPO / "folio-assistant/folio-assistant-sci/library/codata-2022/values.json")
-     if p.is_file()),
-    None,
-)
+_CODATA_2022_FILE = _locate_codata_2022_file(_REPO)
 if _CODATA_2022_FILE is None:
-    raise FileNotFoundError("folio-assistant-sci/library/codata-2022/values.json: mount the platform layers (index.lock.json)")
+    raise FileNotFoundError("folio-assistant-sci/library/codata-2022/values.json: mount the platform layers (index.lock.json) or set FOLIO_ASSISTANT_ROOT")
 _CODATA_2022 = json.loads(_CODATA_2022_FILE.read_text())
 CODATA_ALPHA_INV = mp.mpf(_CODATA_2022["inverse-fine-structure-constant"]["value"])
 
