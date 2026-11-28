@@ -13,6 +13,8 @@ Bean `qou-9obv` (GAP from `q_ns_triad_raising_coupling`). On the Cartan block `K
   `h(P_n²) = Π_{k<n} P² z_k² (P z_k − 1)⁴ / ((P z_k² − 1)(P² z_k² − 1)²(P³ z_k² − 1))`,
   with `z_k = P^k`.
 * `haarState_jacobiPoly_sq_eq`: `h(p_n²) = c_n² · (the same product)`.
+* `coupling_raise_sq`: the squared raising coupling of `q_ns_triad_raising_coupling`, divided by
+  the two norms, is `q⁻² κ_s² · H_{s+2} / H_{s+1}`.
 
 With `p = q⁻²` the `k`-th factor is `p^{2n}(1 − p^n)⁴ / ((1 − p^{2n−1})(1 − p^{2n})²(1 − p^{2n+1}))`
 at `n = k + 1`, so the product is the q-Pochhammer form
@@ -34,10 +36,10 @@ No empirical value enters any proof. Sorry-free.
 ## Not established
 
 * Positivity of the norms over an ordered field.
-* The normalised raising coupling `C̃(r)²` of `q_ns_triad_raising_coupling` as a Lean
-  statement. It now follows from `coupling_raise` and this file by substitution, and its decay
-  `q^{−2r}` at fixed `q > 1` (non-uniform in `q`) is no longer conditional on an unproved norm.
-  The substitution itself has not been written out in Lean.
+* The factor `1/‖βδ‖²` of the normalised coupling `C̃(r)²`. Everything else is
+  `coupling_raise_sq` below: `C_s² / (‖p_{s+2}‖²‖p_{s+1}‖²) = q⁻²κ_s² · H_{s+2}/H_{s+1}`. At fixed
+  `q > 1` this decays like `q^{−4s}` (amplitude `q^{−2s}`), and the decay is not uniform in `q`.
+  The asymptotics are read off the closed form, not proved as a limit in Lean.
 * Part A of `conj:regularity-breakdown`.
 -/
 
@@ -416,6 +418,28 @@ theorem haarState_jacobiPoly_sq_eq (n : ℕ) :
   have hc := coeff_jacobiPoly_ne_zero q hp n
   rw [← H_eq_prod q hp, H, mp, map_smul, smul_mul_assoc, mul_smul_comm, map_smul, map_smul,
     smul_eq_mul, smul_eq_mul]
+  field_simp
+
+/-! ## The raising coupling, normalised -/
+
+open QOU.FluidDynamics.HaarFieldInvariance in
+/-- **The normalised raising coupling.** With `C_s` the raising coupling of
+`q_ns_triad_raising_coupling` and `‖p‖² = h(p²)`,
+`C_s² = (q⁻¹ κ_s)² · nf(P^{s+1}) · ‖p_{s+2}‖² ‖p_{s+1}‖²`.
+So `C_s² / (‖p_{s+2}‖² ‖p_{s+1}‖²) = q⁻² κ_s² · H_{s+2} / H_{s+1}`. -/
+theorem coupling_raise_sq (s : ℕ) :
+    haarState q (ev q (jacobiPoly q (s + 2)) *
+        ((β q * δ q) * fieldPlus q (ev q (jacobiPoly q (s + 1))))) ^ 2 =
+      (kap q s * qi) ^ 2 * nf PP (PP ^ (s + 1)) *
+        haarState q (ev q (jacobiPoly q (s + 2)) * ev q (jacobiPoly q (s + 2))) *
+        haarState q (ev q (jacobiPoly q (s + 1)) * ev q (jacobiPoly q (s + 1))) := by
+  have c1 := coeff_jacobiPoly_ne_zero q hp (s + 1)
+  have c2 := coeff_jacobiPoly_ne_zero q hp (s + 2)
+  have hn : ∀ n, haarState q (ev q (jacobiPoly q n) * ev q (jacobiPoly q n)) =
+      ((jacobiPoly q n).coeff n) ^ 2 * H q n := fun n => by
+    rw [haarState_jacobiPoly_sq_eq q hp, H_eq_prod q hp]
+  have h2 : H q (s + 2) = nf PP (PP ^ (s + 1)) * H q (s + 1) := step_factor q hp (s + 1)
+  rw [coupling_raise q hp, hn (s + 2), hn (s + 1), h2]
   field_simp
 
 end QOU.FluidDynamics.QLegendreNorm
