@@ -222,6 +222,8 @@ export default chapter({
         "bring-isospectrality-question",
         "bring-harmonic-types",
         "bring-harmonic-types-proof",
+        "bring-reflection-parity",
+        "bring-reflection-parity-proof",
         "photon-filtration-depth-bounds",
         "photon-stopping-depth",
         "borromean-photon-factorisations",
