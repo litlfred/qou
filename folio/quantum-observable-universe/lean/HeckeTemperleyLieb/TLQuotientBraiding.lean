@@ -158,6 +158,18 @@ noncomputable def twist (n : ℕ) : TLFin K δ n := (A ^ 3) ^ (n + 1) • Θ δ 
 
 variable (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2)
 
+variable (δ A) in
+/-- The inverse of the framed twist. -/
+noncomputable def twistInv (n : ℕ) : TLFin K δ n := ((A ^ 3) ^ (n + 1))⁻¹ • Θi δ A n 0 n
+
+include hA in
+theorem twist_mul_inv (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (n : ℕ) : twist δ A n * twistInv δ A n = 1 := by
+  rw [twist, twistInv, smul_mul_smul_comm, Θ_mul_Θi hA hδ, mul_inv_cancel₀ (pow_ne_zero _ (pow_ne_zero _ hA)), one_smul]
+
+include hA in
+theorem inv_mul_twist (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (n : ℕ) : twistInv δ A n * twist δ A n = 1 := by
+  rw [twist, twistInv, smul_mul_smul_comm, Θi_mul_Θ hA hδ, inv_mul_cancel₀ (pow_ne_zero _ (pow_ne_zero _ hA)), one_smul]
+
 include hA hδ in
 /-- The twist is central in `TL_{n+1}`. -/
 theorem twist_comm (n : ℕ) (x : TLFin K δ n) : Commute (twist δ A n) x := by
@@ -182,6 +194,18 @@ variable {ε : K} (T : MarkovTower δ ε)
 variable (A) in
 /-- The twist in the quotient. -/
 noncomputable def twistQ (n : ℕ) : Q T n := (twist δ A n : Q T n)
+
+variable (A) in
+/-- The inverse twist in the quotient. -/
+noncomputable def twistInvQ (n : ℕ) : Q T n := (twistInv δ A n : Q T n)
+
+include hA hδ in
+theorem twistQ_mul_inv (n : ℕ) : twistQ A T n * twistInvQ A T n = 1 := by
+  rw [twistQ, twistInvQ, ← RingCon.coe_mul, twist_mul_inv hA hδ, RingCon.coe_one]
+
+include hA hδ in
+theorem inv_mul_twistQ (n : ℕ) : twistInvQ A T n * twistQ A T n = 1 := by
+  rw [twistQ, twistInvQ, ← RingCon.coe_mul, inv_mul_twist hA hδ, RingCon.coe_one]
 
 include hA hδ in
 /-- **The twist is central in every quotient**, hence natural on every endomorphism. -/

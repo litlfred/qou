@@ -492,6 +492,40 @@ theorem pl_D (t M : ℕ) (h : t + M ≤ N) : ∀ (n a : ℕ), a + n ≤ M →
 
 variable (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2)
 
+variable (δ A N) in
+/-- The inverse half twist: `Di s (n+1) = Ci s n 0 · Di (s+1) n`. -/
+noncomputable def Di : ℕ → ℕ → TLFin K δ N
+  | _, 0 => 1
+  | s, n + 1 => Ci δ A N s n 0 * Di (s + 1) n
+
+variable (δ A N) in
+/-- The inverse full twist. -/
+noncomputable def Θi (s n : ℕ) : TLFin K δ N := Di δ A N s n * Di δ A N s n
+
+include hA hδ in
+theorem D_mul_Di : ∀ (n s : ℕ), D δ A N s n * Di δ A N s n = 1
+  | 0, s => mul_one 1
+  | n + 1, s => by
+    show D δ A N (s + 1) n * C δ A N s n 0 * (Ci δ A N s n 0 * Di δ A N (s + 1) n) = 1
+    rw [mul_assoc, ← mul_assoc (C δ A N s n 0), C_mul_Ci hA hδ, one_mul, D_mul_Di n (s + 1)]
+
+include hA hδ in
+theorem Di_mul_D : ∀ (n s : ℕ), Di δ A N s n * D δ A N s n = 1
+  | 0, s => mul_one 1
+  | n + 1, s => by
+    show Ci δ A N s n 0 * Di δ A N (s + 1) n * (D δ A N (s + 1) n * C δ A N s n 0) = 1
+    rw [mul_assoc, ← mul_assoc (Di δ A N (s + 1) n), Di_mul_D n (s + 1), one_mul, Ci_mul_C hA hδ]
+
+include hA hδ in
+theorem Θ_mul_Θi (s n : ℕ) : Θ δ A N s n * Θi δ A N s n = 1 := by
+  rw [Θ, Θi, mul_assoc, ← mul_assoc (D δ A N s n) (Di δ A N s n), D_mul_Di hA hδ, one_mul,
+    D_mul_Di hA hδ]
+
+include hA hδ in
+theorem Θi_mul_Θ (s n : ℕ) : Θi δ A N s n * Θ δ A N s n = 1 := by
+  rw [Θ, Θi, mul_assoc, ← mul_assoc (Di δ A N s n) (D δ A N s n), Di_mul_D hA hδ, one_mul,
+    Di_mul_D hA hδ]
+
 include hA hδ in
 /-- **Yang–Baxter for blocks**: `C (s+1) n m · C s (n+m+1) 0 = C s m 0 · C s n (m+1)`. -/
 theorem C_yang_baxter (s n m : ℕ) (hN : s + n + m + 1 < N) :
