@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - compute-accuracy
 created_at: 2026-07-18T17:08:37Z
-updated_at: 2026-11-28T02:20:00Z
+updated_at: 2026-11-28T01:31:36Z
 parent: qou-avtq
 ---
 
@@ -88,3 +88,11 @@ Next: Lean I_Δ minimal-degree bound. Note: the paper's proof (1208.1663 Lemma l
 
 `QOU/Nuclear/TetIndexDegree.lean`: tetrahedron-index coefficients as an honest finite sum; cone m≤0≤e degree and leading coefficient proved; every cone via triality (1208.1663 Prop prop.S3, cited as hypothesis `Triality`, checked on 3025 coefficients). In the DGG 4.18 sum only e=e₂=0 reaches q⁰ in N₁₁ and only e=−2, e₂=0 in N₁₂; values 1 and −1, so `StokesIndexCount41`'s i00, i1 are theorems and 3 = 2·1 − (−1). lean exit 0, no sorry.
 Remaining: (1) prove triality in Lean (two q-recursions + rank-1 uniqueness, 1208.1663 §4.2–4.4); (2) conj.41M / 5₂ region conjectures (GGM, shared with the W-route); (3) 5₂ attribution in Lean needs the m015 gluing data; (4) internal QOU (Hecke/Markov) derivation of the index, unchanged.
+
+## 2026-11-28 — triality proved in Lean (PR #9925)
+
+`QOU/Nuclear/TetIndexTriality.lean`: `triality_holds : TetIndexDegree.Triality`
+from 1208.1663 eq rec1 (telescoping) and eq rec2 (termwise), a uniqueness lemma
+for solutions vanishing at (0,0),(0,1), and the S-transform. The 4₁ Stokes
+constant 3 is now unconditional (`stokes41_three_unconditional`). No sorry;
+axioms propext/Classical.choice/Quot.sound. Head 7e453f6cdfd36d75c82de93dc3a298ab402d46a1.
