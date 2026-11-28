@@ -142,7 +142,11 @@ noncomputable def binding_per_A_fe56 : ℝ := 8.7903
 -- ═══════════════════════════════════════════════════════════════════
 -- QOU predicted masses from knot generation (MeV/c²)
 --
--- Computed from: q = 1.10997, μ_u = 311.10, μ_d = 312.39
+-- Computed from: q = 1.10997, μ_u = 311.10, μ_d = 312.39 under the retired
+-- convention-C pair formula (status 2026-11-28). Those dressed masses were
+-- chosen to reproduce m_p and m_n, so the rows below are fitted, not
+-- predicted; the dressed masses are now parameters with an open derivation
+-- (`QOU.HadronicMass`, `QOU.Torsion.pairSkeinMass`).
 -- Proton:  S_uu + 2·S_ud = 938.269 MeV
 -- Neutron: 2·S_ud + S_dd = 939.565 MeV
 -- Atom(Z,N) = Z·m_p + N·m_n - A·(B/A) + Z·m_e
