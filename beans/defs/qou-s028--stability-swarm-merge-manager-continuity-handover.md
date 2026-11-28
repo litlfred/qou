@@ -7,7 +7,7 @@ priority: high
 tags:
     - stability
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-28T12:37:11Z
+updated_at: 2026-11-28T12:40:00Z
 parent: qou-5vkl
 blocked_by:
     - qou-10v9
@@ -228,3 +228,4 @@ Verbatim (`2026-11-28`): *"make sure you are working proton pin... no longer muo
 
 - **2026-11-28 (`#9941` landed)**: Merged PR `#9941` (`hkmt` glued TL `MonoidalCategory`, `6118b03bd24a` -> `e21d9686cec98143ba7ec2a00b3f9543b9242c92`, `17/17` replayed, `MISSING: 0`, 26th PR landed in session).
 - **2026-11-28 (`#10008`, `#10007`, `#10009` landed)**: Merged PR `#10008` (`b156b0867213` -> `80f557eaee54be658d5688a60b54476e558865d4`, post-merge `CommRing` drain), PR `#10007` (`2f23ee877170` -> `0300ec06f6fdb3ce828c36a0c6f8d1a430ea4310`, `qou-crwk` completed), and PR `#10009` (`4972ccce33f3` -> `e613da00ab76d4e6f54a42b1c68f363e112f6200`, `qou-intr` completed; `29` PRs landed in session, all `MISSING: 0`).
+- **2026-11-28 (`#10011` landed)**: Merged PR `#10011` (`qou-qval` `crates/qou-values` fast MPFR witness evaluator, `43c583579931` -> `b5a545711ee23d64bf4923e2d9a629fbac23834a`, `1/1` replayed, `MISSING: 0`, `qou-qval` completed; `30` PRs landed in session).
