@@ -51,6 +51,7 @@ export default chapter({
         "braid-chirality-blind-to-hypercharge-sign",
         "strands-are-bring-elliptic-quotients",
         "bring-conjugation-on-gm",
+        "colour-strand-count",
         "chirality-sign-is-hypercharge-sign",
         "linking-does-not-fix-charge",
         "strand-slot-separates-gen1",
