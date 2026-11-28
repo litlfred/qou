@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-12T20:38:54Z
-updated_at: 2026-11-28T00:10:00Z
+updated_at: 2026-11-28T00:15:00Z
 parent: qou-533l
 ---
 
@@ -62,3 +62,8 @@ Still open: (a') real lifts after refinement for an arbitrary cocycle (needs par
 
 PR #9857 (merged), QOU/Transcendental/MathlibExt/CechRealLiftRefinement.lean: exists_refinement_isRealLift. On a paracompact Hausdorff space every U(1)-cocycle on an open cover has a local real lift on an open refinement x ↦ W_x ∋ x. The proof is the Godement/Serre argument: a locally finite closed shrinking, then factoring through a common closed piece. #9842 and #9850 merged too.
 Still open: (i) independence of [c₁] ∈ Ȟ² from the chosen refinement (needs real lifts of 0-cochains after refinement); (ii) Ȟ²(X; C(-,ℤ)) ≅ H²(X; ℤ); (iii) FiberBundle comparison; (iv) c₁ = e = χ (Poincaré–Hopf).
+
+## 2026-11-28 (same thread): refinement independence
+
+PR #9867 (merged), QOU/Transcendental/MathlibExt/CechChernRefinementIndep.lean. cechChern_indep_refinement: two open refinements with real lifts give the same class in Ȟ², on any space; the gauge h_p = γ_{R₂p R₁p} has real logs after refinement, with no paracompactness needed. exists_unique_cechChern: on a paracompact Hausdorff space every U(1)-cocycle has a unique c₁ ∈ Ȟ²(X; C(-,ℤ)). Item (i) of the previous note is closed.
+Still open: Ȟ²(X; C(-,ℤ)) ≅ H²(X; ℤ); FiberBundle comparison; c₁ = e = χ (Poincaré–Hopf).
