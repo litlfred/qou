@@ -4,7 +4,7 @@ title: Which Nahm datum A does the tetraplectic sum give beyond 4_1?
 status: in-progress
 type: task
 created_at: 2026-11-27T17:26:40Z
-updated_at: 2026-11-28T00:58:22Z
+updated_at: 2026-11-28T01:03:40Z
 ---
 
 Research path, opened 2026-11-27 (thread 'Reeb flow and tetraplectic structure', PR #9496 merged).
@@ -49,3 +49,8 @@ Started TetVolumeConcave.lean, then found the result already proved on main, thr
 angle structure) merged as 30a070c1bd. Remaining for RᵃL: (1) at an interior critical point of total
 volume on the RᵃL angle polytope the shapes satisfy the gluing (log-modulus) equations; (2) the maximum is
 interior (Futer–Guéritaud boundary argument). L6a4VolumeMaximum.lean is the worked template for (1).
+
+## 2026-11-28 — critical point lemma (PR #9906)
+`NZVolumeCritical.lean`: `logModulus_gluing`, `exists_nzSolution_of_isVolMax` (shapes (sin β/sin(α+β))e^{iα}
+solve every NZ row exactly, all in H), `regulator_pos_of_isVolMax`. Generic in symplectic (A|B). Still open:
+the maximum is interior (Futer–Guéritaud boundary step) — next.
