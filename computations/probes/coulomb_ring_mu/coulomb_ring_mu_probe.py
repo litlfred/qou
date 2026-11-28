@@ -79,6 +79,14 @@ for name, A, dB in AME:
     print(f"  {name:10s} eps needed = {mp.nstr(need, 6)} MeV   need/eps_log = {mp.nstr(need / el1, 6)}"
           f"   need/eps_U = {mp.nstr(need / eu1, 6)}   need*A^(1/3) = {mp.nstr(need * mp.cbrt(A), 6)}")
 
+# size law test (Lean CoulombBlockSize.size_ratio): eps^3 * A constant <=> need * A^(1/3) flat.
+flat = [2 * mp.mpf(dB) / (A - 1) * mp.cbrt(A) for _, A, dB in AME]
+raw = [2 * mp.mpf(dB) / (A - 1) for _, A, dB in AME]
+print("\nsize law (comparison only): max/min of eps needed      =", mp.nstr(max(raw) / min(raw), 6))
+print("                             max/min of eps needed*A^1/3 =", mp.nstr(max(flat) / min(flat), 6))
+print("                             mean eps needed*A^1/3 (MeV) =", mp.nstr(mp.fsum(flat) / len(flat), 6),
+      "  / eps_U(mu_1) =", mp.nstr(mp.fsum(flat) / len(flat) / eu1, 6))
+
 print()
 ok = all(c for _, c in checks)
 for n, c in checks:
