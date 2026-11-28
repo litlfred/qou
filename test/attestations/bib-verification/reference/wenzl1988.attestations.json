@@ -1,0 +1,55 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "wenzl1988",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 492,
+      "entry": {
+        "id": "wenzl1988",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1007/bf01394336"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T13:25:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API and DOI Handle API (DOI 10.1007/bf01394336; Invent. Math. 92 (1988), no. 2, 349-383).",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Constructs seminormal orthogonal representations of Hecke algebras H_n(q), proves C*-positivity of Markov traces on real-q/unit-circle regimes, and determines the real-q star-structure.",
+          "keyResults": [
+            {
+              "locator": "Section 2 (Thm. 2.2) & Section 3",
+              "statement": "Explicit seminormal matrix units for H_n(q) with positive-definite inner product under the real-q C*-involution sigma_i^* = sigma_i and Markov trace decomposition.",
+              "useForFolio": "Directly backs the division-free Wenzl metric M_q, unimodular Cauchy-Green strain det G_{(2,1)}(w) = 1, and global electron minimum Tr G_{(2,1)}(e) = 2 in QOU/StandardModel/LeptonFramedGNSAndStrainOrder.lean.",
+              "targets": [
+                "QOU/StandardModel/LeptonFramedGNSAndStrainOrder.lean",
+                "BraidKnotOctonion/HeckeJucysMurphySymmetricCenter.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "aid-proof",
+              "rationale": "Formalized in QOU/StandardModel/LeptonFramedGNSAndStrainOrder.lean (wenzlMetric21_intertwines_word, det_strain21, trace_strain21_ge_two).",
+              "target": "QOU/StandardModel/LeptonFramedGNSAndStrainOrder.lean"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T13:25:00Z"
+        }
+      }
+    }
+  ]
+}

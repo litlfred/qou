@@ -1,0 +1,54 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "faddeev-reshetikhin-takhtajan1988",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 485,
+      "entry": {
+        "id": "faddeev-reshetikhin-takhtajan1988",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1016/b978-0-12-385340-0.50013-9"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T13:25:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API and DOI Handle API (DOI 10.1016/b978-0-12-385340-0.50013-9; Algebraic Analysis, Vol. I, Academic Press, 1988, pp. 129-139; Russian expanded version Algebra i Analiz 1 (1989) / Leningrad Math. J. 1 (1990), 193-225).",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Defines the FRT RTT presentation of O_q(G) and U_q(g), quantum determinant, and quantum trace tr_q(X) = Tr(q^{2 rho} X) matching Woronowicz modular Haar trace.",
+          "keyResults": [
+            {
+              "locator": "Section 1-2",
+              "statement": "Constructs O_q(SU(2)) via RTT relations and identifies central L-operator quantum traces with modular q^{2 rho}-weighted matrix traces.",
+              "useForFolio": "Provides the quantum-trace and quantum-determinant framework audited in Family 1 and Family 3 of the 2026-11-28 untapped algebraic invariants audit.",
+              "targets": [
+                "docs/audits/2026-11-28-untapped-algebraic-invariants-audit.md"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "compute-check",
+              "rationale": "Evaluated in computations/probes/untapped_algebraic_invariants_proton_probe.py across O_q(SU(2)) Haar/modular weights and Hecke exterior invariants.",
+              "target": "computations/probes/untapped_algebraic_invariants_proton_probe.py"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T13:25:00Z"
+        }
+      }
+    }
+  ]
+}

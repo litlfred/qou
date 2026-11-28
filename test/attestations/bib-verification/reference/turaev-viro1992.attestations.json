@@ -1,0 +1,55 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "turaev-viro1992",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 489,
+      "entry": {
+        "id": "turaev-viro1992",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1016/0040-9383(92)90015-a"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T13:25:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Enriched existing stub with Crossref/Handle-verified DOI 10.1016/0040-9383(92)90015-a and issue number (Topology 31 (1992), no. 4, 865-902).",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Constructs the state-sum 3-manifold invariant from tetrahedral quantum 6j-symbols.",
+          "keyResults": [
+            {
+              "locator": "Section 1-4",
+              "statement": "Defines tetrahedral quantum 6j weights and proves 2-3 / 1-4 Pachner invariance at roots of unity via Biedenharn-Elliott.",
+              "useForFolio": "Provides the K_4 tetrahedral state-sum weight audited at real q_0^{(p)} against the 4He K_4 binding shortfall.",
+              "targets": [
+                "computations/probes/untapped_algebraic_invariants_proton_probe.py",
+                "docs/audits/2026-11-28-untapped-algebraic-invariants-audit.md"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "compute-check",
+              "rationale": "Evaluated in computations/probes/untapped_algebraic_invariants_proton_probe.py (Family 4 negative exclusion at real q_0^{(p)}).",
+              "target": "computations/probes/untapped_algebraic_invariants_proton_probe.py"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T13:25:00Z"
+        }
+      }
+    }
+  ]
+}

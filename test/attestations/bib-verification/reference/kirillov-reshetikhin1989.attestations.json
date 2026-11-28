@@ -1,0 +1,55 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "kirillov-reshetikhin1989",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 488,
+      "entry": {
+        "id": "kirillov-reshetikhin1989",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1142/9789812798336_0015"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T13:25:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API and DOI Handle API (DOI 10.1142/9789812798336_0015; Infinite Dimensional Lie Algebras and Groups, Adv. Ser. Math. Phys. 7, World Scientific, 1989, pp. 285-339).",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Establishes the Racah-Askey-Wilson closed-form formula, tetrahedral symmetry, and ribbon framing phases for U_q(sl_2) quantum 6j-symbols.",
+          "keyResults": [
+            {
+              "locator": "Section 5-8",
+              "statement": "Closed-form q-factorial sum for U_q(sl_2) quantum 6j-symbols satisfying Biedenharn-Elliott pentagon and orthogonal recoupling identities.",
+              "useForFolio": "Evaluated at 85 dps on the real proton pin q_0^{(p)} across tetrahedral K_4 spins j = 1/2, 1, 3/2 in computations/probes/untapped_algebraic_invariants_proton_probe.py.",
+              "targets": [
+                "computations/probes/untapped_algebraic_invariants_proton_probe.py",
+                "docs/audits/2026-11-28-untapped-algebraic-invariants-audit.md"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "compute-check",
+              "rationale": "Evaluated at 85 dps in computations/probes/untapped_algebraic_invariants_proton_probe.py (Family 4).",
+              "target": "computations/probes/untapped_algebraic_invariants_proton_probe.py"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T13:25:00Z"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "nazarov-tarasov1994",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 487,
+      "entry": {
+        "id": "nazarov-tarasov1994",
+        "source": {
+          "kind": "external",
+          "url": "https://arxiv.org/abs/hep-th/9402112"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T13:25:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via arXiv API (hep-th/9402112) and MathSciNet/zbMATH bibliographic metadata (Publ. RIMS Kyoto Univ. 30 (1994), no. 3, 459-478; DOI 10.2977/prims/1195165907).",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Constructs quantum Capelli identities and non-commutative quantum exterior minors generating central invariants via Schur-Weyl duality.",
+          "keyResults": [
+            {
+              "locator": "Section 1-3",
+              "statement": "Quantum exterior minors built with antisymmetrizing Hecke idempotents generate the quantum determinant center.",
+              "useForFolio": "Explains why quantum exterior minors match q-skew Schur functions under Schur-Weyl duality in Family 3 of the 2026-11-28 untapped algebraic invariants audit.",
+              "targets": [
+                "docs/audits/2026-11-28-untapped-algebraic-invariants-audit.md"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "compute-check",
+              "rationale": "Audited in docs/audits/2026-11-28-untapped-algebraic-invariants-audit.md.",
+              "target": "docs/audits/2026-11-28-untapped-algebraic-invariants-audit.md"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T13:25:00Z"
+        }
+      }
+    }
+  ]
+}

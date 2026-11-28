@@ -1,0 +1,55 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "aiston-morton-1997",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 490,
+      "entry": {
+        "id": "aiston-morton-1997",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1142/s0218216598000243"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T13:25:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Enriched with Crossref/Handle-verified DOI 10.1142/s0218216598000243, issue 4, and arXiv q-alg/9607027 (J. Knot Theory Ramifications 7 (1998), no. 4, 463-487).",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Constructs minimal Young-symmetrizer Hecke idempotents, satellite cabling maps into H_{kn}(q), and framed HOMFLYPT Young-diagram satellite eigenfunctions.",
+          "keyResults": [
+            {
+              "locator": "Section 3-5",
+              "statement": "Cabled satellite braids decompose into Young-diagram eigencomponents of the full twist with eigenvalues q^{2 sum c(box)}.",
+              "useForFolio": "Underlies the 2-cable (H_6(q_0)) satellite trace and zero-writhe framing projection in computations/probes/untapped_algebraic_invariants_proton_probe.py and QOU/StandardModel/LeptonFramedGNSAndStrainOrder.lean.",
+              "targets": [
+                "QOU/StandardModel/LeptonFramedGNSAndStrainOrder.lean",
+                "computations/probes/untapped_algebraic_invariants_proton_probe.py"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "compute-check",
+              "rationale": "Evaluated at 85 dps in computations/probes/untapped_algebraic_invariants_proton_probe.py (2-cable colored Jones and HOMFLYPT satellites).",
+              "target": "computations/probes/untapped_algebraic_invariants_proton_probe.py"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T13:25:00Z"
+        }
+      }
+    }
+  ]
+}
