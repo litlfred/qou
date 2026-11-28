@@ -1,13 +1,13 @@
 ---
 # qou-y7ek
 title: 'PPQ-1 (L1): 80-dps Newton Anchor Round-Trip Polish (2.85 ppt -> < 1e-80 on m_p/m_e -> q_0, q_2t)'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - compute-accuracy
 created_at: 2026-11-19T16:48:46Z
-updated_at: 2026-11-28T00:20:00Z
+updated_at: 2026-11-28T00:13:00Z
 parent: qou-10v9
 ---
 
@@ -30,3 +30,4 @@ This bean was set to completed by local commits on `cat/cat-harness/beans` (e223
 - Probe `computations/probes/q0_80dps_anchor_roundtrip_probe.py`: Newton at 120 dps, round trip 1.55e-120; polished q0 rounds to `Q_50_DIGIT_STR` and `Q_MP` (q0 unchanged). Error as a rational cut [lo, lo+1e-85] bracketing the root at 120 and 240 dps (`Cut.ofInterval`). Two-term pin checked as named comparison.
 - `per_observable_100x_status.py`: m_p `roundtrip_residual_ppb` 0.002852 -> 7.197e-43 (measured vs anchor m_e x m_p/m_e); CODATA rounding kept as `codata_rounding_ppb`.
 - Left: m_p substrate producer still reads the 50-digit q0 string (qou-5eg1). Complete on merge.
+- 2026-11-28T00:12Z: PR #9864 merged. Completed. Follow-up (50-digit q0 in m_p producer) stays on qou-5eg1.
