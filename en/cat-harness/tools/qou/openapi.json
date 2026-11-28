@@ -1273,6 +1273,116 @@
         }
       }
     },
+    "/tools/crate-qou-clarabel": {
+      "post": {
+        "operationId": "crate-qou-clarabel",
+        "summary": "Rust crate qou-clarabel (crates/qou-clarabel)",
+        "description": "80-dps MpfrFloat Clarabel LP-dual & Frobenius cone certifier for proper gamma-gamma H_3(q) hadron rows (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Generated from `crates/qou-clarabel/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+        "tags": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "crate-qou-clarabel/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "qou_clarabel": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "Rust crate `qou-clarabel` at `crates/qou-clarabel` (`crates/qou-clarabel/Cargo.toml`)."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/crate-qou-clarabel.jsonld",
+        "x-invoke": {
+          "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p qou-clarabel"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "cargo"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "x-selection": {
+          "when": "Building, type-checking, or consuming `qou-clarabel` (`crates/qou-clarabel`).",
+          "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+          "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+        }
+      }
+    },
+    "/tools/crate-qou-gg-cli": {
+      "post": {
+        "operationId": "crate-qou-gg-cli",
+        "summary": "Rust crate qou-gg-cli (crates/qou-gg-cli)",
+        "description": "JSON CLI emitter combining qou-gg-eval and qou-clarabel for the Annex A Proper gamma-gamma Hadron & Light-Nuclei Datum Table (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Generated from `crates/qou-gg-cli/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+        "tags": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "crate-qou-gg-cli/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "qou_gg_cli": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "Rust crate `qou-gg-cli` at `crates/qou-gg-cli` (`crates/qou-gg-cli/Cargo.toml`)."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/crate-qou-gg-cli.jsonld",
+        "x-invoke": {
+          "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p qou-gg-cli"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "cargo"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "x-selection": {
+          "when": "Building, type-checking, or consuming `qou-gg-cli` (`crates/qou-gg-cli`).",
+          "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+          "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+        }
+      }
+    },
     "/tools/crate-qou-gg-core": {
       "post": {
         "operationId": "crate-qou-gg-core",
@@ -1323,6 +1433,61 @@
         ],
         "x-selection": {
           "when": "Building, type-checking, or consuming `qou-gg-core` (`crates/qou-gg-core`).",
+          "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+          "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+        }
+      }
+    },
+    "/tools/crate-qou-gg-eval": {
+      "post": {
+        "operationId": "crate-qou-gg-eval",
+        "summary": "Rust crate qou-gg-eval (crates/qou-gg-eval)",
+        "description": "80-dps proton-pinned MPFR evaluator for proper gamma-gamma hadrons, 4-photon products, H_4 flavoured nucleons, 6-strand lepton pairs, and A=1..4 T3-bonded nuclear braids (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Generated from `crates/qou-gg-eval/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+        "tags": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "crate-qou-gg-eval/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "qou_gg_eval": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "Rust crate `qou-gg-eval` at `crates/qou-gg-eval` (`crates/qou-gg-eval/Cargo.toml`)."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/crate-qou-gg-eval.jsonld",
+        "x-invoke": {
+          "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p qou-gg-eval"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "cargo"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "rust-crates-and-values",
+          "compute-author"
+        ],
+        "x-selection": {
+          "when": "Building, type-checking, or consuming `qou-gg-eval` (`crates/qou-gg-eval`).",
           "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
           "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
         }
@@ -4168,6 +4333,54 @@
         "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-gb-depth-period-bring-fig8.jsonld",
         "x-invoke": {
           "shell": "python3 -u computations/gb_depth_period_bring_fig8.py"
+        },
+        "x-install": {
+          "none": true
+        },
+        "x-requires": {
+          "runtime": [
+            "python3"
+          ],
+          "network": false
+        },
+        "x-satisfies": [
+          "compute-integration-watcher"
+        ]
+      }
+    },
+    "/tools/produce-gg-hadron-datum-table": {
+      "post": {
+        "operationId": "produce-gg-hadron-datum-table",
+        "summary": "Produce gg-hadron-datum-table.witness.json",
+        "description": "Run the computation `computations/gg_hadron_datum_table.py`, which writes `computations/gg-hadron-datum-table.witness.json`. Wired from 2 content block(s): `folio/quantum-observable-universe/appendix-knot-periodic-table/gg-hadron-datum-table-data.ts`, `folio/quantum-observable-universe/appendix-knot-periodic-table/gg-hadron-datum-table.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+        "tags": [
+          "compute-integration-watcher"
+        ],
+        "externalDocs": {
+          "description": "The Tool's page",
+          "url": "produce-gg-hadron-datum-table/"
+        },
+        "responses": {
+          "200": {
+            "description": "The Tool's declared outputs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "gg-hadron-datum-table": {
+                      "$ref": "#/components/schemas/RepoPath",
+                      "description": "`computations/gg-hadron-datum-table.witness.json`, a computation-witness node."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-tool-iri": "https://litlfred.github.io/qou/tools/produce-gg-hadron-datum-table.jsonld",
+        "x-invoke": {
+          "shell": "python3 -u computations/gg_hadron_datum_table.py"
         },
         "x-install": {
           "none": true
