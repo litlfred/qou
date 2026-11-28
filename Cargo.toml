@@ -18,10 +18,10 @@ members = [
   "crates/hecke-engine-c",
   "crates/pyhecke-native",
   "crates/qou-gg-core",
+  "crates/qou-values",
   # Parallel A1/A3 crates plug in here on landing:
   # "crates/qou-clarabel",
   # "crates/qou-gg-eval",
-  # "crates/qou-values",
 ]
 default-members = [
   "crates/borromean-recurrence-crt",
