@@ -53,6 +53,7 @@ export default chapter({
         "bring-conjugation-on-gm",
         "colour-strand-count",
         "index-five-subgroups-are-point-stabilisers",
+        "complex-volume-sign-placement",
         "chirality-sign-is-hypercharge-sign",
         "linking-does-not-fix-charge",
         "strand-slot-separates-gen1",
