@@ -2,7 +2,7 @@
   "$schema": "folio-bean-index/v1",
   "tile": {
     "beans": {
-      "count": 1788,
+      "count": 1789,
       "unit": "open beans"
     }
   },
@@ -42912,6 +42912,20 @@
       "file": "beans/defs/qou-he82--evaluate-the-faddeev-state-integral-at-the-substra.md"
     },
     {
+      "id": "qou-hebw",
+      "title": "GAP: derive the muon pin — CAL-2 relation m_μ/m_e = Vol(4₁)/ℏ_q² is a calibration, not a derivation",
+      "status": "todo",
+      "type": "task",
+      "priority": "",
+      "parent": "",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-28T01:59:16Z",
+      "updatedAt": "2026-11-28T01:59:16Z",
+      "preview": "Owner 2026-11-28 (cmsg …RqPTJH, …TBxqUe): 'swap everything back to the proton pin unless we can prove that relation'; 'Keep the muon pin as open bean to derive.' Card ruling 01:54Z: keep the relation, labelled a calibration.\n\nFacts: current words e=Hopf σ₀σ₁σ₀, μ=T(2,4) σ₀⁴σ₁⁻¹, 4₁ neutral. Ring ratio from def:mass-identity = (q⁸+q⁴−q²+1)/(q⁶(q⁴+1)), =1 at q=1, ≈0.762 at q₀ (measured 207, comparis",
+      "file": "beans/defs/qou-hebw--gap-derive-the-muon-pin-cal-2-relation-m-μm-e-vol.md"
+    },
+    {
       "id": "qou-hey2",
       "title": "GAP: feynman-eigenbasis.md:29 claims balanced HOMFLY skein IS the braiding characteristic equation — false, nonzero Hecke residual; 11 blocks carry Form B",
       "status": "completed",
@@ -60994,7 +61008,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T18:40:00Z",
-      "updatedAt": "2026-11-27T22:30:00Z",
+      "updatedAt": "2026-11-28T02:02:54Z",
       "preview": "Follow-up to qou-pa7n (PR #9537). Two results show Part A of `conj:regularity-breakdown` is false on every finite or two-dimensional model:\n- `partA_fails_on_truncation` (q_ns_modal_triad.lean) covers every finite truncation of the triad model;\n- `partA_fails_dec2d` (q_ns_dec_refinement.lean) covers every 2-complex at every resolution, given an enstrophy-skew advection.\n\n**Two routes forward.**\n\n1",
       "file": "beans/defs/qou-q3dc--gap-q-ns-part-a-needs-q-cg-coefficients-or-a-3-complex-dec-model.md"
     },
@@ -73714,7 +73728,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-07-18T17:08:37Z",
-      "updatedAt": "2026-11-28T01:31:36Z",
+      "updatedAt": "2026-11-28T02:14:03Z",
       "preview": "CORRECTED FRAMING (2026-07-18): A_ω≈3.8884 (=4√2·e^{-3/8}) is the EVEN-face, q=1 BINDING-period Stokes constant (co-equational, bar-even, binding a_D only) — NOT the odd-face keystone. Do not conflate.\n\nG3 keystone = the bar-ODD (Q_β/Φ_b) monodromy datum z(q0)→S whose archimedean eval must reproduce S(muon)=+0.00968298, S(proton)=-0.03945936. UN-MEASURED. It is a categorical Stokes/monodromy datum",
       "file": "beans/defs/qou-vr3q--deep-dive-1-g3-monodromystokes-constant-keystone-d.md"
     },
@@ -88348,8 +88362,8 @@
         "share": null
       }
     ],
-    "orphanOpen": 137,
-    "openTotal": 1788,
+    "orphanOpen": 138,
+    "openTotal": 1789,
     "coveredOpen": 1643,
     "duplicateIds": 0
   }
