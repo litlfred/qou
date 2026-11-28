@@ -304,6 +304,35 @@ theorem commute_pl_zag {N t M p k : ℕ} (h0 : t + M ≤ N) (h : t + M + 1 ≤ p
   intertwine _ _ _ (fun j => by
     rw [pl_e, ← gen_eq_E]; exact (commute_zag k (by omega)).eq) x
 
+/-- Two algebra maps out of `TL_m` that agree on generators agree. -/
+theorem algHom_eq_of_gen {m N : ℕ} (f g : TLFin K δ m →ₐ[K] TLFin K δ N)
+    (h : ∀ i, f (e K δ adjFin i) = g (e K δ adjFin i)) (x : TLFin K δ m) : f x = g x := by
+  simpa using intertwine f g 1 (fun i => by rw [mul_one, one_mul, h i]) x
+
+theorem pl_incl {N t M : ℕ} (h : t + (M + 1) ≤ N) (x : TLFin K δ M) :
+    pl δ t (M + 1) h (incl δ M x) = pl δ t M (by omega) x :=
+  algHom_eq_of_gen ((pl δ t (M + 1) h).comp (incl δ M)) (pl δ t M (by omega)) (fun i => by
+    rw [AlgHom.comp_apply, incl_e, pl_e, pl_e]; rfl) x
+
+/-- **A cup slides through a placed block.** In `TL_N` with `N = n + m + 3`: the cup that
+`capEmb` puts after `x`, followed by the block `y`, pushed through `zig (n+1) (m+2)`, comes out as
+the block `y` moved two strands left, with no cup between `x` and `y`. -/
+theorem cup_slide_block (hδ : δ ≠ 0) {N n m : ℕ} (hN : n + m + 3 = N) (x : TLFin K δ n) (y : TLFin K δ m) :
+    pl δ 0 (n + 1 + 1) (by omega) (capEmb δ n x) * pl δ (n + 3) m (by omega) y *
+        zig δ N (n + 1) (m + 2) =
+      zig δ N (n + 1) (m + 2) * (pl δ 0 n (by omega) x * pl δ (n + 1) m (by omega) y) := by
+  have hE : pl δ 0 (n + 1 + 1) (N := N) (by omega) (e K δ adjFin (Fin.last (n + 1))) = gen δ N (n + 1) := by
+    rw [pl_e, gen_eq_E]; simp
+  have hx : pl δ 0 (n + 1 + 1) (N := N) (by omega) (incl δ (n + 1) (incl δ n x)) = pl δ 0 n (N := N) (by omega) x := by
+    rw [pl_incl, pl_incl]
+  have hs := pl_shift_zig (δ := δ) (N := N) (t := n + 1) (M := m) (p := n + 1) (k := m + 1)
+    (by omega) (by omega) le_rfl (by omega) (by omega) y
+  have hc := commute_pl_zig (δ := δ) (N := N) (t := 0) (M := n) (p := n + 1) (k := m + 2)
+    (by omega) (Or.inl (by omega)) x
+  rw [capEmb, map_smul, map_mul, hx, hE, smul_mul_assoc, smul_mul_assoc, mul_assoc, mul_assoc,
+    hs, ← mul_assoc (gen δ N (n + 1)), gen_mul_zig (by omega), smul_mul_assoc, mul_smul_comm,
+    smul_smul, inv_mul_cancel₀ hδ, one_smul, ← mul_assoc, hc.eq, mul_assoc]
+
 end Place
 
 end QOU.HeckeTemperleyLieb.TLZigzag
