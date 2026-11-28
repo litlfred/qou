@@ -154,3 +154,10 @@ Sorry-free; axioms propext, Classical.choice, Quot.sound.
 `Φ` are bundled in `AssocData D` (nilpotent scale `c`, counit, `Inv512 (Fil N 1) Φ`, constant
 term 1, pentagon in `U4 N`). `Rep.monoidal P` is a `def`, not an instance, since it depends on
 `P`. The braiding `σ ∘ R` comes next. Sorry-free; axioms propext, Classical.choice, Quot.sound.
+
+`HAdicDrinfeld/ModuleBraiding.lean`: the braiding `β_{X,Y} = σ ∘ ρ(R)` for `R = E(c t)`.
+`R` is a unit when `E` has constant term 1, because `c • (A ⊗ A)` is a nil ideal when
+`c ^ N = 0` (`nilIdeal_cIdeal`, `rMatrix_isUnit`). `braidingHom` is `A`-linear by
+`rMatrix_quasiCocomm` and cocommutativity of `Δ`; `braiding` is the isomorphism with inverse
+`ρ(R⁻¹) ∘ σ⁻¹`; `braidingHom_naturality`. The two module hexagons come next.
+Sorry-free; axioms propext, Classical.choice, Quot.sound.
