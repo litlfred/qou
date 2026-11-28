@@ -243,4 +243,173 @@ theorem slideV_mul_slideU (hδ : δ ≠ 0) (a m c : ℕ) {y : TLFin K δ m} (hy 
     rw [slideV_mul_slideU_step hδ (by omega) (by omega) y y, slideV_mul_slideU hδ a m c hy hc hca k,
       ← TLRectHom.P_succ_succ δ (by omega), pl_zero_P (by omega)]
 
+/-! ## Adding two strands to the second factor
+
+The second factor gets its new cup at the right end, so no slide is needed: the slide words
+of `capEmb y` are `capEmb` of the slide words of `y`. -/
+
+theorem pl_gen {N t M i : ℕ} (h : t + M ≤ N) (hi : i < M) :
+    pl δ t M h (gen δ M i) = gen δ N (t + i) := by
+  rw [gen_eq_E, gen_eq_E, pl_E t M h hi]
+
+theorem pl_zig {N t M p : ℕ} (h : t + M ≤ N) :
+    ∀ k, p + k ≤ M → pl δ t M h (zig δ M p k) = zig δ N (t + p) k
+  | 0, _ => by simp [zig]
+  | k + 1, hk => by
+    rw [zig_succ, zig_succ, map_mul, pl_zig h k (by omega), pl_gen h (by omega), add_assoc]
+
+theorem pl_capEmb {N t L : ℕ} (h : t + (L + 1 + 1) ≤ N) (z : TLFin K δ L) :
+    pl δ t (L + 1 + 1) h (capEmb δ L z) =
+      δ⁻¹ • (pl δ t L (by omega) z * gen δ N (t + L + 1)) := by
+  rw [capEmb, map_smul, map_mul, pl_incl, pl_incl, pl_e, gen_eq_E]
+  simp [add_assoc]
+
+theorem pl_zag {N t M p : ℕ} (h : t + M ≤ N) :
+    ∀ k, p + k ≤ M → pl δ t M h (zag δ M p k) = zag δ N (t + p) k
+  | 0, _ => by simp [zag]
+  | k + 1, hk => by
+    rw [zag_succ, zag_succ, map_mul, pl_zag h k (by omega), pl_gen h (by omega), add_assoc]
+
+theorem slideBase_capEmb_right (a m : ℕ) (y : TLFin K δ m) (n : ℕ) :
+    slideBase δ a (m + 1 + 1) (capEmb δ m y) n = capEmb δ (n + m + 1) (slideBase δ a m y n) := by
+  unfold slideBase
+  split_ifs with h
+  · subst h
+    rw [pl_zero_self, pl_zero_self, TLTensorCorner.tens_capEmb_right]
+  · rw [capEmb_zero]
+
+/-- **The core word identity.** A block `Y` on the first `L + 1` strands, then the cups at
+`L + 1` and `L + 3`: pushing it through the long zigzag is the same as pushing it through the
+short one and adding the cup at `L + 3` afterwards. -/
+theorem zig_capEmb_two {N L p j : ℕ} (hp : p + j = L + 1) (hN : L + 3 < N) (Y : TLFin K δ N)
+    (hY : ∀ i, L + 1 ≤ i → Commute Y (gen δ N i)) :
+    zig δ N p (j + 1 + 1 + 1) * (Y * gen δ N (L + 1) * gen δ N (L + 3)) =
+      zig δ N p (j + 1) * (Y * gen δ N (L + 1)) * gen δ N (L + 3) := by
+  set g1 := gen δ N (L + 1)
+  set g2 := gen δ N (L + 2)
+  set g3 := gen δ N (L + 3)
+  set z := zig δ N p (j + 1)
+  have hz : zig δ N p (j + 1 + 1 + 1) = z * g2 * g3 := by
+    simp only [z, zig_succ, g2, g3]
+    rw [show p + (j + 1) = L + 2 by omega, show p + (j + 1 + 1) = L + 3 by omega]
+  have hz1 : z * g1 = δ • z := by
+    have := zig_mul_gen (δ := δ) (n := N) (p := p) (k := j) (by omega)
+    rwa [hp] at this
+  have hz121 : z * g2 * g1 = z := by
+    simp only [z, zig_succ]
+    rw [hp, mul_assoc, mul_assoc, ← mul_assoc g1, gen_adj_up (by omega)]
+  have h13 : g3 * g1 = g1 * g3 := (commute_gen (Or.inl (by omega))).eq.symm
+  have h33 : g3 * g3 = δ • g3 := gen_sq (by omega)
+  have hY1 := (hY (L + 1) le_rfl).eq
+  have hY23 : Commute Y (g2 * g3) := (hY (L + 2) (by omega)).mul_right (hY (L + 3) (by omega))
+  have hY21 : Commute Y (g2 * g1) := (hY (L + 2) (by omega)).mul_right (hY (L + 1) le_rfl)
+  rw [hz]
+  calc z * g2 * g3 * (Y * g1 * g3)
+      = z * ((g2 * g3) * Y) * (g1 * g3) := by simp only [mul_assoc]
+    _ = z * Y * (g2 * (g3 * g1) * g3) := by rw [← hY23.eq]; simp only [mul_assoc]
+    _ = δ • (z * (Y * (g2 * g1)) * g3) := by
+        rw [h13, mul_assoc g2, mul_assoc g1, h33]
+        simp only [mul_smul_comm, mul_assoc]
+    _ = δ • (z * Y * g3) := by
+        rw [hY21.eq, ← mul_assoc, ← mul_assoc, hz121]
+    _ = z * (Y * g1) * g3 := by
+        rw [hY1, ← mul_assoc, hz1, smul_mul_assoc, smul_mul_assoc]
+
+theorem slideU_capEmb_right (hδ : δ ≠ 0) (a m : ℕ) (y : TLFin K δ m) :
+    ∀ n, slideU δ a (m + 1 + 1) (capEmb δ m y) n = capEmb δ (n + m + 1) (slideU δ a m y n)
+  | 0 => slideBase_capEmb_right a m y 0
+  | 1 => slideBase_capEmb_right a m y 1
+  | n + 2 => by
+    by_cases h : a ≤ n
+    · rw [slideU_step _ h, slideU_step _ h, slideU_capEmb_right hδ a m y n]
+      refine (pl_zero_self (L := n + 1 + 1 + m + 1 + 1 + 1) (by omega) _).symm.trans
+        (Eq.trans ?_ (pl_zero_self (L := n + 1 + 1 + m + 1 + 1 + 1) (by omega) _))
+      rw [map_smul, map_mul]
+      erw [pl_zig (M := n + 1 + 1 + m + 1 + 1 + 1) (p := n + 1) _ (m + 1 + 1 + 2) (by omega)]
+      rw [pl_pl, pl_capEmb (L := n + (m + 1 + 1) + 1), pl_capEmb (L := n + m + 1)]
+      rw [pl_capEmb (L := n + 1 + 1 + m + 1), map_smul, map_mul,
+        pl_zig (M := n + 1 + 1 + m + 1) (p := n + 1) _ (m + 2) (by omega)]
+      erw [pl_capEmb (L := n + m + 1)]
+      rw [map_smul, map_mul, pl_pl, pl_gen _ (by omega)]
+      simp only [Nat.zero_add, smul_mul_assoc, mul_smul_comm, smul_smul]
+      congr 1
+      rw [show gen δ (n + 1 + 1 + m + 1 + 1 + 1) (n + (m + 1 + 1) + 1 + 1) =
+          gen δ (n + 1 + 1 + m + 1 + 1 + 1) (n + m + 1 + 3) from congrArg _ (by omega),
+        show gen δ (n + 1 + 1 + m + 1 + 1 + 1) (n + 1 + 1 + m + 1 + 1) =
+          gen δ (n + 1 + 1 + m + 1 + 1 + 1) (n + m + 1 + 3) from congrArg _ (by omega)]
+      exact zig_capEmb_two (N := n + 1 + 1 + m + 1 + 1 + 1) (p := n + 1) (L := n + m + 1) (j := m + 1) (by omega) (by omega) (pl δ 0 (n + m + 1) (by omega) (slideU δ a m y n)) (fun i hi => by
+        have := commute_pl_zig (δ := δ) (t := 0) (M := n + m + 1) (p := i) (k := 1)
+          (N := n + 1 + 1 + m + 1 + 1 + 1) (by omega) (Or.inl (by omega)) (slideU δ a m y n)
+        rwa [zig_one] at this)
+    · rw [slideU.eq_3, slideU.eq_3, if_neg h, if_neg h]
+      exact slideBase_capEmb_right a m y (n + 2)
+
+/-- The mirror of `zig_capEmb_two`, through `zag`. -/
+theorem zag_capEmb_two {N L p j : ℕ} (hp : p + j = L + 1) (hN : L + 3 < N) (Y : TLFin K δ N) :
+    Y * gen δ N (L + 1) * gen δ N (L + 3) * zag δ N p (j + 1 + 1 + 1) =
+      Y * gen δ N (L + 1) * zag δ N p (j + 1) * gen δ N (L + 3) := by
+  set g1 := gen δ N (L + 1)
+  set g2 := gen δ N (L + 2)
+  set g3 := gen δ N (L + 3)
+  set z := zag δ N p (j + 1)
+  have hz : zag δ N p (j + 1 + 1 + 1) = g3 * (g2 * z) := by
+    simp only [z, zag_succ, g2, g3]
+    rw [show p + (j + 1) = L + 2 by omega, show p + (j + 1 + 1) = L + 3 by omega]
+  have hzj : z = g1 * zag δ N p j := by simp only [z, zag_succ, g1]; rw [hp]
+  have h121 : g1 * g2 * g1 = g1 := gen_adj_up (by omega)
+  have h11 : g1 * g1 = δ • g1 := gen_sq (by omega)
+  have h13 : g1 * g3 = g3 * g1 := (commute_gen (Or.inl (by omega))).eq
+  have h33 : g3 * g3 = δ • g3 := gen_sq (by omega)
+  have hz3 : z * g3 = g3 * z := (commute_zag (j + 1) (Or.inr (by omega))).eq.symm
+  rw [hz]
+  calc Y * g1 * g3 * (g3 * (g2 * z))
+      = δ • (Y * (g1 * g3) * g2 * z) := by
+        rw [mul_assoc (Y * g1) g3, ← mul_assoc g3 g3, h33]
+        simp only [smul_mul_assoc, mul_smul_comm, mul_assoc]
+    _ = δ • (Y * g3 * z) := by
+        rw [h13, hzj]; simp only [mul_assoc]; rw [← mul_assoc g1 g2, ← mul_assoc (g1 * g2), h121]
+    _ = Y * g1 * z * g3 := by
+        rw [mul_assoc (Y * g1) z, hz3, ← mul_assoc, mul_assoc Y g1 g3, h13, hzj]
+        simp only [mul_assoc]
+        rw [← mul_assoc g1 g1, h11]
+        simp only [smul_mul_assoc, mul_smul_comm]
+
+theorem slideV_capEmb_right (hδ : δ ≠ 0) (a m : ℕ) (y : TLFin K δ m) :
+    ∀ n, slideV δ a (m + 1 + 1) (capEmb δ m y) n = capEmb δ (n + m + 1) (slideV δ a m y n)
+  | 0 => slideBase_capEmb_right a m y 0
+  | 1 => slideBase_capEmb_right a m y 1
+  | n + 2 => by
+    by_cases h : a ≤ n
+    · rw [slideV_step _ h, slideV_step _ h, slideV_capEmb_right hδ a m y n]
+      refine (pl_zero_self (L := n + 1 + 1 + m + 1 + 1 + 1) (by omega) _).symm.trans
+        (Eq.trans ?_ (pl_zero_self (L := n + 1 + 1 + m + 1 + 1 + 1) (by omega) _))
+      rw [map_smul, map_mul]
+      erw [pl_zag (M := n + 1 + 1 + m + 1 + 1 + 1) (p := n + 1) _ (m + 1 + 1 + 2) (by omega)]
+      rw [pl_pl, pl_capEmb (L := n + (m + 1 + 1) + 1)]
+      erw [pl_capEmb (L := n + m + 1)]
+      rw [pl_capEmb (L := n + 1 + 1 + m + 1), map_smul, map_mul,
+        pl_zag (M := n + 1 + 1 + m + 1) (p := n + 1) _ (m + 2) (by omega)]
+      erw [pl_capEmb (L := n + m + 1)]
+      rw [map_smul, map_mul, pl_pl, pl_gen _ (by omega)]
+      simp only [Nat.zero_add, smul_mul_assoc, smul_smul]
+      congr 1
+      rw [show gen δ (n + 1 + 1 + m + 1 + 1 + 1) (n + (m + 1 + 1) + 1 + 1) =
+          gen δ (n + 1 + 1 + m + 1 + 1 + 1) (n + m + 1 + 3) from congrArg _ (by omega),
+        show gen δ (n + 1 + 1 + m + 1 + 1 + 1) (n + 1 + 1 + m + 1 + 1) =
+          gen δ (n + 1 + 1 + m + 1 + 1 + 1) (n + m + 1 + 3) from congrArg _ (by omega)]
+      exact zag_capEmb_two (N := n + 1 + 1 + m + 1 + 1 + 1) (p := n + 1) (L := n + m + 1)
+        (j := m + 1) (by omega) (by omega) (pl δ 0 (n + m + 1) (by omega) (slideV δ a m y n))
+    · rw [slideV.eq_3, slideV.eq_3, if_neg h, if_neg h]
+      exact slideBase_capEmb_right a m y (n + 2)
+
+/-- **Adding two strands to the second factor.** Conjugating `x ⊗ capEmb ψ` by the slide words
+of `capEmb y`, `capEmb y'` is `capEmb` of conjugating `x ⊗ ψ`. -/
+theorem slide_conj_capEmb_right (hδ : δ ≠ 0) {a a' m n : ℕ} (y y' : TLFin K δ m)
+    (x : TLFin K δ n) (ψ : TLFin K δ m) :
+    slideV δ a' (m + 1 + 1) (capEmb δ m y') n * tens δ x (capEmb δ m ψ) *
+        slideU δ a (m + 1 + 1) (capEmb δ m y) n =
+      capEmb δ (n + m + 1) (slideV δ a' m y' n * tens δ x ψ * slideU δ a m y n) := by
+  rw [slideV_capEmb_right hδ, slideU_capEmb_right hδ, TLTensorCorner.tens_capEmb_right,
+    capEmb_mul3 hδ]
+
 end QOU.HeckeTemperleyLieb.TLSlideIso
