@@ -7,7 +7,7 @@ priority: high
 tags:
     - stability
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-28T11:18:00Z
+updated_at: 2026-11-28T11:26:00Z
 parent: qou-5vkl
 blocked_by:
     - qou-10v9
@@ -200,3 +200,5 @@ Verbatim (`2026-11-28`): *"make sure you are working proton pin... no longer muo
   `#9502` (`32c51829a9d`, closed `qou-mk34`), `#9629` (`f22289709b8`), `#9687` (`00a77cbee51`), `#9722` (`6f89037b0c0`), `#9737` (`5c2b8ef8a22`), `#9747` (`e04d18bbd9d`), `#9777` (`3571e500084`), `#9811` (`aa875534101`), `#9995` (`b9b18345023`, lossless `--merge` recovery after GitHub rebase-merge dropped `#9934`'s 2 commits over merge-from-main `e23577eb3ab`), `#9983` (`3fbba15854a`), and `#9994` (`4594f0db137`, closed `qou-yzp7`).
 
 2026-11-28 (merge-steward): Landed PR #9996 (`qou-ii2k` speculative-open-problems split -> `fc10afc52fad532b0ae16a321185369fe4dcc8f6`, closed `qou-ii2k`, commented on #9984/#9979) and PR #9997 (`qou-5lct` Mulliken stoichiometry -> `2ef4ef0744ad28ff38a558f3e4288c728e00e19d`, closed `qou-5lct`, `qou-d9iv` kept `in-progress` for `qou-v2om`).
+
+2026-11-28 (merge-steward): Landed PR #9998 (Owner Card A1 hadron-level knot table retirement -> `4e47aed7aee7743b607f62773d7c5f3d7e1fc172`) and PR #9999 (`qou-v2om` / `qou-d9iv` Tranche B -> `8fcfa9e031cb68e47bfbd05cb31fbaa2fbf60c3d`; closed `qou-v2om` and `qou-d9iv`).
