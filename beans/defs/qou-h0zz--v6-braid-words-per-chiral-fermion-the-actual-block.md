@@ -431,3 +431,6 @@ Matter = EVEN exterior part Λ⁰⊕Λ²⊕Λ⁴ = 1⊕10⊕5̄ (Spin(10) 16); o
 
 ## 2026-11-27 — slot map derived (PR #9811, commit 92f312ca2d9)
 `SlotFromEvenShape.lean`, sorry-free: the GG slot of `StrandSlotSeparatesGen1` is the shape of an even subset meeting colour once or twice ({c,3},{c,4},{c,c+1},{c}^c — 12 states; 4 colour-singlet leptons). Charges at α=1/6 match slotCharge and are distinct, so `slot_forced`: any slot assignment reproducing SM charges is GG. Slot map is no longer an input. Still open: odd strands; dual flag = chirality sign (P–C relative orientation).
+
+## 2026-11-28 — odd strands follow from chirality (PR #9811, commit e22a176a6c7)
+`OddStrandsForceChirality.lean`, sorry-free, general n: matter (even part) is closed under conjugation iff n even (dichotomy: all or none of the conjugates are matter); for even n every odd charge moment vanishes identically (vector-like). So "strands odd" ⇔ "matter chiral". Still open: why n = 5 (3 colour + 2 isospin), and the chirality sign.
