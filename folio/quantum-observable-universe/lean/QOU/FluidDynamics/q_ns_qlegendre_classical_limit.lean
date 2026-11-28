@@ -24,12 +24,31 @@ The value at `q = 1` is therefore an evaluation, not a limit. No ε–δ argumen
 * `Rc_ge`: for every `q ≥ 1`, `Rc q s · q^{4(5s+7)} ≥ (s+1)²/16`. So every mode with
   `q^{20s+28} ≤ 2` keeps a normalised squared coupling `≥ (s+1)²/32`. That window holds
   `s ≈ ln 2/(20 ln q)` modes, and it grows without bound as `q → 1⁺`.
+* `Rc_le`: for `q² > 1`, `Rc q s · q^{4s} · (q² − 1)³(q⁴ − 1)²(q⁶ − 1) ≤ q⁸`, so `Rc` decays
+  like `q^{−4s}` with a prefactor of order `(q² − 1)^{−6}`.
+
+## Surreal reading: where the triad transfer lives
+
+Put `q² = 1 + δ` with `δ` a positive infinitesimal (`q = 1 + ε`, `δ ≈ 2ε`). The two bounds pin
+the band of modes that carry a non-negligible raising coupling:
+
+* if `s·δ` is at most a small standard constant (`(1 + δ)^{10s+14} ≤ 2`), then
+  `Rc ≥ (s+1)²/32`, which is infinite once `s` is infinite;
+* if `s·δ ≥ 3.5·log(1/δ)` (roughly), then `(1 + δ)^{2s} ≥ δ^{−7}` and `Rc ≤ 12⁻¹δ·(1 + O(δ))`,
+  which is infinitesimal.
+
+So the edge `s*` of the coupled band has ω-grade exactly `1` (between `c/δ` and
+`C·log(1/δ)/δ`). This is the triad-level counterpart of the grade-1 cap in
+`qou_ns_surreal_bridge` (`enstrophy_grade_one_of_dissipation_closure`): above ω-grade `1` (up to the log) the raising
+coupling is infinitesimal. Whether infinitely many infinitesimal steps can still move a finite
+amount of energy is not decided here; that needs the other velocity modes and the dissipation.
 
 All algebraic. No empirical value enters. Sorry-free.
 
 ## Not established
 
-* An upper bound matching `Rc_ge`, and the sharp location of the peak in `s` for fixed `q`.
+* The sharp location of the peak in `s` for fixed `q`, and a Lean statement of the surreal
+  window reading below (it is read off `Rc_ge` and `Rc_le`, not proved as a surreal theorem).
 * The factor `1/‖βδ‖²` of `C̃(r)²`, other velocity modes, and Part A itself.
 -/
 
@@ -221,6 +240,97 @@ theorem Rc_ge (hq : 1 ≤ (q : K)) (s : ℕ) :
         rw [heq]; exact h1
     _ ≤ jk ((q : K) * q) (s + 1) ^ 2 * (nfc PP (s + 1) * PP ^ (8 * (s + 1) + 4)) := by
         gcongr
+
+/-! ## A matching upper bound for `q² > 1`
+
+For `z ≥ 1`, `a z² − 1 ≥ (a − 1) z²`. Applied to the four denominator factors of
+`nf` this gives `nf P z · (P − 1)(P² − 1)²(P³ − 1) · z² ≤ P⁶`, and with `[s+1]_P (P − 1) ≤ P^{s+1}`
+it gives `Rc q s · P^{2s} · (P − 1)³(P² − 1)²(P³ − 1) ≤ P⁴`. So `Rc` decays like `q^{−4s}`, with a
+prefactor that grows like `(P − 1)^{−6}` as `q → 1⁺`. -/
+
+theorem sq_sub_one_ge (a : K) {z : K} (hz : 1 ≤ z) : (a - 1) * z ^ 2 ≤ a * z ^ 2 - 1 := by
+  have : 1 ≤ z ^ 2 := one_le_pow₀ hz
+  nlinarith
+
+theorem nf_le {P z : K} (hP : 1 < P) (hz : 1 ≤ z) :
+    nf P z * ((P - 1) * (P ^ 2 - 1) ^ 2 * (P ^ 3 - 1)) * z ^ 2 ≤ P ^ 6 := by
+  have hP0 : 0 < P := lt_trans one_pos hP
+  have hz0 : 0 < z := lt_of_lt_of_le one_pos hz
+  have hP2 : 1 < P ^ 2 := one_lt_pow₀ hP (by norm_num)
+  have hP3 : 1 < P ^ 3 := one_lt_pow₀ hP (by norm_num)
+  have g1 := sq_sub_one_ge P hz
+  have g2 := sq_sub_one_ge (P ^ 2) hz
+  have g3 := sq_sub_one_ge (P ^ 3) hz
+  have p1 : 0 < (P - 1) * z ^ 2 := by have := sub_pos.mpr hP; positivity
+  have p2 : 0 < (P ^ 2 - 1) * z ^ 2 := by have := sub_pos.mpr hP2; positivity
+  have p3 : 0 < (P ^ 3 - 1) * z ^ 2 := by have := sub_pos.mpr hP3; positivity
+  have a1 : 0 ≤ P * z - 1 := by nlinarith
+  have hnum : P ^ 2 * z ^ 2 * (P * z - 1) ^ 4 ≤ P ^ 6 * z ^ 6 := by
+    have : (P * z - 1) ^ 4 ≤ (P * z) ^ 4 := pow_le_pow_left₀ a1 (by linarith) 4
+    have h0 : 0 ≤ P ^ 2 * z ^ 2 := by positivity
+    nlinarith [mul_le_mul_of_nonneg_left this h0]
+  have hden : ((P - 1) * z ^ 2) * ((P ^ 2 - 1) * z ^ 2) ^ 2 * ((P ^ 3 - 1) * z ^ 2) ≤
+      (P * z ^ 2 - 1) * (P ^ 2 * z ^ 2 - 1) ^ 2 * (P ^ 3 * z ^ 2 - 1) := by
+    have n1 : 0 ≤ P * z ^ 2 - 1 := by linarith
+    have n2 : 0 ≤ P ^ 2 * z ^ 2 - 1 := by linarith
+    have n3 : 0 ≤ P ^ 3 * z ^ 2 - 1 := by linarith
+    gcongr
+  have hD : 0 < (P * z ^ 2 - 1) * (P ^ 2 * z ^ 2 - 1) ^ 2 * (P ^ 3 * z ^ 2 - 1) :=
+    lt_of_lt_of_le (by positivity) hden
+  have hc : 0 < (P - 1) * (P ^ 2 - 1) ^ 2 * (P ^ 3 - 1) := by
+    have := sub_pos.mpr hP; have := sub_pos.mpr hP2; have := sub_pos.mpr hP3; positivity
+  unfold nf
+  rw [div_mul_eq_mul_div, div_mul_eq_mul_div, div_le_iff₀ hD]
+  calc P ^ 2 * z ^ 2 * (P * z - 1) ^ 4 * ((P - 1) * (P ^ 2 - 1) ^ 2 * (P ^ 3 - 1)) * z ^ 2
+      ≤ P ^ 6 * z ^ 6 * ((P - 1) * (P ^ 2 - 1) ^ 2 * (P ^ 3 - 1)) * z ^ 2 := by gcongr
+    _ = P ^ 6 * (((P - 1) * z ^ 2) * ((P ^ 2 - 1) * z ^ 2) ^ 2 * ((P ^ 3 - 1) * z ^ 2)) := by
+        ring
+    _ ≤ P ^ 6 * ((P * z ^ 2 - 1) * (P ^ 2 * z ^ 2 - 1) ^ 2 * (P ^ 3 * z ^ 2 - 1)) := by
+        gcongr
+
+/-- **Upper bound for `q² > 1`:**
+`Rc q s · q^{4s} · (q² − 1)³(q⁴ − 1)²(q⁶ − 1) ≤ q⁸`. -/
+theorem Rc_le (hq : 1 < (q : K) * q) (s : ℕ) :
+    Rc q s * ((q : K) * q) ^ (2 * s) *
+        ((PP - 1) ^ 3 * (PP ^ 2 - 1) ^ 2 * (PP ^ 3 - 1)) ≤ PP ^ 4 := by
+  have hP0 : 0 < PP := lt_trans one_pos hq
+  have hp : ∀ m : ℕ, PP ^ (m + 1) ≠ 1 := fun m => (one_lt_pow₀ hq (Nat.succ_ne_zero m)).ne'
+  have hqq : qi * (q : K) = 1 := by simp
+  have hA : (kap q s * qi) ^ 2 * PP ^ (2 * s + 2) = jk PP (s + 1) ^ 2 := by
+    unfold kap
+    rw [show (qi * jk PP (s + 1) * (qi * qi) ^ s * qi) ^ 2 * PP ^ (2 * s + 2)
+        = jk PP (s + 1) ^ 2 * (qi * q) ^ (4 * s + 4) by ring, hqq, one_pow, mul_one]
+  set z := PP ^ (s + 1) with hzdef
+  have hz : 1 ≤ z := one_le_pow₀ hq.le
+  have hj : jk PP (s + 1) * (PP - 1) ≤ z := by
+    rw [← pow_sub_one_eq]; linarith
+  have hj0 : 0 ≤ jk PP (s + 1) := le_trans (Nat.cast_nonneg _) (jk_ge_of_one_le hq.le (s + 1))
+  have hn := nf_le hq hz
+  have hnf0 : 0 ≤ nf PP z := by
+    have h := nf_pos_of_one_lt hq hz; exact h.le
+  have hc0 : 0 ≤ (PP - 1) * (PP ^ 2 - 1) ^ 2 * (PP ^ 3 - 1) := by
+    have := sub_pos.mpr hq
+    have := sub_pos.mpr (one_lt_pow₀ hq (n := 2) (by norm_num))
+    have := sub_pos.mpr (one_lt_pow₀ hq (n := 3) (by norm_num)); positivity
+  have key : Rc q s * PP ^ (2 * s) * ((PP - 1) ^ 3 * (PP ^ 2 - 1) ^ 2 * (PP ^ 3 - 1)) * PP ^ 2 =
+      (jk PP (s + 1) * (PP - 1)) ^ 2 *
+        (nf PP z * ((PP - 1) * (PP ^ 2 - 1) ^ 2 * (PP ^ 3 - 1))) := by
+    rw [Rc, ← nf_eq_nfc hp, ← hzdef,
+      show (jk PP (s + 1) * (PP - 1)) ^ 2 = jk PP (s + 1) ^ 2 * (PP - 1) ^ 2 by ring, ← hA]
+    ring
+  have hsq : (jk PP (s + 1) * (PP - 1)) ^ 2 ≤ z ^ 2 :=
+    pow_le_pow_left₀ (mul_nonneg hj0 (sub_pos.mpr hq).le) hj 2
+  have hzP : z ^ 2 = PP ^ (2 * s) * PP ^ 2 := by rw [hzdef]; ring
+  have hfin : Rc q s * PP ^ (2 * s) * ((PP - 1) ^ 3 * (PP ^ 2 - 1) ^ 2 * (PP ^ 3 - 1)) * PP ^ 2
+      ≤ PP ^ 4 * PP ^ 2 := by
+    rw [key]
+    calc (jk PP (s + 1) * (PP - 1)) ^ 2 * (nf PP z * ((PP - 1) * (PP ^ 2 - 1) ^ 2 * (PP ^ 3 - 1)))
+        ≤ z ^ 2 * (nf PP z * ((PP - 1) * (PP ^ 2 - 1) ^ 2 * (PP ^ 3 - 1))) := by
+          gcongr
+      _ = nf PP z * ((PP - 1) * (PP ^ 2 - 1) ^ 2 * (PP ^ 3 - 1)) * z ^ 2 := by ring
+      _ ≤ PP ^ 6 := hn
+      _ = PP ^ 4 * PP ^ 2 := by ring
+  exact le_of_mul_le_mul_right hfin (by positivity)
 
 end Ordered
 
