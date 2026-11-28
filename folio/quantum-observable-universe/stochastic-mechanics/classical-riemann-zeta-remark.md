@@ -1,3 +1,3 @@
 Each maximal ideal $\mathfrak{m}$ of norm $N(\mathfrak{m}) = p^f$ contributes a local factor to the Euler product. The adelic completion yields the global zeta function.
 
-The non-trivial zeros of $\zeta(s)$ are the classical shadows of the Reeb eigenvalues. Under the spectral coordinate mapping, $\alpha_i = q^{\rho_i} \to e^{-\rho_i \log p}$ at each prime $p$. The global zeros arise from the coherent alignment of the local spectra.
+A reading the framework would like, and does not have: that the non-trivial zeros of $\zeta(s)$ are classical shadows of Reeb eigenvalues, with $\alpha_i = q^{\rho_i}$ becoming $e^{-\rho_i \log p}$ at each prime. Two things stand in the way. No Reeb operator with a spectrum tied to $\zeta$ is constructed. And the local Frobenius eigenvalues of Bring's curve, the only local spectra the book has, belong to $L(E,s)$ and not to $\zeta(s)$, whose local factors carry no eigenvalue at all.
