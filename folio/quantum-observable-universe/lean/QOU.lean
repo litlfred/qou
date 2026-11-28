@@ -2155,3 +2155,5 @@ import QOU.Nuclear.CoulombRingLedger
 import QOU.Nuclear.CoulombRingMu
 import QOU.Nuclear.CoulombBlockSize
 import QOU.Nuclear.IsobaricBetaWritheCoulombStep
+import QOU.StandardModel.ElectroweakConditionalDischarge
+import QOU.StandardModel.AlphaEmConditionalReduction
