@@ -157,6 +157,52 @@ two-parameter table, the newest-box law `q_n(s, c)`. Its natural strengthening i
 `|c|` given `s` is stochastically increasing in `s` for `s ≥ 4`. That strengthening is not checked
 here.
 
+## Result 4c (2026-11-28): same-parity total positivity, and a shift inequality
+
+Write `a = |c|` and `K_n(s, a) = n!·Pr(s, |c| = a)`, an integer. Since `s = i + j` and `c = j − i`,
+`a ≡ s (mod 2)`, so each row `s` of `K_n` lives on one parity class of `a`.
+
+**TP2-par (measured, not proved).** Every 2×2 minor of `K_n` whose rows have the same parity is
+non-negative: for `s < s'` with `s ≡ s'` and `a < a'`,
+`K(s, a)·K(s', a') ≥ K(s, a')·K(s', a)`. Exact check: zero violations for every `n ≤ 45`
+(witness `n ≤ 30`; `n = 31…45` a separate run with the same integer arithmetic). Full TP2 fails,
+but only through parity zeros, for example rows `3, 4` and columns `0, 1`.
+
+**What TP2-par gives (proved implication).** Same-parity TP2 says the law of `a` given `s + 2`
+dominates the law given `s` in likelihood ratio. Likelihood-ratio order implies stochastic order,
+and `a²` is increasing in `a ≥ 0`, so `E[c² | s] ≤ E[c² | s + 2]`. So, granted TP2-par, `ρ_n`
+restricted to even `s` has one sign change, and so does `ρ_n` restricted to odd `s`. What is still
+needed for SC is the cross-parity step `s → s + 1`.
+
+**SHIFT (measured, not proved).** The inequality `E[c² | s + 1] ≥ E[(|c| + 1)² | s]` implies
+`E[c² | s] ≤ E[c² | s + 1]`, since `(|c| + 1)² ≥ c²`. SHIFT fails at small `s`, but for every
+checked `n` its largest failing `s` lies inside the proved lower half `s ≤ 2 + √(n−1)`:
+
+| `n` | 25 | 30 | 35 | 40 | 45 | 50 | 55 | 60 |
+|---|---|---|---|---|---|---|---|---|
+| largest failing `s` | 6 | 6 | 7 | 7 | 8 | 8 | 9 | 9 |
+| `2 + √(n−1)` | 6.90 | 7.39 | 7.83 | 8.24 | 8.63 | 9.00 | 9.35 | 9.68 |
+
+(witness `n ≤ 40`; `n = 41…60` a separate run.) For such `n`, `ρ_n ≤ 0` up to the edge by the
+lower half, and `E[c² | s]` is non-decreasing beyond it by SHIFT, so SC follows. This is a second
+derivation of SC at the checked `n`, not a new value of `n`.
+
+**Why SHIFT alone cannot be the proof.** The margin between the largest failing `s` and the edge
+is under one unit for every `n` in the table. Nothing here shows it stays positive. Under the
+limit-shape heuristic of Result 3b the failure region scales like a multiple of `√n` that may
+exceed the edge coefficient 1, in which case SHIFT would fail above the edge for large `n`. That
+is a heuristic, not a measurement.
+
+**Plan for the remaining window.** SC does not need monotonicity in the interior. It needs only
+`ρ_n(s) ≤ 0` for `2 + √(n−1) < s < t_n`, and `t_n ≈ 1.44√n` by Result 3b. So the route is:
+a negativity bound for `ρ_n` in the interior (for example a large-deviation bound on `E[c² | s]`
+from the local law), with SHIFT or TP2-par only above it. A proof of TP2-par itself is the other
+open input; it is a total-positivity statement about the cotransition measure and may follow
+from a determinantal or Schur-positivity argument, which has not been attempted.
+
+Probe: `computations/deltalambda/wlambda_covariance_M1_newest_box_tp2.py`, witness
+`wlambda-covariance-M1-newest-box-tp2.witness.json` (exact integer arithmetic, no floats).
+
 ## Measurement
 
 `ρ_n` has exactly one sign change for every `n = 4…67`. The threshold is `t_n = 11` for `n = 41…46`,
@@ -169,7 +215,7 @@ The exhaustive table already gives `M₁(n) > 0` for `n ≤ 78`, so this extensi
 ## What it is, and what it is not
 
 - **Is:** a one-cell form of `M₁`, `P`, `N` and `ρ_n`, with a derivation; proofs of the lower half
-  and of the upper tail of SC; and two refuted sufficient conditions.
+  and of the upper tail of SC; two refuted sufficient conditions, and two measured ones (TP2-par, SHIFT).
 - **Is not:** a proof of SC or of `M₁ > 0` for all `n`. The open input of `qou-k5r5` is unchanged.
 - **Not formalized.** The Kerov identity and the Plancherel-growth law are not in this repo's Lean.
   The elementary steps behind Results 3 and 3b are `|j − i| ≤ i + j − 2` and `ij ≤ n` for an
