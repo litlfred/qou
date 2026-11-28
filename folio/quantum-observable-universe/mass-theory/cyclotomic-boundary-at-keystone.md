@@ -186,8 +186,18 @@ $[n]! = g_\lambda \prod_{c}[h(c)]$, then $g_\lambda$ is monic of degree $\binom 
 (`qHook_top_of_eq`, via $\sum_c h(c) = n + N(\lambda)$, `sum_hook`), and its next coefficient is
 (corners of $\lambda$) $- 1$ (`qHook_nextCoeff_of_eq`). The same file proves the degree check
 (`top_exponent_gap`): when $2m < n-1$, $S(n-1)$ and $[n-1]S(n-2)$ stay strictly below the top
-exponent of $S(n)$. Not yet formalised: the divisibility $\prod_c [h(c)] \mid [n]!$ itself
-(Stanley, EC2, §7.21 \cite{stanley1999}), and the $\delta = 1, 2$ counts behind $a_1, a_2$.
+exponent of $S(n)$. `QOU.Mass.StaircaseNearMin` (sorry-free) proves the $\delta = 1$ count. For
+$n = T_m + r$, write $N_{\min} = N(\mathrm{stair}_m) + rm$. A Young diagram with $N = N_{\min} + 1$
+has one of two shapes (`nearMin_classify`). Either it is the staircase, plus $r-1$ cells on
+antidiagonal $m$, plus one cell on antidiagonal $m+1$ resting on them. Or it is the staircase less
+one cell $b$ of antidiagonal $m-1$, plus $r+1$ cells on antidiagonal $m$, none of them sitting on
+$b$. For $m \ge 1$ there are
+$2\binom{m}{r-2} + m\binom{m-1}{r-3} + m\binom{m-1}{r+1}$ such diagrams (`card_nearMin_eq`), which is
+$a_1$. Under the same divisibility hypothesis, this count is the coefficient one step below the top
+of $\sum_\lambda X^{N(\lambda)} g_\lambda(X^2)$, which is $q^{\binom n2} S(n)$ in the symmetric
+normalisation (`coeff_sum_sym_qHook_of_eq`). Not yet formalised: the divisibility
+$\prod_c [h(c)] \mid [n]!$ itself (Stanley, EC2, §7.21 \cite{stanley1999}), and the $\delta = 2$
+count behind $a_2$.
 
 Together with the finite certificates this settles $6 \le n \le 20$, every triangular $n$, and
 every $n \in \{T_j + 1, T_{j+1} - 1\}$ with $j \ge 4$.
