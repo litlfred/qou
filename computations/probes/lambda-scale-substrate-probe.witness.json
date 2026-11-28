@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-20T15:43:55.093180+00:00",
-  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
+  "computedAt": "2026-11-28T02:44:02.894975+00:00",
+  "commitSha": "b0bfb4f942eabf7ac8d9870270456dda240ffcb0",
   "assertions": [
     {
       "name": "probe_1_proton_within_10ppm",
-      "computed": "5.61658244724239606",
+      "computed": "5.8314255319922447032",
       "expected": "0",
       "passed": true,
       "tolerance": "10",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 13,
   "computation": "lambda-scale-substrate-probe",
   "scriptFile": "lambda_scale_substrate_probe.py",
-  "scriptHash": "ad38c2d03aee",
-  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "scriptHash": "5d45e7775118",
+  "scriptCommitSha": "c4888b0e524235b23cdb51520a0887669e8a7554",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,14 +27,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.18",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "930c010e26215e56"
+    "pyhecke_native_build": "a22b08f9db48ed97"
   },
   "invocation": {
     "argv": [
@@ -45,53 +46,53 @@
   "description": "Probe of the substrate-form hypothesis λ_scale = p(4)/2 − h²·G + O(h^4) for the Borromean baryon mass formula. Tests proton, neutron, Σ baryons, Λ baryon at MPFR 80 dps. Verifies the 5.6 ppm match for proton; solves for higher-order corrections; tests generation predictions (p(n)/2 for n=4,5,6); checks Skein S(B) interpretation. NO FITTING — all targets are computed from CODATA via the Borromean formula.",
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "parameters": {
-    "q_0": "1.109978595642739046681795",
-    "h": "0.2090603221503167466308003",
+    "q_0": "1.109978582751380807591669",
+    "h": "0.2090602987956393154308462",
     "G_catalan": "0.9159655941772190150546035",
     "Vol_B3_literature": "7.327724753417752120436828",
     "Vol_B3_from_8G": "7.327724753417752120436828"
   },
   "data": {
     "probe_1_5_2_minus_h2_G_proton": {
-      "lambda_p_target": "2.45995279126013643291016",
-      "5/2 - h²·G": "2.459966607787804869530325",
-      "diff_absolute": "1.38165276684366e-5",
-      "diff_ppm": "5.61658244724239606"
+      "lambda_p_target": "2.459952271703790360624823",
+      "5/2 - h²·G": "2.459966616732275056431413",
+      "diff_absolute": "1.43450284846958e-5",
+      "diff_ppm": "5.8314255319922447032"
     },
     "probe_2_neutron_common_form": {
-      "lambda_n_target": "2.463343637673293454432773",
-      "5/2 - h²·G (same as proton)": "2.459966607787804869530325",
-      "Δ in λ (n - common form)": "0.00337702988548858",
-      "ΔS(n) implied (× m_e MeV)": "1.2880625 MeV",
+      "lambda_n_target": "2.463343117400780885468567",
+      "5/2 - h²·G (same as proton)": "2.459966616732275056431413",
+      "Δ in λ (n - common form)": "0.00337650066850583",
+      "ΔS(n) implied (× m_e MeV)": "1.2878609 MeV",
       "interpretation": "If λ has common substrate value 5/2 − h²·G + small, the p/n split lives in S(B) Skein. ΔS(n) - ΔS(p) should equal the Δm_pn ≈ 1.293 MeV / m_e."
     },
     "probe_3_h4_correction": {
       "ansatz": "λ_p = 5/2 - h²·G - h^4·c4 + O(h^6)",
-      "c4_solved": "0.00723289982043261",
+      "c4_solved": "0.0075095713484935",
       "c4_simple_candidates": {
         "G/2": "0.4579828",
-        "G/h": "4.3813459",
+        "G/h": "4.3813464",
         "[2]_q²·G / 8": "0.46298697",
         "(1+G)/2": "0.9579828"
       },
-      "interpretation": "c4 = +0.007233. Compare to simple candidates: if c4 ≈ G, then λ_p ≈ 5/2 − h²·G − h^4·G + O(h^6) = 5/2 − G·(h² + h^4 + ...) ≈ 5/2 − G·h²/(1−h²)."
+      "interpretation": "c4 = +0.007510. Compare to simple candidates: if c4 ≈ G, then λ_p ≈ 5/2 − h²·G − h^4·G + O(h^6) = 5/2 − G·(h² + h^4 + ...) ≈ 5/2 − G·h²/(1−h²)."
     },
     "probe_3b_geometric_series": {
       "form": "5/2 − G·h²/(1−h²)  (geometric series)",
-      "value": "2.458136931371730557085199",
-      "diff_ppm": "-738.16859203858245121"
+      "value": "2.45813694115247592975222",
+      "diff_ppm": "-737.95356608976510756"
     },
     "probe_4_generation_sigma": {
       "hypothesis": "λ_Σ = 7/2 − h²·G (2nd-generation prediction)",
-      "lam_sigma_predicted": "3.45996660779",
-      "lam_sigma_plus_target": "3.11827889191",
-      "lam_sigma_0_target": "3.12685739022",
-      "lam_lambda_target": "2.92508701999",
-      "mass_predicted_MeV": "1319.6961",
+      "lam_sigma_predicted": "3.45996661673",
+      "lam_sigma_plus_target": "3.11827823331",
+      "lam_sigma_0_target": "3.12685672981",
+      "lam_lambda_target": "2.9250864022",
+      "mass_predicted_MeV": "1319.6964",
       "mass_sigma_plus_codata_MeV": "1189.37",
       "mass_sigma_0_codata_MeV": "1192.642",
-      "ratio_pred_to_sigma_plus": "1.1095757396044591541",
-      "ratio_pred_to_sigma_0": "1.1065316309616427931",
+      "ratio_pred_to_sigma_plus": "1.109575976821762709",
+      "ratio_pred_to_sigma_0": "1.1065318675281433265",
       "interpretation": "If p(n)/2 generation hypothesis holds with p(5) = 7, λ_Σ_pred = 7/2 − h²·G = ~3.46. Observed Σ baryon λ values: Σ+ → 3.1183, Σ⁰ → 3.1269, Λ → 2.9251. Pattern fits IF λ_Σ is in the range 3.1 to 3.5; observed ~3.12 (Σ+), so prediction 3.46 is off by ~10%. Likely the generation hypothesis needs refinement OR Σ has additional Skein contribution."
     },
     "probe_5_alternative_rationals": {
@@ -100,32 +101,32 @@
         {
           "leading": "5/2",
           "value": "2.5",
-          "test_with_h2G": "2.45996660779",
-          "diff_p_ppm": "5.61658244724239606"
+          "test_with_h2G": "2.45996661673",
+          "diff_p_ppm": "5.8314255319922447032"
         },
         {
           "leading": "10/4",
           "value": "2.5",
-          "test_with_h2G": "2.45996660779",
-          "diff_p_ppm": "5.61658244724239606"
+          "test_with_h2G": "2.45996661673",
+          "diff_p_ppm": "5.8314255319922447032"
         },
         {
           "leading": "15/6",
           "value": "2.5",
-          "test_with_h2G": "2.45996660779",
-          "diff_p_ppm": "5.61658244724239606"
+          "test_with_h2G": "2.45996661673",
+          "diff_p_ppm": "5.8314255319922447032"
         },
         {
           "leading": "20/8",
           "value": "2.5",
-          "test_with_h2G": "2.45996660779",
-          "diff_p_ppm": "5.61658244724239606"
+          "test_with_h2G": "2.45996661673",
+          "diff_p_ppm": "5.8314255319922447032"
         },
         {
           "leading": "25/10",
           "value": "2.5",
-          "test_with_h2G": "2.45996660779",
-          "diff_p_ppm": "5.61658244724239606"
+          "test_with_h2G": "2.45996661673",
+          "diff_p_ppm": "5.8314255319922447032"
         }
       ]
     },
@@ -138,26 +139,26 @@
     },
     "probe_7_muon_sanity": {
       "muon_check": "m_μ/m_e = Vol(4_1)/ℏ_q² × λ_μ + S(μ)",
-      "lambda_mu_target": "1.000000000040950089538119",
+      "lambda_mu_target": "0.9999997888351302301199762",
       "should_be_unity": "yes (CAL-2 anchor)",
-      "5/2 - h²·G test for muon": "2.45996660779",
+      "5/2 - h²·G test for muon": "2.45996661673",
       "interpretation": "The muon has λ ≈ 1 by CAL-2 (definition of q_0). The Borromean formula does not apply to leptons; this is a sanity check that the 5/2 − h²·G value is NOT universal — it's specific to baryons with B_3 topology."
     },
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
-        "size_bytes": 6238,
-        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
-        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
-        "computedAt": "2026-08-28T20:47:21.480123+00:00"
+        "sha256": "2614db24633cfa8e1ffddb85b06245a7618947f3a79c5237a6cc02dba823d247",
+        "size_bytes": 6301,
+        "commitSha": "e8c751c5542f24bba3130e96c7d0a895719c6ae1",
+        "scriptCommitSha": "e8c751c5542f24bba3130e96c7d0a895719c6ae1",
+        "computedAt": "2026-11-24T09:08:52.109433+00:00"
       }
     ]
   },
   "caveats": [
     "Probe-only — does not modify production compute paths. Findings inform the open R&D on λ_scale substrate derivation."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-  "q0AnchorReason": "Reads `q-pinning-50-digit.witness.json` DIRECTLY (Q_PIN, module scope) -- the muon anchor-DEFINING witness -- so it computes at the ideal/CAL-2 layer. The stem is listed `ideal_muon` in q0_anchor_manifest.json, which agrees. CORRECTED 2026-08-28 (bean qou-324i). The previous disposition was `independent`, justified by: \"PROVED by running this producer under QOU_Q0_ANCHOR=muon and =proton ... every substantive field is byte-identical\". That experiment is BLIND here, and the blindness is structural rather than incidental: QOU_Q0_ANCHOR is read by `q_parameter`, and a direct read of the pinning witness never consults `q_parameter`. So byte-identity under the flip was guaranteed a priori and was evidence of nothing. Re-run 2026-08-28 and it does indeed report `clean` -- while the producer is hard-pinned to muon. `independent` hid this file from the qou-1c4y muon->proton migration; `muon` makes it visible to it. Whether it should MOVE to the experimental pin is that migration's question, not this correction's."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "Computes at the pin q_parameter resolves (proton). Since the owner ruling of 2026-11-28 ('Move produced to proton pin') the stem is listed `physical_proton`; QOU_Q0_ANCHOR=muon still selects muon. Measured 2026-11-28: under QOU_Q0_ANCHOR=muon the witness reproduces the previous muon-stamped values byte-for-byte; under proton the 5/2 - h^2 G residual moves 5.6166 -> 5.8314 ppm, entirely from the pin shift (lambda_p target moves by 0.21 ppm). Bean qou-324i records why the earlier `independent` disposition was wrong."
 }

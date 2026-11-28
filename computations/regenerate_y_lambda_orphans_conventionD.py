@@ -71,8 +71,14 @@ DPS = 50
 # `1.1099785955541805`, the SUPERSEDED muon value -- it matches neither
 # current pin. The NAME says muon, so the muon pin is taken explicitly
 # rather than through the manifest, which would hand this stem proton.
-# Owner ruling 2026-08-24, bean `qou/ftuv`.
-MUON_Q0 = pin_value_for_anchor("muon")
+# The 2026-08-24 ruling that this producer is muon by name is superseded by
+# the owner ruling of 2026-11-28 ("Move produced to proton pin"): the
+# default is the proton pin, and QOU_Q0_ANCHOR=muon still selects muon.
+import os as _os_anchor  # noqa: E402
+_MUON_NAMES = {"ideal", "muon", "canonical"}
+ANCHOR = ("muon" if _os_anchor.environ.get("QOU_Q0_ANCHOR", "").strip().lower()
+          in _MUON_NAMES else "proton")
+PIN_Q0 = pin_value_for_anchor(ANCHOR)
 
 TARGETS = [
     "wenzl-y-lambda-h9.witness.json",
@@ -149,11 +155,11 @@ def find_q0(doc) -> tuple[str, str]:
         elif isinstance(node, list):
             stack.extend(node[:20])
     if stated is None:
-        return MUON_Q0, "pin table (file states none)"
+        return PIN_Q0, "pin table (file states none)"
     k, v = stated
-    if v[:30] == str(MUON_Q0)[:30]:
-        return MUON_Q0, f"pin table (file field `{k}` agrees)"
-    return MUON_Q0, (f"pin table — OVERRIDING stale file field `{k}` = {v[:24]}…")
+    if v[:30] == str(PIN_Q0)[:30]:
+        return PIN_Q0, f"pin table (file field `{k}` agrees)"
+    return PIN_Q0, (f"pin table — OVERRIDING stale file field `{k}` = {v[:24]}…")
 
 
 def rewrite(doc, q):
@@ -271,9 +277,8 @@ def main() -> int:
             # q0_anchor was False -- "no q0 in this producer's cone".  That is
             # false and always was: every value this producer writes is a Wenzl
             # weight y_lambda(q0), a function of the pin, and the fix above
-            # moved them by 3.18e-10.  The stem is declared `ideal_muon` in the
-            # manifest so this resolves the MUON anchor, per the owner ruling of
-            # 2026-08-24 that this producer is muon by name.
+            # moved them by 3.18e-10.  The anchor is proton by default (owner
+            # ruling 2026-11-28); QOU_Q0_ANCHOR=muon selects muon.
             # Drop the PREVIOUS run's anchor fields before stamping. The
             # builder guards on `if "q0Anchor" not in payload`, writing anchor
             # AND value only inside it (bean qou-ftuv), so a doc that already
@@ -284,11 +289,12 @@ def main() -> int:
                 doc.pop(_k, None)
             _WB.stamp_staleness_metadata(
                 doc, script_path=__file__, engine=None,
-                q0_anchor="muon", q0_value=q0_str,
+                q0_anchor=ANCHOR, q0_value=q0_str,
                 q0_anchor_reason=(
-                    "computes Wenzl weights y_lambda(q0) at the MUON pin, taken "
-                    "explicitly from pin_value_for_anchor('muon') rather than "
-                    "through the manifest (owner ruling 2026-08-24). Stamped "
+                    f"computes Wenzl weights y_lambda(q0) at the {ANCHOR.upper()} "
+                    "pin from pin_value_for_anchor (proton by default; "
+                    "QOU_Q0_ANCHOR=muon selects muon; owner ruling 2026-11-28). "
+                    "Stamped "
                     "explicitly because the auto-detector reads the import cone "
                     "and this producer reaches q0 via q0_stamp, not q_parameter, "
                     "so it was being stamped 'independent' on a value that is a "

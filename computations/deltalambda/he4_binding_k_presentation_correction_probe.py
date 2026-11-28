@@ -32,6 +32,12 @@ their error — but any correction probe importing q_parameter from a
 non-manifest process would silently get the proton pin (an 8.8e-8-level
 trap, measured); this probe therefore loads the pinning witness directly.
 
+UPDATE 2026-11-28 (owner: "Move produced to proton pin"): the certified
+chi-cache/combiner chain is now PROTON-pinned (canonical-tr-m-via-chi-cache
+stamps proton), and this stem is listed `physical_proton`, so the whole
+module graph resolves the proton pin and the reproductions are aligned there.
+QOU_Q0_ANCHOR=muon still selects muon. The muon paragraphs below are history.
+
 WHAT THE CANONICAL ⁴He WORD ACTUALLY IS (read off `atom_braid_word_3A`; no
 fingerprint search needed): T_⁴He = p(0)·σ₂·p(3)·cw₅·n(6)·σ₈⁻¹·n(9) — four
 canonical 11-crossing nucleon blocks (NOT plain Borromean [σ₁σ₂⁻¹]³: each
@@ -56,7 +62,7 @@ OPERATOR DICTIONARY (paper presentation, σ⁻¹ = σ − h), certified below:
                                         → two weighted GP branches
 
 CERTIFICATION: reproduce the certified combiner traces for proton, neutron,
-deuteron, ⁴He end-to-end through GP with the dictionary above at v=√q_muon.
+deuteron, ⁴He end-to-end through GP with the dictionary above at v=√q₀ (proton pin by default).
 p/n are exact-dictionary words (tolerance 1e-15); D/⁴He carry one
 color-weighted crossing whose δ enters as f64 in the builder (tolerance
 1e-12).
@@ -284,7 +290,7 @@ def main() -> int:
         "and the full operator dictionary (σ; σ⁻¹ = σ−h; averaged = (σ+σ⁻¹)/2 via "
         "GP sign 0 ÷2; color-weighted aσ+bσ⁻¹) reproduces the certified combiner "
         "traces for proton, neutron, deuteron, ⁴He end-to-end through GP at the "
-        "canonical-muon pin. The canonical ⁴He binding structure needs no "
+        "pin q_parameter resolves (proton by default since 2026-11-28). The canonical ⁴He binding structure needs no "
         "fingerprint search — it is explicit in atom_braid_word_3A: one "
         "inter-nucleon crossing per adjacent seam at generators {2,5,8} (0-based), "
         "pair-typed (p-p: σ; p-n: color-weighted average; n-n: σ⁻¹), joining four "
@@ -308,7 +314,7 @@ def main() -> int:
         "computedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "engine": "pyhecke_native(GP + seminormal-mpfr) + mpmath", "dps": 50,
         "q_pin": {
-            "used": "canonical muon, resolved via q_parameter (this stem is listed `ideal_muon`)",
+            "used": "resolved via q_parameter (proton by default; QOU_Q0_ANCHOR=muon selects muon)",
             "value": q_str,
             "note": "q_parameter is anchor-adaptive (q0_anchor_manifest.json): "
                     "ideal_muon producers resolve this value; ad-hoc shells resolve "
@@ -369,9 +375,17 @@ def main() -> int:
     # `ideal_muon`, so an auto-resolved stamp would say PROTON over muon
     # arithmetic -- the straddle AGENTS.md forbids. Passing the anchor and the
     # value it actually used makes the witness self-consistent (bean qou-1c4y).
+    # 2026-11-28 (owner: proton pin unless the CAL-2 relation is proved): the
+    # stem moved to `physical_proton`, and the upstream combiner witness
+    # (canonical-tr-m-via-chi-cache) is itself proton-pinned, so the chain is
+    # coherent at proton. The anchor is read off the value q_parameter
+    # resolved, so QOU_Q0_ANCHOR=muon still stamps muon honestly.
+    sys.path.insert(0, str(COMP))
+    from q0_stamp import anchor_of_value  # noqa: E402
+    _qv = load_canonical_q()
     WitnessBuilder.stamp_staleness_metadata(
         wit, script_path=__file__, engine="mpmath",
-        q0_anchor="muon", q0_value=load_canonical_q())
+        q0_anchor=anchor_of_value(_qv), q0_value=_qv)
     wit["scriptFile"] = _os.path.basename(__file__)
     json.dump(wit, open(out, "w"), indent=1)
     print("witness ->", out.name, " allPassed:", wit["allPassed"])

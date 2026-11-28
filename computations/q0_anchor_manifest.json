@@ -6,15 +6,10 @@
     "cross_check_trM_1ppb",
     "hadron_knot_table",
     "hardcoded_q0_literal_families_audit",
-    "he4_binding_k_presentation_correction_probe",
     "he4_binding_k_stage2_probe",
-    "lambda_scale_substrate_probe",
     "q0_anchor_consistency_audit",
-    "q1_mass_gap_probe",
     "q_pinning_50_digit",
-    "qbeta_decay_sdp_extended_ck",
-    "qbeta_physics",
-    "regenerate_y_lambda_orphans_conventionD"
+    "qbeta_decay_sdp_extended_ck"
   ],
   "physical_proton": [
     "A_operator_extract_reduced",
@@ -1667,7 +1662,12 @@
     "z_resolved_b3_mirror_split_probe",
     "zero_point_channel_energy_probe",
     "zeropoint_unit_candidate_gate_probe",
-    "zeta4_complex_volume_moderator_probe"
+    "zeta4_complex_volume_moderator_probe",
+    "q1_mass_gap_probe",
+    "he4_binding_k_presentation_correction_probe",
+    "regenerate_y_lambda_orphans_conventionD",
+    "lambda_scale_substrate_probe",
+    "qbeta_physics"
   ],
   "ambiguous": [
     "cal4_disguise_hunt",
