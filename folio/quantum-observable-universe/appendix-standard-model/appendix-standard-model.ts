@@ -49,6 +49,7 @@ export default chapter({
         "bring-twist-flips-hypercharge",
         "hypercharge-sign-is-bring-orientation",
         "braid-chirality-blind-to-hypercharge-sign",
+        "strands-are-bring-elliptic-quotients",
         "chirality-sign-is-hypercharge-sign",
         "linking-does-not-fix-charge",
         "strand-slot-separates-gen1",
