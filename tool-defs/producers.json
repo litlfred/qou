@@ -608,6 +608,17 @@
       "scriptExists": true
     },
     {
+      "script": "computations/gg_hadron_datum_table.py",
+      "witnesses": [
+        "computations/gg-hadron-datum-table.witness.json"
+      ],
+      "blocks": [
+        "folio/quantum-observable-universe/appendix-knot-periodic-table/gg-hadron-datum-table-data.ts",
+        "folio/quantum-observable-universe/appendix-knot-periodic-table/gg-hadron-datum-table.ts"
+      ],
+      "scriptExists": true
+    },
+    {
       "script": "computations/gram-matrix-dual.py",
       "witnesses": [
         "computations/gram-h3-symbolic-regression.witness.json",
