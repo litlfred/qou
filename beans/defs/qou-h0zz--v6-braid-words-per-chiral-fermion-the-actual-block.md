@@ -469,3 +469,10 @@ Still open: the sign's value (a source seeing the base orientation directly, e.g
 - Hopf trace formula: Hatcher, Algebraic Topology, Thm 2C.3, https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
 - Index-n subgroups / transitive actions: K. Conrad, https://kconrad.math.uconn.edu/blurbs/grouptheory/transitive.pdf and gpaction.pdf
 - Aut(Ĝm) = {±1}: no open-access copy found (Hazewinkel is not OA); formal-groups thread formalising it.
+
+## 2026-11-28 — index-five uniqueness proved (commit abec537e09a, PR #9811)
+`QOU/StandardModel/OrderTwentyFourSubgroupsArePointStabilisers.lean`, sorry-free, standard axioms:
+`eq_stab_of_index_five` — every index-five subgroup of S5 is some Stab(i). Proof by orbit size
+(orbit-stabiliser rules out 5; 2,3 leave only 12 set-preserving permutations; 1,4 give a fixed
+point). Block prop:index-five-subgroups-are-point-stabilisers. The strands block now cites it
+instead of the textbook. Remaining cited steps: Chevalley–Weil, Hodge, Hopf trace (step 3).
