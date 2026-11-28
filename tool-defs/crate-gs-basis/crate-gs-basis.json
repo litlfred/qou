@@ -3,7 +3,7 @@
   "tool": {
     "id": "crate-gs-basis",
     "title": "Rust crate gs-basis (crates/gs-basis)",
-    "description": "General-purpose non-commutative Gröbner–Shirshov bases, free associative algebras, and specialized Iwahori–Hecke and Temperley–Lieb normal-form engines. (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Generated from `crates/gs-basis/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+    "description": "General-purpose non-commutative Gröbner–Shirshov bases, dyadic Laurent rings, free associative algebras, and specialized Iwahori–Hecke and Temperley–Lieb normal-form and layer-peeling engines. (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Binaries (1): `gs-peel`. Generated from `crates/gs-basis/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
     "install": {
       "none": true
     },

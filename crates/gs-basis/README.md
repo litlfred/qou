@@ -4,9 +4,10 @@ A standalone, publication-grade pure-Rust (`#![forbid(unsafe_code)]`, zero C-FFI
 
 ## Capabilities
 
-1. **Exact Coefficient Rings (`scalar`)**
-   - `RingScalar` trait with exact arithmetic, unit inversion (`try_inv`), and exact division (`try_div_exact`).
-   - Built-in rings: `i64`, `num_bigint::BigInt`, `num_rational::BigRational`, sparse Laurent polynomials `LaurentPoly<R>` in $R[q, q^{-1}]$ (with $h = q - q^{-1}$ and quantum integers $[n]_q$), and truncated $h$-jet rings `TruncatedJet<R, K>` representing $R[h]/(h^{K+1})$.
+1. **Exact Coefficient Rings (`scalar`, `dyadic`)**
+   - `RingScalar` (`CoeffRing`) trait with exact arithmetic, unit inversion (`try_inv`), and exact division (`try_div_exact`).
+   - Built-in rings: `i64`, `num_bigint::BigInt`, `num_rational::BigRational`, GCD-free dyadic rationals `DyadicScalar` ($\mathbb{Z}[\frac{1}{2}]$) and dense-window dyadic Laurent polynomials `DyadicLaurent` ($\mathbb{Z}[\frac{1}{2}][q, q^{-1}]$), sparse Laurent polynomials `LaurentPoly<R>` in $R[q, q^{-1}]$ (with $h = q - q^{-1}$ and quantum integers $[n]_q$), and truncated $h$-jet rings `TruncatedJet<R, K>` representing $R[h]/(h^{K+1})$.
+   - Standalone `gs-peel` JSON CLI (`src/bin/gs-peel.rs`) exposing batch dyadic Hecke normal-form walks, Temperley–Lieb dyadic loop-closure trace walks, homogeneous division-free Markov tower peeling, and monotone two-row Bratteli sweeps.
 
 2. **Free Associative Algebras & Admissible Monomial Orders (`order`, `free_alg`)**
    - `FreeAlg<G, R>` over any ordered generator alphabet `G: Ord + Clone + Hash`.

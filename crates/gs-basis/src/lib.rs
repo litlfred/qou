@@ -1,17 +1,20 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 
-//! # `gs-basis` — Non-Commutative Gröbner–Shirshov Bases, Layer Peeling & Toric Binomials
+//! # `gs-basis` — Non-Commutative Gröbner–Shirshov Bases, Dyadic Laurent Rings & Layer Peeling
 //!
 //! `gs-basis` is a standalone, pure-Rust library (`#![forbid(unsafe_code)]`, zero C-FFI,
 //! `wasm32`-compatible) for computing exact normal forms, Gröbner–Shirshov completions,
-//! inductive Markov/Bratteli layer-peeling traces, and oriented binomial lattice reductions.
+//! dyadic Laurent reductions, inductive Markov/Bratteli layer-peeling traces, and oriented
+//! binomial lattice reductions.
 //!
 //! ## Modules
 //!
-//! - [`scalar`]: Exact coefficient rings implementing [`RingScalar`], including `i64`,
-//!   `BigInt`, `BigRational`, sparse Laurent polynomials [`LaurentPoly<R>`] over `R[q, q^-1]`,
-//!   and truncated power-series jets [`TruncatedJet<R, K>`] over `R[h]/(h^(K+1))`.
+//! - [`scalar`]: Exact coefficient rings implementing [`RingScalar`] (also exported as [`CoeffRing`]),
+//!   including `i64`, `BigInt`, `BigRational`, sparse Laurent polynomials [`LaurentPoly<R>`] over
+//!   `R[q, q^-1]`, and truncated power-series jets [`TruncatedJet<R, K>`] over `R[h]/(h^(K+1))`.
+//! - [`dyadic`]: GCD-free dyadic rationals [`DyadicScalar`] ($\mathbb{Z}\[\frac{1}{2}\]$) and
+//!   dense-window dyadic Laurent polynomials [`DyadicLaurent`] ($\mathbb{Z}\[\frac{1}{2}\]\[q, q^{-1}\]$).
 //! - [`order`]: Admissible monomial well-orders ([`DegLex`], [`DegRevLex`], [`DegRightLex`],
 //!   [`WeightedDegLex`], [`OrderKind`]) compatible with two-sided word concatenation.
 //! - [`free_alg`]: Sparse elements [`FreeAlg<G, R>`] of the free associative algebra $R\langle G \rangle$.
@@ -24,7 +27,7 @@
 //!   and Hecke skein quotients.
 //! - [`peel`]: Matrix-free layer-peeling and transfer-matrix engines:
 //!   - [`peel::markov_tower`]: Streaming GS accumulation + inductive Ocneanu–Markov tower peeling
-//!     $H_n(q) \to H_{n-1}(q) \to \dots \to H_1(q)$.
+//!     $H_n(q) \to H_{n-1}(q) \to \dots \to H_1(q)$ (both normalized and homogeneous division-free).
 //!   - [`peel::chain_transfer`]: Hecke-only $2\times 2$ block-chain transfer reduction.
 //!   - [`peel::bratteli_two_row`]: Multiplicity-free Gelfand–Tsetlin / Young–Hoefsmit edge transfer
 //!     sweep (Catalan two-row $\ell(\lambda) \le 2$ and unrestricted).
@@ -63,6 +66,7 @@
 //! ```
 
 pub mod binomial;
+pub mod dyadic;
 pub mod free_alg;
 pub mod hecke;
 pub mod order;
@@ -75,10 +79,11 @@ pub use binomial::{
     linear_cost, pottier_graver_basis, promote_stratum_columns, reduced_costs, BinomialBasis,
     BinomialRule, IntegerMatrix,
 };
+pub use dyadic::{DyadicLaurent, DyadicScalar};
 pub use free_alg::{FreeAlg, Word};
 pub use hecke::BokutShiaoHecke;
 pub use order::{DegLex, DegRevLex, DegRightLex, MonomialOrder, OrderKind, WeightedDegLex};
-pub use scalar::{rat, LaurentPoly, RingScalar, TruncatedJet};
+pub use scalar::{rat, LaurentPoly, RingScalar, RingScalar as CoeffRing, TruncatedJet};
 pub use shirshov::{
     CompletionCertificate, CompletionConfig, CriticalPairKind, NormalFormBasis, RewriteRule,
     ShirshovEngine, ShirshovError,

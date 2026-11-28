@@ -279,6 +279,123 @@ pub fn streaming_markov_trace<R: RingScalar>(
     state.coeff(&[])
 }
 
+/// Homogeneous division-free peel of a single top generator `top_gen = k - 2` ($H_k \to H_{k-1}$)
+/// for rational Markov parameters $z = z_{\mathrm{num}} / z_{\mathrm{den}}$:
+/// multiplies $\sigma_{\text{top\_gen}}$-linear words by `z_num` and $\sigma_{\text{top\_gen}}$-free
+/// words by `z_den`, avoiding fraction-field GCDs entirely.
+pub fn peel_top_layer_homogeneous<R: RingScalar>(
+    elem: &FreeAlg<usize, R>,
+    top_gen: usize,
+    h: &R,
+    z_num: &R,
+    z_den: &R,
+) -> FreeAlg<usize, R> {
+    let top_basis = BokutShiaoHecke::new(top_gen + 2, h.clone());
+    let sub_basis = BokutShiaoHecke::new(top_gen + 1, h.clone());
+    let nf = top_basis.reduce(elem);
+
+    let mut out = FreeAlg::zero();
+    for (w, coeff) in nf.terms() {
+        match w.iter().position(|&g| g == top_gen) {
+            None => {
+                let scaled = coeff.mul_val(z_den);
+                out.add_scaled_assign(&FreeAlg::word(w.clone()), &scaled);
+            }
+            Some(pos) => {
+                let mut vu = Vec::with_capacity(w.len() - 1);
+                vu.extend_from_slice(&w[pos + 1..]);
+                vu.extend_from_slice(&w[..pos]);
+                let red_vu = sub_basis.reduce_word(&vu);
+                let scaled = coeff.mul_val(z_num);
+                out.add_scaled_assign(&red_vu, &scaled);
+            }
+        }
+    }
+    out
+}
+
+/// Stream linear factors on `num_strands` strands and perform homogeneous division-free Markov
+/// tower peeling, returning exact $z_{\mathrm{den}}^{\,n-1}\,\operatorname{tr}_{M, z_{\mathrm{num}}/z_{\mathrm{den}}}(\prod_t (c_t\sigma_{g_t} + d_t)) \in R$.
+pub fn streaming_markov_trace_homogeneous<R: RingScalar>(
+    factors: &[LinearFactor<R>],
+    num_strands: usize,
+    h: &R,
+    z_num: &R,
+    z_den: &R,
+) -> R {
+    assert!(num_strands >= 1, "num_strands must be >= 1");
+    if num_strands == 1 {
+        return R::one();
+    }
+    if factors.is_empty() {
+        return z_den.pow_u32((num_strands - 1) as u32);
+    }
+
+    let max_gens = num_strands - 1;
+    let mut last_seen: Vec<Option<usize>> = vec![None; max_gens];
+    for (idx, f) in factors.iter().enumerate() {
+        assert!(f.gen < max_gens, "generator out of range");
+        last_seen[f.gen] = Some(idx);
+    }
+
+    let mut peeled_unused = 0u32;
+    let mut active_top: Option<usize> = Some(max_gens - 1);
+    while let Some(top) = active_top {
+        if last_seen[top].is_none() {
+            peeled_unused += 1;
+            active_top = top.checked_sub(1);
+        } else {
+            break;
+        }
+    }
+
+    let eff_strands = active_top.map_or(1, |g| g + 2);
+    let mut state = FreeAlg::<usize, R>::scalar(z_den.pow_u32(peeled_unused));
+    let mut cur_strands = eff_strands;
+    let mut cur_basis = BokutShiaoHecke::new(cur_strands, h.clone());
+
+    for (step_idx, factor) in factors.iter().enumerate() {
+        let mut next = FreeAlg::zero();
+        if !factor.d.is_zero() {
+            next.add_scaled_assign(&state, &factor.d);
+        }
+        if !factor.c.is_zero() {
+            for (w, coeff) in state.terms() {
+                let mut w_ext = Vec::with_capacity(w.len() + 1);
+                w_ext.extend_from_slice(w);
+                w_ext.push(factor.gen);
+                let red = cur_basis.reduce_word(&w_ext);
+                let scaled = coeff.mul_val(&factor.c);
+                next.add_scaled_assign(&red, &scaled);
+            }
+        }
+        state = next;
+
+        while cur_strands >= 2 {
+            let top_gen = cur_strands - 2;
+            let done_with_top = match last_seen[top_gen] {
+                None => true,
+                Some(last_idx) => last_idx <= step_idx,
+            };
+            if done_with_top {
+                state = peel_top_layer_homogeneous(&state, top_gen, h, z_num, z_den);
+                cur_strands -= 1;
+                cur_basis = BokutShiaoHecke::new(cur_strands, h.clone());
+            } else {
+                break;
+            }
+        }
+    }
+
+    while cur_strands >= 2 {
+        let top_gen = cur_strands - 2;
+        state = peel_top_layer_homogeneous(&state, top_gen, h, z_num, z_den);
+        cur_strands -= 1;
+    }
+
+    state.coeff(&[])
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
