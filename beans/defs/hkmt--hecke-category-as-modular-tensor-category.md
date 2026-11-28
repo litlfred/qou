@@ -8,7 +8,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T09:20:00Z
-updated_at: 2026-11-28T00:00:00Z
+updated_at: 2026-11-28T12:23:24Z
 parent: qou-rtxm
 ---
 
@@ -140,3 +140,5 @@ thread, #9923), modularity.
 - `TLGluedAssoc.lean`: `glued_induction` (decomposition of every glued morphism into cups, top-level endomorphisms, and caps), full 3-slot associator naturality `assoc_nat`, and Mac Lane pentagon `tensHom_pentagon` (`0` `sorry`).
 - `TLGluedMonoidal.lean`: zero-strand vacuum idempotent `vacIdem = δ⁻¹ e_0 ∈ End [1]`, natural right/left unitors (`uR_nat`, `uL_nat`), Mac Lane triangle (`triangle_gobj`), and full `MonoidalCategory`, `MonoidalPreadditive`, and `MonoidalLinear K` instances on the idempotent completion `TLMonObj T hε` with full & faithful `K`-linear embedding `inclG : GObj T hε ⥤ TLMonObj T hε` (`0` `sorry`, `0` `field_simp`, axioms `[propext, Classical.choice, Quot.sound]`).
 - **Still open on `hkmt`:** lift `TLQuotientBraiding` + `TLGluedTwist` (#9995) onto `TLMonObj T hε` for `BraidedCategory` / `BalancedCategory` / `RibbonCategory` instances.
+
+- **2026-11-28 (merge-steward)**: Landed PR `#9941` (`claude/hkmt-glued-monoidal-2026-11-28` @ `6118b03bd24a`) onto `origin/main` at `e21d9686cec98143ba7ec2a00b3f9543b9242c92` (`17/17` commits replayed, `MISSING: 0`). Kept `status: in-progress` for the braided/ribbon lift tranche.
