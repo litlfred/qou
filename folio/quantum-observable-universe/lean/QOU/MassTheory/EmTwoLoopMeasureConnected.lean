@@ -111,5 +111,41 @@ Form B's `−N₁ h² H` are both of this kind. -/
 theorem factorized_slot (μ : LoopMeasure K) (θ : K) (hf : Factorizes μ) :
     θ * μ.μ₂ = θ * μ.μ₁ ^ 2 := by rw [hf]
 
+/-! ## The two corpus readings of the two-loop slot (PR #9856: `N₁ = 1`, `[3]_q = 3 + h²`)
+
+θ-graph reading: `−[3]_q μ₁² = −(3 + h²) μ₁²`, a product measure.
+Form B reading: `−h² H = −h² [2]_q μ₁`, one measure factor only. As a `LoopMeasure`, Form B is
+`μ₂ = μ₁` with graph value `−h²[2]_q`: its connected part is `μ₁ − μ₁²`, nonzero unless
+`μ₁ ∈ {0, 1}`. So the two readings are two different two-loop measures, not two graph values. -/
+
+/-- The Form B measure: the second loop carries no extra weight. -/
+def formBMeasure (μ₁ : K) : LoopMeasure K := ⟨μ₁, μ₁⟩
+
+theorem formB_connected (μ₁ : K) : connected (formBMeasure μ₁) = μ₁ - μ₁ ^ 2 := rfl
+
+/-- The θ-graph measure is the product measure. -/
+def thetaMeasure (μ₁ : K) : LoopMeasure K := ⟨μ₁, μ₁ ^ 2⟩
+
+theorem theta_factorizes (μ₁ : K) : Factorizes (thetaMeasure μ₁) := rfl
+
+/-- **When the readings agree.** With `[3]_q = 3 + h²` and `[2]_q = s`, the θ slot
+`−(3 + h²) μ₁²` equals the Form B slot `−h² s μ₁` iff `μ₁ ((3 + h²) μ₁ − h² s) = 0`.
+So for `μ₁ ≠ 0` (in a domain) they agree only at the single value
+`(3 + h²) μ₁ = h² s`, a relation fixing `μ₁` inside `ℚ(q)`. -/
+theorem formB_theta_agree_iff (h s μ₁ : K) :
+    -(3 + h ^ 2) * (thetaMeasure μ₁).μ₂ = -(h ^ 2 * s) * (formBMeasure μ₁).μ₂ ↔
+      μ₁ * ((3 + h ^ 2) * μ₁ - h ^ 2 * s) = 0 := by
+  simp only [thetaMeasure, formBMeasure]
+  constructor
+  · intro e; linear_combination -e
+  · intro e; linear_combination -e
+
+/-- **Classical limit.** At `h = 0` the Form B slot vanishes and the θ slot is `−3 μ₁²`. -/
+theorem classical_limit_slots (s μ₁ : K) :
+    -((0 : K) ^ 2 * s) * (formBMeasure μ₁).μ₂ = 0 ∧
+      -(3 + (0 : K) ^ 2) * (thetaMeasure μ₁).μ₂ = -3 * μ₁ ^ 2 := by
+  simp only [thetaMeasure, formBMeasure]
+  constructor <;> ring
+
 end EmTwoLoopMeasureConnected
 end QOU.MassTheory

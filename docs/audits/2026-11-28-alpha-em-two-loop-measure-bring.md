@@ -43,6 +43,23 @@ Scope (AGENTS.md §"Before declaring refuted"): this is a statement about **wher
 period must sit, not an exclusion of `ζ(3)`. It does **not** say `ζ(3) ∉ ℚ[π, π⁻¹]`:
 whether `ζ(3)/π³` is irrational is an open problem, so no such claim is made.
 
+### 1b. The two corpus readings are two measures (with PR #9856)
+
+PR #9856 (`EmThetaGraphSkeinSplit`) proved `[3]_q = 3 + h²` and `N₁ = 1` in both readings.
+In the language above:
+
+- **θ-graph:** slot `−(3 + h²)μ₁²`. The product measure, `κ₂ = 0` (`theta_factorizes`).
+- **Form B:** slot `−h²[2]_q μ₁`. One measure factor: the measure `μ₂ = μ₁`
+  (`formBMeasure`), whose connected part is `μ₁ − μ₁²` (`formB_connected`), nonzero unless
+  `μ₁ ∈ {0, 1}`.
+
+So the readings differ in the **measure**, not in the graph value: they are a factor
+`[2]_q·8π` apart on the shared `h²` piece. `formB_theta_agree_iff`: the two slots agree iff
+`μ₁((3 + h²)μ₁ − h²[2]_q) = 0`, which for `μ₁ ≠ 0` pins `μ₁` to a value in `ℚ(q)` and never
+to `1/(8π)` by any corpus rule. `classical_limit_slots`: at `h = 0` Form B's slot is `0` and
+the θ slot is `−3μ₁²`. The constant `3` is worked in the sibling thread
+(`2026-11-28-alpha-em-two-loop-placement-count.md`).
+
 ### 2. A two-loop period that is `ζ(3)` by a theorem (Transcendental, cited)
 
 The one construction found in which `ζ(3)` comes out of a two-loop vacuum graph by a
