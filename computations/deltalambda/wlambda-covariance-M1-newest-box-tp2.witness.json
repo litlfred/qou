@@ -1,0 +1,254 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-28T00:18:10.395086+00:00",
+  "commitSha": "8457f029917340ee18cdd281bbf4b27a2d86b82d",
+  "assertions": [
+    {
+      "name": "tp2_parity_and_shift",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "TP2-par n≤30; shift n≤40"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2,
+  "computation": "wlambda-covariance-M1-newest-box-tp2",
+  "scriptFile": "wlambda_covariance_M1_newest_box_tp2.py",
+  "scriptHash": "8902d93be0a0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/wlambda_covariance_M1_newest_box_tp2.py",
+      "30",
+      "40"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/wlambda_covariance_M1_newest_box_tp2.py 30 40"
+  },
+  "description": "Newest Plancherel-growth box law K_n(s,a), s=i+j, a=|j−i|: same-parity TP2 (⇒ E[c²|s]≤E[c²|s+2], one sign change of ρ_n per parity class) and the shift inequality E[c²|s+1] ≥ E[(|c|+1)²|s], whose failures all lie inside the proved lower half (s ≤ 2+√(n−1)) for the checked n, giving single crossing there. Neither is proved for all n; the limit shape suggests the shift inequality eventually fails above the lower-half edge. No fit; nothing wired.",
+  "data": {
+    "rows": [
+      {
+        "n": 5,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 3,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 6,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 3,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 7,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 3,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 8,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 3,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 9,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 4,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 10,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 4,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 11,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 4,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 12,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 4,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 13,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 4,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 14,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 4,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 15,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 5,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 16,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 5,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 17,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 5,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 18,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 5,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 19,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 5,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 20,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 5,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 21,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 5,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 22,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 5,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 23,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 5,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 24,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 6,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 25,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 6,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 26,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 6,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 27,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 6,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 28,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 6,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 29,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 6,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 30,
+        "tp2_parity_violations": 0,
+        "shift_fail_max_s": 6,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 31,
+        "shift_fail_max_s": 6,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 32,
+        "shift_fail_max_s": 7,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 33,
+        "shift_fail_max_s": 7,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 34,
+        "shift_fail_max_s": 7,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 35,
+        "shift_fail_max_s": 7,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 36,
+        "shift_fail_max_s": 7,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 37,
+        "shift_fail_max_s": 7,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 38,
+        "shift_fail_max_s": 7,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 39,
+        "shift_fail_max_s": 7,
+        "shift_failures_inside_lower_half": true
+      },
+      {
+        "n": 40,
+        "shift_fail_max_s": 7,
+        "shift_failures_inside_lower_half": true
+      }
+    ]
+  }
+}
