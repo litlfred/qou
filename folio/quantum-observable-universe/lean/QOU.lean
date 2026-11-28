@@ -2043,6 +2043,7 @@ import QOU.StandardModel.StrandCountFromBring
 import QOU.StandardModel.StrandChargesAreHolomorphicDifferentials
 import QOU.StandardModel.BringTwistFlipsHypercharge
 import QOU.StandardModel.HyperchargeSignIsBringOrientation
+import QOU.StandardModel.BraidChiralityBlindToHyperchargeSign
 import QOU.Confinement.HopfElectronTwoTermMass
 import QOU.Nuclear.LeptonTwoTermStokesCovariance
 import QOU.BraidsAndKnots.HeckeWeightSpaceSymmetry
