@@ -19,7 +19,8 @@ export default proposition({
       body:
         "Sorry-free (`StrandsAreBringEllipticQuotients.lean`). Proves the equivariant " +
         "matching of strands with the five A4 subgroups and of invariant lines in H0(K). " +
-        "Chevalley-Weil and uniqueness of the transitive 5-point S5-set are cited. That " +
+        "Chevalley-Weil is cited; uniqueness of the 5-point S5-set is proved in " +
+        "prop:index-five-subgroups-are-point-stabilisers. That " +
         "the physical strands are these quotients remains the modelling identification. " +
         "Bean qou-h0zz.",
     },

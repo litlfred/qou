@@ -2047,6 +2047,7 @@ import QOU.StandardModel.BraidChiralityBlindToHyperchargeSign
 import QOU.StandardModel.StrandsAreBringEllipticQuotients
 import QOU.StandardModel.BringConjugationOnGm
 import QOU.StandardModel.ColourStrandCount
+import QOU.StandardModel.OrderTwentyFourSubgroupsArePointStabilisers
 import QOU.Confinement.HopfElectronTwoTermMass
 import QOU.Nuclear.LeptonTwoTermStokesCovariance
 import QOU.BraidsAndKnots.HeckeWeightSpaceSymmetry

@@ -33,7 +33,7 @@ What is proved is the equivariant matching of the two `S₅`-sets and of the inv
 That the physical strands *are* these quotients is the modelling identification. It is no
 longer a bare label: up to isomorphism, a transitive `S₅`-set of size five is unique (its
 stabilisers have index five, and every index-five subgroup of `S₅` is a point stabiliser;
-cited, not proved here). So any identification of the strands with an `S₅`-set from Bring's
+proved in `OrderTwentyFourSubgroupsArePointStabilisers.lean`). So any identification of the strands with an `S₅`-set from Bring's
 surface agrees with this one.
 
 Integer and rational arithmetic only. No empirical value enters.

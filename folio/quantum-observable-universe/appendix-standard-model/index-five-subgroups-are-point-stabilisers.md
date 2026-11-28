@@ -1,0 +1,5 @@
+**Proposition.** *Let $H$ be a subgroup of $S_5$ of index $5$, equivalently of order $24$. Then $H = \mathrm{Stab}(i)$ for some strand $i \in \{0,\dots,4\}$.*
+
+*Proof.* Let $O$ be the $H$-orbit of $0$. By orbit–stabiliser, $|O|$ divides $24$, so $|O| \ne 5$. The group $H$ maps $O$, and hence its complement, to itself. If $|O| \in \{2, 3\}$, the permutations preserving $O$ number $|O|!\,(5-|O|)! = 12 < 24$, which is impossible. If $|O| \in \{1, 4\}$, then $O$ or its complement is a single point, and $H$ fixes it. So $H \subseteq \mathrm{Stab}(i)$ for some $i$, and equality holds since both have $24$ elements. The two counting facts about subsets of $\{0,\dots,4\}$ are checked exhaustively. $\square$
+
+**Consequence.** The stabilisers of a transitive five-point $S_5$-set have index five, so each is a point stabiliser $\mathrm{Stab}(i)$. This closes the uniqueness step cited in [`prop:strands-are-bring-elliptic-quotients`](strands-are-bring-elliptic-quotients.md): any identification of the five strands with a five-point $S_5$-set coming from Bring's surface, such as the five elliptic quotients $B/A_4$, uses the same five stabiliser subgroups.

@@ -52,6 +52,7 @@ export default chapter({
         "strands-are-bring-elliptic-quotients",
         "bring-conjugation-on-gm",
         "colour-strand-count",
+        "index-five-subgroups-are-point-stabilisers",
         "chirality-sign-is-hypercharge-sign",
         "linking-does-not-fix-charge",
         "strand-slot-separates-gen1",
