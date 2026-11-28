@@ -201,8 +201,16 @@ a set $C$ of cells on antidiagonal $m+1$ and removes a set $B$ of cells of antid
 $|C| + |B| = 2$ (`nearMin2_classify`), the three families are counted in closed form
 (`card_nearMin2_eq`), the minimisers have $r\binom{m+1}{r} + m\binom{m-1}{r}$ corners in total
 (`sum_corners_minimisers`), and for $n \ge 3$ the coefficient two steps below the top is the sum
-of the two (`coeff_sum_sym_qHook_two`). Not yet formalised: the divisibility
-$\prod_c [h(c)] \mid [n]!$ itself (Stanley, EC2, §7.21 \cite{stanley1999}).
+of the two (`coeff_sum_sym_qHook_two`). `QOU.Mass.QHookDvd` (sorry-free) proves the
+divisibility $\prod_c [h(c)] \mid [n]!$ itself (`hookProd_dvd_qfact`; Stanley, EC2, §7.21
+\cite{stanley1999}), so the three coefficient statements hold with no hypothesis
+(`coeff_sum_qHook`, `coeff_sum_sym_qHook`, `coeff_sum_sym_qHook_two_uncond`). Since
+$[k] = \prod_{1 < d \mid k} \Phi_d$, it suffices that for each $d \ge 2$ at most
+$\lfloor n/d \rfloor$ cells have $d \mid h(c)$. With $L = n$ rows and beta numbers
+$\beta_i = \lambda_i + L - 1 - i$, the cell $(i, j)$ gives a bead $\beta_i$ and an empty
+position $\beta_i - h(i,j) = L + j - \lambda'_j$ on the same runner of the $d$-abacus, this map is
+injective, and the beads satisfy $d \cdot \#\{\text{bead–gap pairs}\} + \binom L2 \le \sum_i \beta_i
+= n + \binom L2$ (`bead_bound`, `mul_card_hook_dvd_le`).
 
 Together with the finite certificates this settles $6 \le n \le 20$, every triangular $n$, and
 every $n \in \{T_j + 1, T_{j+1} - 1\}$ with $j \ge 4$.
