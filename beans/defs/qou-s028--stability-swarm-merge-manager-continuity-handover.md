@@ -7,7 +7,7 @@ priority: high
 tags:
     - stability
 created_at: 2026-11-24T08:06:16Z
-updated_at: 2026-11-28T12:03:00Z
+updated_at: 2026-11-28T12:05:00Z
 parent: qou-5vkl
 blocked_by:
     - qou-10v9
@@ -224,3 +224,4 @@ Verbatim (`2026-11-28`): *"make sure you are working proton pin... no longer muo
 - Registered 2 active `in-progress` child beans under `qou-s028`:
   - **`qou-intr`**: Introduction redo & Paper PDF TeX fix: 3 summary tables (gamma-gamma hadrons, Eightfold status, 26 SM parameters) + proton-pin / E=mc_q^2 currency + fix Paper PDF TeX errors
   - **`qou-cbot`**: Compute bottlenecks audit & Rust crates/* acceleration map: profile slow Python producers/sweeps across computations/ and map exact crates/* targets
+- Landed PR **#9705** (paper retitle *"On the Mechanics of Quantum Observables"* -> `ea3443986de5954b84d279aab406a7b3c333dff0`, `MISSING: 0`; `speculative-open-problems` & `ACCURACY.md` preserved).
