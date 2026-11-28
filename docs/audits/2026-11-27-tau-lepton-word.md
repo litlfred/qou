@@ -108,3 +108,18 @@ with its axis. Volume ratio τ/μ = 1.19: volume alone cannot carry the hierarch
 
 **Backups kept** (owner: *"keep the alternatives… as a fallback"*): universality ladder Δ, Δ³, Δ⁵
 (§above, Lean kept); shared 4₁ carrier; T(2,2n) links; B₂ trefoil ladder.
+
+
+## Least-crossing ladder (2026-11-28)
+
+PR #9879 showed that def:mass-identity, as written, is the N = 2 ring trace on braid classes and is Markov invariant, so the mass depends only on the closure. Under it the least-trace ladder ties e and μ (both close to the Hopf link): m = [4]/q³ for both. The trace cannot serve as a selector, because one link has 3-braid representatives of many traces.
+
+A selector that is itself a link invariant is the crossing number. SnapPy enumeration of odd 3-braid words up to length 7, keeping two-component, non-split, prime closures, gives, in crossing order:
+
+| lepton | word | closure | crossings | lk | volume |
+|---|---|---|---|---|---|
+| e | σ₀σ₁σ₀ | Hopf link | 2 | 1 | 0 |
+| μ | σ₀⁴σ₁⁻¹ | T(2,4) | 4 | 2 | 0 |
+| τ | σ₀²σ₁⁻¹σ₀σ₁⁻¹ | Whitehead link | 5 | 0 | 3.66386 |
+
+At 5 crossings the only other two-component link, Hopf # trefoil (σ₀³σ₁²), is composite. The crossing counts after simplification are upper bounds; they agree with the knot-table values for these links. Owner ruling: *"Keep definition, new words"*. N = 2 ring masses and U(1) = 3·lk = 3, 6, 0 are in PR #9881, unscored. U is not monotone along the ladder because the Whitehead link has lk 0. That is recorded as a consequence, not adjusted.
