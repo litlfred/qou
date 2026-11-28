@@ -1470,3 +1470,78 @@ degree-by-degree construction as `AssociatorObstructionVanishes E`. That obstruc
 linearised hexagon. `PentagonHexagonLie` addresses a different question: whether the hexagon
 part of the obstruction is implied by its pentagon part, for Lie elements of degree `d ≥ 3`. The
 two statements are independent, and this file does not use `Obstruction.lean`.
+
+## 17j. Furusho's Lie-algebra theorem proved for `d ≥ 3` (bean `qou-3fdg`)
+
+**Target.** Discharge the one input §17i left as a named `Prop`:
+
+```lean
+def PentagonHexagonLie (d : ℕ) : Prop :=
+  ∀ h : F2, Homog d h → IsPrimitive h → (assocLin (d + 1) h).2.2 = 0 → assocLin (d + 1) h = 0
+```
+
+**Proved** (sorry-free, algebraic over `ℚ`, three new files under `RationalAssociator/`):
+
+```lean
+theorem pentagonHexagonLie_of_three_le : ∀ d, 3 ≤ d → PentagonHexagonLie d
+```
+
+and, with that hypothesis discharged, the corollaries of §17i:
+
+```lean
+theorem assocU4_of_pentagon' {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
+    (hT : GroupLikeKAssociatorTower K E) {N : ℕ} (hN : 3 ≤ N) {Φ : F2}
+    (h3 : AssocU4 3 E Φ) (hp : Pentagon Φ (t N 0) (t N 1) (t N 3) (t N 4) (t N 5))
+    (hg : GL N Φ) : AssocU4 N E Φ
+theorem assocU4_iff_pentagon' … (hg : GL N Φ) :
+    AssocU4 N E Φ ↔ AssocU4 3 E Φ ∧ Pentagon Φ (t N 0) (t N 1) (t N 3) (t N 4) (t N 5)
+```
+
+(`K` any field with `[Algebra ℚ K]`.)
+
+The proof follows the shape of Furusho's Lie-algebra argument (Ann. Math. 171 (2010), Thm 3),
+written out for the repo's definitions:
+
+1. `FurushoTwoCycle.lean`. A shift by a central element commutes with evaluating a Lie
+   polynomial (`eval_add_left`, `eval_add_right`). From the linearised pentagon, the 2-cycle
+   identity `h(X, Y) + h(Y, X) = 0` follows (`add_swap_eq_zero_of_pentagon`).
+2. `FurushoP5.lean`. Five-strand families `P5`: their relabellings, their compositions, and
+   the `DK4` family of the first four strands. The linearised pentagon becomes a five-term
+   expression `piExpr` (`piExpr_eq`). The permutation sum `rSum_eq` gathers four relabelled
+   pentagons into the hexagon polynomial `R(X, Y) = h(X, Y) + h(Y, −X−Y) + h(−X−Y, X)`
+   (`rPoly`), evaluated at four pairs.
+3. `FurushoHexagon.lean`.
+   - It builds a concrete five-strand family on `ℚ⟨Y₁, Y₂, Y₃⟩ ⧸ FF3 N`, whose entries are a
+     left multiplication plus a Leibniz map (`xE`, `xE_p5`). Commutation is checked on all 15
+     disjoint pairs.
+   - Each relabelling lifts `U4 N`, so the pentagon is zero there (`piExpr_eq_zero`). Summing
+     gives `hexSum (rPoly h) ∈ FF3 (d+1)` (`hexSum_mem`).
+   - Two substitutions to `ℚ⟨X, Y⟩`, homogeneity and the symmetries of `R` give
+     `(2^{d−1} − 2)·R = 0`. So `R = 0` for `d ≥ 3` (`rPoly_eq_zero`).
+   - Then `t₁₂ + t₁₃ + t₂₃` is central in the `t₁₂, t₁₃, t₂₃` subalgebra, and the shift of
+     step 1 turns the linearised hexagon into `−R(t₁₂, t₁₃) = 0` (`lin513_eq_zero`). The
+     (5.17) components follow from the 2-cycle.
+
+The factor `2^{d−1} − 2` vanishes exactly at `d = 2`. That matches §17i's hand computation,
+where `[A, B]` has zero linearised pentagon and nonzero linearised hexagon, so the theorem cannot
+be extended below degree 3. The `μ` normalisation (`AssocU4 3 E Φ`) remains an input.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on each of `FurushoTwoCycle.lean`,
+`FurushoP5.lean`, `FurushoHexagon.lean` and `FurushoReduction.lean` exits 0 with no output.
+This was run against the symlink overlay used for §17g–§17i. `#print axioms` on
+`pentagonHexagonLie_of_three_le`, `rPoly_eq_zero`, `hexSum_mem`,
+`add_swap_eq_zero_of_pentagon`, `lin513_eq_zero`, `assocU4_of_pentagon'` and
+`assocU4_iff_pentagon'` gives `[propext, Classical.choice, Quot.sound]`. The files contain no
+`sorry`, no `axiom`, no `native_decide` and no analytic constructs. No `lake build` was run.
+
+**What remains open.** The Lie statement is now fully closed. What is still not reduced to
+pentagon-only data:
+
+- `GroupLikeKAssociatorTower K E` is still a hypothesis of `assocU4_of_pentagon'`. Each degree
+  step compares `Φ` with a genuine `K`-associator from the tower (§17i, "What this does not do").
+  Removing it would mean building the degree-`(d+1)` associator correction from the pentagon
+  alone. §17h's `AssociatorObstructionVanishes E` is the corresponding open input of the
+  construction route. The present theorem says that the hexagon part of that obstruction is
+  implied by its pentagon part in degrees `d ≥ 3`.
+- Furusho's group-level theorem (pentagon ⇒ hexagon for group-like `φ` with no associator given)
+  is not formalised. Only its Lie-algebra form is.

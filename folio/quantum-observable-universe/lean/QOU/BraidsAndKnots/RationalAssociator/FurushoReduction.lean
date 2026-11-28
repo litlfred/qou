@@ -17,7 +17,8 @@ algebraic over `ℚ` and sorry-free, and states the remaining input as a named `
    * `GroupLikeKAssociatorTower K E` (the existing analytic hypothesis: one group-like
      `K`-associator per level), and
    * `PentagonHexagonLie d` for every `d ≥ 3` (Furusho's Lie-algebra theorem in degree `d`,
-     stated below; **not proved here**).
+     stated below; proved for every `d ≥ 3` in `FurushoHexagon.lean`,
+     `pentagonHexagonLie_of_three_le`).
    Then a rational `Φ` with `ε(Φ) = 1`, group-like modulo `FF2 N`, satisfying **only the
    pentagon** in `U4 N`, and agreeing with an associator modulo degree 3 (`AssocU4 3 E Φ`), is
    an associator in `U4 N` (`N ≥ 3`): inversion (5.12) and the hexagon follow.
@@ -155,13 +156,14 @@ end Trunc
 
 /-! ### 3. The Lie-algebra statement, and the reduction -/
 
-/-- **Furusho's theorem, Lie-algebra form, in degree `d`** (the remaining input; not proved).
+/-- **Furusho's theorem, Lie-algebra form, in degree `d`** (the remaining input of this file).
 A homogeneous primitive `h` of degree `d` (a Lie element, by Friedrichs) whose linearised pentagon
 (5.20) vanishes in `U4 (d + 1)` has every linearised associator equation vanish there: (5.17) at
 every pair of `Fil (d + 1) 1` and the linearised hexagon (5.18). By hand computation (not
 formalised here): true at `d = 1` (the pentagon kills degree 1) and false at `d = 2`
 (`h = [A, B]`: linearised pentagon zero, linearised hexagon `−3[t₁₂, t₂₃]`). For `d ≥ 3` it is
-the Lie-algebra form of Furusho's theorem, which is not proved here. -/
+the Lie-algebra form of Furusho's theorem, proved in `FurushoHexagon.lean`
+(`pentagonHexagonLie_of_three_le`); this file does not import that proof. -/
 def PentagonHexagonLie (d : ℕ) : Prop :=
   ∀ h : F2, Homog d h → IsPrimitive h → (assocLin (d + 1) h).2.2 = 0 → assocLin (d + 1) h = 0
 
