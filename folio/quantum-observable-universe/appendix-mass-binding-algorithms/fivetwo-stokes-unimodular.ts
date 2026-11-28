@@ -16,7 +16,26 @@ export default proposition({
     "resurgence",
   ],
   uses: ["prop:fivetwo-dt-spectrum-split"],
+  cites: [
+    "faddeev_kashaev1994",
+    "andersen-kashaev2014",
+    "dimofte-gaiotto-gukov2013",
+    "dimofte-gaiotto-gukov2014",
+    "gueritaud2006",
+    "agol2011",
+    "porti1997",
+    "dubois2005",
+    "ohtsuki-takata-2015",
+    "garoufalidis-zagier2023",
+    "garoufalidis-zagier-2024",
+  ],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-28",
+      body:
+        "**Primary literature chain and claim boundaries (`docs/audits/2026-11-28-torsion-reeb-stokes-evidence-and-relevancy.md`).** Gu\u00e9ritaud (2006, \u00a79--10) and Agol (2011, Theorem 3.2 / Proposition 4.1) construct canonical layered/veering ideal triangulations from Farey/splitting words (`RL` for $5_2$, `m015` after fold); Faddeev and Kashaev (1994, \u00a72--3) and Andersen and Kashaev (2014, Proposition 3, Theorem 4, Theorem 5 on $(S^3, 4_1)$ and $(S^3, 5_2)$) realise Pachner $2$--$3$ invariance of the state-integral partition function via the quantum dilogarithm pentagon; Dimofte, Gaiotto, and Gukov (2013, \u00a74.1--4.3; 2014, \u00a73--4) supply the symplectic $Sp(2N, \\mathbb{Z})$ gluing and rotated $3$d index $I_M(m,e;q)$ from which `QOU.Nuclear.StokesIndexCount52` reads off the $q^0$ Stokes entries $4, -3, -9$; Porti (1997, Ch. 3--4), Dubois (2005, Theorem 7.1), Ohtsuki and Takata (2015, Theorem 1.1), and Garoufalidis and Zagier (2023, \u00a72.3; 2024, Part I \u00a74--6) identify the $1$-loop saddle prefactor with adjoint Reidemeister torsion $\\tau_{\\mathrm{Ad}}$ up to roots of unity. **Claim boundary:** in Lean (`FiveTwoStokes.lean` and `StokesIndexCount52.lean`), unimodularity and index factorisation are proved at $q^0$ (and inversion through $q^3$); the all-orders block-to-index identity for $5_2$ remains numerical ($40$ digits, `2026-11-28-fivetwo-stokes-from-3d-index.md`).",
+    },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Original wording: heading \"Why these are Lean-provable\"; \"are checked numerically in the sandwich compute and are not formalised here.\"" },
     {
       kind: "status",

@@ -1,0 +1,53 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dubois2006",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 458,
+      "entry": {
+        "id": "dubois2006",
+        "source": {
+          "kind": "external",
+          "url": "https://arxiv.org/abs/math/0403304"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.4153/cmb-2006-006-0) and arXiv e-print LaTeX source math/0403304v2.",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Computes non-abelian Ad-twisted Reidemeister torsion of fibered knots directly from fiber monodromy, with explicit evaluations on torus knots T(2,q) and the figure-eight knot 4_1.",
+          "keyResults": [
+            {
+              "locator": "\u00a73 Main Theorem; \u00a75 Examples (torus knots and 4_1)",
+              "statement": "Expresses mu-regular non-abelian Reidemeister torsion of a fibered knot in S^3 via the twisted monodromy determinant on the fiber surface group.",
+              "useForFolio": "Cross-checks 4_1 and torus-knot non-abelian torsion from monodromy; claim boundary excludes non-fibered 5_2 (covered instead by dubois2007).",
+              "targets": [
+                "prop:fivetwo-stokes-unimodular"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "no-action",
+              "rationale": "Registered and audited in docs/audits/2026-11-28-torsion-reeb-stokes-evidence-and-relevancy.md."
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "bralic1980",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 470,
+      "entry": {
+        "id": "bralic1980",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1103/PhysRevD.22.3090"
+        },
+        "status": "partial",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1103/PhysRevD.22.3090), OpenAlex abstract, and citations in Broda (2002, library/).",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Gauge-physics formulation of the non-abelian surface Stokes theorem expressing path-ordered Wilson loops as surface-ordered curvature integrals to compute exact loop averages in 2d Yang-Mills theory.",
+          "keyResults": [
+            {
+              "locator": "\u00a7II (Non-Abelian Stokes Theorem); \u00a7III-IV (2d Yang-Mills entangled Wilson loops)",
+              "statement": "Rewrites a path-ordered gauge holonomy around partial Sigma as a surface-ordered exponential of parallel-transported field strength and evaluates arbitrary entangled loop averages in 2d Yang-Mills.",
+              "useForFolio": "Physics counterpart to Yekutieli's non-abelian multiplicative surface integration in prop:mi-sw-abelianisation and lem:yekutieli-leading-coefficient.",
+              "targets": [
+                "prop:mi-sw-abelianisation",
+                "lem:yekutieli-leading-coefficient"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Wired in prop:mi-sw-abelianisation.",
+              "target": "prop:mi-sw-abelianisation"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

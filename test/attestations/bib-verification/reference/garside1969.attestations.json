@@ -1,0 +1,54 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "garside1969",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 465,
+      "entry": {
+        "id": "garside1969",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1093/qmath/20.1.235"
+        },
+        "status": "partial",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1093/qmath/20.1.235) and primary citations in Birman-Ko-Lee (1998) and Dehornoy et al. (2015).",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Foundational paper introducing the positive braid monoid B_n^+, the fundamental half-twist Delta, and canonical normal-form stepping solving the braid word and conjugacy problems.",
+          "keyResults": [
+            {
+              "locator": "\u00a71-2, Theorems 1-5",
+              "statement": "B_n^+ embeds in B_n, every braid admits a canonical Delta^k positive decomposition, and summit sets give a finite decidable invariant of conjugacy.",
+              "useForFolio": "Grounds positive-monoid normal-form stepping and conjugacy invariants on B_n.",
+              "targets": [
+                "rem:braid-fluid"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Wired in rem:braid-fluid.",
+              "target": "rem:braid-fluid"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

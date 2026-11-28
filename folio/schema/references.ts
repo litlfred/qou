@@ -3072,6 +3072,21 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "granssamuelsson2020" },
   { id: "furusho2010" },
   { id: "hicksmullenyucaszavislak2008" },
+  { id: "porti1997" },
+  { id: "dubois2005" },
+  { id: "dubois2006" },
+  { id: "kitano1996" },
+  { id: "muller1993" },
+  { id: "gueritaud2006" },
+  { id: "agol2011" },
+  { id: "weber2005" },
+  { id: "birman-williams1983" },
+  { id: "garside1969" },
+  { id: "birman-ko-lee1998" },
+  { id: "dehornoy2015" },
+  { id: "gaiotto-moore-neitzke2013" },
+  { id: "etnyre-ghrist2000" },
+  { id: "bralic1980" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

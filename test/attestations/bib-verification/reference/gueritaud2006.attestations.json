@@ -1,0 +1,55 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "gueritaud2006",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 461,
+      "entry": {
+        "id": "gueritaud2006",
+        "source": {
+          "kind": "external",
+          "url": "https://arxiv.org/abs/math/0406242"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.2140/gt.2006.10.1239) and arXiv e-print LaTeX source math/0406242v4.",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Primary source for canonical geometric layered ideal triangulations of punctured-torus bundles (RL monodromy words) and, via Futer's Appendix B, of hyperbolic two-bridge link complements (4_1 from R, 5_2 from RL).",
+          "keyResults": [
+            {
+              "locator": "Thm. 1.1 & Prop. prop:concavity (\u00a72-8); Appendix B by D. Futer (\u00a79-10)",
+              "statement": "Proves Rivin angle-polytope concavity and geometricity of layered ideal triangulations from RL words on punctured-torus bundles and Farey words on hyperbolic two-bridge links.",
+              "useForFolio": "Backs QOU.Transcendental.BraidKnotOctonion.RivinConcavity, QOU.Mass.FiveTwoGluingFromFareyWord, and two_bridge_layered_nz_probe.py.",
+              "targets": [
+                "prop:fivetwo-stokes-unimodular",
+                "prop:fivetwo-saddle-sum-rule"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Wired in prop:fivetwo-stokes-unimodular.",
+              "target": "prop:fivetwo-stokes-unimodular"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

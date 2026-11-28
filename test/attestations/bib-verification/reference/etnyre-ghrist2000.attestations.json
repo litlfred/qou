@@ -1,0 +1,54 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "etnyre-ghrist2000",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 469,
+      "entry": {
+        "id": "etnyre-ghrist2000",
+        "source": {
+          "kind": "external",
+          "url": "https://arxiv.org/abs/dg-ga/9708011"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1088/0951-7715/13/2/306) and arXiv e-print LaTeX source dg-ga/9708011v1.",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Proves exact topological equivalence (up to smooth non-vanishing rescaling and Riemannian metric) between contact Reeb vector fields and non-singular rotational Beltrami steady Euler flows on 3-manifolds.",
+          "keyResults": [
+            {
+              "locator": "Thm. 2.1 (thm_BelReeb) & Cor. 2.2 (\u00a72)",
+              "statement": "Any non-singular rotational Beltrami field on a Riemannian 3-manifold is a Reeb-like field for some contact 1-form, and conversely every contact Reeb field solves steady incompressible Euler for a compatible metric.",
+              "useForFolio": "Direct literature foundation for prop:reeb-beltrami-regular-flow on UT(Sigma_4) (QOU.FluidDynamics.BeltramiSteadyEuler).",
+              "targets": [
+                "prop:reeb-beltrami-regular-flow"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Wired in prop:reeb-beltrami-regular-flow.",
+              "target": "prop:reeb-beltrami-regular-flow"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

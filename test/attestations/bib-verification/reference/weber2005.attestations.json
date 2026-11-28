@@ -1,0 +1,55 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "weber2005",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 463,
+      "entry": {
+        "id": "weber2005",
+        "source": {
+          "kind": "external",
+          "url": "https://msp.org/pjm/2005/220-1/pjm-v220-n1-p09-s.pdf"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.2140/pjm.2005.220.167) and MSP open-access full text.",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Constructs Bring's genus-4 curve directly from Kepler's small stellated dodecahedron {5,4} / (2,4,5) tessellation and proves Jac(Sigma_4) ~ T^4 geometrically via flat cone metrics.",
+          "keyResults": [
+            {
+              "locator": "Thm. 1.1; Lemma 2.1 & Prop. 2.2 (\u00a72); Prop. 3.1 (\u00a73); Cor. 5.5 (\u00a75)",
+              "statement": "Identifies the hyperbolic {5,4}-tessellated small stellated dodecahedron with Bring's curve (Aut = S_5) and proves its Jacobian is isogenous to the fourth power T^4 of an explicit rhombic torus.",
+              "useForFolio": "Primary geometric reference for QOU's (2,4,5) Bring vertex/multiplier carrier (SigmaJGeometricCarrier.lean) and elliptic quotient T = E_{5tau_0}.",
+              "targets": [
+                "prop:mi-sw-abelianisation",
+                "prop:x5-bring-prym-jacobian"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Wired in prop:mi-sw-abelianisation.",
+              "target": "prop:mi-sw-abelianisation"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}

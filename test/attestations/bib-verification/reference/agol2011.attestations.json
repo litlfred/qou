@@ -1,0 +1,54 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "agol2011",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 462,
+      "entry": {
+        "id": "agol2011",
+        "source": {
+          "kind": "external",
+          "url": "https://arxiv.org/abs/1008.1606"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T12:33:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API (DOI 10.1090/conm/560/11087) and arXiv e-print LaTeX source 1008.1606v2.",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Establishes canonical veering taut ideal triangulations of punctured pseudo-Anosov mapping tori from periodic train-track splitting / Whitehead flip sequences.",
+          "keyResults": [
+            {
+              "locator": "Thm. 3.5 (periodicsplitting); Prop. 4.2 (veering)",
+              "statement": "Periodic splitting sequences of train tracks suited to the stable lamination of a punctured pseudo-Anosov map yield canonical veering taut ideal triangulations via Whitehead moves.",
+              "useForFolio": "Generalizes punctured-torus RL layering to arbitrary punctured surface mapping tori (covering fibered knots such as 4_1, while non-fibered 5_2 uses gueritaud2006 \u00a79-10).",
+              "targets": [
+                "prop:fivetwo-stokes-unimodular"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "cite-in-block",
+              "rationale": "Wired in prop:fivetwo-stokes-unimodular.",
+              "target": "prop:fivetwo-stokes-unimodular"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T12:33:00Z"
+        }
+      }
+    }
+  ]
+}
