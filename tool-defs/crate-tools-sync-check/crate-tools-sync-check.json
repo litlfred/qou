@@ -1,0 +1,30 @@
+{
+  "$schema": "tool-definition/v1",
+  "tool": {
+    "id": "crate-tools-sync-check",
+    "title": "Check tool-defs crate nodes match crates/*/Cargo.toml",
+    "description": "Verify that `tool-defs/crates.json` and every `tool-defs/crate-*/crate-*.json` node match the live `crates/*/Cargo.toml` and root `Cargo.toml` manifests (`scripts/gen-crate-tools.ts --check`). Writes nothing.",
+    "install": {
+      "none": true
+    },
+    "invoke": {
+      "shell": "bun run scripts/gen-crate-tools.ts --check"
+    },
+    "io": {
+      "inputs": [],
+      "outputs": []
+    },
+    "satisfies": [
+      "rust-crates-and-values"
+    ],
+    "subprocesses": [
+      "rust-crates-and-values"
+    ],
+    "requires": {
+      "runtime": [
+        "bun"
+      ],
+      "network": false
+    }
+  }
+}

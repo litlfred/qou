@@ -1,12 +1,18 @@
 # Octave MEX build for hecke-engine-c bindings.
 #
-# Assumes hecke-engine-c has been built (cd ../hecke-engine-c && cargo build --release).
+# Assumes hecke-engine-c has been built (`cargo build --release -p hecke-engine-c`).
 # Compiles one MEX file per C-ABI function; mkoctfile links against
 # libhecke_engine_c.{so,dylib} + the system libgmp + libmpfr that
 # hecke-engine itself needs.
 
-C_LIB_DIR  := ../hecke-engine-c/target/release
-C_INC_DIR  := ../hecke-engine-c/include
+ifneq ($(wildcard $(CARGO_TARGET_DIR)/release/libhecke_engine_c.*),)
+  C_LIB_DIR := $(CARGO_TARGET_DIR)/release
+else ifneq ($(wildcard ../../target/release/libhecke_engine_c.*),)
+  C_LIB_DIR := ../../target/release
+else
+  C_LIB_DIR := ../../crates/hecke-engine-c/target/release
+endif
+C_INC_DIR  := ../../crates/hecke-engine-c/include
 
 # Default mkoctfile (Octave's MEX-compatible compiler driver).
 MKOCTFILE := mkoctfile

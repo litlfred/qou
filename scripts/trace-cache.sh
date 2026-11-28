@@ -22,7 +22,7 @@
 #               Two routes to the same exact number may round its last MPFR
 #               digits differently, so each route is its own member.
 #   engine-key  first 12 hex of sha256 over the git TREE ids of
-#               tools/pyhecke-native and tools/hecke-engine at HEAD — the same
+#               crates/pyhecke-native and crates/hecke-engine at HEAD — the same
 #               key wheel-cache uses, so a trace member and the wheel that
 #               computed it share a key. A dirty source tree has no key
 #               (`undetermined`): it never restores and never seeds.
@@ -75,7 +75,7 @@ set_func() {
     *) die "unknown function: $1 (tr-m-atomic-mpfr | tr-m-atomic-mpfr-suffixes)" ;;
   esac
 }
-SRCS="tools/pyhecke-native tools/hecke-engine"   # same order as wheel-cache.sh, so the keys agree
+SRCS="crates/pyhecke-native crates/hecke-engine"   # same order as wheel-cache.sh, so the keys agree
 
 bc_init trace-cache
 PREFIX="$BC_PREFIX"

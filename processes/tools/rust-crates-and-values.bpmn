@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  qou — Rust crates workspace, tool-defs/ KG registration, and 80-dps proton-pinned witnessed values
+
+  Source of truth: this file. Owner rulings A1/A2/A3 (2026-11-28, bean qou-crwk).
+  Open it in bpmn.io or any BPMN 2.0 tool.
+
+  Governs authoring or modifying any Rust crate under `crates/*`, syncing its
+  `tool-definition/v1` registration in `tool-defs/` (`scripts/gen-crate-tools.ts` +
+  `bun run cat check:tools`), and evaluating 80-dps proton-pinned witnessed values
+  via `crates/qou-values` / `Clarabel.rs` MPFR (`rev = "37f06c3"`).
+-->
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                  xmlns:bootstrap.processes="https://litlfred.github.io/bootstrap/0.1.0/processes/ns#"
+                  xmlns:cat-harness.processes="https://litlfred.github.io/cat-harness/0.1.0/processes/ns#"
+                  id="Definitions_RustCratesAndValues"
+                  targetNamespace="https://litlfred.github.io/qou/workflows"
+                  exporter="qou" exporterVersion="1">
+
+  <bpmn:collaboration id="Collaboration_RustCratesAndValues">
+    <bpmn:participant id="Participant_RustCratesAndValues" name="Rust crates workspace, tool-defs KG registration &amp; proton-pinned witnessed values" processRef="Process_RustCratesAndValues" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_RustCratesAndValues" name="Rust crates workspace, tool-defs KG registration &amp; proton-pinned witnessed values" isExecutable="false">
+    <bpmn:documentation>Author, verify, and register Rust crates in QOU's top-level Cargo workspace (`Cargo.toml` + `crates/*`), and evaluate 80-dps proton-pinned witnessed values via `crates/qou-values` and `Clarabel.rs` MPFR (`rev = "37f06c3"`).
+
+DOMAIN-NEUTRAL LIBRARY BOUNDARY (Ruling A1, 2026-11-28). General mathematical crates (`crates/gs-basis`: non-commutative Buchberger–Shirshov, Coxeter/Hecke/TL normal forms, Markov tower peeling, binomial/toric Gröbner reduction) stay 100% free of QOU domain specifics with strict semver metadata (`package-release`) so `folio-assistant-sci` and external scientific consumers reuse them directly. QOU-specific physics/model crates (`crates/qou-gg-core`, `crates/qou-gg-eval`, `crates/qou-clarabel`, `crates/qou-values`) sit on top.
+
+EVERY CRATE IS A TOOL NODE (Ruling A2, 2026-11-28). `scripts/gen-crate-tools.ts` projects every `crates/*/Cargo.toml` into `tool-defs/crate-&lt;id&gt;/crate-&lt;id&gt;.json` (`tool-definition/v1`) and `tool-defs/crates.json`, checked by `bun run cat check:tools`.
+
+PROTON PIN &amp; 80-DPS CERTIFICATES (Ruling A3, 2026-11-28). All active Rust and Python evaluations use the proton pin (`q0Anchor = "proton"`; muon pin on hold until rederivation) at &gt;= 80 decimal digits (`prec_bits &gt;= 280` in MPFR). Rewriting any committed `*.witness.json` waits on owner approval (`processes/content/witness-refresh.bpmn`).</bpmn:documentation>
+    <bpmn:extensionElements>
+      <cat-harness.processes:policy enforcement="strict" />
+    </bpmn:extensionElements>
+    <bpmn:laneSet id="Process_RustCratesAndValues_LaneSet">
+      <bpmn:lane id="Lane_Owner" name="Owner (the paper's author)">
+        <bpmn:documentation>Approves any rewrite of committed `*.witness.json` files or new public crate releases (`package-release`).</bpmn:documentation>
+        <bpmn:extensionElements><bootstrap.processes:role ref="author"/></bpmn:extensionElements>
+        <bpmn:flowNodeRef>Task_ApproveWitnesses</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Agent" name="Compute / Rust authoring agent">
+        <bpmn:documentation>Authors crates under `crates/*` with shared `CARGO_TARGET_DIR`, syncs `tool-defs/` KG nodes, runs 80-dps proton-pinned evaluations, and verifies KG and JSON-LD gates.</bpmn:documentation>
+        <bpmn:extensionElements><bootstrap.processes:role ref="authoring-agent"/></bpmn:extensionElements>
+        <bpmn:flowNodeRef>StartEvent_CrateChange</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_AuthorCrate</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_SyncCrateTools</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_NeedsWitnessWrite</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_EvalValues</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_VerifyGates</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_Ready</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+
+    <bpmn:startEvent id="StartEvent_CrateChange" name="A crate under crates/*&#10;is added or updated">
+      <bpmn:documentation>Triggered when creating, moving, or modifying a Rust crate in `crates/*` or evaluating witnessed values via `crates/qou-values`.</bpmn:documentation>
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+
+    <bpmn:serviceTask id="Task_AuthorCrate" name="Check crate boundary,&#10;metadata &amp; shared build">
+      <bpmn:documentation>Keep `crates/gs-basis` 100% free of QOU domain specifics (`folio-assistant-sci` reusable), set exact semver + license + repository in `Cargo.toml`, and verify with `CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check` while keeping `/` &gt;= 13–14 GB free.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="rust-crates-and-values" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:serviceTask id="Task_SyncCrateTools" name="Sync tool-defs/ crate&#10;nodes &amp; check:tools">
+      <bpmn:documentation>Run `bun run scripts/gen-crate-tools.ts` (`--check`) to regenerate `tool-defs/crates.json` and `tool-defs/crate-*/crate-*.json` (`tool-definition/v1`), then verify `bun run cat check:tools` exits 0.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="rust-crates-and-values" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:exclusiveGateway id="Gateway_NeedsWitnessWrite" name="Writes committed&#10;witness JSON?">
+      <bpmn:documentation>Read-only library/crate changes proceed straight to gate verification; rewriting a committed `*.witness.json` requires owner approval (`witness-refresh.bpmn`).</bpmn:documentation>
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_NoWrite</bpmn:outgoing>
+      <bpmn:outgoing>Flow_NeedsApproval</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+
+    <bpmn:userTask id="Task_ApproveWitnesses" name="Approve witness&#10;refresh card">
+      <bpmn:documentation>Owner approves rewriting committed `*.witness.json` payloads via a structured decision card (`AskUserQuestion`, `🟡` + chat mirror).</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="interaction-modality" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_NeedsApproval</bpmn:incoming>
+      <bpmn:outgoing>Flow_Approved</bpmn:outgoing>
+    </bpmn:userTask>
+
+    <bpmn:serviceTask id="Task_EvalValues" name="Evaluate 80-dps proton-pin&#10;values (qou-values)">
+      <bpmn:documentation>Evaluate witnessed values at &gt;= 80 dps (`prec_bits &gt;= 280`, `Clarabel.rs` rev `37f06c3` MPFR certificates) on the proton pin (`q0Anchor = "proton"`; muon pin on hold until rederivation), emitting exact decimal strings with zero `f64` intermediate.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="compute-author" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_Approved</bpmn:incoming>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:serviceTask id="Task_VerifyGates" name="Verify KG, scorecard&#10;&amp; JSON-LD gates">
+      <bpmn:documentation>Run `bun run scripts/gen-crate-tools.ts --check`, `bun run cat check:tools`, `bun run cat check:instance-config`, and `bash scripts/gen-block-jsonld.sh --check` (plus `generate-accuracy-scorecard.py --check` when witnesses changed).</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="compute-audit" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_NoWrite</bpmn:incoming>
+      <bpmn:incoming>Flow_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_5</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:endEvent id="EndEvent_Ready" name="Crates &amp; KG&#10;verified">
+      <bpmn:incoming>Flow_5</bpmn:incoming>
+    </bpmn:endEvent>
+
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="StartEvent_CrateChange" targetRef="Task_AuthorCrate" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_AuthorCrate" targetRef="Task_SyncCrateTools" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Task_SyncCrateTools" targetRef="Gateway_NeedsWitnessWrite" />
+    <bpmn:sequenceFlow id="Flow_NoWrite" name="no" sourceRef="Gateway_NeedsWitnessWrite" targetRef="Task_VerifyGates" />
+    <bpmn:sequenceFlow id="Flow_NeedsApproval" name="yes" sourceRef="Gateway_NeedsWitnessWrite" targetRef="Task_ApproveWitnesses" />
+    <bpmn:sequenceFlow id="Flow_Approved" sourceRef="Task_ApproveWitnesses" targetRef="Task_EvalValues" />
+    <bpmn:sequenceFlow id="Flow_4" sourceRef="Task_EvalValues" targetRef="Task_VerifyGates" />
+    <bpmn:sequenceFlow id="Flow_5" sourceRef="Task_VerifyGates" targetRef="EndEvent_Ready" />
+  </bpmn:process>
+
+  <bpmndi:BPMNDiagram id="BPMNDiagram_RustCratesAndValues">
+    <bpmndi:BPMNPlane id="BPMNPlane_RustCratesAndValues" bpmnElement="Collaboration_RustCratesAndValues">
+      <bpmndi:BPMNShape id="Participant_RustCratesAndValues_di" bpmnElement="Participant_RustCratesAndValues" isHorizontal="true">
+        <dc:Bounds x="40" y="40" width="1120" height="360" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Owner_di" bpmnElement="Lane_Owner" isHorizontal="true">
+        <dc:Bounds x="70" y="40" width="1090" height="150" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Agent_di" bpmnElement="Lane_Agent" isHorizontal="true">
+        <dc:Bounds x="70" y="190" width="1090" height="210" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_CrateChange_di" bpmnElement="StartEvent_CrateChange">
+        <dc:Bounds x="112" y="272" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_AuthorCrate_di" bpmnElement="Task_AuthorCrate">
+        <dc:Bounds x="190" y="250" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_SyncCrateTools_di" bpmnElement="Task_SyncCrateTools">
+        <dc:Bounds x="370" y="250" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_NeedsWitnessWrite_di" bpmnElement="Gateway_NeedsWitnessWrite" isMarkerVisible="true">
+        <dc:Bounds x="555" y="265" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_ApproveWitnesses_di" bpmnElement="Task_ApproveWitnesses">
+        <dc:Bounds x="640" y="75" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_EvalValues_di" bpmnElement="Task_EvalValues">
+        <dc:Bounds x="740" y="250" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_VerifyGates_di" bpmnElement="Task_VerifyGates">
+        <dc:Bounds x="920" y="250" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_Ready_di" bpmnElement="EndEvent_Ready">
+        <dc:Bounds x="1092" y="272" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
+        <di:waypoint x="148" y="290" /><di:waypoint x="190" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
+        <di:waypoint x="330" y="290" /><di:waypoint x="370" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_3_di" bpmnElement="Flow_3">
+        <di:waypoint x="510" y="290" /><di:waypoint x="555" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_NoWrite_di" bpmnElement="Flow_NoWrite">
+        <di:waypoint x="580" y="315" /><di:waypoint x="580" y="365" /><di:waypoint x="990" y="365" /><di:waypoint x="990" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_NeedsApproval_di" bpmnElement="Flow_NeedsApproval">
+        <di:waypoint x="580" y="265" /><di:waypoint x="580" y="115" /><di:waypoint x="640" y="115" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Approved_di" bpmnElement="Flow_Approved">
+        <di:waypoint x="780" y="115" /><di:waypoint x="810" y="115" /><di:waypoint x="810" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_4_di" bpmnElement="Flow_4">
+        <di:waypoint x="880" y="290" /><di:waypoint x="920" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_5_di" bpmnElement="Flow_5">
+        <di:waypoint x="1060" y="290" /><di:waypoint x="1092" y="290" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

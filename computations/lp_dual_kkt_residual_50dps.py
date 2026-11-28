@@ -69,11 +69,21 @@ DPS = 50
 
 
 def _bin() -> Path | None:
-    rel = Path("tools/hecke-engine/target/release/clarabel-operator-selection-lp")
-    for parent in HERE.parents:
-        cand = parent / rel
+    import os
+    if ct := os.environ.get("CARGO_TARGET_DIR"):
+        cand = Path(ct) / "release" / "clarabel-operator-selection-lp"
         if cand.exists():
             return cand
+    rels = (
+        Path("target/release/clarabel-operator-selection-lp"),
+        Path("crates/hecke-engine/target/release/clarabel-operator-selection-lp"),
+        Path("tools/hecke-engine/target/release/clarabel-operator-selection-lp"),
+    )
+    for parent in HERE.parents:
+        for rel in rels:
+            cand = parent / rel
+            if cand.exists():
+                return cand
     return None
 
 

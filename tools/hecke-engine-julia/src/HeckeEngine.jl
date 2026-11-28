@@ -8,12 +8,12 @@ Tier-3 wrapper per workplan v2 §3.6 — sibling of `pyhecke-native`,
 Iwahori-Hecke H_3(q) Gram / Markov-trace surface.
 
 Build:
-    cd ../hecke-engine-c
-    cargo build --release
+    cargo build --release -p hecke-engine-c
 
 The Julia side discovers the resulting `libhecke_engine_c.{so,dylib,dll}`
-via the `HECKE_ENGINE_C_LIB` env var, falling back to the conventional
-location `../hecke-engine-c/target/release/`.
+via the `HECKE_ENGINE_C_LIB` env var, `$CARGO_TARGET_DIR/release`, or
+the top-level Cargo workspace `target/release/` (falling back to
+`crates/hecke-engine-c/target/release/`).
 
 Usage:
     using HeckeEngine
@@ -32,22 +32,27 @@ const _LIB = let
     if !isempty(env)
         env
     else
-        # Convention: tools/hecke-engine-julia and tools/hecke-engine-c
-        # are siblings. Walk up to the workspace root.
-        root = dirname(dirname(@__DIR__))
-        for ext in (".so", ".dylib", ".dll")
-            cand = joinpath(root, "hecke-engine-c", "target", "release",
-                            "libhecke_engine_c$ext")
-            if isfile(cand)
+        repo_root = dirname(dirname(dirname(@__DIR__)))
+        cargo_target = get(ENV, "CARGO_TARGET_DIR", "")
+        lib_dirs = String[]
+        if !isempty(cargo_target)
+            push!(lib_dirs, joinpath(cargo_target, "release"))
+        end
+        push!(lib_dirs, joinpath(repo_root, "target", "release"))
+        push!(lib_dirs, joinpath(repo_root, "crates", "hecke-engine-c", "target", "release"))
+        push!(lib_dirs, joinpath(repo_root, "tools", "hecke-engine-c", "target", "release"))
+        cand = ""
+        for dir in lib_dirs, ext in (".so", ".dylib", ".dll")
+            p = joinpath(dir, "libhecke_engine_c$ext")
+            if isfile(p)
+                cand = p
                 @goto found
             end
         end
         error("""
             HeckeEngine: could not find libhecke_engine_c.{so,dylib,dll}.
 
-            Expected location: tools/hecke-engine-c/target/release/.
-            Build it with:    cd tools/hecke-engine-c && cargo build --release
-
+            Build it with:    cargo build --release -p hecke-engine-c
             Or set the HECKE_ENGINE_C_LIB env var to an explicit path.
             """)
         @label found

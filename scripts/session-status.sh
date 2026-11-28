@@ -46,18 +46,18 @@ elif [ -f "$HOME/.cargo/env" ]; then
   if has cargo; then CARGO_OK=true; CARGO_VER=$(cargo --version 2>/dev/null); fi
 fi
 
-HECKE_DIR="$REPO_ROOT/tools/hecke-engine"
-HECKE_BIN="$HECKE_DIR/target/release/hecke-engine"
+HECKE_DIR="$REPO_ROOT/crates/hecke-engine"
 HECKE_VER_FILE="$HECKE_DIR/Cargo.toml"
-if [ -f "$HECKE_BIN" ]; then
-  HECKE_OK=true
-  HECKE_VER=$(grep '^version' "$HECKE_VER_FILE" 2>/dev/null | head -1 | sed 's/.*"\(.*\)"/\1/')
-elif [ "$CARGO_OK" = true ] && [ -f "$HECKE_DIR/Cargo.toml" ]; then
-  (cd "$HECKE_DIR" && cargo build --release 2>/dev/null) && {
+for _cand_bin in \
+  "${CARGO_TARGET_DIR:-/tmp/qou-shared-cargo-target}/release/hecke-engine" \
+  "$REPO_ROOT/target/release/hecke-engine" \
+  "$HECKE_DIR/target/release/hecke-engine"; do
+  if [ -f "$_cand_bin" ]; then
     HECKE_OK=true
     HECKE_VER=$(grep '^version' "$HECKE_VER_FILE" 2>/dev/null | head -1 | sed 's/.*"\(.*\)"/\1/')
-  }
-fi
+    break
+  fi
+done
 
 # ── 2. PDF generation ──────────────────────────────────────────
 PDFLATEX_OK=false
@@ -172,7 +172,7 @@ FIXES=""
 [ "$DVISVGM_OK" = false ] && [ "$PDFLATEX_OK" = true ] && FIXES="$FIXES\n  → TeX preview: sudo apt install dvisvgm"
 [ "$ASSISTANT_OK" = false ] && FIXES="$FIXES\n  → Paper assistant: ./scripts/start-folio-assistant.sh --http"
 [ "$CARGO_OK" = false ] && FIXES="$FIXES\n  → Rust: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && source ~/.cargo/env"
-[ "$HECKE_OK" = false ] && [ "$CARGO_OK" = true ] && FIXES="$FIXES\n  → Hecke engine: cd tools/hecke-engine && cargo build --release --bin v2"
+[ "$HECKE_OK" = false ] && [ "$CARGO_OK" = true ] && FIXES="$FIXES\n  → Hecke engine: CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo build --release -p hecke-engine --bin hecke-engine"
 
 if [ -n "$FIXES" ]; then
     SUMMARY="$SUMMARY

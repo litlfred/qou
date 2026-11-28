@@ -98,7 +98,7 @@ GATES = [
     # ── lp-dual-gate.yml, job `gate` (needs the MPFR LP binary built first) ────
     g("lp-dual-backend", "Task_LpDual", "Confirm CI solves at 50 dps, not float64",
       [[PY, "scripts/lp-dual-backend-check.py"]],
-      setup="cargo build --release --features clarabel-mpfr --bin clarabel-operator-selection-lp (in tools/hecke-engine)"),
+      setup="CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo build --release -p hecke-engine --features clarabel-mpfr --bin clarabel-operator-selection-lp"),
     g("pyhecke-tests", "Task_LpDual", "Unit tests — provenance, the rescue, and every backend site",
       [[PY, "-m", "pytest", "tools/pyhecke/tests", "-q"]]),
     g("lp-dual-wired", "Task_LpDual", "Content-wired LP/SDP witnesses must report their duals",

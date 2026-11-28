@@ -1,8 +1,7 @@
 {
   "$schema": "concern-groups/v1",
-  "_comment": "qou's process diagrams, by concern group (codes from the platform's code-lists/concern-group.json). A same-named group here is a member of the platform's group. Story TOOLS T6, bean qou-kumy.",
+  "_comment": "qou's additional process concern group(s) not already declared by cat-harness/folio-assistant-core (`content` is declared by cat-harness, so `processes/content/` is automatically a member without re-declaring it; `tools` is declared here). Story TOOLS T6, bean qou-kumy / qou-crwk.",
   "groups": [
-    "content",
     "tools"
   ]
 }

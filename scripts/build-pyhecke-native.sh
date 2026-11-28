@@ -6,7 +6,7 @@
 #
 # WHY THIS SCRIPT EXISTS
 # ----------------------
-# `pyhecke-native` is NOT on PyPI; it must be built from `tools/pyhecke-native`
+# `pyhecke-native` is NOT on PyPI; it must be built from `crates/pyhecke-native`
 # with maturin. Its Cargo graph pins a git fork `github.com/litlfred/Clarabel.rs`
 # (the Clarabel SDP solver). In the Claude-Code-on-the-web sandbox a global git
 # `insteadOf` rewrites every `https://github.com/...` fetch to a local mirror
@@ -73,9 +73,11 @@ if [ -z "$WHL" ]; then
   fi
 
   echo "[pyhecke-native] maturin build --release (fetches Clarabel.rs fork direct from github)"
-  ( cd "$ROOT/tools/pyhecke-native" && maturin build --release )
+  WHEEL_OUT="$ROOT/crates/pyhecke-native/target/wheels"
+  mkdir -p "$WHEEL_OUT"
+  ( cd "$ROOT/crates/pyhecke-native" && maturin build --release --out "$WHEEL_OUT" )
 
-  WHL="$(find "$ROOT/tools/pyhecke-native/target/wheels" -name 'pyhecke_native*.whl' 2>/dev/null | head -1)"
+  WHL="$(find "$WHEEL_OUT" -name 'pyhecke_native*.whl' 2>/dev/null | head -1)"
   [ -n "$WHL" ] || { echo "[pyhecke-native] ERROR: no wheel produced" >&2; exit 1; }
   BUILT=1
 fi
@@ -85,7 +87,7 @@ python3 -c "import pyhecke_native; print('[pyhecke-native] import OK:', pyhecke_
 # ── Trace-convention gate ────────────────────────────────────────────────────
 # An import check cannot tell a fresh wheel from a stale one. On 2026-08-09 the
 # INSTALLED .so returned convention C (markov_z(q0) = 0.4993203341836945) while
-# its own source, tools/hecke-engine/src/gram.rs, read convention D — the wheel
+# its own source, crates/hecke-engine/src/gram.rs, read convention D — the wheel
 # predated b5f4cb5b9 ("the Rust engine stack C -> D, all nine bindings") by a
 # day. Source review could not see it, the content-layer axis passed, and the
 # registry was correct; only calling the binary exposes it.

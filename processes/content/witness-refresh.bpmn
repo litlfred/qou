@@ -106,7 +106,7 @@ unchanged">
 
     <bpmn:serviceTask id="Task_Run" name="Re-run the approved
 producers">
-      <bpmn:documentation>Re-run exactly the approved producers, in dependency order. A producer that writes sibling witnesses outside the approved set is reported, and those files are restored to their committed state rather than committed.</bpmn:documentation>
+      <bpmn:documentation>Re-run exactly the approved Python (`computations/`) or Rust (`crates/qou-values`, `crates/hecke-engine`) producers at the active proton pin (`q0Anchor = "proton"`; muon pin on hold until rederivation per 2026-11-28 owner ruling), in dependency order. A producer that writes sibling witnesses outside the approved set is reported, and those files are restored to their committed state rather than committed.</bpmn:documentation>
       <bpmn:extensionElements>
         <bootstrap.processes:skill ref="compute-author" />
         <cat-harness.processes:bean op="note" />

@@ -1,7 +1,8 @@
 """Tests for the PyO3 native acceleration layer.
 
 Skipped if `pyhecke_native` has not been built (requires
-`cd tools/pyhecke-native && maturin build && pip install target/wheels/*.whl`).
+`bash scripts/build-pyhecke-native.sh` or
+`cd crates/pyhecke-native && maturin build --release --out target/wheels && pip install target/wheels/*.whl`).
 """
 
 from __future__ import annotations
@@ -36,14 +37,21 @@ def _canonical_q0() -> float:
     return float(_pg.q0)
 
 
-def _cargo_version() -> str:
-    """`version = "..."` from `pyhecke-native/Cargo.toml`."""
-    import re
+def _pyhecke_native_dir():
     from pathlib import Path
-    toml = (Path(__file__).resolve().parents[2]
-            / "pyhecke-native" / "Cargo.toml").read_text()
+    repo_root = Path(__file__).resolve().parents[3]
+    cand = repo_root / "crates" / "pyhecke-native"
+    if cand.is_dir():
+        return cand
+    return Path(__file__).resolve().parents[2] / "pyhecke-native"
+
+
+def _cargo_version() -> str:
+    """`version = "..."` from `crates/pyhecke-native/Cargo.toml`."""
+    import re
+    toml = (_pyhecke_native_dir() / "Cargo.toml").read_text()
     m = re.search(r'(?m)^version\s*=\s*"([^"]+)"', toml)
-    assert m, "no version in pyhecke-native/Cargo.toml"
+    assert m, "no version in crates/pyhecke-native/Cargo.toml"
     return m.group(1)
 
 
@@ -251,8 +259,7 @@ def test_native_version_bumped():
     from pathlib import Path
 
     assert pyhecke_native.__version__ == _cargo_version()
-    pyproject = (Path(__file__).resolve().parents[2]
-                 / "pyhecke-native" / "pyproject.toml")
+    pyproject = _pyhecke_native_dir() / "pyproject.toml"
     if pyproject.exists():
         m = re.search(r'(?m)^version\s*=\s*"([^"]+)"', pyproject.read_text())
         if m:

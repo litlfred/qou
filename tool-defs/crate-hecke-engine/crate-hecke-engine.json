@@ -1,0 +1,44 @@
+{
+  "$schema": "tool-definition/v1",
+  "tool": {
+    "id": "crate-hecke-engine",
+    "title": "Rust crate hecke-engine (crates/hecke-engine)",
+    "description": "Gröbner reduction engine for H_n(q) — nuclear normal forms (Workspace member in root `Cargo.toml`. Version 0.8.0, edition 2021, license MIT. Binaries (37): `clarabel-certify`, `clarabel-confinement-moment-sdp`, `clarabel-h3-exact-lp`, `clarabel-operator-selection-lp`, `clarabel-phase8b-mpfr-smoke`, `clarabel-round4-rational-smoke`, `clarabel-round4-sdp-smoke`, `dump-block-matrices`, `faddeev_fk`, `gp-cross-validate`, `hecke`, `hecke-allparts`, `hecke-atomic`, `hecke-bigint`, `hecke-canonical-chi`, `hecke-crt`, `hecke-engine`, `hecke-float`, `hecke-gram`, `hecke-hapower`, `hecke-irrep`, `hecke-mass`, `hecke-modular`, `hecke-molecular`, `hecke-pergen`, `hecke-qvalues`, `hecke-stream`, `hecke-tensor`, `hecke-tower-trace`, `hecke-tr-m-wenzl-lr`, `joint-tower-sdp`, `r5-5-diagnose-h5`, `r5-5-minimal-h5`, `r5-5-scale-test`, `r5-6-smoke`, `tl-cable-mpfr`, `tl-cable-qstar`. Optional features: `clarabel-bigrational`, `clarabel-mpfr`, `clarabel-mpfr-sdp`, `clarabel-sdp`, `mpfr`, `wasm-core`. Generated from `crates/hecke-engine/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+    "install": {
+      "none": true
+    },
+    "invoke": {
+      "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p hecke-engine"
+    },
+    "io": {
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "hecke_engine",
+          "schema": {
+            "$type": "RepoPath"
+          },
+          "description": "Rust crate `hecke-engine` at `crates/hecke-engine` (`crates/hecke-engine/Cargo.toml`)."
+        }
+      ]
+    },
+    "satisfies": [
+      "rust-crates-and-values",
+      "compute-author"
+    ],
+    "subprocesses": [
+      "rust-crates-and-values"
+    ],
+    "selection": {
+      "when": "Building, type-checking, or consuming `hecke-engine` (`crates/hecke-engine`).",
+      "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+      "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+    },
+    "requires": {
+      "runtime": [
+        "cargo"
+      ],
+      "network": false
+    }
+  }
+}

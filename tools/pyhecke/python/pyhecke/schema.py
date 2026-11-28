@@ -1,6 +1,6 @@
 """JSON Schema validation for certificate-*.json and *.witness.json.
 
-Uses Draft 2020-12. Schemas live under tools/hecke-engine/schemas/.
+Uses Draft 2020-12. Schemas live under crates/hecke-engine/schemas/.
 """
 
 from __future__ import annotations
@@ -28,8 +28,8 @@ def schema_dir() -> Path:
 
     Search order:
       1. $PYHECKE_SCHEMA_DIR environment variable
-      2. tools/hecke-engine/schemas/ relative to the installed package
-      3. <repo-root>/tools/hecke-engine/schemas/ by walking up from cwd
+      2. crates/hecke-engine/schemas/ (or legacy tools/hecke-engine/schemas/) relative to the package
+      3. <repo-root>/crates/hecke-engine/schemas/ by walking up from cwd
     """
     import os
 
@@ -39,17 +39,22 @@ def schema_dir() -> Path:
         if (p / "certificate.schema.json").is_file():
             return p
 
-    # Installed next to the package.
-    pkg_candidate = Path(__file__).resolve().parent.parent.parent.parent / "hecke-engine" / "schemas"
-    if (pkg_candidate / "certificate.schema.json").is_file():
-        return pkg_candidate
+    repo_root = Path(__file__).resolve().parents[4]
+    for pkg_candidate in (
+        repo_root / "crates" / "hecke-engine" / "schemas",
+        repo_root / "tools" / "hecke-engine" / "schemas",
+        Path(__file__).resolve().parent.parent.parent.parent / "hecke-engine" / "schemas",
+    ):
+        if (pkg_candidate / "certificate.schema.json").is_file():
+            return pkg_candidate
 
     # Walk up from cwd looking for a repo root marker.
     d = Path.cwd().resolve()
     while d != d.parent:
-        candidate = d / "tools" / "hecke-engine" / "schemas"
-        if (candidate / "certificate.schema.json").is_file():
-            return candidate
+        for sub in (("crates", "hecke-engine", "schemas"), ("tools", "hecke-engine", "schemas")):
+            candidate = d.joinpath(*sub)
+            if (candidate / "certificate.schema.json").is_file():
+                return candidate
         d = d.parent
 
     raise FileNotFoundError(

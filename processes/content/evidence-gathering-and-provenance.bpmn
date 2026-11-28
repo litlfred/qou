@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  qou — Evidence gathering, multi-database KG ingestion, relevancy triage & authoring provenance
+
+  Source of truth: this file. Owner directive 2026-11-28 (bean qou-crwk).
+  Open it in bpmn.io or any BPMN 2.0 tool.
+
+  Governs how research and authoring agents scope research topic areas, shortlist
+  and retrieve papers/datasets across DOI/Crossref, arXiv, INSPIRE-HEP, PubMed,
+  OpenAlex/Semantic Scholar/Google Scholar, and CODATA/PDG/AME, ingest them into
+  QOU's Knowledge Graph (`folio/references/`, `library/`, `test/attestations/bib-verification/`),
+  assess relevancy, and record provenance in block `authorNotes` and `cites[]`.
+-->
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                  xmlns:bootstrap.processes="https://litlfred.github.io/bootstrap/0.1.0/processes/ns#"
+                  xmlns:cat-harness.processes="https://litlfred.github.io/cat-harness/0.1.0/processes/ns#"
+                  id="Definitions_EvidenceGatheringAndProvenance"
+                  targetNamespace="https://litlfred.github.io/qou/workflows"
+                  exporter="qou" exporterVersion="1">
+
+  <bpmn:collaboration id="Collaboration_EvidenceGatheringAndProvenance">
+    <bpmn:participant id="Participant_EvidenceGatheringAndProvenance" name="Research evidence gathering, multi-DB KG ingestion &amp; authoring provenance" processRef="Process_EvidenceGatheringAndProvenance" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_EvidenceGatheringAndProvenance" name="Research evidence gathering, multi-DB KG ingestion &amp; authoring provenance" isExecutable="false">
+    <bpmn:documentation>Ensure every research investigation and document-authoring pass systematically scopes its topic areas, shortlists needed literature and empirical datasets, retrieves them from scholarly and reference databases (Crossref/DOI, arXiv, INSPIRE-HEP, PubMed, Semantic Scholar/OpenAlex/Google Scholar, CODATA/PDG/AME2020), ingests them into QOU's Knowledge Graph (`folio/references/`, `library/`, `test/attestations/bib-verification/`), assesses exact relevancy and claim scope, and records provenance in block `authorNotes` and `cites[]` links.
+
+NO EPHEMERAL LITERATURE NOTES (Owner directive 2026-11-28). Papers and datasets consulted during research are ingested into the Knowledge Graph and assessed for relevancy rather than left in ephemeral chat transcripts.
+
+MATH VS COMPARISON BOUNDARY. Triage separates deductive mathematical theorems (`claim_domain: "math"`, proved in-paper) from empirical reference measurements (`claim_domain: "science"`, entering only at QOU's comparison boundary).
+
+PROVENANCE IN AUTHORING. Block `authorNotes` record exact source theorem/equation/page provenance and convention mappings during authoring, while `cites[]` and prose citations link relevant sources in the published paper.</bpmn:documentation>
+    <bpmn:extensionElements>
+      <cat-harness.processes:policy enforcement="strict" />
+    </bpmn:extensionElements>
+    <bpmn:laneSet id="Process_EvidenceGatheringAndProvenance_LaneSet">
+      <bpmn:lane id="Lane_Owner" name="Owner (the paper's author)">
+        <bpmn:documentation>Supplies paywalled/gated uploads when requested via a decision card, and approves bibliography/attestation sweeps that rewrite tracked ledgers.</bpmn:documentation>
+        <bpmn:extensionElements><bootstrap.processes:role ref="author"/></bpmn:extensionElements>
+        <bpmn:flowNodeRef>Task_SupplyGatedSource</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Agent" name="Research &amp; authoring agent">
+        <bpmn:documentation>Writes topic-area shortlists, queries bibliographic/scientific databases, ingests into `library/` + `folio/references/` + `bib-verification/`, triages relevancy, and records provenance in block `authorNotes` and `cites[]`.</bpmn:documentation>
+        <bpmn:extensionElements><bootstrap.processes:role ref="authoring-agent"/></bpmn:extensionElements>
+        <bpmn:flowNodeRef>StartEvent_ResearchTopic</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_ScopeShortlist</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_QueryDatabases</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_AccessGated</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_IngestKG</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_AssessRelevancy</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_RecordProvenance</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_ProvenanceLinked</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+
+    <bpmn:startEvent id="StartEvent_ResearchTopic" name="Research topic or&#10;block authoring opened">
+      <bpmn:documentation>Entered whenever a niche research agent investigates a mathematical/physical question or an authoring agent drafts/updates content blocks grounded in external results or datasets.</bpmn:documentation>
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+
+    <bpmn:serviceTask id="Task_ScopeShortlist" name="Write topic areas &amp;&#10;shortlist papers/data">
+      <bpmn:documentation>Check existing `library/` and `folio/references/` holdings first, then write up the topic areas under study and a concrete shortlist of papers, theorems, and datasets needed for each.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="evidence-gathering-and-provenance" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:serviceTask id="Task_QueryDatabases" name="Query DOI, arXiv, PubMed,&#10;Scholar &amp; data registries">
+      <bpmn:documentation>Retrieve bibliographic metadata, full texts, and reference datasets from Crossref/DOI, arXiv, INSPIRE-HEP, PubMed/PMC, OpenAlex/Semantic Scholar/Google Scholar, and CODATA/PDG/AME2020 without bypassing access or anti-bot gates.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="evidence-gathering-and-provenance" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:exclusiveGateway id="Gateway_AccessGated" name="Source gated /&#10;needs user PDF?">
+      <bpmn:documentation>Open-access preprints/DOIs proceed directly to KG ingestion; paywalled or user-held sources request upload via a decision card.</bpmn:documentation>
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_DirectIngest</bpmn:outgoing>
+      <bpmn:outgoing>Flow_AskOwnerUpload</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+
+    <bpmn:userTask id="Task_SupplyGatedSource" name="Drop gated source in&#10;uploads/ (optional)">
+      <bpmn:documentation>Owner optionally provides user-accessible PDFs/datasets into `uploads/` in response to a `🟡` decision card naming the exact DOI and theorem/datum needed.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="interaction-modality" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_AskOwnerUpload</bpmn:incoming>
+      <bpmn:outgoing>Flow_Uploaded</bpmn:outgoing>
+    </bpmn:userTask>
+
+    <bpmn:serviceTask id="Task_IngestKG" name="Ingest into library/,&#10;references/ &amp; ledger">
+      <bpmn:documentation>Ingest full text/sections into `library/&lt;doc-id&gt;/`, create CSL-JSON `folio/references/&lt;key&gt;.json` (`folio/schema/references.ts` + `references.bib`), and verify bibliography/PDF sync (`references-bib-check`, `references-pdf-check`, `references-library-sync-check`).</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="document-intake" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_DirectIngest</bpmn:incoming>
+      <bpmn:incoming>Flow_Uploaded</bpmn:incoming>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:serviceTask id="Task_AssessRelevancy" name="Triage relevancy &amp;&#10;in-paper claim scope">
+      <bpmn:documentation>Assess each ingested source (`core`, `supporting`, `tangential`, `not-relevant`, `undetermined`), distinguish `math` vs `science` claims and `in-paper` vs `elsewhere` proofs, and record the verdict in `test/attestations/bib-verification/`.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="paper-relevance-triage" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_5</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:serviceTask id="Task_RecordProvenance" name="Record provenance in&#10;authorNotes &amp; link cites">
+      <bpmn:documentation>Record source provenance (exact theorem/equation/page + convention mapping) in the block's `.ts` `authorNotes`, wire `cites: [...]`, link citations in `.md` prose (`\cite{key}`), and validate with `run-validate.ts` + `gen-block-jsonld.sh --check`.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <bootstrap.processes:skill ref="evidence-gathering-and-provenance" />
+        <cat-harness.processes:bean op="note" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_5</bpmn:incoming>
+      <bpmn:outgoing>Flow_6</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:endEvent id="EndEvent_ProvenanceLinked" name="KG ingested &amp;&#10;provenance linked">
+      <bpmn:incoming>Flow_6</bpmn:incoming>
+    </bpmn:endEvent>
+
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="StartEvent_ResearchTopic" targetRef="Task_ScopeShortlist" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_ScopeShortlist" targetRef="Task_QueryDatabases" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Task_QueryDatabases" targetRef="Gateway_AccessGated" />
+    <bpmn:sequenceFlow id="Flow_DirectIngest" name="no" sourceRef="Gateway_AccessGated" targetRef="Task_IngestKG" />
+    <bpmn:sequenceFlow id="Flow_AskOwnerUpload" name="yes" sourceRef="Gateway_AccessGated" targetRef="Task_SupplyGatedSource" />
+    <bpmn:sequenceFlow id="Flow_Uploaded" sourceRef="Task_SupplyGatedSource" targetRef="Task_IngestKG" />
+    <bpmn:sequenceFlow id="Flow_4" sourceRef="Task_IngestKG" targetRef="Task_AssessRelevancy" />
+    <bpmn:sequenceFlow id="Flow_5" sourceRef="Task_AssessRelevancy" targetRef="Task_RecordProvenance" />
+    <bpmn:sequenceFlow id="Flow_6" sourceRef="Task_RecordProvenance" targetRef="EndEvent_ProvenanceLinked" />
+  </bpmn:process>
+
+  <bpmndi:BPMNDiagram id="BPMNDiagram_EvidenceGatheringAndProvenance">
+    <bpmndi:BPMNPlane id="BPMNPlane_EvidenceGatheringAndProvenance" bpmnElement="Collaboration_EvidenceGatheringAndProvenance">
+      <bpmndi:BPMNShape id="Participant_EvidenceGatheringAndProvenance_di" bpmnElement="Participant_EvidenceGatheringAndProvenance" isHorizontal="true">
+        <dc:Bounds x="40" y="40" width="1280" height="360" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Owner_di" bpmnElement="Lane_Owner" isHorizontal="true">
+        <dc:Bounds x="70" y="40" width="1250" height="145" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Agent_di" bpmnElement="Lane_Agent" isHorizontal="true">
+        <dc:Bounds x="70" y="185" width="1250" height="215" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_ResearchTopic_di" bpmnElement="StartEvent_ResearchTopic">
+        <dc:Bounds x="112" y="272" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_ScopeShortlist_di" bpmnElement="Task_ScopeShortlist">
+        <dc:Bounds x="185" y="250" width="145" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_QueryDatabases_di" bpmnElement="Task_QueryDatabases">
+        <dc:Bounds x="365" y="250" width="145" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_AccessGated_di" bpmnElement="Gateway_AccessGated" isMarkerVisible="true">
+        <dc:Bounds x="545" y="265" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_SupplyGatedSource_di" bpmnElement="Task_SupplyGatedSource">
+        <dc:Bounds x="615" y="70" width="145" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_IngestKG_di" bpmnElement="Task_IngestKG">
+        <dc:Bounds x="720" y="250" width="145" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_AssessRelevancy_di" bpmnElement="Task_AssessRelevancy">
+        <dc:Bounds x="900" y="250" width="145" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_RecordProvenance_di" bpmnElement="Task_RecordProvenance">
+        <dc:Bounds x="1080" y="250" width="145" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_ProvenanceLinked_di" bpmnElement="EndEvent_ProvenanceLinked">
+        <dc:Bounds x="1257" y="272" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
+        <di:waypoint x="148" y="290" /><di:waypoint x="185" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
+        <di:waypoint x="330" y="290" /><di:waypoint x="365" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_3_di" bpmnElement="Flow_3">
+        <di:waypoint x="510" y="290" /><di:waypoint x="545" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_DirectIngest_di" bpmnElement="Flow_DirectIngest">
+        <di:waypoint x="595" y="290" /><di:waypoint x="720" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_AskOwnerUpload_di" bpmnElement="Flow_AskOwnerUpload">
+        <di:waypoint x="570" y="265" /><di:waypoint x="570" y="110" /><di:waypoint x="615" y="110" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Uploaded_di" bpmnElement="Flow_Uploaded">
+        <di:waypoint x="760" y="110" /><di:waypoint x="792" y="110" /><di:waypoint x="792" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_4_di" bpmnElement="Flow_4">
+        <di:waypoint x="865" y="290" /><di:waypoint x="900" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_5_di" bpmnElement="Flow_5">
+        <di:waypoint x="1045" y="290" /><di:waypoint x="1080" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_6_di" bpmnElement="Flow_6">
+        <di:waypoint x="1225" y="290" /><di:waypoint x="1257" y="290" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

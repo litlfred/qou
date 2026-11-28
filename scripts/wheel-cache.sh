@@ -64,13 +64,13 @@ PREFIX="$BC_PREFIX"
 # and the Cargo.toml the version is read from.
 pkg_sources() {
   case "$1" in
-    pyhecke-native) echo "tools/pyhecke-native tools/hecke-engine" ;;
+    pyhecke-native) echo "crates/pyhecke-native crates/hecke-engine" ;;
     *) return 1 ;;
   esac
 }
 pkg_version() {
   local toml
-  case "$1" in pyhecke-native) toml="tools/pyhecke-native/Cargo.toml" ;; *) return 1 ;; esac
+  case "$1" in pyhecke-native) toml="crates/pyhecke-native/Cargo.toml" ;; *) return 1 ;; esac
   sed -n 's/^version *= *"\([^"]*\)".*/\1/p' "$toml" | head -1
 }
 

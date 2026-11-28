@@ -3,6 +3,8 @@ name = "pyhecke-native"
 version = "0.9.0"
 edition = "2021"
 description = "PyO3 bindings for hecke-engine Gram/trace primitives"
+license = "MIT"
+repository = "https://github.com/litlfred/qou"
 
 [lib]
 name = "pyhecke_native"
@@ -44,14 +46,5 @@ rug = "1.26"
 default = ["clarabel-lp"]
 clarabel-lp = ["hecke-engine/clarabel-mpfr"]
 
-[profile.release]
-opt-level = 3
-lto = true
-
-[patch.crates-io]
-# Mirror hecke-engine's clarabel pin.  `[patch]` only applies from the
-# build-root manifest, so when pyhecke-native is the root (the wheel build),
-# the clarabel `mpfr` feature — present only on the litlfred fork, not
-# crates.io 0.11 — would otherwise be unresolvable.  Keep the rev in sync
-# with tools/hecke-engine/Cargo.toml.
-clarabel = { git = "https://github.com/litlfred/Clarabel.rs", rev = "37f06c3" }
+# `[profile.release]` and `[patch.crates-io]` (Clarabel.rs rev 37f06c3) are
+# inherited from the top-level workspace `Cargo.toml`.

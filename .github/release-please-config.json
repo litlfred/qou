@@ -61,7 +61,7 @@
         }
       ]
     },
-    "tools/pyhecke-native": {
+    "crates/pyhecke-native": {
       "release-type": "python",
       "package-name": "pyhecke-native",
       "component": "pyhecke-native",
@@ -78,12 +78,12 @@
         }
       ]
     },
-    "tools/hecke-engine": {
+    "crates/hecke-engine": {
       "release-type": "rust",
       "package-name": "hecke-engine",
       "component": "hecke-engine"
     },
-    "tools/hecke-engine-wasm": {
+    "crates/hecke-engine-wasm": {
       "release-type": "rust",
       "package-name": "hecke-engine-wasm",
       "component": "hecke-engine-wasm",
@@ -95,7 +95,7 @@
         }
       ]
     },
-    "tools/hecke-engine-node": {
+    "crates/hecke-engine-node": {
       "release-type": "rust",
       "package-name": "hecke-engine-node",
       "component": "hecke-engine-node",

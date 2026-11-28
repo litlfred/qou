@@ -45,28 +45,40 @@ from typing import Optional
 # ── Locate the Rust binary ───────────────────────────────────────
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent
-_HECKE_DIR = _REPO_ROOT / "tools" / "hecke-engine"
+_HECKE_DIR = (
+    _REPO_ROOT / "crates" / "hecke-engine"
+    if (_REPO_ROOT / "crates" / "hecke-engine").is_dir()
+    else _REPO_ROOT / "tools" / "hecke-engine"
+)
+
+
+def _release_dirs() -> list[Path]:
+    dirs: list[Path] = []
+    cargo_target = os.environ.get("CARGO_TARGET_DIR")
+    if cargo_target:
+        dirs.append(Path(cargo_target) / "release")
+    dirs.append(_REPO_ROOT / "target" / "release")
+    dirs.append(_HECKE_DIR / "target" / "release")
+    return dirs
+
+
+def _find_binary(name: str = "hecke-engine") -> Optional[Path]:
+    """Find a specific Rust binary across shared/workspace/crate target dirs."""
+    for rel_dir in _release_dirs():
+        candidate = rel_dir / name
+        if candidate.exists():
+            return candidate
+    return None
+
+
 _HECKE_BIN = _HECKE_DIR / "target" / "release" / "hecke-engine"
 _HECKE_QVALUES = _HECKE_DIR / "target" / "release" / "hecke-qvalues"
-
-_HECKE_BIN_PATH = None
-for candidate in [_HECKE_BIN, _HECKE_QVALUES]:
-    if candidate.exists():
-        _HECKE_BIN_PATH = candidate
-        break
+_HECKE_BIN_PATH = _find_binary("hecke-engine") or _find_binary("hecke-qvalues")
 
 
 def is_rust_available() -> bool:
     """Check if the compiled Rust hecke-engine binary exists."""
-    return _HECKE_BIN_PATH is not None
-
-
-def _find_binary(name: str = "hecke-engine") -> Optional[Path]:
-    """Find a specific Rust binary."""
-    candidate = _HECKE_DIR / "target" / "release" / name
-    if candidate.exists():
-        return candidate
-    return None
+    return (_find_binary("hecke-engine") or _find_binary("hecke-qvalues")) is not None
 
 
 def _run_binary(
@@ -173,19 +185,19 @@ def build_rust_engine(verbose: bool = False) -> bool:
     global _HECKE_BIN_PATH
 
     if not (_HECKE_DIR / "Cargo.toml").exists():
-        print("No Cargo.toml found in tools/hecke-engine/", file=sys.stderr)
+        print("No Cargo.toml found in crates/hecke-engine/", file=sys.stderr)
         return False
 
     try:
-        cmd = ["cargo", "build", "--release"]
+        cmd = ["cargo", "build", "--release", "-p", "hecke-engine"]
         result = subprocess.run(
             cmd,
-            cwd=str(_HECKE_DIR),
+            cwd=str(_REPO_ROOT),
             capture_output=not verbose,
             timeout=600,
         )
         if result.returncode == 0:
-            _HECKE_BIN_PATH = _HECKE_BIN if _HECKE_BIN.exists() else _HECKE_QVALUES
+            _HECKE_BIN_PATH = _find_binary("hecke-engine") or _find_binary("hecke-qvalues")
             return True
     except (subprocess.TimeoutExpired, FileNotFoundError):
         pass

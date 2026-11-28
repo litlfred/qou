@@ -6,7 +6,7 @@ dnl (https://github.com/gap-packages/example/blob/master/configure.ac).
 dnl
 dnl Build flow (downstream consumer):
 dnl   cd src && ./configure --with-gaproot=$GAPROOT \
-dnl                          --with-hecke-engine-c=../../hecke-engine-c
+dnl                          --with-hecke-engine-c=../../../crates/hecke-engine-c
 dnl   make
 
 AC_PREREQ([2.69])
@@ -46,13 +46,19 @@ AC_ARG_WITH([hecke-engine-c],
     [AS_HELP_STRING([--with-hecke-engine-c=PATH],
                     [path to the hecke-engine-c crate root])],
     [HECKE_C_DIR="$withval"],
-    [HECKE_C_DIR="../../hecke-engine-c"])
+    [HECKE_C_DIR="../../../crates/hecke-engine-c"])
 
 AS_IF([test ! -f "$HECKE_C_DIR/include/hecke_engine.h"],
-    [AC_MSG_ERROR([$HECKE_C_DIR/include/hecke_engine.h not found; run `cargo build --release` in the hecke-engine-c crate first])])
+    [AC_MSG_ERROR([$HECKE_C_DIR/include/hecke_engine.h not found; run `cargo build --release -p hecke-engine-c` first])])
 
 HECKE_C_INC="$HECKE_C_DIR/include"
-HECKE_C_LIB="$HECKE_C_DIR/target/release"
+if test -n "$CARGO_TARGET_DIR" && test -d "$CARGO_TARGET_DIR/release"; then
+    HECKE_C_LIB="$CARGO_TARGET_DIR/release"
+elif test -d "../../../target/release"; then
+    HECKE_C_LIB="../../../target/release"
+else
+    HECKE_C_LIB="$HECKE_C_DIR/target/release"
+fi
 
 AC_SUBST([HECKE_C_INC])
 AC_SUBST([HECKE_C_LIB])

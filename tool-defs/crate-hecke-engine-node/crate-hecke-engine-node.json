@@ -1,0 +1,44 @@
+{
+  "$schema": "tool-definition/v1",
+  "tool": {
+    "id": "crate-hecke-engine-node",
+    "title": "Rust crate hecke-engine-node (crates/hecke-engine-node)",
+    "description": "napi-rs Node.js native bindings for hecke-engine Gram/trace primitives (Target-specific FFI crate listed in root `Cargo.toml` `[workspace].exclude`. Version 0.1.0, edition 2021, license MIT. Generated from `crates/hecke-engine-node/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+    "install": {
+      "none": true
+    },
+    "invoke": {
+      "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check --manifest-path crates/hecke-engine-node/Cargo.toml"
+    },
+    "io": {
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "hecke_engine_node",
+          "schema": {
+            "$type": "RepoPath"
+          },
+          "description": "Rust crate `hecke-engine-node` at `crates/hecke-engine-node` (`crates/hecke-engine-node/Cargo.toml`)."
+        }
+      ]
+    },
+    "satisfies": [
+      "rust-crates-and-values",
+      "compute-author"
+    ],
+    "subprocesses": [
+      "rust-crates-and-values"
+    ],
+    "selection": {
+      "when": "Building, type-checking, or consuming `hecke-engine-node` (`crates/hecke-engine-node`).",
+      "limits": "Target-specific FFI crate (`[workspace].exclude`); invoke with its target toolchain flags for release artefacts.",
+      "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+    },
+    "requires": {
+      "runtime": [
+        "cargo"
+      ],
+      "network": false
+    }
+  }
+}

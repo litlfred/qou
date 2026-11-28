@@ -17,8 +17,8 @@ is overnight work; the cache lets that cost amortise across runs.
 
   The `mn-chi-cache` family declared in qou.json: one orphan branch
   `cat/qou/mn-chi-cache/mn-chi-q-<engine-key>`, where the engine key is the
-  wheel-cache / trace-cache source key (git trees of tools/pyhecke-native and
-  tools/hecke-engine). Locally, an fsync'd journal under
+  wheel-cache / trace-cache source key (git trees of crates/pyhecke-native and
+  crates/hecke-engine). Locally, an fsync'd journal under
   `$QOU_MN_CHI_CACHE_DIR` (default `~/.cache/qou/mn-chi-cache/<member>/`).
   Entries: `{"l": "2,1", "m": "3", "v": [[q_degree, "coeff"], ...]}`, the
   producer's exact coefficient strings. See computations/_branch_cache.py.
@@ -79,7 +79,7 @@ sys.path.insert(0, str(HERE))
 import _branch_cache as _bc  # noqa: E402
 
 KIND = "mn-chi-cache"
-_ENGINE_SRCS = ("tools/pyhecke-native", "tools/hecke-engine")  # wheel-cache's order
+_ENGINE_SRCS = ("crates/pyhecke-native", "crates/hecke-engine")  # wheel-cache's order
 
 
 def _encode_key(lam: tuple[int, ...], mu: tuple[int, ...]) -> str:

@@ -15,8 +15,12 @@ allowed-tools: Read Write Edit Bash Grep Glob Agent
 # Paper relevance triage
 
 `paper-importer` converts a paper into content blocks. `document-intake` owns
-the extraction pipeline. **This skill sits before both**: it decides whether a
-document is worth importing at all, and what the author should do with it.
+the extraction pipeline. [`evidence-gathering-and-provenance`](evidence-gathering-and-provenance.md)
+(`processes/content/evidence-gathering-and-provenance.bpmn`, owner directive 2026-11-28)
+governs topic-area shortlisting across DOI/arXiv/PubMed/Scholar/INSPIRE-HEP,
+KG ingestion, and recording source provenance in block `authorNotes` + `cites[]`
+during authoring. **This skill sits between ingestion and authoring**: it decides whether a
+document is worth importing or citing at all, and what the author should do with it.
 
 Most uploads do not become content blocks. They supply a lemma, corroborate a
 constant, or turn out to be background the paper already has. Triage produces

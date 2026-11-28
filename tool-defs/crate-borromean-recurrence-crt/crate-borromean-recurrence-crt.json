@@ -1,0 +1,44 @@
+{
+  "$schema": "tool-definition/v1",
+  "tool": {
+    "id": "crate-borromean-recurrence-crt",
+    "title": "Rust crate borromean-recurrence-crt (crates/borromean-recurrence-crt)",
+    "description": "Phase-2 modular sampler for the Borromean diagonal colored-Jones recurrence: per-prime RREF nullspace sampling + per-column rational-function fits (canonical monic-Q normalization) for the multi-prime CRT lift (bean n920, PR #3443 follow-up). (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Binaries (1): `borromean-recurrence-crt`. Generated from `crates/borromean-recurrence-crt/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+    "install": {
+      "none": true
+    },
+    "invoke": {
+      "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p borromean-recurrence-crt"
+    },
+    "io": {
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "borromean_recurrence_crt",
+          "schema": {
+            "$type": "RepoPath"
+          },
+          "description": "Rust crate `borromean-recurrence-crt` at `crates/borromean-recurrence-crt` (`crates/borromean-recurrence-crt/Cargo.toml`)."
+        }
+      ]
+    },
+    "satisfies": [
+      "rust-crates-and-values",
+      "compute-author"
+    ],
+    "subprocesses": [
+      "rust-crates-and-values"
+    ],
+    "selection": {
+      "when": "Building, type-checking, or consuming `borromean-recurrence-crt` (`crates/borromean-recurrence-crt`).",
+      "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+      "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+    },
+    "requires": {
+      "runtime": [
+        "cargo"
+      ],
+      "network": false
+    }
+  }
+}

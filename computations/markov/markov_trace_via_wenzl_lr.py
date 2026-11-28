@@ -6,8 +6,8 @@
 """Wenzl LR Markov-trace wrapper (P4ⁱᵛ unblock).
 
 Calls the Rust `hecke-tr-m-wenzl-lr` binary (see
-`tools/hecke-engine/src/bin/hecke_tr_m_wenzl_lr.rs` and
-`tools/hecke-engine/src/wenzl_lr.rs`) to compute the Hecke
+`crates/hecke-engine/src/bin/hecke_tr_m_wenzl_lr.rs` and
+`crates/hecke-engine/src/wenzl_lr.rs`) to compute the Hecke
 characters `χ^λ(β_1 ⊗ β_2 ⊗ ... ⊗ β_k)` of a tensor-product
 braid via the Littlewood–Richardson bridge
 
@@ -63,6 +63,15 @@ from witness_base import WitnessBuilder  # noqa: E402
 # Try to locate the binary in the standard cargo target tree.
 REPO_ROOT = HERE.parent.parent
 BIN_CANDIDATES = [
+    *([Path(_ct) / "release" / "hecke-tr-m-wenzl-lr",
+       Path(_ct) / "debug" / "hecke-tr-m-wenzl-lr"]
+      if (_ct := __import__("os").environ.get("CARGO_TARGET_DIR")) else []),
+    REPO_ROOT / "target" / "release" / "hecke-tr-m-wenzl-lr",
+    REPO_ROOT / "target" / "debug" / "hecke-tr-m-wenzl-lr",
+    REPO_ROOT / "crates" / "hecke-engine" / "target" / "release"
+    / "hecke-tr-m-wenzl-lr",
+    REPO_ROOT / "crates" / "hecke-engine" / "target" / "debug"
+    / "hecke-tr-m-wenzl-lr",
     REPO_ROOT / "tools" / "hecke-engine" / "target" / "release"
     / "hecke-tr-m-wenzl-lr",
     REPO_ROOT / "tools" / "hecke-engine" / "target" / "debug"
@@ -94,9 +103,9 @@ def run_lr_compute(
     if bin_path is None:
         raise FileNotFoundError(
             "hecke-tr-m-wenzl-lr binary not found in "
-            "tools/hecke-engine/target/{release,debug}/ or $PATH. "
-            "Build with: `cd tools/hecke-engine && cargo build "
-            "--release --bin hecke-tr-m-wenzl-lr`."
+            "$CARGO_TARGET_DIR/{release,debug}/, target/{release,debug}/, "
+            "crates/hecke-engine/target/{release,debug}/, or $PATH. "
+            "Build with: `cargo build --release -p hecke-engine --bin hecke-tr-m-wenzl-lr`."
         )
     spec = {"lambda": [], "factors": factor_specs}
     args = [str(bin_path)]

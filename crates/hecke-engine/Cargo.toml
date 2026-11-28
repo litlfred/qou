@@ -3,6 +3,8 @@ name = "hecke-engine"
 version = "0.8.0"
 edition = "2021"
 description = "Gröbner reduction engine for H_n(q) — nuclear normal forms"
+license = "MIT"
+repository = "https://github.com/litlfred/qou"
 
 # Joint-tower SDP certificate emitter (R1+R2+R6 of RUST_INTEGRATION.md)
 [[bin]]
@@ -169,7 +171,7 @@ serde_json = "1"
 # rug = mpfr bindings (system GMP + MPFR + libc). Optional behind the
 # `mpfr` feature, which is on by default — `cargo build` keeps full
 # functionality. Disable for WASM-targetable builds: `cargo build
-# --lib --no-default-features`. See tools/hecke-engine-wasm/ for
+# --lib --no-default-features`. See crates/hecke-engine-wasm/ for
 # the canonical WASM consumer of the rug-free surface.
 rug = { version = "1.26", optional = true }
 num-bigint = "0.4"
@@ -210,7 +212,7 @@ default = ["mpfr"]
 mpfr = ["dep:rug"]
 # wasm-core: explicit signal that an intentional WASM-targetable build
 # is in progress. No-op flag — the actual exclusion is done via
-# `--no-default-features`. Used by tools/hecke-engine-wasm/ for intent
+# `--no-default-features`. Used by crates/hecke-engine-wasm/ for intent
 # clarity in build scripts.
 wasm-core = []
 # Opt-in: enables the Clarabel-rs SDP-as-solver code path. Requires system
@@ -232,32 +234,8 @@ clarabel-mpfr-sdp = ["clarabel-mpfr", "clarabel?/sdp-netlib"]
 
 [build-dependencies]
 
-# Pin Clarabel-rs to the litlfred fork's bigrational-backend branch.
-#
-# Rationale: upstream PR https://github.com/litlfred/Clarabel.rs/pull/1
-# ships the trait-decoupling and Copy → Clone refactor that QOU needs
-# for the §S8 exact-rational diagnostic, plus the rug-interop feature
-# that lets seminormal_mpfr's rug::Float outputs flow into the solver
-# without an f64 round-trip.  See CLARABEL_PRECISION_PLAN.md.
-#
-# Bumped 2026-11-21 to 37f06c3 (fork main: PRs #2-#7, incl. the native
-# MPFR SVD that lets PSD cones of any size solve at MPFR precision).
-# Previously validated at 9673209 (Round 4 + Phase 8a/8b): 71/71 hecke-engine
-# tests pass under `cargo test --features clarabel-sdp`.  This pin
-# is the branch HEAD and includes Phase 8a (denom-bit log), Phase 8b
-# (run-time MpfrFloat backend), and Round 4 (BlockDiagPSDConeT,
-# tighten_to_rational, structured Solution<T> accessors).
-# Same f64 SDP path that 0.11.1 from crates.io carried, plus all
-# the high-precision T headroom QOU's workplan needs.
-#
-# Will be lifted once the fork merges to its own main and a release
-# is cut on crates.io.
-[patch.crates-io]
-clarabel = { git = "https://github.com/litlfred/Clarabel.rs", rev = "37f06c3" }
-
-[profile.release]
-opt-level = 3
-lto = true
+# Note: `[patch.crates-io]` (pinning Clarabel.rs rev 37f06c3) and
+# `[profile.release]` live in the workspace root `Cargo.toml`.
 
 # Modular port of v9 — u64 mod p, identical NF
 [[bin]]

@@ -328,3 +328,7 @@ folio/*/lean/blocks-shadow/
 
 # Written by the site build (sync-docs-harness), never committed
 docs/_data/
+
+# Rust Cargo workspace build outputs (top-level Cargo.toml + crates/*)
+/target/
+crates/*/target/

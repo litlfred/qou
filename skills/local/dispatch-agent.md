@@ -58,16 +58,40 @@ with **PROCESS / TASK** (process or skill by name, task, done-criteria),
 before the §1 contract and the body. The canonical rule and template are in
 the platform skill `folio-assistant/cat-harness/sdlc/skills/sdlc-core/agent-handoff.md` §0 (litlfred/cat-harness#1405). This copy points to it and does not restate it.
 
+## 0c. Foreground discussion responsiveness — never block foreground chat (owner directive 2026-11-28, STRICT)
+
+Owner, verbatim (`2026-11-28`): *"modify foreground discussion rules: if you need to think more than a brief period of time, you still dispatch agent so foreground stays open. let user know you are waiting for a report back (how long expected to take, potential outcomes). if needed ask for clarifications. once done update user"*
+
+Even during **foreground discussion mode**, the foreground session MUST stay open and responsive to user input:
+
+1. **Never block foreground chat on multi-step research or deep thinking** (>1 quick lookup or ~15–20 s of wall time). Dispatch a background research/analysis subagent immediately so the foreground turn ends quickly and remains open for the owner.
+2. **Tell the user immediately upon dispatch** that you are waiting on the subagent's report, stating:
+   - **(a) Expected duration (ETA)** (e.g. "~2–3 minutes"), and
+   - **(b) Potential outcomes** and what each outcome implies for the decision or next step.
+3. **Ask for clarifications up front** (via a structured `AskUserQuestion` card prefixed with `🟡` and mirrored in full in chat prose, per `AGENTS.md` §User accessibility) whenever an ambiguity can be resolved in parallel while waiting.
+4. **Update the user promptly** as soon as the subagent reports back, presenting concrete evidence and any resulting decision card.
+
+## 0d. Niche continuity & cross-fertilization across persistent research agents (owner directive 2026-11-28, STRICT)
+
+Owner, verbatim (`2026-11-28`): *"updates skills: if you have queue of research agents, generally keep them researching deep into niche topic areas. so related questions go to same agent. occasionally, if hints of cross-fertilization, ask questions of multiple agents to see if connections can be made"*
+
+When managing a pool or queue of research agents:
+
+1. **Keep persistent niche-specialist agents:** Assign each research agent a deep, coherent mathematical/computational niche (e.g. Gröbner–Shirshov / normal forms, $\gamma\gamma$ & atomic-chart algebra, Clarabel MPFR dual certificates, knot topology / volume bounds, $q$-NS modal transfer) rather than spinning up disposable one-off agents that lose accumulated context.
+2. **Route related questions to the same specialist:** Send follow-up questions, adjacent lemmas, or refinements in that domain to the existing agent via `send_message` (`SendMessage`) so its accumulated theorem/codebase mental model compounds.
+3. **Selective cross-fertilization:** Whenever a result or obstruction hints at a cross-domain bridge (e.g. a GS normal-form filtration constraint touching an LP active-set degeneracy or a knot-volume bound), pose the targeted question to **multiple** relevant niche specialists in parallel to test whether a structural connection holds.
+4. **Evidence-gathering & KG ingestion on every research front (owner directive 2026-11-28, STRICT):** Every dispatched research/authoring agent MUST follow [`evidence-gathering-and-provenance.md`](evidence-gathering-and-provenance.md) and [`processes/content/evidence-gathering-and-provenance.bpmn`](../../../processes/content/evidence-gathering-and-provenance.bpmn): write up topic areas, shortlist needed papers/datasets, query DOI/Crossref, arXiv, INSPIRE-HEP, PubMed, Semantic Scholar/OpenAlex/Google Scholar, and CODATA/PDG/AME, ingest into QOU's KG (`folio/references/` + `library/` + `test/attestations/bib-verification/`), assess relevancy, and record provenance in block `authorNotes` and `cites[]` during authoring.
+
 ## 0. When to use
 
+- **Any foreground discussion turn requiring more than a brief (~15–20 s) lookup or analysis** (§0c above — dispatch a background subagent so foreground chat stays open!).
 - Launching **≥ 2 background `Agent` calls** on independent fronts
   (research routes, per-file proofs, per-isotope compute).
 - The user asks for **periodic status** ("update me every 2 minutes",
   "keep me posted", "monitor these").
 - A single long agent whose progress the user wants to watch live.
 
-For a single quick synchronous agent whose result you need before the next
-step, skip this — just call `Agent(run_in_background: false)`.
+For a single trivial (<15 s) lookup, do it inline; anything longer dispatches in the background per §0c so the foreground never blocks.
 
 ---
 

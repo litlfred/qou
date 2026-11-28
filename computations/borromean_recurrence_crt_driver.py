@@ -4,7 +4,7 @@ recurrence to Z[q^{±1}], with exact symbolic verification (bean n920;
 follow-up to PR #3443's existence certificate + degree scoping).
 
 Pipeline:
-  1. Run the Rust sampler (tools/borromean-recurrence-crt) at k distinct
+  1. Run the Rust sampler (crates/borromean-recurrence-crt) at k distinct
      ~61-bit primes.  Each run emits, per matrix column c of the unique
      (r, W) = (6, 11) window, the minimal-degree rational function
      P_c(q)/Q_c(q) over F_p with the CANONICAL normalization (leading
@@ -40,7 +40,24 @@ R_ORD = 6
 W_WIN = 11
 NBLK = 2 * W_WIN + 1
 NCOLS = (R_ORD + 2) * NBLK
-BIN = Path(__file__).parent.parent / "tools/borromean-recurrence-crt/target/release/borromean-recurrence-crt"
+def _find_crt_bin() -> Path:
+    import os
+    root = Path(__file__).parent.parent
+    candidates = []
+    if ct := os.environ.get("CARGO_TARGET_DIR"):
+        candidates.append(Path(ct) / "release" / "borromean-recurrence-crt")
+    candidates.extend([
+        root / "target/release/borromean-recurrence-crt",
+        root / "crates/borromean-recurrence-crt/target/release/borromean-recurrence-crt",
+        root / "tools/borromean-recurrence-crt/target/release/borromean-recurrence-crt",
+    ])
+    for c in candidates:
+        if c.exists():
+            return c
+    return candidates[0]
+
+
+BIN = _find_crt_bin()
 MAX_PRIMES = 24
 NVER = 14
 
@@ -65,8 +82,7 @@ def run_prime(p: int, degrees: list[int] | None, log) -> dict:
     except FileNotFoundError:
         raise RuntimeError(
             f"Rust sampler not built at {BIN} — run: "
-            "cargo build --release --manifest-path "
-            "tools/borromean-recurrence-crt/Cargo.toml")
+            "cargo build --release -p borromean-recurrence-crt")
     if r.returncode != 0:
         raise RuntimeError(f"sampler failed at p={p}: {r.stderr[-500:]}")
     print(f"  [prime] p={p} done in {time.time()-t:.0f}s", flush=True)
