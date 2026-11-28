@@ -1621,9 +1621,11 @@ automatically hexagon-solutions. Neither (i) nor (ii) mentions a field `K`.
   implies `ObstructionVanishesAt E d` for arbitrary `Φ` (§17h, same gap: `AssocU4 M → AssocU4 N`
   for `N ≤ M` exists now as `AssocU4.trunc`, but the level invariant for an arbitrary `Φ` does
   not). So it is not checked inside Lean that the two `Prop`s are consistent with the tower.
-- Literature. `grep -i "bar-natan\|drinfeld\|furusho" library/INDEX.md` finds no copy of Drinfeld
-  1990, Bar-Natan 1998 or Furusho 2010, and the `ocr/` tier has no hit either. Nothing here cites
-  a theorem number from them, and their claims about `H⁴` were not checked against the text.
+- Literature. Furusho 2010 IS held: `library/arxiv-math-0702128v3/` (merged in #9836). Its INDEX
+  row is titled "PENTAGON AND HEXAGON EQUATIONS" and does not name the author, so a grep for
+  `furusho` in `library/INDEX.md` misses it. Theorem 1 there (§0, p. 1) is the group-level
+  statement behind `FurushoGroupStep`; its proof is §2 (pp. 5-8). Drinfeld 1990 and Bar-Natan
+  1998 are not in `library/` (INDEX and `ocr/` searched); their `H⁴` claims were not checked.
 
 **Verification.** `lean -DautoImplicit=false -s 65536` on `PentagonObstruction.lean` exits 0 with
 no output, against the `/home/claude/furov` symlink overlay. The `RationalAssociator/` directory is
