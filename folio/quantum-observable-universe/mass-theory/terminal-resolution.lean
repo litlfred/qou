@@ -1,6 +1,4 @@
-import Mathlib.Algebra.Field.Basic
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
+import QOU.MassTheory.PairSkeinMassConventionD
 import Mathlib.Tactic.LinearCombination
 
 /-!
@@ -8,186 +6,144 @@ import Mathlib.Tactic.LinearCombination
 
 LaTeX label: `prop:terminal-resolution`.
 
-The pair Skein formula (`lem:pair-skein-mass-formula`) assigns to an ordered
-quark pair `(a, b)` the crossing-pair mass
+The convention-D pair Skein formula (`lem:pair-skein-mass-formula`, derived in
+`QOU.MassTheory.PairSkeinD`) assigns to an ordered quark pair `(a, b)` the
+pair mass
 
-  `S_ab = (q·μ_a + q⁻¹·μ_b) / (q^{1/2} + q^{-1/2})`,
+  `S_ab = trace₂ z_D (μ_a·σ + μ_b·σ⁻¹) = w₊·μ_a + w₋·μ_b`,
 
-and a nucleon mass is the sum over its three pairs:
-`m_p = S_uu + 2·S_ud`, `m_n = 2·S_ud + S_dd`.
+with `w₊ = z_D = q³/(q² + 1)` and `w₋ = z_D − h = q⁻¹/(q² + 1)`. A nucleon
+mass is the sum over its three pairs: `m_p = S_uu + 2·S_ud`,
+`m_n = 2·S_ud + S_dd`.
 
 This file proves what that formula determines, and nothing more:
 
 1. `neutron_sub_proton` — the exact splitting identity
-   `m_n − m_p = [2]_q · (μ_d − μ_u) / (q^{1/2} + q^{-1/2})`.
-2. `det_eq` — the 2×2 map `(μ_u, μ_d) ↦ (m_p, m_n)` has determinant
-   `3·[2]_q²` (before the common factor `(q^{1/2}+q^{-1/2})⁻²`).
-3. `up_eq`, `down_eq`, `injective`, `surjective` — when `s ≠ 0`,
-   `s + s⁻¹ ≠ 0`, `[2]_q ≠ 0` and `3 ≠ 0` the map is a bijection,
-   with explicit inverse. So every pair `(m_p, m_n)` is reproduced by exactly
-   one pair of dressed quark masses: reproducing measured nucleon masses this
-   way is a change of variables and carries no predictive content.
+   `m_n − m_p = κ · (μ_d − μ_u)`, `κ = w₊ + w₋ = (q⁴ + 1)/(q(q² + 1))`.
+2. `det_eq` — the 2×2 map `(μ_u, μ_d) ↦ (m_p, m_n)` has determinant `3κ²`.
+3. `up_eq`, `down_eq`, `injective`, `surjective` — when `κ ≠ 0` and `3 ≠ 0`
+   the map is a bijection with explicit inverse. So every pair `(m_p, m_n)` is
+   reproduced by exactly one pair of dressed quark masses: reproducing
+   measured nucleon masses this way is a change of variables and carries no
+   predictive content.
 
 No numerical value of `q` and no measured mass appears here.
 
-**Base ring (§7c).** A generic field `K`. The square root is avoided by
-working with `s`, where `q = s²`; so `q^{1/2} + q^{-1/2} = s + s⁻¹`.
+**Base ring (§7c).** A generic field `K`. No square root appears.
 
-**Convention.** The denominator `s + s⁻¹` is the reciprocal of the excised
-convention-C Markov weight; the results hold in that frame, as the pair Skein
-formula does. Re-deriving the formula under convention D is open.
+**Convention.** Convention D (owner ruling 2026-11-27, Carl: *"Derive the
+convention D. Formula. Go ahead and migrate the convention D"*). The
+convention-C form, with denominator `q^{1/2} + q^{-1/2}`, is retired. The
+bijection argument is unchanged in shape: the determinant is `3κ²` in both
+conventions, with `κ` the sum of the two crossing weights.
 
 -- Ref: [leitner2026] mass-theory, `lem:pair-skein-mass-formula`
 -/
 
 namespace QOU.MassTheory.PairSkeinNucleon
 
+open QOU.MassTheory.PairSkeinD
+
 variable {K : Type*} [Field K]
 
-/-- Crossing-pair mass `S_ab` with `q = s²`. -/
-def pairSkein (s a b : K) : K := (s ^ 2 * a + (s ^ 2)⁻¹ * b) / (s + s⁻¹)
+/-- Crossing-pair mass `S_ab`, the convention-D Markov trace. -/
+def pairSkein (q a b : K) : K := pairMassD q a b
 
 /-- Proton mass `S_uu + 2·S_ud` under the pair Skein formula. -/
-def protonMass (s u d : K) : K := pairSkein s u u + 2 * pairSkein s u d
+def protonMass (q u d : K) : K := pairSkein q u u + 2 * pairSkein q u d
 
 /-- Neutron mass `2·S_ud + S_dd` under the pair Skein formula. -/
-def neutronMass (s u d : K) : K := 2 * pairSkein s u d + pairSkein s d d
+def neutronMass (q u d : K) : K := 2 * pairSkein q u d + pairSkein q d d
 
-/-- **Splitting identity.** `m_n − m_p = [2]_q·(μ_d − μ_u)/(q^{1/2}+q^{-1/2})`,
-with `[2]_q = q + q⁻¹`, `q = s²`. Holds with no hypothesis. -/
-theorem neutron_sub_proton (s u d : K) :
-    neutronMass s u d - protonMass s u d
-      = (s ^ 2 + (s ^ 2)⁻¹) * (d - u) / (s + s⁻¹) := by
+/-- The positive-crossing weight `w₊ = z_D`. -/
+def wPos (q : K) : K := zD q
+
+/-- The negative-crossing weight `w₋ = z_D − h`. -/
+def wNeg (q : K) : K := zD q - hD q
+
+theorem kappaD_eq_wPos_add_wNeg (q : K) : kappaD q = wPos q + wNeg q := by
+  rw [kappaD_eq]; unfold wPos wNeg; ring
+
+/-- **Splitting identity.** `m_n − m_p = κ·(μ_d − μ_u)`. Holds with no
+hypothesis. -/
+theorem neutron_sub_proton (q u d : K) :
+    neutronMass q u d - protonMass q u d = kappaD q * (d - u) := by
   unfold neutronMass protonMass pairSkein
+  rw [pairMassD_eq, pairMassD_eq, pairMassD_eq, kappaD_eq]
   ring
 
-/-- **Linear form.** `(s + s⁻¹)·m_p = (3q + q⁻¹)·μ_u + 2q⁻¹·μ_d` and
-`(s + s⁻¹)·m_n = 2q·μ_u + (q + 3q⁻¹)·μ_d`, given `s + s⁻¹ ≠ 0`. -/
-theorem proton_linear (s u d : K) (hD : s + s⁻¹ ≠ 0) :
-    (s + s⁻¹) * protonMass s u d
-      = (3 * s ^ 2 + (s ^ 2)⁻¹) * u + 2 * (s ^ 2)⁻¹ * d := by
-  have h : protonMass s u d
-      = ((3 * s ^ 2 + (s ^ 2)⁻¹) * u + 2 * (s ^ 2)⁻¹ * d) / (s + s⁻¹) := by
-    unfold protonMass pairSkein
-    ring
-  rw [h, mul_div_assoc', mul_div_cancel_left₀ _ hD]
-
-theorem neutron_linear (s u d : K) (hD : s + s⁻¹ ≠ 0) :
-    (s + s⁻¹) * neutronMass s u d
-      = 2 * s ^ 2 * u + (s ^ 2 + 3 * (s ^ 2)⁻¹) * d := by
-  have h : neutronMass s u d
-      = (2 * s ^ 2 * u + (s ^ 2 + 3 * (s ^ 2)⁻¹) * d) / (s + s⁻¹) := by
-    unfold neutronMass pairSkein
-    ring
-  rw [h, mul_div_assoc', mul_div_cancel_left₀ _ hD]
-
-/-- **Determinant.** `(3q + q⁻¹)(q + 3q⁻¹) − (2q⁻¹)(2q) = 3·[2]_q²`, for `q ≠ 0`. -/
-theorem det_eq (q : K) (hq : q ≠ 0) :
-    (3 * q + q⁻¹) * (q + 3 * q⁻¹) - (2 * q⁻¹) * (2 * q)
-      = 3 * (q + q⁻¹) ^ 2 := by
-  field_simp
+/-- **Linear form of the proton mass.** `m_p = (3w₊ + w₋)·μ_u + 2w₋·μ_d`. -/
+theorem proton_linear (q u d : K) :
+    protonMass q u d = (3 * wPos q + wNeg q) * u + 2 * wNeg q * d := by
+  unfold protonMass pairSkein wPos wNeg
+  rw [pairMassD_eq, pairMassD_eq]
   ring
 
-/-- **Inverse, up quark.** When `s ≠ 0`, `s + s⁻¹ ≠ 0`, `[2]_q ≠ 0` and `3 ≠ 0`,
-`μ_u` is recovered from `(m_p, m_n)`. -/
-theorem up_eq (s u d : K) (hs : s ≠ 0) (hD : s + s⁻¹ ≠ 0)
-    (h2 : s ^ 2 + (s ^ 2)⁻¹ ≠ 0) (h3 : (3 : K) ≠ 0) :
-    u = (s + s⁻¹) * ((s ^ 2 + 3 * (s ^ 2)⁻¹) * protonMass s u d
-          - 2 * (s ^ 2)⁻¹ * neutronMass s u d)
-        / (3 * (s ^ 2 + (s ^ 2)⁻¹) ^ 2) := by
-  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
-  have hP := proton_linear s u d hD
-  have hN := neutron_linear s u d hD
-  have hden : 3 * (s ^ 2 + (s ^ 2)⁻¹) ^ 2 ≠ 0 := mul_ne_zero h3 (pow_ne_zero 2 h2)
-  rw [eq_div_iff hden]
-  have e1 : (s + s⁻¹) * ((s ^ 2 + 3 * (s ^ 2)⁻¹) * protonMass s u d
-          - 2 * (s ^ 2)⁻¹ * neutronMass s u d)
-        = (s ^ 2 + 3 * (s ^ 2)⁻¹) * ((s + s⁻¹) * protonMass s u d)
-          - 2 * (s ^ 2)⁻¹ * ((s + s⁻¹) * neutronMass s u d) := by ring
-  rw [e1, hP, hN]
-  have hdet := det_eq (s ^ 2) hq
-  linear_combination (-u) * hdet
+/-- **Linear form of the neutron mass.** `m_n = 2w₊·μ_u + (w₊ + 3w₋)·μ_d`. -/
+theorem neutron_linear (q u d : K) :
+    neutronMass q u d = 2 * wPos q * u + (wPos q + 3 * wNeg q) * d := by
+  unfold neutronMass pairSkein wPos wNeg
+  rw [pairMassD_eq, pairMassD_eq]
+  ring
+
+/-- **Determinant.** `(3w₊ + w₋)(w₊ + 3w₋) − (2w₋)(2w₊) = 3(w₊ + w₋)²`. -/
+theorem det_eq (a b : K) :
+    (3 * a + b) * (a + 3 * b) - (2 * b) * (2 * a) = 3 * (a + b) ^ 2 := by
+  ring
+
+/-- `κ ≠ 0` whenever `q ≠ 0`, `q² + 1 ≠ 0` and `q⁴ + 1 ≠ 0`. -/
+theorem kappaD_ne_zero (q : K) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0)
+    (hq4 : q ^ 4 + 1 ≠ 0) : kappaD q ≠ 0 := by
+  rw [kappaD_closed q hq hq2]
+  exact div_ne_zero hq4 (mul_ne_zero hq hq2)
+
+/-- **Inverse, up quark.** When `κ ≠ 0` and `3 ≠ 0`, `μ_u` is recovered from
+`(m_p, m_n)`. -/
+theorem up_eq (q u d : K) (hκ : kappaD q ≠ 0) (h3 : (3 : K) ≠ 0) :
+    u = ((wPos q + 3 * wNeg q) * protonMass q u d
+          - 2 * wNeg q * neutronMass q u d) / (3 * kappaD q ^ 2) := by
+  have hden : 3 * kappaD q ^ 2 ≠ 0 := mul_ne_zero h3 (pow_ne_zero 2 hκ)
+  rw [eq_div_iff hden, proton_linear, neutron_linear, kappaD_eq_wPos_add_wNeg]
+  ring
 
 /-- **Inverse, down quark.** -/
-theorem down_eq (s u d : K) (hs : s ≠ 0) (hD : s + s⁻¹ ≠ 0)
-    (h2 : s ^ 2 + (s ^ 2)⁻¹ ≠ 0) (h3 : (3 : K) ≠ 0) :
-    d = (s + s⁻¹) * ((3 * s ^ 2 + (s ^ 2)⁻¹) * neutronMass s u d
-          - 2 * s ^ 2 * protonMass s u d)
-        / (3 * (s ^ 2 + (s ^ 2)⁻¹) ^ 2) := by
-  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
-  have hP := proton_linear s u d hD
-  have hN := neutron_linear s u d hD
-  have hden : 3 * (s ^ 2 + (s ^ 2)⁻¹) ^ 2 ≠ 0 := mul_ne_zero h3 (pow_ne_zero 2 h2)
-  rw [eq_div_iff hden]
-  have e1 : (s + s⁻¹) * ((3 * s ^ 2 + (s ^ 2)⁻¹) * neutronMass s u d
-          - 2 * s ^ 2 * protonMass s u d)
-        = (3 * s ^ 2 + (s ^ 2)⁻¹) * ((s + s⁻¹) * neutronMass s u d)
-          - 2 * s ^ 2 * ((s + s⁻¹) * protonMass s u d) := by ring
-  rw [e1, hP, hN]
-  have hdet := det_eq (s ^ 2) hq
-  linear_combination (-d) * hdet
+theorem down_eq (q u d : K) (hκ : kappaD q ≠ 0) (h3 : (3 : K) ≠ 0) :
+    d = ((3 * wPos q + wNeg q) * neutronMass q u d
+          - 2 * wPos q * protonMass q u d) / (3 * kappaD q ^ 2) := by
+  have hden : 3 * kappaD q ^ 2 ≠ 0 := mul_ne_zero h3 (pow_ne_zero 2 hκ)
+  rw [eq_div_iff hden, proton_linear, neutron_linear, kappaD_eq_wPos_add_wNeg]
+  ring
 
 /-- **The nucleon map is injective.** Two dressed-quark pairs giving the same
-`(m_p, m_n)` are equal. Hence the pair Skein formula reproduces any measured
-`(m_p, m_n)` with exactly one `(μ_u, μ_d)`. -/
-theorem injective (s u d u' d' : K) (hs : s ≠ 0) (hD : s + s⁻¹ ≠ 0)
-    (h2 : s ^ 2 + (s ^ 2)⁻¹ ≠ 0) (h3 : (3 : K) ≠ 0)
-    (hp : protonMass s u d = protonMass s u' d')
-    (hn : neutronMass s u d = neutronMass s u' d') :
+`(m_p, m_n)` are equal. -/
+theorem injective (q u d u' d' : K) (hκ : kappaD q ≠ 0) (h3 : (3 : K) ≠ 0)
+    (hp : protonMass q u d = protonMass q u' d')
+    (hn : neutronMass q u d = neutronMass q u' d') :
     u = u' ∧ d = d' := by
   constructor
-  · rw [up_eq s u d hs hD h2 h3, up_eq s u' d' hs hD h2 h3, hp, hn]
-  · rw [down_eq s u d hs hD h2 h3, down_eq s u' d' hs hD h2 h3, hp, hn]
+  · rw [up_eq q u d hκ h3, up_eq q u' d' hκ h3, hp, hn]
+  · rw [down_eq q u d hκ h3, down_eq q u' d' hκ h3, hp, hn]
 
 /-- **The nucleon map is surjective.** Every pair `(P, N)` is `(m_p, m_n)` for
 the dressed-quark pair given by the inverse formulas. -/
-theorem surjective (s P N : K) (hs : s ≠ 0) (hD : s + s⁻¹ ≠ 0)
-    (h2 : s ^ 2 + (s ^ 2)⁻¹ ≠ 0) (h3 : (3 : K) ≠ 0) :
-    ∃ u d : K, protonMass s u d = P ∧ neutronMass s u d = N := by
-  have hq : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
-  have hden : 3 * (s ^ 2 + (s ^ 2)⁻¹) ^ 2 ≠ 0 := mul_ne_zero h3 (pow_ne_zero 2 h2)
-  have hdet := det_eq (s ^ 2) hq
-  set Δ := 3 * (s ^ 2 + (s ^ 2)⁻¹) ^ 2 with hΔ
-  refine ⟨(s + s⁻¹) * ((s ^ 2 + 3 * (s ^ 2)⁻¹) * P - 2 * (s ^ 2)⁻¹ * N) / Δ,
-    (s + s⁻¹) * ((3 * s ^ 2 + (s ^ 2)⁻¹) * N - 2 * s ^ 2 * P) / Δ, ?_, ?_⟩
-  · have h : protonMass s
-        ((s + s⁻¹) * ((s ^ 2 + 3 * (s ^ 2)⁻¹) * P - 2 * (s ^ 2)⁻¹ * N) / Δ)
-        ((s + s⁻¹) * ((3 * s ^ 2 + (s ^ 2)⁻¹) * N - 2 * s ^ 2 * P) / Δ)
-        = P * (((3 * s ^ 2 + (s ^ 2)⁻¹) * (s ^ 2 + 3 * (s ^ 2)⁻¹)
-            - 2 * (s ^ 2)⁻¹ * (2 * s ^ 2)) / Δ) := by
-      have hl : protonMass s ((s + s⁻¹) * ((s ^ 2 + 3 * (s ^ 2)⁻¹) * P - 2 * (s ^ 2)⁻¹ * N) / Δ)
-          ((s + s⁻¹) * ((3 * s ^ 2 + (s ^ 2)⁻¹) * N - 2 * s ^ 2 * P) / Δ)
-          = (s + s⁻¹) * (P * (((3 * s ^ 2 + (s ^ 2)⁻¹) * (s ^ 2 + 3 * (s ^ 2)⁻¹)
-            - 2 * (s ^ 2)⁻¹ * (2 * s ^ 2)) / Δ)) / (s + s⁻¹) := by
-        unfold protonMass pairSkein
-        ring
-      rw [hl, mul_div_cancel_left₀ _ hD]
-    rw [h, hdet, div_self hden, mul_one]
-  · have h : neutronMass s
-        ((s + s⁻¹) * ((s ^ 2 + 3 * (s ^ 2)⁻¹) * P - 2 * (s ^ 2)⁻¹ * N) / Δ)
-        ((s + s⁻¹) * ((3 * s ^ 2 + (s ^ 2)⁻¹) * N - 2 * s ^ 2 * P) / Δ)
-        = N * (((3 * s ^ 2 + (s ^ 2)⁻¹) * (s ^ 2 + 3 * (s ^ 2)⁻¹)
-            - 2 * (s ^ 2)⁻¹ * (2 * s ^ 2)) / Δ) := by
-      have hl : neutronMass s ((s + s⁻¹) * ((s ^ 2 + 3 * (s ^ 2)⁻¹) * P - 2 * (s ^ 2)⁻¹ * N) / Δ)
-          ((s + s⁻¹) * ((3 * s ^ 2 + (s ^ 2)⁻¹) * N - 2 * s ^ 2 * P) / Δ)
-          = (s + s⁻¹) * (N * (((3 * s ^ 2 + (s ^ 2)⁻¹) * (s ^ 2 + 3 * (s ^ 2)⁻¹)
-            - 2 * (s ^ 2)⁻¹ * (2 * s ^ 2)) / Δ)) / (s + s⁻¹) := by
-        unfold neutronMass pairSkein
-        ring
-      rw [hl, mul_div_cancel_left₀ _ hD]
-    rw [h, hdet, div_self hden, mul_one]
+theorem surjective (q P N : K) (hκ : kappaD q ≠ 0) (h3 : (3 : K) ≠ 0) :
+    ∃ u d : K, protonMass q u d = P ∧ neutronMass q u d = N := by
+  have hab : wPos q + wNeg q ≠ 0 := by rwa [← kappaD_eq_wPos_add_wNeg]
+  refine ⟨((wPos q + 3 * wNeg q) * P - 2 * wNeg q * N) / (3 * (wPos q + wNeg q) ^ 2),
+    ((3 * wPos q + wNeg q) * N - 2 * wPos q * P) / (3 * (wPos q + wNeg q) ^ 2), ?_, ?_⟩
+  · rw [proton_linear]; field_simp; ring
+  · rw [neutron_linear]; field_simp; ring
 
-/-- **Statement of `prop:terminal-resolution`.** The splitting identity holds,
-and the nucleon map is a bijection (injective and surjective). -/
-theorem terminal_resolution (s : K) (hs : s ≠ 0) (hD : s + s⁻¹ ≠ 0)
-    (h2 : s ^ 2 + (s ^ 2)⁻¹ ≠ 0) (h3 : (3 : K) ≠ 0) :
-    (∀ u d : K, neutronMass s u d - protonMass s u d
-        = (s ^ 2 + (s ^ 2)⁻¹) * (d - u) / (s + s⁻¹)) ∧
-    (∀ u d u' d' : K, protonMass s u d = protonMass s u' d' →
-        neutronMass s u d = neutronMass s u' d' → u = u' ∧ d = d') ∧
-    (∀ P N : K, ∃ u d : K, protonMass s u d = P ∧ neutronMass s u d = N) :=
-  ⟨neutron_sub_proton s, fun u d u' d' hp hn =>
-    injective s u d u' d' hs hD h2 h3 hp hn,
-   fun P N => surjective s P N hs hD h2 h3⟩
+/-- **Terminal resolution, bundled.** The splitting identity, injectivity and
+surjectivity of the nucleon map under the convention-D pair Skein formula. -/
+theorem terminal_resolution (q : K) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0)
+    (hq4 : q ^ 4 + 1 ≠ 0) (h3 : (3 : K) ≠ 0) :
+    (∀ u d : K, neutronMass q u d - protonMass q u d = kappaD q * (d - u)) ∧
+    (∀ u d u' d' : K, protonMass q u d = protonMass q u' d' →
+        neutronMass q u d = neutronMass q u' d' → u = u' ∧ d = d') ∧
+    (∀ P N : K, ∃ u d : K, protonMass q u d = P ∧ neutronMass q u d = N) :=
+  have hκ := kappaD_ne_zero q hq hq2 hq4
+  ⟨neutron_sub_proton q, fun u d u' d' hp hn => injective q u d u' d' hκ h3 hp hn,
+   fun P N => surjective q P N hκ h3⟩
 
 end QOU.MassTheory.PairSkeinNucleon

@@ -11,5 +11,5 @@ export default remark({
     "q0",
   ],
   interprets: "prop:flavor-dressed-mass-from-aether-split",
-  uses: ["thm:flavor-mass-splitting-bound"],
+  uses: ["thm:flavor-mass-splitting-bound", "lem:pair-skein-mass-formula", "conj:flavor-split-aether-mass"],
 });

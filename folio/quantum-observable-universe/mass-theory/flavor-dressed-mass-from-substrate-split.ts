@@ -55,6 +55,18 @@ export default proposition({
         "nucleon split. The theorem now derives `μ_d − μ_u = M_N · s(q)` from that " +
         "class and the nucleon form of the pair Skein formula, an explicit hypothesis.",
     },
+    {
+      kind: "status",
+      date: "2026-11-28",
+      body:
+        "Migrated to convention D (owner ruling 2026-11-27). The Skein factor " +
+        "$(q^{1/2}+q^{-1/2})/(q+q^{-1})$ is replaced by the derived " +
+        "$q(q^2+1)/(q^4+1) = 1/\\kappa$, and the nucleon form of the pair Skein " +
+        "formula is now a theorem of the pair masses " +
+        "(`pairSkeinNucleonSplit_of_nucleonMassD`). The probe gives " +
+        "$\\mu_d - \\mu_u \\approx 1.2709$ MeV at the proton-pinned $q_0$; the " +
+        "retired convention-C value was $1.286$ MeV.",
+    },
   ],
   tags: [
     "flavor",
@@ -67,6 +79,7 @@ export default proposition({
     "def:flavor-dressing-functor",
     "conj:flavor-split-aether-mass",
     "lem:pair-skein-mass-formula",
+    "prop:terminal-resolution",
   ],
   computation: {
     engine: "mpmath",

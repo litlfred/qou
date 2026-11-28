@@ -8,7 +8,7 @@ import QOU.EightfoldWay.DressedMassFromSubstrateSplit
 Two-sided substrate bound on the down–up dressed-quark splitting:
 
 ```
-0 < μ_d − μ_u < M_N · ℏ_q² · h_q · [2]_q
+0 < μ_d − μ_u ≤ M_N · ℏ_q² · h_q · [2]_q / 3 < M_N · ℏ_q² · h_q · [2]_q
 ```
 
 with ℏ_q = (q − 1)/q, h_q = q − q⁻¹, [2]_q = q + q⁻¹.
@@ -85,8 +85,8 @@ theorem substrate_to_bound_ratio {R : Type*} [Field R]
 
 /-- At `q > 1`, the substrate split factor is strictly positive. -/
 -- Ref: [leitner2026] braids-and-knots/flavor-mass-splitting-bound
-private lemma aether_split_factor_pos {t q : ℝ} (ht : 0 < t) (hq : 1 < q) :
-    0 < aether_split_factor t q := by
+private lemma aether_split_factor_pos {q : ℝ} (hq : 1 < q) :
+    0 < aether_split_factor q := by
   have hq0 : 0 < q := by linarith
   have hq_ne : q ≠ 0 := ne_of_gt hq0
   have hq_inv_pos : 0 < q⁻¹ := inv_pos.mpr hq0
@@ -99,44 +99,19 @@ private lemma aether_split_factor_pos {t q : ℝ} (ht : 0 < t) (hq : 1 < q) :
     rw [h_pow]
     have : (q ^ 4 : ℝ)⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq4_gt_1
     linarith
-  have h_sqrt_sum_pos : 0 < t + t⁻¹ := by have := inv_pos.mpr ht; linarith
-  have h_qpqinv_pos : 0 < q + q⁻¹ := by linarith
   unfold aether_split_factor
   apply mul_pos
   · apply div_pos (mul_pos (pow_pos hsub_q1 2) h_one_sub_q4_inv) (by norm_num)
-  · exact div_pos h_sqrt_sum_pos h_qpqinv_pos
+  · positivity
 
 @[deprecated (since := "2026-11-27")] alias substrate_split_factor_pos := aether_split_factor_pos
 
-/-- The Skein-side AM-GM inequality:  at `q > 1`,
-    `t + t⁻¹ < 3·(q + q⁻¹)` for the symbol `t = √q` (`t > 0`, `t² = q`).
-    Used to derive the strict upper bound from `substrate_to_bound_ratio`. -/
-private lemma sqrt_sum_lt_three_mul_qq_inv {t q : ℝ} (ht : 0 < t) (ht2 : t ^ 2 = q)
-    (hq : 1 < q) :
-    t + t⁻¹ < 3 * (q + q⁻¹) := by
-  have hq0 : 0 < q := by linarith
-  have h_sum_pos : 0 < t + t⁻¹ := by have := inv_pos.mpr ht; linarith
-  -- (t + t⁻¹)² = q + 2 + q⁻¹
-  have h_sqrt_sq : (t + t⁻¹) ^ 2 = q + q⁻¹ + 2 := by
-    rw [← ht2]; field_simp; ring
-  -- AM-GM strict at q ≠ 1:  q + q⁻¹ > 2
-  have h_qpqinv_gt_2 : q + q⁻¹ > 2 := by
-    have hpos : 0 < (q - 1) ^ 2 / q := div_pos (pow_pos (show (0:ℝ) < q - 1 by linarith) 2) hq0
-    have h_eq : (q - 1) ^ 2 / q = q + q⁻¹ - 2 := by field_simp; ring
-    linarith
-  -- (√q + √q⁻¹)² > 4, hence √q + √q⁻¹ > 2
-  have h_sum_gt_2 : t + t⁻¹ > 2 := by
-    have hsq_gt : (t + t⁻¹) ^ 2 > 4 := by
-      rw [h_sqrt_sq]; linarith
-    nlinarith [h_sum_pos]
-  -- Goal:  √q + √q⁻¹ < 3·(q + q⁻¹) = 3·(s² − 2)  for  s = √q + √q⁻¹
-  --     ⟺ 3·s² − s − 6 > 0,  which holds at s > 2.
-  have h_target_sq :
-      3 * (q + q⁻¹) - (t + t⁻¹) =
-        3 * (t + t⁻¹) ^ 2 - (t + t⁻¹) - 6 := by
-    rw [h_sqrt_sq]; ring
-  nlinarith [h_sum_gt_2, h_target_sq,
-             sq_nonneg (t + t⁻¹ - 2)]
+/-- The convention-D Skein factor `q(q² + 1)/(q⁴ + 1)` is at most `1` for
+    `q > 0`, since `q⁴ + 1 − q(q² + 1) = (q − 1)(q³ − 1) ≥ 0`. -/
+private lemma skeinD_factor_le_one {q : ℝ} (hq : 0 < q) :
+    q * (q ^ 2 + 1) / (q ^ 4 + 1) ≤ 1 := by
+  rw [div_le_one (by positivity)]
+  nlinarith [mul_nonneg (sq_nonneg (q - 1)) (add_nonneg (add_nonneg (sq_nonneg q) hq.le) zero_le_one)]
 
 /-- **Substrate bound on the dressed-quark splitting.**
     For substrate parameter `q > 1`, nucleon average mass `M_N > 0`,
@@ -150,26 +125,23 @@ private lemma sqrt_sum_lt_three_mul_qq_inv {t q : ℝ} (ht : 0 < t) (ht2 : t ^ 2
 
     The strict lower bound expresses positivity of the substrate
     factor at q > 1; the strict upper bound uses the algebraic
-    identity `substrate_to_bound_ratio` plus the Skein-side
-    adjustment factor `(q^{1/2}+q⁻^{1/2})/(q+q⁻¹) < 1` at q > 1.
-
-    **Conditional content:** the realised value of `μ_d − μ_u`
-    sits at about 1/3 of the upper bound at q = q₀; the theorem
-    does NOT claim tightness.  Tightness would require a finer
-    substrate factor incorporating the Skein adjustment
-    explicitly.
+    identity `substrate_to_bound_ratio` plus the convention-D Skein
+    factor `q(q² + 1)/(q⁴ + 1) ≤ 1` (owner ruling 2026-11-27), which
+    gives the sharper bound `≤ M_N · ℏ_q² · h_q · [2]_q / 3`.
 
     This form takes the splitting identity as a plain hypothesis
     `h_derive`; `flavor_mass_splitting_bound` below is the form
     conditional on `conj:flavor-split-aether-mass`. -/
 -- Ref: [leitner2026] braids-and-knots/flavor-mass-splitting-bound
 theorem flavor_mass_splitting_bound_of_split
-    (F : FlavorDressingFunctor) (M_N t q : ℝ)
-    (hM : 0 < M_N) (ht : 0 < t) (ht2 : t ^ 2 = q) (hq : 1 < q)
+    (F : FlavorDressingFunctor) (M_N q : ℝ)
+    (hM : 0 < M_N) (hq : 1 < q)
     (h_derive :
       F.μ Flavor.down - F.μ Flavor.up
-        = M_N * aether_split_factor t q) :
+        = M_N * aether_split_factor q) :
     0 < F.μ Flavor.down - F.μ Flavor.up ∧
+    F.μ Flavor.down - F.μ Flavor.up
+      ≤ M_N * (((q - 1)/q)^2 * (q - q⁻¹) * (q + q⁻¹)) / 3 ∧
     F.μ Flavor.down - F.μ Flavor.up
       < M_N * (((q - 1)/q)^2 * (q - q⁻¹) * (q + q⁻¹)) := by
   have hq0 : 0 < q := by linarith
@@ -200,62 +172,48 @@ theorem flavor_mass_splitting_bound_of_split
     have := h_ratio
     rw [div_eq_iff hdenom_ne] at this
     linarith
-  -- aether_split_factor t q = ((q-1)/q)² · (q-q⁻¹) · (t + t⁻¹) / 3
+  -- aether_split_factor q = B/3 · r,  with  B = ((q-1)/q)² · (q-q⁻¹) · (q+q⁻¹)
+  -- and the convention-D Skein factor  r = q(q²+1)/(q⁴+1) ∈ (0, 1].
+  set B := ((q - 1) / q) ^ 2 * (q - q⁻¹) * (q + q⁻¹) with hBdef
+  have hB_pos : 0 < B := mul_pos (mul_pos h_sub_div_sq_pos h_qmqinv_pos) h_qpqinv_pos
   have h_factor_form :
-      aether_split_factor t q
-        = ((q - 1) / q) ^ 2 * (q - q⁻¹) *
-            (t + t⁻¹) / 3 := by
+      aether_split_factor q = B / 3 * (q * (q ^ 2 + 1) / (q ^ 4 + 1)) := by
     unfold aether_split_factor
     rw [h_numerator_form]
-    field_simp
-  -- Strict upper bound on the factor.
-  have h_factor_lt :
-      aether_split_factor t q
-        < ((q - 1) / q) ^ 2 * (q - q⁻¹) * (q + q⁻¹) := by
+  have h_r_le : q * (q ^ 2 + 1) / (q ^ 4 + 1) ≤ 1 := skeinD_factor_le_one hq0
+  have h_factor_le : aether_split_factor q ≤ B / 3 := by
     rw [h_factor_form]
-    have h_prefactor_pos :
-        0 < ((q - 1) / q) ^ 2 * (q - q⁻¹) :=
-      mul_pos h_sub_div_sq_pos h_qmqinv_pos
-    have h_step : t + t⁻¹ < 3 * (q + q⁻¹) :=
-      sqrt_sum_lt_three_mul_qq_inv ht ht2 hq
-    -- Rearrange:  ((q-1)/q)² · (q-q⁻¹) · S / 3  <  ((q-1)/q)² · (q-q⁻¹) · (q+q⁻¹)
-    --   ⟺  S < 3 · (q + q⁻¹)
-    have key :
-        ((q - 1) / q) ^ 2 * (q - q⁻¹) *
-            (t + t⁻¹) / 3
-          < ((q - 1) / q) ^ 2 * (q - q⁻¹) * (q + q⁻¹) := by
-      rw [div_lt_iff₀ (by norm_num : (0 : ℝ) < 3)]
-      calc ((q - 1) / q) ^ 2 * (q - q⁻¹) *
-              (t + t⁻¹)
-          < ((q - 1) / q) ^ 2 * (q - q⁻¹) * (3 * (q + q⁻¹)) := by
-            exact (mul_lt_mul_left h_prefactor_pos).mpr h_step
-        _ = ((q - 1) / q) ^ 2 * (q - q⁻¹) * (q + q⁻¹) * 3 := by ring
-    exact key
-  refine ⟨?_, ?_⟩
+    have : 0 < B / 3 := by positivity
+    nlinarith
+  refine ⟨?_, ?_, ?_⟩
   · rw [h_derive]
-    exact mul_pos hM (aether_split_factor_pos ht hq)
+    exact mul_pos hM (aether_split_factor_pos hq)
+  · rw [h_derive, mul_div_assoc]
+    exact mul_le_mul_of_nonneg_left h_factor_le hM.le
   · rw [h_derive]
-    exact mul_lt_mul_of_pos_left h_factor_lt hM
+    apply mul_lt_mul_of_pos_left _ hM
+    linarith
 
 /-- **Substrate bound on the dressed-quark splitting, conditional on
     `conj:flavor-split-aether-mass`** (§3b-cond). With
     `M_N = (m_p + m_n)/2`, the conjecture `[FlavorSplitSubstrateMass m_p m_n q]`
     and the nucleon form of the pair Skein mass formula give
 
-      0 < μ_d − μ_u < M_N · ℏ_q² · h_q · [2]_q.
+      0 < μ_d − μ_u ≤ M_N · ℏ_q² · h_q · [2]_q / 3 < M_N · ℏ_q² · h_q · [2]_q.
 
     The splitting identity is derived by `dressed_mass_from_substrate_split`
     and then bounded by `flavor_mass_splitting_bound_of_split`. -/
 -- Ref: [leitner2026] braids-and-knots/flavor-mass-splitting-bound
 theorem flavor_mass_splitting_bound
-    (F : FlavorDressingFunctor) (m_p m_n t q : ℝ)
+    (F : FlavorDressingFunctor) (m_p m_n q : ℝ)
     [h : FlavorSplitSubstrateMass m_p m_n q]
-    (ht : 0 < t) (ht2 : t ^ 2 = q)
-    (h_skein : PairSkeinNucleonSplit F m_p m_n t q) :
+    (h_skein : PairSkeinNucleonSplit F m_p m_n q) :
     0 < F.μ Flavor.down - F.μ Flavor.up ∧
     F.μ Flavor.down - F.μ Flavor.up
+      ≤ (m_p + m_n) / 2 * (((q - 1)/q)^2 * (q - q⁻¹) * (q + q⁻¹)) / 3 ∧
+    F.μ Flavor.down - F.μ Flavor.up
       < (m_p + m_n) / 2 * (((q - 1)/q)^2 * (q - q⁻¹) * (q + q⁻¹)) :=
-  flavor_mass_splitting_bound_of_split F ((m_p + m_n) / 2) t q h.M_N_pos ht ht2 h.q_gt_one
-    (dressed_mass_from_substrate_split F m_p m_n t q h_skein).1
+  flavor_mass_splitting_bound_of_split F ((m_p + m_n) / 2) q h.M_N_pos h.q_gt_one
+    (dressed_mass_from_substrate_split F m_p m_n q h_skein).1
 
 end QOU.FlavorDressing

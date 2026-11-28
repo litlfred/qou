@@ -30,18 +30,23 @@ Two ingredients:
      \frac{1}{3},
    $$
  The aether factor of the proposition equals $1/3$ of the
- bound expression. Multiplication by $M_N$ preserves the
- inequality; the Skein-side adjustment factor
- $(q^{1/2} + q^{-1/2})/(q + q^{-1}) < 1$ at $q > 1$ tightens the
- bound further but is not required for the strict inequality.
+ bound expression times the convention-D Skein factor
+ $q(q^2+1)/(q^4+1)$. That factor is at most $1$ for $q > 0$,
+ because
+ $$
+     q^4 + 1 - q(q^2 + 1) = (q - 1)(q^3 - 1) \;\ge\; 0 .
+ $$
+ So the splitting is at most $\tfrac13 M_N \hbar_q^2 h_q [2]_q$,
+ which is strictly below $M_N \hbar_q^2 h_q [2]_q$.
  $\square$
 
 ## Tightness
 
 The bound is **not** tight: the slack-ratio identity above shows
-that the realised splitting is exactly $(1/3) \cdot (q^{1/2} +
-q^{-1/2})/(q + q^{-1})$ of the bound (plus a small higher-order
-correction). The dominant factor is the explicit $1/3$ baked
+that the realised splitting is exactly $(1/3) \cdot
+q(q^2+1)/(q^4+1)$ of the bound (plus a small higher-order
+correction); at $q_0$ this is $0.328$. The sharper bound
+factor $q(q^2+1)/(q^4+1)$ equals $1$ only at $q = 1$. The dominant factor is the explicit $1/3$ baked
 into the aether formula of
 [Aether-pure derivation of the $u$--$d$ flavor split](flavor-split-substrate.md).
 Tightening would require either:

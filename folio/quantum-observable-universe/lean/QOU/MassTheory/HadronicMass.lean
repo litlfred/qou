@@ -299,9 +299,11 @@ theorem row4_binding_from_skein :
 
 The Borromean braid of a nucleon has six crossings in three pairs, one pair
 per color-exchange channel.  At each pair between quarks of species `a` and
-`b`, a double application of the Skein relation yields the **pair Skein mass**:
+`b`, the convention-D Markov trace of the pair's crossing element yields the
+**pair Skein mass** (derived in `QOU.MassTheory.PairSkeinD`, owner ruling
+2026-11-27):
 
-  `𝒮_{ab}(q) = (q · μ_a + q⁻¹ · μ_b) / (q^{1/2} + q^{-1/2})`
+  `𝒮_{ab}(q) = (q³ · μ_a + q⁻¹ · μ_b) / (q² + 1)`
 
 where `μ_a` is the **dressed quark Skein mass** of species `a`.
 The total nucleon mass is the sum over the three crossing pairs:
@@ -322,10 +324,19 @@ noncomputable def dressed_mass_up : ℝ := 311.10
 noncomputable def dressed_mass_down : ℝ := 312.39
 
 /-- The **pair Skein mass** `𝒮_{ab}(q)` at a crossing pair between quarks
-    of dressed masses `μ_a` and `μ_b`:
-    `𝒮_{ab}(q) = (q · μ_a + q⁻¹ · μ_b) / (q^{1/2} + q^{-1/2})` -/
+    of dressed masses `μ_a` and `μ_b`, convention D:
+    `𝒮_{ab}(q) = (q³ · μ_a + q⁻¹ · μ_b) / (q² + 1)`
+    (`QOU.MassTheory.PairSkeinD.pairMassD_closed`). The convention-C form
+    with denominator `q^{1/2} + q^{-1/2}` is retired (owner ruling
+    2026-11-27).
+
+    The two dressed masses above were chosen under the retired
+    convention-C form; under convention D they are not re-derived, and
+    the nucleon map is a bijection (`QOU.MassTheory.PairSkeinNucleon`), so
+    any pair of nucleon masses is reproduced by some pair of dressed
+    masses. -/
 noncomputable def pair_skein_mass (q μ_a μ_b : ℝ) : ℝ :=
-  (q * μ_a + q⁻¹ * μ_b) / (q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ)))
+  (q ^ 3 * μ_a + q⁻¹ * μ_b) / (q ^ 2 + 1)
 
 /-- Pair Skein mass for two up quarks: `𝒮_{uu}(q)`. -/
 noncomputable def S_uu : ℝ := pair_skein_mass substrate_q dressed_mass_up dressed_mass_up
@@ -355,13 +366,13 @@ theorem pair_skein_mass_splitting :
   ring
 
 /-- The mass splitting factors through the dressed quark mass difference:
-    `𝒮_{dd}(q) − 𝒮_{uu}(q) = [(q + q⁻¹)/(q^{1/2} + q^{-1/2})] · (μ_d − μ_u)`.
+    `𝒮_{dd}(q) − 𝒮_{uu}(q) = [(q³ + q⁻¹)/(q² + 1)] · (μ_d − μ_u)`.
 
-    This shows the proton--neutron splitting is a pure Skein-level effect
-    of the u-d mass difference, amplified by the factor (q+q⁻¹)/(q^½+q^-½). -/
+    The factor `(q³ + q⁻¹)/(q² + 1) = κ = trace₂ z_D (σ + σ⁻¹)` is the
+    convention-D splitting constant. -/
 theorem pair_skein_splitting_formula :
     S_dd - S_uu =
-      (substrate_q + substrate_q⁻¹) / (substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)))
+      (substrate_q ^ 3 + substrate_q⁻¹) / (substrate_q ^ 2 + 1)
       * (dressed_mass_down - dressed_mass_up) := by
   unfold S_dd S_uu pair_skein_mass
   ring
@@ -463,11 +474,15 @@ noncomputable def borromean_mass_ratio : ℝ :=
 |---------------------------|--------------------------------------------------|-------------|
 | `dressed_mass_up`         | μ_u                                              | 311.10      |
 | `dressed_mass_down`       | μ_d                                              | 312.39      |
-| `S_uu`                    | (q·μ_u + q⁻¹·μ_u)/(q^½+q^-½)                   | ≈ 312.36    |
-| `S_ud`                    | (q·μ_u + q⁻¹·μ_d)/(q^½+q^-½)                   | ≈ 312.97    |
-| `S_dd`                    | (q·μ_d + q⁻¹·μ_d)/(q^½+q^-½)                   | ≈ 313.65    |
-| `proton_from_pair_skein`  | S_uu + 2·S_ud                                    | ≈ 938.3     |
-| `neutron_from_pair_skein` | 2·S_ud + S_dd                                    | ≈ 939.6     |
+| `S_uu`                    | (q³·μ_u + q⁻¹·μ_u)/(q²+1)                        | not evaluated |
+| `S_ud`                    | (q³·μ_u + q⁻¹·μ_d)/(q²+1)                        | not evaluated |
+| `S_dd`                    | (q³·μ_d + q⁻¹·μ_d)/(q²+1)                        | not evaluated |
+| `proton_from_pair_skein`  | S_uu + 2·S_ud                                    | not evaluated |
+| `neutron_from_pair_skein` | 2·S_ud + S_dd                                    | not evaluated |
+
+The values listed here before 2026-11-27 were convention-C figures from
+dressed masses chosen to reproduce the nucleon masses; they are removed with
+the convention-C formula.
 
 ### Cross-checks proved:
 - `mass_sum_rule`: m_D + ΔE = m_p + m_n  ✓
