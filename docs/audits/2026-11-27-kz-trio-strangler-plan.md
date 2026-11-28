@@ -141,3 +141,10 @@ isomorphisms of representations (`A`-linear by the counit laws), their naturalit
 **triangle** `(id ⊗ λ) ∘ α_{X,k,Y} = ρ ⊗ id`, from `middleCounit_assoc3` (hypothesis: `Φ` has
 constant term 1). The objects live in `Rep.{u, w, u} D`, the universe of `k`, so that `k` itself is
 one. Sorry-free; axioms propext, Classical.choice, Quot.sound.
+
+`HAdicDrinfeld/ModulePentagon.lean`: the **pentagon** for `α = a ∘ ρ(Φ)` on representations.
+`action4` is the action of `A^{⊗4}` on `((W⊗X)⊗Y)⊗Z`; `action4_face0 … action4_face4` match each
+coface map of `Pentagon.lean` with the action of `A^{⊗3}` on one of the five triple products of
+the pentagon, through the linear associators; `linear_pentagon` is the linear identity; and
+`Rep.pentagon` follows from `CasimirData.pentagon` (hypothesis: the pentagon in `U4 N`).
+Sorry-free; axioms propext, Classical.choice, Quot.sound.
