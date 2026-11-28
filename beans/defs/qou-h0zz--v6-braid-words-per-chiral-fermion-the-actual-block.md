@@ -434,3 +434,7 @@ Matter = EVEN exterior part Λ⁰⊕Λ²⊕Λ⁴ = 1⊕10⊕5̄ (Spin(10) 16); o
 
 ## 2026-11-28 — odd strands follow from chirality (PR #9811, commit e22a176a6c7)
 `OddStrandsForceChirality.lean`, sorry-free, general n: matter (even part) is closed under conjugation iff n even (dichotomy: all or none of the conjugates are matter); for even n every odd charge moment vanishes identically (vector-like). So "strands odd" ⇔ "matter chiral". Still open: why n = 5 (3 colour + 2 isospin), and the chirality sign.
+
+## 2026-11-28 — sign consolidated; n = 5 conditional (PR #9811, commit after e22a176a6c7)
+- `ChiralitySignIsHyperchargeSign.lean`: matter-part sign and the α = ±1/6 root are ONE sign (even at −α = odd at α). Colour + electric charge blind (toggle neutral strand 4 is a Q-preserving bijection even→odd); hypercharge Y0 sees it. Sign value still open.
+- `StrandCountFromBring.lean`: conditional — if strand relabellings ≅ Bring's S5 then n = 5; colour 3 ⇒ isospin 2. Open: why relabellings are Bring's symmetries; why 3 colour.
