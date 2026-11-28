@@ -1,7 +1,7 @@
 ---
 # qou-v2om
 title: 'EPIC: close the low-isotope binding defect — five fronts, formalize-first'
-status: completed
+status: in-progress
 type: epic
 priority: normal
 tags:
@@ -84,4 +84,4 @@ Claimed 2026-11-23 by claude/w4-colour-reconn-stokes-aomega-20261123 (Worker 16,
 - Pre-registered 80-dps probe `computations/probes/w4_colour_reconn_stokes_aomega/w4_colour_reconn_stokes_aomega_probe.witness.json` (`q0Anchor = "proton"`, `6/6` assertions): coupling $|\mathbf{1}^A\rangle$ to the $(4, 41, 461)$ hidden-colour reconnection channels in Hoefsmit $S^{[A,A,A]}(q_0)$ reverses the factorized $\gamma\gamma$-chain unbinding ($E_- < 0$ across all 6 models), and complete-graph $K_A$ pair exchange (`V2`) boosts $A=2:3:4$ scaling from chain $1:2.003:3.006$ to $1:2.564:7.293$ (`G1`) and $1:2.254:6.397$ (`G2`; in $E_{\mathrm{osc}}(q_0)=42.2478\;\mathrm{MeV}$, `G2__V2` gives $2.2648\;\mathrm{MeV}$ at ${}^2\mathrm{H}$, $5.1059\;\mathrm{MeV}$ at $A=3$, $14.4877\;\mathrm{MeV}$ at ${}^4\mathrm{He}$).
 - Remaining open for this epic: combining $S^{[A,A,A]}_{\mathrm{col}}$ with $\mathrm{SU}(4)$ spin-isospin Wigner $[4]$ space-exchange weighting (for the remaining $\sim 1.75\text{–}1.99\times$ $\alpha$-cluster jump to $12.72\times$) and W6 absolute scale normalization.
 
-Closed post-merge: exploratory `AlphaQuartetPauliWignerSaturation` (citing ruled `T3` valence + proton-pinned 80-dps witness, `5/5` green, division-free `CommRing` Lean) landed on `origin/main` in PR #9999 (`8fcfa9e031cb68e47bfbd05cb31fbaa2fbf60c3d`).
+2026-11-28 (merge-steward, epic kept in-progress per bean-coordination/Rule-13a: 219 open child beans + AlphaQuartetPauliWignerSaturationHypothesis): exploratory `AlphaQuartetPauliWignerSaturation` (citing ruled `T3` valence + proton-pinned 80-dps witness, `5/5` green, division-free `CommRing` Lean) landed on `origin/main` in PR #9999 (`8fcfa9e031cb68e47bfbd05cb31fbaa2fbf60c3d`).
