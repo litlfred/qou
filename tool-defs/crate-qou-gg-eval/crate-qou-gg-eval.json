@@ -1,0 +1,44 @@
+{
+  "$schema": "tool-definition/v1",
+  "tool": {
+    "id": "crate-qou-gg-eval",
+    "title": "Rust crate qou-gg-eval (crates/qou-gg-eval)",
+    "description": "80-dps proton-pinned MPFR evaluator for proper gamma-gamma hadrons, 4-photon products, H_4 flavoured nucleons, 6-strand lepton pairs, and A=1..4 T3-bonded nuclear braids (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Generated from `crates/qou-gg-eval/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+    "install": {
+      "none": true
+    },
+    "invoke": {
+      "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p qou-gg-eval"
+    },
+    "io": {
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "qou_gg_eval",
+          "schema": {
+            "$type": "RepoPath"
+          },
+          "description": "Rust crate `qou-gg-eval` at `crates/qou-gg-eval` (`crates/qou-gg-eval/Cargo.toml`)."
+        }
+      ]
+    },
+    "satisfies": [
+      "rust-crates-and-values",
+      "compute-author"
+    ],
+    "subprocesses": [
+      "rust-crates-and-values"
+    ],
+    "selection": {
+      "when": "Building, type-checking, or consuming `qou-gg-eval` (`crates/qou-gg-eval`).",
+      "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+      "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+    },
+    "requires": {
+      "runtime": [
+        "cargo"
+      ],
+      "network": false
+    }
+  }
+}

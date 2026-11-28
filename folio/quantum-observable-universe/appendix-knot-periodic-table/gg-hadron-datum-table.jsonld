@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-gg-hadron-datum-table",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:gg-hadron-datum-table",
+  "kind": "remark",
+  "title": "Proper $\\gamma\\gamma$ photonic, single-hadron, and light-nuclei ($A = 1\\ldots 4$) datum atlas",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form",
+    "papers/quantum-observable-universe/blocks/def-photon",
+    "papers/quantum-observable-universe/blocks/prop-borromean-two-photon-factorisation",
+    "papers/quantum-observable-universe/blocks/rem-knot-particle-dictionary",
+    "papers/quantum-observable-universe/blocks/rem-particle-nf-table"
+  ],
+  "cites": [
+    "references/codata2022",
+    "references/ame2020"
+  ],
+  "tags": [
+    "archimedean-bridge",
+    "hecke",
+    "normal-form",
+    "gamma-gamma",
+    "hadrons",
+    "binding-energy",
+    "appendix"
+  ],
+  "text": "gg-hadron-datum-table.md",
+  "provenance": "authored"
+}

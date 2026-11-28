@@ -1,0 +1,44 @@
+{
+  "$schema": "tool-definition/v1",
+  "tool": {
+    "id": "crate-qou-clarabel",
+    "title": "Rust crate qou-clarabel (crates/qou-clarabel)",
+    "description": "80-dps MpfrFloat Clarabel LP-dual & Frobenius cone certifier for proper gamma-gamma H_3(q) hadron rows (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Generated from `crates/qou-clarabel/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+    "install": {
+      "none": true
+    },
+    "invoke": {
+      "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p qou-clarabel"
+    },
+    "io": {
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "qou_clarabel",
+          "schema": {
+            "$type": "RepoPath"
+          },
+          "description": "Rust crate `qou-clarabel` at `crates/qou-clarabel` (`crates/qou-clarabel/Cargo.toml`)."
+        }
+      ]
+    },
+    "satisfies": [
+      "rust-crates-and-values",
+      "compute-author"
+    ],
+    "subprocesses": [
+      "rust-crates-and-values"
+    ],
+    "selection": {
+      "when": "Building, type-checking, or consuming `qou-clarabel` (`crates/qou-clarabel`).",
+      "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+      "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+    },
+    "requires": {
+      "runtime": [
+        "cargo"
+      ],
+      "network": false
+    }
+  }
+}

@@ -70,7 +70,8 @@ UPSTREAM_SPECS: list[tuple[str, str]] = [
     ("computations/mirror-nuclei-coulomb-systematics.witness.json", "§2, §3.3a"),
     ("computations/beta-decay-from-q.witness.json", "§2, §3.4a, §5.1"),
     ("computations/probes/alpha_decay_n126_and_derived_qalpha/alpha_decay_n126_qalpha_probe.witness.json", "§2, §3.5a–b"),
-    ("computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json", "§3.2a (ruled trace-pipeline row)"),
+    ("computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json", "§3.2a (ruled trace-pipeline A=2 cross-check)"),
+    ("computations/gg-hadron-datum-table.witness.json", "§3.2a (ruled trace-pipeline A=2..4 K_A rows)"),
     ("computations/scorecard-epistemic-status.witness.json", "§2, §3.1a, §3.2a, §3.3a, §3.4a (row labels)"),
 ]
 
@@ -335,6 +336,7 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
     # (owner dispatch 2026-11-27). A row without a label is a render error.
     es_rows = loaded["computations/scorecard-epistemic-status.witness.json"]["data"]["rows"]
     gg_bond = loaded["computations/probes/gg_deuteron_bond/gg-deuteron-bond.witness.json"]["data"]
+    gg_datum = loaded["computations/gg-hadron-datum-table.witness.json"]["data"]
 
     def _status(rid: str) -> str:
         if rid not in es_rows:
@@ -616,16 +618,25 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
     b3_jun = _m(j_un["per_A"]["A=3"]["bind_MeV"])
     b4_jun = _m(j_un["per_A"]["A=4"]["bind_MeV"])
 
-    # Ruled trace pipeline: gamma-gamma bond V(2)^3 between the V^3 nucleons (selected by the
-    # cheapest-passing rule, owner card 1, 2026-11-25), log law B = -E_0 ln(tr_atom/tr_free) at the
-    # ruled tower E_0. The trace ratio is read from the producer; only the E_0 chart is applied here.
+    # Ruled trace pipeline: gamma-gamma V^3 bonds on K_A (1, 3, 6 bonds at A = 2, 3, 4) between bare
+    # V^3 nucleons, passing reading-3 character positivity at every level m = 1..3A, evaluated under
+    # log law B = -E_0 ln(tr_bound/tr_free) at the ruled tower E_0.
+    e0_ruled = _m(po["qbeta_ruled_base"]["E0_MeV"])
     gg_rows = gg_bond["results"]["V^3"]["rows"]
     gg_sel = [r for r in gg_rows if r["bond"] == "V(2)^3" and r["reading3_every_level"] is True]
-    if len(gg_sel) != 1:
-        errors.append("gg-deuteron-bond: expected exactly one passing V(2)^3 row at m = 3")
-        b2_gg = mpf(0)
+    ln_t3 = [r for r in gg_datum["light_nuclei_t3_rows"] if r["nucleon_cell"] == "bare_gg_V3"]
+    r2_t3 = [r for r in ln_t3 if r["nuclide"] == "2H" and r["n_bonds"] == 1 and r["reading3_m1_to_3a"] is True]
+    r3_t3 = [r for r in ln_t3 if r["nuclide"] == "3H" and r["n_bonds"] == 3 and r["transport_variant"] == "over" and r["reading3_m1_to_3a"] is True]
+    r4_t3 = [r for r in ln_t3 if r["nuclide"] == "4He" and r["route"] == "K4 D+D pairing a" and r["transport_variant"] == "over" and r["reading3_m1_to_3a"] is True]
+    if len(gg_sel) != 1 or len(r2_t3) != 1 or len(r3_t3) != 1 or len(r4_t3) != 1:
+        errors.append("gg-hadron-datum-table / gg-deuteron-bond: missing passing bare V^3 K_A row")
+        b2_gg = b3_gg = b4_gg = mpf(0)
     else:
-        b2_gg = -_m(po["qbeta_ruled_base"]["E0_MeV"]) * mp.log(_m(gg_sel[0]["ratio"]))
+        if abs(_m(r2_t3[0]["ratio"]) - _m(gg_sel[0]["ratio"])) > mpf("1e-18"):
+            errors.append("gg-hadron-datum-table A=2 ratio disagrees with gg-deuteron-bond")
+        b2_gg = -e0_ruled * mp.log(_m(r2_t3[0]["ratio"]))
+        b3_gg = -e0_ruled * mp.log(_m(r3_t3[0]["ratio"]))
+        b4_gg = -e0_ruled * mp.log(_m(r4_t3[0]["ratio"]))
 
     fewbody_rows = [
         (
@@ -638,9 +649,10 @@ def render_all(root: Path) -> tuple[str, str, list[str]]:
             f"`—` (omitted) | `—` (omitted) | `{_fmt_fixed(b3_chain / b2_chain, 3)}` | `3.000` (asymptotic) |"
         ),
         (
-            f"| Ruled trace pipeline (γγ bond $V(2)^3$, tower $E_0$, log law) | "
-            f"`{_fmt_fixed(b2_gg, 5)}` (`{_fmt_fixed((b2_gg - b2_ame) / b2_ame * HUNDRED, 2, signed=True)}%`) | "
-            f"`—` (p = n cell) | `—` (p = n cell) | `—` (not computed) | `—` | `—` |"
+            f"| Ruled trace pipeline ($K_A$ γγ $V^3$ bonds, tower $E_0$, $p=n$ cell) | "
+            f"{_fb_cell(b2_gg, b2_ame)} | {_fb_cell(b3_gg, b3h_ame)} | "
+            f"{_fb_cell(b3_gg, b3he_ame)} | {_fb_cell(b4_gg, b4_ame)} | "
+            f"`{_fmt_fixed(b3_gg / b2_gg, 3)}` | `{_fmt_fixed(b4_gg / b2_gg, 3)}` |"
         ),
         (
             f"| 3D $K_A$ Plaquette Exact (`M3a`, $E_{{\\mathrm{{osc}}}}$) | {_fb_cell(b2_m3a, b2_ame)} | "

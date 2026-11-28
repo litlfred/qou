@@ -1,0 +1,44 @@
+{
+  "$schema": "tool-definition/v1",
+  "tool": {
+    "id": "crate-qou-gg-cli",
+    "title": "Rust crate qou-gg-cli (crates/qou-gg-cli)",
+    "description": "JSON CLI emitter combining qou-gg-eval and qou-clarabel for the Annex A Proper gamma-gamma Hadron & Light-Nuclei Datum Table (Workspace member in root `Cargo.toml`. Version 0.1.0, edition 2021, license MIT. Generated from `crates/qou-gg-cli/Cargo.toml` by `scripts/gen-crate-tools.ts`.)",
+    "install": {
+      "none": true
+    },
+    "invoke": {
+      "shell": "CARGO_TARGET_DIR=/tmp/qou-shared-cargo-target CARGO_BUILD_JOBS=2 nice -n 15 cargo check -p qou-gg-cli"
+    },
+    "io": {
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "qou_gg_cli",
+          "schema": {
+            "$type": "RepoPath"
+          },
+          "description": "Rust crate `qou-gg-cli` at `crates/qou-gg-cli` (`crates/qou-gg-cli/Cargo.toml`)."
+        }
+      ]
+    },
+    "satisfies": [
+      "rust-crates-and-values",
+      "compute-author"
+    ],
+    "subprocesses": [
+      "rust-crates-and-values"
+    ],
+    "selection": {
+      "when": "Building, type-checking, or consuming `qou-gg-cli` (`crates/qou-gg-cli`).",
+      "limits": "Requires Rust/Cargo toolchain (and system GMP/MPFR when `mpfr` feature is active).",
+      "cost": "Incremental `cargo check` under shared `/tmp/qou-shared-cargo-target` (`CARGO_BUILD_JOBS=2`)."
+    },
+    "requires": {
+      "runtime": [
+        "cargo"
+      ],
+      "network": false
+    }
+  }
+}
