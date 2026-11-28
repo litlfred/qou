@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-27T18:40:00Z
-updated_at: 2026-11-27T22:30:00Z
+updated_at: 2026-11-28T02:02:54Z
 parent: qou-pa7n
 ---
 
@@ -121,3 +121,6 @@ qou PR #9766, file QOU/FluidDynamics/q_ns_haar_triad_weight.lean, is sorry-free.
 So transfer is exactly skew iff a + m = 0, which on a PBW monomial (a,b,c) is a + b - c = 0. This computes the twist that q_ns_triad_noncomm left as a gap.
 
 Not established: the link to nabla_q, any nonzero coupling, Part A. The bean stays open.
+
+
+2026-11-28 (triad thread): #9957 merged (83c8b371fe): q-Legendre Haar norms are positive over an ordered field, for q²>1 and for 0<q²<1. #9961 (open): cancelled form nf_eq_nfc; normalised squared raising coupling Rc defined at q=1; Rc 1 s = (s+1)²(s+2)⁴/((2s+3)(2s+4)²(2s+5)) ≥ (s+1)²/16. So the coupling is unbounded at q=1 but decays like q^{-4s} at fixed q>1, which is non-uniform as q→1⁺. Still open: a uniform neighbourhood statement, the 1/‖βδ‖² factor, Part A itself.
