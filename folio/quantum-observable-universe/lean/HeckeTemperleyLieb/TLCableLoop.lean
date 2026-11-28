@@ -6,11 +6,20 @@ import HeckeTemperleyLieb.TLMeridianClosure
 Bean `hkmt`. The row `S_{b,j}` is the closure of the Jones–Wenzl projector `p_j` linked once with
 a `b`-strand cable carrying `p_{b−1}`. The cable is the product of the single-strand loops of
 `TLMeridianClosure`: `cable n b = ι(cable n (b−1)) · loop n (b−1)`. This file proves the two
-local moves the Chebyshev recursion for the rows needs.
+local moves, the recursion, and its solution.
 
 * `cup_hopf`, `cup_loop`: **cup slide.** Two adjacent cable strands joined by a cap can be
   pulled off the encircled block: `e · ι(loop n c) · σ · ι(loop n c) = e · σ`, equivalently
   `e · ι(loop n c) · loop n (c+1) = e`.
+
+* `sh_commute_cable`: the cable algebra (the shifted Temperley–Lieb algebra on the cable strands)
+  commutes with the cable.
+* `rec_H`, `rec_R`: the Chebyshev recursion for `H_m = τ((p_n ⊗ p_m)·C_{m+1})`,
+  `H_{m+1} = ελH_m − c_{m+1}εR_m`, `R_{m+1} = (1 − c_{m+1}ε)H_m`, with `λ = A^{2n+4} + A^{−(2n+4)}`
+  and `c_{m+1} = [m+1]/[m+2]`.
+* `cable_trace`: **`δ^{n+m+2}·H_m = [(n+2)(m+2)]`** for any Markov trace with `δε = 1`.
+* `cable_row_eq_sMatrix`: at a primitive `2(k+2)`-th root of unity this is the `S`-matrix entry
+  `S_{n+1,m+1}`, so every row of `S` is derived from braiding.
 
 The local relations are proved once in an abstract section (`TLAbstract`) over any ring
 holding a Temperley–Lieb pair `a, b` (`a² = δa`, `b² = δb`, `aba = a`, `bab = b`), with the
@@ -695,6 +704,117 @@ theorem rec_R (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (n m : ℕ) (hSm : 
   show cH A T n m - _ = _
   ring
 
+/-- `(A^{2N} + A^{−2N})·[p+N] = [p+2N] + [p]`. -/
+theorem lam_mul_qint (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) : ∀ N p : ℕ,
+    (A ^ (2 * N) + A⁻¹ ^ (2 * N)) * qint δ (p + N) = qint δ (p + 2 * N) + qint δ p
+  | 0, p => by simp only [mul_zero, pow_zero, add_zero]; ring
+  | 1, p => by rw [mul_one, ← hδ, qint_add_two]; ring
+  | N + 2, p => by
+    have hAB : A * A⁻¹ = 1 := mul_inv_cancel₀ hA
+    have hΛ : A ^ (2 * (N + 2)) + A⁻¹ ^ (2 * (N + 2)) =
+        δ * (A ^ (2 * (N + 1)) + A⁻¹ ^ (2 * (N + 1))) - (A ^ (2 * N) + A⁻¹ ^ (2 * N)) := by
+      rw [hδ]
+      linear_combination (-(A * A⁻¹ + 1) * (A⁻¹ ^ (2 * N) + A ^ (2 * N))) * hAB
+    have ih1 := lam_mul_qint hA hδ (N + 1) (p + 1)
+    have ih0 := lam_mul_qint hA hδ N (p + 2)
+    rw [show p + 1 + (N + 1) = p + (N + 2) by ring,
+      show p + 1 + 2 * (N + 1) = p + 2 * N + 2 + 1 by ring] at ih1
+    rw [show p + 2 + N = p + (N + 2) by ring, show p + 2 + 2 * N = p + 2 * N + 2 by ring] at ih0
+    have hc := qint_add_two δ (p + 2 * N + 2)
+    have he := qint_add_two δ p
+    rw [show p + 2 * (N + 2) = p + 2 * N + 2 + 2 by ring, hΛ]
+    linear_combination δ * ih1 - ih0 - hc - he
+
+theorem cR_zero (n : ℕ) : cR A T n 0 = T.τ n (jw δ n) := by
+  show T.τ (n + 1) (incl δ n (jw δ n) * sh δ n 0 (jw δ 0) * incl δ n 1) = _
+  rw [show jw δ 0 = 1 from rfl, map_one, map_one, mul_one, mul_one, T.tr_incl]
+
+theorem cH_zero (n : ℕ) : cH A T n 0 = T.τ (n + 1) (wQ δ (n + 1) * hopfW δ A (n + 1)) := by
+  show T.τ (n + 1) (incl δ n (jw δ n) * sh δ n 0 (jw δ 0) * (incl δ n 1 * hopfW δ A (n + 1))) = _
+  rw [show jw δ 0 = 1 from rfl, map_one, map_one, mul_one, one_mul]; rfl
+
+theorem cable_trace_aux (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (hε : δ * ε = 1) (n : ℕ)
+    (hn : ∀ k ≤ n, qint δ (k + 1) ≠ 0) : ∀ m : ℕ, (∀ k ≤ m, qint δ (k + 1) ≠ 0) →
+      δ ^ (n + m + 2) * cH A T n m = qint δ ((n + 2) * (m + 2)) ∧
+        qint δ (m + 1) * (δ ^ (n + m + 2) * cR A T n m) = qint δ (m + 2) * qint δ ((n + 2) * (m + 1))
+  | 0, _ => by
+    have h := hopf_trace T hA hδ hε (n + 1) (fun k hk => hn k (by omega))
+    have hl := lam_mul_qint hA hδ (n + 2) 0
+    have hτ := tau_jw T hε n hn (fun j hj => jw_spec δ j (fun k hk => hn k (by omega)))
+    have hpow : δ ^ (n + 1) * ε ^ (n + 1) = 1 := by rw [← mul_pow, hε, one_pow]
+    simp only [show n + 1 + 1 = n + 2 from rfl] at h
+    simp only [zero_add, qint_zero, add_zero] at hl
+    rw [cH_zero, cR_zero, hτ, show n + 0 + 2 = n + 2 from rfl, show (n + 2) * (0 + 2) = 2 * (n + 2)
+      by ring, show (n + 2) * (0 + 1) = n + 2 by ring, qint_two]
+    refine ⟨?_, ?_⟩
+    · linear_combination h + hl
+    · rw [show (0 : ℕ) + 1 = 1 from rfl, qint_one]
+      linear_combination (δ * qint δ (n + 2)) * hpow
+  | m + 1, hm => by
+    obtain ⟨ih1, ih2⟩ := cable_trace_aux hA hδ hε n hn m (fun k hk => hm k (by omega))
+    have hSn := jw_spec δ n hn
+    have hSm := jw_spec δ m (fun k hk => hm k (by omega))
+    have eH := rec_H T hA hδ hε n m hSn hSm
+    have eR := rec_R T hA hδ n m hSm
+    have hq2 : qint δ (m + 2) ≠ 0 := hm (m + 1) le_rfl
+    have hcq : qint δ (m + 1) / qint δ (m + 2) * qint δ (m + 2) = qint δ (m + 1) :=
+      div_mul_cancel₀ _ hq2
+    have cheb := lam_mul_qint hA hδ (n + 2) ((n + 2) * (m + 1))
+    rw [show (n + 2) * (m + 1) + (n + 2) = (n + 2) * (m + 2) by ring,
+      show (n + 2) * (m + 1) + 2 * (n + 2) = (n + 2) * (m + 3) by ring,
+      show 2 * (n + 2) = 2 * n + 4 by ring] at cheb
+    have hq3 := qint_add_two δ (m + 1)
+    simp only [show m + 1 + 2 = m + 3 from rfl, show m + 1 + 1 = m + 2 from rfl] at hq3
+    set c := qint δ (m + 1) / qint δ (m + 2)
+    set D := δ ^ (n + m + 2)
+    have hcr : c * (D * cR A T n m) = qint δ ((n + 2) * (m + 1)) := by
+      apply mul_left_cancel₀ hq2
+      linear_combination (D * cR A T n m) * hcq + ih2
+    rw [show n + (m + 1) + 2 = n + m + 2 + 1 by ring, pow_succ,
+      show (n + 2) * (m + 1 + 2) = (n + 2) * (m + 3) by ring,
+      show (n + 2) * (m + 1 + 1) = (n + 2) * (m + 2) by ring,
+      show m + 1 + 1 = m + 2 from rfl, show m + 1 + 2 = m + 3 from rfl, eH, eR]
+    refine ⟨?_, ?_⟩
+    · linear_combination ((A ^ (2 * n + 4) + A⁻¹ ^ (2 * n + 4)) * D * cH A T n m
+        - c * D * cR A T n m) * hε + (A ^ (2 * n + 4) + A⁻¹ ^ (2 * n + 4)) * ih1 - hcr + cheb
+    · linear_combination (-(c * qint δ (m + 2) * D * cH A T n m)) * hε
+        - (D * cH A T n m) * hcq + (qint δ (m + 2) * δ - qint δ (m + 1)) * ih1
+        - qint δ ((n + 2) * (m + 2)) * hq3
+
+/-- **The cabled Hopf trace.** For any Markov trace with `δε = 1`, the Hopf link of `p_n` on
+`n + 1` strands with `p_m` on `m + 1` strands is `δ^{n+m+2}·τ = [(n+2)(m+2)]`. -/
+theorem cable_trace (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (hε : δ * ε = 1) (n m : ℕ)
+    (hn : ∀ k ≤ n, qint δ (k + 1) ≠ 0) (hm : ∀ k ≤ m, qint δ (k + 1) ≠ 0) :
+    δ ^ (n + m + 2) * cH A T n m = qint δ ((n + 2) * (m + 2)) :=
+  (cable_trace_aux T hA hδ hε n hn m hm).1
+
 end Rec
+
+/-! ## At a root of unity: every row `S_{b,j}` -/
+
+section RootOfUnity
+
+open QOU.HeckeTemperleyLieb.TLRootOfUnity QOU.HeckeTemperleyLieb.TLVacuumRow
+
+variable {K : Type*} [Field K]
+
+/-- **Every row of `S` from braiding.** At `A = ω`, `ζ = ω²` a primitive `2(k+2)`-th root of
+unity, for any Markov trace with `δε = 1`, the Hopf link of `p_n` on `n + 1 ≤ k` strands with the
+cable `p_m` on `m + 1 ≤ k` strands is the `S`-matrix entry `S_{n+1,m+1} = [(n+2)(m+2)]`. -/
+theorem cable_row_eq_sMatrix (ω : Kˣ) (k : ℕ) (hζ : IsPrimitiveRoot (ω ^ 2) (2 * (k + 2)))
+    {ε : K} (T : MarkovTower (((ω ^ 2 : Kˣ) : K) + (((ω ^ 2)⁻¹ : Kˣ) : K)) ε)
+    (hε : (((ω ^ 2 : Kˣ) : K) + (((ω ^ 2)⁻¹ : Kˣ) : K)) * ε = 1) (n m : ℕ) (hn : n + 1 ≤ k)
+    (hm : m + 1 ≤ k) :
+    (((ω ^ 2 : Kˣ) : K) + (((ω ^ 2)⁻¹ : Kˣ) : K)) ^ (n + m + 2) * cH (ω : K) T n m =
+      sMatrix (ω ^ 2) k ⟨n + 1, by omega⟩ ⟨m + 1, by omega⟩ := by
+  have hδ : ((ω ^ 2 : Kˣ) : K) + (((ω ^ 2)⁻¹ : Kˣ) : K) = (ω : K) ^ 2 + (ω : K)⁻¹ ^ 2 := by
+    rw [Units.val_inv_eq_inv_val, Units.val_pow_eq_pow_val, inv_pow]
+  have hg : ∀ j ≤ k - 1, qint (((ω ^ 2 : Kˣ) : K) + (((ω ^ 2)⁻¹ : Kˣ) : K)) (j + 1) ≠ 0 :=
+    fun j hj => by rw [qint_eq_qInt]; exact qInt_ne_zero k hζ (by omega) (by omega)
+  rw [cable_trace T ω.ne_zero hδ hε n m (fun j hj => hg j (by omega))
+    (fun j hj => hg j (by omega)), qint_eq_qInt]
+  rfl
+
+end RootOfUnity
 
 end QOU.HeckeTemperleyLieb.TLCable
