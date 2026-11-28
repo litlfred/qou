@@ -7,7 +7,7 @@ priority: normal
 tags:
     - needs-owner
 created_at: 2026-11-27T18:05:00Z
-updated_at: 2026-11-27T18:40:00Z
+updated_at: 2026-11-28T02:44:08Z
 parent: qou-innq
 ---
 
@@ -40,3 +40,5 @@ Stays open (rule 13a): its subject is an open conjecture.
 - On the block K[ζ]: the X₊X₋ pair budget term is 2νq² times the energy rate of u̇ = −νLu, h(u·Lu) ≥ 0, and that flow dissipates (q_ns_block_viscous_dissipation.lean).
 - A candidate triad coupling: X₊ζ^{j+1}·X₋ζ^{k+1} = [j+1]_{q²}[k+1]_{q²}(q ζ^{j+k+1} + q² ζ^{j+k+2}). That is forward-only in ζ-degree, with coefficients ≥ (j+1)(k+1) for q ≥ 1 (q_ns_block_pair_cascade.lean). Sorry-free.
 - Still open: (i) that this pair product is the q-NS advection (no ∇_q on O_q(SU(2))); (ii) the coefficients in the little q-Jacobi basis; (iii) a transfer lower bound along a solution; (iv) Part A. This bean stays open.
+
+2026-11-28: surreal reading formalised (PR #9986, q_ns_qlegendre_surreal_band.lean): for q-1 infinitesimal, Rc q s >= (s+1)^2/32 for every s : N, so no standard mode decouples; the band cutoff sits at an infinite index ~log(1/delta)/delta, needing hypernatural indices (open). Chapter intro status account #9977, placeholder relabels #9980. Part A itself stays open.
