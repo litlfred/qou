@@ -18,7 +18,8 @@ export default remark({
   uses: [
     "prop:incompleteness-implies-horizon",
     "rem:aether-computation",
-    "rem:p-vs-np-event-horizon",
+    "def:computational-horizon",
+    "def:jet-horizon",
   ],
   cites: ["goedel1931", "turing1936",
     "hawking1975",

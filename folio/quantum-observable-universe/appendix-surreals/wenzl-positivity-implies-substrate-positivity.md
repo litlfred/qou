@@ -1,4 +1,4 @@
-**Archimedean specialisation.** The companion conjecture [Osterwalder--Schrader reflection positivity from the Reeb $\mathbb{Z}_2$](#conj:os-reflection-positivity-from-reeb) reduces the Wightman-axiom portion of the Yang–Mills millennium statement to a single aether axiom: $C^*$-Frobenius positivity of the QOU Frobenius–Hopf aether at $q = q_0$. This conjecture takes the natural next step. The axiom should be **derivable** from Wenzl's positivity criterion for $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ at $q_0 \in \mathbb{R}_{>1}$, as a consequence of existing unitarity.
+**Archimedean specialisation.** The companion conjecture [Osterwalder--Schrader reflection positivity from the Reeb $\mathbb{Z}_2$](#conj:os-reflection-positivity-from-reeb) isolates a single aether hypothesis for Euclidean reflection positivity: $C^*$-Frobenius positivity of the QOU Frobenius--Hopf aether at $q = q_0$. This conjecture posits that this hypothesis is **derivable** from Wenzl's positivity criterion for $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ at $q_0 \in \mathbb{R}_{>1}$.
 
 **Conjecture (Wenzl positivity at $q_0$ implies aether
 $C^*$-Frobenius positivity).** *Wenzl's positivity criterion for the
@@ -81,25 +81,14 @@ positivity notions:
 (a) is a theorem; (b) is the aether axiom, so the conjecture is
 exactly the claim that (a) implies (b) via the categorical
 Frobenius–algebra theory of Müger / BKLR.
-## Strategic significance
+## Structural role
 
-If this conjecture is proved, the entire Yang–Mills millennium
-statement reduces in the QOU framework to:
+If this conjecture holds, Euclidean reflection positivity of the categorical Frobenius pairing at $q_0$ follows from:
 
-- [Collapse of the quantum gap](#thm:quantum-gap-collapse) — surreal
-  mass gap (established);
-- [Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\mathrm{Aut}(\mathbb{P}(V))$](#prop:reeb-u1-chart-swap) — chart-swap
-  $U(1)$ is the Reeb $U(1)$ (proved);
-- Wenzl positivity at $q_0 \in \mathbb{R}_{>1}$ (theorem
-  \cite{wenzl1988});
-- Müger / BKLR positive-Frobenius theory (theorem, off-the-shelf);
-- This conjecture: the bridge.
-
-The bridge is the *only* genuinely conjectural input. Closing it
-discharges the OS-reflection-positivity-as-axiom assumption and
-upgrades the QOU framework to a complete derivation of Yang–Mills
-mass gap + Wightman compliance from the categorical aether +
-Bring's surface constraint.
+- [Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\mathrm{Aut}(\mathbb{P}(V))$](#prop:reeb-u1-chart-swap) — chart-swap $U(1)$ is the Reeb $U(1)$;
+- Wenzl positivity at $q_0 \in \mathbb{R}_{>1}$ \cite{wenzl1988};
+- Müger / BKLR positive-Frobenius theory;
+- This bridge conjecture identifying the induced $C^*$-Frobenius structure on $A$.
 
 Unitarity is compatible with $q = q_0$, but it does not single
 $q_0$ out. Wenzl's unitarity range is the whole real positive line,

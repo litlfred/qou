@@ -142,8 +142,9 @@ export default chapter({
         // unitary-stability as an intra-section H1 forward ref;
         // swap makes it a backward ref, no new cascade.
         "unitary-stability",
+        "bring-frobenius-traces",
+        "bring-frobenius-traces-proof",
         "geometric-rh-exposition",
-        "adelic-critical-line-persistence",
       ],
     }),
     section({

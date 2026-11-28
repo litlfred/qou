@@ -9,4 +9,4 @@ The computational horizon applies the jet horizon directly to the resolution tre
 | Degree-$0$ sections vanish on $\mathcal{H}$ | The answer $P_L(q_0)$ is inaccessible in poly time |
 | Degree $\geq 1$ data leaks through | Witnesses (resolution paths) are poly-time verifiable |
 | Hawking radiation: thermal, no particle identity | Partial computation: statistical correlations, no answer |
-| Aeon boundary: separates observable epochs | Complexity class boundary: separates P from NP |
+| Aeon boundary: separates observable epochs | Evaluation boundary: separates polynomial skein slices from full tree expansion |

@@ -20,7 +20,7 @@ export default conjecture({
     "rem:chern-simons-as-knot-invariant",
     "def:phi-q-piece",
     "prop:reeb-u1-chart-swap",
-    "rem:yang-mills-surreal-bound",
+    "speculative-open-problems:rem:yang-mills-surreal-bound",
   ],
   cites: [
     "faddeev1994",

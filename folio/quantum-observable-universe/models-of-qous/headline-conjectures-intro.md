@@ -1,1 +1,0 @@
-The Yang–Mills millennium problem asks for the existence of the theory and a strictly positive mass gap. These conjectures recast that problem inside the categorical aether. The mass gap $\Delta_q > 0$, and hence confinement, is derived directly from the Frobenius–Hopf structure. This avoids analytic technicalities on $\mathbb{R}^4$.

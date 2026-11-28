@@ -13,7 +13,7 @@
   ],
   "label": "def:categorical-mordell-weil",
   "kind": "definition",
-  "title": "Categorical Mordell--Weil group, $q$-Tate--Shafarevich group, and $q$-deformed $L$-function",
+  "title": "Invariant Hom-group, finite-place Euler product, and monoidal localisation kernel",
   "uses": [
     "papers/quantum-observable-universe/blocks/conj-tannaka-krein-isomorphism",
     "papers/quantum-observable-universe/blocks/prop-descartes-elliptic-curve",
@@ -23,11 +23,10 @@
     "references/tate1974"
   ],
   "tags": [
-    "birch-swinnerton-dyer",
     "elliptic-curve",
     "l-function",
-    "mordell-weil",
-    "tate-shafarevich",
+    "hom-group",
+    "localisation-kernel",
     "categorical",
     "fibre-functor"
   ],

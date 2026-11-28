@@ -1,15 +1,3 @@
-The "cost" of a standard-scale deviation $\delta$ from the classical
-configuration — whether a zero off the critical line, a singular spike
-in the velocity gradient, or a non-trivial Collatz orbit — is
-$\delta^2 \cdot \Omega_q \asymp \delta^2 \cdot \varepsilon^{-1}$.
-The "budget" available from the mass-gap dissipation is
-$\Delta_q \asymp \varepsilon^3$.  The [surreal squeeze](#lem:surreal-squeeze)
-states that the cost **strictly exceeds** the budget.  No passage to
-the limit is needed: the inequality is already exact in the ordered
-field.
+For any standard real $\delta > 0$, a term scaling as $\delta^2 \cdot \Omega_q \asymp \delta^2 \cdot \varepsilon^{-1}$ sits at strictly higher Conway $\omega$-order than an infinitesimal scaling as $\Delta_q \asymp \varepsilon^3$. The [surreal squeeze](#lem:surreal-squeeze) expresses that dominance directly inside the ordered field $\mathbb{R}(\varepsilon) \subset \mathbf{No}$, without taking an analytic limit $\varepsilon \to 0^+$.
 
-**Downstream.** Every millennium-problem remark in this chapter and
-Chapter 7 ([fluid dynamics](#chap:fluid-dynamics))
-reduces to this lemma.  See:
-
-* [Navier--Stokes surreal bound](#rem:ns-surreal-bound);
+In the fluid-dynamics chapter ([fluid dynamics](#chap:fluid-dynamics)), a related rate comparison is examined for [Navier--Stokes surreal scaling](#rem:ns-surreal-bound).

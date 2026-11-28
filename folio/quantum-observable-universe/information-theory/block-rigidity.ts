@@ -12,6 +12,6 @@ export default proposition({
         "Lean: `QOU/InformationTheory/BlockRigidity.lean` — `derivation_centralIdempotent_eq_zero`, `derivation_mul_centralIdempotent`, `algEquiv_centralIdempotent`, `conj_central`, `not_inner_of_moves_central`. Generic `CommRing R`, any `Ring A` with `Algebra R A`; no field or characteristic hypothesis. The Goldman–Iwahori facts in the last paragraph are `QOU.GoldmanIwahori.theta`, `theta_not_inner`, `trivialChar_theta_gen` (`QOU/Core/HeckeGoldmanIwahori.lean`).",
     },
   ],
-  tags: ["P-vs-NP", "inner-automorphism", "outer-automorphism", "derivation", "Wedderburn"],
-  uses: ["sec:p-vs-np-boundary-intro"],
+  tags: ["inner-automorphism", "outer-automorphism", "derivation", "Wedderburn"],
+  uses: ["sec:skein-trace-bandwidth-intro"],
 });

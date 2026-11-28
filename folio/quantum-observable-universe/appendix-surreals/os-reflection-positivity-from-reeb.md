@@ -1,4 +1,4 @@
-The [Yang–Mills surreal bound](#rem:yang-mills-surreal-bound) gives the mass-gap statement at aether order $\Delta_q \asymp \varepsilon^3$ but explicitly defers the Wightman-axiom portion of the Millennium Prize statement—the regularity programme of recovering a standard renormalised QFT as the standard part of the $q$-deformed aether. This conjecture supplies the bridge: the Reeb $\mathbb{Z}_2$ acting on the [Frobenius pairing](#def:frobenius-hopf-aether) furnishes Osterwalder–Schrader reflection positivity in the archimedean realisation. Together with the surreal mass gap, this forms the Osterwalder–Schrader sufficient input for Wightman reconstruction.
+Recovering an Osterwalder--Schrader Euclidean field theory from the $q$-deformed aether requires reflection positivity of the categorical correlation pairings. This conjecture posits that the Reeb $\mathbb{Z}_2$ acting on the [Frobenius pairing](#def:frobenius-hopf-aether) furnishes Osterwalder--Schrader reflection positivity in the archimedean realisation.
 
 **Conjecture (OS reflection positivity from the Reeb $\mathbb{Z}_2$).**
 *Let $\theta$ denote the antipodal $\mathbb{Z}_2 \subset U(1)_{\xi}$ inside the Reeb $U(1)$—equivalently, the chart-swap involution $\iota : Z \mapsto Z^{-1}$ on the [contact affine chart](#def:contact-affine-chart) at $\varTheta = \pi$, per [chart-swap $U(1)$ is the Reeb flow](#prop:reeb-u1-chart-swap). Then the [Frobenius pairing](#def:frobenius-hopf-aether) $\langle\,\cdot\,,\,\cdot\,\rangle_F$ on $A$ satisfies reflection positivity under $\theta$:*
@@ -23,9 +23,9 @@ In the QOU framework:
 | OS1 (Euclidean covariance) | $S_5$-action on Bring's coordinate ring is the categorical lift of the $\mathrm{SO}(4) / \mathrm{Spin}(4)$ rotation group, and the [$\mathbb{Z}_2 \hookrightarrow U(1)_{\xi}$](#prop:reeb-u1-chart-swap) hierarchy is the Euclidean time translation. |
 | **OS2 (reflection positivity)** | **This conjecture.** |
 | OS3 (symmetry / locality) | Nakayama-covariant braiding and $\ast$-hermiticity on $A / \mathrm{rad}\,\tau$. |
-| OS4 (cluster decomposition) | Mass gap $\Delta_q \asymp \varepsilon^3$ from the [surreal bound](#rem:yang-mills-surreal-bound) gives exponential clustering at separation $r$: $|S_n(\cdots) - S_k(\cdots) S_{n-k}(\cdots)| \lesssim e^{-\Delta_q r}$. |
+| OS4 (cluster decomposition) | Exponential clustering posited at rate $\Delta_q \asymp \varepsilon^3$ in the surreal register. |
 
-OS0, OS1, OS3 are categorically built-in. OS4 is the [surreal mass-gap statement](#rem:yang-mills-surreal-bound). OS2 is the open input—this conjecture. Granting it, the OS theorem reconstructs a Wightman QFT on $\mathbb{R}^4$ as the standard part of the $q$-deformed aether, completing the Wightman-axiom portion of the Yang–Mills millennium statement.
+OS2 is the open structural input isolated by this conjecture: whether the antipode-twisted Frobenius pairing descends under $\tau_{\mathrm{arch}}$ to a reflection-positive Euclidean inner product.
 
 The positivity statement involves three open ingredients:
 
@@ -57,4 +57,4 @@ The status of OS reflection positivity in the QOU framework is equal to the stat
 - Verification that one of these candidate norms makes the Frobenius pairing positive in the sense above.
 - Compatibility of the chosen norm with the antipode $S$.
 
-The Wightman-axiom portion of the Yang–Mills millennium statement reduces to the structural positivity of the antipode-twisted Frobenius pairing. The reflection involved is the antipodal $\mathbb{Z}_2$ subgroup of the Reeb $U(1)$, made visible by the [chart-swap–Reeb identification](#prop:reeb-u1-chart-swap). The categorical infrastructure already houses every OS ingredient except this positivity.
+The Euclidean reflection-positivity condition in the QOU model reduces to structural positivity of the antipode-twisted Frobenius pairing. The reflection involved is the antipodal $\mathbb{Z}_2$ subgroup of the Reeb $U(1)$, made visible by the [chart-swap–Reeb identification](#prop:reeb-u1-chart-swap).

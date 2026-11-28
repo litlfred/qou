@@ -14,7 +14,7 @@ export default conjecture({
     "def:contact-affine-chart",
     "def:frobenius-hopf-aether",
     "def:archimedean-realization-functor",
-    "rem:yang-mills-surreal-bound",
+    "speculative-open-problems:rem:yang-mills-surreal-bound",
     "thm:quantum-gap-collapse",
     "rem:kashaev-as-archimedean-realization",
   ],

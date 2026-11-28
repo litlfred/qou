@@ -1,4 +1,4 @@
-A decision problem encoded by a link $L = \hat{\beta}$ with $c = 3N$ crossings belongs to $\mathrm{P}$ if and only if its Skein polynomial $P_L(q)$ can be evaluated (its degree-$0$ answer extracted) within
+A skein evaluation on a link $L = \hat{\beta}$ with $c = 3N$ crossings lies in the polynomial-bandwidth regime if and only if its Skein polynomial $P_L(q)$ can be extracted within
 $$
   t(c) \leq \mathfrak{B}(q)^{-1} \mathrm{poly}(c)
 $$

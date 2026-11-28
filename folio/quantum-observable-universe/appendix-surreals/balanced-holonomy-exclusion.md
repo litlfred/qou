@@ -1,0 +1,4 @@
+Let $\mathcal{C}_q$ be the partial affine $[2]_q$-division map on $\mathbb{Z}[q^{\pm 1}]$.
+
+1. **Balanced-holonomy exclusion.** In any commutative ring where $[2]_q = q + 1$ is not a unit, the equation $[3]_q^{k_{\mathrm{odd}}} = [2]_q^k$ has no solution with $k_{\mathrm{odd}} \ge 1$ and $k \ge 1$, so $\mathcal{C}_q$ admits no periodic orbit of multiplicative holonomy $A = [3]_q^{k_{\mathrm{odd}}} / [2]_q^k = 1$ other than the fixed point $\{0\}$. Over $\mathbb{R}_{>0}$, although $[3]_\rho^3 = [2]_\rho^5$ holds at the real root $\rho \approx 1.32472$ of $q^3 = q + 1$, positivity of the additive holonomy $B > 0$ still excludes any non-zero balanced cycle.
+2. **Complete cycle classification in $\mathbb{Z}[q^{\pm 1}]$.** Across all multiplicative holonomies $A$ in $\mathbb{Z}[q^{\pm 1}]$, the only periodic orbits of $\mathcal{C}_q$ are $\{0\}$, the odd fixed point $\{-q^{-2}\}$, and the $2$-cycle $\{q^{-1},\, 1 + q^{-1}\}$.

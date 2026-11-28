@@ -59,18 +59,14 @@ export default chapter({
       ],
     }),
 
-    // ── Headline conjectures ──────────────────────────────────────────
-    // R4 YM-split: `conj:yang-mills-mass-gap` was competing with
-    // `prop:main-commutative-diagram` for 'the main result' framing in
-    // sec:physical-interpretation.  Split into its own subsection paired
-    // with the GR-substrate-geometry interpretation that motivates it.
+    // ── Crossing-energy positivity and Levi back-reaction ────────────
     section({
-      title: "Headline conjectures",
-      label: "sec:headline-conjectures",
+      title: "Crossing-energy positivity and Levi back-reaction",
+      label: "sec:crossing-energy-levi-backreaction",
       blocks: [
-        "headline-conjectures-intro",
-        "yang-mills-mass-gap",
-        "yang-mills-mass-gap-table-data",
+        "crossing-energy-gap-intro",
+        "crossing-energy-gap",
+        "crossing-energy-gap-proof",
         "gr-substrate-geometry",
       ],
     }),

@@ -4,7 +4,7 @@ $$
 \mathrm{Re}(\rho_i) = \frac{1}{2} \qquad \text{for all } \rho_i \in \mathrm{Spec}(\xi_q), \quad i = 1, \ldots, 8.
 $$
 
-All 8 fundamental modes of the Reeb spectrum lie exactly on the critical line $\mathrm{Re}(\rho) = 1/2$. This formulates the finite-field Riemann hypothesis in the language of the aether. The spectral oscillations in the explicit formula balance: each mode contributes fluctuations of amplitude $|X^{\rho_i}/[\rho_i]_q| = X^{1/2}/|[\rho_i]_q|$, giving square-root cancellation.
+All eight spectral exponents lie on the line $\mathrm{Re}(\rho_i) = 1/2$. This expresses the finite-field Weil bound in logarithmic spectral coordinates; reading those exponents as eigenvalues $\mathrm{Spec}(\xi_q)$ of a Reeb derivation is an interpretive identification rather than an established theorem (see the closing paragraph). In an explicit-formula expansion, each mode has amplitude $|X^{\rho_i}/[\rho_i]_q| = X^{1/2}/|[\rho_i]_q|$, giving square-root scaling.
 
 The Hasse--Weil bound is the deep input here, and it is worth separating out what the *shallow* half of the Weil package already forces. The functional equation alone pairs the Frobenius eigenvalues by $\alpha \mapsto q/\alpha$; in the spectral coordinate this is $\rho \mapsto 1 - \rho$, so the eight real parts form a multiset symmetric about $1/2$ without yet lying on it. Summing that symmetry over the pairing gives
 
