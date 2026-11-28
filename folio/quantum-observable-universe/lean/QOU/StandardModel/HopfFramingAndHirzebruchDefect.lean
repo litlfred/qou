@@ -294,6 +294,10 @@ theorem baez_huerta_z6_congruence_iff (tau w w' T : ℤ) (hw : (2 : ℤ) ∣ (w 
     refine ⟨r + k, ?_⟩
     omega
 
+section ChargeFreeColemanGlashow
+
+variable (K : Type*) [Field K]
+
 /-- **Rule-13a Open Conjecture Carrier (`qou-qvpl` Open Check A), restated 2026-11-27.**
 
 The earlier field `∀ T twoI3, ∃ Y3, Y3 = 2T − 3·twoI3` was provable by `rfl`, so the class
@@ -311,14 +315,16 @@ The QOU content is that `ribbonCharges` comes from the ribbon twist and that `an
 follows from the axioms; neither is derived.  **Zero instances** (`AGENTS.md` Rule 13a): an
 instance written by quoting the Standard Model table would be a fit, not a derivation.
 `hypercharge_of_ribbon` gives what an instance would buy. -/
-class CategoricalRibbonHyperchargeDerivationHypothesis (K : Type*) [Field K] [CharZero K] where
+class CategoricalRibbonHyperchargeDerivationHypothesis [CharZero K] where
   ribbonCharges : QOU.StandardModel.AnomalyFreeHypercharge.Charges K
   anomalyFree : QOU.StandardModel.AnomalyFreeHypercharge.AnomalyFree ribbonCharges
   neutral : QOU.StandardModel.AnomalyFreeHypercharge.HasNeutralLepton ribbonCharges
 
+variable {K}
+
 /-- What Check A would buy: an instance of the carrier forces the Standard Model hypercharge
 ratios, `yQ = ± 1/6`, and the `3/8` trace ratio. -/
-theorem hypercharge_of_ribbon {K : Type*} [Field K] [CharZero K]
+theorem hypercharge_of_ribbon [CharZero K]
     [h : CategoricalRibbonHyperchargeDerivationHypothesis K] :
     QOU.StandardModel.AnomalyFreeHypercharge.IsChiralSolution h.ribbonCharges ∧
       (h.ribbonCharges.yQ = 1 / 6 ∨ h.ribbonCharges.yQ = -1 / 6) :=
@@ -327,10 +333,6 @@ theorem hypercharge_of_ribbon {K : Type*} [Field K] [CharZero K]
   ⟨r.1, r.2.1⟩
 
 /-! ## Section 4: Charge-Value-Free U-Spin Coleman–Glashow Theorem (`qou-pwz4`, `qou-krgl`) -/
-
-section ChargeFreeColemanGlashow
-
-variable {K : Type*} [Field K]
 
 /-- Adjacent pairwise charge sum `Q₁₂ + Q₂₃` on an `(a, a, b)` 3-strand weight space
 (basis `|aab⟩, |aba⟩, |baa⟩`, covering `p = uud`, `Σ⁺ = uus`, `Σ⁻ = dds`), parameterized by
@@ -401,9 +403,9 @@ traces vanish identically for **any** `qd, q : K`. -/
 theorem trConnBor_equal_charge_eq_zero (qd q : K) (h3 : (3 : K) ≠ 0) :
     trConnBorAAB qd qd q = 0 ∧ trConnBorABB qd qd q = 0 := by
   have hscalar : (2 * qd * qd + 4 * qd * qd) / 3 = 2 * qd ^ 2 := by
-    field_simp [h3]; ring
+    rw [show 2 * qd * qd + 4 * qd * qd = 3 * (2 * qd ^ 2) by ring, mul_div_cancel_left₀ _ h3]
   have hscalarB : (4 * qd * qd + 2 * qd * qd) / 3 = 2 * qd ^ 2 := by
-    field_simp [h3]; ring
+    rw [show 4 * qd * qd + 2 * qd * qd = 3 * (2 * qd ^ 2) by ring, mul_div_cancel_left₀ _ h3]
   refine ⟨?_, ?_⟩
   · unfold trConnBorAAB
     rw [QAdjAAB_same_eq_scalar, hscalar, Matrix.smul_mul, Matrix.one_mul,

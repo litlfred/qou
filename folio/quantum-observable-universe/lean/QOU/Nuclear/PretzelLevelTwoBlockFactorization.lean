@@ -80,12 +80,13 @@ theorem odd_parity_quarter_offset (k : ℤ) :
 
 /-- **The fundamental character squares to the adjoint plus one.** The doubled
 blocks depend on the meridian eigenvalue `m` only through `σ = m + m⁻¹`. With
-`s = m² + 1 + m⁻²` (the adjoint character `s(x)`, `x = m²`), `σ² = s + 1`. So a
-`σ`-even expression lies in `ℤ[s]` and a `σ`-odd one does not. -/
-theorem fundamental_sq_eq_adjoint_add_one {K : Type*} [Field K] (m : K) (hm : m ≠ 0) :
-    (m + m⁻¹) ^ 2 = (m ^ 2 + 1 + (m ^ 2)⁻¹) + 1 := by
-  field_simp
-  ring
+`s = m² + 1 + m⁻²` (the adjoint character `s(x)`, `x = m²`), `σ² = s + 1` over any
+commutative ring for `m : Rˣ`. So a `σ`-even expression lies in `ℤ[s]` and a
+`σ`-odd one does not. -/
+theorem fundamental_sq_eq_adjoint_add_one {R : Type*} [CommRing R] (m : Rˣ) :
+    ((m : R) + (↑m⁻¹ : R)) ^ 2 = ((m : R) ^ 2 + 1 + (↑m⁻¹ : R) ^ 2) + 1 := by
+  have hm : (m : R) * (↑m⁻¹ : R) = 1 := Units.mul_inv m
+  linear_combination 2 * hm
 
 /-- **Six families.** Two unit families (chirals 1 and 2) and `2 × 2` doubled
 families (sign `σ`, parity `ε`). The count matches the pretzel's rank `6`

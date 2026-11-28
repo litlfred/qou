@@ -59,7 +59,7 @@ namespace QOU.Nuclear.NucleonFlavourTypedLetters
 
 open Matrix
 
-variable {R : Type*} [Field R]
+variable {R : Type*} [CommRing R]
 
 /-- Two-strand states `(a, b)`, `0 = u`, `1 = d`. -/
 abbrev S2 := Fin 2 × Fin 2
@@ -187,15 +187,15 @@ theorem typed_V_pow_trW_eq (α β : R) (m : Matrix (Fin 2) (Fin 2) R) (k : ℕ) 
     exact (trW_pow_swap 1 n (gen0 (typed α β m)) (gen1 (typed β α m))
       (proj_comm_gen0 1 α β m)).symm
 
-/-- `K`-weight of a state: `K = diag(q, q⁻¹)` on each strand. -/
-def kw (q : R) (s : S3) : R := q ^ (3 - nd s) * (q⁻¹) ^ nd s
+/-- `K`-weight of a state: `K = diag(q, q⁻¹)` on each strand for a unit `q : Rˣ`. -/
+def kw (q : Rˣ) (s : S3) : R := (q : R) ^ (3 - nd s) * (↑q⁻¹ : R) ^ nd s
 
 /-- `K`-weighted trace on the weight space with `k` down strands. -/
-def tau (q : R) (k : ℕ) (X : Matrix S3 S3 R) : R :=
+def tau (q : Rˣ) (k : ℕ) (X : Matrix S3 S3 R) : R :=
   (proj k * Matrix.diagonal (kw q) * X).trace
 
-theorem tau_eq_kw_trW (q : R) (k : ℕ) (_hk : k ≤ 3) (X : Matrix S3 S3 R) :
-    tau q k X = q ^ (3 - k) * (q⁻¹) ^ k * trW k X := by
+theorem tau_eq_kw_trW (q : Rˣ) (k : ℕ) (_hk : k ≤ 3) (X : Matrix S3 S3 R) :
+    tau q k X = (q : R) ^ (3 - k) * (↑q⁻¹ : R) ^ k * trW k X := by
   simp only [tau, trW, proj, Matrix.diagonal_mul_diagonal, Matrix.trace, Matrix.diag,
     Matrix.diagonal_mul, Finset.mul_sum]
   refine Finset.sum_congr rfl fun s _ => ?_
@@ -206,30 +206,36 @@ theorem tau_eq_kw_trW (q : R) (k : ℕ) (_hk : k ≤ 3) (X : Matrix S3 S3 R) :
 /-- **No second flavour factor.** For every typed γγ word on three strands and every typing
 (raw or framing-corrected), `τ_p = q² · τ_n`: the typed letters contribute exactly `1`, and the
 split is the `K`-weight cell alone. -/
-theorem typed_V_pow_tau_ratio (q : R) (hq : q ≠ 0) (α β : R)
+theorem typed_V_pow_tau_ratio (q : Rˣ) (α β : R)
     (m : Matrix (Fin 2) (Fin 2) R) (k : ℕ) :
-    tau q 1 (typedV α β m ^ k) = q ^ 2 * tau q 2 (typedV α β m ^ k) := by
+    tau q 1 (typedV α β m ^ k) = (q : R) ^ 2 * tau q 2 (typedV α β m ^ k) := by
   rw [tau_eq_kw_trW q 1 (by norm_num), tau_eq_kw_trW q 2 (by norm_num), typed_V_pow_trW_eq]
-  field_simp
-  ring
+  have hq : (q : R) * (↑q⁻¹ : R) = 1 := Units.mul_inv q
+  calc
+    (q : R) ^ (3 - 1) * (↑q⁻¹ : R) ^ 1 * trW 2 (typedV α β m ^ k)
+        = (q : R) ^ 2 * (↑q⁻¹ : R) * ((q : R) * (↑q⁻¹ : R)) * trW 2 (typedV α β m ^ k) := by
+          rw [hq]; ring
+    _ = (q : R) ^ 2 * ((q : R) ^ (3 - 2) * (↑q⁻¹ : R) ^ 2 * trW 2 (typedV α β m ^ k)) := by
+          ring
 
 /-! ## The two readings are instances -/
 
 /-- Raw-trace typing of `σ`: `uu ↦ q`, `dd ↦ q⁻¹` (`σ⁻¹` on `dd`). -/
-def rawScalars (q : R) : R × R := (q, q⁻¹)
+def rawScalars (q : Rˣ) : R × R := ((q : R), (↑q⁻¹ : R))
 
 /-- Framing-corrected typing of `σ` (writhe weight `q^{∓2}` per signed crossing):
 `uu ↦ q⁻²·q`, `dd ↦ q²·q⁻¹`. -/
-def corrScalars (q : R) : R × R := (q⁻¹ ^ 2 * q, q ^ 2 * q⁻¹)
+def corrScalars (q : Rˣ) : R × R := ((↑q⁻¹ : R) ^ 2 * (q : R), (q : R) ^ 2 * (↑q⁻¹ : R))
 
-theorem corrScalars_eq (q : R) (hq : q ≠ 0) : corrScalars q = (q⁻¹, q) := by
+theorem corrScalars_eq (q : Rˣ) : corrScalars q = ((↑q⁻¹ : R), (q : R)) := by
+  have hq : (q : R) * (↑q⁻¹ : R) = 1 := Units.mul_inv q
   simp only [corrScalars, Prod.mk.injEq]
-  constructor <;> field_simp
+  exact ⟨by linear_combination (↑q⁻¹ : R) * hq, by linear_combination (q : R) * hq⟩
 
 /-- The corrected typing swaps the raw scalars: the writhe weight turns the `uu`/`dd` diagonal
 ratio `q²` of one typed letter into `q⁻²`. -/
-theorem corrScalars_swap_raw (q : R) (hq : q ≠ 0) :
+theorem corrScalars_swap_raw (q : Rˣ) :
     corrScalars q = ((rawScalars q).2, (rawScalars q).1) := by
-  rw [corrScalars_eq q hq]; rfl
+  rw [corrScalars_eq q]; rfl
 
 end QOU.Nuclear.NucleonFlavourTypedLetters

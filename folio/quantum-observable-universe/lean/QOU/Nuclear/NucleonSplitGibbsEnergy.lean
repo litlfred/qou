@@ -1,7 +1,8 @@
+import Mathlib.Algebra.Order.Ring.Defs
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
-import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # The Gibbs map: free energy, internal energy and entropy of the nucleon split
@@ -18,80 +19,81 @@ proton weight space, `q⁻¹` on the neutron one; `t` the common weight-space tr
 mass. That is the Helmholtz free energy `F = −log Z/β`. The internal energy is
 `U = −∂ log Z/∂β` and `F = U − TS`.
 
-## What is proved
-
-1. `logZ_split`: `log Z_n − log Z_p = −2·log q` for **every** positive common factor `s(q)`
-   (trace, normalisation, tower factor, spectator strands): all orders in `q`.
-2. `logZ_split_hasDerivAt`: its `q`-derivative is `−2/q`, again for every `s`.
-3. So the split depends on the temperature only through the parametrisation `β = b(q)`.
-   With `b' ≠ 0` the chain rule gives `ΔF = 2·log q / b(q)` and `ΔU = 2/(q·b'(q))`
-   (`fSplit`, `uSplit`). Four corpus parametrisations, each with its derivative checked:
-   * dictionary `b = log q` (`prop:beta-eq-ln-q-dictionary`): `ΔU = ΔF = 2`, `TΔS = 0`;
-   * natural units `b = q/(q−1)` (`def:quantum-temperature`): `ΔU = −2(q−1)²/q`;
-   * CAL-1 units, order-zero `b = 1/E₀ = q(q−1)`: `ΔU = 2/(q(2q−1))`;
-   * CAL-1 units, tower `b = 1/E₀^tower = (q−1)(2q−1)/q`: `ΔU = 2q/(2q²−1)`.
-4. `uT_lt_fT`, `uTower_lt_fTower`, `uNat_neg`: for every `q > 1` the two CAL-1 internal-energy
-   splits lie strictly below their free-energy splits (`TΔS = ΔU − ΔF < 0`: the neutron sector
-   carries less entropy than the proton one in these units), and the natural-unit one is
-   negative.
-
 ## Where the parts live
 
-This module holds the internal-energy split `uSplit` and its closed forms (`uNat_eq`, `uT_eq`,
-`uTower_eq`, `uNat_neg`) over any ordered field: they are rational in `q`. The partition
-functions `log Z`, the free-energy split `fSplit`, the derivatives of the four parametrisations
-and the comparisons with `log q` (`logZ_split`, `logZ_split_hasDerivAt`, `dictionary_U_eq_F`,
-`uT_lt_fT`, `uTower_lt_fTower`) use `Real.log` and calculus, and live behind the transcendental
-boundary in `QOU.Transcendental.Nuclear.NucleonSplitGibbsEnergyAnalytic` (same namespace).
-
-## What is NOT claimed
-
-* Which of `F` and `U` is a mass. That is the reading, recorded as a fork in the audit.
-* Which parametrisation is the temperature. `F` is the same in all of them (in each one's own
-  unit); `U` is not, because the energy unit of the dictionary and of natural units moves with
-  `q`. No measured value appears in this file.
+This module holds the algebraic internal-energy split `uSplitUnit` and its closed forms
+(`uNat_eq_unit`, `uNat_neg_unit`, `uT_eq_unit`, `uTower_eq_unit`) over any strict ordered
+commutative ring with `Kˣ` units (§7c base-ring discipline; zero field binders or division
+tactics). The real division wrapper `uSplit` and the `Real.log` / calculus comparisons live
+behind the transcendental boundary in `QOU.Transcendental.Nuclear.NucleonSplitGibbsEnergyAnalytic`
+(same namespace). No measured value appears in this file.
 -/
 
 namespace QOU.QBeta.NucleonSplitGibbsEnergy
 
+section Algebraic
+
+variable {K : Type*} [CommRing K]
+
+/-- Internal-energy split `ΔU = 2 · q⁻¹ · (b')⁻¹` over a commutative ring for invertible `b', q : Kˣ`. -/
+def uSplitUnit (b' q : Kˣ) : K := 2 * (↑q⁻¹ : K) * (↑b'⁻¹ : K)
+
+/-- Natural units, `β_q = q/(q−1)` (`b' · (q − 1)² = −1`): `ΔU = −2(q−1)² · q⁻¹`. -/
+theorem uNat_eq_unit (bNat q : Kˣ) (hbNat : (bNat : K) * ((q : K) - 1) ^ 2 = -1) :
+    uSplitUnit bNat q = -2 * ((q : K) - 1) ^ 2 * (↑q⁻¹ : K) := by
+  unfold uSplitUnit
+  have hm : (bNat : K) * (↑bNat⁻¹ : K) = 1 := Units.mul_inv bNat
+  have hinv : (↑bNat⁻¹ : K) = -((q : K) - 1) ^ 2 := by
+    linear_combination -((q : K) - 1) ^ 2 * hm + (↑bNat⁻¹ : K) * hbNat
+  rw [hinv]
+  ring
+
+/-- CAL-1 units, order zero (`b' = 2q − 1`): `ΔU = 2 · q⁻¹ · (2q − 1)⁻¹`. -/
+theorem uT_eq_unit (bT q : Kˣ) :
+    uSplitUnit bT q = 2 * ((↑q⁻¹ : K) * (↑bT⁻¹ : K)) := by
+  unfold uSplitUnit
+  ring
+
+/-- CAL-1 units, tower (`b' · q² = 2q² − 1`): `ΔU = 2q · (2q² − 1)⁻¹`. -/
+theorem uTower_eq_unit (bTow u2q2 q : Kˣ)
+    (hbTow : (bTow : K) * (q : K) ^ 2 = (u2q2 : K)) :
+    uSplitUnit bTow q = 2 * (q : K) * (↑u2q2⁻¹ : K) := by
+  unfold uSplitUnit
+  have hq : (q : K) * (↑q⁻¹ : K) = 1 := Units.mul_inv q
+  have hb : (bTow : K) * (↑bTow⁻¹ : K) = 1 := Units.mul_inv bTow
+  have hu : (u2q2 : K) * (↑u2q2⁻¹ : K) = 1 := Units.mul_inv u2q2
+  have hinv : (↑bTow⁻¹ : K) = (q : K) ^ 2 * (↑u2q2⁻¹ : K) := by
+    linear_combination
+      ((q : K) ^ 2 * (↑u2q2⁻¹ : K)) * hb -
+        ((↑bTow⁻¹ : K) * (↑u2q2⁻¹ : K)) * hbTow -
+        (↑bTow⁻¹ : K) * hu
+  rw [hinv]
+  linear_combination 2 * ((q : K) * (↑u2q2⁻¹ : K)) * hq
+
+end Algebraic
+
 section Ordered
 
-variable {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+variable {K : Type*} [CommRing K] [LinearOrder K] [IsStrictOrderedRing K]
 
-/-- Internal-energy split `ΔU = −d(log Z_n − log Z_p)/dβ = −(−2/q)/b'(q)` (chain rule). -/
-def uSplit (b' q : K) : K := -(-2 / q) / b'
+theorem unit_inv_pos (u : Kˣ) (hu : 0 < (u : K)) : 0 < (↑u⁻¹ : K) := by
+  by_contra h
+  push_neg at h
+  have hmul : (u : K) * (↑u⁻¹ : K) ≤ 0 := mul_nonpos_of_nonneg_of_nonpos hu.le h
+  rw [Units.mul_inv u] at hmul
+  linarith [zero_lt_one (α := K)]
 
-/-! ## Internal-energy splits of the corpus temperatures
-
-`b'` is the derivative of the parametrisation `β = b(q)`; the derivatives themselves are checked
-in `QOU.Transcendental.Nuclear.NucleonSplitGibbsEnergyAnalytic`. -/
-
-/-- Natural units, `β_q = q/(q−1)`: `ΔU = −2(q−1)²/q`. -/
-theorem uNat_eq (q : K) (hq : 1 < q) :
-    uSplit (-1 / (q - 1) ^ 2) q = -2 * (q - 1) ^ 2 / q := by
-  have h1 : q - 1 ≠ 0 := by linarith
-  have h0 : q ≠ 0 := by linarith
-  unfold uSplit; field_simp
-
-theorem uNat_neg (q : K) (hq : 1 < q) : uSplit (-1 / (q - 1) ^ 2) q < 0 := by
-  rw [uNat_eq q hq]
-  have h1 : 0 < q - 1 := by linarith
-  have h0 : 0 < q := by linarith
-  have : 0 < 2 * (q - 1) ^ 2 / q := div_pos (by positivity) h0
-  linarith [show -2 * (q - 1) ^ 2 / q = -(2 * (q - 1) ^ 2 / q) by ring]
-
-/-- CAL-1 units, order zero (`β = 1/E₀ = q(q−1)`): `ΔF = 2 log q/(q(q−1))`, `ΔU = 2/(q(2q−1))`. -/
-theorem uT_eq (q : K) (hq : 1 < q) : uSplit (2 * q - 1) q = 2 / (q * (2 * q - 1)) := by
-  have h0 : q ≠ 0 := by linarith
-  have h2 : 2 * q - 1 ≠ 0 := by linarith
-  unfold uSplit; field_simp
-
-/-- CAL-1 units, tower (`β = 1/E₀^tower = (q−1)(2q−1)/q`): `ΔU = 2q/(2q²−1)`. -/
-theorem uTower_eq (q : K) (hq : 1 < q) :
-    uSplit ((2 * q ^ 2 - 1) / q ^ 2) q = 2 * q / (2 * q ^ 2 - 1) := by
-  have h0 : q ≠ 0 := by linarith
-  have h2 : 2 * q ^ 2 - 1 ≠ 0 := by nlinarith
-  unfold uSplit; field_simp
+theorem uNat_neg_unit (bNat q : Kˣ) (hq : 1 < (q : K))
+    (hbNat : (bNat : K) * ((q : K) - 1) ^ 2 = -1) :
+    uSplitUnit bNat q < 0 := by
+  rw [uNat_eq_unit bNat q hbNat]
+  have h1 : 0 < (q : K) - 1 := by linarith
+  have h0 : 0 < (q : K) := by linarith
+  have hinv : 0 < (↑q⁻¹ : K) := unit_inv_pos q h0
+  have hpos : 0 < 2 * ((q : K) - 1) ^ 2 * (↑q⁻¹ : K) :=
+    mul_pos (mul_pos (by norm_num) (sq_pos_of_pos h1)) hinv
+  linarith [show -2 * ((q : K) - 1) ^ 2 * (↑q⁻¹ : K) =
+      -(2 * ((q : K) - 1) ^ 2 * (↑q⁻¹ : K)) by ring]
 
 end Ordered
 

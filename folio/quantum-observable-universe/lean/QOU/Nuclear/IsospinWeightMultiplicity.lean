@@ -104,18 +104,22 @@ theorem weight_le (M s : ℕ) (hs : s ≤ M) :
       · have : (M : ℚ) = 0 := by nlinarith [sq_nonneg (s : ℚ)]
         nlinarith
       · have hApos : 0 < (M : ℚ) + s + s ^ 2 := lt_of_le_of_ne hA (Ne.symm hz)
-        have hc_le : c ≤ c0 * ((M : ℚ) + s) / ((M : ℚ) + s + s ^ 2) := by
-          rw [le_div_iff₀ hApos]; linarith
-        calc c * ((M : ℚ) - s) * ((M : ℚ) + s + 1 + (s + 1) ^ 2)
-            = c * (((M : ℚ) - s) * ((M : ℚ) + s + 1 + (s + 1) ^ 2)) := by ring
-          _ ≤ c0 * ((M : ℚ) + s) / ((M : ℚ) + s + s ^ 2)
-                * (((M : ℚ) - s) * ((M : ℚ) + s + 1 + (s + 1) ^ 2)) :=
-              mul_le_mul_of_nonneg_right hc_le hB
-          _ = c0 / ((M : ℚ) + s + s ^ 2)
-                * (((M : ℚ) + s) * ((M : ℚ) - s) * ((M : ℚ) + s + 1 + (s + 1) ^ 2)) := by ring
-          _ ≤ c0 / ((M : ℚ) + s + s ^ 2) * (((M : ℚ) + s + s ^ 2) * ((M : ℚ) + s + 1) ^ 2) :=
-              mul_le_mul_of_nonneg_left poly (by positivity)
-          _ = c0 * ((M : ℚ) + s + 1) ^ 2 := by field_simp
+        have hmul :
+            (c * ((M : ℚ) - s) * ((M : ℚ) + s + 1 + (s + 1) ^ 2)) * ((M : ℚ) + s + s ^ 2) ≤
+              (c0 * ((M : ℚ) + s + 1) ^ 2) * ((M : ℚ) + s + s ^ 2) := by
+          calc
+            (c * ((M : ℚ) - s) * ((M : ℚ) + s + 1 + (s + 1) ^ 2)) * ((M : ℚ) + s + s ^ 2)
+                = (c * ((M : ℚ) + s + s ^ 2)) *
+                    (((M : ℚ) - s) * ((M : ℚ) + s + 1 + (s + 1) ^ 2)) := by ring
+            _ ≤ (c0 * ((M : ℚ) + s)) *
+                  (((M : ℚ) - s) * ((M : ℚ) + s + 1 + (s + 1) ^ 2)) :=
+                mul_le_mul_of_nonneg_right ih hB
+            _ = c0 * (((M : ℚ) + s) * ((M : ℚ) - s) * ((M : ℚ) + s + 1 + (s + 1) ^ 2)) := by
+                ring
+            _ ≤ c0 * (((M : ℚ) + s + s ^ 2) * ((M : ℚ) + s + 1) ^ 2) :=
+                mul_le_mul_of_nonneg_left poly (by positivity)
+            _ = (c0 * ((M : ℚ) + s + 1) ^ 2) * ((M : ℚ) + s + s ^ 2) := by ring
+        exact le_of_mul_le_mul_right hmul hApos
     push_cast
     have : c' * ((M : ℚ) + (s + 1) + (s + 1) ^ 2) * ((M : ℚ) + s + 1)
         ≤ c0 * ((M : ℚ) + (s + 1)) * ((M : ℚ) + s + 1) := by
