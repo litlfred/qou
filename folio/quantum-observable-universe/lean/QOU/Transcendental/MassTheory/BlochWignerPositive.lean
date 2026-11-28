@@ -37,7 +37,7 @@ A single evaluation of `D`, no limit, no `[Coev E]` instance, no numerical value
 namespace QOU.Archimedean.BlochWignerPositive
 
 open Real QOU.Archimedean QOU.Archimedean.FiveTermProof
-open QOU.Archimedean.NahmBlochBridge QOU.Archimedean.LeptonBundleNahm
+open QOU.Archimedean.NahmBlochBridge QOU.Archimedean.LeptonBundleNahm QOU.Archimedean.NeumannZagierBloch
 open QOU.Archimedean.NahmRegulator QOU.Archimedean.LeptonBundleRegulator
 
 noncomputable section
@@ -194,6 +194,27 @@ theorem regulator_tauClass_pos {s : ℂ} (hs : s ^ 3 - 6 * s ^ 2 + 8 * s - 4 = 0
   have := blochD_pos hB
   have := blochD_pos him
   linarith
+
+/-- **A Neumann–Zagier class with every shape in the upper half plane has positive
+regulator.** -/
+theorem regulator_nzClass_pos {ι : Type*} [Fintype ι] [Nonempty ι] {A B : Matrix ι ι ℤ}
+    (s : NZSolution ℂ ι A B) (h : ∀ i, 0 < (s.w i : ℂ).im) : 0 < regulator (nzClass s) := by
+  rw [regulator_nzClass]
+  exact Finset.sum_pos (fun i _ => blochD_pos (h i)) Finset.univ_nonempty
+
+/-- **The `RᵃL` Bloch class is nonzero** at any solution of the gluing rows whose shapes
+all lie in the upper half plane, for every `a ≥ 3`: its regulator
+`det B · ∑ D(zᵢ)` is nonzero. The hypothesis is a property of the given solution;
+that the geometric solution has it for every `a` is not proved here. -/
+theorem regulator_raClass_ne_zero {a : ℕ} (h3 : 3 ≤ a)
+    (s : NZSolution ℂ (Fin (a + 1)) (NeumannZagierBloch.raA a) (NeumannZagierBloch.raB a))
+    (h : ∀ i, 0 < (s.w i : ℂ).im) :
+    regulator ((NeumannZagierBloch.raB a).det • nzClass s) ≠ 0 := by
+  obtain ⟨hreg, hdet⟩ := regulator_raClass h3 s
+  rw [hreg]
+  have hsum : 0 < ∑ i, blochD (s.w i : ℂ) :=
+    Finset.sum_pos (fun i _ => blochD_pos (h i)) Finset.univ_nonempty
+  exact mul_ne_zero (by exact_mod_cast hdet) hsum.ne'
 
 end
 
