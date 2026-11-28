@@ -8,26 +8,24 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Positivity
 
 /-!
-# Yang–Mills Existence and Mass Gap (Categorical Formulation)
+# Crossing-Energy Positivity and Categorical Gap Carrier
 
-Formal statement of the Yang–Mills mass gap conjecture in the QOU
-framework.  The conjecture translates the classical millennium problem
-into categorical language:
+Proves elementary rational positivity of the crossing-energy gap functional
+`crossingEnergyGap q = ½(q − q⁻¹)(q − 1)² > 0` for `q > 1` (vanishing at `q = 1`
+and monotone increasing on `(1, ∞)`), and packages the speculative Yang–Mills
+mass-gap carrier (`YangMillsMassGap`, `HasYangMillsMassGap`) used by the
+companion speculative document.
 
-- **Existence**: a critical point of the q-weighted Yang–Mills–Levi
-  functional exists and the vacuum state extends to a Hilbert space.
-- **Mass gap**: every non-vacuum excitation has categorical mass
-  bounded below by Δ_q > 0.
-
-## Key provable ingredients
-
-1. The **minimum crossing energy** `½(q − q⁻¹) > 0` for `q > 1`.
-2. The **mass gap lower bound** `Δ_q ≥ E_cross · (q−1)² > 0`.
-3. The **two-point function** decays exponentially with rate `Δ_q`.
+Note on scope (owner ruling 2026-11-28): `crossingEnergyGap_pos` is an
+elementary rational inequality over `ℝ`, whereas `YangMillsMassGap` bundles
+`mass_gap` and `gap_positive` as structure fields rather than deriving a
+Wightman quantum field theory on `ℝ⁴`. Existing declaration names
+(`massGapBound`, `YangMillsMassGap`, etc.) are retained for downstream
+compatibility alongside neutral `crossingEnergyGap` aliases.
 
 ## References
 
-- [leitner2026] Chapter 5, Conjecture: Yang–Mills existence and mass gap
+- [leitner2026] Models of QOUs: Crossing-energy gap; Companion speculative paper, Ch 1
 - [jaffe2006] A. Jaffe & E. Witten, "Quantum Yang–Mills Theory",
   Clay Mathematics Institute Millennium Problem.
 -/
@@ -130,6 +128,25 @@ theorem massGapBound_mono {q₁ q₂ : ℝ} (hq₁ : 1 < q₁) (hq₂ : q₁ ≤
     have h2 : q₁ - 1 ≤ q₂ - 1 := by linarith
     nlinarith
   exact mul_le_mul he_mono hs_mono (by positivity) (le_of_lt he₂)
+
+/-- Neutral alias for `massGapBound`: the crossing-energy gap functional
+    `Δ_q = ½(q − q⁻¹)(q − 1)²`. -/
+noncomputable abbrev crossingEnergyGap (q : ℝ) : ℝ :=
+  massGapBound q
+
+/-- `crossingEnergyGap q > 0` for `q > 1`. -/
+theorem crossingEnergyGap_pos {q : ℝ} (hq : 1 < q) :
+    0 < crossingEnergyGap q :=
+  massGapBound_pos hq
+
+/-- `crossingEnergyGap 1 = 0` at the symmetric point `q = 1`. -/
+theorem crossingEnergyGap_at_one : crossingEnergyGap 1 = 0 :=
+  massGapBound_at_one
+
+/-- `crossingEnergyGap` is monotonically non-decreasing on `(1, ∞)`. -/
+theorem crossingEnergyGap_mono {q₁ q₂ : ℝ} (hq₁ : 1 < q₁) (hq₂ : q₁ ≤ q₂) :
+    crossingEnergyGap q₁ ≤ crossingEnergyGap q₂ :=
+  massGapBound_mono hq₁ hq₂
 
 /-! ## Categorical transfer matrix (spectral data) -/
 
