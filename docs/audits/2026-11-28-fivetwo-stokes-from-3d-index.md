@@ -82,7 +82,34 @@ of absolute value at most 2.
 1. GGM's conjecture for the 5₂ region matrices (behind eq Sp-52). The W-route
    rests on it too.
 2. The block-to-index identity is measured to 40 digits, not proved.
-3. The Lean minimal-degree bound for the tetrahedron index (next in this bean),
-   which would turn the 4₁ (and then 5₂) coefficient inputs into theorems.
+3. ~~The Lean minimal-degree bound for the tetrahedron index.~~ Done for 4₁, see
+   the next section. The same bound applies to 5₂, but the 5₂ attribution needs
+   the m015 gluing data in Lean, which is not there yet.
+
+## Addendum: the 4₁ inputs are now theorems (Lean)
+
+[`QOU/Nuclear/TetIndexDegree.lean`](../../folio/quantum-observable-universe/lean/QOU/Nuclear/TetIndexDegree.lean)
+defines `[t^k] I_Δ(m,e)` (`t = q^{1/2}`) as an honest finite sum: partition counts
+for `1/(q)_n`, with the `n`-sum cut where every later summand starts above `t^k`
+(`summand_start_gt`). It proves:
+
+- `tet_cone_lead`, `tet_cone_zero`: in the cone `m ≤ 0 ≤ e`, the lowest term is
+  `1·t^{-me}` (1208.1663, proof of Lemma lem.degID).
+- `tet_degree_bound`: in every cone, `[t^k] I_Δ(m,e) = 0` below
+  `deg2 = m₊(m+e)₊ + (−m)₊e₊ + (−e)₊(−e−m)₊ + max{0,m,−e}`, given triality.
+- `fourone_N11_support`, `fourone_N12_support`: in the DGG sum
+  `I₄₁(m,e) = Σ_{e₂} I_Δ(m−e₂, m+e−e₂)·I_Δ(e−e₂, −e₂)`, the only term reaching
+  q⁰ in `N₁₁` is `e = e₂ = 0`, and in `N₁₂` it is `e = −2, e₂ = 0`.
+- `fourone_i00 = 1`, `fourone_i1 = −1`, `stokes41_inputs_proved`,
+  `stokes41_three_from_tetrahedra`: the 3 is `2·1 − (−1)` in tetrahedron-index
+  coefficients.
+
+The one cited input is triality, `I_Δ(m,e) = (−q^{1/2})^{−e} I_Δ(e, −e−m)`
+(1208.1663 Prop prop.S3(b)), stated as a hypothesis `Triality` on the concrete
+coefficients. It was checked on the exact index for `|m|,|e| ≤ 5`, `k ≤ 24`
+(3025 coefficients, 0 failures). Proving it in Lean needs the two q-recursions of
+`I_Δ` and the rank-1 uniqueness of their solution space (1208.1663 §4.2–4.4).
+`lean`-direct exit 0, no `sorry`, axioms `propext`, `Classical.choice`,
+`Quot.sound` only.
 
 No measured value enters any step, and nothing is fitted.

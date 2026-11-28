@@ -81,6 +81,9 @@ plus one BPS state at magnetic flux 1 and electric charge −2. The Lean theorem
    `[I₄₁(1,−2)]_{q^{1/2}} = −1`, and that nothing else reaches q-degree 0.
    This needs the minimal-degree bound for the tetrahedron index `I_Δ(m,e)`
    (Garoufalidis 1208.1663, held in `library/`).
+   *(Done 2026-11-28: [`QOU/Nuclear/TetIndexDegree.lean`](../../folio/quantum-observable-universe/lean/QOU/Nuclear/TetIndexDegree.lean)
+   proves both coefficients and that no other term reaches q⁰ in the first row of
+   the index matrix, given triality (1208.1663 Prop prop.S3) as a cited input.)*
 3. 5₂: GGM eq (WW52) has the same shape with a 3×3 index matrix. Repeating this
    for 5₂ is the cross-knot test (the `{3,4}` chirality split) that the
    anti-numerology rule asks for.
