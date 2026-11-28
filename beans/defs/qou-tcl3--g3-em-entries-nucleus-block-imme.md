@@ -31,3 +31,5 @@ Unit CAL-3 λ̄_π, A^(1/3) derived (#9859); only c selected. Arms c=1 and c³=3
 
 ## 2026-11-28 — derived p-shell shape (PR #9870)
 ν = 3/2 q-Hankel, f 0.514→0.509 for Z 3..8 (index alternates ≤0.5%); A=5 jump gone. Comparison (c=1): misses one-signed +7..+28%; lever is c (owner card). Not wired (17 witnesses).
+
+2026-11-28: owner ruling. c stays open with two labelled arms (c = 1, c³ = 3/2); neither is adopted. Recorded in owner-rulings.md (PR #9905).

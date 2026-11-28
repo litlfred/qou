@@ -41,3 +41,5 @@ The n−p EM term needs a derived energy-to-length map. All representations are 
 
 ## 2026-11-28 — Coulomb length reduces to cell radius c (PR #9866)
 Unit CAL-3 λ̄_π, A^(1/3) derived (#9859); only c selected. Arms c=1 and c³=3/2 recorded, none adopted (owner card). Next lever: derived p-shell shape (A≥5) replacing the imported ball.
+
+2026-11-28: owner ruling. c stays open with two labelled arms (c = 1, c³ = 3/2); neither is adopted. Recorded in owner-rulings.md (PR #9905).
