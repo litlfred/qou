@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-28T11:16:11.558807+00:00",
-  "commitSha": "1f2e91f2029c460f6aa122bed3a7ffdd5b92ba85",
+  "computedAt": "2026-11-28T11:23:54.956820+00:00",
+  "commitSha": "6a67f93efe28be77d2d22a980d44af3da324f130",
   "assertions": [
     {
       "name": "composite_transition_count_is_1009",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "composite-beta-writhe-coulomb-accuracy",
   "scriptFile": "composite_beta_writhe_coulomb_accuracy_probe.py",
-  "scriptHash": "1c3060dfc8bd",
-  "scriptCommitSha": "1f2e91f2029c460f6aa122bed3a7ffdd5b92ba85",
+  "scriptHash": "d083ac297a8b",
+  "scriptCommitSha": "6a67f93efe28be77d2d22a980d44af3da324f130",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
