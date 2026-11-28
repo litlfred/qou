@@ -124,3 +124,10 @@ STILL OPEN: (1) k+1 or more strands, i.e. completeness in the quotient by neglig
 
 ## 2026-11-28 01:20Z — tensor product on the quotient (PR #9914)
 TLQuotientTensor.lean, sorry-free. Proved: the Markov trace is mirror invariant (left Markov property derived from the right one); negligible morphisms form a tensor ideal; tensQ : Q n × Q m → Q (n+m+1), which is bilinear, multiplicative and unital, satisfies τ(x⊗y)=τxτy, and is associative up to strand reindexing. Still open: a Mathlib MonoidalCategory on the glued category (sibling thread "Glue all strand levels into one category"), and the braided/ribbon instance (sibling thread "Build the Mathlib braided ribbon instance"). The bean stays open.
+
+## 2026-11-28 — tensor of corners (PR #9931)
+
+`TLTensorCorner.lean`: `mvn_tens_P`, `P_a^{a+2i} ⊗ P_c^{c+2j}` ≅ (MvN) `P_{a+c+1}^{a+c+1+2(i+j)}` up to
+recast. Sorry-free. Next: MonoidalCategory on the glued category `GObj` (#9929), formal unit.
+Still open: monoidal structure, coherence (pentagon with the chosen movers), braided/ribbon (sibling
+thread, #9923), modularity.
