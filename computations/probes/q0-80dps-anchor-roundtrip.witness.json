@@ -1,0 +1,163 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-28T00:02:08.496874+00:00",
+  "commitSha": "67bc02974f51cb4f87402a3e74b24af148a89c03",
+  "assertions": [
+    {
+      "name": "q0_roundtrip_below_1e-80",
+      "computed": "1.549e-120",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-80"
+    },
+    {
+      "name": "m_p_MeV_roundtrip_below_1e-80",
+      "computed": "1.549e-120",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-80"
+    },
+    {
+      "name": "q0_unchanged_rounds_to_Q_50",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "q0_unchanged_rounds_to_Q_MP_70",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "q0_cut_brackets_root",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "q2t_roundtrip_below_1e-80",
+      "computed": "2.1299e-120",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-80"
+    },
+    {
+      "name": "q2t_cut_brackets_root",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "q0-80dps-anchor-roundtrip",
+  "scriptFile": "q0_80dps_anchor_roundtrip_probe.py",
+  "scriptHash": "1f596d967e3f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/q0_80dps_anchor_roundtrip_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/q0_80dps_anchor_roundtrip_probe.py"
+  },
+  "description": "80-dps Newton polish of the canonical one-term proton pin q0 (bean qou-y7ek). Precision only: asserts the polished root rounds to Q_50_DIGIT_STR and Q_MP, so q0 is unchanged. Error recorded as a rational two-sided cut of width 1e-85.",
+  "auditOnly": "docs/audits/2026-11-27-q0-80dps-anchor-polish.md",
+  "parameters": {
+    "work_dps": 120,
+    "target_dps": 80,
+    "cut_digits": 85,
+    "anchor": "m_p/m_e (CAL-2), one-term proton substrate identity",
+    "mass_ratio_p_e": "1836.152673426"
+  },
+  "data": {
+    "q0_one_term": {
+      "q0_80_digits": "1.1099785827513808075916690956107688798744991218735787360728142401817989635744830",
+      "newton_steps_abs": [
+        "2.7514e-9",
+        "1.0487e-16",
+        "1.5236e-31",
+        "3.2159e-61",
+        "1.37e-120"
+      ],
+      "roundtrip_rel_residual": "1.549e-120",
+      "roundtrip_rel_residual_from_50_digit_string": "4.0224e-49",
+      "m_p_MeV_anchor": "938.27208942732424736394000000000000000000000000000103824054260056431891365449575",
+      "m_p_MeV_roundtrip": "938.27208942732424736394000000000000000000000000000103824054260056431891365449575",
+      "m_p_MeV_rel_residual_vs_anchor": "1.549e-120",
+      "rounds_to_Q_50_DIGIT_STR": true,
+      "rounds_to_Q_MP_70": true,
+      "agree_digits_with_q_at_95": 120,
+      "cut": {
+        "lo": "11099785827513808075916690956107688798744991218735787360728142401817989635744830211371/10^85",
+        "hi": "11099785827513808075916690956107688798744991218735787360728142401817989635744830211372/10^85",
+        "width": "1e-85",
+        "residual_at_lo": {
+          "120": "1.3288e-81",
+          "240": "1.3288e-81"
+        },
+        "residual_at_hi": {
+          "120": "-2.1446e-81",
+          "240": "-2.1446e-81"
+        },
+        "sign_change": true,
+        "signs_stable_across_precisions": true,
+        "lean_shape": "QOU.Core.LawvereCut.Cut.ofInterval lo hi (over Q)"
+      }
+    },
+    "q_two_term_comparison_only": {
+      "status": "NAMED COMPARISON, never the default (owner ruling 2026-11-20)",
+      "q_80_digits": "1.1099785951508859990875652035986826212141034805412162114889044129176770838269367",
+      "newton_steps_abs": [
+        "5.1509e-9",
+        "3.6755e-16",
+        "1.8715e-30",
+        "4.8524e-59",
+        "3.262e-116"
+      ],
+      "roundtrip_rel_residual": "2.1299e-120",
+      "agree_digits_with_q_proton_two_term_at_95": 120,
+      "cut": {
+        "lo": "11099785951508859990875652035986826212141034805412162114889044129176770838269366763822/10^85",
+        "hi": "11099785951508859990875652035986826212141034805412162114889044129176770838269366763823/10^85",
+        "width": "1e-85",
+        "residual_at_lo": {
+          "120": "1.1622e-81",
+          "240": "1.1622e-81"
+        },
+        "residual_at_hi": {
+          "120": "-2.3112e-81",
+          "240": "-2.3112e-81"
+        },
+        "sign_change": true,
+        "signs_stable_across_precisions": true,
+        "lean_shape": "QOU.Core.LawvereCut.Cut.ofInterval lo hi (over Q)"
+      }
+    }
+  },
+  "caveats": [
+    "The cut is a numerical certificate: the residual sign at both rational endpoints agrees at 120 and 240 dps. It is not an interval-arithmetic proof.",
+    "A round trip through the defining identity checks arithmetic, not physics. The CODATA ratio is the CAL-2 input of this computation and enters no proof."
+  ],
+  "q0Anchor": "proton",
+  "q0AnchorReason": "certifies the canonical one-term proton pin q_at(); the two-term pin appears only in the labelled comparison block",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

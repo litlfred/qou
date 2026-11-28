@@ -1,0 +1,217 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0702128v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "f298954dfde0052556d46609a3818b883627aad465b94a944b76e722cea2ba07",
+  "file": "arxiv-math-0702128v3.pdf"
+ },
+ "provenance": {
+  "title": "PENTAGON AND HEXAGON EQUATIONS",
+  "authors": "HIDEKAZU FURUSHO",
+  "arxiv": {
+   "id": "math/0702128",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "6 Oct 2007"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 14,
+  "by_kind": {
+   "theorem": 4,
+   "remark": 3,
+   "lemma": 5,
+   "corollary": 2
+  },
+  "formalization_candidates": 11
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "Let \u03d5 = \u03d5 (X,Y ) be a group-like element of U F2. Suppose that \u03d5",
+   "section_file": "sections/sec-000-0-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "LetF2(k) be the the free pro-unipotent algebraic group with two vari-",
+   "section_file": "sections/sec-000-0-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "Let \u03d5 be a commutator Lie-like element 1 with c2(\u03d5 ) = 0 . Suppose",
+   "section_file": "sections/sec-001-1-lie-algebra-case.md",
+   "section_title": "Lie algebra case",
+   "pages": "3-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4",
+   "name": null,
+   "statement": "There is partially a geometric picture in the proof: We have a de",
+   "section_file": "sections/sec-001-1-lie-algebra-case.md",
+   "section_title": "Lie algebra case",
+   "pages": "3-5",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5",
+   "name": null,
+   "statement": "Let\u03d5 be a group-like element. Giving the pentagon equation (1) for \u03d5",
+   "section_file": "sections/sec-002-2-proof-of-theorem-1.md",
+   "section_title": "Proof of Theorem 1",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6",
+   "name": null,
+   "statement": "Let \u03d5 be a group-like element. If \u03d5 is commutator group-like and it",
+   "section_file": "sections/sec-002-2-proof-of-theorem-1.md",
+   "section_title": "Proof of Theorem 1",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "7",
+   "name": null,
+   "statement": "Let \u03d5 be a group-like element. Giving two hexagon equations (2) and",
+   "section_file": "sections/sec-002-2-proof-of-theorem-1.md",
+   "section_title": "Proof of Theorem 1",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "8",
+   "name": null,
+   "statement": "Let \u03d5 1 and \u03d5 2 be commutator group-like elements. Put \u03d5 3 = \u03d5 2\u25e6",
+   "section_file": "sections/sec-002-2-proof-of-theorem-1.md",
+   "section_title": "Proof of Theorem 1",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "9",
+   "name": null,
+   "statement": "Let \u03d5 be a commutator group-like element with c2(\u03d5 ) = 0 . Suppose",
+   "section_file": "sections/sec-002-2-proof-of-theorem-1.md",
+   "section_title": "Proof of Theorem 1",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "10",
+   "name": null,
+   "statement": "Let\u03d5 be a commutator group-like element. Suppose that \u03d5 satis\ufb01es",
+   "section_file": "sections/sec-002-2-proof-of-theorem-1.md",
+   "section_title": "Proof of Theorem 1",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "11",
+   "name": null,
+   "statement": "By the same argument as lemma 5, giving the pentagon equation (4)",
+   "section_file": "sections/sec-003-3-proof-of-theorem-2.md",
+   "section_title": "Proof of Theorem 2",
+   "pages": "8-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "12",
+   "name": null,
+   "statement": "Let f =f (x,y ) be an element of F (l)",
+   "section_file": "sections/sec-003-3-proof-of-theorem-2.md",
+   "section_title": "Proof of Theorem 2",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "13",
+   "name": null,
+   "statement": "Let f = f (x,y ) be an element of F nil",
+   "section_file": "sections/sec-003-3-proof-of-theorem-2.md",
+   "section_title": "Proof of Theorem 2",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "15",
+   "name": null,
+   "statement": "Although the pentagon equation (4) implies the two hexagon e qua-",
+   "section_file": "sections/sec-003-3-proof-of-theorem-2.md",
+   "section_title": "Proof of Theorem 2",
+   "pages": "8-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

@@ -263,3 +263,107 @@ Here `linkSum = Σ` of the signs of the crossings between different components `
 | bounded `log` means zero volume | `growth_of_bounded` |
 
 **Reading.** The ring (trace) chart is the N = 2 block of the operator at real `q`. The volume chart is the growth of the same operator's scalars at `q = ζ_N`, as N → ∞. These are two readings of one operator. The probe shows the 4₁ growth approaching `Vol(4₁)` (2.0277 at N = 800, after removing the one-loop `(3/2) log N`). For the ruled words `Δ^{2k+1}` (torus-type closures), the Kashaev scalars grow only polynomially, so `growth_of_bounded`-type behaviour gives volume 0 (cited, not proved here). The muon's `Vol(4₁)/ℏ²` is therefore a reading of the 4₁ operator, not of the muon's word. Which operator a lepton carries is still open.
+
+## 14. Which convolution operator does a lepton carry? The universality ladder is volume-blind
+
+**Lean.** `QOU/Transcendental/MassTheory/UniversalityVolumeBlind.lean`. No `sorry`, no new axiom.
+
+Under the universality ruling the generations differ only by full twists `Δ²`, which are central in `B₃`. In the convolution picture `Δ²` acts on each spin-`J` part of `V_N^{⊗3}` by a ribbon scalar `q^{integer}` (§12). So generation `k` has colour-`N` invariant `Σ_J a_J r_J^k`, where the `a_J` come from `Δ` alone. At `q = ζ_N` every `|r_J| = 1` (`norm_twist_eq_one`). Hence `‖Σ_J a_J r_J^k‖ ≤ Σ_J ‖a_J‖` for every `k` (`universality_envelope`), and no generation's Kashaev growth exceeds that of the `k`-free envelope (`universality_growth_le`).
+
+**Consequence.** Adding full twists cannot add volume, so the universality ladder is volume-degenerate. Combined with §12 (wrong-way ring masses) and `prop:vol-through-tau`, this means neither the trace chart nor the volume chart of the ladder words produces the lepton hierarchy. A hyperbolic carrier has to come from a factor that is neither central nor periodic.
+
+**Where a hyperbolic carrier can come from (Nielsen–Thurston).** `B₃/Z(B₃) ≅ PSL(2,ℤ)` via `σ₁ ↦ [[1,1],[0,1]]`, `σ₂ ↦ [[1,0],[−1,1]]`. A braid is periodic, reducible or pseudo-Anosov according as `|tr| < 2`, `= 2` or `> 2`. `Δ` is periodic. The pseudo-Anosov element of least trace (3, dilatation `φ²`) is `σ₁σ₂⁻¹`, and the closure of its square is `4₁`. That is the corpus muon carrier. This is offered as a selector to derive, not adopted here.
+
+## 15. Pseudo-Anosov selector (owner: "Derive what you can", "Work anosov")
+
+**Lean.** `QOU/Observations/BraidNielsenThurston.lean`, over ℤ. No `sorry`, no new axiom.
+
+| statement | Lean |
+|---|---|
+| `σ₁ ↦ [[1,1],[0,1]]`, `σ₂ ↦ [[1,0],[−1,1]]` satisfies the braid relation | `braid_rel` |
+| `Δ ↦ [[0,1],[−1,0]]` (trace 0), `Δ² ↦ −I` | `img_delta`, `img_delta_sq` |
+| full twists change only the sign of the trace | `trace_mul_delta_sq` |
+| every ruled lepton word `Δ^{2k+1}` has trace 0, so all are periodic | `trace_lepton_ladder` |
+| carrier `σ₁σ₂⁻¹ ↦ [[2,1],[1,1]]`, trace 3 | `img_carrier`, `trace_carrier` |
+| `|t| > 2 ⇒ |t| ≥ 3`: `σ₁σ₂⁻¹` is a least-trace pseudo-Anosov | `least_pA_trace` |
+| dilatation `φ² = (3+√5)/2` satisfies `λ + λ⁻¹ = 3` | `golden_dilatation` |
+
+**What it derives.** The Nielsen–Thurston classification (cited) via `B₃/Z ≅ PSL(2,ℤ)` selects `σ₁σ₂⁻¹` as the minimal hyperbolic (pseudo-Anosov) 3-braid, and its square closes to `4₁`. That is a reason, not a fit, for `4₁` being the volume carrier. With one carrier shared by all generations and the universality ruling unchanged, `trace_mul_delta_sq` shows that the type, trace and dilatation are the same for `e`, `μ` and `τ`. So the selector explains the carrier but not the hierarchy. A generation-dependent hyperbolic factor needs a non-central change of the words, which is the open revisit of the ruling (tau thread). Candidate families for that revisit, such as the powers `(σ₁σ₂⁻¹)^m` (`m = 2`: 4₁, `m = 3`: Borromean, `m = 4`: 8₁₈), are handed over unscored.
+
+## 16. Closure ∪ axis: the braid axis as a convolution operator (card "Convolution op of closure ∪ axis")
+
+**Lean.** `QOU/Observations/AxisConvolutionOperator.lean`. No `sorry`, no new axiom. Probe `computations/probes/coloured_ladder/axis_convolution_probe.py` (40/40).
+
+Under the least-trace ruling (23:35Z) `e = σ₁σ₂σ₁` and `μ = σ₁²σ₂⁻¹` both close to the Hopf link, so every closure invariant agrees on them. The braid axis `A` is an unknot that encircles the three strands. `closure(β) ∪ A` is the 4-strand closure of `β·σ₃σ₂σ₁σ₁σ₂σ₃`.
+
+| statement | Lean / probe |
+|---|---|
+| on the spin-`J` part of `V_j^{⊗3}` the axis (colour `N`) acts by `s_J = [N(2J+1)]/[2J+1]`, so `m_N(β ∪ A) = f^{−6} Σ_J χ_J(β) s_J` | probe, N = 2, 3, 4, two values of q |
+| Hopf fusion sum `Σ_K [d_K] θ_K = θ_J θ_j [d_J d_j]` (the full twist of the axis around a block, traced) | `hopf_encircling` |
+| `s_J` is the character of `V_j` at `K = q^{2J+1}`: `[a]·Σ_{m<N} q^{a(N−1−2m)} = [aN]` | `charSum_mul`, `charSum_two` |
+| the axis is a central convolution operator, one scalar per block | `axisOp` (a `ConvOp`) |
+| at `q = 1` every `s_J = N`, so the axis only multiplies by `N` | `charSum_at_one`, `axisMass_at_one` |
+
+**Reading.** The axis sees the braid's isotypic split `χ_J(β)` (the multiplicity traces of `β` on each spin-`J` block), which is finer than its closure. At N = 2, `χ(e) = (3.00514, 0)` and `χ(μ) = (3.70249, −0.69735)` on `(J = 3/2, 1/2)`. The sums agree, which is the Hopf closure. At `q = 1` the axis cannot separate them: `U(1)` of `β ∪ A` is the closure's `U(1)` plus `12j(j+1)` (`= 3·lk` with the axis at N = 2), so e and μ both read 12. The separation is in the `q`-dependence only.
+
+**Values at q₀ (display only; per the no-comparison-first rule, not scored against any measurement).**
+
+| N | m(e ∪ A) | m(μ ∪ A) | m(τ ∪ A) | μ/e | τ/e |
+|---|---|---|---|---|---|
+| 2 | 2.557635 | 2.593907 | 1.987022 | 1.01418 | 0.77690 |
+| 3 | 1.968392 | 2.146213 | 1.275525 | 1.09034 | 0.64800 |
+| 4 | 1.148855 | 1.428926 | 0.710123 | 1.24378 | 0.61811 |
+
+The framing factor `f^{−6}` is common to all three words, so the ratios do not depend on how the axis is framed. Which reading of `β ∪ A` is the mass (trace at fixed `N`, growth in `N`, or growth at `ζ_N` on the mapping-torus volumes 0, 5.33349, 6.35459) is not fixed here.
+
+## 17. Volume reading of closure ∪ axis at the root of unity (card "Volume reading at roots of unity")
+
+**Lean.** `QOU/Observations/AxisKashaevReading.lean`. No `sorry`, no new axiom. Probe `computations/probes/coloured_ladder/axis_volume_reading_probe.py` (23/23).
+
+Colour every component `N`, set `q = e^{iπ/N}` (Kashaev's root, which is Murakami's `e^{2πi/N}` in `q²`), and cut the axis open. What is left is a scalar `c_N(β)` on `V_N`.
+
+| statement | Lean / probe |
+|---|---|
+| cut axis on the block of dimension `a`: `[aN]/[N]`; `[N]·cut = [a]·closed = [aN]` | `cut_closed` |
+| at `q^N = −1` the cut axis is `a·(−1)^{a−1}` | `charSum_at_root`, `cutAxisOp` |
+| `c_N(β) = f^{−6} Σ_a μ_a(β)·a·(−1)^{a−1}`, with `μ_a` the multiplicity traces | `cutAxis_at_root` |
+| `μ_a = T_a − T_{a+2}` from the framed traces on weight spaces (exact at the root) | probe; matches the 4-strand brute force, N = 2..6 |
+| convention: the 3-strand cut of `(σ₁σ₂⁻¹)²` is the Kashaev sum of 4₁ | probe, N = 2..6 |
+
+**Growth `(2π/N) log|c_N|` (numerical, double precision to N = 24; an arb-ball run agrees to N = 20).** The complement of `closure(β) ∪ A` is the mapping torus of `β`. Its volumes (cited geometric constants, not measurements) are 0, 5.33349 (the magic manifold) and 6.35459.
+
+| word | behaviour of `c_N` | growth estimate |
+|---|---|---|
+| e = σ₁σ₂σ₁ | polynomial, `|c_N| ≤ N²`, exact zeros at N ≡ 0 mod 8 | 0 |
+| μ = σ₁²σ₂⁻¹ | `log|c_N| = V N/2π + a log N + b + c/N`, solved on 4 consecutive N | V = 5.3336, a = 1.499 (N = 21..24) |
+| τ = σ₁⁴σ₂⁻¹ | oscillates (competing phases) | 6.32 to 6.34 (8-step windows, N = 20..24, with the 3/2 log N term) |
+
+**Reading.** The ζ_N growth of the closure ∪ axis operator recovers the mapping-torus volumes. It is the volume conjecture for these three links, checked numerically, not proved. So on the volume chart the axis operator gives the ordering 0 < 5.333 < 6.355 for e, μ, τ. Per the owner's ruling "Derive the reading first" (PR #9853), this is not scored against any measured mass. Which reading of the operator is the mass, and with which colour, has to come from the axioms first.
+
+## 18. Which reading is the mass? What `def:mass-identity` forces (ruling "Derive the reading first")
+
+**Lean.** `QOU/Observations/MassReadingForced.lean`. No `sorry`, no new axiom, and no axiom or definition changed.
+
+`def:mass-identity` already settles the three choices that §16 and §17 left open.
+
+| choice | what the definition says | consequence |
+|---|---|---|
+| colour | the Hecke/TL model acts on `V^{⊗n}`, `V = R²` (Jimbo) | `N = 2` |
+| reading | the mass is the ring element `[2]ⁿ q^{−2w} ∫_A ρ(β)`; a comparison is `|φ(m)|` for one ring homomorphism `φ` | the trace at `N = 2`. The `ζ_N` growth over the family `N → ∞` is not of this form |
+| cycle | read on braid classes (conjugation and both stabilisations) | the axis is not in the class of `β`; `β ∪ A` is a different (4-strand) cycle |
+
+**Forced values (convention D, any field).** `m(σ₁σ₂σ₁) = m(σ₁²σ₂⁻¹) = (q²+1)(q⁴+1)/q⁶ = [4]/q³` (`massWord_e`, `massWord_mu`, `mass_mu_eq_e`): both close to the Hopf link. `m(σ₁⁴σ₂⁻¹) = (q²+1)(q⁸+q⁴−q²+1)/q¹²` (`massWord_tau`), the class of the (2,4) torus link.
+
+**Conclusion.** Under the definition as it stands, the least-trace ladder gives `e` and `μ` the same mass, exactly and for every `q`. This is a structural negative, not a numerical one. The volume ordering of §17 (0 < 5.333 < 6.355) is not reachable without changing one of the three rows above. Each such change (an axis in the cycle, a colour other than `V = R²`, or the `ζ_N` growth as the reading) is a change to `def:mass-identity` and needs the owner's own tap. The alternative is to keep the definition and choose words in distinct braid classes (tau thread). Nothing is compared with a measured value.
+
+## 19. Readings of the least-crossing link ladder (tau-thread candidate, unscored)
+
+**Lean.** `QOU/Observations/LeptonLinkLadderReadings.lean`. No `sorry`, no new axiom. This reads the set under `def:mass-identity` as it stands (§18).
+
+| word | closure | lk | ring mass (N = 2) | U(1) = 3·lk | m(q₀) (display) | U(q₀) (display) |
+|---|---|---|---|---|---|---|
+| e = σ₁σ₂σ₁ | Hopf | 1 | `(q²+1)(q⁴+1)/q⁶` | 3 | 3.00514 | 2.48463 |
+| μ = σ₁⁴σ₂⁻¹ | T(2,4) | 2 | `(q²+1)(q⁸+q⁴−q²+1)/q¹²` | 6 | 2.29105 | 4.75658 |
+| τ = σ₁²σ₂⁻¹σ₁σ₂⁻¹ | Whitehead | 0 | `(q²+1)(q¹⁰−q⁸+2q⁶−q⁴+2q²−1)/q⁸` | 0 | 4.08910 | −0.50796 |
+
+At `q = 1` all three masses are 4 (`mass_at_one`). The three closures are distinct, so the definition now separates the generations. `U(1)` follows the linking number (3, 6, 0), so it is not monotone along the ladder. Nothing is compared with a measured value (no-comparison-first rule).

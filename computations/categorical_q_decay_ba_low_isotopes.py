@@ -14,8 +14,8 @@ This is a 4-input scheme:
 
   1. m_μ/m_e = 206.768   (fixes q_0)
   2. m_e = 0.511 MeV     (leptonic scale)
-  3. μ_u = 311.10 MeV    (proton-side dressed quark, from m_p calib)
-  4. μ_d = 312.39 MeV    (neutron-side dressed quark, from m_n−m_p split)
+  3. μ_u (dressed up quark; the C-fitted 311.10 is retired, 2026-11-28)
+  4. μ_d (dressed down quark; the C-fitted 312.39 is retired, 2026-11-28)
 
 p and n are CORRECTLY DIFFERENT under this representation — the
 n-p mass splitting is exact (μ_d − μ_u capture). Equivalently the

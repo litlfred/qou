@@ -67,13 +67,14 @@ theorem ck_a1_eq_neg_c3_depth_two (a₁ a₂ c₃ : ℝ)
     (hrec : c₃ = a₁ * (-1) + a₂ * 0) : a₁ = -c₃ := by
   rw [hrec]; ring
 
-/-- **The kernel's leading coefficient is the #1887 Φ₂ (up to √2).** Combining
-`a₁ = -c₃` with the #1887 phase relation `c₃ = -(Φ₁·Φ₂)` and `Φ₁ = √2`:
-`a₁ = √2·Φ₂`. The kernel's leading coefficient and the open Φ₂ are the same
-object. -/
-theorem ck_a1_eq_sqrt2_phi2 (a₁ c₃ Φ₂ : ℝ)
-    (ha1 : a₁ = -c₃) (hphase : c₃ = -(Real.sqrt 2 * Φ₂)) :
-    a₁ = Real.sqrt 2 * Φ₂ := by
+/-- **The kernel's leading coefficient is the #1887 Φ₂ (up to Φ₁ = √2).** Combining
+`a₁ = -c₃` with the #1887 phase relation `c₃ = -(Φ₁·Φ₂)`: `a₁ = Φ₁·Φ₂`. The
+kernel's leading coefficient and the open Φ₂ are the same object. `Φ₁` is the
+square-root symbol (`Φ₁² = 2` in the corpus); the identity does not use its
+value, so no `Real.sqrt` is needed (bean `qou-dk7p`). -/
+theorem ck_a1_eq_sqrt2_phi2 (a₁ c₃ Φ₁ Φ₂ : ℝ)
+    (ha1 : a₁ = -c₃) (hphase : c₃ = -(Φ₁ * Φ₂)) :
+    a₁ = Φ₁ * Φ₂ := by
   rw [ha1, hphase]; ring
 
 /-- **Constant depth-2 kernel predicts `c₄ = 1 - c₃²`.** Constraints `a₂ = -1`

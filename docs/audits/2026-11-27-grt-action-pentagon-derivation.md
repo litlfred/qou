@@ -1470,3 +1470,423 @@ degree-by-degree construction as `AssociatorObstructionVanishes E`. That obstruc
 linearised hexagon. `PentagonHexagonLie` addresses a different question: whether the hexagon
 part of the obstruction is implied by its pentagon part, for Lie elements of degree `d ≥ 3`. The
 two statements are independent, and this file does not use `Obstruction.lean`.
+
+## 17j. Furusho's Lie-algebra theorem proved for `d ≥ 3` (bean `qou-3fdg`)
+
+**Target.** Discharge the one input §17i left as a named `Prop`:
+
+```lean
+def PentagonHexagonLie (d : ℕ) : Prop :=
+  ∀ h : F2, Homog d h → IsPrimitive h → (assocLin (d + 1) h).2.2 = 0 → assocLin (d + 1) h = 0
+```
+
+**Proved** (sorry-free, algebraic over `ℚ`, three new files under `RationalAssociator/`):
+
+```lean
+theorem pentagonHexagonLie_of_three_le : ∀ d, 3 ≤ d → PentagonHexagonLie d
+```
+
+and, with that hypothesis discharged, the corollaries of §17i:
+
+```lean
+theorem assocU4_of_pentagon' {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
+    (hT : GroupLikeKAssociatorTower K E) {N : ℕ} (hN : 3 ≤ N) {Φ : F2}
+    (h3 : AssocU4 3 E Φ) (hp : Pentagon Φ (t N 0) (t N 1) (t N 3) (t N 4) (t N 5))
+    (hg : GL N Φ) : AssocU4 N E Φ
+theorem assocU4_iff_pentagon' … (hg : GL N Φ) :
+    AssocU4 N E Φ ↔ AssocU4 3 E Φ ∧ Pentagon Φ (t N 0) (t N 1) (t N 3) (t N 4) (t N 5)
+```
+
+(`K` any field with `[Algebra ℚ K]`.)
+
+The proof follows the shape of Furusho's Lie-algebra argument (Ann. Math. 171 (2010), Thm 3),
+written out for the repo's definitions:
+
+1. `FurushoTwoCycle.lean`. A shift by a central element commutes with evaluating a Lie
+   polynomial (`eval_add_left`, `eval_add_right`). From the linearised pentagon, the 2-cycle
+   identity `h(X, Y) + h(Y, X) = 0` follows (`add_swap_eq_zero_of_pentagon`).
+2. `FurushoP5.lean`. Five-strand families `P5`: their relabellings, their compositions, and
+   the `DK4` family of the first four strands. The linearised pentagon becomes a five-term
+   expression `piExpr` (`piExpr_eq`). The permutation sum `rSum_eq` gathers four relabelled
+   pentagons into the hexagon polynomial `R(X, Y) = h(X, Y) + h(Y, −X−Y) + h(−X−Y, X)`
+   (`rPoly`), evaluated at four pairs.
+3. `FurushoHexagon.lean`.
+   - It builds a concrete five-strand family on `ℚ⟨Y₁, Y₂, Y₃⟩ ⧸ FF3 N`, whose entries are a
+     left multiplication plus a Leibniz map (`xE`, `xE_p5`). Commutation is checked on all 15
+     disjoint pairs.
+   - Each relabelling lifts `U4 N`, so the pentagon is zero there (`piExpr_eq_zero`). Summing
+     gives `hexSum (rPoly h) ∈ FF3 (d+1)` (`hexSum_mem`).
+   - Two substitutions to `ℚ⟨X, Y⟩`, homogeneity and the symmetries of `R` give
+     `(2^{d−1} − 2)·R = 0`. So `R = 0` for `d ≥ 3` (`rPoly_eq_zero`).
+   - Then `t₁₂ + t₁₃ + t₂₃` is central in the `t₁₂, t₁₃, t₂₃` subalgebra, and the shift of
+     step 1 turns the linearised hexagon into `−R(t₁₂, t₁₃) = 0` (`lin513_eq_zero`). The
+     (5.17) components follow from the 2-cycle.
+
+The factor `2^{d−1} − 2` vanishes exactly at `d = 2`. That matches §17i's hand computation,
+where `[A, B]` has zero linearised pentagon and nonzero linearised hexagon, so the theorem cannot
+be extended below degree 3. The `μ` normalisation (`AssocU4 3 E Φ`) remains an input.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on each of `FurushoTwoCycle.lean`,
+`FurushoP5.lean`, `FurushoHexagon.lean` and `FurushoReduction.lean` exits 0 with no output.
+This was run against the symlink overlay used for §17g–§17i. `#print axioms` on
+`pentagonHexagonLie_of_three_le`, `rPoly_eq_zero`, `hexSum_mem`,
+`add_swap_eq_zero_of_pentagon`, `lin513_eq_zero`, `assocU4_of_pentagon'` and
+`assocU4_iff_pentagon'` gives `[propext, Classical.choice, Quot.sound]`. The files contain no
+`sorry`, no `axiom`, no `native_decide` and no analytic constructs. No `lake build` was run.
+
+**What remains open.** The Lie statement is now fully closed. What is still not reduced to
+pentagon-only data:
+
+- `GroupLikeKAssociatorTower K E` is still a hypothesis of `assocU4_of_pentagon'`. Each degree
+  step compares `Φ` with a genuine `K`-associator from the tower (§17i, "What this does not do").
+  Removing it would mean building the degree-`(d+1)` associator correction from the pentagon
+  alone. §17h's `AssociatorObstructionVanishes E` is the corresponding open input of the
+  construction route. The present theorem says that the hexagon part of that obstruction is
+  implied by its pentagon part in degrees `d ≥ 3`.
+- Furusho's group-level theorem (pentagon ⇒ hexagon for group-like `φ` with no associator given)
+  is not formalised. Only its Lie-algebra form is.
+
+## 17k. The lifting obstruction splits into a pentagon part and a group-level Furusho step (bean `qou-3fdg`)
+
+**Target.** Attack the pentagon half of §17h's `AssociatorObstructionVanishes E`, aiming to remove
+the `GroupLikeKAssociatorTower K E` hypothesis (a `K`-associator, classically KZ) from the
+rational-associator chain.
+
+**Result, in one line.** The hypothesis is not removed. It is replaced, with no field `K`, by two
+named `Prop`s. For `d ≥ 3` the replacement is an exact equivalence, so nothing is lost by it.
+
+**Proved** (`RationalAssociator/PentagonObstruction.lean`, sorry-free, algebraic over `ℚ`):
+
+- `GL.mul`: group-likeness modulo `FF2 m` is closed under products over `ℚ`.
+- `exists_GL_lift`: **the group-likeness half of the obstruction always vanishes.** For
+  `ε(Φ) = 1`, `d ≥ 1` and `GL d Φ`, there is `x ∈ FF d` with `GL (d+1) (Φ + x)`. Proof: build
+  `Ψ = Π expPoly(kᵢ)`, one homogeneous primitive `kᵢ` per degree, with `Ψ ≡ Φ` modulo `FF m` for
+  `m = 1, …, d` (`GL_expPoly`, `primDef_mem_of_GL_add`, `exists_primitive_layer`,
+  `expPoly_congr`). No logarithm and no `K`. This was not previously in the repository: §17h's
+  `lift_iff_primitive` needed `GL (d+1) Φ` as a hypothesis.
+- `ObstructionVanishesAt E d` (a `def … : Prop`): §17h's statement at one degree;
+  `associatorObstructionVanishes_iff`: `AssociatorObstructionVanishes E ↔ ∀ d ≥ 1,
+  ObstructionVanishesAt E d` (definitional).
+- `obstructionVanishesAt_of_pentagon` (`d ≥ 2`):
+  `PentagonLiftVanishes E d → FurushoGroupStep E d → ObstructionVanishesAt E d`.
+- `furushoGroupStep_of_obstructionVanishesAt` (`d ≥ 3`): `ObstructionVanishesAt E d →
+  FurushoGroupStep E d`. This uses `pentagonHexagonLie_of_three_le` (#9876). The vanishing gives
+  a lift `Φ + x`. The primitive layer `k` of `x` has zero linearised pentagon, because `Φ` and
+  `Φ + x` both satisfy the pentagon. So `assocLin k = 0`, and `Φ` was already an associator.
+- `pentagonLiftVanishes_of_obstructionVanishesAt` (`d ≥ 1`), and so
+  `obstructionVanishesAt_iff` (`d ≥ 3`):
+  `ObstructionVanishesAt E d ↔ PentagonLiftVanishes E d ∧ FurushoGroupStep E d`.
+- `compatible_of_pentagon_furusho`: a seed `Φ₃` with `AssocU4 3 E Φ₃` and `GL 3 Φ₃`, together
+  with both `Prop`s for every `d ≥ 3`, gives `Φ : ℕ → ℚ⟨X,Y⟩` with `AssocU4 N E (Φ N)`,
+  `GL N (Φ N)` and `Φ (N+1) − Φ N ∈ FF N` for every `N ≥ 3`. No `K` and no tower.
+
+**The two remaining statements** (both `def … : Prop`, neither assumed nor proved):
+
+```lean
+def PentagonLiftVanishes (E : F2) (d : ℕ) : Prop :=
+  ∀ Φ : F2, AssocU4 d E Φ → GL (d + 1) Φ →
+    ∃ h ∈ FF d, Homog d h ∧ IsPrimitive h ∧
+      Pentagon (Φ + h) (t (d + 1) 0) (t (d + 1) 1) (t (d + 1) 3) (t (d + 1) 4) (t (d + 1) 5)
+
+def FurushoGroupStep (E : F2) (d : ℕ) : Prop :=
+  ∀ Φ : F2, AssocU4 d E Φ → GL (d + 1) Φ →
+    Pentagon Φ (t (d + 1) 0) (t (d + 1) 1) (t (d + 1) 3) (t (d + 1) 4) (t (d + 1) 5) →
+      AssocU4 (d + 1) E Φ
+```
+
+- `PentagonLiftVanishes` is the pentagon (Drinfeld–Kohno / Stasheff) part. It asks for a Lie
+  correction `h` of degree `d` that cancels the degree-`d` pentagon defect `ψ ∈ U(𝔱₄)`. Hexagon
+  and inversion are not required of `Φ + h`. The hypothesis still carries `AssocU4 d E Φ`, the
+  hexagon included, because a pentagon-only hypothesis could make the statement false. Whether
+  pentagon solutions modulo `d` always lift is not settled here.
+- `FurushoGroupStep` is Furusho's group-level pentagon ⇒ hexagon at a single degree. #9876 proved
+  only the Lie-algebra form. The Lie form gives the converse direction above. It does not give
+  this statement by itself, because the hexagon defect of `Φ` is nonlinear in `Φ`.
+
+**What the equivalence says.** Once #9876 is in, the hexagon is redundant for the *obstruction
+question*. In degrees `d ≥ 3`, a rational group-like associator modulo `d` lifts iff (i) its
+pentagon defect can be cancelled by a Lie element, and (ii) pentagon-solutions one degree up are
+automatically hexagon-solutions. Neither (i) nor (ii) mentions a field `K`.
+
+**What was not done.**
+
+- Neither `Prop` is proved. For (i), the natural route would show the defect `ψ` is a cocycle in
+  `U(𝔱₅)` (the five relabelled pentagons, the 3-dimensional associahedron) and then that every
+  such cocycle of degree `d` is `δ` of a Lie element of degree `d`. That is an `H⁴` vanishing
+  statement for the pentagon complex. The cocycle step is not formalised here. The `H⁴` step is
+  the known hard point.
+- No explicit low-degree check (`d = 3, 4`) was run. Deciding equalities in `U4 (d+1)` needs a
+  normal form for `U(𝔱₄)` truncated, and the repository has none.
+- No converse from the tower: the repository does not show that `GroupLikeKAssociatorTower K E`
+  implies `ObstructionVanishesAt E d` for arbitrary `Φ` (§17h, same gap: `AssocU4 M → AssocU4 N`
+  for `N ≤ M` exists now as `AssocU4.trunc`, but the level invariant for an arbitrary `Φ` does
+  not). So it is not checked inside Lean that the two `Prop`s are consistent with the tower.
+- Literature. Furusho 2010 IS held: `library/arxiv-math-0702128v3/` (merged in #9836). Its INDEX
+  row is titled "PENTAGON AND HEXAGON EQUATIONS" and does not name the author, so a grep for
+  `furusho` in `library/INDEX.md` misses it. Theorem 1 there (§0, p. 1) is the group-level
+  statement behind `FurushoGroupStep`; its proof is §2 (pp. 5-8). Drinfeld 1990 and Bar-Natan
+  1998 are not in `library/` (INDEX and `ocr/` searched); their `H⁴` claims were not checked.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `PentagonObstruction.lean` exits 0 with
+no output, against the `/home/claude/furov` symlink overlay. The `RationalAssociator/` directory is
+byte-identical between the overlay's source branch (`b9d209162`) and `origin/main` after #9876.
+`#print axioms` on `exists_GL_lift`, `GL.mul`, `obstructionVanishesAt_of_pentagon`,
+`furushoGroupStep_of_obstructionVanishesAt`, `pentagonLiftVanishes_of_obstructionVanishesAt`,
+`obstructionVanishesAt_iff` and `compatible_of_pentagon_furusho` gives
+`[propext, Classical.choice, Quot.sound]`. The file has no `sorry`, no `axiom`, no
+`native_decide` and no analytic constructs. No `lake build` was run.
+
+## 17l. The group-level Furusho step: from any `K`-tower, and unconditionally for `E = 1` (bean `qou-3fdg`)
+
+**Target.** Prove §17k's `FurushoGroupStep E d` for `d ≥ 3`, or as much of it as possible.
+
+**Proved** (`RationalAssociator/FurushoGroupStep.lean`, sorry-free, algebraic over `ℚ`):
+
+```lean
+theorem levelInv_of_assocU4 {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
+    (hT : GroupLikeKAssociatorTower K E) {d : ℕ} (hd : 3 ≤ d) {Φ : F2}
+    (hA : AssocU4 d E Φ) (hG : GL d Φ) : LevelInv K E d Φ
+theorem furushoGroupStep_of_tower (hE) (hT : GroupLikeKAssociatorTower K E) (hd : 3 ≤ d) :
+    FurushoGroupStep E d
+theorem obstructionVanishesAt_of_tower (hE) (hT) (hd : 3 ≤ d) : ObstructionVanishesAt E d
+theorem pentagonLiftVanishes_of_tower (hE) (hT) (hd : 3 ≤ d) : PentagonLiftVanishes E d
+theorem groupLikeKAssociatorTower_one : GroupLikeKAssociatorTower K (1 : F2)
+theorem furushoGroupStep_one (hd : 3 ≤ d) : FurushoGroupStep (1 : F2) d
+theorem obstructionVanishesAt_one (hd : 3 ≤ d) : ObstructionVanishesAt (1 : F2) d
+theorem pentagonLiftVanishes_one (hd : 3 ≤ d) : PentagonLiftVanishes (1 : F2) d
+```
+
+- `levelInv_of_assocU4` closes the gap §17k listed under "No converse from the tower": for
+  `d ≥ 3`, **every** rational associator modulo `d` that is group-like modulo `FF2 d` carries the
+  level invariant. The proof builds it at degree 3 (`levelInv_three`) and raises it one degree
+  at a time with `LevelInv.succ_of_assoc`, feeding in the truncations `AssocU4.trunc` of `Φ`
+  itself. So the tower implies all three of §17k's statements (`FurushoGroupStep`,
+  `ObstructionVanishesAt`, `PentagonLiftVanishes`) at every `d ≥ 3`. This also checks inside Lean
+  that the two `Prop`s of §17k are consistent with the tower.
+- For `E = 1` (hexagon without exponential, i.e. `μ = 0`, the `GRT₁` case) the tower is inhabited
+  by the constant `Ψ = 1`, over any `K` (`assocK_one`, `GLK_one`). Hence `FurushoGroupStep 1 d`,
+  `ObstructionVanishesAt 1 d` and `PentagonLiftVanishes 1 d` hold for every `d ≥ 3` with no
+  hypothesis. No existing associator, no KZ, no field other than `ℚ` is used.
+
+**Relation to the source** (Furusho, arXiv math/0702128v3, §2 "Proof of Theorem 1", pp. 5-8,
+read from `library/arxiv-math-0702128v3/sections/sec-002-2-proof-of-theorem-1.md`):
+
+- Lemma 9 (pp. 6-7): a commutator group-like `φ` with `c₂(φ) = 0` satisfying the 5-cycle relation
+  satisfies the 3-cycle relation (14). Its proof is an induction on degree: `φ ∈ GRT₁^{(n)}`, the
+  corresponding Lie element `ψ` "also determines an element of `grt₁(k)`", `φ₁ = Exp ψ` agrees
+  with `φ` modulo degree `n`, `φ = φ₂ ∘ φ₁` (Lemma 8), and Theorem 3 (the Lie form) puts the
+  degree-`n` part of `φ₂` in `grt₁`. `furushoGroupStep_one` is that inductive step in the repo's
+  terms. The comparison object is not `Exp ψ` but the degree-`(d+1)` lift `Φ + x` that `levelStep`
+  produces by re-aligning `Ψ = 1` onto `Φ` through `Exp` of `grt` layers (`realign`), and the
+  Lie form is `pentagonHexagonLie_of_three_le` (§17j). `obstructionVanishesAt_one` is the
+  one-degree surjectivity onto `GRT₁^{(d)}` that Lemma 9 uses.
+- Theorem 10 (pp. 7-8), the case `μ ≠ 0`: the proof passes to the weight-graded ring and uses
+  "`Gr^W O(M₁)` is isomorphic to `O(GRT₁)` by [F06] theorem 6.2.2". [F06] is not in `library/`
+  (not checked further), so whether that input itself rests on the existence of an associator is
+  not settled from the held text. The held text does show that Theorem 10 is not a one-degree
+  argument: it compares filtered coordinate rings of the two solution varieties.
+
+**What is open.** `FurushoGroupStep E d` for `E ≠ 1` (`μ ≠ 0`) without a `K`-tower. It remains a
+named `Prop`; this file proves it only from `GroupLikeKAssociatorTower K E` (classically the KZ
+associator). The question "can the degree-`d` associator `Φ` of the hypothesis serve as the
+comparison object" has a negative answer in the form attempted: the linearisation used throughout
+(`assocDefect_add`) compares `Φ` with a degree-`(d+1)` associator congruent to it modulo `FF d`,
+and `Φ` is only an associator modulo `d`, so it cannot be its own comparison object. The natural
+next step is a one-degree version of Furusho's weight-filtration argument: show that the
+`μ`-dependent part of the degree-`d` hexagon defect of `Φ` is determined by lower-degree data
+already satisfying the equations, so that the `E = 1` step transfers. This is not attempted here.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `FurushoGroupStep.lean` exits 0 with no
+output, against the `/home/claude/furov` overlay; `RationalAssociator/` is byte-identical between
+the overlay's source (PR #9880 head `74e97b66c`) and `origin/main` after #9880 merged. `#print
+axioms` on all eight theorems above gives `[propext, Classical.choice, Quot.sound]`. No `sorry`,
+no `axiom`, no `native_decide`, no analytic constructs. No `lake build` was run.
+
+## 17m. The `μ ≠ 0` group step is exactly one-degree existence (bean `qou-3fdg`)
+
+**Target.** Prove `FurushoGroupStep E d` for `E ≠ 1` (`μ ≠ 0`), `d ≥ 3`, with no tower hypothesis.
+
+**Result: not proved. A sharper reduction is proved, and it is an equivalence.** New file
+`RationalAssociator/FurushoSingleLevel.lean`:
+
+- `LevelInvAt K E d N Φ`: the level invariant of `AssociatorRealign.lean` at one level `N`.
+- `levelInvAt_of_assoc`: one group-like `K`-associator modulo `N` aligns onto every rational
+  associator `Φ` modulo `d ≤ N` (`realign`, one degree at a time along the truncations of `Φ`).
+- `assocU4_succ_of_pentagon_at`: the reduction step of `FurushoReduction.lean` from the invariant
+  at the single level `N = d + 1`. The step never used the levels above `d + 1`.
+- `furushoGroupStep_of_exists_assocK`: `FurushoGroupStep E d` (`d ≥ 3`) from **one** group-like
+  `K`-associator for `E` modulo `d + 1`. This replaces `GroupLikeKAssociatorTower K E` (every level)
+  in `furushoGroupStep_of_tower` by one level.
+- `assocK_of_assocU4`: base change of a rational associator.
+- `furushoGroupStep_iff_exists`: for `d ≥ 3` and any one `Φ₀` satisfying the step's hypotheses,
+  `FurushoGroupStep E d ↔ ∃ Ψ : ℚ⟨X,Y⟩, AssocU4 (d + 1) E Ψ ∧ GL (d + 1) Ψ`.
+
+**What this means for `μ ≠ 0`.** When the step's hypothesis set is non-empty (which it is,
+for example, whenever a rational associator modulo `d` exists and `PentagonLiftVanishes E d`
+holds), the group-level Furusho step at degree `d` **is** the existence of one rational group-like
+associator for `E` modulo `d + 1`. So any proof of the `μ ≠ 0` step, by a weight-filtration
+argument or otherwise, is a proof of that existence statement, and conversely. Classically that
+existence is Drinfeld's theorem (the KZ associator over `ℂ`, then descent, as in
+`rational_associator_of_tower`); no algebraic proof of it is in the repository.
+
+**Why the suggested route does not close, as attempted (scope (a)).** The weight-filtration
+transfer from `E = 1` asks that the `μ`-dependent part of the degree-`d` hexagon defect be
+determined by lower-degree data. By `pentagonHexagonLie_of_three_le` the defect of a
+pentagon-solution is indeed a function of `Φ mod FF d` only (two degree-`d` corrections differ by a
+primitive layer with zero linearised pentagon, hence zero linearised hexagon). But showing that
+function vanishes at a `μ ≠ 0` point needs a comparison object at that `μ`: for `E = 1` it is
+`Ψ = 1`; for `E ≠ 1` the `E = 1` objects cannot serve, because the `GRT₁` action preserves `μ`,
+and rescaling `Φ(sA, sB)` moves `μ` to `sμ` and never to or from `0`. By
+`furushoGroupStep_iff_exists` a comparison object at `μ` modulo `d + 1` is exactly what the step is
+equivalent to. Furusho's Theorem 10 supplies it globally through `Gr^W O(M₁) ≅ O(GRT₁)` [F06,
+6.2.2], which presupposes that `M₁` is a non-empty torsor. This is a negative about the route as
+attempted, not a proof that no algebraic argument exists.
+
+**What is open.** `FurushoGroupStep E d` for `E ≠ 1`, equivalently (given the hypotheses are
+inhabited) `∃ Ψ, AssocU4 (d + 1) E Ψ ∧ GL (d + 1) Ψ` over `ℚ`, by an algebraic argument.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `FurushoSingleLevel.lean` exits 0 with
+no output against the `/home/claude/furov` overlay (which carries `FurushoGroupStep.olean` from
+#9887). `#print axioms` on all six theorems gives `[propext, Classical.choice, Quot.sound]`. No
+`sorry`, no `axiom`, no `native_decide`, no analytic constructs. No `lake build` was run.
+
+## 17n. The pentagon obstruction as a class; the whole degree-`d` step is one-degree existence (bean `qou-3fdg`)
+
+**Target.** Prove `PentagonLiftVanishes E d` for `d ≥ 3` with no tower hypothesis, by the
+algebraic route: the obstruction to lifting a pentagon solution one degree is a cocycle in a
+cohomology group that vanishes (Drinfeld 1991 §5; Bar-Natan 1998).
+
+**Result: not proved for `E ≠ 1` (scope (a)). A sharper reduction is proved.** (`E = 1` was
+already unconditional: `pentagonLiftVanishes_one`, §17l, where the tower is built from `Ψ = 1`.)
+New file `RationalAssociator/PentagonObstructionClass.lean`:
+
+1. **The whole step at degree `d` is one-degree existence, for every `E` and every `d ≥ 1`.**
+   - `obstructionVanishesAt_of_exists_assocK`: one group-like `K`-associator for `E` modulo
+     `d + 1` gives `ObstructionVanishesAt E d` (`d ≥ 1`). It uses `levelInvAt_of_assoc` and
+     `inductionStep_of_groupLike` at the single level `d + 1`; no other level and no use of the
+     Lie-algebra Furusho theorem.
+   - `obstructionVanishesAt_of_exists`, `pentagonLiftVanishes_of_exists`: the same over `ℚ`.
+   - `obstructionVanishesAt_iff_exists`: given one rational associator modulo `d`, group-like
+     modulo `FF2 d`, `ObstructionVanishesAt E d ↔ ∃ Ψ, AssocU4 (d + 1) E Ψ ∧ GL (d + 1) Ψ`.
+   - `obstructionVanishesAt_of_exists_le`: existence modulo `N + 1` gives the step at every
+     `1 ≤ d ≤ N`.
+
+   So §17m's equivalence for the Furusho half extends to the full obstruction (pentagon part
+   included), at `d ≥ 1` rather than `d ≥ 3`.
+
+2. **The pentagon obstruction is a well-defined class.** `pentObs d E Φ` is the pentagon defect
+   of `Φ` in `U4 (d + 1)`; `lieLayer d` is the submodule of homogeneous primitive (Lie) elements of
+   degree `d`; `pentLin` is the linearised pentagon (Drinfeld's (5.20)); `pentCob d` is
+   `pentLin (lieLayer d)`.
+   - `pentagon_add_iff`: for `x ∈ FF d`, the pentagon for `Φ + x` modulo `d + 1` holds iff
+     `pentObs Φ + pentLin x = 0`.
+   - `pentagonLiftVanishes_iff_mem`, `pentagonLiftVanishes_iff_class`: `PentagonLiftVanishes E d`
+     iff the class of `pentObs d E Φ` in `U4 (d + 1) ⧸ pentCob d` is zero for every `Φ` in its
+     hypothesis set.
+   - `pentObs_sub_mem`, `pentClass_eq`: that class depends only on `Φ` modulo degree `d` (among
+     `Φ` group-like modulo `FF2 (d + 1)`).
+
+**Why the cohomological route does not close here.** Two steps separate `pentClass` from the
+statement "a cocycle in a group that vanishes", and neither is done:
+
+- *The cocycle condition.* The pentagon defect satisfies the five-strand (Stasheff `K₅`) identity
+  in `U(𝔱₅)`. Stating it needs a five-strand universal algebra `U5` and its five coface maps
+  `U4 → U5`; the repository has `U4` only. This is mechanical but substantial, and it was not
+  attempted in this tranche.
+- *The vanishing.* The held source says it is not known. Drinfeld 1991, §5, p. 14
+  (`library/drinfeld1991-quasitriangular/sections/page-014.md`), after Prop. 5.8, on the fourth
+  cohomology `H⁴` of the relevant complex `L̄*`: *"The author does not know whether its 4th
+  cohomology group H⁴ is equal to 0. It is easily seen that Hⁿ = Lⁿ = 0 for n < 2, dim H² =
+  dim L² = 1, and H³ is the algebraic direct sum of the homogeneous components of grt₁."* So in
+  the held literature the "obstruction lies in a vanishing group" route rests on an open
+  question, and Drinfeld's own existence proof goes through the KZ associator.
+- *Bar-Natan 1998 is not held.* `library/` has no copy of "On associators and the
+  Grothendieck–Teichmuller group I" (`arxiv-q-alg-9707006v1` is a different paper, on the Drinfeld
+  twist for quantum `su(2)`), and arXiv is blocked here. No claim in this section rests on it. My
+  recollection, unchecked against the text, is that its rationality proof is a descent argument
+  from an existing `ℂ`-associator, i.e. the route `exists_rational_lift` already formalises; that
+  recollection should be checked before it is relied on.
+
+**What is open.** For `E ≠ 1`: `pentClass d E Φ = 0`, equivalently (given a rational associator
+modulo `d`) one-degree existence `∃ Ψ, AssocU4 (d + 1) E Ψ ∧ GL (d + 1) Ψ`, by an algebraic
+argument. As a cohomological statement, it would need (i) `U5` and the `K₅` cocycle identity for
+`pentObs`, and (ii) vanishing of the relevant degree-`d` part of `H⁴`, which Drinfeld records as
+unknown in general.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `PentagonObstructionClass.lean`
+exits 0 with no output against the `/home/claude/furov` overlay, after adding
+`FurushoSingleLevel.olean` (#9888) to it. `#print axioms` on all ten theorems gives `[propext,
+Classical.choice, Quot.sound]`. A deliberately false `example : (2 : ℚ) = 3 := by norm_num`
+in the same check file fails (so the check is live) and was removed. No `sorry`, no `axiom`, no
+`native_decide`, no analytic constructs. No `lake build` was run.
+
+## 17o. The KZ fallback: the fixed-`E` tower is false at `μ ≠ 0`, and the per-level target (bean `qou-3fdg`)
+
+File: `QOU/Transcendental/BraidsAndKnots/KZTowerTarget.lean` (new). It is behind the
+transcendental boundary because it is the interface to the analytic KZ construction. It
+contains no analysis: no limit, integral, `exp`, `π` or `ζ`.
+
+**What already exists, and why it does not discharge the descent.** `AssociatorKZ.lean` builds
+`Φ_KZ` as a connection matrix. `DrinfeldAssociator.lean` packages it as
+`structure Associator` (`kz : Associator`, line 134), and `KZPentagon` / `KZHexagon` prove
+the pentagon and the hexagon (in the central `e^{πi·}` form) in complete normed `ℂ`-algebras,
+for non-resonant arguments. Four pieces are missing to obtain `AssocK ℂ N E Ψ ∧ GLK ℂ N Ψ`:
+(i) a complete normed structure on the truncated free algebra `ℂ ⊗ ℚ⟨X, Y⟩ / (deg ≥ N)`;
+(ii) group-likeness, which is not a field of `Associator`; (iii) matching the `e^{πi·}`
+hexagon convention to `E = exp(t/2)` by rescaling the arguments by `2πi`; (iv) realising
+`Φ_KZ` there as a polynomial `Ψ`. None of these is attempted in this tranche.
+
+**The main finding: `GroupLikeKAssociatorTower K E` cannot hold for the exponential case.**
+The tower fixes one polynomial `E` for every level `N`.
+
+- `hexagon_sq_eq`: if `AssocU4 N E Φ`, then in every commutative `ℚ`-algebra, for every `y` with
+  `y ^ N = 0`, `(E(2y))² = (E(y))⁴`, where `E(x) = eval x 0 E`. Proof: send all six generators
+  `tᵢⱼ` to `y` (`diagMap`). The hexagon becomes `E(2y) = F·e·F·e·F`, with `F = Φ(y, y)` and
+  `e = E(y)`, and inversion gives `F² = 1`.
+- `not_assocU4_expHalfPoly`: for `expHalfPoly = 1 + X/2 + X²/8` and `N ≥ 4`, no `Φ` exists.
+  The witness is `y = 8z` in `ℚ[X]/(X⁴)`:
+  `(1 + 8z + 32z²)² − (1 + 4z + 8z²)⁴ = −128z³ + (z⁴-terms)`, and `z³ ≠ 0`.
+- `not_groupLikeKAssociatorTower_expHalfPoly`: the tower hypothesis for `expHalfPoly` is false
+  over every field `K`.
+- `not_exists_assocK_expHalfPoly_four`: so is the single-level form at level `4`.
+- `tower_forces_square_law`: any tower forces the square law at every nilpotency order.
+  Informally, this makes `x ↦ E(x, 0)` an exact exponential series, which a polynomial is only
+  when `E = 1` (`μ = 0`). That general claim is argued, not formalised. Only the `expHalfPoly`
+  case is formalised.
+
+**Consequence for §17d–§17n.** Every theorem that takes `GroupLikeKAssociatorTower K E` as a
+hypothesis is vacuous for `E = expHalfPoly`. The same holds for any `μ ≠ 0` polynomial `E`, by
+the informal argument above. The `E = 1` results (§17l) are unaffected. The open item of §17n,
+one-degree existence `∃ Ψ, AssocU4 (d + 1) E Ψ ∧ GL (d + 1) Ψ` for a fixed `E ≠ 1`, is
+**false** for `E = expHalfPoly` at `d + 1 ≥ 4`. The right open item takes `E` to be the
+level-`(d + 1)` truncation of `exp(X/2)`. I have not changed `GroupLikeKAssociatorTower` (a core
+definition); that change is escalated to the coordinator.
+
+**The per-level target.** `expHalfTrunc N = Σ_{k<N} X^k / (2^k k!)` is exact in `U4 N`.
+
+- `class KZAssociatorExists (K)` requires, for every `N ≥ 2`,
+  `∃ Ψ : K ⊗[ℚ] F2, AssocK K N (expHalfTrunc N) Ψ ∧ GLK K N Ψ`. This is a **conditional
+  hypothesis with content**. It is Drinfeld's KZ theorem for `K = ℂ`, rescaled. No instance is
+  declared, and it is not proved here.
+- `rational_associator_of_kz`: under the class, for every `N ≥ 2` there is a rational `Φ` with
+  `AssocU4 N (expHalfTrunc N) Φ ∧ GL N Φ` (via `rational_associator_of_groupLikeK`). This is
+  conditional.
+- Unconditionally: `assocU4_three` and `GL_three` show that `1 + [X, Y]/24` is a rational
+  associator modulo `3` for `expHalfTrunc 3 = expHalfPoly`, group-like modulo `FF2 3`.
+  `kzLevel_three` follows: the class's field holds at `N = 3` over every field `K`, with no
+  analysis. Level `2` was not stated separately.
+
+**What remains open.** Levels `N ≥ 4` of `KZAssociatorExists`, by any route. The
+analytic route needs (i)–(iv) above. The algebraic route needs the one-degree step of §17n
+restated for per-level `E`, with `E` changing between the truncations. The existing lift
+machinery (`assocU4_add_iff`, the pentagon class) takes a fixed `E`, so it would need a
+version where `E` changes by a degree-`N` term between levels.
+
+**Verification.** `lean -DautoImplicit=false -s 65536 KZTowerTarget.lean` exits 0 with no
+output against the `/home/claude/furov` overlay. `#print axioms` on all fifteen public
+theorems gives `[propext, Classical.choice, Quot.sound]`. A false `example : (2 : ℚ) + 2 = 5
+:= by norm_num` appended to the file fails (`⊢ False`), so the check is live; it was removed.
+No `sorry`, no `axiom`, no `native_decide`, no `: True`. No `lake build` was run.
+`scripts/transcendental-boundary-audit.py --check` reports `new 0`. It exits 1 only because of
+353 `GONE` entries: files absent from this sparse worktree, not changed by it. `QOU.lean`
+imports the new module.

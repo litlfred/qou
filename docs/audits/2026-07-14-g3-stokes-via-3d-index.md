@@ -127,6 +127,13 @@ appendix-B tables were needed (the stub's suspected next-inputs).
 
 ### 4. A_ω is derived via `W_m`, not via this index — and the stub's plan-step 2 is moot
 
+> **Corrected 2026-11-27 (bean `qou-vr3q`).** The claim below that A_ω "is not a
+> coefficient read-off of `I_41`" is wrong for 4₁. Through the gauge fixed by
+> GGM's eqs (Sp-41), (W41rec), (W41xm) and (WW41), the whole Stokes matrix
+> `S⁺(x;q)` is the index matrix, and `S⁺₁₂(1;0) = 3 = 2·[I₄₁(0,0)]_{q⁰} −
+> [I₄₁(1,−2)]_{q^{1/2}}`. See
+> [`2026-11-27-aomega-stokes-constant-from-3d-index.md`](2026-11-27-aomega-stokes-constant-from-3d-index.md).
+
 The formalize-first derivation-vs-fit check the stub planned (read A_ω off the
 3d-index) does **not** apply: A_ω is not a coefficient read-off of `I_41`. The
 corpus already derives **A_ω(4₁) = 3** — Lean-proved (`QOU.QBeta.StokesQZeroDTCount`,

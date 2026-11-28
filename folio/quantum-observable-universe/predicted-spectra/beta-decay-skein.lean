@@ -190,28 +190,28 @@ def BetaDecaySkein := BetaMinusDecay
 -- Z/2 symmetry: q ↔ q⁻¹ exchanges β⁻ ↔ β⁺
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- The pair Skein mass S_ab(q) = (q·μ_a + q⁻¹·μ_b)/(q^½ + q^{-½}).
+/-- The pair Skein mass `S_ab(q) = (q³·μ_a + q⁻¹·μ_b)/(q² + 1)`, the
+    convention-D Markov trace of the pair's crossing element
+    (`QOU.MassTheory.PairSkeinD.pairMassD_closed`; owner ruling 2026-11-27).
     This is the "mass formula" for a crossing between flavours a and b. -/
 -- Ref: [leitner2026] §6/beta-decay-skein
-noncomputable def pairSkeinMass (q mu_a mu_b : ℝ) (hq : 0 < q) : ℝ :=
-  (q * mu_a + (1/q) * mu_b) / (q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ)))
+noncomputable def pairSkeinMass (q mu_a mu_b : ℝ) (_hq : 0 < q) : ℝ :=
+  (q ^ 3 * mu_a + (1/q) * mu_b) / (q ^ 2 + 1)
 
 /-- The Z/2 symmetry: S_ab(q⁻¹) = S_ba(q).
-    Exchanging q ↔ q⁻¹ swaps the role of flavours a and b. -/
+    Exchanging q ↔ q⁻¹ swaps the role of flavours a and b: multiplying
+    numerator and denominator of `S_ab(q⁻¹)` by `q²` gives `S_ba(q)`. -/
 -- Ref: [leitner2026] §6/beta-decay-skein
 theorem pair_skein_Z2_symmetry (q mu_a mu_b : ℝ) (hq : 0 < q) :
     pairSkeinMass (1/q) mu_a mu_b (by positivity) =
     pairSkeinMass q mu_b mu_a hq := by
   unfold pairSkeinMass
-  congr 1
-  · -- numerator: (1/q)·μ_a + q·μ_b = q·μ_b + (1/q)·μ_a
-    have hq' : q ≠ 0 := ne_of_gt hq
-    field_simp
-    ring
-  · -- denominator: (1/q)^±½ = q^∓½, so the sum is unchanged
-    rw [one_div, Real.inv_rpow hq.le, Real.inv_rpow hq.le,
-      ← Real.rpow_neg hq.le, ← Real.rpow_neg hq.le]
-    ring_nf
+  have hq' : q ≠ 0 := ne_of_gt hq
+  have h2 : q ^ 2 + 1 ≠ 0 := by positivity
+  have h2' : (1/q) ^ 2 + 1 ≠ 0 := by positivity
+  rw [div_eq_div_iff h2' h2]
+  field_simp
+  ring
 
 /-- The weak asymmetry is antisymmetric: A(q, μ_a, μ_b) = -A(q, μ_b, μ_a). -/
 -- Ref: [leitner2026] §6/beta-decay-skein

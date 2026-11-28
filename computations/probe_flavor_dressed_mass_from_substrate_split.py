@@ -66,12 +66,13 @@ def main() -> int:
     )
     w.set_description(
         "Substrate-derived down–up dressed-quark splitting "
-        "μ_d − μ_u = M_N · (q−1)²(1−q⁻⁴)/3 · (q^½+q^−½)/(q+q⁻¹) at "
-        "q = q_0. Verifies the substrate identity (q−1)²(1−q⁻⁴)/3 = "
-        "(1/3)ℏ²h[2], the two-sided bound 0 < μ_d−μ_u < M_N·ℏ²·h·[2], "
-        "and the slack ratio (1/3)(q^½+q^−½)/(q+q⁻¹). Pins μ_d−μ_u ≈ "
-        "1.286 MeV (substrate-pure modulo the CODATA M_N anchor); m_n−m_p "
-        "is a cross-check target, not an input. Covers "
+        "μ_d − μ_u = M_N · (q−1)²(1−q⁻⁴)/3 · q(q²+1)/(q⁴+1) at "
+        "q = q_0, convention D (owner ruling 2026-11-27; the pair Skein mass "
+        "is the Markov trace at z_D = q³/(q²+1)). Verifies the substrate "
+        "identity (q−1)²(1−q⁻⁴)/3 = (1/3)ℏ²h[2], the bound "
+        "0 < μ_d−μ_u ≤ M_N·ℏ²·h·[2]/3, and the slack ratio "
+        "(1/3)·q(q²+1)/(q⁴+1). m_n−m_p is a cross-check target, not an "
+        "input. Covers "
         "prop:flavor-dressed-mass-from-aether-split and "
         "thm:flavor-mass-splitting-bound."
     )
@@ -91,8 +92,9 @@ def main() -> int:
         two_q = q + 1 / q
         sub_factor_identity = mp.mpf(1) / 3 * hbar_q ** 2 * h_q * two_q
 
-        # Skein-side adjustment factor.
-        skein = (mp.sqrt(q) + 1 / mp.sqrt(q)) / (q + 1 / q)
+        # Convention-D Skein factor 1/κ = q(q²+1)/(q⁴+1), with
+        # κ = tr_M^{z_D}(σ + σ⁻¹) (QOU.MassTheory.PairSkeinD.kappaD_closed).
+        skein = q * (q ** 2 + 1) / (q ** 4 + 1)
 
         # The realised splitting.
         mu_d_minus_u = M_N * sub_factor * skein
@@ -100,10 +102,10 @@ def main() -> int:
         # Two-sided substrate bound.
         bound = M_N * hbar_q ** 2 * h_q * two_q
         slack_ratio = mu_d_minus_u / bound
-        slack_closed = mp.mpf(1) / 3 * skein  # = (1/3)(q^½+q^−½)/(q+q⁻¹)
+        slack_closed = mp.mpf(1) / 3 * skein  # = (1/3)·q(q²+1)/(q⁴+1)
 
         # m_n − m_p prediction (cross-check, not an input).
-        mn_mp_pred = (q + 1 / q) / (mp.sqrt(q) + 1 / mp.sqrt(q)) * mu_d_minus_u
+        mn_mp_pred = (q ** 4 + 1) / (q * (q ** 2 + 1)) * mu_d_minus_u
         mn_mp_codata = m_n - m_p
         mn_mp_residual = (mn_mp_pred - mn_mp_codata) / mn_mp_codata
 
@@ -112,7 +114,7 @@ def main() -> int:
         print(f"  substrate factor = {mp.nstr(sub_factor, 14)}")
         print(f"  identity (1/3)ℏ²h[2] = {mp.nstr(sub_factor_identity, 14)}")
         print(f"  skein factor     = {mp.nstr(skein, 12)}")
-        print(f"  μ_d − μ_u (MeV)  = {mp.nstr(mu_d_minus_u, 12)}  [cited 1.286]")
+        print(f"  μ_d − μ_u (MeV)  = {mp.nstr(mu_d_minus_u, 12)}")
         print(f"  bound (MeV)      = {mp.nstr(bound, 12)}  [cited 3.88]")
         print(f"  slack ratio      = {mp.nstr(slack_ratio, 12)}  [cited ~0.33]")
         print(f"  m_n−m_p pred     = {mp.nstr(mn_mp_pred, 12)} vs CODATA "
@@ -139,14 +141,14 @@ def main() -> int:
 
         # Cross-check assertions.
         w.add_assertion(
-            name="mu_d_minus_mu_u_MeV",
+            name="mu_d_minus_mu_u_identity_form",
             computed=mu_d_minus_u,
-            expected=1.286,
-            tolerance=1e-3,
+            expected=M_N / 3 * hbar_q ** 2 * h_q * two_q * skein,
+            tolerance=1e-40,
             unit="MeV",
             source=(
-                "rem:dressed-quark-numerology-at-q0 cites μ_d − μ_u ≈ "
-                "1.286 MeV from the substrate split at q_0"
+                "μ_d − μ_u = (M_N/3)·ℏ²·h·[2]·q(q²+1)/(q⁴+1), the "
+                "convention-D form of prop:flavor-dressed-mass-from-aether-split"
             ),
         )
         w.add_assertion(
@@ -182,12 +184,12 @@ def main() -> int:
         )
         w.add_assertion(
             name="splitting_strictly_positive_below_bound",
-            computed=1 if (0 < mu_d_minus_u < bound) else 0,
+            computed=1 if (0 < mu_d_minus_u <= bound / 3) else 0,
             expected=1,
             tolerance=0,
             source=(
-                "thm:flavor-mass-splitting-bound: 0 < μ_d−μ_u < "
-                "M_N·ℏ²·h·[2] for q_0 > 1"
+                "thm:flavor-mass-splitting-bound: 0 < μ_d−μ_u ≤ "
+                "M_N·ℏ²·h·[2]/3 for q_0 > 1"
             ),
         )
 

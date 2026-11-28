@@ -49,5 +49,15 @@ export default proposition({
         "C binomial coefficients and has not been re-run; the D coefficients " +
         "in Table 1 are exact rationals derived symbolically, not witnessed.",
     },
+    {
+      kind: "note",
+      date: "2026-11-27",
+      body:
+        "**Follow-up (i) above is done.** The Lean module " +
+        "`lean/BraidKnotOctonion/TrMHopfSigma1SqClosedForm.lean` now states the " +
+        "convention-D value $(q^4+1)/(q^2+1) = (q-q^{-1})\\,q^3/(q^2+1) + 1$ over a " +
+        "generic field, with no square root, and proves by `rfl` that it agrees " +
+        "with the canonical `MarkovTraceTower` instance. Follow-up (ii) is untouched.",
+    },
   ],
 });

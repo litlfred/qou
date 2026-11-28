@@ -75,45 +75,49 @@ noncomputable def vol_figure_eight : ℝ := 2.0298832128  -- :leanval[Vol_4_1]{p
 noncomputable def vol_three_twist : ℝ := 2.8281220883
 
 -- ═══════════════════════════════════════════════════════════════════
--- Dressed quark masses and pair Skein masses
+-- Pair Skein masses (convention D)
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- Dressed up-quark Skein mass (MeV), from CODATA nucleon masses. -/
--- Ref: CODATA 2022, [leitner2026] §11/terminal-resolution-proof
-noncomputable def mu_up : ℝ := 311.10
+-- The dressed quark masses μ_u, μ_d are parameters. The constants
+-- 311.10 / 312.39 MeV that stood here were chosen under the retired
+-- convention-C pair formula to reproduce the nucleon masses (selection
+-- against the target) and are removed (owner rules 2026-11-27: "derive
+-- what you can", no fitting). Their derivation from the aether is open;
+-- under convention D the nucleon map (μ_u, μ_d) ↦ (m_p, m_n) is a
+-- bijection (`QOU.MassTheory.PairSkeinNucleon`), so measured nucleon
+-- masses fix them only by a change of variables.
 
-/-- Dressed down-quark Skein mass (MeV), from CODATA nucleon masses. -/
--- Ref: CODATA 2022, [leitner2026] §11/terminal-resolution-proof
-noncomputable def mu_down : ℝ := 312.39
-
-/-- Pair Skein mass: S_ab(q) = (q·μ_a + q⁻¹·μ_b) / (q^½ + q^{-½}).
-    This is the mass contribution from a single crossing pair in the
-    Borromean braid of a nucleon. -/
--- Ref: [leitner2026] §11/terminal-resolution-proof
+/-- Pair Skein mass, convention D (owner ruling 2026-11-27):
+    `S_ab(q) = (q³·μ_a + q⁻¹·μ_b) / (q² + 1)`, the Markov trace at
+    `z_D = q³/(q²+1)` of `μ_a·σ + μ_b·σ⁻¹`
+    (`QOU.MassTheory.PairSkeinD.pairMassD_closed`). The convention-C
+    denominator `q^½ + q^{-½}` is retired. -/
+-- Ref: [leitner2026] §11/pair-skein-mass-formula
 noncomputable def pairSkeinMass (mu_a mu_b : ℝ) : ℝ :=
-  (q_substrate * mu_a + (1 / q_substrate) * mu_b) /
-  (Real.sqrt q_substrate + 1 / Real.sqrt q_substrate)
+  (q_substrate ^ 3 * mu_a + q_substrate⁻¹ * mu_b) / (q_substrate ^ 2 + 1)
 
-/-- S_uu ≈ 312.370 MeV. -/
-noncomputable def skein_uu : ℝ := pairSkeinMass mu_up mu_up
+/-- Pair Skein mass of two up strands. -/
+noncomputable def skein_uu (mu_up : ℝ) : ℝ := pairSkeinMass mu_up mu_up
 
-/-- S_ud ≈ 312.950 MeV. -/
-noncomputable def skein_ud : ℝ := pairSkeinMass mu_up mu_down
+/-- Pair Skein mass of an up and a down strand. -/
+noncomputable def skein_ud (mu_up mu_down : ℝ) : ℝ := pairSkeinMass mu_up mu_down
 
-/-- S_dd ≈ 313.665 MeV. -/
-noncomputable def skein_dd : ℝ := pairSkeinMass mu_down mu_down
+/-- Pair Skein mass of two down strands. -/
+noncomputable def skein_dd (mu_down : ℝ) : ℝ := pairSkeinMass mu_down mu_down
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Nucleon masses from pair Skein formula
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- Proton mass = S_uu + 2·S_ud (MeV). -/
+/-- Proton mass = S_uu + 2·S_ud, as a function of the dressed masses. -/
 -- Ref: [leitner2026] §11/terminal-resolution-proof
-noncomputable def mass_proton_qou : ℝ := skein_uu + 2 * skein_ud
+noncomputable def mass_proton_qou (mu_up mu_down : ℝ) : ℝ :=
+  skein_uu mu_up + 2 * skein_ud mu_up mu_down
 
-/-- Neutron mass = 2·S_ud + S_dd (MeV). -/
+/-- Neutron mass = 2·S_ud + S_dd, as a function of the dressed masses. -/
 -- Ref: [leitner2026] §11/terminal-resolution-proof
-noncomputable def mass_neutron_qou : ℝ := 2 * skein_ud + skein_dd
+noncomputable def mass_neutron_qou (mu_up mu_down : ℝ) : ℝ :=
+  2 * skein_ud mu_up mu_down + skein_dd mu_down
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Atomic mass computation from knot generation
@@ -122,8 +126,10 @@ noncomputable def mass_neutron_qou : ℝ := 2 * skein_ud + skein_dd
 /-- Mass of an atom with Z protons, N neutrons, and Z electrons,
     minus nuclear binding energy B. -/
 -- Ref: [leitner2026] §11/mass-from-generators
-noncomputable def atomicMass (Z N : ℕ) (binding : ℝ) (m_e : ℝ) : ℝ :=
-  Z * mass_proton_qou + N * mass_neutron_qou - binding + Z * m_e
+noncomputable def atomicMass (mu_up mu_down : ℝ) (Z N : ℕ) (binding : ℝ)
+    (m_e : ℝ) : ℝ :=
+  Z * mass_proton_qou mu_up mu_down + N * mass_neutron_qou mu_up mu_down
+    - binding + Z * m_e
 
 /-- Electron mass (MeV), CODATA 2022. -/
 -- Ref: [codata2022] CODATA 2022

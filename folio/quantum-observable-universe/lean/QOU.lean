@@ -115,10 +115,18 @@ import QOU.Transcendental.MassTheory.ElectronMassChartWeight
 import QOU.Transcendental.MassTheory.ElectronRingMassReading
 import QOU.Transcendental.MassTheory.RingMassLinkingNumber
 import QOU.Transcendental.MassTheory.RingMassLinkingThreeStrand
+import QOU.Transcendental.MassTheory.MassComparison
 import QOU.Observations.LeptonUniversalityLadder
+import QOU.Observations.LeptonChargeClassTrace
 import QOU.Observations.ColouredLadderTwist
 import QOU.Observations.VolumeOrderRule
 import QOU.Transcendental.MassTheory.KnotConvolutionVolume
+import QOU.Transcendental.MassTheory.UniversalityVolumeBlind
+import QOU.Observations.BraidNielsenThurston
+import QOU.Observations.AxisConvolutionOperator
+import QOU.Observations.AxisKashaevReading
+import QOU.Observations.MassReadingForced
+import QOU.Observations.LeptonLinkLadderReadings
 import QOU.MassTheory.BranchIntegerPinning
 import QOU.MassTheory.NucleusBondValence
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
@@ -294,6 +302,7 @@ import QOU.BraidsAndKnots.SeminormalDimSmall
 import QOU.Core.Glossary
 import QOU.Transcendental.BraidsAndKnots.AssociatorKZ
 import QOU.Transcendental.BraidsAndKnots.BlockResidues
+import QOU.Transcendental.BraidsAndKnots.HiggsCategoricalMassFormulaReal
 import QOU.Transcendental.BraidsAndKnots.Drinfeld.Assoc
 import QOU.Transcendental.BraidsAndKnots.Drinfeld.Braiding
 import QOU.Transcendental.BraidsAndKnots.Drinfeld.BraidingVV
@@ -331,6 +340,7 @@ import QOU.Transcendental.BraidsAndKnots.KZIntertwine
 import QOU.Transcendental.BraidsAndKnots.KZPentagon
 import QOU.Transcendental.BraidsAndKnots.KZShift
 import QOU.Transcendental.BraidsAndKnots.KZShiftPhi
+import QOU.Transcendental.BraidsAndKnots.KZTowerTarget
 import QOU.BraidsAndKnots.NonResonantInt
 import QOU.Transcendental.BraidsAndKnots.SmallHbar
 import QOU.Transcendental.BraidsAndKnots.ZigZag
@@ -841,6 +851,7 @@ import BraidKnotOctonion.SecondMomentKernelVanishes
 import QOU.Confinement.FlavorDressing
 import QOU.MassTheory.ArchimedeanMassFormula
 import QOU.Observations.CODATAChain
+import QOU.Transcendental.Observations.CODATAChainReal
 import QOU.Core.ClassicalLimitObstruction
 import QOU.StandardModel.FeynmanPathIntegrals
 import QOU.Core.MathConstants
@@ -1022,7 +1033,7 @@ import QOU.MassTheory.IdealTetVolumeRigidity
 -- The Li₂-continuation / scalar-IFT chain this lane rests on is wired at the
 -- top of this file (with the other MathlibExt imports), not here — it is
 -- general analytic infrastructure, not 5₂ content.
-import QCalculus.LiTwoNegOne
+import QOU.Transcendental.QCalculus.LiTwoNegOne
 import QOU.Nuclear.FiveTwoDiscriminant
 import QOU.Nuclear.FiveTwoCutAvoidance
 import QOU.Nuclear.FiveTwoDeformedSaddle
@@ -1081,6 +1092,9 @@ import QOU.Nuclear.CompleteStructureExclusion
 import QOU.Nuclear.ThetaLipschitzObstruction
 import QOU.Nuclear.StokesSymmetryConstant
 import QOU.Nuclear.StokesQZeroDTCount
+import QOU.Nuclear.StokesIndexCount41
+import QOU.Nuclear.StokesIndexCount52
+import QOU.Nuclear.TetIndexDegree
 import QOU.Nuclear.StokesSymmetryConstantQZero
 -- M2 (conditional BPS characterization) was an umbrella orphan (qou-orph
 -- pattern: nothing imported it, so `lake build` never checked it). Importing
@@ -1223,7 +1237,8 @@ import QOU.BraidsAndKnots.DerivedCharacterCatalogue
 -- CI); registered here for coverage. Transitively pulls HeckeH3Characters,
 -- HeckeH3BlockRep, HeckeH2Wedderburn, HeckeBraidedCategoryScaffold,
 -- MatrixSemisimple.
-import HeckeTemperleyLieb.HeckeH2WedderburnReal
+import QOU.Transcendental.HeckeTemperleyLieb.HeckeH2WedderburnReal
+import QOU.Transcendental.HeckeTemperleyLieb.QHookBoundReal
 import HeckeTemperleyLieb.HeckeH3Semisimple
 import HeckeTemperleyLieb.HeckeH3GramNondegeneracy
 import HeckeTemperleyLieb.HeckeH4AlgebraLaws
@@ -1993,6 +2008,7 @@ import QOU.StandardModel.ElectroweakBringSchwingerBridge
 import QOU.StandardModel.ElectroweakSweedlerScaleAndRGThresholds
 import QOU.StandardModel.ElectroweakVevFixedPointDecomposition
 import QOU.StandardModel.ElectroweakVevGaps
+import QOU.Transcendental.StandardModel.ElectroweakVevGapsReal
 import QOU.StandardModel.NeutrinoUnknotSweedlerMassLift
 import QOU.MassTheory.BringSchwingerNormalizationDerivation
 import QOU.Transcendental.MassTheory.BringSchwingerNormalizationDerivationReal
@@ -2089,3 +2105,6 @@ import QOU.EightfoldWay.WeylInvarianceQDeformation
 import QOU.EightfoldWay.MesonOctetTracelessSplit
 import QOU.EightfoldWay.SymmetricChannelDimension
 import QOU.Nuclear.CoulombIsospinChannel
+import QOU.Nuclear.CoulombRingLedger
+import QOU.Nuclear.CoulombRingMu
+import QOU.Nuclear.CoulombBlockSize

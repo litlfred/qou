@@ -1,4 +1,3 @@
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Tactic
 
 /-!
@@ -28,8 +27,10 @@ Honest scope: the numerical extraction (that the 4₁ asymptotic really contains
 (`qbeta-ohtsuki-deformed-meridian-rungs.witness.json`); the Lean proves the
 exact response algebra and parity, NOT the analytic asymptotics of `J_N`.
 
-Base ring is `ℝ` by necessity (§7c archimedean side): `π` and the ordering in
-the bound are the content. No `sorry`.
+`π` enters only as a positive magnitude, so it is the symbol `p` (`0 < p`) over
+any ordered field: every identity below is rational in `p` and `u`, and the bound
+uses only the ordering. Instantiating `p := Real.pi` recovers the stated `ℝ`
+forms (bean `qou-dk7p`). No `sorry`.
 
 -- Ref: [ohtsuki-takata-2015] deformed 4₁ asymptotic (theorem-grade regime)
 --   (repointed from the dead key `murakami2013`, 2026-09-03. Evidence is in
@@ -44,22 +45,22 @@ the bound are the content. No `sorry`.
 
 namespace QOU.QBeta
 
-open Real
+variable {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
 
 /-- Growth-rate residual produced by a linear meridian term `π·u` in `Im S(u)`:
     `2π²·u / (u² + 4π²)` — the model measured in PR #3691 with the leading
-    coefficient `1/2`. -/
-noncomputable def meridianLinearResponse (u : ℝ) : ℝ :=
-  2 * π ^ 2 * u / (u ^ 2 + 4 * π ^ 2)
+    coefficient `1/2`. Here `π` is the symbol `p`. -/
+def meridianLinearResponse (p u : K) : K :=
+  2 * p ^ 2 * u / (u ^ 2 + 4 * p ^ 2)
 
 /-- **The response of an `Im S(u) ⊃ π·u` term is exactly
     `meridianLinearResponse`.** Adding `π·u` to the volume in the growth-rate
     formula `2π·(…)/(u² + 4π²)` shifts it by exactly the response model —
     the algebraic content of "the measured residual is the `π·u` term". -/
-theorem alpha_resid_of_meridian_term (Vol : ℝ → ℝ) (u : ℝ) :
-    2 * π * (Vol u + π * u) / (u ^ 2 + 4 * π ^ 2)
-      - 2 * π * Vol u / (u ^ 2 + 4 * π ^ 2) = meridianLinearResponse u := by
-  have hpos : (0 : ℝ) < u ^ 2 + 4 * π ^ 2 := by positivity
+theorem alpha_resid_of_meridian_term (p : K) (hp : 0 < p) (Vol : K → K) (u : K) :
+    2 * p * (Vol u + p * u) / (u ^ 2 + 4 * p ^ 2)
+      - 2 * p * Vol u / (u ^ 2 + 4 * p ^ 2) = meridianLinearResponse p u := by
+  have hpos : (0 : K) < u ^ 2 + 4 * p ^ 2 := by positivity
   unfold meridianLinearResponse
   field_simp [hpos.ne']
   ring
@@ -67,8 +68,8 @@ theorem alpha_resid_of_meridian_term (Vol : ℝ → ℝ) (u : ℝ) :
 /-- **Bar-odd parity.** The bar involution `σ : q ↦ q⁻¹` acts on the meridian
     as `u ↦ −u`; the linear-meridian response is an odd function of `u` —
     a bar-ODD channel. -/
-theorem meridianLinearResponse_odd (u : ℝ) :
-    meridianLinearResponse (-u) = -meridianLinearResponse u := by
+theorem meridianLinearResponse_odd (p u : K) :
+    meridianLinearResponse p (-u) = -meridianLinearResponse p u := by
   unfold meridianLinearResponse
   rw [neg_sq]
   ring
@@ -76,16 +77,16 @@ theorem meridianLinearResponse_odd (u : ℝ) :
 /-- **The bar-even volume channel, for contrast.** For an even volume function
     (4₁ is amphichiral: `Vol(−u) = Vol(u)`), the volume term of the growth
     rate is even in `u` — the bar-EVEN channel. -/
-theorem volChannel_even (Vol : ℝ → ℝ) (hV : ∀ u, Vol (-u) = Vol u) (u : ℝ) :
-    2 * π * Vol (-u) / ((-u) ^ 2 + 4 * π ^ 2)
-      = 2 * π * Vol u / (u ^ 2 + 4 * π ^ 2) := by
+theorem volChannel_even (p : K) (Vol : K → K) (hV : ∀ u, Vol (-u) = Vol u) (u : K) :
+    2 * p * Vol (-u) / ((-u) ^ 2 + 4 * p ^ 2)
+      = 2 * p * Vol u / (u ^ 2 + 4 * p ^ 2) := by
   rw [hV, neg_sq]
 
 /-- **Exact `u/2` deficit identity.** The response equals `u/2` minus an
     explicit cubic remainder: `u/2 − resp(u) = u³ / (2(u² + 4π²))`. -/
-theorem half_u_sub_response (u : ℝ) :
-    u / 2 - meridianLinearResponse u = u ^ 3 / (2 * (u ^ 2 + 4 * π ^ 2)) := by
-  have hpos : (0 : ℝ) < u ^ 2 + 4 * π ^ 2 := by positivity
+theorem half_u_sub_response (p : K) (hp : 0 < p) (u : K) :
+    u / 2 - meridianLinearResponse p u = u ^ 3 / (2 * (u ^ 2 + 4 * p ^ 2)) := by
+  have hpos : (0 : K) < u ^ 2 + 4 * p ^ 2 := by positivity
   unfold meridianLinearResponse
   field_simp [hpos.ne']
   ring
@@ -94,11 +95,11 @@ theorem half_u_sub_response (u : ℝ) :
     `u/2` by at most `|u|³/(8π²)` — at the substrate meridian `u ≈ 0.209` this
     is `≈ 1.2×10⁻⁴`, far below the linear term, so the ladder fit returns
     `a = 1/2` to the observed precision. -/
-theorem meridianLinearResponse_near_half_u (u : ℝ) :
-    |u / 2 - meridianLinearResponse u| ≤ |u| ^ 3 / (8 * π ^ 2) := by
-  have hden : (0 : ℝ) < 2 * (u ^ 2 + 4 * π ^ 2) := by positivity
-  have hbound : 8 * π ^ 2 ≤ 2 * (u ^ 2 + 4 * π ^ 2) := by nlinarith [sq_nonneg u]
-  rw [half_u_sub_response, abs_div, abs_of_pos hden, abs_pow]
+theorem meridianLinearResponse_near_half_u (p : K) (hp : 0 < p) (u : K) :
+    |u / 2 - meridianLinearResponse p u| ≤ |u| ^ 3 / (8 * p ^ 2) := by
+  have hden : (0 : K) < 2 * (u ^ 2 + 4 * p ^ 2) := by positivity
+  have hbound : 8 * p ^ 2 ≤ 2 * (u ^ 2 + 4 * p ^ 2) := by nlinarith [sq_nonneg u]
+  rw [half_u_sub_response p hp, abs_div, abs_of_pos hden, abs_pow]
   gcongr
 
 end QOU.QBeta

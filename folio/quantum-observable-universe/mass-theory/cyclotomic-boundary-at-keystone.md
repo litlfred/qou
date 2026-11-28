@@ -169,15 +169,98 @@ the near-staircase partition count for every triangular $n \le 91$.
 (`leadingCoeff_dvd_coeff`, `abs_powerSum_two_le`), sorry-free. It also proves the arithmetic
 of the three families for every $j$, taking the top coefficients of $P_n$ as hypotheses
 (`not_isCycloProduct_triangular_of_topCoeffs`, `…_rEqJ_of_topCoeffs`, `…_rEqOne_of_topCoeffs`).
-The partition count that supplies those coefficients for every $n$ is proved above on paper and
-is not yet formalised.
+The partition count that supplies those coefficients is proved above on paper. Its first step is
+formalised in `QOU.Mass.StaircaseMinimisers`, sorry-free: for any set $s$ of $T_m + r$ cells of
+$\mathbb N^2$ with $r \le m+1$, $N(s) \ge N(\delta_m) + rm$, with equality exactly when $s$ is
+$\delta_m$ plus $r$ cells on antidiagonal $m$ (`le_N_of_card`, `N_eq_iff`). Each of these is a
+Young diagram (`isLowerSet_stair_union`), and there are $\binom{m+1}{r}$ of them
+(`card_choices`). The second step is `QOU.Mass.StaircaseTopCoeff`, also sorry-free. Among the
+Young diagrams with $T_m + r$ cells ($1 \le r \le m+1$), exactly $\binom{m+1}{r}$ attain the
+minimum (`card_minimisers`), and $3N(\delta_{m+1}) = m(m+1)(m+2)$ (`three_mul_N_stair`).
+For any family of integer polynomials $f_\lambda$ of degree at most $M - N(\lambda)$ with
+coefficient $1$ there, the coefficient of $\sum_\lambda f_\lambda$ at degree $M - N_{\min}$ is
+$\binom{m+1}{r}$ (`coeff_sum_shapes_of_top`). This takes the top term of the $q$-hook formula as
+a hypothesis. `QOU.Mass.QHookTop` (sorry-free) discharges that hypothesis from the
+divisibility half of the $q$-hook formula. With $[k] = 1 + t + \dots + t^{k-1}$, if
+$[n]! = g_\lambda \prod_{c}[h(c)]$, then $g_\lambda$ is monic of degree $\binom n2 - N(\lambda)$
+(`qHook_top_of_eq`, via $\sum_c h(c) = n + N(\lambda)$, `sum_hook`), and its next coefficient is
+(corners of $\lambda$) $- 1$ (`qHook_nextCoeff_of_eq`). The same file proves the degree check
+(`top_exponent_gap`): when $2m < n-1$, $S(n-1)$ and $[n-1]S(n-2)$ stay strictly below the top
+exponent of $S(n)$. `QOU.Mass.StaircaseNearMin` (sorry-free) proves the $\delta = 1$ count. For
+$n = T_m + r$, write $N_{\min} = N(\mathrm{stair}_m) + rm$. A Young diagram with $N = N_{\min} + 1$
+has one of two shapes (`nearMin_classify`). Either it is the staircase, plus $r-1$ cells on
+antidiagonal $m$, plus one cell on antidiagonal $m+1$ resting on them. Or it is the staircase less
+one cell $b$ of antidiagonal $m-1$, plus $r+1$ cells on antidiagonal $m$, none of them sitting on
+$b$. For $m \ge 1$ there are
+$2\binom{m}{r-2} + m\binom{m-1}{r-3} + m\binom{m-1}{r+1}$ such diagrams (`card_nearMin_eq`), which is
+$a_1$. Under the same divisibility hypothesis, this count is the coefficient one step below the top
+of $\sum_\lambda X^{N(\lambda)} g_\lambda(X^2)$, which is $q^{\binom n2} S(n)$ in the symmetric
+normalisation (`coeff_sum_sym_qHook_of_eq`). `QOU.Mass.StaircaseNearMin2` (sorry-free) proves
+the $\delta = 2$ count and the formula for $a_2$ below: every diagram with $N = N_{\min} + 2$ adds
+a set $C$ of cells on antidiagonal $m+1$ and removes a set $B$ of cells of antidiagonal $m-1$ with
+$|C| + |B| = 2$ (`nearMin2_classify`), the three families are counted in closed form
+(`card_nearMin2_eq`), the minimisers have $r\binom{m+1}{r} + m\binom{m-1}{r}$ corners in total
+(`sum_corners_minimisers`), and for $n \ge 3$ the coefficient two steps below the top is the sum
+of the two (`coeff_sum_sym_qHook_two`). `QOU.Mass.QHookDvd` (sorry-free) proves the
+divisibility $\prod_c [h(c)] \mid [n]!$ itself (`hookProd_dvd_qfact`; Stanley, EC2, §7.21
+\cite{stanley1999}), so the three coefficient statements hold with no hypothesis
+(`coeff_sum_qHook`, `coeff_sum_sym_qHook`, `coeff_sum_sym_qHook_two_uncond`). Since
+$[k] = \prod_{1 < d \mid k} \Phi_d$, it suffices that for each $d \ge 2$ at most
+$\lfloor n/d \rfloor$ cells have $d \mid h(c)$. With $L = n$ rows and beta numbers
+$\beta_i = \lambda_i + L - 1 - i$, the cell $(i, j)$ gives a bead $\beta_i$ and an empty
+position $\beta_i - h(i,j) = L + j - \lambda'_j$ on the same runner of the $d$-abacus, this map is
+injective, and the beads satisfy $d \cdot \#\{\text{bead–gap pairs}\} + \binom L2 \le \sum_i \beta_i
+= n + \binom L2$ (`bead_bound`, `mul_card_hook_dvd_le`).
 
 Together with the finite certificates this settles $6 \le n \le 20$, every triangular $n$, and
-every $n \in \{T_j + 1, T_{j+1} - 1\}$ with $j \ge 4$. For the other $n$ the two tests
-together settle every $n \le 90$
-(`computations/cyclotomic_boundary_power_sum.py`): at each such $n$ either $c \nmid a_1$ or
-$(a_1^2 - 2c\,a_2)/c^2$ is not an integer (for example $n = 16, 18, 76$). No uniform argument for
-general $r$ is known.
+every $n \in \{T_j + 1, T_{j+1} - 1\}$ with $j \ge 4$.
+
+*Third coefficient for general $r$.* For $n = T_j + r$ with $1 \le r \le j+1$ and $n \ge 10$, the
+same count gives $a_2$ as a sum of four kinds of term:
+```tex
+\[\begin{aligned}
+a_2 ={}& \binom{j+1}{r}(r-1) + j\binom{j-1}{r}
+  && \text{(corners of the minimisers)}\\
+&+ 3\binom{j-1}{r-4} + 3(j-1)\binom{j-2}{r-5} + \Bigl(\binom j2 - j + 1\Bigr)\binom{j-3}{r-6}
+  && \text{(two cells on antidiagonal } j+1)\\
+&+ 2(j-1)\binom{j-2}{r-1} + 2\binom{j-1}{2}\binom{j-3}{r-2}
+  && \text{(one corner of } \delta_j \text{ moved up two)}\\
+&+ \Bigl(\binom j2 - j + 1\Bigr)\binom{j-3}{r+2} + (j-1)\binom{j-2}{r+2}
+  && \text{(two corners of } \delta_j \text{ moved up one)}.
+\end{aligned}\]
+```
+This agrees with the exact partition count for every $10 \le n \le 91$. With $c = \binom{j+1}{r}$,
+$$\frac{a_1}{c} = -4j - 2 + \frac{2r(j-r)}{j+1} + \frac{j(j+2)}{r+1} + \frac{(j+2)^2}{j-r+2}.$$
+Writing $B = r+1$, $C = j-r+2$ and $A = j+1 = B + C - 2$, this is
+$$\frac{a_1}{c} = j - 2r + 1 + \frac{(C-1)(C-3)}{B} + \frac{(B-1)^2}{C} - \frac{2(C-1)(C-2)}{A},$$
+so $c \mid a_1$ exactly when the last three fractions sum to an integer.
+The power-sum test needs $c \mid a_1$ and then $c \mid 2a_2$. For non-triangular $n$ ($r \le j$)
+and $j \le 400000$, $c \mid a_1$ happens only at
+$(j,r) = (5,1), (5,3), (11,10), (14,6), (98,55), (143,109), (152,119), (440,153)$; there is no
+solution with $440 < j \le 400000$. At each of the eight, $c \nmid 2a_2$. So the two tests settle
+every $n$ with $j \le 400000$, that is every $n \le 80{,}000{,}600{,}000$
+(`computations/cyclotomic_boundary_s1_scan.c` for the scan,
+`computations/cyclotomic_boundary_power_sum.py` for $c \nmid 2a_2$). This is a finite check, not a
+proof. A heuristic count suggests finitely many solutions. When $A$, $B$, $C$ are pairwise
+coprime there are none. Modulo $A$ the numerator of the three fractions over $ABC$ is
+$2C(C-1)(C-2)^2$, and $C - 2 \equiv -B$, so $A \mid 2(C-1)$. Since $0 < 2(C-1) < 2A$, this forces
+$A = 2(C-1)$, that is $B = C$, which contradicts $\gcd(B, C) = 1$
+(`QOU.Mass.StaircaseMinimisers.not_dvd_a1Num_of_coprime`, sorry-free). All eight solutions above
+have a common factor between two of $A, B, C$. If only $A$ is coprime to $B$ and to $C$, the same
+step still gives $B = C$, and then the three fractions sum to $(B-2)^2/B$, so $B \mid 4$ and
+$(j, r) \in \{(1,1), (5,3)\}$ (`eq_and_dvd_four_of_coprime_A`). Every other solution has
+$\gcd(A,B) > 1$ or $\gcd(A,C) > 1$. If $\gcd(A,B) = 1$, write $h = \gcd(B-1, C-1)$ and
+$g = \gcd(A, C)$. Then $A \mid 2C(C-1)$ gives $A \in \{hg, 2hg\}$; the solutions $(11,10)$, $(14,6)$
+and $(98,55)$ are of this kind. No proof of finiteness is known in general.
+
+*A cumulant test.* Cumulants add under products, and
+$\kappa_{2d}(\Phi_m) = \tfrac{B_{2d}}{2d}J_{2d}(m)$ with $J$ the Jordan totient
+\cite{billeyswanson2023}. So a cyclotomic $P$, after removing its factors $(q-1)$, has
+$12\kappa_2 = \sum_i J_2(k_i) \in \mathbb Z$. For $4 \le n \le 24$ every $D(n)$ has exactly the
+factor $(q-1)^2$, and $12\kappa_2$ is an integer only for $n = 4, 5, 7$
+(`computations/cyclotomic_boundary_cumulant_integrality.py`). This settles nothing beyond the
+tests above, but it is independent of them. A proof for all $n$ would need the second-order
+expansion of $S(n)$ at $q = 1$, which is not known in closed form.
 
 *Open:* non-cyclotomicity for **every** $n \ge 6$. What remains is the non-triangular $n$
-outside the two families, for $n > 90$.
+outside the two families with $j > 400000$.

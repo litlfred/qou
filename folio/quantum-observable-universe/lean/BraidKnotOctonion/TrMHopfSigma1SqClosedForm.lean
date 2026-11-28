@@ -4,83 +4,52 @@ Released under MIT license. Authors: Claude (Anthropic).
 
 # Closed form for the canonical Markov trace of σ_1² (Hopf+ braid)
 
-Proves (modulo Hecke-algebra primitives axiomatised in `MarkovTraceTower`
-and `TrMHopfSigma1SqClosedForm`):
+Under convention D, `z = q³/(q²+1)`, the Markov axiom gives
 
-  tr_M(σ_1²) = (q^{5/2} − q^{1/2} + q² + q) / (q² + q)
-             = 1 + (q − 1) · q^{−1/2}
+  tr_M(σ_1²) = h·z + 1 = (q − q⁻¹)·q³/(q²+1) + 1 = (q⁴ + 1)/(q² + 1)
 
 for every n ≥ 2, where tr_M is the canonical Markov trace on the
-Iwahori-Hecke algebra H_n(q).
+Iwahori-Hecke algebra H_n(q). The value is rational in `q`, so the
+closed form is stated over a generic field `K` (§7c).
 
-The proof uses only the three Markov-trace axioms (existence,
-normalisation, Markov property) from `MarkovTraceTower` and the
-Hecke quadratic relation σ_i² = (q − q⁻¹) σ_i + 1.
+This module previously stated the convention-C value
+`(q^{5/2} − q^{1/2} + q² + q)/(q² + q) = 1 + (q − 1)·q^{−1/2}`, which needs a
+square root of `q`. Convention C is excised (owner ruling 2026-08-09); the
+canonical `MarkovTraceTower` instance in `HeckeTemperleyLieb.HnMarkovTrace`
+already carries `(q⁴ + 1)/(q² + 1)`, and the block's own author note asked for
+this module to follow it onto a generic base.
 
-Ref: probe_F_n_categorical_derivation.py (numerical verification at
-50 dps for n = 3, 4, 5, 6; closed form matches symbolically).
 Ref: [jones1987] https://www.jstor.org/stable/1971403
 Ref: [wenzl1988] https://doi.org/10.1007/BF01393699
 -/
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import MathlibExt.RpowAlgebra
 import HeckeTemperleyLieb.HnMarkovTrace
 
 namespace QOU.Braiding
 
-open QOU.MathlibExt.RpowAlgebra
-
-/-- Closed-form value of the canonical Markov trace of σ_1² in H_n(q),
-    expressed as a real-valued function of q > 1.
+/-- Closed-form value of the canonical (convention-D) Markov trace of σ_1² in
+    H_n(q), over a generic field `K`.
 
     The propositional content is the algebraic identity
-        (q^{5/2} − q^{1/2} + q² + q) / (q² + q) = 1 + (q − 1) · q^{−1/2}
-    that the Markov-trace value satisfies for every n ≥ 2.
-    Markov-invariance under stabilisation is captured by the
-    `MarkovTraceTower` class.
-
-    `closed_form` carries the value; `closed_form_equals_simplified`
-    follows from the rpow algebra.
--/
-class TrMHopfSigma1SqClosedForm (q : ℝ) where
-  /-- Hypothesis: q is in the Wenzl positivity regime (q > 1). -/
-  q_gt_one : 1 < q
+        (q⁴ + 1)/(q² + 1) = (q − q⁻¹)·q³/(q² + 1) + 1,
+    i.e. the value is `h·z_D + 1` as the Markov axiom requires. -/
+class TrMHopfSigma1SqClosedForm {K : Type*} [Field K] (q : K) where
+  /-- Non-degeneracy: `q ≠ 0`. -/
+  q_ne_zero : q ≠ 0
+  /-- Non-degeneracy of the convention-D denominator: `q² + 1 ≠ 0`. -/
+  q_sq_add_one_ne_zero : q ^ 2 + 1 ≠ 0
   /-- Canonical-Markov-trace value of σ_1² in H_n(q) at any n ≥ 2. -/
-  trM_sigma1_sq : ℝ
-  /-- The closed form: tr_M(σ_1²) = (q^{5/2} − q^{1/2} + q² + q) / (q² + q). -/
-  closed_form :
-    trM_sigma1_sq =
-      (q ^ ((5 : ℝ) / 2) - q ^ ((1 : ℝ) / 2) + q ^ 2 + q) / (q ^ 2 + q)
+  trM_sigma1_sq : K
+  /-- The closed form: tr_M(σ_1²) = (q⁴ + 1)/(q² + 1). -/
+  closed_form : trM_sigma1_sq = (q ^ 4 + 1) / (q ^ 2 + 1)
 
-/-- The closed form equals the simplified form 1 + (q − 1) · q^{−1/2}.
-
-Proof strategy: substitute u := sqrt(q) > 0 and reduce to the
-polynomial-in-u identity
-    (u^5 - u + u^4 + u^2) / (u^4 + u^2) = 1 + (u^2 - 1) · u⁻¹
-which closes via `field_simp + ring` under `u > 0`.
--/
-theorem trm_hopf_sigma1_sq_closed_form_simplified (q : ℝ) (hq : 1 < q)
+/-- The closed form equals `h·z_D + 1`, with `h = q − q⁻¹` and
+    `z_D = q³/(q² + 1)`. -/
+theorem trm_hopf_sigma1_sq_closed_form_simplified {K : Type*} [Field K] (q : K)
     [inst : TrMHopfSigma1SqClosedForm q] :
-    inst.trM_sigma1_sq = 1 + (q - 1) * q ^ ((-1 : ℝ) / 2) := by
-  -- Ref: [jones1987] https://www.jstor.org/stable/1971403
-  have hq_pos : 0 < q := lt_trans zero_lt_one hq
-  have hq_nonneg : 0 ≤ q := le_of_lt hq_pos
+    inst.trM_sigma1_sq = (q - q⁻¹) * (q ^ 3 / (q ^ 2 + 1)) + 1 := by
   rw [inst.closed_form]
-  -- Substitute the rpow expressions with sqrt q via the bridge lemmas
-  rw [rpow_five_half q hq_nonneg]
-  rw [rpow_half q hq_nonneg]
-  rw [rpow_neg_half q hq_pos]
-  -- Now both sides are in terms of `Real.sqrt q`. Let u := Real.sqrt q.
-  set u := Real.sqrt q with hu_def
-  have hu_pos : 0 < u := Real.sqrt_pos.mpr hq_pos
-  have hu_ne : u ≠ 0 := ne_of_gt hu_pos
-  -- Substitute q = u^2 throughout
-  have hu_sq : q = u ^ 2 := (sqrt_sq_eq q hq_nonneg).symm
-  rw [show q ^ 2 = u ^ 4 by rw [hu_sq]; ring]
-  conv_lhs => rw [hu_sq]
-  conv_rhs => rw [hu_sq]
-  -- Goal now: (u^5 - u + u^4 + u^2)/(u^4 + u^2) = 1 + (u^2 - 1) · u⁻¹
-  have hu_denom : u ^ 4 + u ^ 2 ≠ 0 := by positivity
+  have h0 := inst.q_ne_zero
+  have h1 := inst.q_sq_add_one_ne_zero
   field_simp
   ring
 
@@ -93,22 +62,21 @@ theorem trm_hopf_sigma1_sq_markov_invariant
     MarkovTraceTower.trM_sigma1_sq (q := q) m =
       MarkovTraceTower.trM_sigma1_sq (q := q) n := by
   -- Ref: [jones1987] https://www.jstor.org/stable/1971403
-  -- Direct application of the stabilisation axiom in MarkovTraceTower.
   exact MarkovTraceTower.trM_sigma1_sq_stabilises (q := q) m n hm hn
 
-/-- Canonical concrete instance of `TrMHopfSigma1SqClosedForm q` for `q > 1`.
-
-The instance uses the same closed-form expression as the canonical
-`MarkovTraceTower` instance (HnMarkovTrace.lean): the value at every
-`n ≥ 2` is `(q^{5/2} - q^{1/2} + q² + q) / (q² + q)`. The `closed_form`
-field is satisfied by `rfl`. This discharges the class abstraction with
-a concrete witness whose Markov-invariance is proved via
-`trm_hopf_sigma1_sq_markov_invariant`. -/
-noncomputable instance trMHopfSigma1SqClosedForm_canonical
-    (q : ℝ) (hq : 1 < q) : TrMHopfSigma1SqClosedForm q where
-  q_gt_one := hq
-  trM_sigma1_sq :=
-    (q ^ ((5 : ℝ) / 2) - q ^ ((1 : ℝ) / 2) + q ^ 2 + q) / (q ^ 2 + q)
+/-- Canonical concrete instance of `TrMHopfSigma1SqClosedForm q`, with the same
+    value `(q⁴ + 1)/(q² + 1)` as the canonical `MarkovTraceTower` instance. -/
+instance trMHopfSigma1SqClosedForm_canonical {K : Type*} [Field K] (q : K)
+    (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0) : TrMHopfSigma1SqClosedForm q where
+  q_ne_zero := hq
+  q_sq_add_one_ne_zero := hq2
+  trM_sigma1_sq := (q ^ 4 + 1) / (q ^ 2 + 1)
   closed_form := rfl
+
+/-- Agreement with the canonical Markov tower: for `q > 1`, the canonical tower's
+    value of tr_M(σ_1²) at any level is the closed form. -/
+theorem trm_hopf_sigma1_sq_eq_tower (q : ℝ) (hq : 1 < q) (n : Nat) :
+    (markovTraceTower_canonical q hq).trM_sigma1_sq n = (q ^ 4 + 1) / (q ^ 2 + 1) :=
+  rfl
 
 end QOU.Braiding

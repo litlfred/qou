@@ -1976,6 +1976,7 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Billingsley 1995 (Probability and Measure — Fréchet–Shohat / method of moments textbook source) ──
   { id: "billingsley1995" },
+  { id: "billeyswanson2023" },
 
   // ── Simon 1998 (the classical moment problem survey — Carleman determinacy) ──
   { id: "simon1998" },
@@ -3069,6 +3070,7 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "chmutov2007" },
   { id: "ciubotaru2014" },
   { id: "granssamuelsson2020" },
+  { id: "furusho2010" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

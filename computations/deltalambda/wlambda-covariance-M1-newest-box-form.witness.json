@@ -1,0 +1,885 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-27T23:59:34.255514+00:00",
+  "commitSha": "d1633459f5df4e4495cacd02da692e428a8d326a",
+  "assertions": [
+    {
+      "name": "m1_newest_box_form",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "identities n=4..10; SC + lower half + upper tail n=4..50"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2,
+  "computation": "wlambda-covariance-M1-newest-box-form",
+  "scriptFile": "wlambda_covariance_M1_newest_box_form.py",
+  "scriptHash": "021e700c232f",
+  "scriptCommitSha": "d1633459f5df4e4495cacd02da692e428a8d326a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/wlambda_covariance_M1_newest_box_form.py",
+      "10",
+      "50",
+      "14"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/wlambda_covariance_M1_newest_box_form.py 10 50 14"
+  },
+  "description": "Newest-box form of the covariance-kernel first moment: with the n-th Plancherel-growth box at (i,j), s=i+j, c=j−i, m=min(i,j): E[c²]=n−1, M₁=(n/3)Cov(s,c²), P=(n/3)Cov(|c|,c²), N=−(2n/3)Cov(m,c²), and ρ_n(s)=E[1{s}(c²−(n−1))]/((n−1)(n−2)), all equal exactly to the three-box and hook-formula sides. Lower half of single crossing (ρ_n≤0 for (s−2)²≤n−1) and upper tail (ρ_n≥0 for s²≥5n−1) checked; single crossing checked; two candidate sufficient conditions (monotone regression, per-ν covariance) FAIL. Single crossing for all n is NOT proved. No fit; nothing wired.",
+  "data": {
+    "identity_rows": [
+      {
+        "n": 4,
+        "M1": "4/3",
+        "P": "8/3",
+        "N": "4/3",
+        "E_c2": "3",
+        "match": true
+      },
+      {
+        "n": 5,
+        "M1": "8/3",
+        "P": "6",
+        "N": "10/3",
+        "E_c2": "4",
+        "match": true
+      },
+      {
+        "n": 6,
+        "M1": "14/3",
+        "P": "94/9",
+        "N": "52/9",
+        "E_c2": "5",
+        "match": true
+      },
+      {
+        "n": 7,
+        "M1": "7",
+        "P": "287/18",
+        "N": "161/18",
+        "E_c2": "6",
+        "match": true
+      },
+      {
+        "n": 8,
+        "M1": "148/15",
+        "P": "1022/45",
+        "N": "578/45",
+        "E_c2": "7",
+        "match": true
+      },
+      {
+        "n": 9,
+        "M1": "2437/180",
+        "P": "2801/90",
+        "N": "211/12",
+        "E_c2": "8",
+        "match": true
+      },
+      {
+        "n": 10,
+        "M1": "67961/3780",
+        "P": "52369/1260",
+        "N": "44573/1890",
+        "E_c2": "9",
+        "match": true
+      }
+    ],
+    "single_crossing_rows": [
+      {
+        "n": 4,
+        "single_crossing": true,
+        "threshold_s": 5,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          4,
+          4
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 5,
+        "single_crossing": true,
+        "threshold_s": 5,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": null,
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 6,
+        "single_crossing": true,
+        "threshold_s": 5,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          5,
+          5
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 7,
+        "single_crossing": true,
+        "threshold_s": 5,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          5,
+          5
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 8,
+        "single_crossing": true,
+        "threshold_s": 6,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          5,
+          6
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 9,
+        "single_crossing": true,
+        "threshold_s": 6,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          5,
+          6
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 10,
+        "single_crossing": true,
+        "threshold_s": 6,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          6,
+          6
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 11,
+        "single_crossing": true,
+        "threshold_s": 6,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          6,
+          7
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 12,
+        "single_crossing": true,
+        "threshold_s": 7,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          6,
+          7
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 13,
+        "single_crossing": true,
+        "threshold_s": 7,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          6,
+          7
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 14,
+        "single_crossing": true,
+        "threshold_s": 7,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          6,
+          8
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 15,
+        "single_crossing": true,
+        "threshold_s": 7,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          6,
+          8
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 16,
+        "single_crossing": true,
+        "threshold_s": 7,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          6,
+          8
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 17,
+        "single_crossing": true,
+        "threshold_s": 8,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          9
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 18,
+        "single_crossing": true,
+        "threshold_s": 8,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          9
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 19,
+        "single_crossing": true,
+        "threshold_s": 8,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          9
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 20,
+        "single_crossing": true,
+        "threshold_s": 8,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          9
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 21,
+        "single_crossing": true,
+        "threshold_s": 8,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          10
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 22,
+        "single_crossing": true,
+        "threshold_s": 8,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          10
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 23,
+        "single_crossing": true,
+        "threshold_s": 9,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          10
+        ],
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 24,
+        "single_crossing": true,
+        "threshold_s": 9,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          10
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 25,
+        "single_crossing": true,
+        "threshold_s": 9,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          7,
+          11
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 26,
+        "single_crossing": true,
+        "threshold_s": 9,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          11
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 27,
+        "single_crossing": true,
+        "threshold_s": 9,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          11
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 28,
+        "single_crossing": true,
+        "threshold_s": 9,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          11
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 29,
+        "single_crossing": true,
+        "threshold_s": 9,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          11
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 30,
+        "single_crossing": true,
+        "threshold_s": 10,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          12
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 31,
+        "single_crossing": true,
+        "threshold_s": 10,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          12
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 32,
+        "single_crossing": true,
+        "threshold_s": 10,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          12
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 33,
+        "single_crossing": true,
+        "threshold_s": 10,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          12
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 34,
+        "single_crossing": true,
+        "threshold_s": 10,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          12
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 35,
+        "single_crossing": true,
+        "threshold_s": 10,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          13
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 36,
+        "single_crossing": true,
+        "threshold_s": 10,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          8,
+          13
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 37,
+        "single_crossing": true,
+        "threshold_s": 10,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          13
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 38,
+        "single_crossing": true,
+        "threshold_s": 11,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          13
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 39,
+        "single_crossing": true,
+        "threshold_s": 11,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          13
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 40,
+        "single_crossing": true,
+        "threshold_s": 11,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          14
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 41,
+        "single_crossing": true,
+        "threshold_s": 11,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          14
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 42,
+        "single_crossing": true,
+        "threshold_s": 11,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          14
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 43,
+        "single_crossing": true,
+        "threshold_s": 11,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          14
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 44,
+        "single_crossing": true,
+        "threshold_s": 11,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          14
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 45,
+        "single_crossing": true,
+        "threshold_s": 11,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          14
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 46,
+        "single_crossing": true,
+        "threshold_s": 11,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          15
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 47,
+        "single_crossing": true,
+        "threshold_s": 12,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          15
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 48,
+        "single_crossing": true,
+        "threshold_s": 12,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          15
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 49,
+        "single_crossing": true,
+        "threshold_s": 12,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          15
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 50,
+        "single_crossing": true,
+        "threshold_s": 12,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          10,
+          15
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      }
+    ],
+    "monotone_regression_first_failure": {
+      "n": 24,
+      "decrease_into_s": [
+        4
+      ]
+    },
+    "per_nu_negative_covariance": [
+      {
+        "k": 1,
+        "negative_count": 0,
+        "examples": []
+      },
+      {
+        "k": 2,
+        "negative_count": 0,
+        "examples": []
+      },
+      {
+        "k": 3,
+        "negative_count": 0,
+        "examples": []
+      },
+      {
+        "k": 4,
+        "negative_count": 0,
+        "examples": []
+      },
+      {
+        "k": 5,
+        "negative_count": 0,
+        "examples": []
+      },
+      {
+        "k": 6,
+        "negative_count": 0,
+        "examples": []
+      },
+      {
+        "k": 7,
+        "negative_count": 0,
+        "examples": []
+      },
+      {
+        "k": 8,
+        "negative_count": 1,
+        "examples": [
+          [
+            3,
+            3,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 9,
+        "negative_count": 0,
+        "examples": []
+      },
+      {
+        "k": 10,
+        "negative_count": 0,
+        "examples": []
+      },
+      {
+        "k": 11,
+        "negative_count": 0,
+        "examples": []
+      },
+      {
+        "k": 12,
+        "negative_count": 2,
+        "examples": [
+          [
+            4,
+            4,
+            3,
+            1
+          ],
+          [
+            4,
+            3,
+            3,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 13,
+        "negative_count": 1,
+        "examples": [
+          [
+            4,
+            4,
+            3,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 14,
+        "negative_count": 4,
+        "examples": [
+          [
+            5,
+            4,
+            3,
+            2
+          ],
+          [
+            4,
+            4,
+            4,
+            2
+          ],
+          [
+            4,
+            4,
+            3,
+            3
+          ]
+        ]
+      }
+    ]
+  }
+}

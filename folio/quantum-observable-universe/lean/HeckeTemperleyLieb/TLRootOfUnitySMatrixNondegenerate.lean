@@ -58,11 +58,15 @@ onto the `ℓ − 1` simples.
 ## Honest scope
 
 * The identification of `[(i+1)(j+1)]` with the double-braiding Markov trace of the Jones–Wenzl
-  idempotents is the classical Kauffman–Lins / Kirby–Melvin computation. It is **cited** here, not
-  re-derived from the corpus Hecke algebra; `qou-pbjv` / `qou-ltwg` (general-`n` `H_n(q)` as a
-  braided category with Jones–Wenzl projectors) are the infrastructure that would let it be proved.
-* `T_{jj} = ω^{(j+1)²} = ω·θ_j` with `θ_j = ω^{j(j+2)}` the ribbon twist of `f_j` is likewise
-  cited (Kirby–Melvin), not derived from the corpus braiding.
+  idempotents is **derived from the corpus braiding** in `TLCableLoop.lean`
+  (`cable_row_eq_sMatrix`, every row) and `TLBraidedModular.lean` (`braidS_eq_sMatrix`, the whole
+  matrix, including the vacuum row from `vacuum_row_eq_sMatrix`), for any Markov trace with
+  `δε = 1` on the Temperley–Lieb tower.
+* `T_{jj} = ω^{(j+1)²} = ω·θ_j`: the twist `θ_j` of `p_{j−1}` is derived from the full twist and
+  one framing curl per strand in `TLBraidedModular.ribbon_jw` (via `jw_mul_fullTwist`,
+  `markov_curl`, `twist_eq_tMatrix`).
+* Not proved here or there: that `f_0, …, f_k` (the vacuum and `p_0, …, p_{k−1}`) are exactly
+  the simple objects of the semisimplified quotient category. The statements are about the projectors and their traces.
 * This file is about the root-of-unity quotient. At a generic `q` (for instance real `q > 1`) every
   `[n]` is nonzero, the category has infinitely many simples and is **not** modular
   (`HeckeRealVsRootOfUnityModularity.lean`). The restatement of `hkmt` to the quotient follows the

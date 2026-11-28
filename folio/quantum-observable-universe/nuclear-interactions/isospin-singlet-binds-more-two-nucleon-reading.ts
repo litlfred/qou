@@ -8,7 +8,7 @@ export default remark({
   label: "rem:isospin-singlet-binds-more-two-nucleon-reading",
   title: "Which two-nucleon channel the singlet ordering selects",
   interprets: "prop:isospin-singlet-binds-more",
-  uses: ["prop:isospin-singlet-binds-more"],
+  uses: ["prop:isospin-singlet-binds-more", "def:mass-identity"],
   authorNotes: [
     {
       kind: "note",

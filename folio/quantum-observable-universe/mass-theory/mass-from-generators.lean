@@ -140,85 +140,16 @@ noncomputable def binding_per_A_o16 : ℝ := 7.9762
 noncomputable def binding_per_A_fe56 : ℝ := 8.7903
 
 -- ═══════════════════════════════════════════════════════════════════
--- QOU predicted masses from knot generation (MeV/c²)
+-- Atom rows and agreement checks: removed 2026-11-28
 --
--- Computed from: q = 1.10997, μ_u = 311.10, μ_d = 312.39
--- Proton:  S_uu + 2·S_ud = 938.269 MeV
--- Neutron: 2·S_ud + S_dd = 939.565 MeV
--- Atom(Z,N) = Z·m_p + N·m_n - A·(B/A) + Z·m_e
+-- Twelve atom masses `qou_hydrogen_1` … `qou_iron_56` and the theorems
+-- `hydrogen_agreement`, `deuterium_agreement`, `helium_4_agreement` stood
+-- here. The rows were computed from dressed quark masses μ_u = 311.10,
+-- μ_d = 312.39 MeV chosen under the retired convention-C pair formula to
+-- reproduce m_p and m_n, so they were fitted, and the theorems compared
+-- them with measured values inside Lean. Both are removed (owner rules
+-- 2026-11-27: no fitting, no empirical values in formal proofs). Record:
+-- docs/audits/2026-11-28-dressed-mass-fit-removal.md.
 -- ═══════════════════════════════════════════════════════════════════
-
-/-- Hydrogen-1 atom (¹H): 𝔭 ⋈ T_{2,3}. -/
--- Ref: [leitner2026] §11/mass-from-generators
-noncomputable def qou_hydrogen_1 : ℝ := 938.780495
-
-/-- Deuterium atom (²H): 𝔭 ⋈ 𝔫 ⋈ T_{2,3}. -/
--- Ref: [leitner2026] §11/mass-from-generators
-noncomputable def qou_deuterium : ℝ := 1876.120855
-
-/-- Helium-3 atom (³He): 2𝔭 ⋈ 𝔫 ⋈ 2T_{2,3}. -/
--- Ref: [leitner2026] §11/mass-from-generators
-noncomputable def qou_helium_3 : ℝ := 2809.407650
-
-/-- Helium-4 atom (⁴He): 2𝔭 ⋈ 2𝔫 ⋈ 2T_{2,3}. -/
--- Ref: [leitner2026] §11/mass-from-generators
-noncomputable def qou_helium_4 : ℝ := 3728.394911
-
-/-- Lithium-6 atom (⁶Li): 3𝔭 ⋈ 3𝔫 ⋈ 3T_{2,3}. -/
--- Ref: [leitner2026] §11/mass-from-generators
-noncomputable def qou_lithium_6 : ℝ := 5603.040766
-
-/-- Lithium-7 atom (⁷Li): 3𝔭 ⋈ 4𝔫 ⋈ 3T_{2,3}. -/
--- Ref: [leitner2026] §11/mass-from-generators
-noncomputable def qou_lithium_7 : ℝ := 6535.356427
-
-/-- Beryllium-9 atom (⁹Be): 4𝔭 ⋈ 5𝔫 ⋈ 4T_{2,3}. -/
--- Ref: [leitner2026] §11/mass-from-generators
-noncomputable def qou_beryllium_9 : ℝ := 8394.780582
-
-/-- Carbon-12 atom (¹²C): 6𝔭 ⋈ 6𝔫 ⋈ 6T_{2,3}. -/
--- Ref: [leitner2026] §11/mass-from-generators
-noncomputable def qou_carbon_12 : ℝ := 11177.910333
-
-/-- Nitrogen-14 atom (¹⁴N): 7𝔭 ⋈ 7𝔫 ⋈ 7T_{2,3}. -/
--- Ref: [leitner2026] §11/mass-from-generators
-noncomputable def qou_nitrogen_14 : ℝ := 13043.758388
-
-/-- Oxygen-16 atom (¹⁶O): 8𝔭 ⋈ 8𝔫 ⋈ 8T_{2,3}. -/
--- Ref: [leitner2026] §11/mass-from-generators
-noncomputable def qou_oxygen_16 : ℝ := 14899.142843
-
-/-- Silicon-28 atom (²⁸Si): 14𝔭 ⋈ 14𝔫 ⋈ 14T_{2,3}. -/
--- Ref: [leitner2026] §11/mass-from-generators
-noncomputable def qou_silicon_28 : ℝ := 26060.297976
-
-/-- Iron-56 atom (⁵⁶Fe): 26𝔭 ⋈ 30𝔫 ⋈ 26T_{2,3}. -/
--- Ref: [leitner2026] §11/mass-from-generators
-noncomputable def qou_iron_56 : ℝ := 52102.978883
-
--- ═══════════════════════════════════════════════════════════════════
--- Agreement checks (analogous to terminal_resolution_sub_keV)
--- ═══════════════════════════════════════════════════════════════════
-
-/-- Hydrogen atom: QOU vs CODATA+m_e, within 0.01 MeV. -/
--- Ref: [codata2022] CODATA 2022
-theorem hydrogen_agreement :
-    |qou_hydrogen_1 - (codata_proton + codata_electron)| < 0.01 := by
-  unfold qou_hydrogen_1 codata_proton codata_electron
-  norm_num
-
-/-- Deuterium atom: QOU vs CODATA+m_e, within 0.01 MeV. -/
--- Ref: [codata2022] CODATA 2022
-theorem deuterium_agreement :
-    |qou_deuterium - (codata_deuteron + codata_electron)| < 0.01 := by
-  unfold qou_deuterium codata_deuteron codata_electron
-  norm_num
-
-/-- Helium-4 atom: QOU vs CODATA+2m_e, within 0.01 MeV. -/
--- Ref: [codata2022] CODATA 2022
-theorem helium_4_agreement :
-    |qou_helium_4 - (codata_he4 + 2 * codata_electron)| < 0.01 := by
-  unfold qou_helium_4 codata_he4 codata_electron
-  norm_num
 
 end QOU.Experimental.MassData

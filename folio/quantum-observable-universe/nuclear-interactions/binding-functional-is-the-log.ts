@@ -8,6 +8,6 @@ export default proposition({
     ref: "qou:QOU.Nuclear.InterfaceScalar.linearForm_extensivity_defect",
     validation: "not_checked",
   },
-  uses: ["prop:markov-stabilisation-needs-a-fresh-generator"],
+  uses: ["prop:markov-stabilisation-needs-a-fresh-generator", "def:mass-identity"],
   tags: ["binding-functional", "extensivity", "markov-trace", "deuteron"],
 });

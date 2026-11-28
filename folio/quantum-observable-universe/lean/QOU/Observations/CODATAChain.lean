@@ -7,7 +7,6 @@ import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 /-!
 # QOU.CODATAChain — End-to-End: QOU Theory → CODATA Observables
@@ -127,20 +126,8 @@ theorem h_q_eq_quantum_planck {M : Type*}
     (amf : ArchimedeanMassFormula M) :
     amf.h_q = 1 - 1 / amf.q := amf.h_q_def
 
-/-- **Full chain theorem**: Given an `ArchimedeanMassFormula` for
-    the muon (knot volume = Vol(4₁)), and the CODATA mass ratio as
-    input, the substrate parameter is determined to be q ≈ 1.1097.
-
-    This repackages `Calculations.full_derivation_chain` to show
-    it is a consequence of the `ArchimedeanMassFormula`. -/
-theorem substrate_from_archimedean_formula :
-    let vol := figureEightEntry.volume.value
-    let ratio := experimental_mu_e_ratio
-    let hq2 := vol / ratio
-    let hq := Real.sqrt hq2
-    let q := 1 / (1 - hq)
-    |q - substrate_q| < 0.001 :=
-  Calculations.full_derivation_chain
+/- The `Real.sqrt` restatement `substrate_from_archimedean_formula` lives in the
+   companion `QOU.Transcendental.Observations.CODATAChainReal` (qou-dk7p). -/
 
 /-! ## §4 Terminal Resolution: the complete chain
 

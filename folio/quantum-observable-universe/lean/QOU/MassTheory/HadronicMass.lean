@@ -299,9 +299,11 @@ theorem row4_binding_from_skein :
 
 The Borromean braid of a nucleon has six crossings in three pairs, one pair
 per color-exchange channel.  At each pair between quarks of species `a` and
-`b`, a double application of the Skein relation yields the **pair Skein mass**:
+`b`, the convention-D Markov trace of the pair's crossing element yields the
+**pair Skein mass** (derived in `QOU.MassTheory.PairSkeinD`, owner ruling
+2026-11-27):
 
-  `𝒮_{ab}(q) = (q · μ_a + q⁻¹ · μ_b) / (q^{1/2} + q^{-1/2})`
+  `𝒮_{ab}(q) = (q³ · μ_a + q⁻¹ · μ_b) / (q² + 1)`
 
 where `μ_a` is the **dressed quark Skein mass** of species `a`.
 The total nucleon mass is the sum over the three crossing pairs:
@@ -311,58 +313,72 @@ The total nucleon mass is the sum over the three crossing pairs:
 For the proton (uud):  `m_p = 𝒮_{uu} + 2 · 𝒮_{ud}`
 For the neutron (udd): `m_n = 2 · 𝒮_{ud} + 𝒮_{dd}` -/
 
-/-- Dressed quark Skein mass of the up quark (MeV).
-    Derived from the Borromean Skein decomposition:
-    `μ_u ≈ 311.10 MeV` at `q = 1.1097`. -/
-noncomputable def dressed_mass_up : ℝ := 311.10
+/-! The dressed quark masses `μ_u`, `μ_d` are **parameters** here, not
+constants. The values `311.10` and `312.39` MeV that stood here were chosen
+under the retired convention-C formula so that the pair Skein sums reproduce
+the measured nucleon masses; that is selection against the target, and they
+are removed (owner rules "derive what you can", "no fitting", 2026-11-27).
 
-/-- Dressed quark Skein mass of the down quark (MeV).
-    Derived from the Borromean Skein decomposition:
-    `μ_d ≈ 312.39 MeV` at `q = 1.1097`. -/
-noncomputable def dressed_mass_down : ℝ := 312.39
+**Status: open.** No derivation of `μ_u` or `μ_d` from the aether is on
+record. Under convention D the nucleon map `(μ_u, μ_d) ↦ (m_p, m_n)` is a
+bijection (`QOU.MassTheory.PairSkeinNucleon.injective` / `surjective`), so a
+pair of nucleon masses determines the dressed masses uniquely — a change of
+variables, not a prediction. The only aether input on record is the
+conjectured split `conj:flavor-split-aether-mass`, which fixes at most the
+difference `μ_d − μ_u`, not the pair. -/
 
 /-- The **pair Skein mass** `𝒮_{ab}(q)` at a crossing pair between quarks
-    of dressed masses `μ_a` and `μ_b`:
-    `𝒮_{ab}(q) = (q · μ_a + q⁻¹ · μ_b) / (q^{1/2} + q^{-1/2})` -/
+    of dressed masses `μ_a` and `μ_b`, convention D:
+    `𝒮_{ab}(q) = (q³ · μ_a + q⁻¹ · μ_b) / (q² + 1)`
+    (`QOU.MassTheory.PairSkeinD.pairMassD_closed`). The convention-C form
+    with denominator `q^{1/2} + q^{-1/2}` is retired (owner ruling
+    2026-11-27).
+
+    The nucleon map is a bijection (`QOU.MassTheory.PairSkeinNucleon`), so
+    any pair of nucleon masses is reproduced by exactly one pair of dressed
+    masses. -/
 noncomputable def pair_skein_mass (q μ_a μ_b : ℝ) : ℝ :=
-  (q * μ_a + q⁻¹ * μ_b) / (q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ)))
+  (q ^ 3 * μ_a + q⁻¹ * μ_b) / (q ^ 2 + 1)
 
 /-- Pair Skein mass for two up quarks: `𝒮_{uu}(q)`. -/
-noncomputable def S_uu : ℝ := pair_skein_mass substrate_q dressed_mass_up dressed_mass_up
+noncomputable def S_uu (μ_u : ℝ) : ℝ := pair_skein_mass substrate_q μ_u μ_u
 
 /-- Pair Skein mass for up-down quarks: `𝒮_{ud}(q)`. -/
-noncomputable def S_ud : ℝ := pair_skein_mass substrate_q dressed_mass_up dressed_mass_down
+noncomputable def S_ud (μ_u μ_d : ℝ) : ℝ := pair_skein_mass substrate_q μ_u μ_d
 
 /-- Pair Skein mass for two down quarks: `𝒮_{dd}(q)`. -/
-noncomputable def S_dd : ℝ := pair_skein_mass substrate_q dressed_mass_down dressed_mass_down
+noncomputable def S_dd (μ_d : ℝ) : ℝ := pair_skein_mass substrate_q μ_d μ_d
 
 /-- The proton mass decomposes as `m_p = 𝒮_{uu} + 2 · 𝒮_{ud}`.
     This is the Skein recursion iterated across all three crossing pairs
     of the Borromean braid with quark content (u₁, u₂, d). -/
-noncomputable def proton_from_pair_skein : ℝ := S_uu + 2 * S_ud
+noncomputable def proton_from_pair_skein (μ_u μ_d : ℝ) : ℝ :=
+  S_uu μ_u + 2 * S_ud μ_u μ_d
 
 /-- The neutron mass decomposes as `m_n = 2 · 𝒮_{ud} + 𝒮_{dd}`.
     This is the Skein recursion iterated across all three crossing pairs
     of the Borromean braid with quark content (u, d₁, d₂). -/
-noncomputable def neutron_from_pair_skein : ℝ := 2 * S_ud + S_dd
+noncomputable def neutron_from_pair_skein (μ_u μ_d : ℝ) : ℝ :=
+  2 * S_ud μ_u μ_d + S_dd μ_d
 
 /-- The proton--neutron mass difference from the pair Skein decomposition:
     `m_n − m_p = 𝒮_{dd} − 𝒮_{uu}`.
     Only the same-flavor crossing pair changes when swapping u ↔ d. -/
-theorem pair_skein_mass_splitting :
-    neutron_from_pair_skein - proton_from_pair_skein = S_dd - S_uu := by
+theorem pair_skein_mass_splitting (μ_u μ_d : ℝ) :
+    neutron_from_pair_skein μ_u μ_d - proton_from_pair_skein μ_u μ_d
+      = S_dd μ_d - S_uu μ_u := by
   unfold neutron_from_pair_skein proton_from_pair_skein
   ring
 
 /-- The mass splitting factors through the dressed quark mass difference:
-    `𝒮_{dd}(q) − 𝒮_{uu}(q) = [(q + q⁻¹)/(q^{1/2} + q^{-1/2})] · (μ_d − μ_u)`.
+    `𝒮_{dd}(q) − 𝒮_{uu}(q) = [(q³ + q⁻¹)/(q² + 1)] · (μ_d − μ_u)`.
 
-    This shows the proton--neutron splitting is a pure Skein-level effect
-    of the u-d mass difference, amplified by the factor (q+q⁻¹)/(q^½+q^-½). -/
-theorem pair_skein_splitting_formula :
-    S_dd - S_uu =
-      (substrate_q + substrate_q⁻¹) / (substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)))
-      * (dressed_mass_down - dressed_mass_up) := by
+    The factor `(q³ + q⁻¹)/(q² + 1) = κ = trace₂ z_D (σ + σ⁻¹)` is the
+    convention-D splitting constant. -/
+theorem pair_skein_splitting_formula (μ_u μ_d : ℝ) :
+    S_dd μ_d - S_uu μ_u =
+      (substrate_q ^ 3 + substrate_q⁻¹) / (substrate_q ^ 2 + 1)
+      * (μ_d - μ_u) := by
   unfold S_dd S_uu pair_skein_mass
   ring
 
@@ -461,13 +477,17 @@ noncomputable def borromean_mass_ratio : ℝ :=
 
 | Declaration               | Formula                                          | Value (MeV) |
 |---------------------------|--------------------------------------------------|-------------|
-| `dressed_mass_up`         | μ_u                                              | 311.10      |
-| `dressed_mass_down`       | μ_d                                              | 312.39      |
-| `S_uu`                    | (q·μ_u + q⁻¹·μ_u)/(q^½+q^-½)                   | ≈ 312.36    |
-| `S_ud`                    | (q·μ_u + q⁻¹·μ_d)/(q^½+q^-½)                   | ≈ 312.97    |
-| `S_dd`                    | (q·μ_d + q⁻¹·μ_d)/(q^½+q^-½)                   | ≈ 313.65    |
-| `proton_from_pair_skein`  | S_uu + 2·S_ud                                    | ≈ 938.3     |
-| `neutron_from_pair_skein` | 2·S_ud + S_dd                                    | ≈ 939.6     |
+| μ_u, μ_d (parameters)     | dressed quark masses — derivation open           | —           |
+| `S_uu`                    | (q³·μ_u + q⁻¹·μ_u)/(q²+1)                        | not evaluated |
+| `S_ud`                    | (q³·μ_u + q⁻¹·μ_d)/(q²+1)                        | not evaluated |
+| `S_dd`                    | (q³·μ_d + q⁻¹·μ_d)/(q²+1)                        | not evaluated |
+| `proton_from_pair_skein`  | S_uu + 2·S_ud                                    | not evaluated |
+| `neutron_from_pair_skein` | 2·S_ud + S_dd                                    | not evaluated |
+
+The values listed here before 2026-11-27 were convention-C figures from
+dressed masses (311.10, 312.39 MeV) chosen to reproduce the nucleon masses;
+they are removed with the convention-C formula, and the dressed masses are
+now parameters. Their derivation from the aether is open.
 
 ### Cross-checks proved:
 - `mass_sum_rule`: m_D + ΔE = m_p + m_n  ✓
