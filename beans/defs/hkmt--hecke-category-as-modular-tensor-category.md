@@ -103,3 +103,7 @@ Chebyshev recursion, root-of-unity identification. Bean stays open.
 
 ## 2026-11-28 — S and T from braiding are modular (PR #9886)
 `TLBraidedModular.lean` (sorry-free): `braidS_eq_sMatrix` (whole matrix of Hopf-link traces on the vacuum and p_0..p_{k−1} equals S), `braidS_det_ne_zero`, `braidS_mul_self`, `ribbon_jw` (twist from full twist + framing curls), `braid_modular_relation` ((ST)³ = p₊S²). PR #9863 merged (64ba31d7f4). Still open, so the bean stays open: that the vacuum and p_0..p_{k−1} are exactly the simples of the semisimplified quotient category (categorical, not trace-level, modularity).
+
+## 2026-11-28: semisimplified quotient (PR #9890)
+TLSemisimpleQuotient.lean, sorry-free. p_n is a primitive idempotent and is negligible iff τ(p_n)=0. At a primitive 2(k+2)-th root: p_0…p_{k−1} survive, the trace form is nondegenerate below k+1 strands, and p_k ≠ 0 is negligible at every level. The rows of the braid-derived S are pairwise distinct, so the k+1 objects are pairwise non-isomorphic.
+STILL OPEN: completeness, i.e. every simple of the quotient is one of these. Needs rectangular TL hom spaces Hom(m,n). Bean stays open.
