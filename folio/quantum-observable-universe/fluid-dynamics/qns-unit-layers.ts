@@ -13,7 +13,6 @@ export default definition({
     "classical-limit",
     "unit-convention",
     "fluid-dynamics",
-    "millennium-problem",
   ],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The substrate/physical-layer pile-up answers are, per the witness `qns-tail-pileup-probe.witness.json`." },

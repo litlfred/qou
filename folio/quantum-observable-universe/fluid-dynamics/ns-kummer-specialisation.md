@@ -39,7 +39,7 @@ The resulting class avoids zero if and only if $n \nmid \kappa_0$, that is, if a
 
 Consequently "persistently nonzero" is **not** by itself evidence that the NS obstruction is a faithful regularity criterion.
 
-Note also that the divisibility structure is what makes the verdict level-dependent: at $\chi_{\mathrm{eu}}(\mathcal{S}) = -6$ the obstruction *vanishes* at levels $n \in \{1, 2, 3, 6\}$ while persisting at all others. Different restrictions of $\kappa_0$ therefore carry different verdicts at once, and the shared class transfers nothing between the Millennium legs.
+Note also that the divisibility structure is what makes the verdict level-dependent: at $\chi_{\mathrm{eu}}(\mathcal{S}) = -6$ the obstruction *vanishes* at levels $n \in \{1, 2, 3, 6\}$ while persisting at all others. Different root-of-unity specialisations of $\kappa_0$ therefore carry different Kummer verdicts at once, and non-vanishing of $\kappa_0 \bmod n$ at generic $n$ transfers no analytical blowup conclusion to the hydrodynamic limit.
 
 The regularity content therefore sits in the filtration — whether the vortex-knot complexity stays bounded — not in the non-vanishing of the class alone.
 

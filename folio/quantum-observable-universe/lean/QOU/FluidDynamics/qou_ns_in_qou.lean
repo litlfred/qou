@@ -26,20 +26,17 @@ obstruction lives on the whole surface `S`, not on the vortex locus `Σ`: every
 class in `H²` restricts to zero on a one-dimensional `Σ` (item 3). The capstone
 `qou_internal_ns_singular` composes these QOU-structural steps.
 
-**Every QOU is internally singular — from the axiom, not from `χ = -6`.** The
-chain starts at the *definitional* observability field, so `qou_internal_ns_singular`
-holds for **every** `QOUFluidUniverse` (∀ `U`); the Descartes `χ = -6` instance
-below only *witnesses non-vacuity*. There is **no NS-regular QOU**: a `χ = 0`
-(regular) object has `NS(A) = 0`, which violates observability, so it is a quantum
-*universe* but **not** a quantum *observable* universe. Regularity and QOU-hood
-are mutually exclusive.
+**Conditional internal classification.** The chain starts at the observability
+field together with the assumed hypothesis field `observability_forces_chi`, so
+`qou_internal_ns_singular` holds across `QOUFluidUniverse` by composing those
+structure fields; the Descartes `χ = -6` instance below witnesses non-vacuity.
+Within this internal classification, a `χ = 0` pre-universe has `NS(A) = 0`.
 
-**Clay recasting (in-QOU boundary).** Consequently the open bridge is *not* "which
-QOU?" but "**is the physical fluid a QOU at all?**": classical NS blows up ⟺ the
-fluid is the internal `q = 1` flow of a QOU (satisfies observability); classical
-NS is globally regular ⟺ the fluid is *not* a QOU (fails observability, `χ = 0`).
-That embedding question is the open wall (`bean qou-innq`,
-`qou_ns_surreal_bridge`), deliberately not asserted.
+**Model-to-PDE boundary (open).** Identifying the internal surface class
+`NS(A) = e(ξ) ∈ H²(S, ℤ)` or the internal `q = 1` degeneration of a QOU with
+regularity or blowup of the classical 3D Navier–Stokes PDE on `ℝ³` is an open
+bridge (`bean qou-innq`, `qou_ns_surreal_bridge`) and is deliberately not
+asserted here.
 
 **Non-vacuity.** `descartesQOU` is a *concrete* instance (`χ(A) = -6`, Bring's
 surface) for which the whole base chain discharges **sorry-free**: the

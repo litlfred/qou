@@ -9,8 +9,8 @@ The parameter $q$ acts as the dial. Three regimes govern the behaviour:
 
 | Parameter limit | Geometric picture | Dynamical content |
 |---|---|---|
-| $q \to 1^+$ | Full Riemannian metric; $\varTheta_q$ degenerates | Classical Navier–Stokes; Reeb projection vanishes |
-| $q > 1$ generic | Strict contact metric on $\mathcal{S}$ | $q$-NS globally regular ([thm:q-ns-wellposedness](#thm:q-ns-wellposedness)); Reeb flow Turing-complete ([rem:reeb-contact-universal-computer](#rem:reeb-contact-universal-computer)) |
+| $q \to 1^+$ | Full Riemannian metric; $\varTheta_q$ degenerates | Inviscid Euler limit ($\nu_q \to 0$, or fixed-viscosity Navier--Stokes after $c_q$-rescaling); Reeb projection vanishes |
+| $q > 1$ generic | Strict contact metric on $\mathcal{S}$ | $q$-NS conditionally regular ([global regularity](#thm:q-ns-wellposedness)); Reeb flow Turing-complete ([Reeb universal computer](#rem:reeb-contact-universal-computer)) |
 | $q \to \infty$ | Pure Reeb (horizontal components vanish) | Hamiltonian first-return; bare tape-reading dynamics |
 
 **A geometric reading of the $q$-NS obstruction.**

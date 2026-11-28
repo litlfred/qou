@@ -14,7 +14,6 @@ export default conjecture({
     "modular-tensor-category",
     "regularity",
     "accumulation-point",
-    "millennium-problem",
   ],
   authorNotes: [
     {

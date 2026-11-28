@@ -15,7 +15,6 @@ export default conjecture({
     "levi-form",
     "contact-degeneracy",
     "vorticity-direction",
-    "millennium-problem",
     "navier-stokes",
   ],
   authorNotes: [

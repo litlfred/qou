@@ -366,14 +366,15 @@ theorem q_bounded_cond_finite (L : QBoundedLeviForm) :
 -- §10  The Levi Degeneracy Conjecture
 -- ════════════════════════════════════════════════════════════════
 
-/-- **Levi degeneracy conjecture**: the core aspect ratio at root of
-    unity q = e^{iπ/κ} grows at most linearly in κ.
+/-- **Root-of-unity aspect-ratio bound (legacy carrier)**: the core aspect
+    ratio in the finite-mode root-of-unity ansatz `q = e^{iπ/κ}` satisfies a
+    linear Bernstein bound `1 + (κ - 1)`.
 
-    The NS millennium problem reduces to determining the growth rate:
-    - If cond = O(1): blowup (counter-example established)
-    - If cond ~ κ: regularity (Levi form degenerates)
+    Scope note: in 3D the Levi datum of the vorticity plane field is a single
+    scalar rather than a condition number (`QOU.FluidDynamics.LeviDegeneracyQ1`),
+    and classical 3D Navier–Stokes regularity does not reduce to this bound.
 
-    Ref: [leitner2026] Ch 5 §8 Root-of-unity truncation -/
+    Ref: [leitner2026] fluid-dynamics/root-of-unity-truncation -/
 structure LeviDegeneracyConjecture where
   /-- Truncation level (κ in q = e^{iπ/κ}). -/
   κ : ℕ

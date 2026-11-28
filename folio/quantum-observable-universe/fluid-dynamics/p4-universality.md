@@ -1,4 +1,4 @@
-The critical exponent $\alpha = 4/3$ governs the rate at which enstrophy diverges as $q \to 1$. The claim is that $\alpha$ depends only on:
+Conditional on [the critical-exponent conjecture](#conj:critical-exponent), let $\alpha$ denote the exponent governing a conjectured power-law divergence $\Omega_{\max}(q) \sim (q-1)^{-\alpha}$ of the internal $q$-NS enstrophy supremum as $q \to 1^+$ (such as the Kolmogorov-closure value $\alpha = 4/3$). This conjecture asserts that $\alpha$ depends only on:
 
 1. The Euler characteristic $\chi(A)$ of the Frobenius--Hopf object.
 2. The spatial dimension $d = 3$.

@@ -20,10 +20,10 @@ Taking $q = q_n \to 1$ along the diagonal, the viscous term vanishes. The $q$-La
 **Step 6: A modified family with fixed viscosity.**
 The $q$-NS family itself does not converge to Navier--Stokes. To obtain a Navier--Stokes limit one must change the family, adding an independent classical viscosity $\nu > 0$ that does not vanish with $q - 1$. For that modified family the same compactness argument would give a weak Navier--Stokes solution with viscosity $\nu$; the modified family is a separate object, not the brane $q$-NS of this chapter.
 
-**Step 7: The limit loses regularity.**
-The anti-parallel vortex pair initial data causes the filaments to approach at rate $d(t) \sim \sqrt{T^* - t}$. The vorticity diverges as $t \to T^{*-}$. The q-deformed solutions are smooth because quantum pressure prevents collision. The limit has no quantum pressure, and the collision proceeds to completion.
+**Step 7: Conjectured loss of smoothness in the limit.**
+Under the anti-parallel vortex-pair collision scenario of [the vortex-collision conjecture](#conj:ns-counterexample), the filaments are posited to approach at rate $d(t) \sim \sqrt{T^* - t}$ with diverging vorticity as $t \to T^{*-}$: for $q > 1$, quantum pressure opposes core overlap, whereas in the $q \to 1^+$ limit $Q_q \to 0$.
 
 **Conjecture (q-Aubin--Lions).**
 Under the hypotheses above, there exists a subsequence $q_n \to 1$ such that $v_{q_n} \to v^*$ weakly in $L^2$. $v^*$ is a weak solution of the Euler equation (of the Navier--Stokes equation with viscosity $\nu$ for the modified family of Step 6), satisfies the energy inequality, and is smooth off a singular set of Hausdorff dimension $\leq 1$.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the algebraic→archimedean wall. It invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the algebraic-to-archimedean wall. It invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

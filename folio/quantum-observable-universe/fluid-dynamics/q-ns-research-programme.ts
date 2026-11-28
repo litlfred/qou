@@ -3,15 +3,16 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "thm:q-ns-wellposedness",
   label: "rem:q-ns-research-programme",
-  title: "The quantum Navier--Stokes programme: from categorical regularity to the Clay problem",
+  title: "Open problems in the $q$-deformed Navier--Stokes programme",
   uses: [
     "rem:berry-vortex-moduli",
     "rem:vortex-reconnection",
     "prop:acoustic-horizon-conditions",
+    "conj:regularity-breakdown",
+    "conj:levi-degeneracy",
   ],
   tags: [
     "research-programme",
-    "millennium-problem",
     "navier-stokes",
     "regularity",
     "open-problems",

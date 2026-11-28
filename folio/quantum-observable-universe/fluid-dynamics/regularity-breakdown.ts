@@ -24,7 +24,6 @@ export default conjecture({
   tags: [
     "tier:famous",
     "navier-stokes",
-    "millennium-problem",
     "regularity",
     "critical-exponent",
     "blowup",

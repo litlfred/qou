@@ -16,7 +16,6 @@ export default remark({
     "three-dimensional",
     "fluid-dynamics",
     "navier-stokes",
-    "millennium-problem",
   ],
   authorNotes: [
     {

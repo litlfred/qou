@@ -1,5 +1,5 @@
-The proof of [global regularity](#thm:q-ns-wellposedness) rests on
-three mechanisms, each exploiting $q > 1$.
+The proposed strategy for [global regularity](#thm:q-ns-wellposedness) rests on
+three mechanisms available in the $q$-deformed model when $q > 1$.
 
 **Step 1: Exponential UV damping.**
 The $q$-Laplacian eigenvalues $[k]_q^2$ grow as
@@ -12,17 +12,19 @@ satisfies $d\Omega/dt \leq -\nu_q [1]_q^2\Omega + C\Omega^{3/2}$.
 At $q = 1$ the damping coefficient vanishes; at $q > 1$ it
 provides a linear restoring term.
 
-**Step 2: Finite cascade depth.**
+**Step 2: Effective cascade cutoff.**
 The [Planck--Reynolds number](#rem:planck-reynolds)
-$\mathrm{Re}_q = 2/(q-1)$ bounds the active modes:
+$\mathrm{Re}_q = 2/(q-1)$ bounds the inertial-range modes via
 $N_{\mathrm{eff}} \leq \lfloor \log_q(\mathrm{Re}_q^{3/4})
-\rfloor < \infty$.  The q-NS equation reduces to a
-finite-dimensional ODE, globally well-posed by Picard--Lindelöf.
+\rfloor < \infty$.  Modes above $N_{\mathrm{eff}}$ lie in the
+exponential dissipation tail, motivating finite-dimensional Galerkin
+truncations that are globally well-posed by Picard--Lindelöf before
+passing to the full modal hierarchy.
 
-**Step 3: Bootstrap to smoothness.**
-Higher modes are damped to zero in finite time.  Parabolic
-regularity on the truncated system gives $v \in C^\infty$ for
-$t > 0$.  Initial regularity extends by uniqueness.
+**Step 3: Parabolic bootstrap.**
+On any truncated modal system, parabolic damping yields $v \in C^\infty$
+for $t > 0$, with uniform-in-truncation control sought from the
+exponential $[k]_q^2$ weights.
 
 | Mechanism | Role | Failure at $q = 1$ |
 |---|---|---|

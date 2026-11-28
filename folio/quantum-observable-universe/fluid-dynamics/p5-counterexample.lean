@@ -12,7 +12,7 @@ LaTeX label: `conj:ns-counterexample`
 
 ## Conjectural content
 
-Conjectural NS-counterexample: existence of a smooth initial datum whose q-deformed flow develops a finite-time singularity at q = 1, refuting the smoothness Millennium variant.
+Conjectural NS-counterexample: existence of a smooth initial datum whose q-deformed flow develops a finite-time singularity in the q → 1⁺ degeneration of the q-NS model.
 
 ## Status
 

@@ -39,6 +39,5 @@ export default remark({
     "strain",
     "fluid-dynamics",
     "navier-stokes",
-    "millennium-problem",
   ],
 });

@@ -14,7 +14,7 @@ export default definition({
     "line-bundle",
     "multiplicative-group",
     "projective",
-    "substrate",
+    "aether",
     "family",
   ],
 });
