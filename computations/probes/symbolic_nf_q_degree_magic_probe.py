@@ -93,7 +93,14 @@ from fractions import Fraction
 # the machine that wrote it, so `verify()` could not import hecke_core_symbolic
 # anywhere else and the producer exited 1 before computing anything.
 _COMP = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path[:0] = [_COMP, os.path.join(_COMP, 'substrate')]
+sys.path[:0] = [_COMP, os.path.join(_COMP, 'substrate'), os.path.join(_COMP, 'hecke')]
+
+try:
+    from gs_peel_bridge import decode_dyadic_laurent, gs_peel_binary_path, invoke_gs_peel
+except ImportError:  # pragma: no cover
+    decode_dyadic_laurent = None  # type: ignore[assignment]
+    gs_peel_binary_path = lambda: None  # type: ignore[assignment]
+    invoke_gs_peel = None  # type: ignore[assignment]
 
 MAGIC = {2, 8, 20, 28, 50, 82, 126}
 
@@ -203,8 +210,66 @@ def ground_state_ordering(Z: int, N: int) -> list[str]:
     return o
 
 
-def build_atom_nf_lau(Z: int, N: int) -> list[Lau]:
-    """Exact Laurent mirror of hecke_core_symbolic.build_atom_nf_sym."""
+def _atom_dyadic_steps(Z: int, N: int) -> list[dict]:
+    """Encode the exact H_3 crossing sequence for (Z, N) as dyadic steps for `gs-peel`."""
+    A = Z + N
+    if A == 0:
+        return []
+    ordering = ground_state_ordering(Z, N)
+    steps: list[dict] = []
+
+    def push(gen: int, d_mant: int, d_exp2: int, d_hpow: int, repeat: int = 1) -> None:
+        if (
+            steps
+            and steps[-1]["gen"] == gen
+            and steps[-1]["d_mant"] == d_mant
+            and steps[-1]["d_exp2"] == d_exp2
+            and steps[-1]["d_hpow"] == d_hpow
+        ):
+            steps[-1]["repeat"] += repeat
+        else:
+            steps.append({
+                "gen": gen,
+                "c_mant": 1,
+                "c_exp2": 0,
+                "c_hpow": 0,
+                "d_mant": d_mant,
+                "d_exp2": d_exp2,
+                "d_hpow": d_hpow,
+                "repeat": repeat,
+            })
+
+    for k in range(A):
+        if ordering[k] == "p":
+            for _ in range(3):
+                push(0, 0, 0, 0)
+                push(1, -1, 0, 1)
+            push(0, 0, 0, 0)
+            push(0, -1, -1, 1)
+            push(1, -1, -1, 1)
+            push(0, 0, 0, 0, repeat=2)
+        else:
+            for _ in range(3):
+                push(0, 0, 0, 0)
+                push(1, -1, 0, 1)
+            push(0, -1, -1, 1, repeat=2)
+            push(1, -1, 0, 1)
+            push(0, 0, 0, 0, repeat=2)
+        for prev in range(k):
+            ti, tj = ordering[prev], ordering[k]
+            if ti == "p" and tj == "p":
+                push(0, 0, 0, 0)
+            elif ti == "n" and tj == "n":
+                push(0, -1, 0, 1)
+            else:
+                push(0, -1, -1, 1)
+    if Z > 0:
+        push(1, -1, 0, 1, repeat=Z)
+    return steps
+
+
+def build_atom_nf_lau_python(Z: int, N: int) -> list[Lau]:
+    """Pure-Python reference mirror of hecke_core_symbolic.build_atom_nf_sym."""
     A = Z + N
     nf: list[Lau] = [lau_one(), {}, {}, {}, {}, {}]
     if A == 0:
@@ -242,11 +307,34 @@ def build_atom_nf_lau(Z: int, N: int) -> list[Lau]:
     return nf
 
 
+def build_atom_nf_lau(Z: int, N: int, *, use_rust: bool = True) -> list[Lau]:
+    """Exact Laurent mirror of hecke_core_symbolic.build_atom_nf_sym.
+
+    Dispatches to `crates/gs-basis`'s GCD-free `DyadicLaurent` engine (`gs-peel`)
+    when available, falling back cleanly to `build_atom_nf_lau_python`.
+    """
+    if (Z + N) == 0:
+        return [lau_one(), {}, {}, {}, {}, {}]
+    if use_rust and gs_peel_binary_path() is not None and invoke_gs_peel is not None:
+        resp = invoke_gs_peel({
+            "op": "dyadic_hecke_nf_batch",
+            "jobs": [{
+                "id": f"{Z}_{N}",
+                "num_strands": 3,
+                "include_terms": True,
+                "steps": _atom_dyadic_steps(Z, N),
+            }],
+        })
+        comps = resp["results"][0]["components"]
+        return [decode_dyadic_laurent(c.get("terms") or []) for c in comps]
+    return build_atom_nf_lau_python(Z, N)
+
+
 # ── Observables: the grading, never an evaluation ─────────────────────────
 
-def profile(Z: int, N: int) -> dict:
+def profile(Z: int, N: int, *, use_rust: bool = True) -> dict:
     t0 = time.time()
-    nf = build_atom_nf_lau(Z, N)
+    nf = build_atom_nf_lau(Z, N, use_rust=use_rust)
     per = []
     support: set[int] = set()
     for c in nf:
@@ -268,6 +356,49 @@ def profile(Z: int, N: int) -> dict:
         "support_size": len(support),
         "wall_ms": int(round((time.time() - t0) * 1000)),
     }
+
+
+def profile_batch(configs: list[tuple[int, int]], *, use_rust: bool = True) -> list[dict]:
+    """Compute exact graded NF profiles across `(Z, N)` pairs in one `gs-peel` batch."""
+    if not configs:
+        return []
+    if use_rust and gs_peel_binary_path() is not None and invoke_gs_peel is not None:
+        t0 = time.time()
+        jobs = [
+            {
+                "id": f"{Z}_{N}",
+                "num_strands": 3,
+                "include_terms": False,
+                "steps": _atom_dyadic_steps(Z, N),
+            }
+            for (Z, N) in configs
+        ]
+        resp = invoke_gs_peel({"op": "dyadic_hecke_nf_batch", "jobs": jobs})
+        elapsed_ms = int(round((time.time() - t0) * 1000))
+        per_job_ms = max(0, elapsed_ms // max(1, len(configs)))
+        out = []
+        for (Z, N), res in zip(configs, resp["results"]):
+            per = []
+            for comp in res["components"]:
+                if comp["n_terms"] > 0:
+                    per.append([comp["min_degree"], comp["max_degree"], comp["n_terms"]])
+                else:
+                    per.append(None)
+            out.append({
+                "Z": Z, "N": N, "A": Z + N,
+                "magic_Z": Z in MAGIC, "magic_N": N in MAGIC,
+                "any_magic": (Z in MAGIC) or (N in MAGIC),
+                "doubly_magic": (Z in MAGIC) and (N in MAGIC),
+                "max_degree": res["max_degree"],
+                "min_degree": res["min_degree"],
+                "degree_span": res["degree_span"],
+                "n_terms": res["n_terms"],
+                "degree_profile": per,
+                "support_size": res["support_size"],
+                "wall_ms": per_job_ms,
+            })
+        return out
+    return [profile(Z, N, use_rust=False) for (Z, N) in configs]
 
 
 def verify() -> bool:
@@ -322,8 +453,9 @@ def main() -> int:
     rows = []
     for A in range(1, a.max_A + 1):
         print(f"=== A={A} ===", flush=True)
-        for Z in range(A, -1, -1):
-            r = profile(Z, A - Z)
+        level_configs = [(Z, A - Z) for Z in range(A, -1, -1)]
+        for r in profile_batch(level_configs):
+            Z = r["Z"]
             tag = ("DOUBLY MAGIC" if r["doubly_magic"]
                    else "MAGIC" if r["any_magic"] else "neither")
             r["tag"] = tag
