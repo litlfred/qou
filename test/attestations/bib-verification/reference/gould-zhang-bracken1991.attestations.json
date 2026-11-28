@@ -1,0 +1,55 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "gould-zhang-bracken1991",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 479,
+      "entry": {
+        "id": "gould-zhang-bracken1991",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1063/1.529152"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T13:25:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API and DOI Handle API (DOI 10.1063/1.529152; J. Math. Phys. 32 (1991), no. 9, 2298-2303).",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Derives generalized quantum Gel'fand invariants (higher quantum power-sum Casimirs) and polynomial characteristic identities on braid-group representations.",
+          "keyResults": [
+            {
+              "locator": "Section II-III",
+              "statement": "Constructs quantum power-sum Casimirs and explicit polynomial characteristic identities of L-operators and R-matrix braid generators.",
+              "useForFolio": "Underlies the higher power-sum trace tau_D(W^k) and full-twist pairing tau_D(Delta_3^2 W) analysis on the 2-component lepton braid words in QOU/StandardModel/LeptonFramedGNSAndStrainOrder.lean.",
+              "targets": [
+                "QOU/StandardModel/LeptonFramedGNSAndStrainOrder.lean",
+                "docs/audits/2026-11-28-untapped-algebraic-invariants-audit.md"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "aid-proof",
+              "rationale": "Cited in QOU/StandardModel/LeptonFramedGNSAndStrainOrder.lean and computations/probes/untapped_algebraic_invariants_proton_probe.py.",
+              "target": "QOU/StandardModel/LeptonFramedGNSAndStrainOrder.lean"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T13:25:00Z"
+        }
+      }
+    }
+  ]
+}

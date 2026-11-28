@@ -1,0 +1,55 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "morton-lukac-2001",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 484,
+      "entry": {
+        "id": "morton-lukac-2001",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1016/s0393-0440(02)00127-4"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T13:25:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Enriched with Crossref/Handle-verified DOI 10.1016/s0393-0440(02)00127-4 and arXiv math/0108011 (J. Geom. Phys. 48 (2003), no. 1, 93-110).",
+        "relevance": {
+          "verdict": "supporting",
+          "rationale": "Computes HOMFLYPT satellite invariants of 2-component Whitehead/Hopf/clasped links decorated by partition idempotents.",
+          "keyResults": [
+            {
+              "locator": "Section 2-4",
+              "statement": "Explicit Young-diagram satellite invariant expansion on 2-component links.",
+              "useForFolio": "Supports the 2-cable (2)-symmetrizer vs (1,1)-antisymmetrizer satellite evaluation on the 2-component lepton links (Hopf e, T(2,4) mu, Whitehead tau).",
+              "targets": [
+                "computations/probes/untapped_algebraic_invariants_proton_probe.py",
+                "docs/audits/2026-11-28-untapped-algebraic-invariants-audit.md"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "compute-check",
+              "rationale": "Evaluated in computations/probes/untapped_algebraic_invariants_proton_probe.py (Family 3 2-cable satellite traces).",
+              "target": "computations/probes/untapped_algebraic_invariants_proton_probe.py"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T13:25:00Z"
+        }
+      }
+    }
+  ]
+}

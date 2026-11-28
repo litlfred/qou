@@ -1,0 +1,55 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "bib-verification",
+  "subject": {
+    "kind": "reference",
+    "id": "dipper-james1987",
+    "path": null
+  },
+  "verifications": [
+    {
+      "position": 476,
+      "entry": {
+        "id": "dipper-james1987",
+        "source": {
+          "kind": "external",
+          "url": "https://doi.org/10.1112/plms/s3-54.1.57"
+        },
+        "status": "verified-clean",
+        "verified_at": "2026-11-28T13:25:00Z",
+        "verified_by": {
+          "kind": "agent",
+          "model": "claude-opus-4-7"
+        },
+        "note": "Verified via Crossref REST API and DOI Handle API (DOI 10.1112/plms/s3-54.1.57; Proc. London Math. Soc. (3) 54 (1987), no. 1, 57-82).",
+        "relevance": {
+          "verdict": "core",
+          "rationale": "Foundational paper introducing multiplicative Jucys-Murphy elements in type-A Iwahori-Hecke algebras over arbitrary rings and characterizing Z(H_n(q)) via symmetric polynomials.",
+          "keyResults": [
+            {
+              "locator": "Section 2-4",
+              "statement": "Multiplicative Jucys-Murphy elements commute pairwise and every elementary symmetric polynomial in them lies in the center of the Iwahori-Hecke algebra over any commutative ground ring.",
+              "useForFolio": "Backs BraidKnotOctonion/HeckeJucysMurphySymmetricCenter.lean discharging bean qou-u9o1 over [CommRing R].",
+              "targets": [
+                "BraidKnotOctonion/HeckeJucysMurphySymmetricCenter.lean"
+              ]
+            }
+          ],
+          "proposedActions": [
+            {
+              "action": "aid-proof",
+              "rationale": "Formalized in BraidKnotOctonion/HeckeJucysMurphySymmetricCenter.lean (jmMon_comm, sigma_comm_elemSymmJM, sigma_comm_elemSymm_jmRaw).",
+              "target": "BraidKnotOctonion/HeckeJucysMurphySymmetricCenter.lean",
+              "bean": "qou-u9o1"
+            }
+          ],
+          "assessed_by": {
+            "kind": "agent",
+            "model": "claude-opus-4-7"
+          },
+          "assessed_at": "2026-11-28T13:25:00Z"
+        }
+      }
+    }
+  ]
+}
