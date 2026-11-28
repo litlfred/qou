@@ -458,4 +458,88 @@ theorem loop_comm_cable (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (n : ℕ)
 
 end Tower
 
+/-! ## The cable and the shifted projector -/
+
+section Cable
+
+variable {K : Type*} [Field K] {δ A : K}
+
+variable (δ) in
+/-- The right shift `TL_{m+1} → TL_{n+m+2}`, `e_i ↦ e_{n+1+i}`: the algebra of the cable
+strands. -/
+noncomputable def sh (n m : ℕ) : TLFin K δ m →ₐ[K] TLFin K δ (n + m + 1) :=
+  lift K δ adjFin (fun i => e K δ adjFin (⟨n + 1 + i, by omega⟩ : Fin (n + m + 1)))
+    (fun _ => e_sq _)
+    (fun i j h => e_adjacent (by simp only [adjFin] at h ⊢; omega))
+    (fun i j h => e_farCommute (by simp only [adjFin] at h ⊢; omega))
+
+@[simp] theorem sh_e (n m : ℕ) (i : Fin m) :
+    sh δ n m (e K δ adjFin i) = e K δ adjFin (⟨n + 1 + i, by omega⟩ : Fin (n + m + 1)) :=
+  lift_e _ _ _ _ _ _ _ i
+
+theorem sh_incl (n m : ℕ) (x : TLFin K δ m) :
+    sh δ n (m + 1) (incl δ m x) = incl δ (n + m + 1) (sh δ n m x) := by
+  have : (sh δ n (m + 1)).comp (incl δ m) = (incl δ (n + m + 1)).comp (sh δ n m) :=
+    hom_ext _ _ _ _ _ (fun i => by
+      simp only [AlgHom.comp_apply, incl_e, sh_e]
+      congr 1)
+  exact AlgHom.congr_fun this x
+
+theorem sh_last (n m : ℕ) :
+    sh δ n (m + 1) (e K δ adjFin (Fin.last m)) = e K δ adjFin (Fin.last (n + m + 1)) := by
+  rw [sh_e]; congr 1; ext; simp; omega
+
+variable (δ A) in
+/-- **The cable** of `b` parallel strands around the first `n + 1`:
+`C_0 = 1`, `C_{b+1} = ι(C_b) · loop n b`. -/
+noncomputable def cable (n : ℕ) : ∀ b : ℕ, TLFin K δ (n + b)
+  | 0 => 1
+  | b + 1 => incl δ (n + b) (cable n b) * loop δ A n b
+
+/-- The top cap commutes with `ι(ι Z) · ι(loop n c) · loop n (c+1)`. -/
+theorem top_commute (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (n c : ℕ) (Z : TLFin K δ (n + c))
+    : Commute (e K δ adjFin (Fin.last (n + c + 1)))
+      (incl δ (n + c + 1) (incl δ (n + c) Z * loop δ A n c) * loop δ A n (c + 1)) := by
+  have hZ := (incl_incl_commute δ (n + c) Z).symm
+  rw [map_mul]
+  show _ * _ = _ * _
+  calc _ = incl δ (n + c + 1) (incl δ (n + c) Z) * (e K δ adjFin (Fin.last (n + c + 1)) *
+        incl δ (n + c + 1) (loop δ A n c) * loop δ A n (c + 1)) := by
+          simp only [mul_assoc]; rw [← mul_assoc _ (incl δ (n + c + 1) _), hZ.eq, mul_assoc]
+    _ = incl δ (n + c + 1) (incl δ (n + c) Z) * (incl δ (n + c + 1) (loop δ A n c) *
+        loop δ A n (c + 1) * e K δ adjFin (Fin.last (n + c + 1))) := by
+          rw [cup_loop_loop hA hδ n c, loop_loop_cup hA hδ n c]
+    _ = _ := by simp only [mul_assoc]
+
+/-- **Naturality on the whole cable.** Every element of the cable algebra commutes with the
+cable: `sh(x) · C_{m+1} = C_{m+1} · sh(x)`. -/
+theorem sh_commute_cable (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (n : ℕ) :
+    ∀ (m : ℕ) (x : TLFin K δ m), Commute (sh δ n m x) (cable δ A n (m + 1)) := by
+  intro m
+  induction m with
+  | zero => intro x; exact commute_of_gens _ _ (fun i => i.elim0) x
+  | succ m ih =>
+    intro x
+    refine commute_of_gens _ _ (fun i => ?_) x
+    rw [sh_e]
+    show Commute _ (incl δ (n + m + 1) (cable δ A n (m + 1)) * loop δ A n (m + 1))
+    by_cases hi : i.val < m
+    · have hE : (e K δ adjFin (⟨n + 1 + i, by omega⟩ : Fin (n + (m + 1) + 1)))
+          = incl δ (n + m + 1) (sh δ n m (e K δ adjFin (⟨i, hi⟩ : Fin m))) := by
+        rw [sh_e, incl_e]; rfl
+      refine Commute.mul_right ?_ ?_
+      · rw [hE]; exact (ih _).map (incl δ (n + m + 1))
+      · have := loop_comm_cable hA hδ n (m + 1) (i.val + 1) (by omega) (by omega)
+        convert this using 3
+        omega
+    · have hE : (⟨n + 1 + i, by omega⟩ : Fin (n + (m + 1) + 1)) = Fin.last (n + m + 1) :=
+        Fin.ext (by simp; omega)
+      rw [hE]
+      cases m with
+      | zero => exact top_commute hA hδ n 0 (cable δ A n 0)
+      | succ m =>
+        exact top_commute hA hδ n (m + 1) (cable δ A n (m + 1))
+
+end Cable
+
 end QOU.HeckeTemperleyLieb.TLCable
