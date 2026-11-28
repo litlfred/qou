@@ -1819,3 +1819,74 @@ exits 0 with no output against the `/home/claude/furov` overlay, after adding
 Classical.choice, Quot.sound]`. A deliberately false `example : (2 : ℚ) = 3 := by norm_num`
 in the same check file fails (so the check is live) and was removed. No `sorry`, no `axiom`, no
 `native_decide`, no analytic constructs. No `lake build` was run.
+
+## 17o. The KZ fallback: the fixed-`E` tower is false at `μ ≠ 0`, and the per-level target (bean `qou-3fdg`)
+
+File: `QOU/Transcendental/BraidsAndKnots/KZTowerTarget.lean` (new). It is behind the
+transcendental boundary because it is the interface to the analytic KZ construction. It
+contains no analysis: no limit, integral, `exp`, `π` or `ζ`.
+
+**What already exists, and why it does not discharge the descent.** `AssociatorKZ.lean` builds
+`Φ_KZ` as a connection matrix. `DrinfeldAssociator.lean` packages it as
+`structure Associator` (`kz : Associator`, line 134), and `KZPentagon` / `KZHexagon` prove
+the pentagon and the hexagon (in the central `e^{πi·}` form) in complete normed `ℂ`-algebras,
+for non-resonant arguments. Four pieces are missing to obtain `AssocK ℂ N E Ψ ∧ GLK ℂ N Ψ`:
+(i) a complete normed structure on the truncated free algebra `ℂ ⊗ ℚ⟨X, Y⟩ / (deg ≥ N)`;
+(ii) group-likeness, which is not a field of `Associator`; (iii) matching the `e^{πi·}`
+hexagon convention to `E = exp(t/2)` by rescaling the arguments by `2πi`; (iv) realising
+`Φ_KZ` there as a polynomial `Ψ`. None of these is attempted in this tranche.
+
+**The main finding: `GroupLikeKAssociatorTower K E` cannot hold for the exponential case.**
+The tower fixes one polynomial `E` for every level `N`.
+
+- `hexagon_sq_eq`: if `AssocU4 N E Φ`, then in every commutative `ℚ`-algebra, for every `y` with
+  `y ^ N = 0`, `(E(2y))² = (E(y))⁴`, where `E(x) = eval x 0 E`. Proof: send all six generators
+  `tᵢⱼ` to `y` (`diagMap`). The hexagon becomes `E(2y) = F·e·F·e·F`, with `F = Φ(y, y)` and
+  `e = E(y)`, and inversion gives `F² = 1`.
+- `not_assocU4_expHalfPoly`: for `expHalfPoly = 1 + X/2 + X²/8` and `N ≥ 4`, no `Φ` exists.
+  The witness is `y = 8z` in `ℚ[X]/(X⁴)`:
+  `(1 + 8z + 32z²)² − (1 + 4z + 8z²)⁴ = −128z³ + (z⁴-terms)`, and `z³ ≠ 0`.
+- `not_groupLikeKAssociatorTower_expHalfPoly`: the tower hypothesis for `expHalfPoly` is false
+  over every field `K`.
+- `not_exists_assocK_expHalfPoly_four`: so is the single-level form at level `4`.
+- `tower_forces_square_law`: any tower forces the square law at every nilpotency order.
+  Informally, this makes `x ↦ E(x, 0)` an exact exponential series, which a polynomial is only
+  when `E = 1` (`μ = 0`). That general claim is argued, not formalised. Only the `expHalfPoly`
+  case is formalised.
+
+**Consequence for §17d–§17n.** Every theorem that takes `GroupLikeKAssociatorTower K E` as a
+hypothesis is vacuous for `E = expHalfPoly`. The same holds for any `μ ≠ 0` polynomial `E`, by
+the informal argument above. The `E = 1` results (§17l) are unaffected. The open item of §17n,
+one-degree existence `∃ Ψ, AssocU4 (d + 1) E Ψ ∧ GL (d + 1) Ψ` for a fixed `E ≠ 1`, is
+**false** for `E = expHalfPoly` at `d + 1 ≥ 4`. The right open item takes `E` to be the
+level-`(d + 1)` truncation of `exp(X/2)`. I have not changed `GroupLikeKAssociatorTower` (a core
+definition); that change is escalated to the coordinator.
+
+**The per-level target.** `expHalfTrunc N = Σ_{k<N} X^k / (2^k k!)` is exact in `U4 N`.
+
+- `class KZAssociatorExists (K)` requires, for every `N ≥ 2`,
+  `∃ Ψ : K ⊗[ℚ] F2, AssocK K N (expHalfTrunc N) Ψ ∧ GLK K N Ψ`. This is a **conditional
+  hypothesis with content**. It is Drinfeld's KZ theorem for `K = ℂ`, rescaled. No instance is
+  declared, and it is not proved here.
+- `rational_associator_of_kz`: under the class, for every `N ≥ 2` there is a rational `Φ` with
+  `AssocU4 N (expHalfTrunc N) Φ ∧ GL N Φ` (via `rational_associator_of_groupLikeK`). This is
+  conditional.
+- Unconditionally: `assocU4_three` and `GL_three` show that `1 + [X, Y]/24` is a rational
+  associator modulo `3` for `expHalfTrunc 3 = expHalfPoly`, group-like modulo `FF2 3`.
+  `kzLevel_three` follows: the class's field holds at `N = 3` over every field `K`, with no
+  analysis. Level `2` was not stated separately.
+
+**What remains open.** Levels `N ≥ 4` of `KZAssociatorExists`, by any route. The
+analytic route needs (i)–(iv) above. The algebraic route needs the one-degree step of §17n
+restated for per-level `E`, with `E` changing between the truncations. The existing lift
+machinery (`assocU4_add_iff`, the pentagon class) takes a fixed `E`, so it would need a
+version where `E` changes by a degree-`N` term between levels.
+
+**Verification.** `lean -DautoImplicit=false -s 65536 KZTowerTarget.lean` exits 0 with no
+output against the `/home/claude/furov` overlay. `#print axioms` on all fifteen public
+theorems gives `[propext, Classical.choice, Quot.sound]`. A false `example : (2 : ℚ) + 2 = 5
+:= by norm_num` appended to the file fails (`⊢ False`), so the check is live; it was removed.
+No `sorry`, no `axiom`, no `native_decide`, no `: True`. No `lake build` was run.
+`scripts/transcendental-boundary-audit.py --check` reports `new 0`. It exits 1 only because of
+353 `GONE` entries: files absent from this sparse worktree, not changed by it. `QOU.lean`
+imports the new module.
