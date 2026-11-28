@@ -35,8 +35,11 @@ Hence `S⁺ = L · E·N·E⁻¹ · R` with `L = P·K(x⁻¹;q⁻¹)⁻¹·M₀(x
 
 * GGM's conjecture for the 5₂ region matrices (behind eq Sp-52), as for 4₁.
 * The block-to-index identity (measured numerically in the probe, not proved).
-* The index coefficients themselves, and the q-expansion of `L·E·N·E⁻¹·R` (exact
-  integer arithmetic in the probe, checks C1–C7, not in Lean).
+* ~~The index coefficients themselves, and the q-expansion of `L·E·N·E⁻¹·R`.~~
+  At `q⁰`, `x = 1`, for the entries `S⁺₁₂ = 4` and `S⁺₃₁ = -3`, both are now in
+  Lean: `QOU.QBeta.FiveTwoIndex.stokes52_12_from_index`, `stokes52_31_from_index`
+  (m015 index as a tetrahedron sum, finite support, exact arithmetic). The full
+  q-expansion (checks C1–C7) is still the probe's.
 
 No measured value enters. No fit.
 
