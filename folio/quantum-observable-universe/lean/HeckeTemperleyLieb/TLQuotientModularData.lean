@@ -30,7 +30,6 @@ different strand counts) and a braiding as a natural isomorphism in Mathlib's
 No empirical input; everything is over an arbitrary field.
 
 -- Ref: [jones1983] Index for subfactors, §4.
--- Ref: [kirbymelvin1991] https://doi.org/10.1007/BF01239527
 -- Ref: [leitner2026] the Temperley–Lieb chapter (bean `hkmt`).
 -/
 
