@@ -479,3 +479,6 @@ instead of the textbook. Remaining cited steps: Chevalley–Weil, Hodge, Hopf tr
 
 ## 2026-11-28 — Hopf trace formula proved (PR #9811)
 `QOU/Core/HopfTraceFormula.lean`: `trace_eq_restrict_add_mapQ`, `trace_eq_of_intertwine`, `trace_funLeft_perm`, `ChainEnd.hopf_trace`. Sorry-free. Still cited in hopf_trace_h1: cellular homology = surface homology with H0 trivial, H2 orientation; Hodge. Carl idea (02:02Z): complex volume Vol+i·CS to fix/place the sign upstream — CS on UT(Σ4) is blind (lifts preserve orientation, lift_orientation_sign); a chiral knot complement (CS≠0) would move the bit to the mirror choice of the knot.
+
+## 2026-11-28 — CS placement + quaternion conjugation (PR #9811)
+ComplexVolumeSignPlacement.lean: CS on UT blind; mirror flips readout; amphichiral CS=0. QuaternionConjugationOrientation.lean: star det -1, swaps L/R, keeps Gamma_i; L_w star flips both. Open: how S5xC2 acts on the cone (star vs L_w star) — that decides whether cone chirality = hypercharge sign.
