@@ -8,7 +8,7 @@ export default remark({
   uses: [
     "def:two-q-adic-valuation",
     "conj:q-collatz",
-    "prop:root-of-unity-truncation",
+    "conj:root-of-unity-truncation",
   ],
   tags: [
     "collatz",

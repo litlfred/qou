@@ -7,7 +7,7 @@ export default remark({
   interprets: "conj:q-birch-swinnerton-dyer",
   uses: [
     "def:categorical-mordell-weil",
-    "prop:root-of-unity-truncation",
+    "conj:root-of-unity-truncation",
     "prop:ns-kummer-specialisation",
     "rem:aether-gm-torsion",
   ],

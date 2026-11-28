@@ -2,7 +2,7 @@
   Root-of-unity truncation (conditional on the q-NS cone).
 
   Ref: [leitner2026] §Fluid dynamics / Root-of-unity truncation,
-       prop:root-of-unity-truncation
+       conj:root-of-unity-truncation
 -/
 
 import Mathlib.Data.Real.Basic
@@ -74,7 +74,7 @@ class RootOfUnityTruncationContext where
     assume its own conclusion).
 
     Ref: [leitner2026] §Fluid dynamics / Root-of-unity truncation,
-         prop:root-of-unity-truncation -/
+         conj:root-of-unity-truncation -/
 def root_of_unity_truncation_conditional
     [ctx : RootOfUnityTruncationContext] :
     (∀ t : ℝ, t < ctx.tStar →

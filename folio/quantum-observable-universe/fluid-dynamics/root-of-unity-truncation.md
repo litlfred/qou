@@ -17,7 +17,7 @@ $$
   }
 $$
 
-**Proof.**
+**Heuristic argument.**
 
 The governing [QOU axiom](#def:aether-parameter) rigorously demands that $q$ remains **not** a root of unity. However, forcibly passing the limit $q \to 1$ directly through the dense set of unity roots triggers a radical truncation across the representation theory that forcibly **strengthens** classical regularity. The resulting macroscopic blowup operating at $q = 1$ behaves merely as the pure mathematical accumulation gathering these infinite truncations.
 

@@ -6,7 +6,7 @@ export default conjecture({
   title:
     "Counter-example to Navier--Stokes regularity via $q \\to 1$ degeneration",
   uses: [
-    "prop:universality",
+    "conj:universality",
     "prop:acoustic-horizon-conditions",
   ],
   tags: [

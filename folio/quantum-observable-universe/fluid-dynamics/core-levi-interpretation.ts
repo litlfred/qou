@@ -36,7 +36,7 @@ export default remark({
         "the withdrawn identification), so no numerical result is lost. " +
         "**Restated:** what the Levi scalar measures, and the two surviving " +
         "statements (open branch (B); cited Beirão da Veiga–Berselli " +
-        "contrapositive). `prop:root-of-unity-truncation` dropped from `uses`; " +
+        "contrapositive). `conj:root-of-unity-truncation` dropped from `uses`; " +
         "`conj:levi-degeneracy` added as a forward pointer. Bean `qou-fm7s`.",
     },
   ],

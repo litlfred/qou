@@ -19,6 +19,11 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-11-28",
+      body: "Limit corrected from classical Navier--Stokes to Euler (owner ruling 2026-11-28, NS audit): nu_q -> 0, so the q-NS family converges to an inviscid limit, as conj:regularity-breakdown already states. The Navier--Stokes limit is kept only for the modified fixed-viscosity family of Step 6. The Lean carrier QAubinLions is numeric and does not encode either limit.",
+    },
+    {
       kind: "caveat",
       date: "2026-11-24",
       body: "Formalisation audit (`qou-x60n`): `2026-08-24-undecided-carrier-witnesses.lean` records that the earlier existential `QAubinLions` carrier (`∃ q_thresh > 0`) was trivially inhabited at `1`.",

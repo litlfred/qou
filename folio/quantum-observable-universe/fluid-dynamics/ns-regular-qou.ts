@@ -28,6 +28,11 @@ export default definition({
     "categorical",
   ],
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-28",
+      body: "Owner Lean ruling 2026-11-28 (NS audit): the sentence stating that observability guarantees chi(A) != 0, so every QOU is internally NS-singular, is reworded as an expectation. In QOU.FluidDynamics.qou_internal_ns_singular the step observability -> chi != 0 is the structure field observability_forces_chi, so the theorem composes assumptions. The claim is kept as a documented open item.",
+    },
     { kind: "note", date: "2026-11-24", body: "Relocated from the block prose by the reading-order drain (qou-d4kh): ([Descartes theorem](#thm:ns-singularity-descartes), item 1)" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The global-surface definition $\\deg e(\\xi) = \\chi(A)$ is (matching `QOU.FluidDynamics.qou_ns_in_qou`)." },
     {

@@ -3,7 +3,7 @@ import Mathlib.Tactic
 /-!
 # QOU.FluidDynamics.p4_universality — universality of the critical exponent
 
-**Proposition (conditional)** ([`prop:universality`](../../../quantum-observable-universe/fluid-dynamics/p4-universality.md)).
+**Proposition (conditional)** ([`conj:universality`](../../../quantum-observable-universe/fluid-dynamics/p4-universality.md)).
 
 *The critical exponent `α` governing the enstrophy divergence as `q → 1`
 depends only on the categorical invariants of `(C, A, τ)` — the Euler
@@ -55,7 +55,7 @@ class P4UniversalityContext where
   alpha_factors_through_invariants :
     ∃ f : Invariants → Exponent, ∀ v₀, α v₀ = f invariants
 
-/-- **Universality of the critical exponent** ([`prop:universality`]).
+/-- **Universality of the critical exponent** ([`conj:universality`]).
 
     The critical exponent is **independent of the initial data**: any two
     initial data yield the same exponent.  *Derived* from
