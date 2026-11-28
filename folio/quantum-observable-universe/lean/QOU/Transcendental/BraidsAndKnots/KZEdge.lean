@@ -1,6 +1,6 @@
 import QOU.Transcendental.BraidsAndKnots.KZ4
 import QOU.Transcendental.BraidsAndKnots.FuchsianParam
-import QOU.BraidsAndKnots.Flat2D
+import QOU.Transcendental.BraidsAndKnots.Flat2D
 import QOU.Transcendental.BraidsAndKnots.KZCorner
 import QOU.Transcendental.BraidsAndKnots.KZHexagon
 

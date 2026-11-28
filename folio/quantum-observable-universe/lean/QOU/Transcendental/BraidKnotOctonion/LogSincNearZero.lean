@@ -55,9 +55,9 @@ import QOU.Transcendental.BraidKnotOctonion.KashaevEndpointSplit
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 import Mathlib.Analysis.Calculus.MeanValue
-import MathlibExt.TrapezoidRule
-import MathlibExt.SinCubeBounds
-import MathlibExt.CompositeEulerMaclaurin
+import QOU.Transcendental.MathlibExt.TrapezoidRule
+import QOU.Transcendental.MathlibExt.SinCubeBounds
+import QOU.Transcendental.MathlibExt.CompositeEulerMaclaurin
 
 namespace QOU.Knot.FigureEightVolume
 

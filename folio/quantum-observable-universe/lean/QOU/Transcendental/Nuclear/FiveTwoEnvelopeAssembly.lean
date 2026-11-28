@@ -1,6 +1,6 @@
 import QOU.Transcendental.Nuclear.FiveTwoEnvelopeSum
-import QOU.MassTheory.BranchIntegerPinning
-import MathlibExt.ConstantOffOnePoint
+import QOU.Transcendental.MassTheory.BranchIntegerPinning
+import QOU.Transcendental.MathlibExt.ConstantOffOnePoint
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Calculus.Deriv.Pow
 import Mathlib.Analysis.Calculus.FDeriv.RestrictScalars

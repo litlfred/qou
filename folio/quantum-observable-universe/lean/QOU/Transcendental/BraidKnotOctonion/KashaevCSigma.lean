@@ -29,7 +29,7 @@
   -- Ref: [leitner2026] QOU/Knot/KashaevAsymptoticBounds.lean
 -/
 import QOU.Transcendental.BraidKnotOctonion.KashaevAsymptoticBounds
-import MathlibExt.OneLoopPrefactorInvariance
+import QOU.Transcendental.MathlibExt.OneLoopPrefactorInvariance
 
 namespace QOU.Knot.FigureEightVolume
 

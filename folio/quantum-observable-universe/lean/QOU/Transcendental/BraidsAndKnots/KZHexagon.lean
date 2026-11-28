@@ -1,5 +1,5 @@
 import QOU.Transcendental.BraidsAndKnots.KZHalfMonodromy
-import MathlibExt.KZHolonomy.FlatTransport
+import QOU.Transcendental.MathlibExt.KZHolonomy.FlatTransport
 
 /-!
 # The hexagon relation for the KZ associator

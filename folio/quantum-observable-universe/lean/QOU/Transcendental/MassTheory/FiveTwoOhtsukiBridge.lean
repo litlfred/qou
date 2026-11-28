@@ -2,7 +2,7 @@ import Mathlib.Tactic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import QOU.Transcendental.MathlibExt.BlochWignerLobachevsky
 import QOU.Transcendental.MassTheory.BlochWignerSymmetry
-import MathlibExt.ExponentialGrowthRate
+import QOU.Transcendental.MathlibExt.ExponentialGrowthRate
 import QOU.Transcendental.BraidKnotOctonion.KummerRadial
 
 /-!

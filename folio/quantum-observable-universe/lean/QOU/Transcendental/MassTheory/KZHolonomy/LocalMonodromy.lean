@@ -1,5 +1,5 @@
-import HeckeTemperleyLieb.KZTwoStrandHecke
-import QOU.MassTheory.KZHolonomy.Continuity
+import QOU.Transcendental.HeckeTemperleyLieb.KZTwoStrandHecke
+import QOU.Transcendental.MassTheory.KZHolonomy.Continuity
 import QOU.BraidsAndKnots.FuchsianConvergence
 import QOU.Transcendental.BraidsAndKnots.KZHalfMonodromy
 import Mathlib.Topology.Algebra.Module.Cardinality

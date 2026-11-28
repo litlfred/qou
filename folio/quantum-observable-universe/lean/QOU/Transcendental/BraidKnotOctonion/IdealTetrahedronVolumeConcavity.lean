@@ -58,7 +58,7 @@
 
 import Mathlib.Analysis.Convex.Deriv
 import QOU.Transcendental.BraidKnotOctonion.LobachevskyDerivative
-import MathlibExt.IdealTetrahedronConcavity
+import QOU.Transcendental.MathlibExt.IdealTetrahedronConcavity
 
 namespace QOU.Archimedean.IdealTetrahedronConcavity
 

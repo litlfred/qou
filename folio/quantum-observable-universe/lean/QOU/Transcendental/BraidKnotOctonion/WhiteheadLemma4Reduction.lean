@@ -41,7 +41,7 @@ positive-sum shape estimate**; no oscillatory analysis remains.
 -/
 
 import QOU.Transcendental.BraidKnotOctonion.WhiteheadPhaseAlgebra
-import MathlibExt.ComplexGaussianSumNonCancellation
+import QOU.Transcendental.MathlibExt.ComplexGaussianSumNonCancellation
 import Mathlib.Analysis.Real.Pi.Bounds
 
 namespace QOU.Knot.FigureEightVolume

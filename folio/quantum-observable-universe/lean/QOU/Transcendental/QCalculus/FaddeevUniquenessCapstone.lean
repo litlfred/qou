@@ -1,4 +1,4 @@
-import MathlibExt.RatioEntireOfSameDivisor
+import QOU.Transcendental.MathlibExt.RatioEntireOfSameDivisor
 import QOU.Transcendental.QCalculus.FaddeevPhiUniquenessAssembly
 
 /-!

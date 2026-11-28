@@ -1,4 +1,4 @@
-import QOU.BraidsAndKnots.FuchsianAnalytic
+import QOU.Transcendental.BraidsAndKnots.FuchsianAnalytic
 import Mathlib.Analysis.ODE.Gronwall
 
 /-!

@@ -32,8 +32,8 @@
   -- Ref: [leitner2026] QOU/OneLoopPrefactorInvariance.lean
 -/
 import QOU.Transcendental.BraidKnotOctonion.LobachevskyDerivative
-import MathlibExt.TaylorRemainder
-import MathlibExt.TrapezoidRule
+import QOU.Transcendental.MathlibExt.TaylorRemainder
+import QOU.Transcendental.MathlibExt.TrapezoidRule
 
 namespace QOU.Knot.FigureEightVolume
 

@@ -1,5 +1,5 @@
 import QOU.Transcendental.BraidKnotOctonion.RivinConcavity
-import MathlibExt.StrictConcaveOnSegments
+import QOU.Transcendental.MathlibExt.StrictConcaveOnSegments
 import ToricConicOpt.ConcaveOnSum
 
 /-!

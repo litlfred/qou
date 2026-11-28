@@ -1,5 +1,5 @@
 import MathlibExt.FiveTwoRogersExtend
-import MathlibExt.FiveTwoRogersReflection
+import QOU.Transcendental.MathlibExt.FiveTwoRogersReflection
 import QOU.Transcendental.QCalculus.ComplexDilogBridge
 import QOU.Transcendental.QCalculus.ComplexDilogarithmLanden
 import QCalculus.ComplexDilogarithmBoundary

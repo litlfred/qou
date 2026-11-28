@@ -63,7 +63,7 @@
 import Mathlib.Tactic
 import Mathlib.Analysis.Calculus.MeanValue
 import QOU.Transcendental.BraidKnotOctonion.LobachevskyDerivative
-import MathlibExt.IdealTetrahedronConcavity
+import QOU.Transcendental.MathlibExt.IdealTetrahedronConcavity
 
 namespace QOU.Archimedean
 

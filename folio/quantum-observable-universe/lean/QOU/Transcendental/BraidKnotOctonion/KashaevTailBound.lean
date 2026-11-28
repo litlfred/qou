@@ -79,8 +79,8 @@
 -/
 import QOU.Transcendental.BraidKnotOctonion.KashaevArgmax
 import QOU.Transcendental.BraidKnotOctonion.LobTaylorSaddle
-import MathlibExt.TrapezoidRule
-import MathlibExt.GaussianSumBound
+import QOU.Transcendental.MathlibExt.TrapezoidRule
+import QOU.Transcendental.MathlibExt.GaussianSumBound
 import Mathlib.Analysis.Calculus.MeanValue
 
 namespace QOU.Knot.FigureEightVolume

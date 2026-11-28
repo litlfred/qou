@@ -71,7 +71,7 @@
   -- Ref: [ohtsuki2016] https://doi.org/10.4171/QT/83
 -/
 import QOU.Transcendental.BraidKnotOctonion.KummerRadial
-import QCalculus.FiveTwoComplexPentagon
+import QOU.Transcendental.QCalculus.FiveTwoComplexPentagon
 import QOU.Transcendental.BraidKnotOctonion.IdealTriangulation
 
 namespace QOU.Knot.FiveTwoVolume

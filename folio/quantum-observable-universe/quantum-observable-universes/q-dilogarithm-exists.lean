@@ -1,4 +1,4 @@
-import QOU.Core.QAnalysisUniquenessCounterexamples
+import QOU.Transcendental.Core.QAnalysisUniquenessCounterexamples
 
 
 /-!

@@ -49,7 +49,7 @@ bracket form may still be wanted under the weaker hypotheses of
 `docs/audits/2026-08-19-qou-shrp-duplicated-corpus-euler-maclaurin.md`.
 -/
 
-import BraidKnotOctonion.EulerMaclaurinFirst
+import QOU.Transcendental.BraidKnotOctonion.EulerMaclaurinFirst
 import QOU.Transcendental.BraidKnotOctonion.LogSineSmoothPart
 
 namespace QOU.Knot.FigureEightVolume

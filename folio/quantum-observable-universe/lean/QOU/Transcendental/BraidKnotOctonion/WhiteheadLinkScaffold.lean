@@ -58,7 +58,7 @@ Audit: `docs/audits/2026-08-19-volume-conjecture-work-overlap-sweep.md`.
 -/
 
 import QOU.Transcendental.BraidKnotOctonion.WhiteheadChainVolume
-import MathlibExt.ExponentialGrowthRate
+import QOU.Transcendental.MathlibExt.ExponentialGrowthRate
 
 namespace QOU.Knot.FigureEightVolume
 

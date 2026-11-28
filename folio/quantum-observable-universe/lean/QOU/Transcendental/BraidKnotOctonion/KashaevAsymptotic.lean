@@ -53,7 +53,7 @@
   -- Ref: [leitner2026] computations/probes/kashaev_assembly_bound_probe.py
 -/
 import QOU.Transcendental.BraidKnotOctonion.LobNearZero
-import MathlibExt.StirlingRobbins
+import QOU.Transcendental.MathlibExt.StirlingRobbins
 
 namespace QOU.Knot.FigureEightVolume
 

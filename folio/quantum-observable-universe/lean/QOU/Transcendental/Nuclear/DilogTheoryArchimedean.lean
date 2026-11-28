@@ -1,5 +1,5 @@
 import QOU.Nuclear.DilogTheory
-import MathlibExt.FiveTwoAbelFiveTerm
+import QOU.Transcendental.MathlibExt.FiveTwoAbelFiveTerm
 import QOU.Transcendental.MassTheory.BlochRigidity.Reflection
 
 /-!

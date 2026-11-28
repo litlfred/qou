@@ -1,5 +1,5 @@
 import QOU.MassTheory.KohnoComparison
-import QOU.MassTheory.KZHolonomy.Continuity
+import QOU.Transcendental.MassTheory.KZHolonomy.Continuity
 import QOU.Transcendental.MassTheory.KZHolonomy.LocalMonodromy
 import HeckeTemperleyLieb.BraidHeckeFactor
 import BraidKnotOctonion.JMProjectorContinuity

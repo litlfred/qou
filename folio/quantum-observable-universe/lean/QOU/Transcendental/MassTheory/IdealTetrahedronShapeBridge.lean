@@ -56,7 +56,7 @@
 
 import Mathlib.Tactic
 import QOU.Transcendental.MathlibExt.BlochWignerLobachevsky
-import MathlibExt.IdealTetrahedronConcavity
+import QOU.Transcendental.MathlibExt.IdealTetrahedronConcavity
 
 namespace QOU.Archimedean.IdealTetrahedronConcavity
 

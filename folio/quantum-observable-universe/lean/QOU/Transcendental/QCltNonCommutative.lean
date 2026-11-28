@@ -1,7 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Topology.Order.Basic
 import Mathlib.Order.Filter.Basic
-import CompactQuantumMetrics.AlgebraicGnsEmbedding
+import QOU.Transcendental.CompactQuantumMetrics.AlgebraicGnsEmbedding
 import QOU.Observations.QCltCut
 
 /-!

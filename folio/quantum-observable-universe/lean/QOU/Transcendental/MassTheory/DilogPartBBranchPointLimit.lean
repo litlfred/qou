@@ -1,5 +1,5 @@
 import QOU.Transcendental.MathlibExt.DilogPartBBranchPointSum
-import MathlibExt.QuadraticIrrationalBadlyApproximable
+import QOU.Transcendental.MathlibExt.QuadraticIrrationalBadlyApproximable
 
 /-!
 # Part B of `conj:dilogarithm-archimedean-limit` — the W-P1 branch-point limit

@@ -1,7 +1,7 @@
 import QOU.Transcendental.Nuclear.FiveTwoEnvelopeWiring
 import QOU.Transcendental.Nuclear.FiveTwoLevelSevenBridge
 import QOU.Transcendental.Nuclear.FiveTwoExtendIdentification
-import MathlibExt.FiveTwoAbelFiveTerm
+import QOU.Transcendental.MathlibExt.FiveTwoAbelFiveTerm
 
 /-!
 # `S(π) = −π²/2`, assembled — bean `qou-asem`

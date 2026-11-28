@@ -25,7 +25,7 @@ Nothing is assumed: no `sorry`, no axiom, no hypothesis left on `Li`.
 -- Ref: [leitner2026] beans qou-ph1k, qou-gkco, qou-0yqu
 -/
 import QOU.Transcendental.MassTheory.ComplexDilogReflectionExt
-import QCalculus.FiveTwoComplexPentagon
+import QOU.Transcendental.QCalculus.FiveTwoComplexPentagon
 
 namespace QOU.QBeta.FiveTwo
 

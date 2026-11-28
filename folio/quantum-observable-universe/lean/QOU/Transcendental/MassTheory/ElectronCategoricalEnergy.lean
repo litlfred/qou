@@ -35,8 +35,8 @@ No measured value enters. Numbers at `q₀` are in
 `computations/probes/electron_weight/electron_log_weight_probe.py`.
 -/
 import QOU.Observations.ElectronWeightAdditivity
-import QOU.Nuclear.SpectatorEnergyMap
-import QOU.Core.QBetaEnergyDictionary
+import QOU.Transcendental.Nuclear.SpectatorEnergyMap
+import QOU.Transcendental.Core.QBetaEnergyDictionary
 
 namespace QOU.Transcendental.MassTheory.ElectronCategoricalEnergy
 

@@ -161,3 +161,20 @@ term 1, pentagon in `U4 N`). `Rep.monoidal P` is a `def`, not an instance, since
 `rMatrix_quasiCocomm` and cocommutativity of `Δ`; `braiding` is the isomorphism with inverse
 `ρ(R⁻¹) ∘ σ⁻¹`; `braidingHom_naturality`. The two module hexagons come next.
 Sorry-free; axioms propext, Classical.choice, Quot.sound.
+
+## 6. Closed-subgraph move, 2026-11-28
+
+The baseline listed 378 modules outside the boundary. 267 of them are imported only by other
+modules in that set, by modules already inside `QOU/Transcendental/`, or by the root `QOU.lean`.
+They form a closed subgraph and move unchanged into `QOU/Transcendental/<path>` (a `MathlibExt/X`
+module becomes `QOU/Transcendental/MathlibExt/X`; `QOU/Y/X` becomes `QOU/Transcendental/Y/X`).
+Only import lines change: 267 renames, import edits in 106 files (100 inside the boundary,
+`QOU.lean`, and four content-block siblings under `quantum-observable-universes/`). Namespaces
+and declaration names are unchanged, so every `lean.ref` still resolves. Two candidates touched
+by open PRs (#9400 `SDPStrongDuality`, #9579 `ElectroweakBosonThresholdsAndWeinberg`) were held
+back. The baseline is 378 → 111.
+
+The remaining 111 are each imported by an algebraic module, so each needs a split. They are
+divided into six chunks for sibling threads: `/mnt/project-files/strangler-chunks-2026-11-28/briefs.md`.
+Path references inside computations/ docstrings and witnesses, and in dated audit docs, are left
+as historical records; editing a producer would drift its witness `scriptHash`.

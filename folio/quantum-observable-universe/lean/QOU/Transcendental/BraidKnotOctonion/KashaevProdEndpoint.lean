@@ -41,7 +41,7 @@
   -- Ref: [leitner2026] computations/probes/one_loop_c_sigma_tetrahedral_probe.py
 -/
 import QOU.Transcendental.BraidKnotOctonion.FigureEightVolume
-import MathlibExt.RootsOfUnityProduct
+import QOU.Transcendental.MathlibExt.RootsOfUnityProduct
 
 namespace QOU.Knot.FigureEightVolume
 

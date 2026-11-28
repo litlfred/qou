@@ -1,5 +1,5 @@
 import QOU.Transcendental.Nuclear.FiveTwoRootStructure
-import MathlibExt.ImplicitScalar
+import QOU.Transcendental.MathlibExt.ImplicitScalar
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 import Mathlib.Analysis.SpecialFunctions.Sqrt

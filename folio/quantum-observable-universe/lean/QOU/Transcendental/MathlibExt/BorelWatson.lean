@@ -27,7 +27,7 @@
   -- Ref: [leitner2026] bean el8w tranche 5 — Watson uniqueness brick 2
 -/
 
-import MathlibExt.StirlingUpperBound
+import QOU.Transcendental.MathlibExt.StirlingUpperBound
 
 namespace QOU.Mathlib.Borel
 

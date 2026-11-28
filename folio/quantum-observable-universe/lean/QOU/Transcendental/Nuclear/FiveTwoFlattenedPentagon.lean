@@ -53,7 +53,7 @@ and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 
 -- Ref: [neumann2004] library/0307092v2/0307092v2.pdf, Prop 2.5 and §2 (`R(z;p,q)`, `ker ν`)
 -/
-import QCalculus.FiveTwoComplexPentagon
+import QOU.Transcendental.QCalculus.FiveTwoComplexPentagon
 
 namespace QOU.QBeta.FiveTwoFlattenedPentagon
 

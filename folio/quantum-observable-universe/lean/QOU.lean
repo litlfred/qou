@@ -5,8 +5,8 @@ import QOU.BringsSurface.QGenericBaseReal
 import QOU.BringsSurface.TwistSignTorsor
 import BraidKnotOctonion.CoveringDegreeRamification
 import MathlibExt.GermStabiliserCyclic
-import QOU.BringsSurface.ChartStep
-import QOU.BringsSurface.IdentityTheorem
+import QOU.Transcendental.BringsSurface.ChartStep
+import QOU.Transcendental.BringsSurface.IdentityTheorem
 import MathlibExt.CombinatorialMapQuotient
 import MathlibExt.CombinatorialMapEuler
 import MathlibExt.CycleCountSwap
@@ -62,13 +62,13 @@ import QOU.Core.TarskiSignBernstein
 import QOU.Core.TarskiSignKashaevGen2
 import QOU.Core.KashaevReflection
 import MathlibExt.Core
-import MathlibExt.QuadraticIrrationalBadlyApproximable
+import QOU.Transcendental.MathlibExt.QuadraticIrrationalBadlyApproximable
 import QOU.Core.MarkovTrace
 import HeckeTemperleyLieb.HeckeToTemperleyLieb
 import HeckeTemperleyLieb.TraceRadicalNondegenerate
 import MathlibExt.LocalCocycleTransport
 import MathlibExt.LocalCocycleGenerated
-import MathlibExt.PathLebesgue
+import QOU.Transcendental.MathlibExt.PathLebesgue
 import HeckeTemperleyLieb.TemperleyLiebSpanning
 import HeckeTemperleyLieb.TemperleyLiebWedderburn
 import HeckeTemperleyLieb.TemperleyLiebNormalForm
@@ -82,7 +82,7 @@ import QCalculus.QuantumDilogarithmInfinite
 import QOU.Transcendental.QCalculus.FaddeevQuantumDilogarithm
 import QOU.Transcendental.QCalculus.FaddeevPhiBRealIntegral
 import QCalculus.PhiBProd
-import QCalculus.PhiBFibreExtension
+import QOU.Transcendental.QCalculus.PhiBFibreExtension
 import MathlibExt.YekutieliIntegration
 import CompactQuantumMetrics.SDP
 import CompactQuantumMetrics.SDPEmptyConstraints
@@ -104,8 +104,8 @@ import QOU.Transcendental.QCalculus.ComplexRogersDilog
 -- Scalar implicit function theorem, and two one-variable transport lemmas
 -- (a constant pinned off a single point; an integer branch index pinned by a
 -- window). All Mathlib gaps; all sorry-free.
-import MathlibExt.ImplicitScalar
-import MathlibExt.ConstantOffOnePoint
+import QOU.Transcendental.MathlibExt.ImplicitScalar
+import QOU.Transcendental.MathlibExt.ConstantOffOnePoint
 import QOU.Transcendental.MassTheory.ClausenDoubleAngleSeries
 import QOU.Transcendental.MassTheory.Cl2PentagonFromBlochWigner
 import QOU.Transcendental.MassTheory.BlochGroupComplex
@@ -133,19 +133,19 @@ import QOU.Observations.AxisKashaevReading
 import QOU.Observations.MassReadingForced
 import QOU.Observations.LeptonLinkLadderReadings
 import QOU.Observations.LeptonMassGrowthBound
-import QOU.MassTheory.BranchIntegerPinning
+import QOU.Transcendental.MassTheory.BranchIntegerPinning
 import QOU.MassTheory.NucleusBondValence
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
 -- infrastructure that closes PI-2 of QOU.Mathlib.HadamardFactorization.
 -- Sorry-free, so it is wired here for CI type-checking (unlike
 -- HadamardFactorization itself, which still carries PI-3 / the full theorem).
-import MathlibExt.WeierstrassFactorEstimate
+import QOU.Transcendental.MathlibExt.WeierstrassFactorEstimate
 -- Algebraic skeleton of the Dimofte-Garoufalidis 1-loop invariant: the shape
 -- identity ζ+ζ'+ζ''=0, the CUSP-NUMBER-FREE degeneracy of the edge rows, the
 -- lattice-basis determinant lemmas, and the proof that the per-cusp factor
 -- 2^{(c-1)/2} cancels identically.  Sorry-free, so wired here for CI.
 import QOU.StandardModel.OneLoopEdgeLattice
-import MathlibExt.OneLoopPrefactorInvariance
+import QOU.Transcendental.MathlibExt.OneLoopPrefactorInvariance
 -- Borel-Carathéodory inequality: a one-sided bound on Re f gives a two-sided
 -- bound on ‖f‖. A genuine Mathlib v4.24.0 gap and a PI-5 prerequisite for
 -- QOU.Mathlib.HadamardFactorization. Sorry-free, so wired here for CI.
@@ -153,7 +153,7 @@ import MathlibExt.BorelCaratheodory
 -- Scoping check for the Hadamard chain: phiBProd is a RATIO whose denominator
 -- factor vanishes at an explicit point for every b /= 0, so it is not entire and
 -- IsEntireOfOrderLE cannot be assumed for it. Sorry-free.
-import QCalculus.HadamardApplicability
+import QOU.Transcendental.QCalculus.HadamardApplicability
 -- Littlewood-Richardson coefficients c^nu_{lambda mu} as a count of LR tableaux
 -- (decidable; small values by kernel `decide`). Sorry-free.
 import MathlibExt.LittlewoodRichardson
@@ -169,7 +169,7 @@ import QCalculus.FaddeevSolutionSet
 -- The hratio "reduction" is circular: given double periodicity, "ratio entire"
 -- and "ratio constant" are the same statement. So qou-cons is not a sub-problem
 -- of uniqueUpToScalar — it IS uniqueUpToScalar. Sorry-free.
-import MathlibExt.RigidityReductionScope
+import QOU.Transcendental.MathlibExt.RigidityReductionScope
 -- Per Copilot review: `QOU.MathlibExt.SDPRankEquality` is kept
 -- OUT of the top-level umbrella while it still has `sorry`
 -- placeholders (rank-nullity Mathlib API + Goldman-Tucker
@@ -230,7 +230,7 @@ import QOU.Core.SelfDualityDegree
 import QOU.StandardModel.ColourStabilizerAction
 import QOU.StandardModel.ColourBridge
 import QOU.StandardModel.ThetaQcdFramingCp
-import QOU.StandardModel.StrongCPWritheCancellationAndStringTension
+import QOU.Transcendental.StandardModel.StrongCPWritheCancellationAndStringTension
 import QOU.StandardModel.SecondCrossingInvariant
 -- Information content of the eightfold-way hypercharge battery: the RH half
 -- is entailed by Q (GMN at I3=0 pins Y uniquely, so it discriminates nothing);
@@ -335,8 +335,8 @@ import QOU.Transcendental.BraidsAndKnots.Drinfeld.Pentagon
 import QOU.Transcendental.BraidsAndKnots.Drinfeld.Reindex
 import QOU.Transcendental.BraidsAndKnots.Drinfeld.Transport
 import QOU.Transcendental.BraidsAndKnots.Drinfeld.Whisker
-import QOU.BraidsAndKnots.Flat2D
-import QOU.BraidsAndKnots.FuchsianAnalytic
+import QOU.Transcendental.BraidsAndKnots.Flat2D
+import QOU.Transcendental.BraidsAndKnots.FuchsianAnalytic
 import QOU.BraidsAndKnots.FuchsianConvergence
 import QOU.BraidsAndKnots.FuchsianFormal
 import QOU.Transcendental.BraidsAndKnots.FuchsianParam
@@ -409,7 +409,7 @@ import BraidKnotOctonion.PLPolyPush
 import BraidKnotOctonion.PLPrismPush
 import BraidKnotOctonion.PLDeltaPoly
 import BraidKnotOctonion.PLGenericSlide
-import BraidKnotOctonion.PLRegularProjection
+import QOU.Transcendental.BraidKnotOctonion.PLRegularProjection
 import BraidKnotOctonion.PLHomeo
 import BraidKnotOctonion.PLAlexander
 import BraidKnotOctonion.PLTriangulation
@@ -426,7 +426,7 @@ import BraidKnotOctonion.PLBarycentric
 import BraidKnotOctonion.PLRegularNbhd
 import BraidKnotOctonion.PLStar
 import BraidKnotOctonion.PLBall
-import BraidKnotOctonion.PLDeltaEquiv
+import QOU.Transcendental.BraidKnotOctonion.PLDeltaEquiv
 import QOU.Transcendental.BraidKnotOctonion.FiveTwoVolumeConstant
 import QOU.Transcendental.BraidKnotOctonion.FiveTwoAngleSum
 import QOU.Transcendental.BraidKnotOctonion.FiveTwoNinthPower
@@ -472,9 +472,9 @@ import QOU.Transcendental.MassTheory.MassDerivationReal
 import QOU.MassTheory.LinkingWeightWedderburn
 -- Also brings QOU.Mass.ChainTraceFactor under the umbrella; nothing had
 -- imported it, so it was invisible to blueprint/doc-gen import walks.
-import QOU.MassTheory.IntraOrderingInvariance
-import QOU.MassTheory.FreeEnergyReadingIsSigned
-import QOU.MassTheory.MarginalRatioExtensivity
+import QOU.Transcendental.MassTheory.IntraOrderingInvariance
+import QOU.Transcendental.MassTheory.FreeEnergyReadingIsSigned
+import QOU.Transcendental.MassTheory.MarginalRatioExtensivity
 import QOU.MassTheory.BondFactorClassicalFloor
 import QOU.MassTheory.TwoRowTwoColumnCollision
 import QOU.MassTheory.TraceConventionGate
@@ -507,7 +507,7 @@ import QOU.MassTheory.A4PrecisionOrderSeparation
 import QOU.MassTheory.A3UnitsConsistency
 import QOU.MassTheory.BindingWeightMarkovPinning
 import QOU.MassTheory.CKnotNonUniversal
-import QOU.MassTheory.MassVolDensity
+import QOU.Transcendental.MassTheory.MassVolDensity
 import QOU.MassTheory.MixedMultibondMuBarIntegrality
 import QOU.MassTheory.BindingRecurrenceSpectral
 import QOU.MassTheory.BindingClassicalKernel
@@ -593,8 +593,8 @@ import HeckeTemperleyLieb.YoungLatticeExchange
 import BraidKnotOctonion.YoungLatticeCornerCount
 import QOU.MassTheory.LinearChainBondCount
 import QOU.MassTheory.WedderburnMassFormulaCoefficients
-import QOU.MassTheory.KappaWritheAsymptote
-import QOU.MassTheory.LinearChainBondFactorization
+import QOU.Transcendental.MassTheory.KappaWritheAsymptote
+import QOU.Transcendental.MassTheory.LinearChainBondFactorization
 import BraidKnotOctonion.MilnorSignRepObstruction
 import BraidKnotOctonion.MilnorIndeterminacyGate
 import QOU.MassTheory.BondChannelClassSelection
@@ -621,8 +621,8 @@ import QOU.Core.NSymHostStructure
 import QOU.Core.NSymSlotDerivation
 import QOU.Core.NSymTraceAlgebra
 import QOU.Core.QAnalysis
-import QOU.Core.QBetaEnergyDictionary
-import QOU.Core.QExpEntire
+import QOU.Transcendental.Core.QBetaEnergyDictionary
+import QOU.Transcendental.Core.QExpEntire
 import QOU.Core.QIntegralTransforms
 import HeckeTemperleyLieb.QSchurWeyl
 import HeckeTemperleyLieb.BurnsideSpan
@@ -707,7 +707,7 @@ import QOU.Confinement.AtomicityLieRank
 import QOU.Confinement.AtomicityGroupRank
 import QOU.Confinement.AtomicityRankOneToSingleObject
 import QOU.Confinement.AtomicitySelfDualToSymplectic
-import QOU.BraidsAndKnots.WignerSU4FromSpinIsospin
+import QOU.Transcendental.BraidsAndKnots.WignerSU4FromSpinIsospin
 import QOU.Confinement.WeakIsospinT3Grading
 import QOU.Core.Elaboration
 import QOU.StandardModel.PathIntegrals
@@ -731,7 +731,7 @@ import QOU.BringsSurface.BringConeSplitChirality
 import QOU.BringsSurface.BringLatticeSpan
 import QOU.BringsSurface.BringLatticeSpanFiniteQuotient
 import QOU.StandardModel.Gen1QuarkRays
-import QOU.StandardModel.QuaternionicElectroweak
+import QOU.Transcendental.StandardModel.QuaternionicElectroweak
 import QOU.MassTheory.ArchimedeanUniverse
 import QOU.LiftingDescent.PAdicQuantumGroups
 import QOU.Transcendental.FluidDynamics.GaugeFieldFluidDynamics
@@ -764,7 +764,7 @@ import QOU.Confinement.ChannelSeparation
 import QOU.MassTheory.Archimedean
 import QOU.Transcendental.MathlibExt.DilogReflection
 import QOU.Transcendental.MassTheory.CatalanClausenBridge
-import MathlibExt.IdealTetrahedronConcavity
+import QOU.Transcendental.MathlibExt.IdealTetrahedronConcavity
 import QOU.Transcendental.BraidKnotOctonion.LobachevskyDerivative
 import QOU.Transcendental.MassTheory.IdealTetrahedronShapeBridge
 import QOU.Transcendental.BraidKnotOctonion.IdealTetrahedronVolumeConcavity
@@ -861,7 +861,7 @@ import BraidKnotOctonion.CentralIdempotentLaurent
 import BraidKnotOctonion.ContentSqSumBridge
 import BraidKnotOctonion.PlancherelSnDataGeneral
 import BraidKnotOctonion.KeystoneDefectGeneral
-import QOU.BraidsAndKnots.KeystoneN5LevelSixSuffices
+import QOU.Transcendental.BraidsAndKnots.KeystoneN5LevelSixSuffices
 import BraidKnotOctonion.SecondMomentKernelVanishes
 import QOU.Confinement.FlavorDressing
 import QOU.MassTheory.ArchimedeanMassFormula
@@ -872,7 +872,7 @@ import QOU.StandardModel.FeynmanPathIntegrals
 import QOU.Core.MathConstants
 import QOU.StandardModel.PhotonThreading
 import QOU.InformationTheory.QBirchSwinnertonDyer
-import QOU.InformationTheory.QCollatz
+import QOU.Transcendental.InformationTheory.QCollatz
 import QOU.InformationTheory.QGeometricLanglands
 -- The four §3b conjecture-class carriers for the `conj:q-gl-*` blocks.
 -- They sat outside the import graph, so `lake build` never compiled them:
@@ -896,33 +896,33 @@ import QOU.MassTheory.MassEndomorphism
 import MathlibExt.PhiQPiece
 import QOU.Transcendental.BraidKnotOctonion.Kashaev
 import QOU.BraidsAndKnots.PhiQJSJ
-import QOU.Core.Infra
-import CompactQuantumMetrics.AlgebraicGnsEmbedding
+import QOU.Transcendental.Core.Infra
+import QOU.Transcendental.CompactQuantumMetrics.AlgebraicGnsEmbedding
 import QOU.Observations.InhomogeneousLeptonLoopResolvent
 import QOU.Transcendental.QCltNonCommutative
 import QOU.Observations.TraceLocalityMeetsGsNonLocality
-import MathlibExt.RootsOfUnityProduct
+import QOU.Transcendental.MathlibExt.RootsOfUnityProduct
 import MathlibExt.GaussianThetaSum
-import MathlibExt.GaussianShearIntegral
-import MathlibExt.StirlingRobbins
-import MathlibExt.TrapezoidRule
-import MathlibExt.CorrectedTrapezoid
-import MathlibExt.CompositeEulerMaclaurin
-import MathlibExt.SinCubeBounds
-import MathlibExt.TaylorRemainder
-import MathlibExt.GaussianSumBound
+import QOU.Transcendental.MathlibExt.GaussianShearIntegral
+import QOU.Transcendental.MathlibExt.StirlingRobbins
+import QOU.Transcendental.MathlibExt.TrapezoidRule
+import QOU.Transcendental.MathlibExt.CorrectedTrapezoid
+import QOU.Transcendental.MathlibExt.CompositeEulerMaclaurin
+import QOU.Transcendental.MathlibExt.SinCubeBounds
+import QOU.Transcendental.MathlibExt.TaylorRemainder
+import QOU.Transcendental.MathlibExt.GaussianSumBound
 import MathlibExt.GaussianThetaBound
 import MathlibExt.GaussianTiltedSum
 import MathlibExt.GaussianTailBound
 import MathlibExt.GaussianWindowSum
-import MathlibExt.RpowAlgebra
+import QOU.Transcendental.MathlibExt.RpowAlgebra
 import HeckeTemperleyLieb.HnMarkovTrace
 import BraidKnotOctonion.TrMHopfSigma1SqClosedForm
 import BraidKnotOctonion.JonesMobiusDiagonal
 import HeckeTemperleyLieb.HeckeGenPolyReduction
-import QOU.InformationTheory.HeckeLogDecomposition
+import QOU.Transcendental.InformationTheory.HeckeLogDecomposition
 import QOU.InformationTheory.JetHorizon
-import QOU.Nuclear.DeltaCouplingSubstrateForm
+import QOU.Transcendental.Nuclear.DeltaCouplingSubstrateForm
 -- Migrated from content-tree extract
 -- (`quantum-observable-universes/categorical-dq-squared-proof.lean`).
 -- See `AUDIT-REPORT.md §P3` for the open non-vanishing direction.
@@ -943,7 +943,7 @@ import QOU.BraidsAndKnots.non_self_intersection
 import HeckeTemperleyLieb.MarkovTraceClassicalLimit
 -- Keystone geometric-angle fingerprint: the ℓ=1 icosahedral character on the
 -- 5-fold rotation is the golden ratio (parameter-free; validates irrepToRotation).
-import BraidKnotOctonion.IcosahedralCharacterGoldenRatio
+import QOU.Transcendental.BraidKnotOctonion.IcosahedralCharacterGoldenRatio
 import QOU.BraidsAndKnots.TFromTraceCyclicity
 import QOU.BraidsAndKnots.TFromTraceCyclicityH3
 import QOU.BraidsAndKnots.TFromTraceCyclicityAll
@@ -995,13 +995,13 @@ import QOU.BraidsAndKnots.ColorFlavorIsospinSelection
 import QOU.BraidsAndKnots.CFromColorFlavorSwap
 -- Post-τ q-Rogers pentagon: α/β substitution algebra, the log² correction
 -- term, and the q≠1 analytic-continuation conjecture-class.
-import BraidKnotOctonion.QRogersPentagonArchimedean
+import QOU.Transcendental.BraidKnotOctonion.QRogersPentagonArchimedean
 import QOU.InformationTheory.p_bandwidth_bound
 import QOU.InformationTheory.DimqRegularisationIdentities
 import QOU.InformationTheory.EulerCharacteristicOfHochschild
 import QOU.Core.GrothendieckChern
 import QOU.Confinement.atomic_lp_stability
-import QOU.Confinement.silver_ratio_beta_decay_null
+import QOU.Transcendental.Confinement.silver_ratio_beta_decay_null
 import QOU.Confinement.delta_pre_archimedean
 import QOU.Confinement.even_tower_continuant_harmonics
 import QOU.FluidDynamics.q_bkm_criterion
@@ -1010,7 +1010,7 @@ import QOU.FluidDynamics.LambCalculus
 import QOU.FluidDynamics.LambCalculusArchimedean
 import QOU.Transcendental.FluidDynamics.DSSObstructions
 import QOU.FluidDynamics.IntegerSpin
-import QOU.Nuclear.BarOddLadderShape
+import QOU.Transcendental.Nuclear.BarOddLadderShape
 -- Anchor-followups cluster (beans qou-o3ta / qou-4g4a): the interface scalar,
 -- the Markov-Gram signature, and the Temperley-Lieb tower. Added to the root
 -- import list 2026-08-09 -- all three were ORPHANS, compiling only when named
@@ -1035,24 +1035,24 @@ import QOU.Nuclear.FiveTwoCyclotomicBloch
 import MathlibExt.FiveTwoLevelSevenLadder
 import MathlibExt.FiveTwoRogersExtend
 import MathlibExt.FiveTwoFiveTermArguments
-import MathlibExt.FiveTwoRogersReflection
-import MathlibExt.FiveTwoAbelFiveTerm
+import QOU.Transcendental.MathlibExt.FiveTwoRogersReflection
+import QOU.Transcendental.MathlibExt.FiveTwoAbelFiveTerm
 import QOU.Nuclear.DilogTheory
 import QOU.Transcendental.MassTheory.BlochRigidity.Reflection
 import QOU.Transcendental.Nuclear.DilogTheoryArchimedean
 import QOU.Nuclear.ToddDilogExpansion
 import QOU.Nuclear.BarEvenJet
-import QOU.Nuclear.BarEvenJetArchimedean
+import QOU.Transcendental.Nuclear.BarEvenJetArchimedean
 import QOU.Transcendental.QCalculus.FaddeevCompactCurve
 import QOU.MassTheory.IdealTetVolumeRigidity
 -- The Li₂-continuation / scalar-IFT chain this lane rests on is wired at the
 -- top of this file (with the other MathlibExt imports), not here — it is
 -- general analytic infrastructure, not 5₂ content.
 import QOU.Transcendental.QCalculus.LiTwoNegOne
-import QOU.Nuclear.FiveTwoDiscriminant
+import QOU.Transcendental.Nuclear.FiveTwoDiscriminant
 import QOU.Nuclear.FiveTwoCutAvoidance
 import QOU.Nuclear.FiveTwoDeformedSaddle
-import QOU.Nuclear.FiveTwoCurveDeriv
+import QOU.Transcendental.Nuclear.FiveTwoCurveDeriv
 import QOU.Transcendental.Nuclear.FiveTwoEnvelopeSum
 import QOU.Transcendental.Nuclear.FiveTwoEnvelopeAssembly
 import QOU.Transcendental.Nuclear.FiveTwoBranchByArgument
@@ -1070,7 +1070,7 @@ import QOU.Transcendental.Nuclear.FiveTwoLevelSevenBridge
 import QOU.Transcendental.Nuclear.FiveTwoExtendIdentification
 import QOU.Transcendental.Nuclear.FiveTwoLevelSevenAssembly
 import MathlibExt.FiveTwoSaddleSumRule
-import QCalculus.FiveTwoComplexPentagon
+import QOU.Transcendental.QCalculus.FiveTwoComplexPentagon
 import QOU.Transcendental.Nuclear.FiveTwoFlattenedPentagon
 import QOU.Nuclear.FiveTwoOhtsukiCriticalPoint
 import QOU.Nuclear.FiveTwoDTSpectrumSplit
@@ -1085,7 +1085,7 @@ import QCalculus.HabiroTailStar
 import QCalculus.HabiroTailCorollaries
 import QOU.Nuclear.LevelMixingBridge
 import QOU.Nuclear.LevelMapValuation
-import QOU.Nuclear.LeverLogDerivative
+import QOU.Transcendental.Nuclear.LeverLogDerivative
 import QOU.Nuclear.MeridianLinearBarOdd
 import QOU.Nuclear.ImQDecayLinearResponse
 import QOU.Nuclear.RationalCoeffRecurrence
@@ -1095,7 +1095,7 @@ import QOU.Nuclear.PhiBSArgumentIdentification
 import QOU.Nuclear.TauNormalizationChoice
 import QOU.Nuclear.ModularRayDiagonalPrune
 import QOU.Transcendental.Nuclear.OhtsukiNZBridgeScale
-import QOU.Nuclear.WindingGFTransform
+import QOU.Transcendental.Nuclear.WindingGFTransform
 import QOU.Nuclear.ThetaRealityBound
 import QOU.Nuclear.AfreeThetaConstraint
 import QOU.Transcendental.Nuclear.AfreeThetaConstraintReal
@@ -1118,7 +1118,7 @@ import QOU.Nuclear.StokesSymmetryConstantQZero
 import QOU.Nuclear.AomegaM2BPSCohomology
 import QOU.Nuclear.RouteCM3CategoryIdentification
 import QOU.Nuclear.UDeformFamilyPruning
-import QOU.Nuclear.NewtonRealityInvariance
+import QOU.Transcendental.Nuclear.NewtonRealityInvariance
 import MathlibExt.QBesselContiguityRecurrence
 import QOU.Nuclear.QBesselBarCovariance
 import QOU.Nuclear.QBesselQuadraticActionTerm
@@ -1143,10 +1143,10 @@ import QOU.Nuclear.TracelessDifferenceEllipticity
 import QOU.Nuclear.DiscriminantCurveInQ
 import QOU.Nuclear.TraceBlindSector
 import QOU.Nuclear.TermCompleteness
-import QOU.Nuclear.BondDecayRates
-import QOU.Nuclear.EigenphaseCarrierClassicalLimit
+import QOU.Transcendental.Nuclear.BondDecayRates
+import QOU.Transcendental.Nuclear.EigenphaseCarrierClassicalLimit
 import QOU.Nuclear.MonodromyTraceInvariance
-import QOU.Nuclear.CosineParametrisationUnfalsifiable
+import QOU.Transcendental.Nuclear.CosineParametrisationUnfalsifiable
 import QOU.Nuclear.DecayFunctionalUnification
 import QOU.Nuclear.DeltaSTwoRowCharacterVanishes
 import QOU.Nuclear.SLeakZeroCrossing
@@ -1275,7 +1275,7 @@ import QOU.BraidsAndKnots.StrongAJFigureEight
 import QOU.BraidsAndKnots.AJTorusAnnihilation
 import QOU.BraidsAndKnots.AJMinimality
 import MathlibExt.EndSemisimple
-import QOU.BringsSurface.zeta5_residue_monodromy
+import QOU.Transcendental.BringsSurface.zeta5_residue_monodromy
 
 import QOU.MassTheory.BorromeanQuark
 import QOU.MassTheory.EmCouplingBringZeroMode
@@ -1327,12 +1327,12 @@ import QOU.Transcendental.FrechetShohat
 import QOU.Transcendental.StieltjesCompactDeterminacy
 import QOU.MassTheory.BalancedKernelConfluence
 import QOU.MassTheory.BalancedMomentConfluence
-import QOU.MassTheory.BalancedKernelTightness
+import QOU.Transcendental.MassTheory.BalancedKernelTightness
 import QOU.MassTheory.BalancedCarrierJacobi
 import QOU.MassTheory.SWJacksonMomentFactorization
-import QOU.MassTheory.SWGaussianLogNormalMoments
+import QOU.Transcendental.MassTheory.SWGaussianLogNormalMoments
 import QOU.MassTheory.SWCoreJacobi
-import QOU.MassTheory.TropicalClassTransport
+import QOU.Transcendental.MassTheory.TropicalClassTransport
 import QOU.MassTheory.AwZeroLocalization
 import QOU.BringsSurface.SubstrateClockUniqueness
 import QOU.BringsSurface.PlanckStepAtomicity
@@ -1347,14 +1347,14 @@ import HeckeTemperleyLieb.SchurInvariantFormProportional
 import QOU.MassTheory.InvariantFormTransport
 import QOU.MassTheory.GaugeGroupThreeScale
 import QOU.MassTheory.GramDetRatioCongruence
-import QOU.MassTheory.SchwingerMeasureShape
+import QOU.Transcendental.MassTheory.SchwingerMeasureShape
 import QOU.Observations.KnotConvolutedTensor
 import QOU.Observations.PalindromicityOrbitalType
 import QOU.Observations.ShellCapacitySelfSquare
 import QOU.Observations.ShellClosureNfTermCount
 
 import QOU.Core.ShellTransitionKnot
-import QOU.Core.KnotFactorFrobeniusPairing
+import QOU.Transcendental.Core.KnotFactorFrobeniusPairing
 import HeckeTemperleyLieb.KnotFactor
 import HeckeTemperleyLieb.KnotFactorFrobeniusPairing
 import QOU.Core.WeakSpectralCompleteness
@@ -1362,29 +1362,29 @@ import QOU.Core.MagicNumbersBring
 import QOU.Core.QuantumLanglandsDual
 
 -- q-Gevrey / Newton-polygon Mathlib infra (epic qou-7b7v, brick MI-1).
-import MathlibExt.QGevreyOrder
+import QOU.Transcendental.MathlibExt.QGevreyOrder
 -- Elliptic divisor-degree scaffold (epic qou-lbth / bean qou-toqt, brick PI-2):
 -- Liouville's third theorem (Σ ord = 0) stated open; f'/f-periodicity + divisor-
 -- lattice-periodicity bricks proved sorry-free.
-import MathlibExt.EllipticDivisorDegree
-import MathlibExt.EllipticAnnulusDescent
-import MathlibExt.ArgumentPrincipleAnnulus
-import MathlibExt.EllipticAnnulusWinding
-import MathlibExt.LiouvilleThird
-import MathlibExt.HadamardFactorization
-import MathlibExt.JensenZeroCounting
-import MathlibExt.ExponentOfConvergence
-import MathlibExt.HadamardZeroFree
-import MathlibExt.C1GevreyLinearCoeff
-import QCalculus.CanonicalProductGrowth
-import QCalculus.HadamardQuotient
-import QCalculus.HadamardMinimumModulus
-import QCalculus.HadamardAssembly
+import QOU.Transcendental.MathlibExt.EllipticDivisorDegree
+import QOU.Transcendental.MathlibExt.EllipticAnnulusDescent
+import QOU.Transcendental.MathlibExt.ArgumentPrincipleAnnulus
+import QOU.Transcendental.MathlibExt.EllipticAnnulusWinding
+import QOU.Transcendental.MathlibExt.LiouvilleThird
+import QOU.Transcendental.MathlibExt.HadamardFactorization
+import QOU.Transcendental.MathlibExt.JensenZeroCounting
+import QOU.Transcendental.MathlibExt.ExponentOfConvergence
+import QOU.Transcendental.MathlibExt.HadamardZeroFree
+import QOU.Transcendental.MathlibExt.C1GevreyLinearCoeff
+import QOU.Transcendental.QCalculus.CanonicalProductGrowth
+import QOU.Transcendental.QCalculus.HadamardQuotient
+import QOU.Transcendental.QCalculus.HadamardMinimumModulus
+import QOU.Transcendental.QCalculus.HadamardAssembly
 -- Argument-principle scaffold (epic qou-lbth / bean qou-bmyx, brick PI-3):
 -- (1/2πi)∮ f'/f = #zeros − #poles stated open (residue-of-logDeriv = order is the
 -- Mathlib gap); #zeros−#poles=Σ ord counting brick + 2πi≠0 proved sorry-free.
 -- lean-direct exit 0 (3 intended sorries on the deep theorems); lake build QOU is CI gate.
-import MathlibExt.ArgumentPrinciple
+import QOU.Transcendental.MathlibExt.ArgumentPrinciple
 -- Identity-I / RSK infrastructure (verified library files; wired in for CI build coverage).
 import HeckeTemperleyLieb.PartitionListBridge
 import BraidKnotOctonion.PartitionsOfBridge
@@ -1486,7 +1486,7 @@ import BraidKnotOctonion.BrunnianDeficitLeadingOrderDerived
 -- A=4 interface-operator magnitude: the derived -ln det(I+G) form (spectrum {±√5,±1})
 -- is surjective onto (0,∞) in its one free scalar m ⇒ WALL(scope-(a)); naive z scope-(b)
 -- excluded. Formalize-first, 0-fit, sorry-free.
-import QOU.MassTheory.A4InterfaceMagnitude
+import QOU.Transcendental.MassTheory.A4InterfaceMagnitude
 import QOU.MassTheory.BindingSaturationCapA4
 import QOU.MassTheory.BraneGeometricResummation
 -- front-1: the radial handle C_knot = Vol(K)·ρ(K)/ℏ_q² with ρ = tr_M is refuted
@@ -1578,7 +1578,7 @@ import BraidKnotOctonion.GeneratedCertifiedHigh
 -- to this arc's additions.
 import QOU.Observations.BirthdayFaithful
 import QOU.Observations.DyadicBirthdayHyperreal
-import QOU.Observations.DiophantineBirthday
+import QOU.Transcendental.Observations.DiophantineBirthday
 import QOU.Observations.DiophantineBirthdayScope
 import QOU.Observations.DiophantineBirthdayTrajectory
 import QOU.Observations.GonshorConvergence
@@ -1640,7 +1640,7 @@ import MathlibExt.RothHeightBound
 -- single root, connecting Mathlib's circleAverage_log_norm_sub_const_eq_posLog to
 -- mahlerMeasure.  Cornerstone of the Jensen form, and the measurement that reversed this
 -- arc's recommendation from "bare-hands Gelfond" to "fill the bridge upstream".
-import MathlibExt.MahlerJensen
+import QOU.Transcendental.MathlibExt.MahlerJensen
 -- Heights of a disjoint-variable product.  For separated variables the coefficients of a
 -- product ARE the products of the coefficients, so the height is exactly multiplicative —
 -- which makes the height half of Roth's induction step elementary rather than a Gelfond
@@ -1735,7 +1735,7 @@ import MathlibExt.RothContradiction
 -- lower half) and step 4's inequality (which needs both) were never using different
 -- normalisations.  The worry that opened qou-ujl8 was unfounded; recording that they
 -- coincide is the fix, not a record reconciling them.
-import MathlibExt.RothNormalisation
+import QOU.Transcendental.MathlibExt.RothNormalisation
 -- O_K's replacement for "a non-zero integer has absolute value at least one".
 -- Over Z smallness at the one place forces vanishing; over O_K it does not -- an
 -- algebraic integer can be tiny at one place and enormous elsewhere with |N(x)| >= 1
@@ -1765,7 +1765,7 @@ import MathlibExt.RothAuxiliaryInt
 -- and step 1 proves the index over K while step 2 consumes it over R, so it transports
 -- along a real embedding -- which is a real hypothesis, being the statement that the
 -- alpha_h are REAL algebraic numbers, and the composition refuses to typecheck without one.
-import MathlibExt.RothIntegerChain
+import QOU.Transcendental.MathlibExt.RothIntegerChain
 -- THE PARAMETER SELECTION -- the one piece of the arc that CONSTRUCTS data rather
 -- than composing supplied hypotheses, and the only place the "infinitely many
 -- solutions" assumption is consumed.  Greedy recursion: pick a denominator past a
@@ -1786,7 +1786,7 @@ import MathlibExt.RothSiegelBound
 -- or a POWER of them below N -- exactly the selection's own parameters.  The normalisation
 -- slack eta is 1/k from (H h)^k <= N, and height_le_mul_den is what makes a floor on the
 -- heights serve as a floor on the DENOMINATORS, which is what hpt actually constrains.
-import MathlibExt.RothFinalAssembly
+import QOU.Transcendental.MathlibExt.RothFinalAssembly
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated
@@ -1801,7 +1801,7 @@ import HeckeTemperleyLieb.KazhdanLusztigBasis
 import MathlibExt.ConcentratedColumnCollapse
 import BraidKnotOctonion.StandardYoungCountInstance
 import MathlibExt.LieValuedForms
-import MathlibExt.ManifoldForms
+import QOU.Transcendental.MathlibExt.ManifoldForms
 import MathlibExt.ContactForms
 import CompactQuantumMetrics.SDPStrongDuality
 
@@ -1844,14 +1844,14 @@ import QOU.BraidsAndKnots.BoundedDegreeCoulomb
 -- construction delivers an ARITHMETIC (convex) one.  AM >= GM, so the sign is
 -- backwards structurally.  The crossing weight is `1/(q^2+1)`, which is `1/2`
 -- only at `q = 1`; the corpus sits at `1/2 + delta_flavour/4`, 11.7 % above it.
-import HeckeTemperleyLieb.SymmetrySignAmGm
+import QOU.Transcendental.HeckeTemperleyLieb.SymmetrySignAmGm
 -- `ChannelRangeGrowthClass`: adding a bond MULTIPLIES the trace by `b < 1`, so
 -- the native falloff is `b^d(i,j) = exp(-mu.d(i,j))` -- Yukawa in graph
 -- distance.  That puts weak / strong / EM on one axis (the mediator mass) and
 -- separates them by GROWTH CLASS: every `mu > 0` gives an extensive pair sum,
 -- only `mu = 0` gives `Theta(n^2)`.  Also `L_pp + L_nn = 2 log [2]_q`, so the
 -- three rates carry one constraint and one free parameter.
-import HeckeTemperleyLieb.ChannelRangeGrowthClass
+import QOU.Transcendental.HeckeTemperleyLieb.ChannelRangeGrowthClass
 -- `BarWeightFamily`: bar invariance of the p-n interface reduces to
 -- `wbar = 1 - w`, ONE equation -- and the family `w_k = q^-k/[2]_{q^k}` meets it
 -- for every `k`.  The corpus's averaging rule is the `k = 0` member, pinned only
@@ -1929,7 +1929,7 @@ import QOU.MassTheory.CrossTermFixedPointCount
 import QOU.LiftingDescent.CrossedModuleSurfaceHolonomy
 import QOU.MassTheory.CrossTermOrderZeroComponentCount
 import HeckeTemperleyLieb.HeckeQuadraticClassicalShadow
-import QOU.MassTheory.KZUnitModulusPrune
+import QOU.Transcendental.MassTheory.KZUnitModulusPrune
 import HeckeTemperleyLieb.HeckeMonodromy
 import QOU.MassTheory.BraidedStrands
 import MathlibExt.ColourCubicDiscriminant
@@ -1938,31 +1938,31 @@ import QOU.MassTheory.FigureEightGluingFromMonodromy
 import QOU.MassTheory.FiveTwoGluingFromFareyWord
 import QOU.MassTheory.AffineCumulantSecondDifference
 import QOU.MassTheory.FiveTwoAPolynomialFromFareyWord
-import QOU.Nuclear.FloorRemainderFromDerivedShapeFields
-import QOU.Nuclear.PretzelRemainderFromPtolemy
+import QOU.Transcendental.Nuclear.FloorRemainderFromDerivedShapeFields
+import QOU.Transcendental.Nuclear.PretzelRemainderFromPtolemy
 import QOU.Transcendental.MassTheory.VolumeTranscendental
 import TwistedFrobeniusHopf.BlockMeasureFromFrobeniusPairing
 import HeckeTemperleyLieb.BranchingPushforwardMultiplicativity
-import QOU.MassTheory.BlockMeasureBindingFormArchimedean
+import QOU.Transcendental.MassTheory.BlockMeasureBindingFormArchimedean
 import QOU.MassTheory.InterfaceLetterCrossingMixture
 import QOU.MassTheory.CompositionFeasibilityProgram
-import QOU.MassTheory.RelativeReebDatum
-import QOU.MassTheory.SegmentCollisionDatum
+import QOU.Transcendental.MassTheory.RelativeReebDatum
+import QOU.Transcendental.MassTheory.SegmentCollisionDatum
 import QOU.MassTheory.ConvolutionFlowParity
-import QOU.MassTheory.ConvolutionFlowFibre
-import BraidKnotOctonion.BringResidueEnergy
+import QOU.Transcendental.MassTheory.ConvolutionFlowFibre
+import QOU.Transcendental.BraidKnotOctonion.BringResidueEnergy
 import QOU.MassTheory.DeuteronKappaThreeSixteenthsReconciliation
 import QOU.MassTheory.XbotBottomEdgeLemmas
 import BraidKnotOctonion.DepthOneHookClassification
 import BraidKnotOctonion.BringConjugationChirality
 import BraidKnotOctonion.BringCoverTower
 import BraidKnotOctonion.BringDescendingTower
-import QOU.BringsSurface.BringUTContactChirality
+import QOU.Transcendental.BringsSurface.BringUTContactChirality
 import QOU.MassTheory.YangMillsVacuumFlat
 import QOU.MassTheory.InfinitesimalPureBraid
 import QOU.MassTheory.LagrangianKZIdentification
 import QOU.MassTheory.KZPullbackHypothesis
-import QOU.MassTheory.KohnoTwoPoint
+import QOU.Transcendental.MassTheory.KohnoTwoPoint
 import QOU.Transcendental.BraidsAndKnots.Drinfeld.HeckeStrands
 import QOU.MassTheory.LagrangianKZInputs
 import QOU.MassTheory.BridgeADeligneGauge
@@ -1972,15 +1972,15 @@ import QOU.Transcendental.MassTheory.BridgeAColourSplit
 import QOU.Transcendental.MassTheory.KohnoAssemblyGL
 import QOU.Transcendental.MassTheory.BridgeAStokesAlgebraic
 import QOU.Transcendental.MassTheory.BridgeAP2Regular
-import QOU.MassTheory.KZHolonomy.FlatCocycle
-import QOU.MassTheory.KZHolonomy.FlatGauge
-import QOU.MassTheory.KZHolonomy.ODETransport
-import QOU.MassTheory.KZHolonomy.SmoothGauge
-import QOU.MassTheory.KZHolonomy.ConfConnected
-import QOU.MassTheory.KZHolonomy.BraidGauge
-import QOU.MassTheory.KZHolonomy.ConfRegions
-import QOU.MassTheory.KZHolonomy.ConfGeneric
-import QOU.MassTheory.KZHolonomy.ArtinGeneration
+import QOU.Transcendental.MassTheory.KZHolonomy.FlatCocycle
+import QOU.Transcendental.MassTheory.KZHolonomy.FlatGauge
+import QOU.Transcendental.MassTheory.KZHolonomy.ODETransport
+import QOU.Transcendental.MassTheory.KZHolonomy.SmoothGauge
+import QOU.Transcendental.MassTheory.KZHolonomy.ConfConnected
+import QOU.Transcendental.MassTheory.KZHolonomy.BraidGauge
+import QOU.Transcendental.MassTheory.KZHolonomy.ConfRegions
+import QOU.Transcendental.MassTheory.KZHolonomy.ConfGeneric
+import QOU.Transcendental.MassTheory.KZHolonomy.ArtinGeneration
 import BraidKnotOctonion.BorromeanThreeCuspNZHessian
 import QOU.Nuclear.McPhailSnyderBridgeExclusion
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
@@ -2023,7 +2023,7 @@ import QOU.Transcendental.StandardModel.ElectroweakVevGapsReal
 import QOU.StandardModel.NeutrinoUnknotSweedlerMassLift
 import QOU.MassTheory.BringSchwingerNormalizationDerivation
 import QOU.Transcendental.MassTheory.BringSchwingerNormalizationDerivationReal
-import QOU.Nuclear.CoshHolonomyAndGPMTBaseBridge
+import QOU.Transcendental.Nuclear.CoshHolonomyAndGPMTBaseBridge
 import QOU.Nuclear.SelectorPrune
 import QOU.Nuclear.BringLatticeRanks
 import QOU.Nuclear.CoefficientPurity
@@ -2051,9 +2051,9 @@ import QOU.StandardModel.OddExteriorAnomalyFreedom
 import QOU.Confinement.HopfElectronTwoTermMass
 import QOU.Nuclear.LeptonTwoTermStokesCovariance
 import QOU.BraidsAndKnots.HeckeWeightSpaceSymmetry
-import QOU.Nuclear.CrossNucleonPairWedderburnZRemoval
+import QOU.Transcendental.Nuclear.CrossNucleonPairWedderburnZRemoval
 import QOU.Nuclear.EntangledLeptonPairTrace
-import QOU.Nuclear.LogTraceAdditiveEnergy
+import QOU.Transcendental.Nuclear.LogTraceAdditiveEnergy
 import QOU.Nuclear.NormalFormLengthInvariants
 import QOU.Nuclear.ParityMapCandidates
 import QOU.Confinement.BetaEntangledSectorTrace
@@ -2082,7 +2082,7 @@ import QOU.StandardModel.SixStrandClusterChargeGellMannNishijima
 import QOU.Nuclear.BorromeanFlavourPivotalUnification
 import QOU.Nuclear.ThomaeJacksonCoulombAndAlphaTunneling
 import QOU.Transcendental.Nuclear.ThomaeJacksonCoulombAndAlphaTunnelingReal
-import QOU.Observations.DeBroglieBoostedReebPhase
+import QOU.Transcendental.Observations.DeBroglieBoostedReebPhase
 import QOU.Nuclear.ChargedCurrentChiralitySelection
 import QOU.StandardModel.TorusLinkElectroweakSchurRatio
 import QOU.StandardModel.BringPrymRiemannRochGenerations

@@ -2,7 +2,7 @@ import QOU.Transcendental.QCalculus.ComplexDilogarithmDeriv
 import Mathlib.Analysis.SpecialFunctions.Integrability.Basic
 import Mathlib.Analysis.SpecialFunctions.Integrability.LogMeromorphic
 import QCalculus.ComplexDilogarithmBoundary
-import MathlibExt.ConstantOffOnePoint
+import QOU.Transcendental.MathlibExt.ConstantOffOnePoint
 
 /-!
 # `cLiTwoExt`'s integrand is integrable at real `x > 0` — `qou-invr` step (1), DONE
