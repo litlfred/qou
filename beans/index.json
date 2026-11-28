@@ -2,7 +2,7 @@
   "$schema": "folio-bean-index/v1",
   "tile": {
     "beans": {
-      "count": 1789,
+      "count": 1796,
       "unit": "open beans"
     }
   },
@@ -8858,6 +8858,20 @@
       "file": "beans/defs/qou-0jcd--step-2-plan-close-cheat-sheet-2a-the-stipulated-he.md"
     },
     {
+      "id": "qou-0jo7",
+      "title": "Post-merge stability QA: refresh stale ACCURACY.md scorecard + witnesses, fix JonesTractableOrders transcendental boundary, and shrink base-ring-audit",
+      "status": "in-progress",
+      "type": "task",
+      "priority": "high",
+      "parent": "qou-s028",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-28T10:15:32Z",
+      "updatedAt": "2026-11-28T10:15:32Z",
+      "preview": "2026-11-28 (Antigravity coordinator 92bff8c9-777d-458a-a380-8dd5bf5cc0f3, sibling ws5-nov19-rebase -> branch claude/postmerge-qa-scorecard-boundary-20261128): Clear live post-merge QA reds on `origin/main` (2cc11f7f1c6): (1) fix `NEW QOU/InformationTheory/JonesTractableOrders.lean ['transcendental-function']` in `scripts/transcendental-boundary-audit.py --check` (and verify `qou-68a4` status) + `s",
+      "file": "beans/defs/qou-0jo7--post-merge-stability-qa-refresh-stale-accuracymd-s.md"
+    },
+    {
       "id": "qou-0jq9",
       "title": "Check platform repin branch claude/platform-repin-2026-10-11 landed",
       "status": "completed",
@@ -11149,7 +11163,7 @@
         "qou-mk7u"
       ],
       "createdAt": "2026-11-23T20:54:27Z",
-      "updatedAt": "2026-11-27T14:18:14Z",
+      "updatedAt": "2026-11-28T10:15:33Z",
       "preview": "L2 `1-ppQ` Workstream Package `Q-Gap-2` under `qou-qzvs`.\n\n- **Linked Beans:** `qou-91w7`, `qou-6gf9`, `qou-mk7u`\n- **Scope:** Joint lepton weight functional across the ruled `σ₀σ₁σ₀` Hopf electron and `4₁` figure-eight muon loop resolvent; resolve the `+211.206 ppb` μ–p anchor tension under the proton pin (`CAL-1/2/3` zero-fit, ≥80 dps `mpmath`, generic-ring Lean 4).\n\nClaimed by claude/w6-joint-l",
       "file": "beans/defs/qou-1ozb--w6-joint-lepton-weight-functional-hopf-4-1-loop-re.md"
     },
@@ -16052,7 +16066,7 @@
       "status": "todo",
       "type": "task",
       "priority": "high",
-      "parent": "qou-cxh0",
+      "parent": "",
       "blocking": [
         "qou-s028"
       ],
@@ -34152,6 +34166,20 @@
       "file": "beans/defs/qou-cw27--defect-li-2-q-returns-inf-for-zq-but-gx-li-2q-x-is.md"
     },
     {
+      "id": "qou-cw8i",
+      "title": "Accuracy conditional->proved (Lepton/Koide): discharge provable S3/Z3 generation-circulant invariants in KoideTopologicalProtectionHypothesis & evaluate 2026-11-28 least-crossing lepton axis/colour readings",
+      "status": "in-progress",
+      "type": "task",
+      "priority": "high",
+      "parent": "qou-s028",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-28T10:29:07Z",
+      "updatedAt": "2026-11-28T10:29:07Z",
+      "preview": "2026-11-28 (Antigravity 92bff8c9, Sibling 6 in main-base -> claude/accuracy-koide-lepton-conditional-drain-20261128): Attack `KoideTopologicalProtectionHypothesis` on `m_tau/m_e` (+0.92 sigma CODATA / +0.44 sigma PDG-24, currently Conditional on `ACCURACY.md` Table 3.1a) using Bring Z3/S3 circulant & classical-limit invariance, narrow/prove all algebraic parts in Lean (`0 sorry`, division-free / c",
+      "file": "beans/defs/qou-cw8i--accuracy-conditional-proved-leptonkoide-discharge.md"
+    },
+    {
       "id": "qou-cwdx",
       "title": "#6 counting LB: skein 3^{3n} tree → VNP/arithmetic-circuit lower bound for the Jones polynomial",
       "status": "todo",
@@ -34824,6 +34852,20 @@
       "updatedAt": "2026-07-13T15:03:17Z",
       "preview": "",
       "file": "beans/defs/qou-d98a--t2-deuteron-entanglement-coupling-independent-deri.md"
+    },
+    {
+      "id": "qou-d9iv",
+      "title": "Salvage & re-scope Nov-24 uncommitted stability worktrees (5-layer Mulliken stoichiometry qou-5lct & exploratory SU(4)/FCC nuclear saturation probe) onto current main",
+      "status": "in-progress",
+      "type": "task",
+      "priority": "high",
+      "parent": "qou-s028",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-28T10:15:33Z",
+      "updatedAt": "2026-11-28T10:15:33Z",
+      "preview": "2026-11-28 (Antigravity coordinator 92bff8c9-777d-458a-a380-8dd5bf5cc0f3, sibling ws15-p3-p5-p6 & ws12-pr9180): Review applicability against 2026-11-27/28 owner rulings (`owner-rulings.md` T3 valence cap, proton pin, base-ring units, aether terminology), rebase onto `origin/main`, verify Lean (`0 sorry`, `base-ring-audit`, `transcendental-boundary-audit`), two-step stamp 80-dps witnesses at proton",
+      "file": "beans/defs/qou-d9iv--salvage-re-scope-nov-24-uncommitted-stability-work.md"
     },
     {
       "id": "qou-d9sk",
@@ -38342,6 +38384,20 @@
       "updatedAt": "2026-08-15T15:02:38Z",
       "preview": "The probe compares its operator against a hard-coded rho_strong = (1, 3.8128, 13.0316) from AME. This paper's universal Tjon curve gives an independent, dimensionless target: check whether the operator's fractional Tjon deviation sits on the universal band and whether its curvature sign matches. A mismatch is informative either way; an agreement must NOT be back-fitted into any weight.\n\n**From the",
       "file": "beans/defs/qou-f3ec--cross-check-0610105v2pdf-at-computationsdeltalambd.md"
+    },
+    {
+      "id": "qou-f3hr",
+      "title": "Accuracy compute & derivation (qou-j5b6, qou-bbr4, qou-tcl2/3): fix gg_scalar_per_step precision red, regenerate z_max=118 canonical-isotope shards, and wire derived T(T+1)+Coulomb composite beta/mass terms",
+      "status": "in-progress",
+      "type": "task",
+      "priority": "high",
+      "parent": "qou-s028",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-28T10:29:08Z",
+      "updatedAt": "2026-11-28T10:29:08Z",
+      "preview": "2026-11-28 (Antigravity 92bff8c9, Sibling 8 in ws2-bridge-hecke -> claude/accuracy-compute-bbr4-j5b6-isospin-20261128): (1) Fix `qou-j5b6` witness-literal copy red gate in `gg_scalar_per_step_probe.py:96`; (2) complete `qou-bbr4` full `z_max = 118` canonical-isotope shard & index regeneration after #9699 Coulomb shape factor; (3) formalize & evaluate derived `T(T+1)` writhe + Coulomb isobaric slop",
+      "file": "beans/defs/qou-f3hr--accuracy-compute-derivation-qou-j5b6-qou-bbr4-qou.md"
     },
     {
       "id": "qou-f3mc",
@@ -45315,6 +45371,20 @@
       "updatedAt": "2026-11-20T16:06:50Z",
       "preview": "---\n\n## 2026-09-13 — sibling note: the alpha route is dead, THIS one is not\n\n`qou-ultb` (actinide cosmochronometry) is now measured: a bound on\n`|d(alpha)/alpha|` converts to a bound on `|dq/q|` by dividing by\n`S = |d ln alpha / d ln q| = 6.86193302278`, and at its asserted 2.08e-3 that\nis **2.5e5x LOOSER than sigma(q0)** — so the alpha-variation programme cannot\nconstrain q0 at any achievable pre",
       "file": "beans/defs/qou-ihtw--obs-gw170817-kilonova-sr-ii-is-the-r-process-path.md"
+    },
+    {
+      "id": "qou-ii2k",
+      "title": "Speculative document split: move RH, P vs NP, Yang-Mills, BSD, Collatz & Millennium unification to folio/speculative-open-problems and keep neutral algebra in main book",
+      "status": "in-progress",
+      "type": "task",
+      "priority": "high",
+      "parent": "qou-s028",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-28T10:15:31Z",
+      "updatedAt": "2026-11-28T10:15:32Z",
+      "preview": "2026-11-28 (Antigravity coordinator 92bff8c9-777d-458a-a380-8dd5bf5cc0f3, sibling ws1-precision -> branch claude/speculative-open-problems-split-20261128): Owner directive 'Move all except Navier-Stokes': move problem framing for RH, P vs NP, Yang-Mills, BSD, Collatz, and the Millennium unification / obstruction-specializations / skein-filtration tables into a separate speculative folio document (",
+      "file": "beans/defs/qou-ii2k--speculative-document-split-move-rh-p-vs-np-yang-mi.md"
     },
     {
       "id": "qou-ii3w",
@@ -65644,7 +65714,7 @@
         "qou-ziag"
       ],
       "createdAt": "2026-11-24T08:06:16Z",
-      "updatedAt": "2026-11-27T23:36:14Z",
+      "updatedAt": "2026-11-28T10:15:33Z",
       "preview": "## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)\n\nA **Swarm** is a first-class work item (`type: epic` in `beans`) with explicit **Acceptance Criteria / End State**, **Structured Work-Item Queues**, **On-Demand + Optional Periodic Human-Consumable Status Reporting**, and **Live Cold-Start Handover Notes**.\n\n### Defined End-State / Exit Criteria for the `'Stability'` Swarm\n- [",
       "file": "beans/defs/qou-s028--stability-swarm-merge-manager-continuity-handover.md"
     },
@@ -73311,6 +73381,20 @@
       "file": "beans/defs/qou-vhe7--add-reference-for-0401068v1pdf-at-contentschemaref.md"
     },
     {
+      "id": "qou-vhm1",
+      "title": "Accuracy conditional->proved (alpha_EM, Rydberg & v_weak): discharge provable BringMapChain/LiTwo/loop-measure sub-hypotheses in AlphaEm & ElectroweakBringSchwingerBridge classes",
+      "status": "in-progress",
+      "type": "task",
+      "priority": "high",
+      "parent": "qou-s028",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-28T10:29:07Z",
+      "updatedAt": "2026-11-28T10:29:07Z",
+      "preview": "2026-11-28 (Antigravity 92bff8c9, Sibling 7 in ws3-l2-physics -> claude/accuracy-alpha-ew-conditional-to-proved-20261128): Audit `ArchimedeanLimit`, `BlochSuslinUniqueness`, `BringZeroModeBlochClass` (Form B/C alpha_EM & Rydberg R_infty) and `ElectroweakBringSchwingerBridge` / `ElectroweakVevGaps` (v_weak -29.37 ppb, -0.11 sigma) against newly landed `BringMapChain` (#9769), `LiTwo_reflection` (qo",
+      "file": "beans/defs/qou-vhm1--accuracy-conditional-proved-alpha-em-rydberg-v-wea.md"
+    },
+    {
       "id": "qou-vhv6",
       "title": "Research(well-posed): torus-knot -> q-Bring embedding offset — track discriminant/branch-point roots of q-deformed color curve vs q, angle from zeta_5/zeta_3 equivariance",
       "status": "todo",
@@ -80643,6 +80727,20 @@
       "updatedAt": "2026-11-21T14:33:40Z",
       "preview": "Found while building QOU for an unrelated UGB change (qou-auq3). Not mine to fix: QOU/SchurWeyl/QJucysMurphy.lean is bean qou-ck0g, in-progress with another session.\n\n## What is red\n\n  lake build (QOU) fails on QOU/SchurWeyl/QJucysMurphy.lean\n\nSix sites, all the same error, all 'ring_nf made no progress on goal':\n\n  line 170:59   174:39   176:59   197:53   201:36   203:59\n\nThe build surfaces ONE p",
       "file": "beans/defs/qou-yzl8--main-is-red-qjucysmurphylean-uses-ring-on-a-noncom.md"
+    },
+    {
+      "id": "qou-yzp7",
+      "title": "Fluid dynamics chapter: tone down Navier-Stokes framing to a q-deformed model and scrub remaining Millennium/blowup-guarantee over-claims",
+      "status": "in-progress",
+      "type": "task",
+      "priority": "high",
+      "parent": "qou-s028",
+      "blocking": [],
+      "blockedBy": [],
+      "createdAt": "2026-11-28T10:15:32Z",
+      "updatedAt": "2026-11-28T10:15:32Z",
+      "preview": "2026-11-28 (Antigravity coordinator 92bff8c9-777d-458a-a380-8dd5bf5cc0f3, sibling ws6-exposition-pdf -> branch claude/fluid-dynamics-qns-tonedown-20261128): Owner directive 'Move all except Navier-Stokes — Same, but the fluid dynamics chapter keeps its NS framing, toned down to a q-deformed model.' Audit & tone down all blocks in `folio/quantum-observable-universe/fluid-dynamics/` (including `ns-c",
+      "file": "beans/defs/qou-yzp7--fluid-dynamics-chapter-tone-down-navier-stokes-fra.md"
     },
     {
       "id": "qou-yzs2",
@@ -88097,14 +88195,14 @@
         "file": "beans/defs/qou-5vkl--platform-tooling-and-hygiene.md",
         "status": "in-progress",
         "epics": 9,
-        "total": 420,
+        "total": 427,
         "closed": 173,
-        "open": 247,
-        "inProgress": 132,
+        "open": 254,
+        "inProgress": 139,
         "todo": 115,
         "draft": 0,
         "unclassified": 0,
-        "share": 0.4119047619047619
+        "share": 0.405152224824356
       },
       {
         "id": "suwr",
@@ -88363,8 +88461,8 @@
       }
     ],
     "orphanOpen": 138,
-    "openTotal": 1789,
-    "coveredOpen": 1643,
+    "openTotal": 1796,
+    "coveredOpen": 1650,
     "duplicateIds": 0
   }
 }
