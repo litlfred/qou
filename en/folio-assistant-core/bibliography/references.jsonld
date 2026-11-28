@@ -3850,6 +3850,20 @@
       "bibo:doi": "10.1016/0095-8956(90)90098-K"
     },
     {
+      "@id": "references/billeyswanson2023",
+      "@type": [
+        "fabio:Work",
+        "bibo:Article"
+      ],
+      "dcterms:title": "Cyclotomic Generating Functions",
+      "dcterms:creator": [
+        "Billey, Sara C.",
+        "Swanson, Joshua P."
+      ],
+      "dcterms:issued": "2024",
+      "dcterms:identifier": "https://arxiv.org/abs/2305.07620"
+    },
+    {
       "@id": "references/billingsley1995",
       "@type": [
         "fabio:Work",
