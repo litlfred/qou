@@ -2,7 +2,7 @@
 
 Lean: QOU/Nuclear/NucleonSplitScaleRatio.lean (flavour_over_em): the ratio is
 -2L/(a*Q), independent of the energy map E. Here L = log q0, a = alpha_em(q0)
-(alpha_em_inv_derived, conditional on the Witten-kappa Gram sorry), Q = 1/3.
+(alpha_em_inv_derived, conditional on the unproved CS Gram-ratio identification, bean qou-wkgp; the old Witten-kappa Gram sorry was refuted and removed 2026-11-20), Q = 1/3.
 Literature values are comparison points only (papers in library/), printed last.
 mpmath at 50 dps, proton pin.
 """

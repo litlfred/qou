@@ -8,7 +8,7 @@ E = k_B T_q = E0 (route T, ``SpectatorEnergyMap.kT_eq_e0``). Audit:
 lambda (Coulomb energy per unit charge product) is NOT derived. The probe evaluates the split for
 the two on-record scale candidates alpha_em(q0)*E0 (order zero, the route-T temperature) and
 alpha_em(q0)*E0_tower (``crossing_covariant_qed_probe.py``); alpha_em is the framework value
-``alpha_em_inv_derived`` (conditional on the Witten-kappa Gram-determinant sorry). It also prints,
+``alpha_em_inv_derived`` (conditional on the unproved CS Gram-ratio identification, bean qou-wkgp; the old Witten-kappa Gram sorry was refuted and removed 2026-11-20). It also prints,
 as a DIAGNOSTIC that adopts nothing, the lambda each CODATA reading would need
 (``gibbs_coulomb_lambda_of_split``). CODATA enters only the comparison lines.
 

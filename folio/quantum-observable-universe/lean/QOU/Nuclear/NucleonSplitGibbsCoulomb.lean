@@ -26,7 +26,8 @@ the remark "for `c ≥ 0` the Gibbs cell can only grow" covers the attractive si
 
 What is not derived here: the value of `λ`. The corpus's on-record candidate is
 `λ = α_em(q₀)·E₀^{tower}` (`computations/crossing_covariant_qed_probe.py`, conditional on the
-Witten-κ Gram-determinant `sorry`). Numbers are in
+unproved CS Gram-ratio identification, bean `qou-wkgp`; the old Witten-κ Gram `sorry` was
+refuted and removed 2026-11-20). Numbers are in
 `computations/probes/nucleon_split_gibbs_coulomb_probe.py`.
 
 -- Ref: [leitner2026] docs/audits/2026-11-27-nucleon-split-gibbs-coulomb.md

@@ -8,7 +8,7 @@ chain carries one alpha. So the pre-registered factor is
     mu_1   = 1 - alpha * h^2            (one exchange; Lean CoulombRingMu)
     mu_lad = 1 / (1 + alpha * h^2)      (ladder resummation; differs at O(alpha^2))
 
-with alpha the corpus-derived alpha_EM (conditional on the Witten-kappa Gram sorry).
+with alpha the corpus-derived alpha_EM (conditional on the unproved CS Gram-ratio identification, bean qou-wkgp; the old Witten-kappa Gram sorry was refuted and removed 2026-11-20).
 Readings (Lean CoulombRingLedger.reading_ledger): eps = rho(mu).
   log reading    eps_log = E0 * (-ln mu)
   energy reading eps_U   = (m_e / U_e) * U(mu),  U(mu_1) = 2 alpha h [2] / (1 - alpha h^2)
