@@ -123,6 +123,8 @@ import QOU.Transcendental.MassTheory.MassComparison
 import QOU.Observations.LeptonUniversalityLadder
 import QOU.Observations.LeptonChargeClassTrace
 import QOU.Observations.LeptonWordsCatMap
+import QOU.Observations.LeptonMassAtI
+import QOU.Observations.LeptonColouredBurau
 import QOU.Observations.ColouredLadderTwist
 import QOU.Observations.VolumeOrderRule
 import QOU.Transcendental.MassTheory.KnotConvolutionVolume

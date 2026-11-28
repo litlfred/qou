@@ -50,6 +50,44 @@ Readings:
 * Ordering on closure ∪ axis: e 0 < μ 6.35 < τ 9.50. No mass rule has been fixed, so this is not
   scored (owner: "Derive the reading first").
 
+## 4. Where `i` enters the pipeline (Lean, sorry-free)
+
+`QOU/Observations/LeptonMassAtI.lean`, following the owner's 02:09Z direction ("group action before
+the trace; track the imaginary part").
+
+1. **Before the trace.** The standard 2-dimensional Hecke block, with `T₀ = [[q,1],[0,−q⁻¹]]` and
+   `T₁ = [[−q⁻¹,0],[1,q]]` (quadratic and braid relations proved), becomes unipotent at `q = i`
+   after the framing normalisation `q⁻¹`. Conjugation by `diag(1, i)` turns it, word by word, into
+   the integer `B₃ → SL(2, ℤ)` image (`conj_word`). So the cat-map action *is* the pre-trace block
+   at `q = i`. The two choices `±i` give the same integers (`conj_gen_neg`). The `√−1` choice lives
+   only in the conjugator, which is the same one bit as the `G_m` orientation (#9944).
+2. **The trace.** Every N = 2 ring mass has the factor `q² + 1 = q·[2]_q`, which vanishes at
+   `q = i`, so all masses vanish there. For the reduced masses `J = m/(q²+1)` at `q = i`, Lean gives
+   `J_e = −2`, `J_μ = 4` and `J_τ = −8`. These equal `∓(2 − tr img β)`, with traces 0, 6 and 10, and
+   they are the link determinants (Hopf 2, T(2,4) 4, Whitehead 8, via the standard
+   `V(−1) = ±det`, which is not formalised here).
+3. **Ratios at `q = i`:** `J_μ/J_e = J_τ/J_μ = −2`, so the ladder doubles. This is the one point
+   where the pre-trace group action fixes the mass ratios exactly. It is a value at `q = i`, not at
+   `q₀`, and does not give 206.77.
+
+## 5. One `G_m` per component: interactions across components (Lean, sorry-free)
+
+`QOU/Observations/LeptonColouredBurau.lean`, following the owner's 02:14Z direction. Each lepton is a
+2-component link, so `G_m × G_m` acts, with one colour `tᵢ` per component, through the coloured
+Burau matrices before any trace. The `(0,0)` minor of `I − B` is `(1 − t₂)·Δ_L(t₁,t₂)` up to a unit:
+
+| lepton | `Δ_L(t₁, t₂)` | lk | how the components interact |
+|---|---|---|---|
+| e (Hopf) | 1 | 1 | trivially |
+| μ (T(2,4)) | 1 + t₁t₂ | 2 | only through the diagonal `G_m` (`mu_diagonal`): fully coupled |
+| τ (Whitehead) | (t₁ − 1)(t₂ − 1) | 0 | factorises per component (`tau_split`): decoupled at this level |
+
+The `torres` theorem proves `Δ(t,1)(t − 1) = t^lk − 1` per component, which is `U(1) = 3·lk` (#9805)
+seen per component. On the diagonal at `t = −1` (`q = i`), `(t − 1)Δ` gives −2, 4 and −8, the same
+determinants as §4. The log cross-derivative `∂₁∂₂ log Δ` at `t = 1` (sympy, not in Lean) is 0 for
+e, 1/4 for μ and 0 for τ. Reading: the muon is the only lepton whose two components interact at
+the Alexander level.
+
 ## Open
 
 * The muon pin (bean): derive `m_μ/m_e` from the axioms. Level one is excluded (§1).
