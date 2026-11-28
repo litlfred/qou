@@ -107,3 +107,7 @@ Chebyshev recursion, root-of-unity identification. Bean stays open.
 ## 2026-11-28: semisimplified quotient (PR #9890)
 TLSemisimpleQuotient.lean, sorry-free. p_n is a primitive idempotent and is negligible iff τ(p_n)=0. At a primitive 2(k+2)-th root: p_0…p_{k−1} survive, the trace form is nondegenerate below k+1 strands, and p_k ≠ 0 is negligible at every level. The rows of the braid-derived S are pairwise distinct, so the k+1 objects are pairwise non-isomorphic.
 STILL OPEN: completeness, i.e. every simple of the quotient is one of these. Needs rectangular TL hom spaces Hom(m,n). Bean stays open.
+
+## 2026-11-28: cup-cap corner and completeness below k+1 strands (PR #9897)
+TLCupCapCorner.lean, sorry-free. capEmb : TL_{n+1} ≅ E·TL_{n+3}·E (onto via Jones' lemma, injective on nondegenerate levels). Objects are idempotents and isomorphism is Murray–von Neumann equivalence. simple_mvn_std: every simple idempotent of TL_{N+1} is equivalent to p_N, the vacuum, or a cup of a standard object, whenever p_m exists and the form is nondegenerate for m ≤ N. At a root of unity this covers N+1 ≤ k.
+STILL OPEN: (1) k+1 or more strands, i.e. completeness in the quotient by negligibles; (2) rectangular Hom(m,n) as a category. Bean stays open.
