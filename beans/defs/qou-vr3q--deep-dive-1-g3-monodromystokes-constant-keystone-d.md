@@ -106,3 +106,10 @@ flux ±2) gives honest finite sums; gauge entries at x=1 as num/den with q-expan
 `stokes52_12_from_index` = 4, `stokes52_31_from_index` = −3, matched to splus0. Still named:
 GGM region conjecture, block-to-index identity. No sorry, standard axioms.
 Head 558bafebb7b7dea340b202894ace097d958737f7.
+
+**2026-11-28 (PR #9989).** One-tetrahedron block identity proved in Lean
+(`TetBlockFactorisation.lean`): Euler's two identities as convergence of finite
+products, and `block_eq_Fc` / `tet_block`. The 5₂ three-block identity stays
+open (not a product of tetrahedron blocks). Next: GGM Conjecture 5.2 needs Borel
+resummation defined in Lean, or a class carrying it as free data is trivially
+instantiable — put to Carl on a card.
