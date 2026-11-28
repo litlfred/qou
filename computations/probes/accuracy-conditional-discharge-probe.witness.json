@@ -1,0 +1,261 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-28T11:51:34.042242+00:00",
+  "commitSha": "44f9323d4ac9973e9f917f0f31dd6ddc2ed58dec",
+  "assertions": [
+    {
+      "name": "bring_regular_map_chi_neg6_genus_4_betti_8",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.1",
+      "source": "ElectroweakConditionalDischarge.bringMap_connected_and_euler"
+    },
+    {
+      "name": "constructive_commring_clebsch_gordan_weinberg_loop_identities",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.1",
+      "source": "ElectroweakConditionalDischarge + AlphaEmConditionalReduction (§2-§4)"
+    },
+    {
+      "name": "proton_lawvere_cuts_rational_enclosure_and_sign_change",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.1",
+      "source": "ewNvProton_cut_certified + emFormB_and_rydberg_proton_cut_certified"
+    },
+    {
+      "name": "proton_pin_roundtrip_residual",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-80",
+      "source": "qou_substrate.constants.q_at(95)"
+    },
+    {
+      "name": "ew_fixed_point_self_consistency_residual",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-80",
+      "source": "ElectroweakConditionalDischarge.minimalEwBridge_discharges_legacy_classes"
+    },
+    {
+      "name": "ew_nv_proton_inside_lawvere_cut",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.1",
+      "source": "ElectroweakConditionalDischarge.ewNvProton_cut_certified"
+    },
+    {
+      "name": "ew_vev_proton_within_1sigma_codata_gf",
+      "computed": "246.21964356171226358416855662477162517473843713881623406980852172803055288414575",
+      "expected": "246.21965079413737804757656897241980682466964533231959241832325515517361961844917",
+      "passed": true,
+      "tolerance": "0.000063329255959699206967919570797825733655287852564262256954363944186011015020708756",
+      "unit": "GeV",
+      "source": "CODATA 2022 Fermi coupling constant"
+    },
+    {
+      "name": "em_formB_inv_alpha_proton_inside_lawvere_cut",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.1",
+      "source": "AlphaEmConditionalReduction.emFormB_and_rydberg_proton_cut_certified"
+    },
+    {
+      "name": "em_formC_pinned_deltaB3_eq_deltaReq",
+      "computed": "0.27573688623630858282265358253728432971925656034537586478663273145669871271062718",
+      "expected": "0.27573688623630858282265358253728432971925656034537586478663273145669871271062718",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "AlphaEmConditionalReduction.formC_pinned_and_dilog_duplication_status"
+    },
+    {
+      "name": "em_formC_inv_alpha_proton_within_1sigma_codata",
+      "computed": "137.03599917369576068487082888165490093696745523009713052906372861469357360018624",
+      "expected": "137.03599917700000000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true,
+      "tolerance": "0.000000021000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "source": "CODATA 2022 inverse fine-structure constant"
+    },
+    {
+      "name": "koide_quadratic_resolvent_q_eq_two_thirds",
+      "computed": "0.66666666666666666666666666666666666666666666666666666666666666666666666666666667",
+      "expected": "0.66666666666666666666666666666666666666666666666666666666666666666666666666666667",
+      "passed": true,
+      "tolerance": "1e-80",
+      "source": "S3CirculantKoideTraceIdentity.koide_quadratic_resolvent"
+    },
+    {
+      "name": "mtau_over_me_proton_within_1sigma_codata",
+      "computed": "3477.4423064158730225498913589145330526823157603419118156903291082843225215032127",
+      "expected": "3477.2300000000000000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true,
+      "tolerance": "0.23000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "source": "CODATA 2022 tau-electron mass ratio"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "accuracy-conditional-discharge-probe",
+  "scriptFile": "accuracy_conditional_discharge_probe.py",
+  "scriptHash": "250cbea1f8b9",
+  "scriptCommitSha": "44f9323d4ac9973e9f917f0f31dd6ddc2ed58dec",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/accuracy_conditional_discharge_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/accuracy_conditional_discharge_probe.py"
+  },
+  "description": "80-dps strictly proton-pinned verification of QOU/StandardModel/ElectroweakConditionalDischarge.lean and QOU/StandardModel/AlphaEmConditionalReduction.lean (bean qou-vhm1): finite S_5 regular-map Bring genus g=4 / b_1=8 discharge, constructive [CommRing R] quantum-integer Clebsch-Gordan & bar-parity identities, Form-B all-loop signed join -h^2 & constant measure, domain-level sin^2(theta_W)(0)=3/8, exact Q LawvereCut certificates on N_v(q0), alpha_EM^-1(q0), and R_inf/m_e, and before/after conditional hypothesis ledger.",
+  "auditOnly": "docs/audits/2026-11-28-accuracy-conditional-discharge-ledger.md",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218735787360728142401817989635744830",
+    "vol_4_1": "2.0298832128193072500424051085490405718833786150605995840349782135531949525164880",
+    "compute_dps": 95,
+    "output_dps": 80
+  },
+  "data": {
+    "bring_regular_map_discharge": {
+      "passed": true,
+      "darts": 120,
+      "orbits": 1,
+      "V_numCycles_sigma": 30,
+      "E_numCycles_alpha": 60,
+      "F_numCycles_sigma_alpha": 24,
+      "bringMapEuler": -6,
+      "bringMapBettiOne": 8,
+      "bringGenus": 4,
+      "ewSeifertSum": 6,
+      "affine_carrier_rule_unique_a0_b4": true,
+      "betti_eq_gauss_bonnet_unique_g4": true
+    },
+    "constructive_symbolic_identities": {
+      "passed": true,
+      "ew_chebyshev_factors_exact": true,
+      "ew_clebsch_gordan_9channel_exact": true,
+      "twoEwTreeU_bar_and_q1_eq_384": true,
+      "illustrative_alt_tree_at_q1": "537/2",
+      "em_clebsch_gordan_9channel_exact": true,
+      "emTreeU_bar_and_q1_eq_90": true,
+      "skein_to_habiro_square_bridge_exact": true,
+      "sixOneLoopB0_su2_eq_neg_19": -19,
+      "anomaly_cubic_factorization_exact": true,
+      "cleared_weinberg_trace_8x72_eq_3x192_eq_576": true,
+      "tl3_koide_departure_identity_exact": true
+    },
+    "lawvere_cut_rational_certificates": {
+      "passed": true,
+      "ew_parameter_box_contains_proton_q0_pi": true,
+      "em_parameter_box_contains_proton_q0_pi": true,
+      "ewNvProtonLo": "2624181688191/10000000000",
+      "ewNvProtonHi": "1312090844097/5000000000",
+      "ewNvProtonCut_width": "3/10000000000",
+      "ew_cubic_worst_lo_negative": true,
+      "ew_cubic_worst_hi_positive": true,
+      "emInvAlphaProtonLo": "342589997817/2500000000",
+      "emInvAlphaProtonHi": "1370359991271/10000000000",
+      "emInvAlphaProtonCut_width": "3/10000000000",
+      "em_cubic_worst_lo_negative": true,
+      "em_cubic_worst_hi_positive": true,
+      "rydbergFactorProtonLo": "50000000000000000000/1877886505676255196195441",
+      "rydbergFactorProtonHi": "3125000000000000000/117367906604252064765489"
+    },
+    "proton_pinned_observables_80dps": {
+      "pin_policy": "Strictly proton-pinned per owner ruling 2026-11-28; muon pin on hold until rederivation.",
+      "N_v_pred": "262.41816881923108883916431207783126215819974999426634492808107452004015115363074",
+      "v_weak_pred_GeV": "246.21964356171226358416855662477162517473843713881623406980852172803055288414575",
+      "v_weak_exp_GeV": "246.21965079413737804757656897241980682466964533231959241832325515517361961844917",
+      "v_weak_err_ppb": "-29.373874469956058980987486427537814918225689233899495802224696632799471514189893",
+      "v_weak_pull_sigma": "-0.11420353839410179043789169711873066921720228571746563281484766255486341648469280",
+      "alpha_EM_inv_FormB_pred": "137.03599912695091242017270049642000673995567550571804579375172154645555275802295",
+      "alpha_EM_inv_FormB_err_ppb": "-0.36522583759310081907456410985734104109046988399913156385788934511383857977097615",
+      "alpha_EM_inv_FormB_pull_sigma": "-2.3832898847536809287419044409544916425848549622022989739783070115227167899431589",
+      "alpha_EM_inv_FormC_pred": "137.03599917369576068487082888165490093696745523009713052906372861469357360018624",
+      "alpha_EM_inv_FormC_err_ppb": "-0.024112199239422568466606387453294036924340041008699357362050829773063978911635467",
+      "alpha_EM_inv_FormC_pull_sigma": "-0.15734472929186529134976662204916879856680330813982244691935363808636964337634396",
+      "rydberg_FormB_eV": "13.605693132852388849598530037446617618104656840338476396305554319395835368460649",
+      "rydberg_FormB_err_ppb": "0.72487221051118064083001950745328133000350703335539206176533350355195296084776681",
+      "rydberg_FormC_eV": "13.605693123570213877215987777713542014558240447066560170846201995139453395538606",
+      "rydberg_FormC_err_ppb": "0.042644933409205059802202777137873159925006409572056614967882218174316608136842170",
+      "rydberg_FormC_pull_sigma_comb": "0.13619613213939223191545744658703987072724038934716394300863226664538389707274180",
+      "m_tau_over_m_e_pred": "3477.4423064158730225498913589145330526823157603419118156903291082843225215032127",
+      "m_tau_over_m_e_err_ppm": "61.056190091832449936115504160798302762762412009506328407700463967733369150926380",
+      "m_tau_over_m_e_pull_sigma_codata22": "0.92307137336096760822329962840457687963374061700789430577873167096748479657685102",
+      "tl3_koide_departure_at_q0": "0.0071285863480193532871050368319722144838365430543179951154004633895437793900722713"
+    },
+    "hypothesis_reduction_ledger": {
+      "m_tau_over_m_e": {
+        "premises_before": 5,
+        "discharged_proved": 4,
+        "remaining_open": 1,
+        "open_kernel": "KoideCirculantEquipartitionHypothesis (2||b(q)||^2 = a(q)^2 + lepton hierarchy qou-se9w)",
+        "status": "Conditional"
+      },
+      "alpha_em_inv_form_b": {
+        "premises_before": 8,
+        "discharged_proved": 6,
+        "remaining_open": 2,
+        "legacy_scorecard_premises_eliminated": [
+          "ArchimedeanLimit (proved on (0,1) + 0)",
+          "BlochSuslinUniqueness (proved for complex blochD)",
+          "BringZeroModeBlochClass (bypassed via BringMapChain + (2,4,5) angle defect)"
+        ],
+        "open_kernel": "FormBMinimalKernelClass (GermPeriodShare + HeatKernelLeadingCoeff for mu_1 = 1/(8*pi), plus additive Delta_2 = 0 assembly)",
+        "status": "Conditional"
+      },
+      "alpha_em_inv_form_c": {
+        "premises_before": 6,
+        "discharged_proved": 4,
+        "remaining_open": 2,
+        "open_kernel": "FormCPinned (deltaB3 q = deltaReq q alpha) + canonical non-residual arm selection (qou-aemx)",
+        "status": "Conditional"
+      },
+      "rydberg_form_b_and_c": {
+        "premises_before_form_b": 8,
+        "discharged_proved_form_b": 6,
+        "remaining_open_form_b": 2,
+        "premises_before_form_c": 6,
+        "discharged_proved_form_c": 4,
+        "remaining_open_form_c": 2,
+        "open_kernel": "Strictly inherited from FormBMinimalKernelClass / FormCPinned (rational R_inf/m_e = 1/(2*A^2) propagation proved)",
+        "status": "Conditional"
+      },
+      "v_weak_electroweak_vev": {
+        "premises_before": 9,
+        "discharged_proved": 6,
+        "remaining_open_bundled_classes": 1,
+        "remaining_open_class_fields": 3,
+        "open_kernel": "MinimalElectroweakVevBridgeClass (Nv_pos, duality_self_consistency, su2_vev_assembly; discrete choices qou-rpt1 / qou-myxi)",
+        "status": "Conditional"
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "Owner ruling 2026-11-28: strictly proton-pinned q0 (q_at(95)); muon pin on hold until rederivation."
+}
