@@ -22,3 +22,6 @@ PR #9839 merged 2026-11-27T23:53Z. Remaining open item: derive μ (the EM ring f
 
 ## 2026-11-28 — μ from the vertex pair (PR #9854)
 Pre-registered μ₁ = 1 − αh² (one photon vertex pair, #9841). ε_log 1.349 keV, ε_U 1.262 keV; ~570× below ³H/³He, and needed ε ∝ A^{-1/3}. Scope (a): the open piece is the energy-to-length map (qou-mbfv).
+
+## 2026-11-28 — size law (PR #9859)
+Under homogeneity + additive volume: ε³A = const (Lean CoulombBlockSize). Mirror max/min 2.10 → 1.24. One length κ³/v left, shared with qou-mbfv.
