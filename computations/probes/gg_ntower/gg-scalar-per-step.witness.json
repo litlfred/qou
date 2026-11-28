@@ -6,13 +6,14 @@
  "beans": [
   "qou-cds1",
   "qou-99qc",
-  "qou-ales"
+  "qou-ales",
+  "qou-j5b6"
  ],
  "q0": "1.1099785827513808075916690956107688798744991218736",
  "q0Anchor": "proton",
  "q0AnchorReason": "evaluates the exact Q(q) closed forms at the proton-pinned q0 (Q0_STR) for the F_required straddle only",
  "markov_convention": "D (z = q^3/(q^2+1))",
- "compute_dps": 70,
+ "compute_dps": 80,
  "checks": {
   "S_projector_and_jones_eigenvalue": true,
   "I1_cabled_crossing_on_double_singlet_is_q_squared": true,
@@ -162,8 +163,8 @@
      "F_vs_abs_tr_Delta_S": "3.05635753903"
     }
    },
-   "F_required_order_zero_E0": "1.75923699418",
-   "abs_tr_M_Delta_S_at_zD": "0.106235639848092790892142",
+   "F_required_order_zero_E0": "1.75923732993756197830943854773406088009522174399222537337871",
+   "abs_tr_M_Delta_S_at_zD": "0.106235639848092790892141987160551894399375838398455711118223",
    "crossing": {
     "last_c_below": 5,
     "first_c_at_or_above": 6
@@ -178,5 +179,13 @@
    "reading_3_is_magnitude_blind": "Measured three independent ways: admissible at every c = 1..8 here while tr_M grows without bound; 10 of 12 configurations admissible across a 7.6x magnitude range in the sibling pair-creation construction; and the composed tower 'rejects nothing and admits everything H_3 rejected'."
   }
  },
- "wall_seconds": 1
+ "wall_seconds": 4,
+ "scriptHash": "536e95a690d4",
+ "scriptCommitSha": "4109c6c90a525a60995293f35663cc4e237cb1ad",
+ "commitSha": "4109c6c90a525a60995293f35663cc4e237cb1ad",
+ "engine": "mpmath",
+ "computedAt": "2026-11-28T10:47:54.829736+00:00",
+ "durationMs": 0,
+ "engineVersion": "mpmath 1.3.0",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
