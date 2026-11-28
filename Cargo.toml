@@ -21,7 +21,7 @@ members = [
   # "crates/qou-clarabel",
   # "crates/qou-gg-core",
   # "crates/qou-gg-eval",
-  # "crates/qou-values",
+  "crates/qou-values",
 ]
 default-members = [
   "crates/borromean-recurrence-crt",
