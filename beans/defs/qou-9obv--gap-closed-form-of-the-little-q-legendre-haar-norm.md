@@ -3,8 +3,9 @@
 title: 'GAP: closed form of the little q-Legendre Haar norm on the O_q(SU(2)) Cartan block'
 status: todo
 type: task
+priority: normal
 created_at: 2026-11-28T01:30:18Z
-updated_at: 2026-11-28T01:30:18Z
+updated_at: 2026-11-28T01:54:08Z
 ---
 
 Related: qou-q3dc (GAP progress notes) and qou-pa7n (Part A). This bean stays open while Part A is open.
@@ -26,3 +27,7 @@ If proved, the normalised raising coupling satisfies
 At fixed q > 1 this decays like q^(-2r). As q -> 1 it grows like r, so the decay is not uniform in q. This is scope-(a) evidence for one triad family only, not a structural exclusion.
 
 Possible routes: a three-term recurrence or a Christoffel–Darboux identity for the jacobiPoly basis in OqSU2LittleQJacobiBasis, or a Rodrigues-type formula.
+
+
+## 2026-11-28 — proved (PR #9947)
+`QOU/FluidDynamics/q_ns_qlegendre_norm.lean`, `H_eq_prod`, is sorry-free. The norm of the monic P_n is Π_{k<n} P²z²(Pz−1)⁴/((Pz²−1)(P²z²−1)²(P³z²−1)), with P = q² and z = P^k. The route is the three-term recurrence plus closed forms for the top coefficients. Close this bean once #9947 merges. Still open: the C̃(r)² substitution as a Lean statement (small), positivity over an ordered field, and Part A (qou-pa7n).
