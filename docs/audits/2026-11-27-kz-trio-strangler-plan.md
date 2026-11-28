@@ -116,5 +116,9 @@ Step A has landed (#9643). Step B starts with the part that does not depend on `
   `(Δ ⊗ id)(R) = Φ₃₁₂ R₁₃ Φ₁₃₂⁻¹ R₂₃ Φ₁₂₃`, with the associators realised by `realize3`.
 - `CasimirData.quasiYBE`: the quasi-Yang–Baxter equation, from `quasiYBE_of_hexagon`.
 
-Still open: the pentagon transported to `A^{⊗4}` through `CasimirData.evalU4`. It needs the four-strand
-coproduct identities `(Δ ⊗ id ⊗ id)`, `(id ⊗ Δ ⊗ id)` and `(id ⊗ id ⊗ Δ)` on `Φ`.
+`HAdicDrinfeld/Pentagon.lean` carries the pentagon to `A^{⊗4}` through `CasimirData.evalU4`:
+the five coface maps `face0 … face4`, their values on `t₁₂, t₂₃` from the splitting identities,
+and `CasimirData.pentagon`, the quasi-Hopf pentagon
+`(id⊗id⊗Δ)Φ · (Δ⊗id⊗id)Φ = (1⊗Φ) · (id⊗Δ⊗id)Φ · (Φ⊗1)` for `Φ = φ(c t₁₂, c t₂₃)`. Its only
+hypothesis is the pentagon in `U4 N`, so it does not depend on the choice of exponential `E`.
+Sorry-free; axioms propext, Classical.choice, Quot.sound.
