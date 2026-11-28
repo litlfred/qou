@@ -260,7 +260,7 @@ def main() -> int:
                                 "QOU.Nuclear.CoulombShell.shapeFactorSq")
         wb.add_assertion(name="primary_f_positive_finite", computed=str(int(0 < fp < 10)),
                          expected="1", tolerance=0, source="sanity only")
-        print(f"witness: {wb.save()}")
+        print(f"witness: {wb.save({'q0Anchor': 'proton', 'q0Value': Q_50_DIGIT_STR})}")
     return 0
 
 

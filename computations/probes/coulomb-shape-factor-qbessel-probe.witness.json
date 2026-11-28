@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-28T00:26:09.005975+00:00",
-  "commitSha": "f4d12154e85e4b9c1a4644f3c92da793583d9b52",
+  "computedAt": "2026-11-28T00:28:02.119321+00:00",
+  "commitSha": "518adf468059ef5e48af7200031313426bf24235",
   "assertions": [
     {
       "name": "qhankel_norm_at_q0",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "coulomb-shape-factor-qbessel-probe",
   "scriptFile": "coulomb_shape_factor_qbessel_probe.py",
-  "scriptHash": "e868800d3769",
-  "scriptCommitSha": "98608fc2f9af5cbf81f33bb237fe24d9a6e6fc99",
+  "scriptHash": "8ffa91f5e09f",
+  "scriptCommitSha": "518adf468059ef5e48af7200031313426bf24235",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -122,5 +122,7 @@
       "2": "0.51928678636768828277302857315308703951239442608314690570168"
     },
     "primary_f_lean_double_sum": "0.520010562994850862465840107226616923677672899831771179340096"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
