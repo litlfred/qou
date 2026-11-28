@@ -775,6 +775,31 @@ def _chain_V_full(chain):
 
 
 
+_SLOT_VOL_CACHE: dict = {}
+
+
+def _eval_slot_volume_chain(chain) -> dict:
+    """Evaluate single-generator channel accumulators ``(a, b, sp, ap)`` -> volume dict.
+
+    Matches the per-slot recurrence of ``atom_per_generator_volumes`` operation-for-operation
+    starting from ``(0.0, 1.0, 1.0, 1.0)`` so both binary64 and ``mpmath.mpf`` arithmetic
+    produce bit-for-bit identical values to the uncached loop.
+    """
+    a = 0.0
+    b = 1.0
+    sp = 1.0
+    ap = 1.0
+    for c, d in chain:
+        a_new = a * c * h + a * d + b * c
+        b_new = a * c + b * d
+        a = a_new
+        b = b_new
+        sp *= c * q0 + d
+        ap *= -c * qi + d
+    vs = z * a + b
+    return {"std": vs, "sym": sp, "alt": ap, "full": vs}
+
+
 def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
                                 m_pp=None, m_pn=None, m_nn=None):
     """Per-generator additive Wedderburn volumes V̂_i^full for the atom braid.
@@ -834,11 +859,13 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
         𝔪(W) = |Π V̂_i| + Σ Φ_q(|V̂_i|)
               + z² Σ_{|i-j|=1} Φ_q(|V̂_i V̂_j|).
 
-    Implementation: replays _step_chain_generic for each nucleon, but
-    instead of tracking a single accumulated YSN matrix, accumulates
-    per-generator (a, b, sp, ap) — the additive Wedderburn channel
-    state.  Mirrors mass_endomorphism.additive_wedderburn_volumes
-    extended to A-nucleon atoms.
+    Implementation: each generator slot is independent and takes one of at most
+    seven local crossing chains (``_PROTON_G0``, ``_PROTON_G1``, ``_NEUTRON_G0``,
+    ``_NEUTRON_G1``, ``pp``, ``nn``, ``pn``). Memoising those seven slot dicts
+    keyed by active ``mpmath`` precision and substrate parameters reduces per-call
+    arithmetic from ``O(A)`` ``mpf`` loops (~277M ``mpf`` ops across the 14,972-row
+    ``mass_table_comprehensive.py`` sweep; bean ``qou-cbot``) to ``O(1)`` slot
+    lookups plus fresh per-slot dict copies, with zero numerical drift.
 
     Parameters
     ----------
@@ -856,125 +883,62 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
     if A < 1:
         return []
 
-    # The H_3 vs H_{3A} DeprecationWarning that stood here (audit 2026-05-25,
-    # PR #1238) was removed on 2026-11-19. The volumes below are now the
-    # convention-D Markov trace z*a + b, which is the same in H_3 and H_{3A}.
-
-    # Nucleon ordering (Z protons then N neutrons) — matches
-    # atom_character_raw convention.
-    ordering = ['p'] * Z + ['n'] * N
-
-    # n_gens for the joint braid
-    if include_inter:
-        n_strands = 3 * A
-        n_gens_total = n_strands - 1  # 3A - 1
-    else:
-        # Free baseline: per-nucleon disjoint blocks of 2 generators each
-        n_gens_total = 2 * A
-
-    # Per-generator accumulators (a, b for std; sp for sym; ap for alt)
-    a_arr  = [0.0] * n_gens_total
-    b_arr  = [1.0] * n_gens_total
-    sp_arr = [1.0] * n_gens_total
-    ap_arr = [1.0] * n_gens_total
-
-    # Build the atom braid by walking the nucleon chain.  For each
-    # nucleon k, the intra-nucleon crossings live on local gens; for
-    # the joint braid, these are mapped to global gens 3k, 3k+1.
-    # Inter-nucleon crossings (when include_inter) live on gen 3k+2,
-    # connecting nucleon k with nucleon k+1.
-    for k, nuc in enumerate(ordering):
-        intra    = _PROTON_G0 if nuc == 'p' else _NEUTRON_G0
-        intra_g1 = _PROTON_G1 if nuc == 'p' else _NEUTRON_G1
-        if include_inter:
-            base_g0 = 3 * k       # global gen for first intra slot
-            base_g1 = 3 * k + 1   # global gen for second intra slot
-        else:
-            base_g0 = 2 * k
-            base_g1 = 2 * k + 1
-        # Intra-nucleon, first generator slot
-        for c, d in intra:
-            i = base_g0
-            a_new = a_arr[i] * c * h + a_arr[i] * d + b_arr[i] * c
-            b_new = a_arr[i] * c + b_arr[i] * d
-            a_arr[i] = a_new
-            b_arr[i] = b_new
-            sp_arr[i] *= c * q0 + d
-            ap_arr[i] *= -c * qi + d
-        # Intra-nucleon, second generator slot
-        for c, d in intra_g1:
-            i = base_g1
-            a_new = a_arr[i] * c * h + a_arr[i] * d + b_arr[i] * c
-            b_new = a_arr[i] * c + b_arr[i] * d
-            a_arr[i] = a_new
-            b_arr[i] = b_new
-            sp_arr[i] *= c * q0 + d
-            ap_arr[i] *= -c * qi + d
-        # Inter-nucleon crossings (only when include_inter and k < A-1)
-        # crossings_per_pair: number of repetitions of the basic pair
-        # crossing.  For ILP-stable pairs, this should be derived from
-        # Frobenius positivity (currently a parameter; see witness).
-        if include_inter and k < A - 1:
-            i = 3 * k + 2  # global gen for inter-nucleon between k and k+1
-            next_nuc = ordering[k + 1]
-            if nuc == 'p' and next_nuc == 'p':
-                base_cross = (1.0, 0.0)      # pp: σ
-                m_this = m_pp if m_pp is not None else crossings_per_pair
-            elif nuc == 'n' and next_nuc == 'n':
-                base_cross = (1.0, -h)       # nn: σ⁻¹
-                m_this = m_nn if m_nn is not None else crossings_per_pair
-            else:
-                base_cross = (1.0, D_PN)     # pn: colour-weighted mixed
-                m_this = m_pn if m_pn is not None else crossings_per_pair
-            pair_cross = [base_cross] * m_this
-            for c, d in pair_cross:
-                a_new = a_arr[i] * c * h + a_arr[i] * d + b_arr[i] * c
-                b_new = a_arr[i] * c + b_arr[i] * d
-                a_arr[i] = a_new
-                b_arr[i] = b_new
-                sp_arr[i] *= c * q0 + d
-                ap_arr[i] *= -c * qi + d
-
-    # Build per-generator V̂_full from accumulators.
-    #
-    # `z` and `W_SYM/W_STD/W_ALT` come from `pyhecke.gram` — the module this
-    # file already imports them from at the top. They used to be SHADOWED here
-    # by a local recomputation, and the two had diverged:
-    #
-    #   local  z_mark = 1/(q^½ + q^-½) = 0.4993203  ← convention **C**
-    #   gram   z      = q³/(q²+1)      = 0.6126880  ← convention **D**
-    #
-    # The owner ruling of 2026-08-09 excised C repo-wide (`33a6c7aa4`, "the
-    # trace is now D everywhere") and `gram.py` moved to D on 2026-08-15, but
-    # this local copy was never registered as a C implementation
-    # (docs/coordination/trace-convention-registry.json lists only the two
-    # `_HISTORICAL` sites in schur_principal_mpmath and `gram.py::z`), so the
-    # migration never visited it. Every one of the callers of this function was
-    # still getting C.
-    #
-    # The weights were NOT divergent — the local recomputation reproduced
-    # gram's W_SYM/W_STD/W_ALT to the last f64 digit — but recomputing a
-    # constant that is imported three lines above is how the `z` fork happened
-    # in the first place, so both now come from the single source.
-    #
-    # The old NOTE here said these were "the H_3 weights, wrong for A > 1".
-    # That no longer applies: see the convention-D note below.
-    #
     # CONVENTION D (owner, 2026-11-18: "switch them to convention D"). The
     # per-generator volume is now the convention-D Markov trace of the
     # generator's word a*sigma_i + b, which is z*a + b with z = q^3/(q^2+1).
-    # It used to be the mixture W_SYM*sym + W_STD*(z*a+b) + W_ALT*alt. Those
-    # weights (0.165, 0.669, 0.165) are not the convention-D Markov weights,
-    # which are y_lambda*dim_lambda = (0.505, 0.495, 0) on (3), (2,1), (1^3).
-    # The Markov property tr(x*sigma_i) = z*tr(x) makes z*a + b the same in
-    # every H_n, so the H_3 vs H_{3A} question goes away for these volumes.
-    # Checked against mass_at_3A_proper.per_generator_V_hat_3A(weight_scheme=
-    # "jones_wenzl") for A = 1..4: agreement to 5.6e-16, the float64 floor.
+    eff_pp = crossings_per_pair if m_pp is None else m_pp
+    eff_pn = crossings_per_pair if m_pn is None else m_pn
+    eff_nn = crossings_per_pair if m_nn is None else m_nn
+    cache_key = (
+        _mp.mp.prec,
+        type(h), h, q0, qi, z, D_PN,
+        tuple(_PROTON_G0), tuple(_PROTON_G1),
+        tuple(_NEUTRON_G0), tuple(_NEUTRON_G1),
+        eff_pp, eff_pn, eff_nn,
+    )
+    slots = _SLOT_VOL_CACHE.get(cache_key)
+    if slots is None:
+        slots = {
+            "p_g0": _eval_slot_volume_chain(_PROTON_G0),
+            "p_g1": _eval_slot_volume_chain(_PROTON_G1),
+            "n_g0": _eval_slot_volume_chain(_NEUTRON_G0),
+            "n_g1": _eval_slot_volume_chain(_NEUTRON_G1),
+            "pp": _eval_slot_volume_chain([(1.0, 0.0)] * eff_pp),
+            "nn": _eval_slot_volume_chain([(1.0, -h)] * eff_nn),
+            "pn": _eval_slot_volume_chain([(1.0, D_PN)] * eff_pn),
+        }
+        _SLOT_VOL_CACHE[cache_key] = slots
+
+    p0, p1 = slots["p_g0"], slots["p_g1"]
+    n0, n1 = slots["n_g0"], slots["n_g1"]
+    if not include_inter:
+        vols = []
+        for _ in range(Z):
+            vols.append(dict(p0))
+            vols.append(dict(p1))
+        for _ in range(N):
+            vols.append(dict(n0))
+            vols.append(dict(n1))
+        return vols
+
+    s_pp, s_pn, s_nn = slots["pp"], slots["pn"], slots["nn"]
+    ordering = ["p"] * Z + ["n"] * N
     vols = []
-    for i in range(n_gens_total):
-        Vs = z * a_arr[i] + b_arr[i]
-        Vf = Vs
-        vols.append({"std": Vs, "sym": sp_arr[i], "alt": ap_arr[i], "full": Vf})
+    for k, nuc in enumerate(ordering):
+        if nuc == "p":
+            vols.append(dict(p0))
+            vols.append(dict(p1))
+        else:
+            vols.append(dict(n0))
+            vols.append(dict(n1))
+        if k < A - 1:
+            next_nuc = ordering[k + 1]
+            if nuc == "p" and next_nuc == "p":
+                vols.append(dict(s_pp))
+            elif nuc == "n" and next_nuc == "n":
+                vols.append(dict(s_nn))
+            else:
+                vols.append(dict(s_pn))
     return vols
 
 
