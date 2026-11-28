@@ -115,3 +115,9 @@ STILL OPEN: (1) k+1 or more strands, i.e. completeness in the quotient by neglig
 ## 2026-11-28 — completeness on every number of strands (PR #9902)
 
 `TLNegligibleQuotient.lean`: in the quotient by negligibles, every simple idempotent on any number of strands is equivalent to the vacuum or some p_m (m < k) with cups, and none of these vanishes (`simple_mvn_stdLt_root`). Sorry-free. Still open: rectangular Hom(m,n) as a category; braiding/modular data on the quotient category itself (not just its objects).
+
+## 2026-11-28 — rectangular Hom and quotient modular data (PRs #9903 merged, #9907)
+
+- `TLRectangularHom.lean` (#9903, merged 1c32f0025e): Hom(a,b) = [b]·Q_N·[a] with [a] = nested cup-cap idempotent; a CategoryTheory.Category on labels a ≤ N; adding two strands is a full and faithful functor, so Hom(a,b) does not depend on N.
+- `TLQuotientModularData.lean` (#9907): trace on the quotient is nondegenerate; crossings descend (invertible, braid relations); twist on p_n; `modular_data_quotient` = complete simples list + S = [(i+1)(j+1)] + det S ≠ 0.
+- Still open: monoidal structure on the quotient category (tensor across strand counts) and a Mathlib BraidedCategory / ribbon instance; the N → ∞ colimit as one category.
