@@ -112,6 +112,7 @@ import QOU.Transcendental.MassTheory.BlochGroupComplex
 import QOU.Transcendental.MassTheory.MuonCarrierHeckeObstruction
 import QOU.Transcendental.MassTheory.LevelWeightSign
 import QOU.MassTheory.LevelWeightEnergy
+import QOU.MassTheory.MuonLevelRatio
 import QOU.MassTheory.LevelWeightOrder
 import QOU.Transcendental.MassTheory.ElectronCategoricalEnergy
 import QOU.Transcendental.MassTheory.ElectronMassChartWeight
@@ -121,6 +122,7 @@ import QOU.Transcendental.MassTheory.RingMassLinkingThreeStrand
 import QOU.Transcendental.MassTheory.MassComparison
 import QOU.Observations.LeptonUniversalityLadder
 import QOU.Observations.LeptonChargeClassTrace
+import QOU.Observations.LeptonWordsCatMap
 import QOU.Observations.ColouredLadderTwist
 import QOU.Observations.VolumeOrderRule
 import QOU.Transcendental.MassTheory.KnotConvolutionVolume
