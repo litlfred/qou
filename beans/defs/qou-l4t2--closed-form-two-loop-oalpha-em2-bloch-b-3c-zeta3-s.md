@@ -77,3 +77,12 @@ docs/audits/2026-11-28-alpha-em-two-loop-placement-count.md.
 
 ## 2026-11-28T00:09Z
 Two-loop measure on Bring: PR #9860 (EmTwoLoopMeasureConnected, FlatSunsetConnectedPeriod).
+
+## 2026-11-28 — the θ-graph's classical 3 (PR #9896)
+
+`(σ+σ⁻¹)² = 4 + h² = [2]_q²` at one convention-D generator, so `[3]_q = (unsigned
+four-history pair) − 1` (Clebsch–Gordan `[2]² = [3] + [1]`; `EmThetaClassicalThree.lean`,
+sorry-free). The 3 is the four chiral histories counted with weight 1, minus the
+singlet. Form B's signed `−ε₁ε₂` weights cancel it. Open choice (qou-aemx): signed vs
+unsigned-spin-1 weights on the two-vertex photon insertion. Measure: thread "Define
+the two-loop measure on Bring", PR #9860.
