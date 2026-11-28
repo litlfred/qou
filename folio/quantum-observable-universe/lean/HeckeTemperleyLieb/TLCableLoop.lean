@@ -201,6 +201,65 @@ theorem slide_conj (hX : Commute X b) (hyp : ∀ z, a * (X * (cr A a * (X * z)))
     capLZ hA hδ hb hbab, hyp, r2Z hA hδ ha hb haba hbab, capLIZ hA hδ ha haba, mul_neg,
     neg_neg, ← mul_assoc, ← mul_assoc, hbab]
 
+omit ha hb haba hbab in
+theorem capRZ {x y : R} (hx : x * x = δ • x) (hxyx : x * y * x = x) (z : R) :
+    cr A x * (cr A y * (x * z)) = -(y * (x * z)) := by
+  have h := congrArg (· * z) (capR hA hδ hx hxyx)
+  simpa only [mul_assoc, neg_mul] using h
+
+omit ha hb haba hbab in
+theorem capRIZ {x y : R} (hx : x * x = δ • x) (hxyx : x * y * x = x) (z : R) :
+    crI A x * (crI A y * (x * z)) = -(y * (x * z)) := by
+  have h := congrArg (· * z) (capRI hA hδ hx hxyx)
+  simpa only [mul_assoc, neg_mul] using h
+
+/-- **Cup slide, positive step, right.** -/
+theorem slide_pos_right (hX : Commute X b)
+    (hyp : ∀ z, X * (cr A a * (X * (a * z))) = cr A a * (a * z)) (z : R) :
+    cr A a * (X * (cr A a * (cr A b * (cr A a * (X * (cr A a * (b * z)))))))
+      = cr A b * (b * z) := by
+  rw [braidZ hA hδ ha hb haba hbab, commZ hX, ← commZ hX (cr A a * (b * z)),
+    capRZ hA hδ hb hbab,]
+  simp only [mul_neg]
+  rw [hyp,
+    braidZ hA hδ ha hb haba hbab, capRZ hA hδ ha haba]
+  simp only [mul_neg, neg_neg]
+  rw [← mul_assoc b a, ← mul_assoc (b * a) b, hbab]
+
+/-- **Cup slide, conjugate step, right.** -/
+theorem slide_conj_right (hX : Commute X b)
+    (hyp : ∀ z, X * (cr A a * (X * (a * z))) = cr A a * (a * z)) (z : R) :
+    cr A a * (X * (crI A a * (cr A b * (cr A a * (X * (crI A a * (b * z)))))))
+      = cr A b * (b * z) := by
+  rw [k1Z hA hδ ha hb haba hbab, commZ hX, ← commIZ hX (crI A a * (b * z)),
+    capRIZ hA hδ hb hbab,]
+  simp only [mul_neg]
+  rw [hyp,
+    braidZ hA hδ ha hb haba hbab, capRZ hA hδ ha haba]
+  simp only [mul_neg, neg_neg]
+  rw [← mul_assoc b a, ← mul_assoc (b * a) b, hbab]
+
+omit hδ ha hb haba hbab in
+theorem eq_of_cr (x : R) : x = A ^ 2 • (1 : R) - A • cr A x := by
+  unfold cr
+  simp only [smul_sub, smul_smul, mul_inv_cancel₀ hA, one_smul, sq]
+  abel
+
+/-- **Naturality across a passed cup.** If `X` commutes with `b`, then `a` commutes with
+`σ(b) σ(a) X σ(a)⁻¹ σ(b)⁻¹`. -/
+theorem nat_comm (hX : Commute X b) :
+    Commute a (cr A b * (cr A a * X * crI A a) * crI A b) := by
+  have hs : Commute (cr A a) (cr A b * (cr A a * X * crI A a) * crI A b) := by
+    have h : cr A a * (cr A b * (cr A a * (X * (crI A a * (crI A b * 1)))))
+        = cr A b * (cr A a * (X * (crI A a * (crI A b * (cr A a * 1))))) := by
+      rw [braidZ hA hδ ha hb haba hbab, ← commZ hX (crI A a * (crI A b * 1)),
+        r2Z hA hδ hb ha hbab haba]
+    show _ = _
+    simpa only [mul_assoc, mul_one] using h
+  have := ((Commute.one_left (cr A b * (cr A a * X * crI A a) * crI A b)).smul_left
+    (A ^ 2)).sub_left (hs.smul_left A)
+  rwa [← eq_of_cr hA a] at this
+
 end Slides
 
 /-! ## The cup slide on the tower -/
@@ -280,6 +339,122 @@ theorem cup_loop_loop (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (n c : ℕ)
       crossingInv δ A (Fin.last (n + c + 1))) = _
   rw [← mul_assoc, ← mul_assoc, cup_loop hA hδ n c, mul_assoc,
     crossing_mul_crossingInv hA hδ, mul_one]
+
+/-- **Cup slide for the Hopf word, right.** `ι(W) σ ι(W) e = σ e`. -/
+theorem hopf_cup (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) : ∀ m : ℕ,
+    incl δ m (hopfW δ A m) * crossing δ A (Fin.last m) * incl δ m (hopfW δ A m) *
+        e K δ adjFin (Fin.last m)
+      = crossing δ A (Fin.last m) * e K δ adjFin (Fin.last m)
+  | 0 => by simp [hopfW, hopfList]
+  | m + 1 => by
+    have IH := congrArg (incl δ (m + 1)) (hopf_cup hA hδ m)
+    simp only [map_mul, incl_e, incl_crossing] at IH
+    have hyp : ∀ z, incl δ (m + 1) (incl δ m (hopfW δ A m)) *
+        (cr A (e K δ adjFin (Fin.castSucc (Fin.last m))) *
+          (incl δ (m + 1) (incl δ m (hopfW δ A m)) * (e K δ adjFin (Fin.castSucc (Fin.last m)) * z)))
+        = cr A (e K δ adjFin (Fin.castSucc (Fin.last m))) *
+          (e K δ adjFin (Fin.castSucc (Fin.last m)) * z) := fun z => by
+      have := congrArg (· * z) IH
+      simpa only [mul_assoc, crossing_eq_cr] using this
+    have key := slide_pos_right hA hδ (e_sq' δ _) (e_sq' δ _) (adj_low (δ := δ) m) (last_adj δ m)
+      (incl_incl_commute δ m (hopfW δ A m)) hyp 1
+    rw [hopfW_succ, map_mul, map_mul, incl_crossing]
+    simpa only [mul_one, mul_assoc, crossing_eq_cr] using key
+
+/-- **Cup slide for the passing loop, right.** `ι(loop n c) σ ι(loop n c) e = σ e`. -/
+theorem loop_cup_cr (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (n : ℕ) : ∀ c : ℕ,
+    incl δ (n + c + 1) (loop δ A n c) * crossing δ A (Fin.last (n + c + 1)) *
+        incl δ (n + c + 1) (loop δ A n c) * e K δ adjFin (Fin.last (n + c + 1))
+      = crossing δ A (Fin.last (n + c + 1)) * e K δ adjFin (Fin.last (n + c + 1))
+  | 0 => hopf_cup hA hδ (n + 1)
+  | c + 1 => by
+    show incl δ (n + c + 2) (loop δ A n (c + 1)) * crossing δ A (Fin.last (n + c + 2)) *
+        incl δ (n + c + 2) (loop δ A n (c + 1)) * e K δ adjFin (Fin.last (n + c + 2))
+      = crossing δ A (Fin.last (n + c + 2)) * e K δ adjFin (Fin.last (n + c + 2))
+    have hw : incl δ (n + c + 2) (loop δ A n (c + 1)) =
+        crossing δ A (Fin.castSucc (Fin.last (n + c + 1))) *
+          incl δ (n + c + 2) (incl δ (n + c + 1) (loop δ A n c)) *
+          crossingInv δ A (Fin.castSucc (Fin.last (n + c + 1))) := by
+      rw [loop, map_mul, map_mul, incl_crossing', incl_crossingInv]
+    have IH := congrArg (incl δ (n + c + 2)) (loop_cup_cr hA hδ n c)
+    simp only [map_mul, incl_e, incl_crossing] at IH
+    have hyp : ∀ z, incl δ (n + c + 2) (incl δ (n + c + 1) (loop δ A n c)) *
+        (cr A (e K δ adjFin (Fin.castSucc (Fin.last (n + c + 1)))) *
+          (incl δ (n + c + 2) (incl δ (n + c + 1) (loop δ A n c)) *
+            (e K δ adjFin (Fin.castSucc (Fin.last (n + c + 1))) * z)))
+        = cr A (e K δ adjFin (Fin.castSucc (Fin.last (n + c + 1)))) *
+          (e K δ adjFin (Fin.castSucc (Fin.last (n + c + 1))) * z) := fun z => by
+      have := congrArg (· * z) IH
+      simpa only [mul_assoc, crossing_eq_cr] using this
+    have key := slide_conj_right hA hδ (e_sq' δ _) (e_sq' δ _) (adj_low (δ := δ) (n + c + 1))
+      (last_adj δ (n + c + 1)) (incl_incl_commute δ (n + c + 1) (loop δ A n c)) hyp 1
+    rw [hw]
+    simpa only [mul_one, mul_assoc, crossing_eq_cr, crossingInv_eq_crI] using key
+
+/-- **Cup slide**, right loop form: `ι(loop n c) · loop n (c+1) · e = e`. -/
+theorem loop_loop_cup (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (n c : ℕ) :
+    incl δ (n + c + 1) (loop δ A n c) * loop δ A n (c + 1) * e K δ adjFin (Fin.last (n + c + 1))
+      = e K δ adjFin (Fin.last (n + c + 1)) := by
+  show _ * (crossing δ A (Fin.last (n + c + 1)) * incl δ (n + c + 1) (loop δ A n c) *
+      crossingInv δ A (Fin.last (n + c + 1))) * _ = _
+  have h1 : crossingInv δ A (Fin.last (n + c + 1)) * e K δ adjFin (Fin.last (n + c + 1))
+      = (-(A ^ 3)) • e K δ adjFin (Fin.last (n + c + 1)) := crI_mul_self hA hδ (e_sq' δ _)
+  have h2 : crossing δ A (Fin.last (n + c + 1)) * e K δ adjFin (Fin.last (n + c + 1))
+      = (-(A⁻¹ ^ 3)) • e K δ adjFin (Fin.last (n + c + 1)) := cr_mul_self hA hδ (e_sq' δ _)
+  calc _ = incl δ (n + c + 1) (loop δ A n c) * crossing δ A (Fin.last (n + c + 1)) *
+        incl δ (n + c + 1) (loop δ A n c) *
+        (crossingInv δ A (Fin.last (n + c + 1)) * e K δ adjFin (Fin.last (n + c + 1))) := by
+          simp only [mul_assoc]
+    _ = (-(A ^ 3)) • (crossing δ A (Fin.last (n + c + 1)) * e K δ adjFin (Fin.last (n + c + 1))) := by
+          rw [h1, mul_smul_comm, loop_cup_cr hA hδ n c]
+    _ = _ := by
+          rw [h2, smul_smul, show -A ^ 3 * -A⁻¹ ^ 3 = (1 : K) by field_simp, one_smul]
+
+/-- An element commuting with `e_i` commutes with `σ_i` and `σ_i⁻¹`. -/
+theorem commute_crossing {m : ℕ} {y : TLFin K δ m} {i : Fin m}
+    (h : Commute y (e K δ adjFin i)) : Commute y (crossing δ A i) :=
+  ((Commute.one_right y).smul_right _).sub_right (h.smul_right _)
+
+theorem commute_crossingInv {m : ℕ} {y : TLFin K δ m} {i : Fin m}
+    (h : Commute y (e K δ adjFin i)) : Commute y (crossingInv δ A i) :=
+  ((Commute.one_right y).smul_right _).sub_right (h.smul_right _)
+
+/-- **Naturality on the cable.** A cap between two cable strands that the loop passes commutes
+with the loop. -/
+theorem loop_comm_cable (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2) (n : ℕ) : ∀ (c k : ℕ)
+    (hk1 : 1 ≤ k) (hk : k + 1 ≤ c),
+    Commute (e K δ adjFin (⟨n + k, by omega⟩ : Fin (n + c + 1))) (loop δ A n c)
+  | 0, k, _, hk => absurd hk (by omega)
+  | c + 1, k, hk1, hk => by
+    show Commute (e K δ adjFin (⟨n + k, by omega⟩ : Fin (n + c + 2)))
+      (crossing δ A (Fin.last (n + c + 1)) * incl δ (n + c + 1) (loop δ A n c) *
+        crossingInv δ A (Fin.last (n + c + 1)))
+    by_cases hkc : k + 1 ≤ c
+    · have hE : (e K δ adjFin (⟨n + k, by omega⟩ : Fin (n + c + 2)))
+          = incl δ (n + c + 1) (e K δ adjFin (⟨n + k, by omega⟩ : Fin (n + c + 1))) := by
+        rw [incl_e]; rfl
+      have hf : Commute (e K δ adjFin (⟨n + k, by omega⟩ : Fin (n + c + 2)))
+          (e K δ adjFin (Fin.last (n + c + 1))) :=
+        e_commute_fin (by simp only [Fin.val_last]; omega)
+      refine ((commute_crossing hf).mul_right ?_).mul_right (commute_crossingInv hf)
+      rw [hE]
+      exact (loop_comm_cable hA hδ n c k hk1 hkc).map (incl δ (n + c + 1))
+    · obtain rfl : k = c := by omega
+      obtain ⟨c', rfl⟩ : ∃ c', k = c' + 1 := ⟨k - 1, by omega⟩
+      have hE : (⟨n + (c' + 1), by omega⟩ : Fin (n + (c' + 1) + 2))
+          = Fin.castSucc (Fin.last (n + (c' + 1))) := Fin.ext (by simp)
+      have hw : incl δ (n + c' + 2) (loop δ A n (c' + 1)) =
+          crossing δ A (Fin.castSucc (Fin.last (n + c' + 1))) *
+            incl δ (n + c' + 2) (incl δ (n + c' + 1) (loop δ A n c')) *
+            crossingInv δ A (Fin.castSucc (Fin.last (n + c' + 1))) := by
+        rw [loop, map_mul, map_mul, incl_crossing', incl_crossingInv]
+      rw [hE]
+      show Commute (e K δ adjFin (Fin.castSucc (Fin.last (n + c' + 1))))
+        (crossing δ A (Fin.last (n + c' + 2)) * incl δ (n + c' + 2) (loop δ A n (c' + 1)) *
+          crossingInv δ A (Fin.last (n + c' + 2)))
+      rw [hw]
+      exact nat_comm hA hδ (e_sq' δ _) (e_sq' δ _) (adj_low (δ := δ) (n + c' + 1))
+        (last_adj δ (n + c' + 1)) (incl_incl_commute δ (n + c' + 1) (loop δ A n c'))
 
 end Tower
 
