@@ -116,6 +116,24 @@ factorises as `C_a C_b`.
   terms. The tau's interaction starts at `h³`, so it is purely odd at leading order. Its sign is
   therefore the `G_m` orientation bit of §4 again. It moves the bit to the first odd jet order
   but does not fix it.
+**Naming κ₃ (probe `kappa3_conway_probe.py`, conjectural).** On 12 two-component links (the
+torus links T(2,2k) for k = 1–4, the mirror T(2,−4), the mirror of τ, and six further 3-braid
+closures), the data fit
+
+    κ₂ = lk²/6,    κ₃ = (lk³ − lk)/9 − (4/3)·a₃
+
+Here a₃ is the z³ coefficient of the Conway polynomial, with its sign fixed by a₁ = lk. For the
+Whitehead link a₁ = 0, so the formula predicts a₃(τ) = −1 in the orientation of this word.
+Electron: lk = 1, a₃ = 0, so κ₃ = 0. Muon: lk = 2, a₃ = 1, so κ₃ = −2/3. This is a fit over 12
+links, not a theorem.
+
+**Where Vol(4₁) can and cannot enter.** For each fixed colour pair, J is a Laurent polynomial in q
+with integer coefficients. So every hᵏ coefficient of log C is rational, and polynomial in the
+colours (Melvin–Morton–Rozansky). Vol(4₁) therefore cannot appear at any finite order. It can
+only appear in the double-scaling limit a → ∞ with a·h fixed (the volume conjecture). That limit
+is analytic, belongs in `QOU/Transcendental/`, and exists only for a hyperbolic piece. Of the
+three closures only τ is hyperbolic; the e and μ closures are not.
+
 * No `C` value is near 206.77. This gives a coupling hierarchy, not a mass ratio.
 
 ## Open
