@@ -131,3 +131,6 @@ TLQuotientTensor.lean, sorry-free. Proved: the Markov trace is mirror invariant 
 recast. Sorry-free. Next: MonoidalCategory on the glued category `GObj` (#9929), formal unit.
 Still open: monoidal structure, coherence (pentagon with the chosen movers), braided/ribbon (sibling
 thread, #9923), modularity.
+
+## 2026-11-28 — slide words done (PR #9941)
+`TLSlideIso.lean`: slide words U, V with U·V = tensor corner, V·U = standard corner; compatible with two more strands on either factor (second factor exactly, first factor by slide_conj_succ). Sorry-free. Next: glued tensor of morphisms, unit object (needs zero-through-strand objects), MonoidalCategory.
