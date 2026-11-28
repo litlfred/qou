@@ -1,16 +1,15 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 10: Fluid Dynamics of the Brane.
+ * Chapter: Fluid Dynamics of the Brane.
  *
  * The brane of a quantum observable universe carries a natural fluid
  * dynamics whose viscosity, vortex spectrum, and turbulence structure
- * are determined by the substrate parameter q.  Three sections:
- * (1) the brane fluid and its q-deformed hydrodynamics,
- * (2) global regularity of the q-NS system for q > 1,
- * (3) the NS obstruction — a categorical invariant that determines
- *     whether the classical (q = 1) Navier–Stokes equation admits
- *     finite-time blowup.
+ * depend on the aether parameter q:
+ * (1) the brane fluid, vortex spectrum, and q-deformed turbulence,
+ * (2) conditional global regularity of the q-NS model for q > 1,
+ * (3) the global surface Euler class NS(A) = e(ξ) on the spectral surface
+ *     and open questions governing the q → 1⁺ degeneration.
  */
 export default chapter({
   title: "Fluid Dynamics of the Brane",

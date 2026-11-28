@@ -11,7 +11,7 @@ export default remark({
   // points forward to it rather than depending on it.
   foreshadows: ["conj:levi-degeneracy"],
   cites: ["beiraodaveiga2002"],
-  tags: ["millennium-problem", "contact", "integrability", "interpretation"],
+  tags: ["contact", "integrability", "interpretation"],
   authorNotes: [
     {
       kind: "caveat",

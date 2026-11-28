@@ -5,9 +5,11 @@ The global regularity theorem ([$q$-NS well-posedness](#thm:q-ns-wellposedness))
 **Conjecture (regularity breakdown).**
 
 *Part A (the $q$-family).* Define the enstrophy order parameter
+
 $$
 \Omega(q) = \sup_{t \geq 0} \sum_k [k]_q^2\, |\hat{v}_k(t)|^2 .
 $$
+
 The initial amplitudes $|\hat{v}_k(0)|$ are held fixed in the algebraic layer of [the unit layers](#def:qns-unit-layers), independently of $q$. For each $q > 1$, $\Omega(q) < \infty$. Part A asserts that, for suitable such data, $\Omega(q) \to +\infty$ as $q \to 1^+$, with $\Omega(q) \sim (q - 1)^{-\alpha}$ for some critical exponent $\alpha > 0$.
 
 *Part B (classical model).* There exists a nonzero backward discretely self-similar solution of the classical Navier--Stokes equation on $\mathbb{R}^3$ with fixed viscosity, in the sense of [the discretely self-similar Leray profile](#def:leray-profile): a smooth profile $V(y, s)$, periodic in $s = -\log(T^* - t)$ with some period $P > 0$, with $|V(y, s)| = O(|y|^{-1})$ as $|y| \to \infty$ and $V(\cdot, s) \notin L^3(\mathbb{R}^3)$. No value of $P$ is asserted.
@@ -30,6 +32,6 @@ The initial amplitudes $|\hat{v}_k(0)|$ are held fixed in the algebraic layer of
 
 **What $\Omega(1) = +\infty$ does and does not mean.** $\Omega(q)$ is a supremum over all $t \geq 0$. A quantity can be unbounded on $[0, \infty)$ while bounded on every $[0, T]$, so divergence of $\Omega$ is not finite-time blow-up. The analogy with a second-order phase transition, with $q$ in the role of temperature and $\Omega$ as order parameter, is a heuristic; it is not derived from the QOU axioms.
 
-**Relation to the Clay problem.** The Clay problem asks whether smooth finite-energy data for the Navier--Stokes equation with fixed viscosity can blow up in finite time. A discretely self-similar solution with $|V| \sim |y|^{-1}$ has infinite global energy, so Part B is relevant to the Clay problem only as the local profile of a finite-energy blow-up near $(x_0, T^*)$; local asymptotics of this kind with profile continuous in $s$ with values in $L^3 \cap C^2$ are again excluded \cite{chae2013adss}. Part B is a scenario for a positive answer that survives the exclusions listed above; it is open. Part A concerns a family whose $q \to 1$ endpoint is Euler, so it does not reframe the Clay problem as a statement about the limit $q \to 1$.
+**Relation to classical finite-energy regularity.** Classical three-dimensional regularity asks whether smooth finite-energy data for the unforced Navier--Stokes equation with fixed viscosity can blow up in finite time. A discretely self-similar solution with $|V| \sim |y|^{-1}$ has infinite global energy, so Part B bears on finite-energy blow-up only as a candidate local asymptotic profile near $(x_0, T^*)$; local asymptotics of this kind with profile continuous in $s$ with values in $L^3 \cap C^2$ are again excluded \cite{chae2013adss}. Part B records a local profile scenario that survives the exclusions listed above and remains open. Part A concerns an internal $q$-family whose unrescaled $q \to 1^+$ endpoint is inviscid Euler, so it does not reduce fixed-viscosity classical Navier--Stokes regularity to the limit $q \to 1^+$.
 
 **Archimedean specialisation.** What follows invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

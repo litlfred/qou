@@ -17,7 +17,7 @@ $$
   [k]_q^2|v_k|^2,
 $$
 
-where $v_k$ denotes the Fourier coefficients in the $q$-integer eigenbasis. For $q > 1$, the exponential damping guarantees the sum converges absolutely, circumventing the standard barriers to proving classical 3D energy estimates.
+where $v_k$ denotes the Fourier coefficients in the $q$-integer eigenbasis. For $q > 1$, the exponential growth $[k]_q^2 \sim q^{2k}/(q-q^{-1})^2$ makes this series converge rapidly whenever the high-mode amplitudes remain bounded.
 
 **Classical and quantum limits.**
 
@@ -27,5 +27,5 @@ where $v_k$ denotes the Fourier coefficients in the $q$-integer eigenbasis. For 
 | $q \to 1^+$ (fixed $\hbar_q$) | $\hbar_q/2$ | $-\hbar^2\Delta\sqrt{\rho}/(2\sqrt{\rho})$ | Navier--Stokes + Bohm potential |
 | $q \gg 1$ | $(1 - 1/q)/2$ | Dominant | Flow freezes to ground state due to extreme pressure |
 
-**Well-posedness.**
-The energy estimate $\frac{d}{dt}\lVert v\rVert^2 \leq -\nu_q[1]_q^2\lVert v\rVert^2$ yields exponential decay of the total kinetic energy, and the exponential $q$-growth halts the enstrophy blowup that sabotages classical proofs. The classical 3D Navier--Stokes regularity problem is an artefact of the $q \to 1$ singularity.
+**Energy decay and the $q \to 1^+$ degeneration.**
+Along any smooth divergence-free solution satisfying the modal energy balance for $q > 1$, the estimate $\frac{d}{dt}\lVert v\rVert^2 \leq -2\nu_q[1]_q^2\lVert v\rVert^2$ gives exponential decay of total kinetic energy while $[k]_q^2$ damps high wavenumbers exponentially. As $q \to 1^+$ at unrescaled $\nu_q = (q-1)/(2q)$, both the exponential spectral growth and the viscosity vanish, so the formal limit of the unrescaled $q$-NS family is the inviscid Euler equation unless rescaled to a fixed-viscosity unit layer.

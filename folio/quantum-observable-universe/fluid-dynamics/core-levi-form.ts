@@ -14,7 +14,6 @@ export default proposition({
     "contact-structure",
     "vorticity-direction",
     "integrability",
-    "millennium-problem",
   ],
   authorNotes: [
     {

@@ -14,6 +14,6 @@ $$
   \nu_{\mathrm{phys}} \;=\; c_q\,\nu_q \;=\; \frac{1}{2q},
 $$
 
-exactly — an algebraic identity, with $\tfrac12 - \nu_{\mathrm{phys}} \leq (q-1)/2$. In this layer the classical limit is a *fixed-viscosity* Navier–Stokes limit, the setting of the Clay formulation.
+exactly — an algebraic identity, with $\tfrac12 - \nu_{\mathrm{phys}} \leq (q-1)/2$. In this layer the classical limit is a *fixed-viscosity* Navier--Stokes limit, matching the fixed-viscosity classical PDE regime.
 
 **Never straddle the layers (strict).** A single computed quantity, estimate, or claim must not mix aether-layer and physical-layer inputs; every fluid-dynamics statement about the classical limit names its layer, and cross-layer comparisons go through the conversion identities above. The two layers can give different answers to the same-sounding question: the spectral pile-up question of the uniformity reduction is answered *negatively* in the algebraic layer (tail enstrophy above a fixed band grows without bound as $q \to 1^+$, the receding dissipation range filling in) and *affirmatively* in the physical layer (the converted tail vanishes), as measured numerically.

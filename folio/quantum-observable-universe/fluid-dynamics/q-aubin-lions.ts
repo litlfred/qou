@@ -15,7 +15,6 @@ export default conjecture({
     "convergence",
     "weak-limit",
     "counter-example",
-    "millennium-problem",
   ],
   authorNotes: [
     {

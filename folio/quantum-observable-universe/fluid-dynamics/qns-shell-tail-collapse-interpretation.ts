@@ -11,6 +11,5 @@ export default remark({
     "fluid-dynamics",
     "shell-model",
     "probe-support",
-    "millennium-problem",
   ],
 });

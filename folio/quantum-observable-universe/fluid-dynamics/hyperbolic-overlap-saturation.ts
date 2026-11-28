@@ -53,6 +53,5 @@ export default remark({
     "fluid-dynamics",
     "navier-stokes",
     "blowup",
-    "millennium-problem",
   ],
 });

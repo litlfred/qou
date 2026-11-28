@@ -14,7 +14,6 @@ export default theorem({
     "navier-stokes",
     "well-posedness",
     "regularity",
-    "millennium-problem",
     "q-deformation",
     "global-existence",
     "categorical",

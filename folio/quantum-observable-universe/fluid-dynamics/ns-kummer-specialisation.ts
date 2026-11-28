@@ -12,11 +12,8 @@ export default proposition({
     "def:reeb-bundle",
     "rem:aether-gm-torsion",
     "prop:ns-obstruction-computation",
-    "conj:qou-p-neq-np",
     "thm:ns-singularity-descartes",
-    "rem:skein-filtration-trichotomy",
   ],
-  cites: ["aaronsonwigderson2009", "grochow2017"],
   tags: [
     "kummer",
     "specialisation",

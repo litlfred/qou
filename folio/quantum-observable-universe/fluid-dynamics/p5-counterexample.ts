@@ -4,14 +4,13 @@ export default conjecture({
   label: "conj:ns-counterexample",
   lean: { ref: "qou:QOU.FluidDynamics.NSCounterexample" },
   title:
-    "Counter-example to Navier--Stokes regularity via $q \\to 1$ degeneration",
+    "Conjectural anti-parallel vortex-collision singularity in the $q \\to 1^+$ limit",
   uses: [
     "conj:universality",
     "prop:acoustic-horizon-conditions",
   ],
   tags: [
     "counter-example",
-    "millennium-problem",
     "navier-stokes",
     "blowup",
     "yekutieli",

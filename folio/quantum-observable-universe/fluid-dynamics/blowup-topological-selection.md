@@ -1,17 +1,21 @@
 **The :refterm[descent]{#descent} condition and vortex reconnection.**
-The [twisted 2-cocycle condition](#prop:descent-condition)
+Within the brane-tower model, the [twisted 2-cocycle condition](#prop:descent-condition)
+
 $$
   d(g_{ijk}^{(n)}) = a_{ij}^{(n)} \cdot g_{ijk}^{(n)}
   \cdot (a_{jk}^{(n)})^{-1}
 $$
-fails at the singular set $\Sigma$ because the transition functions $g_{ij}^{(n)}$ develop discontinuities there. These discontinuities correspond to [vortex reconnection](#rem:vortex-reconnection) events where the divisor topology changes. The obstruction class $\kappa_{n^*}$ measures the total topological change at $\Sigma$. It acts as the net "reconnection charge": the signed count of reconnection events weighted by their fusion-rule multiplicities.
+
+fails across a singular locus $\Sigma$ when the transition functions $g_{ij}^{(n)}$ jump across [vortex reconnection](#rem:vortex-reconnection) events where the divisor topology changes. In that model, a non-trivial class $\kappa_{n^*}$ acts as a net reconnection charge counting reconnection events weighted by their fusion-rule multiplicities (noting that on a one-dimensional curve $\Sigma$, direct sheaf cohomology $H^2(\Sigma, \mathcal{B})$ vanishes, so any non-trivial class must be formulated in local or relative cohomology on $\mathcal{S}$).
 
 **Constraint from Berry phase.**
-The obstruction class must align with $\mathrm{SU}_q(2)$ representation theory. The class $\kappa_{n^*}$ must lie in the image of the character map:
+Compatibility with $\mathrm{SU}_q(2)$ representation theory requires any such cohomological charge to lie in the image of a character map
+
 $$
   \chi \colon
   \mathrm{Rep}(\mathrm{SU}_q(2))
    \to 
-  H^2(\Sigma, \mathcal{B}).
+  H^2(\Sigma, \mathcal{B}),
 $$
-This restricts the possible values of $\kappa_{n^*}$ to a discrete lattice. This forms a **topological selection rule** on the blowup. One permits only vorticity concentrations with cohomological charges compatible with the categorical structure.
+
+restricting admissible reconnection charges in the $q$-deformed model to a discrete lattice determined by the categorical fusion rules rather than constraining classical three-dimensional Navier--Stokes solutions directly.

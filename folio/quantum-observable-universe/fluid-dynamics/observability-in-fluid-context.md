@@ -23,6 +23,6 @@ A surviving morphism $\phi \colon \mathbf{1} \to \mathrm{Ad}(A)$ would establish
 - A designated axis where vortex stretching zeroes out.
 - A physical channel permitting vorticity to drain without local concentration.
 
-This structural leak would provide a persistent **regularity mechanism**: vorticity would dissipate cleanly along the preferred direction rather than concentrating into a blowup.
+This structural leak would provide an algebraic **laminar channel**: vorticity could relax along the preferred gauge direction without nonlinear engagement.
 
-**Observability asserts that no such escape route exists.** The brane fluid remains dynamically active; colliding vortices lack any structural geometry to dissipate through.
+**Observability excludes such a gauge-invariant neutral axis within the model.** Every internal direction of the brane fluid participates in the gauge-covariant coupling; whether classical vortex interactions concentrate or remain smooth in the $q \to 1^+$ degeneration remains a separate analytical question.

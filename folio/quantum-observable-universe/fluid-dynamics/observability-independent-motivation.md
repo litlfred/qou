@@ -28,12 +28,12 @@ See [Table](#tbl:observability-independent-motivation-table-data).
 
 The QPU supplies a fundamentally weaker framework, and it permits NS regularity.
 
-**The relationship between observability and NS.**
+**The relationship between observability and internal NS-singularity.**
 
-The logic proceeds strictly one way:
+Within the QOU framework, the expected topological pairing runs one way:
 
 $$
-  \text{Observability} \Longrightarrow \text{NS singular}
+  \text{Observability} \Longrightarrow \mathrm{NS}(A) = e(\xi) \neq 0
 $$
 
-The converse fails. Classical NS blowup could trigger without observability via entirely unrelated PDE mechanics; conversely, categorical NS-regularity ($\mathrm{NS}(A) = e(\xi) = 0$, $\chi(A) = 0$) fits within a QPU. Within the QOU model, the observability axiom encodes a measurement principle spanning gauge theory, geometry, and representation theory, from which $\mathrm{NS}(A) = e(\xi) \neq 0$ follows as a downstream topological consequence; identifying that internal class with classical 3D PDE blowup is the separate model-to-PDE bridge ([NS-regular QOU](#def:ns-regular-qou)).
+under the unproved structural expectation that $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ excludes $\chi(A) = 0$ ([NS-regular QOU](#def:ns-regular-qou)). The converse fails even as a heuristic: classical PDE blowup could occur without any categorical realisation, while categorical NS-regularity ($\mathrm{NS}(A) = e(\xi) = 0$, $\chi(A) = 0$) is realised by quantum pre-universes such as the two-torus. Within the model, observability encodes a gauge, geometric, and representation-theoretic measurement principle rather than a fluid-dynamical blowup assumption, and $\mathrm{NS}(A) \neq 0$ remains an internal surface Euler class rather than a three-dimensional PDE blowup proof ([NS-regular QOU](#def:ns-regular-qou)).
