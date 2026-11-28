@@ -4,7 +4,7 @@ title: Which Nahm datum A does the tetraplectic sum give beyond 4_1?
 status: in-progress
 type: task
 created_at: 2026-11-27T17:26:40Z
-updated_at: 2026-11-28T00:49:53Z
+updated_at: 2026-11-28T00:55:29Z
 ---
 
 Research path, opened 2026-11-27 (thread 'Reeb flow and tetraplectic structure', PR #9496 merged).
@@ -38,3 +38,5 @@ Conjecture-tracking bean: do not close until the mathematics closes (AGENTS.md r
 2026-11-28: PR #9895 — LeptonBundleRegulator.lean (Transcendental). Regulator of any Nahm/NZ class over ℂ = Σ D(zᵢ); μ: D(1/2+y)+2D(y); τ: 2D(A(s))+D(B(s))+2D(s); RᵃL (a≥3): det B·Σ D(zᵢ), det B ≠ 0. Open next: D(z) > 0 for Im z > 0 (not in corpus) to show the classes are nonzero; located-cut volume comparison.
 
 2026-11-28: PR #9898 — BlochWignerPositive.lean: D(z) > 0 for Im z > 0 (blochD_pos); μ and τ regulators positive, so both classes are nonzero in B(ℂ)⊗ℚ. RᵃL family positivity needs the shapes of the geometric solution in H for general a — not yet derived. Next open: located-cut comparison with volume.
+
+2026-11-28: #9900 (RᵃL class nonzero at any upper-half-plane solution) and #9901 (explicit positive angle structure on RᵃL for every a ≥ 3, integer angles, N = 128(a²+1)). Still open: volume maximization (Casson–Rivin / Futer–Guéritaud) from angle structure to shapes in H — the last step to unconditional nonvanishing of every RᵃL class.
