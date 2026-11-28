@@ -2160,3 +2160,4 @@ import QOU.Nuclear.CoulombBlockSize
 import QOU.Nuclear.IsobaricBetaWritheCoulombStep
 import QOU.StandardModel.ElectroweakConditionalDischarge
 import QOU.StandardModel.AlphaEmConditionalReduction
+import QOU.BraidsAndKnots.AdjointTorsionSaddlePrefactors
