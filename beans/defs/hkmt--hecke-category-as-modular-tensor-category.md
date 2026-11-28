@@ -121,3 +121,6 @@ STILL OPEN: (1) k+1 or more strands, i.e. completeness in the quotient by neglig
 - `TLRectangularHom.lean` (#9903, merged 1c32f0025e): Hom(a,b) = [b]·Q_N·[a] with [a] = nested cup-cap idempotent; a CategoryTheory.Category on labels a ≤ N; adding two strands is a full and faithful functor, so Hom(a,b) does not depend on N.
 - `TLQuotientModularData.lean` (#9907): trace on the quotient is nondegenerate; crossings descend (invertible, braid relations); twist on p_n; `modular_data_quotient` = complete simples list + S = [(i+1)(j+1)] + det S ≠ 0.
 - Still open: monoidal structure on the quotient category (tensor across strand counts) and a Mathlib BraidedCategory / ribbon instance; the N → ∞ colimit as one category.
+
+## 2026-11-28 01:20Z — tensor product on the quotient (PR #9914)
+TLQuotientTensor.lean, sorry-free. Proved: the Markov trace is mirror invariant (left Markov property derived from the right one); negligible morphisms form a tensor ideal; tensQ : Q n × Q m → Q (n+m+1), which is bilinear, multiplicative and unital, satisfies τ(x⊗y)=τxτy, and is associative up to strand reindexing. Still open: a Mathlib MonoidalCategory on the glued category (sibling thread "Glue all strand levels into one category"), and the braided/ribbon instance (sibling thread "Build the Mathlib braided ribbon instance"). The bean stays open.
