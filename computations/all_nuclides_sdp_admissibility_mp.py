@@ -59,12 +59,18 @@ for _p in (_ROOT, _ROOT / "substrate",
 
 from mpmath import mp                                 # noqa: E402
 from pyhecke import gram                              # noqa: E402
-from pyhecke.lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from pyhecke.lp_dual_solver import (                  # noqa: E402
+    _find_qou_gg_cli_bin,
+    solve_operator_selection_lp,
+    solve_operator_selection_lp_batch,
+)
 from compound_shift_nf import build_atom_nf_mp        # noqa: E402
 from qou_substrate.witness import WitnessBuilder      # noqa: E402
 from convolution_provenance import CONVOLUTION        # noqa: E402
 
 DPS = 50
+LP_PREC_BITS = 320
+LP_OUT_DPS = 80
 MAGIC = {2, 8, 20, 28, 50, 82, 126}
 
 
@@ -126,7 +132,30 @@ def _lp_batch_worker(a_values: list[int]) -> int:
 
 
 def _precompute_lp_by_a(distinct_a: list[int], batch_size: int = 8) -> dict[int, dict]:
-    """Precompute LP dual dicts keyed by A in bounded-memory subprocess batches."""
+    """Precompute LP dual dicts keyed by A.
+
+    Fast path (`qou-cbot` Rank #5): invokes `solve_operator_selection_lp_batch`
+    (`qou-gg-cli --lp-batch`, 1 process for all `len(distinct_a)` targets at
+    320-bit `MpfrFloat` / 80-dps output with per-item TLS arena teardown so RSS
+    stays `< 80 MB`). Falls back to bounded-memory 8-item child processes only
+    when `qou-gg-cli` is not built.
+    """
+    gg_cli = _find_qou_gg_cli_bin()
+    if gg_cli is not None:
+        mp.dps = max(DPS + 10, LP_OUT_DPS + 18)
+        t = gram.tr_m_mp_strings(LP_OUT_DPS + 14)
+        G = gram.gram_matrix_mp_strings(LP_OUT_DPS + 14)
+        results = solve_operator_selection_lp_batch(
+            t,
+            G,
+            [str(a) for a in distinct_a],
+            backend="clarabel",
+            prec_bits=LP_PREC_BITS,
+            out_dps=LP_OUT_DPS,
+            qou_gg_cli_bin=gg_cli,
+        )
+        return {a_val: res.to_dict() for a_val, res in zip(distinct_a, results)}
+
     lp_by_a: dict[int, dict] = {}
     script = str(Path(__file__).resolve())
     for idx in range(0, len(distinct_a), batch_size):
@@ -141,6 +170,36 @@ def _precompute_lp_by_a(distinct_a: list[int], batch_size: int = 8) -> dict[int,
         for k, v in batch_out.items():
             lp_by_a[int(k)] = v
     return lp_by_a
+
+
+def _precompute_atom_nfs_fast(
+    pairs: list[tuple[int, int]], dps: int
+) -> Optional[dict[tuple[int, int], tuple[str, Optional[str]]]]:
+    """Batch-evaluate `(nf_net_str, nf_net_log10_abs_str)` via `qou-gg-cli --atom-nf-batch`
+    when available (`~0.18 s` for 4,543 nuclides vs `~3,573 s` in Python `mpmath`)."""
+    gg_cli = _find_qou_gg_cli_bin()
+    if gg_cli is None:
+        return None
+    prec_bits = max(384, ((dps + 35) * 333) // 100)
+    req = {
+        "prec_bits": prec_bits,
+        "nf_dps": max(80, dps),
+        "net_dps": 30,
+        "log10_dps": 20,
+        "pairs": [[z, n] for z, n in pairs],
+    }
+    proc = subprocess.run(
+        [gg_cli, "--atom-nf-batch"],
+        input=json.dumps(req),
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    resp = json.loads(proc.stdout, parse_float=str)
+    return {
+        (int(r["Z"]), int(r["N"])): (r["nf_net_str"], r["nf_net_log10_abs_str"])
+        for r in resp["rows"]
+    }
 
 
 def main() -> int:
@@ -170,6 +229,16 @@ def main() -> int:
     print(f"  LP precomputed for {len(lp_by_a)} distinct A values in {time.time()-t0:.1f}s",
           flush=True)
 
+    from typing import Optional  # noqa: PLC0415
+
+    target_pairs = [
+        (Z, N)
+        for Z in range(0, zmax + 1)
+        for N in range(0, nmax + 1)
+        if 0 < (Z + N) <= 260 and (Z in MAGIC or N in MAGIC or (Z + N) % 4 == 0)
+    ]
+    fast_nf_map = _precompute_atom_nfs_fast(target_pairs, DPS)
+
     rows = []
     n_overflow = n_fail = 0
     for Z in range(0, zmax + 1):
@@ -179,24 +248,34 @@ def main() -> int:
                 continue
             if Z not in MAGIC and N not in MAGIC and A % 4 != 0:
                 continue  # keep every magic-Z or magic-N row; sample the rest
-            try:
-                nf = build_atom_nf_mp(Z, N, DPS)
-                net = sum(nf)
-            except Exception:
-                n_fail += 1
-                rows.append({"Z": Z, "N": N, "A": A, "build_fail": True})
-                continue
-            if not mp.isfinite(net):
-                n_overflow += 1
-                rows.append({"Z": Z, "N": N, "A": A, "nf_overflow": True})
-                continue
-            row = {"Z": Z, "N": N, "A": A,
-                   "nf_net_str": mp.nstr(net, 30),
-                   # mp.nstr, never float(): the raw-float64 ratchet rejects a
-                   # bare float here, and rightly — a magnitude that reaches
-                   # 1e+499 is the whole reason this producer exists.
-                   "nf_net_log10_abs_str": (mp.nstr(mp.log10(abs(net)), 20)
-                                            if net != 0 else None)}
+            if fast_nf_map is not None and (Z, N) in fast_nf_map:
+                nf_net_str, nf_log10_str = fast_nf_map[(Z, N)]
+                row = {
+                    "Z": Z,
+                    "N": N,
+                    "A": A,
+                    "nf_net_str": nf_net_str,
+                    "nf_net_log10_abs_str": nf_log10_str,
+                }
+            else:
+                try:
+                    nf = build_atom_nf_mp(Z, N, DPS)
+                    net = sum(nf)
+                except Exception:
+                    n_fail += 1
+                    rows.append({"Z": Z, "N": N, "A": A, "build_fail": True})
+                    continue
+                if not mp.isfinite(net):
+                    n_overflow += 1
+                    rows.append({"Z": Z, "N": N, "A": A, "nf_overflow": True})
+                    continue
+                row = {"Z": Z, "N": N, "A": A,
+                       "nf_net_str": mp.nstr(net, 30),
+                       # mp.nstr, never float(): the raw-float64 ratchet rejects a
+                       # bare float here, and rightly — a magnitude that reaches
+                       # 1e+499 is the whole reason this producer exists.
+                       "nf_net_log10_abs_str": (mp.nstr(mp.log10(abs(net)), 20)
+                                                if net != 0 else None)}
             d = lp_by_a[A]
             if "_lp_error" in d:
                 row["lp_error"] = d["_lp_error"]

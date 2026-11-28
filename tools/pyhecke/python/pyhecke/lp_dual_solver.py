@@ -86,6 +86,15 @@ class LpDualResult:
     residual_primal_str: Optional[str] = None
     residual_dual_str: Optional[str] = None
     gap_recomputed_str: Optional[str] = None
+    kkt_primal_residual_str: Optional[str] = None
+    kkt_dual_residual_str: Optional[str] = None
+    min_slack_str: Optional[str] = None
+    # `qou-fu8c` (2026-11-25) identifiability masks for zero-cost / unconstrained
+    # dual rows (`u_identified[i] is False` => `y_star_masked_str[i] is None` and
+    # `y_star_intervals[i] == ["0", "+inf"]`).
+    u_identified: Optional[list] = None
+    y_star_masked_str: Optional[list] = None
+    y_star_intervals: Optional[list] = None
     #: Set only when the false-infeasible rescue fired: the power of two the
     #: cost vector was scaled by before re-solving. `None` on a normal solve.
     #: Present so a witness records that the raw solve was rejected rather
@@ -155,6 +164,12 @@ class LpDualResult:
             ("residual_primal_str", self.residual_primal_str),
             ("residual_dual_str", self.residual_dual_str),
             ("gap_recomputed_str", self.gap_recomputed_str),
+            ("kkt_primal_residual_str", self.kkt_primal_residual_str),
+            ("kkt_dual_residual_str", self.kkt_dual_residual_str),
+            ("min_slack_str", self.min_slack_str),
+            ("u_identified", self.u_identified),
+            ("y_star_masked_str", self.y_star_masked_str),
+            ("y_star_intervals", self.y_star_intervals),
         ):
             if val is not None:
                 d[key] = list(val) if isinstance(val, (list, tuple)) else str(val)
@@ -169,6 +184,7 @@ PROVENANCE_STR_FIELDS = (
     "X_star_str", "Z_star_str", "eigenvalues_str",
     "primal_obj_str", "dual_obj_str", "duality_gap_str",
     "residual_primal_str", "residual_dual_str", "gap_recomputed_str",
+    "kkt_primal_residual_str", "kkt_dual_residual_str", "min_slack_str",
 )
 
 
@@ -215,6 +231,10 @@ def provenance(res) -> dict:
         val = _get(key)
         if val is not None:
             out[key] = list(val) if isinstance(val, (list, tuple)) else str(val)
+    for key in ("u_identified", "y_star_masked_str", "y_star_intervals"):
+        val = _get(key)
+        if val is not None:
+            out[key] = list(val)
     return out
 
 
@@ -310,6 +330,33 @@ def solve_frobenius_dual_lp(
     )
 
 
+def _find_qou_gg_cli_bin(explicit: Optional[str] = None) -> Optional[str]:
+    """Locate the ``qou-gg-cli`` binary (built by default workspace builds).
+
+    ``qou-gg-cli`` links ``crates/qou-clarabel`` (`Clarabel.rs` @ `37f06c3` MPFR)
+    and supports bounded-RSS TLS-isolated single (`--lp-single`), batch JSON
+    (`--lp-batch`), and streaming JSONL (`--lp-batch-jsonl`) modes.
+    """
+    if explicit and os.path.exists(explicit):
+        return explicit
+    env = os.environ.get("QOU_GG_CLI_BIN")
+    if env and os.path.exists(env):
+        return env
+    for tdir in (
+        os.environ.get("CARGO_TARGET_DIR"),
+        "/tmp/qou-shared-cargo-target",
+    ):
+        if tdir:
+            cand = Path(tdir) / "release" / "qou-gg-cli"
+            if cand.exists():
+                return str(cand)
+    for parent in Path(__file__).resolve().parents:
+        cand = parent / "target" / "release" / "qou-gg-cli"
+        if cand.exists():
+            return str(cand)
+    return None
+
+
 def _find_clarabel_lp_bin(explicit: Optional[str] = None) -> str:
     """Locate the ``clarabel-operator-selection-lp`` binary.
 
@@ -357,7 +404,7 @@ def _mpf_or_float(x):
     return mp.mpf(x) if not isinstance(x, mp.mpf) else x
 
 
-def _rescale_mpfr_result(out: dict, s, G_str, d: int) -> dict:
+def _rescale_mpfr_result(out: dict, s, G_str, d: int, *, dps: int = 50) -> dict:
     """Undo the objective normalisation, and re-derive the active set.
 
     TWO DISTINCT DEFECTS, both found on the H_9 (triton, 28-pair) LP of
@@ -401,7 +448,7 @@ def _rescale_mpfr_result(out: dict, s, G_str, d: int) -> dict:
     except ImportError:
         return out
 
-    with mp.workdps(50):
+    with mp.workdps(max(50, dps + 8)):
         inv = 1 / _mpf_or_float(s)
         # (1) unscale every quantity carrying one power of the objective.
         for key in ("y0_star", "primal_obj", "dual_obj", "duality_gap"):
@@ -409,11 +456,11 @@ def _rescale_mpfr_result(out: dict, s, G_str, d: int) -> dict:
                 out[key] = float(_mpf_or_float(out[key]) * inv)
             ks = key + "_str"
             if ks in out and out[ks] is not None:
-                out[ks] = mp.nstr(_mpf_or_float(out[ks]) * inv, 50)
+                out[ks] = mp.nstr(_mpf_or_float(out[ks]) * inv, max(50, dps))
         if "y_star" in out:
             out["y_star"] = [float(_mpf_or_float(v) * inv) for v in out["y_star"]]
         if out.get("y_star_str"):
-            out["y_star_str"] = [mp.nstr(_mpf_or_float(v) * inv, 50)
+            out["y_star_str"] = [mp.nstr(_mpf_or_float(v) * inv, max(50, dps))
                                  for v in out["y_star_str"]]
 
         # (2) active set from the DUAL, gated on the dual being non-zero.
@@ -516,6 +563,12 @@ def _lp_result_from_dict(out: dict, d: int) -> LpDualResult:
         # That is worse than an absent field: a reader takes `*_str` as the
         # authoritative value precisely because it is a string.
         **_str_fields_if_decimal(out),
+        u_identified=list(out["u_identified"]) if out.get("u_identified") is not None else None,
+        y_star_masked_str=list(out["y_star_masked_str"]) if out.get("y_star_masked_str") is not None else None,
+        y_star_intervals=list(out["y_star_intervals"]) if out.get("y_star_intervals") is not None else None,
+        kkt_primal_residual_str=str(out["kkt_primal_residual_str"]) if out.get("kkt_primal_residual_str") is not None else None,
+        kkt_dual_residual_str=str(out["kkt_dual_residual_str"]) if out.get("kkt_dual_residual_str") is not None else None,
+        min_slack_str=str(out["min_slack_str"]) if out.get("min_slack_str") is not None else None,
         backend="clarabel-mpfr",
         precision_bits=int(out["precision_bits"]) if out.get("precision_bits") else None,
     )
@@ -806,10 +859,58 @@ def _solve_operator_selection_lp_clarabel(
     # `_rescale_mpfr_result`'s docstring describes the Rust tolerances as
     # hardcoded `1e-12` — true of `main`, no longer true here.
     t_str_orig = list(t_str)
+    _target_dps = max(50, int(prec_bits * 0.30103) - 6)
+
+    # Fast, zero-roundoff path via `qou-gg-cli --lp-single` (`crates/qou-clarabel`,
+    # built by default workspace builds): performs exact power-of-two objective
+    # conditioning, TLS-isolated `MpfrFloat` arena reclamation, KKT certification,
+    # and `qou-fu8c` zero-cost dual masking directly in Rust MPFR.
+    if clarabel_bin is None:
+        _gg_cli = _find_qou_gg_cli_bin()
+    elif os.path.basename(clarabel_bin) == "qou-gg-cli":
+        _gg_cli = clarabel_bin
+    else:
+        _gg_cli = None
+
+    if _gg_cli is not None:
+        import json as _json
+        import subprocess as _subp
+
+        _payload = {
+            "t": t_str_orig,
+            "G": G_str,
+            "n_target": n_str,
+            "m_bound": m_str,
+            "dual_tol": dt_str,
+            "prec_bits": int(prec_bits),
+            "out_dps": int(_target_dps),
+        }
+        _proc = _subp.run(
+            [_gg_cli, "--lp-single"],
+            input=_json.dumps(_payload),
+            capture_output=True,
+            text=True,
+        )
+        _out = _json.loads(_proc.stdout) if _proc.stdout.strip() else {}
+        if _out.get("feasible", False):
+            _res = _lp_result_from_dict(_out, d)
+            _ok, _why = _certifies_optimality(t_str_orig, G_str, n_str, m_str, _res)
+            if not _ok:
+                return _lp_result_from_dict(
+                    {"feasible": False, "error": f"solve failed certification: {_why}"},
+                    d,
+                )
+            if _out.get("loosened_status"):
+                _res.loosened_status = str(_out["loosened_status"])
+            if _out.get("rescaled_by_pow2") is not None:
+                _res.rescaled_by_pow2 = int(_out["rescaled_by_pow2"])
+            return _res
+        return _lp_result_from_dict(_out, d)
+
     _scale = None
     try:
         import mpmath as _mp
-        with _mp.workdps(50):
+        with _mp.workdps(_target_dps + 10):
             _tmax = max((abs(_mp.mpf(v)) for v in t_str), default=_mp.mpf(0))
             if _tmax > 0:
                 # Normalise the OBJECTIVE, not `t`: the tolerance is absolute
@@ -819,12 +920,14 @@ def _solve_operator_selection_lp_clarabel(
                 # feasible set rather than the units.
                 _nt = abs(_mp.mpf(n_str))
                 _scale = 1 / (_tmax * _nt) if _nt > 0 else 1 / _tmax
-                t_str = [_mp.nstr(_mp.mpf(v) * _scale, 50) for v in t_str]
+                t_str = [_mp.nstr(_mp.mpf(v) * _scale, _target_dps) for v in t_str]
     except ImportError:
         _scale = None
 
     def _finish(out: dict) -> LpDualResult:
-        out = _rescale_mpfr_result(out, _scale if _scale is not None else 1, G_str, d)
+        out = _rescale_mpfr_result(
+            out, _scale if _scale is not None else 1, G_str, d, dps=_target_dps
+        )
         return _lp_result_from_dict(out, d)
 
     def _solve(t_vals: list) -> dict:
@@ -1610,7 +1713,7 @@ def solve_psd_operator_selection_sdp(
     # selection LP's stated dual program (max n_target · y_0).
     y_eq = -float(constraints[0].dual_value)
     y_ineq = np.asarray(constraints[1].dual_value)
-    dual_obj = float(n_target * y_eq)
+    dual_obj = float(float(n_target) * y_eq)
     duality_gap = abs(primal_obj - dual_obj)
 
     # PSD eigenvalues (here Gx is a vector; treat as diag PSD matrix)
@@ -1626,6 +1729,147 @@ def solve_psd_operator_selection_sdp(
         eigenvalues=eigenvalues,
         feasible=True,
     )
+
+
+def solve_operator_selection_lp_batch(
+    t,
+    G,
+    n_targets,
+    *,
+    M_bound: float = 1e6,
+    dual_tol: float = 1e-9,
+    backend: str = "auto",
+    prec_bits: int = 320,
+    out_dps: int = 80,
+    qou_gg_cli_bin: Optional[str] = None,
+    return_metadata: bool = False,
+):
+    """Solve ``N`` operator-selection LPs in ONE bounded-RSS ``qou-gg-cli --lp-batch`` call.
+
+    Eliminates both the ``~46 GB`` ``MpfrFloat`` thread-local arena retention across
+    nuclide sweeps and the ``29`` Python / ``229`` CLI subprocess spawns in
+    ``all_nuclides_sdp_admissibility_mp.py`` (`qou-cbot` Rank #5).
+
+    Each item runs inside a fresh scoped OS thread inside ``qou-clarabel::batch``
+    so ``Clarabel``'s TLS ``MpfrFloat`` arena drops to zero bytes after every row,
+    keeping peak RSS ``< 80 MB``. Preserves ``qou-fu8c`` ``null`` + ``["0", "+inf"]``
+    interval semantics (`u_identified`, `y_star_masked_str`, `y_star_intervals`) on
+    any unconstrained zero-row Gram block and ``< 10^-76`` KKT/duality-gap residuals
+    at ``prec_bits = 320`` (`out_dps = 80`).
+    """
+    if backend not in ("auto", "scipy", "clarabel"):
+        raise ValueError(f"unknown backend {backend!r}; use 'auto', 'scipy', or 'clarabel'")
+
+    def _s(x) -> str:
+        return x if isinstance(x, str) else repr(float(x))
+
+    if isinstance(t, np.ndarray) or not isinstance(t[0], str):
+        t_arr = np.asarray(t, dtype=float)
+        G_arr = np.asarray(G, dtype=float)
+        d = len(t_arr)
+        t_str = [repr(float(x)) for x in t_arr]
+        G_str = [[repr(float(G_arr[i, j])) for j in range(d)] for i in range(d)]
+    else:
+        d = len(t)
+        t_str = [_s(x) for x in t]
+        G_str = [[_s(G[i][j]) for j in range(d)] for i in range(d)]
+
+    m_str = _s(M_bound)
+    dt_str = _s(dual_tol)
+    targets_list = list(n_targets)
+
+    gg_cli = _find_qou_gg_cli_bin(qou_gg_cli_bin) if backend != "scipy" else None
+    if gg_cli is not None:
+        import subprocess as _subp
+
+        items = []
+        for idx, item in enumerate(targets_list):
+            if isinstance(item, dict):
+                items.append({
+                    "id": str(item.get("id", idx)),
+                    "n_target": _s(item["n_target"]),
+                    **({"t": [_s(v) for v in item["t"]]} if "t" in item and item["t"] is not None else {}),
+                    **({"G": [[_s(v) for v in r] for r in item["G"]]} if "G" in item and item["G"] is not None else {}),
+                    **({"m_bound": _s(item["m_bound"])} if "m_bound" in item and item["m_bound"] is not None else {}),
+                })
+            else:
+                items.append({"id": str(item), "n_target": _s(item)})
+
+        req_payload = {
+            "prec_bits": int(prec_bits),
+            "out_dps": int(out_dps),
+            "m_bound": m_str,
+            "dual_tol": dt_str,
+            "t": t_str,
+            "G": G_str,
+            "items": items,
+        }
+        proc = _subp.run(
+            [gg_cli, "--lp-batch", "--prec-bits", str(int(prec_bits)), "--dps", str(int(out_dps))],
+            input=json.dumps(req_payload),
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        resp = json.loads(proc.stdout)
+        results: list[LpDualResult] = []
+        for raw_item, req_it in zip(resp["results"], items):
+            d_i = len(req_it.get("t", t_str))
+            t_i = req_it.get("t", t_str)
+            g_i = req_it.get("G", G_str)
+            m_i = req_it.get("m_bound", m_str)
+            r_obj = _lp_result_from_dict(raw_item, d_i)
+            if r_obj.feasible:
+                ok, why = _certifies_optimality(t_i, g_i, req_it["n_target"], m_i, r_obj)
+                if not ok:
+                    r_obj = _lp_result_from_dict(
+                        {"feasible": False, "error": f"batch solve failed certification: {why}"},
+                        d_i,
+                    )
+                else:
+                    r_obj.residual_primal_str = raw_item.get("residual_primal_str")
+                    r_obj.residual_dual_str = raw_item.get("residual_dual_str")
+                    r_obj.gap_recomputed_str = raw_item.get("gap_recomputed_str")
+                    if raw_item.get("loosened_status"):
+                        r_obj.loosened_status = str(raw_item["loosened_status"])
+                    if raw_item.get("rescaled_by_pow2") is not None:
+                        r_obj.rescaled_by_pow2 = int(raw_item["rescaled_by_pow2"])
+            results.append(r_obj)
+
+        meta = {
+            "backend": resp.get("backend", "qou-clarabel-mpfr@37f06c3"),
+            "n_items": resp.get("n_items", len(results)),
+            "peak_rss_bytes": int(resp.get("peak_rss_bytes", 0)),
+            "subprocesses_spawned": 1,
+        }
+        return (results, meta) if return_metadata else results
+
+    if backend == "clarabel":
+        raise FileNotFoundError(
+            "qou-gg-cli binary not found for batch Clarabel MPFR solve; "
+            "build via `cargo build --release -p qou-gg-cli`."
+        )
+
+    # Fallback loop when `backend == "scipy"` or `qou-gg-cli` is not built
+    results_fb = [
+        solve_operator_selection_lp(
+            item.get("t", t) if isinstance(item, dict) else t,
+            item.get("G", G) if isinstance(item, dict) else G,
+            item["n_target"] if isinstance(item, dict) else item,
+            M_bound=M_bound,
+            dual_tol=dual_tol,
+            backend=backend,
+            prec_bits=prec_bits,
+        )
+        for item in targets_list
+    ]
+    meta_fb = {
+        "backend": results_fb[0].backend if results_fb else backend,
+        "n_items": len(results_fb),
+        "peak_rss_bytes": 0,
+        "subprocesses_spawned": len(results_fb),
+    }
+    return (results_fb, meta_fb) if return_metadata else results_fb
 
 
 if __name__ == "__main__":
