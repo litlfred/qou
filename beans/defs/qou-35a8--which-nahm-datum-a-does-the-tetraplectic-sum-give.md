@@ -4,7 +4,7 @@ title: Which Nahm datum A does the tetraplectic sum give beyond 4_1?
 status: in-progress
 type: task
 created_at: 2026-11-27T17:26:40Z
-updated_at: 2026-11-28T01:03:40Z
+updated_at: 2026-11-28T01:11:06Z
 ---
 
 Research path, opened 2026-11-27 (thread 'Reeb flow and tetraplectic structure', PR #9496 merged).
@@ -54,3 +54,9 @@ interior (Futer–Guéritaud boundary argument). L6a4VolumeMaximum.lean is the w
 `NZVolumeCritical.lean`: `logModulus_gluing`, `exists_nzSolution_of_isVolMax` (shapes (sin β/sin(α+β))e^{iα}
 solve every NZ row exactly, all in H), `regulator_pos_of_isVolMax`. Generic in symplectic (A|B). Still open:
 the maximum is interior (Futer–Guéritaud boundary step) — next.
+
+## 2026-11-28 — Whitehead class + closed-polytope max (PR #9912)
+New ladder (#9908): e = Hopf, μ = σ₀⁴σ₁⁻¹, τ = Whitehead. Whitehead: 4[i] ∈ B(F) exactly, D(4[i]) = 4G = vol_L5a1.
+Coverage caveat: RᵃL results are for the punctured-torus BUNDLE of the monodromy (braid closure + axis). The
+closure of σ₀⁴σ₁⁻¹ alone destabilises to T(2,4), a torus link, volume 0. So "μ = R⁴L, a = 4" applies only if
+the lepton object is the bundle. Old μ = R²L has det B = 0 (a = 2). Still open: interior maximum.
