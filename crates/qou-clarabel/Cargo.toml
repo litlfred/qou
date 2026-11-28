@@ -6,6 +6,7 @@ description = "80-dps MpfrFloat Clarabel LP-dual & Frobenius cone certifier for 
 
 [dependencies]
 clarabel = { version = "0.11", default-features = false, features = ["mpfr", "serde"] }
+libc = "0.2"
 num-traits = "0.2"
 qou-gg-eval = { path = "../qou-gg-eval" }
 rug = "1.29"

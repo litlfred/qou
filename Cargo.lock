@@ -846,6 +846,7 @@ name = "qou-clarabel"
 version = "0.1.0"
 dependencies = [
  "clarabel",
+ "libc",
  "num-traits",
  "qou-gg-eval",
  "rug",
