@@ -1749,3 +1749,73 @@ inhabited) `∃ Ψ, AssocU4 (d + 1) E Ψ ∧ GL (d + 1) Ψ` over `ℚ`, by an al
 no output against the `/home/claude/furov` overlay (which carries `FurushoGroupStep.olean` from
 #9887). `#print axioms` on all six theorems gives `[propext, Classical.choice, Quot.sound]`. No
 `sorry`, no `axiom`, no `native_decide`, no analytic constructs. No `lake build` was run.
+
+## 17n. The pentagon obstruction as a class; the whole degree-`d` step is one-degree existence (bean `qou-3fdg`)
+
+**Target.** Prove `PentagonLiftVanishes E d` for `d ≥ 3` with no tower hypothesis, by the
+algebraic route: the obstruction to lifting a pentagon solution one degree is a cocycle in a
+cohomology group that vanishes (Drinfeld 1991 §5; Bar-Natan 1998).
+
+**Result: not proved for `E ≠ 1` (scope (a)). A sharper reduction is proved.** (`E = 1` was
+already unconditional: `pentagonLiftVanishes_one`, §17l, where the tower is built from `Ψ = 1`.)
+New file `RationalAssociator/PentagonObstructionClass.lean`:
+
+1. **The whole step at degree `d` is one-degree existence, for every `E` and every `d ≥ 1`.**
+   - `obstructionVanishesAt_of_exists_assocK`: one group-like `K`-associator for `E` modulo
+     `d + 1` gives `ObstructionVanishesAt E d` (`d ≥ 1`). It uses `levelInvAt_of_assoc` and
+     `inductionStep_of_groupLike` at the single level `d + 1`; no other level and no use of the
+     Lie-algebra Furusho theorem.
+   - `obstructionVanishesAt_of_exists`, `pentagonLiftVanishes_of_exists`: the same over `ℚ`.
+   - `obstructionVanishesAt_iff_exists`: given one rational associator modulo `d`, group-like
+     modulo `FF2 d`, `ObstructionVanishesAt E d ↔ ∃ Ψ, AssocU4 (d + 1) E Ψ ∧ GL (d + 1) Ψ`.
+   - `obstructionVanishesAt_of_exists_le`: existence modulo `N + 1` gives the step at every
+     `1 ≤ d ≤ N`.
+
+   So §17m's equivalence for the Furusho half extends to the full obstruction (pentagon part
+   included), at `d ≥ 1` rather than `d ≥ 3`.
+
+2. **The pentagon obstruction is a well-defined class.** `pentObs d E Φ` is the pentagon defect
+   of `Φ` in `U4 (d + 1)`; `lieLayer d` is the submodule of homogeneous primitive (Lie) elements of
+   degree `d`; `pentLin` is the linearised pentagon (Drinfeld's (5.20)); `pentCob d` is
+   `pentLin (lieLayer d)`.
+   - `pentagon_add_iff`: for `x ∈ FF d`, the pentagon for `Φ + x` modulo `d + 1` holds iff
+     `pentObs Φ + pentLin x = 0`.
+   - `pentagonLiftVanishes_iff_mem`, `pentagonLiftVanishes_iff_class`: `PentagonLiftVanishes E d`
+     iff the class of `pentObs d E Φ` in `U4 (d + 1) ⧸ pentCob d` is zero for every `Φ` in its
+     hypothesis set.
+   - `pentObs_sub_mem`, `pentClass_eq`: that class depends only on `Φ` modulo degree `d` (among
+     `Φ` group-like modulo `FF2 (d + 1)`).
+
+**Why the cohomological route does not close here.** Two steps separate `pentClass` from the
+statement "a cocycle in a group that vanishes", and neither is done:
+
+- *The cocycle condition.* The pentagon defect satisfies the five-strand (Stasheff `K₅`) identity
+  in `U(𝔱₅)`. Stating it needs a five-strand universal algebra `U5` and its five coface maps
+  `U4 → U5`; the repository has `U4` only. This is mechanical but substantial, and it was not
+  attempted in this tranche.
+- *The vanishing.* The held source says it is not known. Drinfeld 1991, §5, p. 14
+  (`library/drinfeld1991-quasitriangular/sections/page-014.md`), after Prop. 5.8, on the fourth
+  cohomology `H⁴` of the relevant complex `L̄*`: *"The author does not know whether its 4th
+  cohomology group H⁴ is equal to 0. It is easily seen that Hⁿ = Lⁿ = 0 for n < 2, dim H² =
+  dim L² = 1, and H³ is the algebraic direct sum of the homogeneous components of grt₁."* So in
+  the held literature the "obstruction lies in a vanishing group" route rests on an open
+  question, and Drinfeld's own existence proof goes through the KZ associator.
+- *Bar-Natan 1998 is not held.* `library/` has no copy of "On associators and the
+  Grothendieck–Teichmuller group I" (`arxiv-q-alg-9707006v1` is a different paper, on the Drinfeld
+  twist for quantum `su(2)`), and arXiv is blocked here. No claim in this section rests on it. My
+  recollection, unchecked against the text, is that its rationality proof is a descent argument
+  from an existing `ℂ`-associator, i.e. the route `exists_rational_lift` already formalises; that
+  recollection should be checked before it is relied on.
+
+**What is open.** For `E ≠ 1`: `pentClass d E Φ = 0`, equivalently (given a rational associator
+modulo `d`) one-degree existence `∃ Ψ, AssocU4 (d + 1) E Ψ ∧ GL (d + 1) Ψ`, by an algebraic
+argument. As a cohomological statement, it would need (i) `U5` and the `K₅` cocycle identity for
+`pentObs`, and (ii) vanishing of the relevant degree-`d` part of `H⁴`, which Drinfeld records as
+unknown in general.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `PentagonObstructionClass.lean`
+exits 0 with no output against the `/home/claude/furov` overlay, after adding
+`FurushoSingleLevel.olean` (#9888) to it. `#print axioms` on all ten theorems gives `[propext,
+Classical.choice, Quot.sound]`. A deliberately false `example : (2 : ℚ) = 3 := by norm_num`
+in the same check file fails (so the check is live) and was removed. No `sorry`, no `axiom`, no
+`native_decide`, no analytic constructs. No `lake build` was run.
