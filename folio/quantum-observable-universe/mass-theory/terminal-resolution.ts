@@ -21,8 +21,11 @@ export default proposition({
     {
       kind: "note",
       body:
-        "Lean sibling over a generic field (AGENTS.md §7c). The square root is " +
-        "avoided by writing $q = s^2$.",
+        "Lean sibling over a generic field (AGENTS.md §7c). Re-stated under " +
+        "convention D on 2026-11-28 (owner ruling 2026-11-27): the pair Skein " +
+        "mass is $(q^3\\mu_a + q^{-1}\\mu_b)/(q^2+1)$, so no square root " +
+        "appears. The determinant is $3\\kappa^2$ with $\\kappa$ the sum of the " +
+        "two crossing weights, the same shape as under the retired convention C.",
     },
   ],
   label: "prop:terminal-resolution",

@@ -4,6 +4,7 @@
 
 $$
   0 \;<\; \mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}
+  \;\le\; \tfrac13\, M_N \cdot \hbar_q^2 \cdot h_q \cdot [2]_q
   \;<\; M_N \cdot \hbar_q^2 \cdot h_q \cdot [2]_q,
 $$
 

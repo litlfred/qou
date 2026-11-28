@@ -136,10 +136,31 @@ Both would have closed SC, and both are measured false (exact):
 
 Both are scope (a): they say these two routes do not work as stated, not that SC is false.
 
+## Result 4b (2026-11-28): monotone regression fails only at s = 4
+
+The failure of monotone regression in Result 4 occurs at a single step. For every `n ≤ 62`, the
+only decrease of `E[c² | s]` is the step `s = 3 → 4`. On `s = 3` every cell has `c² = 1`. On
+`s = 4` the cell `(2, 2)` has `c = 0` and carries most of the weight. That step lies inside the
+proved lower half for every `n ≥ 5`.
+
+This gives a refined sufficient condition:
+
+> **(MR4)** `E[c² | s]` is non-decreasing in `s` for `s ≥ 4`.
+
+The sign of `ρ_n(s)` is the sign of `E[c² | s] − (n−1)`. Suppose (MR4) holds. The lower half makes
+`ρ_n(s) ≤ 0` for `s ≤ 2 + √(n−1)`, which covers `s ≤ 4` when `n ≥ 5`. The upper tail makes
+`ρ_n(s) > 0` for large `s`. So `ρ_n` changes sign exactly once, and SC follows for every `n ≥ 5`.
+
+(MR4) is **not proved**. It holds exactly for `n ≤ 62`: the witness records `n ≤ 50`, and a
+separate run with the same arithmetic covered `n = 51…62`. It is a statement about one
+two-parameter table, the newest-box law `q_n(s, c)`. Its natural strengthening is that the law of
+`|c|` given `s` is stochastically increasing in `s` for `s ≥ 4`. That strengthening is not checked
+here.
+
 ## Measurement
 
-`ρ_n` has exactly one sign change for every `n = 4…58`. The threshold is `t_n = 11` for `n = 41…46`,
-`t_n = 12` for `n = 47…56` and `t_n = 13` for `n = 57, 58`. The witness records `n ≤ 45`; `n = 46…58` came from the same integer sign computation in a separate run, not recorded in the witness. This extends the `n ≤ 40` check of the Jucys–Murphy audit. The
+`ρ_n` has exactly one sign change for every `n = 4…67`. The threshold is `t_n = 11` for `n = 41…46`,
+`t_n = 12` for `n = 47…56` and `t_n = 13` for `n = 57…67`. The witness records `n ≤ 50`; `n = 51…67` came from the same integer sign computation in a separate run, not recorded in the witness. This extends the `n ≤ 40` check of the Jucys–Murphy audit. The
 single-box formula is about 100× faster than the three-box one (`n = 42` takes 2.7 s).
 
 The exhaustive table already gives `M₁(n) > 0` for `n ≤ 78`, so this extension adds no new value of

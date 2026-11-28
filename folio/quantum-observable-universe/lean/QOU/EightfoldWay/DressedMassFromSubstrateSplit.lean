@@ -1,6 +1,7 @@
 import QOU.Core.Basic
 import QOU.EightfoldWay.FlavorDressingFunctor
 import QOU.EightfoldWay.FlavorSplitSubstrateMass
+import QOU.MassTheory.PairSkeinMassConventionD
 
 /-!
 # QOU.FlavorDressing.dressed_mass_from_substrate_split
@@ -9,9 +10,11 @@ The substrate-pure derivation of the down–up dressed-quark
 mass splitting:
 
 ```
-μ_d − μ_u = M_N · (q-1)²·(1 − q⁻⁴)/3 · (q^{1/2} + q⁻^{1/2})/(q + q⁻¹)
-            + O((Δm/M_N)²)
+μ_d − μ_u = M_N · (q-1)²·(1 − q⁻⁴)/3 · q(q² + 1)/(q⁴ + 1)
 ```
+
+The last factor comes from the convention-D pair Skein mass formula,
+derived in `QOU.MassTheory.PairSkeinD` (owner ruling 2026-11-27).
 
 This is the categorical lift of `conj:flavor-split-aether-mass` to
 the level of the flavor-dressing functor.
@@ -25,16 +28,17 @@ open Flavor
 
 /-- The leading-order substrate factor
 
-    `s(q) = (q − 1)² · (1 − q⁻⁴) / 3 · (√q + 1/√q) / (q + 1/q)`
+    `s(q) = (q − 1)² · (1 − q⁻⁴) / 3 · q(q² + 1) / (q⁴ + 1)`
 
-    that multiplies `M_N` to give the dressed-quark splitting at
-    substrate parameter `q ∈ ℝ`, `0 < q`.  The square root `√q` is the
-    symbol `t` (meant with `0 < t`, `t² = q`, so `1/√q = t⁻¹`); the
-    hypotheses are taken where they are used, and no `Real.sqrt` is
-    needed (bean `qou-dk7p`). This is the convention-C form. -/
-noncomputable def aether_split_factor (t q : ℝ) : ℝ :=
+    that multiplies `M_N` to give the dressed-quark splitting. The factor
+    `q(q² + 1)/(q⁴ + 1) = 1/κ` is the inverse of the convention-D nucleon
+    splitting constant `κ = trace₂ z_D (σ + σ⁻¹)`
+    (`QOU.MassTheory.PairSkeinD.kappaD_closed`). No square root appears.
+    Convention D (owner ruling 2026-11-27); the convention-C factor
+    `(√q + 1/√q)/(q + 1/q)` is retired. -/
+noncomputable def aether_split_factor (q : ℝ) : ℝ :=
   ((q - 1)^2 * (1 - q^(-4 : ℤ)) / 3) *
-    ((t + t⁻¹) / (q + q⁻¹))
+    (q * (q^2 + 1) / (q^4 + 1))
 
 @[deprecated (since := "2026-11-27")] alias substrate_split_factor := aether_split_factor
 
@@ -42,27 +46,37 @@ noncomputable def aether_split_factor (t q : ℝ) : ℝ :=
     `aether_split_factor q` vanishes identically at `q = 1` because of the
     `(q - 1)^2` prefactor. -/
 theorem aether_split_factor_at_one :
-    aether_split_factor 1 1 = 0 := by
+    aether_split_factor 1 = 0 := by
   unfold aether_split_factor
   norm_num
 
 @[deprecated (since := "2026-11-27")] alias substrate_split_factor_at_one := aether_split_factor_at_one
 
-/-- The nucleon-level consequence of the pair Skein mass formula
-    (`lem:pair-skein-mass-formula`) on the Borromean baryon braids of the
-    proton and neutron:
+/-- The nucleon-level form of the convention-D pair Skein mass formula:
 
-      `(m_n − m_p) · (√q + √q⁻¹) = (q + q⁻¹) · (μ_d − μ_u)`,
+      `(m_n − m_p) · q(q² + 1) = (q⁴ + 1) · (μ_d − μ_u)`.
 
-    with `√q` written as the symbol `t` (`t² = q`, `t > 0`).
+    It follows from the derived pair formula when the proton and neutron
+    masses are the sums of their pair masses
+    (`pairSkeinNucleonSplit_of_nucleonMassD`). -/
+def PairSkeinNucleonSplit (F : FlavorDressingFunctor) (m_p m_n q : ℝ) : Prop :=
+  (m_n - m_p) * (q * (q^2 + 1))
+    = (q^4 + 1) * (F.μ Flavor.down - F.μ Flavor.up)
 
-    It is a hypothesis of the theorem below, not a lemma proved here. The
-    Lean `QOU.HadronicMass.pair_skein_mass_formula` is a per-pair `Prop`
-    and does not yet yield this nucleon form. The formula holds only in the
-    convention-C frame. -/
-def PairSkeinNucleonSplit (F : FlavorDressingFunctor) (m_p m_n t q : ℝ) : Prop :=
-  (m_n - m_p) * (t + t⁻¹)
-    = (q + q⁻¹) * (F.μ Flavor.down - F.μ Flavor.up)
+/-- The nucleon form follows from the derived convention-D pair Skein mass
+    formula (`QOU.MassTheory.PairSkeinD.neutron_sub_proton_cleared`) when the
+    proton is the strand order `(u, u, d)` and the neutron `(u, d, d)`. -/
+theorem pairSkeinNucleonSplit_of_nucleonMassD
+    (F : FlavorDressingFunctor) (m_p m_n q : ℝ) (hq : 0 < q)
+    (hp : m_p = QOU.MassTheory.PairSkeinD.nucleonMassD q
+      (F.μ Flavor.up) (F.μ Flavor.up) (F.μ Flavor.down))
+    (hn : m_n = QOU.MassTheory.PairSkeinD.nucleonMassD q
+      (F.μ Flavor.up) (F.μ Flavor.down) (F.μ Flavor.down)) :
+    PairSkeinNucleonSplit F m_p m_n q := by
+  unfold PairSkeinNucleonSplit
+  rw [hp, hn]
+  exact QOU.MassTheory.PairSkeinD.neutron_sub_proton_cleared q _ _ hq.ne'
+    (by positivity)
 
 /-- **Dressed-quark mass splitting, conditional on
     `conj:flavor-split-aether-mass`** (§3b-cond).
@@ -71,7 +85,7 @@ def PairSkeinNucleonSplit (F : FlavorDressingFunctor) (m_p m_n t q : ℝ) : Prop
     nucleon form of the pair Skein mass formula, the down–up dressed-mass
     splitting is `M_N · aether_split_factor q` with
     `M_N = (m_p + m_n)/2`. The proof divides the Skein relation by
-    `q + q⁻¹ > 0` and substitutes the conjecture's nucleon split.
+    `q⁴ + 1 > 0` and substitutes the conjecture's nucleon split.
 
     **History.** This file once stated the conclusion as an `axiom`
     quantified over unrelated `(F, M_N, q)`, which made the library
@@ -83,20 +97,20 @@ def PairSkeinNucleonSplit (F : FlavorDressingFunctor) (m_p m_n t q : ℝ) : Prop
     the quark splitting from it. -/
 -- Ref: [leitner2026] mass-theory/flavor-dressed-mass-from-substrate-split
 theorem dressed_mass_from_substrate_split
-    (F : FlavorDressingFunctor) (m_p m_n t q : ℝ)
+    (F : FlavorDressingFunctor) (m_p m_n q : ℝ)
     [h : FlavorSplitSubstrateMass m_p m_n q]
-    (h_skein : PairSkeinNucleonSplit F m_p m_n t q) :
+    (h_skein : PairSkeinNucleonSplit F m_p m_n q) :
     F.μ Flavor.down - F.μ Flavor.up
-        = (m_p + m_n) / 2 * aether_split_factor t q ∧
+        = (m_p + m_n) / 2 * aether_split_factor q ∧
     F.μ Flavor.down
-        = F.μ Flavor.up + (m_p + m_n) / 2 * aether_split_factor t q := by
+        = F.μ Flavor.up + (m_p + m_n) / 2 * aether_split_factor q := by
   have hq0 : 0 < q := lt_trans one_pos h.q_gt_one
-  have hB : 0 < q + q⁻¹ := add_pos hq0 (inv_pos.mpr hq0)
+  have hB : 0 < q^4 + 1 := by positivity
   have hdiff : F.μ Flavor.down - F.μ Flavor.up
-      = (m_n - m_p) * (t + t⁻¹) / (q + q⁻¹) := by
+      = (m_n - m_p) * (q * (q^2 + 1)) / (q^4 + 1) := by
     rw [eq_div_iff hB.ne', h_skein]; ring
   have hsplit : F.μ Flavor.down - F.μ Flavor.up
-      = (m_p + m_n) / 2 * aether_split_factor t q := by
+      = (m_p + m_n) / 2 * aether_split_factor q := by
     rw [hdiff, h.nucleon_split]
     unfold aether_split_factor flavorSplitClosedForm
     ring
