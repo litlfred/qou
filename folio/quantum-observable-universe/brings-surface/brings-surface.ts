@@ -224,6 +224,8 @@ export default chapter({
         "bring-harmonic-types-proof",
         "bring-reflection-parity",
         "bring-reflection-parity-proof",
+        "bring-spectral-sunset-selection",
+        "bring-spectral-sunset-selection-proof",
         "photon-filtration-depth-bounds",
         "photon-stopping-depth",
         "borromean-photon-factorisations",
