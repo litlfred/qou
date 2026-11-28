@@ -101,3 +101,9 @@ Four rules for joining two photon vertices: plain v w, bar-Hermitian v̄ w, bar-
 (v+v̄)(w+w̄), signed bar-odd −(v−v̄)(w−w̄). Only bar-odd (Form B) is the scalar −h² at
 any two positions. Bar-even gives [2]² at one position (θ-graph after the singlet) and
 the non-scalar 4στ − 2h(σ+τ) + h² at two. None adopted; adopting one is Carl's call.
+
+## 2026-11-28 — ruling: bar-odd join (PR #9911)
+
+Carl tapped "Bar-odd (Form B), θ as fallback" (01:09Z). Two-loop vertex pair = −h², N₁ = 1;
+θ-graph [3]_q kept as fallback. Remaining open item for this bean: the per-loop measure
+(thread "Define the two-loop measure on Bring").
