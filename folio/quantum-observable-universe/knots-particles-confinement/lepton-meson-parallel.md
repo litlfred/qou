@@ -13,7 +13,7 @@ This duality exchanges fundamental particles (leptons, single strand) with compo
 | **Second generation** | $\mu$: $n = 5$ (cinquefoil) | $K$: quark pair $\bar{u}s$, 8 crossings |
 | **Third generation** | $\tau$: $n = 7$ (septafoil) | $\eta, \phi$: heavy-strange, 10 crossings |
 | **Flavor transition** | $3 \to 5$: $\mathfrak{e} \to \mu$ | $3 \to 5$: $d \to s$ (same torus-knot step) |
-| **Mass ratio** | $m_\mu / m_\mathfrak{e} = \mathrm{Vol}(4_1) / \hbar_q^2$ | $m_K / m_\pi = \;?$ |
+| **Mass ratio** | $m_\mu / m_\mathfrak{e} = \mathrm{Vol}(4_1) / \hbar_q^2$ (CAL-2 calibration, not derived) | $m_K / m_\pi = \;?$ |
 | **Weight type** | highest weight ($\sigma^n$ saturates positive eigenvalue) | lowest weight ($\sigma^{-1}$ crossings in binding) |
 
 ## The highest-weight / lowest-weight duality

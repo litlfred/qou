@@ -40,7 +40,7 @@ $$
 $$
 
 - **Torus knots** ($\mathrm{Vol} = 0$): Mass comes from crossing energy. The trefoil yields $m_{e} = 3 \cdot \mathfrak{E}_{\times}(q) \cdot \mu_0$.
-- **Hyperbolic knots** ($\mathrm{Vol} > 0$): Mass combines volume and crossing terms. The figure-eight volume determines $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^2$, fixing $q_0$.
+- **Hyperbolic knots** ($\mathrm{Vol} > 0$): Mass combines volume and crossing terms. The CAL-2 calibration sets $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^2$ and so fixes $q_0$; this is a calibration, not a derived mass.
 - **Links**: Linking numbers contribute inter-component crossing energy.
 
 ## Jones polynomial at $q = q_0$

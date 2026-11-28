@@ -46,7 +46,7 @@ The structural identities reveal that the canonical lepton-tower
 closure factors $\xi_m$ live in a single $h$-graded family of
 $q$-bracket products. Concretely:
 
-- **Muon** ($m = 2$, $K_\mu = 4_1$): closure factor
+- **Muon** ($m = 2$, $K_\mu = 4_1$ in the superseded census reading; the current muon word is $T(2,4)$, and $\mathrm{Vol}(4_1)/\hbar_q^2$ is the CAL-2 calibration, not a derivation): closure factor
   $\xi_2 = [3]_q \cdot [2]_q / [4]_q = (3+h^2)/(2+h^2)$ — closes
   $m_\mu/m_e$ via $\mathrm{Vol}(4_1)/\hbar_q^2$ to 0.034 % of CODATA.
 - **Tau** ($m = 3$, $K_\tau = 10_{43}$ candidate): closure factor

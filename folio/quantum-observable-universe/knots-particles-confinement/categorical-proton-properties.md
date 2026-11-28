@@ -26,7 +26,7 @@ $$
   F_{\mathrm{Bor}} = \lvert\mathrm{tr}_M(\beta_{\mathrm{Bor}})\rvert\,\frac{[3]_q!}{q^3}.
 $$
 
-The hyperbolic-volume dependence enters through the muon anchor $\mathrm{Vol}(4_1)$, dressed by the dimensionless Borromean factor $F_{\mathrm{Bor}}$.
+The hyperbolic-volume dependence enters through the muon anchor $\mathrm{Vol}(4_1)$, dressed by the dimensionless Borromean factor $F_{\mathrm{Bor}}$. The muon factor $m_e\,\mathrm{Vol}(4_1)/\hbar_q^2$ is the CAL-2 calibration relation, not a derived mass. Under the current lepton words (owner ruling 2026-11-28) the muon is the closure of $\sigma_0^4\sigma_1^{-1}$, the torus link $T(2,4)$, and $4_1$ is the neutral word; no result in this paper derives the relation.
 
 The Skein corrections isolate the crossing asymmetry between the $\mathfrak{u}$ and $\mathfrak{d}$ components. The pair Skein formula dictates $\mathfrak{m}_{\mathfrak{p}} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)$.
 
