@@ -283,6 +283,7 @@ import QOU.BraidsAndKnots.HAdicDrinfeld.Hexagon
 import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleCategory
 import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleMonoidal
 import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleBraiding
+import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleHexagon
 import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleAssociator
 import QOU.BraidsAndKnots.HAdicDrinfeld.ModulePentagon
 import QOU.BraidsAndKnots.HAdicDrinfeld.ModuleUnit
