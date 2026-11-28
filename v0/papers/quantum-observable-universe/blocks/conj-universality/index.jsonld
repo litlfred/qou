@@ -6,13 +6,13 @@
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-universality",
+  "@id": "papers/quantum-observable-universe/blocks/conj-universality",
   "@type": [
-    "folio-assistant-sci:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:universality",
-  "kind": "proposition",
+  "label": "conj:universality",
+  "kind": "conjecture",
   "title": "Universality of the critical exponent: dependence on $\\chi(A)$ alone",
   "uses": [
     "papers/quantum-observable-universe/blocks/conj-critical-exponent",
