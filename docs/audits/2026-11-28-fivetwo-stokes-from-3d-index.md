@@ -4,7 +4,7 @@
 test named in [`2026-11-27-aomega-stokes-constant-from-3d-index.md`](2026-11-27-aomega-stokes-constant-from-3d-index.md) §"Still open" 3.
 **Probe:** [`computations/probes/qbeta_g3_stokes_from_3d_index_52.py`](../../computations/probes/qbeta_g3_stokes_from_3d_index_52.py),
 witness `qbeta-g3-stokes-from-3d-index-52.witness.json` (9/9).
-**Lean:** [`QOU/Nuclear/StokesIndexCount52.lean`](../../folio/quantum-observable-universe/lean/QOU/Nuclear/StokesIndexCount52.lean).
+**Lean:** [`QOU/Nuclear/StokesIndexCount52.lean`](../../folio/quantum-observable-universe/lean/QOU/Nuclear/StokesIndexCount52.lean): the 3×3 gauge (`gaugeL_spec`, `gaugeR_spec`), `stokes11_eq_index`, and the q⁰ factorisation with the `4, −3, −9` (`splus_qzero_factorisation`). `lean`-direct exit 0, no `sorry`, axioms `propext`, `Classical.choice`, `Quot.sound` only.
 
 ## Result
 
