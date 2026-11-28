@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - compute-accuracy
 created_at: 2026-07-18T17:08:37Z
-updated_at: 2026-11-28T01:40:00Z
+updated_at: 2026-11-28T02:20:00Z
 parent: qou-avtq
 ---
 
@@ -83,3 +83,8 @@ Open: conj.41M (shared with W-route); Lean proof of the two index coefficients (
 - Reading: 4 = 2 + (−1+2+1) + cancelling flux-1/flux-2 pairs. Unlike 4₁ these are signed sums with cancellation, not positive counts.
 - Correction: the GGM S11v misprint was already in docs/audits/2026-08-11-m1-adjudicated-erratum-and-the-three.md.
 Next: Lean I_Δ minimal-degree bound. Note: the paper's proof (1208.1663 Lemma lem.degID) does the cone m≤0,e≥0 directly and the other cones by the triality symmetry (Prop prop.S3); the naive per-summand bound is far too weak in the m>0 cones (true degree comes from cancellation), so the Lean route needs triality as a theorem or a named cited input.
+
+## 2026-11-28 — the 4₁ index inputs proved in Lean (PR #9916)
+
+`QOU/Nuclear/TetIndexDegree.lean`: tetrahedron-index coefficients as an honest finite sum; cone m≤0≤e degree and leading coefficient proved; every cone via triality (1208.1663 Prop prop.S3, cited as hypothesis `Triality`, checked on 3025 coefficients). In the DGG 4.18 sum only e=e₂=0 reaches q⁰ in N₁₁ and only e=−2, e₂=0 in N₁₂; values 1 and −1, so `StokesIndexCount41`'s i00, i1 are theorems and 3 = 2·1 − (−1). lean exit 0, no sorry.
+Remaining: (1) prove triality in Lean (two q-recursions + rank-1 uniqueness, 1208.1663 §4.2–4.4); (2) conj.41M / 5₂ region conjectures (GGM, shared with the W-route); (3) 5₂ attribution in Lean needs the m015 gluing data; (4) internal QOU (Hecke/Markov) derivation of the index, unchanged.
