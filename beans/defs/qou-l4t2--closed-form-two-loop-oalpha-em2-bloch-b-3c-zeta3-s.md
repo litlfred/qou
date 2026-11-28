@@ -116,3 +116,7 @@ PR #9915, EmFormBLoopMeasure.lean), the two-loop slot is −h²[2]_q α²·μ₁
 algebra or this measure. Still open, so the bean stays open: μ₁ = 1/(8π) is
 underived (phase-4 per-loop measure). Fallbacks: θ-graph [3]_q, squared measure,
 R1 flat sunset ζ(3).
+
+## 2026-11-28 — μ₁ stated as a conditional (PR #9932)
+
+Lean now states μ₁ = 1/(8π) as an implication from two hypotheses with no instances: `GermPeriodShare` (Φ / R2, generic) and `HeatKernelLeadingCoeff` (Clause A, under Transcendental/). The generic class supplies only the factor 1/2 (`perLoop_share_satisfiable`). μ₁ is still **not derived**. The next step is the owner-gated 08a2 Gauss–Manin keystone, which discharges Φ. This bean stays open.
