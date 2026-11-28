@@ -17,3 +17,7 @@ Lean, sorry-free: QOU/BringsSurface/BringHarmonicTypes.lean + QOU/Transcendental
 - Every type seen by genus-2 B/<(01)(23)> and B/C3; no Sunada pair in S5 (rows distinct).
 - H^1(Bring map) = 2 x std(x)sgn by Hopf trace (cellular, no RH).
 Open: the eigenvalues; reflection parity under S5 x C2; orbifold signatures of the 7 recovery quotients.
+
+## 2026-11-28 — PR #9874: reflection parity under S5 x C2
+T = (2 4) is the unique map reflection; c = xT is free (no real points), so B/c is non-orientable with chi = -3. The triangle sides are (T, ST, AT); triv+/- = Neumann/Dirichlet, and sgn+/- are mixed. H^1 = [2,1,1,1]+ + [2,1,1,1]-. 14 types are exhaustive; recovery uses 7 orientable + 7 non-orientable quotients.
+Open: the eigenvalues only.
