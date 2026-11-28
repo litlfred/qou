@@ -1,8 +1,13 @@
-//! `qou-gg-cli` — deterministic 80-dps JSON emitter for Annex A (`rem:gg-hadron-datum-table`)
-//! and `computations/gg_hadron_datum_table.py`.
+//! `qou-gg-cli` — deterministic 80-dps JSON emitter for Annex A (`rem:gg-hadron-datum-table`),
+//! plus bounded-RSS 320-bit `MpfrFloat` LP/PSD batch modes (`--lp-batch`, `--lp-batch-jsonl`,
+//! `--lp-single`) and nuclide `H_3(q)` normal-form batch evaluation (`--atom-nf-batch`).
 
 use clap::Parser;
+use qou_clarabel::batch::{
+    solve_item_isolated_tls, solve_lp_batch, stream_lp_batch_jsonl, LpBatchItem, LpBatchRequest,
+};
 use qou_clarabel::{certify_all_h3_rows, HadronRowLpCertificate};
+use qou_gg_eval::atom_nf_batch::{evaluate_atom_nf_batch, AtomNfBatchRequest};
 use qou_gg_eval::h3::{build_all_h3_rows, H3EvaluatedRow, HadronA1Supplements, H3_BASIS_NAMES};
 use qou_gg_eval::h4_flavoured::{evaluate_h4_flavoured_census, H4FlavouredCensusReport};
 use qou_gg_eval::lepton_pair_6s::{evaluate_lepton_pair_6s, LeptonPair6sReport};
@@ -12,20 +17,21 @@ use qou_gg_eval::scalars::{
 };
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+use std::io::{self, Read};
 
 #[derive(Debug, Parser)]
 #[command(name = "qou-gg-cli")]
-#[command(about = "80-dps proton-pinned MPFR + Clarabel evaluator for proper gamma-gamma hadrons and A=1..4 light nuclei")]
+#[command(about = "80-dps proton-pinned MPFR + Clarabel evaluator & bounded-memory batch LP/NF CLI")]
 struct CliArgs {
-    /// MPFR working precision in bits (`>= 266`, default `320` ≈ 96 dps).
+    /// MPFR working precision in bits (`>= 266` for 80-dps modes; default `320` ≈ 96 dps).
     #[arg(long, default_value_t = DEFAULT_PREC_BITS)]
     prec_bits: u32,
 
-    /// Output significant decimal digits (`>= 80`, default `80`).
+    /// Output significant decimal digits (`>= 80` for datum modes; default `80`).
     #[arg(long, default_value_t = DEFAULT_OUT_DPS)]
     dps: usize,
 
-    /// Optional explicit decimal override for `q_0^(p)` (defaults to internal MPFR proton-anchor Newton/secant solve).
+    /// Optional explicit decimal override for `q_0^(p)`.
     #[arg(long)]
     q0: Option<String>,
 
@@ -41,7 +47,23 @@ struct CliArgs {
     #[arg(long, default_value = "all")]
     section: String,
 
-    /// Pretty-print JSON output.
+    /// Read an `LpBatchRequest` JSON object from stdin and emit an `LpBatchResponse` JSON object to stdout.
+    #[arg(long)]
+    lp_batch: bool,
+
+    /// Read one `LpBatchItem` JSON object per line (JSONL) from stdin and stream one result JSON line per input line.
+    #[arg(long)]
+    lp_batch_jsonl: bool,
+
+    /// Read a single LP JSON object from stdin (`clarabel-operator-selection-lp` compatible) and emit its result.
+    #[arg(long)]
+    lp_single: bool,
+
+    /// Read an `AtomNfBatchRequest` JSON object from stdin and emit an `AtomNfBatchResponse` JSON object to stdout.
+    #[arg(long)]
+    atom_nf_batch: bool,
+
+    /// Pretty-print JSON output (non-JSONL modes).
     #[arg(long)]
     pretty: bool,
 }
@@ -71,8 +93,92 @@ pub struct FullDatumPayload {
     pub lepton_pair_6s: Option<LeptonPair6sReport>,
 }
 
+fn read_stdin_string() -> String {
+    let mut s = String::new();
+    io::stdin()
+        .read_to_string(&mut s)
+        .expect("failed reading stdin");
+    s
+}
+
 fn main() {
     let args = CliArgs::parse();
+
+    if args.lp_batch_jsonl {
+        let prec = args.prec_bits.max(113);
+        let stdin = io::stdin();
+        let stdout = io::stdout();
+        stream_lp_batch_jsonl(stdin.lock(), stdout.lock(), prec, args.dps)
+            .expect("JSONL batch LP stream failed");
+        return;
+    }
+
+    if args.lp_batch {
+        let input = read_stdin_string();
+        let mut req: LpBatchRequest =
+            serde_json::from_str(&input).expect("invalid LpBatchRequest JSON on stdin");
+        if req.prec_bits.is_none() {
+            req.prec_bits = Some(args.prec_bits.max(113));
+        } else if let Some(pb) = req.prec_bits {
+            req.prec_bits = Some(pb.max(113));
+        }
+        if req.out_dps.is_none() {
+            req.out_dps = Some(args.dps);
+        }
+        let resp = solve_lp_batch(&req);
+        let out = if args.pretty {
+            serde_json::to_string_pretty(&resp).unwrap()
+        } else {
+            serde_json::to_string(&resp).unwrap()
+        };
+        println!("{out}");
+        return;
+    }
+
+    if args.lp_single {
+        let input = read_stdin_string();
+        let item: LpBatchItem =
+            serde_json::from_str(&input).expect("invalid single LP JSON on stdin");
+        let t_ref = item.t.as_deref().expect("single LP JSON requires `t`");
+        let g_ref = item.g.as_deref().expect("single LP JSON requires `G`");
+        let m_str = item.m_bound.as_deref().unwrap_or("1000000");
+        let prec = item.prec_bits.unwrap_or(args.prec_bits).max(113);
+        let dps = item
+            .out_dps
+            .unwrap_or_else(|| ((prec as usize * 30103) / 100_000).max(50));
+        let res = solve_item_isolated_tls(
+            item.id,
+            t_ref,
+            g_ref,
+            &item.n_target,
+            m_str,
+            prec,
+            dps,
+            item.psd_diagonal_lift,
+        );
+        let out = if args.pretty {
+            serde_json::to_string_pretty(&res).unwrap()
+        } else {
+            serde_json::to_string(&res).unwrap()
+        };
+        println!("{out}");
+        return;
+    }
+
+    if args.atom_nf_batch {
+        let input = read_stdin_string();
+        let req: AtomNfBatchRequest =
+            serde_json::from_str(&input).expect("invalid AtomNfBatchRequest JSON on stdin");
+        let resp = evaluate_atom_nf_batch(&req);
+        let out = if args.pretty {
+            serde_json::to_string_pretty(&resp).unwrap()
+        } else {
+            serde_json::to_string(&resp).unwrap()
+        };
+        println!("{out}");
+        return;
+    }
+
     assert!(
         args.prec_bits >= MIN_PREC_BITS,
         "--prec-bits ({}) must be >= {} (80 dps floor)",

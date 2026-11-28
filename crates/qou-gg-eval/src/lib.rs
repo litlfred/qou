@@ -7,6 +7,7 @@
 //! computed in `rug::Float` at `>= 266` bits (default `320` bits ≈ 96 dps) pinned
 //! strictly to the experimental proton anchor `q_0^(p)`.
 
+pub mod atom_nf_batch;
 pub mod h3;
 pub mod h4_flavoured;
 pub mod lepton_pair_6s;
