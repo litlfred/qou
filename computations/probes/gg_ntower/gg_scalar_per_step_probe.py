@@ -76,24 +76,41 @@ import mpmath as mp
 import sympy as sp
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE))
+ROOT = HERE.parents[2]
+for _p in (HERE, ROOT / "computations" / "qbeta"):
+    if str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
 import gg_ntower_probe as g  # noqa: E402
+import qbeta_e0 as _qbeta_e0  # noqa: E402
+from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402
 
 q, H, K = g.q, g.H, g.K
 Q0_STR = g.Q_50_DIGIT_STR
 Q0_RAT = sp.Rational(Q0_STR)
 T0 = time.time()
 
-try:  # carry the corpus dps rather than a bare literal
+try:  # carry the corpus dps (>= 80) rather than a bare literal
     from qou_substrate.precision import COMPUTE_DPS as _DPS
 except Exception:  # pragma: no cover - thin container
-    _DPS = 70
-mp.mp.dps = int(_DPS)
+    _DPS = 80
+mp.mp.dps = max(int(_DPS), 80)
 
-# |tr_M(Δ_S)| at z_D and the CODATA requirement, both quoted from the corpus and
-# used ONLY to locate where the derived closed form crosses — never as a target.
-ABS_TR_DELTA_S = mp.mpf("0.1062356398480927908921420")
-F_REQUIRED = mp.mpf("1.75923699418")
+
+def _ruled_base_reference():
+    """Derive |tr_M(Δ_S)| at z_D and F_required = Q_beta / (|tr_M(Δ_S)| * E_0)
+    in >= 80-dps mpmath from QOU substrate and CODATA constants (order-zero E_0
+    routed via qbeta_e0.order_zero_scaled; evaluated ONLY to locate where the
+    derived closed form crosses — never as a target)."""
+    mp.mp.dps = max(int(_DPS), 80)
+    q_mp = g.q_at(int(mp.mp.dps))
+    h_mp = q_mp - mp.mpf(1) / q_mp
+    z_d_mp = q_mp ** 3 / (q_mp ** 2 + 1)
+    abs_tr_delta_s = abs(h_mp ** 2 / 2 - h_mp * z_d_mp)
+    m_e = mp.mpf(str(M_E_MEV))
+    q_cod = mp.mpf(str(Q_BETA_MEV))
+    e0 = _qbeta_e0.order_zero_scaled(m_e, q_mp)
+    f_required = q_cod / (abs_tr_delta_s * e0)
+    return abs_tr_delta_s, f_required
 
 
 def log(m):
@@ -231,6 +248,7 @@ def run():
 
     # ---- C: the closure.  geometric in c, hence an unbounded free index
     log("C  tr_M(e₀e₂ Σ₁^c) = q^(4+2c)/(q²+1)⁴, ratio exactly q²")
+    abs_tr_delta_s, f_required = _ruled_base_reference()
     closed_ok, ratio_ok, rows = True, True, {}
     prev = None
     q2_num = at_q0(sp.sympify(q ** 2))
@@ -250,7 +268,7 @@ def run():
             "closed_form_matches": bool(match),
             "tr_M_at_q0": mp.nstr(val, 20),
             "ratio_to_previous": (mp.nstr(ratio, 20) if ratio is not None else None),
-            "F_vs_abs_tr_Delta_S": mp.nstr(val / ABS_TR_DELTA_S, 12),
+            "F_vs_abs_tr_Delta_S": mp.nstr(val / abs_tr_delta_s, 12),
         }
         prev = val
     checks["C_closed_form_matches_every_c"] = bool(closed_ok)
@@ -258,16 +276,16 @@ def run():
 
     # where the DERIVED family crosses the requirement -- a post-hoc check
     fs = {c: mp.mpf(rows[f"c={c}"]["F_vs_abs_tr_Delta_S"]) for c in range(1, 9)}
-    below = [c for c in fs if fs[c] < F_REQUIRED]
-    above = [c for c in fs if fs[c] >= F_REQUIRED]
+    below = [c for c in fs if fs[c] < f_required]
+    above = [c for c in fs if fs[c] >= f_required]
     straddles = bool(below and above)
     checks["C_family_straddles_the_requirement"] = straddles
     data["C"] = {
         "closed_form": "q**(4+2*c)/(q**2+1)**4",
         "q_squared_at_q0": mp.nstr(q2_num, 22),
         "rows": rows,
-        "F_required_order_zero_E0": mp.nstr(F_REQUIRED, 12),
-        "abs_tr_M_Delta_S_at_zD": mp.nstr(ABS_TR_DELTA_S, 25),
+        "F_required_order_zero_E0": mp.nstr(f_required, 60),
+        "abs_tr_M_Delta_S_at_zD": mp.nstr(abs_tr_delta_s, 60),
         "crossing": {
             "last_c_below": max(below) if below else None,
             "first_c_at_or_above": min(above) if above else None,
@@ -317,7 +335,7 @@ def main():
         "scriptFile": Path(__file__).name,
         "kind": "re-derivation record (no search, no selection)",
         "issue": 7727,
-        "beans": ["qou-cds1", "qou-99qc", "qou-ales"],
+        "beans": ["qou-cds1", "qou-99qc", "qou-ales", "qou-j5b6"],
         "q0": Q0_STR,
         "q0Anchor": "proton",
         "q0AnchorReason": "evaluates the exact Q(q) closed forms at the proton-pinned q0 (Q0_STR) for the F_required straddle only",
@@ -327,6 +345,14 @@ def main():
         "data": data,
         "wall_seconds": int(time.time() - T0),
     }
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _WB.stamp_staleness_metadata(
+        out,
+        script_path=__file__,
+        engine="mpmath",
+        q0_anchor="proton",
+        q0_value=Q0_STR,
+    )
     (HERE / "gg-scalar-per-step.witness.json").write_text(
         json.dumps(out, indent=1, default=str) + "\n"
     )
