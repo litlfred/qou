@@ -2,7 +2,7 @@
   "$schema": "folio-bean-index/v1",
   "tile": {
     "beans": {
-      "count": 1789,
+      "count": 1788,
       "unit": "open beans"
     }
   },
@@ -26404,14 +26404,14 @@
     {
       "id": "qou-9obv",
       "title": "GAP: closed form of the little q-Legendre Haar norm on the O_q(SU(2)) Cartan block",
-      "status": "todo",
+      "status": "completed",
       "type": "task",
-      "priority": "",
+      "priority": "normal",
       "parent": "",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-28T01:30:18Z",
-      "updatedAt": "2026-11-28T01:30:18Z",
+      "updatedAt": "2026-11-28T01:56:41Z",
       "preview": "Related: qou-q3dc (GAP progress notes) and qou-pa7n (Part A). This bean stays open while Part A is open.\n\nThis closed form is needed to turn `coupling_raise` (QOU/FluidDynamics/q_ns_triad_raising_coupling.lean) into a decay statement for the spin-raising triad coupling.\n\nExpected value, for monic P_n in zeta, with p = q^-2:\n\n    h(P_n^2) = q^(-2n) p^(n^2) (p;p)_n^4 (1-p) / ((p;p)_{2n} (p;p)_{2n+1}",
       "file": "beans/defs/qou-9obv--gap-closed-form-of-the-little-q-legendre-haar-norm.md"
     },
@@ -88348,8 +88348,8 @@
         "share": null
       }
     ],
-    "orphanOpen": 138,
-    "openTotal": 1789,
+    "orphanOpen": 137,
+    "openTotal": 1788,
     "coveredOpen": 1643,
     "duplicateIds": 0
   }
