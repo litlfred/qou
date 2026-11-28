@@ -462,3 +462,10 @@ Still open: the sign's value (a source seeing the base orientation directly, e.g
 - BringConjugationOnGm.lean: conj = inversion on |q|=1 (μ_n), conj fixes real q>1. Orientation ⇔ Gm orientation on the circle only. Formal-groups thread formalising Aut(Ĝm)={±1}.
 - ColourStrandCount.lean: fundamental self-conjugate iff k=2; with (C) complex non-abelian colour and (W) weak doublet, k+m=5 forces 3+2. (C),(W) are inputs, not derived.
 - Lit for cited steps posted to Carl (Chevalley–Weil, Farkas–Kra, Hatcher 2C.3, Fulton–Harris, Edge, Hazewinkel). Next: prove index-5 uniqueness in S5 and Hopf trace on the Bring map in Lean.
+
+## Open-access sources for the cited steps (2026-11-28)
+- Chevalley–Weil: arXiv:2204.04553 (Residues of connections and the Chevalley–Weil formula for curves); arXiv:2205.07158 (nodal curves).
+- Bring's curve, S5 action, holomorphic differentials: arXiv:2208.13692 (Braden–Disney-Hogg, "Bring's curve: Old and New"); library/arxiv-2402.08782v1.
+- Hopf trace formula: Hatcher, Algebraic Topology, Thm 2C.3, https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
+- Index-n subgroups / transitive actions: K. Conrad, https://kconrad.math.uconn.edu/blurbs/grouptheory/transitive.pdf and gpaction.pdf
+- Aut(Ĝm) = {±1}: no open-access copy found (Hazewinkel is not OA); formal-groups thread formalising it.
