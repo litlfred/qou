@@ -1635,3 +1635,69 @@ byte-identical between the overlay's source branch (`b9d209162`) and `origin/mai
 `obstructionVanishesAt_iff` and `compatible_of_pentagon_furusho` gives
 `[propext, Classical.choice, Quot.sound]`. The file has no `sorry`, no `axiom`, no
 `native_decide` and no analytic constructs. No `lake build` was run.
+
+## 17l. The group-level Furusho step: from any `K`-tower, and unconditionally for `E = 1` (bean `qou-3fdg`)
+
+**Target.** Prove §17k's `FurushoGroupStep E d` for `d ≥ 3`, or as much of it as possible.
+
+**Proved** (`RationalAssociator/FurushoGroupStep.lean`, sorry-free, algebraic over `ℚ`):
+
+```lean
+theorem levelInv_of_assocU4 {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
+    (hT : GroupLikeKAssociatorTower K E) {d : ℕ} (hd : 3 ≤ d) {Φ : F2}
+    (hA : AssocU4 d E Φ) (hG : GL d Φ) : LevelInv K E d Φ
+theorem furushoGroupStep_of_tower (hE) (hT : GroupLikeKAssociatorTower K E) (hd : 3 ≤ d) :
+    FurushoGroupStep E d
+theorem obstructionVanishesAt_of_tower (hE) (hT) (hd : 3 ≤ d) : ObstructionVanishesAt E d
+theorem pentagonLiftVanishes_of_tower (hE) (hT) (hd : 3 ≤ d) : PentagonLiftVanishes E d
+theorem groupLikeKAssociatorTower_one : GroupLikeKAssociatorTower K (1 : F2)
+theorem furushoGroupStep_one (hd : 3 ≤ d) : FurushoGroupStep (1 : F2) d
+theorem obstructionVanishesAt_one (hd : 3 ≤ d) : ObstructionVanishesAt (1 : F2) d
+theorem pentagonLiftVanishes_one (hd : 3 ≤ d) : PentagonLiftVanishes (1 : F2) d
+```
+
+- `levelInv_of_assocU4` closes the gap §17k listed under "No converse from the tower": for
+  `d ≥ 3`, **every** rational associator modulo `d` that is group-like modulo `FF2 d` carries the
+  level invariant. The proof builds it at degree 3 (`levelInv_three`) and raises it one degree
+  at a time with `LevelInv.succ_of_assoc`, feeding in the truncations `AssocU4.trunc` of `Φ`
+  itself. So the tower implies all three of §17k's statements (`FurushoGroupStep`,
+  `ObstructionVanishesAt`, `PentagonLiftVanishes`) at every `d ≥ 3`. This also checks inside Lean
+  that the two `Prop`s of §17k are consistent with the tower.
+- For `E = 1` (hexagon without exponential, i.e. `μ = 0`, the `GRT₁` case) the tower is inhabited
+  by the constant `Ψ = 1`, over any `K` (`assocK_one`, `GLK_one`). Hence `FurushoGroupStep 1 d`,
+  `ObstructionVanishesAt 1 d` and `PentagonLiftVanishes 1 d` hold for every `d ≥ 3` with no
+  hypothesis. No existing associator, no KZ, no field other than `ℚ` is used.
+
+**Relation to the source** (Furusho, arXiv math/0702128v3, §2 "Proof of Theorem 1", pp. 5-8,
+read from `library/arxiv-math-0702128v3/sections/sec-002-2-proof-of-theorem-1.md`):
+
+- Lemma 9 (pp. 6-7): a commutator group-like `φ` with `c₂(φ) = 0` satisfying the 5-cycle relation
+  satisfies the 3-cycle relation (14). Its proof is an induction on degree: `φ ∈ GRT₁^{(n)}`, the
+  corresponding Lie element `ψ` "also determines an element of `grt₁(k)`", `φ₁ = Exp ψ` agrees
+  with `φ` modulo degree `n`, `φ = φ₂ ∘ φ₁` (Lemma 8), and Theorem 3 (the Lie form) puts the
+  degree-`n` part of `φ₂` in `grt₁`. `furushoGroupStep_one` is that inductive step in the repo's
+  terms. The comparison object is not `Exp ψ` but the degree-`(d+1)` lift `Φ + x` that `levelStep`
+  produces by re-aligning `Ψ = 1` onto `Φ` through `Exp` of `grt` layers (`realign`), and the
+  Lie form is `pentagonHexagonLie_of_three_le` (§17j). `obstructionVanishesAt_one` is the
+  one-degree surjectivity onto `GRT₁^{(d)}` that Lemma 9 uses.
+- Theorem 10 (pp. 7-8), the case `μ ≠ 0`: the proof passes to the weight-graded ring and uses
+  "`Gr^W O(M₁)` is isomorphic to `O(GRT₁)` by [F06] theorem 6.2.2". [F06] is not in `library/`
+  (not checked further), so whether that input itself rests on the existence of an associator is
+  not settled from the held text. The held text does show that Theorem 10 is not a one-degree
+  argument: it compares filtered coordinate rings of the two solution varieties.
+
+**What is open.** `FurushoGroupStep E d` for `E ≠ 1` (`μ ≠ 0`) without a `K`-tower. It remains a
+named `Prop`; this file proves it only from `GroupLikeKAssociatorTower K E` (classically the KZ
+associator). The question "can the degree-`d` associator `Φ` of the hypothesis serve as the
+comparison object" has a negative answer in the form attempted: the linearisation used throughout
+(`assocDefect_add`) compares `Φ` with a degree-`(d+1)` associator congruent to it modulo `FF d`,
+and `Φ` is only an associator modulo `d`, so it cannot be its own comparison object. The natural
+next step is a one-degree version of Furusho's weight-filtration argument: show that the
+`μ`-dependent part of the degree-`d` hexagon defect of `Φ` is determined by lower-degree data
+already satisfying the equations, so that the `E = 1` step transfers. This is not attempted here.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `FurushoGroupStep.lean` exits 0 with no
+output, against the `/home/claude/furov` overlay; `RationalAssociator/` is byte-identical between
+the overlay's source (PR #9880 head `74e97b66c`) and `origin/main` after #9880 merged. `#print
+axioms` on all eight theorems above gives `[propext, Classical.choice, Quot.sound]`. No `sorry`,
+no `axiom`, no `native_decide`, no analytic constructs. No `lake build` was run.
