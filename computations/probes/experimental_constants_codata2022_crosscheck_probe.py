@@ -42,16 +42,40 @@ import experimental_constants as _ec  # noqa: E402
 
 
 def _locate_codata_values_json() -> _Path:
+    import os
+    import subprocess
+
     repo = _Path(__file__).resolve().parents[2]
-    candidates = [
+    rel = _Path("folio-assistant-sci") / "library" / "codata-2022" / "values.json"
+    candidates: list[_Path] = []
+    if fa_env := os.environ.get("FOLIO_ASSISTANT_ROOT"):
+        fa = _Path(fa_env).expanduser()
+        candidates.extend([fa / rel, fa / "library" / "codata-2022" / "values.json"])
+    candidates.extend([
         # folio-assistant-sci's copy: qou's was dropped 2026-11-24 as byte-identical.
-        repo / "folio-assistant-sci" / "library" / "codata-2022" / "values.json",
-        repo / "folio-assistant" / "folio-assistant-sci" / "library" / "codata-2022" / "values.json",
-    ]
+        repo / rel,
+        repo / "folio-assistant" / rel,
+        repo.parent / "folio-assistant" / rel,
+        repo.parent.parent / "folio-assistant" / rel,
+    ])
+    try:
+        common = subprocess.run(
+            ["git", "-C", str(repo), "rev-parse", "--git-common-dir"],
+            capture_output=True, text=True, check=False,
+        )
+        if common.returncode == 0 and common.stdout.strip():
+            main_repo = (repo / common.stdout.strip()).resolve().parent
+            candidates.extend([
+                main_repo / rel,
+                main_repo / "folio-assistant" / rel,
+                main_repo.parent / "folio-assistant" / rel,
+            ])
+    except OSError:
+        pass
     for c in candidates:
         if c.is_file():
             return c
-    raise FileNotFoundError("folio-assistant-sci/library/codata-2022/values.json not found: mount the platform layers")
+    raise FileNotFoundError("folio-assistant-sci/library/codata-2022/values.json not found: mount the platform layers or set FOLIO_ASSISTANT_ROOT")
 
 
 def main() -> int:

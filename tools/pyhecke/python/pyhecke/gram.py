@@ -177,25 +177,16 @@ except ImportError:
 # the one item 2 above measured and refuted, so it is struck rather than
 # left standing next to its own refutation.
 #
-# THE NATIVE SPLIT — and note what it is NOT. The Rust mirror
-# (tools/hecke-engine/src/gram.rs) IS convention D: `markov_z` there is
-# already q^3/(q^2+1). Do not describe the crate as "on convention C".
-# It diverges in the trace RULE and the ANCHOR instead:
-#
-#   * `trace_weights` ends `z*z*z` where `TR_M` below ends `h*z^2 + z`.
-#     This is what keeps the crate's Gram non-singular, so it has no
-#     radical and no quotient — hence the trace fix and the quotient must
-#     land together (fixing the trace alone drops a singular Gram into a
-#     path with nothing to handle it).
-#   * `Q_0` is hardcoded to 1.1099785955541805, the MUON pin, against
-#     AGENTS.md's proton default (2.19e-8 relative on z).
-#
-# `build_atom_nf` / `atom_per_generator_volumes` below dispatch to the
-# compiled `pyhecke_native` wheel built from that crate. Since this module
-# moved to D those two functions would return numbers from a different
-# trace rule at a different anchor, so the dispatch now REFUSES rather
-# than silently diverging — see the guard near `has_native`. Tracked as
-# qou-m7py.
+# HISTORICAL NOTE (resolved 2026-08-15 by qou-m7py / PR #5088):
+# Prior to PR #5088, `crates/hecke-engine/src/gram.rs` already used convention-D
+# `markov_z(q) = q^3/(q^2+1)` while diverging in `TR_M[5]` (`z^3` vs `h*z^2 + z`)
+# and `Q_0` (muon vs proton pin). Both were converged in `crates/hecke-engine`
+# and `crates/pyhecke-native` on 2026-08-15 (`Q_0 = 1.1099785827513808` proton
+# pin, `trace_weights[5] = h*z^2 + z`, singular rank-5 Gram with
+# `gram_quotient_inverse` + `gram_radical`). `_native_ok()` below runs a live
+# convergence self-check against `TR_M` and `G` at `q0` so any pre-2026-08-15
+# `.so` wheel still sitting in a host Python environment is loudly refused rather
+# than silently returning pre-port numbers.
 z = q0 ** 3 / (q0 ** 2 + 1)
 
 # Wedderburn-Artin weights for H_3(q)

@@ -252,15 +252,18 @@ def solve_frobenius_dual_lp(
     t = np.asarray(t, dtype=float)
     G = np.asarray(G, dtype=float)
     u = np.asarray(u_demand, dtype=float)
+    n_target_f = float(n_target)
+    m_bound_f = float(M_bound)
+    dual_tol_f = float(dual_tol)
     d = len(t)
 
     c = t.copy()
     # Combined equalities: net + Frobenius-dual demand
     A_eq = np.vstack([np.ones((1, d)), G])
-    b_eq = np.concatenate([[n_target], u])
+    b_eq = np.concatenate([[n_target_f], u])
     res = linprog(
         c=c, A_eq=A_eq, b_eq=b_eq,
-        bounds=[(-M_bound, None)] * d,
+        bounds=[(-m_bound_f, None)] * d,
         method="highs",
     )
     if not res.success:
@@ -283,8 +286,8 @@ def solve_frobenius_dual_lp(
     eq_marginals = np.asarray(res.eqlin.marginals)
     y0_star = float(eq_marginals[0])
     y_star = eq_marginals[1:].tolist()
-    active_set = [i for i, y in enumerate(y_star) if abs(y) > dual_tol]
-    dual_obj = float(n_target * y0_star + u @ np.asarray(y_star))
+    active_set = [i for i, y in enumerate(y_star) if abs(y) > dual_tol_f]
+    dual_obj = float(n_target_f * y0_star + u @ np.asarray(y_star))
     duality_gap = abs(primal_obj - dual_obj)
 
     return LpDualResult(
@@ -1147,8 +1150,15 @@ def solve_operator_selection_lp(
 
     from scipy.optimize import linprog  # SciPy is required for LP duals.
 
+    # Keep original caller inputs (which may be decimal strings such as
+    # `n_target="208"` from `all_nuclides_sdp_admissibility_mp.py`) for
+    # `_attach_residuals`, while casting scalars cleanly to float for HiGHS.
+    t_in, G_in, n_target_in = t, G, n_target
     t = np.asarray(t, dtype=float)
     G = np.asarray(G, dtype=float)
+    n_target_f = float(n_target)
+    m_bound_f = float(M_bound)
+    dual_tol_f = float(dual_tol)
     d = len(t)
     assert G.shape == (d, d), f"Gram matrix shape {G.shape} ≠ ({d},{d})"
 
@@ -1158,7 +1168,7 @@ def solve_operator_selection_lp(
 
     # Equality (net): Σ x_i = n_target
     A_eq = np.ones((1, d))
-    b_eq = np.array([n_target])
+    b_eq = np.array([n_target_f], dtype=float)
 
     # Inequality (Frobenius positivity, in linprog ≤ form):  -Gx ≤ 0
     A_ub = -G
@@ -1166,7 +1176,7 @@ def solve_operator_selection_lp(
 
     res = linprog(
         c=c, A_ub=A_ub, b_ub=b_ub, A_eq=A_eq, b_eq=b_eq,
-        bounds=[(-M_bound, None)] * d,
+        bounds=[(-m_bound_f, None)] * d,
         method="highs",
     )
 
@@ -1197,9 +1207,9 @@ def solve_operator_selection_lp(
     # In linprog 'highs' terms (gradient of LP value w.r.t. RHS):
     y0_star = float(res.eqlin.marginals[0])
     y_star = (-np.asarray(res.ineqlin.marginals)).tolist()
-    active_set = [i for i, y in enumerate(y_star) if y > dual_tol]
+    active_set = [i for i, y in enumerate(y_star) if y > dual_tol_f]
 
-    dual_obj = float(n_target * y0_star)
+    dual_obj = float(n_target_f * y0_star)
     duality_gap = abs(primal_obj - dual_obj)
 
     return _attach_residuals(
@@ -1215,7 +1225,7 @@ def solve_operator_selection_lp(
             backend="scipy-highs",
             precision_bits=53,
         ),
-        t, G, n_target,
+        t_in, G_in, n_target_in,
     )
 
 

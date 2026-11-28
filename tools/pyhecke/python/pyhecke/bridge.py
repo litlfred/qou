@@ -146,11 +146,29 @@ def gram_from_rust(q: Optional[float] = None) -> dict:
     return run_json("hecke-gram", args)
 
 
+def _native_convergent() -> bool:
+    """True iff `pyhecke_native` is importable AND passes `pyhecke.gram._native_ok()`.
+
+    Prevents `bridge` from calling a pre-2026-08-15 convention-C `.so` wheel
+    after `pyhecke.gram` has already quarantined it (`_NATIVE_VERIFIED = False`).
+    """
+    if _NATIVE is None:
+        return False
+    from . import gram as _pg
+    return _pg._native_ok()
+
+
+def _default_q0() -> float:
+    """Canonical proton-pinned substrate `q_0` from `pyhecke.gram`."""
+    from . import gram as _pg
+    return float(_pg.q0)
+
+
 def gram_matrix_from_rust(q: Optional[float] = None):
     """Return just the 6×6 Gram matrix as a numpy array (Rust-computed).
 
     Dispatches in this order:
-      1. `pyhecke_native` (PyO3 in-process) — fastest, ~20ns/call.
+      1. `pyhecke_native` (PyO3 in-process, gated on `gram._native_ok()`) — ~20ns/call.
       2. `hecke-gram` subprocess — ~20ms/call (fork+exec).
       3. FileNotFoundError if neither is available.
     """
@@ -159,8 +177,8 @@ def gram_matrix_from_rust(q: Optional[float] = None):
     except ImportError as e:  # pragma: no cover
         raise ImportError("pyhecke.bridge.gram_matrix_from_rust requires numpy") from e
 
-    if _NATIVE is not None:
-        q_val = q if q is not None else 1.1099785955541805
+    if _native_convergent():
+        q_val = q if q is not None else _default_q0()
         return np.array(_NATIVE.gram_matrix(q_val))
 
     cert = gram_from_rust(q=q)
@@ -168,8 +186,8 @@ def gram_matrix_from_rust(q: Optional[float] = None):
 
 
 def gram_det_from_rust(q: Optional[float] = None) -> float:
-    """Return det(G) at `q`. Fast path via PyO3, fallback via subprocess."""
-    if _NATIVE is not None:
-        q_val = q if q is not None else 1.1099785955541805
+    """Return det(G) at `q`. Fast path via verified PyO3, fallback via subprocess."""
+    if _native_convergent():
+        q_val = q if q is not None else _default_q0()
         return float(_NATIVE.gram_determinant(q_val))
     return float(gram_from_rust(q=q)["determinant"])

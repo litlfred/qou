@@ -9,13 +9,22 @@ from __future__ import annotations
 
 import pytest
 
-from pyhecke import bridge
+from pyhecke import bridge, gram as _pg
 
 
-pytestmark = pytest.mark.skipif(
-    not bridge.has_native(),
-    reason="pyhecke_native wheel not installed — run `maturin build && pip install ...`",
+def _native_convergent() -> bool:
+    return bridge.has_native() and _pg._native_ok()
+
+
+_requires_convergent_native = pytest.mark.skipif(
+    not _native_convergent(),
+    reason=(
+        "pyhecke_native wheel absent or stale pre-convention-D build "
+        "(gram._native_ok() is False) — rebuild via `bash scripts/build-pyhecke-native.sh`"
+    ),
 )
+
+pytestmark = _requires_convergent_native
 
 
 def _canonical_q0() -> float:

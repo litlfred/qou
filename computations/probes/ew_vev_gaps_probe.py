@@ -34,14 +34,41 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
 def codata_values_file() -> Path:
-    """folio-assistant-sci's CODATA 2022 table, at the root mount or under folio-assistant/."""
+    """folio-assistant-sci's CODATA 2022 table, at the root mount, FOLIO_ASSISTANT_ROOT, or sibling checkout."""
+    import os
+    import subprocess
+
     # qou's own copy was dropped 2026-11-24 (owner, "compare, drop qou's if same"):
     # its values.json and tabular.jsonld were byte-identical to folio-assistant-sci's.
-    for p in (ROOT / "folio-assistant-sci/library/codata-2022/values.json",
-              ROOT / "folio-assistant/folio-assistant-sci/library/codata-2022/values.json"):
+    rel = Path("folio-assistant-sci/library/codata-2022/values.json")
+    candidates: list[Path] = []
+    if fa_env := os.environ.get("FOLIO_ASSISTANT_ROOT"):
+        fa = Path(fa_env).expanduser()
+        candidates.extend([fa / rel, fa / "library/codata-2022/values.json"])
+    candidates.extend([
+        ROOT / rel,
+        ROOT / "folio-assistant" / rel,
+        ROOT.parent / "folio-assistant" / rel,
+        ROOT.parent.parent / "folio-assistant" / rel,
+    ])
+    try:
+        common = subprocess.run(
+            ["git", "-C", str(ROOT), "rev-parse", "--git-common-dir"],
+            capture_output=True, text=True, check=False,
+        )
+        if common.returncode == 0 and common.stdout.strip():
+            main_repo = (ROOT / common.stdout.strip()).resolve().parent
+            candidates.extend([
+                main_repo / rel,
+                main_repo / "folio-assistant" / rel,
+                main_repo.parent / "folio-assistant" / rel,
+            ])
+    except OSError:
+        pass
+    for p in candidates:
         if p.is_file():
             return p
-    raise FileNotFoundError("folio-assistant-sci/library/codata-2022/values.json: mount the platform layers")
+    raise FileNotFoundError("folio-assistant-sci/library/codata-2022/values.json: mount the platform layers or set FOLIO_ASSISTANT_ROOT")
 
 
 def codata(key: str) -> tuple[mpf, mpf]:

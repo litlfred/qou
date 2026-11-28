@@ -333,3 +333,44 @@ def test_pseudo_inverse_rank_is_stable_across_working_precision():
             f"kernel missed at dps={dps}: rank changed with working precision"
         )
     assert seen == {1}
+
+
+def test_scipy_fallback_accepts_string_n_target_and_string_inputs(monkeypatch):
+    """`all_nuclides_sdp_admissibility_mp.py` passes `n_target=str(a_val)` (e.g. `"208"`)
+    with `backend="auto"`. When Clarabel-MPFR is unavailable and `solve_operator_selection_lp`
+    falls back to `scipy-highs` (or when `backend="scipy"` is called directly), `n_target`
+    must be cast cleanly to `float` rather than raising
+    `TypeError: can't multiply sequence by non-int of type 'float'`."""
+    from pyhecke import gram as pg
+    from pyhecke import lp_dual_solver as lds
+
+    t_str = pg.tr_m_mp_strings()
+    G_str = pg.gram_matrix_mp_strings()
+
+    # Direct scipy path with string n_target + string t/G
+    res_direct = lds.solve_operator_selection_lp(
+        t_str, G_str, "208", backend="scipy", M_bound="1e6", dual_tol="1e-9"
+    )
+    assert res_direct.feasible is True
+    assert res_direct.backend == "scipy-highs"
+    assert res_direct.dual_obj == pytest.approx(208.0 * res_direct.y0_star, rel=1e-12, abs=1e-12)
+    assert res_direct.gap_recomputed_str is not None
+
+    # Auto fallback path when Clarabel-MPFR is unavailable
+    monkeypatch.delenv("QOU_REQUIRE_CLARABEL", raising=False)
+    monkeypatch.setattr(
+        lds,
+        "_solve_operator_selection_lp_clarabel",
+        lambda *a, **kw: (_ for _ in ()).throw(FileNotFoundError("no clarabel binary")),
+    )
+    with pytest.warns(RuntimeWarning, match="falling back to scipy float64"):
+        res_auto = lds.solve_operator_selection_lp(t_str, G_str, "208", backend="auto")
+    assert res_auto.feasible is True
+    assert res_auto.backend == "scipy-highs"
+    assert res_auto.dual_obj == pytest.approx(res_direct.dual_obj, rel=1e-12, abs=1e-12)
+
+    # Frobenius-dual LP also accepts string n_target
+    u_demand = [float(x) for x in t_str]
+    res_frob = lds.solve_frobenius_dual_lp(t_str, G_str, "3", u_demand)
+    assert res_frob.backend == "scipy-highs"
+
