@@ -5157,7 +5157,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-08-02T09:20:00Z",
-      "updatedAt": "2026-11-28T00:00:00Z",
+      "updatedAt": "2026-11-28T12:23:24Z",
       "preview": "Parent: rtep. TIER: ACHIEVABLE INCREMENTALLY. Formalize the Hecke/Temperley-Lieb side AS a modular\ncategory: simple objects = Hecke blocks λ, qDim = the corpus d_q (Markov-trace/Hoefsmit, already in\nQOU.HeckeAlgebra.MarkovTrace / Hoefsmit), twist θ_λ=q^{2c(λ)} (KeystoneModularTwist.theta, proved),\nS-matrix from the double-braiding trace. Prove the modular-data relations we can (S_{0λ}=d_λ/D done;\n",
       "file": "beans/defs/hkmt--hecke-category-as-modular-tensor-category.md"
     },
@@ -65798,7 +65798,7 @@
         "qou-ziag"
       ],
       "createdAt": "2026-11-24T08:06:16Z",
-      "updatedAt": "2026-11-28T12:05:00Z",
+      "updatedAt": "2026-11-28T12:23:24Z",
       "preview": "## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)\n\nA **Swarm** is a first-class work item (`type: epic` in `beans`) with explicit **Acceptance Criteria / End State**, **Structured Work-Item Queues**, **On-Demand + Optional Periodic Human-Consumable Status Reporting**, and **Live Cold-Start Handover Notes**.\n\n### Defined End-State / Exit Criteria for the `'Stability'` Swarm\n- [",
       "file": "beans/defs/qou-s028--stability-swarm-merge-manager-continuity-handover.md"
     },
