@@ -160,14 +160,20 @@ section({
         "polynomial-observable-subcategory-remark",
         "computational-boundary",
         "computational-boundary-remark",
+        "block-rigidity",
+        "block-rigidity-proof",
         "p-vs-np-boundary",
         "p-vs-np-boundary-table2-data",
         "p-vs-np-boundary-table1-data",
         "p-vs-np-boundary-interpretation",
+        "bounded-width-trace-cost",
+        "bounded-width-trace-cost-proof",
         "p-vs-np-event-horizon",
         "p-vs-np-event-horizon-table2-data",
         "p-vs-np-event-horizon-table1-data",
         "qou-p-neq-np",
+        "jvw-tractable-orders",
+        "jvw-tractable-orders-proof",
         // Skein-observation bridge (2026-07-25): the trichotomy remark —
         // q-Collatz halting, P vs NP, and q-NS regularity as one length-
         // filtration question on the Skein substrate (interprets the
@@ -175,6 +181,7 @@ section({
         // SkeinObservationSystem).
         "skein-filtration-trichotomy",
         "geometry-of-incompleteness",
+        "p-vs-np-open-problems",
       ],
     }),
     section({
