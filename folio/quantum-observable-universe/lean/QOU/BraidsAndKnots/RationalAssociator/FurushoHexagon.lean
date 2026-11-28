@@ -136,9 +136,9 @@ theorem xE_diag (i : Fin 5) : xE N i i = 0 := by
 
 theorem xE_row (i : Fin 5) : ∑ j, xE N i j = 0 := by
   have hw : peW i 0 + peW i 1 + peW i 2 + peW i 3 + peW i 4 = 0 := by
-    fin_cases i <;> simp [peW, peW0] <;> abel
+    fin_cases i <;> (simp [peW, peW0]; try abel)
   have hD : peD i 0 + peD i 1 + peD i 2 + peD i 3 + peD i 4 = 0 := by
-    fin_cases i <;> simp [peD, peD0] <;> abel
+    fin_cases i <;> (simp [peD, peD0]; try abel)
   refine xE_ext fun p => ?_
   simp only [Fin.sum_univ_five, LinearMap.add_apply, xE_mk, LinearMap.zero_apply,
     ← Submodule.Quotient.mk_add]
@@ -255,5 +255,266 @@ theorem piExpr_eq_zero {h : F2} (hpent : lin515Expr N h = 0) {σ : Fin 5 → Fin
   simpa [relGen, piExpr] using e
 
 end Lift
+
+/-! ### The permutation sum lands in `FF3 N` -/
+
+section Sum
+
+variable (N : ℕ)
+
+/-- Left multiplication: `ℚ⟨Y₁, Y₂, Y₃⟩ → End(M3 N)`. -/
+noncomputable def psiL : F3 →ₐ[ℚ] Module.End ℚ (M3 N) :=
+  FreeAlgebra.lift ℚ ![qL N 0, qL N 1, qL N 2]
+
+variable {N}
+
+theorem psiL_mk (c q : F3) :
+    psiL N c (Submodule.Quotient.mk q) = Submodule.Quotient.mk (c * q) := by
+  induction c using FreeAlgebra.induction generalizing q with
+  | grade0 r =>
+    rw [AlgHom.commutes, Module.algebraMap_end_apply, ← Submodule.Quotient.mk_smul,
+      Algebra.smul_def]
+  | grade1 i => fin_cases i <;> simp [psiL, qL_mk]
+  | mul a b ha hb => rw [map_mul, Module.End.mul_apply, hb, ha, mul_assoc]
+  | add a b ha hb => rw [map_add, LinearMap.add_apply, ha, hb, add_mul, Submodule.Quotient.mk_add]
+
+theorem xE_eq_psiL {i j : Fin 5} {w : F3} (hw : peW i j = w) (hD : peD i j = 0) :
+    xE N i j = psiL N w := by
+  refine xE_ext fun p => ?_
+  rw [xE_mk, hw, hD, der3_zero_dir, add_zero, psiL_mk]
+
+/-- The relabelling `1 ↔ 3`. -/
+def swp : Fin 5 → Fin 5 := ![0, 3, 2, 1, 4]
+
+/-- The hexagon-polynomial sum of the permutation argument. -/
+noncomputable def hexSum (g : F2) : F3 :=
+  eval (Yg 0) (Yg 2) g + eval (Yg 0) peS g + eval (Yg 1) (Yg 2) g + eval (Yg 1) peS g
+
+/-- **The permutation sum lies in `FF3 N`.** -/
+theorem hexSum_mem {d : ℕ} {h : F2} (hd : 2 ≤ d) (hh : Homog d h) (hp : IsPrimitive h)
+    (hsw : h + swapPoly h = 0) (hpent : lin515Expr N h = 0) : hexSum (rPoly h) ∈ FF3 N := by
+  have hb : Function.Bijective swp := by decide
+  have S := rSum_eq hd hh hp hsw ((xE_p5 (N := N)).comp hb)
+  have z1 := piExpr_eq_zero (N := N) hpent (σ := swp) hb
+  have z2 := piExpr_eq_zero (N := N) hpent (σ := fun i => swp (cyc2 i)) (by decide)
+  have z3 := piExpr_eq_zero (N := N) hpent (σ := fun i => swp (cyc3 i)) (by decide)
+  have z4 := piExpr_eq_zero (N := N) hpent (σ := fun i => swp (cyc4 i)) (by decide)
+  simp only [] at S z1 z2 z3 z4
+  rw [z1, z2, z3, z4] at S
+  have e03 : xE N (swp 0) (swp 1) = psiL N (Yg 0) :=
+    xE_eq_psiL (by simp [swp, peW, peW0]) (by simp [swp, peD, peD0])
+  have e32 : xE N (swp 1) (swp 2) = psiL N (Yg 2) :=
+    xE_eq_psiL (by simp [swp, peW, peW0]) (by simp [swp, peD, peD0])
+  have e34 : xE N (swp 1) (swp 4) = psiL N peS :=
+    xE_eq_psiL (by simp [swp, peW, peW0]) (by simp [swp, peD, peD0])
+  have e31 : xE N (swp 1) (swp 3) = psiL N (Yg 1) :=
+    xE_eq_psiL (by simp [swp, peW, peW0]) (by simp [swp, peD, peD0])
+  rw [e03, e32, e34, e31, ← map_eval, ← map_eval, ← map_eval, ← map_eval, ← map_add, ← map_add,
+    ← map_add] at S
+  have := congrArg (fun φ : Module.End ℚ (M3 N) => φ (Submodule.Quotient.mk 1)) S
+  simp only [psiL_mk, mul_one, add_zero, LinearMap.zero_apply] at this
+  exact (Submodule.Quotient.mk_eq_zero _).1 this.symm
+
+end Sum
+
+/-! ### Back to `ℚ⟨X, Y⟩` -/
+
+section ToF2
+
+local notation "𝕏" => FreeAlgebra.ι ℚ (0 : Fin 2)
+local notation "𝕐" => FreeAlgebra.ι ℚ (1 : Fin 2)
+
+/-- The substitution `Yᵢ ↦ X_{g i}` from `ℚ⟨Y₁, Y₂, Y₃⟩` to `ℚ⟨X, Y⟩`. -/
+noncomputable def qmap (g : Fin 3 → Fin 2) : F3 →ₐ[ℚ] F2 :=
+  FreeAlgebra.lift ℚ fun i => FreeAlgebra.ι ℚ (g i)
+
+/-- The substitution preserves word length, so it maps `FF3 m` into `FF m`. -/
+theorem qmap_FF3 (g : Fin 3 → Fin 2) {m : ℕ} {p : F3} (hp : p ∈ FF3 m) : qmap g p ∈ FF m := by
+  induction hp using Submodule.span_induction with
+  | mem x hx =>
+    obtain ⟨w, hw, rfl⟩ := hx
+    have e : qmap g (w.map (FreeAlgebra.ι ℚ)).prod = ((w.map g).map (FreeAlgebra.ι ℚ)).prod := by
+      rw [map_list_prod, List.map_map, List.map_map]
+      congr 1
+      exact List.map_congr_left fun i _ => by simp [qmap]
+    rw [e]
+    exact word_mem_FF _ (by simpa using hw)
+  | zero => rw [map_zero]; exact zero_mem _
+  | add x y _ _ hx hy => rw [map_add]; exact add_mem hx hy
+  | smul r x _ hx => rw [map_smul]; exact Submodule.smul_mem _ r hx
+
+/-- `u` is homogeneous of degree one. -/
+def IsLin (u : F2) : Prop := ∀ r : ℚ, scF r u = r • u
+
+theorem isLin_ι (i : Fin 2) : IsLin (FreeAlgebra.ι ℚ i) := fun r => by simp [scF]
+
+theorem IsLin.add {u v : F2} (hu : IsLin u) (hv : IsLin v) : IsLin (u + v) := fun r => by
+  rw [map_add, hu, hv, smul_add]
+
+theorem IsLin.neg {u : F2} (hu : IsLin u) : IsLin (-u) := fun r => by
+  rw [map_neg, hu, smul_neg]
+
+theorem IsLin.sub {u v : F2} (hu : IsLin u) (hv : IsLin v) : IsLin (u - v) := fun r => by
+  rw [map_sub, hu, hv, smul_sub]
+
+theorem homog_eval {d : ℕ} {p u v : F2} (hp : Homog d p) (hu : IsLin u) (hv : IsLin v) :
+    Homog d (eval u v p) := fun r => by
+  rw [map_eval, hu, hv, eval_smul_of_homog hp]
+
+theorem homog_rPoly {d : ℕ} {h : F2} (hh : Homog d h) : Homog d (rPoly h) :=
+  (hh.add (homog_eval hh (isLin_ι 1) ((isLin_ι 0).neg.sub (isLin_ι 1)))).add
+    (homog_eval hh ((isLin_ι 0).neg.sub (isLin_ι 1)) (isLin_ι 0))
+
+theorem rPoly_anti {h : F2} (hsw : h + swapPoly h = 0) (u v : F2) :
+    eval u v (rPoly h) = -eval v u (rPoly h) := by
+  rw [eval_rPoly, eval_rPoly, show -v - u = -u - v by abel, eval_eq_neg_swap hsw v u,
+    eval_eq_neg_swap hsw u (-u - v), eval_eq_neg_swap hsw (-u - v) v]
+  abel
+
+theorem rPoly_cyc {h : F2} (u v : F2) : eval v (-u - v) (rPoly h) = eval u v (rPoly h) := by
+  rw [eval_rPoly, eval_rPoly, show -v - (-u - v) = u by abel]
+  abel
+
+theorem q1_hexSum (p : F2) :
+    qmap ![0, 0, 1] (hexSum p) =
+      eval 𝕏 𝕐 p + eval 𝕏 (-(𝕏 + 𝕏 + 𝕐)) p + eval 𝕏 𝕐 p + eval 𝕏 (-(𝕏 + 𝕏 + 𝕐)) p := by
+  simp only [hexSum, peS, map_add, map_neg, map_eval, qmap, FreeAlgebra.lift_ι_apply]
+  rfl
+
+theorem q2_hexSum (p : F2) :
+    qmap ![0, 1, 0] (hexSum p) =
+      eval 𝕏 𝕏 p + eval 𝕏 (-(𝕏 + 𝕐 + 𝕏)) p + eval 𝕐 𝕏 p + eval 𝕐 (-(𝕏 + 𝕐 + 𝕏)) p := by
+  simp only [hexSum, peS, map_add, map_neg, map_eval, qmap, FreeAlgebra.lift_ι_apply]
+  rfl
+
+/-- **The pure `ℚ⟨X, Y⟩` step.** A homogeneous `g` of degree `d ≥ 3` with the symmetries of the
+hexagon polynomial and the two substituted permutation-sum relations is zero. -/
+theorem eq_zero_of_hex_relations {d : ℕ} {g : F2} (hd : 3 ≤ d) (hg : Homog d g)
+    (anti : ∀ u v : F2, eval u v g = -eval v u g)
+    (cyc : ∀ u v : F2, eval v (-u - v) g = eval u v g)
+    (F1 : eval 𝕏 𝕐 g + eval 𝕏 (-(𝕏 + 𝕏 + 𝕐)) g + eval 𝕏 𝕐 g + eval 𝕏 (-(𝕏 + 𝕏 + 𝕐)) g = 0)
+    (F2' : eval 𝕏 𝕏 g + eval 𝕏 (-(𝕏 + 𝕐 + 𝕏)) g + eval 𝕐 𝕏 g + eval 𝕐 (-(𝕏 + 𝕐 + 𝕏)) g = 0) :
+    g = 0 := by
+  have eXY : eval 𝕏 𝕐 g = g := eval_ι_ι g
+  have two : ∀ z : F2, z + z = 0 → z = 0 := fun z hz => by
+    have : (2 : ℚ) • z = 0 := by rw [two_smul, hz]
+    exact (smul_eq_zero.mp this).resolve_left (by norm_num)
+  have hS : -(𝕏 + 𝕐 + 𝕏) = -(𝕏 + 𝕏 + 𝕐) := by abel
+  have h1 : eval 𝕏 (-(𝕏 + 𝕏 + 𝕐)) g = -g := by
+    have : g + eval 𝕏 (-(𝕏 + 𝕏 + 𝕐)) g = 0 := two _ (by rw [← F1, eXY]; abel)
+    exact eq_neg_of_add_eq_zero_right this
+  have hXX : eval 𝕏 𝕏 g = 0 := by
+    have e := anti 𝕏 𝕏
+    exact two _ (by nth_rewrite 1 [e]; abel)
+  have hYX : eval 𝕐 𝕏 g = -g := by rw [anti, eXY]
+  have h2X : eval ((2 : ℚ) • 𝕏) 𝕐 g = g + g := by
+    have e := cyc ((2 : ℚ) • 𝕏) 𝕐
+    rw [show -((2 : ℚ) • 𝕏) - 𝕐 = -(𝕏 + 𝕏 + 𝕐) by rw [two_smul]; abel] at e
+    rw [hS, hXX, h1, hYX, e] at F2'
+    calc eval ((2 : ℚ) • 𝕏) 𝕐 g = (0 + -g + -g + eval ((2 : ℚ) • 𝕏) 𝕐 g) + g + g := by abel
+      _ = g + g := by rw [F2']; abel
+  -- `m = g(X/2, Y)`
+  have half : eval ((1 / 2 : ℚ) • 𝕏) 𝕐 g + eval ((1 / 2 : ℚ) • 𝕏) 𝕐 g = g := by
+    have e := congrArg (eval ((1 / 2 : ℚ) • 𝕏) 𝕐) h2X
+    rw [map_eval, map_add, map_smul, eval_X, eval_Y, smul_smul,
+      show (2 : ℚ) * (1 / 2) = 1 by norm_num, one_smul, eXY] at e
+    exact e.symm
+  have hom : eval 𝕏 ((2 : ℚ) • 𝕐) g = (2 : ℚ) ^ d • eval ((1 / 2 : ℚ) • 𝕏) 𝕐 g := by
+    have e := eval_smul_of_homog hg (2 : ℚ) ((1 / 2 : ℚ) • 𝕏) 𝕐
+    rw [smul_smul, show (2 : ℚ) * (1 / 2) = 1 by norm_num, one_smul] at e
+    exact e
+  have swp2 : eval ((2 : ℚ) • 𝕐) 𝕏 g = -g + -g := by
+    have e := congrArg (eval 𝕐 𝕏) h2X
+    rw [map_eval, map_add, map_smul, eval_X, eval_Y, hYX] at e
+    exact e
+  have key : (2 : ℚ) ^ d • eval ((1 / 2 : ℚ) • 𝕏) 𝕐 g = g + g := by
+    rw [← hom, anti, swp2, neg_add, neg_neg]
+  set m := eval ((1 / 2 : ℚ) • 𝕏) 𝕐 g
+  have k4 : ((2 : ℚ) ^ d - 4) • m = 0 := by
+    rw [sub_smul, key, ← half, show (4 : ℚ) = 1 + 1 + 1 + 1 by norm_num, add_smul, add_smul,
+      add_smul, one_smul]
+    abel
+  have hne : (2 : ℚ) ^ d - 4 ≠ 0 := by
+    have : (2 : ℚ) ^ 3 ≤ 2 ^ d := pow_le_pow_right₀ (by norm_num) hd
+    intro h0; norm_num at this; linarith
+  have hm : m = 0 := (smul_eq_zero.mp k4).resolve_left hne
+  rw [← half, hm, add_zero]
+
+/-- **`R = 0`.** For a homogeneous primitive `h` of degree `d ≥ 3` with the 2-cycle relation,
+whose permutation sum lies in `FF3 (d + 1)`, the hexagon polynomial vanishes. -/
+theorem rPoly_eq_zero {d : ℕ} {h : F2} (hd : 3 ≤ d) (hh : Homog d h)
+    (hsw : h + swapPoly h = 0) (hmem : hexSum (rPoly h) ∈ FF3 (d + 1)) : rPoly h = 0 := by
+  have hR : Homog d (rPoly h) := homog_rPoly hh
+  have lX := isLin_ι 0
+  have lY := isLin_ι 1
+  have m1 := qmap_FF3 ![0, 0, 1] hmem
+  have m2 := qmap_FF3 ![0, 1, 0] hmem
+  rw [q1_hexSum] at m1
+  rw [q2_hexSum] at m2
+  refine eq_zero_of_hex_relations hd hR (rPoly_anti hsw) rPoly_cyc
+    (eq_zero_of_homog_mem_FF ?_ m1) (eq_zero_of_homog_mem_FF ?_ m2)
+  · exact (((homog_eval hR lX lY).add (homog_eval hR lX ((lX.add lX).add lY).neg)).add
+      (homog_eval hR lX lY)).add (homog_eval hR lX ((lX.add lX).add lY).neg)
+  · exact (((homog_eval hR lX lX).add (homog_eval hR lX ((lX.add lY).add lX).neg)).add
+      (homog_eval hR lY lX)).add (homog_eval hR lY ((lX.add lY).add lX).neg)
+
+end ToF2
+
+/-! ### The hexagon, and Furusho's theorem -/
+
+section Hexagon
+
+/-- **The linearised hexagon from `R = 0`.** -/
+theorem lin513_eq_zero {M d : ℕ} {h : F2} (hd : 2 ≤ d) (hh : Homog d h) (hp : IsPrimitive h)
+    (hsw : h + swapPoly h = 0) (hR : rPoly h = 0) : lin513Expr M h = 0 := by
+  obtain ⟨c0, c1, c3⟩ := DK3.commute_sum (dk4 M).d4
+  have k1 : eval (t M 1) (t M 3) h = eval (t M 1) (-t M 0 - t M 1) h := by
+    conv_lhs => rw [show t M 3 = (-t M 0 - t M 1) + (t M 0 + t M 1 + t M 3) by abel]
+    exact eval_add_right hd hh hp c1 (c0.neg_right.sub_right c1)
+  have k2 : eval (t M 3) (t M 0) h = eval (-t M 0 - t M 1) (t M 0) h := by
+    conv_lhs => rw [show t M 3 = (-t M 0 - t M 1) + (t M 0 + t M 1 + t M 3) by abel]
+    exact eval_add_left hd hh hp (c0.neg_right.sub_right c1) c0
+  have e := congrArg (eval (t M 0) (t M 1)) hR
+  rw [eval_rPoly, map_zero] at e
+  rw [lin513Expr, eval_eq_neg_swap hsw (t M 1) (t M 0), eval_eq_neg_swap hsw (t M 3) (t M 1),
+    eval_eq_neg_swap hsw (t M 0) (t M 3), k1, k2, ← neg_add, ← neg_add, e, neg_zero]
+
+/-- **Furusho's theorem, Lie-algebra form** (Furusho 2010, Theorem 3): for every `d ≥ 3`, a
+homogeneous primitive element of degree `d` whose linearised pentagon (5.20) vanishes in
+`U4 (d + 1)` has every linearised associator equation vanish there. -/
+theorem pentagonHexagonLie_of_three_le : ∀ d, 3 ≤ d → PentagonHexagonLie d := by
+  intro d hd3 h hh hp hpent
+  have hd : 2 ≤ d := by omega
+  have h515 : lin515Expr (d + 1) h = 0 := by
+    simpa only [assocLin, LinearMap.coe_mk, AddHom.coe_mk] using hpent
+  have hsw := add_swap_eq_zero_of_pentagon hd hh hp h515
+  have hR := rPoly_eq_zero hd3 hh hsw (hexSum_mem hd hh hp hsw h515)
+  have h513 := lin513_eq_zero (M := d + 1) hd hh hp hsw hR
+  refine Prod.ext (funext fun p => ?_) (Prod.ext ?_ ?_)
+  · simp only [assocLin, LinearMap.coe_mk, AddHom.coe_mk, Prod.fst_zero, Pi.zero_apply]
+    rw [eval_eq_neg_swap hsw p.1.1 p.1.2, neg_add_cancel]
+  · simp only [assocLin, LinearMap.coe_mk, AddHom.coe_mk, Prod.snd_zero, Prod.fst_zero]
+    rw [lin513Expr] at h513
+    rw [h513, neg_zero]
+  · exact hpent
+
+variable {K : Type*} [Field K] [Algebra ℚ K]
+
+/-- **Pentagon implies hexagon**, with the Lie statement discharged: `assocU4_of_pentagon`
+without its `PentagonHexagonLie` hypothesis. -/
+theorem assocU4_of_pentagon' {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
+    (hT : GroupLikeKAssociatorTower K E) {N : ℕ} (hN : 3 ≤ N) {Φ : F2} (h3 : AssocU4 3 E Φ)
+    (hp : Pentagon Φ (t N 0) (t N 1) (t N 3) (t N 4) (t N 5)) (hg : GL N Φ) :
+    AssocU4 N E Φ :=
+  assocU4_of_pentagon hE hT pentagonHexagonLie_of_three_le hN h3 hp hg
+
+/-- `assocU4_iff_pentagon` without its `PentagonHexagonLie` hypothesis. -/
+theorem assocU4_iff_pentagon' {E : F2} (hE : FreeAlgebra.algebraMapInv E = 1)
+    (hT : GroupLikeKAssociatorTower K E) {N : ℕ} (hN : 3 ≤ N) {Φ : F2} (hg : GL N Φ) :
+    AssocU4 N E Φ ↔
+      AssocU4 3 E Φ ∧ Pentagon Φ (t N 0) (t N 1) (t N 3) (t N 4) (t N 5) :=
+  assocU4_iff_pentagon hE hT pentagonHexagonLie_of_three_le hN hg
+
+end Hexagon
 
 end QOU.BraidsAndKnots.RationalAssociator
