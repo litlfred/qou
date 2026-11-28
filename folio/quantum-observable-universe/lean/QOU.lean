@@ -1110,6 +1110,7 @@ import QOU.Nuclear.AfreeThetaConstraint
 import QOU.Transcendental.Nuclear.AfreeThetaConstraintReal
 import QOU.Nuclear.AlphaQInheritance
 import QOU.Nuclear.AlphaPreformationBound
+import QOU.Nuclear.AlphaSeniorityPreformation
 import QOU.Nuclear.ChannelMeridianIdentification
 import QOU.Transcendental.Nuclear.ChannelMeridianIdentificationReal
 import QOU.Nuclear.CompleteStructureExclusion
