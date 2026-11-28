@@ -1,0 +1,51 @@
+{
+ "q0": "1.10997858275138080759166909561",
+ "rows": [
+  {
+   "unit": "E0",
+   "U_MeV": "4.18598136329",
+   "np_flavour_MeV": "0.8735366214",
+   "np_total_with_EM_MeV": "0.1164115471",
+   "deuteron_MeV": "0.006295589399",
+   "factor_needed_np_total": "2.3473058",
+   "factor_needed_deuteron": "353.3531"
+  },
+  {
+   "unit": "E0_tw",
+   "U_MeV": "4.22748335563",
+   "np_flavour_MeV": "0.8821973169",
+   "np_total_with_EM_MeV": "0.1250722426",
+   "deuteron_MeV": "0.00635800714",
+   "factor_needed_np_total": "2.3242619",
+   "factor_needed_deuteron": "349.88416"
+  },
+  {
+   "unit": "E_osc",
+   "U_MeV": "42.2477681091",
+   "np_flavour_MeV": "8.816325113",
+   "np_total_with_EM_MeV": "8.059200039",
+   "deuteron_MeV": "0.06353936579",
+   "factor_needed_np_total": "0.23257509",
+   "factor_needed_deuteron": "35.010831"
+  },
+  {
+   "unit": "E_mass",
+   "U_MeV": "52.0514663819",
+   "np_flavour_MeV": "10.86217499",
+   "np_total_with_EM_MeV": "10.10504992",
+   "deuteron_MeV": "0.07828383156",
+   "factor_needed_np_total": "0.18877044",
+   "factor_needed_deuteron": "28.416672"
+  },
+  {
+   "unit": "E_log",
+   "U_MeV": "1.38341674131",
+   "np_flavour_MeV": "0.2886933986",
+   "np_total_with_EM_MeV": "-0.4684316757",
+   "deuteron_MeV": "0.002080616948",
+   "factor_needed_np_total": "7.1025441",
+   "factor_needed_deuteron": "1069.1858"
+  }
+ ],
+ "unit_independent_ratio": "150.535603019"
+}
