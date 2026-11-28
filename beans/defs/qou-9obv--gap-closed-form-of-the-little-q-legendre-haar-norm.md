@@ -1,11 +1,11 @@
 ---
 # qou-9obv
 title: 'GAP: closed form of the little q-Legendre Haar norm on the O_q(SU(2)) Cartan block'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-28T01:30:18Z
-updated_at: 2026-11-28T01:54:08Z
+updated_at: 2026-11-28T01:56:41Z
 ---
 
 Related: qou-q3dc (GAP progress notes) and qou-pa7n (Part A). This bean stays open while Part A is open.
@@ -31,3 +31,7 @@ Possible routes: a three-term recurrence or a Christoffel–Darboux identity for
 
 ## 2026-11-28 — proved (PR #9947)
 `QOU/FluidDynamics/q_ns_qlegendre_norm.lean`, `H_eq_prod`, is sorry-free. The norm of the monic P_n is Π_{k<n} P²z²(Pz−1)⁴/((Pz²−1)(P²z²−1)²(P³z²−1)), with P = q² and z = P^k. The route is the three-term recurrence plus closed forms for the top coefficients. Close this bean once #9947 merges. Still open: the C̃(r)² substitution as a Lean statement (small), positivity over an ordered field, and Part A (qou-pa7n).
+
+
+## 2026-11-28 — closed
+#9947 merged as afb7a37806. The norm closed form is proved (H_eq_prod). Follow-up PR #9951 adds coupling_raise_sq and corrects one slip: the SQUARE of the normalised coupling decays like q^{-4r}, and the amplitude like q^{-2r}. The open conjectures live in qou-pa7n and qou-q3dc, which stay open.
