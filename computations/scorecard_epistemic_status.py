@@ -43,6 +43,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 STATUSES = ("Calibration", "Derived", "Selected", "Conditional", "Unclassified")
 
 ALPHA_LADDER = "computations/alpha-em-schwinger-ladder.witness.json"
+BRING_ZERO_MODE = "folio/quantum-observable-universe/lean/QOU/MassTheory/EmCouplingBringZeroMode.lean"
 PER_OBS = "computations/per-observable-100x-status.witness.json"
 MK_AUDIT = "docs/audits/2026-11-20-mk-mpi-derivation-status.md"
 RULINGS = "docs/coordination/owner-rulings.md"
@@ -81,18 +82,24 @@ ROWS: dict[str, tuple[str, str, str, str]] = {
     # Table 3.3a
     "charge_Q": ("Derived", U1, "c is NOT a free knob",
                  "Q = writhe/2 with the fixed coupling c = 1/2"),
-    "alpha_form_b": ("Conditional", ALPHA_LADDER,
-                     "conditional on ArchimedeanLimit, BlochSuslinUniqueness, BringZeroModeBlochClass",
-                     "1-loop (1 - h_A^2 alpha) factor proved (EmFermionLoopFourTopology); the value is "
-                     "conditional on ArchimedeanLimit, BlochSuslinUniqueness, BringZeroModeBlochClass"),
+    # 2026-11-28: the three classes this row used to name no longer gate it (audit
+    # docs/audits/2026-11-28-form-b-alpha-premise-status.md). ArchimedeanLimit is proved
+    # on (0,1), the only range used (archimedeanLimit_Ioo); BlochSuslinUniqueness is
+    # proved in its corrected complex form (BlochSuslinComplex.lean); BringZeroModeBlochClass
+    # is expected false and not needed, since 2/(3pi) is derived from the tiling and
+    # Gauss-Bonnet. What stays conditional is the additive form itself.
+    "alpha_form_b": ("Conditional", BRING_ZERO_MODE, "theorem bringZeroMode_fully_tiling_derived",
+                     "conditional on the additive form 1/alpha = q[9][10] + 2/(3pi) + alpha*H*(1 - h^2 alpha) "
+                     "(prop:em-coupling-bring-zero-mode; Delta_2 dropped). Its pieces are proved: 2/(3pi) "
+                     "from the tiling and Gauss-Bonnet, the 1-loop factor by EmFermionLoopFourTopology"),
     "alpha_form_c": ("Conditional", ALPHA_LADDER, "AlphaEmTwoLoopBlochSchwingerClass",
                      "conditional on AlphaEmTwoLoopBlochSchwingerClass"),
     "alpha_seifert": ("Conditional", SEIFERT, "Conditional/unproved",
                       "Seifert determinant ratio exact; its derivation as the CS Gram Jacobian is open"),
     "alpha_legacy_cs": ("Unclassified", "ACCURACY.md", "legacy Witten",
                         "legacy baseline; no corpus artefact classifies it"),
-    "rydberg_form_b": ("Conditional", ALPHA_LADDER, "BringZeroModeBlochClass",
-                       "(1/2) m_e alpha^2 with Form B alpha; inherits its three hypotheses"),
+    "rydberg_form_b": ("Conditional", BRING_ZERO_MODE, "theorem bringZeroMode_fully_tiling_derived",
+                       "(1/2) m_e alpha^2 with Form B alpha; inherits its conditional additive form"),
     "rydberg_form_c": ("Conditional", ALPHA_LADDER, "AlphaEmTwoLoopBlochSchwingerClass",
                        "(1/2) m_e alpha^2 with Form C alpha; inherits its hypothesis"),
     "coulomb_3h_3he": ("Unclassified", "ACCURACY.md", "Bare topological",
