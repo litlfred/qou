@@ -1,6 +1,6 @@
-> **Summary.** A $q$-deformed Aubin–Lions compactness lemma: the family $\{v_q\}_{q>1}$ of $q$-NS solutions admits a subsequence converging strongly in $L^2(0,T; \mathcal{H})$ to a classical-NS distributional solution as $q \to 1$.
+> **Summary.** A $q$-deformed Aubin–Lions compactness conjecture: the family $\{v_q\}_{q>1}$ of $q$-NS solutions admits a subsequence converging strongly in $L^2(0,T; \mathcal{H})$ to a distributional solution of the Euler equation as $q \to 1$. Because the viscosity $\nu_q$ tends to zero, the limit of the $q$-NS family itself is inviscid; a Navier--Stokes limit requires a modified family with a separate fixed viscosity (Step 6).
 
-This establishes the compactness needed for the $\{v_q\}_{q > 1}$ solutions to converge to a distributional solution of the classical Navier--Stokes equation.
+This would supply the compactness needed for the $\{v_q\}_{q > 1}$ solutions to converge to a distributional solution of the Euler equation.
 
 **Step 1: Uniform embedding.**
 Introduce the $q$-independent space $\mathcal{H} = L^2(\mathcal{S}; T\mathcal{S})$. For each $q > 1$, the fibre functor embeds $L^2_q(A) \hookrightarrow \mathcal{H}$ with uniformly bounded embeddings. The fibre functor preserves inner products up to a factor controlled by the aether parameter.
@@ -17,13 +17,13 @@ Extract a diagonal subsequence $q_n \to 1$ such that for every fixed $N$, the tr
 **Step 5: The limit is a distributional solution.**
 Taking $q = q_n \to 1$ along the diagonal, the viscous term vanishes. The $q$-Laplacian becomes the classical Laplacian. In the limit, the sequence satisfies the truncated Euler equation. Taking $N \to \infty$, the limit satisfies the inviscid Euler equation distributionally. This is consistent with the quantum viscosity vanishing at $q = 1$.
 
-**Step 6: The limit is a weak solution of NS with $\nu > 0$.**
-To obtain a Navier--Stokes solution, introduce an independent classical viscosity $\nu > 0$. As $q \to 1$, the limit satisfies the classical NS equation with viscosity $\nu$. The compactness argument carries through identically.
+**Step 6: A modified family with fixed viscosity.**
+The $q$-NS family itself does not converge to Navier--Stokes. To obtain a Navier--Stokes limit one must change the family, adding an independent classical viscosity $\nu > 0$ that does not vanish with $q - 1$. For that modified family the same compactness argument would give a weak Navier--Stokes solution with viscosity $\nu$; the modified family is a separate object, not the brane $q$-NS of this chapter.
 
 **Step 7: The limit loses regularity.**
 The anti-parallel vortex pair initial data causes the filaments to approach at rate $d(t) \sim \sqrt{T^* - t}$. The vorticity diverges as $t \to T^{*-}$. The q-deformed solutions are smooth because quantum pressure prevents collision. The limit has no quantum pressure, and the collision proceeds to completion.
 
 **Conjecture (q-Aubin--Lions).**
-Under the hypotheses above, there exists a subsequence $q_n \to 1$ such that $v_{q_n} \to v^*$ weakly in $L^2$. $v^*$ is a weak solution of the Navier--Stokes equation, satisfies the energy inequality, and is smooth off a singular set of Hausdorff dimension $\leq 1$.
+Under the hypotheses above, there exists a subsequence $q_n \to 1$ such that $v_{q_n} \to v^*$ weakly in $L^2$. $v^*$ is a weak solution of the Euler equation (of the Navier--Stokes equation with viscosity $\nu$ for the modified family of Step 6), satisfies the energy inequality, and is smooth off a singular set of Hausdorff dimension $\leq 1$.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the algebraic→archimedean wall. It invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

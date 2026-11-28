@@ -11,7 +11,7 @@ Synchronised with the chapter sibling
 `RootOfUnityTruncationContext` (bean `qou-klr1`).
 
 Ref: [leitner2026] §Fluid dynamics / Root-of-unity truncation,
-     prop:root-of-unity-truncation
+     conj:root-of-unity-truncation
 -/
 
 namespace QOU.FluidDynamics
@@ -64,7 +64,7 @@ class RootOfUnityTruncationContext where
     are carried as fields of `[RootOfUnityTruncationContext]` (from the open
     q-NS conjecture cone); this theorem bundles their conjunction for the
     `lean.ref` target `qou:QOU.FluidDynamics.root_of_unity_truncation_conditional`. -/
--- Ref: [leitner2026] prop:root-of-unity-truncation
+-- Ref: [leitner2026] conj:root-of-unity-truncation
 theorem root_of_unity_truncation_conditional
     [ctx : RootOfUnityTruncationContext] :
     (∀ t : ℝ, t < ctx.tStar →
@@ -75,7 +75,7 @@ theorem root_of_unity_truncation_conditional
 /-- Alias preserving the module-matching declaration name `root_of_unity_truncation`.
     **Assumed, not derived here:** projects `root_of_unity_truncation_conditional`
     from `[RootOfUnityTruncationContext]`. -/
--- Ref: [leitner2026] prop:root-of-unity-truncation
+-- Ref: [leitner2026] conj:root-of-unity-truncation
 theorem root_of_unity_truncation
     [ctx : RootOfUnityTruncationContext] :
     (∀ t : ℝ, t < ctx.tStar →
@@ -86,7 +86,7 @@ theorem root_of_unity_truncation
 /-- **Degenerate-level specialization (proved):** at truncation level `κ = 1`
     (zero active non-constant modes), the Bernstein bound `core_bound` forces
     the core aspect ratio to obey `coreAspect t ≤ 1` for all `t < tStar`. -/
--- Ref: [leitner2026] prop:root-of-unity-truncation
+-- Ref: [leitner2026] conj:root-of-unity-truncation
 theorem root_of_unity_truncation_core_at_one
     [ctx : RootOfUnityTruncationContext]
     (hκ : ctx.truncationLevel = 1) (t : ℝ) (ht : t < ctx.tStar) :

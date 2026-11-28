@@ -751,7 +751,7 @@
 | [prop:q-gaussian-solves-q-heat](#prop:q-gaussian-solves-q-heat) | Reeb-invariant $q$-Gaussian solves the $q$-heat equation (archimedean) | Ch 20 |
 | [prop:reidemeister-action-table](#prop:reidemeister-action-table) | Reidemeister moves on the categorical action: complete accounting | Ch 14 |
 | [prop:ideal-tetrahedron-relabelling-invariance](#prop:ideal-tetrahedron-relabelling-invariance) | Relabelling invariance: $z \mapsto 1/(1-z)$ cycles the dihedral angles and preserves volume | Ch 11 |
-| [prop:root-of-unity-truncation](#prop:root-of-unity-truncation) | Representation-theoretic truncation at roots of unity and the $q = 1$ accumulation | Ch 18 |
+| [conj:root-of-unity-truncation](#conj:root-of-unity-truncation) | Representation-theoretic truncation at roots of unity and the $q = 1$ accumulation | Ch 18 |
 | [prop:adelic-reeb-restricted-product](#prop:adelic-reeb-restricted-product) | Restricted-product structure of the Reeb $\omega$-order: additivity over places and local--global squeeze | Ch 19 |
 | [prop:three-strand-color-winding-rigidity](#prop:three-strand-color-winding-rigidity) | Rigidity of the three-strand color winding: $(\sigma_1\sigma_2)^3 = \mathrm{Id}$ on the $(2,1)$ block, $q$-independently | Ch 5 |
 | [prop:shell-schur-weyl-self-duality](#prop:shell-schur-weyl-self-duality) | Schur-Weyl justification of shell-operator self-duality | Ch 7 |
@@ -925,7 +925,7 @@
 | [prop:universal-braid-branching](#prop:universal-braid-branching) | Universal braid character formula via Young's lattice branching | Ch 11 |
 | [prop:hecke-1d-irrep-closed-form-character](#prop:hecke-1d-irrep-closed-form-character) | Universal closed form for 1-d Hecke irrep characters: $\chi^{(n)}_q(\beta) = q^w \cdot ([2]_q/2)^m$ and $\chi^{(1^n)}_q(\beta) = (-q^{-1})^w \cdot (-[2]_q/2)^m$ for typed braids of any $n$ | Ch 11 |
 | [prop:plancherel-term-7-formulation](#prop:plancherel-term-7-formulation) | Universal residue at curvature-rank $k \geq 4$ (Molien-weighted log functional) | Ch 11 |
-| [prop:universality](#prop:universality) | Universality of the critical exponent: dependence on $\chi(A)$ alone | Ch 18 |
+| [conj:universality](#conj:universality) | Universality of the critical exponent: dependence on $\chi(A)$ alone | Ch 18 |
 | [prop:unstable-atom-decay-channel](#prop:unstable-atom-decay-channel) | Unstable atom has a uniquely-determined decay channel | Ch 7 |
 | [prop:topological-mass-upper-bound](#prop:topological-mass-upper-bound) | Upper bound for the topological decomposition of mass | Ch 9 |
 | [prop:upstream-mathlib-additions](#prop:upstream-mathlib-additions) | Upstream Mathlib additions: complex dilogarithm via tsum + BW formula + Cl_2 oddness | Ch 27 |

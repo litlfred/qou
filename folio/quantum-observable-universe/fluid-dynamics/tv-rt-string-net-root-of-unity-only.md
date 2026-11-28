@@ -1,4 +1,4 @@
-The three-dimensional state-sum and lattice constructions built from a fusion category apply only in the second regime of [the root-of-unity truncation](#prop:root-of-unity-truncation), not at the aether parameter itself.
+The three-dimensional state-sum and lattice constructions built from a fusion category apply only in the second regime of [the root-of-unity truncation](#conj:root-of-unity-truncation), not at the aether parameter itself.
 
 The Turaev--Viro invariant $|M|_{\mathbf{C}}$ and its identification $|M|_{\mathbf{C}} = \mathrm{RT}_{Z(\mathbf{C})}(M)$ with the Reshetikhin--Turaev invariant of the Drinfeld centre are stated for a spherical fusion category $\mathbf{C}$ with $\dim \mathbf{C} \neq 0$, and the state sum runs over a finite representative set of simple objects \cite{turaev-virelizier2010}; the extended theory \cite{balsam2010} and the modularity of the centre \cite{bruguieres-virelizier2008} carry the same hypothesis. The Levin--Wen string-net Hamiltonians are built from a finite label set whose total quantum dimension $\sum_i d_i^2$ is finite \cite{levin2005}.
 

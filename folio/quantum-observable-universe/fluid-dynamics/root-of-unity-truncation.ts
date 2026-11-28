@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:root-of-unity-truncation",
+export default conjecture({
+  label: "conj:root-of-unity-truncation",
   lean: { ref: "qou:QOU.FluidDynamics.root_of_unity_truncation_conditional", validation: "not_checked" },
   title:
     "Representation-theoretic truncation at roots of unity and the $q = 1$ accumulation",
@@ -17,6 +17,12 @@ export default proposition({
     "millennium-problem",
   ],
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-28",
+      body:
+        "Relabelled from proposition to conjecture (owner Lean ruling 2026-11-28: only Lean with a human semantic equivalent counts as proved). The statement is downstream of conj:vorticity-lower-bound and its Lean is a def assembling two Prop fields of a context class (core_bound, blowup_iff_coreBounded), a self-assuming projection. Content kept as a documented open item; label renamed from prop: to conj:.",
+    },
     {
       kind: "refined-framing",
       date: "2026-11-15",

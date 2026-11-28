@@ -9,7 +9,7 @@ export default conjecture({
     "def:two-q-adic-valuation",
     "def:collatz-contact-boundary",
     "conj:q-collatz",
-    "prop:root-of-unity-truncation",
+    "conj:root-of-unity-truncation",
   ],
   tags: [
     "collatz",

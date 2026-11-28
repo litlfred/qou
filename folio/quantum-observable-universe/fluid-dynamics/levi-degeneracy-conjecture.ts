@@ -71,7 +71,7 @@ export default conjecture({
         "texts not held). The old `LeviDegeneracy` class (degeneracy set of an " +
         "abstract `leviForm` equal to $\\{1/\\kappa\\}$) is removed: under this " +
         "reading the Levi datum lives on the flow domain, not on the $q$-ladder. " +
-        "`prop:root-of-unity-truncation` is dropped from `uses` for the same reason. " +
+        "`conj:root-of-unity-truncation` is dropped from `uses` for the same reason. " +
         "**The five notes below are kept as records**: the pair-channel " +
         "$\\beta = 1$ result, the lock formula $\\mathcal{C}_L = \\Gamma/(\\pi\\nu_q)$ " +
         "and $\\kappa^2 = V_2/V_1 \\to 0$ are statements about the Townsend core " +

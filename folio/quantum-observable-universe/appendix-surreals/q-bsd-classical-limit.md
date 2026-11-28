@@ -10,7 +10,7 @@ The QOU axioms hold. The representation category $\mathbf{C} \simeq \mathrm{Rep}
 * The weak $q$-BSD reduces to $L(\mathcal{E}_q, 1) \neq 0$, which is an unconditional theorem at the $q$-scale.
 
 **(II) $\mathbb{G}_m$ torsion: roots of unity $q = \zeta_n$.**
-At the torsion points ([root-of-unity truncation](#prop:root-of-unity-truncation)), the representation category truncates to finitely many simple objects $V_0, V_{1/2}, \ldots, V_{(n-2)/2}$, forming a modular tensor category (Chern--Simons TQFT at level $n$). The $q$-BSD data undergoes a phase transition:
+At the torsion points ([root-of-unity truncation](#conj:root-of-unity-truncation)), the representation category truncates to finitely many simple objects $V_0, V_{1/2}, \ldots, V_{(n-2)/2}$, forming a modular tensor category (Chern--Simons TQFT at level $n$). The $q$-BSD data undergoes a phase transition:
 
 * **Rank:** The categorical rank remains zero. $V_{1/2}$ is still non-trivial in the truncated category, so $V_{1/2}^G = 0$ and $r_q = 0$ persists at all roots of unity.
 * **$q$-integers:** The $q$-integers degenerate ($[n]_{\zeta_n} = 0$). The $q$-factorial $[r]_q!$ and the explicit formula have poles/zeros at the torsion points.
