@@ -6,6 +6,7 @@ import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Tactic
 import QOU.Observations.InhomogeneousLeptonLoopResolvent
 import QOU.StandardModel.Photon
+import QOU.StandardModel.KoideSingletDoubletEquipartition
 
 set_option autoImplicit false
 
@@ -909,6 +910,50 @@ theorem koide_hypothesis_implies_tau_resolvent {F : Type*} [Field F]
   have hcs := (koide_quadratic_completed_square_and_discriminant
     (H.rootSpectrum q 0) (H.rootSpectrum q 1) (H.rootSpectrum q 2)).1
   linear_combination hpoly - hcs
+
+/-- **Unconditional Discharge of Circulant Moment Axioms over `[CommRing R]` (`qou-cw8i`):**
+for any circulant $S(a_0, b, c)$ over `[CommRing R]` with $1 + \omega + \omega^2 = 0$, the first
+and second spectral moments (`trace_moment` and `sq_trace_moment`) hold **unconditionally** via
+`KoideSingletDoubletEquipartition.circulant3FourierSpec_moments`, leaving **only** the single
+equipartition equation $2bc = a_0^2$ to force both `koideResolventPoly = 0` and the radical-free
+quartic mass polynomial `koideMassQuarticPoly = 0`. -/
+theorem fourier_circulant_equipartition_implies_resolvent_ring
+    {R : Type*} [CommRing R] (a₀ b c ω : R) (hω : 1 + ω + ω ^ 2 = 0)
+    (heq : 2 * b * c = a₀ ^ 2) :
+    let lam := KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω
+    lam 0 + lam 1 + lam 2 = 3 * a₀ ∧
+      lam 0 ^ 2 + lam 1 ^ 2 + lam 2 ^ 2 = 3 * (a₀ ^ 2 + 2 * b * c) ∧
+      koideResolventPoly (lam 0) (lam 1) (lam 2) = 0 ∧
+      KoideSingletDoubletEquipartition.koideMassQuarticPoly
+        (lam 0 ^ 2) (lam 1 ^ 2) (lam 2 ^ 2) = 0 := by
+  dsimp only
+  have hm := KoideSingletDoubletEquipartition.circulant3FourierSpec_moments a₀ b c ω hω
+  have hsq :
+      (KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω 0) ^ 2 +
+        (KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω 1) ^ 2 +
+        (KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω 2) ^ 2 =
+      3 * (a₀ ^ 2 + 2 * b * c) := by
+    simpa [KoideSingletDoubletEquipartition.normSq3] using hm.2.1
+  have hk :
+      3 * ((KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω 0) ^ 2 +
+            (KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω 1) ^ 2 +
+            (KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω 2) ^ 2) =
+        2 * (KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω 0 +
+              KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω 1 +
+              KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω 2) ^ 2 := by
+    rw [hsq, hm.1, heq]
+    ring
+  have hpoly :
+      koideResolventPoly
+        (KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω 0)
+        (KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω 1)
+        (KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω 2) = 0 := by
+    rw [← koide_quadratic_resolvent_ring_identity, hk, sub_self]
+  exact ⟨hm.1, hsq, hpoly,
+    (KoideSingletDoubletEquipartition.koideMassQuarticPoly_galois_factorization
+      (KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω 0)
+      (KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω 1)
+      (KoideSingletDoubletEquipartition.circulant3FourierSpec a₀ b c ω 2)).2 hk⟩
 
 end Rule13aHypothesisCarrier
 
