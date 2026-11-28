@@ -276,10 +276,11 @@ $$\Delta(n) = -2(n-8)(n-7)(n-6)(n-5)(n-4)\,c^2\,(5n^3 - 21n^2 - 101n + 201).$$
 No odd prime divides both $I_m$ and $I_{m-1}$ (since $I_{m+p} \equiv I_m \pmod p$ and
 $I_0 = I_1 = 1$), so the odd part of $d_2$ divides $\Delta(n)$. It does not for any
 $9 \le n \le 3000$, so the test excludes all of these
-(`computations/cyclotomic_boundary_q1_expansion.py`). For all $n$ the argument needs three facts
-that are checked but not proved here: the quartic hook identity above, the Jucys–Murphy class
-expansions for all $n$, and $v_2(I_m) = \lfloor m/4\rfloor + (0,0,1,2)_{m \bmod 4}$. Given
-the last, the two terms of $6d_2$ never have equal 2-adic valuation, so
+(`computations/cyclotomic_boundary_q1_expansion.py`). The valuation $v_2(I_m) = \lfloor m/4\rfloor + (0,0,1,2)_{m \bmod 4}$ is proved
+(`QOU.Mass.InvolutionTwoAdic`, sorry-free: $I_{4k} = 2^k\alpha$, $I_{4k+1} = 2^k\beta$ with
+$\alpha,\beta$ odd and $\alpha \equiv \beta \pmod 8$, by four steps of the recurrence). For all $n$
+the argument still needs two facts that are checked but not proved here: the quartic hook
+identity above and the Jucys–Murphy class expansions for all $n$. By the valuation, the two terms of $6d_2$ never have equal 2-adic valuation, so
 $v_2(d_2) \le v_2(c) + (n+1)/4$. Then the odd part of $d_2$ grows like $I_{n-8}/2^{n/4}$, which
 is larger than $|\Delta(n)|$ for large $n$.
 
