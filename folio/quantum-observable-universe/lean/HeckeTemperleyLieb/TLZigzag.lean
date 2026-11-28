@@ -1,4 +1,5 @@
 import HeckeTemperleyLieb.TLCupCapCorner
+import HeckeTemperleyLieb.TLQuotientBraiding
 
 /-!
 # Zigzag words in the Temperley–Lieb algebra
@@ -254,5 +255,55 @@ theorem zag_shift_gen {n p k i : ℕ} (hpi : p ≤ i) (hik : i + 2 ≤ p + k) (h
   congr 1
   simp only [← mul_assoc]
   rw [kL, kR]
+
+/-! ## Sliding a placed block through a zigzag -/
+
+section Place
+
+open QOU.HeckeTemperleyLieb.TLCableBraiding
+
+theorem gen_eq_E (n i : ℕ) : gen δ n i = E δ n i := rfl
+
+/-- Two algebra maps out of `TL_m` intertwine with `Z` once they do so on generators. -/
+theorem intertwine {m N : ℕ} (f g : TLFin K δ m →ₐ[K] TLFin K δ N) (Z : TLFin K δ N)
+    (h : ∀ i, f (e K δ adjFin i) * Z = Z * g (e K δ adjFin i)) (x : TLFin K δ m) :
+    f x * Z = Z * g x := by
+  induction mem_adjoin_e x using Algebra.adjoin_induction with
+  | mem y hy => obtain ⟨j, rfl⟩ := hy; exact h j
+  | algebraMap r =>
+    rw [AlgHom.commutes, AlgHom.commutes, Algebra.algebraMap_eq_smul_one, smul_mul_assoc,
+      one_mul, mul_smul_comm, mul_one]
+  | add y z _ _ hy hz => rw [map_add, map_add, add_mul, mul_add, hy, hz]
+  | mul y z _ _ hy hz => rw [map_mul, map_mul, mul_assoc, hz, ← mul_assoc, hy, mul_assoc]
+
+/-- **Full slide.** A block placed on strands `[t+2, t+2+M]`, pushed through the zigzag
+`zig p (k+1)` that spans it, lands on `[t, t+M]`. -/
+theorem pl_shift_zig {N t M p k : ℕ} (h2 : t + 2 + M ≤ N) (h0 : t + M ≤ N) (hp : p ≤ t)
+    (hk : t + M + 1 ≤ p + k) (hn : p + k < N) (x : TLFin K δ M) :
+    pl δ (t + 2) M h2 x * zig δ N p (k + 1) = zig δ N p (k + 1) * pl δ t M h0 x := by
+  refine intertwine _ _ _ (fun j => ?_) x
+  rw [pl_e, pl_e, ← gen_eq_E, ← gen_eq_E, show t + 2 + (j : ℕ) = t + j + 2 by omega]
+  exact gen_shift_zig (by omega) (by omega) hn
+
+/-- The same slide read backwards, through `zag`. -/
+theorem pl_shift_zag {N t M p k : ℕ} (h2 : t + 2 + M ≤ N) (h0 : t + M ≤ N) (hp : p ≤ t)
+    (hk : t + M + 1 ≤ p + k) (hn : p + k < N) (x : TLFin K δ M) :
+    zag δ N p (k + 1) * pl δ (t + 2) M h2 x = pl δ t M h0 x * zag δ N p (k + 1) := by
+  refine (intertwine _ _ _ (fun j => ?_) x).symm
+  rw [pl_e, pl_e, ← gen_eq_E, ← gen_eq_E, show t + 2 + (j : ℕ) = t + j + 2 by omega]
+  exact (zag_shift_gen (by omega) (by omega) hn).symm
+
+/-- A placed block commutes with a zigzag on strands two or more steps away. -/
+theorem commute_pl_zig {N t M p k : ℕ} (h0 : t + M ≤ N) (h : t + M + 1 ≤ p ∨ p + k + 1 ≤ t)
+    (x : TLFin K δ M) : Commute (pl δ t M h0 x) (zig δ N p k) :=
+  intertwine _ _ _ (fun j => by
+    rw [pl_e, ← gen_eq_E]; exact (commute_zig k (by omega)).eq) x
+
+theorem commute_pl_zag {N t M p k : ℕ} (h0 : t + M ≤ N) (h : t + M + 1 ≤ p ∨ p + k + 1 ≤ t)
+    (x : TLFin K δ M) : Commute (pl δ t M h0 x) (zag δ N p k) :=
+  intertwine _ _ _ (fun j => by
+    rw [pl_e, ← gen_eq_E]; exact (commute_zag k (by omega)).eq) x
+
+end Place
 
 end QOU.HeckeTemperleyLieb.TLZigzag
