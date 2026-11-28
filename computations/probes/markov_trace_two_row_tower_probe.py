@@ -52,9 +52,16 @@ import time
 from pathlib import Path
 
 _ROOT = Path(__file__).resolve().parents[2]
-for _p in ("computations", "computations/substrate", "tools/qou-substrate/python"):
+for _p in ("computations", "computations/substrate", "computations/hecke", "tools/qou-substrate/python"):
     if str(_ROOT / _p) not in sys.path:
         sys.path.insert(0, str(_ROOT / _p))
+
+try:
+    from gs_peel_bridge import eval_dyadic_laurent_mpmath, gs_peel_binary_path, invoke_gs_peel
+except ImportError:  # pragma: no cover
+    eval_dyadic_laurent_mpmath = None  # type: ignore[assignment]
+    gs_peel_binary_path = lambda: None  # type: ignore[assignment]
+    invoke_gs_peel = None  # type: ignore[assignment]
 
 from _precision import set_compute_dps  # noqa: E402
 
@@ -186,13 +193,11 @@ def factor(ti, tk, h):
     return -h, mp.mpf(2), True
 
 
-def walk(z, n_neu, q, log=None, checks=True):
-    """Yield (A, tr/2^pn) for every prefix length of the strand sequence."""
+def walk_python(z, n_neu, q, log=None, checks=True):
+    """Pure-Python seminormal reference walk yielding (tr/2^pn, pn) per prefix length."""
     types = ["p"] * z + ["n"] * n_neu
     A = len(types)
     h = q - 1 / q
-    zD = q ** 3 / (q ** 2 + 1)
-    tabs_all = {}
     mats = {0: [[mp.mpf(1)]]}  # H_1: trivial irrep (1)
     pn = 0
     results = {}
@@ -213,6 +218,56 @@ def walk(z, n_neu, q, log=None, checks=True):
             log(f"  level {m}: dims {[len(t) for t in tabs.values()]}, pn={pn}, "
                 f"tr/2^pn = {mp.nstr(tr / mp.mpf(2) ** pn, 25)}")
     return results
+
+
+def walk(z, n_neu, q, log=None, checks=True, *, use_rust: bool = True, max_rust_strands: int = 10):
+    """Yield (tr/2^pn, pn) for every prefix length of the strand sequence.
+
+    Uses `crates/gs-basis` (`gs-peel` Temperley-Lieb dyadic loop-closure trace walk)
+    for `A <= max_rust_strands` when built, falling back to `walk_python`.
+    """
+    types = ["p"] * z + ["n"] * n_neu
+    A = len(types)
+    if A <= 1:
+        return {}
+    if (
+        use_rust
+        and A <= max_rust_strands
+        and gs_peel_binary_path() is not None
+        and invoke_gs_peel is not None
+        and eval_dyadic_laurent_mpmath is not None
+    ):
+        levels_spec = []
+        pn_by_level = {}
+        pn = 0
+        for k in range(1, A):
+            lvl_steps = []
+            for i in range(k):
+                ti, tk = types[i], types[k]
+                if ti == "p" and tk == "p":
+                    lvl_steps.append({"gen": i, "c_mant": 1, "d_mant": 0, "d_exp2": 0, "d_hpow": 0})
+                elif ti == "n" and tk == "n":
+                    lvl_steps.append({"gen": i, "c_mant": 1, "d_mant": -1, "d_exp2": 0, "d_hpow": 1})
+                else:
+                    pn += 1
+                    lvl_steps.append({"gen": i, "c_mant": 1, "d_mant": -1, "d_exp2": -1, "d_hpow": 1})
+            levels_spec.append(lvl_steps)
+            pn_by_level[k + 1] = pn
+
+        resp = invoke_gs_peel({"op": "tl_dyadic_trace_walk", "levels": levels_spec})
+        delta = q + 1 / q
+        results = {}
+        for row in resp["levels"]:
+            m = int(row["strands"])
+            num_val = eval_dyadic_laurent_mpmath(row["numerator_terms"], q)
+            tr_val = num_val / (delta ** m)
+            results[m] = (tr_val, pn_by_level[m])
+            if log:
+                log(f"  level {m} [gs-peel TL]: diagrams={row['num_diagrams']}, pn={pn_by_level[m]}, "
+                    f"tr/2^pn = {mp.nstr(tr_val, 25)}")
+        return results
+
+    return walk_python(z, n_neu, q, log=log, checks=checks)
 
 
 # ---------- self-checks -------------------------------------------------
