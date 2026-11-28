@@ -1,0 +1,10 @@
+**Proposition.** *On the cone $\mathbb{H}_R = $ `Quaternion R`, over any commutative ring $R$, let $\Gamma_i(p) = i\,p\,i$ be the chirality grading.*
+
+1. *Conjugation $p \mapsto \bar p$ satisfies $\overline{qp} = \bar p\,\bar q$, so it turns left multiplication by $q$ into right multiplication by $\bar q$, and it exchanges the two $\mathrm{SU}(2)$ factors of $\mathrm{Spin}(4)$.*
+2. *In coordinates conjugation is $\mathrm{diag}(1,-1,-1,-1)$, of determinant $-1$, while left multiplication by $q$ has determinant $(\mathrm{N}q)^2$. So conjugation reverses orientation, and a unit quaternion preserves it.*
+3. *Conjugation keeps $\Gamma_i$: $\overline{\Gamma_i(\bar p)} = \Gamma_i(p)$. For a general pure $u$ it sends $\Gamma_u(p) = u\,p\,i$ to $p \mapsto i\,p\,u$.*
+4. *If $w$ is a unit with $wi = -iw$, then $p \mapsto w\,\overline{\Gamma_i(\overline{\bar w p})}$ equals $-\Gamma_i(p)$. So $L_w \circ \bar{\ }$ reverses orientation and flips the chirality grading at once.*
+
+*Proof.* (1) and (3) are $\overline{ab} = \bar b \bar a$ with $\bar i = -i$. (2) is a determinant expansion. (4) uses $i\bar w = -\bar w i$, which follows from $wi = -iw$ and $w\bar w = \bar w w = 1$. $\square$
+
+**Reading.** By [`prop:hypercharge-sign-is-bring-orientation`](../appendix-standard-model/hypercharge-sign-is-bring-orientation.md), the hypercharge sign is the orientation bit of Bring's surface. On the cone, conjugation reverses orientation but keeps $\Gamma_i$. A perpendicular unit $w$, for example in $2I$, flips $\Gamma_i$ but keeps orientation. Only $L_w \circ \bar{\ }$ does both. So the cone's chirality equals the hypercharge sign exactly when Bring's reflection acts on the cone as $L_w \circ \bar{\ }$ rather than as conjugation alone. The corpus does not yet construct the $S_5 \times C_2$ action on the cone, so this is open. As with the complex volume ([`prop:complex-volume-sign-placement`](../appendix-standard-model/complex-volume-sign-placement.md)), the quaternions place the bit but do not fix it.

@@ -1,0 +1,9 @@
+**Proposition.** *Let $\mathrm{CS}$ be an orientation-odd invariant of oriented 3-manifolds, with values in a linearly ordered abelian group, as the Chern–Simons part of the complex volume $\mathrm{Vol} + i\,\mathrm{CS}$ is.*
+
+1. *On the unit tangent bundle $UT(\Sigma_4)$ of Bring's surface, every isometry lifts with orientation sign $+1$. So $\mathrm{CS}$ takes the same value on the lift of the reflection as on the identity, and no hypercharge read off it changes sign under the reflection, as the reflection-odd copy of [`prop:hypercharge-sign-is-bring-orientation`](hypercharge-sign-is-bring-orientation.md) requires.*
+2. *On a knot complement, mirroring reverses orientation and negates $\mathrm{CS}$. If $\mathrm{CS}(K) \ne 0$, the readout $Y_K = \operatorname{sgn}\mathrm{CS}(K)\cdot Y$ is $\pm Y$ and the mirror sends it to $-Y_K$, which is exactly the action of the reflection.*
+3. *If $K$ is amphichiral, then $\mathrm{CS}(K) = 0$ and $Y_K = 0$.*
+
+*Proof.* (1) The lift of an isometry of orientation sign $\varepsilon$ has orientation sign $\varepsilon\cdot\varepsilon = 1$ ([`prop:braid-chirality-blind-to-hypercharge-sign`](braid-chirality-blind-to-hypercharge-sign.md)). (2) $\operatorname{sgn}(-a) = -\operatorname{sgn} a$. (3) Mirror invariance and oddness give $\mathrm{CS} = -\mathrm{CS}$, so $2\,\mathrm{CS} = 0$, and a linearly ordered group has no $2$-torsion. $\square$
+
+**Consequence.** The complex volume does not fix the hypercharge sign. It moves the one free bit from the orientation of Bring's surface to the chirality of the matter knot, a property of its braid word. The amphichiral $4_1$ cannot carry it; a chiral knot with $\mathrm{CS} \ne 0$, such as $5_2$, can. The true $\mathrm{CS}$ lies in $\mathbb{R}/\pi^2\mathbb{Z}$, so its sign is read on a chosen representative; that choice belongs to the transcendental layer and is not made here.

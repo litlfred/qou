@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-markov-trace-keeps-both-channels",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:markov-trace-keeps-both-channels",
+  "kind": "proposition",
+  "title": "Convention D keeps both two-strand channels",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hecke-sign-channel-is-fermi"
+  ],
+  "tags": [
+    "appendix",
+    "standard-model",
+    "hecke",
+    "markov-trace",
+    "fermi-statistics"
+  ],
+  "leanRef": "qou:QOU.EightfoldWay.MarkovTraceKeepsBothChannels.zD_keeps_both",
+  "text": "markov-trace-keeps-both-channels.md",
+  "provenance": "authored"
+}

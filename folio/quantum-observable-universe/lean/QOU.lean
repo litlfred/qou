@@ -729,6 +729,7 @@ import BraidKnotOctonion.WignerTargetEquivariance
 import BraidKnotOctonion.BringConeLinkEulerNumber
 import QOU.BringsSurface.BringCone
 import QOU.BringsSurface.BringConeIcosahedral
+import QOU.BringsSurface.QuaternionConjugationOrientation
 import QOU.BringsSurface.BringConeGauge
 import QOU.BringsSurface.BringConeSplitChirality
 import QOU.BringsSurface.BringLatticeSpan
@@ -2016,7 +2017,12 @@ import QOU.EightfoldWay.AlternatingChannelRowCap
 import QOU.EightfoldWay.HyperchargeUniqueness
 import QOU.EightfoldWay.NeutralLeptonFixesCharges
 import QOU.EightfoldWay.FermiPairWedge
+import QOU.EightfoldWay.HeckeSignChannelIsFermi
+import QOU.EightfoldWay.MarkovTraceKeepsBothChannels
 import QOU.EightfoldWay.StrandSlotSeparatesGen1
+import QOU.EightfoldWay.SlotFromEvenShape
+import QOU.EightfoldWay.ChiralitySignIsHyperchargeSign
+import QOU.EightfoldWay.LinkingDoesNotFixCharge
 import QOU.EightfoldWay.ColourSingletSelectionRule
 import QOU.StandardModel.OctonionColourTripletSplitting
 import QOU.StandardModel.ColourOnSingleFibreThreeStrands
@@ -2026,6 +2032,7 @@ import QOU.Core.FlavouredQuantumObservableUniverse
 import QOU.Core.FlavourCentralPhase
 import QOU.Core.FlavourLabelCarrier
 import QOU.Core.FlavourVolumeForcesDimThree
+import QOU.Core.HopfTraceFormula
 import QOU.StandardModel.OctonionCubeRootPhase
 import QOU.StandardModel.ColourTripletCommutant
 import QOU.StandardModel.ElectroweakBringSchwingerBridge
@@ -2061,6 +2068,17 @@ import QOU.StandardModel.AnomalyFreeHyperchargeUniqueness
 import QOU.StandardModel.HopfFramingAndHirzebruchDefect
 import QOU.StandardModel.DrinfeldKohnoAlgebra
 import QOU.StandardModel.OddExteriorAnomalyFreedom
+import QOU.StandardModel.OddStrandsForceChirality
+import QOU.StandardModel.StrandCountFromBring
+import QOU.StandardModel.StrandChargesAreHolomorphicDifferentials
+import QOU.StandardModel.BringTwistFlipsHypercharge
+import QOU.StandardModel.HyperchargeSignIsBringOrientation
+import QOU.StandardModel.BraidChiralityBlindToHyperchargeSign
+import QOU.StandardModel.StrandsAreBringEllipticQuotients
+import QOU.StandardModel.BringConjugationOnGm
+import QOU.StandardModel.ColourStrandCount
+import QOU.StandardModel.OrderTwentyFourSubgroupsArePointStabilisers
+import QOU.StandardModel.ComplexVolumeSignPlacement
 import QOU.Confinement.HopfElectronTwoTermMass
 import QOU.Nuclear.LeptonTwoTermStokesCovariance
 import QOU.BraidsAndKnots.HeckeWeightSpaceSymmetry

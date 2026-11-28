@@ -28,8 +28,9 @@ flag**: whether it sits in `5̄ ⊕ Λ²5` or in the conjugate `5 ⊕ Λ²5̄`.
 ## Inputs
 
 1. The assignment of the eight states to slots (`slot`, `dual`) is the
-   Georgi–Glashow embedding \cite{baez-huerta2010}, stated as a definition. It is not
-   derived. The SM labels enter only as the enumerated type of V9.
+   Georgi–Glashow embedding \cite{baez-huerta2010}, stated as a definition here.
+   `SlotFromEvenShape.slot_forced` shows the charges force it, and that the slots are
+   the shapes of the even subsets meeting colour once or twice. The SM labels enter only as the enumerated type of V9.
 2. Everything upstream of the charge values: the matter content and one neutral
    lepton (`prop:neutral-lepton-fixes-charges`), and Fermi exchange
    (`prop:fermi-pair-wedge`).

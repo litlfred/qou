@@ -152,4 +152,59 @@ theorem evenExterior_cubic (y : Fin 5 → K) (htr : ∑ i, y i = 0) :
     ∑ S ∈ evenSubsets, stateCharge y S ^ 3 = 0 := by
   rw [evenExterior_cubic_eq, htr, zero_mul]
 
+/-! ## Complementation: the even part is the conjugate of the odd part
+
+The even subsets are the basis of `Λ^even K⁵ = Λ⁰ ⊕ Λ² ⊕ Λ⁴`.  Complementation `S ↦ Sᶜ` swaps
+the even and odd parts (five is odd) and, for a traceless charge, negates the charge.  So the
+even part is the charge conjugate of the odd part, state by state: with colour first this is
+`1 ⊕ 10 ⊕ 5̄`, one Standard Model generation plus a singlet, and the odd part is its conjugate.
+Which of the two is "matter" is one `ℤ/2` sign (the chirality); it is **not** derived here
+(bean `qou-h0zz`).  Neither part contains both a `Λ¹` and a `Λ⁴` state, so neither contains a
+vector-like `5 ⊕ 5̄`. -/
+
+theorem card_evenSubsets : evenSubsets.card = 16 := by decide +kernel
+
+/-- By degree, the even part is `1 + 10 + 5` and has no degree-`1` state. -/
+theorem evenSubsets_by_degree :
+    (evenSubsets.filter fun S => S.card = 0).card = 1 ∧
+    (evenSubsets.filter fun S => S.card = 2).card = 10 ∧
+    (evenSubsets.filter fun S => S.card = 4).card = 5 ∧
+    (evenSubsets.filter fun S => S.card = 1).card = 0 := by decide +kernel
+
+/-- By degree, the odd part is `5 + 10 + 1` and has no degree-`4` state. -/
+theorem oddSubsets_by_degree :
+    (oddSubsets.filter fun S => S.card = 1).card = 5 ∧
+    (oddSubsets.filter fun S => S.card = 3).card = 10 ∧
+    (oddSubsets.filter fun S => S.card = 5).card = 1 ∧
+    (oddSubsets.filter fun S => S.card = 4).card = 0 := by decide +kernel
+
+/-- Complementation swaps the even and odd parts. -/
+theorem mem_evenSubsets_iff_compl_mem_odd (S : Finset (Fin 5)) :
+    S ∈ evenSubsets ↔ Sᶜ ∈ oddSubsets := by
+  revert S; decide +kernel
+
+theorem evenSubsets_image_compl : evenSubsets.image (fun S => Sᶜ) = oddSubsets := by
+  decide +kernel
+
+/-- For a traceless charge, the complementary state carries the opposite charge. -/
+theorem stateCharge_compl (y : Fin 5 → K) (htr : ∑ i, y i = 0) (S : Finset (Fin 5)) :
+    stateCharge y Sᶜ = -stateCharge y S := by
+  unfold stateCharge
+  have h := Finset.sum_add_sum_compl S y
+  rw [htr] at h
+  linear_combination h
+
+/-- The degree-`4` state missing `j` carries `-y j`: `Λ⁴` is the conjugate of `Λ¹`. -/
+theorem stateCharge_compl_singleton (y : Fin 5 → K) (htr : ∑ i, y i = 0) (j : Fin 5) :
+    stateCharge y ({j} : Finset (Fin 5))ᶜ = -y j := by
+  rw [stateCharge_compl y htr]; simp [stateCharge]
+
+/-- Any sum over the even part is the sum over the odd part of the conjugate charges. -/
+theorem sum_evenSubsets_eq_neg_odd (y : Fin 5 → K) (htr : ∑ i, y i = 0) (f : K → K) :
+    ∑ S ∈ evenSubsets, f (stateCharge y S) =
+      ∑ S ∈ oddSubsets, f (-stateCharge y S) := by
+  rw [← evenSubsets_image_compl, Finset.sum_image (fun a _ b _ h => compl_injective h)]
+  refine Finset.sum_congr rfl fun S _ => ?_
+  rw [stateCharge_compl y htr, neg_neg]
+
 end QOU.StandardModel.OddExterior
