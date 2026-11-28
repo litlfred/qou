@@ -232,6 +232,8 @@ def check_consumed_witness_staleness(root: Path) -> tuple[list[str], list[str]]:
     index = cone_audit._build_producer_index([comp, REPO_ROOT / "tools"])
     errors: list[str] = []
     warnings: list[str] = []
+    pending_cones: list[tuple[str, Path, datetime, list[Path]]] = []
+    all_cone_mods: set[Path] = set()
     for rel, _sections in UPSTREAM_SPECS:
         wp = root / rel
         try:
@@ -257,11 +259,20 @@ def check_consumed_witness_staleness(root: Path) -> tuple[list[str], list[str]]:
             continue
         if when.tzinfo is None:
             when = when.replace(tzinfo=timezone.utc)
+        mods = [
+            mod for mod in cone_audit.import_cone(producer, index)
+            if not cone_audit._is_provenance_only(cone_audit._rel(mod))
+        ]
+        all_cone_mods.update(mods)
+        pending_cones.append((rel, producer, when, mods))
+
+    if hasattr(cone_audit, "prime_commit_times") and all_cone_mods:
+        cone_audit.prime_commit_times(all_cone_mods)
+
+    for rel, producer, when, mods in pending_cones:
         movers = []
-        for mod in cone_audit.import_cone(producer, index):
+        for mod in mods:
             rel_mod = cone_audit._rel(mod)
-            if cone_audit._is_provenance_only(rel_mod):
-                continue
             ct = cone_audit._git_commit_time(mod)
             if ct and ct > when:
                 movers.append((ct, rel_mod))

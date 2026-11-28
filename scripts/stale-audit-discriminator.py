@@ -93,6 +93,8 @@ TREES = {
 TOPIC_STRONG = re.compile(
     r"markov_peel|tr_M_atomic|word_to_element|tr_m_atom(?![a-z])", re.I)
 TOPIC_NARROW = re.compile(r"markov_peel|tr_M_atomic")   # the bean's own wording
+TOPIC_PEEL_WORD = re.compile(r"\bpeel\b", re.I)
+TOPIC_PEEL_CTX_KW = re.compile(r"markov|tr_M|trace|braid|hecke", re.I)
 TOPIC_PEEL_CTX = re.compile(
     r"(?=.*\bpeel\b)(?=.*(markov|tr_M|trace|braid|hecke))", re.I)
 
@@ -253,14 +255,16 @@ def extract_decimals(text: str):
     out = []
     lines_all = text.splitlines()
     for ln, line in enumerate(lines_all, 1):
-        lo = max(0, ln - 1 - CORRECTION_WINDOW)
-        historical = bool(CORRECTION_MARKER.search(
-            "\n".join(lines_all[lo:ln])))
+        historical = None
         for m in DECIMAL_RE.finditer(line):
             mant, expo = m.group(1), m.group(2)
             sf = sigfigs(mant)
             if sf < SIGFIG_MIN:
                 continue
+            if historical is None:
+                lo = max(0, ln - 1 - CORRECTION_WINDOW)
+                historical = bool(CORRECTION_MARKER.search(
+                    "\n".join(lines_all[lo:ln])))
             out.append({
                 "literal": mant + (f"e{expo}" if expo else ""),
                 "sigfigs": sf, "line_no": ln, "line": line.strip()[:200],
@@ -282,6 +286,42 @@ def extract_scripts(text: str):
 
 
 _resolve_cache: dict[str, str | None] = {}
+_file_stem_index: dict[str, str] | None = None
+_SKIP_WALK_DIRS = frozenset({"target", "__pycache__", ".git", ".lake", "node_modules"})
+
+
+def _walk_rglob_order(directory: Path, idx: dict[str, str]) -> None:
+    """Depth-first ``os.scandir`` walk matching ``Path.rglob`` yield order while
+    pruning build/cache trees (``target/``, ``__pycache__/``, etc.)."""
+    try:
+        entries = list(os.scandir(directory))
+    except OSError:
+        return
+    subdirs: list[Path] = []
+    for entry in entries:
+        name = entry.name
+        try:
+            if entry.is_file():
+                if name not in idx:
+                    idx[name] = Path(entry.path).relative_to(REPO).as_posix()
+            elif entry.is_dir(follow_symlinks=False) and name not in _SKIP_WALK_DIRS:
+                subdirs.append(Path(entry.path))
+        except OSError:
+            continue
+    for sub in reversed(subdirs):
+        _walk_rglob_order(sub, idx)
+
+
+def _get_file_stem_index() -> dict[str, str]:
+    global _file_stem_index
+    if _file_stem_index is None:
+        idx: dict[str, str] = {}
+        for root in ("computations", "scripts", "tools"):
+            base = REPO / root
+            if base.is_dir():
+                _walk_rglob_order(base, idx)
+        _file_stem_index = idx
+    return _file_stem_index
 
 
 def resolve_script(ref: str):
@@ -292,15 +332,9 @@ def resolve_script(ref: str):
         _resolve_cache[ref] = p.relative_to(REPO).as_posix()
         return _resolve_cache[ref]
     stem = Path(ref).name
-    for root in ("computations", "scripts", "tools"):
-        base = REPO / root
-        if base.is_dir():
-            for cand in base.rglob(stem):
-                if cand.is_file():
-                    _resolve_cache[ref] = cand.relative_to(REPO).as_posix()
-                    return _resolve_cache[ref]
-    _resolve_cache[ref] = None
-    return None
+    hit = _get_file_stem_index().get(stem)
+    _resolve_cache[ref] = hit
+    return hit
 
 
 # ---------------------------------------------------------------------------
@@ -395,7 +429,10 @@ def scan():
                 continue
             if TOPIC_STRONG.search(text):
                 topic = "strong"
-            elif any(TOPIC_PEEL_CTX.search(l) for l in text.splitlines()):
+            elif "peel" in text.lower() and any(
+                TOPIC_PEEL_WORD.search(l) and TOPIC_PEEL_CTX_KW.search(l)
+                for l in text.splitlines()
+            ):
                 topic = "peel-in-context"
             else:
                 continue
