@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - compute-accuracy
 created_at: 2026-07-18T17:08:37Z
-updated_at: 2026-11-28T00:20:00Z
+updated_at: 2026-11-28T01:40:00Z
 parent: qou-avtq
 ---
 
@@ -75,3 +75,11 @@ Corrects the 2026-08-15 note that "A_ω is not a coefficient read-off of I_41". 
 - Fixed `I41` flux-scan early stop (I₄₁(0,10), I₄₁(1,10) were 0 at D=30).
 - GGM eq (S11v) misprint found.
 Open: conj.41M (shared with W-route); Lean proof of the two index coefficients (I_Δ min-degree bound); 5₂ test via WW52; internal Hecke derivation unchanged.
+
+## 2026-11-28 — 5₂ cross-knot test: the 4 and the 3 read from the 3d index (PRs #9872 merged, #9910)
+
+- #9872 (merged): half-longitude GHRS index engine `half_class_3d_index.py`; fixed the `borromean_3d_index.admissible_lattice` early shell stop (m015 b=8μ+λ lost a q² term); reran `aomega-m3-rotated-index-three-knots` (m015/m016 nonzero-longitude rows were missing mirror terms; 17/17 still pass).
+- #9910: `qbeta_g3_stokes_from_3d_index_52.py` (9/9 through q⁶). S⁺ = L·E·N·E⁻¹·R from the m015 index. E = diag((−q^k x²)^k) is measured from GGM's own holomorphic blocks at 40 digits (not chosen against the target); the gauge is checked index-free against GGM's W-route. S⁺(x;0) = [[1,s+1,0],[0,1,0],[−s,−s²,1]] (S0px52), det = 1, and at x=1 all nine entries equal the 2007.10190 W-route. Lean `StokesIndexCount52.lean` (exit 0): 3×3 gauge, S⁺₁₁ = N₁₁, q⁰ factorisation with 4, −3, −9.
+- Reading: 4 = 2 + (−1+2+1) + cancelling flux-1/flux-2 pairs. Unlike 4₁ these are signed sums with cancellation, not positive counts.
+- Correction: the GGM S11v misprint was already in docs/audits/2026-08-11-m1-adjudicated-erratum-and-the-three.md.
+Next: Lean I_Δ minimal-degree bound. Note: the paper's proof (1208.1663 Lemma lem.degID) does the cone m≤0,e≥0 directly and the other cones by the triality symmetry (Prop prop.S3); the naive per-summand bound is far too weak in the m>0 cones (true degree comes from cancellation), so the Lean route needs triality as a theorem or a named cited input.
