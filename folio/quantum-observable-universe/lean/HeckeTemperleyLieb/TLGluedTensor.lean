@@ -238,4 +238,238 @@ theorem leg_ltens_stabL_right {n m : ℕ} {A B : LObj T hε n} {A' B' : LObj T h
 
 end LevelFunctor
 
+/-! ## The tensor of morphisms in the glued category -/
+
+section Glued
+
+variable {K : Type*} [Field K] {δ ε : K} {T : MarkovTower δ ε} {hε : δ * ε = 1}
+
+/-- **The tensor of two objects**: `[a] ⊗ [b] = [a + b + 1]` (`a + 1` and `b + 1` strands). -/
+def tensObj (X Y : GObj T hε) : GObj T hε := ⟨X.a + Y.a + 1⟩
+
+/-- A glued object seen at a level `n` above it, of its parity. -/
+def lo (X : GObj T hε) (n : ℕ) (h : X.a ≤ n) (p : X.a % 2 = n % 2) : LObj T hε n := ⟨X.a, h, p⟩
+
+/-- The level-zero morphism. -/
+noncomputable def lzero {N : ℕ} (X Y : LObj T hε N) : X ⟶ Y := lmk 0 (HomSp T N X.a Y.a).zero_mem
+
+theorem leg_lzero {N : ℕ} (X Y : LObj T hε N) : (leg T hε N).map (lzero X Y) = 0 := by
+  rw [leg_map, ← Submodule.Quotient.mk_zero, mk_eq_iff]
+  refine ⟨N, fun M hM => ?_⟩
+  have h := ext_smul_ev T hε (0 : K) (0 : Q T N) M hM
+  rw [zero_smul, zero_smul] at h
+  exact h
+
+/-- **A glued morphism at level `n`**: its preimage under the leg. -/
+noncomputable def pre (n : ℕ) {X Y : GObj T hε} (hX : X.a ≤ n) (pX : X.a % 2 = n % 2)
+    (hY : Y.a ≤ n) (pY : Y.a % 2 = n % 2) (f : X ⟶ Y) : lo X n hX pX ⟶ lo Y n hY pY :=
+  (leg T hε n).preimage f
+
+theorem leg_pre (n : ℕ) {X Y : GObj T hε} (hX : X.a ≤ n) (pX : X.a % 2 = n % 2)
+    (hY : Y.a ≤ n) (pY : Y.a % 2 = n % 2) (f : X ⟶ Y) :
+    (leg T hε n).map (pre n hX pX hY pY f) = f :=
+  Functor.map_preimage (leg T hε n) (X := lo X n hX pX) (Y := lo Y n hY pY) f
+
+theorem pre_succ (n : ℕ) {X Y : GObj T hε} (hX : X.a ≤ n) (pX : X.a % 2 = n % 2)
+    (hY : Y.a ≤ n) (pY : Y.a % 2 = n % 2) (f : X ⟶ Y) :
+    pre (n + 1 + 1) (by omega) (by omega) (by omega) (by omega) f =
+      (stabL T hε n).map (pre n hX pX hY pY f) := by
+  apply (leg T hε (n + 1 + 1)).map_injective
+  rw [leg_pre, leg_stabL, leg_pre]
+
+theorem pre_comp (n : ℕ) {X Y Z : GObj T hε} (hX : X.a ≤ n) (pX : X.a % 2 = n % 2)
+    (hY : Y.a ≤ n) (pY : Y.a % 2 = n % 2) (hZ : Z.a ≤ n) (pZ : Z.a % 2 = n % 2)
+    (f : X ⟶ Y) (g : Y ⟶ Z) :
+    pre n hX pX hZ pZ (f ≫ g) = pre n hX pX hY pY f ≫ pre n hY pY hZ pZ g := by
+  apply (leg T hε n).map_injective
+  rw [Functor.map_comp, leg_pre, leg_pre, leg_pre]
+
+theorem pre_id (n : ℕ) {X : GObj T hε} (hX : X.a ≤ n) (pX : X.a % 2 = n % 2) :
+    pre n hX pX hX pX (𝟙 X) = 𝟙 _ := by
+  apply (leg T hε n).map_injective
+  rw [leg_pre, CategoryTheory.Functor.map_id]
+  rfl
+
+theorem pre_zero (n : ℕ) {X Y : GObj T hε} (hX : X.a ≤ n) (pX : X.a % 2 = n % 2)
+    (hY : Y.a ≤ n) (pY : Y.a % 2 = n % 2) :
+    pre n hX pX hY pY (0 : X ⟶ Y) = lzero _ _ := by
+  apply (leg T hε n).map_injective
+  rw [leg_pre, leg_lzero]
+
+/-- **The tensor of two glued morphisms, computed at levels `n` and `m`.** -/
+noncomputable def tensVia (n m : ℕ) {X Y X' Y' : GObj T hε} (hX : X.a ≤ n)
+    (pX : X.a % 2 = n % 2) (hY : Y.a ≤ n) (pY : Y.a % 2 = n % 2) (hX' : X'.a ≤ m)
+    (pX' : X'.a % 2 = m % 2) (hY' : Y'.a ≤ m) (pY' : Y'.a % 2 = m % 2) (f : X ⟶ Y)
+    (g : X' ⟶ Y') : tensObj X X' ⟶ tensObj Y Y' :=
+  (leg T hε (n + m + 1)).map (X := lobjT (lo X n hX pX) (lo X' m hX' pX'))
+    (Y := lobjT (lo Y n hY pY) (lo Y' m hY' pY'))
+    (ltens (pre n hX pX hY pY f) (pre m hX' pX' hY' pY' g))
+
+theorem tensVia_succ_left (n m : ℕ) {X Y X' Y' : GObj T hε} (hX : X.a ≤ n)
+    (pX : X.a % 2 = n % 2) (hY : Y.a ≤ n) (pY : Y.a % 2 = n % 2) (hX' : X'.a ≤ m)
+    (pX' : X'.a % 2 = m % 2) (hY' : Y'.a ≤ m) (pY' : Y'.a % 2 = m % 2) (f : X ⟶ Y)
+    (g : X' ⟶ Y') :
+    tensVia (n + 1 + 1) m (by omega) (by omega) (by omega) (by omega) hX' pX' hY' pY' f g =
+      tensVia n m hX pX hY pY hX' pX' hY' pY' f g := by
+  unfold tensVia
+  rw [pre_succ n hX pX hY pY f]
+  exact leg_ltens_stabL_left _ _
+
+theorem tensVia_succ_right (n m : ℕ) {X Y X' Y' : GObj T hε} (hX : X.a ≤ n)
+    (pX : X.a % 2 = n % 2) (hY : Y.a ≤ n) (pY : Y.a % 2 = n % 2) (hX' : X'.a ≤ m)
+    (pX' : X'.a % 2 = m % 2) (hY' : Y'.a ≤ m) (pY' : Y'.a % 2 = m % 2) (f : X ⟶ Y)
+    (g : X' ⟶ Y') :
+    tensVia n (m + 1 + 1) hX pX hY pY (by omega) (by omega) (by omega) (by omega) f g =
+      tensVia n m hX pX hY pY hX' pX' hY' pY' f g := by
+  unfold tensVia
+  rw [pre_succ m hX' pX' hY' pY' g]
+  exact leg_ltens_stabL_right _ _
+
+theorem tensVia_level_left (k : ℕ) : ∀ (n n' m : ℕ) (_ : n' = n + 2 * k) {X Y X' Y' : GObj T hε}
+    (hX : X.a ≤ n) (pX : X.a % 2 = n % 2) (hY : Y.a ≤ n) (pY : Y.a % 2 = n % 2)
+    (hX2 : X.a ≤ n') (pX2 : X.a % 2 = n' % 2) (hY2 : Y.a ≤ n') (pY2 : Y.a % 2 = n' % 2)
+    (hX' : X'.a ≤ m) (pX' : X'.a % 2 = m % 2) (hY' : Y'.a ≤ m) (pY' : Y'.a % 2 = m % 2)
+    (f : X ⟶ Y) (g : X' ⟶ Y'),
+    tensVia n' m hX2 pX2 hY2 pY2 hX' pX' hY' pY' f g =
+      tensVia n m hX pX hY pY hX' pX' hY' pY' f g := by
+  induction k with
+  | zero =>
+    intro n n' m hk X Y X' Y' _ _ _ _ _ _ _ _ _ _ _ _ f g
+    obtain rfl : n' = n := by omega
+    rfl
+  | succ k ih =>
+    intro n n' m hk X Y X' Y' hX pX hY pY _ _ _ _ hX' pX' hY' pY' f g
+    obtain rfl : n' = n + 2 * k + 1 + 1 := by omega
+    rw [tensVia_succ_left (n + 2 * k) m (by omega) (by omega) (by omega) (by omega)]
+    exact ih n (n + 2 * k) m rfl _ _ _ _ _ _ _ _ _ _ _ _ f g
+
+theorem tensVia_level_right (k : ℕ) : ∀ (n m m' : ℕ) (_ : m' = m + 2 * k) {X Y X' Y' : GObj T hε}
+    (hX : X.a ≤ n) (pX : X.a % 2 = n % 2) (hY : Y.a ≤ n) (pY : Y.a % 2 = n % 2)
+    (hX' : X'.a ≤ m) (pX' : X'.a % 2 = m % 2) (hY' : Y'.a ≤ m) (pY' : Y'.a % 2 = m % 2)
+    (hX2 : X'.a ≤ m') (pX2 : X'.a % 2 = m' % 2) (hY2 : Y'.a ≤ m') (pY2 : Y'.a % 2 = m' % 2)
+    (f : X ⟶ Y) (g : X' ⟶ Y'),
+    tensVia n m' hX pX hY pY hX2 pX2 hY2 pY2 f g =
+      tensVia n m hX pX hY pY hX' pX' hY' pY' f g := by
+  induction k with
+  | zero =>
+    intro n m m' hk X Y X' Y' _ _ _ _ _ _ _ _ _ _ _ _ f g
+    obtain rfl : m' = m := by omega
+    rfl
+  | succ k ih =>
+    intro n m m' hk X Y X' Y' hX pX hY pY hX' pX' hY' pY' _ _ _ _ f g
+    obtain rfl : m' = m + 2 * k + 1 + 1 := by omega
+    rw [tensVia_succ_right n (m + 2 * k) hX pX hY pY (by omega) (by omega) (by omega) (by omega)]
+    exact ih n m (m + 2 * k) rfl _ _ _ _ _ _ _ _ _ _ _ _ f g
+
+/-- **The tensor of glued morphisms does not depend on the levels.** -/
+theorem tensVia_indep (n n' m m' : ℕ) {X Y X' Y' : GObj T hε}
+    (hX : X.a ≤ n) (pX : X.a % 2 = n % 2) (hY : Y.a ≤ n) (pY : Y.a % 2 = n % 2)
+    (hX' : X'.a ≤ m) (pX' : X'.a % 2 = m % 2) (hY' : Y'.a ≤ m) (pY' : Y'.a % 2 = m % 2)
+    (hX2 : X.a ≤ n') (pX2 : X.a % 2 = n' % 2) (hY2 : Y.a ≤ n') (pY2 : Y.a % 2 = n' % 2)
+    (hX2' : X'.a ≤ m') (pX2' : X'.a % 2 = m' % 2) (hY2' : Y'.a ≤ m') (pY2' : Y'.a % 2 = m' % 2)
+    (f : X ⟶ Y) (g : X' ⟶ Y') :
+    tensVia n' m' hX2 pX2 hY2 pY2 hX2' pX2' hY2' pY2' f g =
+      tensVia n m hX pX hY pY hX' pX' hY' pY' f g := by
+  rw [← tensVia_level_left n n' (n' + 2 * n) m' rfl hX2 pX2 hY2 pY2 (by omega) (by omega)
+      (by omega) (by omega),
+    tensVia_level_left ((n' + n) / 2) n (n' + 2 * n) m' (by omega) hX pX hY pY,
+    ← tensVia_level_right m n m' (m' + 2 * m) rfl hX pX hY pY hX2' pX2' hY2' pY2' (by omega)
+      (by omega) (by omega) (by omega),
+    tensVia_level_right ((m' + m) / 2) n m (m' + 2 * m) (by omega) hX pX hY pY hX' pX' hY' pY']
+
+/-- **The tensor of two glued morphisms**, `0` between labels of different parity. -/
+noncomputable def tensHom {X Y X' Y' : GObj T hε} (f : X ⟶ Y) (g : X' ⟶ Y') :
+    tensObj X X' ⟶ tensObj Y Y' :=
+  if h : X.a % 2 = Y.a % 2 ∧ X'.a % 2 = Y'.a % 2 then
+    tensVia (X.a + 2 * Y.a) (X'.a + 2 * Y'.a) (by omega) (by omega) (by omega) (by omega)
+      (by omega) (by omega) (by omega) (by omega) f g
+  else 0
+
+/-- The tensor is computed at any level of the right parity. -/
+theorem tensHom_eq (n m : ℕ) {X Y X' Y' : GObj T hε}
+    (hX : X.a ≤ n) (pX : X.a % 2 = n % 2) (hY : Y.a ≤ n) (pY : Y.a % 2 = n % 2)
+    (hX' : X'.a ≤ m) (pX' : X'.a % 2 = m % 2) (hY' : Y'.a ≤ m) (pY' : Y'.a % 2 = m % 2)
+    (f : X ⟶ Y) (g : X' ⟶ Y') :
+    tensHom f g = tensVia n m hX pX hY pY hX' pX' hY' pY' f g := by
+  rw [tensHom, dif_pos ⟨by omega, by omega⟩]
+  exact tensVia_indep _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ f g
+
+theorem ltens_lzero_left {n m : ℕ} (A B : LObj T hε n) {A' B' : LObj T hε m} (g : A' ⟶ B') :
+    ltens (lzero A B) g = lzero _ _ := by
+  apply lhom_ext
+  rw [lval_ltens]
+  show tensLvl T _ _ _ _ 0 (lval g) = 0
+  have h := tensQ_smul_left T (0 : K) (0 : Q T n) (lval g)
+  rw [zero_smul, zero_smul] at h
+  rw [tensLvl, h, mul_zero, zero_mul]
+
+theorem ltens_lzero_right {n m : ℕ} {A B : LObj T hε n} (f : A ⟶ B) (A' B' : LObj T hε m) :
+    ltens f (lzero A' B') = lzero _ _ := by
+  apply lhom_ext
+  rw [lval_ltens]
+  show tensLvl T _ _ _ _ (lval f) 0 = 0
+  have h := tensQ_smul_right T (0 : K) (lval f) (0 : Q T m)
+  rw [zero_smul, zero_smul] at h
+  rw [tensLvl, h, mul_zero, zero_mul]
+
+theorem tensHom_zero_left {X Y X' Y' : GObj T hε} (g : X' ⟶ Y') :
+    tensHom (0 : X ⟶ Y) g = 0 := by
+  by_cases h : X.a % 2 = Y.a % 2 ∧ X'.a % 2 = Y'.a % 2
+  · rw [tensHom, dif_pos h]
+    unfold tensVia
+    rw [pre_zero, ltens_lzero_left]
+    exact leg_lzero _ _
+  · rw [tensHom, dif_neg h]
+
+theorem tensHom_zero_right {X Y X' Y' : GObj T hε} (f : X ⟶ Y) :
+    tensHom f (0 : X' ⟶ Y') = 0 := by
+  by_cases h : X.a % 2 = Y.a % 2 ∧ X'.a % 2 = Y'.a % 2
+  · rw [tensHom, dif_pos h]
+    unfold tensVia
+    rw [pre_zero, ltens_lzero_right]
+    exact leg_lzero _ _
+  · rw [tensHom, dif_neg h]
+
+/-- **The tensor of glued morphisms preserves identities.** -/
+theorem tensHom_id (X X' : GObj T hε) : tensHom (𝟙 X) (𝟙 X') = 𝟙 (tensObj X X') := by
+  rw [tensHom_eq X.a X'.a le_rfl rfl le_rfl rfl le_rfl rfl le_rfl rfl]
+  unfold tensVia
+  rw [pre_id, pre_id, ltens_id, CategoryTheory.Functor.map_id]
+  rfl
+
+/-- **The tensor of glued morphisms is functorial.** -/
+theorem tensHom_comp {X Y Z X' Y' Z' : GObj T hε} (f : X ⟶ Y) (h : Y ⟶ Z) (g : X' ⟶ Y')
+    (k : Y' ⟶ Z') : tensHom (f ≫ h) (g ≫ k) = tensHom f g ≫ tensHom h k := by
+  by_cases h1 : X.a % 2 = Y.a % 2
+  swap
+  · rw [hom_eq_zero_of_parity h1 f, Limits.zero_comp, tensHom_zero_left, tensHom_zero_left,
+      Limits.zero_comp]
+  by_cases h2 : Y.a % 2 = Z.a % 2
+  swap
+  · rw [hom_eq_zero_of_parity h2 h, Limits.comp_zero, tensHom_zero_left, tensHom_zero_left,
+      Limits.comp_zero]
+  by_cases h3 : X'.a % 2 = Y'.a % 2
+  swap
+  · rw [hom_eq_zero_of_parity h3 g, Limits.zero_comp, tensHom_zero_right, tensHom_zero_right,
+      Limits.zero_comp]
+  by_cases h4 : Y'.a % 2 = Z'.a % 2
+  swap
+  · rw [hom_eq_zero_of_parity h4 k, Limits.comp_zero, tensHom_zero_right, tensHom_zero_right,
+      Limits.comp_zero]
+  have e := fun {A B : GObj T hε} {A' B' : GObj T hε} (u : A ⟶ B) (v : A' ⟶ B')
+      (hA : A.a ≤ X.a + Y.a + Z.a) (pA : A.a % 2 = (X.a + Y.a + Z.a) % 2)
+      (hB : B.a ≤ X.a + Y.a + Z.a) (pB : B.a % 2 = (X.a + Y.a + Z.a) % 2)
+      (hA' : A'.a ≤ X'.a + Y'.a + Z'.a) (pA' : A'.a % 2 = (X'.a + Y'.a + Z'.a) % 2)
+      (hB' : B'.a ≤ X'.a + Y'.a + Z'.a) (pB' : B'.a % 2 = (X'.a + Y'.a + Z'.a) % 2) =>
+    tensHom_eq (X.a + Y.a + Z.a) (X'.a + Y'.a + Z'.a) hA pA hB pB hA' pA' hB' pB' u v
+  rw [e (f ≫ h) (g ≫ k) (by omega) (by omega) (by omega) (by omega) (by omega) (by omega)
+      (by omega) (by omega),
+    e f g (by omega) (by omega) (by omega) (by omega) (by omega) (by omega) (by omega) (by omega),
+    e h k (by omega) (by omega) (by omega) (by omega) (by omega) (by omega) (by omega) (by omega)]
+  unfold tensVia
+  rw [pre_comp _ _ _ (by omega) (by omega), pre_comp _ _ _ (by omega) (by omega), ltens_comp,
+    CategoryTheory.Functor.map_comp]
+
+end Glued
+
 end QOU.HeckeTemperleyLieb.TLGluedTensor
