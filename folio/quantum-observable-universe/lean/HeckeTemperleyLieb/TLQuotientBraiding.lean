@@ -17,6 +17,8 @@ by negligible morphisms. This file connects the two.
 * `twist n = (A³)^{n+1} · Θ_n`: the framed full twist. `twistQ_comm`: it is **central** in every
   `Q n`, so it is natural on every endomorphism. `twist_balance`, `twistQ_balance`: the
   **balancing identity** `θ_{n+m+1} = (θ_n ⊗ θ_m) · c_{m,n} · c_{n,m}`.
+* `twist_capEmb`, `twistQ_capQ`: **ribbon compatibility**, the twist commutes with the cup map
+  `x ↦ δ⁻¹ ι²(x) e_{n+1}`; the framing `A³` per strand is exactly what makes this hold.
 * `jw_mul_twist`: on the simple `p_n` the twist is the scalar `(A³)^{n+1} A^{n(n+1)}`, which at
   `A = ω` is `ω⁻¹ T_{n+1,n+1}` (`TLPositiveLoop.twist_eq_tMatrix`): the same `T`-matrix as the
   modular data of `TLQuotientModularData`.
@@ -37,6 +39,7 @@ open QOU.MathlibExt.TemperleyLieb QOU.MathlibExt.TemperleyLiebMarkov
 open QOU.HeckeTemperleyLieb.TLPositiveLoop QOU.HeckeTemperleyLieb.TLCable
 open QOU.HeckeTemperleyLieb.TLSemisimpleQuotient QOU.HeckeTemperleyLieb.TLNegligible
 open QOU.HeckeTemperleyLieb.TLQuotientTensor QOU.HeckeTemperleyLieb.TLCableBraiding
+open QOU.HeckeTemperleyLieb.TLCupCap
 
 variable {K : Type*} [Field K] {δ A : K}
 
@@ -209,5 +212,86 @@ theorem jw_mul_twist_eq_tMatrix (ω : Kˣ) {n : ℕ} (hS : JWSpec δ n) :
   ⟨by rw [mul_comm]; exact twist_eq_tMatrix ω n, jw_mul_twist hS⟩
 
 end Twist
+
+/-! ## Ribbon compatibility: the twist commutes with the cup map -/
+
+section Ribbon
+
+variable (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2)
+
+theorem incl_incl_eq_pl (n : ℕ) (x : TLFin K δ n) :
+    incl δ (n + 1) (incl δ n x) = pl δ 0 n (by omega) (N := n + 1 + 1) x := by
+  have : (incl δ (n + 1)).comp (incl δ n) = pl δ 0 n (by omega) (N := n + 1 + 1) :=
+    hom_ext _ _ _ _ _ (fun i => by
+      simp only [AlgHom.comp_apply, incl_e, pl_e]
+      rw [E_of_lt (by omega)]; congr 1; ext; simp)
+  exact AlgHom.congr_fun this x
+
+include hA hδ in
+/-- **The twist commutes with the cup map**: `θ_{n+2} · cup(x) = cup(θ_n · x)`. Adding a
+cup–cap pair of strands does not change the twist: the framing `A³` per strand cancels the curl
+`σ² e = A⁻⁶ e` of the new pair, and the winding of the old strands around the cap is trivial
+(`wind_mul_E`). -/
+theorem twist_capEmb (n : ℕ) (x : TLFin K δ n) :
+    twist δ A (n + 1 + 1) * capEmb δ n x = capEmb δ n (twist δ A n * x) := by
+  have hb := Θ_balance (N := n + 1 + 1) hA hδ 0 n 1 (by omega)
+  simp only [Nat.zero_add] at hb
+  have hw := wind_mul_E (N := n + 1 + 1) hA hδ 0 n (by omega)
+  simp only [Nat.zero_add] at hw
+  have hl := C_mul_pl_left (N := n + 1 + 1) hA hδ 0 n 1 (by omega) x
+  have hr := C_mul_pl_right (N := n + 1 + 1) hA hδ 0 1 n (by omega) x
+  simp only [Nat.zero_add] at hl hr
+  have hX : Θ δ A (n + 1 + 1) (n + 1) 1 = X δ A _ (n + 1) * X δ A _ (n + 1) := by
+    simp [Θ, D, C, H]
+  set P := pl δ 0 n (by omega) (N := n + 1 + 1) x
+  set ee := E δ (n + 1 + 1) (n + 1)
+  set Xn := X δ A (n + 1 + 1) (n + 1)
+  have hXc : Commute Xn P :=
+    (commute_of_gens _ _ (fun i => by
+      rw [pl_e]
+      exact (X_comm_E (δ := δ) (A := A) (N := n + 1 + 1) (i := n + 1) (j := 0 + i)
+        (by have := i.isLt; omega)).symm) x).symm
+  have hcurl : Xn * (Xn * ee) = (A⁻¹ ^ 3) ^ 2 • ee := by
+    rw [X_mul_E_self hA hδ (by omega), mul_smul_comm, X_mul_E_self hA hδ (by omega), smul_smul]
+    congr 1; ring
+  have hlast : (e K δ adjFin (Fin.last (n + 1)) : TLFin K δ (n + 1 + 1)) = ee :=
+    (E_of_lt (by omega : n + 1 < n + 1 + 1)).symm
+  have key : Θ δ A (n + 1 + 1) 0 (n + 1 + 1) * (P * ee) =
+      (A⁻¹ ^ 3) ^ 2 • (Θ δ A (n + 1 + 1) 0 n * (P * ee)) := by
+    rw [hb, hX]
+    calc Θ δ A (n + 1 + 1) 0 n * (Xn * Xn) * C δ A (n + 1 + 1) 0 1 n *
+          C δ A (n + 1 + 1) 0 n 1 * (P * ee)
+        = Θ δ A (n + 1 + 1) 0 n * (Xn * Xn) * (C δ A (n + 1 + 1) 0 1 n *
+            (C δ A (n + 1 + 1) 0 n 1 * P)) * ee := by simp only [mul_assoc]
+      _ = Θ δ A (n + 1 + 1) 0 n * (Xn * Xn) * P *
+            (C δ A (n + 1 + 1) 0 1 n * C δ A (n + 1 + 1) 0 n 1 * ee) := by
+          rw [hl]; simp only [mul_assoc]; rw [← mul_assoc (C δ A (n + 1 + 1) 0 1 n), hr]
+          simp only [mul_assoc]
+      _ = Θ δ A (n + 1 + 1) 0 n * (P * (Xn * (Xn * ee))) := by
+          have h3 : Xn * (Xn * (P * ee)) = P * (Xn * (Xn * ee)) := by
+            rw [← mul_assoc Xn P, hXc.eq, mul_assoc, ← mul_assoc Xn P, hXc.eq, mul_assoc]
+          rw [hw]; simp only [mul_assoc]; rw [h3]
+      _ = _ := by rw [hcurl, mul_smul_comm, mul_smul_comm]
+  unfold capEmb
+  rw [incl_incl_eq_pl, incl_incl_eq_pl, hlast, twist, twist, smul_mul_assoc, map_mul, map_smul,
+    pl_Θ 0 n _ n 0 (by omega), mul_smul_comm, key]
+  simp only [Nat.add_zero, smul_mul_assoc, smul_smul, mul_assoc]
+  congr 1
+  field_simp
+  ring
+
+variable {ε : K} (T : MarkovTower δ ε) (hε : δ * ε = 1)
+
+include hA hδ in
+/-- **Ribbon compatibility on the quotient**: `θ_{n+2} · cup(φ) = cup(θ_n · φ)`, so the twists of
+all strand counts are compatible with the stabilisation `stab` of `TLRectangularHom`. -/
+theorem twistQ_capQ (n : ℕ) (φ : Q T n) :
+    twistQ A T (n + 1 + 1) * TLRectHom.capQ T hε n φ =
+      TLRectHom.capQ T hε n (twistQ A T n * φ) := by
+  obtain ⟨x, rfl⟩ := coe_surj T φ
+  rw [twistQ, twistQ, TLRectHom.capQ_coe, ← RingCon.coe_mul, ← RingCon.coe_mul,
+    TLRectHom.capQ_coe, twist_capEmb hA hδ]
+
+end Ribbon
 
 end QOU.HeckeTemperleyLieb.TLQuotientBraiding

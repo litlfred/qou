@@ -24,6 +24,9 @@ algebra holds every block and no reindexing is needed.
 * `Θ s n = D s n · D s n`: the **full twist**. `Θ_balance`: the balancing identity
   `Θ s (n+m+1) = Θ s n · Θ (s+n+1) m · C s m n · C s n m`. `Θ_mul_E`: `Θ` commutes with every
   generator of its block.
+* `X_mul_E_self`, `E_mul_loop`, `wind_mul_E`: a crossing on its own cap is `−A⁻³`, a cap slides
+  off a double crossing, and a cap is unchanged when a block winds around it (the input to
+  ribbon compatibility).
 * `jw_mul_Θ`: `Θ 0 n` acts on the Jones–Wenzl projector `p_n` by `A^{n(n+1)}`, the same scalar as
   `fullTwist` in `TLPositiveLoopCrossingTwist`.
 
@@ -597,6 +600,84 @@ theorem Θ_balance (s n m : ℕ) (hN : s + n + m + 1 ≤ N) :
   simp only [mul_assoc]
 
 end Twist
+
+/-! ## A cap is unaffected by winding around a block (ribbon compatibility) -/
+
+section Cap
+
+variable {N : ℕ} (hA : A ≠ 0) (hδ : δ = A ^ 2 + A⁻¹ ^ 2)
+
+include hA hδ in
+/-- A crossing absorbed by its own cap: `σᵢ eᵢ = −A⁻³ eᵢ`. -/
+theorem X_mul_E_self {i : ℕ} (h : i < N) : X δ A N i * E δ N i = (-(A⁻¹ ^ 3)) • E δ N i := by
+  rw [X_eq h, sub_mul, smul_mul_assoc, one_mul, smul_mul_assoc, E_of_lt h, e_sq', smul_smul,
+    ← sub_smul, hδ]
+  congr 1
+  field_simp
+  ring
+
+include hA hδ in
+/-- **A cap slides off a double crossing**: `e_{i+1} σᵢσᵢ₊₁σᵢ₊₁σᵢ = e_{i+1}`. -/
+theorem E_mul_loop {i : ℕ} (h : i + 1 < N) :
+    E δ N (i + 1) * (X δ A N i * X δ A N (i + 1) * (X δ A N (i + 1) * X δ A N i)) =
+      E δ N (i + 1) := by
+  rw [X_eq (by omega : i < N), X_eq h]
+  rw [E_of_lt (by omega : i < N), E_of_lt h]
+  set a := e K δ adjFin (⟨i, by omega⟩ : Fin N)
+  set b := e K δ adjFin (⟨i + 1, h⟩ : Fin N)
+  have haa : a * a = δ • a := e_sq' δ _
+  have hbb : b * b = δ • b := e_sq' δ _
+  have hbab : b * (a * b) = b := by rw [← mul_assoc]; exact e_adjacent_fin (Or.inr rfl)
+  have haba : a * (b * a) = a := by rw [← mul_assoc]; exact e_adjacent_fin (Or.inl rfl)
+  -- cap slides: `b σᵢσᵢ₊₁ = −b a` and `a σᵢ₊₁σᵢ = −a b`
+  have h1 : b * ((A • 1 - A⁻¹ • a) * (A • 1 - A⁻¹ • b)) = -(b * a) := by
+    simp only [mul_sub, sub_mul, smul_mul_assoc, mul_smul_comm, one_mul, mul_one, smul_smul,
+      ← mul_assoc, hbb]
+    rw [mul_assoc b a b, hbab]
+    match_scalars <;> (try simp only [hδ]) <;> (field_simp; try ring)
+  have h2 : a * ((A • 1 - A⁻¹ • b) * (A • 1 - A⁻¹ • a)) = -(a * b) := by
+    simp only [mul_sub, sub_mul, smul_mul_assoc, mul_smul_comm, one_mul, mul_one, smul_smul,
+      ← mul_assoc, haa]
+    rw [mul_assoc a b a, haba]
+    match_scalars <;> (try simp only [hδ]) <;> (field_simp; try ring)
+  calc b * ((A • 1 - A⁻¹ • a) * (A • 1 - A⁻¹ • b) * ((A • 1 - A⁻¹ • b) * (A • 1 - A⁻¹ • a)))
+      = (b * ((A • 1 - A⁻¹ • a) * (A • 1 - A⁻¹ • b))) *
+          ((A • 1 - A⁻¹ • b) * (A • 1 - A⁻¹ • a)) := by simp only [mul_assoc]
+    _ = -(b * (a * ((A • 1 - A⁻¹ • b) * (A • 1 - A⁻¹ • a)))) := by
+          rw [h1, neg_mul, mul_assoc]
+    _ = b := by rw [h2, mul_neg, neg_neg, hbab]
+
+include hA hδ in
+/-- **A cap on `[s+n+1, s+n+2]` is unaffected by the block `[s, s+n]` winding around it**:
+`C s 1 n · C s n 1 · e_{s+n+1} = e_{s+n+1}`. -/
+theorem wind_mul_E (s : ℕ) : ∀ n, s + n + 2 < N + 1 →
+    C δ A N s 1 n * C δ A N s n 1 * E δ N (s + n + 1) = E δ N (s + n + 1)
+  | 0, hN => by
+    show H δ A N s 0 * H δ A N (s + 0 + 1) 0 * H δ A N s 1 * E δ N (s + 0 + 1) = _
+    simp only [H, Nat.add_zero]
+    have hd := XX_mul_E_down (N := N) hA hδ (i := s) (by omega)
+    have hu := XX_mul_E_up (N := N) hA hδ (i := s) (by omega)
+    rw [mul_assoc, hd, ← mul_assoc, hu, mul_assoc, E_mul_loop hA hδ (by omega)]
+  | n + 1, hN => by
+    have hl := C_hex_left (δ := δ) (A := A) (N := N) s n 1 0
+    have hr := C_hex_right (δ := δ) (A := A) (N := N) s n 0 1
+    simp only [Nat.add_zero] at hl hr
+    rw [hl, hr]
+    set t := s + n + 1
+    have hZ := C_mul_E_right (N := N) hA hδ t 0 1 (j := 0) (by omega) (by omega)
+    have ih := wind_mul_E s n (by omega)
+    simp only [Nat.add_zero] at hZ
+    rw [show s + (n + 1) + 1 = t + 0 + 1 + 0 by omega]
+    rw [show C δ A N t 1 0 * C δ A N s 1 n * (C δ A N s n 1 * C δ A N t 0 1) * E δ N (t + 0 + 1 + 0) =
+      C δ A N t 1 0 * (C δ A N s 1 n * C δ A N s n 1) * (C δ A N t 0 1 * E δ N (t + 0 + 1 + 0)) by
+        simp only [mul_assoc]]
+    simp only [Nat.add_zero] at *
+    rw [hZ, ← mul_assoc, mul_assoc (C δ A N t 1 0), ih]
+    show H δ A N t 0 * H δ A N (t + 0 + 1) 0 * E δ N t * H δ A N t 1 = E δ N (t + 1)
+    simp only [H, Nat.add_zero]
+    rw [XX_mul_E_up hA hδ (by omega), mul_assoc, E_mul_loop hA hδ (by omega)]
+
+end Cap
 
 /-! ## The twist on the Jones–Wenzl projector -/
 
