@@ -189,4 +189,70 @@ theorem mvn_slide (hδ : δ ≠ 0) {n p m : ℕ} (h : p + m < n) {Y : TLFin K δ
     rw [hm _ _ cw, zag_mul_zig _ h, mul_smul_comm, smul_smul]
     congr 1; field_simp
 
+/-! ## Splitting and the shift-by-two intertwining -/
+
+theorem zig_add (n p a : ℕ) : ∀ b, zig δ n p (a + b) = zig δ n p a * zig δ n (p + a) b
+  | 0 => by rw [add_zero, zig, mul_one]
+  | b + 1 => by rw [← add_assoc, zig_succ, zig_add n p a b, zig_succ, mul_assoc, add_assoc]
+
+theorem zag_add (n p a : ℕ) : ∀ b, zag δ n p (a + b) = zag δ n (p + a) b * zag δ n p a
+  | 0 => by rw [add_zero, zag, one_mul]
+  | b + 1 => by rw [← add_assoc, zag_succ, zag_add n p a b, zag_succ, mul_assoc, add_assoc]
+
+/-- **A full slide intertwines the shift by two strands.** Inside the support of
+`zig p (k+1) = e_p ⋯ e_{p+k}`, `e_{i+2} · zig = zig · e_i`. -/
+theorem gen_shift_zig {n p k i : ℕ} (hpi : p ≤ i) (hik : i + 2 ≤ p + k) (hn : p + k < n) :
+    gen δ n (i + 2) * zig δ n p (k + 1) = zig δ n p (k + 1) * gen δ n i := by
+  have hk : k + 1 = (i - p) + 3 + (k + 1 - (i - p) - 3) := by omega
+  set r := k + 1 - (i - p) - 3
+  rw [hk, zig_add, zig_add n p (i - p) 3, show p + (i - p) = i by omega,
+    show p + (i - p + 3) = i + 3 by omega]
+  have hz : zig δ n i 3 = gen δ n i * (gen δ n (i + 1) * gen δ n (i + 2)) := by
+    simp [zig, one_mul, mul_assoc]
+  have hA : Commute (gen δ n (i + 2)) (zig δ n p (i - p)) := commute_zig _ (by omega)
+  have hB : Commute (gen δ n i) (zig δ n (i + 3) r) := commute_zig _ (by omega)
+  have hC : Commute (gen δ n i) (gen δ n (i + 2)) := commute_gen (by omega)
+  have h1 : gen δ n (i + 2) * gen δ n (i + 1) * gen δ n (i + 2) = gen δ n (i + 2) :=
+    gen_adj_down (δ := δ) (show i + 1 + 1 < n by omega)
+  have h2 := gen_adj_up (δ := δ) (show i + 1 < n by omega)
+  have key : gen δ n (i + 2) * gen δ n i * gen δ n (i + 1) * gen δ n (i + 2) =
+      gen δ n i * gen δ n (i + 1) * gen δ n (i + 2) * gen δ n i := by
+    rw [← hC.eq, mul_assoc, mul_assoc, ← mul_assoc (gen δ n (i + 2)), h1, mul_assoc _ _ (gen δ n i),
+      ← hC.eq, ← mul_assoc, h2]
+  rw [hz]
+  simp only [mul_assoc]
+  rw [← mul_assoc (gen δ n (i + 2)) (zig δ n p (i - p)), hA.eq, mul_assoc, ← hB.eq]
+  congr 1
+  simp only [← mul_assoc]
+  rw [key]
+
+/-- The same for the reversed word: `zag · e_{i+2} = e_i · zag`. -/
+theorem zag_shift_gen {n p k i : ℕ} (hpi : p ≤ i) (hik : i + 2 ≤ p + k) (hn : p + k < n) :
+    zag δ n p (k + 1) * gen δ n (i + 2) = gen δ n i * zag δ n p (k + 1) := by
+  have hk : k + 1 = (i - p) + 3 + (k + 1 - (i - p) - 3) := by omega
+  set r := k + 1 - (i - p) - 3
+  rw [hk, zag_add, zag_add n p (i - p) 3, show p + (i - p) = i by omega,
+    show p + (i - p + 3) = i + 3 by omega]
+  have hz : zag δ n i 3 = gen δ n (i + 2) * (gen δ n (i + 1) * gen δ n i) := by
+    simp [zag, mul_one]
+  have hA : Commute (gen δ n (i + 2)) (zag δ n p (i - p)) := commute_zag _ (by omega)
+  have hB : Commute (gen δ n i) (zag δ n (i + 3) r) := commute_zag _ (by omega)
+  have hC : Commute (gen δ n i) (gen δ n (i + 2)) := commute_gen (by omega)
+  have h1 : gen δ n (i + 2) * gen δ n (i + 1) * gen δ n (i + 2) = gen δ n (i + 2) :=
+    gen_adj_down (δ := δ) (show i + 1 + 1 < n by omega)
+  have h2 := gen_adj_up (δ := δ) (show i + 1 < n by omega)
+  have kL : gen δ n (i + 2) * gen δ n (i + 1) * gen δ n i * gen δ n (i + 2) =
+      gen δ n i * gen δ n (i + 2) := by
+    rw [mul_assoc _ (gen δ n i), hC.eq, ← mul_assoc, h1]
+  have kR : gen δ n i * gen δ n (i + 2) * gen δ n (i + 1) * gen δ n i =
+      gen δ n i * gen δ n (i + 2) := by
+    rw [hC.eq, mul_assoc (gen δ n (i + 2)) (gen δ n i), mul_assoc (gen δ n (i + 2)), h2]
+  rw [hz]
+  simp only [mul_assoc]
+  rw [hA.symm.eq, ← mul_assoc (gen δ n i) (zag δ n (i + 3) r), hB.eq]
+  simp only [mul_assoc]
+  congr 1
+  simp only [← mul_assoc]
+  rw [kL, kR]
+
 end QOU.HeckeTemperleyLieb.TLZigzag
