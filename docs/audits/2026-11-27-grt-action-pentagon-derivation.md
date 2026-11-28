@@ -1545,3 +1545,93 @@ pentagon-only data:
   implied by its pentagon part in degrees `d ≥ 3`.
 - Furusho's group-level theorem (pentagon ⇒ hexagon for group-like `φ` with no associator given)
   is not formalised. Only its Lie-algebra form is.
+
+## 17k. The lifting obstruction splits into a pentagon part and a group-level Furusho step (bean `qou-3fdg`)
+
+**Target.** Attack the pentagon half of §17h's `AssociatorObstructionVanishes E`, aiming to remove
+the `GroupLikeKAssociatorTower K E` hypothesis (a `K`-associator, classically KZ) from the
+rational-associator chain.
+
+**Result, in one line.** The hypothesis is not removed. It is replaced, with no field `K`, by two
+named `Prop`s. For `d ≥ 3` the replacement is an exact equivalence, so nothing is lost by it.
+
+**Proved** (`RationalAssociator/PentagonObstruction.lean`, sorry-free, algebraic over `ℚ`):
+
+- `GL.mul`: group-likeness modulo `FF2 m` is closed under products over `ℚ`.
+- `exists_GL_lift`: **the group-likeness half of the obstruction always vanishes.** For
+  `ε(Φ) = 1`, `d ≥ 1` and `GL d Φ`, there is `x ∈ FF d` with `GL (d+1) (Φ + x)`. Proof: build
+  `Ψ = Π expPoly(kᵢ)`, one homogeneous primitive `kᵢ` per degree, with `Ψ ≡ Φ` modulo `FF m` for
+  `m = 1, …, d` (`GL_expPoly`, `primDef_mem_of_GL_add`, `exists_primitive_layer`,
+  `expPoly_congr`). No logarithm and no `K`. This was not previously in the repository: §17h's
+  `lift_iff_primitive` needed `GL (d+1) Φ` as a hypothesis.
+- `ObstructionVanishesAt E d` (a `def … : Prop`): §17h's statement at one degree;
+  `associatorObstructionVanishes_iff`: `AssociatorObstructionVanishes E ↔ ∀ d ≥ 1,
+  ObstructionVanishesAt E d` (definitional).
+- `obstructionVanishesAt_of_pentagon` (`d ≥ 2`):
+  `PentagonLiftVanishes E d → FurushoGroupStep E d → ObstructionVanishesAt E d`.
+- `furushoGroupStep_of_obstructionVanishesAt` (`d ≥ 3`): `ObstructionVanishesAt E d →
+  FurushoGroupStep E d`. This uses `pentagonHexagonLie_of_three_le` (#9876). The vanishing gives
+  a lift `Φ + x`. The primitive layer `k` of `x` has zero linearised pentagon, because `Φ` and
+  `Φ + x` both satisfy the pentagon. So `assocLin k = 0`, and `Φ` was already an associator.
+- `pentagonLiftVanishes_of_obstructionVanishesAt` (`d ≥ 1`), and so
+  `obstructionVanishesAt_iff` (`d ≥ 3`):
+  `ObstructionVanishesAt E d ↔ PentagonLiftVanishes E d ∧ FurushoGroupStep E d`.
+- `compatible_of_pentagon_furusho`: a seed `Φ₃` with `AssocU4 3 E Φ₃` and `GL 3 Φ₃`, together
+  with both `Prop`s for every `d ≥ 3`, gives `Φ : ℕ → ℚ⟨X,Y⟩` with `AssocU4 N E (Φ N)`,
+  `GL N (Φ N)` and `Φ (N+1) − Φ N ∈ FF N` for every `N ≥ 3`. No `K` and no tower.
+
+**The two remaining statements** (both `def … : Prop`, neither assumed nor proved):
+
+```lean
+def PentagonLiftVanishes (E : F2) (d : ℕ) : Prop :=
+  ∀ Φ : F2, AssocU4 d E Φ → GL (d + 1) Φ →
+    ∃ h ∈ FF d, Homog d h ∧ IsPrimitive h ∧
+      Pentagon (Φ + h) (t (d + 1) 0) (t (d + 1) 1) (t (d + 1) 3) (t (d + 1) 4) (t (d + 1) 5)
+
+def FurushoGroupStep (E : F2) (d : ℕ) : Prop :=
+  ∀ Φ : F2, AssocU4 d E Φ → GL (d + 1) Φ →
+    Pentagon Φ (t (d + 1) 0) (t (d + 1) 1) (t (d + 1) 3) (t (d + 1) 4) (t (d + 1) 5) →
+      AssocU4 (d + 1) E Φ
+```
+
+- `PentagonLiftVanishes` is the pentagon (Drinfeld–Kohno / Stasheff) part. It asks for a Lie
+  correction `h` of degree `d` that cancels the degree-`d` pentagon defect `ψ ∈ U(𝔱₄)`. Hexagon
+  and inversion are not required of `Φ + h`. The hypothesis still carries `AssocU4 d E Φ`, the
+  hexagon included, because a pentagon-only hypothesis could make the statement false. Whether
+  pentagon solutions modulo `d` always lift is not settled here.
+- `FurushoGroupStep` is Furusho's group-level pentagon ⇒ hexagon at a single degree. #9876 proved
+  only the Lie-algebra form. The Lie form gives the converse direction above. It does not give
+  this statement by itself, because the hexagon defect of `Φ` is nonlinear in `Φ`.
+
+**What the equivalence says.** Once #9876 is in, the hexagon is redundant for the *obstruction
+question*. In degrees `d ≥ 3`, a rational group-like associator modulo `d` lifts iff (i) its
+pentagon defect can be cancelled by a Lie element, and (ii) pentagon-solutions one degree up are
+automatically hexagon-solutions. Neither (i) nor (ii) mentions a field `K`.
+
+**What was not done.**
+
+- Neither `Prop` is proved. For (i), the natural route would show the defect `ψ` is a cocycle in
+  `U(𝔱₅)` (the five relabelled pentagons, the 3-dimensional associahedron) and then that every
+  such cocycle of degree `d` is `δ` of a Lie element of degree `d`. That is an `H⁴` vanishing
+  statement for the pentagon complex. The cocycle step is not formalised here. The `H⁴` step is
+  the known hard point.
+- No explicit low-degree check (`d = 3, 4`) was run. Deciding equalities in `U4 (d+1)` needs a
+  normal form for `U(𝔱₄)` truncated, and the repository has none.
+- No converse from the tower: the repository does not show that `GroupLikeKAssociatorTower K E`
+  implies `ObstructionVanishesAt E d` for arbitrary `Φ` (§17h, same gap: `AssocU4 M → AssocU4 N`
+  for `N ≤ M` exists now as `AssocU4.trunc`, but the level invariant for an arbitrary `Φ` does
+  not). So it is not checked inside Lean that the two `Prop`s are consistent with the tower.
+- Literature. Furusho 2010 IS held: `library/arxiv-math-0702128v3/` (merged in #9836). Its INDEX
+  row is titled "PENTAGON AND HEXAGON EQUATIONS" and does not name the author, so a grep for
+  `furusho` in `library/INDEX.md` misses it. Theorem 1 there (§0, p. 1) is the group-level
+  statement behind `FurushoGroupStep`; its proof is §2 (pp. 5-8). Drinfeld 1990 and Bar-Natan
+  1998 are not in `library/` (INDEX and `ocr/` searched); their `H⁴` claims were not checked.
+
+**Verification.** `lean -DautoImplicit=false -s 65536` on `PentagonObstruction.lean` exits 0 with
+no output, against the `/home/claude/furov` symlink overlay. The `RationalAssociator/` directory is
+byte-identical between the overlay's source branch (`b9d209162`) and `origin/main` after #9876.
+`#print axioms` on `exists_GL_lift`, `GL.mul`, `obstructionVanishesAt_of_pentagon`,
+`furushoGroupStep_of_obstructionVanishesAt`, `pentagonLiftVanishes_of_obstructionVanishesAt`,
+`obstructionVanishesAt_iff` and `compatible_of_pentagon_furusho` gives
+`[propext, Classical.choice, Quot.sound]`. The file has no `sorry`, no `axiom`, no
+`native_decide` and no analytic constructs. No `lake build` was run.
