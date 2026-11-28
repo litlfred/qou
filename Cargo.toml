@@ -13,19 +13,21 @@
 resolver = "2"
 members = [
   "crates/borromean-recurrence-crt",
+  "crates/gs-basis",
   "crates/hecke-engine",
   "crates/hecke-engine-c",
   "crates/pyhecke-native",
-  # Parallel A1/A3 crates plug in here on landing:
-  # "crates/gs-basis",
-  # "crates/qou-clarabel",
-  # "crates/qou-gg-core",
-  # "crates/qou-gg-eval",
+  "crates/qou-gg-core",
   "crates/qou-values",
+  # Parallel A1/A3 crates plug in here on landing:
+  # "crates/qou-clarabel",
+  # "crates/qou-gg-eval",
 ]
 default-members = [
   "crates/borromean-recurrence-crt",
+  "crates/gs-basis",
   "crates/hecke-engine",
+  "crates/qou-gg-core",
 ]
 # Target-specific FFI bindings (wasm-pack --no-default-features / panic=abort,
 # napi-rs Node addon, UniFFI Kotlin/Swift bindgen, R extendr subcrate) are built
