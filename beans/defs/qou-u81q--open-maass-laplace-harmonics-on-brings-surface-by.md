@@ -21,3 +21,6 @@ Open: the eigenvalues; reflection parity under S5 x C2; orbifold signatures of t
 ## 2026-11-28 — PR #9874: reflection parity under S5 x C2
 T = (2 4) is the unique map reflection; c = xT is free (no real points), so B/c is non-orientable with chi = -3. The triangle sides are (T, ST, AT); triv+/- = Neumann/Dirichlet, and sgn+/- are mixed. H^1 = [2,1,1,1]+ + [2,1,1,1]-. 14 types are exhaustive; recovery uses 7 orientable + 7 non-orientable quotients.
 Open: the eigenvalues only.
+
+## 2026-11-28 — PR #9874 merged; PR #9877: typed spectral sunset
+The triple selection table N for S5 types: 143/343 allowed, and the holomorphic cubic is forbidden. With parity, 572/2744 are allowed. The sunset on an energy-bounded cut over opaque labels equals the sum of partial sunsets over allowed typed triples (Transcendental/). The selection rule itself (invariance + Schur) is cited.
