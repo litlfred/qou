@@ -8,5 +8,5 @@
  "cumulant_test_passes": [],
  "odd_d2_divides_delta": [],
  "odd_d2_exceeds_delta_from": 38,
- "status": "closed forms checked for n <= 24; full proof needs the quartic hook identity and the class expansions for all n"
+ "status": "closed forms checked against exact D(n) for n <= 24; proved for all n in cyclotomic_boundary_q1_proof_checks.py"
 }

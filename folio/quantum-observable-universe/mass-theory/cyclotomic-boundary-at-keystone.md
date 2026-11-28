@@ -77,9 +77,9 @@ bearing on the arithmetic mechanism is unproven.
 **Status — three tiers of correlation, not to be conflated.**
 
 1. *Arithmetic* (the substance): $D(n)$ is non-cyclotomic from $n=6$. This is
-   **proved for $6 \le n \le 20$** (finite Lean certificates) and for every triangular $n$ and the families $n = T_j \pm 1$, but **not for all $n \geq 6$**; the
-   cofactor's non-$q$-holonomic degree growth is the structural reason, not
-   yet a proof. Generic high-degree bar-even integer polynomials are
+   **proved for $6 \le n \le 20$** (finite Lean certificates) and, computer-assisted, for all
+   $n \ge 9$ by the cumulant argument below; see
+   the proposition that $D(n)$ is a cyclotomic product exactly for $n \le 5$. Generic high-degree bar-even integer polynomials are
    non-cyclotomic, so non-cyclotomicity is the *expected* outcome — the
    content is entirely that $n \leq 5$ *are* cyclotomic, and that "for all
    $n \geq 6$, with no exceptions" is what a proof must supply.
@@ -291,10 +291,15 @@ $9 \le n \le 3000$, so the test excludes all of these
   $\alpha \equiv \beta \pmod 8$). A case split on $n \bmod 4$ then shows the two terms of
   $6d_2$ never have equal 2-adic valuation, so $v_2(d_2) \le v_2(c) + (n+1)/4$.
 - So the odd part of $d_2$ is at least $(n-6)(n^2-13)I_{n-8}/(6 \cdot 2^{(n+1)/4})$, while
-  $0 < |\Delta(n)| < 10n^{14}$. The first beats the second for $46 \le n \le 400$, and the ratio
-  grows from there, so for all $n \ge 46$; $9 \le n \le 3000$ is checked directly.
+  $0 < |\Delta(n)| < 10n^{14}$. The first beats the second for $46 \le n \le 400$. Since
+  $I_{m+2} \ge (m+1)I_m$, the ratio is multiplied by at least $(n-7)/(\sqrt2\,(1+2/n)^{14}) > 1$
+  from $n$ to $n+2$ once $n \ge 40$, so the bound holds for all $n \ge 46$; $9 \le n \le 3000$ is
+  checked directly.
 
 Hence $12\kappa_2 \notin \mathbb Z$ and $D(n)$ is not cyclotomic for every $n \ge 9$. With the
 certificates for $6 \le n \le 8$, $D(n)$ is cyclotomic exactly for $n \le 5$. This argument is
-checked by computer algebra and one Lean file. It has not been reviewed, and the full chain is
-not yet in Lean.
+checked by computer algebra and one Lean file, and was checked by an independent review that
+recomputed $d_2$, $d_4$ from the exact $D(n)$ at $n = 9, 12, 17, 25, \dots, 28$. The full chain is not
+yet in Lean. The arithmetic statement is
+the proposition that $D(n)$ is a cyclotomic product exactly for $n \le 5$; what stays
+conjectural here is the alignment and its cause.

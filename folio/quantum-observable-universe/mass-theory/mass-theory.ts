@@ -310,6 +310,7 @@ export default chapter({
             "bond-order-eq-jet-degree-proof",
             "delta-lambda-dt-index-unification",
             "springer-fibre-convention-scope",
+            "habiro-tail-cyclotomic-iff-n-le-5",
             "cyclotomic-boundary-at-keystone",
             "bring-curve-weyl-e8-prior-art",
             "brunnian-binding-channel",
