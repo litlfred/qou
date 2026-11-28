@@ -211,8 +211,8 @@ Verbatim (`2026-11-28`): *"make sure you are working proton pin... no longer muo
 
 2026-11-28 (merge-steward): Landed rebased Category (c) PR #9767 (`claude/energy-scale-bridge-2026-11-27` -> `91076f6cc123768f656c7cc0cc0261dc792692c5`; closed `qou-h940`).
 
-## 2026-11-28 Merge Steward — PR #10005 Landed (`91076f6cc123`) & 4 Rust `crates/` + Annex A Child Beans Registered
-- Landed PR **#10005** (`qou-vhm1` -> `91076f6cc123768f656c7cc0cc0261dc792692c5`, `MISSING: 0`; closed `qou-vhm1`).
+## 2026-11-28 Merge Steward — PR #10005 Landed (`2b5246217d5c`) & 4 Rust `crates/` + Annex A Child Beans Registered
+- Landed PR **#10005** (`qou-vhm1` -> `2b5246217d5cfb7f0f1721e621bf11186f6635b1`, `MISSING: 0`; closed `qou-vhm1`).
 - Registered 4 active `in-progress` child beans under `qou-s028`:
   - **`qou-crwk`**: crates/ workspace & tools KG migration: move Rust engines to top-level crates/* + Cargo workspace + defineTool KG nodes + local skill
   - **`qou-gsgg`**: crates/gs-basis + crates/qou-gg-core: standalone non-commutative Groebner-Shirshov library + pure-Rust 4-photon & Z=0..118 T3/Hopf chart generator
