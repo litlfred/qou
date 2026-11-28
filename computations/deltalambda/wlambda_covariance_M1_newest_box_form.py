@@ -149,7 +149,8 @@ def main():
         sc_rows.append({"n": n, "single_crossing": sc, "threshold_s": t, "lower_half": low,
                         "upper_tail": up, "cells_ij_le_n": cells_ok,
                         "open_window": [open_window[0], open_window[-1]] if open_window else None,
-                        "monotone_regression": mono})
+                        "monotone_regression": mono,
+                        "monotone_regression_from_s4": all(b <= 4 for b in bad)})
         print(f"  n={n}: SC {sc} t={t} lower-half {low} upper-tail {up} "
               f"window {open_window[:1] + open_window[-1:]} monotone {mono}", flush=True)
     ok &= sc_ok and lower_ok and upper_ok
