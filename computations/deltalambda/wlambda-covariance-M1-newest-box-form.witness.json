@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-27T23:56:03.007244+00:00",
-  "commitSha": "e048ae0d6224752d7b6911d4afd7bef0179f805a",
+  "computedAt": "2026-11-27T23:59:34.255514+00:00",
+  "commitSha": "d1633459f5df4e4495cacd02da692e428a8d326a",
   "assertions": [
     {
       "name": "m1_newest_box_form",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "identities n=4..10; SC + lower half + upper tail n=4..45"
+      "source": "identities n=4..10; SC + lower half + upper tail n=4..50"
     }
   ],
   "allPassed": true,
   "durationMs": 2,
   "computation": "wlambda-covariance-M1-newest-box-form",
   "scriptFile": "wlambda_covariance_M1_newest_box_form.py",
-  "scriptHash": "ec73f02a71f7",
-  "scriptCommitSha": "b7897ad8c6669cba4b63ced9fb32fe95b30af154",
+  "scriptHash": "021e700c232f",
+  "scriptCommitSha": "d1633459f5df4e4495cacd02da692e428a8d326a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,10 +36,10 @@
     "argv": [
       "computations/deltalambda/wlambda_covariance_M1_newest_box_form.py",
       "10",
-      "45",
+      "50",
       "14"
     ],
-    "reproduce": "python3 -u computations/deltalambda/wlambda_covariance_M1_newest_box_form.py 10 45 14"
+    "reproduce": "python3 -u computations/deltalambda/wlambda_covariance_M1_newest_box_form.py 10 50 14"
   },
   "description": "Newest-box form of the covariance-kernel first moment: with the n-th Plancherel-growth box at (i,j), s=i+j, c=j−i, m=min(i,j): E[c²]=n−1, M₁=(n/3)Cov(s,c²), P=(n/3)Cov(|c|,c²), N=−(2n/3)Cov(m,c²), and ρ_n(s)=E[1{s}(c²−(n−1))]/((n−1)(n−2)), all equal exactly to the three-box and hook-formula sides. Lower half of single crossing (ρ_n≤0 for (s−2)²≤n−1) and upper tail (ρ_n≥0 for s²≥5n−1) checked; single crossing checked; two candidate sufficient conditions (monotone regression, per-ν covariance) FAIL. Single crossing for all n is NOT proved. No fit; nothing wired.",
   "data": {
@@ -113,7 +113,8 @@
           4,
           4
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 5,
@@ -123,7 +124,8 @@
         "upper_tail": true,
         "cells_ij_le_n": true,
         "open_window": null,
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 6,
@@ -136,7 +138,8 @@
           5,
           5
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 7,
@@ -149,7 +152,8 @@
           5,
           5
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 8,
@@ -162,7 +166,8 @@
           5,
           6
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 9,
@@ -175,7 +180,8 @@
           5,
           6
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 10,
@@ -188,7 +194,8 @@
           6,
           6
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 11,
@@ -201,7 +208,8 @@
           6,
           7
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 12,
@@ -214,7 +222,8 @@
           6,
           7
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 13,
@@ -227,7 +236,8 @@
           6,
           7
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 14,
@@ -240,7 +250,8 @@
           6,
           8
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 15,
@@ -253,7 +264,8 @@
           6,
           8
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 16,
@@ -266,7 +278,8 @@
           6,
           8
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 17,
@@ -279,7 +292,8 @@
           7,
           9
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 18,
@@ -292,7 +306,8 @@
           7,
           9
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 19,
@@ -305,7 +320,8 @@
           7,
           9
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 20,
@@ -318,7 +334,8 @@
           7,
           9
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 21,
@@ -331,7 +348,8 @@
           7,
           10
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 22,
@@ -344,7 +362,8 @@
           7,
           10
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 23,
@@ -357,7 +376,8 @@
           7,
           10
         ],
-        "monotone_regression": true
+        "monotone_regression": true,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 24,
@@ -370,7 +390,8 @@
           7,
           10
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 25,
@@ -383,7 +404,8 @@
           7,
           11
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 26,
@@ -396,7 +418,8 @@
           8,
           11
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 27,
@@ -409,7 +432,8 @@
           8,
           11
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 28,
@@ -422,7 +446,8 @@
           8,
           11
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 29,
@@ -435,7 +460,8 @@
           8,
           11
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 30,
@@ -448,7 +474,8 @@
           8,
           12
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 31,
@@ -461,7 +488,8 @@
           8,
           12
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 32,
@@ -474,7 +502,8 @@
           8,
           12
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 33,
@@ -487,7 +516,8 @@
           8,
           12
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 34,
@@ -500,7 +530,8 @@
           8,
           12
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 35,
@@ -513,7 +544,8 @@
           8,
           13
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 36,
@@ -526,7 +558,8 @@
           8,
           13
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 37,
@@ -539,7 +572,8 @@
           9,
           13
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 38,
@@ -552,7 +586,8 @@
           9,
           13
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 39,
@@ -565,7 +600,8 @@
           9,
           13
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 40,
@@ -578,7 +614,8 @@
           9,
           14
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 41,
@@ -591,7 +628,8 @@
           9,
           14
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 42,
@@ -604,7 +642,8 @@
           9,
           14
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 43,
@@ -617,7 +656,8 @@
           9,
           14
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 44,
@@ -630,7 +670,8 @@
           9,
           14
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       },
       {
         "n": 45,
@@ -643,7 +684,78 @@
           9,
           14
         ],
-        "monotone_regression": false
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 46,
+        "single_crossing": true,
+        "threshold_s": 11,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          15
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 47,
+        "single_crossing": true,
+        "threshold_s": 12,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          15
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 48,
+        "single_crossing": true,
+        "threshold_s": 12,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          15
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 49,
+        "single_crossing": true,
+        "threshold_s": 12,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          9,
+          15
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
+      },
+      {
+        "n": 50,
+        "single_crossing": true,
+        "threshold_s": 12,
+        "lower_half": true,
+        "upper_tail": true,
+        "cells_ij_le_n": true,
+        "open_window": [
+          10,
+          15
+        ],
+        "monotone_regression": false,
+        "monotone_regression_from_s4": true
       }
     ],
     "monotone_regression_first_failure": {
