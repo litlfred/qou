@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-chirality-sign-is-hypercharge-sign",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:chirality-sign-is-hypercharge-sign",
+  "kind": "proposition",
+  "title": "The chirality sign is the hypercharge sign",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-even-strand-generation",
+    "papers/quantum-observable-universe/blocks/prop-neutral-lepton-fixes-charges"
+  ],
+  "tags": [
+    "appendix",
+    "standard-model",
+    "chirality",
+    "hypercharge"
+  ],
+  "leanRef": "qou:QOU.EightfoldWay.ChiralitySignIsHyperchargeSign.even_neg_alpha_eq_odd",
+  "text": "chirality-sign-is-hypercharge-sign.md",
+  "provenance": "authored"
+}

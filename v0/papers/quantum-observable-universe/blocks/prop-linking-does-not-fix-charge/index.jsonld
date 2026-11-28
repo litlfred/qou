@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-linking-does-not-fix-charge",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:linking-does-not-fix-charge",
+  "kind": "proposition",
+  "title": "The linking number does not fix the charge sign",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-chirality-sign-is-hypercharge-sign"
+  ],
+  "tags": [
+    "appendix",
+    "standard-model",
+    "chirality",
+    "linking-number"
+  ],
+  "leanRef": "qou:QOU.EightfoldWay.LinkingDoesNotFixCharge.charge_not_function_of_linkSum",
+  "text": "linking-does-not-fix-charge.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-odd-strands-force-chirality",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:odd-strands-force-chirality",
+  "kind": "proposition",
+  "title": "Chiral matter forces an odd number of strands",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-even-strand-generation"
+  ],
+  "tags": [
+    "appendix",
+    "standard-model",
+    "chirality",
+    "anomaly"
+  ],
+  "leanRef": "qou:QOU.StandardModel.OddStrands.evenPart_dichotomy",
+  "text": "odd-strands-force-chirality.md",
+  "provenance": "authored"
+}

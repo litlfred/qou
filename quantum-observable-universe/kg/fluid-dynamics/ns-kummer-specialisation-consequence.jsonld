@@ -13,9 +13,10 @@
   ],
   "label": "rem:ns-kummer-specialisation-consequence",
   "kind": "remark",
-  "title": "Consequence for NS regularity",
+  "title": "Consequence for internal NS-singularity and its curve-restriction limit",
   "uses": [
-    "papers/quantum-observable-universe/blocks/thm-qu-to-qou"
+    "papers/quantum-observable-universe/blocks/thm-qu-to-qou",
+    "papers/quantum-observable-universe/blocks/prop-ns-kummer-specialisation"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/prop-ns-kummer-specialisation",
   "tags": [

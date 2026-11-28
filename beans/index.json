@@ -2,7 +2,7 @@
   "$schema": "folio-bean-index/v1",
   "tile": {
     "beans": {
-      "count": 1796,
+      "count": 1794,
       "unit": "open beans"
     }
   },
@@ -11739,7 +11739,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-10-04T15:09:58Z",
-      "updatedAt": "2026-11-27T14:18:15Z",
+      "updatedAt": "2026-11-28T10:56:30Z",
       "preview": "Sub-epic P1.ANCHOR of PROGRAM: L2 at 1 ppQ (mass and binding accuracy) (work-plan reorganisation 2026-10-04).\n\n## Round 84 Progress (PR #8393)\n- Branch: `feat/round84-colourdisc-fixedratio-comptrace-zeroslope-equidcap-43c1`\n- Commit 1 (code + probe): `02a557115ca6d2779725ccfdca969ee6ef80dff4`\n- Commit 2 (witness): `f21ac2e565e6a27158e92746366f1616c0d9fd98` (`scriptSha256 = 930736b7600cb1fb1ca87062",
       "file": "beans/defs/qou-2002--anchors-mu-p-pin-tension-and-calibration.md"
     },
@@ -53591,14 +53591,14 @@
     {
       "id": "qou-mk34",
       "title": "GAP: derive the pair (3,4) in m_K^2/m_pi^2 = [3]_q[4]_q from a definition of K and pi (currently scan-selected)",
-      "status": "todo",
+      "status": "completed",
       "type": "task",
       "priority": "normal",
       "parent": "qou-3l2l",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-20T08:13:33Z",
-      "updatedAt": "2026-11-27T17:35:00Z",
+      "updatedAt": "2026-11-28T10:56:30Z",
       "preview": "**Open, by six-path corpus-grep 2026-11-20** (audit docs/audits/2026-11-20-mk-mpi-derivation-status.md §2, PR #8529).\n\nWhat is proved (QOU.BraidKnot.MesonFusionIndexSelection, sorry-free, generic CommRing):\n- qCG_unnormalised_general: [m]_q[m+d]_q = sum_{k<m}[d+1+2k]_q for all m,d. The credited\n  meson_qCG_3x4 is its m=3,d=1 instance (meson_qCG_3x4_is_family_instance), so the Lean credit on\n  the ",
       "file": "beans/defs/qou-mk34--gap-derive-the-meson-fusion-pair-3-4-for-m-km-pi.md"
     },
@@ -57036,7 +57036,7 @@
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-27T21:52:11Z",
-      "updatedAt": "2026-11-27T22:52:47Z",
+      "updatedAt": "2026-11-28T10:56:30Z",
       "preview": "Follow-up to qou-tcl2 (G2). PR #9747, branch claude/isospin-writhe-scaling-2026-11-27.\n\nLean QOU/Nuclear/IsospinTwistWrithe.lean (sorry-free, lean-direct exit 0): any multiplicative block invariant sees a braid word only through its writhe; the Murphy product is a word of N(N-1) letters; on a block det rho(w)^{N(N-1)} = (q^{2c})^{d e}. So the T(T+1) coefficient is writhe/(N(N-1)). Full twist (#970",
       "file": "beans/defs/qou-o8lo--g2-a-scaling-tt1-coefficient-is-writhenn-1-pr-9747.md"
     },
@@ -65714,7 +65714,7 @@
         "qou-ziag"
       ],
       "createdAt": "2026-11-24T08:06:16Z",
-      "updatedAt": "2026-11-28T10:15:33Z",
+      "updatedAt": "2026-11-28T10:56:30Z",
       "preview": "## 0. Swarm Work-Item Contract — `'Stability'` Epic Swarm (`qou-s028`)\n\nA **Swarm** is a first-class work item (`type: epic` in `beans`) with explicit **Acceptance Criteria / End State**, **Structured Work-Item Queues**, **On-Demand + Optional Periodic Human-Consumable Status Reporting**, and **Live Cold-Start Handover Notes**.\n\n### Defined End-State / Exit Criteria for the `'Stability'` Swarm\n- [",
       "file": "beans/defs/qou-s028--stability-swarm-merge-manager-continuity-handover.md"
     },
@@ -80731,14 +80731,14 @@
     {
       "id": "qou-yzp7",
       "title": "Fluid dynamics chapter: tone down Navier-Stokes framing to a q-deformed model and scrub remaining Millennium/blowup-guarantee over-claims",
-      "status": "in-progress",
+      "status": "completed",
       "type": "task",
       "priority": "high",
       "parent": "qou-s028",
       "blocking": [],
       "blockedBy": [],
       "createdAt": "2026-11-28T10:15:32Z",
-      "updatedAt": "2026-11-28T10:15:32Z",
+      "updatedAt": "2026-11-28T10:56:30Z",
       "preview": "2026-11-28 (Antigravity coordinator 92bff8c9-777d-458a-a380-8dd5bf5cc0f3, sibling ws6-exposition-pdf -> branch claude/fluid-dynamics-qns-tonedown-20261128): Owner directive 'Move all except Navier-Stokes — Same, but the fluid dynamics chapter keeps its NS framing, toned down to a q-deformed model.' Audit & tone down all blocks in `folio/quantum-observable-universe/fluid-dynamics/` (including `ns-c",
       "file": "beans/defs/qou-yzp7--fluid-dynamics-chapter-tone-down-navier-stokes-fra.md"
     },
@@ -88196,13 +88196,13 @@
         "status": "in-progress",
         "epics": 9,
         "total": 427,
-        "closed": 173,
-        "open": 254,
-        "inProgress": 139,
+        "closed": 174,
+        "open": 253,
+        "inProgress": 138,
         "todo": 115,
         "draft": 0,
         "unclassified": 0,
-        "share": 0.405152224824356
+        "share": 0.40749414519906324
       },
       {
         "id": "suwr",
@@ -88226,13 +88226,13 @@
         "status": "in-progress",
         "epics": 12,
         "total": 790,
-        "closed": 248,
-        "open": 542,
+        "closed": 249,
+        "open": 541,
         "inProgress": 276,
-        "todo": 266,
+        "todo": 265,
         "draft": 0,
         "unclassified": 0,
-        "share": 0.3139240506329114
+        "share": 0.31518987341772153
       },
       {
         "id": "szkf",
@@ -88461,8 +88461,8 @@
       }
     ],
     "orphanOpen": 138,
-    "openTotal": 1796,
-    "coveredOpen": 1650,
+    "openTotal": 1794,
+    "coveredOpen": 1648,
     "duplicateIds": 0
   }
 }
